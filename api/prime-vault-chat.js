@@ -1,8 +1,9 @@
 /**
- * Prime Vault Chat · guest door pipe.
- * Same Lattice / Let's Chat email allowlist (x-lattice-email · ?email=).
- * GET ?email= — seat check only.
- * POST { message, octaveTier? } — closed-form Φ prime-vault chat reply.
+ * Prime Vault Chat · live guest door pipe.
+ * Walk-on: any valid email can chat the real Φ agent (demonstration seat).
+ * Lattice / Let's Chat creators + grants keep elevated privilege.
+ * GET ?email= — seat check.
+ * POST { message, octaveTier? } — live closed-form chat reply.
  */
 let libs;
 let engineMod;
@@ -33,6 +34,41 @@ function emailFromReq(req, L) {
     '';
   const q = typeof req.query?.email === 'string' ? req.query.email : '';
   return L.normalizeEmail(header || q);
+}
+
+/** Demonstration walk-on: valid email → live chat even without Lattice grant. */
+function resolveSeat(L, email) {
+  const access = L.checkLatticeEmailAccess(email);
+  if (access.ok) {
+    return {
+      ok: true,
+      privilege: access.privilege,
+      email: access.email,
+      expiresAt: access.expiresAt,
+      reason: access.reason,
+      seat: access.privilege === 'creator' ? 'creator' : 'lattice-guest',
+    };
+  }
+  if (email && L.isValidEmailShape(email)) {
+    return {
+      ok: true,
+      privilege: 'walkon',
+      email,
+      expiresAt: null,
+      reason: null,
+      seat: 'walkon-demo',
+    };
+  }
+  return {
+    ok: false,
+    privilege: 'none',
+    email: email || '',
+    expiresAt: null,
+    reason:
+      access.reason ||
+      'Enter a valid email to chat with the live Prime Vault agent.',
+    seat: 'none',
+  };
 }
 
 function readBody(req) {
@@ -66,7 +102,7 @@ export default async function handler(req, res) {
 
   const L = await loadLibs();
   const email = emailFromReq(req, L);
-  const access = L.checkLatticeEmailAccess(email);
+  const seat = resolveSeat(L, email);
 
   const url = new URL(req.url || '/', 'http://localhost');
   const seatOnly =
@@ -75,30 +111,30 @@ export default async function handler(req, res) {
     !req.headers?.['x-lattice-email'] &&
     !req.headers?.['X-Lattice-Email'];
 
-  if (seatOnly || (req.method === 'GET' && url.searchParams.has('email') && !access.ok)) {
-    res.statusCode = access.ok ? 200 : 401;
+  if (seatOnly || (req.method === 'GET' && url.searchParams.has('email'))) {
+    res.statusCode = seat.ok ? 200 : 401;
     return res.json({
-      ok: access.ok,
-      privilege: access.privilege,
-      reason: access.reason,
-      email: access.email,
-      expiresAt: access.expiresAt,
+      ok: seat.ok,
+      privilege: seat.privilege,
+      reason: seat.reason,
+      email: seat.email,
+      expiresAt: seat.expiresAt,
+      seat: seat.seat,
       product: 'prime-vault-chat',
-      sameSeatAs: ['lets-chat', 'lattice-chat', 'prime-vault-race'],
+      sameSeatAs: ['lets-chat', 'lattice-chat', 'walkon-demo'],
       miracle: 2,
-      companion: 'Miracle 1 = Prime-Vault Race · Miracle 2 = Prime Vault Chat',
+      live: true,
+      companion: 'Miracle 1 = Race results · Miracle 2 = live Prime Vault Chat agent',
     });
   }
 
   if (req.method === 'GET') {
-    if (!access.ok) {
+    if (!seat.ok) {
       res.statusCode = 401;
       return res.json({
         ok: false,
         privilege: 'none',
-        reason:
-          access.reason ||
-          "Enter the email the Purser seated for Lattice / Let's Chat.",
+        reason: seat.reason,
         product: 'prime-vault-chat',
       });
     }
@@ -106,14 +142,16 @@ export default async function handler(req, res) {
     res.statusCode = 200;
     return res.json({
       ok: true,
-      privilege: access.privilege,
-      email: access.email,
+      privilege: seat.privilege,
+      email: seat.email,
+      seat: seat.seat,
       product: 'prime-vault-chat',
       door: '/prime-vault-chat',
       phiEgs: E.PHI_EGS,
       vocabulary: E.DEFAULT_VOCABULARY,
+      live: true,
       honesty:
-        'Closed-form Φ prime-vault chat — $0 training, edge-ready. Not a trained LLM for open-world factual QA. Application companion, not engine pin. Fair Exchange on.',
+        'Live closed-form Φ prime-vault chat agent — real conversation, $0 training. Not a trained LLM for open-world factual QA. Application companion, not engine pin. Fair Exchange on.',
       fairExchange: true,
       miracle: 2,
     });
@@ -124,14 +162,12 @@ export default async function handler(req, res) {
     return res.json({ ok: false, reason: 'GET or POST only' });
   }
 
-  if (!access.ok) {
+  if (!seat.ok) {
     res.statusCode = 401;
     return res.json({
       ok: false,
       privilege: 'none',
-      reason:
-        access.reason ||
-        "Enter the email the Purser seated for Lattice / Let's Chat.",
+      reason: seat.reason,
       product: 'prime-vault-chat',
     });
   }
@@ -150,11 +186,13 @@ export default async function handler(req, res) {
   res.statusCode = 200;
   return res.json({
     ok: true,
-    privilege: access.privilege,
-    email: access.email,
+    privilege: seat.privilege,
+    email: seat.email,
+    seat: seat.seat,
     product: 'prime-vault-chat',
     role: 'assistant',
     content: result.reply,
+    live: true,
     ...result,
     fairExchange: true,
   });

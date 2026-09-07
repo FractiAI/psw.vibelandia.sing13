@@ -32,18 +32,22 @@ describe('Prime Vault Chat · guest door rollout', () => {
     });
     expect(Math.abs(PHI_EGS - (1 + Math.sqrt(5)) / 2) < 1e-15).toBe(true);
     expect(r.trainingCostUsd).toBe(0);
-    expect(r.reply).toMatch(/Omniversal Lattice Response/);
+    expect(r.live).toBe(true);
+    expect(r.reply).toMatch(/Fractal constant|El Gran Sol|Φ/);
+    expect(r.reply).not.toMatch(/^Omniversal Lattice Response to query/);
     expect(r.nodes.length).toBeGreaterThan(0);
     expect(r.latencyMs).toBeLessThan(50);
   });
 
-  it('reuses Lattice / Let\'s Chat email allowlist', () => {
+  it('reuses Lattice seats and allows walk-on demo email', () => {
     const creator = DEFAULT_CREATOR_EMAILS[0];
     const access = checkLatticeEmailAccess(creator);
     expect(access.ok).toBe(true);
     const api = read('api/prime-vault-chat.js');
     expect(api).toContain('checkLatticeEmailAccess');
     expect(api).toContain('prime-vault-chat');
+    expect(api).toContain('walkon');
+    expect(api).toContain('isValidEmailShape');
   });
 
   it('wires vercel routes, quicklink, player door, journey, and blogs', () => {

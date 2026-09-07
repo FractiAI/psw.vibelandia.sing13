@@ -195,10 +195,24 @@
 }
 
 .pvc-msg__body {
-  white-space: pre-wrap;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.86rem;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
   margin: 0;
+  color: var(--pvc-ink);
+}
+
+.pvc-msg__body p {
+  margin: 0 0 0.65rem;
+}
+
+.pvc-msg__body p:last-child {
+  margin-bottom: 0;
+}
+
+.pvc-msg__body strong {
+  color: var(--pvc-gold);
+  font-weight: 600;
 }
 
 .pvc-msg__metrics {

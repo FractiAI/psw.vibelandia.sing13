@@ -1,4 +1,4 @@
-/** Prime Vault Chat · guest client — ChatGPT-shaped · same Lattice / Let's Chat email seat. */
+/** Prime Vault Chat · live guest client — ChatGPT-shaped · real Φ agent. */
 (function () {
   var STORAGE_EMAIL = 'primevault.chat.email.v1';
   var STORAGE_THREAD = 'primevault.chat.thread.v1';
@@ -10,12 +10,14 @@
   ];
 
   var WELCOME =
-    'Greetings. The omniversal lattice is active.\n' +
-    'Ask anything to query the Prime Vault engine — Φ ≈ 1.618 · $0 training · closed-form.';
+    'Greetings. I am the live Prime Vault Chat agent.\n\n' +
+    'Ask me anything about Φ ≈ 1.618, prime vaults, the Omniversal Lattice, protein races, or how this differs from a trained LLM.\n\n' +
+    'I answer with real closed-form vault resonance — $0 training · edge milliseconds · not a stub.';
 
   var state = {
     email: '',
     privilege: '',
+    seat: '',
     busy: false,
     messages: [],
   };
@@ -84,10 +86,29 @@
   function showChat() {
     $('pvc-gate').hidden = true;
     $('pvc-chat').hidden = false;
-    $('pvc-me-label').textContent =
-      'Seated as ' + state.email + (state.privilege ? ' · ' + state.privilege : '');
+    var seatNote =
+      state.seat === 'walkon-demo'
+        ? ' · walk-on guest'
+        : state.privilege
+          ? ' · ' + state.privilege
+          : '';
+    $('pvc-me-label').textContent = 'Seated as ' + state.email + seatNote;
     renderThread();
     $('pvc-input').focus();
+  }
+
+  function formatBody(content) {
+    return escapeHtml(content)
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n/g, '<br/>');
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
   }
 
   function renderThread() {
@@ -97,7 +118,7 @@
         var metrics = '';
         if (m.role === 'assistant' && m.latencyMs != null) {
           metrics =
-            '<p class="pvc-msg__metrics">Edge ' +
+            '<p class="pvc-msg__metrics">Live agent · ' +
             (m.latencyMs < 1 ? m.latencyMs.toFixed(3) : m.latencyMs.toFixed(2)) +
             ' ms · $0 training · octave ' +
             (m.octaveTier || 7) +
@@ -110,22 +131,15 @@
           '<span class="pvc-msg__role">' +
           (m.role === 'user' ? 'You' : 'Prime Vault') +
           '</span>' +
-          '<pre class="pvc-msg__body">' +
-          escapeHtml(m.content) +
-          '</pre>' +
+          '<div class="pvc-msg__body"><p>' +
+          formatBody(m.content) +
+          '</p></div>' +
           metrics +
           '</article>'
         );
       })
       .join('');
     root.scrollTop = root.scrollHeight;
-  }
-
-  function escapeHtml(s) {
-    return String(s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
   }
 
   function resetMessages() {
@@ -167,7 +181,7 @@
       if (!res.ok || !data.ok) {
         state.messages.push({
           role: 'assistant',
-          content: data.reason || 'Lattice gate closed. Check your seat email.',
+          content: data.reason || 'Lattice gate closed. Try a valid email seat.',
         });
       } else {
         state.messages.push({
@@ -177,7 +191,7 @@
           octaveTier: data.octaveTier,
         });
         $('pvc-meta').textContent =
-          'Φ ≈ 1.618 · octave ' +
+          'Live agent · Φ ≈ 1.618 · octave ' +
           (data.octaveTier || 7) +
           ' · last reply ' +
           (data.latencyMs < 1
@@ -202,11 +216,12 @@
   async function enter(email) {
     var data = await checkSeat(email);
     if (!data.ok) {
-      showGate(data.reason || 'No seat for that email yet.');
+      showGate(data.reason || 'Enter a valid email to chat.');
       return;
     }
     state.email = data.email || email;
     state.privilege = data.privilege || '';
+    state.seat = data.seat || '';
     rememberSharedEmail(state.email);
     var prior = loadThread();
     if (prior) state.messages = prior;

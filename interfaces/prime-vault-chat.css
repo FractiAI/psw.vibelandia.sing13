@@ -14,6 +14,7 @@
 .pvc-body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   color: var(--pvc-ink);
   font-family: "IBM Plex Sans", system-ui, sans-serif;
   background:
@@ -27,8 +28,9 @@
 .pvc-shell {
   max-width: 48rem;
   margin: 0 auto;
-  padding: 1rem 1rem 2.5rem;
+  padding: 1rem 1rem calc(2.5rem + env(safe-area-inset-bottom, 0px));
   min-height: calc(100vh - 3rem);
+  min-height: calc(100dvh - 3rem);
   display: flex;
   flex-direction: column;
 }
@@ -228,11 +230,13 @@
   align-items: end;
   padding-top: 0.5rem;
   border-top: 1px solid var(--pvc-line);
+  background: rgba(7, 13, 24, 0.96);
+  z-index: 40;
 }
 
 .pvc-composer textarea {
   resize: none;
-  min-height: 2.75rem;
+  min-height: 2.85rem;
   max-height: 8rem;
   border-radius: 0.85rem;
   border: 1px solid var(--pvc-line);
@@ -240,7 +244,17 @@
   color: var(--pvc-ink);
   padding: 0.75rem 0.9rem;
   font: inherit;
+  font-size: 16px; /* iOS: avoid focus zoom that pushes controls under Safari chrome */
   line-height: 1.4;
+  touch-action: manipulation;
+}
+
+.pvc-composer #pvc-send {
+  min-width: 3.5rem;
+  min-height: 2.85rem;
+  padding: 0.75rem 1rem;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pvc-meta {
@@ -260,7 +274,54 @@
   border: 0;
 }
 
-@media (max-width: 560px) {
+/* Mobile dock: keep Message + Send above Safari / Android chrome */
+@media (max-width: 720px) {
   .pvc-chat__head { flex-direction: column; }
   .pvc-msg { max-width: 100%; }
+
+  .pvc-chat:not([hidden]) {
+    padding-bottom: calc(7.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .pvc-thread {
+    max-height: none;
+    flex: 1 1 auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .pvc-composer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    bottom: var(--pvc-keyboard-inset, 0px);
+    z-index: 1300;
+    margin: 0;
+    padding: 0.7rem 0.85rem 0.35rem;
+    padding-bottom: calc(0.45rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--pvc-line);
+    background:
+      linear-gradient(180deg, rgba(7, 13, 24, 0.92), #070d18 35%);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+    grid-template-columns: 1fr auto;
+  }
+
+  .pvc-meta {
+    position: fixed;
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: calc(3.55rem + env(safe-area-inset-bottom, 0px) + var(--pvc-keyboard-inset, 0px));
+    z-index: 1299;
+    margin: 0;
+    padding: 0.2rem 0;
+    background: transparent;
+    pointer-events: none;
+    font-size: 0.72rem;
+  }
+
+  body.pvc-chat-open .qv-page-views,
+  body.pvc-chat-open #qv-page-views,
+  body.pvc-chat-open [data-qv-page-views] {
+    bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px) + var(--pvc-keyboard-inset, 0px)) !important;
+  }
 }

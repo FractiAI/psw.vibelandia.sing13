@@ -70,9 +70,26 @@
     } catch (_) {}
   }
 
+  function setChatOpen(open) {
+    document.body.classList.toggle('pvc-chat-open', !!open);
+    var host = document.querySelector('[data-qv-page-visits-host]');
+    if (host) {
+      if (open) {
+        host.style.setProperty(
+          'bottom',
+          'calc(5.75rem + env(safe-area-inset-bottom, 0px) + var(--pvc-keyboard-inset, 0px))',
+          'important',
+        );
+      } else {
+        host.style.removeProperty('bottom');
+      }
+    }
+  }
+
   function showGate(err) {
     $('pvc-gate').hidden = false;
     $('pvc-chat').hidden = true;
+    setChatOpen(false);
     var box = $('pvc-gate-err');
     if (err) {
       box.hidden = false;
@@ -86,6 +103,7 @@
   function showChat() {
     $('pvc-gate').hidden = true;
     $('pvc-chat').hidden = false;
+    setChatOpen(true);
     var seatNote =
       state.seat === 'walkon-demo'
         ? ' · walk-on guest'
@@ -94,7 +112,20 @@
           : '';
     $('pvc-me-label').textContent = 'Seated as ' + state.email + seatNote;
     renderThread();
-    $('pvc-input').focus();
+    var input = $('pvc-input');
+    if (input) {
+      try {
+        input.focus({ preventScroll: false });
+      } catch (_) {
+        input.focus();
+      }
+      window.setTimeout(function () {
+        var composer = $('pvc-composer');
+        if (composer && composer.scrollIntoView) {
+          composer.scrollIntoView({ block: 'end', behavior: 'smooth' });
+        }
+      }, 50);
+    }
   }
 
   function formatBody(content) {
@@ -254,17 +285,47 @@
       ev.preventDefault();
       var input = $('pvc-input');
       var text = input.value.trim();
-      if (!text) return;
+      if (!text || state.busy) return;
       input.value = '';
-      sendMessage(text);
+      void sendMessage(text);
     });
+
+    // Explicit tap path — some mobile browsers miss submit when chrome overlays the form.
+    var sendBtn = $('pvc-send');
+    if (sendBtn) {
+      sendBtn.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        var input = $('pvc-input');
+        var text = input && input.value.trim();
+        if (!text || state.busy) return;
+        input.value = '';
+        void sendMessage(text);
+      });
+    }
 
     $('pvc-input').addEventListener('keydown', function (ev) {
       if (ev.key === 'Enter' && !ev.shiftKey) {
         ev.preventDefault();
-        $('pvc-composer').requestSubmit();
+        var input = $('pvc-input');
+        var text = input.value.trim();
+        if (!text || state.busy) return;
+        input.value = '';
+        void sendMessage(text);
       }
     });
+
+    // visualViewport: lift dock when iOS keyboard opens
+    if (window.visualViewport) {
+      var syncDock = function () {
+        if (!document.body.classList.contains('pvc-chat-open')) return;
+        var vv = window.visualViewport;
+        var inset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+        document.documentElement.style.setProperty('--pvc-keyboard-inset', inset + 'px');
+      };
+      window.visualViewport.addEventListener('resize', syncDock);
+      window.visualViewport.addEventListener('scroll', syncDock);
+      syncDock();
+    }
 
     if (pref) enter(pref);
   }

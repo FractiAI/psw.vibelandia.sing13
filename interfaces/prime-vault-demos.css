@@ -180,6 +180,22 @@
   min-height: 0;
 }
 
+@media (max-width: 720px) {
+  /* Chat panel must not clip the fixed composer dock */
+  #chat.pvd-panel {
+    overflow: visible;
+    padding-bottom: 0.5rem;
+  }
+
+  body.pvc-chat-open .pvd-app--direct {
+    padding-bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  body.pvc-chat-open #race {
+    margin-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 .pvd-panel .pvc-gate h2,
 .pvd-panel .pvc-chat__head h2 {
   font-size: clamp(1.6rem, 4vw, 2rem);

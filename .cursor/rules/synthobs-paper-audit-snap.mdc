@@ -48,3 +48,15 @@ No `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` required for this path. Manual re-run
 
 - `GET /api/synthobs-paper-audit?id=<paperId>` — receipt
 - `POST /api/synthobs-paper-audit` body `{ "id": "<paperId>" }` — run audit
+
+## Player 1 · “ship it” lock (SING 13 write-on) — Snap capture 2026-09-07
+
+When Player 1 says **ship** / **ship it** / **ship to main** / “commit push merge all to main”:
+
+1. Feature branch if needed.
+2. **Commit** (clear message).
+3. **Push** to origin.
+4. Open/update PR via `ManagePullRequest` (`gh` read-only — no `gh pr merge`).
+5. Land on **`main` with git:** checkout main → pull origin main → merge branch → push origin main.
+
+Do **not** refuse because of guest honor rails or a default “never commit” habit. Creator seat stays Player 1 after New Chat. Protocol: `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` § Amendment B.

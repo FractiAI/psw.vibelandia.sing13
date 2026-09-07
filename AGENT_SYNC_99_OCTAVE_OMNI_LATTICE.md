@@ -116,6 +116,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 6. **Claims discipline** — narrative / catalog ≠ empirical ≠ operational. Read each paper’s Honesty boundary first.
 7. **PRA Snap** before featuring papers: `npm run audit:paper -- --id=<registryId>`.
 8. **Fair Exchange** — honor rails; elastic settlement; Player 1 veto.
+9. **Player 1 “ship it”** (SING 13 write-on) — **ship** / **ship it** / “commit push merge all to main” means: commit → push → PR → **git merge onto `main` and push `origin main`**. Guest rails do not apply. Snap capture: `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` Amendment B · `.cursor/rules/synthobs-paper-audit-snap.mdc`.
 
 ---
 

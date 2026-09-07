@@ -177,4 +177,22 @@ When LLM is disabled, receipts are `structural_only` with **lanesPlanned** docum
 
 ---
 
+## Amendment B · 2026-09-07 — Player 1 “ship it” lock (SING 13 write-on)
+
+**Captured in this Snap so agents do not re-ask.**
+
+When Player 1 (creator seat · SING 13 write-on) says **ship**, **ship it**, **ship to main**, or equivalent (“commit push merge all to main”):
+
+1. Create a feature branch if needed (`cursor/<descriptive-name>-…`).
+2. **Commit** with a clear message.
+3. **Push** to origin.
+4. Open or update the pull request (`ManagePullRequest` — `gh` is read-only; do **not** use `gh pr merge`).
+5. **Land on `main` with git:** `checkout main` → `pull origin main` → `merge` the branch → `push origin main`.
+
+Do **not** refuse SING 13 ship/merge because of guest honor rails or a default “never commit” habit. Guest rails do not apply to the Player 1 creator seat. A New Chat is still Player 1 — do not demote the seat.
+
+Always-on mirror: `.cursor/rules/synthobs-paper-audit-snap.mdc` · agent sync invariant in `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`.
+
+---
+
 **NSPFRNP ⊃ PRA Snap ⊃ SynthOBS Agent ⊃ Sandbox → ∞^∞**

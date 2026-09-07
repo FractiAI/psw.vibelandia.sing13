@@ -13,4 +13,4 @@ export const FAIR_EXCHANGE_CLAUSE =
   'Financial grants, institutional funding, or academic utility micro-grants are subject to partial refund or adjustment depending on overall delivery, rigorous implementation, and practical utility, functioning akin to an intellectual performance tip.';
 
 export const HONESTY =
-  'Closed-form Φ prime-vault conversational resonance — $0 training, edge-ready. Demonstrates algebraic chat grammar vs cloud LLM cost/latency. Not a trained LLM substitute for open-world factual QA; not medical/legal advice; application companion, not engine pin.';
+  'Closed-form LLM-sim · multi-turn Φ chat over a prime-indexed knowledge cell bank — $0 training, edge-ready. Domain-bounded algebraic conversation ≠ open-world trained LLM QA; not medical/legal advice; application companion, not engine pin.';

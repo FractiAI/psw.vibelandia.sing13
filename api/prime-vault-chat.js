@@ -3,7 +3,7 @@
  * Walk-on: any valid email can chat the real Φ agent (demonstration seat).
  * Lattice / Let's Chat creators + grants keep elevated privilege.
  * GET ?email= — seat check.
- * POST { message, octaveTier? } — live closed-form chat reply.
+ * POST { message, octaveTier?, history? } — live closed-form LLM-sim reply (multi-turn).
  */
 let libs;
 let engineMod;
@@ -151,8 +151,9 @@ export default async function handler(req, res) {
       vocabulary: E.DEFAULT_VOCABULARY,
       live: true,
       honesty:
-        'Live closed-form Φ prime-vault chat agent — real conversation, $0 training. Not a trained LLM for open-world factual QA. Application companion, not engine pin. Fair Exchange on.',
+        'Live closed-form LLM-sim · multi-turn Φ chat over a knowledge cell bank — $0 training. Domain-bounded; not a trained LLM for open-world factual QA. Application companion, not engine pin. Fair Exchange on.',
       fairExchange: true,
+      llmSim: true,
       miracle: 2,
     });
   }
@@ -179,9 +180,16 @@ export default async function handler(req, res) {
     return res.json({ ok: false, reason: 'message required' });
   }
 
+  const history = Array.isArray(body.history)
+    ? body.history.slice(-12).map((t) => ({
+        role: String(t?.role || '') === 'assistant' ? 'assistant' : 'user',
+        content: String(t?.content || '').slice(0, 2000),
+      }))
+    : [];
+
   const E = await loadEngine();
   const octaveTier = body.octaveTier ?? body.octave ?? 7;
-  const result = E.queryPrimeVaultChat(message, { octaveTier });
+  const result = E.queryPrimeVaultChat(message, { octaveTier, history });
 
   res.statusCode = 200;
   return res.json({
@@ -193,6 +201,7 @@ export default async function handler(req, res) {
     role: 'assistant',
     content: result.reply,
     live: true,
+    llmSim: true,
     ...result,
     fairExchange: true,
   });

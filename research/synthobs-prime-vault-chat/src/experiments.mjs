@@ -1,5 +1,5 @@
 /**
- * Prime Vault Chat — suite locks for the edge Omni-Lattice chat engine.
+ * Prime Vault Chat — suite locks for the closed-form LLM-sim engine.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,7 +17,9 @@ import {
   createPrimeVaultChatEngine,
   generateSemanticPrimes,
   queryPrimeVaultChat,
+  hashThreadPhase,
   DEFAULT_VOCABULARY,
+  KNOWLEDGE_CELLS,
 } from '../../../lib/prime-vault-chat-engine.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -48,7 +50,11 @@ function experimentPrimes() {
 function experimentDeterminism() {
   const a = queryPrimeVaultChat('What is the fractal constant?', { octaveTier: 7 });
   const b = queryPrimeVaultChat('What is the fractal constant?', { octaveTier: 7 });
-  const stripClock = (s) => s.replace(/→ Edge clock:.*$/m, '').trim();
+  const stripClock = (s) =>
+    s
+      .replace(/_Edge note:.*?_/gs, '')
+      .replace(/→ Edge clock:.*$/m, '')
+      .trim();
   const nodesEqual =
     a.nodes.length === b.nodes.length &&
     a.nodes.every(
@@ -64,8 +70,10 @@ function experimentDeterminism() {
       nodesEqual &&
       a.nodes.length >= 1 &&
       a.trainingCostUsd === 0 &&
-      a.latencyMs < 50,
+      a.latencyMs < 50 &&
+      a.llmSim === true,
     latencyMs: a.latencyMs,
+    speechAct: a.speechAct,
   };
 }
 
@@ -74,12 +82,13 @@ function experimentIntentBoost() {
     octaveTier: 7,
   });
   const hit = protein.nodes.some((n) =>
-    /protein|prime|container/i.test(n.concept),
+    /protein|prime|Race|Nova|container/i.test(n.concept),
   );
   return {
     id: 'E4_intent_resonance',
-    pass: hit && protein.nodes[0].amplitude > 0,
+    pass: hit && protein.nodes[0].amplitude > 0 && protein.speechAct === 'race',
     top: protein.nodes[0]?.concept,
+    speechAct: protein.speechAct,
   };
 }
 
@@ -88,7 +97,7 @@ function experimentZeroTraining() {
   const r = engine.queryLattice('hello lattice');
   return {
     id: 'E5_zero_training_cost',
-    pass: r.trainingCostUsd === 0 && /zero training|\$0\.00 training/i.test(r.reply),
+    pass: r.trainingCostUsd === 0 && /\$0(?:\.00)? training/i.test(r.reply),
   };
 }
 
@@ -111,13 +120,16 @@ function experimentSurfaces() {
     paperPhi: /1\.618|Φ|PHI/i.test(paper),
     paperFair: /Fair Exchange/i.test(paper),
     paperZero: /\$0|0\.00 training|zero training/i.test(paper),
+    paperLlmSim: /LLM-sim|knowledge cell bank|multi-turn/i.test(paper),
     paperOperator: /SynthOBS/i.test(paper),
     blogExists: Boolean(blog),
     blogSlug: blog.includes(SHIP_BLOG_SLUG) || blog.includes('prime-vault-chat'),
-    blogDoor: blog.includes(DOOR) || blog.includes('/prime-vault-chat'),
+    blogDoor: blog.includes(DOOR) || blog.includes('/prime-vault-chat') || blog.includes('/demonstrations'),
     blogHonesty: /Honesty/i.test(blog),
+    blogLlmSim: /LLM-sim|knowledge cell/i.test(blog),
     doorChatUi: /pvc-thread|Message Prime Vault/i.test(door),
     apiSeat: /checkLatticeEmailAccess|x-lattice-email/i.test(api),
+    apiHistory: /history/i.test(api),
   };
   return {
     id: 'E6_surfaces',
@@ -134,6 +146,54 @@ function experimentRegistry() {
   };
 }
 
+function experimentKnowledgeBank() {
+  const n = Object.keys(KNOWLEDGE_CELLS).length;
+  const required = [
+    'Closed-form LLM-sim',
+    'Multi-turn memory',
+    'Unmodeled Nova',
+    'Domain boundary',
+    'Guest brand Infinite Octaves',
+  ];
+  const hasAll = required.every((k) => KNOWLEDGE_CELLS[k]?.speak);
+  return {
+    id: 'E8_knowledge_cell_bank',
+    pass: n >= 18 && hasAll && DEFAULT_VOCABULARY.length === n,
+    n,
+  };
+}
+
+function experimentMultiTurn() {
+  const history = [
+    { role: 'user', content: 'What is Phi?' },
+    { role: 'assistant', content: 'Phi is about 1.618.' },
+  ];
+  const follow = queryPrimeVaultChat('tell me more about that', {
+    octaveTier: 7,
+    history,
+  });
+  const cold = queryPrimeVaultChat('tell me more about that', { octaveTier: 7 });
+  const phaseA = hashThreadPhase([...history, { role: 'user', content: 'tell me more about that' }]);
+  const phaseB = hashThreadPhase([{ role: 'user', content: 'tell me more about that' }]);
+  const ood = queryPrimeVaultChat('What is the weather in Reno tomorrow?', {
+    octaveTier: 7,
+  });
+  return {
+    id: 'E9_multiturn_and_ood',
+    pass:
+      follow.historyTurns === 2 &&
+      follow.threadPhase === phaseA &&
+      cold.threadPhase === phaseB &&
+      phaseA !== phaseB &&
+      follow.llmSim === true &&
+      (follow.speechAct === 'continue' || follow.kinds.includes('followup') || follow.kinds.includes('continuing')) &&
+      ood.speechAct === 'refuse' &&
+      /outside my cell bank|Domain-bounded|medicine|steer back/i.test(ood.reply),
+    followAct: follow.speechAct,
+    oodAct: ood.speechAct,
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentPhi(),
@@ -143,6 +203,8 @@ export async function runAllExperiments() {
     experimentZeroTraining(),
     experimentSurfaces(),
     experimentRegistry(),
+    experimentKnowledgeBank(),
+    experimentMultiTurn(),
   ];
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
   return {

@@ -11,8 +11,8 @@
 
   var WELCOME =
     "Hey — I'm the live Prime Vault Chat agent.\n\n" +
-    "Talk to me like a guest on the ship. Ask who I am, what Φ ≈ 1.618 means, how I differ from ChatGPT, or what the Race scoreboard shows.\n\n" +
-    "I answer in conversation — closed-form · $0 training · not a stats dump.";
+    "Talk to me like you would talk to an LLM on this ship. I keep multi-turn memory of this thread, answer in natural paragraphs from a Φ knowledge cell bank, and cost $0 to train.\n\n" +
+    "Ask who I am, what Φ ≈ 1.618 means, how I differ from ChatGPT, what Infinite Octaves is, or what the Race scoreboard shows.";
 
   var state = {
     email: '',
@@ -200,6 +200,16 @@
     saveThread();
 
     try {
+      var history = state.messages
+        .filter(function (m) {
+          return m.role === 'user' || m.role === 'assistant';
+        })
+        .slice(0, -1)
+        .slice(-12)
+        .map(function (m) {
+          return { role: m.role, content: String(m.content || '').slice(0, 2000) };
+        });
+
       var res = await fetch('/api/prime-vault-chat', {
         method: 'POST',
         headers: {
@@ -207,7 +217,7 @@
           Accept: 'application/json',
           'x-lattice-email': state.email,
         },
-        body: JSON.stringify({ message: text, octaveTier: 7 }),
+        body: JSON.stringify({ message: text, octaveTier: 7, history: history }),
       });
       var data = await res.json();
       if (!res.ok || !data.ok) {
@@ -221,15 +231,17 @@
           content: data.content || data.reply,
           latencyMs: data.latencyMs,
           octaveTier: data.octaveTier,
+          speechAct: data.speechAct,
         });
         $('pvc-meta').textContent =
-          'Live agent · Φ ≈ 1.618 · octave ' +
+          'Live LLM-sim · Φ ≈ 1.618 · octave ' +
           (data.octaveTier || 7) +
           ' · last reply ' +
           (data.latencyMs < 1
             ? data.latencyMs.toFixed(3)
             : Number(data.latencyMs).toFixed(2)) +
-          ' ms · $0 training';
+          ' ms · $0 training · thread ' +
+          (data.historyTurns != null ? data.historyTurns : history.length);
       }
     } catch (e) {
       state.messages.push({

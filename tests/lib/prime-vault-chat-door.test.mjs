@@ -26,14 +26,16 @@ describe('Prime Vault Chat · guest door rollout', () => {
     expect(html).toContain('pvc-thread');
   });
 
-  it('resolves closed-form Φ chat with $0 training', () => {
+  it('resolves closed-form LLM-sim with $0 training and multi-turn phase', () => {
     const r = queryPrimeVaultChat('What is El Gran Sol fractal constant?', {
       octaveTier: 7,
     });
     expect(Math.abs(PHI_EGS - (1 + Math.sqrt(5)) / 2) < 1e-15).toBe(true);
     expect(r.trainingCostUsd).toBe(0);
     expect(r.live).toBe(true);
-    expect(r.reply).toMatch(/Fractal constant|El Gran Sol|Φ|Prime Vault/);
+    expect(r.llmSim).toBe(true);
+    expect(r.knowledgeCells).toBeGreaterThanOrEqual(18);
+    expect(r.reply).toMatch(/Fractal constant|El Gran Sol|Φ|Prime Vault|1\.618/);
     expect(r.reply).not.toMatch(/^Omniversal Lattice Response to query/);
     expect(r.reply).not.toMatch(/lattice locks first on/);
     expect(r.reply).not.toMatch(/Activated vaults:/);
@@ -43,6 +45,28 @@ describe('Prime Vault Chat · guest door rollout', () => {
     expect(about.reply).toMatch(/Prime Vault Chat/);
     expect(about.reply).not.toMatch(/lattice locks first/);
     expect(about.kinds).toContain('about');
+    expect(about.speechAct).toBe('introduce');
+
+    const history = [
+      { role: 'user', content: 'What is Phi?' },
+      { role: 'assistant', content: 'Phi keys the vaults at about 1.618.' },
+    ];
+    const follow = queryPrimeVaultChat('say more about that', { history });
+    expect(follow.historyTurns).toBe(2);
+    expect(follow.threadPhase).toBeGreaterThan(0);
+    expect(follow.reply).not.toMatch(/Activated vaults:/);
+
+    const ood = queryPrimeVaultChat('diagnose my fever prescription please');
+    expect(ood.speechAct).toBe('refuse');
+  });
+
+  it('API accepts history for multi-turn LLM-sim', () => {
+    const api = read('api/prime-vault-chat.js');
+    expect(api).toContain('history');
+    expect(api).toContain('llmSim');
+    const client = read('interfaces/prime-vault-chat-client.js');
+    expect(client).toContain('history');
+    expect(client).toMatch(/knowledge cell bank|LLM/);
   });
 
   it('reuses Lattice seats and allows walk-on demo email', () => {

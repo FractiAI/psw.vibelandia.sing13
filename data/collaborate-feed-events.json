@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-06T20:24:37.617Z",
+  "updatedAt": "2026-09-07T03:33:55.005Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-prime-vault-chat-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-07T03:33:55.004Z",
+      "body": "Prime Vault Chat — Edge Omni-Lattice Agent Replacing LLM Training with Φ-Recursive Prime-Vault Architecture",
+      "presenceHue": "gold",
+      "paperId": "synthobs-prime-vault-chat-2026-09",
+      "artifact": {
+        "title": "Prime Vault Chat — Edge Omni-Lattice Agent Replacing LLM Training with Φ-Recursive Prime-Vault Architecture",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_PRIME_VAULT_CHAT_EGS_2026-09.md",
+        "url": "/whitepaper/prime-vault-chat",
+        "paperId": "synthobs-prime-vault-chat-2026-09",
+        "docId": "WP-SYNTHOBS-PRIME-VAULT-CHAT-EGS-2026-09-06",
+        "published": "2026-09-06T23:59:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-goldilocks-quest-door-2026-09",
       "type": "ArtifactEvent",

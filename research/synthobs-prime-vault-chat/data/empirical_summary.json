@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T23:28:47.158Z",
+  "generatedAt": "2026-09-07T03:33:46.218Z",
   "experiments": [
     {
       "id": "E1_phi_egs",
@@ -9,17 +9,19 @@
     {
       "id": "E2_semantic_primes",
       "pass": true,
-      "n": 11
+      "n": 20
     },
     {
       "id": "E3_deterministic_reply",
       "pass": true,
-      "latencyMs": 0.36066600000000193
+      "latencyMs": 1.4601429999999986,
+      "speechAct": "teach"
     },
     {
       "id": "E4_intent_resonance",
       "pass": true,
-      "top": "El Gran Sol"
+      "top": "El Gran Sol",
+      "speechAct": "race"
     },
     {
       "id": "E5_zero_training_cost",
@@ -33,22 +35,36 @@
       "paperPhi": true,
       "paperFair": true,
       "paperZero": true,
+      "paperLlmSim": true,
       "paperOperator": true,
       "blogExists": true,
       "blogSlug": true,
       "blogDoor": true,
       "blogHonesty": true,
+      "blogLlmSim": true,
       "doorChatUi": true,
-      "apiSeat": true
+      "apiSeat": true,
+      "apiHistory": true
     },
     {
       "id": "E7_registry",
       "pass": true,
       "REGISTRY_ID": "synthobs-prime-vault-chat-2026-09"
+    },
+    {
+      "id": "E8_knowledge_cell_bank",
+      "pass": true,
+      "n": 20
+    },
+    {
+      "id": "E9_multiturn_and_ood",
+      "pass": true,
+      "followAct": "continue",
+      "oodAct": "refuse"
     }
   ],
-  "n_pass": 7,
-  "n_total": 7,
+  "n_pass": 9,
+  "n_total": 9,
   "all_pass": true,
   "failed": []
 }

@@ -35,10 +35,10 @@
 
 | Tier | What this document claims | What it does **not** claim |
 |------|---------------------------|------------------------------|
-| **Architecture** | A runnable edge chat agent maps queries into prime-indexed containers and resolves replies via $\Phi$-recursive resonance | That this replaces trained LLMs for open-world factual QA, coding agents, or tool-use |
+| **Architecture** | A runnable **closed-form LLM-sim**: multi-turn speech-act planner over a **prime-indexed knowledge cell bank**, resolved via $\Phi$-recursive resonance | That this replaces trained LLMs for open-world factual QA, coding agents, or tool-use; not BYOK to Claude/GPT as the mouth |
 | **Cost / latency** | Instantiation is **$0.00 training**; replies are closed-form algebraic (sub-millisecond typical on CPU) | Audited GPU invoices from competing vendors |
-| **Awareness** | Deterministic vault ranking under catalog grammar (zero-balance filter · $xD\pm yD$ summation talk) | New physics, consciousness proofs, or medical/legal advice |
-| **Guest door** | Free guest UI at `/prime-vault-chat` with the same email seat as Let’s Chat / Lattice Chat | Unlimited unauthenticated compute abuse |
+| **Awareness** | Deterministic vault ranking + thread-phase memory under catalog grammar (zero-balance filter · $xD\pm yD$ summation talk) | New physics, consciousness proofs, or medical/legal advice |
+| **Guest door** | Free guest UI at `/prime-vault-chat` (and Demonstrations `#chat`) with walk-on email or Lattice seat | Unlimited unauthenticated compute abuse |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 
@@ -50,10 +50,10 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 This paper presents the architectural design and complete SING 13 implementation of an interactive chat agent that replaces resource-heavy, training-based Large Language Models with a lightweight, edge-compatible **Omniversal Lattice Prime-Vault Engine**. Grounded in **El Gran Sol’s Fractal constant** ($\Phi \approx 1.618$), the system achieves interactive deployment with **$0.00 training cost**, zero GPU cluster dependency, and deterministic precision.
 
-* **Findings:** Linguistic intent and conversational synthesis can be mapped into prime-indexed volumetric containers ($p=2$ base, odd primes $\ge 3$) and resolved via multi-dimensional $xD \pm yD$ holographic summation (catalog grammar).
-* **Novelties:** ChatGPT-shaped guest UI + Node ESM engine + Vercel pipe (`/api/prime-vault-chat`) — not Streamlit-only.
-* **Implications:** Democratizes a second Prime Vault **miracle** after the Race door: guests experience algebraic chat for themselves.
-* **Applications:** Live at `/prime-vault-chat` for Purser-seated guests.
+* **Findings:** Linguistic intent, **multi-turn thread phase**, and speech-act synthesis can be mapped into a **knowledge cell bank** (prime-indexed volumetric containers; $p=2$ base, odd primes $\ge 3$) and resolved via multi-dimensional $xD \pm yD$ holographic summation (catalog grammar).
+* **Novelties:** ChatGPT-shaped guest UI + closed-form **LLM-sim** planner + Node ESM engine + Vercel pipe (`/api/prime-vault-chat` with `history`) — not Streamlit-only, not a trained-weight mouth.
+* **Implications:** Democratizes a second Prime Vault **miracle** after the Race door: guests experience LLM-shaped conversation without the training tax.
+* **Applications:** Live at `/demonstrations#chat` and `/prime-vault-chat` for walk-on and Lattice seats.
 
 ---
 
@@ -67,9 +67,10 @@ $$\Phi = \frac{1 + \sqrt{5}}{2} \approx 1.618$$
 
 ## 2. System Design for Edge Deployment
 
-1. **Prime-Vault Semantic Lexicon** — maps concepts to primes (`lib/prime-vault-chat-engine.mjs`).
-2. **Omni-Lattice State Tracker** — octave tiers $n \in [1,15]$, resonance filter, intent boosts (still closed-form).
-3. **Interactive UI Layer** — ChatGPT-shaped HTML/CSS/JS guest door (email seat shared with Let’s Chat / Lattice Chat).
+1. **Knowledge Cell Bank** — prime-indexed demo-domain cells (`KNOWLEDGE_CELLS` in `lib/prime-vault-chat-engine.mjs`): Φ, Infinite Octaves vs 99 pin, Race/Nova deferred, LLM contrast, Fair Exchange, voyage framing, OOD refusal.
+2. **Multi-turn thread phase** — client sends recent `history`; engine hashes turns into Φ resonance so follow-ups stay coherent without weight growth.
+3. **Speech-act reply planner** — greets, introduces, teaches, contrasts, continues, races, or refuses OOD — natural multi-paragraph answers; quiet edge footer only.
+4. **Interactive UI Layer** — ChatGPT-shaped HTML/CSS/JS on Demonstrations + standalone door (walk-on email or Lattice seat).
 
 ---
 
@@ -86,7 +87,7 @@ Resonance (catalog):
 
 $$A_k = \frac{\Phi^{o}}{p_k \ln p_k}\cos\!\left(\frac{L\,p_k}{\Phi}\right)$$
 
-Top-3 vaults synthesize the assistant reply. Latency is wall time of the closed form.
+Top-3 vaults feed the speech-act planner. Thread phase mixes into the cosine argument. Latency is wall time of the closed form.
 
 
 
@@ -116,7 +117,7 @@ Engine unit: `lib/prime-vault-chat-engine.mjs` · suite receipt: `research/synth
 | Miracle | Door | What guests feel |
 |---------|------|------------------|
 | **1 · Race** | `/prime-vault-race` | Φ vaults vs measured ColabFold (+ Unmodeled Nova tier) |
-| **2 · Chat** | `/prime-vault-chat` | ChatGPT-shaped conversation from closed-form vaults |
+| **2 · Chat** | `/demonstrations#chat` · `/prime-vault-chat` | Closed-form LLM-sim: multi-turn chat from a knowledge cell bank |
 
 ---
 

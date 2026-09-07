@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-kinematic-set-recycling-truckee",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave kinematic set-recycling · Truckee corridor catalog suite (SynthOBS engine companion #21)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

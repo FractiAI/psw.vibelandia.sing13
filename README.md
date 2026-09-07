@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-07** · **280** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-07** · **281** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -299,6 +299,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-infinite-octave-prime-parity-2026-09.html`](/interfaces/blog-infinite-octave-prime-parity-2026-09.html) | Infinite Octave Prime-Parity · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octaves-omniversal-2026-08.html`](/interfaces/blog-infinite-octaves-omniversal-2026-08.html) | Your valet just got Infinite Octaves · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-invisible-frontier-gates-ai-2026-08.html`](/interfaces/blog-invisible-frontier-gates-ai-2026-08.html) | The Invisible Frontier — responding to Bill Gates’s AI warnings · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-kinematic-set-recycling-2026-09.html`](/interfaces/blog-kinematic-set-recycling-2026-09.html) | Kinematic Set-Recycling · Truckee · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-vs-vibe-coding-2026-09.html`](/interfaces/blog-lattice-vs-vibe-coding-2026-09.html) | Lattice beats vibe coding on design, write, and deploy · Ship blog · SS Vibelandia |

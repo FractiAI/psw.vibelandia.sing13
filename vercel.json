@@ -1373,6 +1373,14 @@
       "destination": "/interfaces/blog-holographic-singularity-crystal-2026-09.html"
     },
     {
+      "source": "/ship-blog/kinematic-set-recycling",
+      "destination": "/interfaces/blog-kinematic-set-recycling-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/kinematic-set-recycling/",
+      "destination": "/interfaces/blog-kinematic-set-recycling-2026-09.html"
+    },
+    {
       "source": "/ship-blog/zero-octave-node-k0",
       "destination": "/interfaces/blog-zero-octave-node-k0-2026-09.html"
     },

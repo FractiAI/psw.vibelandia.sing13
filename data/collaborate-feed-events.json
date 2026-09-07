@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-07T20:38:16.111Z",
+  "updatedAt": "2026-09-07T20:50:57.837Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-kinematic-set-recycling-truckee-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-07T20:50:57.835Z",
+      "body": "Kinematic Set-Recycling: Velocity-Dependent Octave Modulation of the Terrestrial Theater along the Truckee River Corridor (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-kinematic-set-recycling-truckee-2026-09",
+      "artifact": {
+        "title": "Kinematic Set-Recycling: Velocity-Dependent Octave Modulation of the Terrestrial Theater along the Truckee River Corridor (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md",
+        "url": "/whitepaper/kinematic-set-recycling",
+        "paperId": "synthobs-kinematic-set-recycling-truckee-2026-09",
+        "docId": "WP-SYNTHOBS-KINEMATIC-SET-RECYCLING-TRUCKEE-EGS-2026-09-07",
+        "published": "2026-09-07T21:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-zero-octave-node-k0-2026-09",
       "type": "ArtifactEvent",

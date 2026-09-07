@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-09-07T20:50:57.714Z",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Golden key for velocity-octave harmonic intervals.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity for set-recycling scale ladders.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_velocity_modes",
+        "title": "Stationary < pedestrian < cyclist velocity modes",
+        "modes": {
+          "stationary": 0,
+          "pedestrian": 5,
+          "cyclist": 20
+        },
+        "pass": true,
+        "interpretation": "Three catalog octave-shift states along the corridor.",
+        "honesty": "Field-grammar labels — not instrumented trials."
+      },
+      {
+        "id": "E4_fourier_velocity_scale",
+        "title": "ℱ scale: arg ω/v · amplitude 1/|v|",
+        "v": 20,
+        "omega": 10,
+        "scaleArg": 0.5,
+        "amp": 0.05,
+        "pass": true,
+        "interpretation": "Higher speed compresses spatial-frequency sampling (catalog).",
+        "honesty": "Algebra fixture — not measured cortical spectra."
+      },
+      {
+        "id": "E5_theater_integral_fixture",
+        "title": "Σ (Φ/v) over velocity samples is finite & positive",
+        "vs": [
+          5,
+          10,
+          15,
+          20,
+          25
+        ],
+        "sum": 0.7389021881957852,
+        "pass": true,
+        "interpretation": "Discrete fixture for T_perceived rhetoric; continuous integral → ∞ is grammar.",
+        "honesty": "Not a proof of infinite XR assets."
+      },
+      {
+        "id": "E6_truckee_corridor_filing",
+        "title": "Truckee River corridor · Downtown Reno filing",
+        "corridor": {
+          "name": "Truckee River corridor",
+          "city": "Downtown Reno"
+        },
+        "pass": true,
+        "interpretation": "Physical set label for kinematic recycling observations.",
+        "honesty": "Place filing — not a GIS survey product."
+      },
+      {
+        "id": "E7_solar_filing_anchors",
+        "title": "R≈90.9 · AR14524 · AR14527 filing anchors",
+        "sunspotR": 90.9,
+        "regions": [
+          "AR14524",
+          "AR14527"
+        ],
+        "pass": true,
+        "interpretation": "Ambient solar telemetry filed as characters for this ship date.",
+        "honesty": "Filing labels — not NOAA causation of perception."
+      },
+      {
+        "id": "E8_doc_and_blog_presence",
+        "title": "Paper · suite mirror · ship blog present",
+        "main": "/workspace/docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md",
+        "suite": "/workspace/research/synthobs-kinematic-set-recycling-truckee/docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md",
+        "blog": "/workspace/interfaces/blog-kinematic-set-recycling-2026-09.html",
+        "pass": true,
+        "interpretation": "Protocol surfaces exist for kinematic set-recycling.",
+        "honesty": "Presence lock only."
+      },
+      {
+        "id": "E9_protocol_headers",
+        "title": "Document ID · Registry · Honesty · Operator · Author",
+        "pass": true,
+        "interpretation": "PRA Snap structural headers present.",
+        "honesty": "Structural lock — full PRA via npm run audit:paper."
+      }
+    ]
+  }
+}

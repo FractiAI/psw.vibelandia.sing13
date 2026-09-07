@@ -20,6 +20,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-infinite-octave-prime-parity',
       'synthobs-infinite-octaves-omniversal-lattice',
       'synthobs-invisible-frontier-gates-ai',
+      'synthobs-kinematic-set-recycling-truckee',
       'synthobs-lattice-vs-vibe-coding',
       'synthobs-macro-protein-work-engine',
       'synthobs-magneto-harmonic-stellar-99-octave',

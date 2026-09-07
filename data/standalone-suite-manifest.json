@@ -317,6 +317,19 @@
         "docs/SYNTHOBS_ZERO_OCTAVE_NODE_K0_SINGULARITY_CRYSTAL_EGS_2026-09.md",
         "docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-kinematic-set-recycling-truckee",
+      "path": "research/synthobs-kinematic-set-recycling-truckee",
+      "github": "https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee",
+      "description": "Kinematic Set-Recycling — velocity multiplex · Truckee corridor theater · Φ_EGS catalog fixtures",
+      "paperIds": [
+        "synthobs-kinematic-set-recycling-truckee-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md",
+        "docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md"
+      ]
     }
   ]
 }

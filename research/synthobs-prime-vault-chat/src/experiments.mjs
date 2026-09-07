@@ -303,6 +303,35 @@ function experimentLudcrAbilities() {
   };
 }
 
+function experimentTopicConnection() {
+  const phi = queryPrimeVaultChat('What is Phi?', { octaveTier: 7 });
+  const france = queryPrimeVaultChat('What is the capital of France?', { octaveTier: 7 });
+  const bread = queryPrimeVaultChat('sourdough bread recipe', { octaveTier: 7 });
+  const goldi = queryPrimeVaultChat('Explain Goldilocks hologram and holographic magnetic projections', {
+    octaveTier: 7,
+  });
+  return {
+    id: 'E13_topic_connected_fold',
+    pass:
+      phi.speechAct === 'teach' &&
+      phi.topicConnected === true &&
+      /Fractal constant|El Gran Sol/.test(phi.nodes[0]?.concept || '') &&
+      /Φ|1\.618|fractal|golden|vault/i.test(phi.reply) &&
+      !/folded voyage filing/i.test(phi.reply) &&
+      france.speechAct === 'refuse' &&
+      bread.speechAct === 'refuse' &&
+      !/El Gran Sol is how we name/i.test(france.reply) &&
+      !/Grand Arc of the Voyage/i.test(bread.reply) &&
+      goldi.speechAct === 'corpus' &&
+      goldi.topicConnected === true &&
+      /Goldilocks|holograph|magnetic|attention/i.test(goldi.reply),
+    phiAct: phi.speechAct,
+    phiTop: phi.nodes[0]?.concept,
+    franceAct: france.speechAct,
+    breadAct: bread.speechAct,
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentPhi(),
@@ -317,6 +346,7 @@ export async function runAllExperiments() {
     experimentCorpusEncode(),
     experimentLanguageFoldProcessor(),
     experimentLudcrAbilities(),
+    experimentTopicConnection(),
   ];
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
   return {

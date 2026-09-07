@@ -76,6 +76,23 @@ describe('Prime Vault Chat · guest door rollout', () => {
     expect(voyage.reply).toMatch(/prospectus|Borikén|genesis|voyage|catalog|Φ|El Gran Sol|fold/i);
     expect(existsSync(join(ROOT, 'data/prime-vault-corpus-v0.json'))).toBe(true);
     expect(existsSync(join(ROOT, 'lib/prime-vault-corpus-encode.mjs'))).toBe(true);
+
+    // Topic connection — not stale brochure dumps
+    const phi = queryPrimeVaultChat('What is Phi?');
+    expect(phi.speechAct).toBe('teach');
+    expect(phi.topicConnected).toBe(true);
+    expect(phi.nodes[0].concept).toMatch(/Fractal constant|El Gran Sol/);
+    expect(phi.reply).toMatch(/Φ|1\.618|fractal|golden|vault/i);
+    expect(phi.reply).not.toMatch(/You asked about What is Phi — here is the folded voyage filing/);
+    expect(phi.reply).not.toMatch(/linear awareness is missing/i);
+
+    const france = queryPrimeVaultChat('capital of France');
+    expect(france.speechAct).toBe('refuse');
+    expect(france.reply).not.toMatch(/El Gran Sol is how we name/);
+
+    const bread = queryPrimeVaultChat('sourdough bread recipe');
+    expect(bread.speechAct).toBe('refuse');
+    expect(bread.reply).not.toMatch(/Honesty boundary|Grand Arc of the Voyage/);
   });
 
   it('API accepts history for multi-turn LLM-sim', () => {

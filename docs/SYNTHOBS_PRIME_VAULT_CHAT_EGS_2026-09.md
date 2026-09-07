@@ -72,7 +72,7 @@ Brain-speech / protein-fold **catalog rhyme** (not wet-lab claim):
 | Ability (LUDCR) | Pipeline stage | Role | Honesty tier |
 |-----------------|----------------|------|--------------|
 | **Listen** | Sense | Utterance + thread-phase hash | Operational |
-| **Understand** | Retrieve | Φ-rank prime vault residues | **Catalog** — not open-world comprehension |
+| **Understand** | Retrieve | Lexical vault contact + Φ tie-break (word-boundary; no brochure dump) | **Catalog** — not open-world comprehension |
 | **Decide** | Plan | Speech-act selection | Operational |
 | **Respond** | Articulate (fold) | Compose 1–3 atom contacts | Operational |
 | **Communicate** | Guest chat door | Live thread `/demonstrations#chat` | Operational |
@@ -82,7 +82,7 @@ Engine result exposes `abilities` + `stages` for the same loop.
 1. **Protein library encode (chain)** — recursive manifest (`PROTEIN_LIBRARY_MANIFEST` in `lib/prime-vault-corpus-encode.mjs`) files Official Prospectus → holographic/magnetic/Goldilocks → Infinite Octaves → 99/prime vaults → protein/Higgs/bridge/nested-agent companions into `data/prime-vault-corpus-v0.json`. **Encode ≠ training.**
 2. **Hand knowledge cells** — demo Miracle-2 cells merged with library (`MERGED_CELLS`).
 3. **Multi-turn thread phase** — history hashes into Φ resonance.
-4. **Fold articulate** — deterministic compose from residue contacts; OOD refuse.
+4. **Fold articulate** — compose only from residue contacts that touch the ask; low-confidence / OOD → invite or refuse (no stale prepared scripts).
 5. **Interactive UI** — Demonstrations `#chat` + `/prime-vault-chat`.
 
 ### Encode vs LLM training

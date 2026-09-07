@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T04:45:55.544Z",
+  "generatedAt": "2026-09-07T05:03:41.406Z",
   "experiments": [
     {
       "id": "E1_phi_egs",
@@ -14,13 +14,13 @@
     {
       "id": "E3_deterministic_reply",
       "pass": true,
-      "latencyMs": 3.328445000000002,
-      "speechAct": "corpus"
+      "latencyMs": 4.073969000000002,
+      "speechAct": "teach"
     },
     {
       "id": "E4_intent_resonance",
       "pass": true,
-      "top": "Corpus · protein-folding · Abstract",
+      "top": "Macro-protein work engine",
       "speechAct": "race"
     },
     {
@@ -60,7 +60,7 @@
     {
       "id": "E9_multiturn_and_ood",
       "pass": true,
-      "followAct": "continue",
+      "followAct": "teach",
       "oodAct": "refuse"
     },
     {
@@ -91,10 +91,18 @@
         "respond",
         "communicate"
       ]
+    },
+    {
+      "id": "E13_topic_connected_fold",
+      "pass": true,
+      "phiAct": "teach",
+      "phiTop": "Fractal constant",
+      "franceAct": "refuse",
+      "breadAct": "refuse"
     }
   ],
-  "n_pass": 12,
-  "n_total": 12,
+  "n_pass": 13,
+  "n_total": 13,
   "all_pass": true,
   "failed": []
 }

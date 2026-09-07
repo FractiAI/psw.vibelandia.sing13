@@ -13,4 +13,4 @@ export const FAIR_EXCHANGE_CLAUSE =
   'Financial grants, institutional funding, or academic utility micro-grants are subject to partial refund or adjustment depending on overall delivery, rigorous implementation, and practical utility, functioning akin to an intellectual performance tip.';
 
 export const HONESTY =
-  'Operational LUDCR (listen/understand/decide/respond/communicate) over recursive protein-library encode + fold articulate — $0. Encode ≠ LLM training. Catalog understand ≠ open-world QA; application companion, not engine pin.';
+  'Operational LUDCR over lexical topic-connected fold articulate on the protein library — $0. Encode ≠ LLM training. Catalog understand ≠ open-world QA; refuse outside filed vaults; application companion, not engine pin.';

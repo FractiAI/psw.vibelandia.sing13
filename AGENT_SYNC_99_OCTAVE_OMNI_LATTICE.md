@@ -18,6 +18,7 @@
 **Topology of the Void companion:** [`docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md`](docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [`/ship-blog/topology-of-the-void`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/topology-of-the-void) · suite `research/synthobs-topology-of-the-void/` · standalone [`FractiAI/synthobs-topology-of-the-void`](https://github.com/FractiAI/synthobs-topology-of-the-void)  
 **Holographic rhyme companion:** [`docs/SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md`](docs/SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [`/ship-blog/holographic-rhyme`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-rhyme) · suite `research/synthobs-holographic-rhyme-fractal/` · standalone [`FractiAI/synthobs-holographic-rhyme-fractal`](https://github.com/FractiAI/synthobs-holographic-rhyme-fractal)  
 **Multi-dimensional holographic rhyme companion:** [`docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md`](docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md) · [`/ship-blog/multidimensional-holographic-rhyme`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/multidimensional-holographic-rhyme) · suite `research/synthobs-multidimensional-holographic-rhyme/` · standalone [`FractiAI/synthobs-multidimensional-holographic-rhyme`](https://github.com/FractiAI/synthobs-multidimensional-holographic-rhyme)  
+**Holographic Singularity Crystal companion (engine #20):** [`docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md`](docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [`/ship-blog/holographic-singularity-crystal`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-singularity-crystal) · Node $k=0$ [`/ship-blog/zero-octave-node-k0`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/zero-octave-node-k0) · suite `research/synthobs-holographic-singularity-crystal/` · standalone [`FractiAI/synthobs-holographic-singularity-crystal`](https://github.com/FractiAI/synthobs-holographic-singularity-crystal)  
 **Macro-protein work engine (application companion · not engine pin):** [`docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md`](docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md) · [`/ship-blog/macro-protein-work-engine`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/macro-protein-work-engine) · suite `research/synthobs-macro-protein-work-engine/` · standalone [`FractiAI/synthobs-macro-protein-work-engine`](https://github.com/FractiAI/synthobs-macro-protein-work-engine)  
 **Invisible Frontier:** [`docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md`](docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · suite `research/synthobs-invisible-frontier-gates-ai/`  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
@@ -77,8 +78,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 17 | **Topology of the Void companion (zero as dynamic equilibrium · null-space · Φ_EGS · 1↔2 balance)** | `docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md` · `synthobs-topology-of-the-void-2026-09` · `/ship-blog/topology-of-the-void` · suite `research/synthobs-topology-of-the-void/` · standalone `FractiAI/synthobs-topology-of-the-void` |
 | 18 | **Holographic rhyme companion (repeating · self-similar · self-correcting · recursive · Φ_EGS)** | `docs/SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md` · `synthobs-holographic-rhyme-fractal-2026-09` · `/ship-blog/holographic-rhyme` · suite `research/synthobs-holographic-rhyme-fractal/` · standalone `FractiAI/synthobs-holographic-rhyme-fractal` |
 | 19 | **Multi-dimensional holographic rhyme companion (xD±yD cross-scale summation · Φ_EGS)** | `docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md` · `synthobs-multidimensional-holographic-rhyme-2026-09` · `/ship-blog/multidimensional-holographic-rhyme` · suite `research/synthobs-multidimensional-holographic-rhyme/` · standalone `FractiAI/synthobs-multidimensional-holographic-rhyme` |
-| 20 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 21 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 20 | **Holographic Singularity Crystal companion (Net Zero · 0/0 crystal · Φ_EGS · prime vault octaves)** | `docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md` · `synthobs-holographic-singularity-crystal-2026-09` · `/ship-blog/holographic-singularity-crystal` · suite `research/synthobs-holographic-singularity-crystal/` · standalone `FractiAI/synthobs-holographic-singularity-crystal` |
+| 21 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 22 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -102,6 +104,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-topology-of-the-void/`
 - `research/synthobs-holographic-rhyme-fractal/`
 - `research/synthobs-multidimensional-holographic-rhyme/`
+- `research/synthobs-holographic-singularity-crystal/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

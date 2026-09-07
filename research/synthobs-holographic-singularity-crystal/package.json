@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-holographic-singularity-crystal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave holographic singularity crystal · Net Zero catalog suite (SynthOBS engine companion #20)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-holographic-singularity-crystal.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

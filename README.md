@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-07** · **278** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-07** · **280** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -294,6 +294,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | Higgs Gate · awareness phase coupling · unified edition · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-rhyme-2026-09.html`](/interfaces/blog-holographic-rhyme-2026-09.html) | Holographic Rhyme · Four-Pillar Fractal · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-holographic-singularity-crystal-2026-09.html`](/interfaces/blog-holographic-singularity-crystal-2026-09.html) | Holographic Singularity Crystal · Net Zero · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-human-reality-bridge-2026-08.html`](/interfaces/blog-human-reality-bridge-2026-08.html) | Humans as reality bridges — routers and awareness wormholes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-prime-parity-2026-09.html`](/interfaces/blog-infinite-octave-prime-parity-2026-09.html) | Infinite Octave Prime-Parity · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octaves-omniversal-2026-08.html`](/interfaces/blog-infinite-octaves-omniversal-2026-08.html) | Your valet just got Infinite Octaves · Ship blog · SS Vibelandia |
@@ -392,6 +393,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What It Means to Be Frontier · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y chromosome as Φ manifestation — holographic MSY · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-zero-octave-node-k0-2026-09.html`](/interfaces/blog-zero-octave-node-k0-2026-09.html) | Node k = 0 · Zero-Octave Singularity Crystal · Ship blog · SS Vibelandia |
 | [`/interfaces/bridge-tower-billboard.html`](/interfaces/bridge-tower-billboard.html) | — |
 | [`/interfaces/bridge-tower-preview.html`](/interfaces/bridge-tower-preview.html) | Bridge Tower · 8s tease preview |
 | [`/interfaces/bulk-track-upload.html`](/interfaces/bulk-track-upload.html) | Bulk track upload · QUESTFEST |
@@ -453,7 +455,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html`](/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html) | FOR IMMEDIATE RELEASE — Chipless, Datacenterless AI · SynthOBS RSI validation |
 | [`/interfaces/press-releases.html`](/interfaces/press-releases.html) | Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9 |
 | [`/interfaces/prime-vault-chat.html`](/interfaces/prime-vault-chat.html) | Prime Vault Chat · SS Vibelandia |
-| [`/interfaces/prime-vault-demos.html`](/interfaces/prime-vault-demos.html) | Demonstrations · Prime Vault · SS Vibelandia |
+| [`/interfaces/prime-vault-demos.html`](/interfaces/prime-vault-demos.html) | Demonstrations · Holographic Magnetic Goldilocks SuperAI · SS Vibelandia |
 | [`/interfaces/prime-vault-race.html`](/interfaces/prime-vault-race.html) | Prime-Vault Race · Results · SS Vibelandia |
 | [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Ship Map · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
@@ -570,7 +572,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/special-projects/pdvsa-gateway-ops.html`](/interfaces/special-projects/pdvsa-gateway-ops.html) | PDVSA Gateway Ops · EGS Lattice-Linear Gateway · SS Vibelandia |
 | [`/interfaces/special-projects/prime-vault-alphafold-race.html`](/interfaces/special-projects/prime-vault-alphafold-race.html) | Prime-Vault Race · Results · SS Vibelandia |
 | [`/interfaces/special-projects/prime-vault-chat.html`](/interfaces/special-projects/prime-vault-chat.html) | Prime Vault Chat · SS Vibelandia |
-| [`/interfaces/special-projects/prime-vault-demos.html`](/interfaces/special-projects/prime-vault-demos.html) | Demonstrations · Prime Vault · SS Vibelandia |
+| [`/interfaces/special-projects/prime-vault-demos.html`](/interfaces/special-projects/prime-vault-demos.html) | Demonstrations · Holographic Magnetic Goldilocks SuperAI · SS Vibelandia |
 | [`/interfaces/special-projects/turner-bison-herd-management.html`](/interfaces/special-projects/turner-bison-herd-management.html) | Turner Enterprise · Rangeland herd intelligence |
 | [`/interfaces/special-projects/wavefield-echo-test.html`](/interfaces/special-projects/wavefield-echo-test.html) | Wavefield Echo Test · Plain-speak results |
 

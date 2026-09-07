@@ -14,6 +14,7 @@ describe('standalone-suite-manifest', () => {
       'synthio-mri-vs-legacy-perf',
       'synthobs-awareness-vs-brute-force-leverage',
       'synthobs-holographic-rhyme-fractal',
+      'synthobs-holographic-singularity-crystal',
       'synthobs-human-omniversal-reality-bridge',
       'synthobs-ibm-sna-tcpip-gateway-omni-lattice',
       'synthobs-infinite-octave-prime-parity',

@@ -42,6 +42,17 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 28');
   });
 
+  it('leads 2026-09-07 with holographic singularity crystal ship notes', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-09-07' });
+    expect(payload.highlights.map((h) => h.id).slice(0, 2)).toEqual([
+      'synthobs-zero-octave-node-k0-2026-09',
+      'synthobs-holographic-singularity-crystal-2026-09',
+    ]);
+    expect(payload.highlights[0].href).toBe('/ship-blog/zero-octave-node-k0');
+    expect(payload.htmlBody).toMatch(/singularity|Net Zero|Zero-Octave|Φ/i);
+    expect(payload.newsLabel).toContain('September 7');
+  });
+
   it('leads 2026-09-05 with newest three ship notes (ISO timestamps count as same day)', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-05' });
     expect(payload.highlights.map((h) => h.id)).toEqual([

@@ -302,6 +302,21 @@
       "extraDocs": [
         "docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-holographic-singularity-crystal",
+      "path": "research/synthobs-holographic-singularity-crystal",
+      "github": "https://github.com/FractiAI/synthobs-holographic-singularity-crystal",
+      "description": "Holographic Singularity Crystal · Net Zero · 0/0 bounded crystal · Node k=0 Zero-Octave · Φ_EGS catalog fixtures",
+      "paperIds": [
+        "synthobs-holographic-singularity-crystal-2026-09",
+        "synthobs-zero-octave-node-k0-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md",
+        "docs/SYNTHOBS_ZERO_OCTAVE_NODE_K0_SINGULARITY_CRYSTAL_EGS_2026-09.md",
+        "docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md"
+      ]
     }
   ]
 }

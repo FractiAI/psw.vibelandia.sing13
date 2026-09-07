@@ -40,6 +40,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-tbme-planetary-core-goldilocks',
       'synthobs-topology-of-the-void',
       'synthobs-triadic-nested-hemispheres-99-octave',
+      'synthobs-viscosity-of-light',
       'synthobs-y-chromosome-holographic-manifestation',
     ]);
   });

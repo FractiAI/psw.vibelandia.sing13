@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-GRAND-UNIFIED-METROLOGICAL-OVERLAP-EGS-2026-09-07`
 **Registry ID:** `synthobs-grand-unified-metrological-overlap-2026-09`
-**Generated:** 2026-09-07T21:39:05.434Z
+**Generated:** 2026-09-07T21:50:21.011Z
 
 ## Verdict
 
@@ -71,7 +71,7 @@
 ### E4_prime_action_wells — S_n = h / p_n strictly decreasing
 
 - **Pass:** `true`
-- **Interpretation:** Prime containers give unique coprime action barriers.
+- **Interpretation:** Expanded prime ladder · unique coprime action barriers.
 - **Honesty:** Catalog packing grammar — not alias-free proof for all encodings.
 
 ```json
@@ -86,7 +86,7 @@
     6.023700136363636e-35
   ],
   "pass": true,
-  "interpretation": "Prime containers give unique coprime action barriers.",
+  "interpretation": "Expanded prime ladder · unique coprime action barriers.",
   "honesty": "Catalog packing grammar — not alias-free proof for all encodings."
 }
 ```
@@ -94,37 +94,67 @@
 ### E5_catalog_mass_sum — m_catalog = (h ν_HI / c²) Σ 1/(p_n Φ^n)
 
 - **Pass:** `true`
-- **Interpretation:** Truncated five-constant overlap mass fixture.
+- **Interpretation:** Truncated five-constant overlap mass fixture (15 primes).
 - **Honesty:** Not equal to electron/proton rest mass — catalog interference pattern only.
 
 ```json
 {
   "id": "E5_catalog_mass_sum",
   "title": "m_catalog = (h ν_HI / c²) Σ 1/(p_n Φ^n)",
-  "sum": 0.8427981183530897,
-  "mCatalog": 8.825729307856865e-42,
+  "sum": 0.8433418298748032,
+  "mCatalog": 8.831423020986627e-42,
   "pass": true,
-  "interpretation": "Truncated five-constant overlap mass fixture.",
+  "interpretation": "Truncated five-constant overlap mass fixture (15 primes).",
   "honesty": "Not equal to electron/proton rest mass — catalog interference pattern only."
 }
 ```
 
-### E6_si_fixtures — h · c · ν_HI SI fixtures
+### E6_dual_clock_prime_ladder — Dual clock report · prime ladder descending terms
 
 - **Pass:** `true`
-- **Interpretation:** CODATA / SI constants locked for solver reproducibility.
-- **Honesty:** Uses published SI values — does not redefine them.
+- **Interpretation:** Wave clock / material clock + prime-ladder viz fixtures.
+- **Honesty:** Catalog reports for demos panel — not lab metrology certification.
 
 ```json
 {
-  "id": "E6_si_fixtures",
-  "title": "h · c · ν_HI SI fixtures",
-  "H_PLANCK": 6.62607015e-34,
-  "C_LIGHT": 299792458,
-  "NU_HI": 1420405751.768,
+  "id": "E6_dual_clock_prime_ladder",
+  "title": "Dual clock report · prime ladder descending terms",
+  "clock": {
+    "waveClockHz": 1420405751.768,
+    "materialClockMps": 299792458,
+    "lambdaHiM": 0.211061140541598,
+    "periodS": 7.040241837624815e-10,
+    "overlapIdentity": "λ_HI = c / ν_HI"
+  },
+  "ladderPreview": [
+    {
+      "n": 0,
+      "prime": 2,
+      "actionWell": 3.313035075e-34,
+      "deltaE": 9.411708152678253e-25,
+      "term": 0.5,
+      "phiScale": 1
+    },
+    {
+      "n": 1,
+      "prime": 3,
+      "actionWell": 2.20869005e-34,
+      "deltaE": 1.5228463683227899e-24,
+      "term": 0.20601132958329826,
+      "phiScale": 1.618033988749895
+    },
+    {
+      "n": 2,
+      "prime": 5,
+      "actionWell": 1.32521403e-34,
+      "deltaE": 2.4640171835906152e-24,
+      "term": 0.07639320225002103,
+      "phiScale": 2.618033988749895
+    }
+  ],
   "pass": true,
-  "interpretation": "CODATA / SI constants locked for solver reproducibility.",
-  "honesty": "Uses published SI values — does not redefine them."
+  "interpretation": "Wave clock / material clock + prime-ladder viz fixtures.",
+  "honesty": "Catalog reports for demos panel — not lab metrology certification."
 }
 ```
 
@@ -146,18 +176,18 @@
 }
 ```
 
-### E8_doc_blog_sibling_python — Paper · suite · ship blog · eddy/Higgs siblings · Python present
+### E8_doc_blog_sibling_python_demo — Paper · suite · ship blog · siblings · Python · demo JS present
 
 - **Pass:** `true`
-- **Interpretation:** Protocol surfaces and transduction / Higgs siblings linked.
+- **Interpretation:** Protocol surfaces, transduction siblings, and /demonstrations#overlap panel linked.
 - **Honesty:** Presence lock only.
 
 ```json
 {
-  "id": "E8_doc_blog_sibling_python",
-  "title": "Paper · suite · ship blog · eddy/Higgs siblings · Python present",
+  "id": "E8_doc_blog_sibling_python_demo",
+  "title": "Paper · suite · ship blog · siblings · Python · demo JS present",
   "pass": true,
-  "interpretation": "Protocol surfaces and transduction / Higgs siblings linked.",
+  "interpretation": "Protocol surfaces, transduction siblings, and /demonstrations#overlap panel linked.",
   "honesty": "Presence lock only."
 }
 ```

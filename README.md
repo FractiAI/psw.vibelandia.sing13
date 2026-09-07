@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-07** · **283** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-07** · **284** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -393,6 +393,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Topology of the Void · Zero as Equilibrium · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three nested domes — one Goldilocks stage · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-viscosity-of-light-2026-09.html`](/interfaces/blog-viscosity-of-light-2026-09.html) | Viscosity of Light · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What It Means to Be Frontier · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y chromosome as Φ manifestation — holographic MSY · Ship blog · SS Vibelandia |

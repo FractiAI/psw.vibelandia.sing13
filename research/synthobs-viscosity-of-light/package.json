@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-viscosity-of-light",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave viscosity of light · EGS frictional drag catalog suite (SynthOBS engine companion #24)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-viscosity-of-light.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

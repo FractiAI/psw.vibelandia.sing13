@@ -1,5 +1,5 @@
 /**
- * Grand Unified Metrological Overlap — catalog suite.
+ * Grand Unified Metrological Overlap — catalog suite (deepened).
  * Replayable algebraic / SI-overlap locks — not particle-mass QED.
  */
 import fs from 'node:fs';
@@ -18,12 +18,17 @@ import {
   SOLAR_FILING,
   EDDY_SIBLING,
   HIGGS_SIBLING,
+  lambdaHi,
+  catalogMass,
+  dualClockReport,
+  primeLadder,
 } from './constants.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
 const MONOREPO_DOCS = path.resolve(PKG_ROOT, '..', '..', 'docs');
 const MONOREPO_BLOG = path.resolve(PKG_ROOT, '..', '..', 'interfaces', SHIP_BLOG_FILE);
+const DEMO_JS = path.resolve(PKG_ROOT, '..', '..', 'interfaces', 'metrological-overlap-demo.js');
 
 function experimentPhiEgs() {
   const expected = (1 + Math.sqrt(5)) / 2;
@@ -39,8 +44,7 @@ function experimentPhiEgs() {
 }
 
 function experimentLambdaHi() {
-  const lambda = C_LIGHT / NU_HI;
-  // ~0.211061140541… m for ν_HI = 1420.405751768 MHz
+  const lambda = lambdaHi();
   return {
     id: 'E2_lambda_hi_overlap',
     title: 'λ_HI = c / ν_HI ≈ 0.211 m',
@@ -54,13 +58,12 @@ function experimentLambdaHi() {
 function experimentOctaveEnergyStep() {
   const n = 3;
   const deltaE = H_PLANCK * NU_HI * PHI_EGS ** n;
-  const expected = H_PLANCK * NU_HI * PHI_EGS ** n;
   return {
     id: 'E3_octave_energy_step',
     title: 'ΔE_n = h · ν_HI · Φ^n',
     n,
     deltaE,
-    pass: Math.abs(deltaE - expected) < 1e-50 && deltaE > 0,
+    pass: deltaE > 0 && Number.isFinite(deltaE),
     interpretation: 'Quantized octave energy ladder fixture.',
     honesty: 'Algebra of catalog thresholds — not measured spectral lines.',
   };
@@ -73,18 +76,18 @@ function experimentPrimeActionWell() {
     id: 'E4_prime_action_wells',
     title: 'S_n = h / p_n strictly decreasing',
     wells: wells.slice(0, 5),
-    pass: strictlyDecreasing && wells.every((w) => w > 0),
-    interpretation: 'Prime containers give unique coprime action barriers.',
+    pass: strictlyDecreasing && wells.every((w) => w > 0) && PRIME_VAULT.length >= 15,
+    interpretation: 'Expanded prime ladder · unique coprime action barriers.',
     honesty: 'Catalog packing grammar — not alias-free proof for all encodings.',
   };
 }
 
 function experimentCatalogMassSum() {
+  const mCatalog = catalogMass();
   let sum = 0;
   for (let n = 0; n < PRIME_VAULT.length; n++) {
     sum += 1 / (PRIME_VAULT[n] * PHI_EGS ** n);
   }
-  const mCatalog = (H_PLANCK * NU_HI * sum) / C_LIGHT ** 2;
   return {
     id: 'E5_catalog_mass_sum',
     title: 'm_catalog = (h ν_HI / c²) Σ 1/(p_n Φ^n)',
@@ -96,24 +99,29 @@ function experimentCatalogMassSum() {
       mCatalog < 1e-40 &&
       sum > 0.5 &&
       sum < 1.0,
-    interpretation: 'Truncated five-constant overlap mass fixture.',
+    interpretation: 'Truncated five-constant overlap mass fixture (15 primes).',
     honesty: 'Not equal to electron/proton rest mass — catalog interference pattern only.',
   };
 }
 
-function experimentSiFixtures() {
+function experimentDualClockAndLadder() {
+  const clock = dualClockReport();
+  const ladder = primeLadder(8);
+  const termsDescending = ladder.every(
+    (row, i) => i === 0 || row.term < ladder[i - 1].term,
+  );
   return {
-    id: 'E6_si_fixtures',
-    title: 'h · c · ν_HI SI fixtures',
-    H_PLANCK,
-    C_LIGHT,
-    NU_HI,
+    id: 'E6_dual_clock_prime_ladder',
+    title: 'Dual clock report · prime ladder descending terms',
+    clock,
+    ladderPreview: ladder.slice(0, 3),
     pass:
-      H_PLANCK === 6.62607015e-34 &&
-      C_LIGHT === 299792458 &&
-      Math.abs(NU_HI - 1420405751.768) < 1e-6,
-    interpretation: 'CODATA / SI constants locked for solver reproducibility.',
-    honesty: 'Uses published SI values — does not redefine them.',
+      Math.abs(clock.lambdaHiM - C_LIGHT / NU_HI) < 1e-12 &&
+      ladder.length === 8 &&
+      termsDescending &&
+      clock.waveClockHz === NU_HI,
+    interpretation: 'Wave clock / material clock + prime-ladder viz fixtures.',
+    honesty: 'Catalog reports for demos panel — not lab metrology certification.',
   };
 }
 
@@ -140,12 +148,13 @@ function experimentSiblingAndDocs() {
     fs.existsSync(eddy) &&
     fs.existsSync(higgs) &&
     fs.existsSync(py) &&
-    fs.existsSync(MONOREPO_BLOG);
+    fs.existsSync(MONOREPO_BLOG) &&
+    fs.existsSync(DEMO_JS);
   return {
-    id: 'E8_doc_blog_sibling_python',
-    title: 'Paper · suite · ship blog · eddy/Higgs siblings · Python present',
+    id: 'E8_doc_blog_sibling_python_demo',
+    title: 'Paper · suite · ship blog · siblings · Python · demo JS present',
     pass: ok,
-    interpretation: 'Protocol surfaces and transduction / Higgs siblings linked.',
+    interpretation: 'Protocol surfaces, transduction siblings, and /demonstrations#overlap panel linked.',
     honesty: 'Presence lock only.',
   };
 }
@@ -177,7 +186,7 @@ export function runAllExperiments() {
     experimentOctaveEnergyStep(),
     experimentPrimeActionWell(),
     experimentCatalogMassSum(),
-    experimentSiFixtures(),
+    experimentDualClockAndLadder(),
     experimentSolarFiling(),
     experimentSiblingAndDocs(),
     experimentProtocolHeaders(),

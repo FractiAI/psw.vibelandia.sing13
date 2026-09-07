@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-09-07T21:50:20.913Z",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Golden key for cognitive octave scaling.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity for drag scale ladders.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_c_light_fixture",
+        "title": "c SI fixture (frictional floor label)",
+        "C_LIGHT": 299792458,
+        "pass": true,
+        "interpretation": "c filed as frictional drag floor in catalog.",
+        "honesty": "Uses CODATA SI value — does not redefine measured c."
+      },
+      {
+        "id": "E4_ideation_octave_sum",
+        "title": "Σ Φ^{-n} finite octave sum",
+        "sum": 2.5623058987490532,
+        "closed": 2.5623058987490532,
+        "pass": true,
+        "interpretation": "Truncated non-local cognitive field amplitude fixture.",
+        "honesty": "Geometric series algebra — not measured thought potential."
+      },
+      {
+        "id": "E5_viscous_drag_coefficient",
+        "title": "D_visc(v) = (v/c) · Φ^{-1}",
+        "v": 149896229,
+        "drag": 0.3090169943749474,
+        "atC": 0.6180339887498948,
+        "pass": true,
+        "interpretation": "Frictional drag rises toward material clock saturation at v→c.",
+        "honesty": "Catalog coefficient — not measured optical viscosity."
+      },
+      {
+        "id": "E6_stationary_immersion",
+        "title": "v→0 → drag→0 (wave-clock immersion)",
+        "drag0": 0,
+        "pass": true,
+        "interpretation": "Stationary mode maximizes spatial detail / minimizes frictional slice.",
+        "honesty": "Kinematic Soft Story rhyme — not psychophysics QED."
+      },
+      {
+        "id": "E7_solar_filing_anchors",
+        "title": "R≈90.9 · AR14524 · AR14527 filing",
+        "sunspotR": 90.9,
+        "regions": [
+          "AR14524",
+          "AR14527"
+        ],
+        "pass": true,
+        "interpretation": "Ambient solar telemetry filed as characters for this ship date.",
+        "honesty": "Filing labels — not NOAA causation of cognitive drag."
+      },
+      {
+        "id": "E8_doc_blog_sibling_python",
+        "title": "Paper · suite · ship blog · eddy/kinematic siblings · Python present",
+        "pass": true,
+        "interpretation": "Protocol surfaces and transduction / Truckee siblings linked.",
+        "honesty": "Presence lock only."
+      },
+      {
+        "id": "E9_protocol_headers",
+        "title": "Document ID · Registry · Honesty · Operator · Author",
+        "pass": true,
+        "interpretation": "PRA Snap structural headers present.",
+        "honesty": "Structural lock — full PRA via npm run audit:paper."
+      }
+    ]
+  }
+}

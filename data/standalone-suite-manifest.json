@@ -357,6 +357,20 @@
         "docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md",
         "docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-viscosity-of-light",
+      "path": "research/synthobs-viscosity-of-light",
+      "github": "https://github.com/FractiAI/synthobs-viscosity-of-light",
+      "description": "Viscosity of Light — c as frictional drag · cognitive non-locality Soft Story · Φ_EGS catalog fixtures",
+      "paperIds": [
+        "synthobs-viscosity-of-light-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md",
+        "docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md",
+        "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md"
+      ]
     }
   ]
 }

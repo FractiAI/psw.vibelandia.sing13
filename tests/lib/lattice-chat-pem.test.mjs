@@ -64,6 +64,10 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
       (e) => e.registryId === 'synthobs-grand-unified-metrological-overlap-2026-09',
     );
     expect(metro?.order).toBe(23);
+    const viscosity = shelf.find(
+      (e) => e.registryId === 'synthobs-viscosity-of-light-2026-09',
+    );
+    expect(viscosity?.order).toBe(24);
     const proton = shelf.find(
       (e) => e.registryId === 'synthobs-proton-space-electron-theater-2026-09',
     );
@@ -87,6 +91,7 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(directive).toContain('Kinematic set-recycling companion');
     expect(directive).toContain('Eddy-Current Mirror companion');
     expect(directive).toContain('Grand Unified Metrological Overlap companion');
+    expect(directive).toContain('Viscosity of Light companion');
     expect(directive).toContain('Moving up the stack companion');
     expect(renderNarrativePointersClause()).toContain('Official Prospectus');
     expect(renderNarrativePointersClause()).toContain(

@@ -121,17 +121,20 @@ Pure ideation resides in a complex Hilbert space with imaginary time components 
 
 ---
 
-## 5. Executable solver (Python reference)
+## 5. Executable solver (Python reference + live demo)
 
 Suite path: `research/synthobs-grand-unified-metrological-overlap/reference/egs_metrological_overlap_solver.py`
 
-The solver implements:
+The deepened solver implements:
 
 1. $\lambda_{\mathrm{HI}} = c/\nu_{\mathrm{HI}}$
 2. $\Delta E_n = h\cdot\nu_{\mathrm{HI}}\cdot\Phi^n$ for octave ladder $n$
 3. $S_n = h/p_n$ action wells
-4. Truncated $m_{\mathrm{catalog}}$ sum over the first $N$ primes
-5. Solar filing anchors ($R=70$ · Sunspot 4524)
+4. Truncated $m_{\mathrm{catalog}}$ sum over expanded primes (15)
+5. **Dual-clock report** + **prime-ladder table**
+6. Solar filing anchors ($R=70$ · Sunspot 4524)
+
+**Live panel:** [/demonstrations#overlap](https://www.ssvibelandiaquestfest24x365.com/demonstrations#overlap) · `interfaces/metrological-overlap-demo.js`
 
 Run: `python3 research/synthobs-grand-unified-metrological-overlap/reference/egs_metrological_overlap_solver.py`  
 Suite: `npm run research:synthobs-grand-unified-metrological-overlap` (9/9 fixtures).

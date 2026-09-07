@@ -25,6 +25,8 @@
       <a href="#race">Miracle 1</a>
       <span class="sep" aria-hidden="true">·</span>
       <a href="#chat">Miracle 2</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="#overlap">Overlap</a>
     </div>
   </nav>
 
@@ -39,10 +41,11 @@
       <p class="pvd-jump">
         <a class="pvd-btn" href="#race">1 · Protein fold</a>
         <a class="pvd-btn pvd-btn--ghost" href="#chat">2 · LLM alternative</a>
+        <a class="pvd-btn pvd-btn--ghost" href="#overlap">3 · Metrological overlap</a>
       </p>
       <p class="pvd-honesty">
         Catalog demonstration of edge power — not a claim of new physics or open-world trained LLM parity.
-        Latency race ≠ CASP. Fold-chat ≠ BYOK Claude/GPT. Fair Exchange on.
+        Latency race ≠ CASP. Fold-chat ≠ BYOK Claude/GPT. Overlap solver ≠ particle-mass QED. Fair Exchange on.
       </p>
     </header>
 
@@ -148,6 +151,28 @@
       </div>
     </section>
 
+    <section class="pvd-panel" id="overlap" aria-labelledby="metro-overlap-h">
+      <p class="pvd-demo__kicker">Live solver · five-constant overlap</p>
+      <h2 id="metro-overlap-h">Metrological Overlap</h2>
+      <p class="pvd-panel__lead">
+        Dual clocks — hydrogen wave vs light’s brake — and a prime-ladder under Φ ≈ 1.618.
+        Slide the vault depth; watch catalog mass update.
+      </p>
+      <div id="metro-overlap-app" class="metro-app">
+        <label class="metro-slider" for="metro-n-terms">
+          Prime terms · <span id="metro-n-label">10</span>
+          <input id="metro-n-terms" type="range" min="3" max="15" value="10" />
+        </label>
+        <div id="metro-dual-clock" class="metro-clock" aria-live="polite"></div>
+        <div id="metro-prime-ladder" class="metro-ladder" aria-label="Prime ladder term contributions"></div>
+      </div>
+      <p class="pvd-panel__lead pvd-panel__lead--tight">
+        Catalog algebra only ·
+        <a href="/ship-blog/grand-unified-metrological-overlap">ship-blog</a>
+        · <a href="/interfaces/whitepaper-surface.html?id=synthobs-grand-unified-metrological-overlap-2026-09">paper</a>
+      </p>
+    </section>
+
     <p class="pvd-foot">
       <a href="/questfest">Ship board</a>
       · <a href="/ship-blog/prime-vault-demos">Announcement</a>
@@ -157,6 +182,7 @@
   </main>
 
   <script src="/interfaces/prime-vault-chat-client.js" defer></script>
+  <script src="/interfaces/metrological-overlap-demo.js" defer></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

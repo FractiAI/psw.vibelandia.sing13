@@ -15,8 +15,10 @@ export const SHIP_BLOG_FILE = 'blog-grand-unified-metrological-overlap-2026-09.h
 export const STANDALONE_REPO =
   'https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap';
 
-/** First primes for truncated catalog mass sum. */
-export const PRIME_VAULT = Object.freeze([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
+/** Expanded primes for dual-clock / prime-ladder viz. */
+export const PRIME_VAULT = Object.freeze([
+  2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
+]);
 
 /** Solar filing — narrative locks, not NOAA causation. */
 export const SOLAR_FILING = Object.freeze({
@@ -32,3 +34,48 @@ export const FAIR_EXCHANGE_CLAUSE =
 
 export const HONESTY =
   'Catalog / algebraic fixtures for five-constant metrological overlap (h · Φ_EGS · p_n · ν_HI · c) under Infinite Octaves. Does not claim Standard Model retirement, measured particle-mass derivation from Φ, or NOAA causation by Sunspot 4524.';
+
+/** Shared pure-JS solver API (Node suite + browser demos). */
+export function lambdaHi(c = C_LIGHT, nuHi = NU_HI) {
+  return c / nuHi;
+}
+
+export function octaveEnergyStep(n, h = H_PLANCK, nuHi = NU_HI, phi = PHI_EGS) {
+  return h * nuHi * phi ** n;
+}
+
+export function actionWell(p, h = H_PLANCK) {
+  return h / p;
+}
+
+export function catalogMass(primes = PRIME_VAULT, nTerms = primes.length) {
+  const terms = primes.slice(0, nTerms);
+  let sum = 0;
+  for (let n = 0; n < terms.length; n++) {
+    sum += 1 / (terms[n] * PHI_EGS ** n);
+  }
+  return (H_PLANCK * NU_HI * sum) / C_LIGHT ** 2;
+}
+
+export function dualClockReport() {
+  const lam = lambdaHi();
+  return {
+    waveClockHz: NU_HI,
+    materialClockMps: C_LIGHT,
+    lambdaHiM: lam,
+    periodS: 1 / NU_HI,
+    overlapIdentity: 'λ_HI = c / ν_HI',
+  };
+}
+
+export function primeLadder(nTerms = 10) {
+  const terms = PRIME_VAULT.slice(0, nTerms);
+  return terms.map((p, n) => ({
+    n,
+    prime: p,
+    actionWell: actionWell(p),
+    deltaE: octaveEnergyStep(n),
+    term: 1 / (p * PHI_EGS ** n),
+    phiScale: PHI_EGS ** n,
+  }));
+}

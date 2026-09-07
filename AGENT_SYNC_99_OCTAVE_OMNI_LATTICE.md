@@ -22,6 +22,7 @@
 **Kinematic set-recycling companion (engine #21):** [`docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md`](docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md) · [`/ship-blog/kinematic-set-recycling`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/kinematic-set-recycling) · suite `research/synthobs-kinematic-set-recycling-truckee/` · standalone [`FractiAI/synthobs-kinematic-set-recycling-truckee`](https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee)  
 **Eddy-Current Mirror companion (engine #22):** [`docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md`](docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md) · [`/ship-blog/eddy-current-mirror`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/eddy-current-mirror) · suite `research/synthobs-eddy-current-mirror/` · standalone [`FractiAI/synthobs-eddy-current-mirror`](https://github.com/FractiAI/synthobs-eddy-current-mirror)  
 **Grand Unified Metrological Overlap companion (engine #23):** [`docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md`](docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md) · [`/ship-blog/grand-unified-metrological-overlap`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/grand-unified-metrological-overlap) · suite `research/synthobs-grand-unified-metrological-overlap/` · standalone [`FractiAI/synthobs-grand-unified-metrological-overlap`](https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap)  
+**Viscosity of Light companion (engine #24):** [`docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md`](docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md) · [`/ship-blog/viscosity-of-light`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/viscosity-of-light) · suite `research/synthobs-viscosity-of-light/` · standalone [`FractiAI/synthobs-viscosity-of-light`](https://github.com/FractiAI/synthobs-viscosity-of-light)  
 **Macro-protein work engine (application companion · not engine pin):** [`docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md`](docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md) · [`/ship-blog/macro-protein-work-engine`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/macro-protein-work-engine) · suite `research/synthobs-macro-protein-work-engine/` · standalone [`FractiAI/synthobs-macro-protein-work-engine`](https://github.com/FractiAI/synthobs-macro-protein-work-engine)  
 **Invisible Frontier:** [`docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md`](docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · suite `research/synthobs-invisible-frontier-gates-ai/`  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
@@ -85,8 +86,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 21 | **Kinematic set-recycling companion (velocity multiplex · Truckee theater · Φ_EGS)** | `docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md` · `synthobs-kinematic-set-recycling-truckee-2026-09` · `/ship-blog/kinematic-set-recycling` · suite `research/synthobs-kinematic-set-recycling-truckee/` · standalone `FractiAI/synthobs-kinematic-set-recycling-truckee` |
 | 22 | **Eddy-Current Mirror companion (c transduction · self-observation · Lenz analogy · Φ_EGS)** | `docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md` · `synthobs-eddy-current-mirror-2026-09` · `/ship-blog/eddy-current-mirror` · suite `research/synthobs-eddy-current-mirror/` · standalone `FractiAI/synthobs-eddy-current-mirror` |
 | 23 | **Grand Unified Metrological Overlap companion (h · Φ_EGS · p_n · ν_HI · c · Higgs-eddy)** | `docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md` · `synthobs-grand-unified-metrological-overlap-2026-09` · `/ship-blog/grand-unified-metrological-overlap` · suite `research/synthobs-grand-unified-metrological-overlap/` · standalone `FractiAI/synthobs-grand-unified-metrological-overlap` |
-| 24 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 25 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 24 | **Viscosity of Light companion (c as frictional drag · cognitive non-locality · Φ_EGS)** | `docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md` · `synthobs-viscosity-of-light-2026-09` · `/ship-blog/viscosity-of-light` · suite `research/synthobs-viscosity-of-light/` · standalone `FractiAI/synthobs-viscosity-of-light` |
+| 25 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 26 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -114,6 +116,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-kinematic-set-recycling-truckee/`
 - `research/synthobs-eddy-current-mirror/`
 - `research/synthobs-grand-unified-metrological-overlap/`
+- `research/synthobs-viscosity-of-light/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

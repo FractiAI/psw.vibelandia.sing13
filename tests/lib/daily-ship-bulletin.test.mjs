@@ -42,15 +42,15 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 28');
   });
 
-  it('leads 2026-09-07 with metrological overlap, eddy, and kinematic notes', async () => {
+  it('leads 2026-09-07 with viscosity, metrological overlap, and eddy notes', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-07' });
     expect(payload.highlights.map((h) => h.id).slice(0, 3)).toEqual([
+      'synthobs-viscosity-of-light-2026-09',
       'synthobs-grand-unified-metrological-overlap-2026-09',
       'synthobs-eddy-current-mirror-2026-09',
-      'synthobs-kinematic-set-recycling-truckee-2026-09',
     ]);
-    expect(payload.highlights[0].href).toBe('/ship-blog/grand-unified-metrological-overlap');
-    expect(payload.htmlBody).toMatch(/metrological|overlap|eddy|transduction|kinematic|Truckee|Φ/i);
+    expect(payload.highlights[0].href).toBe('/ship-blog/viscosity-of-light');
+    expect(payload.htmlBody).toMatch(/viscosity|metrological|overlap|eddy|transduction|Φ/i);
     expect(payload.newsLabel).toContain('September 7');
   });
 

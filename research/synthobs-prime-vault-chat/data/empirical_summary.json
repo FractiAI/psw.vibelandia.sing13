@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T03:48:21.118Z",
+  "generatedAt": "2026-09-07T04:03:15.831Z",
   "experiments": [
     {
       "id": "E1_phi_egs",
@@ -14,7 +14,7 @@
     {
       "id": "E3_deterministic_reply",
       "pass": true,
-      "latencyMs": 1.9186669999999992,
+      "latencyMs": 2.517171000000001,
       "speechAct": "corpus"
     },
     {
@@ -68,10 +68,21 @@
       "pass": true,
       "nCells": 11,
       "act": "corpus"
+    },
+    {
+      "id": "E11_language_fold_processor",
+      "pass": true,
+      "stages": [
+        "sense",
+        "retrieve",
+        "plan",
+        "articulate"
+      ],
+      "contacts": 3
     }
   ],
-  "n_pass": 10,
-  "n_total": 10,
+  "n_pass": 11,
+  "n_total": 11,
   "all_pass": true,
   "failed": []
 }

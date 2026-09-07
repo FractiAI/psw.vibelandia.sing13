@@ -223,6 +223,7 @@ function experimentCorpusEncode() {
     (fs.existsSync(path.join(MONOREPO, 'docs', PAPER_NAME)) &&
       fs.readFileSync(path.join(MONOREPO, 'docs', PAPER_NAME), 'utf8')) ||
     '';
+  const sampleCell = Object.values(live.cells)[0];
   return {
     id: 'E10_corpus_encode_v0',
     pass:
@@ -231,12 +232,40 @@ function experimentCorpusEncode() {
       live.nCells >= 8 &&
       chunkMarkdown(md).length >= 8 &&
       (CORPUS_BANK.nCells || 0) >= 8 &&
+      Array.isArray(sampleCell?.atoms) &&
+      sampleCell.atoms.length >= 1 &&
       prospectus.corpusEncode === true &&
       prospectus.speechAct === 'corpus' &&
-      /prospectus|Borikén|genesis|voyage|catalog|Reno|Φ|El Gran Sol/i.test(prospectus.reply) &&
-      /corpus encode|Layer A/i.test(paper),
+      /prospectus|Borikén|genesis|voyage|catalog|Reno|Φ|El Gran Sol|fold/i.test(prospectus.reply) &&
+      /corpus encode|Layer A|protein-fold|sense/i.test(paper),
     nCells: live.nCells,
     act: prospectus.speechAct,
+  };
+}
+
+function experimentLanguageFoldProcessor() {
+  const about = queryPrimeVaultChat('Tell me about you.');
+  const voyage = queryPrimeVaultChat('Tell me about Borikén and the Official Prospectus');
+  const leadSpeak =
+    voyage.nodes[0] &&
+    (CORPUS_BANK.cells?.[voyage.nodes[0].concept]?.speak ||
+      MERGED_CELLS[voyage.nodes[0].concept]?.speak ||
+      '');
+  return {
+    id: 'E11_language_fold_processor',
+    pass:
+      about.languageProcessor === true &&
+      about.stages?.sense &&
+      about.stages?.retrieve &&
+      about.stages?.plan &&
+      about.stages?.articulate?.composed === true &&
+      voyage.composed === true &&
+      Array.isArray(voyage.contacts) &&
+      voyage.contacts.length >= 1 &&
+      voyage.reply.trim() !== String(leadSpeak || '').trim() &&
+      /fold|sense|retrieve|language processor/i.test(about.reply),
+    stages: Object.keys(about.stages || {}),
+    contacts: voyage.contacts?.length,
   };
 }
 
@@ -252,6 +281,7 @@ export async function runAllExperiments() {
     experimentKnowledgeBank(),
     experimentMultiTurn(),
     experimentCorpusEncode(),
+    experimentLanguageFoldProcessor(),
   ];
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
   return {

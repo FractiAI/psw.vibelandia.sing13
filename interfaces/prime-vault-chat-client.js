@@ -10,9 +10,9 @@
   ];
 
   var WELCOME =
-    "Hey — I'm the live Prime Vault Chat agent.\n\n" +
-    "I layer two algebraic lanes: corpus encode (Official Prospectus → prime vaults) and a speech-act planner that talks from them — multi-turn, $0 training, no Claude/GPT mouth.\n\n" +
-    "Ask who I am, what Φ ≈ 1.618 means, the voyage grand arc (Borikén · Reno), how I differ from ChatGPT, or what the Race scoreboard shows.";
+    "Hey — I'm the live Prime Vault Chat agent — a domain-bounded closed-form language processor.\n\n" +
+    "I sense your words, retrieve prime vaults, plan a speech act, then fold residue atoms into an answer (knowledge packaged like a protein chain). $0 training — no Claude/GPT mouth.\n\n" +
+    "Ask who I am, Φ ≈ 1.618, the voyage grand arc (Borikén · Reno), how I differ from ChatGPT, or the Race scoreboard.";
 
   var state = {
     email: '',

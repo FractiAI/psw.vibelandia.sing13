@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-07T04:24:44.690Z",
+  "updatedAt": "2026-09-07T04:28:39.688Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-07T04:24:44.689Z",
+      "createdAt": "2026-09-07T04:28:39.688Z",
       "body": "Prime Vault Chat — Edge Omni-Lattice Agent Replacing LLM Training with Φ-Recursive Prime-Vault Architecture",
       "presenceHue": "gold",
       "paperId": "synthobs-prime-vault-chat-2026-09",

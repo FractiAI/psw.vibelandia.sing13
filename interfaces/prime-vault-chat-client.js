@@ -10,9 +10,9 @@
   ];
 
   var WELCOME =
-    "Hey — I'm the live Prime Vault Chat agent — a domain-bounded closed-form language processor.\n\n" +
-    "I sense your words, retrieve prime vaults, plan a speech act, then fold residue atoms into an answer (knowledge packaged like a protein chain). $0 training — no Claude/GPT mouth.\n\n" +
-    "Ask who I am, Φ ≈ 1.618, the voyage grand arc (Borikén · Reno), how I differ from ChatGPT, or the Race scoreboard.";
+    "Hey — I'm the live Prime Vault Chat agent — a domain-bounded closed-form language processor with operational LUDCR.\n\n" +
+    "Listen → understand (catalog) → decide → respond (fold) → communicate on this door. Knowledge is a recursive protein library (encode ≠ LLM training). $0 — no Claude/GPT mouth.\n\n" +
+    "Ask who I am, Φ ≈ 1.618, the voyage grand arc (Borikén · Reno), Goldilocks / magnetic catalog, or the Race scoreboard.";
 
   var state = {
     email: '',

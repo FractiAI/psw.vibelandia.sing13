@@ -40,6 +40,11 @@ describe('Prime Vault Chat · guest door rollout', () => {
     expect(r.languageProcessor).toBe(true);
     expect(r.stages?.articulate?.composed).toBe(true);
     expect(r.proteinLibraryDocs).toBeGreaterThanOrEqual(12);
+    expect(r.abilities?.listen?.ok).toBe(true);
+    expect(r.abilities?.understand?.tier).toBe('catalog');
+    expect(r.abilities?.decide?.ok).toBe(true);
+    expect(r.abilities?.respond?.ok).toBe(true);
+    expect(r.abilities?.communicate?.ok).toBe(true);
     expect(r.reply).toMatch(/Fractal constant|El Gran Sol|Φ|Prime Vault|1\.618/);
     expect(r.reply).not.toMatch(/^Omniversal Lattice Response to query/);
     expect(r.reply).not.toMatch(/lattice locks first on/);

@@ -69,12 +69,15 @@ $$\Phi = \frac{1 + \sqrt{5}}{2} \approx 1.618$$
 
 Brain-speech / protein-fold **catalog rhyme** (not wet-lab claim):
 
-| Stage | Operational name | Role |
-|-------|------------------|------|
-| Sense | Utterance + thread-phase hash | Hear the 1D word chain |
-| Retrieve | Φ-resonance over prime vaults | Select semantic residues |
-| Plan | Speech-act | Choose answer shape |
-| Articulate | Fold compose | Contact 1–3 atoms into speech (anti-parrot) |
+| Ability (LUDCR) | Pipeline stage | Role | Honesty tier |
+|-----------------|----------------|------|--------------|
+| **Listen** | Sense | Utterance + thread-phase hash | Operational |
+| **Understand** | Retrieve | Φ-rank prime vault residues | **Catalog** — not open-world comprehension |
+| **Decide** | Plan | Speech-act selection | Operational |
+| **Respond** | Articulate (fold) | Compose 1–3 atom contacts | Operational |
+| **Communicate** | Guest chat door | Live thread `/demonstrations#chat` | Operational |
+
+Engine result exposes `abilities` + `stages` for the same loop.
 
 1. **Protein library encode (chain)** — recursive manifest (`PROTEIN_LIBRARY_MANIFEST` in `lib/prime-vault-corpus-encode.mjs`) files Official Prospectus → holographic/magnetic/Goldilocks → Infinite Octaves → 99/prime vaults → protein/Higgs/bridge/nested-agent companions into `data/prime-vault-corpus-v0.json`. **Encode ≠ training.**
 2. **Hand knowledge cells** — demo Miracle-2 cells merged with library (`MERGED_CELLS`).

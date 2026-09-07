@@ -278,6 +278,31 @@ function experimentLanguageFoldProcessor() {
   };
 }
 
+function experimentLudcrAbilities() {
+  const r = queryPrimeVaultChat('What is Infinite Octaves?');
+  const a = r.abilities || {};
+  const paper =
+    (fs.existsSync(path.join(MONOREPO, 'docs', PAPER_NAME)) &&
+      fs.readFileSync(path.join(MONOREPO, 'docs', PAPER_NAME), 'utf8')) ||
+    '';
+  return {
+    id: 'E12_ludcr_abilities',
+    pass:
+      a.listen?.ok === true &&
+      a.understand?.ok === true &&
+      a.understand?.tier === 'catalog' &&
+      a.decide?.ok === true &&
+      a.respond?.ok === true &&
+      a.communicate?.ok === true &&
+      a.listen?.mapsTo === 'sense' &&
+      a.understand?.mapsTo === 'retrieve' &&
+      a.decide?.mapsTo === 'plan' &&
+      a.respond?.mapsTo === 'articulate' &&
+      /LUDCR|Listen|Understand|Decide|Respond|Communicate/i.test(paper),
+    abilities: Object.keys(a),
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentPhi(),
@@ -291,6 +316,7 @@ export async function runAllExperiments() {
     experimentMultiTurn(),
     experimentCorpusEncode(),
     experimentLanguageFoldProcessor(),
+    experimentLudcrAbilities(),
   ];
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
   return {

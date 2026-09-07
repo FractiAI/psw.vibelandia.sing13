@@ -38,6 +38,7 @@
 }
 
 .pvr-gate h1,
+.pvr-report h1,
 .pvr-arena__head h2 {
   font-family: "Bebas Neue", Impact, sans-serif;
   font-weight: 400;
@@ -45,6 +46,62 @@
   color: var(--pvr-gold-hi);
   margin: 0 0 0.65rem;
   font-size: clamp(2.2rem, 9vw, 3.2rem);
+}
+
+.pvr-section-h {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--pvr-gold-hi);
+  margin: 1.75rem 0 0.75rem;
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+}
+
+.pvr-desc-list {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+  color: var(--pvr-muted);
+  line-height: 1.55;
+}
+
+.pvr-desc-list li { margin-bottom: 0.55rem; }
+.pvr-desc-list strong { color: var(--pvr-gold-hi); }
+
+.pvr-table-wrap {
+  overflow-x: auto;
+  margin: 0.5rem 0 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--pvr-line);
+}
+
+.pvr-scoreboard {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.pvr-scoreboard th,
+.pvr-scoreboard td {
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--pvr-line);
+}
+
+.pvr-scoreboard th {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--pvr-gold-hi);
+  font-weight: 700;
+}
+
+.pvr-scoreboard td { color: var(--pvr-ink); }
+.pvr-scoreboard tr:last-child td { border-bottom: none; }
+.pvr-scoreboard strong { color: var(--pvr-vault); }
+.pvr-scoreboard em { color: var(--pvr-muted); font-style: italic; }
+
+.pvr-card__result {
+  margin-top: 0.55rem !important;
+  color: var(--pvr-gold-hi) !important;
+  font-weight: 600;
 }
 
 .pvr-arena__head h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }

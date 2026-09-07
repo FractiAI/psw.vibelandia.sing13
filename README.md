@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-06** · **275** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-07** · **278** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -320,6 +320,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html) | Prime-Indexed Volumetric Storage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-vault-alphafold-race-2026-09.html`](/interfaces/blog-prime-vault-alphafold-race-2026-09.html) | Prime-Vault vs ColabFold — race results · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-vault-chat-2026-09.html`](/interfaces/blog-prime-vault-chat-2026-09.html) | Prime Vault Chat is open · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-prime-vault-demos-2026-09.html`](/interfaces/blog-prime-vault-demos-2026-09.html) | Prime Vault Demonstrations door is open · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-vault-race-door-2026-09.html`](/interfaces/blog-prime-vault-race-door-2026-09.html) | Prime-Vault Race door is open · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-protein-folding-prime-container-2026-09.html`](/interfaces/blog-protein-folding-prime-container-2026-09.html) | Protein Folding · Prime-Container Architecture · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Φ Duality · Ship blog · SS Vibelandia |
@@ -452,7 +453,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html`](/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html) | FOR IMMEDIATE RELEASE — Chipless, Datacenterless AI · SynthOBS RSI validation |
 | [`/interfaces/press-releases.html`](/interfaces/press-releases.html) | Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9 |
 | [`/interfaces/prime-vault-chat.html`](/interfaces/prime-vault-chat.html) | Prime Vault Chat · SS Vibelandia |
-| [`/interfaces/prime-vault-race.html`](/interfaces/prime-vault-race.html) | Prime-Vault Race · SS Vibelandia |
+| [`/interfaces/prime-vault-demos.html`](/interfaces/prime-vault-demos.html) | Demonstrations · Prime Vault · SS Vibelandia |
+| [`/interfaces/prime-vault-race.html`](/interfaces/prime-vault-race.html) | Prime-Vault Race · Results · SS Vibelandia |
 | [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Ship Map · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
 | [`/interfaces/reading-room-concert-program.html`](/interfaces/reading-room-concert-program.html) | Reading Room Concert Program · SS Vibelandia |
@@ -566,8 +568,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/special-projects/geomagnetic-herbivore-study.html`](/interfaces/special-projects/geomagnetic-herbivore-study.html) | Geomagnetic Herbivore Study · Multi-Taxa Wavefield |
 | [`/interfaces/special-projects/goldilocks-quest.html`](/interfaces/special-projects/goldilocks-quest.html) | Goldilocks Quest · Full Gen · SS Vibelandia |
 | [`/interfaces/special-projects/pdvsa-gateway-ops.html`](/interfaces/special-projects/pdvsa-gateway-ops.html) | PDVSA Gateway Ops · EGS Lattice-Linear Gateway · SS Vibelandia |
-| [`/interfaces/special-projects/prime-vault-alphafold-race.html`](/interfaces/special-projects/prime-vault-alphafold-race.html) | Prime-Vault Race · SS Vibelandia |
+| [`/interfaces/special-projects/prime-vault-alphafold-race.html`](/interfaces/special-projects/prime-vault-alphafold-race.html) | Prime-Vault Race · Results · SS Vibelandia |
 | [`/interfaces/special-projects/prime-vault-chat.html`](/interfaces/special-projects/prime-vault-chat.html) | Prime Vault Chat · SS Vibelandia |
+| [`/interfaces/special-projects/prime-vault-demos.html`](/interfaces/special-projects/prime-vault-demos.html) | Demonstrations · Prime Vault · SS Vibelandia |
 | [`/interfaces/special-projects/turner-bison-herd-management.html`](/interfaces/special-projects/turner-bison-herd-management.html) | Turner Enterprise · Rangeland herd intelligence |
 | [`/interfaces/special-projects/wavefield-echo-test.html`](/interfaces/special-projects/wavefield-echo-test.html) | Wavefield Echo Test · Plain-speak results |
 

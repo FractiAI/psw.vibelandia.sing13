@@ -21,7 +21,13 @@ describe('Prime-Vault Race · guest door rollout', () => {
     expect(existsSync(join(ROOT, 'api/prime-vault-race.js'))).toBe(true);
     const html = read('interfaces/prime-vault-race.html');
     expect(html).toContain('prime-vault-race-client.js');
-    expect(html).toContain('Same email seat as');
+    expect(html).toContain('Scoreboard (this host)');
+    expect(html).toContain('No live play controls');
+    expect(html).not.toContain('Come aboard · race');
+    expect(html).not.toContain('Race this tier');
+    const client = read('interfaces/prime-vault-race-client.js');
+    expect(client).not.toContain('Race this tier');
+    expect(client).not.toContain('raceTier');
   });
 
   it('reuses Lattice / Let\'s Chat email allowlist', () => {

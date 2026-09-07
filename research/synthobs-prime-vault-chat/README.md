@@ -1,6 +1,11 @@
 # SynthOBS · Prime Vault Chat
 
-Closed-form **LLM-sim** — multi-turn speech-act planner over a prime-indexed knowledge cell bank under Φ ≈ 1.618.
-$0 training · application companion (not engine pin).
+Closed-form **LLM-sim** — **Layer A** corpus encode (prospectus → prime vaults) + **Layer B** speech-act planner.
+$0 training · application companion (not engine pin) · not open-world LLM parity.
 
-Suite: `npm run research:synthobs-prime-vault-chat` · door `/demonstrations#chat` · `/prime-vault-chat`
+```bash
+npm run encode:prime-vault-corpus   # refresh data/prime-vault-corpus-v0.json
+npm run research:synthobs-prime-vault-chat
+```
+
+Door: `/demonstrations#chat` · `/prime-vault-chat`

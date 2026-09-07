@@ -11,8 +11,8 @@
 
   var WELCOME =
     "Hey — I'm the live Prime Vault Chat agent.\n\n" +
-    "Talk to me like you would talk to an LLM on this ship. I keep multi-turn memory of this thread, answer in natural paragraphs from a Φ knowledge cell bank, and cost $0 to train.\n\n" +
-    "Ask who I am, what Φ ≈ 1.618 means, how I differ from ChatGPT, what Infinite Octaves is, or what the Race scoreboard shows.";
+    "I layer two algebraic lanes: corpus encode (Official Prospectus → prime vaults) and a speech-act planner that talks from them — multi-turn, $0 training, no Claude/GPT mouth.\n\n" +
+    "Ask who I am, what Φ ≈ 1.618 means, the voyage grand arc (Borikén · Reno), how I differ from ChatGPT, or what the Race scoreboard shows.";
 
   var state = {
     email: '',

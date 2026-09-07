@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "0b93ff4474ca397e",
+  "auditId": "46f19ab794bd12c7",
   "paperId": "synthobs-prime-vault-chat-2026-09",
   "sourcePath": "docs/SYNTHOBS_PRIME_VAULT_CHAT_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-07T03:33:55.002Z"
+          "invokedAt": "2026-09-07T03:47:58.975Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-07T03:33:55.001Z",
-  "completedAt": "2026-09-07T03:33:55.003Z",
+  "startedAt": "2026-09-07T03:47:58.974Z",
+  "completedAt": "2026-09-07T03:47:58.976Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 895,
+      "wordCount": 924,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
         "links": 6,
-        "numbered": 4,
+        "numbered": 5,
         "citeLines": 2
       }
     }

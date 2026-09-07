@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T03:33:46.218Z",
+  "generatedAt": "2026-09-07T03:48:21.118Z",
   "experiments": [
     {
       "id": "E1_phi_egs",
@@ -9,13 +9,13 @@
     {
       "id": "E2_semantic_primes",
       "pass": true,
-      "n": 20
+      "n": 31
     },
     {
       "id": "E3_deterministic_reply",
       "pass": true,
-      "latencyMs": 1.4601429999999986,
-      "speechAct": "teach"
+      "latencyMs": 1.9186669999999992,
+      "speechAct": "corpus"
     },
     {
       "id": "E4_intent_resonance",
@@ -54,17 +54,24 @@
     {
       "id": "E8_knowledge_cell_bank",
       "pass": true,
-      "n": 20
+      "n": 20,
+      "merged": 31
     },
     {
       "id": "E9_multiturn_and_ood",
       "pass": true,
       "followAct": "continue",
       "oodAct": "refuse"
+    },
+    {
+      "id": "E10_corpus_encode_v0",
+      "pass": true,
+      "nCells": 11,
+      "act": "corpus"
     }
   ],
-  "n_pass": 9,
-  "n_total": 9,
+  "n_pass": 10,
+  "n_total": 10,
   "all_pass": true,
   "failed": []
 }

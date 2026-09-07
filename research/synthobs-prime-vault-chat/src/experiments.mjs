@@ -20,7 +20,13 @@ import {
   hashThreadPhase,
   DEFAULT_VOCABULARY,
   KNOWLEDGE_CELLS,
+  MERGED_CELLS,
+  CORPUS_BANK,
 } from '../../../lib/prime-vault-chat-engine.mjs';
+import {
+  encodeCorpusToCells,
+  chunkMarkdown,
+} from '../../../lib/prime-vault-corpus-encode.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -120,7 +126,7 @@ function experimentSurfaces() {
     paperPhi: /1\.618|Φ|PHI/i.test(paper),
     paperFair: /Fair Exchange/i.test(paper),
     paperZero: /\$0|0\.00 training|zero training/i.test(paper),
-    paperLlmSim: /LLM-sim|knowledge cell bank|multi-turn/i.test(paper),
+    paperLlmSim: /LLM-sim|knowledge cell bank|multi-turn|corpus encode/i.test(paper),
     paperOperator: /SynthOBS/i.test(paper),
     blogExists: Boolean(blog),
     blogSlug: blog.includes(SHIP_BLOG_SLUG) || blog.includes('prime-vault-chat'),
@@ -158,8 +164,13 @@ function experimentKnowledgeBank() {
   const hasAll = required.every((k) => KNOWLEDGE_CELLS[k]?.speak);
   return {
     id: 'E8_knowledge_cell_bank',
-    pass: n >= 18 && hasAll && DEFAULT_VOCABULARY.length === n,
+    pass:
+      n >= 18 &&
+      hasAll &&
+      DEFAULT_VOCABULARY.length === Object.keys(MERGED_CELLS).length &&
+      DEFAULT_VOCABULARY.length > n,
     n,
+    merged: DEFAULT_VOCABULARY.length,
   };
 }
 
@@ -188,9 +199,44 @@ function experimentMultiTurn() {
       follow.llmSim === true &&
       (follow.speechAct === 'continue' || follow.kinds.includes('followup') || follow.kinds.includes('continuing')) &&
       ood.speechAct === 'refuse' &&
-      /outside my cell bank|Domain-bounded|medicine|steer back/i.test(ood.reply),
+      /outside my|filed vaults|medicine|steer back/i.test(ood.reply),
     followAct: follow.speechAct,
     oodAct: ood.speechAct,
+  };
+}
+
+function experimentCorpusEncode() {
+  const jsonPath = path.join(MONOREPO, 'data', 'prime-vault-corpus-v0.json');
+  const encodeLib = path.join(MONOREPO, 'lib', 'prime-vault-corpus-encode.mjs');
+  const mdPath = path.join(
+    MONOREPO,
+    'docs',
+    'SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md',
+  );
+  const md = fs.readFileSync(mdPath, 'utf8');
+  const live = encodeCorpusToCells(md, { maxCells: 16 });
+  const prospectus = queryPrimeVaultChat(
+    'What is the Official Prospectus grand arc and Borikén convergence?',
+    { octaveTier: 7 },
+  );
+  const paper =
+    (fs.existsSync(path.join(MONOREPO, 'docs', PAPER_NAME)) &&
+      fs.readFileSync(path.join(MONOREPO, 'docs', PAPER_NAME), 'utf8')) ||
+    '';
+  return {
+    id: 'E10_corpus_encode_v0',
+    pass:
+      fs.existsSync(jsonPath) &&
+      fs.existsSync(encodeLib) &&
+      live.nCells >= 8 &&
+      chunkMarkdown(md).length >= 8 &&
+      (CORPUS_BANK.nCells || 0) >= 8 &&
+      prospectus.corpusEncode === true &&
+      prospectus.speechAct === 'corpus' &&
+      /prospectus|Borikén|genesis|voyage|catalog|Reno|Φ|El Gran Sol/i.test(prospectus.reply) &&
+      /corpus encode|Layer A/i.test(paper),
+    nCells: live.nCells,
+    act: prospectus.speechAct,
   };
 }
 
@@ -205,6 +251,7 @@ export async function runAllExperiments() {
     experimentRegistry(),
     experimentKnowledgeBank(),
     experimentMultiTurn(),
+    experimentCorpusEncode(),
   ];
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
   return {

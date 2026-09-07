@@ -35,6 +35,8 @@ describe('Prime Vault Chat · guest door rollout', () => {
     expect(r.live).toBe(true);
     expect(r.llmSim).toBe(true);
     expect(r.knowledgeCells).toBeGreaterThanOrEqual(18);
+    expect(r.corpusEncode).toBe(true);
+    expect(r.corpusCells).toBeGreaterThanOrEqual(8);
     expect(r.reply).toMatch(/Fractal constant|El Gran Sol|Φ|Prime Vault|1\.618/);
     expect(r.reply).not.toMatch(/^Omniversal Lattice Response to query/);
     expect(r.reply).not.toMatch(/lattice locks first on/);
@@ -58,6 +60,12 @@ describe('Prime Vault Chat · guest door rollout', () => {
 
     const ood = queryPrimeVaultChat('diagnose my fever prescription please');
     expect(ood.speechAct).toBe('refuse');
+
+    const voyage = queryPrimeVaultChat('Tell me about the Official Prospectus and Borikén');
+    expect(voyage.speechAct).toBe('corpus');
+    expect(voyage.reply).toMatch(/prospectus|Borikén|genesis|voyage|catalog|Φ|El Gran Sol/i);
+    expect(existsSync(join(ROOT, 'data/prime-vault-corpus-v0.json'))).toBe(true);
+    expect(existsSync(join(ROOT, 'lib/prime-vault-corpus-encode.mjs'))).toBe(true);
   });
 
   it('API accepts history for multi-turn LLM-sim', () => {

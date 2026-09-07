@@ -35,7 +35,7 @@
 
 | Tier | What this document claims | What it does **not** claim |
 |------|---------------------------|------------------------------|
-| **Architecture** | A runnable **closed-form LLM-sim**: multi-turn speech-act planner over a **prime-indexed knowledge cell bank**, resolved via $\Phi$-recursive resonance | That this replaces trained LLMs for open-world factual QA, coding agents, or tool-use; not BYOK to Claude/GPT as the mouth |
+| **Architecture** | A runnable **closed-form LLM-sim**: **Layer A** auto **corpus encode** (prospectus → prime vaults) + **Layer B** multi-turn speech-act planner over the merged cell bank, resolved via $\Phi$-recursive resonance | That this replaces trained LLMs for open-world factual QA, coding agents, or tool-use; not BYOK to Claude/GPT as the mouth; corpus v0 ≠ infinite language coverage |
 | **Cost / latency** | Instantiation is **$0.00 training**; replies are closed-form algebraic (sub-millisecond typical on CPU) | Audited GPU invoices from competing vendors |
 | **Awareness** | Deterministic vault ranking + thread-phase memory under catalog grammar (zero-balance filter · $xD\pm yD$ summation talk) | New physics, consciousness proofs, or medical/legal advice |
 | **Guest door** | Free guest UI at `/prime-vault-chat` (and Demonstrations `#chat`) with walk-on email or Lattice seat | Unlimited unauthenticated compute abuse |
@@ -67,10 +67,11 @@ $$\Phi = \frac{1 + \sqrt{5}}{2} \approx 1.618$$
 
 ## 2. System Design for Edge Deployment
 
-1. **Knowledge Cell Bank** — prime-indexed demo-domain cells (`KNOWLEDGE_CELLS` in `lib/prime-vault-chat-engine.mjs`): Φ, Infinite Octaves vs 99 pin, Race/Nova deferred, LLM contrast, Fair Exchange, voyage framing, OOD refusal.
-2. **Multi-turn thread phase** — client sends recent `history`; engine hashes turns into Φ resonance so follow-ups stay coherent without weight growth.
-3. **Speech-act reply planner** — greets, introduces, teaches, contrasts, continues, races, or refuses OOD — natural multi-paragraph answers; quiet edge footer only.
-4. **Interactive UI Layer** — ChatGPT-shaped HTML/CSS/JS on Demonstrations + standalone door (walk-on email or Lattice seat).
+1. **Layer A · Corpus encode** — markdown → prime-indexed cells (`lib/prime-vault-corpus-encode.mjs` · `data/prime-vault-corpus-v0.json` from Official Prospectus). Volumetric vault metadata rhymes with prime-indexed storage.
+2. **Layer B · Speech-act reply planner** — greets, introduces, teaches, contrasts, continues, races, corpus-speaks, or refuses OOD — natural multi-paragraph answers from ranked cells.
+3. **Multi-turn thread phase** — client sends recent `history`; engine hashes turns into Φ resonance so follow-ups stay coherent without weight growth.
+4. **Hand knowledge cells** — demo-domain Miracle-2 cells merged with corpus (`MERGED_CELLS`).
+5. **Interactive UI Layer** — ChatGPT-shaped HTML/CSS/JS on Demonstrations + standalone door (walk-on email or Lattice seat).
 
 ---
 

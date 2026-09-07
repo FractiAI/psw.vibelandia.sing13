@@ -10,9 +10,9 @@
   ];
 
   var WELCOME =
-    'Greetings. I am the live Prime Vault Chat agent.\n\n' +
-    'Ask me anything about Φ ≈ 1.618, prime vaults, the Omniversal Lattice, protein races, or how this differs from a trained LLM.\n\n' +
-    'I answer with real closed-form vault resonance — $0 training · edge milliseconds · not a stub.';
+    "Hey — I'm the live Prime Vault Chat agent.\n\n" +
+    "Talk to me like a guest on the ship. Ask who I am, what Φ ≈ 1.618 means, how I differ from ChatGPT, or what the Race scoreboard shows.\n\n" +
+    "I answer in conversation — closed-form · $0 training · not a stats dump.";
 
   var state = {
     email: '',
@@ -131,6 +131,7 @@
   function formatBody(content) {
     return escapeHtml(content)
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/_([^_\n]+)_/g, '<em>$1</em>')
       .replace(/\n\n/g, '</p><p>')
       .replace(/\n/g, '<br/>');
   }

@@ -33,10 +33,16 @@ describe('Prime Vault Chat · guest door rollout', () => {
     expect(Math.abs(PHI_EGS - (1 + Math.sqrt(5)) / 2) < 1e-15).toBe(true);
     expect(r.trainingCostUsd).toBe(0);
     expect(r.live).toBe(true);
-    expect(r.reply).toMatch(/Fractal constant|El Gran Sol|Φ/);
+    expect(r.reply).toMatch(/Fractal constant|El Gran Sol|Φ|Prime Vault/);
     expect(r.reply).not.toMatch(/^Omniversal Lattice Response to query/);
+    expect(r.reply).not.toMatch(/lattice locks first on/);
+    expect(r.reply).not.toMatch(/Activated vaults:/);
     expect(r.nodes.length).toBeGreaterThan(0);
     expect(r.latencyMs).toBeLessThan(50);
+    const about = queryPrimeVaultChat('Tell me about you.');
+    expect(about.reply).toMatch(/Prime Vault Chat/);
+    expect(about.reply).not.toMatch(/lattice locks first/);
+    expect(about.kinds).toContain('about');
   });
 
   it('reuses Lattice seats and allows walk-on demo email', () => {

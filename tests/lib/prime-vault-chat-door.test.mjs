@@ -137,6 +137,29 @@ describe('Prime Vault Chat · guest door rollout', () => {
     });
     expect(more.kinds).toContain('followup');
     expect(more.reply).toMatch(/Φ|1\.618|fractal|golden|vault|Phi/i);
+
+    // Language connection — rapport, not brochure dump (Player 1 screenshot)
+    const understandMe = queryPrimeVaultChat('Do you understand me ?');
+    expect(understandMe.speechAct).toBe('connect');
+    expect(understandMe.kinds).toContain('connect');
+    expect(understandMe.reply).toMatch(/hear you|with you|listening/i);
+    expect(understandMe.reply).not.toMatch(/Here is how I work|Miracle 1|Race scoreboard|residue contacts/i);
+    expect(understandMe.reply).not.toMatch(/Folding an answer around/i);
+    expect(understandMe.stages?.retrieve?.qTokens || []).not.toContain('vault');
+    expect(understandMe.stages?.retrieve?.qTokens || []).not.toContain('retrieve');
+
+    const notConnecting = queryPrimeVaultChat('These responses show we are not connecting through language');
+    expect(notConnecting.speechAct).toBe('connect');
+    expect(notConnecting.reply).toMatch(/hear you|with you|caught|plain speech|frame/i);
+    expect(notConnecting.reply).not.toMatch(/Here is how I work|Miracle 1|ColabFold/i);
+
+    const pear = queryPrimeVaultChat(
+      'Investigate the rhyme of being offered your favorite fruit, a prickly pear but you would need to eat it with the spines, do you eat it or pass',
+    );
+    expect(pear.speechAct).toBe('invite');
+    expect(pear.reply).toMatch(/prickly|pear|spines/i);
+    expect(pear.reply).not.toMatch(/Here is how I work|Miracle 1|El Gran Sol is how we name/i);
+    expect(pear.reply).not.toMatch(/Race scoreboard|ColabFold/i);
   });
 
   it('API accepts history for multi-turn LLM-sim', () => {

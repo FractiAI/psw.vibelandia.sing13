@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T04:28:39.587Z",
+  "generatedAt": "2026-09-07T04:45:55.544Z",
   "experiments": [
     {
       "id": "E1_phi_egs",
@@ -14,7 +14,7 @@
     {
       "id": "E3_deterministic_reply",
       "pass": true,
-      "latencyMs": 3.3739929999999987,
+      "latencyMs": 3.328445000000002,
       "speechAct": "corpus"
     },
     {

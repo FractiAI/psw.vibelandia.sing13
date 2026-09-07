@@ -23,8 +23,11 @@ describe('Prime Vault Demonstrations · hub door', () => {
     expect(html).toContain('Miracle 2');
     expect(html).toContain('pvc-thread');
     expect(html).toContain('prime-vault-chat-client.js');
-    expect(html).toContain('No prior stop');
+    expect(html).toMatch(/Goldilocks SuperAI|holographic · magnetic/i);
+    expect(html).toContain('protein fold');
+    expect(html).toContain('LLM alternative');
     expect(html).toContain('0.051 ms');
+    expect(html.indexOf('id="race"')).toBeLessThan(html.indexOf('id="chat"'));
   });
 
   it('wires vercel, quicklink, More Aboard door, bulletin, and registry blog', () => {

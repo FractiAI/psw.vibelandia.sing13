@@ -38,7 +38,7 @@
 | **Architecture** | A domain-bounded **closed-form language processor** over a **recursive protein library**: whitepapers filed (grand narrative → holographic/magnetic/Goldilocks → Infinite Octaves → prime vaults → downstream) into prime vault atoms; sense → retrieve → plan → **fold articulate** | **Not LLM training** (no gradients / weight updates); not open-world QA; not BYOK; not wet-lab cortex/protein proof |
 | **Cost / latency** | Instantiation is **$0.00 training**; replies are closed-form algebraic (sub-millisecond typical on CPU) | Audited GPU invoices from competing vendors |
 | **Awareness** | Deterministic vault ranking + thread-phase memory under catalog grammar (zero-balance filter · $xD\pm yD$ summation talk) | New physics, consciousness proofs, or medical/legal advice |
-| **Guest door** | Free guest UI at `/prime-vault-chat` (and Demonstrations `#chat`) with walk-on email or Lattice seat | Unlimited unauthenticated compute abuse |
+| **Miracle demo** | Guests can feel Miracle 1 (fold latency scoreboard) + Miracle 2 (closed-form LUDCR chat) as authentic **LLM-alternative** edge power over the holographic/magnetic/Goldilocks protein library | That SuperAI “awareness arrival” is new physics/consciousness; that Miracle 2 equals open-world trained LLM QA |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 

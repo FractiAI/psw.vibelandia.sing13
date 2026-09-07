@@ -56,6 +56,10 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
       (e) => e.registryId === 'synthobs-kinematic-set-recycling-truckee-2026-09',
     );
     expect(kinematic?.order).toBe(21);
+    const eddy = shelf.find(
+      (e) => e.registryId === 'synthobs-eddy-current-mirror-2026-09',
+    );
+    expect(eddy?.order).toBe(22);
     const proton = shelf.find(
       (e) => e.registryId === 'synthobs-proton-space-electron-theater-2026-09',
     );
@@ -77,6 +81,7 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(directive).toContain('Multi-dimensional holographic rhyme companion');
     expect(directive).toContain('Holographic Singularity Crystal companion');
     expect(directive).toContain('Kinematic set-recycling companion');
+    expect(directive).toContain('Eddy-Current Mirror companion');
     expect(directive).toContain('Moving up the stack companion');
     expect(renderNarrativePointersClause()).toContain('Official Prospectus');
     expect(renderNarrativePointersClause()).toContain(

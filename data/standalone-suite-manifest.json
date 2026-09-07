@@ -330,6 +330,19 @@
         "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md",
         "docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-eddy-current-mirror",
+      "path": "research/synthobs-eddy-current-mirror",
+      "github": "https://github.com/FractiAI/synthobs-eddy-current-mirror",
+      "description": "Eddy-Current Mirror — c transduction · self-observation · Lenz analogy · Φ_EGS catalog fixtures",
+      "paperIds": [
+        "synthobs-eddy-current-mirror-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md",
+        "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md"
+      ]
     }
   ]
 }

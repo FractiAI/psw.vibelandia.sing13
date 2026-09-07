@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Monday board · September 7 · Puerto Reno",
   "newsLabel": "News of the day · Monday, September 7",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/kinematic-set-recycling\">Same river. Different speed. New theater. (catalog)</a>. Also new on the board: <a href=\"/ship-blog/zero-octave-node-k0\">Node k = 0 — Awakening Phase Gate (catalog)</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/eddy-current-mirror\">Thought meets its mirror — and slows into matter (catalog)</a>. Also new on the board: <a href=\"/ship-blog/kinematic-set-recycling\">Same river. Different speed. New theater. (catalog)</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-eddy-current-mirror-2026-09",
+      "title": "Thought meets its mirror — and slows into matter (catalog)",
+      "href": "/ship-blog/eddy-current-mirror",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-eddy-current-mirror-2026-09",
+      "blurb": "c as transduction line · self-observation brake · eddy-current analogy under Φ≈1.618. Honesty first: catalog grammar, not relativity retirement. Fair Exchange tip clause on."
+    },
     {
       "id": "synthobs-kinematic-set-recycling-truckee-2026-09",
       "title": "Same river. Different speed. New theater. (catalog)",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/zero-octave-node-k0",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-zero-octave-node-k0-2026-09",
       "blurb": "Zero-Octave locus with Net Zero cancel and 0/0 → Φ⁰=1 crystal diagnostic under Φ≈1.618. Honesty first: implementation fixtures, not GR singularity QED. Fair Exchange tip clause on."
-    },
-    {
-      "id": "synthobs-holographic-singularity-crystal-2026-09",
-      "title": "Zero isn’t empty — it’s the singularity crystal (catalog)",
-      "href": "/ship-blog/holographic-singularity-crystal",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-holographic-singularity-crystal-2026-09",
-      "blurb": "Net Zero and 0/0 file as a bounded Φ≈1.618 holographic singularity crystal · engine #20. Honesty first: catalog grammar, not GR/QFT retirement. Fair Exchange tip clause on."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-07-synthobs-zero-octave-node-k0-2026-09",
-    "title": "Node k = 0 — Awakening Phase Gate (catalog)",
-    "href": "/ship-blog/zero-octave-node-k0"
+    "id": "daily-2026-09-07-synthobs-kinematic-set-recycling-truckee-2026-09",
+    "title": "Same river. Different speed. New theater. (catalog)",
+    "href": "/ship-blog/kinematic-set-recycling"
   },
-  "generatedAt": "2026-09-07T20:50:58.175Z"
+  "generatedAt": "2026-09-07T21:04:05.741Z"
 }

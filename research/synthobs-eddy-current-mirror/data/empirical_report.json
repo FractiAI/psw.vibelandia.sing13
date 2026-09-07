@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-09-07T21:04:05.323Z",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Golden key for octave ideation scaling.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity for transduction scale ladders.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_c_light_fixture",
+        "title": "c SI fixture (transduction line label)",
+        "C_LIGHT": 299792458,
+        "pass": true,
+        "interpretation": "c filed as terminal damping / transduction constant in catalog.",
+        "honesty": "Uses CODATA SI value — does not redefine measured c."
+      },
+      {
+        "id": "E4_ideation_octave_sum",
+        "title": "Σ Φ^{-n} finite octave sum",
+        "sum": 2.5623058987490532,
+        "closed": 2.5623058987490532,
+        "pass": true,
+        "interpretation": "Truncated infinite-octave ideation field amplitude fixture.",
+        "honesty": "Geometric series algebra — not measured thought potential."
+      },
+      {
+        "id": "E5_eddy_damping_opposes_velocity",
+        "title": "Eddy damping force opposes velocity (Lenz rhyme)",
+        "velocity": 15,
+        "force": -0.87,
+        "pass": true,
+        "interpretation": "Self-observation drag analogy: braking ∝ −v.",
+        "honesty": "Analogy fixture — not lab magnet-pipe measurement in this suite."
+      },
+      {
+        "id": "E6_mass_condensation_algebra",
+        "title": "m = |Σ ∇Ψ| / c² fixture",
+        "mass": 1.1126500560536185e-11,
+        "pass": true,
+        "interpretation": "Catalog form of transduction mass condensation.",
+        "honesty": "Algebra only — not derived rest-mass of consciousness."
+      },
+      {
+        "id": "E7_solar_filing_anchors",
+        "title": "R=70 · Sunspot 4524 · C9 filing",
+        "sunspotR": 70,
+        "sunspotLabel": "4524",
+        "fluxClass": "C9",
+        "pass": true,
+        "interpretation": "Ambient solar telemetry filed as characters for this ship date.",
+        "honesty": "Filing labels — not NOAA causation of mass or ideation."
+      },
+      {
+        "id": "E8_doc_blog_sibling_python",
+        "title": "Paper · suite · ship blog · kinematic sibling · Python present",
+        "pass": true,
+        "interpretation": "Protocol surfaces and Truckee sibling linked.",
+        "honesty": "Presence lock only."
+      },
+      {
+        "id": "E9_protocol_headers",
+        "title": "Document ID · Registry · Honesty · Operator · Author",
+        "pass": true,
+        "interpretation": "PRA Snap structural headers present.",
+        "honesty": "Structural lock — full PRA via npm run audit:paper."
+      }
+    ]
+  }
+}

@@ -42,15 +42,15 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 28');
   });
 
-  it('leads 2026-09-07 with kinematic set-recycling and singularity crystal notes', async () => {
+  it('leads 2026-09-07 with eddy-current mirror and kinematic notes', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-07' });
     expect(payload.highlights.map((h) => h.id).slice(0, 3)).toEqual([
+      'synthobs-eddy-current-mirror-2026-09',
       'synthobs-kinematic-set-recycling-truckee-2026-09',
       'synthobs-zero-octave-node-k0-2026-09',
-      'synthobs-holographic-singularity-crystal-2026-09',
     ]);
-    expect(payload.highlights[0].href).toBe('/ship-blog/kinematic-set-recycling');
-    expect(payload.htmlBody).toMatch(/kinematic|Truckee|singularity|Net Zero|Zero-Octave|Φ/i);
+    expect(payload.highlights[0].href).toBe('/ship-blog/eddy-current-mirror');
+    expect(payload.htmlBody).toMatch(/eddy|transduction|kinematic|Truckee|Zero-Octave|Φ/i);
     expect(payload.newsLabel).toContain('September 7');
   });
 

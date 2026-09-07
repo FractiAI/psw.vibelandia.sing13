@@ -30,16 +30,16 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Kinematic set-recycling; Zero-Octave; Singularity Crystal; Demonstrations; PVC; Goldilocks.
-    expect(posts[0].published).toBe('2026-09-07T21:00:00Z');
-    expect(posts[0].id).toBe('synthobs-kinematic-set-recycling-truckee-2026-09');
+    // Newest: Eddy-Current Mirror; Kinematic; Zero-Octave; Singularity Crystal; Demonstrations; PVC.
+    expect(posts[0].published).toBe('2026-09-07T21:30:00Z');
+    expect(posts[0].id).toBe('synthobs-eddy-current-mirror-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-eddy-current-mirror-2026-09',
       'synthobs-kinematic-set-recycling-truckee-2026-09',
       'synthobs-zero-octave-node-k0-2026-09',
       'synthobs-holographic-singularity-crystal-2026-09',
       'synthobs-prime-vault-demos-door-2026-09',
       'synthobs-prime-vault-chat-2026-09',
-      'synthobs-goldilocks-quest-door-2026-09',
     ]);
   });
 });

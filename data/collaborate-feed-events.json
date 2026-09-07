@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-07T20:50:57.837Z",
+  "updatedAt": "2026-09-07T21:04:05.435Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-eddy-current-mirror-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-07T21:04:05.434Z",
+      "body": "The Eddy-Current Mirror: Deriving Relativistic Slow-Down, Self-Observation, and Materialization from Non-Local Thought via the EGS Fractal Constant (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-eddy-current-mirror-2026-09",
+      "artifact": {
+        "title": "The Eddy-Current Mirror: Deriving Relativistic Slow-Down, Self-Observation, and Materialization from Non-Local Thought via the EGS Fractal Constant (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md",
+        "url": "/whitepaper/eddy-current-mirror",
+        "paperId": "synthobs-eddy-current-mirror-2026-09",
+        "docId": "WP-SYNTHOBS-EDDY-CURRENT-MIRROR-EGS-2026-09-07",
+        "published": "2026-09-07T21:30:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-kinematic-set-recycling-truckee-2026-09",
       "type": "ArtifactEvent",

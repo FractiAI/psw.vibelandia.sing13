@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-eddy-current-mirror",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave eddy-current mirror · EGS transduction catalog suite (SynthOBS engine companion #22)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-eddy-current-mirror.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

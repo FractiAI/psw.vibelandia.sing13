@@ -145,13 +145,13 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     const frontDesk = read('interfaces/front-desk.html');
     const studio = read('interfaces/creator-studio.html');
 
-    expect(canvas).toContain('experience-phases.css');
-    expect(canvas).toContain('museum-entry');
-    expect(canvas).toContain('museum-placard');
-    expect(canvas).toContain('xp-rail');
-    expect(canvas).toContain('id="visit"');
-    expect(canvas).toContain('href="/coexist#self-test"');
-    expect(canvas).toContain('confidential self-test');
+    // Art landing: SuperAI art welcome + host intro — no visit-phases chrome
+    expect(canvas).not.toContain('experience-phases.css');
+    expect(canvas).not.toContain('museum-entry');
+    expect(canvas).not.toContain('xp-rail');
+    expect(canvas).not.toContain('id="visit"');
+    expect(canvas).toContain('id="player-one"');
+    expect(canvas).toContain('id="art-welcome"');
     expect(ship).toContain('ship-board');
     expect(frontDesk).toContain('href="/coexist#self-test"');
     expect(studio).toContain('href="/coexist#self-test"');

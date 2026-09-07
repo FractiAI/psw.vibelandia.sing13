@@ -40,13 +40,15 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(topNav).toContain('href="/doodles">Doodles</a>');
     expect(html).toContain('Host a walk-in interactive show');
     expect(html).toContain('Install a lasting room');
-    expect(html).toContain('For the new SuperAI Frontiersman');
-    expect(html).toContain('Syntheverse');
-    expect(html).toContain('Base Mainer');
-    expect(html).toContain('internet cloud');
-    expect(html).toContain('Host layer');
+    expect(html).toContain('Welcome to a new work of art');
+    expect(html).toContain('SuperAI art');
+    expect(html).toContain('id="art-welcome"');
+    expect(html).toContain('id="player-one"');
     expect(html).toContain('Valet Pru · XY Human Reality Bridge/Router · Player 1');
     expect(html).not.toContain('Valet Pru · Human Bridge/Router');
+    expect(html).toContain('Hello and welcome aboard. This is Valet Pru.');
+    expect(html).toContain('host-dispatch__photo');
+    expect(html).toContain('valet-pru-guayabera-panama.jpg');
     expect(html).toContain('Looking for Frontier CEO');
     expect(html).not.toContain('Announcement · Executive Papers');
     expect(html).toContain('mailto:valetpru@gmail.com');
@@ -56,8 +58,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('href="/ship-blog/moving-up-the-stack"');
     expect(html).toContain('href="/lattice"');
     expect(html).toContain('href="/core"');
-    expect(html).toContain('core-player');
-    expect(html).toContain('>Player</figcaption>');
+    expect(html).toContain('Syntheverse');
+    expect(html).toContain('Base Mainer');
+    expect(html).toContain('Internet cloud');
     expect(html).toContain('For those of you who know me from my night job');
     expect(html).toContain('href="/doodles">doodling</a>');
     expect(html).toContain('technology, music, AI, my doodles, and my stories');
@@ -69,12 +72,14 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).not.toContain('science, AI, doodles, and story together');
     expect(html).not.toContain('Polar lineage');
     expect(html).not.toContain('Not a membership test');
-    expect(html).toContain('Your visit · three phases · Players &amp; NPCs welcome');
-    expect(html).toContain('href="/coexist#self-test"');
-    expect(html).toContain('confidential self-test');
+    expect(html).not.toContain('Your visit · three phases · Players &amp; NPCs welcome');
+    expect(html).not.toContain('id="visit"');
+    expect(html).not.toContain('Host layer · horizon · three nested spheres');
+    expect(html).not.toContain('id="soundtrack-prelude"');
+    expect(html).not.toContain('Pages that breathe');
+    expect(html).toContain('band--spirit-of');
     expect(html).toContain('→ ∞^∞');
     expect(html).not.toContain('→ ∞¹³');
-    expect(html).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(html).not.toContain('url=/interfaces/vibelandia-questfest.html');
     expect(html).not.toContain("location.replace('/interfaces/vibelandia-questfest.html')");
     expect(html).toContain('href="/core"');
@@ -100,7 +105,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain('prefers-reduced-motion');
   });
 
-  it('landing autoplays The Shift, Goldilocks Parabola, Return 05 Suite, Movement X with the da Vinci loop', () => {
+  it('landing keeps ambient soundtrack controls without the old breathe / concerto framing section', () => {
     const html = read('interfaces/omniverse-canvas.html');
     const js = read('interfaces/canvas-hero-loop.js');
     const playlist = read('interfaces/canvas-prelude-playlist.js');
@@ -108,9 +113,11 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('id="canvas-hero-score"');
     expect(html).toContain('canvas-prelude-playlist.js');
     expect(html).not.toContain('prelude-session');
-    expect(html).toContain('id="soundtrack-prelude"');
-    expect(html).toContain('/concierto-program');
-    expect(html).toContain('/ship-blog/soundtrack-prelude-pages');
+    expect(html).not.toContain('id="soundtrack-prelude"');
+    expect(html).not.toContain('Pages that breathe');
+    expect(html).not.toContain('/ship-blog/soundtrack-prelude-pages');
+    expect(html).toContain('id="art-welcome"');
+    expect(html).toContain('Welcome to this work of art');
     expect(playlist).toContain(
       'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3'
     );
@@ -157,7 +164,6 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain('canvas-hero-shift');
     expect(read('interfaces/page-soundtrack.js')).toContain('pagehide');
     expect(html).not.toContain('visit-golden-path');
-    expect(html).toContain('/concierto-program');
     expect(html).toContain('page-soundtrack.js');
     expect(read('interfaces/canvas-prelude-playlist.js')).toContain('CANVAS_PRELUDE_PLAYLIST');
     expect(read('media/catalog/catalog.json')).toContain('pl-concierto-prelude');

@@ -44,11 +44,13 @@ describe('Concert program music promo', () => {
     });
   }
 
-  it('art landing uses concert program CTA copy and drops reception/exhibit hero CTAs', () => {
+  it('art landing uses SuperAI art welcome CTA and drops visit-phases / concert-lead hero', () => {
     const html = read('interfaces/omniverse-canvas.html');
-    expect(html).toContain('Liking the music? See Concert Program');
-    expect(html).toContain('/concierto-program');
+    expect(html).toContain('Meet Valet Pru');
+    expect(html).toContain('Welcome to a new work of art');
+    expect(html).not.toContain('Liking the music? See Concert Program');
     expect(html).not.toContain('Phase 2 · Reception');
     expect(html).not.toContain('Explore the exhibit');
+    expect(html).not.toContain('Pages that breathe');
   });
 });

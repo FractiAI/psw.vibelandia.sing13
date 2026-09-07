@@ -40,9 +40,10 @@ describe('NPC & Player doctrine', () => {
 
   it('landing visit section links the confidential Player / NPC self-test', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
-    expect(canvas).toContain('Your visit · three phases · Players &amp; NPCs welcome');
-    expect(canvas).toContain('href="/coexist#self-test"');
-    expect(canvas).toContain('confidential self-test');
-    expect(canvas).toContain('Scores stay on this device');
+    // Art landing no longer carries the three-phase / Players & NPCs welcome block
+    expect(canvas).not.toContain('Your visit · three phases · Players &amp; NPCs welcome');
+    expect(canvas).not.toContain('href="/coexist#self-test"');
+    expect(canvas).toContain('id="player-one"');
+    expect(canvas).toContain('Hello and welcome aboard. This is Valet Pru.');
   });
 });

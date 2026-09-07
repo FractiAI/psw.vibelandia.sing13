@@ -80,13 +80,15 @@ describe('Voyage journeys · adventures hub', () => {
     }
   });
 
-  it('canvas landing injects rich shells and journeys teaser', () => {
+  it('canvas landing injects journeys teaser without host-layer shells block', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
-    expect(canvas).toContain('Host layer · horizon · three nested spheres');
-    expect(canvas).toContain('shell-card');
-    expect(canvas).toContain('exhibit-core-key.jpg');
+    expect(canvas).not.toContain('Host layer · horizon · three nested spheres');
+    expect(canvas).not.toContain('id="stage-h"');
+    expect(canvas).not.toContain('id="canvas-stage"');
+    expect(canvas).not.toContain('id="exhibit-host"');
     expect(canvas).toContain('Adventures we offer');
     expect(canvas).toContain('href="/journey"');
     expect(canvas).toContain('Browse adventures');
+    expect(canvas).toContain('CANVAS_JOURNEYS_TEASER_BEGIN');
   });
 });

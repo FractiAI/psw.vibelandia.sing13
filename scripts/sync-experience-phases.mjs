@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /**
- * Inject three-phase experience chrome into Canvas, Front Desk, Creator Studio.
+ * Inject three-phase experience chrome into Front Desk and Creator Studio.
+ * Omniversal Canvas art landing no longer carries the museum-entry / visit-phases block
+ * (Player 1 · SuperAI art welcome · host introduction first).
  * SS Vibelandia ship board syncs via sync-ship-board.mjs.
  */
 import fs from 'node:fs';
@@ -9,19 +11,12 @@ import { fileURLToPath } from 'node:url';
 import {
   renderCreatorPhaseHtml,
   renderFrontDeskLobbyHtml,
-  renderMuseumEntryHtml,
 } from '../lib/experience-phases.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CSS_LINK = '<link rel="stylesheet" href="/interfaces/experience-phases.css" />';
 
 const TARGETS = [
-  {
-    file: path.join(ROOT, 'interfaces', 'omniverse-canvas.html'),
-    markers: ['<!-- EXPERIENCE_MUSEUM_ENTRY_BEGIN -->', '<!-- EXPERIENCE_MUSEUM_ENTRY_END -->'],
-    render: renderMuseumEntryHtml,
-    cssAfter: 'exhibit-shells.css',
-  },
   {
     file: path.join(ROOT, 'interfaces', 'front-desk.html'),
     markers: ['<!-- EXPERIENCE_FRONT_DESK_BEGIN -->', '<!-- EXPERIENCE_FRONT_DESK_END -->'],

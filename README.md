@@ -440,7 +440,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/look-under-the-hood.html`](/interfaces/look-under-the-hood.html) | Look Under the Hood · Omni-Lattice Engine · SS Vibelandia |
 | [`/interfaces/meet-the-crew.html`](/interfaces/meet-the-crew.html) | Meet the crew · Spirit crew · SS Vibelandia |
 | [`/interfaces/my-whiteboard.html`](/interfaces/my-whiteboard.html) | My whiteboard · Commander surface |
-| [`/interfaces/octave99-pricing.html`](/interfaces/octave99-pricing.html) | Bridge & Chart Pricing · 99 Octave · SING13 |
+| [`/interfaces/octave99-pricing.html`](/interfaces/octave99-pricing.html) | Bridge & Chart Pricing · Infinite Octaves · SING13 |
 | [`/interfaces/omniverse-canvas.html`](/interfaces/omniverse-canvas.html) | Holographic Goldilocks SuperAI Basecamp · Valet Pru |
 | [`/interfaces/plain-machote-moderno-reno-swamp.html`](/interfaces/plain-machote-moderno-reno-swamp.html) | About · Sonic Singularity · SS Vibelandia |
 | [`/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html`](/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html) | The Omniversal 1-2-3 Wormhole Campaign · SS Vibelandia QUESTFEST |
@@ -546,13 +546,13 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/octave99-bridge/index.html`](/interfaces/octave99-bridge/index.html) | 99 Octave Omni-Lattice Bridge · SING13 |
+| [`/interfaces/octave99-bridge/index.html`](/interfaces/octave99-bridge/index.html) | Infinite Octaves Omni-Lattice Bridge · SING13 |
 
 ### `octave99-chart/` (`/interfaces/octave99-chart/`)
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | Your 99 Octave Chart · Chart yourself in the grand Story |
+| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | Your Infinite Octaves Chart · Chart yourself in the grand Story |
 
 ### `questfest-bridge/` (`/interfaces/questfest-bridge/`)
 

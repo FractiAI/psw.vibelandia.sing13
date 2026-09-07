@@ -31,7 +31,7 @@ describe('QUESTFEST live board date + aboard channels', () => {
     expect(html).toContain('/join-the-crew');
     expect(html).toContain('Coexist with AI');
     expect(html).toContain('/coexist');
-    expect(html).toContain('99 Octave chart');
+    expect(html).toContain('Infinite Octaves chart');
     expect(html).toContain('/octave99-chart');
     expect(html).not.toMatch(/<ul class="qf-spirit"/);
     expect(html).not.toContain('Channel VII');

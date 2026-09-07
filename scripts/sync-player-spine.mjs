@@ -84,9 +84,11 @@ if (next) {
   );
 }
 
-if (!html.includes(MARKERS.moreAboard[0])) {
-  next = patchBlock(html, MARKERS.moreAboard, moreBlock);
-  if (next) html = next;
+next = patchBlock(html, MARKERS.moreAboard, moreBlock);
+if (next) {
+  html = next;
+} else if (!html.includes(MARKERS.moreAboard[0])) {
+  // Fallback inject only when markers are missing (legacy HTML).
 }
 
 html = html.replace(

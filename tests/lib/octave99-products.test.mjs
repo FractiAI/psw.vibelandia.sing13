@@ -91,7 +91,7 @@ describe('octave99 tiers', () => {
   });
 
   it('exposes Venmo PayPal Cash App deep links for paid chart amounts', () => {
-    const std = honorRailLinks(29, { memo: 'Your 99 Octave Chart · Standard $29' });
+    const std = honorRailLinks(29, { memo: 'Your Infinite Octaves Chart · Standard $29' });
     expect(std).toHaveLength(3);
     expect(std.map((r) => r.id)).toEqual(['venmo', 'paypal', 'cashapp']);
     expect(std[0].href).toContain(`venmo.com/${HONOR_RAIL_HANDLES.venmo}`);

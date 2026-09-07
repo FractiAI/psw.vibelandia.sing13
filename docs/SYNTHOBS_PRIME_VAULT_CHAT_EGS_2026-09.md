@@ -35,7 +35,7 @@
 
 | Tier | What this document claims | What it does **not** claim |
 |------|---------------------------|------------------------------|
-| **Architecture** | A domain-bounded **closed-form language processor**: sense → retrieve → plan → **articulate (protein-fold compose)** over auto **corpus encode** + hand cells; $\Phi$-recursive resonance; meta-protein tags for nested voyage folds | That this replaces trained LLMs for open-world factual QA; not BYOK; not wet-lab cortex/protein proof; corpus coverage ≠ infinite language |
+| **Architecture** | A domain-bounded **closed-form language processor** over a **recursive protein library**: whitepapers filed (grand narrative → holographic/magnetic/Goldilocks → Infinite Octaves → prime vaults → downstream) into prime vault atoms; sense → retrieve → plan → **fold articulate** | **Not LLM training** (no gradients / weight updates); not open-world QA; not BYOK; not wet-lab cortex/protein proof |
 | **Cost / latency** | Instantiation is **$0.00 training**; replies are closed-form algebraic (sub-millisecond typical on CPU) | Audited GPU invoices from competing vendors |
 | **Awareness** | Deterministic vault ranking + thread-phase memory under catalog grammar (zero-balance filter · $xD\pm yD$ summation talk) | New physics, consciousness proofs, or medical/legal advice |
 | **Guest door** | Free guest UI at `/prime-vault-chat` (and Demonstrations `#chat`) with walk-on email or Lattice seat | Unlimited unauthenticated compute abuse |
@@ -76,11 +76,20 @@ Brain-speech / protein-fold **catalog rhyme** (not wet-lab claim):
 | Plan | Speech-act | Choose answer shape |
 | Articulate | Fold compose | Contact 1–3 atoms into speech (anti-parrot) |
 
-1. **Corpus encode (chain)** — markdown → cells with `atoms[]` + `metaProtein` (`lib/prime-vault-corpus-encode.mjs` · `data/prime-vault-corpus-v0.json`).
-2. **Hand knowledge cells** — demo Miracle-2 cells merged with corpus (`MERGED_CELLS`).
+1. **Protein library encode (chain)** — recursive manifest (`PROTEIN_LIBRARY_MANIFEST` in `lib/prime-vault-corpus-encode.mjs`) files Official Prospectus → holographic/magnetic/Goldilocks → Infinite Octaves → 99/prime vaults → protein/Higgs/bridge/nested-agent companions into `data/prime-vault-corpus-v0.json`. **Encode ≠ training.**
+2. **Hand knowledge cells** — demo Miracle-2 cells merged with library (`MERGED_CELLS`).
 3. **Multi-turn thread phase** — history hashes into Φ resonance.
 4. **Fold articulate** — deterministic compose from residue contacts; OOD refuse.
 5. **Interactive UI** — Demonstrations `#chat` + `/prime-vault-chat`.
+
+### Encode vs LLM training
+
+| | Protein library encode | Cloud LLM training |
+|--|------------------------|--------------------|
+| Mechanism | Deterministic markdown → prime vault atoms | Gradient descent on weights |
+| Cost | **$0.00** | Millions USD talk |
+| Growth | Add docs to manifest + re-run `npm run encode:prime-vault-corpus` | Re-train / fine-tune |
+| Honesty | Domain-bounded filing | Open-world token prediction |
 
 ---
 

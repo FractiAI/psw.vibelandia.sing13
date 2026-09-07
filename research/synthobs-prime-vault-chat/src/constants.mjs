@@ -13,4 +13,4 @@ export const FAIR_EXCHANGE_CLAUSE =
   'Financial grants, institutional funding, or academic utility micro-grants are subject to partial refund or adjustment depending on overall delivery, rigorous implementation, and practical utility, functioning akin to an intellectual performance tip.';
 
 export const HONESTY =
-  'Domain-bounded closed-form language processor · sense→retrieve→plan→fold articulate over prime vaults — $0 training. Prospectus/demo coverage ≠ open-world trained LLM QA; catalog rhyme ≠ wet-lab; application companion, not engine pin.';
+  'Recursive protein-library encode (whitepapers → prime vaults) + closed-form fold articulate — $0 training. Encode ≠ LLM training (no gradients). Domain-bounded ≠ open-world QA; catalog rhyme ≠ wet-lab; application companion, not engine pin.';

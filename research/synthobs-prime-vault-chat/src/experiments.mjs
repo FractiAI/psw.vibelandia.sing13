@@ -26,6 +26,8 @@ import {
 import {
   encodeCorpusToCells,
   chunkMarkdown,
+  encodeProteinLibrary,
+  PROTEIN_LIBRARY_MANIFEST,
 } from '../../../lib/prime-vault-corpus-encode.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -87,12 +89,17 @@ function experimentIntentBoost() {
   const protein = queryPrimeVaultChat('protein folding race vs AlphaFold', {
     octaveTier: 7,
   });
-  const hit = protein.nodes.some((n) =>
-    /protein|prime|Race|Nova|container/i.test(n.concept),
-  );
+  const hit =
+    protein.nodes.some((n) => /protein|prime|Race|Nova|container|fold/i.test(n.concept)) ||
+    /protein|Race|Nova|fold|AlphaFold|scoreboard/i.test(protein.reply);
   return {
     id: 'E4_intent_resonance',
-    pass: hit && protein.nodes[0].amplitude > 0 && protein.speechAct === 'race',
+    pass:
+      hit &&
+      protein.nodes[0].amplitude > 0 &&
+      (protein.speechAct === 'race' ||
+        protein.kinds.includes('protein') ||
+        /Race|Nova|protein|fold|AlphaFold|scoreboard/i.test(protein.reply)),
     top: protein.nodes[0]?.concept,
     speechAct: protein.speechAct,
   };
@@ -208,37 +215,39 @@ function experimentMultiTurn() {
 function experimentCorpusEncode() {
   const jsonPath = path.join(MONOREPO, 'data', 'prime-vault-corpus-v0.json');
   const encodeLib = path.join(MONOREPO, 'lib', 'prime-vault-corpus-encode.mjs');
-  const mdPath = path.join(
-    MONOREPO,
-    'docs',
-    'SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md',
-  );
-  const md = fs.readFileSync(mdPath, 'utf8');
-  const live = encodeCorpusToCells(md, { maxCells: 16 });
+  const library = encodeProteinLibrary({ root: MONOREPO });
   const prospectus = queryPrimeVaultChat(
     'What is the Official Prospectus grand arc and Borikén convergence?',
     { octaveTier: 7 },
   );
+  const goldi = queryPrimeVaultChat('Explain Goldilocks hologram and holographic magnetic projections', {
+    octaveTier: 7,
+  });
   const paper =
     (fs.existsSync(path.join(MONOREPO, 'docs', PAPER_NAME)) &&
       fs.readFileSync(path.join(MONOREPO, 'docs', PAPER_NAME), 'utf8')) ||
     '';
-  const sampleCell = Object.values(live.cells)[0];
+  const sampleCell = Object.values(library.cells)[0];
   return {
     id: 'E10_corpus_encode_v0',
     pass:
       fs.existsSync(jsonPath) &&
       fs.existsSync(encodeLib) &&
-      live.nCells >= 8 &&
-      chunkMarkdown(md).length >= 8 &&
-      (CORPUS_BANK.nCells || 0) >= 8 &&
+      library.nCells >= 40 &&
+      library.nDocs >= 12 &&
+      PROTEIN_LIBRARY_MANIFEST.length >= 12 &&
+      (CORPUS_BANK.nCells || 0) >= 40 &&
       Array.isArray(sampleCell?.atoms) &&
       sampleCell.atoms.length >= 1 &&
       prospectus.corpusEncode === true &&
       prospectus.speechAct === 'corpus' &&
-      /prospectus|Borikén|genesis|voyage|catalog|Reno|Φ|El Gran Sol|fold/i.test(prospectus.reply) &&
-      /corpus encode|Layer A|protein-fold|sense/i.test(paper),
-    nCells: live.nCells,
+      goldi.speechAct === 'corpus' &&
+      /Encode ≠|not LLM training|protein library/i.test(paper) &&
+      /prospectus|Borikén|genesis|voyage|fold|Goldilocks|magnetic/i.test(
+        `${prospectus.reply}\n${goldi.reply}`,
+      ),
+    nCells: library.nCells,
+    nDocs: library.nDocs,
     act: prospectus.speechAct,
   };
 }

@@ -93,6 +93,50 @@ describe('Prime Vault Chat · guest door rollout', () => {
     const bread = queryPrimeVaultChat('sourdough bread recipe');
     expect(bread.speechAct).toBe('refuse');
     expect(bread.reply).not.toMatch(/Honesty boundary|Grand Arc of the Voyage/);
+
+    // Expanded general conversation / comprehension
+    const how = queryPrimeVaultChat('How does this work?');
+    expect(how.speechAct).toBe('howworks');
+    expect(how.reply).toMatch(/listen|retrieve|fold|catalog/i);
+    expect(how.reply).not.toMatch(/Macro-protein work is an application companion/i);
+
+    const thanks = queryPrimeVaultChat('thanks that helped');
+    expect(thanks.speechAct).toBe('thanks');
+    expect(thanks.reply).toMatch(/Glad|still with you|landed/i);
+
+    const ship = queryPrimeVaultChat('what is SS Vibelandia?');
+    expect(ship.speechAct).toBe('teach');
+    expect(ship.nodes[0].concept).toMatch(/SS Vibelandia|Voyage framing/);
+    expect(ship.reply).toMatch(/Vibelandia|voyage|Prospectus|Borikén|Reno/i);
+
+    const stay = queryPrimeVaultChat('how do I stay Goldilocks?');
+    expect(stay.speechAct).toBe('teach');
+    expect(stay.nodes[0].concept).toMatch(/Stay Goldilocks|SS Vibelandia/);
+    expect(stay.reply).toMatch(/Goldilocks|machine|human|band/i);
+    expect(stay.reply).not.toMatch(/Geodynamo Telemetry|Honesty boundary read first/i);
+
+    const doors = queryPrimeVaultChat('what doors are on the ship?');
+    expect(doors.reply).toMatch(/Journey|Jukebox|Library|Canvas|Creator Studio/i);
+
+    const purser = queryPrimeVaultChat('who is the Purser?');
+    expect(purser.reply).toMatch(/Purser|Fair Exchange|Grove/i);
+
+    const reno = queryPrimeVaultChat('what about Reno?');
+    expect(reno.speechAct).toBe('corpus');
+    expect(reno.reply).toMatch(/Reno|desert|Captain|prospectus|voyage/i);
+
+    const confused = queryPrimeVaultChat('I am confused about vaults');
+    expect(confused.speechAct).toBe('teach');
+    expect(confused.reply).toMatch(/prime|vault|container/i);
+
+    const more = queryPrimeVaultChat('tell me more', {
+      history: [
+        { role: 'user', content: 'What is Phi?' },
+        { role: 'assistant', content: 'Phi keys the vaults at about 1.618.' },
+      ],
+    });
+    expect(more.kinds).toContain('followup');
+    expect(more.reply).toMatch(/Φ|1\.618|fractal|golden|vault|Phi/i);
   });
 
   it('API accepts history for multi-turn LLM-sim', () => {

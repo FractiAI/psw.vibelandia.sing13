@@ -332,6 +332,41 @@ function experimentTopicConnection() {
   };
 }
 
+function experimentConversationComprehension() {
+  const how = queryPrimeVaultChat('How does this work?', { octaveTier: 7 });
+  const thanks = queryPrimeVaultChat('thanks that helped', { octaveTier: 7 });
+  const ship = queryPrimeVaultChat('what is SS Vibelandia?', { octaveTier: 7 });
+  const stay = queryPrimeVaultChat('how do I stay Goldilocks?', { octaveTier: 7 });
+  const reno = queryPrimeVaultChat('what about Reno?', { octaveTier: 7 });
+  const more = queryPrimeVaultChat('tell me more', {
+    octaveTier: 7,
+    history: [
+      { role: 'user', content: 'What is Phi?' },
+      { role: 'assistant', content: 'Phi keys the vaults at about 1.618.' },
+    ],
+  });
+  return {
+    id: 'E14_conversation_comprehension',
+    pass:
+      how.speechAct === 'howworks' &&
+      /listen|retrieve|fold/i.test(how.reply) &&
+      !/Macro-protein work is an application companion/i.test(how.reply) &&
+      thanks.speechAct === 'thanks' &&
+      ship.speechAct === 'teach' &&
+      /Vibelandia|voyage|Prospectus/i.test(ship.reply) &&
+      stay.speechAct === 'teach' &&
+      /Goldilocks|machine|human/i.test(stay.reply) &&
+      reno.speechAct === 'corpus' &&
+      /Reno|desert|Captain|prospectus/i.test(reno.reply) &&
+      more.kinds.includes('followup') &&
+      /Φ|1\.618|fractal|vault|Phi/i.test(more.reply),
+    howAct: how.speechAct,
+    shipTop: ship.nodes[0]?.concept,
+    stayTop: stay.nodes[0]?.concept,
+    renoAct: reno.speechAct,
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentPhi(),
@@ -347,6 +382,7 @@ export async function runAllExperiments() {
     experimentLanguageFoldProcessor(),
     experimentLudcrAbilities(),
     experimentTopicConnection(),
+    experimentConversationComprehension(),
   ];
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
   return {

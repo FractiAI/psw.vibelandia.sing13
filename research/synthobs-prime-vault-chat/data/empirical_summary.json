@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T05:03:41.406Z",
+  "generatedAt": "2026-09-07T05:13:55.777Z",
   "experiments": [
     {
       "id": "E1_phi_egs",
@@ -9,19 +9,19 @@
     {
       "id": "E2_semantic_primes",
       "pass": true,
-      "n": 131
+      "n": 137
     },
     {
       "id": "E3_deterministic_reply",
       "pass": true,
-      "latencyMs": 4.073969000000002,
+      "latencyMs": 5.758165000000002,
       "speechAct": "teach"
     },
     {
       "id": "E4_intent_resonance",
       "pass": true,
-      "top": "Macro-protein work engine",
-      "speechAct": "race"
+      "top": "Corpus · protein-folding · Abstract",
+      "speechAct": "contrast"
     },
     {
       "id": "E5_zero_training_cost",
@@ -54,13 +54,13 @@
     {
       "id": "E8_knowledge_cell_bank",
       "pass": true,
-      "n": 20,
-      "merged": 131
+      "n": 26,
+      "merged": 137
     },
     {
       "id": "E9_multiturn_and_ood",
       "pass": true,
-      "followAct": "teach",
+      "followAct": "corpus",
       "oodAct": "refuse"
     },
     {
@@ -79,7 +79,7 @@
         "plan",
         "articulate"
       ],
-      "contacts": 3
+      "contacts": 2
     },
     {
       "id": "E12_ludcr_abilities",
@@ -99,10 +99,18 @@
       "phiTop": "Fractal constant",
       "franceAct": "refuse",
       "breadAct": "refuse"
+    },
+    {
+      "id": "E14_conversation_comprehension",
+      "pass": true,
+      "howAct": "howworks",
+      "shipTop": "SS Vibelandia",
+      "stayTop": "Stay Goldilocks",
+      "renoAct": "corpus"
     }
   ],
-  "n_pass": 13,
-  "n_total": 13,
+  "n_pass": 14,
+  "n_total": 14,
   "all_pass": true,
   "failed": []
 }

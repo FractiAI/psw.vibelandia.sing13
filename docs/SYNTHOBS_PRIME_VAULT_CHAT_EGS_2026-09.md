@@ -72,7 +72,7 @@ Brain-speech / protein-fold **catalog rhyme** (not wet-lab claim):
 | Ability (LUDCR) | Pipeline stage | Role | Honesty tier |
 |-----------------|----------------|------|--------------|
 | **Listen** | Sense | Utterance + thread-phase hash | Operational |
-| **Understand** | Retrieve | Lexical vault contact + Φ tie-break (word-boundary; no brochure dump) | **Catalog** — not open-world comprehension |
+| **Understand** | Retrieve | Lexical vault contact + synonym expand + guest intents (ship/doors/Goldilocks/how-works) + multi-turn topic carry; Φ tie-break; honesty-atom filter | **Catalog** — expanded conversation, still not open-world comprehension |
 | **Decide** | Plan | Speech-act selection | Operational |
 | **Respond** | Articulate (fold) | Compose 1–3 atom contacts | Operational |
 | **Communicate** | Guest chat door | Live thread `/demonstrations#chat` | Operational |

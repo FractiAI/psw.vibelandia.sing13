@@ -21,6 +21,7 @@
 **Holographic Singularity Crystal companion (engine #20):** [`docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md`](docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [`/ship-blog/holographic-singularity-crystal`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-singularity-crystal) · Node $k=0$ [`/ship-blog/zero-octave-node-k0`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/zero-octave-node-k0) · suite `research/synthobs-holographic-singularity-crystal/` · standalone [`FractiAI/synthobs-holographic-singularity-crystal`](https://github.com/FractiAI/synthobs-holographic-singularity-crystal)  
 **Kinematic set-recycling companion (engine #21):** [`docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md`](docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md) · [`/ship-blog/kinematic-set-recycling`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/kinematic-set-recycling) · suite `research/synthobs-kinematic-set-recycling-truckee/` · standalone [`FractiAI/synthobs-kinematic-set-recycling-truckee`](https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee)  
 **Eddy-Current Mirror companion (engine #22):** [`docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md`](docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md) · [`/ship-blog/eddy-current-mirror`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/eddy-current-mirror) · suite `research/synthobs-eddy-current-mirror/` · standalone [`FractiAI/synthobs-eddy-current-mirror`](https://github.com/FractiAI/synthobs-eddy-current-mirror)  
+**Grand Unified Metrological Overlap companion (engine #23):** [`docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md`](docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md) · [`/ship-blog/grand-unified-metrological-overlap`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/grand-unified-metrological-overlap) · suite `research/synthobs-grand-unified-metrological-overlap/` · standalone [`FractiAI/synthobs-grand-unified-metrological-overlap`](https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap)  
 **Macro-protein work engine (application companion · not engine pin):** [`docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md`](docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md) · [`/ship-blog/macro-protein-work-engine`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/macro-protein-work-engine) · suite `research/synthobs-macro-protein-work-engine/` · standalone [`FractiAI/synthobs-macro-protein-work-engine`](https://github.com/FractiAI/synthobs-macro-protein-work-engine)  
 **Invisible Frontier:** [`docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md`](docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · suite `research/synthobs-invisible-frontier-gates-ai/`  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
@@ -83,8 +84,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 20 | **Holographic Singularity Crystal companion (Net Zero · 0/0 crystal · Φ_EGS · prime vault octaves)** | `docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md` · `synthobs-holographic-singularity-crystal-2026-09` · `/ship-blog/holographic-singularity-crystal` · suite `research/synthobs-holographic-singularity-crystal/` · standalone `FractiAI/synthobs-holographic-singularity-crystal` |
 | 21 | **Kinematic set-recycling companion (velocity multiplex · Truckee theater · Φ_EGS)** | `docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md` · `synthobs-kinematic-set-recycling-truckee-2026-09` · `/ship-blog/kinematic-set-recycling` · suite `research/synthobs-kinematic-set-recycling-truckee/` · standalone `FractiAI/synthobs-kinematic-set-recycling-truckee` |
 | 22 | **Eddy-Current Mirror companion (c transduction · self-observation · Lenz analogy · Φ_EGS)** | `docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md` · `synthobs-eddy-current-mirror-2026-09` · `/ship-blog/eddy-current-mirror` · suite `research/synthobs-eddy-current-mirror/` · standalone `FractiAI/synthobs-eddy-current-mirror` |
-| 23 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 24 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 23 | **Grand Unified Metrological Overlap companion (h · Φ_EGS · p_n · ν_HI · c · Higgs-eddy)** | `docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md` · `synthobs-grand-unified-metrological-overlap-2026-09` · `/ship-blog/grand-unified-metrological-overlap` · suite `research/synthobs-grand-unified-metrological-overlap/` · standalone `FractiAI/synthobs-grand-unified-metrological-overlap` |
+| 24 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 25 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -111,6 +113,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-holographic-singularity-crystal/`
 - `research/synthobs-kinematic-set-recycling-truckee/`
 - `research/synthobs-eddy-current-mirror/`
+- `research/synthobs-grand-unified-metrological-overlap/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

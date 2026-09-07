@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-grand-unified-metrological-overlap",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave grand unified metrological overlap · five-constant solver catalog suite (SynthOBS engine companion #23)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

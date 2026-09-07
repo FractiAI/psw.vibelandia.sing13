@@ -343,6 +343,20 @@
         "docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md",
         "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-grand-unified-metrological-overlap",
+      "path": "research/synthobs-grand-unified-metrological-overlap",
+      "github": "https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap",
+      "description": "Grand Unified Metrological Overlap — h · Φ_EGS · primes · ν_HI · c · Higgs-eddy catalog fixtures",
+      "paperIds": [
+        "synthobs-grand-unified-metrological-overlap-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md",
+        "docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md",
+        "docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md"
+      ]
     }
   ]
 }

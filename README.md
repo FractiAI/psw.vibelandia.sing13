@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-07** · **282** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-07** · **283** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -292,6 +292,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Prime-Linear Compression Transform · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest Full Gen is live · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Transfinite Inversion Theorem · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-grand-unified-metrological-overlap-2026-09.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09.html) | Grand Unified Metrological Overlap · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | Higgs Gate · awareness phase coupling · unified edition · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-rhyme-2026-09.html`](/interfaces/blog-holographic-rhyme-2026-09.html) | Holographic Rhyme · Four-Pillar Fractal · Ship blog · SS Vibelandia |

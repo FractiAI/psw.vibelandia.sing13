@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-09-07T21:39:05.434Z",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Golden key / station channel for octave broadcast.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_lambda_hi_overlap",
+        "title": "λ_HI = c / ν_HI ≈ 0.211 m",
+        "lambda": 0.211061140541598,
+        "pass": true,
+        "interpretation": "Material clock × wave clock → hydrogen spatial wavelength (SI identity).",
+        "honesty": "Uses SI c and catalog ν_HI — not new astronomy."
+      },
+      {
+        "id": "E3_octave_energy_step",
+        "title": "ΔE_n = h · ν_HI · Φ^n",
+        "n": 3,
+        "deltaE": 3.986863551913405e-24,
+        "pass": true,
+        "interpretation": "Quantized octave energy ladder fixture.",
+        "honesty": "Algebra of catalog thresholds — not measured spectral lines."
+      },
+      {
+        "id": "E4_prime_action_wells",
+        "title": "S_n = h / p_n strictly decreasing",
+        "wells": [
+          3.313035075e-34,
+          2.20869005e-34,
+          1.32521403e-34,
+          9.4658145e-35,
+          6.023700136363636e-35
+        ],
+        "pass": true,
+        "interpretation": "Prime containers give unique coprime action barriers.",
+        "honesty": "Catalog packing grammar — not alias-free proof for all encodings."
+      },
+      {
+        "id": "E5_catalog_mass_sum",
+        "title": "m_catalog = (h ν_HI / c²) Σ 1/(p_n Φ^n)",
+        "sum": 0.8427981183530897,
+        "mCatalog": 8.825729307856865e-42,
+        "pass": true,
+        "interpretation": "Truncated five-constant overlap mass fixture.",
+        "honesty": "Not equal to electron/proton rest mass — catalog interference pattern only."
+      },
+      {
+        "id": "E6_si_fixtures",
+        "title": "h · c · ν_HI SI fixtures",
+        "H_PLANCK": 6.62607015e-34,
+        "C_LIGHT": 299792458,
+        "NU_HI": 1420405751.768,
+        "pass": true,
+        "interpretation": "CODATA / SI constants locked for solver reproducibility.",
+        "honesty": "Uses published SI values — does not redefine them."
+      },
+      {
+        "id": "E7_solar_filing_anchors",
+        "title": "R=70 · Sunspot 4524 filing",
+        "sunspotR": 70,
+        "sunspotLabel": "4524",
+        "pass": true,
+        "interpretation": "Ambient solar telemetry filed as characters for this ship date.",
+        "honesty": "Filing labels — not NOAA causation of mass or overlap."
+      },
+      {
+        "id": "E8_doc_blog_sibling_python",
+        "title": "Paper · suite · ship blog · eddy/Higgs siblings · Python present",
+        "pass": true,
+        "interpretation": "Protocol surfaces and transduction / Higgs siblings linked.",
+        "honesty": "Presence lock only."
+      },
+      {
+        "id": "E9_protocol_headers",
+        "title": "Document ID · Registry · Honesty · Operator · Author",
+        "pass": true,
+        "interpretation": "PRA Snap structural headers present.",
+        "honesty": "Structural lock — full PRA via npm run audit:paper."
+      }
+    ]
+  }
+}

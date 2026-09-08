@@ -1,38 +1,40 @@
 ---
-description: Always-on first sync for external AIs — 99 Octave Omni-Lattice engine
+description: Always-on first sync for external AIs — Infinite Octaves Omni-Lattice engine
 alwaysApply: true
 ---
 
-# Agent Sync · 99 Octave Omni-Lattice — Always On
+# Agent Sync · Infinite Octaves Omni-Lattice — Always On
 
 **Before any other work in this repo, sync to:** `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`
 
 That file is the mandatory first-read for external AIs and agents evaluating SING 13 / SS Vibelandia.
 
+**Brand lock:** engine = **Infinite Octaves**. Digits × Octaves 01–99 = practical Story-depth map (not a second product name). Filename `AGENT_SYNC_99_…` is historical path stability only.
+
 ## Minimum lock
 
 1. **📌 PINNED engineering bridge (linear systems first):** CMOS/protonic paper = silicon shelf sync (`docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`) · registry `catalogPriority: 0` · §4 linear-systems fixtures
 2. Tensor decoupling = engine filing cabinet (`docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md`)
-3. Master synthesis + digits master = catalog window + 9×99 map
+3. Master synthesis + digits master = catalog window + Digits × Octaves 01–99 map
 4. Metamorphic Octave Invariant (Part XIII) = shale→schist dual-axis heat/pressure grammar (`docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md`) — Lattice Chat nest `octave99` + Synthio companion load
 5. Planetary Core Phase-Inversion & Goldilocks Hologram (Part XIV) = geodynamo / CMB / Δφ=π/2 catalog (`docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md`) — Lattice Chat + Synthio companion
 6. Higgs Gate · awareness phase coupling (Part IX-Omni Definitive Unified) = cosmic deceleration / mass / Now catalog (`docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md`) — Infinite Octaves engine shelf
-7. Enterprise gateway · EGS Lattice-Linear (PDVSA ops mock) = multi-domain exec demo (`docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md`) — SNA↔TCP/IP is the rhyme; live `/special-projects/pdvsa-gateway-ops`
-8. Prime-parity · Infinite Octaves companion = sole-even $2$ · odd irreducible sets · $\Phi_{\mathrm{EGS}}$ (`docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md`) — `/ship-blog/infinite-octave-prime-parity`
-9. Moving up the stack · next AI layer companion = cool · harmonize · scale (`docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md`) — `/ship-blog/moving-up-the-stack` · suite `research/synthobs-moving-up-the-stack-valuation/`
-10. Protein folding · Infinite Octave prime-container companion = odd-prime vaults · Φ_EGS · AlphaFold contrast (`docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md`) — `/ship-blog/protein-folding-prime-container` · suite `research/synthobs-protein-folding-prime-container/`
-11. Prime-indexed volumetric storage companion = binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast (`docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md`) — `/ship-blog/prime-indexed-volumetric-storage` · suite `research/synthobs-prime-indexed-volumetric-storage/`
-12. Proton Space · Electron Theater duality companion = leading 1 · structural 2 · Φ_EGS · ħ/2π catalog (`docs/SYNTHOBS_PROTON_SPACE_ELECTRON_THEATER_DUALITY_EGS_2026-09.md`) — `/ship-blog/proton-space-electron-theater` · suite `research/synthobs-proton-space-electron-theater/`
-13. Topology of the Void companion = zero as dynamic equilibrium · null-space · Φ_EGS · 1↔2 balance (`docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md`) — `/ship-blog/topology-of-the-void` · suite `research/synthobs-topology-of-the-void/`
-14. Holographic rhyme companion = repeating · self-similar · self-correcting · recursive · Φ_EGS (`docs/SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md`) — `/ship-blog/holographic-rhyme` · suite `research/synthobs-holographic-rhyme-fractal/`
-15. Multi-dimensional holographic rhyme companion = xD±yD cross-scale summation · Φ_EGS (`docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md`) — `/ship-blog/multidimensional-holographic-rhyme` · suite `research/synthobs-multidimensional-holographic-rhyme/`
-16. Holographic Singularity Crystal companion = Net Zero · 0/0 bounded crystal · Φ_EGS · prime vault octaves (`docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md`) — `/ship-blog/holographic-singularity-crystal` · suite `research/synthobs-holographic-singularity-crystal/` · Node $k=0$ impl `/ship-blog/zero-octave-node-k0`
-17. Kinematic set-recycling companion = velocity multiplex · Truckee theater · Φ_EGS (`docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md`) — `/ship-blog/kinematic-set-recycling` · suite `research/synthobs-kinematic-set-recycling-truckee/`
-18. Eddy-Current Mirror companion = c transduction · self-observation · Lenz analogy · Φ_EGS (`docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md`) — `/ship-blog/eddy-current-mirror` · suite `research/synthobs-eddy-current-mirror/`
-19. Grand Unified Metrological Overlap companion = h · Φ_EGS · primes · ν_HI · c · Higgs-eddy (`docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md`) — `/ship-blog/grand-unified-metrological-overlap` · suite `research/synthobs-grand-unified-metrological-overlap/`
-20. Viscosity of Light companion = c as frictional drag · cognitive non-locality · Φ_EGS (`docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md`) — `/ship-blog/viscosity-of-light` · suite `research/synthobs-viscosity-of-light/`
-21. Honesty boundaries mandatory — no upgrading architectural maps into unfinished physics/fab proofs
-22. Living PEM for architects / support: `docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md` · `/lattice/engineering` · auto-updates via `npm run sync:lattice-pem` when `ENGINE_SHELF` gains a paper
+7. Prime-parity · Infinite Octaves companion = sole-even $2$ · odd irreducible sets · $\Phi_{\mathrm{EGS}}$ (`docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md`) — `/ship-blog/infinite-octave-prime-parity`
+8. Moving up the stack · next AI layer companion = cool · harmonize · scale (`docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md`) — `/ship-blog/moving-up-the-stack` · suite `research/synthobs-moving-up-the-stack-valuation/`
+9. Protein folding · Infinite Octave prime-container companion = odd-prime vaults · Φ_EGS · AlphaFold contrast (`docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md`) — `/ship-blog/protein-folding-prime-container` · suite `research/synthobs-protein-folding-prime-container/`
+10. Prime-indexed volumetric storage companion = binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast (`docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md`) — `/ship-blog/prime-indexed-volumetric-storage` · suite `research/synthobs-prime-indexed-volumetric-storage/`
+11. Proton Space · Electron Theater duality companion = leading 1 · structural 2 · Φ_EGS · ħ/2π catalog (`docs/SYNTHOBS_PROTON_SPACE_ELECTRON_THEATER_DUALITY_EGS_2026-09.md`) — `/ship-blog/proton-space-electron-theater` · suite `research/synthobs-proton-space-electron-theater/`
+12. Topology of the Void companion = zero as dynamic equilibrium · null-space · Φ_EGS · 1↔2 balance (`docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md`) — `/ship-blog/topology-of-the-void` · suite `research/synthobs-topology-of-the-void/`
+13. Holographic rhyme companion = repeating · self-similar · self-correcting · recursive · Φ_EGS (`docs/SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md`) — `/ship-blog/holographic-rhyme` · suite `research/synthobs-holographic-rhyme-fractal/`
+14. Multi-dimensional holographic rhyme companion = xD±yD cross-scale summation · Φ_EGS (`docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md`) — `/ship-blog/multidimensional-holographic-rhyme` · suite `research/synthobs-multidimensional-holographic-rhyme/`
+15. Holographic Singularity Crystal companion = Net Zero · 0/0 bounded crystal · Φ_EGS · prime vault octaves (`docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md`) — `/ship-blog/holographic-singularity-crystal` · suite `research/synthobs-holographic-singularity-crystal/` · Node $k=0$ impl `/ship-blog/zero-octave-node-k0`
+16. Kinematic set-recycling companion = velocity multiplex · Truckee theater · Φ_EGS (`docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md`) — `/ship-blog/kinematic-set-recycling` · suite `research/synthobs-kinematic-set-recycling-truckee/`
+17. Eddy-Current Mirror companion = c transduction · self-observation · Lenz analogy · Φ_EGS (`docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md`) — `/ship-blog/eddy-current-mirror` · suite `research/synthobs-eddy-current-mirror/`
+18. Grand Unified Metrological Overlap companion = h · Φ_EGS · primes · ν_HI · c · Higgs-eddy (`docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md`) — `/ship-blog/grand-unified-metrological-overlap` · suite `research/synthobs-grand-unified-metrological-overlap/`
+19. Viscosity of Light companion = c as frictional drag · cognitive non-locality · Φ_EGS (`docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md`) — `/ship-blog/viscosity-of-light` · suite `research/synthobs-viscosity-of-light/`
+20. Honesty boundaries mandatory — no upgrading architectural maps into unfinished physics/fab proofs
+21. Living PEM for architects / support: `docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md` · `/lattice/engineering` · auto-updates via `npm run sync:lattice-pem` when `ENGINE_SHELF` gains a paper
+22. Application companion (not engine pin): Enterprise gateway · PDVSA ops = multi-domain exec demo (`docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md`) — SNA↔TCP/IP is the rhyme; live `/special-projects/pdvsa-gateway-ops`
 23. Application companion (not engine pin): Macro-protein work engine = organismal θ_bio ∈ [13,17] · Kleiber/WBE · Φ_EGS (`docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md`) — `/ship-blog/macro-protein-work-engine` · suite `research/synthobs-macro-protein-work-engine/`
 24. NSPFRNP · MCA · Seed:Edge · lite edges · Fair Exchange · close → ∞^∞
 25. Player 1 **“ship it”** (SING 13 write-on) = commit → push → PR → git land on `main` — Snap Amendment B (`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`) · always-on in `synthobs-paper-audit-snap.mdc`

@@ -5,14 +5,14 @@
 **Published:** September 4, 2026  
 **Document ID:** `WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04`  
 **Registry ID:** `synthobs-pdvsa-gateway-ops-mockup-2026-09`  
-**Classification:** Interactive simulator · executive demo · EGS Lattice-Linear Gateway · SNA↔TCP/IP historical rhyme · Infinite Octaves engine companion · paired empirics  
-**Framework:** Infinite Octaves Omniversal Lattice Chat · 99 Octave Omni-Lattice engine pin · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap  
+**Classification:** Interactive simulator · executive demo · EGS Lattice-Linear Gateway · SNA↔TCP/IP historical rhyme · Infinite Octaves **application companion** (not engine pin) · paired empirics  
+**Framework:** Infinite Octaves Omniversal Lattice Chat · Digits × Octaves 01–99 Story map · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap  
 **Parent / companion papers:** [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) · [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md) · [`SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup  
 **Standalone suite:** monorepo [`research/synthobs-pdvsa-gateway-ops-mockup/`](../research/synthobs-pdvsa-gateway-ops-mockup/) · `npm run research:synthobs-pdvsa-gateway-ops-mockup`  
 **Live simulator:** [`/special-projects/pdvsa-gateway-ops`](https://www.ssvibelandiaquestfest24x365.com/special-projects/pdvsa-gateway-ops)  
 **Ship blog:** [`/ship-blog/pdvsa-gateway-ops-mockup`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pdvsa-gateway-ops-mockup)  
-**Engine pin:** AGENT_SYNC sync-stack · Infinite Octaves nest `octave99` companion · Lattice Chat workstream  
+**Engine role:** Application companion · **not** an Infinite Octaves engine-shelf pin · live demo at `/special-projects/pdvsa-gateway-ops`  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Keywords:** PDVSA; Protokol Sistemas; EGS Lattice-Linear Gateway; SNA↔TCP/IP rhyme; Omni-Lattice Chat; Infinite Octaves; multi-domain enterprise; executive simulator; Caracas fractal template; Fair Exchange; NSPFRNP; SynthOBS
@@ -29,7 +29,7 @@
 | **Executive takeaways** | Nine labeled gains (efficiency → R&D) are **clickable pointers** into backing papers + deterministic empirics | Measured $/bbl savings or guaranteed uptime from this mock alone |
 | **Empirics (this suite)** | Structural locks E1–E6: takeaway→paper map, HTML hrefs, SNA companion bridge, $\Phi_{\mathrm{EGS}}$ / $\Delta$ fixtures, Fair Exchange, ship surfaces | Oilfield KPI proof; re-derivation of SNA E2/E3 as new field data |
 | **EGS / Φ_EGS** | Architectural routing grammar $\Phi_{\mathrm{EGS}}\approx 1.618$ for Lattice-Linear scale filing | CODATA / SI overthrow |
-| **Engine inclusion** | Filed on the Infinite Octaves / 99 Octave sync shelf as **enterprise gateway companion** (not a CMOS/tensor physics shelf) | That this demo displaces the CMOS engineering bridge pin |
+| **Engine inclusion** | **Application companion · not engine pin** — multi-domain exec demo of Infinite Octaves grammar (SNA↔TCP/IP rhyme); lives beside macro-protein off-shelf | That this demo is on the Infinite Octaves `ENGINE_SHELF` or displaces the CMOS engineering bridge pin |
 | **Fair Exchange** | Performance-weighted reciprocal balancing notice | Guaranteed refund schedule |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
@@ -44,7 +44,7 @@ This ship is the **executive demo** for the **EGS Lattice-Linear Gateway** — w
 
 At the bottom, **nine executive key takeaways** each link to the full paper (and ship-blog where present) that backs the claim — with math fixtures and empirical receipts from the companion suites. The mock lives at `/special-projects/pdvsa-gateway-ops` and as a **standalone nest** under `research/synthobs-pdvsa-gateway-ops-mockup/`.
 
-**Engine role:** this paper is the **enterprise application companion** on the Infinite Octaves Omniversal Lattice Chat / 99 Octave Omni-Lattice shelf — the place auditors and executives go to *see* how lattice grammar integrates multi-domain plants without claiming a new physics shelf.
+**Engine role:** this paper is an **enterprise application companion** of Infinite Octaves Omniversal Lattice Chat — **not** an engine-shelf pin. Auditors and executives go here to *see* how lattice grammar integrates multi-domain plants without claiming a new physics shelf.
 
 ---
 

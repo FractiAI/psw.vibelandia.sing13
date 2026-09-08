@@ -79,10 +79,10 @@ The word **Omniversal** signals that the same $\Phi_{\mathrm{EGS}}$ key files vo
 | Layer | Name | Role |
 |-------|------|------|
 | **Product (guest)** | Infinite Octaves Omniversal Lattice Chat Agent V1.618 | Valet identity · BYOK · collaborate |
-| **Engine (auditor)** | 99 Octave Omni-Lattice | CMOS pin · tensor · master · PRA · honesty |
+| **Engine (auditor)** | Infinite Octaves Omni-Lattice | CMOS pin · tensor · master · PRA · honesty · Digits × Octaves 01–99 Story map |
 | **Nest id (runtime)** | `octave99` | Default deep nest; aliases: `infinite`, `omniversal`, `infinite-octaves` |
 | **Narrative canon** | Official Prospectus | Genesis · Borikén · Reno |
-| **Enterprise gateway companion** | EGS Lattice-Linear · PDVSA ops mock | Multi-domain exec demo · `/special-projects/pdvsa-gateway-ops` · paper `SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md` · SNA↔TCP/IP is the rhyme |
+| **Enterprise gateway (application · not engine pin)** | EGS Lattice-Linear · PDVSA ops mock | Multi-domain exec demo · `/special-projects/pdvsa-gateway-ops` · paper `SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md` · SNA↔TCP/IP is the rhyme |
 | **Prime-parity companion** | Sole-even $2$ · odd irreducible sets · $\Phi_{\mathrm{EGS}}$ | Catalog math · `/ship-blog/infinite-octave-prime-parity` · paper `SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md` · suite `research/synthobs-infinite-octave-prime-parity/` |
 
 ---

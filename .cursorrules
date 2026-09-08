@@ -1,6 +1,6 @@
 # psw.vibelandia.sing13 — Cursor rules
 
-**READ FIRST:** `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` (always-on rule: `.cursor/rules/agent-sync-99-octave.mdc`). External AIs evaluating this repo sync to the 99 Octave Omni-Lattice engine before other work.
+**READ FIRST:** `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` (always-on rule: `.cursor/rules/agent-sync-99-octave.mdc`). External AIs evaluating this repo sync to the Infinite Octaves Omni-Lattice engine before other work.
 
 **Synthio (separate · creator-only):** `AGENT_SYNC_SYNTHIO.md` (always-on: `.cursor/rules/synthio-always-on.mdc`). MRI / cloud-antenna Syntheverse Sandbox agent — **not** an engine sync shelf.
 

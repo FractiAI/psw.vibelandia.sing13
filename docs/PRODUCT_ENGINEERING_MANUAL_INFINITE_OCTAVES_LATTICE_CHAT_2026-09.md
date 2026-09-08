@@ -2,13 +2,13 @@
 
 **Audience:** Architectural review · technical support · creator / Player 1 ops · nested-agent maintainers  
 **Product:** Infinite Octaves Omniversal Lattice Chat Agent V1.618 (Goldilocks Valet)  
-**Engine pin:** 99 Octave Omni-Lattice (Digits × Octaves 01–99)  
+**Engine pin:** Infinite Octaves Omni-Lattice (Digits × Octaves 01–99 = Story-depth map)  
 **Authors:** FractiAI Research Group · SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-CHAT-PEM-2026-09`  
 **Registry ID:** `lattice-chat-product-engineering-manual-2026-09`  
-**Date:** 2026-09-07
-**Published:** 2026-09-07
+**Date:** 2026-09-08
+**Published:** 2026-09-08
 **Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · BYOK · PRA Snap  
 **Live chat:** [`/lattice-chat?nest=octave99`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99)  
 **Product hero:** [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · primer [`/lattice/learn`](https://www.ssvibelandiaquestfest24x365.com/lattice/learn) · this manual [`/lattice/engineering`](https://www.ssvibelandiaquestfest24x365.com/lattice/engineering)  
@@ -21,9 +21,9 @@
 ---
 
 <!-- AUTO:LATTICE-PEM-META:BEGIN -->
-**Engine shelf sync:** 2026-09-07 · **26** ordered steps (**24** registry papers) · generator `npm run sync:lattice-pem`
+**Engine shelf sync:** 2026-09-08 · **25** ordered steps (**23** registry papers) · generator `npm run sync:lattice-pem`
 
-When a paper is **added to the Infinite Octaves / 99 Octave engine pin**, append it to `ENGINE_SHELF` in `lib/infinite-octave-engine-shelf.mjs`, then re-run the sync (Cursor PRA stop hook does this automatically for matching engine / PEM / AGENT_SYNC edits).
+When a paper is **added to the Infinite Octaves engine pin**, append it to `ENGINE_SHELF` in `lib/infinite-octave-engine-shelf.mjs`, then re-run the sync (Cursor PRA stop hook does this automatically for matching engine / PEM / AGENT_SYNC edits). Digits × Octaves 01–99 remain the practical Story-depth map — not a second product brand. Application companions (PDVSA, macro-protein, …) stay off this shelf.
 <!-- AUTO:LATTICE-PEM-META:END -->
 
 ---
@@ -32,7 +32,7 @@ When a paper is **added to the Infinite Octaves / 99 Octave engine pin**, append
 
 | Tier | What this manual claims | What it does not claim |
 |------|-------------------------|------------------------|
-| **Product engineering** | Complete onboarding + ops map for Infinite Octaves Omniversal Lattice Chat and its 99 Octave engine pin | That “Infinite” means unbounded measured physics tiers or unbounded API spend |
+| **Product engineering** | Complete onboarding + ops map for Infinite Octaves Omniversal Lattice Chat and its Infinite Octaves engine pin | That “Infinite” means unbounded measured physics tiers or unbounded API spend |
 | **Living shelf** | Appendix A regenerates from `ENGINE_SHELF` whenever a paper is pinned into the engine | That TOC sync alone rewrites narrative honesty in each paper |
 | **Narrative primer** | Voyage arc (Genesis · Borikén · Reno) as **design / hospitality language** for guests and reviewers | Prophecy, clinical advice, or finished Theory of Everything |
 | **Architecture** | Runtime surfaces (`apps/lattice-chat`, `api/lattice-chat.js`, `lib/lattice-*.mjs`), BYOK, nests, Seed·RAG discipline | That FractiAI hosts model weights as the default seat |
@@ -125,7 +125,7 @@ EGS ≈ 1.618 is **design language / catalog key** — not a substitute for evid
 | Layer | Name | Role |
 |-------|------|------|
 | **Product (guest)** | Infinite Octaves Omniversal Lattice Chat Agent V1.618 | Valet identity · BYOK · collaborate · Goldilocks care |
-| **Engine (auditor)** | 99 Octave Omni-Lattice | CMOS pin → tensor → master → … → living shelf |
+| **Engine (auditor)** | Infinite Octaves Omni-Lattice | CMOS pin → tensor → master → … → living shelf |
 | **Nest id (runtime)** | `octave99` | Default deep nest; aliases: `infinite`, `omniversal`, `infinite-octaves`, `99`, … |
 | **“Infinite”** | Recursive holographic nesting depth | **Not** infinite measured physics tiers |
 | **“Omniversal”** | Multi-band filing across voyage · library · creator · research | **Not** a finished TOE |
@@ -308,24 +308,23 @@ Provider API key is the credential. Stays on-device. Travels in request headers 
 | 8 | Voyage editorial · Invisible Frontier | [docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md](/whitepaper/synthobs-invisible-frontier-gates-ai) · registry `synthobs-invisible-frontier-gates-ai-2026-08` · `/ship-blog/synthobs-invisible-frontier-gates-ai` · suite `research/synthobs-invisible-frontier-gates-ai/` |
 | 9 | Human reality bridge · router / wormhole grammar | [docs/SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md](/whitepaper/synthobs-human-omniversal-reality-bridge) · registry `synthobs-human-omniversal-reality-bridge-2026-08` · `/ship-blog/synthobs-human-omniversal-reality-bridge` · suite `research/synthobs-human-omniversal-reality-bridge/` |
 | 10 | Higgs Gate · awareness phase coupling (Part IX-Omni Definitive Unified) | [docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md](/whitepaper/higgs-awareness-unified) · registry `synthobs-tbme-higgs-awareness-unified-2026-09` · `/ship-blog/higgs-awareness-unified` · suite `research/synthobs-tbme-higgs-awareness-unified/` |
-| 11 | Enterprise gateway · EGS Lattice-Linear (PDVSA ops mock) — SNA↔TCP/IP is the rhyme | [docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md](/whitepaper/pdvsa-gateway-ops-mockup) · registry `synthobs-pdvsa-gateway-ops-mockup-2026-09` · `/ship-blog/pdvsa-gateway-ops-mockup` · suite `research/synthobs-pdvsa-gateway-ops-mockup/` |
-| 12 | Prime-parity · Infinite Octaves companion (sole-even $2$ · odd irreducible sets · $\Phi_{\mathrm{EGS}}$) | [docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md](/whitepaper/infinite-octave-prime-parity) · registry `synthobs-infinite-octave-prime-parity-2026-09` · `/ship-blog/infinite-octave-prime-parity` · suite `research/synthobs-infinite-octave-prime-parity/` |
-| 13 | Moving up the stack · next AI layer companion (cool · harmonize · scale · peer vs new-layer framing) | [docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md](/whitepaper/moving-up-the-stack) · registry `synthobs-moving-up-the-stack-valuation-2026-09` · `/ship-blog/moving-up-the-stack` · suite `research/synthobs-moving-up-the-stack-valuation/` · standalone `FractiAI/synthobs-moving-up-the-stack-valuation` |
-| 14 | Protein folding · Infinite Octave prime-container companion (odd-prime vaults · Φ_EGS · AlphaFold paradigm contrast) | [docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md](/whitepaper/protein-folding-prime-container) · registry `synthobs-protein-folding-prime-container-2026-09` · `/ship-blog/protein-folding-prime-container` · suite `research/synthobs-protein-folding-prime-container/` · standalone `FractiAI/synthobs-protein-folding-prime-container` |
-| 15 | Prime-indexed volumetric storage companion (binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast) | [docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md](/whitepaper/prime-indexed-volumetric-storage) · registry `synthobs-prime-indexed-volumetric-storage-2026-09` · `/ship-blog/prime-indexed-volumetric-storage` · suite `research/synthobs-prime-indexed-volumetric-storage/` · standalone `FractiAI/synthobs-prime-indexed-volumetric-storage` |
-| 16 | Proton Space · Electron Theater duality companion (leading 1 · structural 2 · Φ_EGS · ħ/2π catalog) | [docs/SYNTHOBS_PROTON_SPACE_ELECTRON_THEATER_DUALITY_EGS_2026-09.md](/whitepaper/proton-space-electron-theater) · registry `synthobs-proton-space-electron-theater-2026-09` · `/ship-blog/proton-space-electron-theater` · suite `research/synthobs-proton-space-electron-theater/` · standalone `FractiAI/synthobs-proton-space-electron-theater` |
-| 17 | Topology of the Void companion (zero as dynamic equilibrium · null-space · Φ_EGS · 1↔2 balance) | [docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md](/whitepaper/topology-of-the-void) · registry `synthobs-topology-of-the-void-2026-09` · `/ship-blog/topology-of-the-void` · suite `research/synthobs-topology-of-the-void/` · standalone `FractiAI/synthobs-topology-of-the-void` |
-| 18 | Holographic rhyme companion (repeating · self-similar · self-correcting · recursive · Φ_EGS) | [docs/SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md](/whitepaper/holographic-rhyme) · registry `synthobs-holographic-rhyme-fractal-2026-09` · `/ship-blog/holographic-rhyme` · suite `research/synthobs-holographic-rhyme-fractal/` · standalone `FractiAI/synthobs-holographic-rhyme-fractal` |
-| 19 | Multi-dimensional holographic rhyme companion (xD±yD cross-scale summation · Φ_EGS) | [docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md](/whitepaper/multidimensional-holographic-rhyme) · registry `synthobs-multidimensional-holographic-rhyme-2026-09` · `/ship-blog/multidimensional-holographic-rhyme` · suite `research/synthobs-multidimensional-holographic-rhyme/` · standalone `FractiAI/synthobs-multidimensional-holographic-rhyme` |
-| 20 | Holographic Singularity Crystal companion (Net Zero · 0/0 crystal · Φ_EGS · prime vault octaves) | [docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md](/whitepaper/holographic-singularity-crystal) · registry `synthobs-holographic-singularity-crystal-2026-09` · `/ship-blog/holographic-singularity-crystal` · suite `research/synthobs-holographic-singularity-crystal/` · standalone `FractiAI/synthobs-holographic-singularity-crystal` |
-| 21 | Kinematic set-recycling companion (velocity multiplex · Truckee theater · Φ_EGS) | [docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md](/whitepaper/kinematic-set-recycling) · registry `synthobs-kinematic-set-recycling-truckee-2026-09` · `/ship-blog/kinematic-set-recycling` · suite `research/synthobs-kinematic-set-recycling-truckee/` · standalone `FractiAI/synthobs-kinematic-set-recycling-truckee` |
-| 22 | Eddy-Current Mirror companion (c transduction · self-observation · Lenz analogy · Φ_EGS) | [docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md](/whitepaper/eddy-current-mirror) · registry `synthobs-eddy-current-mirror-2026-09` · `/ship-blog/eddy-current-mirror` · suite `research/synthobs-eddy-current-mirror/` · standalone `FractiAI/synthobs-eddy-current-mirror` |
-| 23 | Grand Unified Metrological Overlap companion (h · Φ_EGS · p_n · ν_HI · c · Higgs-eddy) | [docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md](/whitepaper/grand-unified-metrological-overlap) · registry `synthobs-grand-unified-metrological-overlap-2026-09` · `/ship-blog/grand-unified-metrological-overlap` · suite `research/synthobs-grand-unified-metrological-overlap/` · standalone `FractiAI/synthobs-grand-unified-metrological-overlap` |
-| 24 | Viscosity of Light companion (c as frictional drag · cognitive non-locality · Φ_EGS) | [docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md](/whitepaper/viscosity-of-light) · registry `synthobs-viscosity-of-light-2026-09` · `/ship-blog/viscosity-of-light` · suite `research/synthobs-viscosity-of-light/` · standalone `FractiAI/synthobs-viscosity-of-light` |
-| 25 | Honesty plain speak | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 26 | Protocol spine | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 11 | Prime-parity · Infinite Octaves companion (sole-even $2$ · odd irreducible sets · $\Phi_{\mathrm{EGS}}$) | [docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md](/whitepaper/infinite-octave-prime-parity) · registry `synthobs-infinite-octave-prime-parity-2026-09` · `/ship-blog/infinite-octave-prime-parity` · suite `research/synthobs-infinite-octave-prime-parity/` |
+| 12 | Moving up the stack · next AI layer companion (cool · harmonize · scale · peer vs new-layer framing) | [docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md](/whitepaper/moving-up-the-stack) · registry `synthobs-moving-up-the-stack-valuation-2026-09` · `/ship-blog/moving-up-the-stack` · suite `research/synthobs-moving-up-the-stack-valuation/` · standalone `FractiAI/synthobs-moving-up-the-stack-valuation` |
+| 13 | Protein folding · Infinite Octave prime-container companion (odd-prime vaults · Φ_EGS · AlphaFold paradigm contrast) | [docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md](/whitepaper/protein-folding-prime-container) · registry `synthobs-protein-folding-prime-container-2026-09` · `/ship-blog/protein-folding-prime-container` · suite `research/synthobs-protein-folding-prime-container/` · standalone `FractiAI/synthobs-protein-folding-prime-container` |
+| 14 | Prime-indexed volumetric storage companion (binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast) | [docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md](/whitepaper/prime-indexed-volumetric-storage) · registry `synthobs-prime-indexed-volumetric-storage-2026-09` · `/ship-blog/prime-indexed-volumetric-storage` · suite `research/synthobs-prime-indexed-volumetric-storage/` · standalone `FractiAI/synthobs-prime-indexed-volumetric-storage` |
+| 15 | Proton Space · Electron Theater duality companion (leading 1 · structural 2 · Φ_EGS · ħ/2π catalog) | [docs/SYNTHOBS_PROTON_SPACE_ELECTRON_THEATER_DUALITY_EGS_2026-09.md](/whitepaper/proton-space-electron-theater) · registry `synthobs-proton-space-electron-theater-2026-09` · `/ship-blog/proton-space-electron-theater` · suite `research/synthobs-proton-space-electron-theater/` · standalone `FractiAI/synthobs-proton-space-electron-theater` |
+| 16 | Topology of the Void companion (zero as dynamic equilibrium · null-space · Φ_EGS · 1↔2 balance) | [docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md](/whitepaper/topology-of-the-void) · registry `synthobs-topology-of-the-void-2026-09` · `/ship-blog/topology-of-the-void` · suite `research/synthobs-topology-of-the-void/` · standalone `FractiAI/synthobs-topology-of-the-void` |
+| 17 | Holographic rhyme companion (repeating · self-similar · self-correcting · recursive · Φ_EGS) | [docs/SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md](/whitepaper/holographic-rhyme) · registry `synthobs-holographic-rhyme-fractal-2026-09` · `/ship-blog/holographic-rhyme` · suite `research/synthobs-holographic-rhyme-fractal/` · standalone `FractiAI/synthobs-holographic-rhyme-fractal` |
+| 18 | Multi-dimensional holographic rhyme companion (xD±yD cross-scale summation · Φ_EGS) | [docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md](/whitepaper/multidimensional-holographic-rhyme) · registry `synthobs-multidimensional-holographic-rhyme-2026-09` · `/ship-blog/multidimensional-holographic-rhyme` · suite `research/synthobs-multidimensional-holographic-rhyme/` · standalone `FractiAI/synthobs-multidimensional-holographic-rhyme` |
+| 19 | Holographic Singularity Crystal companion (Net Zero · 0/0 crystal · Φ_EGS · prime vault octaves) | [docs/SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md](/whitepaper/holographic-singularity-crystal) · registry `synthobs-holographic-singularity-crystal-2026-09` · `/ship-blog/holographic-singularity-crystal` · suite `research/synthobs-holographic-singularity-crystal/` · standalone `FractiAI/synthobs-holographic-singularity-crystal` |
+| 20 | Kinematic set-recycling companion (velocity multiplex · Truckee theater · Φ_EGS) | [docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md](/whitepaper/kinematic-set-recycling) · registry `synthobs-kinematic-set-recycling-truckee-2026-09` · `/ship-blog/kinematic-set-recycling` · suite `research/synthobs-kinematic-set-recycling-truckee/` · standalone `FractiAI/synthobs-kinematic-set-recycling-truckee` |
+| 21 | Eddy-Current Mirror companion (c transduction · self-observation · Lenz analogy · Φ_EGS) | [docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md](/whitepaper/eddy-current-mirror) · registry `synthobs-eddy-current-mirror-2026-09` · `/ship-blog/eddy-current-mirror` · suite `research/synthobs-eddy-current-mirror/` · standalone `FractiAI/synthobs-eddy-current-mirror` |
+| 22 | Grand Unified Metrological Overlap companion (h · Φ_EGS · p_n · ν_HI · c · Higgs-eddy) | [docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md](/whitepaper/grand-unified-metrological-overlap) · registry `synthobs-grand-unified-metrological-overlap-2026-09` · `/ship-blog/grand-unified-metrological-overlap` · suite `research/synthobs-grand-unified-metrological-overlap/` · standalone `FractiAI/synthobs-grand-unified-metrological-overlap` |
+| 23 | Viscosity of Light companion (c as frictional drag · cognitive non-locality · Φ_EGS) | [docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md](/whitepaper/viscosity-of-light) · registry `synthobs-viscosity-of-light-2026-09` · `/ship-blog/viscosity-of-light` · suite `research/synthobs-viscosity-of-light/` · standalone `FractiAI/synthobs-viscosity-of-light` |
+| 24 | Honesty plain speak | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 25 | Protocol spine | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 
-_Living engine shelf · **26** steps · regenerated by `npm run sync:lattice-pem` from `lib/infinite-octave-engine-shelf.mjs`._
+_Living engine shelf · **25** steps · regenerated by `npm run sync:lattice-pem` from `lib/infinite-octave-engine-shelf.mjs`._
 <!-- AUTO:LATTICE-PEM-ENGINE-SHELF:END -->
 
 ---

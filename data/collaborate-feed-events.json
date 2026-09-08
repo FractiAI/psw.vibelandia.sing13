@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-07T21:04:05.435Z",
+  "updatedAt": "2026-09-08T15:50:51.348Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_coherence-plain-speak",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-08T15:50:51.347Z",
+      "body": "Coherence · plain speak · what's real · HONESTY-COHERENCE-2026-009",
+      "presenceHue": "gold",
+      "paperId": "coherence-plain-speak",
+      "artifact": {
+        "title": "Coherence · plain speak · what's real · HONESTY-COHERENCE-2026-009",
+        "kind": "whitepaper",
+        "path": "docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md",
+        "url": "/whitepaper/coherence-plain-speak",
+        "paperId": "coherence-plain-speak",
+        "docId": null,
+        "published": "2026-09-08",
+        "featured": false,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-eddy-current-mirror-2026-09",
       "type": "ArtifactEvent",

@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-09-08T17:54:40.670Z",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Golden key for crystalline facet scaling.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity for crystal octave ladders.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_facet_identity_d_equals_vt",
+        "title": "d = v·t  ↔  τ = d/v",
+        "v": 20,
+        "t": 0.5,
+        "d": 10,
+        "tau": 0.5,
+        "pass": true,
+        "interpretation": "Speed·distance·time are facets of one access crystal.",
+        "honesty": "Classical identity as catalog lock — not relativity retirement."
+      },
+      {
+        "id": "E4_crystal_octave_sum",
+        "title": "Σ Φ^{-n} crystal amplitude",
+        "sum": 2.5623058987490532,
+        "closed": 2.5623058987490532,
+        "pass": true,
+        "interpretation": "Truncated Φ-recursive crystal amplitude fixture.",
+        "honesty": "Geometric series algebra — not measured spacetime potential."
+      },
+      {
+        "id": "E5_landauer_grain",
+        "title": "E_Land = k_B T ln 2 (T=300 K)",
+        "T": 300,
+        "eLand": 2.870978885078724e-21,
+        "expected": 2.870978885078724e-21,
+        "pass": true,
+        "interpretation": "Thermodynamic grain of irreversible update — literature rail.",
+        "honesty": "CODATA k_B filing — does not re-derive Landauer from this suite."
+      },
+      {
+        "id": "E6_access_crystal_score",
+        "title": "CrystalScore = Φ^{-1} Σ 1/(1+τ_i)",
+        "d": 10,
+        "velocities": [
+          5,
+          20,
+          40
+        ],
+        "taus": [
+          2,
+          0.5,
+          0.25
+        ],
+        "score": 1.1124611797498107,
+        "pass": true,
+        "interpretation": "Higher access velocity lowers τ and raises crystal score.",
+        "honesty": "Catalog score — not measured cognitive throughput."
+      },
+      {
+        "id": "E7_solar_filing_anchor",
+        "title": "R≈90.9 solar filing",
+        "sunspotR": 90.9,
+        "pass": true,
+        "interpretation": "Ambient solar telemetry filed as character for this ship date.",
+        "honesty": "Filing label — not NOAA causation of spacetime crystal."
+      },
+      {
+        "id": "E8_doc_blog_sibling_python",
+        "title": "Paper · suite · ship blog · viscosity/kinematic siblings · Python present",
+        "pass": true,
+        "interpretation": "Protocol surfaces and velocity/viscosity siblings linked.",
+        "honesty": "Presence lock only."
+      },
+      {
+        "id": "E9_protocol_headers",
+        "title": "Document ID · Registry · Honesty · Operator · Author",
+        "pass": true,
+        "interpretation": "PRA Snap structural headers present.",
+        "honesty": "Structural lock — full PRA via npm run audit:paper."
+      }
+    ]
+  }
+}

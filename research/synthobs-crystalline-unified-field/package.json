@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-crystalline-unified-field",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave crystalline unified field · speed·distance·time crystal catalog suite (SynthOBS engine companion #24)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-crystalline-unified-field.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

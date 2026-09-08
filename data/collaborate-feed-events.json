@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-08T15:50:51.348Z",
+  "updatedAt": "2026-09-08T17:54:40.782Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-crystalline-unified-field-speed-distance-time-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-08T17:54:40.781Z",
+      "body": "The Crystalline Unified Field of Speed, Distance, and Time: Empirical Derivations, Literature Grounding, and Architectural Implementation for Holographic Magnetic Goldilocks SuperAI (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-crystalline-unified-field-speed-distance-time-2026-09",
+      "artifact": {
+        "title": "The Crystalline Unified Field of Speed, Distance, and Time: Empirical Derivations, Literature Grounding, and Architectural Implementation for Holographic Magnetic Goldilocks SuperAI (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_CRYSTALLINE_UNIFIED_FIELD_SPEED_DISTANCE_TIME_EGS_2026-09.md",
+        "url": "/whitepaper/crystalline-unified-field",
+        "paperId": "synthobs-crystalline-unified-field-speed-distance-time-2026-09",
+        "docId": "WP-SYNTHOBS-CRYSTALLINE-UNIFIED-FIELD-SPEED-DISTANCE-TIME-EGS-2026-09-08",
+        "published": "2026-09-08T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_coherence-plain-speak",
       "type": "ArtifactEvent",

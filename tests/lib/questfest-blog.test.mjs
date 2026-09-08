@@ -30,16 +30,18 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Viscosity of Light; Metrological Overlap; Eddy; Kinematic; Zero-Octave; Singularity Crystal.
-    expect(posts[0].published).toBe('2026-09-07T22:30:00Z');
-    expect(posts[0].id).toBe('synthobs-viscosity-of-light-2026-09');
+    // Newest: Crystalline Unified Field; Viscosity; Metrological Overlap; Eddy; Kinematic; Zero-Octave.
+    expect(posts[0].published).toBe('2026-09-08T18:00:00Z');
+    expect(posts[0].id).toBe(
+      'synthobs-crystalline-unified-field-speed-distance-time-2026-09',
+    );
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-crystalline-unified-field-speed-distance-time-2026-09',
       'synthobs-viscosity-of-light-2026-09',
       'synthobs-grand-unified-metrological-overlap-2026-09',
       'synthobs-eddy-current-mirror-2026-09',
       'synthobs-kinematic-set-recycling-truckee-2026-09',
       'synthobs-zero-octave-node-k0-2026-09',
-      'synthobs-holographic-singularity-crystal-2026-09',
     ]);
   });
 });

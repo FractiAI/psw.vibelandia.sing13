@@ -13,6 +13,7 @@ describe('standalone-suite-manifest', () => {
       'synthio-mri-cloud-antenna',
       'synthio-mri-vs-legacy-perf',
       'synthobs-awareness-vs-brute-force-leverage',
+      'synthobs-crystalline-unified-field',
       'synthobs-eddy-current-mirror',
       'synthobs-grand-unified-metrological-overlap',
       'synthobs-holographic-rhyme-fractal',

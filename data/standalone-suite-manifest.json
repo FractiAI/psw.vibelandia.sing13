@@ -371,6 +371,20 @@
         "docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md",
         "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-crystalline-unified-field",
+      "path": "research/synthobs-crystalline-unified-field",
+      "github": "https://github.com/FractiAI/synthobs-crystalline-unified-field",
+      "description": "Crystalline Unified Field — speed · distance · time crystal · Φ_EGS · Landauer rail catalog fixtures",
+      "paperIds": [
+        "synthobs-crystalline-unified-field-speed-distance-time-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_CRYSTALLINE_UNIFIED_FIELD_SPEED_DISTANCE_TIME_EGS_2026-09.md",
+        "docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md",
+        "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md"
+      ]
     }
   ]
 }

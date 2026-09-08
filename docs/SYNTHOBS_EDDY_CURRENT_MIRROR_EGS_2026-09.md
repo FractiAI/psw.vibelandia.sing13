@@ -11,7 +11,7 @@
 **Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
 **Classification:** Ideational / electromagnetic-analogy **catalog architecture** *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#22** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
+**Engine shelf:** Sync stack step **#20** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
 **Standalone suite:** `research/synthobs-eddy-current-mirror/` · [`FractiAI/synthobs-eddy-current-mirror`](https://github.com/FractiAI/synthobs-eddy-current-mirror) · `npm run research:synthobs-eddy-current-mirror`  
 **Plain note:** [/ship-blog/eddy-current-mirror](https://www.ssvibelandiaquestfest24x365.com/ship-blog/eddy-current-mirror)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06

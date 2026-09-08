@@ -11,7 +11,7 @@
 **Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
 **Classification:** Ideational / relativistic-analogy **catalog architecture** *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#24** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
+**Engine shelf:** Sync stack step **#22** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
 **Standalone suite:** `research/synthobs-viscosity-of-light/` · [`FractiAI/synthobs-viscosity-of-light`](https://github.com/FractiAI/synthobs-viscosity-of-light) · `npm run research:synthobs-viscosity-of-light`  
 **Plain note:** [/ship-blog/viscosity-of-light](https://www.ssvibelandiaquestfest24x365.com/ship-blog/viscosity-of-light)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
@@ -135,7 +135,7 @@ By reframing the speed of light as the frictional slowing of thought *in Infinit
 |-------|-------|
 | Document ID | `WP-SYNTHOBS-VISCOSITY-OF-LIGHT-EGS-2026-09-07` |
 | Registry ID | `synthobs-viscosity-of-light-2026-09` |
-| Engine shelf | **#24** |
+| Engine shelf | **#22** |
 | Suite | `research/synthobs-viscosity-of-light/` |
 | Ship blog | `/ship-blog/viscosity-of-light` |
 | Standalone | `FractiAI/synthobs-viscosity-of-light` |

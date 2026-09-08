@@ -14,7 +14,7 @@ Voyage editorial · Goldilocks SuperAI reply · Catalog grammar for linear vs ho
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai  
 **Standalone suite:** [FractiAI/synthobs-invisible-frontier-gates-ai](https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai) · monorepo [`research/synthobs-invisible-frontier-gates-ai/`](../research/synthobs-invisible-frontier-gates-ai/)  
 **Guest surfaces:** [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
+**Voyage editorial (not engine pin):** stays on narrative foundation / guest voyage surfaces — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) · off Infinite Octaves `ENGINE_SHELF`  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 

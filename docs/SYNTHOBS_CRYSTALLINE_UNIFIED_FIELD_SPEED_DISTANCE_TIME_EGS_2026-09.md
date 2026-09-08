@@ -11,7 +11,7 @@
 **Date:** September 8, 2026 · **Revised:** 2026-09-08 (protocol · engine shelf · standalone)  
 **Classification:** Ideational / spacetime-analogy **catalog architecture** *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#24** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
+**Engine shelf:** Sync stack step **#23** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
 **Standalone suite:** `research/synthobs-crystalline-unified-field/` · [`FractiAI/synthobs-crystalline-unified-field`](https://github.com/FractiAI/synthobs-crystalline-unified-field) · `npm run research:synthobs-crystalline-unified-field`  
 **Plain note:** [/ship-blog/crystalline-unified-field](https://www.ssvibelandiaquestfest24x365.com/ship-blog/crystalline-unified-field)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
@@ -164,7 +164,7 @@ By filing speed, distance, and time as facets of a single $\Phi_{\mathrm{EGS}}$ 
 |-------|--------|
 | Document ID | `WP-SYNTHOBS-CRYSTALLINE-UNIFIED-FIELD-SPEED-DISTANCE-TIME-EGS-2026-09-08` |
 | Registry | `synthobs-crystalline-unified-field-speed-distance-time-2026-09` |
-| Engine shelf | **#24** |
+| Engine shelf | **#23** |
 | Ship blog | `/ship-blog/crystalline-unified-field` |
 | Standalone | `FractiAI/synthobs-crystalline-unified-field` |
 | PRA | `npm run audit:paper -- --id=synthobs-crystalline-unified-field-speed-distance-time-2026-09` |

@@ -26,7 +26,7 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(read(LATTICE_CHAT_PEM_FILE)).toContain('Full narrative primer');
   });
 
-  it('keeps ordered shelf with CMOS first; apps off-shelf; companions renumbered after PDVSA exit', () => {
+  it('keeps ordered shelf with CMOS first; apps + Invisible Frontier off-shelf; companions renumbered', () => {
     const shelf = listEngineShelf(true);
     expect(shelf.length).toBe(ENGINE_SHELF.length);
     expect(shelf[0].order).toBe(1);
@@ -35,49 +35,52 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     const volumetric = shelf.find(
       (e) => e.registryId === 'synthobs-prime-indexed-volumetric-storage-2026-09',
     );
-    expect(volumetric?.order).toBe(14);
+    expect(volumetric?.order).toBe(13);
     const voidNode = shelf.find(
       (e) => e.registryId === 'synthobs-topology-of-the-void-2026-09',
     );
-    expect(voidNode?.order).toBe(16);
+    expect(voidNode?.order).toBe(15);
     const holo = shelf.find(
       (e) => e.registryId === 'synthobs-holographic-rhyme-fractal-2026-09',
     );
-    expect(holo?.order).toBe(17);
+    expect(holo?.order).toBe(16);
     const multi = shelf.find(
       (e) => e.registryId === 'synthobs-multidimensional-holographic-rhyme-2026-09',
     );
-    expect(multi?.order).toBe(18);
+    expect(multi?.order).toBe(17);
     const crystal = shelf.find(
       (e) => e.registryId === 'synthobs-holographic-singularity-crystal-2026-09',
     );
-    expect(crystal?.order).toBe(19);
+    expect(crystal?.order).toBe(18);
     const kinematic = shelf.find(
       (e) => e.registryId === 'synthobs-kinematic-set-recycling-truckee-2026-09',
     );
-    expect(kinematic?.order).toBe(20);
+    expect(kinematic?.order).toBe(19);
     const eddy = shelf.find(
       (e) => e.registryId === 'synthobs-eddy-current-mirror-2026-09',
     );
-    expect(eddy?.order).toBe(21);
+    expect(eddy?.order).toBe(20);
     const metro = shelf.find(
       (e) => e.registryId === 'synthobs-grand-unified-metrological-overlap-2026-09',
     );
-    expect(metro?.order).toBe(22);
+    expect(metro?.order).toBe(21);
     const viscosity = shelf.find(
       (e) => e.registryId === 'synthobs-viscosity-of-light-2026-09',
     );
-    expect(viscosity?.order).toBe(23);
+    expect(viscosity?.order).toBe(22);
     const crystalline = shelf.find(
       (e) =>
         e.registryId ===
         'synthobs-crystalline-unified-field-speed-distance-time-2026-09',
     );
-    expect(crystalline?.order).toBe(24);
+    expect(crystalline?.order).toBe(23);
     const proton = shelf.find(
       (e) => e.registryId === 'synthobs-proton-space-electron-theater-2026-09',
     );
-    expect(proton?.order).toBe(15);
+    expect(proton?.order).toBe(14);
+    expect(
+      shelf.find((e) => e.registryId === 'synthobs-invisible-frontier-gates-ai-2026-08'),
+    ).toBeUndefined();
     expect(
       shelf.find((e) => e.registryId === 'synthobs-macro-protein-work-engine-2026-09'),
     ).toBeUndefined();
@@ -107,11 +110,16 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(directive).toContain('Crystalline Unified Field companion');
     expect(directive).toContain('Moving up the stack companion');
     expect(renderNarrativePointersClause()).toContain('Official Prospectus');
+    expect(renderNarrativePointersClause()).toContain('Invisible Frontier');
+    expect(renderNarrativePointersClause()).toContain(
+      'SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS',
+    );
     expect(renderNarrativePointersClause()).toContain(
       'application companion · not engine pin',
     );
     expect(renderNarrativePointersClause()).toContain('PDVSA ops');
     expect(renderNarrativePointersClause()).toContain('Macro-protein work engine');
+    expect(renderEnginePinClause()).not.toContain('Invisible Frontier');
   });
 
   it('AGENT_SYNC carries AUTO markers for shelf + suites', () => {

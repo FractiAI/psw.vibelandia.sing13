@@ -11,7 +11,7 @@
 **Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
 **Classification:** Environmental / perceptual **catalog architecture** for velocity-multiplexed theaters *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#21** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
+**Engine shelf:** Sync stack step **#19** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
 **Standalone suite:** `research/synthobs-kinematic-set-recycling-truckee/` · [`FractiAI/synthobs-kinematic-set-recycling-truckee`](https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee) · `npm run research:synthobs-kinematic-set-recycling-truckee`  
 **Plain note:** [/ship-blog/kinematic-set-recycling](https://www.ssvibelandiaquestfest24x365.com/ship-blog/kinematic-set-recycling)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06

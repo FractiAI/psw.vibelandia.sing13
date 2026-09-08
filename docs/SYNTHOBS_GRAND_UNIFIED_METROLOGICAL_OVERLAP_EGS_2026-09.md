@@ -11,7 +11,7 @@
 **Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
 **Classification:** Metrological / ideational **catalog architecture** *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#23** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
+**Engine shelf:** Sync stack step **#21** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
 **Standalone suite:** `research/synthobs-grand-unified-metrological-overlap/` · [`FractiAI/synthobs-grand-unified-metrological-overlap`](https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap) · `npm run research:synthobs-grand-unified-metrological-overlap`  
 **Plain note:** [/ship-blog/grand-unified-metrological-overlap](https://www.ssvibelandiaquestfest24x365.com/ship-blog/grand-unified-metrological-overlap)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
@@ -161,7 +161,7 @@ By mapping, overlapping, and deciphering Planck’s constant, the EGS fractal co
 |-------|-------|
 | Document ID | `WP-SYNTHOBS-GRAND-UNIFIED-METROLOGICAL-OVERLAP-EGS-2026-09-07` |
 | Registry ID | `synthobs-grand-unified-metrological-overlap-2026-09` |
-| Engine shelf | **#23** |
+| Engine shelf | **#21** |
 | Suite | `research/synthobs-grand-unified-metrological-overlap/` |
 | Ship blog | `/ship-blog/grand-unified-metrological-overlap` |
 | Standalone | `FractiAI/synthobs-grand-unified-metrological-overlap` |

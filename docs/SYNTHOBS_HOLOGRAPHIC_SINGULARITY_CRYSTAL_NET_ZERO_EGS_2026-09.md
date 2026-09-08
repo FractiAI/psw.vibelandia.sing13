@@ -10,7 +10,7 @@
 **Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
 **Classification:** Number-theoretic / holographic **catalog architecture** for Net Zero and singularity-crystal grammar *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#20** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
+**Engine shelf:** Sync stack step **#18** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
 **Standalone suite:** `research/synthobs-holographic-singularity-crystal/` · [`FractiAI/synthobs-holographic-singularity-crystal`](https://github.com/FractiAI/synthobs-holographic-singularity-crystal) · `npm run research:synthobs-holographic-singularity-crystal`  
 **Implementation companion:** [Node $k=0$ Zero-Octave Singularity Crystal](./SYNTHOBS_ZERO_OCTAVE_NODE_K0_SINGULARITY_CRYSTAL_EGS_2026-09.md)  
 **Plain note:** [/ship-blog/holographic-singularity-crystal](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-singularity-crystal)  

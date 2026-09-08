@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "posts": [
+    {
+      "id": "daily-2026-09-08-synthobs-crystalline-unified-field-speed-distance-time-2026-09",
+      "posted": "2026-09-08",
+      "featured": true,
+      "title": "One crystal. Three faces. Speed · distance · time. (catalog)",
+      "subtitle": "News of the day · Tuesday, September 8",
+      "summary": "v·d·t as Φ≈1.618 crystal facets with Landauer grain. Honesty first: catalog grammar, not spacetime retirement. Fair Exchange tip clause on.",
+      "href": "/ship-blog/crystalline-unified-field",
+      "pill": "TODAY",
+      "docRef": "synthobs-crystalline-unified-field-speed-distance-time-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-07-synthobs-eddy-current-mirror-2026-09",
       "posted": "2026-09-07",

@@ -11,6 +11,7 @@ import {
   buildInviteMailto,
   inviteByEmail,
   listNetworkPeers,
+  listPendingApprovals,
   resetLetsChatNetworkForTests,
 } from '../../lib/lets-chat-network.mjs';
 import { deriveThreadKeyMaterial, encryptLetsChatPlaintext } from '../../lib/lets-chat-crypto.mjs';
@@ -98,6 +99,16 @@ describe('lets-chat-network', () => {
     expect(approved.ok).toBe(true);
     expect(approved.peer.approved).toBe(true);
   });
+
+  it('lists pending approvals for Purser without requiring the live DM', async () => {
+    const seat = await boardLetsChat('pending.row@example.com');
+    const purserId = resolveLetsChatPeerId('valetpru@gmail.com');
+    const pending = await listPendingApprovals(purserId);
+    expect(pending.some((p) => p.peerId === seat.peerId)).toBe(true);
+    await approveGuestByPeerId('valetpru@gmail.com', seat.peerId);
+    const after = await listPendingApprovals(purserId);
+    expect(after.some((p) => p.peerId === seat.peerId)).toBe(false);
+  });
 });
 
 describe('lets-chat-crypto', () => {
@@ -150,6 +161,21 @@ describe('lets-chat-signal', () => {
     await setPresence('lc_peer_a', { dnd: true, label: 'dnd' });
     expect((await snapshotPresence()).lc_peer_a.dnd).toBe(true);
   });
+
+  it('keeps durable chat envelopes beyond the old 90s TTL', async () => {
+    const msg = sanitizeEnvelope({
+      id: 'lc_durable_1',
+      kind: 'msg',
+      fromPeerId: 'lc_peer_a',
+      toPeerId: 'lc_peer_b',
+      threadId: 'lc_peer_a:lc_peer_b',
+      ciphertext: 'cipher_blob',
+    });
+    msg.at = Date.now() - 120_000;
+    await pushEnvelope(msg);
+    const inbox = await pullInbox({ toPeerId: 'lc_peer_b', since: 0 });
+    expect(inbox.some((e) => e.id === 'lc_durable_1')).toBe(true);
+  });
 });
 
 describe('lets-chat surfaces', () => {
@@ -168,6 +194,8 @@ describe('lets-chat surfaces', () => {
     expect(app).not.toContain('lc_…');
     expect(app.toLowerCase()).not.toContain('copy id');
     expect(client).toContain('inviteByEmail');
+    expect(client).toContain('pendingApprovals');
+    expect(client).toContain('ensureThreadApprovalCard');
     expect(client).not.toContain('copyMyId');
     expect(client).not.toContain('lc-my-id');
     expect(intro).toContain('inviting friends by email');

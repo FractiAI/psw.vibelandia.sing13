@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useUnifiedFeed, startCollabDmBridge } from '@/feed/store';
 import { countUnreadDms } from '@/feed/dm';
 import { syncCollaborateDms } from '@/feed/syncCollaborateDms';
+import { syncCollaborateAgent } from '@/feed/syncCollaborateAgent';
 import { applyTabFaviconBadge } from '@/lib/tabFavicon';
 
 /** Floating toast + document title + tab favicon badge when a Collaborate DM is received. */
@@ -19,20 +20,24 @@ export function CollabDmNotifier({
 
   useEffect(() => startCollabDmBridge(), []);
 
-  // Keep Collaborate DMs flowing while on Lattice Chat (not only inside Collaborate).
+  // Keep Collaborate DMs + shared agent flowing while on Lattice Chat (not only inside Collaborate).
   useEffect(() => {
     let cancelled = false;
     const run = () => {
-      if (!cancelled) void syncCollaborateDms();
+      if (cancelled) return;
+      void syncCollaborateDms();
+      void syncCollaborateAgent();
     };
-    run();
-    const id = window.setInterval(run, 12_000);
+    // Defer first poll slightly so first paint is not blocked by sync.
+    const boot = window.setTimeout(run, 400);
+    const id = window.setInterval(run, 8_000);
     const onVis = () => {
       if (document.visibilityState === 'visible') run();
     };
     document.addEventListener('visibilitychange', onVis);
     return () => {
       cancelled = true;
+      window.clearTimeout(boot);
       window.clearInterval(id);
       document.removeEventListener('visibilitychange', onVis);
     };

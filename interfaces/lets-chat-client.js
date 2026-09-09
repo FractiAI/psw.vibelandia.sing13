@@ -18,6 +18,7 @@
     privilege: 'guest',
     peers: [],
     pendingInvites: [],
+    pendingApprovals: [],
     activePeerId: null,
     presence: {},
     dnd: false,
@@ -543,22 +544,23 @@
   }
 
   async function ingestEnvelope(env) {
-    if (state.seenIds.has(env.id)) return;
-    state.seenIds.add(env.id);
-    state.since = Math.max(state.since, env.at || 0);
+    if (!env || !env.id || state.seenIds.has(env.id)) return;
 
     if (env.kind === 'signal') {
       var sigPlain = await decryptPayload(state.myPeerId, env.fromPeerId, env.ciphertext);
-      if (sigPlain) {
-        try {
-          await handleSignal(JSON.parse(sigPlain), env.fromPeerId);
-        } catch (_) {}
-      }
+      if (!sigPlain) return; // do not advance since — retry until TTL
+      state.seenIds.add(env.id);
+      state.since = Math.max(state.since, env.at || 0);
+      try {
+        await handleSignal(JSON.parse(sigPlain), env.fromPeerId);
+      } catch (_) {}
       return;
     }
 
     var plain = await decryptPayload(state.myPeerId, env.fromPeerId, env.ciphertext);
-    if (!plain) return;
+    if (!plain) return; // decrypt miss — keep for next poll; do not burn since
+    state.seenIds.add(env.id);
+    state.since = Math.max(state.since, env.at || 0);
     var peer = state.peers.find(function (p) { return p.id === env.fromPeerId; });
     var msg;
 
@@ -638,13 +640,49 @@
     renderPeers();
   }
 
+  function ensureThreadApprovalCard(peerId) {
+    if (!isPurser() || !peerId) return;
+    var peer = state.peers.find(function (p) { return p.id === peerId; });
+    var pending = (state.pendingApprovals || []).find(function (a) { return a.peerId === peerId; });
+    var needsApprove = Boolean(pending) || (peer && peer.approved === false);
+    if (!needsApprove) return;
+    var tid = threadId(state.myPeerId, peerId);
+    var msgs = getLocalMessages(tid);
+    var hasOpen = msgs.some(function (m) {
+      return m.msgType === 'approval' && !m.approved && (m.guestPeerId === peerId || !m.guestPeerId);
+    });
+    if (hasOpen) return;
+    appendLocalMessage(tid, {
+      id: 'lc_appr_local_' + peerId,
+      msgType: 'approval',
+      text: 'Please approve my Let\'s Chat seat.' + (pending && pending.email ? '\n\nEmail: ' + pending.email : ''),
+      guestPeerId: peerId,
+      guestEmail: pending && pending.email ? pending.email : '',
+      approved: false,
+      mine: false,
+      fromName: (pending && pending.name) || (peer && peer.name) || 'Guest',
+      at: Date.now(),
+    });
+  }
+
   function openThread(peerId) {
     endCall(false);
     state.activePeerId = peerId;
     clearUnread(peerId);
     updatePageTitle();
     var peer = state.peers.find(function (p) { return p.id === peerId; });
-    var name = peer ? peer.name : 'Guest';
+    var pending = (state.pendingApprovals || []).find(function (a) { return a.peerId === peerId; });
+    var name = (peer && peer.name) || (pending && pending.name) || 'Guest';
+    // Ensure pending-approval guests appear in the thread even before roster peer hydrate.
+    if (!peer && pending) {
+      state.peers = state.peers.concat([{
+        id: pending.peerId,
+        name: pending.name || 'Guest',
+        privilege: 'guest',
+        approved: false,
+      }]);
+    }
+    ensureThreadApprovalCard(peerId);
     $('lc-thread-empty').hidden = true;
     $('lc-thread-active').hidden = false;
     $('lc-thread-name').textContent = name;
@@ -663,13 +701,14 @@
     state.privilege = data.privilege || state.privilege || 'guest';
     state.peers = data.peers || [];
     state.pendingInvites = data.pendingInvites || [];
+    state.pendingApprovals = Array.isArray(data.pendingApprovals) ? data.pendingApprovals : [];
     $('lc-me-label').textContent = state.email;
     renderPending();
     renderPeers();
   }
 
   function isPurser() {
-    return state.privilege === 'creator' || state.email === 'valetpru@gmail.com';
+    return state.privilege === 'creator' || state.email === 'valetpru@gmail.com' || state.email === 'espressolico@gmail.com';
   }
 
   function showInviteMsg(text, isErr) {
@@ -708,12 +747,36 @@
     var list = $('lc-pending-list');
     if (!list) return;
     list.innerHTML = '';
-    if (!state.pendingInvites.length) {
-      list.hidden = true;
-      return;
-    }
-    list.hidden = false;
-    state.pendingInvites.forEach(function (inv) {
+    var rows = 0;
+
+    (state.pendingApprovals || []).forEach(function (appr) {
+      rows += 1;
+      var li = document.createElement('li');
+      li.className = 'lc-pending__row';
+      var label = document.createElement('span');
+      label.textContent = (appr.name || 'Guest') + ' asks to come aboard';
+      var approve = document.createElement('button');
+      approve.type = 'button';
+      approve.className = 'lc-pending__accept';
+      approve.textContent = 'Approve';
+      approve.addEventListener('click', function () {
+        void approveGuest(appr.peerId);
+      });
+      var open = document.createElement('button');
+      open.type = 'button';
+      open.className = 'lc-pending__decline';
+      open.textContent = 'Open';
+      open.addEventListener('click', function () {
+        openThread(appr.peerId);
+      });
+      li.appendChild(label);
+      li.appendChild(approve);
+      li.appendChild(open);
+      list.appendChild(li);
+    });
+
+    (state.pendingInvites || []).forEach(function (inv) {
+      rows += 1;
       var li = document.createElement('li');
       li.className = 'lc-pending__row';
       var label = document.createElement('span');
@@ -737,6 +800,8 @@
       li.appendChild(decline);
       list.appendChild(li);
     });
+
+    list.hidden = rows === 0;
   }
 
   async function refreshRoster() {
@@ -771,14 +836,25 @@
       showInviteMsg(data.message || 'Could not approve.', true);
       return;
     }
-    applyRosterPayload(data);
+    if (Array.isArray(data.peers)) state.peers = data.peers;
+    if (Array.isArray(data.pendingApprovals)) state.pendingApprovals = data.pendingApprovals;
+    else state.pendingApprovals = (state.pendingApprovals || []).filter(function (a) { return a.peerId !== peerId; });
+    applyRosterPayload({
+      myPeerId: data.myPeerId || state.myPeerId,
+      privilege: state.privilege,
+      peers: state.peers,
+      pendingInvites: state.pendingInvites,
+      pendingApprovals: state.pendingApprovals,
+    });
     showInviteMsg('Approved — they are welcome aboard.');
     if (state.activePeerId) {
       var tid = threadId(state.myPeerId, state.activePeerId);
       var map = loadHistory();
       if (map[tid]) {
         map[tid].forEach(function (m) {
-          if (m.msgType === 'approval' && m.guestPeerId === peerId) m.approved = true;
+          if (m.msgType === 'approval' && (m.guestPeerId === peerId || m.guestPeerId === state.activePeerId)) {
+            m.approved = true;
+          }
         });
         saveHistory(map);
       }
@@ -902,10 +978,20 @@
     state.presenceTimer = window.setInterval(function () {
       void pushPresence();
       void pullPresence();
+      void refreshRoster().catch(function () {});
     }, 12000);
     void pushPresence();
     void pullPresence();
     void pollInbox();
+    if (!state._visBound) {
+      state._visBound = true;
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'visible') {
+          void pollInbox();
+          void refreshRoster().catch(function () {});
+        }
+      });
+    }
   }
 
   function stopLoops() {

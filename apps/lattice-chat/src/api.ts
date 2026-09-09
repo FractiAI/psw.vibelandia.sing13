@@ -822,7 +822,31 @@ export async function sendLatticeMessage(
   };
 
   const settleSuccess = (data: LatticeResponse) => {
-    if (settled || !awaitingAssistant(threadId)) {
+    if (settled) {
+      store.setSending(false);
+      store.clearPending();
+      return;
+    }
+    const reply = (data.reply || '').trim();
+    const thread = useLatticeStore.getState().threads.find((t) => t.id === threadId);
+    const last = thread?.messages[thread.messages.length - 1];
+    const alreadyHasReply =
+      Boolean(reply) &&
+      Boolean(
+        thread?.messages.some(
+          (m) => m.role === 'assistant' && m.content.trim() === reply,
+        ),
+      );
+
+    // Race harden: if awaiting flipped false without applying, still upsert when we have content.
+    if (!awaitingAssistant(threadId)) {
+      if (reply && !alreadyHasReply && last?.role === 'user') {
+        settled = true;
+        applyAssistantReply(threadId, data, store.modelId, store.agentMode);
+        store.setError(null);
+        store.setSending(false);
+        return;
+      }
       settled = true;
       store.setSending(false);
       store.clearPending();

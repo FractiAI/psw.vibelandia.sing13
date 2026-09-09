@@ -112,12 +112,18 @@ export default async function handler(req, res) {
         return;
       }
       const peers = await L.listNetworkPeers(seat.myPeerId);
+      const pendingApprovals =
+        seat.privilege === 'creator' ||
+        seat.email === L.normalizeEmail(L.LETS_CHAT_PURSER_EMAIL)
+          ? await L.listPendingApprovals(seat.myPeerId)
+          : [];
       res.status(200).json({
         ok: true,
         myPeerId: seat.myPeerId,
         approved: true,
         peer: result.peer,
         peers,
+        pendingApprovals,
       });
       return;
     }
@@ -227,7 +233,7 @@ export default async function handler(req, res) {
           myPeerId: seat.myPeerId,
           envelopes,
           honesty:
-            'Ciphertext relay only — center pipe never holds plaintext. Blob-backed when BLOB_READ_WRITE_TOKEN is set. Envelopes expire in ~90s. Edge clients decrypt locally.',
+            'Ciphertext relay only — center pipe never holds plaintext. Blob-backed when BLOB_READ_WRITE_TOKEN is set. Chat/approval/file envelopes keep ~14 days; call signals expire in ~90s. Edge clients decrypt locally.',
         });
         return;
       }
@@ -269,6 +275,12 @@ export default async function handler(req, res) {
       }
       const peers = await L.listNetworkPeers(seat.myPeerId);
       const pendingInvites = await L.listPendingInvites(seat.myPeerId);
+      const isPurserSeat =
+        seat.privilege === 'creator' ||
+        seat.email === L.normalizeEmail(L.LETS_CHAT_PURSER_EMAIL);
+      const pendingApprovals = isPurserSeat
+        ? await L.listPendingApprovals(seat.myPeerId)
+        : [];
       res.status(200).json({
         ok: true,
         product: L.LETS_CHAT_PRODUCT,
@@ -281,9 +293,10 @@ export default async function handler(req, res) {
         approved: seat.approved,
         peers,
         pendingInvites,
+        pendingApprovals,
         egsFrontalConstant: L.EGS_FRONTAL_CONSTANT,
         honesty:
-          'Personal network only — tap + to invite by email. New guests send an in-app approval DM to the Purser (valetpru). No peer-id UI.',
+          'Personal network only — tap + to invite by email. New guests send an in-app approval DM to the Purser (valetpru). Approve also lists on Purser roster until cleared. Chat envelopes keep ~14 days; call signals ~90s. No peer-id UI.',
       });
       return;
     }

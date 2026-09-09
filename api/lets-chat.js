@@ -1,7 +1,7 @@
 /**
  * Let's Chat · ephemeral guest comms pipe.
  * GET  ?roster=1 — personal network + my Let's Chat id (email header required).
- * POST ?invite=1 — invite by Let's Chat id (lc_*).
+ * POST ?invite=1 — invite by email (mailto draft + pending / auto-link).
  * POST ?invite-accept=1 — accept a pending invite.
  * POST ?invite-decline=1 — decline a pending invite.
  * GET  ?inbox=1&since= — pull ciphertext envelopes for signed-in peer.
@@ -128,7 +128,7 @@ export default async function handler(req, res) {
         res.status(seat.error.status).json({ ok: false, error: seat.error.code, message: seat.error.message });
         return;
       }
-      const result = await L.inviteByPeerId(seat.myPeerId, body?.peerId || body?.toPeerId);
+      const result = await L.inviteByEmail(seat.myPeerId, body?.email || body?.toEmail);
       if (!result.ok) {
         res.status(400).json({ ok: false, error: result.code, message: result.message });
         return;
@@ -283,7 +283,7 @@ export default async function handler(req, res) {
         pendingInvites,
         egsFrontalConstant: L.EGS_FRONTAL_CONSTANT,
         honesty:
-          'Personal network only — tap + to invite by Let\'s Chat id. New guests send an in-app approval DM to the Purser (valetpru). No separate email track.',
+          'Personal network only — tap + to invite by email. New guests send an in-app approval DM to the Purser (valetpru). No peer-id UI.',
       });
       return;
     }
@@ -302,7 +302,7 @@ export default async function handler(req, res) {
           presence: '?presence=1',
         },
         honesty:
-          'Let\'s Chat — board with email; approval is an in-app DM to the Purser (valetpru). Invite by Let\'s Chat id. Fair Exchange · consent-first · predators never welcome.',
+          'Let\'s Chat — board with email; invite by email (mailto intro + /lets-chat link). Approval is an in-app DM to the Purser. Fair Exchange · consent-first · predators never welcome.',
       });
       return;
     }

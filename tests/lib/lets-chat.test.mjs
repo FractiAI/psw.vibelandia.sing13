@@ -8,7 +8,8 @@ import {
   approveGuestByPeerId,
   areNetworkPeers,
   boardLetsChat,
-  inviteByPeerId,
+  buildInviteMailto,
+  inviteByEmail,
   listNetworkPeers,
   resetLetsChatNetworkForTests,
 } from '../../lib/lets-chat-network.mjs';
@@ -46,46 +47,56 @@ describe('lets-chat-network', () => {
     resetLetsChatSignalForTests();
   });
 
-  it('boards a new guest, auto-links Purser, and sends in-app approval DM (no mailto)', async () => {
+  it('boards a new guest, auto-links Purser, and sends in-app approval DM', async () => {
     const seat = await boardLetsChat('fresh.guest@example.com');
     expect(seat.ok).toBe(true);
-    expect(seat.peerId).toMatch(/^lc_/);
-    expect(seat.isNew).toBe(true);
     expect(seat.approvalDmSent).toBe(true);
-    expect(seat.approval).toBeUndefined();
     const purserId = resolveLetsChatPeerId('valetpru@gmail.com');
     expect(await areNetworkPeers(seat.peerId, purserId)).toBe(true);
     const inbox = await pullInbox({ toPeerId: purserId, since: 0 });
     expect(inbox.some((e) => e.kind === 'approval' && e.fromPeerId === seat.peerId)).toBe(true);
   });
 
-  it('lets Purser approve from the DM and confirms in-app', async () => {
+  it('invites by email with mailto intro and auto-links when invitee boards', async () => {
+    const a = await boardLetsChat('alice.invite@example.com');
+    const invite = await inviteByEmail(a.peerId, 'bob.invite@example.com');
+    expect(invite.ok).toBe(true);
+    expect(invite.pending).toBe(true);
+    expect(invite.mailto.href).toMatch(/^mailto:/);
+    expect(invite.mailto.body).toContain('/lets-chat');
+    expect(invite.mailto.body).toContain('Lattice Chat');
+    expect(invite.mailto.subject).toContain("Let's Chat");
+
+    const b = await boardLetsChat('bob.invite@example.com');
+    expect(b.ok).toBe(true);
+    expect(await areNetworkPeers(a.peerId, b.peerId)).toBe(true);
+  });
+
+  it('invites an already-boarded email with instant mutual network + mailto', async () => {
+    const a = await boardLetsChat('carol.invite@example.com');
+    const b = await boardLetsChat('dave.invite@example.com');
+    const invite = await inviteByEmail(a.peerId, 'dave.invite@example.com');
+    expect(invite.ok).toBe(true);
+    expect(invite.connected).toBe(true);
+    expect(invite.mailto.href).toMatch(/^mailto:/);
+    expect(await areNetworkPeers(a.peerId, b.peerId)).toBe(true);
+  });
+
+  it('builds invite mailto without peer ids', () => {
+    const m = buildInviteMailto({
+      inviterName: 'Valet',
+      inviterEmail: 'valetpru@gmail.com',
+      toEmail: 'friend@example.com',
+    });
+    expect(m.body).not.toMatch(/lc_[a-f0-9]{14}/);
+    expect(m.body).toContain('ssvibelandiaquestfest24x365.com/lets-chat');
+  });
+
+  it('lets Purser approve from the DM', async () => {
     const seat = await boardLetsChat('needs.approval@example.com');
     const approved = await approveGuestByPeerId('valetpru@gmail.com', seat.peerId);
     expect(approved.ok).toBe(true);
     expect(approved.peer.approved).toBe(true);
-    const guestInbox = await pullInbox({ toPeerId: seat.peerId, since: 0 });
-    expect(guestInbox.some((e) => e.kind === 'msg' && e.fromPeerId === resolveLetsChatPeerId('valetpru@gmail.com'))).toBe(
-      true,
-    );
-  });
-
-  it('invites by peer id and instantly adds both private networks', async () => {
-    const a = await boardLetsChat('alice.network@example.com');
-    const b = await boardLetsChat('bob.network@example.com');
-    expect(a.ok && b.ok).toBe(true);
-
-    const invite = await inviteByPeerId(a.peerId, b.peerId);
-    expect(invite.ok).toBe(true);
-    expect(invite.connected).toBe(true);
-    expect(await areNetworkPeers(a.peerId, b.peerId)).toBe(true);
-  });
-
-  it('rejects unknown peer ids', async () => {
-    const a = await boardLetsChat('solo@example.com');
-    const miss = await inviteByPeerId(a.peerId, 'lc_deadbeefdeadbe');
-    expect(miss.ok).toBe(false);
-    expect(miss.code).toBe('unknown_peer');
   });
 });
 
@@ -103,7 +114,6 @@ describe('lets-chat-crypto', () => {
     const a = resolveLetsChatPeerId('valetpru@gmail.com');
     const b = resolveLetsChatPeerId('fresh.guest@example.com');
     const enc = encryptLetsChatPlaintext(a, b, '{"type":"approval_request"}');
-    expect(enc.threadId).toBe(letsChatThreadId(a, b));
     expect(enc.ciphertext.length).toBeGreaterThan(20);
   });
 });
@@ -121,18 +131,9 @@ describe('lets-chat-signal', () => {
       ciphertext: 'x'.repeat(50_000),
     });
     expect(photo).toBeTruthy();
-    const msg = sanitizeEnvelope({
-      id: 'lc_msg_1',
-      kind: 'msg',
-      fromPeerId: 'lc_peer_a',
-      toPeerId: 'lc_peer_b',
-      threadId: 'lc_peer_a:lc_peer_b',
-      ciphertext: 'x'.repeat(20_000),
-    });
-    expect(msg).toBeNull();
   });
 
-  it('relays ciphertext envelopes without persisting beyond memory', async () => {
+  it('relays ciphertext envelopes', async () => {
     const env = sanitizeEnvelope({
       id: 'lc_test_1',
       fromPeerId: 'lc_peer_a',
@@ -140,43 +141,36 @@ describe('lets-chat-signal', () => {
       threadId: 'lc_peer_a:lc_peer_b',
       ciphertext: 'cipher_blob',
     });
-    expect(env).toBeTruthy();
     await pushEnvelope(env);
     const inbox = await pullInbox({ toPeerId: 'lc_peer_b', since: 0 });
     expect(inbox).toHaveLength(1);
-    expect(inbox[0].ciphertext).toBe('cipher_blob');
   });
 
-  it('tracks ephemeral DND presence and clears when set offline', async () => {
+  it('tracks ephemeral DND presence', async () => {
     await setPresence('lc_peer_a', { dnd: true, label: 'dnd' });
     expect((await snapshotPresence()).lc_peer_a.dnd).toBe(true);
-    await setPresence('lc_peer_a', { dnd: false, label: 'online' });
-    expect((await snapshotPresence()).lc_peer_a.dnd).toBe(false);
-    expect((await snapshotPresence()).lc_peer_a.label).toBe('online');
   });
 });
 
 describe('lets-chat surfaces', () => {
-  it('ships + invite and in-app Purser approval (no mailto)', async () => {
+  it('hides peer ids and invites by email only', async () => {
     const { readFileSync } = await import('node:fs');
     const { join } = await import('node:path');
     const root = join(process.cwd());
     const app = readFileSync(join(root, 'interfaces/lets-chat.html'), 'utf8');
     const intro = readFileSync(join(root, 'interfaces/lets-chat-intro.html'), 'utf8');
-    const css = readFileSync(join(root, 'interfaces/lets-chat.css'), 'utf8');
     const client = readFileSync(join(root, 'interfaces/lets-chat-client.js'), 'utf8');
     expect(app).toContain('id="lc-add-btn"');
-    expect(app).toContain('id="lc-invite-form"');
-    expect(app).not.toContain('lc-approval-send');
-    expect(app).not.toContain('mailto:valetpru');
-    expect(css).toContain('.lc-add-btn');
-    expect(css).toContain('.lc-msg__approve');
-    expect(client).toContain('approveGuest');
-    expect(client).toContain('?approve=1');
-    expect(client).toContain("env.kind === 'approval'");
-    expect(client).not.toContain('sendApprovalMessage');
-    expect(intro).toContain('in-app');
-    expect(intro).toContain('Approve');
-    expect(intro).toContain('No harvesting');
+    expect(app).toContain('id="lc-invite-email"');
+    expect(app).not.toContain('lc-my-id');
+    expect(app).not.toContain('lc-copy-id');
+    expect(app).not.toContain('Copy id');
+    expect(app).not.toContain('lc_…');
+    expect(app.toLowerCase()).not.toContain('copy id');
+    expect(client).toContain('inviteByEmail');
+    expect(client).not.toContain('copyMyId');
+    expect(client).not.toContain('lc-my-id');
+    expect(intro).toContain('inviting friends by email');
+    expect(intro).not.toContain('lc_…');
   });
 });

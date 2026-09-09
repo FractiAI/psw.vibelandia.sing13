@@ -664,8 +664,6 @@
     state.peers = data.peers || [];
     state.pendingInvites = data.pendingInvites || [];
     $('lc-me-label').textContent = state.email;
-    var idEl = $('lc-my-id');
-    if (idEl) idEl.textContent = state.myPeerId || '—';
     renderPending();
     renderPeers();
   }
@@ -693,7 +691,7 @@
     panel.hidden = !open;
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open) {
-      var input = $('lc-invite-id');
+      var input = $('lc-invite-email');
       if (input) {
         input.focus();
         input.select();
@@ -748,17 +746,21 @@
     return data;
   }
 
-  async function inviteById(peerId) {
-    var data = await apiPost('?invite=1', { peerId: String(peerId || '').trim() });
+  async function inviteByEmail(email) {
+    var data = await apiPost('?invite=1', { email: String(email || '').trim() });
     if (!data.ok) {
       showInviteMsg(data.message || 'Invite failed.', true);
       return;
     }
     applyRosterPayload(data);
-    if (data.alreadyConnected) showInviteMsg('Already in your network.');
-    else if (data.connected || data.accepted) showInviteMsg('Added — you are in each other\'s private networks now.');
-    else showInviteMsg('Invite updated.');
-    var input = $('lc-invite-id');
+    if (data.mailto && data.mailto.href) {
+      window.location.href = data.mailto.href;
+    }
+    if (data.alreadyConnected) showInviteMsg('Already in your network — invite email opened.');
+    else if (data.connected || data.accepted) showInviteMsg('Added to your network — invite email opened.');
+    else if (data.pending) showInviteMsg('Invite email opened — they join your network when they come aboard.');
+    else showInviteMsg('Invite ready.');
+    var input = $('lc-invite-email');
     if (input) input.value = '';
     setInvitePanelOpen(false);
   }
@@ -802,25 +804,6 @@
     }
     applyRosterPayload(data);
     showInviteMsg('Invite declined.');
-  }
-
-  async function copyMyId() {
-    if (!state.myPeerId) return;
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(state.myPeerId);
-      } else {
-        var ta = document.createElement('textarea');
-        ta.value = state.myPeerId;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-      }
-      showInviteMsg('Copied your Let\'s Chat id.');
-    } catch (_) {
-      showInviteMsg('Could not copy — select the id manually.', true);
-    }
   }
 
   async function pushPresence() {
@@ -1016,11 +999,7 @@
 
   $('lc-invite-form').addEventListener('submit', function (ev) {
     ev.preventDefault();
-    void inviteById($('lc-invite-id').value);
-  });
-
-  $('lc-copy-id').addEventListener('click', function () {
-    void copyMyId();
+    void inviteByEmail($('lc-invite-email').value);
   });
 
   $('lc-signout').addEventListener('click', function () {

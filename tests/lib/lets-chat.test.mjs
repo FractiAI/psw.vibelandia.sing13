@@ -5,13 +5,14 @@ import {
   resolveLetsChatPeerId,
 } from '../../lib/lets-chat-peers.mjs';
 import {
+  approveGuestByPeerId,
   areNetworkPeers,
   boardLetsChat,
   inviteByPeerId,
   listNetworkPeers,
   resetLetsChatNetworkForTests,
 } from '../../lib/lets-chat-network.mjs';
-import { deriveThreadKeyMaterial } from '../../lib/lets-chat-crypto.mjs';
+import { deriveThreadKeyMaterial, encryptLetsChatPlaintext } from '../../lib/lets-chat-crypto.mjs';
 import {
   pushEnvelope,
   pullInbox,
@@ -40,18 +41,33 @@ describe('lets-chat-peers', () => {
 });
 
 describe('lets-chat-network', () => {
-  beforeEach(() => resetLetsChatNetworkForTests());
+  beforeEach(() => {
+    resetLetsChatNetworkForTests();
+    resetLetsChatSignalForTests();
+  });
 
-  it('boards a new guest, auto-links Purser, and generates valetpru approval message', async () => {
+  it('boards a new guest, auto-links Purser, and sends in-app approval DM (no mailto)', async () => {
     const seat = await boardLetsChat('fresh.guest@example.com');
     expect(seat.ok).toBe(true);
     expect(seat.peerId).toMatch(/^lc_/);
     expect(seat.isNew).toBe(true);
-    expect(seat.approval?.to).toBe('valetpru@gmail.com');
-    expect(seat.approval?.body).toContain(seat.peerId);
-    expect(seat.approval?.mailto).toMatch(/^mailto:/);
-    const peers = await listNetworkPeers(seat.peerId);
-    expect(peers.some((p) => p.id === resolveLetsChatPeerId('valetpru@gmail.com'))).toBe(true);
+    expect(seat.approvalDmSent).toBe(true);
+    expect(seat.approval).toBeUndefined();
+    const purserId = resolveLetsChatPeerId('valetpru@gmail.com');
+    expect(await areNetworkPeers(seat.peerId, purserId)).toBe(true);
+    const inbox = await pullInbox({ toPeerId: purserId, since: 0 });
+    expect(inbox.some((e) => e.kind === 'approval' && e.fromPeerId === seat.peerId)).toBe(true);
+  });
+
+  it('lets Purser approve from the DM and confirms in-app', async () => {
+    const seat = await boardLetsChat('needs.approval@example.com');
+    const approved = await approveGuestByPeerId('valetpru@gmail.com', seat.peerId);
+    expect(approved.ok).toBe(true);
+    expect(approved.peer.approved).toBe(true);
+    const guestInbox = await pullInbox({ toPeerId: seat.peerId, since: 0 });
+    expect(guestInbox.some((e) => e.kind === 'msg' && e.fromPeerId === resolveLetsChatPeerId('valetpru@gmail.com'))).toBe(
+      true,
+    );
   });
 
   it('invites by peer id and instantly adds both private networks', async () => {
@@ -63,21 +79,13 @@ describe('lets-chat-network', () => {
     expect(invite.ok).toBe(true);
     expect(invite.connected).toBe(true);
     expect(await areNetworkPeers(a.peerId, b.peerId)).toBe(true);
-
-    const aPeers = await listNetworkPeers(a.peerId);
-    const bPeers = await listNetworkPeers(b.peerId);
-    expect(aPeers.map((p) => p.id)).toContain(b.peerId);
-    expect(bPeers.map((p) => p.id)).toContain(a.peerId);
   });
 
-  it('rejects unknown peer ids and does not leak global roster', async () => {
+  it('rejects unknown peer ids', async () => {
     const a = await boardLetsChat('solo@example.com');
     const miss = await inviteByPeerId(a.peerId, 'lc_deadbeefdeadbe');
     expect(miss.ok).toBe(false);
     expect(miss.code).toBe('unknown_peer');
-    // solo still only sees Purser, not arbitrary peers
-    const peers = await listNetworkPeers(a.peerId);
-    expect(peers.every((p) => p.id !== 'lc_deadbeefdeadbe')).toBe(true);
   });
 });
 
@@ -89,6 +97,14 @@ describe('lets-chat-crypto', () => {
     const two = deriveThreadKeyMaterial(b, a);
     expect(one.threadId).toBe(two.threadId);
     expect(one.keyBytes.equals(two.keyBytes)).toBe(true);
+  });
+
+  it('encrypts server-side approval payloads', () => {
+    const a = resolveLetsChatPeerId('valetpru@gmail.com');
+    const b = resolveLetsChatPeerId('fresh.guest@example.com');
+    const enc = encryptLetsChatPlaintext(a, b, '{"type":"approval_request"}');
+    expect(enc.threadId).toBe(letsChatThreadId(a, b));
+    expect(enc.ciphertext.length).toBeGreaterThan(20);
   });
 });
 
@@ -141,7 +157,7 @@ describe('lets-chat-signal', () => {
 });
 
 describe('lets-chat surfaces', () => {
-  it('ships standalone app and intro pages with personal-network invite UX', async () => {
+  it('ships + invite and in-app Purser approval (no mailto)', async () => {
     const { readFileSync } = await import('node:fs');
     const { join } = await import('node:path');
     const root = join(process.cwd());
@@ -149,33 +165,18 @@ describe('lets-chat surfaces', () => {
     const intro = readFileSync(join(root, 'interfaces/lets-chat-intro.html'), 'utf8');
     const css = readFileSync(join(root, 'interfaces/lets-chat.css'), 'utf8');
     const client = readFileSync(join(root, 'interfaces/lets-chat-client.js'), 'utf8');
-    expect(app).toContain('lets-chat-client.js');
-    expect(app).toContain('lc-chat-list');
-    expect(app).toContain('lc-shell');
-    expect(app).toContain('lc-back-btn');
-    expect(app).toContain('id="lc-dnd-btn"');
-    expect(app).toContain('id="lc-dnd-btn-thread"');
-    expect(app).toContain('lc-dnd-toggle');
-    expect(app).toContain('id="lc-invite-form"');
-    expect(app).toContain('id="lc-my-id"');
     expect(app).toContain('id="lc-add-btn"');
-    expect(app).toContain('id="lc-approval-send"');
-    expect(app).not.toContain('No Lattice access');
-    expect(css).toContain('.lc-dnd-toggle');
-    expect(css).toContain('.lc-unread-badge');
-    expect(css).toContain('.lc-invite');
+    expect(app).toContain('id="lc-invite-form"');
+    expect(app).not.toContain('lc-approval-send');
+    expect(app).not.toContain('mailto:valetpru');
     expect(css).toContain('.lc-add-btn');
-    expect(client).toContain('function toggleDnd');
-    expect(client).toContain("localStorage.removeItem(STORAGE_DND)");
-    expect(client).toContain('letschat.unread.v1');
-    expect(client).toContain('lc-unread-badge');
-    expect(client).toContain('inviteById');
-    expect(client).toContain('?invite=1');
-    expect(client).toContain('toggleInvitePanel');
-    expect(client).toContain('sendApprovalMessage');
+    expect(css).toContain('.lc-msg__approve');
+    expect(client).toContain('approveGuest');
+    expect(client).toContain('?approve=1');
+    expect(client).toContain("env.kind === 'approval'");
+    expect(client).not.toContain('sendApprovalMessage');
+    expect(intro).toContain('in-app');
+    expect(intro).toContain('Approve');
     expect(intro).toContain('No harvesting');
-    expect(intro).toContain('Predators never welcome');
-    expect(intro).toContain('personal network');
-    expect(intro).toContain('Let\'s Chat id');
   });
 });

@@ -66,7 +66,8 @@ async function requireSeat(req, body, L) {
     privilege: boarded.privilege,
     isNew: Boolean(boarded.isNew),
     linkedPurser: Boolean(boarded.linkedPurser),
-    approval: boarded.approval || null,
+    approvalDmSent: Boolean(boarded.approvalDmSent),
+    approved: Boolean(boarded.approved),
   };
 }
 
@@ -98,6 +99,29 @@ export default async function handler(req, res) {
       : null;
 
   try {
+    if (url.searchParams.get('approve') === '1' && req.method === 'POST') {
+      const seat = await requireSeat(req, body, L);
+      if (seat.error) {
+        res.status(seat.error.status).json({ ok: false, error: seat.error.code, message: seat.error.message });
+        return;
+      }
+      const result = await L.approveGuestByPeerId(seat.email, body?.peerId || body?.fromPeerId);
+      if (!result.ok) {
+        const status = result.code === 'forbidden' ? 403 : 400;
+        res.status(status).json({ ok: false, error: result.code, message: result.message });
+        return;
+      }
+      const peers = await L.listNetworkPeers(seat.myPeerId);
+      res.status(200).json({
+        ok: true,
+        myPeerId: seat.myPeerId,
+        approved: true,
+        peer: result.peer,
+        peers,
+      });
+      return;
+    }
+
     if (url.searchParams.get('invite') === '1' && req.method === 'POST') {
       const seat = await requireSeat(req, body, L);
       if (seat.error) {
@@ -253,12 +277,13 @@ export default async function handler(req, res) {
         privilege: seat.privilege,
         isNew: seat.isNew,
         linkedPurser: seat.linkedPurser,
-        approval: seat.approval,
+        approvalDmSent: seat.approvalDmSent,
+        approved: seat.approved,
         peers,
         pendingInvites,
         egsFrontalConstant: L.EGS_FRONTAL_CONSTANT,
         honesty:
-          'Personal network only — tap + to invite by Let\'s Chat id (instant mutual add). New guests auto-link to the Purser and generate an approval message to valetpru. Not the Lattice Chat allowlist.',
+          'Personal network only — tap + to invite by Let\'s Chat id. New guests send an in-app approval DM to the Purser (valetpru). No separate email track.',
       });
       return;
     }
@@ -272,11 +297,12 @@ export default async function handler(req, res) {
           invite: '?invite=1',
           inviteAccept: '?invite-accept=1',
           inviteDecline: '?invite-decline=1',
+          approve: '?approve=1',
           inbox: '?inbox=1',
           presence: '?presence=1',
         },
         honesty:
-          'Let\'s Chat — guest-to-guest encrypted comms on a personal network. Board with email. Invite by Let\'s Chat id. Fair Exchange · consent-first · predators never welcome.',
+          'Let\'s Chat — board with email; approval is an in-app DM to the Purser (valetpru). Invite by Let\'s Chat id. Fair Exchange · consent-first · predators never welcome.',
       });
       return;
     }

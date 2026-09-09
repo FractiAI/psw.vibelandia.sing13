@@ -124,18 +124,25 @@
   font-size: 0.72rem;
   color: #8696a0;
 }
-.lc-approval {
-  margin: 0 0 0.55rem;
-  padding: 0.55rem 0.6rem;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 8px;
-  background: rgba(212, 175, 55, 0.08);
+.lc-msg__approve {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0a0f1a;
+  background: #d4af37;
+  border: none;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
 }
-.lc-approval[hidden] { display: none !important; }
-.lc-approval__lead {
-  margin: 0 0 0.45rem;
-  font-size: 0.78rem;
-  color: #fef3c7;
+.lc-msg__approved {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  color: #d4af37;
 }
 
 .lc-id-row {

@@ -327,8 +327,30 @@
               '<p class="olc-mod__meta">' + doneN + ' / ' + ids.length + ' lessons complete</p>' +
               '<div class="olc-mod__links">' + links + '</div>' +
               (firstId
-                ? '<div class="olc-mod__cta"><a class="olc-btn olc-btn--gold" href="#ch/' +
-                  encodeURIComponent(firstId) + '">Start week</a></div>'
+                ? (function () {
+                    var resumeId = firstId;
+                    var ctaLabel = 'Start lessons';
+                    for (var i = 0; i < ids.length; i++) {
+                      if (!isDone(ids[i])) {
+                        resumeId = ids[i];
+                        if (doneN > 0) ctaLabel = 'Continue lessons';
+                        break;
+                      }
+                    }
+                    if (doneN >= ids.length && ids.length) {
+                      resumeId = firstId;
+                      ctaLabel = 'Review lessons';
+                    }
+                    return (
+                      '<div class="olc-mod__cta"><a class="olc-btn olc-btn--gold" href="#ch/' +
+                      encodeURIComponent(resumeId) +
+                      '" data-olc-goto="' +
+                      encodeURIComponent(resumeId) +
+                      '">' +
+                      ctaLabel +
+                      '</a></div>'
+                    );
+                  })()
                 : '') +
             '</article>'
           );
@@ -528,21 +550,45 @@
         bodyEl.focus({ preventScroll: true });
       }
 
-      function go(i, pushHash) {
+      function go(i, opts) {
+        // Legacy: go(i, false) meant "don't rewrite hash" (hashchange path).
+        if (opts === false) opts = { pushHash: false, scroll: true };
+        else if (opts == null || opts === true) opts = {};
+        var pushHash = opts.pushHash !== false;
+        var doScroll = opts.scroll !== false;
+
         renderChapter(i);
-        if (pushHash !== false) {
+        if (pushHash) {
           var id = chapters[current].id;
+          var nextHash = '#ch/' + encodeURIComponent(id);
           if (history.replaceState) {
-            history.replaceState(null, '', '#ch/' + encodeURIComponent(id));
-          } else {
+            history.replaceState(null, '', nextHash);
+          } else if (location.hash !== nextHash) {
             location.hash = 'ch/' + encodeURIComponent(id);
           }
         }
         var reader = document.getElementById('reader');
-        if (reader && pushHash !== false) {
+        if (reader && doScroll) {
           reader.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         closeSidebar();
+      }
+
+      function gotoChapterId(id, opts) {
+        if (!(id in indexById)) return false;
+        go(indexById[id], opts);
+        return true;
+      }
+
+      function chapterIdFromHashHref(href) {
+        var raw = String(href || '');
+        if (raw.charAt(0) === '#') raw = raw.slice(1);
+        if (raw.indexOf('ch/') !== 0) return null;
+        try {
+          return decodeURIComponent(raw.slice(3));
+        } catch (e) {
+          return raw.slice(3);
+        }
       }
 
       function openSidebar() {
@@ -587,11 +633,42 @@
       });
       sidebarClose.addEventListener('click', closeSidebar);
 
+      // Intercept #ch/… links so CTAs always jump to the lesson (even when hash is unchanged)
+      // and always scroll the reader into view. Hash-only navigation used to update the
+      // lesson off-screen — "Start week" looked dead.
+      document.addEventListener('click', function (ev) {
+        var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="#ch/"]') : null;
+        if (!a) return;
+        var id = a.getAttribute('data-olc-goto') || chapterIdFromHashHref(a.getAttribute('href'));
+        if (!id || !(id in indexById)) return;
+        ev.preventDefault();
+        gotoChapterId(id, { pushHash: true, scroll: true });
+      });
+
+      if (startBtn) {
+        startBtn.addEventListener('click', function (ev) {
+          var href = startBtn.getAttribute('href') || '';
+          var id = chapterIdFromHashHref(href);
+          if (id && id in indexById) {
+            ev.preventDefault();
+            gotoChapterId(id, { pushHash: true, scroll: true });
+            return;
+          }
+          if (href === '#reader' || href.indexOf('#reader') === 0) {
+            ev.preventDefault();
+            var resume = null;
+            try { resume = localStorage.getItem(CHAPTER_KEY); } catch (e) { /* ignore */ }
+            if (resume && resume in indexById) gotoChapterId(resume, { pushHash: true, scroll: true });
+            else go(0, { pushHash: true, scroll: true });
+          }
+        });
+      }
+
       window.addEventListener('hashchange', function () {
         var h = (location.hash || '').replace(/^#/, '');
         if (h.indexOf('ch/') === 0) {
           var id = decodeURIComponent(h.slice(3));
-          if (id in indexById) go(indexById[id], false);
+          if (id in indexById) go(indexById[id], { pushHash: false, scroll: true });
         }
       });
 

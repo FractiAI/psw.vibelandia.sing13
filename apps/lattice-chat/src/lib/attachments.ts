@@ -25,6 +25,7 @@ const TEXT_DOC_EXT = new Set([
   'toml',
   'svg',
   'log',
+  'pdf',
 ]);
 
 export type LatticeAttachment = {
@@ -37,6 +38,15 @@ export type LatticeAttachment = {
   previewUrl?: string;
 };
 
+function isPdfFile(name: string, mime: string): boolean {
+  if (/^application\/pdf$/i.test(mime)) return true;
+  const ext = String(name || '')
+    .split('.')
+    .pop()
+    ?.toLowerCase();
+  return ext === 'pdf';
+}
+
 export function guessAttachmentKind(name: string, mime: string): 'image' | 'doc' {
   if (/^image\//i.test(mime)) return 'image';
   const ext = String(name || '')
@@ -45,11 +55,12 @@ export function guessAttachmentKind(name: string, mime: string): 'image' | 'doc'
     ?.toLowerCase();
   if (ext && TEXT_DOC_EXT.has(ext)) return 'doc';
   if (/^text\//i.test(mime) || /json|xml|javascript|typescript/i.test(mime)) return 'doc';
+  if (/^application\/pdf$/i.test(mime)) return 'doc';
   return 'doc';
 }
 
 const ACCEPT =
-  'image/png,image/jpeg,image/gif,image/webp,.png,.jpg,.jpeg,.gif,.webp,.txt,.md,.markdown,.csv,.tsv,.json,.jsonl,.html,.htm,.xml,.css,.js,.mjs,.ts,.tsx,.jsx,.py,.yaml,.yml,.toml,.svg,.log';
+  'image/png,image/jpeg,image/gif,image/webp,.png,.jpg,.jpeg,.gif,.webp,.txt,.md,.markdown,.csv,.tsv,.json,.jsonl,.html,.htm,.xml,.css,.js,.mjs,.ts,.tsx,.jsx,.py,.yaml,.yml,.toml,.svg,.log,.pdf,application/pdf';
 
 export function latticeAttachAccept(): string {
   return ACCEPT;
@@ -71,6 +82,32 @@ function readAsText(file: File): Promise<string> {
     reader.onerror = () => reject(reader.error || new Error('read failed'));
     reader.readAsText(file);
   });
+}
+
+/** Edge-only PDF text extract (pdf.js). Scanned/image-only PDFs may yield empty text. */
+async function extractPdfText(file: File): Promise<string> {
+  const pdfjs = await import('pdfjs-dist');
+  const workerSrc = (await import('pdfjs-dist/build/pdf.worker.min.mjs?url')).default;
+  pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
+
+  const data = new Uint8Array(await file.arrayBuffer());
+  const doc = await pdfjs.getDocument({ data, useSystemFonts: true }).promise;
+  const pages: string[] = [];
+  const maxPages = Math.min(doc.numPages, 40);
+  for (let i = 1; i <= maxPages; i += 1) {
+    const page = await doc.getPage(i);
+    const content = await page.getTextContent();
+    const line = content.items
+      .map((item) => ('str' in item ? String(item.str || '') : ''))
+      .join(' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (line) pages.push(line);
+  }
+  if (doc.numPages > maxPages) {
+    pages.push(`[…PDF truncated after ${maxPages} pages for Goldilocks size…]`);
+  }
+  return pages.join('\n\n').trim();
 }
 
 /** Read guest files into attach payloads (edge-only; never stored server-side). */
@@ -99,6 +136,20 @@ export async function readLatticeFiles(files: FileList | File[]): Promise<{
           kind: 'image',
           dataBase64,
           previewUrl: URL.createObjectURL(file),
+        });
+      } else if (isPdfFile(file.name, mime)) {
+        const text = await extractPdfText(file);
+        if (!text.trim()) {
+          errors.push(
+            `${file.name}: no extractable text (scanned/image-only PDF). Paste text or use a text PDF.`,
+          );
+          continue;
+        }
+        attachments.push({
+          name: file.name,
+          mime: 'application/pdf',
+          kind: 'doc',
+          text: text.slice(0, 120_000),
         });
       } else {
         const text = await readAsText(file);

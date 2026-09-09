@@ -32,6 +32,22 @@ describe('lattice-attachments', () => {
     expect(folded).toContain('plan.txt');
   });
 
+  it('normalizes and folds PDF text docs', () => {
+    const list = normalizeLatticeAttachments([
+      {
+        name: 'deck.pdf',
+        mime: 'application/pdf',
+        kind: 'doc',
+        text: 'Goldilocks voyage abstract',
+      },
+    ]);
+    expect(list).toHaveLength(1);
+    expect(list[0].mime).toBe('application/pdf');
+    const folded = foldAttachmentsIntoMessage('Summarize', list);
+    expect(folded).toContain('deck.pdf');
+    expect(folded).toContain('Goldilocks voyage abstract');
+  });
+
   it('folds Cursor-capable images as vision, not a Claude-only stub', () => {
     const folded = foldAttachmentsIntoMessage(
       'Use this poster',

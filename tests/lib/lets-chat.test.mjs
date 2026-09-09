@@ -2,9 +2,17 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import {
   EGS_FRONTAL_CONSTANT,
   letsChatThreadId,
-  listLetsChatPeers,
   resolveLetsChatPeerId,
 } from '../../lib/lets-chat-peers.mjs';
+import {
+  acceptInvite,
+  areNetworkPeers,
+  boardLetsChat,
+  inviteByPeerId,
+  listNetworkPeers,
+  listPendingInvites,
+  resetLetsChatNetworkForTests,
+} from '../../lib/lets-chat-network.mjs';
 import { deriveThreadKeyMaterial } from '../../lib/lets-chat-crypto.mjs';
 import {
   pushEnvelope,
@@ -16,27 +24,60 @@ import {
 } from '../../lib/lets-chat-signal.mjs';
 
 describe('lets-chat-peers', () => {
-  it('resolves stable peer ids for creators and guests', () => {
+  it('resolves stable peer ids for any valid email (not Lattice allowlist)', () => {
     expect(resolveLetsChatPeerId('valetpru@gmail.com')).toMatch(/^lc_[a-f0-9]{14}$/);
-    expect(resolveLetsChatPeerId('danielarifriedman@gmail.com')).toMatch(/^lc_/);
-    expect(resolveLetsChatPeerId('not-a-seat@example.com')).toBeNull();
-  });
-
-  it('lists allowlisted peers including creators', () => {
-    const peers = listLetsChatPeers();
-    expect(peers.length).toBeGreaterThanOrEqual(2);
-    expect(peers.some((p) => p.email === 'valetpru@gmail.com')).toBe(true);
-    expect(peers.some((p) => p.email === 'danielarifriedman@gmail.com')).toBe(true);
+    expect(resolveLetsChatPeerId('brand-new-guest@example.com')).toMatch(/^lc_/);
+    expect(resolveLetsChatPeerId('not-an-email')).toBeNull();
   });
 
   it('uses order-independent thread ids', () => {
     const a = resolveLetsChatPeerId('valetpru@gmail.com');
-    const b = resolveLetsChatPeerId('danielarifriedman@gmail.com');
+    const b = resolveLetsChatPeerId('brand-new-guest@example.com');
     expect(letsChatThreadId(a, b)).toBe(letsChatThreadId(b, a));
   });
 
   it('exports EGS frontal constant near phi', () => {
     expect(Number(EGS_FRONTAL_CONSTANT)).toBeCloseTo(1.618, 3);
+  });
+});
+
+describe('lets-chat-network', () => {
+  beforeEach(() => resetLetsChatNetworkForTests());
+
+  it('boards a new email without Lattice grant and starts with empty network', async () => {
+    const seat = await boardLetsChat('fresh.guest@example.com');
+    expect(seat.ok).toBe(true);
+    expect(seat.peerId).toMatch(/^lc_/);
+    expect(await listNetworkPeers(seat.peerId)).toEqual([]);
+  });
+
+  it('invites by peer id, keeps roster personal, and connects on accept', async () => {
+    const a = await boardLetsChat('alice.network@example.com');
+    const b = await boardLetsChat('bob.network@example.com');
+    expect(a.ok && b.ok).toBe(true);
+
+    const invite = await inviteByPeerId(a.peerId, b.peerId);
+    expect(invite.ok).toBe(true);
+    expect(invite.pending).toBe(true);
+    expect(await listNetworkPeers(a.peerId)).toEqual([]);
+    expect(await listPendingInvites(b.peerId)).toHaveLength(1);
+
+    const accepted = await acceptInvite(b.peerId, a.peerId);
+    expect(accepted.ok).toBe(true);
+    expect(await areNetworkPeers(a.peerId, b.peerId)).toBe(true);
+
+    const aPeers = await listNetworkPeers(a.peerId);
+    const bPeers = await listNetworkPeers(b.peerId);
+    expect(aPeers.map((p) => p.id)).toEqual([b.peerId]);
+    expect(bPeers.map((p) => p.id)).toEqual([a.peerId]);
+  });
+
+  it('rejects unknown peer ids and does not leak global roster', async () => {
+    const a = await boardLetsChat('solo@example.com');
+    const miss = await inviteByPeerId(a.peerId, 'lc_deadbeefdeadbe');
+    expect(miss.ok).toBe(false);
+    expect(miss.code).toBe('unknown_peer');
+    expect(await listNetworkPeers(a.peerId)).toEqual([]);
   });
 });
 
@@ -100,7 +141,7 @@ describe('lets-chat-signal', () => {
 });
 
 describe('lets-chat surfaces', () => {
-  it('ships standalone app and intro pages', async () => {
+  it('ships standalone app and intro pages with personal-network invite UX', async () => {
     const { readFileSync } = await import('node:fs');
     const { join } = await import('node:path');
     const root = join(process.cwd());
@@ -115,13 +156,21 @@ describe('lets-chat surfaces', () => {
     expect(app).toContain('id="lc-dnd-btn"');
     expect(app).toContain('id="lc-dnd-btn-thread"');
     expect(app).toContain('lc-dnd-toggle');
+    expect(app).toContain('id="lc-invite-form"');
+    expect(app).toContain('id="lc-my-id"');
+    expect(app).not.toContain('No Lattice access');
     expect(css).toContain('.lc-dnd-toggle');
     expect(css).toContain('.lc-unread-badge');
+    expect(css).toContain('.lc-invite');
     expect(client).toContain('function toggleDnd');
     expect(client).toContain("localStorage.removeItem(STORAGE_DND)");
     expect(client).toContain('letschat.unread.v1');
     expect(client).toContain('lc-unread-badge');
+    expect(client).toContain('inviteById');
+    expect(client).toContain('?invite=1');
     expect(intro).toContain('No harvesting');
     expect(intro).toContain('Predators never welcome');
+    expect(intro).toContain('personal network');
+    expect(intro).toContain('Let\'s Chat id');
   });
 });

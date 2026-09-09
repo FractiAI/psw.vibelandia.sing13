@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0c1628" />
   <title>Let's Chat · SS Vibelandia</title>
-  <meta name="description" content="Registered guest-to-guest encrypted chat on SS Vibelandia. No harvesting. Consent-first. Do Not Disturb." />
+  <meta name="description" content="Personal-network guest chat on SS Vibelandia. Board with email. Invite by Let's Chat id. No harvesting. Consent-first." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lets-chat" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,13 +28,13 @@
   <main class="lc-app" id="lc-app">
     <section class="lc-gate" id="lc-gate" aria-labelledby="lc-gate-h">
       <h1 id="lc-gate-h">Let's Chat</h1>
-      <p class="lc-gate__lead">Registered guests only. Enter the email the Purser seated for you.</p>
+      <p class="lc-gate__lead">Enter your email to come aboard. You only see people in your personal network — invite them with a Let's Chat id.</p>
       <form id="lc-gate-form" class="lc-gate__form">
         <label for="lc-email">Email</label>
         <input id="lc-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
         <button type="submit" class="lc-btn lc-btn--send">Come aboard</button>
       </form>
-      <p class="lc-gate__hint">No seat yet? <a href="mailto:valetpru@gmail.com?subject=Let's%20Chat%20guest%20seat">Email the Purser</a></p>
+      <p class="lc-gate__hint">New here? Board first, copy your Let's Chat id, then invite a friend by theirs.</p>
       <p class="lc-gate__err" id="lc-gate-err" hidden></p>
     </section>
 
@@ -53,10 +53,21 @@
               </div>
             </div>
             <p class="lc-list-head__you" id="lc-me-label">You</p>
+            <div class="lc-id-row" id="lc-id-row">
+              <code class="lc-id-row__code" id="lc-my-id" title="Your Let's Chat id">—</code>
+              <button type="button" class="lc-id-row__copy" id="lc-copy-id" title="Copy Let's Chat id">Copy id</button>
+            </div>
             <p class="lc-list-head__dnd" id="lc-dnd-status" hidden>Do not disturb is on</p>
+            <form class="lc-invite" id="lc-invite-form" aria-label="Invite by Let's Chat id">
+              <label class="visually-hidden" for="lc-invite-id">Friend's Let's Chat id</label>
+              <input id="lc-invite-id" name="peerId" type="text" autocomplete="off" placeholder="Invite · paste lc_…" spellcheck="false" />
+              <button type="submit" class="lc-btn lc-btn--invite">Invite</button>
+            </form>
+            <p class="lc-invite__msg" id="lc-invite-msg" hidden></p>
+            <ul class="lc-pending" id="lc-pending-list" hidden aria-label="Pending invites"></ul>
           </header>
           <ul id="lc-peer-list" class="lc-chat-list"></ul>
-          <p class="lc-list-empty" id="lc-list-empty" hidden>No other guests seated yet.</p>
+          <p class="lc-list-empty" id="lc-list-empty" hidden>Your network is empty. Copy your id above, or invite someone with theirs.</p>
         </aside>
 
         <div class="lc-thread-pane" id="lc-thread-pane">

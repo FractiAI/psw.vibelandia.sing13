@@ -1,22 +1,26 @@
 /**
  * Let's Chat · ephemeral guest comms pipe.
- * GET ?roster=1 — allowlisted peers (email header required).
- * GET ?inbox=1&since= — pull ciphertext envelopes for signed-in peer.
- * GET ?presence=1 — ephemeral DND / online snapshot.
+ * GET  ?roster=1 — personal network + my Let's Chat id (email header required).
+ * POST ?invite=1 — invite by Let's Chat id (lc_*).
+ * POST ?invite-accept=1 — accept a pending invite.
+ * POST ?invite-decline=1 — decline a pending invite.
+ * GET  ?inbox=1&since= — pull ciphertext envelopes for signed-in peer.
+ * GET  ?presence=1 — ephemeral DND / online snapshot.
  * POST ?inbox=1 — push ciphertext envelope (no plaintext stored).
  * POST ?presence=1 — set DND / online (TTL only).
  *
- * Honesty: relay only — no Blob, no message archive. Creators are guests here too.
+ * Honesty: personal network only — not Lattice Chat allowlist. Relay ciphertext only.
  */
 let libs;
 async function loadLibs() {
   if (!libs) {
-    const [access, peers, signal] = await Promise.all([
+    const [access, peers, signal, network] = await Promise.all([
       import('../lib/lattice-access.mjs'),
       import('../lib/lets-chat-peers.mjs'),
       import('../lib/lets-chat-signal.mjs'),
+      import('../lib/lets-chat-network.mjs'),
     ]);
-    libs = { ...access, ...peers, ...signal };
+    libs = { ...access, ...peers, ...signal, ...network };
   }
   return libs;
 }
@@ -45,21 +49,22 @@ function emailFromReq(req, body, normalizeEmail) {
 
 async function requireSeat(req, body, L) {
   const email = emailFromReq(req, body, L.normalizeEmail);
-  const access = L.checkLatticeEmailAccess(email);
-  if (!access.ok) {
-    return { error: { status: 401, code: 'email_required', message: access.reason } };
-  }
-  const myPeerId = L.resolveLetsChatPeerId(email);
-  if (!myPeerId) {
+  const boarded = await L.boardLetsChat(email);
+  if (!boarded.ok) {
     return {
       error: {
-        status: 403,
-        code: 'no_seat',
-        message: 'This email has no Let\'s Chat seat yet. Email the Purser to request access.',
+        status: 401,
+        code: 'email_required',
+        message: boarded.message || 'Enter a valid email to come aboard.',
       },
     };
   }
-  return { email, access, myPeerId };
+  return {
+    email: boarded.email,
+    myPeerId: boarded.peerId,
+    name: boarded.name,
+    privilege: boarded.privilege,
+  };
 }
 
 export default async function handler(req, res) {
@@ -90,6 +95,66 @@ export default async function handler(req, res) {
       : null;
 
   try {
+    if (url.searchParams.get('invite') === '1' && req.method === 'POST') {
+      const seat = await requireSeat(req, body, L);
+      if (seat.error) {
+        res.status(seat.error.status).json({ ok: false, error: seat.error.code, message: seat.error.message });
+        return;
+      }
+      const result = await L.inviteByPeerId(seat.myPeerId, body?.peerId || body?.toPeerId);
+      if (!result.ok) {
+        res.status(400).json({ ok: false, error: result.code, message: result.message });
+        return;
+      }
+      const peers = await L.listNetworkPeers(seat.myPeerId);
+      const pendingInvites = await L.listPendingInvites(seat.myPeerId);
+      res.status(200).json({
+        ok: true,
+        myPeerId: seat.myPeerId,
+        ...result,
+        peers,
+        pendingInvites,
+      });
+      return;
+    }
+
+    if (url.searchParams.get('invite-accept') === '1' && req.method === 'POST') {
+      const seat = await requireSeat(req, body, L);
+      if (seat.error) {
+        res.status(seat.error.status).json({ ok: false, error: seat.error.code, message: seat.error.message });
+        return;
+      }
+      const result = await L.acceptInvite(seat.myPeerId, body?.fromPeerId || body?.peerId);
+      if (!result.ok) {
+        res.status(400).json({ ok: false, error: result.code, message: result.message });
+        return;
+      }
+      const peers = await L.listNetworkPeers(seat.myPeerId);
+      const pendingInvites = await L.listPendingInvites(seat.myPeerId);
+      res.status(200).json({
+        ok: true,
+        myPeerId: seat.myPeerId,
+        accepted: true,
+        peer: result.peer,
+        peers,
+        pendingInvites,
+      });
+      return;
+    }
+
+    if (url.searchParams.get('invite-decline') === '1' && req.method === 'POST') {
+      const seat = await requireSeat(req, body, L);
+      if (seat.error) {
+        res.status(seat.error.status).json({ ok: false, error: seat.error.code, message: seat.error.message });
+        return;
+      }
+      await L.declineInvite(seat.myPeerId, body?.fromPeerId || body?.peerId);
+      const peers = await L.listNetworkPeers(seat.myPeerId);
+      const pendingInvites = await L.listPendingInvites(seat.myPeerId);
+      res.status(200).json({ ok: true, myPeerId: seat.myPeerId, peers, pendingInvites });
+      return;
+    }
+
     if (url.searchParams.get('presence') === '1') {
       const seat = await requireSeat(req, body, L);
       if (seat.error) {
@@ -152,10 +217,13 @@ export default async function handler(req, res) {
           res.status(400).json({ ok: false, error: 'invalid_envelope' });
           return;
         }
-        const roster = L.listLetsChatPeers();
-        const target = roster.find((p) => p.id === envelope.toPeerId);
-        if (!target) {
-          res.status(403).json({ ok: false, error: 'unknown_peer' });
+        const connected = await L.areNetworkPeers(seat.myPeerId, envelope.toPeerId);
+        if (!connected) {
+          res.status(403).json({
+            ok: false,
+            error: 'not_in_network',
+            message: 'You can only message guests in your personal network. Invite them by Let\'s Chat id first.',
+          });
           return;
         }
         const result = await L.pushEnvelope(envelope);
@@ -172,18 +240,19 @@ export default async function handler(req, res) {
         res.status(seat.error.status).json({ ok: false, error: seat.error.code, message: seat.error.message });
         return;
       }
-      const peers = L.listLetsChatPeers()
-        .filter((p) => p.id !== seat.myPeerId)
-        .map(({ id, name, privilege }) => ({ id, name, privilege }));
+      const peers = await L.listNetworkPeers(seat.myPeerId);
+      const pendingInvites = await L.listPendingInvites(seat.myPeerId);
       res.status(200).json({
         ok: true,
         product: L.LETS_CHAT_PRODUCT,
         myPeerId: seat.myPeerId,
-        privilege: seat.access.privilege,
+        name: seat.name,
+        privilege: seat.privilege,
         peers,
+        pendingInvites,
         egsFrontalConstant: L.EGS_FRONTAL_CONSTANT,
         honesty:
-          'Registered guests + creators (creators are guests here). Request access by email — no Lattice Chat BYOK required.',
+          'Personal network only — invite by Let\'s Chat id (lc_*). Not the Lattice Chat allowlist. No harvesting.',
       });
       return;
     }
@@ -194,11 +263,14 @@ export default async function handler(req, res) {
         product: L.LETS_CHAT_PRODUCT,
         endpoints: {
           roster: '?roster=1',
+          invite: '?invite=1',
+          inviteAccept: '?invite-accept=1',
+          inviteDecline: '?invite-decline=1',
           inbox: '?inbox=1',
           presence: '?presence=1',
         },
         honesty:
-          'Let\'s Chat — guest-to-guest encrypted comms. No harvesting. Fractal EGS encryption on the edge. Fair Exchange · consent-first · predators never welcome.',
+          'Let\'s Chat — guest-to-guest encrypted comms on a personal network. Board with email. Invite by Let\'s Chat id. Fair Exchange · consent-first · predators never welcome.',
       });
       return;
     }

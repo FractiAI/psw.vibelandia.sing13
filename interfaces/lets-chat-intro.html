@@ -63,7 +63,7 @@
       margin: 2rem 0 0.65rem;
     }
     p { margin: 0 0 1rem; color: var(--soft); }
-    ul { margin: 0 0 1rem; padding-left: 1.2rem; color: var(--soft); }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.2rem; color: var(--soft); }
     li { margin-bottom: 0.45rem; }
     .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 1.75rem 0 0; }
     .btn {
@@ -110,19 +110,20 @@
   </nav>
 
   <main class="wrap">
-    <p class="kicker">Deck 8 Veranda · registered guests</p>
+    <p class="kicker">Deck 8 Veranda · personal network</p>
     <h1>Let's Chat</h1>
     <p class="lead">Guest-to-guest encrypted comms on the ship — without becoming a Lattice Chat power user first.</p>
 
     <p>
-      <strong>Let's Chat</strong> is the Goldilocks comms lounge for registered guests and creators alike.
-      Creators are guests here too. You do not need a provider API key, a repo workspace, or the full Lattice Chat agent stack —
-      only an email the Purser has already seated.
+      <strong>Let's Chat</strong> is the Goldilocks comms lounge for guests and creators alike.
+      Creators are guests here too. You do not need a provider API key, a repo workspace, or the Lattice Chat allowlist —
+      board with your email inside Let's Chat, then grow a <strong>personal network</strong> by inviting friends with their Let's Chat id (<code>lc_…</code>).
     </p>
 
     <h2>Why Let's Chat</h2>
     <ul>
-      <li><strong>No harvesting</strong> — the center pipe relays encrypted envelopes for seconds, then they expire. No social graph mining. No ad profile.</li>
+      <li><strong>Personal network only</strong> — you see people you invite (or who accept your invite). Not a global ship roster.</li>
+      <li><strong>No harvesting</strong> — the center pipe relays encrypted envelopes for seconds, then they expire. No ad profile.</li>
       <li><strong>Fractal EGS encryption</strong> — messages derive keys from the EGS frontal constant (Φ ≈ 1.618) on your device. The server sees ciphertext only.</li>
       <li><strong>Goldilocks environment</strong> — consent-first. Fair Exchange. Do Not Disturb when you need quiet. Predators never welcome.</li>
       <li><strong>Standalone or Collaborate</strong> — open <code>/lets-chat</code> directly, or hop over from Lattice Collaborate on Deck 8 Veranda.</li>
@@ -135,7 +136,7 @@
           <tr><th></th><th>Let's Chat</th><th>Lattice Chat</th><th>Big platforms</th></tr>
         </thead>
         <tbody>
-          <tr><td>Who</td><td>Registered guests + creators</td><td>BYOK agent seats</td><td>Anyone</td></tr>
+          <tr><td>Who</td><td>Email board · personal network</td><td>BYOK agent seats</td><td>Anyone</td></tr>
           <tr><td>Server keeps messages</td><td>No (ephemeral relay)</td><td>Collaborate DMs optional pipe</td><td>Often yes</td></tr>
           <tr><td>Encryption</td><td>EGS fractal · edge decrypt</td><td>BYOK to provider</td><td>Varies</td></tr>
           <tr><td>Consent rail</td><td>DND · Fair Exchange</td><td>Goldilocks valet</td><td>Terms of service</td></tr>
@@ -143,11 +144,13 @@
       </table>
     </div>
 
-    <h2>Request a seat</h2>
-    <p>
-      Email <a href="mailto:valetpru@gmail.com?subject=Let's%20Chat%20guest%20seat">valetpru@gmail.com</a>
-      with the address you want seated. One-month guest windows renew on request — same honor rail as Lattice access.
-    </p>
+    <h2>How to board</h2>
+    <ol>
+      <li>Open <a href="/lets-chat">Let's Chat</a> and enter your email — Come aboard.</li>
+      <li>Copy your <strong>Let's Chat id</strong> (<code>lc_…</code>) and share it with a friend.</li>
+      <li>Invite them by pasting <em>their</em> id — they accept, and you both appear in each other's network.</li>
+    </ol>
+    <p>Fair Exchange questions still go to the Purser — seating itself is handled inside Let's Chat.</p>
 
     <div class="cta-row">
       <a class="btn btn-primary" href="/lets-chat">Open Let's Chat</a>

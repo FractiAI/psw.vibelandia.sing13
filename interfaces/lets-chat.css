@@ -96,6 +96,97 @@
   color: #fef3c7;
 }
 .lc-list-head__tools { display: flex; align-items: center; gap: 0.35rem; }
+.lc-id-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.15rem 0 0.55rem;
+  min-width: 0;
+}
+.lc-id-row__code {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.72rem;
+  color: #fef3c7;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 6px;
+  padding: 0.28rem 0.45rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lc-id-row__copy {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0a0f1a;
+  background: #d4af37;
+  border: none;
+  border-radius: 6px;
+  padding: 0.32rem 0.55rem;
+  cursor: pointer;
+}
+.lc-invite {
+  display: flex;
+  gap: 0.35rem;
+  margin: 0 0 0.35rem;
+}
+.lc-invite input {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.82rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 8px;
+  border: 1px solid rgba(134, 150, 160, 0.35);
+  background: #111b21;
+  color: #e9edef;
+}
+.lc-btn--invite {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  padding: 0.4rem 0.7rem;
+}
+.lc-invite__msg {
+  font-size: 0.78rem;
+  color: #d4af37;
+  margin: 0 0 0.45rem;
+}
+.lc-invite__msg--err { color: #ea4335; }
+.lc-pending {
+  list-style: none;
+  margin: 0 0 0.55rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.lc-pending__row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: #d6cfc4;
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  padding: 0.4rem 0.5rem;
+}
+.lc-pending__row span { flex: 1; min-width: 0; }
+.lc-pending__accept,
+.lc-pending__decline {
+  font-size: 0.68rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 0.28rem 0.45rem;
+  cursor: pointer;
+}
+.lc-pending__accept { background: #d4af37; color: #0a0f1a; }
+.lc-pending__decline { background: transparent; color: #8696a0; border: 1px solid rgba(134, 150, 160, 0.4); }
+
 .lc-list-head__you {
   margin: 0.35rem 0 0;
   font-size: 0.72rem;

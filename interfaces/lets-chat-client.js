@@ -16,6 +16,7 @@
     email: '',
     myPeerId: '',
     peers: [],
+    pendingInvites: [],
     activePeerId: null,
     presence: {},
     dnd: false,
@@ -612,13 +613,122 @@
     $('lc-input').focus();
   }
 
+  function applyRosterPayload(data) {
+    state.myPeerId = data.myPeerId || state.myPeerId;
+    state.peers = data.peers || [];
+    state.pendingInvites = data.pendingInvites || [];
+    $('lc-me-label').textContent = state.email;
+    var idEl = $('lc-my-id');
+    if (idEl) idEl.textContent = state.myPeerId || '—';
+    renderPending();
+    renderPeers();
+  }
+
+  function showInviteMsg(text, isErr) {
+    var el = $('lc-invite-msg');
+    if (!el) return;
+    if (!text) {
+      el.hidden = true;
+      return;
+    }
+    el.hidden = false;
+    el.textContent = text;
+    el.classList.toggle('lc-invite__msg--err', Boolean(isErr));
+  }
+
+  function renderPending() {
+    var list = $('lc-pending-list');
+    if (!list) return;
+    list.innerHTML = '';
+    if (!state.pendingInvites.length) {
+      list.hidden = true;
+      return;
+    }
+    list.hidden = false;
+    state.pendingInvites.forEach(function (inv) {
+      var li = document.createElement('li');
+      li.className = 'lc-pending__row';
+      var label = document.createElement('span');
+      label.textContent = (inv.fromName || 'Guest') + ' invited you';
+      var accept = document.createElement('button');
+      accept.type = 'button';
+      accept.className = 'lc-pending__accept';
+      accept.textContent = 'Accept';
+      accept.addEventListener('click', function () {
+        void acceptInvite(inv.fromPeerId);
+      });
+      var decline = document.createElement('button');
+      decline.type = 'button';
+      decline.className = 'lc-pending__decline';
+      decline.textContent = 'Decline';
+      decline.addEventListener('click', function () {
+        void declineInvite(inv.fromPeerId);
+      });
+      li.appendChild(label);
+      li.appendChild(accept);
+      li.appendChild(decline);
+      list.appendChild(li);
+    });
+  }
+
   async function refreshRoster() {
     var data = await apiGet('?roster=1');
     if (!data.ok) throw new Error(data.message || 'roster_failed');
-    state.myPeerId = data.myPeerId;
-    state.peers = data.peers || [];
-    $('lc-me-label').textContent = state.email;
-    renderPeers();
+    applyRosterPayload(data);
+  }
+
+  async function inviteById(peerId) {
+    var data = await apiPost('?invite=1', { peerId: String(peerId || '').trim() });
+    if (!data.ok) {
+      showInviteMsg(data.message || 'Invite failed.', true);
+      return;
+    }
+    applyRosterPayload(data);
+    if (data.alreadyConnected) showInviteMsg('Already in your network.');
+    else if (data.accepted) showInviteMsg('Connected — you invited each other.');
+    else if (data.pending) showInviteMsg('Invite sent — waiting for them to accept.');
+    else showInviteMsg('Invite updated.');
+    var input = $('lc-invite-id');
+    if (input) input.value = '';
+  }
+
+  async function acceptInvite(fromPeerId) {
+    var data = await apiPost('?invite-accept=1', { fromPeerId: fromPeerId });
+    if (!data.ok) {
+      showInviteMsg(data.message || 'Could not accept.', true);
+      return;
+    }
+    applyRosterPayload(data);
+    showInviteMsg('Accepted — they are in your network now.');
+  }
+
+  async function declineInvite(fromPeerId) {
+    var data = await apiPost('?invite-decline=1', { fromPeerId: fromPeerId });
+    if (!data.ok) {
+      showInviteMsg(data.message || 'Could not decline.', true);
+      return;
+    }
+    applyRosterPayload(data);
+    showInviteMsg('Invite declined.');
+  }
+
+  async function copyMyId() {
+    if (!state.myPeerId) return;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(state.myPeerId);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = state.myPeerId;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      showInviteMsg('Copied your Let\'s Chat id.');
+    } catch (_) {
+      showInviteMsg('Could not copy — select the id manually.', true);
+    }
   }
 
   async function pushPresence() {
@@ -759,7 +869,7 @@
       showRoom();
       startLoops();
     } catch (e) {
-      showGate(e.message || 'Access denied. Email the Purser for a seat.');
+      showGate(e.message || 'Could not come aboard. Check your email and try again.');
     }
   }
 
@@ -805,11 +915,23 @@
     void signIn($('lc-email').value);
   });
 
+  $('lc-invite-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    void inviteById($('lc-invite-id').value);
+  });
+
+  $('lc-copy-id').addEventListener('click', function () {
+    void copyMyId();
+  });
+
   $('lc-signout').addEventListener('click', function () {
     localStorage.removeItem(STORAGE_EMAIL);
     state.email = '';
     state.myPeerId = '';
+    state.peers = [];
+    state.pendingInvites = [];
     state.activePeerId = null;
+    showInviteMsg('');
     showGate();
   });
 

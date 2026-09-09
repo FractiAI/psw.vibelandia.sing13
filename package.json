@@ -189,6 +189,7 @@
     "publish:standalone:topology-of-the-void:create": "node scripts/publish-standalone-suite.mjs synthobs-topology-of-the-void --create-repo",
     "research:synthobs-holographic-rhyme-fractal": "node research/synthobs-holographic-rhyme-fractal/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-multidimensional-holographic-rhyme": "node research/synthobs-multidimensional-holographic-rhyme/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-zero-octave-y-goldilocks": "node research/synthobs-zero-octave-y-goldilocks/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-holographic-singularity-crystal": "node research/synthobs-holographic-singularity-crystal/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-kinematic-set-recycling-truckee": "node research/synthobs-kinematic-set-recycling-truckee/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-eddy-current-mirror": "node research/synthobs-eddy-current-mirror/scripts/run_empirical_pipeline.mjs",

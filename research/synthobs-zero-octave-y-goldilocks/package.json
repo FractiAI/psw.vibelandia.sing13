@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-zero-octave-y-goldilocks",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave Zero-Octave singularity crystal · Fibonacci prime vaults · human Y Goldilocks catalog suite (SynthOBS engine companion #24)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-zero-octave-y-goldilocks.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

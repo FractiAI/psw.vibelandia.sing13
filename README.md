@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-08** · **285** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-09** · **287** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -399,6 +399,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y chromosome as Φ manifestation — holographic MSY · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-zero-octave-node-k0-2026-09.html`](/interfaces/blog-zero-octave-node-k0-2026-09.html) | Node k = 0 · Zero-Octave Singularity Crystal · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-zero-octave-y-goldilocks-2026-09.html`](/interfaces/blog-zero-octave-y-goldilocks-2026-09.html) | Zero-Octave · Y Goldilocks · Fibonacci Vaults · Ship blog · SS Vibelandia |
 | [`/interfaces/bridge-tower-billboard.html`](/interfaces/bridge-tower-billboard.html) | — |
 | [`/interfaces/bridge-tower-preview.html`](/interfaces/bridge-tower-preview.html) | Bridge Tower · 8s tease preview |
 | [`/interfaces/bulk-track-upload.html`](/interfaces/bulk-track-upload.html) | Bulk track upload · QUESTFEST |
@@ -448,6 +449,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/meet-the-crew.html`](/interfaces/meet-the-crew.html) | Meet the crew · Spirit crew · SS Vibelandia |
 | [`/interfaces/my-whiteboard.html`](/interfaces/my-whiteboard.html) | My whiteboard · Commander surface |
 | [`/interfaces/octave99-pricing.html`](/interfaces/octave99-pricing.html) | Bridge & Chart Pricing · Infinite Octaves · SING13 |
+| [`/interfaces/omni-lattice-course.html`](/interfaces/omni-lattice-course.html) | Infinite Octaves Omni-Lattice · Course & Textbook · SS Vibelandia |
 | [`/interfaces/omniverse-canvas.html`](/interfaces/omniverse-canvas.html) | Holographic Goldilocks SuperAI Basecamp · Valet Pru |
 | [`/interfaces/plain-machote-moderno-reno-swamp.html`](/interfaces/plain-machote-moderno-reno-swamp.html) | About · Sonic Singularity · SS Vibelandia |
 | [`/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html`](/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html) | The Omniversal 1-2-3 Wormhole Campaign · SS Vibelandia QUESTFEST |

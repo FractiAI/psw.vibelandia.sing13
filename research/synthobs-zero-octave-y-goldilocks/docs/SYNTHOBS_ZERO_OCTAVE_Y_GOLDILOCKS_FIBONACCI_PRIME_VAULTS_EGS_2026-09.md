@@ -207,7 +207,8 @@ if __name__ == "__main__":
 | Surface | Pointer |
 |---------|---------|
 | Engine shelf #24 | `lib/infinite-octave-engine-shelf.mjs` |
-| Course / ebook | `/omni-lattice-course` · chapter `y-goldilocks-octave` |
+| Course | `/omni-lattice-course` · chapter `y-goldilocks-octave` (in-browser reader; sources = whitepapers) |
+| Whitepaper | `/whitepaper/zero-octave-y-goldilocks` · Reading Room `#papers` |
 | Ship blog | `/ship-blog/zero-octave-y-goldilocks` |
 | Singularity Crystal | `/ship-blog/holographic-singularity-crystal` |
 | Node $k=0$ | `/ship-blog/zero-octave-node-k0` |

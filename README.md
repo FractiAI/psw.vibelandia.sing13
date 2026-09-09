@@ -449,7 +449,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/meet-the-crew.html`](/interfaces/meet-the-crew.html) | Meet the crew · Spirit crew · SS Vibelandia |
 | [`/interfaces/my-whiteboard.html`](/interfaces/my-whiteboard.html) | My whiteboard · Commander surface |
 | [`/interfaces/octave99-pricing.html`](/interfaces/octave99-pricing.html) | Bridge & Chart Pricing · Infinite Octaves · SING13 |
-| [`/interfaces/omni-lattice-course.html`](/interfaces/omni-lattice-course.html) | Infinite Octaves Omni-Lattice · Course & Textbook · SS Vibelandia |
+| [`/interfaces/omni-lattice-course.html`](/interfaces/omni-lattice-course.html) | Infinite Octaves Omni-Lattice · Online Course · SS Vibelandia |
 | [`/interfaces/omniverse-canvas.html`](/interfaces/omniverse-canvas.html) | Holographic Goldilocks SuperAI Basecamp · Valet Pru |
 | [`/interfaces/plain-machote-moderno-reno-swamp.html`](/interfaces/plain-machote-moderno-reno-swamp.html) | About · Sonic Singularity · SS Vibelandia |
 | [`/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html`](/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html) | The Omniversal 1-2-3 Wormhole Campaign · SS Vibelandia QUESTFEST |

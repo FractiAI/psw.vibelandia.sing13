@@ -96,6 +96,48 @@
   color: #fef3c7;
 }
 .lc-list-head__tools { display: flex; align-items: center; gap: 0.35rem; }
+.lc-add-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  border: none;
+  background: #d4af37;
+  color: #0a0f1a;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.lc-add-btn[aria-expanded="true"] {
+  background: #fef3c7;
+}
+.lc-invite-panel {
+  margin: 0 0 0.45rem;
+}
+.lc-invite-panel[hidden] { display: none !important; }
+.lc-invite__hint {
+  margin: 0.25rem 0 0;
+  font-size: 0.72rem;
+  color: #8696a0;
+}
+.lc-approval {
+  margin: 0 0 0.55rem;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 8px;
+  background: rgba(212, 175, 55, 0.08);
+}
+.lc-approval[hidden] { display: none !important; }
+.lc-approval__lead {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  color: #fef3c7;
+}
+
 .lc-id-row {
   display: flex;
   align-items: center;

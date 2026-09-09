@@ -45,6 +45,7 @@
             <div class="lc-list-head__top">
               <h2>Chats</h2>
               <div class="lc-list-head__tools">
+                <button type="button" class="lc-add-btn" id="lc-add-btn" title="Invite a member" aria-label="Invite a member" aria-expanded="false" aria-controls="lc-invite-panel">+</button>
                 <button type="button" class="lc-dnd-toggle" id="lc-dnd-btn" aria-pressed="false" aria-label="Do not disturb · off · tap to quiet" title="Do not disturb · off">
                   <span class="lc-dnd-toggle__icon" aria-hidden="true">🔔</span>
                   <span class="lc-dnd-toggle__text">Available</span>
@@ -58,16 +59,23 @@
               <button type="button" class="lc-id-row__copy" id="lc-copy-id" title="Copy Let's Chat id">Copy id</button>
             </div>
             <p class="lc-list-head__dnd" id="lc-dnd-status" hidden>Do not disturb is on</p>
-            <form class="lc-invite" id="lc-invite-form" aria-label="Invite by Let's Chat id">
-              <label class="visually-hidden" for="lc-invite-id">Friend's Let's Chat id</label>
-              <input id="lc-invite-id" name="peerId" type="text" autocomplete="off" placeholder="Invite · paste lc_…" spellcheck="false" />
-              <button type="submit" class="lc-btn lc-btn--invite">Invite</button>
-            </form>
+            <div class="lc-approval" id="lc-approval" hidden>
+              <p class="lc-approval__lead">New seat — send approval to the Purser (valetpru).</p>
+              <button type="button" class="lc-btn lc-btn--invite" id="lc-approval-send">Email approval message</button>
+            </div>
+            <div class="lc-invite-panel" id="lc-invite-panel" hidden>
+              <form class="lc-invite" id="lc-invite-form" aria-label="Invite by Let's Chat id">
+                <label class="visually-hidden" for="lc-invite-id">Friend's Let's Chat id</label>
+                <input id="lc-invite-id" name="peerId" type="text" autocomplete="off" placeholder="Paste their lc_… id" spellcheck="false" />
+                <button type="submit" class="lc-btn lc-btn--invite">Add</button>
+              </form>
+              <p class="lc-invite__hint">They are added to each other's private networks right away.</p>
+            </div>
             <p class="lc-invite__msg" id="lc-invite-msg" hidden></p>
             <ul class="lc-pending" id="lc-pending-list" hidden aria-label="Pending invites"></ul>
           </header>
           <ul id="lc-peer-list" class="lc-chat-list"></ul>
-          <p class="lc-list-empty" id="lc-list-empty" hidden>Your network is empty. Copy your id above, or invite someone with theirs.</p>
+          <p class="lc-list-empty" id="lc-list-empty" hidden>Your network is empty. Tap <strong>+</strong> to invite a member by Let's Chat id.</p>
         </aside>
 
         <div class="lc-thread-pane" id="lc-thread-pane">

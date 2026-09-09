@@ -5,12 +5,10 @@ import {
   resolveLetsChatPeerId,
 } from '../../lib/lets-chat-peers.mjs';
 import {
-  acceptInvite,
   areNetworkPeers,
   boardLetsChat,
   inviteByPeerId,
   listNetworkPeers,
-  listPendingInvites,
   resetLetsChatNetworkForTests,
 } from '../../lib/lets-chat-network.mjs';
 import { deriveThreadKeyMaterial } from '../../lib/lets-chat-crypto.mjs';
@@ -44,32 +42,32 @@ describe('lets-chat-peers', () => {
 describe('lets-chat-network', () => {
   beforeEach(() => resetLetsChatNetworkForTests());
 
-  it('boards a new email without Lattice grant and starts with empty network', async () => {
+  it('boards a new guest, auto-links Purser, and generates valetpru approval message', async () => {
     const seat = await boardLetsChat('fresh.guest@example.com');
     expect(seat.ok).toBe(true);
     expect(seat.peerId).toMatch(/^lc_/);
-    expect(await listNetworkPeers(seat.peerId)).toEqual([]);
+    expect(seat.isNew).toBe(true);
+    expect(seat.approval?.to).toBe('valetpru@gmail.com');
+    expect(seat.approval?.body).toContain(seat.peerId);
+    expect(seat.approval?.mailto).toMatch(/^mailto:/);
+    const peers = await listNetworkPeers(seat.peerId);
+    expect(peers.some((p) => p.id === resolveLetsChatPeerId('valetpru@gmail.com'))).toBe(true);
   });
 
-  it('invites by peer id, keeps roster personal, and connects on accept', async () => {
+  it('invites by peer id and instantly adds both private networks', async () => {
     const a = await boardLetsChat('alice.network@example.com');
     const b = await boardLetsChat('bob.network@example.com');
     expect(a.ok && b.ok).toBe(true);
 
     const invite = await inviteByPeerId(a.peerId, b.peerId);
     expect(invite.ok).toBe(true);
-    expect(invite.pending).toBe(true);
-    expect(await listNetworkPeers(a.peerId)).toEqual([]);
-    expect(await listPendingInvites(b.peerId)).toHaveLength(1);
-
-    const accepted = await acceptInvite(b.peerId, a.peerId);
-    expect(accepted.ok).toBe(true);
+    expect(invite.connected).toBe(true);
     expect(await areNetworkPeers(a.peerId, b.peerId)).toBe(true);
 
     const aPeers = await listNetworkPeers(a.peerId);
     const bPeers = await listNetworkPeers(b.peerId);
-    expect(aPeers.map((p) => p.id)).toEqual([b.peerId]);
-    expect(bPeers.map((p) => p.id)).toEqual([a.peerId]);
+    expect(aPeers.map((p) => p.id)).toContain(b.peerId);
+    expect(bPeers.map((p) => p.id)).toContain(a.peerId);
   });
 
   it('rejects unknown peer ids and does not leak global roster', async () => {
@@ -77,7 +75,9 @@ describe('lets-chat-network', () => {
     const miss = await inviteByPeerId(a.peerId, 'lc_deadbeefdeadbe');
     expect(miss.ok).toBe(false);
     expect(miss.code).toBe('unknown_peer');
-    expect(await listNetworkPeers(a.peerId)).toEqual([]);
+    // solo still only sees Purser, not arbitrary peers
+    const peers = await listNetworkPeers(a.peerId);
+    expect(peers.every((p) => p.id !== 'lc_deadbeefdeadbe')).toBe(true);
   });
 });
 
@@ -158,16 +158,21 @@ describe('lets-chat surfaces', () => {
     expect(app).toContain('lc-dnd-toggle');
     expect(app).toContain('id="lc-invite-form"');
     expect(app).toContain('id="lc-my-id"');
+    expect(app).toContain('id="lc-add-btn"');
+    expect(app).toContain('id="lc-approval-send"');
     expect(app).not.toContain('No Lattice access');
     expect(css).toContain('.lc-dnd-toggle');
     expect(css).toContain('.lc-unread-badge');
     expect(css).toContain('.lc-invite');
+    expect(css).toContain('.lc-add-btn');
     expect(client).toContain('function toggleDnd');
     expect(client).toContain("localStorage.removeItem(STORAGE_DND)");
     expect(client).toContain('letschat.unread.v1');
     expect(client).toContain('lc-unread-badge');
     expect(client).toContain('inviteById');
     expect(client).toContain('?invite=1');
+    expect(client).toContain('toggleInvitePanel');
+    expect(client).toContain('sendApprovalMessage');
     expect(intro).toContain('No harvesting');
     expect(intro).toContain('Predators never welcome');
     expect(intro).toContain('personal network');

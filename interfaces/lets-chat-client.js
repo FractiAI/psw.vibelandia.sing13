@@ -17,6 +17,7 @@
     myPeerId: '',
     peers: [],
     pendingInvites: [],
+    approval: null,
     activePeerId: null,
     presence: {},
     dnd: false,
@@ -617,11 +618,58 @@
     state.myPeerId = data.myPeerId || state.myPeerId;
     state.peers = data.peers || [];
     state.pendingInvites = data.pendingInvites || [];
+    if (data.approval) state.approval = data.approval;
+    else if (data.isNew === false && !data.approval) {
+      /* keep existing approval banner only if still queued */
+    }
     $('lc-me-label').textContent = state.email;
     var idEl = $('lc-my-id');
     if (idEl) idEl.textContent = state.myPeerId || '—';
+    renderApproval();
     renderPending();
     renderPeers();
+  }
+
+  function renderApproval() {
+    var box = $('lc-approval');
+    if (!box) return;
+    if (state.approval && state.approval.mailto) {
+      box.hidden = false;
+    } else {
+      box.hidden = true;
+    }
+  }
+
+  function sendApprovalMessage() {
+    if (!state.approval || !state.approval.mailto) {
+      showInviteMsg('No approval message to send.', true);
+      return;
+    }
+    window.location.href = state.approval.mailto;
+    showInviteMsg('Approval message opened for valetpru — send when ready.');
+    try {
+      localStorage.setItem('letschat.approval.sent.' + state.email, '1');
+    } catch (_) {}
+  }
+
+  function setInvitePanelOpen(open) {
+    var panel = $('lc-invite-panel');
+    var btn = $('lc-add-btn');
+    if (!panel || !btn) return;
+    panel.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      var input = $('lc-invite-id');
+      if (input) {
+        input.focus();
+        input.select();
+      }
+    }
+  }
+
+  function toggleInvitePanel() {
+    var panel = $('lc-invite-panel');
+    setInvitePanelOpen(Boolean(panel && panel.hidden));
   }
 
   function showInviteMsg(text, isErr) {
@@ -675,6 +723,10 @@
     var data = await apiGet('?roster=1');
     if (!data.ok) throw new Error(data.message || 'roster_failed');
     applyRosterPayload(data);
+    if (data.approval && data.isNew) {
+      state.approval = data.approval;
+      renderApproval();
+    }
   }
 
   async function inviteById(peerId) {
@@ -685,11 +737,11 @@
     }
     applyRosterPayload(data);
     if (data.alreadyConnected) showInviteMsg('Already in your network.');
-    else if (data.accepted) showInviteMsg('Connected — you invited each other.');
-    else if (data.pending) showInviteMsg('Invite sent — waiting for them to accept.');
+    else if (data.connected || data.accepted) showInviteMsg('Added — you are in each other\'s private networks now.');
     else showInviteMsg('Invite updated.');
     var input = $('lc-invite-id');
     if (input) input.value = '';
+    setInvitePanelOpen(false);
   }
 
   async function acceptInvite(fromPeerId) {
@@ -861,6 +913,7 @@
 
   async function signIn(email) {
     state.email = normalizeEmail(email);
+    state.approval = null;
     try {
       await refreshRoster();
       localStorage.setItem(STORAGE_EMAIL, state.email);
@@ -868,6 +921,15 @@
       updateDndButton();
       showRoom();
       startLoops();
+      try {
+        if (state.approval && localStorage.getItem('letschat.approval.sent.' + state.email) !== '1') {
+          /* keep banner visible until they tap Email approval message */
+          renderApproval();
+        } else if (localStorage.getItem('letschat.approval.sent.' + state.email) === '1') {
+          state.approval = null;
+          renderApproval();
+        }
+      } catch (_) {}
     } catch (e) {
       showGate(e.message || 'Could not come aboard. Check your email and try again.');
     }
@@ -915,6 +977,14 @@
     void signIn($('lc-email').value);
   });
 
+  $('lc-add-btn').addEventListener('click', function () {
+    toggleInvitePanel();
+  });
+
+  $('lc-approval-send').addEventListener('click', function () {
+    sendApprovalMessage();
+  });
+
   $('lc-invite-form').addEventListener('submit', function (ev) {
     ev.preventDefault();
     void inviteById($('lc-invite-id').value);
@@ -930,7 +1000,9 @@
     state.myPeerId = '';
     state.peers = [];
     state.pendingInvites = [];
+    state.approval = null;
     state.activePeerId = null;
+    setInvitePanelOpen(false);
     showInviteMsg('');
     showGate();
   });

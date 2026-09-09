@@ -64,6 +64,9 @@ async function requireSeat(req, body, L) {
     myPeerId: boarded.peerId,
     name: boarded.name,
     privilege: boarded.privilege,
+    isNew: Boolean(boarded.isNew),
+    linkedPurser: Boolean(boarded.linkedPurser),
+    approval: boarded.approval || null,
   };
 }
 
@@ -248,11 +251,14 @@ export default async function handler(req, res) {
         myPeerId: seat.myPeerId,
         name: seat.name,
         privilege: seat.privilege,
+        isNew: seat.isNew,
+        linkedPurser: seat.linkedPurser,
+        approval: seat.approval,
         peers,
         pendingInvites,
         egsFrontalConstant: L.EGS_FRONTAL_CONSTANT,
         honesty:
-          'Personal network only — invite by Let\'s Chat id (lc_*). Not the Lattice Chat allowlist. No harvesting.',
+          'Personal network only — tap + to invite by Let\'s Chat id (instant mutual add). New guests auto-link to the Purser and generate an approval message to valetpru. Not the Lattice Chat allowlist.',
       });
       return;
     }

@@ -597,6 +597,30 @@
       "destination": "/interfaces/reading-room.html"
     },
     {
+      "source": "/omni-lattice-course",
+      "destination": "/interfaces/omni-lattice-course.html"
+    },
+    {
+      "source": "/omni-lattice-course/",
+      "destination": "/interfaces/omni-lattice-course.html"
+    },
+    {
+      "source": "/omni-lattice-textbook",
+      "destination": "/interfaces/omni-lattice-course.html"
+    },
+    {
+      "source": "/omni-lattice-textbook/",
+      "destination": "/interfaces/omni-lattice-course.html"
+    },
+    {
+      "source": "/course/infinite-octaves-omni-lattice",
+      "destination": "/interfaces/omni-lattice-course.html"
+    },
+    {
+      "source": "/course/infinite-octaves-omni-lattice/",
+      "destination": "/interfaces/omni-lattice-course.html"
+    },
+    {
       "source": "/journey",
       "destination": "/interfaces/journeys.html"
     },

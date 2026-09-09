@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infinite Octaves Omni-Lattice · Course &amp; Textbook · SS Vibelandia</title>
+  <meta name="description" content="Introductory course and ebook textbook for the Infinite Octaves Omni-Lattice — syllabus, clickable table of contents, and chapter reading. Catalog architecture under Φ ≈ 1.618. CC BY 4.0." />
+  <meta name="theme-color" content="#0a1628" />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/omni-lattice-course" />
+  <meta property="og:title" content="Infinite Octaves Omni-Lattice · Course &amp; Textbook" />
+  <meta property="og:description" content="Syllabus + ebook reader for the Omni-Lattice engine papers. Honesty first: catalog architecture, not physics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/omni-lattice-course" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/omni-lattice-course.css" />
+</head>
+<body class="olc">
+  <a class="olc-skip" href="#ebook-body">Skip to chapter</a>
+
+  <header class="olc-top">
+    <div class="olc-top__inner">
+      <a class="olc-brand" href="/">SS Vibelandia</a>
+      <nav class="olc-nav" aria-label="Course navigation">
+        <a href="#syllabus">Syllabus</a>
+        <a href="#toc">Contents</a>
+        <a href="#reader">Read</a>
+        <a href="/reading-room">Reading Room</a>
+        <a href="/lattice">Lattice Chat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="olc-hero" aria-labelledby="olc-hero-title">
+      <div class="olc-hero__grid">
+        <p class="olc-kicker">Course &amp; textbook · Edition 0.1</p>
+        <h1 id="olc-hero-title">The Infinite Octaves Omni-Lattice</h1>
+        <p class="olc-lede">
+          An introductory course and ebook companion to the SynthOBS engine papers —
+          catalog architecture under Φ ≈ 1.618, not a physics textbook.
+        </p>
+        <div class="olc-hero__actions">
+          <a class="olc-btn olc-btn--gold" href="#syllabus">Open syllabus</a>
+          <a class="olc-btn olc-btn--ghost" href="#reader">Start reading</a>
+          <a class="olc-btn olc-btn--ghost" href="/reading-room">Reading Room</a>
+        </div>
+        <p class="olc-hero__meta" id="olc-hero-meta">Loading course…</p>
+      </div>
+    </section>
+
+    <section class="olc-honesty" aria-label="Honesty boundary">
+      <strong>Honesty first.</strong>
+      <span id="olc-honesty-text">Φ ≈ 1.618 is nesting language / design key — not a substitute for ħ, c, or G. Catalog grammar, not relativity retirement.</span>
+    </section>
+
+    <section class="olc-section" id="syllabus" aria-labelledby="syllabus-title">
+      <div class="olc-wrap">
+        <p class="olc-section__eyebrow">Syllabus</p>
+        <h2 id="syllabus-title">Course modules</h2>
+        <p class="olc-section__lede">Five modules for a first pass through the engine shelf. Each module opens the matching chapters in the ebook reader.</p>
+        <div class="olc-syllabus" id="olc-syllabus"></div>
+      </div>
+    </section>
+
+    <section class="olc-section olc-section--toc" id="toc" aria-labelledby="toc-title">
+      <div class="olc-wrap">
+        <p class="olc-section__eyebrow">Table of contents</p>
+        <h2 id="toc-title">Clickable contents</h2>
+        <p class="olc-section__lede">Jump to any chapter. The reader below keeps your place like an ebook.</p>
+        <div class="olc-toc" id="olc-toc"></div>
+      </div>
+    </section>
+
+    <section class="olc-reader" id="reader" aria-label="Ebook reader">
+      <div class="olc-reader__shell">
+        <aside class="olc-sidebar" id="olc-sidebar" aria-label="Chapter list">
+          <div class="olc-sidebar__head">
+            <strong>Contents</strong>
+            <button type="button" class="olc-sidebar__close" id="olc-sidebar-close" aria-label="Close contents">×</button>
+          </div>
+          <nav class="olc-sidebar__nav" id="olc-sidebar-nav"></nav>
+        </aside>
+
+        <div class="olc-stage">
+          <div class="olc-toolbar">
+            <button type="button" class="olc-icon-btn" id="olc-toc-toggle" aria-expanded="false" aria-controls="olc-sidebar">Contents</button>
+            <p class="olc-toolbar__progress" id="olc-progress">Chapter —</p>
+            <div class="olc-toolbar__nav">
+              <button type="button" class="olc-icon-btn" id="olc-prev" disabled>← Prev</button>
+              <button type="button" class="olc-icon-btn" id="olc-next">Next →</button>
+            </div>
+          </div>
+
+          <article class="olc-page" id="ebook-body" tabindex="-1">
+            <p class="olc-page__loading">Loading textbook…</p>
+          </article>
+
+          <nav class="olc-pager" aria-label="Chapter pager">
+            <button type="button" class="olc-btn olc-btn--ghost" id="olc-prev-foot" disabled>← Previous</button>
+            <a class="olc-btn olc-btn--ghost" href="#toc">All chapters</a>
+            <button type="button" class="olc-btn olc-btn--gold" id="olc-next-foot">Next →</button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="olc-section" id="attribution" aria-labelledby="attr-title">
+      <div class="olc-wrap olc-attr">
+        <p class="olc-section__eyebrow">Attribution &amp; licence</p>
+        <h2 id="attr-title">Provenance</h2>
+        <p>
+          Textbook synthesis by <strong>Daniel Ari Friedman</strong> (FractiAI) · CC BY 4.0 —
+          <a href="https://github.com/docxology/OmniLatticeTextbook" rel="noopener noreferrer" target="_blank">OmniLatticeTextbook</a>.
+          Engine papers by <strong>Prudencio Mendez</strong> (FractiAI), operated by the
+          <strong>SynthOBS Autonomous Agent · Syntheverse Sandbox</strong>.
+        </p>
+        <p>
+          Fair Exchange tip clause on. Human emergency outranks algorithms.
+          Open the <a href="/reading-room">Reading Room</a> for the full paper shelves, or ask in
+          <a href="/lattice">Lattice Chat</a> on nest Infinite Octaves.
+        </p>
+        <p class="olc-attr__glyph">→ ∞^∞</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="olc-foot">
+    <div class="olc-foot__inner">
+      <a href="/">Omniversal Canvas</a>
+      <a href="/questfest">Ship board</a>
+      <a href="/reading-room">Reading Room</a>
+      <a href="/lattice/engineering">Living PEM</a>
+    </div>
+  </footer>
+
+  <script src="/interfaces/omni-lattice-course-content.js"></script>
+  <script>
+    (function () {
+      var data = window.OMNI_LATTICE_COURSE;
+      if (!data || !data.chapters || !data.chapters.length) {
+        document.getElementById('ebook-body').innerHTML =
+          '<p class="olc-page__loading">Course content failed to load.</p>';
+        return;
+      }
+
+      var chapters = data.chapters;
+      var indexById = {};
+      chapters.forEach(function (ch, i) { indexById[ch.id] = i; });
+
+      var bodyEl = document.getElementById('ebook-body');
+      var progressEl = document.getElementById('olc-progress');
+      var sidebarNav = document.getElementById('olc-sidebar-nav');
+      var syllabusEl = document.getElementById('olc-syllabus');
+      var tocEl = document.getElementById('olc-toc');
+      var prevBtn = document.getElementById('olc-prev');
+      var nextBtn = document.getElementById('olc-next');
+      var prevFoot = document.getElementById('olc-prev-foot');
+      var nextFoot = document.getElementById('olc-next-foot');
+      var tocToggle = document.getElementById('olc-toc-toggle');
+      var sidebarClose = document.getElementById('olc-sidebar-close');
+      var readerShell = document.querySelector('.olc-reader__shell');
+      var current = 0;
+
+      document.getElementById('olc-hero-meta').textContent =
+        data.meta.edition + ' · ' + data.meta.authors + ' · ' + data.meta.license +
+        ' · ' + chapters.length + ' chapters';
+      document.getElementById('olc-honesty-text').textContent = data.meta.honesty;
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function buildSyllabus() {
+        syllabusEl.innerHTML = (data.syllabus || []).map(function (mod) {
+          var links = (mod.chapters || []).map(function (id) {
+            var ch = chapters[indexById[id]];
+            if (!ch) return '';
+            return '<a href="#ch/' + encodeURIComponent(id) + '">' + escapeHtml(ch.title) + '</a>';
+          }).join('');
+          return (
+            '<article class="olc-mod">' +
+              '<p class="olc-mod__label">' + escapeHtml(mod.label) + ' · ' + escapeHtml(mod.weeks) + '</p>' +
+              '<h3>' + escapeHtml(mod.title) + '</h3>' +
+              '<p>' + escapeHtml(mod.summary) + '</p>' +
+              '<div class="olc-mod__links">' + links + '</div>' +
+            '</article>'
+          );
+        }).join('');
+      }
+
+      function buildToc() {
+        var parts = {};
+        var order = [];
+        chapters.forEach(function (ch) {
+          var key = ch.partId || 'other';
+          if (!parts[key]) {
+            parts[key] = { title: ch.part, items: [] };
+            order.push(key);
+          }
+          parts[key].items.push(ch);
+        });
+        tocEl.innerHTML = order.map(function (key) {
+          var part = parts[key];
+          var items = part.items.map(function (ch) {
+            return (
+              '<li><a href="#ch/' + encodeURIComponent(ch.id) + '">' +
+                '<span class="olc-toc__num">' + escapeHtml(ch.number) + '</span>' +
+                '<span class="olc-toc__title">' + escapeHtml(ch.title) + '</span>' +
+                '<span class="olc-toc__meta">' + escapeHtml(String(ch.minutes)) + ' min</span>' +
+              '</a></li>'
+            );
+          }).join('');
+          return (
+            '<div class="olc-toc__part">' +
+              '<h3>' + escapeHtml(part.title) + '</h3>' +
+              '<ol>' + items + '</ol>' +
+            '</div>'
+          );
+        }).join('');
+      }
+
+      function buildSidebar() {
+        var html = '';
+        var lastPart = '';
+        chapters.forEach(function (ch, i) {
+          if (ch.part !== lastPart) {
+            html += '<p class="olc-sidebar__part">' + escapeHtml(ch.part) + '</p>';
+            lastPart = ch.part;
+          }
+          html +=
+            '<a href="#ch/' + encodeURIComponent(ch.id) + '" data-index="' + i + '"' +
+            (i === current ? ' aria-current="page"' : '') + '>' +
+            '<span>' + escapeHtml(ch.number) + '</span> ' + escapeHtml(ch.title) +
+            '</a>';
+        });
+        sidebarNav.innerHTML = html;
+      }
+
+      function renderChapter(i) {
+        current = Math.max(0, Math.min(chapters.length - 1, i));
+        var ch = chapters[current];
+        var papers = (ch.papers || []).map(function (p) {
+          return '<a href="' + escapeHtml(p.href) + '">' + escapeHtml(p.label) + '</a>';
+        }).join('');
+
+        bodyEl.innerHTML =
+          '<p class="olc-page__part">' + escapeHtml(ch.part) + '</p>' +
+          '<h2 class="olc-page__title">' +
+            '<span class="olc-page__num">' + escapeHtml(ch.number) + '</span> ' +
+            escapeHtml(ch.title) +
+          '</h2>' +
+          '<p class="olc-page__meta">' +
+            escapeHtml(ch.level) + ' · ~' + escapeHtml(String(ch.minutes)) + ' min read' +
+          '</p>' +
+          (papers
+            ? '<div class="olc-page__papers"><span>Source papers</span>' + papers + '</div>'
+            : '') +
+          '<div class="olc-prose">' + ch.body + '</div>';
+
+        progressEl.textContent =
+          'Chapter ' + (current + 1) + ' of ' + chapters.length + ' · ' + ch.title;
+
+        prevBtn.disabled = prevFoot.disabled = current === 0;
+        nextBtn.disabled = nextFoot.disabled = current === chapters.length - 1;
+
+        sidebarNav.querySelectorAll('a').forEach(function (a) {
+          var on = Number(a.getAttribute('data-index')) === current;
+          if (on) a.setAttribute('aria-current', 'page');
+          else a.removeAttribute('aria-current');
+        });
+
+        try {
+          localStorage.setItem('olc-chapter', ch.id);
+        } catch (e) { /* lite edge */ }
+
+        bodyEl.focus({ preventScroll: true });
+      }
+
+      function go(i, pushHash) {
+        renderChapter(i);
+        if (pushHash !== false) {
+          var id = chapters[current].id;
+          if (history.replaceState) {
+            history.replaceState(null, '', '#ch/' + encodeURIComponent(id));
+          } else {
+            location.hash = 'ch/' + encodeURIComponent(id);
+          }
+        }
+        var reader = document.getElementById('reader');
+        if (reader && pushHash !== false) {
+          reader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        closeSidebar();
+      }
+
+      function openSidebar() {
+        readerShell.classList.add('is-sidebar-open');
+        tocToggle.setAttribute('aria-expanded', 'true');
+      }
+      function closeSidebar() {
+        readerShell.classList.remove('is-sidebar-open');
+        tocToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      function parseHash() {
+        var h = (location.hash || '').replace(/^#/, '');
+        if (h.indexOf('ch/') === 0) {
+          var id = decodeURIComponent(h.slice(3));
+          if (id in indexById) return indexById[id];
+        }
+        if (h === 'syllabus' || h === 'toc' || h === 'reader' || h === 'attribution') return null;
+        try {
+          var saved = localStorage.getItem('olc-chapter');
+          if (saved && saved in indexById) return indexById[saved];
+        } catch (e) { /* ignore */ }
+        return 0;
+      }
+
+      buildSyllabus();
+      buildToc();
+      buildSidebar();
+
+      var start = parseHash();
+      if (start == null) start = 0;
+      renderChapter(start);
+
+      prevBtn.addEventListener('click', function () { if (current > 0) go(current - 1); });
+      nextBtn.addEventListener('click', function () { if (current < chapters.length - 1) go(current + 1); });
+      prevFoot.addEventListener('click', function () { if (current > 0) go(current - 1); });
+      nextFoot.addEventListener('click', function () { if (current < chapters.length - 1) go(current + 1); });
+      tocToggle.addEventListener('click', function () {
+        if (readerShell.classList.contains('is-sidebar-open')) closeSidebar();
+        else openSidebar();
+      });
+      sidebarClose.addEventListener('click', closeSidebar);
+
+      window.addEventListener('hashchange', function () {
+        var h = (location.hash || '').replace(/^#/, '');
+        if (h.indexOf('ch/') === 0) {
+          var id = decodeURIComponent(h.slice(3));
+          if (id in indexById) go(indexById[id], false);
+        }
+      });
+
+      document.addEventListener('keydown', function (ev) {
+        if (ev.target && /^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName)) return;
+        if (ev.key === 'ArrowLeft' && current > 0) {
+          ev.preventDefault();
+          go(current - 1);
+        } else if (ev.key === 'ArrowRight' && current < chapters.length - 1) {
+          ev.preventDefault();
+          go(current + 1);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

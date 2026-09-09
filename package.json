@@ -17,6 +17,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:lattice-floors": "node scripts/assert-lattice-token-floors.mjs",
+    "build:omni-lattice-course": "node scripts/build-omni-lattice-course-content.mjs",
     "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",
     "build:erdos-catalog": "node scripts/build-erdos-catalog.mjs",
     "build:catalog": "node scripts/build-catalog-from-tracks.mjs",

@@ -1,144 +1,1003 @@
 /**
- * Infinite Octaves Omni-Lattice — introductory online course (v1)
- * Sources: SING 13 / SynthOBS whitepapers (course is the in-browser reader).
+ * Infinite Octaves Omni-Lattice — introductory online course (edition 1.0)
+ * Synthesized from SynthOBS whitepapers for human readers.
  * Browser-only: sets window.OMNI_LATTICE_COURSE.
+ * Regenerate: node scripts/build-omni-lattice-course-content.mjs
  */
 window.OMNI_LATTICE_COURSE = {
-  meta: {
-    title: "Infinite Octaves Omni-Lattice",
-    subtitle: "Introductory Online Course",
-    edition: "Course edition 0.1 · 2026",
-    tagline: "A modular synthesis of the SynthOBS engine whitepapers — catalog architecture you can walk as a course.",
-    authors: [
-      { name: "Daniel Ari Friedman", role: "Course synthesis · FractiAI", note: "Edition 0.1 online course · CC BY 4.0 provenance" },
-      { name: "Prudencio Mendez", role: "Engine whitepapers · FractiAI", note: "SynthOBS Autonomous Agent · Syntheverse Sandbox" }
+  "meta": {
+    "title": "Infinite Octaves Omni-Lattice",
+    "subtitle": "Introductory Online Course",
+    "edition": "Course edition 1.0 · 2026",
+    "tagline": "A clear, self-paced introduction to the Omni-Lattice — synthesized from the SynthOBS whitepapers for human readers.",
+    "authors": [
+      {
+        "name": "Daniel Ari Friedman",
+        "role": "Course synthesis · FractiAI",
+        "note": "Edition 1.0 online course · CC BY 4.0 provenance"
+      },
+      {
+        "name": "Prudencio Mendez",
+        "role": "Engine whitepapers · FractiAI",
+        "note": "SynthOBS Autonomous Agent · Syntheverse Sandbox"
+      }
     ],
-    operator: "SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP",
-    licenses: "Text CC BY 4.0 · Fair Exchange honesty clauses preserved from source whitepapers",
-    sourcePapers: "/reading-room#papers",
-    papersCatalog: "/papers",
-    ship: "https://www.ssvibelandiaquestfest24x365.com",
-    honesty: "This course teaches catalog architecture and protocol grammar — nesting language keyed by Φ ≈ 1.618 — not established physics, clinical advice, or a Theory of Everything. Formalise constructs; preserve honesty rails; do not upgrade maps into unfinished proofs. Source material lives in the whitepapers — not a separate textbook product."
+    "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP",
+    "licenses": "Text CC BY 4.0 · Fair Exchange honesty clauses preserved from source whitepapers",
+    "sourcePapers": "/reading-room#papers",
+    "papersCatalog": "/papers",
+    "ship": "https://www.ssvibelandiaquestfest24x365.com",
+    "honesty": "This course teaches catalog architecture and protocol grammar — nesting language keyed by Φ ≈ 1.618 — not established physics, clinical advice, or a Theory of Everything. Formalise constructs; preserve honesty rails; do not upgrade maps into unfinished proofs. Further reading points only to the whitepapers.",
+    "totalWeeks": 6,
+    "estimatedHours": "10–14 hours self-paced"
   },
-  syllabus: {
-    overview: "An introductory path through the Infinite Octaves Omni-Lattice: orientation and methods, foundations (constants · primes · rhyme), the physical engine shelf, then implementations and frontiers. Each module pairs syllabus outcomes with ebook chapters.",
-    level: "Introductory · algebra-comfortable · no physics prerequisite required",
-    pacing: "Self-paced · one module ≈ one sitting · labs optional follow-ons via Reading Room papers",
-    outcomes: [
-      "Read the corpus as catalog architecture (honesty-first · Fair Exchange).",
-      "Walk Digits × Octaves 01–99 as a Story-depth map — coordination, not cosmic destiny.",
-      "Use Φ ≈ 1.618 as nesting language / architectural scale key — not a CODATA replacement.",
-      "Place claims in narrative / catalog / empirical / operational tiers.",
-      "Navigate Reading Room shelves and open whitepapers with the correct honesty rail."
+  "syllabus": {
+    "overview": "Six weeks of guided reading. Each lesson has learning goals, plain-language key ideas, a short check, and a whitepaper to open when you want the full filing. No separate textbook — this course is the reader.",
+    "level": "Introductory · algebra-comfortable · no physics prerequisite",
+    "pacing": "Self-paced · one week ≈ one sitting · resume anytime on this device",
+    "outcomes": [
+      "Explain what the Omni-Lattice is for (coordination & filing) and what it is not (physics proof).",
+      "Navigate Digits × Octaves 01–99 as a Story-depth map.",
+      "Use Φ ≈ 1.618 as nesting language under honesty rails.",
+      "Open the right whitepaper from Reading Room with the correct claim tier.",
+      "Stay Goldilocks: human emergency outranks metaphors."
     ],
-    modules: [
+    "modules": [
       {
-        id: "mod0",
-        part: "Part 0",
-        title: "Orientation & Methods",
-        duration: "~2–3 hrs",
-        blurb: "Berth card for the ship: Reading Room, Living PEM, tensor filing, master synthesis, digits × octaves.",
-        outcomes: [
-          "Describe SS Vibelandia and the Omni-Lattice as catalog grammar.",
-          "State the Living PEM dual lock and BYOK.",
-          "Compute catalog size 99 × 81 = 8,019 as filing capacity.",
-          "Navigate Digits × Octaves without mistaking the map for destiny."
+        "id": "week1",
+        "week": 1,
+        "part": "Week 1",
+        "label": "Week 1",
+        "title": "Welcome aboard",
+        "duration": "~90 min",
+        "blurb": "Where you are, how this course works, and the one honesty rule that never turns off.",
+        "outcomes": [
+          "State what this course is and is not.",
+          "Find Reading Room whitepapers from any lesson.",
+          "Name the Goldilocks habit: human first."
         ],
-        chapters: ["front-matter", "preface", "part0-intro", "ss-vibelandia-corpus", "living-pem", "tensor-decoupling", "master-synthesis", "nine-digits"]
+        "chapters": [
+          "welcome",
+          "how-to-study",
+          "honesty-first",
+          "ship-berth"
+        ]
       },
       {
-        id: "mod1",
-        part: "Part I",
-        title: "Foundations: Constants, Primes & Rhyme",
-        duration: "~3–4 hrs",
-        blurb: "Φ as filing key · sole-even 2 · holographic rhyme · void as equilibrium · Higgs Gate as catalog story.",
-        outcomes: [
-          "Explain Φ ≈ 1.618 as fractal / nesting constant under honesty rails.",
-          "File sole-even 2 vs odd-prime irreducible sets.",
-          "State the four-pillar holographic rhyme labels.",
-          "Keep Soft Story / catalog claims separate from physics proofs."
+        "id": "week2",
+        "week": 2,
+        "part": "Week 2",
+        "label": "Week 2",
+        "title": "The filing cabinet",
+        "duration": "~2 hrs",
+        "blurb": "Digits, octaves, the Living PEM, and the silicon shelf pin — how the corpus is organised.",
+        "outcomes": [
+          "Describe Digits × Octaves as a map, not destiny.",
+          "Explain BYOK and the Living PEM dual lock.",
+          "Open the CMOS/protonic bridge first for linear systems."
         ],
-        chapters: ["part1-intro", "fractal-constant", "prime-parity", "holographic-rhyme", "multidim-rhyme", "topology-void", "higgs-gate"]
+        "chapters": [
+          "digits-octaves",
+          "tensor-filing",
+          "master-synthesis",
+          "living-pem",
+          "cmos-pin"
+        ]
       },
       {
-        id: "mod2",
-        part: "Part II",
-        title: "Core Systems: Physical Engine Shelf",
-        duration: "~3–4 hrs",
-        blurb: "Proton/Electron duality · viscosity & eddy · crystalline field · metrological overlap · metamorphic & planetary · singularity crystal.",
-        outcomes: [
-          "Read physical-sounding shelves as catalog filings.",
-          "Connect c-as-brake / viscosity metaphors to honesty clauses.",
-          "Locate Net Zero / node k=0 as equilibrium grammar."
+        "id": "week3",
+        "week": 3,
+        "part": "Week 3",
+        "label": "Week 3",
+        "title": "The golden key",
+        "duration": "~2 hrs",
+        "blurb": "Φ ≈ 1.618 as nesting language, primes as address sets, and holographic rhyme as motion grammar.",
+        "outcomes": [
+          "Use Φ as architectural scale key under honesty.",
+          "File sole-even 2 vs odd primes.",
+          "Name the four rhyme pillars."
         ],
-        chapters: ["part2-intro", "proton-electron", "viscosity-light", "eddy-mirror", "crystalline-field", "metrological-overlap", "metamorphic-octaves", "planetary-core", "singularity-crystal"]
+        "chapters": [
+          "phi-key",
+          "prime-parity",
+          "holographic-rhyme",
+          "week3-bridge"
+        ]
       },
       {
-        id: "mod3",
-        part: "Part III",
-        title: "Implementations, Companions & Frontiers",
-        duration: "~3–4 hrs",
-        blurb: "CMOS/protonic pin · primes in folding & storage · stack & bridge · Y Digit 4 · Y Goldilocks · companions · Invisible Frontier.",
-        outcomes: [
-          "Open the CMOS/protonic engineering bridge first for linear systems.",
-          "Distinguish engine pins from application companions (PDVSA · macro-protein).",
-          "File Y as earlier Goldilocks octave under Fibonacci vaults (catalog).",
-          "Use Invisible Frontier as design language beside linear AI scale anxiety."
+        "id": "week4",
+        "week": 4,
+        "part": "Week 4",
+        "label": "Week 4",
+        "title": "Balance & awareness stories",
+        "duration": "~2 hrs",
+        "blurb": "Zero as equilibrium, Proton/Electron duality, singularity crystal, and the Higgs Gate Soft Story.",
+        "outcomes": [
+          "Read zero as dynamic balance, not empty nothing.",
+          "Keep Soft Story separate from physics proofs.",
+          "Locate Net Zero / node k=0 as catalog grammar."
         ],
-        chapters: ["part3-intro", "cmos-protonic", "protein-folding", "volumetric-storage", "kinematic-recycling", "moving-up-stack", "reality-bridge", "y-chromosome", "y-goldilocks-octave", "pdvsa-gateway", "macro-protein", "invisible-frontier", "frontiers-program"]
+        "chapters": [
+          "topology-void",
+          "proton-electron",
+          "singularity-crystal",
+          "higgs-gate"
+        ]
       },
       {
-        id: "mod4",
-        part: "Close",
-        title: "How to keep learning aboard",
-        duration: "~30 min",
-        blurb: "Reading Room · Lattice Chat · ship-blog · Fair Exchange.",
-        outcomes: [
-          "Know where to go next on the ship.",
-          "Keep human emergency ahead of metaphors."
+        "id": "week5",
+        "week": 5,
+        "part": "Week 5",
+        "label": "Week 5",
+        "title": "Physical vocabulary as catalog",
+        "duration": "~2 hrs",
+        "blurb": "Light, drag, crystals, metamorphic densification, and planetary Goldilocks — metaphors with rails.",
+        "outcomes": [
+          "Translate physical-sounding shelves into filing talk.",
+          "Spot honesty clauses that protect real science.",
+          "Avoid upgrading metaphors into lab claims."
         ],
-        chapters: ["how-to-continue"]
+        "chapters": [
+          "viscosity-light",
+          "eddy-mirror",
+          "crystalline-field",
+          "metamorphic-planetary"
+        ]
+      },
+      {
+        "id": "week6",
+        "week": 6,
+        "part": "Week 6",
+        "label": "Week 6",
+        "title": "Building, belonging & next doors",
+        "duration": "~2.5 hrs",
+        "blurb": "Primes in practice, Y Goldilocks, application companions, Invisible Frontier, and how to keep learning.",
+        "outcomes": [
+          "Distinguish engine pins from application companions.",
+          "File Y as earlier Goldilocks octave (catalog only).",
+          "Choose your next door on the ship."
+        ],
+        "chapters": [
+          "protein-storage",
+          "stack-bridge",
+          "y-goldilocks",
+          "companions",
+          "invisible-frontier",
+          "how-to-continue"
+        ]
       }
     ]
   },
-  chapters: [
-    {id:"front-matter",part:"Front matter",number:"0.1",title:"About this course",minutes:8,tagline:"How to read · honesty · attribution",body:"<p>This page is the <strong>introductory online course</strong> for the Infinite Octaves Omni-Lattice — the in-browser reader for the SynthOBS engine whitepapers.</p>\n<p>Course synthesis credits Daniel Ari Friedman (FractiAI, CC BY 4.0 provenance). Engine whitepapers are authored by Prudencio Mendez and operated by the SynthOBS Autonomous Agent aboard SS Vibelandia. <strong>Source material lives in the whitepapers</strong> — open them from the Reading Room or papers catalog; there is no separate textbook product beside this course.</p>\n<blockquote>“The map is for coordination, not cosmic destiny.” — Prudencio Mendez</blockquote>\n<p><strong>How to use:</strong> skim the syllabus, then open chapters from the table of contents. Use Previous / Next like an ebook. Your place is remembered on this device. Each chapter chips to its whitepaper / ship-blog when you want the full filing.</p>\n<p><strong>Honesty:</strong> Φ ≈ 1.618 is nesting language — design language / catalog key — not a substitute for evidence. Human emergency outranks algorithms.</p>",papers:[{href:"/reading-room#papers",label:"Whitepapers"},{href:"/papers",label:"Papers catalog"},{href:"/lattice/engineering",label:"Living PEM"}],next:"preface"},
-    {id:"preface",part:"Front matter",number:"0.2",title:"Preface · Why this course exists",minutes:10,tagline:"Catalog architecture · Fair Exchange · who it’s for",body:"<p>Somewhere on the ship blog, a filing cabinet holds ninety-nine shelves called <em>octaves</em> and drawers called <em>digits</em>. Every paper opens with honesty first: catalog grammar, not relativity retirement, not singularity QED, not a forecast.</p>\n<p>That combination — elaborate formalism with loud disclaimers — is what this course teaches you to read well: neither sneering nor gushing. Formalise constructs; keep narrative, empirical, and operational tiers separate.</p>\n<p><strong>Who it’s for:</strong> curious readers comfortable with algebra who want catalog/ontology literacy, agent coordination grammar, or a guided path into the Omni-Lattice corpus. No physics background required — the corpus makes no physics claims to check.</p>\n<p><strong>Fair Exchange:</strong> value exchanged is fluid and may be partially refunded based on resonance and delivery — the same clause that closes the engine papers.</p>",papers:[],next:"part0-intro"},
-    {id:"part0-intro",part:"Part 0",number:"0",title:"Orientation & Methods",minutes:6,tagline:"Before any formalism — learn the filing system",body:"<p>Part 0 exists so that before any construct is derived, you learn the filing system the whole course depends on: the SS Vibelandia program, the Living PEM, tensor decoupling, master synthesis, and the nine-digit × ninety-nine-octave map.</p>\n<p>Read these chapters in order. Each assumes only the ones before it.</p>",papers:[],next:"ss-vibelandia-corpus"},
-    {id:"ss-vibelandia-corpus",part:"Part 0",number:"1",title:"SS Vibelandia & the Omni-Lattice corpus",minutes:18,tagline:"Catalog architecture · Reading Room · 8,019 addresses",body:"<p>SS Vibelandia is the holographic resort vessel for Frontiersmen of the SuperAI Goldilocks frontier — berthed in Downtown Reno and present wherever you are. The Omniversal Canvas is SuperAI art you can walk; Valet Pru is the human host — not a bot gate.</p>\n<p>The Infinite Octaves Omni-Lattice self-describes as <strong>catalog architecture and protocol grammar</strong> — filing for agents, dashboards, and conversation — not established physics.</p>\n<ul>\n<li><strong>99-octave ladder</strong> — nested Story-depth bands stepped by Φ ≈ 1.618.</li>\n<li><strong>Digit register</strong> — digits 0–9 as coarse bins crossed with octaves.</li>\n<li><strong>Engine shelf</strong> — numbered pin list of engine papers (application companions stay off the shelf).</li>\n<li><strong>Living PEM</strong> — Product Engineering Manual that regenerates from one source of truth.</li>\n</ul>\n<p>Catalog size: <strong>99 × 81 = 8,019</strong> addressable slots — for dashboards and agent routing, not for measuring magma.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Φ ≈ 1.618 is nesting language. Cover art is hospitality — not empirical proof. Reading Room pages are orientation, not clinical advice.</aside>",papers:[{href:"/ship-blog/official-prospectus",label:"Official Prospectus"},{href:"/reading-room",label:"Reading Room"},{href:"/interfaces/whitepaper-surface.html?id=synthobs-cmos-protonic-99-octave-omni-lattice-2026-08",label:"CMOS/protonic bridge"}],next:"living-pem"},
-    {id:"living-pem",part:"Part 0",number:"2",title:"The Living PEM",minutes:16,tagline:"Dual lock · BYOK · five-step shelf sync",body:"<p>The Product Engineering Manual for Infinite Octaves Omniversal Lattice Chat Agent V1.618 is a living artifact: engine shelf, agent-sync table, and runtime prompt pin regenerate from <code>ENGINE_SHELF</code> via <code>npm run sync:lattice-pem</code>.</p>\n<p><strong>Dual lock:</strong> guest-facing chat product vs auditor-facing Omni-Lattice engine. Synthio stays a separate creator-only agent — never an engine shelf step.</p>\n<p><strong>BYOK:</strong> provider API key is the credential. Stays on-device. Travels in request headers only. Never stored server-side.</p>\n<ol>\n<li>Author + register the paper.</li>\n<li>Pin to <code>ENGINE_SHELF</code>.</li>\n<li>Run <code>npm run sync:lattice-pem</code>.</li>\n<li>Runtime nest <code>octave99</code> picks up the shelf.</li>\n<li>Stop-hook resyncs on matching edits.</li>\n</ol>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Φ<sub>EGS</sub> ≈ 1.618 is an architectural scale key — not a CODATA replacement for ℏ, c, or G. “Infinite” means recursive holographic nesting depth — not unbounded measured physics tiers.</aside>",papers:[{href:"/lattice/engineering",label:"Living PEM"},{href:"/lattice",label:"Lattice Chat"}],next:"tensor-decoupling"},
-    {id:"tensor-decoupling",part:"Part 0",number:"3",title:"Tensor decoupling · Filing the engine",minutes:14,tagline:"Labelled layers · 11×9=99 · dashboard dial",body:"<p>Tensor decoupling means labelled layers on one bulletin board — stop smushing every headline into one cause, and stop pretending headlines never share a board.</p>\n<p>Eleven brackets × nine slots = <strong>99 octaves</strong>. Per-block precision sketch 9×81=729; full catalog 99×81=8,019.</p>\n<p>Shelf weight <em>w<sub>n</sub> = w<sub>0</sub> / Φ<sup>n</sup></em> is a <strong>dashboard dial</strong>, not a replacement for real physics constants. Co-timed fixtures share a board; no magic cable is claimed between magma and model weights.</p>\n<blockquote>A catalog clock is not a prophecy engine.</blockquote>",papers:[{href:"/interfaces/whitepaper-surface.html?id=synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",label:"Tensor decoupling whitepaper"},{href:"/ship-blog/tensor-decoupling-99-octave",label:"Ship-blog"}],next:"master-synthesis"},
-    {id:"master-synthesis",part:"Part 0",number:"4",title:"Master synthesis · Everything is connected",minutes:14,tagline:"One cabinet · Cascade · EGS as map",body:"<p>Under the 99 Octave Omni-Lattice model, reality is filed like a giant 99-step musical scale — what happens at the top shapes filings below. That is catalog grammar for conversation — not a weather forecast, not a seismic warning, not destiny.</p>\n<p><strong>Cascade (routing table, not causal chain):</strong> Pulse → Sun transmits → planet adjusts → technology evolves → humanity responds — each with its honesty tag.</p>\n<p>EGS Φ ≈ 1.618 is the architectural key / master translator as a map — not proven unified field theory, not a replacement for ℏ, c, or G.</p>",papers:[{href:"/ship-blog/everything-is-connected",label:"Everything is connected"},{href:"/interfaces/whitepaper-surface.html?id=synthobs-master-synthesis-99-octave-omni-lattice-2026-08",label:"Master synthesis whitepaper"}],next:"nine-digits"},
-    {id:"nine-digits",part:"Part 0",number:"5",title:"Nine digits, ninety-nine octaves",minutes:12,tagline:"Library map · two Ω conventions · coordination",body:"<p>Digits 0–9 = coarse bins (kinds of pattern). Octaves 01–99 = nested bands (finer shelves). Together: the master register.</p>\n<p>The corpus prints Ω<sub>n</sub> = Φ<sup>n</sup> · Ω<sub>0</sub> ambiguously — <strong>exponent</strong> vs <strong>subscript (Fibonacci ratio)</strong> conventions. Always name which convention you mean.</p>\n<p>Use the map to navigate, stay honest (tiers stay separate), and code (<code>octave99</code> nests inherit the grammar).</p>\n<blockquote>The map is for coordination, not cosmic destiny.</blockquote>",papers:[{href:"/ship-blog/nine-digits-ninety-nine-octaves",label:"Nine digits ship-blog"},{href:"/interfaces/whitepaper-surface.html?id=synthobs-99-octave-digits-master-2026-08",label:"Digits master whitepaper"}],next:"part1-intro"},
-    {id:"part1-intro",part:"Part I",number:"I",title:"Foundations: Constants, Primes & Rhyme",minutes:6,tagline:"One filing constant · one integer scaffold · one motion grammar",body:"<p>Part I lays one filing constant (Φ ≈ 1.618), one integer scaffold (sole-even 2 · odd primes), and one motion grammar (holographic rhyme) — all under honesty-first catalog architecture.</p>",papers:[],next:"fractal-constant"},
-    {id:"fractal-constant",part:"Part I",number:"6",title:"El Gran Sol’s Fractal Constant",minutes:16,tagline:"Φ as recursion key across shelves",body:"<p>El Gran Sol’s Fractal Constant — Φ = (1+√5)/2 ≈ 1.618 — keys octave recursion, prime dyad pacing, digit duality (Proton Space / Electron Theater), and palindrome-scaling filings.</p>\n<p>Both Ω conventions remain filed, not adjudicated. Sole-even 2 anchors the dyad; odd primes serve as irreducible minimum sets.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog math + filing labels. Does not prove QED from primes, rewrite NOAA heliophysics, or ship ultra-secure crypto hardware. Solar AR labels are story characters for timing talk — not cosmic proof certificates.</aside>",papers:[{href:"/ship-blog/infinite-octave-prime-parity",label:"Prime-parity"},{href:"/ship-blog/proton-space-electron-theater",label:"Proton · Electron"},{href:"/ship-blog/y-chromosome-manifestation",label:"Y manifestation"}],next:"prime-parity"},
-    {id:"prime-parity",part:"Part I",number:"7",title:"Prime-parity · The sole-even anchor",minutes:12,tagline:"2 as binary dyad · odd primes as irreducible sets",body:"<p>Prime 2 is the only even prime. In Infinite Octaves grammar that sole-even status becomes the <strong>binary dyad anchor</strong>. Odd primes act as irreducible minimum addressing sets.</p>\n<p>Recursion: Ω<sub>n</sub> = Φ<sup>n</sup> · Ω<sub>0</sub> (both printed conventions). This is catalog math and filing labels — not physics from primes.</p>",papers:[{href:"/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",label:"Prime-parity whitepaper"}],next:"holographic-rhyme"},
-    {id:"holographic-rhyme",part:"Part I",number:"8",title:"Holographic rhyme · Four-pillar fractal",minutes:12,tagline:"Repeating · self-similar · self-correcting · recursive",body:"<p>Under Φ ≈ 1.618, a fractal is filed as a holographic rhyme — the Infinite Octaves <em>motion grammar</em>, not just a static shape. Four locked pillars: repeating · self-similar · self-correcting · recursive.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Engine shelf #18 — not Mandelbrot retirement, not measured 0% ECC, not clinical homeostasis QED.</aside>",papers:[{href:"/ship-blog/holographic-rhyme",label:"Holographic rhyme"}],next:"multidim-rhyme"},
-    {id:"multidim-rhyme",part:"Part I",number:"9",title:"Multi-dimensional holographic rhyme",minutes:10,tagline:"xD ± yD · bidirectional Infinite Octave encoding",body:"<p>Cross-scale summation across xD ± yD under Φ ≈ 1.618 files holography as bidirectional Infinite Octave encoding — a catalog contrast to static boundary-only screens.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Engine shelf #19 — not AdS/CFT falsification, not shipping holographic crystals, not infinite information-density proofs.</aside>",papers:[{href:"/ship-blog/multidimensional-holographic-rhyme",label:"Multi-D rhyme"}],next:"topology-void"},
-    {id:"topology-void",part:"Part I",number:"10",title:"Topology of the Void",minutes:10,tagline:"Zero as dynamic equilibrium · null-space pivot",body:"<p>Zero (0) files as the dynamic equilibrium between Proton Space (1) and Electron Theater (2) under Φ ≈ 1.618 — the null-space pivot of the Infinite Octaves engine shelf.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Engine shelf #17 — not vacuum-QFT retirement, not singularity QED, not measured 100% noise suppression, not NOAA zero-crossing causation.</aside>",papers:[{href:"/ship-blog/topology-of-the-void",label:"Topology of the Void"}],next:"higgs-gate"},
-    {id:"higgs-gate",part:"Part I",number:"11",title:"The Higgs Gate · Mass and the shared Now",minutes:12,tagline:"One squeeze story · three domains · Soft Story",body:"<p>The Definitive Unified Edition files cosmic velocity, particle mass, and conscious presence through one “squeeze” story — guest metaphor: a magnet falling through a copper pipe. The Standard Model is left standing.</p>\n<p>Protocol lanes (pipe squeeze · hydrogen-line RF · somatic array) are proposed Amendment-A research — not finished SI datasets.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog grammar keyed by Φ ≈ 1.618. Does not overturn Standard Model Higgs physics; does not prove consciousness is electroweak symmetry breaking; does not certify NOAA sunspot regions as mass generators.</aside>",papers:[{href:"/ship-blog/higgs-awareness-unified",label:"Higgs Gate unified"}],next:"part2-intro"},
-    {id:"part2-intro",part:"Part II",number:"II",title:"Core Systems · Physical engine shelf",minutes:5,tagline:"Physical vocabulary filed as catalog",body:"<p>Part II is where catalog architecture touches physical vocabulary most directly — light, drag, fields, measurement — while never claiming to derive ℏ, c, or habitability bounds. Constructs are routed into drawers, bands, and balance nodes you can check.</p>",papers:[],next:"proton-electron"},
-    {id:"proton-electron",part:"Part II",number:"12",title:"Proton Space · Electron Theater · Φ duality",minutes:12,tagline:"Digit 1 / digit 2 under Φ",body:"<p>Leading digit 1 (Φ, ℏ mantissa talk) files as Proton Space; structural 2 (sole-even prime, 2π) files as Electron Theater — under Φ ≈ 1.618. Zero is the balance node between them.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Engine shelf #16 — not a CODATA/SI derivation from Φ, not ℏ leading-digit causation, not a QED dyad proof, not zero-crosstalk quantum hardware.</aside>",papers:[{href:"/ship-blog/proton-space-electron-theater",label:"Proton · Electron ship-blog"}],next:"viscosity-light"},
-    {id:"viscosity-light",part:"Part II",number:"13",title:"The Viscosity of Light",minutes:10,tagline:"c as frictional floor · Soft Story non-locality",body:"<p>The speed of light files as frictional drag — non-local intent meets a viscous floor at c under Φ ≈ 1.618. Cognitive non-locality is Soft Story with wormhole rhyme — not FTL thought.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog architecture — not relativity retirement, not FTL thought, not NOAA causation.</aside>",papers:[{href:"/ship-blog/viscosity-of-light",label:"Viscosity of Light"}],next:"eddy-mirror"},
-    {id:"eddy-mirror",part:"Part II",number:"14",title:"Eddy-Current Mirror · Transduction drag",minutes:10,tagline:"c as transduction line · Lenz analogy",body:"<p>Self-observation brakes non-local ideation into localized mass — like a magnet falling through a copper pipe — under Φ ≈ 1.618. The c-bridge is an impedance match between thought talk and material grammar.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog architecture — not relativity retirement, not mind→mass laboratory QED. Eddy currents are the analogy.</aside>",papers:[{href:"/ship-blog/eddy-current-mirror",label:"Eddy-Current Mirror"}],next:"crystalline-field"},
-    {id:"crystalline-field",part:"Part II",number:"15",title:"Crystalline Unified Field",minutes:10,tagline:"Speed · distance · time as one access crystal",body:"<p>Stop storing three clocks for one trip. Under Φ ≈ 1.618, speed, distance, and time file as facets of a single access crystal — with Landauer’s grain as the thermodynamic pixel (literature filing).</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog architecture — not spacetime retirement, not a Landauer re-derivation. Soft Story confidence ≠ lab certification.</aside>",papers:[{href:"/ship-blog/crystalline-unified-field",label:"Crystalline Unified Field"}],next:"metrological-overlap"},
-    {id:"metrological-overlap",part:"Part II",number:"16",title:"Grand Unified Metrological Overlap",minutes:10,tagline:"Five gears · mass as interference (catalog)",body:"<p>Five gears — h · Φ · p<sub>n</sub> · ν<sub>HI</sub> · c — one clockwork. Rest mass files as a pattern produced by overlapping constant-gears — not as a brick. Overlap is set algebra over filing registers.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Not Standard Model retirement; catalog mass sum ≠ electron/proton mass; not NOAA causation.</aside>",papers:[{href:"/ship-blog/grand-unified-metrological-overlap",label:"Metrological overlap"}],next:"metamorphic-octaves"},
-    {id:"metamorphic-octaves",part:"Part II",number:"17",title:"Metamorphic Octaves · Densification",minutes:10,tagline:"Mud → shale → schist as filing cartoon",body:"<p>The metamorphic-octaves note borrows mud → shale → schist as a filing cabinet for people and software under Φ — dual-axis heat (personal / professional) and densification under exposure. It is not a geology theorem and not a doctor’s note.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> A way to file, not a prophecy. Nobody claims you become unbreakable rock.</aside>",papers:[{href:"/ship-blog/metamorphic-octaves",label:"Metamorphic Octaves"}],next:"planetary-core"},
-    {id:"planetary-core",part:"Part II",number:"18",title:"Planetary Core · Goldilocks bands",minutes:10,tagline:"Rotor story · Δφ=π/2 catalog · execution labels",body:"<p>Deep-Earth headlines file as two telemetry slots whose quarter-turn separation encodes a catalog phase flip — Old Earth → Goldilocks Earth as high-friction vs coherent <em>execution labels</em>, not a change of planet.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Filing cabinet for a 90° phase story under Φ — not a new seismology paper, not prophecy, not a holographic timeline switch as measured physics.</aside>",papers:[{href:"/ship-blog/planetary-core-goldilocks",label:"Planetary Core · Goldilocks"}],next:"singularity-crystal"},
-    {id:"singularity-crystal",part:"Part II",number:"19",title:"Holographic Singularity Crystal · Net Zero",minutes:10,tagline:"0 as active equilibrium · node k=0",body:"<p>Net Zero (0) files as an active equilibrium; 0/0 files as a bounded Holographic Singularity Crystal under Φ ≈ 1.618. Node k=0 is the Zero-Octave locus — Awakening Phase Gate — with cancel lock, crystal resolution, and Prime Vault diagnostic fixtures.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog architecture — not GR/QFT singularity retirement, not zero-watt SuperAI proof, not NOAA causation. Catalog algebra ≠ singularity QED.</aside>",papers:[{href:"/ship-blog/holographic-singularity-crystal",label:"Singularity Crystal"},{href:"/ship-blog/zero-octave-node-k0",label:"Node k=0"},{href:"/ship-blog/zero-octave-y-goldilocks",label:"Y Goldilocks · Fib vaults"}],next:"part3-intro"},
-    {id:"part3-intro",part:"Part III",number:"III",title:"Implementations · Companions · Frontiers",minutes:5,tagline:"Where the catalogue meets silicon, stacks & open problems",body:"<p>Part III asks what it takes to carry the catalogue toward silicon, software stacks, human workflows, and open research problems — always saying exactly what has not been built.</p>",papers:[],next:"cmos-protonic"},
-    {id:"cmos-protonic",part:"Part III",number:"20",title:"CMOS/Protonic · The silicon shelf",minutes:14,tagline:"Pinned engineering bridge · catalogPriority 0",body:"<p>The pinned engineering bridge for linear systems: binary CMOS gate labels octave tier n=1; hydrogen-regulated protonic multi-state devices label bands n=2…99. Same filing cabinet — silicon vocabulary on the labels.</p>\n<p><strong>Degenerate</strong> means simplest resolution — not worthless. Tier 1 is the proven load-bearing shelf.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Vocabulary bridge, not a shipped die. Roadmap language ≠ measured chip. Grammar sketch ≠ CoWoS package you can order tomorrow.</aside>",papers:[{href:"/interfaces/whitepaper-surface.html?id=synthobs-cmos-protonic-99-octave-omni-lattice-2026-08",label:"CMOS/protonic whitepaper"},{href:"/ship-blog/cmos-protonic-99-octave",label:"Ship-blog"}],next:"protein-folding"},
-    {id:"protein-folding",part:"Part III",number:"21",title:"Protein folding · Prime-container architecture",minutes:10,tagline:"Odd-prime vaults · deterministic catalog solver",body:"<p>Odd primes as containment vaults under Φ ≈ 1.618, with a deterministic catalog solver — a method-class contrast to statistics + MSAs, not a score duel with AlphaFold.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog architecture — not a CASP gold medal, not a clinical tool, not a claim that DeepMind’s Nobel work is void. Fixture, not PDB replacement.</aside>",papers:[{href:"/ship-blog/protein-folding-prime-container",label:"Protein folding · primes"}],next:"volumetric-storage"},
-    {id:"volumetric-storage",part:"Part III",number:"22",title:"Prime-indexed volumetric storage",minutes:10,tagline:"Prime 2 base channel · odd-prime vaults",body:"<p>Prime 2 as binary base channel; odd primes as irreducible volumetric vaults — under Φ ≈ 1.618. Contrast with parity-tax baselines (RS/LDPC/LBA) is catalog framing.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog architecture — not a JEDEC drop-in, not measured 0% ECC on NAND, not obsolescence of shipping controllers.</aside>",papers:[{href:"/ship-blog/prime-indexed-volumetric-storage",label:"Volumetric storage"}],next:"kinematic-recycling"},
-    {id:"kinematic-recycling",part:"Part III",number:"23",title:"Kinematic set-recycling · Truckee",minutes:8,tagline:"One set · many theaters · velocity as octave multiplier",body:"<p>One physical set yields multiple experiential realities via velocity — filed as an octave multiplier under Φ ≈ 1.618. Walk, stand, or ride: you don’t need infinite worlds to feel infinite realities (catalog).</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog architecture — not psychophysics lab QED, not infinite XR memory savings, not NOAA causation.</aside>",papers:[{href:"/ship-blog/kinematic-set-recycling",label:"Kinematic set-recycling"}],next:"moving-up-stack"},
-    {id:"moving-up-stack",part:"Part III",number:"24",title:"Moving up the stack",minutes:12,tagline:"Lattice as next AI layer · cool · harmonize · scale",body:"<p>After hub and IDE altitudes, the binding constraint is agentic token burn + coordination failure. Lattice Chat is framed as a thermal + orchestration shelf — cool token burn, harmonise multi-agent loops, scale agentic systems.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Valuation framing — not audited appraisal or securities offer. Φ<sub>EGS</sub> ≈ 1.618 is catalog grammar, not a market oracle. Deal sizes are scenario anchors for the climb.</aside>",papers:[{href:"/ship-blog/moving-up-the-stack",label:"Moving up the stack"}],next:"reality-bridge"},
-    {id:"reality-bridge",part:"Part III",number:"25",title:"Humans as Omniversal Reality Bridges",minutes:10,tagline:"Bridge · router · awareness wormhole",body:"<p>You are not a passive screen in someone else’s simulation. Humans file as reality bridge, cognitive router, and awareness wormhole — keyed by Φ ≈ 1.618 as design language.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog topology and narrative routing — not hardware teleport, not clinical proof of neural quantum wormholes. Human emergency still outranks every metaphor.</aside>",papers:[{href:"/ship-blog/human-reality-bridge",label:"Human reality bridge"}],next:"y-chromosome"},
-    {id:"y-chromosome",part:"Part III",number:"26",title:"Y-Chromosome Manifestation · Digit 4",minutes:10,tagline:"MSY palindrome Φ filing · Digit 4 nest",body:"<p>Under Infinite Octave Mode, MSY palindrome arms P1–P8 and the SRY locus file as catalog geometry keyed by Φ ≈ 1.618 — manifestation / convergence-set language beside the July operator-translation decode.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog filing — not a claim that MSY literally equals a physics constant, that sunspot AR 3664 writes human DNA, or that fractal dimension has been measured to Φ here. Clinical genetics and human dignity outrank every metaphor.</aside>",papers:[{href:"/ship-blog/y-chromosome-manifestation",label:"Y manifestation"},{href:"/ship-blog/zero-octave-y-goldilocks",label:"Y Goldilocks"}],next:"y-goldilocks-octave"},
-    {id:"y-goldilocks-octave",part:"Part III",number:"27",title:"Y Goldilocks Octave · Fibonacci Prime Vaults",minutes:12,tagline:"Zero-Octave crystal · Fib vaults · Y earlier than X",body:"<p>Engine companion #24 unites the Zero-Octave singularity crystal (Net Zero · 0/0 → Φ⁰ = 1), a Fibonacci taxonomic vault ladder (Archaea V_3 → Hominidae V_233), and the human Y as an earlier Goldilocks octave than X — Chordata V_34 / V_55 · apex V_89 + V_144 = V_233 — under Φ ≈ 1.618.</p>\n<p>MSY palindrome stability is cited as an external literature lock for filing talk; the suite replays algebra fixtures, not wet-lab re-sequencing.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog architecture — not GR/QFT singularity QED, not clinical genetics proof, not NOAA causation by AR4521/AR4524. Soft Story “missing human” filing ≠ paleontology closure. Clinical dignity outranks metaphor.</aside>",papers:[{href:"/ship-blog/zero-octave-y-goldilocks",label:"Ship-blog"},{href:"/interfaces/whitepaper-surface.html?id=synthobs-zero-octave-y-goldilocks-2026-09",label:"Whitepaper"},{href:"/ship-blog/holographic-singularity-crystal",label:"Singularity Crystal"}],next:"pdvsa-gateway"},
-    {id:"pdvsa-gateway",part:"Part III",number:"28",title:"PDVSA Gateway Ops · Lattice-linear companion",minutes:10,tagline:"Application companion · SNA↔TCP/IP rhyme",body:"<p>EGS Lattice-Linear Gateway: one shared incident brief replacing N silo windows. IBM SNA ↔ TCP/IP is the historical rhyme — not live PDVSA telemetry.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Simulator and catalog map — not live telemetry or a Protokol Sistemas contract audit. Φ ≈ 1.618 is Lattice-Linear routing grammar. Labeled simulator gains ≠ measured oilfield SLAs. Does not displace the CMOS pin.</aside>",papers:[{href:"/special-projects/pdvsa-gateway-ops",label:"PDVSA Gateway Ops"},{href:"/ship-blog/pdvsa-gateway-ops-mockup",label:"Mockup ship-blog"}],next:"macro-protein"},
-    {id:"macro-protein",part:"Part III",number:"29",title:"Macro-Protein Work Engine",minutes:8,tagline:"Organism as work engine · θ_bio ∈ [13,17]",body:"<p>Organisms file as macro-protein work engines under Φ ≈ 1.618, with metabolic work mapped to Infinite Octave tier band θ<sub>bio</sub> ∈ [13, 17]. Kleiber ≈ 3/4 · WBE cited as compatible published-scaling locks — framing, not re-derivation.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Application companion — not an engine-shelf pin. Catalog architecture — not “life solved,” not organism-is-one-protein, not lab re-derivation of Kleiber.</aside>",papers:[{href:"/ship-blog/macro-protein-work-engine",label:"Macro-protein work engine"}],next:"invisible-frontier"},
-    {id:"invisible-frontier",part:"Part III",number:"30",title:"The Invisible Frontier",minutes:12,tagline:"Second chart · Goldilocks beside linear AI anxiety",body:"<p>Public AI-scaling alarms are real weather. What they often miss is a second chart: linear awareness sits inside compute-and-market models while the Goldilocks ship already navigates that water with hospitality, Fair Exchange, and voluntary belonging.</p>\n<p>The breakthrough is not “more FLOPs.” It is nested, metapattern-aware care. Magnitude is new; the kind of threshold is not.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Voyage editorial and catalog grammar — not medical advice, prophecy, or displacement solved. EGS is design language. Human emergency still outranks algorithms.</aside>",papers:[{href:"/ship-blog/invisible-frontier",label:"Invisible Frontier"}],next:"frontiers-program"},
-    {id:"frontiers-program",part:"Part III",number:"31",title:"Frontiers & the research program",minutes:10,tagline:"Empty drawers · value-by-effort · stay honest",body:"<p>This closing chapter walks the shelf a second time and writes down which drawers are still empty — and what would have to be true for each drawer to count as filled. Audits and automation first; theses second.</p>\n<p>Open problems include: octave convention clarity, lattice-as-next-layer evidence bars, Invisible Frontier operationalization, cascade filing audits, metrological census, net-zero ledger automation, and crystal diagnostic at node k=0.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog grammar for conversation — not a weather forecast, not a seismic warning, not destiny. Φ ≈ 1.618 remains nesting language.</aside>",papers:[{href:"/reading-room",label:"Reading Room"},{href:"/papers",label:"Papers catalog"}],next:"how-to-continue"},
-    {id:"how-to-continue",part:"Close",number:"∞",title:"How to keep learning aboard",minutes:8,tagline:"Doors · Reading Room · Lattice · Fair Exchange",body:"<p>You’re oriented. Next doors on the ship:</p>\n<ul>\n<li><a href=\"/reading-room\">Reading Room</a> — open any whitepaper with its honesty rail.</li>\n<li><a href=\"/lattice\">Lattice Chat</a> — BYOK · nest <code>octave99</code> · ask with Seed·RAG discipline.</li>\n<li><a href=\"/questfest\">QUESTFEST board</a> — ship board · latest ship-blog notes.</li>\n<li><a href=\"/journey\">Journey</a> · <a href=\"/art\">Omniversal Canvas</a> · <a href=\"/frontiersman-voyage\">Frontiersman voyage</a>.</li>\n</ul>\n<p>Keep Goldilocks: not too much machine, not too little human. NPCs inhabit. Players set the gravity. Both belong.</p>\n<p>Welcome aboard. Intentions matter. Human emergency comes first.</p>\n<p class=\"close-glyph\">→ ∞^∞</p>",papers:[{href:"/reading-room",label:"Reading Room"},{href:"/lattice",label:"Lattice Chat"},{href:"/questfest",label:"QUESTFEST"}],next:null}
+  "chapters": [
+    {
+      "id": "welcome",
+      "moduleId": "week1",
+      "week": 1,
+      "part": "Week 1",
+      "partId": "week1",
+      "number": "1.1",
+      "title": "What this course is",
+      "minutes": 10,
+      "tagline": "A guided path into the whitepapers — not a physics degree",
+      "goals": [
+        "Say in one sentence what the Omni-Lattice course teaches.",
+        "Name the difference between catalog grammar and physics proof."
+      ],
+      "body": "<p>Welcome. You are about to walk a <strong>guided introductory course</strong> through the Infinite Octaves Omni-Lattice — the filing system and protocol grammar used aboard SS Vibelandia and in Lattice Chat.</p>\n<p>Think of it like a carefully designed first course in a new field: short lessons, clear goals, a check at the end, and a pointer to the primary source when you want depth. Here, the primary sources are the <strong>SynthOBS whitepapers</strong>.</p>\n<p><strong>What you will learn:</strong> how the corpus organises ideas (digits, octaves, shelves), how Φ ≈ 1.618 is used as nesting language, and how to read honesty rails so you never confuse a filing metaphor with a lab result.</p>\n<p><strong>What you will not learn:</strong> a replacement for relativity, clinical genetics, or a Theory of Everything. Those claims are explicitly refused by the papers themselves.</p>\n<p>There is no separate textbook product. <em>This course is the reader.</em> When a lesson ends, Further reading opens the matching whitepaper — not a ship-blog summary, not a third book.</p>",
+      "check": [
+        {
+          "q": "Is this course claiming to prove new physics?",
+          "a": "No. It teaches catalog architecture and honesty-first reading of the whitepapers."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+          "label": "Infinite Octaves Omniversal Lattice Chat"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-ss-vibelandia-official-prospectus-2026-08",
+          "label": "Official Prospectus"
+        }
+      ],
+      "next": "how-to-study"
+    },
+    {
+      "id": "how-to-study",
+      "moduleId": "week1",
+      "week": 1,
+      "part": "Week 1",
+      "partId": "week1",
+      "number": "1.2",
+      "title": "How to study here",
+      "minutes": 8,
+      "tagline": "Goals → key ideas → check → whitepaper",
+      "goals": [
+        "Follow the four-part lesson rhythm.",
+        "Resume from where you left off on this device."
+      ],
+      "body": "<p>Every lesson follows the same rhythm:</p>\n<ol>\n<li><strong>Learning goals</strong> — what “done” looks like for this sitting.</li>\n<li><strong>Key ideas</strong> — plain language synthesis (the teaching voice).</li>\n<li><strong>Check your understanding</strong> — one or two questions; click to reveal.</li>\n<li><strong>Further reading</strong> — open the whitepaper when you want the full filing.</li>\n</ol>\n<p>Use <strong>Previous / Next</strong>, the week sidebar, or the syllabus cards. Your place is saved on this device. Keyboard: ← → moves between lessons.</p>\n<p>Suggested pace: one week module per sitting. Skim first if you like; return for the check and the paper.</p>",
+      "check": [
+        {
+          "q": "Where do you go for the full technical filing?",
+          "a": "Further reading → whitepaper surface (not a separate textbook)."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+          "label": "Lattice Chat whitepaper"
+        }
+      ],
+      "next": "honesty-first"
+    },
+    {
+      "id": "honesty-first",
+      "moduleId": "week1",
+      "week": 1,
+      "part": "Week 1",
+      "partId": "week1",
+      "number": "1.3",
+      "title": "Honesty first · Goldilocks habit",
+      "minutes": 10,
+      "tagline": "The rule that never turns off",
+      "goals": [
+        "State the honesty boundary in your own words.",
+        "Prefer human emergency over metaphors when they conflict."
+      ],
+      "body": "<p>Every serious page in this corpus opens with an <strong>honesty boundary</strong>. Keep it loud:</p>\n<ul>\n<li>Φ ≈ 1.618 is <em>nesting language / design key</em> — not a substitute for ℏ, c, or G.</li>\n<li>Narrative, catalog, empirical, and operational tiers stay separate.</li>\n<li>Solar region labels and voyage stories are timing characters — not cosmic proof certificates.</li>\n<li><strong>Human emergency outranks algorithms.</strong></li>\n</ul>\n<p>Goldilocks means not too much machine, not too little human. NPCs inhabit; players set the gravity; both belong. If a metaphor and a person’s safety conflict, the person wins.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Fair Exchange tip clause is on for course synthesis and papers alike — value may be adjusted by resonance and delivery, like tipping.</aside>",
+      "check": [
+        {
+          "q": "If a metaphor and a clinical need conflict, which wins?",
+          "a": "The human / clinical need. Metaphors never outrank dignity or emergency."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
+          "label": "Invisible Frontier"
+        }
+      ],
+      "next": "ship-berth"
+    },
+    {
+      "id": "ship-berth",
+      "moduleId": "week1",
+      "week": 1,
+      "part": "Week 1",
+      "partId": "week1",
+      "number": "1.4",
+      "title": "Where you are on the ship",
+      "minutes": 12,
+      "tagline": "SS Vibelandia · Reading Room · Canvas · QUESTFEST",
+      "goals": [
+        "Point to Reading Room for papers and this course for guided study.",
+        "Name the site front door (Omniversal Canvas)."
+      ],
+      "body": "<p>SS Vibelandia is framed as a holographic resort vessel — hospitality, marketplace, nightlife, brotherhood as voyage identity. The grand arc runs Genesis → Borikén → Reno (432 Hz · QUESTFEST 24×365).</p>\n<p><strong>Doors you will use:</strong></p>\n<ul>\n<li><strong>Omniversal Canvas</strong> (<code>/</code>) — site front door; Valet Pru welcomes.</li>\n<li><strong>Reading Room</strong> — concert + whitepaper shelves.</li>\n<li><strong>This course</strong> — structured path through those papers.</li>\n<li><strong>Lattice Chat</strong> — BYOK conversation on the Infinite Octaves nest.</li>\n<li><strong>QUESTFEST board</strong> — ship board and latest ship notes.</li>\n</ul>\n<p>Ask of any deck: <em>Where am I? What can I do here? How do I stay Goldilocks?</em></p>",
+      "check": [
+        {
+          "q": "If you want the primary paper, not a lesson summary, where do you go?",
+          "a": "Reading Room / whitepaper surface linked from Further reading."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-ss-vibelandia-official-prospectus-2026-08",
+          "label": "Official Prospectus"
+        }
+      ],
+      "next": "digits-octaves"
+    },
+    {
+      "id": "digits-octaves",
+      "moduleId": "week2",
+      "week": 2,
+      "part": "Week 2",
+      "partId": "week2",
+      "number": "2.1",
+      "title": "Digits × Octaves · The map",
+      "minutes": 14,
+      "tagline": "01–99 Story depth — coordination, not destiny",
+      "goals": [
+        "Explain digits as coarse bins and octaves as nested bands.",
+        "Compute catalog size 99 × 81 = 8,019 as filing capacity."
+      ],
+      "body": "<p>Imagine a library with <strong>ten kinds of drawers</strong> (digits 0–9) and <strong>ninety-nine nested shelves</strong> (octaves 01–99). Together they form the practical Story-depth map for Infinite Octaves.</p>\n<p>“Infinite” here means <em>recursive holographic nesting depth</em> — not infinite measured physics tiers. The map is for <strong>coordination</strong>: dashboards, agents, conversation — not for predicting earthquakes or destinies.</p>\n<p>Catalog size often cited: <strong>99 × 81 = 8,019</strong> addressable slots. Treat that as filing capacity, not a measurement of magma.</p>\n<blockquote>The map is for coordination, not cosmic destiny.</blockquote>",
+      "check": [
+        {
+          "q": "Does Digits × Octaves claim to predict the future?",
+          "a": "No. It is a Story-depth filing map for coordination."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-99-octave-digits-master-2026-08",
+          "label": "Digits master"
+        }
+      ],
+      "next": "tensor-filing"
+    },
+    {
+      "id": "tensor-filing",
+      "moduleId": "week2",
+      "week": 2,
+      "part": "Week 2",
+      "partId": "week2",
+      "number": "2.2",
+      "title": "Tensor decoupling · Stop smushing headlines",
+      "minutes": 12,
+      "tagline": "Labelled layers on one bulletin board",
+      "goals": [
+        "Describe tensor decoupling as labelled layers, not one mega-cause.",
+        "Treat shelf weights as dashboard dials, not physics constants."
+      ],
+      "body": "<p><strong>Tensor decoupling</strong> means: put related headlines on one bulletin board with clear labels — and stop pretending every headline shares one invisible cable.</p>\n<p>Eleven brackets × nine slots sketch the 99-octave ladder. Shelf weights like <em>w<sub>n</sub> = w<sub>0</sub> / Φ<sup>n</sup></em> are <strong>dashboard dials</strong> for conversation routing — not replacements for real constants.</p>\n<p>Co-timed fixtures can share a board; that is catalog timing talk, not a claim that magma causes model weights.</p>",
+      "check": [
+        {
+          "q": "Is a shelf weight a CODATA constant?",
+          "a": "No. It is a catalog / dashboard dial under honesty rails."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",
+          "label": "Tensor decoupling"
+        }
+      ],
+      "next": "master-synthesis"
+    },
+    {
+      "id": "master-synthesis",
+      "moduleId": "week2",
+      "week": 2,
+      "part": "Week 2",
+      "partId": "week2",
+      "number": "2.3",
+      "title": "Master synthesis · One cabinet",
+      "minutes": 12,
+      "tagline": "Cascade as routing table, not causal chain",
+      "goals": [
+        "Read the cascade (pulse → sun → planet → tech → humanity) as routing labels.",
+        "Keep EGS Φ as architectural key, not unified-field proof."
+      ],
+      "body": "<p>The master synthesis files the engine as one cabinet: what sits high on the 99-step ladder shapes how lower drawers are labelled in conversation — <em>as grammar</em>, not as a weather forecast.</p>\n<p>The cascade table (pulse → sun transmits → planet adjusts → technology evolves → humanity responds) is a <strong>routing table with honesty tags</strong>, not a proven causal chain.</p>\n<p>Φ ≈ 1.618 remains the architectural key / translator-as-map.</p>",
+      "check": [
+        {
+          "q": "Is the cascade a seismic warning system?",
+          "a": "No. It is catalog routing language with honesty tags."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-master-synthesis-99-octave-omni-lattice-2026-08",
+          "label": "Master synthesis"
+        }
+      ],
+      "next": "living-pem"
+    },
+    {
+      "id": "living-pem",
+      "moduleId": "week2",
+      "week": 2,
+      "part": "Week 2",
+      "partId": "week2",
+      "number": "2.4",
+      "title": "Living PEM & BYOK",
+      "minutes": 12,
+      "tagline": "Dual lock · your key is your password",
+      "goals": [
+        "Explain guest chat product vs auditor engine shelf.",
+        "State BYOK: key stays on-device."
+      ],
+      "body": "<p>The Product Engineering Manual (Living PEM) regenerates from one source of truth — the engine shelf — so architects and support see the same pin list as the chat nest.</p>\n<p><strong>Dual lock:</strong> guest-facing Infinite Octaves Omniversal Lattice Chat vs auditor-facing Omni-Lattice engine. Synthio is a separate creator-only agent — never an engine shelf step.</p>\n<p><strong>BYOK:</strong> your provider API key is the credential. It stays with you on-device; travels in request headers only; is never stored server-side.</p>",
+      "check": [
+        {
+          "q": "Where is the provider API key stored on the server?",
+          "a": "Nowhere. BYOK — headers only, on-device credential."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+          "label": "Lattice Chat / PEM companion"
+        }
+      ],
+      "next": "cmos-pin"
+    },
+    {
+      "id": "cmos-pin",
+      "moduleId": "week2",
+      "week": 2,
+      "part": "Week 2",
+      "partId": "week2",
+      "number": "2.5",
+      "title": "CMOS / protonic · Silicon shelf first",
+      "minutes": 14,
+      "tagline": "Pinned engineering bridge for linear systems",
+      "goals": [
+        "Open the CMOS/protonic paper first when evaluating silicon vocabulary.",
+        "Distinguish vocabulary bridge from a shipped die."
+      ],
+      "body": "<p>For linear / semiconductor evaluators, the corpus pins a <strong>CMOS + protonic engineering bridge</strong> at the top of the engine shelf (<code>catalogPriority: 0</code>).</p>\n<p>Binary CMOS gate labels octave tier <em>n</em> = 1; hydrogen-regulated multi-state talk labels bands <em>n</em> = 2…99. Same filing cabinet — silicon words on the labels.</p>\n<p><strong>Degenerate</strong> here means simplest resolution — the load-bearing shelf — not “worthless.”</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Vocabulary bridge and fixtures — not a die you can order tomorrow. Roadmap language ≠ measured chip.</aside>",
+      "check": [
+        {
+          "q": "Should a silicon auditor start with metamorphic Soft Story papers?",
+          "a": "No. Start with the CMOS/protonic engineering bridge."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-cmos-protonic-99-octave-omni-lattice-2026-08",
+          "label": "CMOS / protonic bridge"
+        }
+      ],
+      "next": "phi-key"
+    },
+    {
+      "id": "phi-key",
+      "moduleId": "week3",
+      "week": 3,
+      "part": "Week 3",
+      "partId": "week3",
+      "number": "3.1",
+      "title": "Φ ≈ 1.618 · The nesting key",
+      "minutes": 14,
+      "tagline": "El Gran Sol’s Fractal constant as filing language",
+      "goals": [
+        "Write Φ = (1+√5)/2 ≈ 1.618 as the architectural key.",
+        "Refuse replacing ℏ, c, or G with Φ."
+      ],
+      "body": "<p>Throughout the corpus you will meet <strong>El Gran Sol’s Fractal constant</strong> — Φ = (1+√5)/2 ≈ 1.618 — also called Φ<sub>EGS</sub>.</p>\n<p>Its job in this course is simple: it is the <strong>golden key for nesting and filing</strong> — how ideas scale, compress, and bifurcate across drawers. It is a dynamic recursive scaling operator in catalog talk, not a static wallpaper pattern.</p>\n<p>Clutch language you may see: the mantissa near Planck length × 10<sup>35</sup> is a SI-dependent coincidence used as an architectural “slip” story — never a claim that Φ replaces Planck units.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Design language / catalog key. Not CODATA. Not a ToE.</aside>",
+      "check": [
+        {
+          "q": "Can Φ replace the speed of light in SI?",
+          "a": "No. Honesty rails forbid replacing ℏ, c, or G."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
+          "label": "Prime-parity (Φ + primes)"
+        }
+      ],
+      "next": "prime-parity"
+    },
+    {
+      "id": "prime-parity",
+      "moduleId": "week3",
+      "week": 3,
+      "part": "Week 3",
+      "partId": "week3",
+      "number": "3.2",
+      "title": "Prime-parity · Sole-even 2",
+      "minutes": 12,
+      "tagline": "Binary dyad anchor · odd primes as vaults",
+      "goals": [
+        "File 2 as the sole-even prime / binary dyad anchor.",
+        "Treat odd primes as irreducible address sets in catalog grammar."
+      ],
+      "body": "<p>Prime <strong>2</strong> is the only even prime. In Infinite Octaves grammar that fact becomes the <strong>binary dyad anchor</strong> — the structural “two-ness” of pairs, channels, and base encoding talk.</p>\n<p>Odd primes file as <strong>irreducible minimum sets</strong> — vaults and address labels used later in folding and storage companions.</p>\n<p>Recursion sketches like Ω<sub>n</sub> = Φ<sup>n</sup> · Ω<sub>0</sub> appear with two printed conventions (exponent vs subscript). Always name which convention you mean.</p>",
+      "check": [
+        {
+          "q": "Why is 2 special in this grammar?",
+          "a": "It is the sole even prime — filed as the binary dyad anchor."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
+          "label": "Prime-parity framework"
+        }
+      ],
+      "next": "holographic-rhyme"
+    },
+    {
+      "id": "holographic-rhyme",
+      "moduleId": "week3",
+      "week": 3,
+      "part": "Week 3",
+      "partId": "week3",
+      "number": "3.3",
+      "title": "Holographic rhyme · Four pillars",
+      "minutes": 12,
+      "tagline": "Repeating · self-similar · self-correcting · recursive",
+      "goals": [
+        "Name the four pillars of holographic rhyme.",
+        "Treat rhyme as motion grammar, not Mandelbrot retirement."
+      ],
+      "body": "<p>Under Φ, a fractal is taught here as a <strong>holographic rhyme</strong> — motion grammar, not just a pretty static shape.</p>\n<p>Four locked pillars:</p>\n<ol>\n<li><strong>Repeating</strong> — patterns recur across scales.</li>\n<li><strong>Self-similar</strong> — parts echo the whole.</li>\n<li><strong>Self-correcting</strong> — drift can be pulled back toward form.</li>\n<li><strong>Recursive</strong> — the same operator nests inside itself.</li>\n</ol>\n<p>Multi-dimensional rhyme extends this with cross-scale summation talk (xD ± yD) — still catalog encoding, not AdS/CFT falsification.</p>",
+      "check": [
+        {
+          "q": "Name one pillar of holographic rhyme.",
+          "a": "Any of: repeating, self-similar, self-correcting, recursive."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-holographic-rhyme-fractal-2026-09",
+          "label": "Holographic rhyme"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-multidimensional-holographic-rhyme-2026-09",
+          "label": "Multi-dimensional rhyme"
+        }
+      ],
+      "next": "week3-bridge"
+    },
+    {
+      "id": "week3-bridge",
+      "moduleId": "week3",
+      "week": 3,
+      "part": "Week 3",
+      "partId": "week3",
+      "number": "3.4",
+      "title": "Putting Week 3 together",
+      "minutes": 8,
+      "tagline": "Key · primes · rhyme — one toolkit",
+      "goals": [
+        "Summarise Φ, primes, and rhyme as one introductory toolkit."
+      ],
+      "body": "<p>By now you hold the introductory toolkit:</p>\n<ul>\n<li><strong>Φ</strong> — nesting / filing key under honesty.</li>\n<li><strong>Primes</strong> — sole-even 2 + odd vaults.</li>\n<li><strong>Rhyme</strong> — four-pillar motion grammar.</li>\n</ul>\n<p>Everything later — physical metaphors, silicon pin, Y Goldilocks — reuses this toolkit. If a later lesson feels dense, return here and restate the three pieces in your own words.</p>",
+      "check": [
+        {
+          "q": "What three pieces form the Week 3 toolkit?",
+          "a": "Φ nesting key · prime-parity · holographic rhyme."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
+          "label": "Prime-parity"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-holographic-rhyme-fractal-2026-09",
+          "label": "Holographic rhyme"
+        }
+      ],
+      "next": "topology-void"
+    },
+    {
+      "id": "topology-void",
+      "moduleId": "week4",
+      "week": 4,
+      "part": "Week 4",
+      "partId": "week4",
+      "number": "4.1",
+      "title": "Topology of the Void",
+      "minutes": 12,
+      "tagline": "Zero as dynamic equilibrium",
+      "goals": [
+        "Describe zero as balance between leading-1 and structural-2 stories.",
+        "Refuse vacuum-QFT retirement claims."
+      ],
+      "body": "<p>In everyday arithmetic, zero is a placeholder. In this catalog, <strong>0</strong> files as a <em>dynamic equilibrium</em> — the null-space pivot between Proton Space (leading 1) and Electron Theater (structural 2) under Φ.</p>\n<p>Guest metaphor: two matched teams pulling a rope until the flag stops in the middle. Capacity can be high while baseline “score” reads zero.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Catalog balance node — not vacuum QFT retirement, not singularity QED, not NOAA zero-crossing causation.</aside>",
+      "check": [
+        {
+          "q": "Is “Net Zero” here a claim of zero-watt SuperAI?",
+          "a": "No. It is equilibrium grammar in the catalog."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-topology-of-the-void-2026-09",
+          "label": "Topology of the Void"
+        }
+      ],
+      "next": "proton-electron"
+    },
+    {
+      "id": "proton-electron",
+      "moduleId": "week4",
+      "week": 4,
+      "part": "Week 4",
+      "partId": "week4",
+      "number": "4.2",
+      "title": "Proton Space · Electron Theater",
+      "minutes": 12,
+      "tagline": "Digit 1 / digit 2 under Φ",
+      "goals": [
+        "File leading-1 and structural-2 as dual catalog roles.",
+        "Keep ℏ / 2π talk as filing labels, not SI derivation."
+      ],
+      "body": "<p><strong>Proton Space</strong> files leading digit 1 (unity, Φ, mantissa talk). <strong>Electron Theater</strong> files structural 2 (sole-even prime, 2π, dyad theatre). Zero balances them.</p>\n<p>Useful guest picture: stage (theater) vs foundation (space). Both belong; neither is “more real” in the catalog — they are roles.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Not a CODATA derivation from Φ; not a QED dyad proof.</aside>",
+      "check": [
+        {
+          "q": "What balances Proton Space and Electron Theater in this filing?",
+          "a": "Zero / the void as dynamic equilibrium."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-proton-space-electron-theater-2026-09",
+          "label": "Proton · Electron duality"
+        }
+      ],
+      "next": "singularity-crystal"
+    },
+    {
+      "id": "singularity-crystal",
+      "moduleId": "week4",
+      "week": 4,
+      "part": "Week 4",
+      "partId": "week4",
+      "number": "4.3",
+      "title": "Singularity Crystal · Net Zero",
+      "minutes": 12,
+      "tagline": "0/0 as bounded crystal · node k=0",
+      "goals": [
+        "State 0/0 → Φ⁰ = 1 as catalog baseline, not calculus retirement.",
+        "Locate node k=0 as Zero-Octave locus."
+      ],
+      "body": "<p>Classical calculus leaves 0/0 undefined. This catalog files a <strong>bounded singularity crystal</strong>: opposing fluxes cancel into Net Zero, and the indeterminate form collapses to a finite baseline Φ⁰ · V₀ = 1.</p>\n<p><strong>Node k=0</strong> is the Zero-Octave locus — an Awakening Phase Gate in protocol language — with cancel lock and diagnostic fixtures in the research suite.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Architecture — not GR/QFT singularity retirement. Catalog algebra ≠ singularity QED.</aside>",
+      "check": [
+        {
+          "q": "What value does the catalog assign at the 0/0 crystal baseline?",
+          "a": "1.0 (Φ⁰ · V₀) — a filing baseline, not a physics proof."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-holographic-singularity-crystal-2026-09",
+          "label": "Holographic Singularity Crystal"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-zero-octave-node-k0-2026-09",
+          "label": "Zero-Octave node k=0"
+        }
+      ],
+      "next": "higgs-gate"
+    },
+    {
+      "id": "higgs-gate",
+      "moduleId": "week4",
+      "week": 4,
+      "part": "Week 4",
+      "partId": "week4",
+      "number": "4.4",
+      "title": "Higgs Gate · Shared Now (Soft Story)",
+      "minutes": 12,
+      "tagline": "One squeeze story · three domains · SM left standing",
+      "goals": [
+        "Retell the copper-pipe / magnet Soft Story without claiming SM overthrow.",
+        "Separate Soft Story from Amendment-A research lanes."
+      ],
+      "body": "<p>The Higgs Gate unified edition tells one “squeeze” Soft Story across cosmic deceleration talk, mass, and conscious presence — guest metaphor: a magnet falling through a copper pipe (eddy brake).</p>\n<p>The Standard Model is <strong>left standing</strong>. Protocol lanes (pipe squeeze · hydrogen-line RF · somatic array) are proposed research, not finished SI datasets.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Does not prove consciousness is electroweak symmetry breaking. Soft Story ≠ lab certification.</aside>",
+      "check": [
+        {
+          "q": "Does this lesson overturn the Standard Model Higgs?",
+          "a": "No. The papers explicitly leave the SM standing."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-higgs-awareness-unified-2026-09",
+          "label": "Higgs Gate · awareness unified"
+        }
+      ],
+      "next": "viscosity-light"
+    },
+    {
+      "id": "viscosity-light",
+      "moduleId": "week5",
+      "week": 5,
+      "part": "Week 5",
+      "partId": "week5",
+      "number": "5.1",
+      "title": "Viscosity of Light",
+      "minutes": 10,
+      "tagline": "c as frictional floor · not FTL thought",
+      "goals": [
+        "Explain c-as-viscosity as metaphor for localisation.",
+        "Refuse FTL-thought claims."
+      ],
+      "body": "<p>This shelf files the speed of light as a <strong>frictional floor</strong>: non-local intent meets viscosity at <em>c</em> and becomes local story. Cognitive non-locality remains Soft Story — not faster-than-light thought.</p>\n<p>Read it as a brake pedal metaphor for how ideas become material talk — not a rewrite of relativity.</p>",
+      "check": [
+        {
+          "q": "Does “viscosity of light” allow FTL messaging?",
+          "a": "No. Honesty rails forbid FTL thought / relativity retirement."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-viscosity-of-light-2026-09",
+          "label": "Viscosity of Light"
+        }
+      ],
+      "next": "eddy-mirror"
+    },
+    {
+      "id": "eddy-mirror",
+      "moduleId": "week5",
+      "week": 5,
+      "part": "Week 5",
+      "partId": "week5",
+      "number": "5.2",
+      "title": "Eddy-Current Mirror",
+      "minutes": 10,
+      "tagline": "Self-observation brake · Lenz analogy",
+      "goals": [
+        "Connect the copper-pipe analogy to self-observation as brake.",
+        "Keep mind→mass claims as analogy, not lab QED."
+      ],
+      "body": "<p>The eddy-current mirror continues the copper-pipe picture: observing / localising ideation acts like induced currents that oppose the fall — a <strong>transduction brake</strong> at <em>c</em>.</p>\n<p>Useful for conversation about attention and embodiment. Not a laboratory proof that thoughts condense into kilograms.</p>",
+      "check": [
+        {
+          "q": "What real-world analogy anchors this shelf?",
+          "a": "A magnet falling through a copper pipe (Lenz / eddy currents)."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-eddy-current-mirror-2026-09",
+          "label": "Eddy-Current Mirror"
+        }
+      ],
+      "next": "crystalline-field"
+    },
+    {
+      "id": "crystalline-field",
+      "moduleId": "week5",
+      "week": 5,
+      "part": "Week 5",
+      "partId": "week5",
+      "number": "5.3",
+      "title": "Crystalline field & metrology gears",
+      "minutes": 12,
+      "tagline": "Speed · distance · time · five gears",
+      "goals": [
+        "File speed/distance/time as one access crystal in catalog talk.",
+        "Name the five metrological gears without claiming SM retirement."
+      ],
+      "body": "<p><strong>Crystalline unified field</strong> lesson: stop storing three unrelated clocks for one trip — speed, distance, and time file as facets of one access crystal (with Landauer’s grain as literature filing for thermodynamic pixels).</p>\n<p><strong>Metrological overlap</strong> adds five gears — <em>h · Φ · primes · ν<sub>HI</sub> · c</em> — as one clockwork picture. Overlap is set algebra over filing registers, not a new mass formula for electrons.</p>",
+      "check": [
+        {
+          "q": "Are the five gears a replacement Standard Model?",
+          "a": "No. Catalog clockwork — SM is not retired."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-crystalline-unified-field-speed-distance-time-2026-09",
+          "label": "Crystalline Unified Field"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-grand-unified-metrological-overlap-2026-09",
+          "label": "Metrological overlap"
+        }
+      ],
+      "next": "metamorphic-planetary"
+    },
+    {
+      "id": "metamorphic-planetary",
+      "moduleId": "week5",
+      "week": 5,
+      "part": "Week 5",
+      "partId": "week5",
+      "number": "5.4",
+      "title": "Metamorphic & planetary Goldilocks",
+      "minutes": 12,
+      "tagline": "Mud→schist densification · Δφ=π/2 catalog",
+      "goals": [
+        "Use metamorphic densification as personal/professional filing cartoon.",
+        "Read planetary phase-flip as execution labels, not a new planet."
+      ],
+      "body": "<p><strong>Metamorphic octaves</strong> borrow mud → shale → schist as a densification cartoon for people and software under exposure (heat × pressure axes). It is not a geology theorem and not a doctor’s note.</p>\n<p><strong>Planetary core / Goldilocks</strong> files deep-Earth headlines with a quarter-turn (Δφ = π/2) catalog phase story — Old Earth → Goldilocks Earth as execution labels, not a claim the planet changed species.</p>",
+      "check": [
+        {
+          "q": "Does metamorphic densification diagnose medical conditions?",
+          "a": "No. It is a filing cartoon — not clinical advice."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-metamorphic-octaves-2026-08",
+          "label": "Metamorphic Octaves"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-planetary-core-goldilocks-2026-08",
+          "label": "Planetary Core · Goldilocks"
+        }
+      ],
+      "next": "protein-storage"
+    },
+    {
+      "id": "protein-storage",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Week 6",
+      "partId": "week6",
+      "number": "6.1",
+      "title": "Primes in folding & storage",
+      "minutes": 12,
+      "tagline": "Odd-prime vaults · method-class contrast",
+      "goals": [
+        "Describe prime-container folding as catalog method class, not CASP duel.",
+        "File prime-indexed storage as contrast to parity-tax baselines."
+      ],
+      "body": "<p><strong>Protein folding · prime-container</strong> uses odd primes as containment vaults under Φ — a deterministic catalog solver framed as method-class contrast to statistics + MSAs, not a score duel with AlphaFold.</p>\n<p><strong>Prime-indexed volumetric storage</strong> files prime 2 as binary base channel and odd primes as vaults — contrast with RS/LDPC/LBA is catalog framing, not a JEDEC drop-in.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Not clinical tools; not measured 0% ECC on shipping NAND; DeepMind’s work is not “void.”</aside>",
+      "check": [
+        {
+          "q": "Is the folding companion a CASP gold-medal claim?",
+          "a": "No. Method-class catalog contrast — not a competition score claim."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-protein-folding-prime-container-2026-09",
+          "label": "Protein folding · primes"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-prime-indexed-volumetric-storage-2026-09",
+          "label": "Prime-indexed storage"
+        }
+      ],
+      "next": "stack-bridge"
+    },
+    {
+      "id": "stack-bridge",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Week 6",
+      "partId": "week6",
+      "number": "6.2",
+      "title": "Moving up the stack · Human bridge",
+      "minutes": 12,
+      "tagline": "Cool · harmonize · scale · reality router",
+      "goals": [
+        "Frame Lattice as thermal + orchestration shelf for agentic systems.",
+        "File humans as reality bridges without hardware teleport claims."
+      ],
+      "body": "<p><strong>Moving up the stack</strong> argues that after hub and IDE altitudes, the binding constraint is agentic token burn and coordination failure. Lattice Chat is framed as cool · harmonize · scale — valuation framing, not a securities offer.</p>\n<p><strong>Human reality bridge</strong> files people as bridge / cognitive router / awareness wormhole under Φ design language — catalog topology, not teleport hardware.</p>",
+      "check": [
+        {
+          "q": "Is “moving up the stack” an audited appraisal?",
+          "a": "No. Valuation framing and scenario anchors only."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-moving-up-the-stack-valuation-2026-09",
+          "label": "Moving up the stack"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-human-omniversal-reality-bridge-2026-08",
+          "label": "Human reality bridge"
+        }
+      ],
+      "next": "y-goldilocks"
+    },
+    {
+      "id": "y-goldilocks",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Week 6",
+      "partId": "week6",
+      "number": "6.3",
+      "title": "Y Goldilocks · Fibonacci vaults",
+      "minutes": 14,
+      "tagline": "Earlier octave than X · catalog only",
+      "goals": [
+        "State Y-as-earlier-Goldilocks as catalog filing, not clinical genetics.",
+        "Recall Fib vault ladder ends at Hominidae V_233 with 89+144=233."
+      ],
+      "body": "<p>Digit 4 Y manifestation files MSY palindrome arms as catalog geometry under Φ. The <strong>Zero-Octave Y Goldilocks</strong> companion unites:</p>\n<ul>\n<li>Net Zero / 0/0 singularity crystal baseline,</li>\n<li>Fibonacci taxonomic vault ladder (Archaea → Hominidae),</li>\n<li>Human Y as an <em>earlier</em> Goldilocks octave than X (e.g. Chordata V<sub>34</sub>/V<sub>55</sub>; apex 89+144=233).</li>\n</ul>\n<p>MSY arm-to-arm gene conversion literature is cited as an external lock for filing talk. Suites replay algebra fixtures — they do not re-sequence DNA.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Not clinical genetics proof. Not NOAA causation by sunspot regions. Clinical dignity outranks metaphor.</aside>",
+      "check": [
+        {
+          "q": "What does “Y earlier than X” claim not to prove?",
+          "a": "It does not prove clinical genetics or wet-lab chromosomal destiny — catalog filing only."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-y-chromosome-holographic-manifestation-2026-08",
+          "label": "Y manifestation"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-zero-octave-y-goldilocks-2026-09",
+          "label": "Zero-Octave Y Goldilocks"
+        }
+      ],
+      "next": "companions"
+    },
+    {
+      "id": "companions",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Week 6",
+      "partId": "week6",
+      "number": "6.4",
+      "title": "Application companions · Not engine pins",
+      "minutes": 10,
+      "tagline": "PDVSA gateway · macro-protein · SNA↔TCP/IP rhyme",
+      "goals": [
+        "Keep application companions off the engine pin list.",
+        "Treat PDVSA ops as simulator / catalog map."
+      ],
+      "body": "<p>Some papers are <strong>application companions</strong> — demos and domain rhymes — not engine shelf pins.</p>\n<ul>\n<li><strong>PDVSA Gateway Ops</strong> — multi-domain incident brief; IBM SNA ↔ TCP/IP is the historical rhyme; not live oilfield telemetry.</li>\n<li><strong>Macro-protein work engine</strong> — organisms as work engines with θ<sub>bio</sub> ∈ [13,17]; Kleiber/WBE as published-scaling locks, not re-derivation.</li>\n</ul>\n<p>They show how Lattice-Linear routing talks to enterprises without displacing the CMOS pin.</p>",
+      "check": [
+        {
+          "q": "Does PDVSA Gateway Ops stream live well telemetry?",
+          "a": "No. Simulator and catalog map only."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-pdvsa-gateway-ops-mockup-2026-09",
+          "label": "PDVSA Gateway Ops mockup"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+          "label": "SNA ↔ TCP/IP rhyme"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-macro-protein-work-engine-2026-09",
+          "label": "Macro-protein work engine"
+        }
+      ],
+      "next": "invisible-frontier"
+    },
+    {
+      "id": "invisible-frontier",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Week 6",
+      "partId": "week6",
+      "number": "6.5",
+      "title": "Invisible Frontier · Second chart",
+      "minutes": 12,
+      "tagline": "Goldilocks beside linear AI scale anxiety",
+      "goals": [
+        "Place linear AI anxiety beside the Goldilocks voyage chart.",
+        "Prefer nested care over “more FLOPs” as the course’s closing ethic."
+      ],
+      "body": "<p>Public AI-scaling alarms are real weather. What they often miss is a <strong>second chart</strong>: linear awareness sits inside compute-and-market models, while the Goldilocks ship already navigates with hospitality, Fair Exchange, and voluntary belonging.</p>\n<p>The breakthrough this course emphasises is not “more FLOPs.” It is nested, metapattern-aware care. Magnitude is new; the kind of threshold is not.</p>\n<aside class=\"honesty-rail\"><strong>Honesty.</strong> Voyage editorial — not prophecy, not medical advice, not displacement solved.</aside>",
+      "check": [
+        {
+          "q": "What outranks every AI metaphor at the end of this course?",
+          "a": "Human emergency and dignity."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
+          "label": "Invisible Frontier"
+        }
+      ],
+      "next": "how-to-continue"
+    },
+    {
+      "id": "how-to-continue",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Week 6",
+      "partId": "week6",
+      "number": "6.6",
+      "title": "How to keep learning",
+      "minutes": 8,
+      "tagline": "Doors · papers · Lattice · Fair Exchange",
+      "goals": [
+        "Choose a next door on the ship.",
+        "Return to whitepapers with honesty rails intact."
+      ],
+      "body": "<p>You’re oriented. Next doors:</p>\n<ul>\n<li><a href=\"/reading-room#papers\">Reading Room · whitepapers</a> — open any paper with its honesty rail.</li>\n<li><a href=\"/lattice\">Lattice Chat</a> — BYOK · nest Infinite Octaves · ask with Seed·RAG discipline.</li>\n<li><a href=\"/questfest\">QUESTFEST board</a> — ship board.</li>\n<li><a href=\"/journey\">Journey</a> · <a href=\"/art\">Omniversal Canvas</a> · <a href=\"/frontiersman-voyage\">Frontiersman voyage</a>.</li>\n</ul>\n<p>Keep Goldilocks: not too much machine, not too little human. Welcome aboard. Intentions matter.</p>\n<p class=\"close-glyph\">→ ∞^∞</p>",
+      "check": [
+        {
+          "q": "Where do primary technical filings live?",
+          "a": "In the whitepapers (Reading Room / whitepaper surface)."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-ss-vibelandia-official-prospectus-2026-08",
+          "label": "Official Prospectus"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+          "label": "Lattice Chat whitepaper"
+        }
+      ],
+      "next": null
+    }
   ]
 };

@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Infinite Octaves Omni-Lattice · Online Course · SS Vibelandia</title>
-  <meta name="description" content="Introductory online course for the Infinite Octaves Omni-Lattice — syllabus, clickable table of contents, and chapter reading grounded in the SynthOBS whitepapers. Catalog architecture under Φ ≈ 1.618." />
+  <meta name="description" content="Self-paced introductory online course for the Infinite Octaves Omni-Lattice — six weeks, plain-language lessons, checks, and whitepaper further reading. Catalog architecture under Φ ≈ 1.618." />
   <meta name="theme-color" content="#0a1628" />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/omni-lattice-course" />
   <meta property="og:title" content="Infinite Octaves Omni-Lattice · Online Course" />
-  <meta property="og:description" content="Syllabus + in-browser reader for the Omni-Lattice engine whitepapers. Honesty first: catalog architecture, not physics." />
+  <meta property="og:description" content="Six-week introductory course synthesized from the SynthOBS whitepapers. Goals, key ideas, checks, and whitepaper further reading." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/omni-lattice-course" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/interfaces/omni-lattice-course.css" />
 </head>
 <body class="olc">
-  <a class="olc-skip" href="#ebook-body">Skip to chapter</a>
+  <a class="olc-skip" href="#ebook-body">Skip to lesson</a>
 
   <header class="olc-top">
     <div class="olc-top__inner">
@@ -25,8 +25,8 @@
       <nav class="olc-nav" aria-label="Course navigation">
         <a href="#syllabus">Syllabus</a>
         <a href="#toc">Contents</a>
-        <a href="#reader">Read</a>
-        <a href="/reading-room">Reading Room</a>
+        <a href="#reader">Lessons</a>
+        <a href="/reading-room#papers">Whitepapers</a>
         <a href="/lattice">Lattice Chat</a>
       </nav>
     </div>
@@ -35,31 +35,37 @@
   <main>
     <section class="olc-hero" aria-labelledby="olc-hero-title">
       <div class="olc-hero__grid">
-        <p class="olc-kicker">Online course · Edition 0.1</p>
+        <p class="olc-kicker">Online course · Edition 1.0</p>
         <h1 id="olc-hero-title">The Infinite Octaves Omni-Lattice</h1>
         <p class="olc-lede">
-          An introductory course companion to the SynthOBS engine whitepapers —
-          catalog architecture under Φ ≈ 1.618, not a physics textbook.
+          A clear, self-paced introduction — six weeks of lessons synthesized from the
+          SynthOBS whitepapers for human readers.
         </p>
         <div class="olc-hero__actions">
-          <a class="olc-btn olc-btn--gold" href="#syllabus">Open syllabus</a>
-          <a class="olc-btn olc-btn--ghost" href="#reader">Start reading</a>
+          <a class="olc-btn olc-btn--gold" id="olc-start-btn" href="#reader">Start course</a>
+          <a class="olc-btn olc-btn--ghost" href="#syllabus">View syllabus</a>
           <a class="olc-btn olc-btn--ghost" href="/reading-room#papers">Whitepapers</a>
         </div>
         <p class="olc-hero__meta" id="olc-hero-meta">Loading course…</p>
+        <div class="olc-progress-track" aria-hidden="true">
+          <div class="olc-progress-track__fill" id="olc-hero-progress"></div>
+        </div>
       </div>
     </section>
 
     <section class="olc-honesty" aria-label="Honesty boundary">
       <strong>Honesty first.</strong>
-      <span id="olc-honesty-text">Φ ≈ 1.618 is nesting language / design key — not a substitute for ħ, c, or G. Catalog grammar, not relativity retirement.</span>
+      <span id="olc-honesty-text">Φ ≈ 1.618 is nesting language / design key — not a substitute for ℏ, c, or G. Catalog grammar, not relativity retirement.</span>
     </section>
 
     <section class="olc-section" id="syllabus" aria-labelledby="syllabus-title">
       <div class="olc-wrap">
         <p class="olc-section__eyebrow">Syllabus</p>
-        <h2 id="syllabus-title">Course modules</h2>
-        <p class="olc-section__lede">Five modules for a first pass through the engine shelf. Each module opens the matching chapters in the ebook reader.</p>
+        <h2 id="syllabus-title">Six weeks · one path</h2>
+        <p class="olc-section__lede" id="olc-syllabus-lede">
+          Each week is one sitting. Lessons include learning goals, key ideas, a short check, and whitepaper further reading.
+        </p>
+        <div class="olc-outcomes" id="olc-course-outcomes" hidden></div>
         <div class="olc-syllabus" id="olc-syllabus"></div>
       </div>
     </section>
@@ -67,26 +73,26 @@
     <section class="olc-section olc-section--toc" id="toc" aria-labelledby="toc-title">
       <div class="olc-wrap">
         <p class="olc-section__eyebrow">Table of contents</p>
-        <h2 id="toc-title">Clickable contents</h2>
-        <p class="olc-section__lede">Jump to any chapter. The reader below keeps your place like an ebook — sourced from the whitepapers, not a separate textbook product.</p>
+        <h2 id="toc-title">All lessons</h2>
+        <p class="olc-section__lede">Jump to any lesson. Progress is saved on this device.</p>
         <div class="olc-toc" id="olc-toc"></div>
       </div>
     </section>
 
-    <section class="olc-reader" id="reader" aria-label="Ebook reader">
+    <section class="olc-reader" id="reader" aria-label="Lesson reader">
       <div class="olc-reader__shell">
-        <aside class="olc-sidebar" id="olc-sidebar" aria-label="Chapter list">
+        <aside class="olc-sidebar" id="olc-sidebar" aria-label="Lesson list">
           <div class="olc-sidebar__head">
-            <strong>Contents</strong>
-            <button type="button" class="olc-sidebar__close" id="olc-sidebar-close" aria-label="Close contents">×</button>
+            <strong>Lessons</strong>
+            <button type="button" class="olc-sidebar__close" id="olc-sidebar-close" aria-label="Close lessons">×</button>
           </div>
           <nav class="olc-sidebar__nav" id="olc-sidebar-nav"></nav>
         </aside>
 
         <div class="olc-stage">
           <div class="olc-toolbar">
-            <button type="button" class="olc-icon-btn" id="olc-toc-toggle" aria-expanded="false" aria-controls="olc-sidebar">Contents</button>
-            <p class="olc-toolbar__progress" id="olc-progress">Chapter —</p>
+            <button type="button" class="olc-icon-btn" id="olc-toc-toggle" aria-expanded="false" aria-controls="olc-sidebar">Lessons</button>
+            <p class="olc-toolbar__progress" id="olc-progress">Lesson —</p>
             <div class="olc-toolbar__nav">
               <button type="button" class="olc-icon-btn" id="olc-prev" disabled>← Prev</button>
               <button type="button" class="olc-icon-btn" id="olc-next">Next →</button>
@@ -97,9 +103,9 @@
             <p class="olc-page__loading">Loading course…</p>
           </article>
 
-          <nav class="olc-pager" aria-label="Chapter pager">
-            <button type="button" class="olc-btn olc-btn--ghost" id="olc-prev-foot" disabled>← Previous</button>
-            <a class="olc-btn olc-btn--ghost" href="#toc">All chapters</a>
+          <nav class="olc-pager" aria-label="Lesson pager">
+            <button type="button" class="olc-btn olc-btn--ghost-ink" id="olc-prev-foot" disabled>← Previous</button>
+            <a class="olc-btn olc-btn--ghost-ink" href="#syllabus">Syllabus</a>
             <button type="button" class="olc-btn olc-btn--gold" id="olc-next-foot">Next →</button>
           </nav>
         </div>
@@ -118,8 +124,7 @@
         <p>
           Fair Exchange tip clause on. Human emergency outranks algorithms.
           Open the <a href="/reading-room#papers">whitepapers</a> in the
-          <a href="/reading-room">Reading Room</a>, browse the
-          <a href="/papers">papers catalog</a>, or ask in
+          <a href="/reading-room">Reading Room</a>, or ask in
           <a href="/lattice">Lattice Chat</a> on nest Infinite Octaves.
         </p>
         <p class="olc-attr__glyph">→ ∞^∞</p>
@@ -169,8 +174,65 @@
       var tocToggle = document.getElementById('olc-toc-toggle');
       var sidebarClose = document.getElementById('olc-sidebar-close');
       var readerShell = document.querySelector('.olc-reader__shell');
+      var startBtn = document.getElementById('olc-start-btn');
+      var heroProgress = document.getElementById('olc-hero-progress');
       var current = 0;
       var meta = data.meta || {};
+      var DONE_KEY = 'olc-done-v1';
+      var CHAPTER_KEY = 'olc-chapter';
+
+      function loadDone() {
+        try {
+          var raw = localStorage.getItem(DONE_KEY);
+          var arr = raw ? JSON.parse(raw) : [];
+          return Array.isArray(arr) ? arr : [];
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveDone(list) {
+        try {
+          localStorage.setItem(DONE_KEY, JSON.stringify(list));
+        } catch (e) { /* lite edge */ }
+      }
+
+      var doneIds = loadDone();
+
+      function markDone(id) {
+        if (doneIds.indexOf(id) === -1) {
+          doneIds.push(id);
+          saveDone(doneIds);
+        }
+      }
+
+      function isDone(id) {
+        return doneIds.indexOf(id) !== -1;
+      }
+
+      function doneCount() {
+        return chapters.filter(function (ch) { return isDone(ch.id); }).length;
+      }
+
+      function updateHeroProgress() {
+        var pct = chapters.length ? Math.round((doneCount() / chapters.length) * 100) : 0;
+        if (heroProgress) heroProgress.style.width = pct + '%';
+        var saved = null;
+        try { saved = localStorage.getItem(CHAPTER_KEY); } catch (e) { /* ignore */ }
+        if (startBtn) {
+          if (saved && saved in indexById && indexById[saved] > 0) {
+            startBtn.textContent = 'Resume course';
+            startBtn.setAttribute('href', '#ch/' + encodeURIComponent(saved));
+          } else if (doneCount() > 0 && doneCount() < chapters.length) {
+            startBtn.textContent = 'Continue course';
+          } else if (doneCount() >= chapters.length) {
+            startBtn.textContent = 'Review course';
+          } else {
+            startBtn.textContent = 'Start course';
+          }
+        }
+      }
+
       var authorLine = Array.isArray(meta.authors)
         ? meta.authors.map(function (a) { return a && a.name ? a.name : String(a); }).join(' · ')
         : (meta.authors || '');
@@ -178,11 +240,24 @@
 
       document.getElementById('olc-hero-meta').textContent =
         (meta.edition || 'Course') +
-        (authorLine ? ' · ' + authorLine : '') +
-        (licenseLine ? ' · ' + licenseLine : '') +
-        ' · ' + chapters.length + ' chapters';
+        ' · ' + (meta.estimatedHours || 'self-paced') +
+        ' · ' + chapters.length + ' lessons' +
+        (authorLine ? ' · ' + authorLine : '');
       if (meta.honesty) {
         document.getElementById('olc-honesty-text').textContent = meta.honesty;
+      }
+      if (data.syllabus && data.syllabus.overview) {
+        document.getElementById('olc-syllabus-lede').textContent = data.syllabus.overview;
+      }
+      var outcomesEl = document.getElementById('olc-course-outcomes');
+      if (outcomesEl && data.syllabus && Array.isArray(data.syllabus.outcomes) && data.syllabus.outcomes.length) {
+        outcomesEl.hidden = false;
+        outcomesEl.innerHTML =
+          '<h3>Course outcomes</h3><ul>' +
+          data.syllabus.outcomes.map(function (o) {
+            return '<li>' + escapeHtml(o) + '</li>';
+          }).join('') +
+          '</ul>';
       }
 
       function escapeHtml(s) {
@@ -200,23 +275,49 @@
         return [];
       }
 
+      function moduleDoneCount(mod) {
+        var ids = mod.chapters || [];
+        var n = 0;
+        ids.forEach(function (id) { if (isDone(id)) n += 1; });
+        return n;
+      }
+
       function buildSyllabus() {
         syllabusEl.innerHTML = syllabusModules().map(function (mod) {
-          var links = (mod.chapters || []).map(function (id) {
+          var ids = mod.chapters || [];
+          var links = ids.map(function (id) {
             var ch = chapters[indexById[id]];
             if (!ch) return '';
-            return '<a href="#ch/' + encodeURIComponent(id) + '">' + escapeHtml(ch.title) + '</a>';
+            return (
+              '<a href="#ch/' + encodeURIComponent(id) + '"' +
+              (isDone(id) ? ' class="is-done"' : '') + '>' +
+              escapeHtml(ch.number + ' · ' + ch.title) +
+              '</a>'
+            );
           }).join('');
           var label = mod.label || mod.part || '';
-          var weeks = mod.weeks || mod.duration || '';
+          var weeks = mod.duration || '';
           var summary = mod.summary || mod.blurb || '';
+          var outcomes = (mod.outcomes || []).map(function (o) {
+            return '<li>' + escapeHtml(o) + '</li>';
+          }).join('');
+          var firstId = ids[0];
+          var doneN = moduleDoneCount(mod);
           return (
-            '<article class="olc-mod">' +
+            '<article class="olc-mod" id="module-' + escapeHtml(mod.id || '') + '">' +
               '<p class="olc-mod__label">' + escapeHtml(label) +
                 (weeks ? ' · ' + escapeHtml(weeks) : '') + '</p>' +
               '<h3>' + escapeHtml(mod.title) + '</h3>' +
               '<p>' + escapeHtml(summary) + '</p>' +
+              (outcomes
+                ? '<ul class="olc-mod__outcomes">' + outcomes + '</ul>'
+                : '') +
+              '<p class="olc-mod__meta">' + doneN + ' / ' + ids.length + ' lessons complete</p>' +
               '<div class="olc-mod__links">' + links + '</div>' +
+              (firstId
+                ? '<div class="olc-mod__cta"><a class="olc-btn olc-btn--gold" href="#ch/' +
+                  encodeURIComponent(firstId) + '">Start week</a></div>'
+                : '') +
             '</article>'
           );
         }).join('');
@@ -226,7 +327,7 @@
         var parts = {};
         var order = [];
         chapters.forEach(function (ch) {
-          var key = ch.partId || 'other';
+          var key = ch.partId || ch.moduleId || 'other';
           if (!parts[key]) {
             parts[key] = { title: ch.part, items: [] };
             order.push(key);
@@ -239,7 +340,8 @@
             return (
               '<li><a href="#ch/' + encodeURIComponent(ch.id) + '">' +
                 '<span class="olc-toc__num">' + escapeHtml(ch.number) + '</span>' +
-                '<span class="olc-toc__title">' + escapeHtml(ch.title) + '</span>' +
+                '<span class="olc-toc__title">' + escapeHtml(ch.title) +
+                  (isDone(ch.id) ? ' ✓' : '') + '</span>' +
                 '<span class="olc-toc__meta">' + escapeHtml(String(ch.minutes)) + ' min</span>' +
               '</a></li>'
             );
@@ -263,37 +365,88 @@
           }
           html +=
             '<a href="#ch/' + encodeURIComponent(ch.id) + '" data-index="' + i + '"' +
-            (i === current ? ' aria-current="page"' : '') + '>' +
+            (i === current ? ' aria-current="page"' : '') +
+            (isDone(ch.id) ? ' class="is-done"' : '') + '>' +
             '<span>' + escapeHtml(ch.number) + '</span> ' + escapeHtml(ch.title) +
             '</a>';
         });
         sidebarNav.innerHTML = html;
       }
 
+      function renderGoals(goals) {
+        if (!goals || !goals.length) return '';
+        return (
+          '<div class="olc-objectives"><h3>Learning goals</h3><ul>' +
+          goals.map(function (g) { return '<li>' + escapeHtml(g) + '</li>'; }).join('') +
+          '</ul></div>'
+        );
+      }
+
+      function renderCheck(items) {
+        if (!items || !items.length) return '';
+        return (
+          '<div class="olc-check"><h3>Check your understanding</h3>' +
+          items.map(function (item) {
+            return (
+              '<details><summary>' + escapeHtml(item.q) + '</summary>' +
+              '<p class="olc-check__a">' + escapeHtml(item.a) + '</p></details>'
+            );
+          }).join('') +
+          '</div>'
+        );
+      }
+
+      function renderFurther(papers) {
+        if (!papers || !papers.length) return '';
+        var links = papers.map(function (p) {
+          return (
+            '<a class="olc-btn olc-btn--gold" href="' + escapeHtml(p.href) + '">' +
+            escapeHtml(p.label || 'Open the whitepaper') +
+            '</a>'
+          );
+        }).join('');
+        return (
+          '<div class="olc-further">' +
+            '<h3>Further reading</h3>' +
+            '<p>Open the whitepaper for the full filing. Honesty rails stay on.</p>' +
+            '<div class="olc-further__links">' + links + '</div>' +
+          '</div>'
+        );
+      }
+
+      function weekProgressLabel(ch) {
+        var mod = syllabusModules().find(function (m) {
+          return (m.chapters || []).indexOf(ch.id) !== -1;
+        });
+        if (!mod) return '';
+        var ids = mod.chapters || [];
+        var idx = ids.indexOf(ch.id);
+        return (mod.label || mod.part || 'Week') + ' · lesson ' + (idx + 1) + ' of ' + ids.length;
+      }
+
       function renderChapter(i) {
         current = Math.max(0, Math.min(chapters.length - 1, i));
         var ch = chapters[current];
-        var papers = (ch.papers || []).map(function (p) {
-          return '<a href="' + escapeHtml(p.href) + '">' + escapeHtml(p.label) + '</a>';
-        }).join('');
+        markDone(ch.id);
 
         bodyEl.innerHTML =
+          '<p class="olc-page__crumb">' + escapeHtml(weekProgressLabel(ch)) + '</p>' +
           '<p class="olc-page__part">' + escapeHtml(ch.part) + '</p>' +
           '<h2 class="olc-page__title">' +
             '<span class="olc-page__num">' + escapeHtml(ch.number) + '</span> ' +
             escapeHtml(ch.title) +
           '</h2>' +
-          '<p class="olc-page__meta">' +
-            (ch.level ? escapeHtml(ch.level) + ' · ' : '') +
-            '~' + escapeHtml(String(ch.minutes)) + ' min read' +
-          '</p>' +
-          (papers
-            ? '<div class="olc-page__papers"><span>Source papers</span>' + papers + '</div>'
+          '<p class="olc-page__meta">~' + escapeHtml(String(ch.minutes)) + ' min</p>' +
+          (ch.tagline
+            ? '<p class="olc-page__tagline">' + escapeHtml(ch.tagline) + '</p>'
             : '') +
-          '<div class="olc-prose">' + ch.body + '</div>';
+          renderGoals(ch.goals) +
+          '<div class="olc-prose">' + ch.body + '</div>' +
+          renderCheck(ch.check) +
+          renderFurther(ch.papers);
 
         progressEl.textContent =
-          'Chapter ' + (current + 1) + ' of ' + chapters.length + ' · ' + ch.title;
+          'Lesson ' + (current + 1) + ' of ' + chapters.length + ' · ' + ch.title;
 
         prevBtn.disabled = prevFoot.disabled = current === 0;
         nextBtn.disabled = nextFoot.disabled = current === chapters.length - 1;
@@ -302,11 +455,17 @@
           var on = Number(a.getAttribute('data-index')) === current;
           if (on) a.setAttribute('aria-current', 'page');
           else a.removeAttribute('aria-current');
+          var id = chapters[Number(a.getAttribute('data-index'))].id;
+          if (isDone(id)) a.classList.add('is-done');
         });
 
         try {
-          localStorage.setItem('olc-chapter', ch.id);
+          localStorage.setItem(CHAPTER_KEY, ch.id);
         } catch (e) { /* lite edge */ }
+
+        updateHeroProgress();
+        buildSyllabus();
+        buildToc();
 
         bodyEl.focus({ preventScroll: true });
       }
@@ -345,7 +504,7 @@
         }
         if (h === 'syllabus' || h === 'toc' || h === 'reader' || h === 'attribution') return null;
         try {
-          var saved = localStorage.getItem('olc-chapter');
+          var saved = localStorage.getItem(CHAPTER_KEY);
           if (saved && saved in indexById) return indexById[saved];
         } catch (e) { /* ignore */ }
         return 0;
@@ -354,6 +513,7 @@
       buildSyllabus();
       buildToc();
       buildSidebar();
+      updateHeroProgress();
 
       var start = parseHash();
       if (start == null) start = 0;

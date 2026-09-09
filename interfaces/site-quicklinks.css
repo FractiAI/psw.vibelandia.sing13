@@ -17,6 +17,10 @@ body.qv-has-top-quicklinks .lib-nav {
 
 /* In-flow top quicklinks — same idea as deck-skin-nav / jukebox jb-nav (not a floating overlay) */
 .qv-top-quicklinks {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
   margin: 0;
   padding: 0.65rem 1.1rem 0.55rem;
   padding-top: max(0.65rem, env(safe-area-inset-top, 0px));
@@ -29,15 +33,13 @@ body.qv-has-top-quicklinks .lib-nav {
   background: linear-gradient(180deg, rgba(12, 22, 40, 0.96), rgba(7, 11, 20, 0.92));
   border-bottom: 1px solid rgba(212, 175, 55, 0.28);
   color: #d6cfc4;
+  max-width: 100%;
+  overflow-x: clip;
+  box-sizing: border-box;
 }
 
 .qv-top-quicklinks--questfest {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.35rem;
-  max-width: 100%;
-  overflow-x: clip;
+  gap: 0.4rem;
 }
 
 .qv-top-quicklinks__row {
@@ -45,9 +47,10 @@ body.qv-has-top-quicklinks .lib-nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.15rem 0.2rem;
+  gap: 0.2rem 0.15rem;
+  row-gap: 0.35rem;
   min-width: 0;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   max-width: 100%;
 }
 
@@ -60,9 +63,28 @@ body.qv-has-top-quicklinks .lib-nav {
   opacity: 0.94;
 }
 
+.qv-top-quicklinks__row--chat {
+  padding-top: 0.2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+.qv-top-quicklinks__row--play {
+  padding-top: 0;
+}
+
 .qv-top-quicklinks__sound {
   flex: 0 0 auto;
   max-width: 100%;
+}
+
+.qv-top-quicklinks a,
+.qv-top-quicklinks__here,
+.qv-top-quicklinks__share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.15rem;
+  box-sizing: border-box;
 }
 
 .qv-top-quicklinks a {
@@ -78,12 +100,17 @@ body.qv-has-top-quicklinks .lib-nav {
 
 .qv-top-quicklinks__share {
   all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.15rem;
   cursor: pointer;
   color: #f5e6c8;
   font: inherit;
   font-weight: 700;
   letter-spacing: 0.04em;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .qv-top-quicklinks__share:hover {
@@ -117,9 +144,10 @@ body.qv-has-top-quicklinks .lib-nav {
 }
 
 .qv-top-quicklinks .sep {
-  margin: 0 0.35rem;
+  margin: 0 0.28rem;
   opacity: 0.55;
   flex-shrink: 0;
+  user-select: none;
 }
 
 .qv-top-quicklinks__here {
@@ -128,42 +156,55 @@ body.qv-has-top-quicklinks .lib-nav {
 }
 
 @media (max-width: 640px) {
+  /* Mid-dots orphan on wrap (e.g. “Check In” alone). Gap replaces · on phones. */
   .qv-top-quicklinks {
-    padding: 0.55rem 0.85rem 0.5rem;
-    padding-top: max(0.55rem, env(safe-area-inset-top, 0px));
-    padding-left: max(0.85rem, env(safe-area-inset-left, 0px));
-    padding-right: max(0.85rem, env(safe-area-inset-right, 0px));
-    font-size: 0.74rem;
-  }
-
-  .qv-top-quicklinks--questfest {
-    gap: 0.3rem;
-  }
-
-  .qv-top-quicklinks--questfest .qv-top-quicklinks__row--primary {
-    font-size: 0.68rem;
-    gap: 0.12rem 0.18rem;
-    line-height: 1.35;
-  }
-
-  .qv-top-quicklinks--questfest a,
-  .qv-top-quicklinks--questfest .qv-top-quicklinks__here,
-  .qv-top-quicklinks--questfest .qv-top-quicklinks__share {
-    white-space: normal;
-    text-align: center;
+    gap: 0.45rem;
+    padding: 0.6rem 0.7rem 0.55rem;
+    padding-top: max(0.6rem, env(safe-area-inset-top, 0px));
+    padding-left: max(0.7rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.7rem, env(safe-area-inset-right, 0px));
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    line-height: 1.25;
   }
 
   .qv-top-quicklinks__row {
-    gap: 0.18rem 0.18rem;
+    gap: 0.35rem 0.55rem;
+    row-gap: 0.4rem;
     justify-content: center;
   }
 
+  .qv-top-quicklinks__row--primary {
+    font-size: 0.72rem;
+  }
+
   .qv-top-quicklinks__row--secondary {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
+    gap: 0.3rem 0.5rem;
+  }
+
+  .qv-top-quicklinks__row--chat {
+    padding-top: 0.4rem;
   }
 
   .qv-top-quicklinks .sep {
-    margin: 0 0.18rem;
+    display: none;
+  }
+
+  .qv-top-quicklinks a,
+  .qv-top-quicklinks__here,
+  .qv-top-quicklinks__share {
+    white-space: nowrap;
+    text-align: center;
+    min-height: 2rem;
+    padding: 0.35rem 0.45rem;
+    border-radius: 6px;
+    background: rgba(245, 230, 200, 0.04);
+  }
+
+  .qv-top-quicklinks a:active,
+  .qv-top-quicklinks__share:active {
+    background: rgba(212, 175, 55, 0.14);
   }
 
   .qv-top-quicklinks__sound {

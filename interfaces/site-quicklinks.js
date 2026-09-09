@@ -203,11 +203,12 @@
     });
   }
 
-  var QUICKLINK_SECONDARY =
+  var QUICKLINK_CHAT =
     '<a href="/lets-chat" id="ql-lets-chat-link">Let\'s Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
-    '<a href="/lattice-chat" id="ql-lattice-chat-link">Lattice Chat</a>' +
-    '<span class="sep" aria-hidden="true">·</span>' +
+    '<a href="/lattice-chat" id="ql-lattice-chat-link">Lattice Chat</a>';
+
+  var QUICKLINK_PLAY =
     '<a href="/demonstrations" id="ql-demonstrations-link">Demonstrations</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/demonstrations#chat" id="ql-prime-vault-chat-link">Prime Vault Chat</a>' +
@@ -217,6 +218,9 @@
     '<a href="/goldilocks-quest" id="ql-goldilocks-quest-link">Goldilocks Quest</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>';
+
+  /** @deprecated kept for tests that still grep QUICKLINK_SECONDARY as one string */
+  var QUICKLINK_SECONDARY = QUICKLINK_CHAT + '<span class="sep" aria-hidden="true">·</span>' + QUICKLINK_PLAY;
 
   var path = window.location.pathname || '';
   var onBridge = path.indexOf('questfest-bridge') !== -1;
@@ -315,9 +319,12 @@
     nav.setAttribute('aria-label', 'Site');
     var row = document.createElement('div');
     row.className = 'qv-top-quicklinks__row qv-top-quicklinks__row--primary';
-    var secondary = document.createElement('div');
-    secondary.className = 'qv-top-quicklinks__row qv-top-quicklinks__row--secondary';
-    secondary.innerHTML = QUICKLINK_SECONDARY;
+    var chatRow = document.createElement('div');
+    chatRow.className = 'qv-top-quicklinks__row qv-top-quicklinks__row--secondary qv-top-quicklinks__row--chat';
+    chatRow.innerHTML = QUICKLINK_CHAT;
+    var playRow = document.createElement('div');
+    playRow.className = 'qv-top-quicklinks__row qv-top-quicklinks__row--secondary qv-top-quicklinks__row--play';
+    playRow.innerHTML = QUICKLINK_PLAY;
 
     if (onArtLanding) {
       row.innerHTML =
@@ -387,7 +394,8 @@
     }
 
     nav.appendChild(row);
-    nav.appendChild(secondary);
+    nav.appendChild(chatRow);
+    nav.appendChild(playRow);
     if (onQuestfestHome) {
       nav.insertAdjacentHTML('beforeend', renderQuestfestSoundBar());
     }

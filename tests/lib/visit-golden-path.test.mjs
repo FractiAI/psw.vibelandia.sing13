@@ -89,7 +89,7 @@ describe('Visit golden path · Canvas → Program → Check In', () => {
     expect(readingRoom).not.toContain('rr-prelude');
     expect(readingRoom).not.toContain('data-youtube-start');
     expect(readingRoom).not.toContain('visit-golden-path');
-    expect(readingRoom).toContain('Browse papers');
+    expect(readingRoom).toContain('Browse whitepapers');
     expect(readingRoom).not.toContain('Open concert in jukebox');
     expect(readingRoom).not.toContain('Download program (PDF)');
     expect(readingRoom).toContain(PROGRAM_CTA_LABEL);

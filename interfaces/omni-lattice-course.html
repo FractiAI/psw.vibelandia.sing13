@@ -138,18 +138,25 @@
   <script src="/interfaces/omni-lattice-course-content.js"></script>
   <script>
     (function () {
+      var bodyEl = document.getElementById('ebook-body');
+      function fail(msg) {
+        if (bodyEl) {
+          bodyEl.innerHTML =
+            '<p class="olc-page__loading">' + (msg || 'Course content failed to load.') + '</p>';
+        }
+      }
+
       var data = window.OMNI_LATTICE_COURSE;
       if (!data || !data.chapters || !data.chapters.length) {
-        document.getElementById('ebook-body').innerHTML =
-          '<p class="olc-page__loading">Course content failed to load.</p>';
+        fail('Course content failed to load.');
         return;
       }
 
+      try {
       var chapters = data.chapters;
       var indexById = {};
       chapters.forEach(function (ch, i) { indexById[ch.id] = i; });
 
-      var bodyEl = document.getElementById('ebook-body');
       var progressEl = document.getElementById('olc-progress');
       var sidebarNav = document.getElementById('olc-sidebar-nav');
       var syllabusEl = document.getElementById('olc-syllabus');
@@ -162,32 +169,52 @@
       var sidebarClose = document.getElementById('olc-sidebar-close');
       var readerShell = document.querySelector('.olc-reader__shell');
       var current = 0;
+      var meta = data.meta || {};
+      var authorLine = Array.isArray(meta.authors)
+        ? meta.authors.map(function (a) { return a && a.name ? a.name : String(a); }).join(' · ')
+        : (meta.authors || '');
+      var licenseLine = meta.license || meta.licenses || '';
 
       document.getElementById('olc-hero-meta').textContent =
-        data.meta.edition + ' · ' + data.meta.authors + ' · ' + data.meta.license +
+        (meta.edition || 'Course') +
+        (authorLine ? ' · ' + authorLine : '') +
+        (licenseLine ? ' · ' + licenseLine : '') +
         ' · ' + chapters.length + ' chapters';
-      document.getElementById('olc-honesty-text').textContent = data.meta.honesty;
+      if (meta.honesty) {
+        document.getElementById('olc-honesty-text').textContent = meta.honesty;
+      }
 
       function escapeHtml(s) {
-        return String(s)
+        return String(s == null ? '' : s)
           .replace(/&/g, '&amp;')
           .replace(/</g, '&lt;')
           .replace(/>/g, '&gt;')
           .replace(/"/g, '&quot;');
       }
 
+      function syllabusModules() {
+        var s = data.syllabus;
+        if (Array.isArray(s)) return s;
+        if (s && Array.isArray(s.modules)) return s.modules;
+        return [];
+      }
+
       function buildSyllabus() {
-        syllabusEl.innerHTML = (data.syllabus || []).map(function (mod) {
+        syllabusEl.innerHTML = syllabusModules().map(function (mod) {
           var links = (mod.chapters || []).map(function (id) {
             var ch = chapters[indexById[id]];
             if (!ch) return '';
             return '<a href="#ch/' + encodeURIComponent(id) + '">' + escapeHtml(ch.title) + '</a>';
           }).join('');
+          var label = mod.label || mod.part || '';
+          var weeks = mod.weeks || mod.duration || '';
+          var summary = mod.summary || mod.blurb || '';
           return (
             '<article class="olc-mod">' +
-              '<p class="olc-mod__label">' + escapeHtml(mod.label) + ' · ' + escapeHtml(mod.weeks) + '</p>' +
+              '<p class="olc-mod__label">' + escapeHtml(label) +
+                (weeks ? ' · ' + escapeHtml(weeks) : '') + '</p>' +
               '<h3>' + escapeHtml(mod.title) + '</h3>' +
-              '<p>' + escapeHtml(mod.summary) + '</p>' +
+              '<p>' + escapeHtml(summary) + '</p>' +
               '<div class="olc-mod__links">' + links + '</div>' +
             '</article>'
           );
@@ -256,7 +283,8 @@
             escapeHtml(ch.title) +
           '</h2>' +
           '<p class="olc-page__meta">' +
-            escapeHtml(ch.level) + ' · ~' + escapeHtml(String(ch.minutes)) + ' min read' +
+            (ch.level ? escapeHtml(ch.level) + ' · ' : '') +
+            '~' + escapeHtml(String(ch.minutes)) + ' min read' +
           '</p>' +
           (papers
             ? '<div class="olc-page__papers"><span>Source papers</span>' + papers + '</div>'
@@ -358,6 +386,10 @@
           go(current + 1);
         }
       });
+      } catch (err) {
+        console.error('omni-lattice-course boot', err);
+        fail('Course content failed to start. Refresh, or open Reading Room.');
+      }
     })();
   </script>
 </body>

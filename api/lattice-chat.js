@@ -642,7 +642,7 @@ function wrapProviderAccess(access) {
   };
 }
 
-function buildClaudeMessages(message, history, attachments = []) {
+function buildClaudeMessages(message, history, attachments = [], attachOpts = {}) {
   const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
   const messages = prior
     .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
@@ -650,7 +650,7 @@ function buildClaudeMessages(message, history, attachments = []) {
     .filter((m) => m.content);
   const list =
     typeof normalizeLatticeAttachments === 'function'
-      ? normalizeLatticeAttachments(attachments)
+      ? normalizeLatticeAttachments(attachments, attachOpts)
       : [];
   const userContent =
     list.length && typeof buildClaudeUserContent === 'function'
@@ -686,7 +686,8 @@ async function runClaudeTurn({
   onEvent = null,
   attachments = [],
 }) {
-  const { prior, messages } = buildClaudeMessages(message, history, attachments);
+  const attachOpts = { unlimited: access?.privilege === 'creator' };
+  const { prior, messages } = buildClaudeMessages(message, history, attachments, attachOpts);
   const system = assembleLatticePrompt({
     message,
     nestTopology,
@@ -2222,13 +2223,15 @@ export default async function handler(req, res) {
     }
 
     const rawMessage = typeof body.message === 'string' ? body.message.trim() : '';
+    const attachOpts = { unlimited: access.privilege === 'creator' };
     const attachments =
       typeof normalizeLatticeAttachments === 'function'
-        ? normalizeLatticeAttachments(body.attachments)
+        ? normalizeLatticeAttachments(body.attachments, attachOpts)
         : [];
     const message =
       attachments.length && typeof foldAttachmentsIntoMessage === 'function'
         ? foldAttachmentsIntoMessage(rawMessage, attachments, {
+            ...attachOpts,
             visionCapable:
               typeof latticeProviderSeesImages === 'function'
                 ? latticeProviderSeesImages(provider)

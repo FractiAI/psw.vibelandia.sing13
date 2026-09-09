@@ -1,5 +1,12 @@
 import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
-import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL, VOYAGE_HREF, VOYAGE_LABEL } from '@/access';
+import {
+  isCreatorEmail,
+  isRememberedEmailFresh,
+  MAIN_DECK_HREF,
+  MAIN_DECK_LABEL,
+  VOYAGE_HREF,
+  VOYAGE_LABEL,
+} from '@/access';
 import {
   checkPendingLatticeReply,
   LATTICE_PROGRESS_STEPS,
@@ -57,6 +64,7 @@ export function ChatPane({
   const activeThreadId = useLatticeStore((s) => s.activeThreadId);
   const userEmail = useLatticeStore((s) => s.userEmail);
   const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
+  const privilege = useLatticeStore((s) => s.privilege);
   const sending = useLatticeStore((s) => s.sending);
   const sendPhase = useLatticeStore((s) => s.sendPhase);
   const statusHint = useLatticeStore((s) => s.statusHint);
@@ -96,6 +104,7 @@ export function ChatPane({
   const resumedRef = useRef(false);
 
   const myCollabPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
+  const creatorAttach = privilege === 'creator' || isCreatorEmail(userEmail);
   const openPeerDm = useUnifiedFeed((s) => s.openPeerDm);
   const feedItems = useUnifiedFeed((s) => s.items);
   const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
@@ -282,17 +291,26 @@ export function ChatPane({
 
   async function onPickFiles(fileList: FileList | null) {
     if (!fileList?.length) return;
-    const room = LATTICE_ATTACH_MAX_FILES - attachments.length;
-    if (room <= 0) {
-      setAttachHint(`Max ${LATTICE_ATTACH_MAX_FILES} files per send.`);
-      return;
+    if (!creatorAttach) {
+      const room = LATTICE_ATTACH_MAX_FILES - attachments.length;
+      if (room <= 0) {
+        setAttachHint(`Max ${LATTICE_ATTACH_MAX_FILES} files per send.`);
+        return;
+      }
+      const { attachments: next, errors } = await readLatticeFiles(
+        Array.from(fileList).slice(0, room),
+      );
+      if (errors.length) setAttachHint(errors.join(' · '));
+      else setAttachHint(null);
+      setAttachments((prev) => [...prev, ...next].slice(0, LATTICE_ATTACH_MAX_FILES));
+    } else {
+      const { attachments: next, errors } = await readLatticeFiles(Array.from(fileList), {
+        unlimited: true,
+      });
+      if (errors.length) setAttachHint(errors.join(' · '));
+      else setAttachHint(null);
+      setAttachments((prev) => [...prev, ...next]);
     }
-    const { attachments: next, errors } = await readLatticeFiles(
-      Array.from(fileList).slice(0, room),
-    );
-    if (errors.length) setAttachHint(errors.join(' · '));
-    else setAttachHint(null);
-    setAttachments((prev) => [...prev, ...next].slice(0, LATTICE_ATTACH_MAX_FILES));
     if (fileInputRef.current) fileInputRef.current.value = '';
   }
 
@@ -809,7 +827,11 @@ export function ChatPane({
           <button
             type="button"
             className="composer-attach-btn"
-            title="Attach images, PDFs, or text docs (Cursor and Claude can see images; PDFs as extracted text)"
+            title={
+              creatorAttach
+                ? 'Attach images, PDFs, or text docs (Player 1 — no Lattice attach caps)'
+                : 'Attach images, PDFs, or text docs (Cursor and Claude can see images; PDFs as extracted text)'
+            }
             aria-label="Attach images or documents"
             disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
             onClick={() => fileInputRef.current?.click()}

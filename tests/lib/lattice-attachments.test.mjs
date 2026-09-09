@@ -48,6 +48,32 @@ describe('lattice-attachments', () => {
     expect(folded).toContain('Goldilocks voyage abstract');
   });
 
+  it('creator unlimited skips guest file and fold char caps', () => {
+    const many = Array.from({ length: 6 }, (_, i) => ({
+      name: `n${i}.txt`,
+      mime: 'text/plain',
+      kind: 'doc',
+      text: 'x',
+    }));
+    expect(normalizeLatticeAttachments(many)).toHaveLength(4);
+    expect(normalizeLatticeAttachments(many, { unlimited: true })).toHaveLength(6);
+
+    const long = 'y'.repeat(130_000);
+    const guest = foldAttachmentsIntoMessage('hi', [
+      { name: 'big.txt', mime: 'text/plain', kind: 'doc', text: long },
+    ]);
+    expect(guest).toMatch(/truncated for Goldilocks/i);
+    expect(guest.length).toBeLessThan(130_500);
+
+    const creator = foldAttachmentsIntoMessage(
+      'hi',
+      [{ name: 'big.txt', mime: 'text/plain', kind: 'doc', text: long }],
+      { unlimited: true },
+    );
+    expect(creator).not.toMatch(/truncated for Goldilocks/i);
+    expect(creator.length).toBeGreaterThan(130_000);
+  });
+
   it('folds Cursor-capable images as vision, not a Claude-only stub', () => {
     const folded = foldAttachmentsIntoMessage(
       'Use this poster',

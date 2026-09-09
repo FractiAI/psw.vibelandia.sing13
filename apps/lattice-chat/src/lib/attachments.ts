@@ -1,5 +1,13 @@
 export const LATTICE_ATTACH_MAX_BYTES = 2 * 1024 * 1024;
 export const LATTICE_ATTACH_MAX_FILES = 4;
+/** Guest Goldilocks text fold cap. Player 1 (creator) has no Lattice-side char/page/file caps. */
+export const LATTICE_ATTACH_MAX_TOTAL_CHARS = 120_000;
+export const LATTICE_ATTACH_MAX_PDF_PAGES = 40;
+
+export type LatticeAttachOptions = {
+  /** Player 1 / creator seat — no Lattice attach caps (platform body limits still apply). */
+  unlimited?: boolean;
+};
 
 const TEXT_DOC_EXT = new Set([
   'txt',
@@ -85,7 +93,7 @@ function readAsText(file: File): Promise<string> {
 }
 
 /** Edge-only PDF text extract (pdf.js). Scanned/image-only PDFs may yield empty text. */
-async function extractPdfText(file: File): Promise<string> {
+async function extractPdfText(file: File, opts: LatticeAttachOptions = {}): Promise<string> {
   const pdfjs = await import('pdfjs-dist');
   const workerSrc = (await import('pdfjs-dist/build/pdf.worker.min.mjs?url')).default;
   pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
@@ -93,7 +101,7 @@ async function extractPdfText(file: File): Promise<string> {
   const data = new Uint8Array(await file.arrayBuffer());
   const doc = await pdfjs.getDocument({ data, useSystemFonts: true }).promise;
   const pages: string[] = [];
-  const maxPages = Math.min(doc.numPages, 40);
+  const maxPages = opts.unlimited ? doc.numPages : Math.min(doc.numPages, LATTICE_ATTACH_MAX_PDF_PAGES);
   for (let i = 1; i <= maxPages; i += 1) {
     const page = await doc.getPage(i);
     const content = await page.getTextContent();
@@ -104,23 +112,34 @@ async function extractPdfText(file: File): Promise<string> {
       .trim();
     if (line) pages.push(line);
   }
-  if (doc.numPages > maxPages) {
+  if (!opts.unlimited && doc.numPages > maxPages) {
     pages.push(`[…PDF truncated after ${maxPages} pages for Goldilocks size…]`);
   }
   return pages.join('\n\n').trim();
 }
 
 /** Read guest files into attach payloads (edge-only; never stored server-side). */
-export async function readLatticeFiles(files: FileList | File[]): Promise<{
+export async function readLatticeFiles(
+  files: FileList | File[],
+  opts: LatticeAttachOptions = {},
+): Promise<{
   attachments: LatticeAttachment[];
   errors: string[];
 }> {
-  const list = Array.from(files || []).slice(0, LATTICE_ATTACH_MAX_FILES);
+  const unlimited = Boolean(opts.unlimited);
+  const maxFiles = unlimited ? Number.POSITIVE_INFINITY : LATTICE_ATTACH_MAX_FILES;
+  const maxBytes = unlimited ? Number.POSITIVE_INFINITY : LATTICE_ATTACH_MAX_BYTES;
+  const maxChars = unlimited ? Number.POSITIVE_INFINITY : LATTICE_ATTACH_MAX_TOTAL_CHARS;
+
+  const list = Array.from(files || []).slice(
+    0,
+    Number.isFinite(maxFiles) ? maxFiles : undefined,
+  );
   const attachments: LatticeAttachment[] = [];
   const errors: string[] = [];
 
   for (const file of list) {
-    if (file.size > LATTICE_ATTACH_MAX_BYTES) {
+    if (file.size > maxBytes) {
       errors.push(`${file.name}: over 2 MB limit`);
       continue;
     }
@@ -138,7 +157,7 @@ export async function readLatticeFiles(files: FileList | File[]): Promise<{
           previewUrl: URL.createObjectURL(file),
         });
       } else if (isPdfFile(file.name, mime)) {
-        const text = await extractPdfText(file);
+        const text = await extractPdfText(file, opts);
         if (!text.trim()) {
           errors.push(
             `${file.name}: no extractable text (scanned/image-only PDF). Paste text or use a text PDF.`,
@@ -149,7 +168,7 @@ export async function readLatticeFiles(files: FileList | File[]): Promise<{
           name: file.name,
           mime: 'application/pdf',
           kind: 'doc',
-          text: text.slice(0, 120_000),
+          text: Number.isFinite(maxChars) ? text.slice(0, maxChars) : text,
         });
       } else {
         const text = await readAsText(file);
@@ -161,7 +180,7 @@ export async function readLatticeFiles(files: FileList | File[]): Promise<{
           name: file.name,
           mime: mime || 'text/plain',
           kind: 'doc',
-          text: text.slice(0, 120_000),
+          text: Number.isFinite(maxChars) ? text.slice(0, maxChars) : text,
         });
       }
     } catch {

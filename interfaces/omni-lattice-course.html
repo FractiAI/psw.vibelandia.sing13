@@ -206,6 +206,14 @@
         }
       }
 
+      function unmarkDone(id) {
+        var at = doneIds.indexOf(id);
+        if (at !== -1) {
+          doneIds.splice(at, 1);
+          saveDone(doneIds);
+        }
+      }
+
       function isDone(id) {
         return doneIds.indexOf(id) !== -1;
       }
@@ -257,7 +265,11 @@
           data.syllabus.outcomes.map(function (o) {
             return '<li>' + escapeHtml(o) + '</li>';
           }).join('') +
-          '</ul>';
+          '</ul>' +
+          (data.syllabus.howToSucceed
+            ? '<div class="olc-succeed"><h3>How to succeed in this course</h3><p>' +
+              escapeHtml(data.syllabus.howToSucceed) + '</p></div>'
+            : '');
       }
 
       function escapeHtml(s) {
@@ -424,10 +436,53 @@
         return (mod.label || mod.part || 'Week') + ' · lesson ' + (idx + 1) + ' of ' + ids.length;
       }
 
+      function renderCompleteControl(ch) {
+        var done = isDone(ch.id);
+        return (
+          '<div class="olc-complete">' +
+            '<button type="button" class="olc-complete__btn' + (done ? ' is-done' : '') + '"' +
+              ' id="olc-complete-btn" aria-pressed="' + (done ? 'true' : 'false') + '">' +
+              (done ? '✓ Completed' : 'Mark lesson complete') +
+            '</button>' +
+            '<p class="olc-complete__hint">' +
+              (done
+                ? 'Nice work. Click again if you want to un-mark it.'
+                : 'Mark it when you can answer the checks without peeking.') +
+            '</p>' +
+          '</div>'
+        );
+      }
+
+      function refreshDoneUi() {
+        sidebarNav.querySelectorAll('a').forEach(function (a) {
+          var id = chapters[Number(a.getAttribute('data-index'))].id;
+          a.classList.toggle('is-done', isDone(id));
+        });
+        updateHeroProgress();
+        buildSyllabus();
+        buildToc();
+      }
+
+      function bindCompleteControl(ch) {
+        var btn = document.getElementById('olc-complete-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          if (isDone(ch.id)) unmarkDone(ch.id);
+          else markDone(ch.id);
+          var wrap = btn.parentNode;
+          if (wrap && wrap.parentNode) {
+            var fresh = document.createElement('div');
+            fresh.innerHTML = renderCompleteControl(ch);
+            wrap.parentNode.replaceChild(fresh.firstChild, wrap);
+            bindCompleteControl(ch);
+          }
+          refreshDoneUi();
+        });
+      }
+
       function renderChapter(i) {
         current = Math.max(0, Math.min(chapters.length - 1, i));
         var ch = chapters[current];
-        markDone(ch.id);
 
         bodyEl.innerHTML =
           '<p class="olc-page__crumb">' + escapeHtml(weekProgressLabel(ch)) + '</p>' +
@@ -443,7 +498,10 @@
           renderGoals(ch.goals) +
           '<div class="olc-prose">' + ch.body + '</div>' +
           renderCheck(ch.check) +
-          renderFurther(ch.papers);
+          renderFurther(ch.papers) +
+          renderCompleteControl(ch);
+
+        bindCompleteControl(ch);
 
         progressEl.textContent =
           'Lesson ' + (current + 1) + ' of ' + chapters.length + ' · ' + ch.title;
@@ -456,7 +514,7 @@
           if (on) a.setAttribute('aria-current', 'page');
           else a.removeAttribute('aria-current');
           var id = chapters[Number(a.getAttribute('data-index'))].id;
-          if (isDone(id)) a.classList.add('is-done');
+          a.classList.toggle('is-done', isDone(id));
         });
 
         try {

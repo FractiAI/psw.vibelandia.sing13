@@ -606,11 +606,11 @@
     },
     {
       "source": "/omni-lattice-textbook",
-      "destination": "/interfaces/omni-lattice-course.html"
+      "destination": "/interfaces/omni-lattice-textbook.html"
     },
     {
       "source": "/omni-lattice-textbook/",
-      "destination": "/interfaces/omni-lattice-course.html"
+      "destination": "/interfaces/omni-lattice-textbook.html"
     },
     {
       "source": "/course/infinite-octaves-omni-lattice",

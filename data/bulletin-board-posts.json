@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-09",
+  "updated": "2026-09-10",
   "posts": [
+    {
+      "id": "daily-2026-09-10-synthobs-generative-matrix-phi-egs-2026-09",
+      "posted": "2026-09-10",
+      "featured": true,
+      "title": "One generative seed. Many metrology leaves.",
+      "subtitle": "News of the day · Thursday, September 10",
+      "summary": "From Reno’s holographic AI valley: one generative seed near the golden ratio organises metrology Soft Story shelves — while CODATA stays the measured rail. Honesty first: not a finished quantum-gravity derivation. Fair Exchange tip clause on.",
+      "href": "/ship-blog/generative-matrix-phi-egs",
+      "pill": "TODAY",
+      "docRef": "synthobs-generative-matrix-phi-egs-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-09-synthobs-zero-octave-y-goldilocks-2026-09",
       "posted": "2026-09-09",

@@ -1,6 +1,6 @@
 /**
  * Metrological Overlap · live dual-clock + prime-ladder demo
- * Catalog viz for /demonstrations#overlap — not particle-mass QED.
+ * Catalog viz for /metrological-overlap — not particle-mass QED.
  */
 (function () {
   const PHI = (1 + Math.sqrt(5)) / 2;

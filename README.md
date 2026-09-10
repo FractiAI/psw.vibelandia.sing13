@@ -461,6 +461,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/look-under-the-hood-legacy-catalog.html`](/interfaces/look-under-the-hood-legacy-catalog.html) | Redirect · Master canon |
 | [`/interfaces/look-under-the-hood.html`](/interfaces/look-under-the-hood.html) | Look Under the Hood · Omni-Lattice Engine · SS Vibelandia |
 | [`/interfaces/meet-the-crew.html`](/interfaces/meet-the-crew.html) | Meet the crew · Spirit crew · SS Vibelandia |
+| [`/interfaces/metrological-overlap.html`](/interfaces/metrological-overlap.html) | Metrological Overlap · Demonstration · SS Vibelandia |
 | [`/interfaces/my-whiteboard.html`](/interfaces/my-whiteboard.html) | My whiteboard · Commander surface |
 | [`/interfaces/octave99-pricing.html`](/interfaces/octave99-pricing.html) | Bridge & Chart Pricing · Infinite Octaves · SING13 |
 | [`/interfaces/omni-lattice-course.html`](/interfaces/omni-lattice-course.html) | Infinite Octaves Omni-Lattice · Online Course · SS Vibelandia |
@@ -594,7 +595,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/special-projects/pdvsa-gateway-ops.html`](/interfaces/special-projects/pdvsa-gateway-ops.html) | PDVSA Gateway Ops · EGS Lattice-Linear Gateway · SS Vibelandia |
 | [`/interfaces/special-projects/prime-vault-alphafold-race.html`](/interfaces/special-projects/prime-vault-alphafold-race.html) | Prime-Vault Race · Results · SS Vibelandia |
 | [`/interfaces/special-projects/prime-vault-chat.html`](/interfaces/special-projects/prime-vault-chat.html) | Prime Vault Chat · SS Vibelandia |
-| [`/interfaces/special-projects/prime-vault-demos.html`](/interfaces/special-projects/prime-vault-demos.html) | Demonstrations · Holographic Magnetic Goldilocks SuperAI · SS Vibelandia |
+| [`/interfaces/special-projects/prime-vault-demos.html`](/interfaces/special-projects/prime-vault-demos.html) | Demonstrations · SS Vibelandia |
 | [`/interfaces/special-projects/turner-bison-herd-management.html`](/interfaces/special-projects/turner-bison-herd-management.html) | Turner Enterprise · Rangeland herd intelligence |
 | [`/interfaces/special-projects/wavefield-echo-test.html`](/interfaces/special-projects/wavefield-echo-test.html) | Wavefield Echo Test · Plain-speak results |
 

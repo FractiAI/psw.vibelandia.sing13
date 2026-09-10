@@ -25,6 +25,8 @@ describe('Goldilocks Quest · full-gen door rollout', () => {
     expect(html).toContain('id="gq-canvas"');
     expect(html).toContain('Full Gen');
     expect(html).toContain('full-gen-v3');
+    expect(html).toContain('Under construction');
+    expect(html).toContain('gq-construction');
     expect(html).toContain('gq-presence');
     expect(html).toContain('gq-cinematic');
     const client = read('interfaces/goldilocks-quest-client.js');
@@ -58,8 +60,8 @@ describe('Goldilocks Quest · full-gen door rollout', () => {
     expect(vercel).toContain('api/goldilocks-quest.js');
 
     const ql = read('interfaces/site-quicklinks.js');
-    expect(ql).toContain('href="/goldilocks-quest"');
-    expect(ql).toContain('id="ql-goldilocks-quest-link"');
+    expect(ql).toContain('href="/demonstrations"');
+    expect(ql).not.toContain('ql-goldilocks-quest-link');
 
     expect(PLAYER_MORE_DOORS.some((d) => d.href === '/goldilocks-quest')).toBe(true);
     expect(findJourney('goldilocks-quest')?.cta?.href).toBe('/goldilocks-quest');

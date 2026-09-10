@@ -1902,27 +1902,27 @@
     },
     {
       "source": "/prime-vault-chat",
-      "destination": "/interfaces/prime-vault-demos.html"
+      "destination": "/interfaces/prime-vault-chat.html"
     },
     {
       "source": "/prime-vault-chat/",
-      "destination": "/interfaces/prime-vault-demos.html"
+      "destination": "/interfaces/prime-vault-chat.html"
     },
     {
       "source": "/pvc",
-      "destination": "/interfaces/prime-vault-demos.html"
+      "destination": "/interfaces/prime-vault-chat.html"
     },
     {
       "source": "/pvc/",
-      "destination": "/interfaces/prime-vault-demos.html"
+      "destination": "/interfaces/prime-vault-chat.html"
     },
     {
       "source": "/special-projects/prime-vault-chat",
-      "destination": "/interfaces/special-projects/prime-vault-demos.html"
+      "destination": "/interfaces/special-projects/prime-vault-chat.html"
     },
     {
       "source": "/special-projects/prime-vault-chat/",
-      "destination": "/interfaces/special-projects/prime-vault-demos.html"
+      "destination": "/interfaces/special-projects/prime-vault-chat.html"
     },
     {
       "source": "/ship-blog/prime-vault-chat",
@@ -1934,19 +1934,27 @@
     },
     {
       "source": "/prime-vault-race",
-      "destination": "/interfaces/prime-vault-demos.html"
+      "destination": "/interfaces/prime-vault-race.html"
     },
     {
       "source": "/prime-vault-race/",
-      "destination": "/interfaces/prime-vault-demos.html"
+      "destination": "/interfaces/prime-vault-race.html"
     },
     {
       "source": "/race",
-      "destination": "/interfaces/prime-vault-demos.html"
+      "destination": "/interfaces/prime-vault-race.html"
     },
     {
       "source": "/race/",
-      "destination": "/interfaces/prime-vault-demos.html"
+      "destination": "/interfaces/prime-vault-race.html"
+    },
+    {
+      "source": "/metrological-overlap",
+      "destination": "/interfaces/metrological-overlap.html"
+    },
+    {
+      "source": "/metrological-overlap/",
+      "destination": "/interfaces/metrological-overlap.html"
     },
     {
       "source": "/harmonopoly-guide",

@@ -22,6 +22,32 @@
 
 .gq-site-nav { margin: 0; }
 
+.gq-construction {
+  margin: 0.85rem 0 0;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 0.55rem;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gq-gold);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.gq-construction__tag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+  background: rgba(255, 61, 129, 0.18);
+  color: var(--gq-neon);
+  font-size: 0.55em;
+  vertical-align: middle;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .gq-app {
   max-width: 1040px;
   margin: 0 auto;

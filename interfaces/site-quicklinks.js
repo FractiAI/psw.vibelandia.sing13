@@ -395,7 +395,16 @@
 
     nav.appendChild(row);
     nav.appendChild(chatRow);
-    nav.appendChild(playRow);
+    /* Reading Room: two-line header only (primary + chat). Demo doors live as hero CTAs. */
+    if (onReadingRoom) {
+      chatRow.insertAdjacentHTML(
+        'beforeend',
+        '<span class="sep" aria-hidden="true">·</span>' +
+          '<button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>'
+      );
+    } else {
+      nav.appendChild(playRow);
+    }
     if (onQuestfestHome) {
       nav.insertAdjacentHTML('beforeend', renderQuestfestSoundBar());
     }

@@ -292,20 +292,20 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexisting with AI and Super AI — which quadrant are you? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Crystalline Unified Field · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Crystalline Unified Field · Speed · Distance · Time · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Eddy-Current Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | Epigenetic Execution-State Modeling for Causal Invariance in GPU Performance Telemetry · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen-Holographic Systems · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | The Big Picture: Everything is Connected · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — one tribe, many homes · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-generative-matrix-phi-egs-2026-09.html`](/interfaces/blog-generative-matrix-phi-egs-2026-09.html) | Generative Matrix · Φ_EGS · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-generative-matrix-phi-egs-2026-09.html`](/interfaces/blog-generative-matrix-phi-egs-2026-09.html) | Generative Matrix · One seed, many metrology leaves · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Geomagnetic Influences on Bison & Large Herbivore Movement · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Unified Geomagnetic Wavefields & Multi-Taxa Ungulate Migration Corridors on the Great… · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | A free playbook for when brute force stops working · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Prime-Linear Compression Transform · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest Full Gen is live · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest Full Gen — preview door, polish in progress · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Transfinite Inversion Theorem · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-grand-unified-metrological-overlap-2026-09.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09.html) | Grand Unified Metrological Overlap · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · SS Vibelandia |
@@ -320,7 +320,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-vs-vibe-coding-2026-09.html`](/interfaces/blog-lattice-vs-vibe-coding-2026-09.html) | Lattice beats vibe coding on design, write, and deploy · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Macro-Protein Work Engine · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as work engines — filing life in octave band 13–17 · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as magnets that hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | When life cooks you, you can come out denser · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-moving-up-the-stack-2026-09.html`](/interfaces/blog-moving-up-the-stack-2026-09.html) | Moving Up the Stack · Lattice is the next AI layer · Ship blog · SS Vibelandia |
@@ -333,22 +333,22 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-omniversal-goldilocks-rideshare.html`](/interfaces/blog-omniversal-goldilocks-rideshare.html) | Omniversal Goldilocks Rideshare Protocol · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-nested-agent-lattice.html`](/interfaces/blog-omniversal-nested-agent-lattice.html) | The Architecture of Omniversal Computing · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Syntheverse Omniversal Node Alignment Mapping · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html`](/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html) | Run the pipeline or withhold the claim · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | PDVSA Gateway Ops Mockup · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html`](/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html) | Run the pipeline or withhold the claim · Open empirical science · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | One brief for Production, Field, Compliance, Export · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth letting go — a story filed at the planet’s core · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html) | Prime-Indexed Volumetric Storage · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html) | Storage without the parity tax — prime vaults for memory · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-vault-alphafold-race-2026-09.html`](/interfaces/blog-prime-vault-alphafold-race-2026-09.html) | Prime-Vault vs ColabFold — race results · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-prime-vault-chat-2026-09.html`](/interfaces/blog-prime-vault-chat-2026-09.html) | Prime Vault Chat is open · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-prime-vault-demos-2026-09.html`](/interfaces/blog-prime-vault-demos-2026-09.html) | Prime Vault Demonstrations door is open · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-prime-vault-race-door-2026-09.html`](/interfaces/blog-prime-vault-race-door-2026-09.html) | Prime-Vault Race door is open · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-protein-folding-prime-container-2026-09.html`](/interfaces/blog-protein-folding-prime-container-2026-09.html) | Protein Folding · Prime-Container Architecture · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-prime-vault-chat-2026-09.html`](/interfaces/blog-prime-vault-chat-2026-09.html) | Talk to the prime vaults — Miracle 2 Chat is open · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-prime-vault-demos-2026-09.html`](/interfaces/blog-prime-vault-demos-2026-09.html) | Two miracles on one Nevada deck — Race and Chat · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-prime-vault-race-door-2026-09.html`](/interfaces/blog-prime-vault-race-door-2026-09.html) | The Prime-Vault Race scoreboard is public · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-protein-folding-prime-container-2026-09.html`](/interfaces/blog-protein-folding-prime-container-2026-09.html) | When proteins meet prime vaults — a Nevada contrast to AlphaFold · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Φ Duality · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Recursive Attention Coherence · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html`](/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html) | Sing, Muse, of the Omniversal Lattice · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A smaller pack for the golden key · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html`](/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html) | From IBM SNA gateways to Omni-Lattice Chat · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html`](/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html) | When SNA met TCP/IP — and why CEOs hire the bridge again · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-soundtrack-prelude-pages-2026-08.html`](/interfaces/blog-soundtrack-prelude-pages-2026-08.html) | Soundtrack preludes — pages that breathe with music · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-syn-sun-wavefield-oscillator.html`](/interfaces/blog-syn-sun-wavefield-oscillator.html) | Wavefield Oscillator Solar Model · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-syntheverse-sandbox-comprehensive.html`](/interfaces/blog-syntheverse-sandbox-comprehensive.html) | Syntheverse Sandbox Comprehensive Analysis · Ship blog · SS Vibelandia |
@@ -407,11 +407,11 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tbme-superposition-reno-interpretation.html`](/interfaces/blog-tbme-superposition-reno-interpretation.html) | Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Supercond… · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Tier C Holographic Wiring · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Tier C Holographic Wiring · Narrative shelves as live circuits · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Topology of the Void · Zero as Equilibrium · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three nested domes — one Goldilocks stage · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-viscosity-of-light-2026-09.html`](/interfaces/blog-viscosity-of-light-2026-09.html) | Viscosity of Light · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What It Means to Be Frontier · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-viscosity-of-light-2026-09.html`](/interfaces/blog-viscosity-of-light-2026-09.html) | Viscosity of Light · Thought meets drag · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What it means to be frontier on the QUESTFEST trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y chromosome as Φ manifestation — holographic MSY · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-zero-octave-node-k0-2026-09.html`](/interfaces/blog-zero-octave-node-k0-2026-09.html) | Node k = 0 · Zero-Octave Singularity Crystal · Ship blog · SS Vibelandia |

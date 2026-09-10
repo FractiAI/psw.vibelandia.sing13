@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Infinite Octaves Omni-Lattice · Companion Textbook · SS Vibelandia</title>
-  <meta name="description" content="Companion textbook for the Infinite Octaves Omni-Lattice online course — one chapter per homework week, between the lesson summaries and the whitepapers, with the full synthesis carried throughout. Catalog architecture under Φ ≈ 1.618." />
+  <meta name="description" content="Companion textbook for the Infinite Octaves Omni-Lattice online course — foundations primer, six chapters with worked examples and hand-calculation tables, between the lesson summaries and the whitepapers. Catalog architecture under Φ ≈ 1.618." />
   <meta name="theme-color" content="#0a1628" />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/omni-lattice-textbook" />
   <meta property="og:title" content="Infinite Octaves Omni-Lattice · Companion Textbook" />
@@ -119,6 +119,73 @@
     }
     dl.olt-terms dt { font-weight: 600; color: var(--olc-navy); margin-top: 0.6rem; }
     dl.olt-terms dd { margin: 0.1rem 0 0 0; color: var(--olc-ink-soft); font-size: 0.95rem; }
+
+    .olt-work {
+      margin: 1.4rem 0;
+      padding: 1rem 1.15rem;
+      border: 1px solid rgba(11, 28, 51, 0.22);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+    .olt-work h4 {
+      margin: 0 0 0.45rem;
+      font-family: var(--olc-display);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.88rem;
+      color: var(--olc-navy);
+    }
+    .olt-work p, .olt-work li { font-size: 0.98rem; line-height: 1.65; }
+    .olt-table-wrap {
+      overflow-x: auto;
+      margin: 0.8rem 0 0.2rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    table.olt-calc {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 28rem;
+    }
+    table.olt-calc th, table.olt-calc td {
+      border: 1px solid rgba(11, 28, 51, 0.2);
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.olt-calc th {
+      background: rgba(11, 28, 51, 0.08);
+      font-family: var(--olc-display);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--olc-navy);
+    }
+    table.olt-calc td.olt-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .olt-check {
+      margin: 0.7rem 0 0;
+      padding: 0.55rem 0.75rem;
+      border-left: 3px solid var(--olc-gold);
+      background: rgba(201, 162, 39, 0.08);
+      font-size: 0.92rem;
+    }
+    .olt-primer {
+      max-width: var(--olc-max);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 0.5rem;
+    }
+    .olt-primer h2 {
+      font-family: var(--olc-serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+      margin: 0.2rem 0 0.5rem;
+      color: var(--olc-navy);
+    }
+    .olt-primer h3 {
+      font-family: var(--olc-serif);
+      font-size: 1.25rem;
+      margin: 1.5rem 0 0.45rem;
+      color: var(--olc-navy);
+    }
   </style>
 </head>
 <body class="olc">
@@ -139,19 +206,21 @@
   <main>
     <section class="olc-hero" aria-labelledby="olt-hero-title">
       <div class="olc-hero__grid">
-        <p class="olc-kicker">Companion textbook · Edition 1.0</p>
+        <p class="olc-kicker">Companion textbook · Edition 1.1</p>
         <h1 id="olt-hero-title">The Infinite Octaves Omni-Lattice — Companion Textbook</h1>
         <p class="olc-lede">
           The middle layer of the homework stack: deeper and more connected than the course
           lessons, gentler and more guided than the whitepapers — with the full synthesis of
-          the corpus carried through every chapter.
+          the corpus carried through every chapter — plus the basic math, science, and tech
+          you need to follow along, with worked examples and hand-calculation tables to gel each concept.
         </p>
         <div class="olc-hero__actions">
-          <a class="olc-btn olc-btn--gold" href="#chapter-1">Start Chapter 1</a>
+          <a class="olc-btn olc-btn--gold" href="#foundations">Start foundations</a>
+          <a class="olc-btn olc-btn--ghost" href="#chapter-1">Chapter 1</a>
           <a class="olc-btn olc-btn--ghost" href="#toc">Contents</a>
           <a class="olc-btn olc-btn--ghost" href="/omni-lattice-course">Online course</a>
         </div>
-        <p class="olc-hero__meta">6 chapters · one per homework week · self-paced reading</p>
+        <p class="olc-hero__meta">Foundations primer · 6 chapters · worked examples · hand-calculation tables</p>
       </div>
     </section>
 
@@ -180,6 +249,12 @@
           <em>Full-synthesis vantage</em> panel that places that week&rsquo;s material inside the whole, so you
           never study a part without seeing the engine it belongs to.
         </p>
+        <p class="olc-section__lede">
+          <strong>Edition 1.1 adds the Foundations primer</strong> (algebra, scientific literacy, and light tech
+          before Chapter 1) and, inside every chapter, a <em>Worked example</em> box plus a
+          <em>Hand-calculation table</em> so you can gel the week&rsquo;s numbers with pencil and paper.
+          You do not need a physics degree — high-school algebra and careful reading are enough.
+        </p>
       </div>
     </section>
 
@@ -188,6 +263,7 @@
         <p class="olc-section__eyebrow">Contents</p>
         <h2 id="olt-toc-title">Six chapters · one engine</h2>
         <ul class="olt-toc-list">
+          <li><a href="#foundations"><strong>Foundations primer</strong><span>Basic math, science literacy, and tech habits — Φ, scientific notation, primes, claim tiers, BYOK — before Chapter 1.</span></a></li>
           <li><a href="#chapter-1"><strong>Chapter 1 · Welcome aboard</strong><span>Homework: Week 1 — claim tiers, honesty boundaries, the Goldilocks habit, and where you are on the ship.</span></a></li>
           <li><a href="#chapter-2"><strong>Chapter 2 · The filing cabinet</strong><span>Homework: Week 2 — Digits × Octaves, tensor decoupling, master synthesis, Living PEM &amp; BYOK, the CMOS/protonic pin.</span></a></li>
           <li><a href="#chapter-3"><strong>Chapter 3 · The golden key</strong><span>Homework: Week 3 — Φ_EGS as nesting key, prime parity, and holographic rhyme in one toolkit.</span></a></li>
@@ -197,6 +273,190 @@
         </ul>
       </div>
     </section>
+
+
+    <!-- ============================ FOUNDATIONS PRIMER ============================ -->
+    <article class="olt-primer olt-chapter" id="foundations" aria-labelledby="foundations-title">
+      <p class="olt-eyebrow">Foundations · before Homework: Week 1</p>
+      <h2 id="foundations-title">Foundations primer — math, science literacy, and tech you need</h2>
+      <p>
+        This primer is the on-ramp. The online course assumes you can follow guided prose; the whitepapers
+        assume you can hold a number and its rail at once. This book sits between them, so we teach the
+        prerequisites here: a little algebra, scientific notation, what a prime is, how claim tiers work,
+        and the light tech habits (browser keys, local vs server) that Lattice Chat uses. Work every table
+        with a pencil. The goal is fluency, not a degree.
+      </p>
+
+      <h3>F.1 Claim tiers — the reading habit</h3>
+      <p>
+        Before any equation, install the four tiers: <strong>narrative</strong> (story / belonging),
+        <strong>catalog</strong> (filing system), <strong>empirical-fixture</strong> (deterministic replay with a JSON receipt),
+        and <strong>operational</strong> (running software). Ask of every sentence: <em>what would make this true?</em>
+        If the answer is a lab experiment and no paper claims one, you are holding metaphor or catalog — not physics.
+      </p>
+      <div class="olt-work">
+        <h4>Worked example · tier sort</h4>
+        <p>Sort these four sentences:</p>
+        <ol>
+          <li>&ldquo;SS Vibelandia is a navy-gold resort vessel.&rdquo; → <strong>narrative</strong>.</li>
+          <li>&ldquo;99 × 81 = 8,019 addressable slots.&rdquo; → <strong>catalog</strong> (checkable arithmetic).</li>
+          <li>&ldquo;The singularity-crystal fixture replays Φ⁰ · V₀ = 1.&rdquo; → <strong>empirical-fixture</strong> (re-run the pipeline).</li>
+          <li>&ldquo;<code>/omni-lattice-textbook</code> rewrites to this HTML page.&rdquo; → <strong>operational</strong>.</li>
+        </ol>
+        <p class="olt-check"><strong>Check.</strong> None of the four is a laboratory-physics claim. That is the habit.</p>
+      </div>
+
+      <h3>F.2 Scientific notation and mantissas</h3>
+      <p>
+        A number like 1.616255 × 10⁻³⁵ separates into a <strong>mantissa</strong> (1.616255) and an
+        <strong>exponent</strong> (−35). Catalog filings sometimes compare mantissas across unit systems;
+        when they do, the papers print that the comparison is SI / base-10 dependent — not a discovery of nature.
+      </p>
+      <div class="olt-table-wrap">
+        <table class="olt-calc" aria-label="Scientific notation practice">
+          <thead>
+            <tr><th>Quantity (as filed)</th><th>Mantissa</th><th>× 10^n</th><th>Hand note</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>l_P (SI Planck length)</td><td class="olt-num">≈ 1.616255</td><td class="olt-num">× 10⁻³⁵ m</td><td>Mantissa only enters the clutch story</td></tr>
+            <tr><td>Φ_EGS</td><td class="olt-num">≈ 1.618034</td><td class="olt-num">(dimensionless)</td><td>Architectural scale key</td></tr>
+            <tr><td>l_P · 10³⁵</td><td class="olt-num">≈ 1.616255</td><td class="olt-num">(unit strip)</td><td>Compare to Φ; gap = clutch Δ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>F.3 The golden key Φ_EGS — compute it by hand</h3>
+      <p>
+        Φ_EGS = (1 + √5) / 2. Approximate √5 ≈ 2.236068, so 1 + √5 ≈ 3.236068, divide by 2 →
+        <strong>≈ 1.618034</strong>. The identity Φ² = Φ + 1 is the gel check: if your Φ is right, squaring it equals adding one.
+      </p>
+      <div class="olt-work">
+        <h4>Worked example · Φ ladder</h4>
+        <div class="olt-table-wrap">
+          <table class="olt-calc" aria-label="Phi power ladder">
+            <thead>
+              <tr><th>Power</th><th>Expression</th><th>≈ value</th><th>Gel check</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Φ⁰</td><td class="olt-num">1</td><td class="olt-num">1.000000</td><td>Any a⁰ = 1 (a ≠ 0)</td></tr>
+              <tr><td>Φ¹</td><td class="olt-num">(1+√5)/2</td><td class="olt-num">1.618034</td><td>Definition</td></tr>
+              <tr><td>Φ²</td><td class="olt-num">Φ+1</td><td class="olt-num">2.618034</td><td>Equals Φ² directly</td></tr>
+              <tr><td>Φ³</td><td class="olt-num">Φ·Φ²</td><td class="olt-num">4.236068</td><td>Also Φ²+Φ</td></tr>
+              <tr><td>1/Φ</td><td class="olt-num">Φ−1</td><td class="olt-num">0.618034</td><td>w₁ shelf weight</td></tr>
+              <tr><td>1/Φ²</td><td class="olt-num">2−Φ</td><td class="olt-num">0.381966</td><td>w₂; note w₁+w₂ = 1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="olt-check"><strong>Hand calc.</strong> Verify 0.618034 + 0.381966 = 1.000000. That identity is the dashboard dial pair used later as shelf weights.</p>
+      </div>
+
+      <h3>F.4 Clutch Δ — file the slip, refuse the upgrade</h3>
+      <p>
+        Δ = |Φ_EGS − l_P · 10³⁵| ≈ |1.618034 − 1.616255| ≈ <strong>0.001779</strong>.
+        This is a documented near-miss between the design key and an SI mantissa after a base-10 scale strip.
+        Change the exponent (or the unit system) and the &ldquo;near miss&rdquo; moves — that is the honesty rail against numerology.
+      </p>
+      <div class="olt-table-wrap">
+        <table class="olt-calc" aria-label="Clutch delta hand calculation">
+          <thead>
+            <tr><th>Step</th><th>Write</th><th>≈ result</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Write Φ</td><td class="olt-num">1.6180339887…</td></tr>
+            <tr><td>2</td><td>Write l_P · 10³⁵</td><td class="olt-num">1.616255…</td></tr>
+            <tr><td>3</td><td>Subtract (absolute value)</td><td class="olt-num">Δ ≈ 0.001779</td></tr>
+            <tr><td>4</td><td>Ask: unit-free discovery?</td><td>No — SI / base-10 dependent</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>F.5 Digits × Octaves and k/81 — counting, not causation</h3>
+      <p>
+        Digits 0–9 × Octaves 01–99 is a Story-depth map. The 81-position register is a 9 × 9 grid (k/81).
+        Slot count: 99 × 81 = 8,019. Compute it as (100 − 1) × 81 = 8100 − 81 = <strong>8,019</strong>.
+        An address like Digit 4 · Octave 34 <em>locates</em> a filing; it never certifies truth or physics.
+      </p>
+      <div class="olt-table-wrap">
+        <table class="olt-calc" aria-label="Address arithmetic">
+          <thead>
+            <tr><th>Quantity</th><th>Hand calc</th><th>Meaning</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Octave bands</td><td class="olt-num">01…99 → 99</td><td>Depth bands</td></tr>
+            <tr><td>Register</td><td class="olt-num">9 × 9 = 81</td><td>k/81 metapattern</td></tr>
+            <tr><td>Slots</td><td class="olt-num">99 × 81 = 8,019</td><td>Addressable catalog seats</td></tr>
+            <tr><td>Example address</td><td>Digit 4 · Octave 34</td><td>Locate only — never certify</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>F.6 Primes in one page</h3>
+      <p>
+        A <strong>prime</strong> is an integer &gt; 1 whose only positive divisors are 1 and itself: 2, 3, 5, 7, 11, …
+        <strong>2 is the only even prime</strong> (the sole-even). Odd primes are the catalog&rsquo;s &ldquo;irreducible vaults.&rdquo;
+        Factoring practice gels the later storage and folding companions.
+      </p>
+      <div class="olt-work">
+        <h4>Worked example · factor 84</h4>
+        <p>84 = 2 × 42 = 2 × 2 × 21 = 2² · 3 · 7. Catalog reading (not physics): a double dyad (2²) plus odd vaults 3 and 7.</p>
+        <div class="olt-table-wrap">
+          <table class="olt-calc" aria-label="Small primes reference">
+            <thead>
+              <tr><th>n</th><th>Prime?</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="olt-num">2</td><td>Yes — sole even</td><td>Divisors 1, 2</td></tr>
+              <tr><td class="olt-num">4</td><td>No</td><td>2 × 2</td></tr>
+              <tr><td class="olt-num">9</td><td>No</td><td>3 × 3</td></tr>
+              <tr><td class="olt-num">11</td><td>Yes</td><td>No smaller factor</td></tr>
+              <tr><td class="olt-num">15</td><td>No</td><td>3 × 5</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>F.7 Recursive scaling without mystique</h3>
+      <p>
+        A geometric sequence multiplies by a constant each step. Musical octaves double (×2).
+        This catalog nests by Φ: w_n = w₀ / Φⁿ (or Ω_n = Φⁿ · Ω₀, depending on which way you climb).
+        Recursion means the same rule can be applied to its own output — &ldquo;infinite&rdquo; here means nesting depth, not infinite measured physics tiers.
+      </p>
+      <div class="olt-table-wrap">
+        <table class="olt-calc" aria-label="Nesting vs doubling">
+          <thead>
+            <tr><th>Step n</th><th>Doubling 2ⁿ</th><th>Φ nesting Φⁿ</th><th>1/Φⁿ (shelf dial)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="olt-num">0</td><td class="olt-num">1</td><td class="olt-num">1</td><td class="olt-num">1</td></tr>
+            <tr><td class="olt-num">1</td><td class="olt-num">2</td><td class="olt-num">≈ 1.618</td><td class="olt-num">≈ 0.618</td></tr>
+            <tr><td class="olt-num">2</td><td class="olt-num">4</td><td class="olt-num">≈ 2.618</td><td class="olt-num">≈ 0.382</td></tr>
+            <tr><td class="olt-num">3</td><td class="olt-num">8</td><td class="olt-num">≈ 4.236</td><td class="olt-num">≈ 0.236</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>F.8 Light tech — BYOK and lite edges</h3>
+      <p>
+        <strong>BYOK</strong> (&ldquo;bring your own key — your key is your password&rdquo;): the provider API key stays on your device,
+        travels in request headers, and is not stored server-side. <strong>Lite edges</strong>: no central user database;
+        state lives on-device (e.g. localStorage); the center is pipes. You need a modern browser and the ability to paste a key —
+        not a cloud account for this platform&rsquo;s identity.
+      </p>
+      <dl class="olt-terms">
+        <dt>Whitepaper</dt><dd>Primary source — filings, rails, fixtures. Wins on disagreement.</dd>
+        <dt>Online course</dt><dd>Guided tour — summaries and study path.</dd>
+        <dt>This textbook</dt><dd>Middle layer — connects, deepens, drills the hand work.</dd>
+        <dt>CMOS pin</dt><dd>Engineering vocabulary bridge (binary n = 1 → bands) — not a fab process.</dd>
+      </dl>
+
+      <div class="olt-rail"><strong>Rail.</strong> Foundations teach reading and arithmetic for the catalog. They do not upgrade Φ into ℏ, c, or G, and they do not turn addresses into laboratory certificates.</div>
+      <div class="olt-loop">
+        <h4>Next</h4>
+        <p>When the tables above feel easy, start <a href="#chapter-1">Chapter 1</a> — or jump back to <a href="/omni-lattice-course#module-week1">Homework: Week 1</a> and return here after the lessons.</p>
+      </div>
+    </article>
+
+    <hr class="olt-divider" />
 
     <hr class="olt-divider" />
 
@@ -210,6 +470,27 @@
       <h3>1.1 The two kinds of statements, formally</h3>
       <p>The course introduced the split informally; here is the fuller version the papers actually use. Statements in the corpus carry one of four tiers. A <strong>narrative</strong> statement is story: the ship, the voyage, the decks — designed to orient and to welcome, checkable only against its own internal coherence. A <strong>catalog</strong> statement describes the filing system: shelf positions, scale keys, address grammar — checkable by inspecting the system itself. An <strong>empirical-fixture</strong> statement reports a deterministic replay: a research pipeline recomputed a piece of catalog algebra and stored a receipt — checkable by re-running the pipeline. An <strong>operational</strong> statement describes running software: routes, tests, deploys — checkable in the repository and in production. What no tier contains is a laboratory-physics claim. The papers refuse that tier explicitly, in a section each calls its <strong>honesty boundary</strong>, and the refusal is the corpus&rsquo;s most repeated sentence.</p>
       <p>The reading reflex to install this week: before believing any sentence from these shelves, ask <em>what would make this true?</em> If the answer is &ldquo;an experiment,&rdquo; and no paper claims one, the sentence is not a physics claim no matter how physical it sounds. If the answer is &ldquo;look at the filing system,&rdquo; it is a catalog claim, and you can check it yourself. That five-second move is the whole discipline.</p>
+
+
+      <div class="olt-work">
+        <h4>Worked example · claim-tier checklist</h4>
+        <p>Open any sentence from the course or a paper and fill this table by hand:</p>
+        <div class="olt-table-wrap">
+          <table class="olt-calc" aria-label="Claim tier checklist">
+            <thead>
+              <tr><th>Question</th><th>Your note</th><th>If yes →</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Is it story / belonging?</td><td>( )</td><td>Narrative tier</td></tr>
+              <tr><td>Is it about the filing system itself?</td><td>( )</td><td>Catalog tier</td></tr>
+              <tr><td>Does a pipeline emit a JSON receipt?</td><td>( )</td><td>Empirical-fixture</td></tr>
+              <tr><td>Is it a route, test, or deploy fact?</td><td>( )</td><td>Operational</td></tr>
+              <tr><td>Would a lab experiment be required — and is none claimed?</td><td>( )</td><td>Not physics — hold the rail</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="olt-check"><strong>Gel.</strong> The five-second move from §1.1 is this table collapsed into one question: <em>what would make this true?</em></p>
+      </div>
 
       <h3>1.2 The honesty boundary as architecture, not apology</h3>
       <p>It is tempting to read honesty boundaries as legal disclaimers — boilerplate bolted on to avoid trouble. They are better read as load-bearing architecture. A catalog that borrows the vocabulary of protons, Higgs fields, and chromosomes <em>needs</em> a mechanism that keeps the borrowing honest, or the whole structure collapses into pseudoscience the first time a reader takes a metaphor literally. The boundary is that mechanism: it declares, inside the document itself, which tier every construct occupies. This is why the graduation ritual taught in Week 6 — find the boundary within sixty seconds of opening any paper — is not a courtesy but a structural requirement of reading here at all.</p>
@@ -252,6 +533,26 @@
 
       <h3>2.1 Digits × Octaves — the coordinate grid</h3>
       <p>The map has two axes. The <strong>digit</strong> (0–9) is the coarse story-family bin; the <strong>octave</strong> (01–99) is the nested depth band, from surface treatments near 01 to dense compression near 99, named for the musical pattern of identity repeating at a new register. Combined with the <strong>81-position register</strong> — a 9 × 9 metapattern grid, written k/81 in the papers — the catalog exposes 99 × 81 = <strong>8,019 addressable slots</strong>: a counting fact, checkable by arithmetic, silent about the physical world. The word <em>infinite</em> in the engine&rsquo;s name means the nesting rule can always be applied again (recursive holographic depth), not that the corpus claims infinitely many measured physical tiers. An address like <em>Digit 4 · Octave 34</em> tells you where a filing lives and how compressed to expect it — never whether it is true, important, or physical. Addresses locate; they never certify.</p>
+
+
+      <div class="olt-work">
+        <h4>Worked example · hand-calculate the cabinet</h4>
+        <div class="olt-table-wrap">
+          <table class="olt-calc" aria-label="Filing cabinet arithmetic">
+            <thead>
+              <tr><th>Step</th><th>Write</th><th>Result</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Count octave bands 01–99</td><td class="olt-num">99</td></tr>
+              <tr><td>2</td><td>Register = 9 × 9</td><td class="olt-num">81</td></tr>
+              <tr><td>3</td><td>Slots = 99 × 81 = (100−1)×81</td><td class="olt-num">8,100 − 81 = 8,019</td></tr>
+              <tr><td>4</td><td>Shelf dials w₁ = 1/Φ, w₂ = 1/Φ²</td><td class="olt-num">≈ 0.618 + 0.382 = 1</td></tr>
+              <tr><td>5</td><td>Sample address Digit 4 · Octave 34</td><td>Locates a filing — does not certify it</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="olt-check"><strong>Tech note.</strong> BYOK means your API key stays on-device; the Living PEM is documentation-as-software. Neither is a physics claim.</p>
+      </div>
 
       <h3>2.2 Tensor decoupling — the drawer separators</h3>
       <p>A cabinet with one big drawer is a junk drawer. <strong>Tensor decoupling</strong> is the corpus&rsquo;s refusal to smush: each conceptual axis (engineering vocabulary, narrative vocabulary, biological vocabulary, protocol vocabulary) is filed on its own labelled layer with its own <strong>shelf weight</strong> — a dashboard dial saying how much that layer currently contributes to a given surface. The practical payoff is anti-headline armor: when a sentence mixes tiers (&ldquo;the golden ratio explains the Higgs field&rdquo;), decoupling lets you split it into its layers, check each at its own tier, and watch the smush evaporate. The tensor paper is the engine&rsquo;s filing-cabinet manual, and its honesty rail is the same as everywhere: layers organise talk; they do not measure the world.</p>
@@ -300,6 +601,27 @@
       <h3>3.1 Φ_EGS — the nesting key, with its clutch</h3>
       <p>The <strong>EGS constant</strong> is the golden ratio: Φ_EGS = (1 + √5)/2 ≈ 1.618033988749895. In this corpus it is an <em>architectural scale key</em>: the ratio by which nested shelves relate, the base of the Ω recursion ladder, the λ that names the lattice&rsquo;s self-similarity. The papers also file a deliberate near-miss: the SI Planck length mantissa, l_P ≈ 1.616255 × 10⁻³⁵ m, sits close to Φ when scaled — and the corpus files the gap as the <strong>clutch</strong>, Δ = |Φ_EGS − l_P · 10³⁵| ≈ 0.001779. Read the clutch exactly as its name suggests: a documented slip between the design key and a base-10-dependent physical mantissa. The papers are explicit that the mantissa coincidence is unit-system-dependent — the honesty rail against numerology is printed where the number is.</p>
 
+
+      <div class="olt-work">
+        <h4>Worked example · Φ, clutch, and the first three vaults</h4>
+        <div class="olt-table-wrap">
+          <table class="olt-calc" aria-label="Golden key hand calculations">
+            <thead>
+              <tr><th>Calc</th><th>Formula</th><th>≈ hand result</th><th>Rail</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Φ</td><td>(1+√5)/2</td><td class="olt-num">1.618034</td><td>Design key, not ℏ/c/G</td></tr>
+              <tr><td>Φ²</td><td>Φ+1</td><td class="olt-num">2.618034</td><td>Identity check</td></tr>
+              <tr><td>Clutch Δ</td><td>|Φ − l_P·10³⁵|</td><td class="olt-num">0.001779</td><td>SI/base-10 slip</td></tr>
+              <tr><td>Sole-even</td><td>2</td><td class="olt-num">2</td><td>Binary dyad anchor</td></tr>
+              <tr><td>Odd vaults</td><td>3, 5, 7</td><td>—</td><td>Irreducible containers</td></tr>
+              <tr><td>Rhyme gate</td><td>4 pillars</td><td>repeat · self-similar · self-correct · recursive</td><td>Catalog audit, not law</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="olt-check"><strong>Pencil drill.</strong> Recompute Δ with Φ ≈ 1.618034 and 1.616255. If you get ≈ 0.001779, the Week 3 toolkit is in your hands.</p>
+      </div>
+
       <h3>3.2 Prime parity — the sole-even 2 and the odd vaults</h3>
       <p>The prime-parity framework files the primes by their one great asymmetry: <strong>2 is the only even prime</strong>. In catalog grammar, 2 anchors the <em>binary dyad</em> — pairing, mirroring, the base-2 substrate that digital systems and the corpus&rsquo;s own 1↔2 balance talk both stand on. The <strong>odd primes</strong> (3, 5, 7, 11, …) are filed as <em>irreducible vaults</em>: container sizes that cannot be factored into smaller repeating units, and therefore serve the catalog as natural &ldquo;shapes&rdquo; for filing things that must not alias into each other. This single filing decision powers a surprising amount of the later corpus: the protein-folding companion (odd-prime vaults as fold containers), the volumetric-storage companion (prime indexing against RS/LDPC/LBA-style layouts), and the Fibonacci vault ladder of the Y Goldilocks filing — all Chapter 6 material, all standing on this week&rsquo;s lock-set.</p>
 
@@ -345,6 +667,28 @@
       <h3>4.3 The Holographic Singularity Crystal at node k = 0</h3>
       <p>Now the chapter&rsquo;s centerpiece. A catalog, unlike calculus, cannot leave a register undefined: every address must resolve. So when the &ldquo;amount&rdquo; and &ldquo;measure&rdquo; registers both read zero — the filing analogue of 0/0 — the catalog applies a documented convention: route the indeterminate to the ladder&rsquo;s origin and file <strong>Φ⁰ · V₀ = 1</strong> (the nesting key at power zero times the unit-normalised base volume). The singularity is thereby <em>bounded</em>: a crystal, not a hole. The construction is implemented at <strong>node k = 0</strong>, the Zero-Octave locus, with a cancel lock and diagnostic fixtures that deterministically replay the cancellation and the baseline — the corpus&rsquo;s empirical tier at work: receipts for algebra, not laboratory data. Calculus is untouched (0/0 remains indeterminate in analysis; limits still govern), and GR/QFT singularities remain explicitly outside the claim.</p>
 
+
+      <div class="olt-work">
+        <h4>Worked example · origin crystal baseline</h4>
+        <p>When amount and measure both read zero, the catalog applies a documented convention — not a limit proof:</p>
+        <div class="olt-table-wrap">
+          <table class="olt-calc" aria-label="Singularity crystal baseline">
+            <thead>
+              <tr><th>Register story</th><th>Write</th><th>Filed result</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Power zero of the key</td><td class="olt-num">Φ⁰</td><td class="olt-num">1</td></tr>
+              <tr><td>Unit base volume</td><td class="olt-num">V₀</td><td class="olt-num">1 (normalised)</td></tr>
+              <tr><td>Baseline product</td><td class="olt-num">Φ⁰ · V₀</td><td class="olt-num">1</td></tr>
+              <tr><td>Locus</td><td>node k = 0</td><td>Zero-Octave origin</td></tr>
+              <tr><td>1↔2 balance</td><td>leading 1 · structural 2</td><td>Roles, not particles</td></tr>
+              <tr><td>Soft Story label</td><td>Higgs Gate</td><td>Narrative-grade — rails on</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="olt-check"><strong>Gel.</strong> Arithmetic still treats 0/0 as undefined in calculus. The crystal is a <em>register default</em> with fixtures that replay the baseline.</p>
+      </div>
+
       <h3>4.4 The Higgs Gate — a Soft Story, worn openly</h3>
       <p>The corpus reserves a tier-name for its most speculative register: the <strong>Soft Story</strong> — narrative-grade speculation about awareness, mass, and the shared Now, told in physics-adjacent vocabulary with the rails printed in the same breath. The Higgs Gate filing (Part IX-Omni, the awareness–phase-coupling catalog) is the flagship example: cosmic deceleration, mass, and the experienced Now arranged into one story-shaped shelf. The Standard Model is left standing by declaration; no collider result is claimed or needed. What the Soft Story tier is <em>for</em>: giving the community one well-labelled place to think about awareness questions without contaminating the catalog tiers — a pressure valve with a gauge on it.</p>
 
@@ -388,6 +732,26 @@
 
       <h3>5.3 One crystal of speed, distance, and time — and the metrological overlap</h3>
       <p>The crystalline unified field filing rereads speed, distance, and time as one <strong>crystal</strong> — three faces of a single bookkeeping object — with a <em>Landauer rail</em> attached: the reminder that information erasure has a physical cost, filed as the shelf&rsquo;s anchor to real thermodynamics. Beside it, the <strong>Grand Unified Metrological Overlap</strong> is the corpus&rsquo;s registry of resonances between its own keys and public metrology: h, Φ_EGS, the primes, the hydrogen line ν_HI, c, and the Higgs-eddy shelf, catalogued as overlaps — places where the design language and the measured world happen to rhyme — never as derivations. This is the mature form of the clutch-Δ discipline from Chapter 3: file the coincidence, print the rail, resist the upgrade.</p>
+
+
+      <div class="olt-work">
+        <h4>Worked example · metaphor vs measured quantity</h4>
+        <div class="olt-table-wrap">
+          <table class="olt-calc" aria-label="Physical vocabulary rails">
+            <thead>
+              <tr><th>Shelf name</th><th>Catalog use</th><th>Keep the textbook for…</th><th>Hand check</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Viscosity of light</td><td>Latency / mediation metaphor</td><td>Optics · relativity</td><td>No FTL messaging implied</td></tr>
+              <tr><td>Eddy-current mirror</td><td>Self-observation brake</td><td>Lenz&rsquo;s law (EM)</td><td>No neural eddy claim</td></tr>
+              <tr><td>Speed–distance–time crystal</td><td>One bookkeeping object</td><td>Kinematics · Landauer</td><td>Info cost ≠ new force law</td></tr>
+              <tr><td>Metrological overlap</td><td>Registry of rhymes (h, Φ, ν_HI, c…)</td><td>CODATA / SI</td><td>Overlap ≠ derivation</td></tr>
+              <tr><td>Δφ = π/2 motif</td><td>Quarter-cycle catalog image</td><td>Phase in waves</td><td>π/2 ≈ 1.5708 rad — label only</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="olt-check"><strong>Discipline.</strong> For each gallery paper: find the honesty rail first, then enjoy the metaphor. That order is non-negotiable.</p>
+      </div>
 
       <h3>5.4 Metamorphic octaves and planetary Goldilocks</h3>
       <p>Two closing rooms borrow Earth itself. The <strong>Metamorphic Octave Invariant</strong> (Part XIII) takes geology&rsquo;s shale→schist transformation — the same material recrystallised under heat and directed pressure into a denser, more organised self — as a dual-axis grammar for how filings (and people, and software) densify under load without losing identity. The <strong>Planetary Core Phase-Inversion &amp; Goldilocks Hologram</strong> (Part XIV) files geodynamo structure, CMB vocabulary, and a Δφ = π/2 phase-offset motif as a catalog of &ldquo;habitable-zone&rdquo; balance imagery. Both are catalog tier: no new geology, no new cosmology — the astronomy labels (SMACS, CMB) are used as shelf names, and the papers say so.</p>
@@ -433,6 +797,26 @@
 
       <h3>6.3 The Y Goldilocks ladder</h3>
       <p>The corpus&rsquo;s most elaborate single filing: the <strong>Zero-Octave Y Goldilocks</strong> companion builds a <strong>Fibonacci vault ladder</strong> on Chapter 4&rsquo;s origin crystal, files the Y chromosome&rsquo;s MSY palindrome geometry at <em>Digit 4 · Octave 34</em> (the V₃₄ vault, with V₅₅ carrying the Chordata filing above it), and notes the resonance 89 + 144 = 233 — three consecutive Fibonacci numbers, filed as ladder geometry. Its signature claim is a <em>filing</em> claim: in this catalog&rsquo;s geometry, the human Y occupies an earlier Goldilocks position than X. Every rail applies at once: catalog geometry, not wet-lab genetics; no clinical implication; the manifestation paper&rsquo;s own boundary is the loudest in the corpus precisely because the material is sensitive.</p>
+
+
+      <div class="olt-work">
+        <h4>Worked example · Fibonacci vault ladder (geometry only)</h4>
+        <div class="olt-table-wrap">
+          <table class="olt-calc" aria-label="Fibonacci vault hand table">
+            <thead>
+              <tr><th>Fib terms</th><th>Hand sum</th><th>Filing note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="olt-num">89 + 144</td><td class="olt-num">233</td><td>Three consecutive Fibonaccis — ladder geometry</td></tr>
+              <tr><td>V₃₄ address</td><td>Digit 4 · Octave 34</td><td>Locate the Y / MSY filing shelf</td></tr>
+              <tr><td>V₅₅</td><td>Digit band above</td><td>Chordata shelf in the same ladder story</td></tr>
+              <tr><td>Odd-prime vaults</td><td>3, 5, 7, …</td><td>Fold / storage containers — catalog encode</td></tr>
+              <tr><td>Engine pin vs app</td><td>—</td><td>Pins define the cabinet; companions consume it</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="olt-check"><strong>Rail reminder.</strong> 89 + 144 = 233 is arithmetic you can verify. It does not edit genomes, fold proteins in wet lab, or predict AI timelines.</p>
+      </div>
 
       <h3>6.4 Application companions — and how to tell them from engine pins</h3>
       <p>Two filings wear an explicit <em>not-an-engine-pin</em> badge. The <strong>PDVSA gateway ops</strong> mockup is a multi-domain executive demo whose load-bearing rhyme is historical: SNA ↔ TCP/IP — the era when one gateway let two incompatible network worlds converse — replayed as enterprise-integration grammar. The <strong>macro-protein work engine</strong> files organismal work-rate imagery (θ_bio ∈ [13,17], with Kleiber/WBE scaling as the real-science anchor it cites rather than replaces). The distinction matters structurally: <em>engine pins</em> define the catalog; <em>application companions</em> consume it. Confusing the two is the corpus&rsquo;s version of mistaking an app for the operating system.</p>

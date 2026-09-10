@@ -56,6 +56,22 @@ describe('Omni-Lattice course · homework weeks + companion textbook', () => {
     expect(page).toContain('href="/omni-lattice-course"');
   });
 
+  it('companion textbook Edition 1.1 includes foundations primer, worked examples, and hand-calc tables', () => {
+    const page = read('interfaces/omni-lattice-textbook.html');
+    expect(page).toContain('Edition 1.1');
+    expect(page).toContain('id="foundations"');
+    expect(page).toContain('Foundations primer');
+    expect(page).toContain('Worked example');
+    expect(page).toContain('table class="olt-calc"');
+    expect(page).toContain('Hand-calculation');
+    // One worked-example block per chapter + primer drills
+    expect((page.match(/Worked example ·/g) || []).length).toBeGreaterThanOrEqual(7);
+    expect((page.match(/table class="olt-calc"/g) || []).length).toBeGreaterThanOrEqual(8);
+    expect(page).toContain('Φ_EGS');
+    expect(page).toContain('0.001779');
+    expect(page).toContain('8,019');
+  });
+
   it('course page renders homework panels and links to the textbook', () => {
     const page = read('interfaces/omni-lattice-course.html');
     expect(page).toContain('olc-mod__homework');

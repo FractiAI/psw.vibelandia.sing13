@@ -62,16 +62,16 @@ describe('Reading Room · concert program', () => {
     expect(page).toContain(PROGRAM_CTA_LABEL);
   });
 
-  it('Reading Room hero ships demo doors as Online-course-style buttons; header stays two rows', () => {
+  it('Reading Room hero ships Online course + Demonstrations hub; header stays two rows', () => {
     const page = read('interfaces/reading-room.html');
     expect(page).toContain('ep-hero__cta');
     expect(page).toContain('href="/omni-lattice-course">Online course</a>');
     expect(page).toContain('id="ql-demonstrations-link"');
-    expect(page).toContain('id="ql-prime-vault-chat-link"');
-    expect(page).toContain('id="ql-prime-vault-race-link"');
-    expect(page).toContain('id="ql-goldilocks-quest-link"');
+    expect(page).not.toContain('ql-prime-vault-chat-link');
+    expect(page).not.toContain('ql-prime-vault-race-link');
+    expect(page).not.toContain('ql-goldilocks-quest-link');
     expect(page).toMatch(
-      /ep-hero__cta[\s\S]*btn btn--ghost[\s\S]*Demonstrations[\s\S]*Prime Vault Chat[\s\S]*Prime-Vault Race[\s\S]*Goldilocks Quest/,
+      /ep-hero__cta[\s\S]*btn btn--ghost[\s\S]*Online course[\s\S]*Demonstrations/,
     );
 
     const ql = read('interfaces/site-quicklinks.js');

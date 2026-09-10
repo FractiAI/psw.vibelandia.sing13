@@ -113,7 +113,28 @@
 .pvd-demo__cta {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.pvd-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pvd-badge--construction {
+  color: #ffb4cc;
+  border: 1px solid rgba(255, 61, 129, 0.45);
+  background: rgba(255, 61, 129, 0.14);
+}
+
+.pvd-app--hub .pvd-grid {
+  margin-bottom: 1.5rem;
 }
 
 .pvd-btn {

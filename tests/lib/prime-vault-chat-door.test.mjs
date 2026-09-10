@@ -191,11 +191,11 @@ describe('Prime Vault Chat · guest door rollout', () => {
     expect(vercel).toContain('api/prime-vault-chat.js');
 
     const ql = read('interfaces/site-quicklinks.js');
-    expect(ql).toContain('href="/demonstrations#chat"');
-    expect(ql).toContain('id="ql-prime-vault-chat-link"');
+    expect(ql).toContain('href="/demonstrations"');
+    expect(ql).not.toContain('ql-prime-vault-chat-link');
 
-    expect(PLAYER_MORE_DOORS.some((d) => d.href === '/demonstrations#chat')).toBe(true);
-    expect(findJourney('prime-vault-chat')?.cta?.href).toBe('/demonstrations#chat');
+    expect(PLAYER_MORE_DOORS.some((d) => d.href === '/prime-vault-chat')).toBe(true);
+    expect(findJourney('prime-vault-chat')?.cta?.href).toBe('/prime-vault-chat');
 
     expect(existsSync(join(ROOT, 'interfaces/blog-prime-vault-chat-2026-09.html'))).toBe(true);
     expect(read('lib/questfest-blog-posts.mjs')).toContain('prime-vault-chat');

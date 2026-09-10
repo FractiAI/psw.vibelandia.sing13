@@ -185,6 +185,14 @@ const chapters = [
         'synthobs-ss-vibelandia-official-prospectus-2026-08',
         'Official Prospectus',
       ),
+      wp(
+        'synthobs-open-empirical-science-digital-wet-lab-2026-09',
+        'Open empirical science · digital wet lab',
+      ),
+      wp(
+        'synthobs-tier-c-holographic-wiring-lattices-2026-09',
+        'Tier C holographic wiring lattices',
+      ),
     ],
     next: 'how-to-study',
   }),
@@ -475,6 +483,10 @@ const chapters = [
         'synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08',
         'Tensor decoupling',
       ),
+      wp(
+        'synthobs-tier-c-holographic-wiring-lattices-2026-09',
+        'Tier C holographic wiring lattices',
+      ),
     ],
     next: 'master-synthesis',
   }),
@@ -696,6 +708,10 @@ const chapters = [
       wp(
         'synthobs-infinite-octave-prime-parity-2026-09',
         'Prime-parity (Φ + primes)',
+      ),
+      wp(
+        'synthobs-generative-matrix-phi-egs-2026-09',
+        'Generative Matrix · Φ_EGS',
       ),
     ],
     next: 'prime-parity',
@@ -1249,6 +1265,10 @@ const chapters = [
       wp(
         'synthobs-grand-unified-metrological-overlap-2026-09',
         'Metrological overlap',
+      ),
+      wp(
+        'synthobs-generative-matrix-phi-egs-2026-09',
+        'Generative Matrix · Φ_EGS',
       ),
     ],
     next: 'metamorphic-planetary',

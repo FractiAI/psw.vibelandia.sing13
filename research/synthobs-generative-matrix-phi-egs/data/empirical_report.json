@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-09-10T16:41:00.019Z",
+  "results": {
+    "all_pass": true,
+    "n_pass": 8,
+    "n_total": 8,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS generative seed",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Generative matrix seed.",
+        "honesty": "Architectural key — not CODATA replacement."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Generative ladder identity.",
+        "honesty": "Algebra fixture."
+      },
+      {
+        "id": "E3_clutch_delta",
+        "title": "Clutch Δ ≈ 0.001779 (SI mantissa slip)",
+        "clutch": 0.0017789887498949053,
+        "expectedApprox": 0.001779,
+        "pass": true,
+        "interpretation": "Filed near-miss between Φ and l_P·10^35 mantissa.",
+        "honesty": "SI/base-10 dependent — not a discovery of nature."
+      },
+      {
+        "id": "E4_generative_ladder",
+        "title": "Ω_n = Φ^n · Ω_0 ladder",
+        "ladder": [
+          1,
+          1.618033988749895,
+          2.618033988749895,
+          4.23606797749979,
+          6.854101966249686,
+          11.090169943749476
+        ],
+        "ratios": [
+          1.618033988749895,
+          1.618033988749895,
+          1.618033988749895,
+          1.6180339887498951,
+          1.618033988749895
+        ],
+        "pass": true,
+        "interpretation": "Self-similar generative matrix leaves.",
+        "honesty": "Catalog scaling — not measured vacuum amplitudes."
+      },
+      {
+        "id": "E5_solar_filing_ar4524_ar4530",
+        "title": "AR4524 · AR4530 generative wet-lab anchors",
+        "solAlpha": "AR4524",
+        "solBeta": "AR4530",
+        "pass": true,
+        "interpretation": "Sol-Alpha / Sol-Beta locked for telemetry filing.",
+        "honesty": "Filing characters — not derivation of constants from sunspots."
+      },
+      {
+        "id": "E6_metrology_leaves_not_derived",
+        "title": "Metrology leaves filed — CODATA not retired",
+        "leaves": [
+          "h",
+          "c",
+          "nu_HI",
+          "PHI_EGS",
+          "prime_vaults"
+        ],
+        "pass": true,
+        "interpretation": "Generative matrix organises names; measurement stays external.",
+        "honesty": "Explicit refusal to bypass laboratory metrology."
+      },
+      {
+        "id": "E7_paper_present",
+        "title": "Paper present with Document ID + honesty",
+        "pass": true,
+        "interpretation": "Suite docs mirror monorepo paper.",
+        "honesty": "Structural presence check."
+      },
+      {
+        "id": "E8_ship_blog",
+        "title": "Ship-blog note references registry id",
+        "pass": true,
+        "interpretation": "Plain-language note wired to paper.",
+        "honesty": "Presence check."
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-09-10T16:40:59.916Z",
+  "results": {
+    "all_pass": true,
+    "n_pass": 6,
+    "n_total": 6,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Golden key for wiring hop weights.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_wiring_graph_phi_weights",
+        "title": "Tier C wiring graph under Φ hop weights",
+        "nodes": [
+          "index",
+          "narrative_a",
+          "narrative_b",
+          "honesty",
+          "demo"
+        ],
+        "nEdges": 7,
+        "strength": 3.472135954999579,
+        "entropyProxyPhi": 1.8972914666963177,
+        "entropyProxyUniform": 1.9459101490553132,
+        "pass": true,
+        "interpretation": "Φ-weighted wiring lowers retrieval-entropy proxy vs uniform edge weights (fixture).",
+        "honesty": "Archive-graph metric only — not NOAA retrieval physics."
+      },
+      {
+        "id": "E3_solar_filing_ar4524_ar4530",
+        "title": "AR4524 (Sol-Alpha) · AR4530 (Sol-Beta) filing anchors",
+        "regions": [
+          "AR4524",
+          "AR4530"
+        ],
+        "labels": [
+          "Sol-Alpha",
+          "Sol-Beta"
+        ],
+        "pass": true,
+        "interpretation": "Solar characters locked as ambient filing anchors.",
+        "honesty": "Filing labels — not heliospheric causation of catalog topology."
+      },
+      {
+        "id": "E4_cross_octave_entanglement_weights",
+        "title": "Cross-octave entanglement weights Φ^{-Δ}",
+        "hops": [
+          {
+            "a": 1,
+            "b": 3,
+            "d": 2,
+            "w": 0.3819660112501051
+          },
+          {
+            "a": 2,
+            "b": 5,
+            "d": 3,
+            "w": 0.23606797749978967
+          },
+          {
+            "a": 4,
+            "b": 8,
+            "d": 4,
+            "w": 0.14589803375031543
+          }
+        ],
+        "pass": true,
+        "interpretation": "Sol-Beta modulation label — weights shrink with octave distance.",
+        "honesty": "Catalog tensor talk — not measured entanglement."
+      },
+      {
+        "id": "E5_paper_present",
+        "title": "Paper present with Document ID + honesty",
+        "local": "/workspace/research/synthobs-tier-c-holographic-wiring-lattices/docs/SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md",
+        "mono": "/workspace/docs/SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md",
+        "pass": true,
+        "interpretation": "Suite docs mirror monorepo paper.",
+        "honesty": "Structural presence check."
+      },
+      {
+        "id": "E6_ship_blog",
+        "title": "Ship-blog note references registry id",
+        "path": "/workspace/interfaces/blog-tier-c-holographic-wiring-2026-09.html",
+        "pass": true,
+        "interpretation": "Plain-language note wired to paper.",
+        "honesty": "Presence check."
+      }
+    ]
+  }
+}

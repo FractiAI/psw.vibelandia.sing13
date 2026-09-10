@@ -30,16 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Open empirical science; Zero-Octave Y Goldilocks; Crystalline; Viscosity; Metrological; Eddy.
-    expect(posts[0].published).toBe('2026-09-10');
-    expect(posts[0].id).toBe('synthobs-open-empirical-science-digital-wet-lab-2026-09');
+    // Newest: Generative Matrix · Tier C wiring · Open empirical · Zero-Octave Y · Crystalline · Viscosity
+    expect(posts[0].id).toBe('synthobs-generative-matrix-phi-egs-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-generative-matrix-phi-egs-2026-09',
+      'synthobs-tier-c-holographic-wiring-lattices-2026-09',
       'synthobs-open-empirical-science-digital-wet-lab-2026-09',
       'synthobs-zero-octave-y-goldilocks-2026-09',
       'synthobs-crystalline-unified-field-speed-distance-time-2026-09',
       'synthobs-viscosity-of-light-2026-09',
-      'synthobs-grand-unified-metrological-overlap-2026-09',
-      'synthobs-eddy-current-mirror-2026-09',
     ]);
   });
 });

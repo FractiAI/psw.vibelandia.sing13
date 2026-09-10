@@ -385,6 +385,32 @@
         "docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md",
         "docs/SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-tier-c-holographic-wiring-lattices",
+      "path": "research/synthobs-tier-c-holographic-wiring-lattices",
+      "github": "https://github.com/FractiAI/synthobs-tier-c-holographic-wiring-lattices",
+      "description": "Tier C narrative shelves as holographic wiring lattices — Φ_EGS · AR4524/AR4530 filing fixtures",
+      "paperIds": [
+        "synthobs-tier-c-holographic-wiring-lattices-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md",
+        "docs/SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md"
+      ]
+    },
+    {
+      "id": "synthobs-generative-matrix-phi-egs",
+      "path": "research/synthobs-generative-matrix-phi-egs",
+      "github": "https://github.com/FractiAI/synthobs-generative-matrix-phi-egs",
+      "description": "Generative Matrix · Φ_EGS — metrology/QG Soft Story filings · CODATA contrast · AR4524/AR4530",
+      "paperIds": [
+        "synthobs-generative-matrix-phi-egs-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_GENERATIVE_MATRIX_PHI_EGS_QUANTUM_METROLOGY_2026-09.md",
+        "docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md"
+      ]
     }
   ]
 }

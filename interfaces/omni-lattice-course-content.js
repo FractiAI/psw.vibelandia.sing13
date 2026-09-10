@@ -84,6 +84,14 @@ window.OMNI_LATTICE_COURSE = {
               "label": "Official Prospectus"
             },
             {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-open-empirical-science-digital-wet-lab-2026-09",
+              "label": "Open empirical science · digital wet lab"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-tier-c-holographic-wiring-lattices-2026-09",
+              "label": "Tier C holographic wiring lattices"
+            },
+            {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
               "label": "Invisible Frontier"
             }
@@ -128,6 +136,10 @@ window.OMNI_LATTICE_COURSE = {
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",
               "label": "Tensor decoupling"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-tier-c-holographic-wiring-lattices-2026-09",
+              "label": "Tier C holographic wiring lattices"
             },
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-master-synthesis-99-octave-omni-lattice-2026-08",
@@ -177,6 +189,10 @@ window.OMNI_LATTICE_COURSE = {
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
               "label": "Prime-parity (Φ + primes)"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-generative-matrix-phi-egs-2026-09",
+              "label": "Generative Matrix · Φ_EGS"
             },
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-holographic-rhyme-fractal-2026-09",
@@ -287,6 +303,10 @@ window.OMNI_LATTICE_COURSE = {
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-grand-unified-metrological-overlap-2026-09",
               "label": "Metrological overlap"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-generative-matrix-phi-egs-2026-09",
+              "label": "Generative Matrix · Φ_EGS"
             },
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-metamorphic-octaves-2026-08",
@@ -423,6 +443,14 @@ window.OMNI_LATTICE_COURSE = {
         {
           "href": "/interfaces/whitepaper-surface.html?id=synthobs-ss-vibelandia-official-prospectus-2026-08",
           "label": "Official Prospectus"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-open-empirical-science-digital-wet-lab-2026-09",
+          "label": "Open empirical science · digital wet lab"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-tier-c-holographic-wiring-lattices-2026-09",
+          "label": "Tier C holographic wiring lattices"
         }
       ],
       "next": "how-to-study"
@@ -613,6 +641,10 @@ window.OMNI_LATTICE_COURSE = {
         {
           "href": "/interfaces/whitepaper-surface.html?id=synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",
           "label": "Tensor decoupling"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-tier-c-holographic-wiring-lattices-2026-09",
+          "label": "Tier C holographic wiring lattices"
         }
       ],
       "next": "master-synthesis"
@@ -765,6 +797,10 @@ window.OMNI_LATTICE_COURSE = {
         {
           "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
           "label": "Prime-parity (Φ + primes)"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-generative-matrix-phi-egs-2026-09",
+          "label": "Generative Matrix · Φ_EGS"
         }
       ],
       "next": "prime-parity"
@@ -1161,6 +1197,10 @@ window.OMNI_LATTICE_COURSE = {
         {
           "href": "/interfaces/whitepaper-surface.html?id=synthobs-grand-unified-metrological-overlap-2026-09",
           "label": "Metrological overlap"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-generative-matrix-phi-egs-2026-09",
+          "label": "Generative Matrix · Φ_EGS"
         }
       ],
       "next": "metamorphic-planetary"

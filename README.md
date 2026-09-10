@@ -275,7 +275,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-10** · **289** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-10** · **292** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -299,6 +299,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen-Holographic Systems · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | The Big Picture: Everything is Connected · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — one tribe, many homes · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-generative-matrix-phi-egs-2026-09.html`](/interfaces/blog-generative-matrix-phi-egs-2026-09.html) | Generative Matrix · Φ_EGS · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Geomagnetic Influences on Bison & Large Herbivore Movement · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Unified Geomagnetic Wavefields & Multi-Taxa Ungulate Migration Corridors on the Great… · Ship blog · SS Vibelandia |
@@ -406,6 +407,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tbme-superposition-reno-interpretation.html`](/interfaces/blog-tbme-superposition-reno-interpretation.html) | Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Supercond… · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Tier C Holographic Wiring · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Topology of the Void · Zero as Equilibrium · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three nested domes — one Goldilocks stage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-viscosity-of-light-2026-09.html`](/interfaces/blog-viscosity-of-light-2026-09.html) | Viscosity of Light · Ship blog · SS Vibelandia |

@@ -1,0 +1,8 @@
+{
+  "name": "synthobs-tier-c-holographic-wiring-lattices",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

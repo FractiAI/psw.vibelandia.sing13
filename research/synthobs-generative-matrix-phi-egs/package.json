@@ -1,0 +1,8 @@
+{
+  "name": "synthobs-generative-matrix-phi-egs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

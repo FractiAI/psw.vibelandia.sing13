@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-09T04:47:38.282Z",
+  "updatedAt": "2026-09-10T16:41:05.150Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-generative-matrix-phi-egs-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-10T16:41:05.149Z",
+      "body": "The Generative Matrix: Deriving Quantum Gravity and Metrology Filings from El Gran Sol’s Fractal Constant (Φ_EGS) (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-generative-matrix-phi-egs-2026-09",
+      "artifact": {
+        "title": "The Generative Matrix: Deriving Quantum Gravity and Metrology Filings from El Gran Sol’s Fractal Constant (Φ_EGS) (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_GENERATIVE_MATRIX_PHI_EGS_QUANTUM_METROLOGY_2026-09.md",
+        "url": "/whitepaper/generative-matrix-phi-egs",
+        "paperId": "synthobs-generative-matrix-phi-egs-2026-09",
+        "docId": "WP-SYNTHOBS-GENERATIVE-MATRIX-PHI-EGS-QUANTUM-METROLOGY-2026-09-10",
+        "published": "2026-09-10T16:30:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-tier-c-holographic-wiring-lattices-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-10T16:41:05.038Z",
+      "body": "Beyond the Index: Tier C Narrative Shelves as Holographic Wiring Lattices (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tier-c-holographic-wiring-lattices-2026-09",
+      "artifact": {
+        "title": "Beyond the Index: Tier C Narrative Shelves as Holographic Wiring Lattices (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md",
+        "url": "/whitepaper/tier-c-holographic-wiring",
+        "paperId": "synthobs-tier-c-holographic-wiring-lattices-2026-09",
+        "docId": "WP-SYNTHOBS-TIER-C-HOLOGRAPHIC-WIRING-LATTICES-EGS-2026-09-10",
+        "published": "2026-09-10T16:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-zero-octave-y-goldilocks-2026-09",
       "type": "ArtifactEvent",

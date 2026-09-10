@@ -39,8 +39,8 @@ const modules = [
   {
     id: 'week1',
     week: 1,
-    part: 'Week 1',
-    label: 'Week 1',
+    part: 'Homework: Week 1',
+    label: 'Homework: Week 1',
     title: 'Welcome aboard',
     duration: '~1 hr',
     blurb:
@@ -54,8 +54,8 @@ const modules = [
   {
     id: 'week2',
     week: 2,
-    part: 'Week 2',
-    label: 'Week 2',
+    part: 'Homework: Week 2',
+    label: 'Homework: Week 2',
     title: 'The filing cabinet',
     duration: '~1.5 hrs',
     blurb:
@@ -69,8 +69,8 @@ const modules = [
   {
     id: 'week3',
     week: 3,
-    part: 'Week 3',
-    label: 'Week 3',
+    part: 'Homework: Week 3',
+    label: 'Homework: Week 3',
     title: 'The golden key',
     duration: '~1.5 hrs',
     blurb:
@@ -84,8 +84,8 @@ const modules = [
   {
     id: 'week4',
     week: 4,
-    part: 'Week 4',
-    label: 'Week 4',
+    part: 'Homework: Week 4',
+    label: 'Homework: Week 4',
     title: 'Balance & awareness stories',
     duration: '~1.5 hrs',
     blurb:
@@ -99,8 +99,8 @@ const modules = [
   {
     id: 'week5',
     week: 5,
-    part: 'Week 5',
-    label: 'Week 5',
+    part: 'Homework: Week 5',
+    label: 'Homework: Week 5',
     title: 'Physical vocabulary as catalog',
     duration: '~1.5 hrs',
     blurb:
@@ -114,8 +114,8 @@ const modules = [
   {
     id: 'week6',
     week: 6,
-    part: 'Week 6',
-    label: 'Week 6',
+    part: 'Homework: Week 6',
+    label: 'Homework: Week 6',
     title: 'Building, belonging & next doors',
     duration: '~2 hrs',
     blurb:
@@ -133,7 +133,7 @@ const chapters = [
     id: 'welcome',
     moduleId: 'week1',
     week: 1,
-    part: 'Week 1',
+    part: 'Homework: Week 1',
     partId: 'week1',
     number: '1.1',
     title: 'What this course is',
@@ -149,7 +149,7 @@ const chapters = [
 <h3>Two kinds of statements</h3>
 <p>Throughout the corpus, statements come in tiers. A <strong>catalog claim</strong> says something like “we file this idea on shelf n = 3, scaled by Φ” — it is a statement about organisation, checkable by looking at the filing system itself. A <strong>physics claim</strong> would say “this equation predicts a measurement” — checkable only by experiment, peer review, and instruments. The whitepapers are explicit, sometimes to the point of repetition, that they make claims of the first kind and decline claims of the second kind. That explicit refusal is called the <strong>honesty boundary</strong>, and you will find one near the top of every serious paper.</p>
 <p>What you will learn, concretely: how the corpus organises ideas into <strong>digits and octaves</strong> (a coordinate system for stories and shelves), how the golden ratio Φ ≈ 1.618 is used as <strong>nesting language</strong> (a way of describing how ideas scale and repeat, never a replacement for ℏ, c, or G), and how to read an honesty rail so quickly that spotting the claim tier becomes a reflex. What you will not learn: a replacement for relativity, clinical genetics, or a Theory of Everything. Those claims are explicitly refused by the papers themselves, and this course preserves that refusal on every page.</p>
-<p>One more orientation point. There is no separate textbook product hiding behind this course. <em>This course is the reader.</em> When a lesson ends, the Further reading panel opens the matching whitepaper directly — the primary source, with its own honesty boundary intact. Lessons summarise and teach; papers file and specify. If the two ever seem to disagree, the paper wins, the same way a map disagreement is settled by the territory.</p>
+<p>One more orientation point: this course has a <strong>three-layer reading stack</strong>, and each week's homework walks all three. Layer one is the <strong>online course material</strong> — these lessons, the guided tour. Layer two is the <a href="/omni-lattice-textbook"><strong>companion textbook</strong></a> — one chapter per homework week, sitting deliberately between the lesson summaries and the primary papers, carrying the full synthesis of the corpus through every chapter. Layer three is the <strong>whitepapers</strong> themselves — the primary sources, each with its own honesty boundary intact. Lessons summarise and teach; the textbook connects and deepens; papers file and specify. If any two layers ever seem to disagree, the paper wins, the same way a map disagreement is settled by the territory.</p>
 <div class="worked-example">
 <p>Take a real sentence you will meet in Week 3: “Φ ≈ 1.618 is the architectural scale key of the lattice.” Let us file it together. First, ask: <em>what would make this true or false?</em> If it is a physics claim, we would need an experiment where Φ predicts a measurement better than existing constants. No paper in the corpus proposes such an experiment as settled — so that reading fails. If it is a catalog claim, we need only check that the filing system genuinely uses powers of Φ to relate its shelves — which it does, visibly, in the tensor and prime-parity papers. Verdict: <strong>catalog claim</strong>, correctly labelled. That five-second filing move — “what would make this true?” — is the single most useful habit this course installs.</p>
 </div>
@@ -192,7 +192,7 @@ const chapters = [
     id: 'how-to-study',
     moduleId: 'week1',
     week: 1,
-    part: 'Week 1',
+    part: 'Homework: Week 1',
     partId: 'week1',
     number: '1.2',
     title: 'How to study here',
@@ -232,7 +232,7 @@ const chapters = [
     check: [
       {
         q: 'Where do you go for the full technical filing?',
-        a: 'Further reading → the whitepaper surface (not a separate textbook — this course is the reader).',
+        a: 'Further reading → the whitepaper surface, the primary source. The companion textbook is the middle layer — deeper than lessons, gentler than papers — and each week\u2019s homework includes all three.',
       },
       {
         q: 'You have only fifteen minutes today. What is the highest-value move?',
@@ -255,7 +255,7 @@ const chapters = [
     id: 'honesty-first',
     moduleId: 'week1',
     week: 1,
-    part: 'Week 1',
+    part: 'Homework: Week 1',
     partId: 'week1',
     number: '1.3',
     title: 'Honesty first · Goldilocks habit',
@@ -315,7 +315,7 @@ const chapters = [
     id: 'ship-berth',
     moduleId: 'week1',
     week: 1,
-    part: 'Week 1',
+    part: 'Homework: Week 1',
     partId: 'week1',
     number: '1.4',
     title: 'Where you are on the ship',
@@ -376,7 +376,7 @@ const chapters = [
     id: 'digits-octaves',
     moduleId: 'week2',
     week: 2,
-    part: 'Week 2',
+    part: 'Homework: Week 2',
     partId: 'week2',
     number: '2.1',
     title: 'Digits × Octaves · The map',
@@ -428,7 +428,7 @@ const chapters = [
     id: 'tensor-filing',
     moduleId: 'week2',
     week: 2,
-    part: 'Week 2',
+    part: 'Homework: Week 2',
     partId: 'week2',
     number: '2.2',
     title: 'Tensor decoupling · Stop smushing headlines',
@@ -482,7 +482,7 @@ const chapters = [
     id: 'master-synthesis',
     moduleId: 'week2',
     week: 2,
-    part: 'Week 2',
+    part: 'Homework: Week 2',
     partId: 'week2',
     number: '2.3',
     title: 'Master synthesis · One cabinet',
@@ -537,7 +537,7 @@ const chapters = [
     id: 'living-pem',
     moduleId: 'week2',
     week: 2,
-    part: 'Week 2',
+    part: 'Homework: Week 2',
     partId: 'week2',
     number: '2.4',
     title: 'Living PEM & BYOK',
@@ -592,7 +592,7 @@ const chapters = [
     id: 'cmos-pin',
     moduleId: 'week2',
     week: 2,
-    part: 'Week 2',
+    part: 'Homework: Week 2',
     partId: 'week2',
     number: '2.5',
     title: 'CMOS / protonic · Silicon shelf first',
@@ -648,7 +648,7 @@ const chapters = [
     id: 'phi-key',
     moduleId: 'week3',
     week: 3,
-    part: 'Week 3',
+    part: 'Homework: Week 3',
     partId: 'week3',
     number: '3.1',
     title: 'Φ ≈ 1.618 · The nesting key',
@@ -704,7 +704,7 @@ const chapters = [
     id: 'prime-parity',
     moduleId: 'week3',
     week: 3,
-    part: 'Week 3',
+    part: 'Homework: Week 3',
     partId: 'week3',
     number: '3.2',
     title: 'Prime-parity · Sole-even 2',
@@ -761,7 +761,7 @@ const chapters = [
     id: 'holographic-rhyme',
     moduleId: 'week3',
     week: 3,
-    part: 'Week 3',
+    part: 'Homework: Week 3',
     partId: 'week3',
     number: '3.3',
     title: 'Holographic rhyme · Four pillars',
@@ -823,7 +823,7 @@ const chapters = [
     id: 'week3-bridge',
     moduleId: 'week3',
     week: 3,
-    part: 'Week 3',
+    part: 'Homework: Week 3',
     partId: 'week3',
     number: '3.4',
     title: 'Putting Week 3 together',
@@ -879,7 +879,7 @@ const chapters = [
     id: 'topology-void',
     moduleId: 'week4',
     week: 4,
-    part: 'Week 4',
+    part: 'Homework: Week 4',
     partId: 'week4',
     number: '4.1',
     title: 'Topology of the Void',
@@ -931,7 +931,7 @@ const chapters = [
     id: 'proton-electron',
     moduleId: 'week4',
     week: 4,
-    part: 'Week 4',
+    part: 'Homework: Week 4',
     partId: 'week4',
     number: '4.2',
     title: 'Proton Space · Electron Theater',
@@ -986,7 +986,7 @@ const chapters = [
     id: 'singularity-crystal',
     moduleId: 'week4',
     week: 4,
-    part: 'Week 4',
+    part: 'Homework: Week 4',
     partId: 'week4',
     number: '4.3',
     title: 'Singularity Crystal · Net Zero',
@@ -1043,7 +1043,7 @@ const chapters = [
     id: 'higgs-gate',
     moduleId: 'week4',
     week: 4,
-    part: 'Week 4',
+    part: 'Homework: Week 4',
     partId: 'week4',
     number: '4.4',
     title: 'Higgs Gate · Shared Now (Soft Story)',
@@ -1098,7 +1098,7 @@ const chapters = [
     id: 'viscosity-light',
     moduleId: 'week5',
     week: 5,
-    part: 'Week 5',
+    part: 'Homework: Week 5',
     partId: 'week5',
     number: '5.1',
     title: 'Viscosity of Light',
@@ -1147,7 +1147,7 @@ const chapters = [
     id: 'eddy-mirror',
     moduleId: 'week5',
     week: 5,
-    part: 'Week 5',
+    part: 'Homework: Week 5',
     partId: 'week5',
     number: '5.2',
     title: 'Eddy-Current Mirror',
@@ -1198,7 +1198,7 @@ const chapters = [
     id: 'crystalline-field',
     moduleId: 'week5',
     week: 5,
-    part: 'Week 5',
+    part: 'Homework: Week 5',
     partId: 'week5',
     number: '5.3',
     title: 'Crystalline field & metrology gears',
@@ -1257,7 +1257,7 @@ const chapters = [
     id: 'metamorphic-planetary',
     moduleId: 'week5',
     week: 5,
-    part: 'Week 5',
+    part: 'Homework: Week 5',
     partId: 'week5',
     number: '5.4',
     title: 'Metamorphic & planetary Goldilocks',
@@ -1312,7 +1312,7 @@ const chapters = [
     id: 'protein-storage',
     moduleId: 'week6',
     week: 6,
-    part: 'Week 6',
+    part: 'Homework: Week 6',
     partId: 'week6',
     number: '6.1',
     title: 'Primes in folding & storage',
@@ -1371,7 +1371,7 @@ const chapters = [
     id: 'stack-bridge',
     moduleId: 'week6',
     week: 6,
-    part: 'Week 6',
+    part: 'Homework: Week 6',
     partId: 'week6',
     number: '6.2',
     title: 'Moving up the stack · Human bridge',
@@ -1430,7 +1430,7 @@ const chapters = [
     id: 'y-goldilocks',
     moduleId: 'week6',
     week: 6,
-    part: 'Week 6',
+    part: 'Homework: Week 6',
     partId: 'week6',
     number: '6.3',
     title: 'Y Goldilocks · Fibonacci vaults',
@@ -1490,7 +1490,7 @@ const chapters = [
     id: 'companions',
     moduleId: 'week6',
     week: 6,
-    part: 'Week 6',
+    part: 'Homework: Week 6',
     partId: 'week6',
     number: '6.4',
     title: 'Application companions · Not engine pins',
@@ -1553,7 +1553,7 @@ const chapters = [
     id: 'invisible-frontier',
     moduleId: 'week6',
     week: 6,
-    part: 'Week 6',
+    part: 'Homework: Week 6',
     partId: 'week6',
     number: '6.5',
     title: 'Invisible Frontier · Second chart',
@@ -1607,7 +1607,7 @@ const chapters = [
     id: 'how-to-continue',
     moduleId: 'week6',
     week: 6,
-    part: 'Week 6',
+    part: 'Homework: Week 6',
     partId: 'week6',
     number: '6.6',
     title: 'How to keep learning',
@@ -1634,7 +1634,7 @@ const chapters = [
 </div>
 <div class="misconception">
 <p><strong>The mix-up:</strong> “Finishing the course means finishing the subject — the lessons covered the corpus, so the papers are now optional.”</p>
-<p><strong>The correction:</strong> The course is the guided tour; the papers are the territory, and they hold detail no summary carries (this course is the reader — the further-reading links were always the point). Graduation here means you can now read the primary sources <em>at their own declared tiers</em>, unaccompanied. That is the beginning, not the end.</p>
+<p><strong>The correction:</strong> The course is the guided tour; the <a href="/omni-lattice-textbook">companion textbook</a> is the connecting middle read; the papers are the territory, and they hold detail no summary carries — the further-reading links were always the point. Graduation here means you can now read the primary sources <em>at their own declared tiers</em>, unaccompanied. That is the beginning, not the end.</p>
 </div>
 <div class="key-terms"><dl>
 <dt>Three-sentence pack</dt><dd>The portable summary of the course: filing architecture with refused physics claims · tier labels before belief · humans outrank everything.</dd>
@@ -1671,7 +1671,34 @@ const chapters = [
 ];
 
 for (const mod of modules) {
-  mod.chapters = chapters.filter((c) => c.moduleId === mod.id).map((c) => c.id);
+  const modLessons = chapters.filter((c) => c.moduleId === mod.id);
+  mod.chapters = modLessons.map((c) => c.id);
+
+  // Homework: Week N = course lessons + companion textbook chapter + the week's whitepapers.
+  const first = modLessons[0];
+  const last = modLessons[modLessons.length - 1];
+  const seenPapers = new Set();
+  const weekPapers = [];
+  for (const c of modLessons) {
+    for (const p of c.papers || []) {
+      if (!seenPapers.has(p.href)) {
+        seenPapers.add(p.href);
+        weekPapers.push(p);
+      }
+    }
+  }
+  mod.homework = {
+    heading: `Homework: Week ${mod.week}`,
+    course: {
+      label: `Online course · lessons ${first.number}–${last.number} (${mod.title})`,
+      href: `#ch/${encodeURIComponent(first.id)}`,
+    },
+    textbook: {
+      label: `Companion textbook · Chapter ${mod.week} · ${mod.title}`,
+      href: `/omni-lattice-textbook#chapter-${mod.week}`,
+    },
+    papers: weekPapers,
+  };
 }
 
 const course = {
@@ -1700,17 +1727,17 @@ const course = {
     papersCatalog: '/papers',
     ship: 'https://www.ssvibelandiaquestfest24x365.com',
     honesty:
-      'This course teaches catalog architecture and protocol grammar — nesting language keyed by Φ ≈ 1.618 — not established physics, clinical advice, or a Theory of Everything. Formalise constructs; preserve honesty rails; do not upgrade maps into unfinished proofs. Further reading points only to the whitepapers.',
+      'This course teaches catalog architecture and protocol grammar — nesting language keyed by Φ ≈ 1.618 — not established physics, clinical advice, or a Theory of Everything. Formalise constructs; preserve honesty rails; do not upgrade maps into unfinished proofs. Homework reading runs course lessons → companion textbook → whitepapers; the papers stay the primary sources.',
     totalWeeks: 6,
     estimatedHours: '12–16 hours self-paced',
   },
   syllabus: {
     overview:
-      'Six weeks of guided reading. Each lesson opens with a concrete analogy, develops the key ideas in plain language, walks one worked example, flags the most common mix-up, defines the new terms, and ends with a short check plus the whitepaper to open when you want the full filing. No separate textbook — this course is the reader.',
+      'Six homework weeks of guided reading. Each week\u2019s homework has three layers: the online course lessons here, the matching chapter of the companion textbook, and the week\u2019s whitepapers. Each lesson opens with a concrete analogy, develops the key ideas in plain language, walks one worked example, flags the most common mix-up, defines the new terms, and ends with a short check plus the whitepaper to open when you want the full filing.',
     level: 'Introductory · algebra-comfortable · no physics prerequisite',
     pacing: 'Self-paced · one week ≈ one or two sittings · resume anytime on this device',
     howToSucceed:
-      'Read one lesson at a sitting, the way you would read a good magazine feature. Try each worked example with a pencil before revealing the check answers. When a claim feels too big, hunt for the honesty rail — finding it yourself is the core skill this course teaches. Open at least one linked whitepaper per week so the lessons stay anchored to primary sources. Mark a lesson complete only when you can answer its checks without peeking. And keep the Goldilocks habit: if study time collides with a human need, the human wins — the course saves your place.',
+      'Do the homework in its three-layer order: read the week\u2019s lessons here first, then the matching companion-textbook chapter for the full synthesis, then open at least one of the week\u2019s whitepapers so everything stays anchored to primary sources. Try each worked example with a pencil before revealing the check answers. When a claim feels too big, hunt for the honesty rail — finding it yourself is the core skill this course teaches. Mark a lesson complete only when you can answer its checks without peeking. And keep the Goldilocks habit: if study time collides with a human need, the human wins — the course saves your place.',
     outcomes: [
       'Explain what the Omni-Lattice is for (coordination & filing) and what it is not (physics proof).',
       'Navigate Digits × Octaves 01–99 as a Story-depth map and walk a full address.',

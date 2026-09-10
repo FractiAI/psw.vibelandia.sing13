@@ -357,6 +357,41 @@ a:hover {
   line-height: 1.45;
 }
 
+.olc-mod__homework {
+  margin: 0 0 0.9rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  border-radius: 10px;
+  background: rgba(201, 162, 39, 0.08);
+}
+
+.olc-mod__homework h4 {
+  margin: 0 0 0.4rem;
+  font-family: var(--olc-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--olc-navy);
+}
+
+.olc-mod__homework ol {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.88rem;
+  color: var(--olc-ink-soft);
+  line-height: 1.5;
+}
+
+.olc-mod__homework li {
+  margin: 0 0 0.3rem;
+}
+
+.olc-mod__homework a {
+  color: var(--olc-navy-mid);
+  text-decoration: underline;
+  text-decoration-color: rgba(201, 162, 39, 0.6);
+}
+
 .olc-mod__meta {
   display: flex;
   flex-wrap: wrap;

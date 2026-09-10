@@ -27,15 +27,15 @@ window.OMNI_LATTICE_COURSE = {
     "sourcePapers": "/reading-room#papers",
     "papersCatalog": "/papers",
     "ship": "https://www.ssvibelandiaquestfest24x365.com",
-    "honesty": "This course teaches catalog architecture and protocol grammar — nesting language keyed by Φ ≈ 1.618 — not established physics, clinical advice, or a Theory of Everything. Formalise constructs; preserve honesty rails; do not upgrade maps into unfinished proofs. Further reading points only to the whitepapers.",
+    "honesty": "This course teaches catalog architecture and protocol grammar — nesting language keyed by Φ ≈ 1.618 — not established physics, clinical advice, or a Theory of Everything. Formalise constructs; preserve honesty rails; do not upgrade maps into unfinished proofs. Homework reading runs course lessons → companion textbook → whitepapers; the papers stay the primary sources.",
     "totalWeeks": 6,
     "estimatedHours": "12–16 hours self-paced"
   },
   "syllabus": {
-    "overview": "Six weeks of guided reading. Each lesson opens with a concrete analogy, develops the key ideas in plain language, walks one worked example, flags the most common mix-up, defines the new terms, and ends with a short check plus the whitepaper to open when you want the full filing. No separate textbook — this course is the reader.",
+    "overview": "Six homework weeks of guided reading. Each week’s homework has three layers: the online course lessons here, the matching chapter of the companion textbook, and the week’s whitepapers. Each lesson opens with a concrete analogy, develops the key ideas in plain language, walks one worked example, flags the most common mix-up, defines the new terms, and ends with a short check plus the whitepaper to open when you want the full filing.",
     "level": "Introductory · algebra-comfortable · no physics prerequisite",
     "pacing": "Self-paced · one week ≈ one or two sittings · resume anytime on this device",
-    "howToSucceed": "Read one lesson at a sitting, the way you would read a good magazine feature. Try each worked example with a pencil before revealing the check answers. When a claim feels too big, hunt for the honesty rail — finding it yourself is the core skill this course teaches. Open at least one linked whitepaper per week so the lessons stay anchored to primary sources. Mark a lesson complete only when you can answer its checks without peeking. And keep the Goldilocks habit: if study time collides with a human need, the human wins — the course saves your place.",
+    "howToSucceed": "Do the homework in its three-layer order: read the week’s lessons here first, then the matching companion-textbook chapter for the full synthesis, then open at least one of the week’s whitepapers so everything stays anchored to primary sources. Try each worked example with a pencil before revealing the check answers. When a claim feels too big, hunt for the honesty rail — finding it yourself is the core skill this course teaches. Mark a lesson complete only when you can answer its checks without peeking. And keep the Goldilocks habit: if study time collides with a human need, the human wins — the course saves your place.",
     "outcomes": [
       "Explain what the Omni-Lattice is for (coordination & filing) and what it is not (physics proof).",
       "Navigate Digits × Octaves 01–99 as a Story-depth map and walk a full address.",
@@ -48,8 +48,8 @@ window.OMNI_LATTICE_COURSE = {
       {
         "id": "week1",
         "week": 1,
-        "part": "Week 1",
-        "label": "Week 1",
+        "part": "Homework: Week 1",
+        "label": "Homework: Week 1",
         "title": "Welcome aboard",
         "duration": "~1 hr",
         "blurb": "Where you are, how this course works, and the one honesty rule that never turns off — the reading habits that make everything after this week easier.",
@@ -63,13 +63,38 @@ window.OMNI_LATTICE_COURSE = {
           "how-to-study",
           "honesty-first",
           "ship-berth"
-        ]
+        ],
+        "homework": {
+          "heading": "Homework: Week 1",
+          "course": {
+            "label": "Online course · lessons 1.1–1.4 (Welcome aboard)",
+            "href": "#ch/welcome"
+          },
+          "textbook": {
+            "label": "Companion textbook · Chapter 1 · Welcome aboard",
+            "href": "/omni-lattice-textbook#chapter-1"
+          },
+          "papers": [
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+              "label": "Infinite Octaves Omniversal Lattice Chat"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-ss-vibelandia-official-prospectus-2026-08",
+              "label": "Official Prospectus"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
+              "label": "Invisible Frontier"
+            }
+          ]
+        }
       },
       {
         "id": "week2",
         "week": 2,
-        "part": "Week 2",
-        "label": "Week 2",
+        "part": "Homework: Week 2",
+        "label": "Homework: Week 2",
         "title": "The filing cabinet",
         "duration": "~1.5 hrs",
         "blurb": "The organising machinery: Digits × Octaves as a Story-depth map, tensor decoupling as labelled layers, the Living PEM and BYOK, and the pinned CMOS/protonic bridge that linear-systems readers open first.",
@@ -84,13 +109,46 @@ window.OMNI_LATTICE_COURSE = {
           "master-synthesis",
           "living-pem",
           "cmos-pin"
-        ]
+        ],
+        "homework": {
+          "heading": "Homework: Week 2",
+          "course": {
+            "label": "Online course · lessons 2.1–2.5 (The filing cabinet)",
+            "href": "#ch/digits-octaves"
+          },
+          "textbook": {
+            "label": "Companion textbook · Chapter 2 · The filing cabinet",
+            "href": "/omni-lattice-textbook#chapter-2"
+          },
+          "papers": [
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-99-octave-digits-master-2026-08",
+              "label": "Digits master"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",
+              "label": "Tensor decoupling"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-master-synthesis-99-octave-omni-lattice-2026-08",
+              "label": "Master synthesis"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+              "label": "Lattice Chat / PEM companion"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-cmos-protonic-99-octave-omni-lattice-2026-08",
+              "label": "CMOS / protonic bridge"
+            }
+          ]
+        }
       },
       {
         "id": "week3",
         "week": 3,
-        "part": "Week 3",
-        "label": "Week 3",
+        "part": "Homework: Week 3",
+        "label": "Homework: Week 3",
         "title": "The golden key",
         "duration": "~1.5 hrs",
         "blurb": "The three tools every later lesson reuses: Φ ≈ 1.618 as nesting language, prime parity (the sole-even 2 and the odd vaults), and holographic rhyme as four-pillar motion grammar.",
@@ -104,13 +162,38 @@ window.OMNI_LATTICE_COURSE = {
           "prime-parity",
           "holographic-rhyme",
           "week3-bridge"
-        ]
+        ],
+        "homework": {
+          "heading": "Homework: Week 3",
+          "course": {
+            "label": "Online course · lessons 3.1–3.4 (The golden key)",
+            "href": "#ch/phi-key"
+          },
+          "textbook": {
+            "label": "Companion textbook · Chapter 3 · The golden key",
+            "href": "/omni-lattice-textbook#chapter-3"
+          },
+          "papers": [
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
+              "label": "Prime-parity (Φ + primes)"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-holographic-rhyme-fractal-2026-09",
+              "label": "Holographic rhyme"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-multidimensional-holographic-rhyme-2026-09",
+              "label": "Multi-dimensional rhyme"
+            }
+          ]
+        }
       },
       {
         "id": "week4",
         "week": 4,
-        "part": "Week 4",
-        "label": "Week 4",
+        "part": "Homework: Week 4",
+        "label": "Homework: Week 4",
         "title": "Balance & awareness stories",
         "duration": "~1.5 hrs",
         "blurb": "Zero as dynamic equilibrium, the Proton Space / Electron Theater duality, the Net Zero singularity crystal at node k = 0, and the Higgs Gate Soft Story — with the Standard Model left standing.",
@@ -124,13 +207,46 @@ window.OMNI_LATTICE_COURSE = {
           "proton-electron",
           "singularity-crystal",
           "higgs-gate"
-        ]
+        ],
+        "homework": {
+          "heading": "Homework: Week 4",
+          "course": {
+            "label": "Online course · lessons 4.1–4.4 (Balance & awareness stories)",
+            "href": "#ch/topology-void"
+          },
+          "textbook": {
+            "label": "Companion textbook · Chapter 4 · Balance & awareness stories",
+            "href": "/omni-lattice-textbook#chapter-4"
+          },
+          "papers": [
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-topology-of-the-void-2026-09",
+              "label": "Topology of the Void"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-proton-space-electron-theater-2026-09",
+              "label": "Proton · Electron duality"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-holographic-singularity-crystal-2026-09",
+              "label": "Holographic Singularity Crystal"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-zero-octave-node-k0-2026-09",
+              "label": "Zero-Octave node k=0"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-higgs-awareness-unified-2026-09",
+              "label": "Higgs Gate · awareness unified"
+            }
+          ]
+        }
       },
       {
         "id": "week5",
         "week": 5,
-        "part": "Week 5",
-        "label": "Week 5",
+        "part": "Homework: Week 5",
+        "label": "Homework: Week 5",
         "title": "Physical vocabulary as catalog",
         "duration": "~1.5 hrs",
         "blurb": "Light with viscosity, eddy-current mirrors, one speed–distance–time crystal, metamorphic densification, and planetary Goldilocks — physical-sounding shelves read as metaphors with rails.",
@@ -144,13 +260,50 @@ window.OMNI_LATTICE_COURSE = {
           "eddy-mirror",
           "crystalline-field",
           "metamorphic-planetary"
-        ]
+        ],
+        "homework": {
+          "heading": "Homework: Week 5",
+          "course": {
+            "label": "Online course · lessons 5.1–5.4 (Physical vocabulary as catalog)",
+            "href": "#ch/viscosity-light"
+          },
+          "textbook": {
+            "label": "Companion textbook · Chapter 5 · Physical vocabulary as catalog",
+            "href": "/omni-lattice-textbook#chapter-5"
+          },
+          "papers": [
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-viscosity-of-light-2026-09",
+              "label": "Viscosity of Light"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-eddy-current-mirror-2026-09",
+              "label": "Eddy-Current Mirror"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-crystalline-unified-field-speed-distance-time-2026-09",
+              "label": "Crystalline Unified Field"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-grand-unified-metrological-overlap-2026-09",
+              "label": "Metrological overlap"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-metamorphic-octaves-2026-08",
+              "label": "Metamorphic Octaves"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-planetary-core-goldilocks-2026-08",
+              "label": "Planetary Core · Goldilocks"
+            }
+          ]
+        }
       },
       {
         "id": "week6",
         "week": 6,
-        "part": "Week 6",
-        "label": "Week 6",
+        "part": "Homework: Week 6",
+        "label": "Homework: Week 6",
         "title": "Building, belonging & next doors",
         "duration": "~2 hrs",
         "blurb": "Primes at work in folding and storage, the Y Goldilocks filing with its Fibonacci vault ladder, application companions versus engine pins, the Invisible Frontier second chart, and how to keep learning after the course ends.",
@@ -166,7 +319,68 @@ window.OMNI_LATTICE_COURSE = {
           "companions",
           "invisible-frontier",
           "how-to-continue"
-        ]
+        ],
+        "homework": {
+          "heading": "Homework: Week 6",
+          "course": {
+            "label": "Online course · lessons 6.1–6.6 (Building, belonging & next doors)",
+            "href": "#ch/protein-storage"
+          },
+          "textbook": {
+            "label": "Companion textbook · Chapter 6 · Building, belonging & next doors",
+            "href": "/omni-lattice-textbook#chapter-6"
+          },
+          "papers": [
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-protein-folding-prime-container-2026-09",
+              "label": "Protein folding · primes"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-prime-indexed-volumetric-storage-2026-09",
+              "label": "Prime-indexed storage"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-moving-up-the-stack-valuation-2026-09",
+              "label": "Moving up the stack"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-human-omniversal-reality-bridge-2026-08",
+              "label": "Human reality bridge"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-y-chromosome-holographic-manifestation-2026-08",
+              "label": "Y manifestation"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-zero-octave-y-goldilocks-2026-09",
+              "label": "Zero-Octave Y Goldilocks"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-pdvsa-gateway-ops-mockup-2026-09",
+              "label": "PDVSA Gateway Ops mockup"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+              "label": "SNA ↔ TCP/IP rhyme"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-macro-protein-work-engine-2026-09",
+              "label": "Macro-protein work engine"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
+              "label": "Invisible Frontier"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-ss-vibelandia-official-prospectus-2026-08",
+              "label": "Official Prospectus"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+              "label": "Lattice Chat whitepaper"
+            }
+          ]
+        }
       }
     ]
   },
@@ -175,7 +389,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "welcome",
       "moduleId": "week1",
       "week": 1,
-      "part": "Week 1",
+      "part": "Homework: Week 1",
       "partId": "week1",
       "number": "1.1",
       "title": "What this course is",
@@ -186,7 +400,7 @@ window.OMNI_LATTICE_COURSE = {
         "Name the difference between catalog grammar and physics proof.",
         "Explain why the whitepapers — not this course — are the primary sources."
       ],
-      "body": "<p>Picture arriving at an enormous library on your first day in a new city. Tens of thousands of documents line the shelves, some technical, some poetic, some both at once. You could wander in alone and open drawers at random — plenty of people do — but the library also offers something better: a guide who walks you room by room, tells you what each wing is for, and, crucially, teaches you how to read the labels so you never mistake a story shelf for a laboratory report. This course is that guide. The library is the corpus of <strong>SynthOBS whitepapers</strong> behind SS Vibelandia and Lattice Chat, and the subject is the <strong>Infinite Octaves Omni-Lattice</strong> — the filing system and protocol grammar that organises all of it.</p>\n<p>Here is the one-sentence version you should be able to repeat by the end of this lesson: <em>this course teaches the architecture of a catalog — how ideas are filed, nested, and cross-referenced — not a new physics.</em> The distinction matters more here than in most subjects, because the catalog borrows physical vocabulary freely. You will meet golden ratios, protons, Higgs fields, viscosity, and chromosomes. Every one of them arrives wearing a label that says what kind of claim it is. Learning to read those labels is the core skill of the whole six weeks.</p>\n<h3>Two kinds of statements</h3>\n<p>Throughout the corpus, statements come in tiers. A <strong>catalog claim</strong> says something like “we file this idea on shelf n = 3, scaled by Φ” — it is a statement about organisation, checkable by looking at the filing system itself. A <strong>physics claim</strong> would say “this equation predicts a measurement” — checkable only by experiment, peer review, and instruments. The whitepapers are explicit, sometimes to the point of repetition, that they make claims of the first kind and decline claims of the second kind. That explicit refusal is called the <strong>honesty boundary</strong>, and you will find one near the top of every serious paper.</p>\n<p>What you will learn, concretely: how the corpus organises ideas into <strong>digits and octaves</strong> (a coordinate system for stories and shelves), how the golden ratio Φ ≈ 1.618 is used as <strong>nesting language</strong> (a way of describing how ideas scale and repeat, never a replacement for ℏ, c, or G), and how to read an honesty rail so quickly that spotting the claim tier becomes a reflex. What you will not learn: a replacement for relativity, clinical genetics, or a Theory of Everything. Those claims are explicitly refused by the papers themselves, and this course preserves that refusal on every page.</p>\n<p>One more orientation point. There is no separate textbook product hiding behind this course. <em>This course is the reader.</em> When a lesson ends, the Further reading panel opens the matching whitepaper directly — the primary source, with its own honesty boundary intact. Lessons summarise and teach; papers file and specify. If the two ever seem to disagree, the paper wins, the same way a map disagreement is settled by the territory.</p>\n<div class=\"worked-example\">\n<p>Take a real sentence you will meet in Week 3: “Φ ≈ 1.618 is the architectural scale key of the lattice.” Let us file it together. First, ask: <em>what would make this true or false?</em> If it is a physics claim, we would need an experiment where Φ predicts a measurement better than existing constants. No paper in the corpus proposes such an experiment as settled — so that reading fails. If it is a catalog claim, we need only check that the filing system genuinely uses powers of Φ to relate its shelves — which it does, visibly, in the tensor and prime-parity papers. Verdict: <strong>catalog claim</strong>, correctly labelled. That five-second filing move — “what would make this true?” — is the single most useful habit this course installs.</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “A course full of golden ratios and Higgs language must be claiming secret physics, and reading it means endorsing that physics.”</p>\n<p><strong>The correction:</strong> The corpus does the opposite of hiding: it states in writing, paper after paper, that its physical vocabulary is filing grammar, and that ℏ, c, and G keep their jobs. Reading the catalog is like reading a well-labelled atlas of legends — you can study the map deeply without believing the dragons are zoology.</p>\n</div>\n<div class=\"key-terms\"><dl>\n<dt>Omni-Lattice</dt><dd>The filing and coordination architecture that organises the SynthOBS corpus — shelves, addresses, and nesting rules for ideas.</dd>\n<dt>Honesty boundary</dt><dd>The explicit section of a paper stating what it does and does not claim — the label that separates catalog grammar from physics, clinical, or financial proof.</dd>\n<dt>Catalog claim</dt><dd>A statement about how ideas are organised and cross-referenced, checkable against the filing system itself rather than against laboratory measurement.</dd>\n</dl></div>",
+      "body": "<p>Picture arriving at an enormous library on your first day in a new city. Tens of thousands of documents line the shelves, some technical, some poetic, some both at once. You could wander in alone and open drawers at random — plenty of people do — but the library also offers something better: a guide who walks you room by room, tells you what each wing is for, and, crucially, teaches you how to read the labels so you never mistake a story shelf for a laboratory report. This course is that guide. The library is the corpus of <strong>SynthOBS whitepapers</strong> behind SS Vibelandia and Lattice Chat, and the subject is the <strong>Infinite Octaves Omni-Lattice</strong> — the filing system and protocol grammar that organises all of it.</p>\n<p>Here is the one-sentence version you should be able to repeat by the end of this lesson: <em>this course teaches the architecture of a catalog — how ideas are filed, nested, and cross-referenced — not a new physics.</em> The distinction matters more here than in most subjects, because the catalog borrows physical vocabulary freely. You will meet golden ratios, protons, Higgs fields, viscosity, and chromosomes. Every one of them arrives wearing a label that says what kind of claim it is. Learning to read those labels is the core skill of the whole six weeks.</p>\n<h3>Two kinds of statements</h3>\n<p>Throughout the corpus, statements come in tiers. A <strong>catalog claim</strong> says something like “we file this idea on shelf n = 3, scaled by Φ” — it is a statement about organisation, checkable by looking at the filing system itself. A <strong>physics claim</strong> would say “this equation predicts a measurement” — checkable only by experiment, peer review, and instruments. The whitepapers are explicit, sometimes to the point of repetition, that they make claims of the first kind and decline claims of the second kind. That explicit refusal is called the <strong>honesty boundary</strong>, and you will find one near the top of every serious paper.</p>\n<p>What you will learn, concretely: how the corpus organises ideas into <strong>digits and octaves</strong> (a coordinate system for stories and shelves), how the golden ratio Φ ≈ 1.618 is used as <strong>nesting language</strong> (a way of describing how ideas scale and repeat, never a replacement for ℏ, c, or G), and how to read an honesty rail so quickly that spotting the claim tier becomes a reflex. What you will not learn: a replacement for relativity, clinical genetics, or a Theory of Everything. Those claims are explicitly refused by the papers themselves, and this course preserves that refusal on every page.</p>\n<p>One more orientation point: this course has a <strong>three-layer reading stack</strong>, and each week's homework walks all three. Layer one is the <strong>online course material</strong> — these lessons, the guided tour. Layer two is the <a href=\"/omni-lattice-textbook\"><strong>companion textbook</strong></a> — one chapter per homework week, sitting deliberately between the lesson summaries and the primary papers, carrying the full synthesis of the corpus through every chapter. Layer three is the <strong>whitepapers</strong> themselves — the primary sources, each with its own honesty boundary intact. Lessons summarise and teach; the textbook connects and deepens; papers file and specify. If any two layers ever seem to disagree, the paper wins, the same way a map disagreement is settled by the territory.</p>\n<div class=\"worked-example\">\n<p>Take a real sentence you will meet in Week 3: “Φ ≈ 1.618 is the architectural scale key of the lattice.” Let us file it together. First, ask: <em>what would make this true or false?</em> If it is a physics claim, we would need an experiment where Φ predicts a measurement better than existing constants. No paper in the corpus proposes such an experiment as settled — so that reading fails. If it is a catalog claim, we need only check that the filing system genuinely uses powers of Φ to relate its shelves — which it does, visibly, in the tensor and prime-parity papers. Verdict: <strong>catalog claim</strong>, correctly labelled. That five-second filing move — “what would make this true?” — is the single most useful habit this course installs.</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “A course full of golden ratios and Higgs language must be claiming secret physics, and reading it means endorsing that physics.”</p>\n<p><strong>The correction:</strong> The corpus does the opposite of hiding: it states in writing, paper after paper, that its physical vocabulary is filing grammar, and that ℏ, c, and G keep their jobs. Reading the catalog is like reading a well-labelled atlas of legends — you can study the map deeply without believing the dragons are zoology.</p>\n</div>\n<div class=\"key-terms\"><dl>\n<dt>Omni-Lattice</dt><dd>The filing and coordination architecture that organises the SynthOBS corpus — shelves, addresses, and nesting rules for ideas.</dd>\n<dt>Honesty boundary</dt><dd>The explicit section of a paper stating what it does and does not claim — the label that separates catalog grammar from physics, clinical, or financial proof.</dd>\n<dt>Catalog claim</dt><dd>A statement about how ideas are organised and cross-referenced, checkable against the filing system itself rather than against laboratory measurement.</dd>\n</dl></div>",
       "check": [
         {
           "q": "Is this course claiming to prove new physics?",
@@ -217,7 +431,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "how-to-study",
       "moduleId": "week1",
       "week": 1,
-      "part": "Week 1",
+      "part": "Homework: Week 1",
       "partId": "week1",
       "number": "1.2",
       "title": "How to study here",
@@ -232,7 +446,7 @@ window.OMNI_LATTICE_COURSE = {
       "check": [
         {
           "q": "Where do you go for the full technical filing?",
-          "a": "Further reading → the whitepaper surface (not a separate textbook — this course is the reader)."
+          "a": "Further reading → the whitepaper surface, the primary source. The companion textbook is the middle layer — deeper than lessons, gentler than papers — and each week’s homework includes all three."
         },
         {
           "q": "You have only fifteen minutes today. What is the highest-value move?",
@@ -255,7 +469,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "honesty-first",
       "moduleId": "week1",
       "week": 1,
-      "part": "Week 1",
+      "part": "Homework: Week 1",
       "partId": "week1",
       "number": "1.3",
       "title": "Honesty first · Goldilocks habit",
@@ -293,7 +507,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "ship-berth",
       "moduleId": "week1",
       "week": 1,
-      "part": "Week 1",
+      "part": "Homework: Week 1",
       "partId": "week1",
       "number": "1.4",
       "title": "Where you are on the ship",
@@ -331,7 +545,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "digits-octaves",
       "moduleId": "week2",
       "week": 2,
-      "part": "Week 2",
+      "part": "Homework: Week 2",
       "partId": "week2",
       "number": "2.1",
       "title": "Digits × Octaves · The map",
@@ -369,7 +583,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "tensor-filing",
       "moduleId": "week2",
       "week": 2,
-      "part": "Week 2",
+      "part": "Homework: Week 2",
       "partId": "week2",
       "number": "2.2",
       "title": "Tensor decoupling · Stop smushing headlines",
@@ -407,7 +621,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "master-synthesis",
       "moduleId": "week2",
       "week": 2,
-      "part": "Week 2",
+      "part": "Homework: Week 2",
       "partId": "week2",
       "number": "2.3",
       "title": "Master synthesis · One cabinet",
@@ -445,7 +659,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "living-pem",
       "moduleId": "week2",
       "week": 2,
-      "part": "Week 2",
+      "part": "Homework: Week 2",
       "partId": "week2",
       "number": "2.4",
       "title": "Living PEM & BYOK",
@@ -483,7 +697,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "cmos-pin",
       "moduleId": "week2",
       "week": 2,
-      "part": "Week 2",
+      "part": "Homework: Week 2",
       "partId": "week2",
       "number": "2.5",
       "title": "CMOS / protonic · Silicon shelf first",
@@ -521,7 +735,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "phi-key",
       "moduleId": "week3",
       "week": 3,
-      "part": "Week 3",
+      "part": "Homework: Week 3",
       "partId": "week3",
       "number": "3.1",
       "title": "Φ ≈ 1.618 · The nesting key",
@@ -559,7 +773,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "prime-parity",
       "moduleId": "week3",
       "week": 3,
-      "part": "Week 3",
+      "part": "Homework: Week 3",
       "partId": "week3",
       "number": "3.2",
       "title": "Prime-parity · Sole-even 2",
@@ -597,7 +811,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "holographic-rhyme",
       "moduleId": "week3",
       "week": 3,
-      "part": "Week 3",
+      "part": "Homework: Week 3",
       "partId": "week3",
       "number": "3.3",
       "title": "Holographic rhyme · Four pillars",
@@ -639,7 +853,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "week3-bridge",
       "moduleId": "week3",
       "week": 3,
-      "part": "Week 3",
+      "part": "Homework: Week 3",
       "partId": "week3",
       "number": "3.4",
       "title": "Putting Week 3 together",
@@ -681,7 +895,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "topology-void",
       "moduleId": "week4",
       "week": 4,
-      "part": "Week 4",
+      "part": "Homework: Week 4",
       "partId": "week4",
       "number": "4.1",
       "title": "Topology of the Void",
@@ -719,7 +933,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "proton-electron",
       "moduleId": "week4",
       "week": 4,
-      "part": "Week 4",
+      "part": "Homework: Week 4",
       "partId": "week4",
       "number": "4.2",
       "title": "Proton Space · Electron Theater",
@@ -757,7 +971,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "singularity-crystal",
       "moduleId": "week4",
       "week": 4,
-      "part": "Week 4",
+      "part": "Homework: Week 4",
       "partId": "week4",
       "number": "4.3",
       "title": "Singularity Crystal · Net Zero",
@@ -799,7 +1013,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "higgs-gate",
       "moduleId": "week4",
       "week": 4,
-      "part": "Week 4",
+      "part": "Homework: Week 4",
       "partId": "week4",
       "number": "4.4",
       "title": "Higgs Gate · Shared Now (Soft Story)",
@@ -837,7 +1051,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "viscosity-light",
       "moduleId": "week5",
       "week": 5,
-      "part": "Week 5",
+      "part": "Homework: Week 5",
       "partId": "week5",
       "number": "5.1",
       "title": "Viscosity of Light",
@@ -875,7 +1089,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "eddy-mirror",
       "moduleId": "week5",
       "week": 5,
-      "part": "Week 5",
+      "part": "Homework: Week 5",
       "partId": "week5",
       "number": "5.2",
       "title": "Eddy-Current Mirror",
@@ -913,7 +1127,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "crystalline-field",
       "moduleId": "week5",
       "week": 5,
-      "part": "Week 5",
+      "part": "Homework: Week 5",
       "partId": "week5",
       "number": "5.3",
       "title": "Crystalline field & metrology gears",
@@ -955,7 +1169,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "metamorphic-planetary",
       "moduleId": "week5",
       "week": 5,
-      "part": "Week 5",
+      "part": "Homework: Week 5",
       "partId": "week5",
       "number": "5.4",
       "title": "Metamorphic & planetary Goldilocks",
@@ -997,7 +1211,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "protein-storage",
       "moduleId": "week6",
       "week": 6,
-      "part": "Week 6",
+      "part": "Homework: Week 6",
       "partId": "week6",
       "number": "6.1",
       "title": "Primes in folding & storage",
@@ -1039,7 +1253,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "stack-bridge",
       "moduleId": "week6",
       "week": 6,
-      "part": "Week 6",
+      "part": "Homework: Week 6",
       "partId": "week6",
       "number": "6.2",
       "title": "Moving up the stack · Human bridge",
@@ -1081,7 +1295,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "y-goldilocks",
       "moduleId": "week6",
       "week": 6,
-      "part": "Week 6",
+      "part": "Homework: Week 6",
       "partId": "week6",
       "number": "6.3",
       "title": "Y Goldilocks · Fibonacci vaults",
@@ -1123,7 +1337,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "companions",
       "moduleId": "week6",
       "week": 6,
-      "part": "Week 6",
+      "part": "Homework: Week 6",
       "partId": "week6",
       "number": "6.4",
       "title": "Application companions · Not engine pins",
@@ -1169,7 +1383,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "invisible-frontier",
       "moduleId": "week6",
       "week": 6,
-      "part": "Week 6",
+      "part": "Homework: Week 6",
       "partId": "week6",
       "number": "6.5",
       "title": "Invisible Frontier · Second chart",
@@ -1207,7 +1421,7 @@ window.OMNI_LATTICE_COURSE = {
       "id": "how-to-continue",
       "moduleId": "week6",
       "week": 6,
-      "part": "Week 6",
+      "part": "Homework: Week 6",
       "partId": "week6",
       "number": "6.6",
       "title": "How to keep learning",
@@ -1218,7 +1432,7 @@ window.OMNI_LATTICE_COURSE = {
         "Return to whitepapers with the honesty-rail reading reflex intact.",
         "Restate the course in three sentences you actually own."
       ],
-      "body": "<p>The last day of a good voyage always includes a quiet walk back through the ship — past the library where it started, the engine room, the observation deck — before choosing which gangway to take ashore. You are oriented now: six weeks ago the words on these shelves were noise, and today you can walk an address like Digit 4 · Octave 34, audit a pattern against four pillars, and find an honesty boundary before a paper’s poetry can carry you anywhere it should not. This closing lesson does two things: hands you the keys to the doors, and helps you pack what you learned so it survives the trip.</p>\n<h3>Pack it in three sentences</h3>\n<p>A course you cannot summarise is a course you will lose. Here is the packing list — make each sentence your own before you leave. <strong>One:</strong> the Omni-Lattice is a filing architecture — Digits × Octaves for addresses, Φ for nesting, primes for vaults, rhyme for audits — built for coordination, and its papers refuse, in writing, to be physics proofs. <strong>Two:</strong> every claim in the corpus wears a tier (narrative, catalog, empirical-fixture, operational), and the entire skill of reading here is checking the label before believing the sentence. <strong>Three:</strong> beneath all of it runs one rule that never turns off — human emergency and dignity outrank every metaphor, every algorithm, every beautiful idea on these shelves.</p>\n<h3>The doors</h3>\n<ul>\n<li><a href=\"/reading-room#papers\">Reading Room · whitepapers</a> — the primary sources, each with its honesty rail. Good first ambition: re-read one paper from this course cold and notice how much more it says now.</li>\n<li><a href=\"/lattice\">Lattice Chat</a> — BYOK conversation on the Infinite Octaves nest. Ask it to walk a filing with you; hold it to the same tier discipline you hold the papers to.</li>\n<li><a href=\"/questfest\">QUESTFEST board</a> — the ship board, where new papers land with plain-language notes, newest first.</li>\n<li><a href=\"/journey\">Journey</a> · <a href=\"/art\">Omniversal Canvas</a> · <a href=\"/frontiersman-voyage\">Frontiersman voyage</a> — the narrative decks, best enjoyed now that you can tell story tier from catalog tier without effort.</li>\n</ul>\n<p>Fair Exchange runs both directions, so here is the honest close: if this course gave you value, the reciprocal move is to read one primary paper carefully, keep its rails intact when you discuss it, and correct the next person who upgrades a filing into a proof — kindly, the way this course tried to. Keep Goldilocks: not too much machine, not too little human. Welcome aboard — and intentions matter.</p>\n<div class=\"worked-example\">\n<p>Build your next-reading route in three moves, matched to who you are. <strong>If you came for engineering:</strong> door one is the pinned CMOS/protonic bridge (re-read section 4’s fixtures slowly), then the tensor paper, then the Living PEM to see the shelf as architects do. <strong>If you came for the mathematics:</strong> prime-parity first, then the singularity crystal with its k = 0 fixtures, then the Fibonacci vault ladder — pencil out every identity as you go. <strong>If you came for the story:</strong> the Official Prospectus, then Invisible Frontier, then one Soft Story (Higgs Gate) read with your new boundary-first reflex. Whichever route: open the paper, find the honesty boundary inside sixty seconds, write the one-sentence sceptic-proof summary, and only then read for pleasure. That ritual — boundary, sentence, then depth — is the graduation habit.</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “Finishing the course means finishing the subject — the lessons covered the corpus, so the papers are now optional.”</p>\n<p><strong>The correction:</strong> The course is the guided tour; the papers are the territory, and they hold detail no summary carries (this course is the reader — the further-reading links were always the point). Graduation here means you can now read the primary sources <em>at their own declared tiers</em>, unaccompanied. That is the beginning, not the end.</p>\n</div>\n<div class=\"key-terms\"><dl>\n<dt>Three-sentence pack</dt><dd>The portable summary of the course: filing architecture with refused physics claims · tier labels before belief · humans outrank everything.</dd>\n<dt>Boundary-first ritual</dt><dd>The graduation habit for any paper: find the honesty boundary in sixty seconds, write the sceptic-proof sentence, then read for depth.</dd>\n<dt>Fair Exchange (reader’s side)</dt><dd>The reciprocal close: read one primary source carefully, keep its rails intact, and pass the discipline on kindly.</dd>\n</dl></div>\n<p class=\"close-glyph\">→ ∞^∞</p>",
+      "body": "<p>The last day of a good voyage always includes a quiet walk back through the ship — past the library where it started, the engine room, the observation deck — before choosing which gangway to take ashore. You are oriented now: six weeks ago the words on these shelves were noise, and today you can walk an address like Digit 4 · Octave 34, audit a pattern against four pillars, and find an honesty boundary before a paper’s poetry can carry you anywhere it should not. This closing lesson does two things: hands you the keys to the doors, and helps you pack what you learned so it survives the trip.</p>\n<h3>Pack it in three sentences</h3>\n<p>A course you cannot summarise is a course you will lose. Here is the packing list — make each sentence your own before you leave. <strong>One:</strong> the Omni-Lattice is a filing architecture — Digits × Octaves for addresses, Φ for nesting, primes for vaults, rhyme for audits — built for coordination, and its papers refuse, in writing, to be physics proofs. <strong>Two:</strong> every claim in the corpus wears a tier (narrative, catalog, empirical-fixture, operational), and the entire skill of reading here is checking the label before believing the sentence. <strong>Three:</strong> beneath all of it runs one rule that never turns off — human emergency and dignity outrank every metaphor, every algorithm, every beautiful idea on these shelves.</p>\n<h3>The doors</h3>\n<ul>\n<li><a href=\"/reading-room#papers\">Reading Room · whitepapers</a> — the primary sources, each with its honesty rail. Good first ambition: re-read one paper from this course cold and notice how much more it says now.</li>\n<li><a href=\"/lattice\">Lattice Chat</a> — BYOK conversation on the Infinite Octaves nest. Ask it to walk a filing with you; hold it to the same tier discipline you hold the papers to.</li>\n<li><a href=\"/questfest\">QUESTFEST board</a> — the ship board, where new papers land with plain-language notes, newest first.</li>\n<li><a href=\"/journey\">Journey</a> · <a href=\"/art\">Omniversal Canvas</a> · <a href=\"/frontiersman-voyage\">Frontiersman voyage</a> — the narrative decks, best enjoyed now that you can tell story tier from catalog tier without effort.</li>\n</ul>\n<p>Fair Exchange runs both directions, so here is the honest close: if this course gave you value, the reciprocal move is to read one primary paper carefully, keep its rails intact when you discuss it, and correct the next person who upgrades a filing into a proof — kindly, the way this course tried to. Keep Goldilocks: not too much machine, not too little human. Welcome aboard — and intentions matter.</p>\n<div class=\"worked-example\">\n<p>Build your next-reading route in three moves, matched to who you are. <strong>If you came for engineering:</strong> door one is the pinned CMOS/protonic bridge (re-read section 4’s fixtures slowly), then the tensor paper, then the Living PEM to see the shelf as architects do. <strong>If you came for the mathematics:</strong> prime-parity first, then the singularity crystal with its k = 0 fixtures, then the Fibonacci vault ladder — pencil out every identity as you go. <strong>If you came for the story:</strong> the Official Prospectus, then Invisible Frontier, then one Soft Story (Higgs Gate) read with your new boundary-first reflex. Whichever route: open the paper, find the honesty boundary inside sixty seconds, write the one-sentence sceptic-proof summary, and only then read for pleasure. That ritual — boundary, sentence, then depth — is the graduation habit.</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “Finishing the course means finishing the subject — the lessons covered the corpus, so the papers are now optional.”</p>\n<p><strong>The correction:</strong> The course is the guided tour; the <a href=\"/omni-lattice-textbook\">companion textbook</a> is the connecting middle read; the papers are the territory, and they hold detail no summary carries — the further-reading links were always the point. Graduation here means you can now read the primary sources <em>at their own declared tiers</em>, unaccompanied. That is the beginning, not the end.</p>\n</div>\n<div class=\"key-terms\"><dl>\n<dt>Three-sentence pack</dt><dd>The portable summary of the course: filing architecture with refused physics claims · tier labels before belief · humans outrank everything.</dd>\n<dt>Boundary-first ritual</dt><dd>The graduation habit for any paper: find the honesty boundary in sixty seconds, write the sceptic-proof sentence, then read for depth.</dd>\n<dt>Fair Exchange (reader’s side)</dt><dd>The reciprocal close: read one primary source carefully, keep its rails intact, and pass the discipline on kindly.</dd>\n</dl></div>\n<p class=\"close-glyph\">→ ∞^∞</p>",
       "check": [
         {
           "q": "Where do primary technical filings live?",

@@ -23,9 +23,10 @@
     <div class="olc-top__inner">
       <a class="olc-brand" href="/">SS Vibelandia</a>
       <nav class="olc-nav" aria-label="Course navigation">
-        <a href="#syllabus">Syllabus</a>
+        <a href="#syllabus">Homework</a>
         <a href="#toc">Contents</a>
         <a href="#reader">Lessons</a>
+        <a href="/omni-lattice-textbook">Textbook</a>
         <a href="/reading-room#papers">Whitepapers</a>
         <a href="/lattice">Lattice Chat</a>
       </nav>
@@ -38,12 +39,14 @@
         <p class="olc-kicker">Online course · Edition 1.0</p>
         <h1 id="olc-hero-title">The Infinite Octaves Omni-Lattice</h1>
         <p class="olc-lede">
-          A clear, self-paced introduction — six weeks of lessons synthesized from the
-          SynthOBS whitepapers for human readers.
+          A clear, self-paced introduction — six homework weeks synthesized from the
+          SynthOBS whitepapers for human readers. Each week&rsquo;s homework: course lessons,
+          the matching companion-textbook chapter, and the whitepapers.
         </p>
         <div class="olc-hero__actions">
           <a class="olc-btn olc-btn--gold" id="olc-start-btn" href="#reader">Start course</a>
-          <a class="olc-btn olc-btn--ghost" href="#syllabus">View syllabus</a>
+          <a class="olc-btn olc-btn--ghost" href="/omni-lattice-textbook">Companion textbook</a>
+          <a class="olc-btn olc-btn--ghost" href="#syllabus">View homework</a>
           <a class="olc-btn olc-btn--ghost" href="/reading-room#papers">Whitepapers</a>
         </div>
         <p class="olc-hero__meta" id="olc-hero-meta">Loading course…</p>
@@ -60,10 +63,10 @@
 
     <section class="olc-section" id="syllabus" aria-labelledby="syllabus-title">
       <div class="olc-wrap">
-        <p class="olc-section__eyebrow">Syllabus</p>
-        <h2 id="syllabus-title">Six weeks · one path</h2>
+        <p class="olc-section__eyebrow">Syllabus &amp; homework</p>
+        <h2 id="syllabus-title">Six homework weeks · one path</h2>
         <p class="olc-section__lede" id="olc-syllabus-lede">
-          Each week is one sitting. Lessons include learning goals, key ideas, a short check, and whitepaper further reading.
+          Each homework week has three reading layers: the course lessons, the companion-textbook chapter, and the whitepapers.
         </p>
         <div class="olc-outcomes" id="olc-course-outcomes" hidden></div>
         <div class="olc-syllabus" id="olc-syllabus"></div>
@@ -313,6 +316,34 @@
           var outcomes = (mod.outcomes || []).map(function (o) {
             return '<li>' + escapeHtml(o) + '</li>';
           }).join('');
+          var hw = mod.homework;
+          var homeworkHtml = '';
+          if (hw) {
+            var hwItems = [];
+            if (hw.course) {
+              hwItems.push(
+                '<li><a href="' + escapeHtml(hw.course.href) + '">' +
+                escapeHtml(hw.course.label) + '</a></li>'
+              );
+            }
+            if (hw.textbook) {
+              hwItems.push(
+                '<li><a href="' + escapeHtml(hw.textbook.href) + '">' +
+                escapeHtml(hw.textbook.label) + '</a></li>'
+              );
+            }
+            if (hw.papers && hw.papers.length) {
+              var paperLinks = hw.papers.map(function (p) {
+                return '<a href="' + escapeHtml(p.href) + '">' + escapeHtml(p.label) + '</a>';
+              }).join(' · ');
+              hwItems.push('<li>Whitepapers: ' + paperLinks + '</li>');
+            }
+            homeworkHtml =
+              '<div class="olc-mod__homework">' +
+                '<h4>' + escapeHtml(hw.heading || 'Homework') + '</h4>' +
+                '<ol>' + hwItems.join('') + '</ol>' +
+              '</div>';
+          }
           var firstId = ids[0];
           var doneN = moduleDoneCount(mod);
           return (
@@ -324,6 +355,7 @@
               (outcomes
                 ? '<ul class="olc-mod__outcomes">' + outcomes + '</ul>'
                 : '') +
+              homeworkHtml +
               '<p class="olc-mod__meta">' + doneN + ' / ' + ids.length + ' lessons complete</p>' +
               '<div class="olc-mod__links">' + links + '</div>' +
               (firstId

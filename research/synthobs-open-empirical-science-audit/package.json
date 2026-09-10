@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-open-empirical-science-audit",
+  "private": true,
+  "type": "module",
+  "description": "Corpus audit · open empirical science boundary evaluation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/psw.vibelandia.sing13.git",
+    "directory": "research/synthobs-open-empirical-science-audit"
+  }
+}

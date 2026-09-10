@@ -5,6 +5,19 @@
 
 **Live:** [www.ssvibelandiaquestfest24x365.com](https://www.ssvibelandiaquestfest24x365.com) · **Repo:** [github.com/FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13) · **Agent sync URL:** [/agent-sync](https://www.ssvibelandiaquestfest24x365.com/agent-sync)
 
+### 📌 PINNED · Open empirical science · executive summary
+
+FractiAI operates an **open, uncredentialed empirical framework** driven by **reproducible digital wet labs** — public NOAA / NCBI / PDB / Movebank fetchers, deterministic pipelines, JSON receipts, Amendment A refute columns. **Run the pipeline or withhold the claim.**
+
+| | |
+|--|--|
+| **Paper** | [`docs/SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md`](docs/SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md) |
+| **Pinned summary** | [`docs/OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md`](docs/OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md) |
+| **Audit** | `npm run research:synthobs-open-empirical-science-audit` |
+| **Note** | [/ship-blog/open-empirical-science-digital-wet-lab](https://www.ssvibelandiaquestfest24x365.com/ship-blog/open-empirical-science-digital-wet-lab) |
+
+Honesty: **partial boundary crossing** — Tier A/B lanes are falsifiable open science; Tier C catalog layers remain architecture until pipelined. $\Phi_{\mathrm{EGS}}\approx 1.618$ is the golden filing key — not a CODATA constant.
+
 ### 📌 PINNED · Engineering bridge (linear systems)
 
 Hardware / PPA / BEOL / CFET evaluators: start with the **CMOS 2.0 + protonic** bridge — binary $n=1$ → protonic bands — before cosmic or consciousness layers.
@@ -262,7 +275,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-10** · **288** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-10** · **289** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -319,6 +332,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-omniversal-goldilocks-rideshare.html`](/interfaces/blog-omniversal-goldilocks-rideshare.html) | Omniversal Goldilocks Rideshare Protocol · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-nested-agent-lattice.html`](/interfaces/blog-omniversal-nested-agent-lattice.html) | The Architecture of Omniversal Computing · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Syntheverse Omniversal Node Alignment Mapping · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html`](/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html) | Run the pipeline or withhold the claim · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | PDVSA Gateway Ops Mockup · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth letting go — a story filed at the planet’s core · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · SS Vibelandia |

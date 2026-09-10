@@ -1,0 +1,874 @@
+{
+  "suite": "synthobs-open-empirical-science-audit",
+  "documentId": "WP-SYNTHOBS-OPEN-EMPIRICAL-SCIENCE-2026-09-10",
+  "generatedAt": "2026-09-10T15:09:25.122Z",
+  "experiments": [
+    {
+      "id": "E0_phi_egs_identity",
+      "title": "Φ_EGS = (1+√5)/2",
+      "phi_egs": 1.618033988749895,
+      "abs_err": 0,
+      "result": "support",
+      "pass": true
+    },
+    {
+      "id": "E1_pipeline_count",
+      "title": "Research packages with empirical pipeline",
+      "total_packages": 97,
+      "pipeline_count": 93,
+      "min_required": 40,
+      "result": "support",
+      "pass": true
+    },
+    {
+      "id": "E2_tier_a_public_fetch",
+      "title": "Tier A · public-data wet lab packages",
+      "tier_a_count": 30,
+      "tier_a_samples": [
+        "geomagnetic-herbivore",
+        "synthobs-chromosomal-electrodynamics",
+        "synthobs-constructive-morphogenesis-99-octave",
+        "synthobs-crystalline-unified-field",
+        "synthobs-dna-lattice-holograph",
+        "synthobs-eddy-current-mirror",
+        "synthobs-ef-2187-hybrid",
+        "synthobs-egs-epigenetic-phase-locking"
+      ],
+      "result": "support",
+      "pass": true
+    },
+    {
+      "id": "E3_json_receipt_count",
+      "title": "Packages with committed empirical_report.json",
+      "receipt_count": 90,
+      "result": "support",
+      "pass": true
+    },
+    {
+      "id": "E4_amendment_a_protocol",
+      "title": "Amendment A falsification lane on disk",
+      "path": "protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md",
+      "exists": true,
+      "has_refute_section": true,
+      "result": "support",
+      "pass": true
+    },
+    {
+      "id": "E5_pra_snap_amendment_link",
+      "title": "PRA Snap cites Amendment A",
+      "path": "protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md",
+      "cites_amendment_a": true,
+      "result": "support",
+      "pass": true
+    },
+    {
+      "id": "E6_tier_histogram",
+      "title": "Tier A/B/C classification histogram",
+      "histogram": {
+        "A": 30,
+        "B": 63,
+        "C": 4
+      },
+      "tier_ab_count": 93,
+      "min_ab": 30,
+      "packages": [
+        {
+          "name": "geomagnetic-herbivore",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": false,
+          "hasMethodology": true,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "goldilocks-math",
+          "tier": "C",
+          "hasPipeline": false,
+          "hasReceipt": false,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "harmonopoly-nested-token-sim",
+          "tier": "C",
+          "hasPipeline": false,
+          "hasReceipt": false,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "omniversal-goldilocks-rideshare",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": true,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "recursive-attention-causality",
+          "tier": "C",
+          "hasPipeline": false,
+          "hasReceipt": false,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthio-mri-cloud-antenna",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthio-mri-vs-legacy-perf",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-81-orbital-singularity",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-99-octave-digits-master",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-awareness-vs-brute-force-leverage",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-chromosomal-electrodynamics",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-cmos-protonic-99-octave-omni-lattice",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-constructive-morphogenesis-99-octave",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-crystalline-unified-field",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-cytographic-consumption-recruitment",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-dna-lattice-holograph",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-eddy-current-mirror",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-ef-2187-hybrid",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-ef-2187-monograph",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-egs-81-electrons",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-egs-epigenetic-phase-locking",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-egs-euler-phase-lock",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-egs-planck-scale-harmonic",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-endogenous-phase",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-grand-unified-metrological-overlap",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-histone-phase-operator",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-holographic-operators",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-holographic-rhyme-fractal",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-holographic-singularity-crystal",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-human-omniversal-reality-bridge",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-ibm-sna-tcpip-gateway-omni-lattice",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-infinite-octave-prime-parity",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-infinite-octaves-omniversal-lattice",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-invisible-frontier-gates-ai",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-kinematic-set-recycling-truckee",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-lattice-vs-vibe-coding",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-macro-protein-work-engine",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-macro-seismic-phase-lock-99-octave",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-mag-substrate",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-magneto-harmonic-stellar-99-octave",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-master-synthesis-99-octave-omni-lattice",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-moving-up-the-stack-valuation",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-multidimensional-holographic-rhyme",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-omni-lattice-ef-multi-octave",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-omni-lattice-genomic-determinism",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-omni-lattice-hiv",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-omni-lattice-pogonomyrmex",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-omni-lattice-prompt-capture",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-omni-lattice-report-card-q3-2026",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-omni-lattice-unification",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-omni-prime-hourglass-skeleton",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-open-empirical-science-audit",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": false,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-pchpp",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-pdvsa-gateway-ops-mockup",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-phase-locked-chemical-bonds",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-phase-toxicity",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-prime-indexed-volumetric-storage",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-prime-vault-alphafold-race",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-prime-vault-chat",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": false,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-prion-refold",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-proof-by-continuous-execution",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-protein-folding-prime-container",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-proton-space-electron-theater",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-recursive-attn-mag",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-sandbox",
+          "tier": "C",
+          "hasPipeline": false,
+          "hasReceipt": false,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-ss-vibelandia-official-prospectus",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-sync-subterranean-discharge-99-octave",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-table-top-hep-99-octave",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-tbme-blackhole-filaments-reno",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": true,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-blackhole-magnetic-layer",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": true,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-egs-apiary",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-tbme-egs-hgaios",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-tbme-equine-asi",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-higgs-awareness",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-higgs-awareness-unified",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-internal-kerr-newman",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-metamorphic-octaves",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-mirror-angle-multiplicity",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": true,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-narrow-gate-asi",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-tbme-nodal-nine-singularity",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-nonlocal-field-phaselock",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": true,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-planetary-core-goldilocks",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-protein-phase-collapse",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-recursive-field-drag",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-spherical-solar-focus",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": true,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-spin-phase-polarity",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tbme-thermal-meissner",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-tensor-decoupling-99-octave-omni-lattice",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-three-foundational-proteins",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-topology-of-the-void",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-triadic-nested-hemispheres-99-octave",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-unified-neutronic-agent",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-viscosity-of-light",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        },
+        {
+          "name": "synthobs-x-chromosome-holographic",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-y-chromosome-holographic",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-y-chromosome-holographic-manifestation",
+          "tier": "B",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": false
+        },
+        {
+          "name": "synthobs-zero-octave-y-goldilocks",
+          "tier": "A",
+          "hasPipeline": true,
+          "hasReceipt": true,
+          "hasMethodology": false,
+          "hasPublicFetch": true
+        }
+      ],
+      "honesty": "Tier C is expected — catalog lanes remain. Partial boundary crossing = A+B > C is NOT required.",
+      "result": "support",
+      "pass": true
+    },
+    {
+      "id": "E7_boundary_verdict",
+      "title": "Partial boundary crossing · scoped verdict",
+      "tier_a": 30,
+      "tier_ab": 93,
+      "amendment_a": true,
+      "verdict": "partial_crossing_confirmed",
+      "result": "support",
+      "pass": true,
+      "honesty": "Partial crossing — not uniform empirical science across all registry papers."
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "pass": 8,
+    "fail": 0,
+    "all_pass": true
+  }
+}

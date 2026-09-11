@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-09-11T16:15:01.585Z",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS catalog seed",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Catalog-layer nesting seed.",
+        "honesty": "Architectural key — not GPU physics."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Catalog ladder identity.",
+        "honesty": "Algebra fixture."
+      },
+      {
+        "id": "E3_clutch_delta",
+        "title": "Clutch Δ ≈ 0.001779 (SI mantissa slip)",
+        "clutch": 0.0017789887498949053,
+        "expectedApprox": 0.001779,
+        "pass": true,
+        "interpretation": "Filed near-miss between Φ and l_P·10^35 mantissa.",
+        "honesty": "SI/base-10 dependent — not a discovery of nature."
+      },
+      {
+        "id": "E4_catalog_layer_identity",
+        "title": "Catalog-layer identity constants",
+        "layerId": "infinite-octave-ai-catalog-layer",
+        "engineOrder": 27,
+        "category": "lattice-catalog",
+        "pass": true,
+        "interpretation": "Layer identity locked for registry / shelf sync.",
+        "honesty": "Identity labels — not market share claims."
+      },
+      {
+        "id": "E5_stack_layer_position",
+        "title": "Stack position between agentic IDE and data (catalog labels)",
+        "above": "agentic-ide",
+        "self": "catalog-orchestration",
+        "below": "data-warehouse-storage",
+        "pass": true,
+        "interpretation": "Filed shelf order for coordination talk.",
+        "honesty": "Architecture labels — not displacement of IDEs or warehouses."
+      },
+      {
+        "id": "E6_solar_filing_ar4524_ar4530",
+        "title": "AR4524 · AR4530 catalog wet-lab anchors",
+        "solAlpha": "AR4524",
+        "solBeta": "AR4530",
+        "pass": true,
+        "interpretation": "Sol-Alpha / Sol-Beta locked for telemetry filing.",
+        "honesty": "Filing characters — not derivation of constants from sunspots."
+      },
+      {
+        "id": "E7_honesty_architecture_not_gpu_physics",
+        "title": "Honesty: architecture not GPU physics / JOIN elimination",
+        "honestySnippet": "Catalog / Tier B fixtures under Φ_EGS. Solar AR4524/AR4530 are filing characters only. Architecture for agentic coordination and resonant data management — not proof of infinite GPU-free scaling or JOIN elimination in production databases.",
+        "pass": true,
+        "interpretation": "Explicit refusal of overclaim rails.",
+        "honesty": "Softens draft claims to catalog coordination only."
+      },
+      {
+        "id": "E8_paper_present",
+        "title": "Paper present with Document ID + honesty + Fair Exchange",
+        "pass": true,
+        "interpretation": "Suite docs mirror monorepo paper.",
+        "honesty": "Structural presence check."
+      },
+      {
+        "id": "E9_ship_blog",
+        "title": "Ship-blog note references registry id",
+        "pass": true,
+        "interpretation": "Plain-language note wired to paper.",
+        "honesty": "Presence check."
+      }
+    ]
+  }
+}

@@ -98,8 +98,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 26 | **Generative Matrix companion (Φ_EGS seed · metrology/QG Soft Story filings · AR4524/AR4530)** | `docs/SYNTHOBS_GENERATIVE_MATRIX_PHI_EGS_QUANTUM_METROLOGY_2026-09.md` · `synthobs-generative-matrix-phi-egs-2026-09` · `/ship-blog/generative-matrix-phi-egs` · suite `research/synthobs-generative-matrix-phi-egs/` · standalone `FractiAI/synthobs-generative-matrix-phi-egs` |
 | 27 | **Self-Observing Genome companion (DNA Soft Story mirror · environmental wavefield · Φ_EGS · AR4524/AR4530)** | `docs/SYNTHOBS_SELF_OBSERVING_GENOME_EGS_2026-09.md` · `synthobs-self-observing-genome-egs-2026-09` · `/ship-blog/self-observing-genome` · suite `research/synthobs-self-observing-genome/` · standalone `FractiAI/synthobs-self-observing-genome` |
 | 28 | **Omniversal Time-Crystal Engine companion (aqueous DNA Soft Story clocks · Φ_EGS · AR4524/AR4530)** | `docs/SYNTHOBS_OMNIVERSAL_TIME_CRYSTAL_ENGINE_EGS_2026-09.md` · `synthobs-omniversal-time-crystal-engine-egs-2026-09` · `/ship-blog/omniversal-time-crystal-engine` · suite `research/synthobs-omniversal-time-crystal-engine/` · standalone `FractiAI/synthobs-omniversal-time-crystal-engine` |
-| 29 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 30 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 29 | **AI catalog layer companion (Infinite Octaves · agentic coordination · resonant data management · AR4524/AR4530)** | `docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md` · `synthobs-infinite-octave-ai-catalog-layer-2026-09` · `/ship-blog/infinite-octave-ai-catalog-layer` · suite `research/synthobs-infinite-octave-ai-catalog-layer/` · standalone `FractiAI/synthobs-infinite-octave-ai-catalog-layer` |
+| 30 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 31 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -132,6 +133,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-generative-matrix-phi-egs/`
 - `research/synthobs-self-observing-genome/`
 - `research/synthobs-omniversal-time-crystal-engine/`
+- `research/synthobs-infinite-octave-ai-catalog-layer/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

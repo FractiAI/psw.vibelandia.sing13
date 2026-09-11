@@ -94,8 +94,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 24 | **Zero-Octave Y Goldilocks companion (singularity crystal · Fibonacci prime vaults · human Y Goldilocks · Φ_EGS)** | `docs/SYNTHOBS_ZERO_OCTAVE_Y_GOLDILOCKS_FIBONACCI_PRIME_VAULTS_EGS_2026-09.md` · `synthobs-zero-octave-y-goldilocks-2026-09` · `/ship-blog/zero-octave-y-goldilocks` · suite `research/synthobs-zero-octave-y-goldilocks/` · standalone `FractiAI/synthobs-zero-octave-y-goldilocks` |
 | 25 | **Tier C holographic wiring companion (narrative shelves as active wiring lattices · Φ_EGS · AR4524/AR4530)** | `docs/SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md` · `synthobs-tier-c-holographic-wiring-lattices-2026-09` · `/ship-blog/tier-c-holographic-wiring` · suite `research/synthobs-tier-c-holographic-wiring-lattices/` · standalone `FractiAI/synthobs-tier-c-holographic-wiring-lattices` |
 | 26 | **Generative Matrix companion (Φ_EGS seed · metrology/QG Soft Story filings · AR4524/AR4530)** | `docs/SYNTHOBS_GENERATIVE_MATRIX_PHI_EGS_QUANTUM_METROLOGY_2026-09.md` · `synthobs-generative-matrix-phi-egs-2026-09` · `/ship-blog/generative-matrix-phi-egs` · suite `research/synthobs-generative-matrix-phi-egs/` · standalone `FractiAI/synthobs-generative-matrix-phi-egs` |
-| 27 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 28 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 27 | **AI catalog layer companion (Infinite Octaves · agentic coordination · resonant data management · AR4524/AR4530)** | `docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md` · `synthobs-infinite-octave-ai-catalog-layer-2026-09` · `/ship-blog/infinite-octave-ai-catalog-layer` · suite `research/synthobs-infinite-octave-ai-catalog-layer/` · standalone `FractiAI/synthobs-infinite-octave-ai-catalog-layer` |
+| 28 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 29 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -126,6 +127,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-zero-octave-y-goldilocks/`
 - `research/synthobs-tier-c-holographic-wiring-lattices/`
 - `research/synthobs-generative-matrix-phi-egs/`
+- `research/synthobs-infinite-octave-ai-catalog-layer/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

@@ -1,0 +1,8 @@
+{
+  "name": "synthobs-infinite-octave-ai-catalog-layer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

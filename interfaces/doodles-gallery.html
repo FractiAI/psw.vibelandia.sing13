@@ -242,6 +242,39 @@
       outline: 2px dashed rgba(212, 175, 55, 0.85);
       outline-offset: 4px;
     }
+    .museum-wall__num {
+      position: absolute;
+      top: 0.35rem;
+      left: 0.35rem;
+      z-index: 3;
+      min-width: 1.85rem;
+      padding: 0.22rem 0.45rem;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      background: rgba(12, 10, 8, 0.92);
+      color: #f0d78c;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      text-align: center;
+      pointer-events: none;
+      font-variant-numeric: tabular-nums;
+    }
+    .museum-wall__num--lb {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 51;
+      min-width: 2.2rem;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      background: rgba(12, 10, 8, 0.92);
+      color: #f0d78c;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-variant-numeric: tabular-nums;
+    }
     .museum-wall__delete {
       position: absolute;
       top: 0.35rem;
@@ -396,6 +429,7 @@
       Filed into the same <strong>three nested shells</strong> as the Omniversal Canvas —
       Dome&nbsp;1 Core, Dome&nbsp;2 Amphitheater, Dome&nbsp;3 Horizon.
       Human hand first, machine as studio light.
+      Each frame carries a stable wall number (<strong>#1</strong>, <strong>#2</strong>, …) so Player&nbsp;1 can give edit instructions by number.
     </p>
 
     <nav class="shell-nav" id="shell-nav" aria-label="Nested shell walls">
@@ -440,7 +474,7 @@
 
       <div class="edit-desk" id="edit-desk">
         <h3 id="edit-h">Player 1 · arrange wall</h3>
-        <p>Drag frames to reorder within a shell. Use the shell menu on each frame to move a doodle between Dome&nbsp;1, Dome&nbsp;2, and Dome&nbsp;3. Trash removes it from the wall.</p>
+        <p>Each doodle shows a wall number (<strong>#N</strong>) — use those numbers when sending edit instructions. Drag frames to reorder within a shell. Use the shell menu on each frame to move a doodle between Dome&nbsp;1, Dome&nbsp;2, and Dome&nbsp;3. Trash removes it from the wall.</p>
         <div class="btn-row">
           <button type="button" class="btn btn--ghost" id="edit-toggle" aria-pressed="false">
             Edit wall
@@ -460,6 +494,7 @@
 
   <div class="lb hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Doodle full view">
     <button type="button" id="lb-close">Close</button>
+    <span class="museum-wall__num--lb hidden" id="lb-num" aria-live="polite"></span>
     <div class="museum-frame museum-frame--wall museum-frame--lightbox">
       <figure class="museum-frame__art">
         <img id="lb-img" alt="Valet Pru doodle" />
@@ -509,6 +544,7 @@
     const shellInput = document.getElementById('batch-shell');
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
+    const lbNum = document.getElementById('lb-num');
     const editToggle = document.getElementById('edit-toggle');
     const editStatus = document.getElementById('edit-status');
 
@@ -769,15 +805,22 @@
       }
     }
 
-    function makePiece(w) {
+    function makePiece(w, wallNumber) {
       const piece = document.createElement('article');
       piece.className = 'museum-wall__piece' + (editMode ? ' museum-wall__piece--editing' : '');
       piece.dataset.id = w.id;
       piece.dataset.shell = shellOf(w);
+      piece.dataset.wallNumber = String(wallNumber);
 
       const frame = document.createElement('div');
       frame.className = 'museum-frame museum-frame--wall';
       frame.style.position = 'relative';
+
+      const numBadge = document.createElement('span');
+      numBadge.className = 'museum-wall__num';
+      numBadge.textContent = `#${wallNumber}`;
+      numBadge.setAttribute('aria-label', `Doodle number ${wallNumber}`);
+      frame.append(numBadge);
 
       if (editMode) {
         const del = document.createElement('button');
@@ -787,7 +830,7 @@
         del.innerHTML = TRASH_ICON;
         del.addEventListener('click', (e) => {
           e.stopPropagation();
-          if (window.confirm('Remove this doodle from the gallery wall?')) {
+          if (window.confirm(`Remove doodle #${wallNumber} from the gallery wall?`)) {
             removeWork(w.id);
           }
         });
@@ -815,13 +858,18 @@
       figure.className = 'museum-frame__art';
       const img = document.createElement('img');
       img.src = w.src;
-      img.alt = 'Valet Pru doodle';
+      img.alt = `Valet Pru doodle #${wallNumber}`;
       img.loading = 'lazy';
       img.decoding = 'async';
       img.draggable = false;
       if (!editMode) {
         img.addEventListener('click', () => {
           lbImg.src = w.src;
+          lbImg.alt = `Valet Pru doodle #${wallNumber}`;
+          if (lbNum) {
+            lbNum.textContent = `#${wallNumber}`;
+            lbNum.classList.remove('hidden');
+          }
           lb.classList.remove('hidden');
         });
       }
@@ -833,7 +881,12 @@
       if (caption) {
         const cap = document.createElement('p');
         cap.className = 'museum-wall__caption';
-        cap.textContent = caption;
+        cap.textContent = `#${wallNumber} · ${caption}`;
+        piece.append(cap);
+      } else {
+        const cap = document.createElement('p');
+        cap.className = 'museum-wall__caption';
+        cap.textContent = `#${wallNumber}`;
         piece.append(cap);
       }
 
@@ -851,6 +904,7 @@
       emptyEl.classList.add('hidden');
 
       const groups = groupWorks(galleryWorks);
+      let wallNumber = 0;
       for (const group of groups) {
         const section = document.createElement('section');
         section.className = 'shell-wall';
@@ -886,7 +940,8 @@
           wall.append(empty);
         } else {
           for (const w of group.works) {
-            grid.append(makePiece(w));
+            wallNumber += 1;
+            grid.append(makePiece(w, wallNumber));
           }
           wall.append(grid);
         }
@@ -947,6 +1002,11 @@
     document.getElementById('lb-close').addEventListener('click', () => {
       lb.classList.add('hidden');
       lbImg.removeAttribute('src');
+      lbImg.alt = 'Valet Pru doodle';
+      if (lbNum) {
+        lbNum.textContent = '';
+        lbNum.classList.add('hidden');
+      }
     });
     lb.addEventListener('click', (e) => {
       if (e.target === lb) document.getElementById('lb-close').click();

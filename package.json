@@ -219,7 +219,13 @@
     "publish:standalone:holographic-rhyme": "node scripts/publish-standalone-suite.mjs synthobs-holographic-rhyme-fractal",
     "publish:standalone:holographic-rhyme:create": "node scripts/publish-standalone-suite.mjs synthobs-holographic-rhyme-fractal --create-repo",
     "publish:standalone:multidimensional-holographic-rhyme": "node scripts/publish-standalone-suite.mjs synthobs-multidimensional-holographic-rhyme",
-    "publish:standalone:multidimensional-holographic-rhyme:create": "node scripts/publish-standalone-suite.mjs synthobs-multidimensional-holographic-rhyme --create-repo"
+    "publish:standalone:multidimensional-holographic-rhyme:create": "node scripts/publish-standalone-suite.mjs synthobs-multidimensional-holographic-rhyme --create-repo",
+    "research:synthobs-self-observing-genome": "node research/synthobs-self-observing-genome/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-omniversal-time-crystal-engine": "node research/synthobs-omniversal-time-crystal-engine/scripts/run_empirical_pipeline.mjs",
+    "publish:standalone:self-observing-genome": "node scripts/publish-standalone-suite.mjs synthobs-self-observing-genome",
+    "publish:standalone:self-observing-genome:create": "node scripts/publish-standalone-suite.mjs synthobs-self-observing-genome --create-repo",
+    "publish:standalone:omniversal-time-crystal-engine": "node scripts/publish-standalone-suite.mjs synthobs-omniversal-time-crystal-engine",
+    "publish:standalone:omniversal-time-crystal-engine:create": "node scripts/publish-standalone-suite.mjs synthobs-omniversal-time-crystal-engine --create-repo"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

@@ -353,7 +353,7 @@ window.OMNI_LATTICE_COURSE = {
           "papers": [
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-protein-folding-prime-container-2026-09",
-              "label": "Protein folding · primes"
+              "label": "synthobs-self-observing-genome-egs-2026-09"
             },
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-prime-indexed-volumetric-storage-2026-09",
@@ -1280,7 +1280,7 @@ window.OMNI_LATTICE_COURSE = {
       "papers": [
         {
           "href": "/interfaces/whitepaper-surface.html?id=synthobs-protein-folding-prime-container-2026-09",
-          "label": "Protein folding · primes"
+          "label": "synthobs-self-observing-genome-egs-2026-09"
         },
         {
           "href": "/interfaces/whitepaper-surface.html?id=synthobs-prime-indexed-volumetric-storage-2026-09",

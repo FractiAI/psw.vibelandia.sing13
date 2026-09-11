@@ -411,6 +411,32 @@
         "docs/SYNTHOBS_GENERATIVE_MATRIX_PHI_EGS_QUANTUM_METROLOGY_2026-09.md",
         "docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-self-observing-genome",
+      "path": "research/synthobs-self-observing-genome",
+      "github": "https://github.com/FractiAI/synthobs-self-observing-genome",
+      "description": "Self-Observing Genome — DNA Soft Story mirror · Φ_EGS · AR4524/AR4530 filing fixtures",
+      "paperIds": [
+        "synthobs-self-observing-genome-egs-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_SELF_OBSERVING_GENOME_EGS_2026-09.md",
+        "docs/SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md"
+      ]
+    },
+    {
+      "id": "synthobs-omniversal-time-crystal-engine",
+      "path": "research/synthobs-omniversal-time-crystal-engine",
+      "github": "https://github.com/FractiAI/synthobs-omniversal-time-crystal-engine",
+      "description": "Omniversal Time-Crystal Engine — aqueous DNA Soft Story clocks · Φ_EGS · AR4524/AR4530",
+      "paperIds": [
+        "synthobs-omniversal-time-crystal-engine-egs-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_OMNIVERSAL_TIME_CRYSTAL_ENGINE_EGS_2026-09.md",
+        "docs/SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md"
+      ]
     }
   ]
 }

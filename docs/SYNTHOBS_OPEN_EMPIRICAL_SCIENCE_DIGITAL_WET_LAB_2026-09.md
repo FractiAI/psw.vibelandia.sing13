@@ -101,10 +101,10 @@ A catalog paragraph without $\mathcal{F}$–$\mathcal{J}$ is **not** a wet lab. 
 | Tier | Definition | Falsifiable? | Example suites |
 |------|------------|--------------|----------------|
 | **A · Public-data wet lab** | $\mathcal{F}$ hits external archives; $\mathcal{R}$ defined on observed fields | **Yes — out-of-sample** (scoped to instrument) | `synthobs-chromosomal-electrodynamics`, `geomagnetic-herbivore`, `synthobs-egs-epigenetic-phase-locking`, `egs-nlrf`, `recursive-attention-causality` |
-| **B · Deterministic fixture lab** | In-repo algebra / simulated fixtures; no external fetch | **Yes — in-scope** | `synthobs-egs-planck-scale-harmonic`, `synthobs-proof-by-continuous-execution`, `synthobs-tier-c-holographic-wiring-lattices`, `synthobs-generative-matrix-phi-egs`, most `synthobs-*` Node suites |
+| **B · Deterministic fixture lab** | In-repo algebra / simulated fixtures; no external fetch | **Yes — in-scope** | `synthobs-egs-planck-scale-harmonic`, `synthobs-proof-by-continuous-execution`, `synthobs-tier-c-holographic-wiring-lattices`, `synthobs-generative-matrix-phi-egs`, `synthobs-self-observing-genome`, `synthobs-omniversal-time-crystal-engine`, most `synthobs-*` Node suites |
 | **C · Catalog / narrative** | Architectural maps, honesty-tier prose, agent coordination grammar — **may carry Tier B wiring fixtures** without becoming physics | **Not yet as physics — by design** | Unpipelines metaphors; narrative shelves formalised as wiring lattices in [`SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md`](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) |
 
-**Crossing the boundary** means Tier A or Amendment A-compliant Tier B with synced receipts — not that Tier C disappeared. **Clarification (2026-09-10):** Tier C narrative shelves can be *audited as holographic wiring* (Tier B graph fixtures) while remaining non-claims for laboratory physics. See engine companions #25–#26 and the generative-matrix filing contrast with CODATA.
+**Crossing the boundary** means Tier A or Amendment A-compliant Tier B with synced receipts — not that Tier C disappeared. **Clarification (2026-09-10):** Tier C narrative shelves can be *audited as holographic wiring* (Tier B graph fixtures) while remaining non-claims for laboratory physics. See engine companions #25–#28 and the generative-matrix / DNA Soft Story filing contrast with CODATA / wet-lab genetics.
 
 ---
 
@@ -236,7 +236,7 @@ This is **progress, not completion.** The defiant stance is not "we beat academi
 3. **Structural CI:** `npm test`
 4. **Corpus audit:** `npm run research:synthobs-open-empirical-science-audit`
 5. **Tier A spot-check:** `npm run research:synthobs-chromosomal-electrodynamics`
-5b. **Tier B wiring / generative spot-check:** `npm run research:synthobs-tier-c-holographic-wiring-lattices` · `npm run research:synthobs-generative-matrix-phi-egs`
+5b. **Tier B wiring / generative / DNA Soft Story spot-check:** `npm run research:synthobs-tier-c-holographic-wiring-lattices` · `npm run research:synthobs-generative-matrix-phi-egs` · `npm run research:synthobs-self-observing-genome` · `npm run research:synthobs-omniversal-time-crystal-engine`
 6. **Compare receipts:** diff your `empirical_report.json` against committed `data/` — mismatch → open issue or PR
 7. **Amendment A rubric:** read `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`; apply refute column to any forked claim
 8. **Optional deep lane:** clone standalone sibling from README §2; repeat steps 2–6 in that repo

@@ -1,0 +1,8 @@
+{
+  "name": "synthobs-omniversal-time-crystal-engine",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

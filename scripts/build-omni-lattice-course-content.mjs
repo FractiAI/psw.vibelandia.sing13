@@ -1378,6 +1378,8 @@ const chapters = [
     papers: [
       wp(
         'synthobs-protein-folding-prime-container-2026-09',
+        'synthobs-self-observing-genome-egs-2026-09',
+        'synthobs-omniversal-time-crystal-engine-egs-2026-09',
         'Protein folding · primes',
       ),
       wp(

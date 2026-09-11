@@ -472,7 +472,7 @@ window.OMNI_LATTICE_COURSE = {
       "number": "1.2",
       "title": "How to study here",
       "minutes": 12,
-      "tagline": "Goals → key ideas → worked example → check → whitepaper",
+      "tagline": "Goals → key ideas → worked example → check → whitepapers",
       "goals": [
         "Follow the five-part lesson rhythm and know what each part is for.",
         "Use the navigation (sidebar, syllabus, keyboard) and resume from where you left off.",

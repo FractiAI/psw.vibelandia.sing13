@@ -1,21 +1,27 @@
-# FractiSkills · Goldilocks pilot (Infinite Octaves)
+# FractiSkills · Infinite Octaves full local corpus
 
 Portable `SKILL.md` packages for **Infinite Octaves Omniversal Lattice Chat** — a companion corpus under the AI catalog layer.
 
 ## What this is
-- Curated local skills (not a live 405-page crawl)
-- Pointer-first bodies Lattice Chat can pinch via `lib/lattice-skills.mjs`
-- Inspired by FractiSkills / Skillarum grammar (one skill per surface), adapted to SING 13 honesty rails
+- **Curated** meta skills in `Lattice/`, `Core/`, `Ship-Blog/`
+- **Generated** skills from local registries:
+  - `Papers/` ← whitepaper registry
+  - `Ship-Posts/` ← QUESTFEST ship-blog posts
+  - `Protocols/` ← `protocols/*.md`
+  - `Research/` ← `research/synthobs-*`
+  - `Interfaces/` ← major guest surfaces
+- Pointer-first bodies Lattice Chat pinches via `lib/lattice-skills.mjs` (≤8 pointers, ≤2 pinches)
 
 ## What this is not
+- Not a live FractiSkills crawl of the public site
+- Not Skillarum embedded as a runtime dependency
 - Not a sixth cruise door
-- Not Skillarum embedded as a dependency (yet)
 - Not a claim of infinite GPU-free scaling
-- Not a whole-site republishing of SS Vibelandia
 
 ## Commands
 ```bash
-npm run sync:lattice-skills   # rebuild skills/index.json from SKILL.md frontmatter
+npm run generate:lattice-skills   # discover → render → index
+npm run sync:lattice-skills       # rebuild skills/index.json from SKILL.md frontmatter only
 ```
 
 ## Load path

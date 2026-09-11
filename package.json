@@ -134,7 +134,6 @@
     "sync:site-brand": "node scripts/sync-site-brand.mjs",
     "sync:site-focus": "node scripts/sync-site-focus.mjs",
     "sync:lattice-catalog-layer": "node scripts/sync-lattice-catalog-layer.mjs",
-    "sync:lattice-skills": "node scripts/sync-lattice-skills-index.mjs",
     "sync:exhibit-rooms": "node scripts/sync-exhibit-rooms.mjs",
     "sync:exhibit-canvas": "node scripts/sync-exhibit-canvas.mjs",
     "sync:experience-phases": "node scripts/sync-experience-phases.mjs",
@@ -231,7 +230,8 @@
     "publish:standalone:self-observing-genome:create": "node scripts/publish-standalone-suite.mjs synthobs-self-observing-genome --create-repo",
     "publish:standalone:omniversal-time-crystal-engine": "node scripts/publish-standalone-suite.mjs synthobs-omniversal-time-crystal-engine",
     "publish:standalone:omniversal-time-crystal-engine:create": "node scripts/publish-standalone-suite.mjs synthobs-omniversal-time-crystal-engine --create-repo",
-    "sync:lattice-skills": "node scripts/sync-lattice-skills-index.mjs"
+    "sync:lattice-skills": "node scripts/sync-lattice-skills-index.mjs",
+    "generate:lattice-skills": "node scripts/generate-lattice-skills.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

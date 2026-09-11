@@ -13,18 +13,22 @@ import { assembleLatticePrompt } from '../../lib/lattice-prompt.mjs';
 
 const root = join(import.meta.dirname, '../..');
 
-describe('FractiSkills Goldilocks pilot', () => {
-  it('indexes curated SKILL.md packages', () => {
+describe('FractiSkills full local corpus', () => {
+  it('indexes curated + generated SKILL.md packages at corpus scale', () => {
     const collected = collectSkillsFromTree(root);
-    expect(collected.length).toBeGreaterThanOrEqual(10);
+    expect(collected.length).toBeGreaterThanOrEqual(200);
     expect(collected.every((s) => s.path.endsWith('/SKILL.md'))).toBe(true);
+    const areas = new Set(collected.map((s) => s.area));
+    for (const need of ['Lattice', 'Core', 'Papers', 'Ship-Posts', 'Protocols', 'Research', 'Interfaces']) {
+      expect(areas.has(need), `missing area ${need}`).toBe(true);
+    }
     const index = loadSkillsIndex(root);
     expect(index.schemaVersion).toBe(LATTICE_SKILLS_PILOT.schemaVersion);
     expect(index.skills.length).toBe(collected.length);
-    expect(index.honesty).toMatch(/not a whole-site crawl/i);
+    expect(index.honesty).toMatch(/not a live public crawl|not a whole-site crawl/i);
   });
 
-  it('parses frontmatter tags and routes', () => {
+  it('parses curated frontmatter tags and routes', () => {
     const md = readFileSync(
       join(root, 'skills/Lattice/lattice-product-surfaces/SKILL.md'),
       'utf8',
@@ -48,12 +52,12 @@ describe('FractiSkills Goldilocks pilot', () => {
       nestTopology: 'octave99',
       root,
     });
-    expect(pack).toContain('FractiSkills pilot');
+    expect(pack).toMatch(/FractiSkills (pilot|corpus)/);
     expect(pack).toContain('skills/');
     expect(pack).toMatch(/Skill pinches/);
-    // Must not dump entire index body as one blob of all skills
     const pinchCount = (pack.match(/#### skills\//g) || []).length;
     expect(pinchCount).toBeLessThanOrEqual(LATTICE_SKILLS_PILOT.maxPinches);
+    expect(pinchCount).toBeGreaterThan(0);
   });
 
   it('skips skills when nest is off', () => {
@@ -75,7 +79,7 @@ describe('FractiSkills Goldilocks pilot', () => {
       omitHistory: true,
       root,
     });
-    expect(prompt).toContain('FractiSkills pilot');
+    expect(prompt).toMatch(/FractiSkills (pilot|corpus)/);
     expect(prompt).toMatch(/skills\/.*SKILL\.md/);
   });
 });

@@ -437,6 +437,19 @@
         "docs/SYNTHOBS_OMNIVERSAL_TIME_CRYSTAL_ENGINE_EGS_2026-09.md",
         "docs/SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-infinite-octave-ai-catalog-layer",
+      "path": "research/synthobs-infinite-octave-ai-catalog-layer",
+      "github": "https://github.com/FractiAI/synthobs-infinite-octave-ai-catalog-layer",
+      "description": "Infinite Octave AI catalog layer — agentic coordination · resonant data management · Φ_EGS · AR4524/AR4530",
+      "paperIds": [
+        "synthobs-infinite-octave-ai-catalog-layer-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md",
+        "docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md"
+      ]
     }
   ]
 }

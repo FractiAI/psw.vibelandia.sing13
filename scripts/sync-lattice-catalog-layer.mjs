@@ -1,136 +1,97 @@
 #!/usr/bin/env node
 /**
- * Inject Infinite Octaves AI catalog-layer band sitewide.
- * Preserves five cruise doors; stacks the layer above heroes / after CEO asides.
+ * Strip legacy bolted-on Infinite Octaves catalog-layer chrome bands.
+ * Content weave lives in native surface copy; this script strips legacy chrome bands.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import {
-  LATTICE_CATALOG_LAYER_MARKERS as M,
-  renderLatticeCatalogLayerBandHtml,
-  renderLatticeCatalogLayerCss,
-} from '../lib/lattice-catalog-layer.mjs';
+import { LATTICE_CATALOG_LAYER_MARKERS as M } from '../lib/lattice-catalog-layer.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-function patchMarked(html, start, end, block) {
-  if (html.includes(start) && html.includes(end)) {
-    const re = new RegExp(
-      `${start.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${end.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`,
-    );
-    return html.replace(re, block.trim());
-  }
-  return null;
+function escapeRe(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function ensureStyle(html) {
-  const styleBlock = `${M.styleStart}\n<style id="lat-cat-layer-style">${renderLatticeCatalogLayerCss()}</style>\n${M.styleEnd}`;
-  const patched = patchMarked(html, M.styleStart, M.styleEnd, styleBlock);
-  if (patched) return patched;
-  if (html.includes('</head>')) {
-    return html.replace('</head>', `  ${styleBlock}\n</head>`);
-  }
-  return html;
+/** Remove a marked block (markers inclusive), including surrounding blank lines when present. */
+function stripMarked(html, start, end) {
+  if (!html.includes(start) || !html.includes(end)) return html;
+  const re = new RegExp(
+    `\\n?[ \\t]*${escapeRe(start)}[\\s\\S]*?${escapeRe(end)}[ \\t]*\\n?`,
+  );
+  return html.replace(re, '\n');
 }
 
-function insertAfterCeoAside(html, band, ceoClass) {
-  const needle = `class="${ceoClass}"`;
-  const idx = html.indexOf(needle);
-  if (idx < 0) return null;
-  const close = html.indexOf('</aside>', idx);
-  if (close < 0) return null;
-  const at = close + '</aside>'.length;
-  return `${html.slice(0, at)}\n\n  ${band}\n${html.slice(at)}`;
+/** Orphan aside when markers are missing. */
+function stripOrphanAside(html) {
+  if (html.includes(M.start) && html.includes(M.end)) return html;
+  return html.replace(
+    /\n?[ \t]*<aside\b[^>]*\bclass="[^"]*\blat-cat-layer\b[^"]*"[^>]*>[\s\S]*?<\/aside>[ \t]*\n?/gi,
+    '\n',
+  );
 }
 
-function insertAfterBanner(html, band) {
-  if (html.includes('<!-- SITE_TOP_BANNER_END -->')) {
-    return html.replace(
-      '<!-- SITE_TOP_BANNER_END -->',
-      `<!-- SITE_TOP_BANNER_END -->\n\n  ${band}`,
-    );
-  }
-  return null;
+/** Orphan style#lat-cat-layer-style when markers are missing. */
+function stripOrphanStyle(html) {
+  if (html.includes(M.styleStart) && html.includes(M.styleEnd)) return html;
+  return html.replace(
+    /\n?[ \t]*<style\b[^>]*\bid=["']lat-cat-layer-style["'][^>]*>[\s\S]*?<\/style>[ \t]*\n?/gi,
+    '\n',
+  );
 }
 
-function insertAfterBody(html, band) {
-  if (/<body[^>]*>/.test(html)) {
-    return html.replace(/<body[^>]*>/, (m) => `${m}\n  ${band}`);
-  }
-  return null;
-}
-
-function insertAfterTopnav(html, band) {
-  // lattice-v1618: after closing </nav> of topnav
-  const m = html.match(/<nav class="topnav"[\s\S]*?<\/nav>/);
-  if (m) {
-    return html.replace(m[0], `${m[0]}\n\n  ${band}`);
-  }
-  return null;
-}
-
-function ensureBand(html, { ceoClass = null, prefer = 'ceo', compact = false } = {}) {
-  const band = renderLatticeCatalogLayerBandHtml({ compact });
-  const patched = patchMarked(html, M.start, M.end, band);
-  if (patched) return patched;
-
-  if (prefer === 'ceo' && ceoClass) {
-    const next = insertAfterCeoAside(html, band, ceoClass);
-    if (next) return next;
-  }
-  if (prefer === 'topnav') {
-    const next = insertAfterTopnav(html, band);
-    if (next) return next;
-  }
-  const afterBanner = insertAfterBanner(html, band);
-  if (afterBanner) return afterBanner;
-  const afterBody = insertAfterBody(html, band);
-  if (afterBody) return afterBody;
-  return html;
+function stripCatalogLayer(html) {
+  let next = html;
+  next = stripMarked(next, M.start, M.end);
+  next = stripMarked(next, M.styleStart, M.styleEnd);
+  next = stripOrphanAside(next);
+  next = stripOrphanStyle(next);
+  // Collapse accidental triple blank lines left by removals
+  next = next.replace(/\n{3,}/g, '\n\n');
+  return next;
 }
 
 const TARGETS = [
-  {
-    rel: 'interfaces/vibelandia-questfest.html',
-    ceoClass: 'ship-ceo-announcement',
-    prefer: 'ceo',
-    compact: false,
-  },
-  { rel: 'index.html', ceoClass: 'canvas-ceo-announcement', prefer: 'ceo', compact: false },
-  {
-    rel: 'interfaces/omniverse-canvas.html',
-    ceoClass: 'canvas-ceo-announcement',
-    prefer: 'ceo',
-    compact: false,
-  },
-  { rel: 'interfaces/lattice-v1618.html', prefer: 'topnav', compact: false },
-  { rel: 'interfaces/journeys.html', prefer: 'banner', compact: true },
-  { rel: 'interfaces/reading-room.html', prefer: 'banner', compact: true },
-  { rel: 'interfaces/creator-studio.html', prefer: 'banner', compact: true },
-  { rel: 'interfaces/lattice-learn-more.html', prefer: 'topnav', compact: true },
-  { rel: 'interfaces/lattice-brochure.html', prefer: 'topnav', compact: true },
+  'interfaces/vibelandia-questfest.html',
+  'index.html',
+  'interfaces/omniverse-canvas.html',
+  'interfaces/lattice-v1618.html',
+  'interfaces/journeys.html',
+  'interfaces/reading-room.html',
+  'interfaces/creator-studio.html',
+  'interfaces/lattice-learn-more.html',
+  'interfaces/lattice-brochure.html',
 ];
 
+const stripped = [];
 let n = 0;
-for (const t of TARGETS) {
-  const file = path.join(ROOT, t.rel);
+for (const rel of TARGETS) {
+  const file = path.join(ROOT, rel);
   if (!fs.existsSync(file)) {
-    console.warn(`skip missing ${t.rel}`);
+    console.warn(`skip missing ${rel}`);
     continue;
   }
-  let html = fs.readFileSync(file, 'utf8');
-  html = ensureStyle(html);
-  html = ensureBand(html, {
-    ceoClass: t.ceoClass || null,
-    prefer: t.prefer,
-    compact: Boolean(t.compact),
-  });
-  fs.writeFileSync(file, html);
+  const before = fs.readFileSync(file, 'utf8');
+  const after = stripCatalogLayer(before);
+  const changed = after !== before;
+  if (changed) {
+    fs.writeFileSync(file, after);
+    stripped.push(rel);
+  }
   n += 1;
-  const has = html.includes('lat-cat-layer');
-  console.log(`synced ${t.rel}${has ? '' : ' (WARN: band missing)'}`);
+  const residual =
+    after.includes('lat-cat-layer') ||
+    after.includes(M.start) ||
+    after.includes(M.styleStart);
+  console.log(
+    `${changed ? 'stripped' : 'clean'} ${rel}${residual ? ' (WARN: residual catalog chrome)' : ''}`,
+  );
 }
 
-console.log(`lattice-catalog-layer: ${n} surfaces`);
+console.log(`lattice-catalog-layer: ${n} surfaces scanned, ${stripped.length} stripped`);
+if (stripped.length) {
+  console.log('stripped files:');
+  for (const rel of stripped) console.log(`  ${rel}`);
+}

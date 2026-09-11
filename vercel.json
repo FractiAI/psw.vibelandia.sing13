@@ -1405,7 +1405,6 @@
       "destination": "/interfaces/blog-tier-c-holographic-wiring-2026-09.html"
     },
     {
-    {
       "source": "/ship-blog/self-observing-genome",
       "destination": "/interfaces/blog-self-observing-genome-2026-09.html"
     },
@@ -1421,6 +1420,7 @@
       "source": "/ship-blog/omniversal-time-crystal-engine/",
       "destination": "/interfaces/blog-omniversal-time-crystal-engine-2026-09.html"
     },
+    {
       "source": "/ship-blog/generative-matrix-phi-egs",
       "destination": "/interfaces/blog-generative-matrix-phi-egs-2026-09.html"
     },

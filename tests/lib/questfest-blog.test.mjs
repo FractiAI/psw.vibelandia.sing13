@@ -30,15 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: AI catalog layer · Time-Crystal · Self-Observing Genome · Generative Matrix · Tier C · Open empirical
-    expect(posts[0].id).toBe('synthobs-infinite-octave-ai-catalog-layer-2026-09');
+    // Newest: FractiSkills · AI catalog layer · Time-Crystal · Self-Observing Genome · Generative Matrix · Tier C
+    expect(posts[0].id).toBe('synthobs-fractiskills-portable-agent-skills-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-fractiskills-portable-agent-skills-2026-09',
       'synthobs-infinite-octave-ai-catalog-layer-2026-09',
       'synthobs-omniversal-time-crystal-engine-egs-2026-09',
       'synthobs-self-observing-genome-egs-2026-09',
       'synthobs-generative-matrix-phi-egs-2026-09',
       'synthobs-tier-c-holographic-wiring-lattices-2026-09',
-      'synthobs-open-empirical-science-digital-wet-lab-2026-09',
     ]);
   });
 });

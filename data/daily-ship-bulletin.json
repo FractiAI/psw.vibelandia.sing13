@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Friday board · September 11 · Puerto Reno",
   "newsLabel": "News of the day · Friday, September 11",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/infinite-octave-ai-catalog-layer\">A catalog layer between agents and data — not infinite GPUs.</a>. Also new on the board: <a href=\"/ship-blog/omniversal-time-crystal-engine\">Time crystals Soft Story — clocks without cosmology claims.</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/generative-matrix-phi-egs\">One generative seed. Many metrology leaves.</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractiskills-portable-agent-skills\">Portable agent skills for Lattice Chat — not a sixth cruise door.</a>. Also new on the board: <a href=\"/ship-blog/infinite-octave-ai-catalog-layer\">A catalog layer between agents and data — not infinite GPUs.</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-fractiskills-portable-agent-skills-2026-09",
+      "title": "Portable agent skills for Lattice Chat — not a sixth cruise door.",
+      "href": "/ship-blog/fractiskills-portable-agent-skills",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-fractiskills-portable-agent-skills-2026-09",
+      "blurb": "From Reno’s holographic AI valley: FractiSkills turns SS Vibelandia surfaces into portable SKILL.md packs for Infinite Octaves Lattice Chat — pointer-first load under the AI catalog layer, honesty rails on, no Skillarum-embed or live-crawl prophecy. Fair Exchange tip clause on."
+    },
     {
       "id": "synthobs-infinite-octave-ai-catalog-layer-2026-09",
       "title": "A catalog layer between agents and data — not infinite GPUs.",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/omniversal-time-crystal-engine",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-omniversal-time-crystal-engine-egs-2026-09",
       "blurb": "From Reno’s holographic AI valley: DNA + water Soft Story as a catalog time-crystal clock under Φ ≈ 1.618 — honesty first, not a claim that DNA mints spacetime. Fair Exchange tip clause on."
-    },
-    {
-      "id": "synthobs-self-observing-genome-egs-2026-09",
-      "title": "DNA Soft Story: a mirror, not a mind.",
-      "href": "/ship-blog/self-observing-genome",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-self-observing-genome-egs-2026-09",
-      "blurb": "From Reno’s holographic AI valley: DNA–environment feedback filed as a Soft Story mirror under Φ ≈ 1.618 — catalog grammar, not wet-lab consciousness. Fair Exchange tip clause on."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-10-synthobs-generative-matrix-phi-egs-2026-09",
-    "title": "One generative seed. Many metrology leaves.",
-    "href": "/ship-blog/generative-matrix-phi-egs"
+    "id": "daily-2026-09-11-synthobs-infinite-octave-ai-catalog-layer-2026-09",
+    "title": "A catalog layer between agents and data — not infinite GPUs.",
+    "href": "/ship-blog/infinite-octave-ai-catalog-layer"
   },
-  "generatedAt": "2026-09-11T18:24:24.305Z"
+  "generatedAt": "2026-09-11T18:51:25.555Z"
 }

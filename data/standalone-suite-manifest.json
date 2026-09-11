@@ -450,6 +450,19 @@
         "docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md",
         "docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-fractiskills-portable-agent-skills",
+      "path": "research/synthobs-fractiskills-portable-agent-skills",
+      "github": "https://github.com/FractiAI/synthobs-fractiskills-portable-agent-skills",
+      "description": "FractiSkills — portable agent SKILL.md corpus · pointer-first Lattice Chat · AI catalog layer companion · Φ_EGS · AR4524/AR4530",
+      "paperIds": [
+        "synthobs-fractiskills-portable-agent-skills-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_FRACTISKILLS_PORTABLE_AGENT_SKILLS_2026-09.md",
+        "docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md"
+      ]
     }
   ]
 }

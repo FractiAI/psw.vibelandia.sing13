@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-10T16:41:05.150Z",
+  "updatedAt": "2026-09-11T18:51:13.977Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-fractiskills-portable-agent-skills-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-11T18:51:13.976Z",
+      "body": "FractiSkills: Portable Agent Skills for the Infinite Octave Omniversal Lattice Catalog (Application Companion)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-fractiskills-portable-agent-skills-2026-09",
+      "artifact": {
+        "title": "FractiSkills: Portable Agent Skills for the Infinite Octave Omniversal Lattice Catalog (Application Companion)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_FRACTISKILLS_PORTABLE_AGENT_SKILLS_2026-09.md",
+        "url": "/whitepaper/fractiskills-portable-agent-skills",
+        "paperId": "synthobs-fractiskills-portable-agent-skills-2026-09",
+        "docId": "WP-SYNTHOBS-FRACTISKILLS-PORTABLE-AGENT-SKILLS-2026-09-11",
+        "published": "2026-09-11T21:30:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-generative-matrix-phi-egs-2026-09",
       "type": "ArtifactEvent",

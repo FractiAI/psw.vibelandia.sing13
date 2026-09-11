@@ -202,6 +202,7 @@
     "research:synthobs-tier-c-holographic-wiring-lattices": "node research/synthobs-tier-c-holographic-wiring-lattices/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-generative-matrix-phi-egs": "node research/synthobs-generative-matrix-phi-egs/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-infinite-octave-ai-catalog-layer": "node research/synthobs-infinite-octave-ai-catalog-layer/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-fractiskills-portable-agent-skills": "node research/synthobs-fractiskills-portable-agent-skills/scripts/run_empirical_pipeline.mjs",
     "publish:standalone:tier-c-holographic-wiring-lattices": "node scripts/publish-standalone-suite.mjs synthobs-tier-c-holographic-wiring-lattices",
     "publish:standalone:tier-c-holographic-wiring-lattices:create": "node scripts/publish-standalone-suite.mjs synthobs-tier-c-holographic-wiring-lattices --create-repo",
     "publish:standalone:generative-matrix-phi-egs": "node scripts/publish-standalone-suite.mjs synthobs-generative-matrix-phi-egs",

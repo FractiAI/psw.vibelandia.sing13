@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "id": "fractiskills-goldilocks-pilot",
+  "honesty": "Goldilocks FractiSkills pilot — curated local SKILL.md packages for Infinite Octaves Lattice Chat. Not a whole-site crawl and not a finished physics proof.",
+  "generatedAt": "2026-09-11T18:25:28.378Z",
+  "skillCount": 12,
+  "skills": [
+    {
+      "id": "ai-catalog-layer",
+      "name": "AI catalog layer companion",
+      "description": "Infinite Octaves as new category layer between agentic IDEs and resonant data.",
+      "tags": [
+        "catalog-layer",
+        "ai-stack",
+        "resonant-data",
+        "moving-up-the-stack"
+      ],
+      "routes": [
+        "/lattice#ai-catalog-layer-intro",
+        "/ship-blog/infinite-octave-ai-catalog-layer"
+      ],
+      "sources": [
+        "docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md",
+        "interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html",
+        "lib/lattice-catalog-layer.mjs"
+      ],
+      "path": "skills/Core/ai-catalog-layer/SKILL.md",
+      "area": "Core"
+    },
+    {
+      "id": "goldilocks-valet",
+      "name": "Goldilocks Valet voice · seats",
+      "description": "Player 1 creator vs guest honor; craft, curiosity, care within Goldilocks.",
+      "tags": [
+        "goldilocks",
+        "valet",
+        "player-1",
+        "guest",
+        "seat"
+      ],
+      "routes": [
+        "/lattice-chat",
+        "/hire-a-goldilocks-valet-concierge"
+      ],
+      "sources": [
+        "lib/lattice-prompt.mjs",
+        "lib/lattice-access.mjs"
+      ],
+      "path": "skills/Core/goldilocks-valet/SKILL.md",
+      "area": "Core"
+    },
+    {
+      "id": "honesty-boundaries",
+      "name": "Honesty boundaries · claim tiers",
+      "description": "Narrative vs empirical vs operational — refuse upgrading Soft Story into unfinished proofs.",
+      "tags": [
+        "honesty",
+        "tiers",
+        "claims",
+        "pra-snap"
+      ],
+      "routes": [
+        "/ai-transparency",
+        "/coherence-plain-speak"
+      ],
+      "sources": [
+        "protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md",
+        "docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md"
+      ],
+      "path": "skills/Core/honesty-boundaries/SKILL.md",
+      "area": "Core"
+    },
+    {
+      "id": "lattice-chat-runtime",
+      "name": "Lattice Chat runtime pipes",
+      "description": "BYOK API, prompt assembly, nest topology, Player 1 write-on rails.",
+      "tags": [
+        "lattice-chat",
+        "byok",
+        "api",
+        "pipes",
+        "prompt"
+      ],
+      "routes": [
+        "/lattice-chat"
+      ],
+      "sources": [
+        "api/lattice-chat.js",
+        "lib/lattice-prompt.mjs",
+        "lib/lattice-engine.mjs"
+      ],
+      "path": "skills/Lattice/lattice-chat-runtime/SKILL.md",
+      "area": "Lattice"
+    },
+    {
+      "id": "lattice-pem-engine-shelf",
+      "name": "Lattice PEM · engine shelf",
+      "description": "Living Product Engineering Manual and Infinite Octaves engine pin order.",
+      "tags": [
+        "pem",
+        "engine-shelf",
+        "infinite-octaves",
+        "engineering"
+      ],
+      "routes": [
+        "/lattice/engineering"
+      ],
+      "sources": [
+        "docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md",
+        "lib/infinite-octave-engine-shelf.mjs"
+      ],
+      "path": "skills/Lattice/lattice-pem-engine-shelf/SKILL.md",
+      "area": "Lattice"
+    },
+    {
+      "id": "lattice-product-surfaces",
+      "name": "Lattice product surfaces",
+      "description": "Infinite Octaves Lattice Chat landing, how-it-works, brochure — product Edge, not cruise-door weave.",
+      "tags": [
+        "lattice",
+        "product",
+        "token-maxing",
+        "catalog-layer"
+      ],
+      "routes": [
+        "/lattice",
+        "/lattice/how",
+        "/lattice/brochure",
+        "/lattice-chat"
+      ],
+      "sources": [
+        "interfaces/lattice-v1618.html",
+        "interfaces/lattice-learn-more.html"
+      ],
+      "path": "skills/Lattice/lattice-product-surfaces/SKILL.md",
+      "area": "Lattice"
+    },
+    {
+      "id": "nspfrnp-mca-catalog",
+      "name": "NSPFRNP · MCA catalog spine",
+      "description": "Metabolize → Crystallize → Animate; Seed:Edge; Fair Exchange posture.",
+      "tags": [
+        "nspfrnp",
+        "mca",
+        "seed-edge",
+        "fair-exchange",
+        "protocol"
+      ],
+      "routes": [
+        "/whitepaper/mca-nspfrnp-catalog"
+      ],
+      "sources": [
+        "protocols/MCA_NSPFRNP_CATALOG.md",
+        "BBHE_REPOSITORY_STANDARD.md"
+      ],
+      "path": "skills/Protocols/nspfrnp-mca-catalog/SKILL.md",
+      "area": "Protocols"
+    },
+    {
+      "id": "official-prospectus",
+      "name": "Official Prospectus · voyage foundation",
+      "description": "SS Vibelandia grand arc Genesis · Borikén · Reno and five cruise doors.",
+      "tags": [
+        "prospectus",
+        "voyage",
+        "frontiersman",
+        "cruise-doors",
+        "ss-vibelandia"
+      ],
+      "routes": [
+        "/journey",
+        "/frontiersman-voyage",
+        "/ship-blog/official-prospectus"
+      ],
+      "sources": [
+        "docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md",
+        "interfaces/blog-official-prospectus-2026-08.html"
+      ],
+      "path": "skills/Core/official-prospectus/SKILL.md",
+      "area": "Core"
+    },
+    {
+      "id": "questfest-ship-blog-index",
+      "name": "Ship-blog index · catalog of notes",
+      "description": "How ship-blog posts are registered and synced onto QUESTFEST.",
+      "tags": [
+        "ship-blog",
+        "index",
+        "sync",
+        "questfest"
+      ],
+      "routes": [
+        "/ship-blog/",
+        "/questfest"
+      ],
+      "sources": [
+        "lib/questfest-blog.mjs",
+        "scripts/sync-questfest-blog.mjs",
+        "interfaces/ship-blog-index.html"
+      ],
+      "path": "skills/Ship-Blog/questfest-ship-blog-index/SKILL.md",
+      "area": "Ship-Blog"
+    },
+    {
+      "id": "seed-rag-discipline",
+      "name": "Seed·RAG pointer-first discipline",
+      "description": "FILE_BUDGET, Seed pack pinches, no corpus tours — Token Maxing practice.",
+      "tags": [
+        "seed",
+        "rag",
+        "pointer-first",
+        "token-maxing",
+        "budget"
+      ],
+      "routes": [
+        "/lattice/proof",
+        "/whitepaper/lattice-token-reduction-proof-2026-07"
+      ],
+      "sources": [
+        "lib/lattice-prompt.mjs",
+        "docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md"
+      ],
+      "path": "skills/Core/seed-rag-discipline/SKILL.md",
+      "area": "Core"
+    },
+    {
+      "id": "ship-blog-latest-six",
+      "name": "QUESTFEST ship-blog latest six",
+      "description": "Newest public paper notes on the ship board — newest first.",
+      "tags": [
+        "ship-blog",
+        "questfest",
+        "latest-six",
+        "papers"
+      ],
+      "routes": [
+        "/questfest#ship-blog",
+        "/ship-blog/"
+      ],
+      "sources": [
+        "lib/questfest-blog-posts.mjs",
+        "interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html",
+        "interfaces/blog-omniversal-time-crystal-engine-2026-09.html",
+        "interfaces/blog-self-observing-genome-2026-09.html"
+      ],
+      "path": "skills/Ship-Blog/ship-blog-latest-six/SKILL.md",
+      "area": "Ship-Blog"
+    },
+    {
+      "id": "voyage-doors",
+      "name": "Five cruise doors · ship navigation",
+      "description": "Journey · Canvas · Jukebox · Library · Creator Studio — voyage Edge map.",
+      "tags": [
+        "voyage",
+        "doors",
+        "canvas",
+        "journey",
+        "reading-room",
+        "creator-studio"
+      ],
+      "routes": [
+        "/",
+        "/art",
+        "/journey",
+        "/questfest",
+        "/reading-room",
+        "/creator-studio"
+      ],
+      "sources": [
+        "docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md",
+        "interfaces/omniverse-canvas.html"
+      ],
+      "path": "skills/Core/voyage-doors/SKILL.md",
+      "area": "Core"
+    }
+  ]
+}

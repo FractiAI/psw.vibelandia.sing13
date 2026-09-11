@@ -21,6 +21,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-holographic-singularity-crystal',
       'synthobs-human-omniversal-reality-bridge',
       'synthobs-ibm-sna-tcpip-gateway-omni-lattice',
+      'synthobs-infinite-octave-ai-catalog-layer',
       'synthobs-infinite-octave-prime-parity',
       'synthobs-infinite-octaves-omniversal-lattice',
       'synthobs-invisible-frontier-gates-ai',

@@ -99,6 +99,7 @@ export function ChatPane({
   const bottomRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const stickToBottomRef = useRef(true);
+  const [showJumpToBottom, setShowJumpToBottom] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const resumedRef = useRef(false);
@@ -224,19 +225,35 @@ export function ChatPane({
   }, [signedIn, hasEdgeKey, activeThreadId]);
 
   useEffect(() => {
+    stickToBottomRef.current = true;
+    setShowJumpToBottom(false);
+  }, [activeThreadId]);
+
+  useEffect(() => {
     // Only pin to bottom when the user is already near the end (or just sent).
     // Do not re-scroll on wait-timer ticks — that blocked reading earlier turns.
     if (!stickToBottomRef.current) return;
     const el = scrollRef.current;
     if (!el) return;
     el.scrollTop = el.scrollHeight;
+    setShowJumpToBottom(false);
   }, [thread?.messages.length, showWorking, signedIn, activeThreadId, liveTranscript.length]);
 
   function onMessageScroll() {
     const el = scrollRef.current;
     if (!el) return;
     const gap = el.scrollHeight - el.scrollTop - el.clientHeight;
-    stickToBottomRef.current = gap < 96;
+    const nearBottom = gap < 96;
+    stickToBottomRef.current = nearBottom;
+    setShowJumpToBottom(!nearBottom && el.scrollHeight > el.clientHeight + 120);
+  }
+
+  function jumpToLatest() {
+    stickToBottomRef.current = true;
+    setShowJumpToBottom(false);
+    const el = scrollRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+    else bottomRef.current?.scrollIntoView({ block: 'end' });
   }
   useEffect(() => {
     if (!showWorking) {
@@ -279,6 +296,7 @@ export function ChatPane({
     if (!signedIn) return;
     if (!draft.trim() && !attachments.length) return;
     stickToBottomRef.current = true;
+    setShowJumpToBottom(false);
     const text = draft;
     const wire = attachmentsForWire(attachments);
     setDraft('');
@@ -496,6 +514,7 @@ export function ChatPane({
         </div>
       ) : null}
 
+      <div className="message-scroll-wrap">
       <div
         className="message-scroll"
         role="log"
@@ -716,6 +735,17 @@ export function ChatPane({
           </article>
         ) : null}
         <div ref={bottomRef} />
+      </div>
+      {showJumpToBottom && signedIn ? (
+        <button
+          type="button"
+          className="jump-to-bottom"
+          onClick={jumpToLatest}
+          aria-label="Go to bottom of conversation"
+        >
+          ↓ Latest
+        </button>
+      ) : null}
       </div>
 
       {error ? (

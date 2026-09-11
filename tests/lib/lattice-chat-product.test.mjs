@@ -50,10 +50,16 @@ describe('Lattice Chat · Player 1 New Chat / past sessions', () => {
     const pane = read('apps/lattice-chat/src/components/ChatPane.tsx');
     expect(pane).toContain('header-thread-pick');
     expect(pane).toContain('Select a past chat');
+    expect(pane).toContain('jump-to-bottom');
+    expect(pane).toContain('Go to bottom of conversation');
+    expect(pane).toContain('jumpToLatest');
 
     const store = read('apps/lattice-chat/src/store.ts');
     expect(store).toContain('slimThreadsForPersist');
     expect(store).toContain('privilege: s.privilege');
+    // New chat always mints a fresh thread — never reuse empty draft / stay on current.
+    expect(store).toContain('Always mint a fresh thread id');
+    expect(store).not.toContain('reuse an empty draft');
 
     const auth = read('apps/lattice-chat/src/components/AuthPanel.tsx');
     expect(auth).toContain('Player 1 · creator');

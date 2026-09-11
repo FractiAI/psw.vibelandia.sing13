@@ -92,7 +92,7 @@ type LatticeState = {
   ensureThread: () => string;
   /** Shared Collaborate Lattice Chat thread (all seats). */
   ensureSharedCollabThread: () => string;
-  /** Create or reuse an empty draft thread; returns active thread id. */
+  /** Always mint a fresh blank thread; returns the new active thread id. */
   newChat: () => string;
   selectThread: (id: string) => void;
   renameThread: (id: string, title: string) => void;
@@ -225,36 +225,18 @@ export const useLatticeStore = create<LatticeState>()(
       },
 
       newChat: () => {
-        const { threads, activeThreadId } = get();
-        const active = threads.find((t) => t.id === activeThreadId);
-        // Cursor-like: reuse an empty draft instead of stacking blanks.
-        if (active && active.messages.length === 0) {
-          set({
-            error: null,
-            sendPhase: 'idle',
-            statusHint: null,
-            pending: null,
-            liveTranscript: [],
-            sending: false,
-          });
-          return active.id;
-        }
-        const empty = threads.find((t) => t.messages.length === 0);
-        if (empty) {
-          set({
-            activeThreadId: empty.id,
-            error: null,
-            sendPhase: 'idle',
-            statusHint: null,
-            pending: null,
-            liveTranscript: [],
-            sending: false,
-          });
-          return empty.id;
-        }
+        // Always mint a fresh thread id so New chat never looks like “staying”
+        // on the open conversation. Drop other empty drafts (keep shared collab).
         const t = emptyThread();
         set((s) => ({
-          threads: [t, ...s.threads],
+          threads: [
+            t,
+            ...s.threads.filter(
+              (x) =>
+                x.id === COLLAB_SHARED_AGENT_THREAD_ID ||
+                (x.messages || []).length > 0,
+            ),
+          ],
           activeThreadId: t.id,
           error: null,
           sendPhase: 'idle',

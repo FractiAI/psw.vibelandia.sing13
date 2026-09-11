@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "ff5baccf35c9d8ba",
+  "auditId": "ebdce1e955139047",
   "paperId": "synthobs-fractiskills-portable-agent-skills-2026-09",
   "sourcePath": "docs/SYNTHOBS_FRACTISKILLS_PORTABLE_AGENT_SKILLS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-11T18:51:13.973Z"
+          "invokedAt": "2026-09-11T19:49:39.947Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-11T18:51:13.972Z",
-  "completedAt": "2026-09-11T18:51:13.973Z",
+  "startedAt": "2026-09-11T19:49:39.946Z",
+  "completedAt": "2026-09-11T19:49:39.948Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1584,
+      "wordCount": 1795,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 13,
+        "links": 23,
         "numbered": 7,
-        "citeLines": 2
+        "citeLines": 18
       }
     }
   },

@@ -3,12 +3,15 @@
 **Subtitle:** Application companion — whole-site `SKILL.md` corpus as resonant filing under Infinite Octaves Lattice Chat (**not** an engine pin; **not** a live public crawl claim of unfinished physics)
 
 **Author:** Prudencio Mendez · FractiAI · Reno, Nevada  
+**Related work / credit:** **Daniel Ari Friedman, Ph.D.** — originator of **FractiSkills** (one portable agent `SKILL.md` per page)  
+**Original paper:** Friedman, Daniel Ari (2026). *FractiSkills: One Portable Agent Skill per Page* (v0.1.0). Zenodo. DOI [10.5281/zenodo.22712651](https://doi.org/10.5281/zenodo.22712651) · [zenodo.org/records/22712651](https://zenodo.org/records/22712651)  
+**Original repo:** [`docxology/FractiSkills`](https://github.com/docxology/FractiSkills)  
 **Corresponding:** espressolico@gmail.com  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-SYNTHOBS-FRACTISKILLS-PORTABLE-AGENT-SKILLS-2026-09-11`  
 **Registry ID:** `synthobs-fractiskills-portable-agent-skills-2026-09`  
-**Date:** September 11, 2026 · **Revised:** 2026-09-11 (protocol · application companion · standalone)  
+**Date:** September 11, 2026 · **Revised:** 2026-09-11 (Daniel credit · original paper/repo links)  
 **Classification:** Lattice-catalog **application companion** · digital wet-lab **Tier B fixtures** *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP · FractiSkills  
 **Engine role:** **Application companion** under the AI catalog layer — consumed by Lattice Chat; **not** an Infinite Octaves engine-shelf pin  
@@ -47,7 +50,8 @@
 | **Digital wet lab** | Tier B fixtures lock Φ_EGS, clutch Δ, corpus index presence / skill count floors, pointer budgets, and honesty strings | Heliophysics causation from AR4524/AR4530; live-crawl benchmarks as Tier A science |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
-**Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
+**Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.  
+**Upstream credit:** Daniel Ari Friedman, Ph.D. · FractiSkills origin · [DOI 10.5281/zenodo.22712651](https://doi.org/10.5281/zenodo.22712651) · [`docxology/FractiSkills`](https://github.com/docxology/FractiSkills). This SING 13 filing is a **local Lattice Chat application companion** inspired by that work — **not** an embed of Skillarum and **not** a republication of the live public-crawl manuscript.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · [AI Catalog Layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) · [Lattice Chat product](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md).
 
@@ -175,6 +179,19 @@ AR characters are **filing anchors**, not NOAA causation and not GPU physics.
 
 ---
 
+## Related work / credit
+
+**FractiSkills** as a named whole-site portable-skill program originates with **Daniel Ari Friedman, Ph.D.** (FractiAI · Active Inference Institute):
+
+| Artifact | Link |
+|----------|------|
+| **Original paper** | Friedman, Daniel Ari (2026). *FractiSkills: One Portable Agent Skill per Page* (v0.1.0). Zenodo. DOI **[10.5281/zenodo.22712651](https://doi.org/10.5281/zenodo.22712651)** · [zenodo.org/records/22712651](https://zenodo.org/records/22712651) · concept DOI [10.5281/zenodo.22712650](https://doi.org/10.5281/zenodo.22712650) |
+| **Original repository** | [`github.com/docxology/FractiSkills`](https://github.com/docxology/FractiSkills) · release [v0.1.0](https://github.com/docxology/FractiSkills/releases/tag/v0.1.0) |
+
+This SynthOBS / SING 13 document is the **Infinite Octaves Lattice Chat application companion** — local registry→`skills/` corpus + pointer-first load — filed **with credit** to Daniel’s paper and repo. Honesty lock unchanged: **not** Skillarum embed, **not** live 405-page crawl as production proof, **not** an engine pin.
+
+---
+
 ## Document control
 
 | Field | Value |
@@ -184,5 +201,6 @@ AR characters are **filing anchors**, not NOAA causation and not GPU physics.
 | Engine role | Application companion (not pin) |
 | Category | `lattice-catalog` · application companion |
 | Empirical tier | B |
+| Upstream credit | Daniel Ari Friedman · FractiSkills · DOI 10.5281/zenodo.22712651 · `docxology/FractiSkills` |
 | Ship blog | `/ship-blog/fractiskills-portable-agent-skills` |
 | Close | → ∞^∞ |

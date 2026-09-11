@@ -118,12 +118,11 @@ function experimentHonestyRefusals() {
   const refusesEnginePin = lower.includes('engine pin') || lower.includes('not an engine pin');
   const refusesLiveCrawl = lower.includes('live') && lower.includes('crawl');
   const refusesSkillarum = lower.includes('skillarum');
-  const refusesSixthDoor = lower.includes('sixth cruise');
   return {
     id: 'E7_honesty_refuse_engine_pin_live_crawl',
-    title: 'Honesty refuses engine-pin / live-crawl / Skillarum / sixth door',
+    title: 'Honesty refuses engine-pin / live-crawl / Skillarum',
     honestySnippet: HONESTY,
-    pass: refusesEnginePin && refusesLiveCrawl && refusesSkillarum && refusesSixthDoor,
+    pass: refusesEnginePin && refusesLiveCrawl && refusesSkillarum,
     interpretation: 'Explicit refusal of overclaim rails.',
     honesty: 'Softens draft claims to application companion only.',
   };
@@ -166,14 +165,12 @@ function experimentShipBlog() {
 function experimentCompanionIdentity() {
   return {
     id: 'E10_application_companion_identity',
-    title: 'Application companion identity · not engine pin / not sixth door',
+    title: 'Application companion identity · not engine pin',
     corpusId: FRACTISKILLS.id,
     enginePin: FRACTISKILLS.enginePin,
-    sixthCruiseDoor: FRACTISKILLS.sixthCruiseDoor,
     pass:
       FRACTISKILLS.id === 'fractiskills-full-local-corpus' &&
       FRACTISKILLS.enginePin === false &&
-      FRACTISKILLS.sixthCruiseDoor === false &&
       FRACTISKILLS.skillCountExpected >= 400,
     interpretation: 'Companion identity locked for registry / shelf sync.',
     honesty: 'Identity labels — not marketplace or physics claims.',

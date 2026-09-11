@@ -46,7 +46,7 @@
 | **Portable SKILL.md corpus** | A monorepo `skills/` tree of portable agent skill packages (`SKILL.md` + index), generated from registries (papers, ship-blog, protocols, research, major interfaces) plus curated Lattice/Core meta skills — **≈421** skills in the current local corpus | That Skillarum (or any external skill marketplace) is an **embedded dependency** of SING 13 / Lattice Chat |
 | **Pointer-first load** | Lattice Chat / `lib/lattice-skills.mjs` loads **≤8 pointers** and **≤2 pinched** skill bodies per turn — never a fat-dump of the whole library | That skills replace whitepapers, protocols, or the Infinite Octaves engine shelf |
 | **Local discover → render → index** | Pipeline `npm run generate:lattice-skills` discovers surfaces from registries, renders `SKILL.md` packages, and writes `skills/index.json` **locally** | That a **live 405-page public crawl** is production proof or a finished physics / fab claim |
-| **Catalog position** | FractiSkills is an **application companion** under the AI catalog layer, **consumed by** Infinite Octaves Lattice Chat | That FractiSkills is a **sixth cruise door**, an engine pin, or a GPU-free infinity theorem |
+| **Catalog position** | FractiSkills is an **application companion** under the AI catalog layer, **consumed by** Infinite Octaves Lattice Chat | That FractiSkills is an engine pin, or a GPU-free infinity theorem |
 | **Digital wet lab** | Tier B fixtures lock Φ_EGS, clutch Δ, corpus index presence / skill count floors, pointer budgets, and honesty strings | Heliophysics causation from AR4524/AR4530; live-crawl benchmarks as Tier A science |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
@@ -65,7 +65,7 @@ Agentic IDEs and multi-agent nests need **portable, page-scoped skills** — sho
 
 ## 1. Introduction
 
-The [AI Catalog Layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) names the municipal filing office between agentic IDE altitude and data altitude. Guests and nested agents still need **one skill per surface** — a thin, portable brief for QUESTFEST doors, papers, protocols, and Lattice product routes — without inventing a sixth cruise door or claiming the public site was crawled as physics proof.
+The [AI Catalog Layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) names the municipal filing office between agentic IDE altitude and data altitude. Guests and nested agents still need **one skill per surface** — a thin, portable brief for QUESTFEST doors, papers, protocols, and Lattice product routes — without claiming the public site was crawled as physics proof.
 
 FractiSkills is that **application companion**: a `SKILL.md` corpus under Infinite Octaves, wired for Lattice Chat’s cool · harmonize · scale habit and the [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) parent↔child topology. It sits **under** the catalog layer and is **consumed by** Lattice Chat — not pinned into `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` as engine identity.
 
@@ -95,7 +95,7 @@ Filed as **application companion** labels only:
 | Infinite Octaves **engine** pins | Not a pin — CMOS / tensor / master / companions stay on the sync stack | Do not add FractiSkills as engine step |
 | **AI catalog layer** | Parent shelf — FractiSkills is resonant filing *under* catalog coordination | Sibling grammar, not market displacement |
 | **Lattice Chat product** | Consumer — pointer-first skill packs enter guest / creator prompts | Skills are loadable briefs, not a new chat product |
-| **Cruise doors / QUESTFEST** | Surfaces may have skills; skills are **not** a sixth cruise door | Hospitality doors ≠ skill corpus identity |
+| **Cruise doors / QUESTFEST** | Surfaces may have skills that label those doors for agents | Hospitality doors ≠ skill corpus identity |
 
 $\Phi_{\mathrm{EGS}}\approx 1.618$ supplies nesting grammar for how skill pointers nest under catalog briefs. It does not prove GPU-free infinity or unfinished physics.
 

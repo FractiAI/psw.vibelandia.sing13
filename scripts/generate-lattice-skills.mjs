@@ -13,7 +13,7 @@
  * Then rebuilds skills/index.json via sync-lattice-skills-index.mjs.
  *
  * Honesty: local catalog render — not a live public crawl of 405 pages,
- * not a sixth cruise door, not an unfinished physics proof.
+ * not an unfinished physics proof.
  */
 import {
   existsSync,

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "id": "fractiskills-full-local-corpus",
-  "honesty": "FractiSkills full local corpus — SKILL.md packages generated from repo registries (papers, ship-blog, protocols, research, major interfaces) plus curated Lattice/Core meta skills. Pointer-first load only. Not a live public crawl, not a sixth cruise door, not a finished physics proof.",
-  "generatedAt": "2026-09-11T18:36:26.254Z",
+  "honesty": "FractiSkills full local corpus — SKILL.md packages generated from repo registries (papers, ship-blog, protocols, research, major interfaces) plus curated Lattice/Core meta skills. Pointer-first load only. Not a live public crawl, not a finished physics proof.",
+  "generatedAt": "2026-09-11T20:00:26.772Z",
   "skillCount": 421,
   "skills": [
     {

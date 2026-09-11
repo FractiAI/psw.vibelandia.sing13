@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-FRACTISKILLS-PORTABLE-AGENT-SKILLS-2026-09-11`
 **Registry ID:** `synthobs-fractiskills-portable-agent-skills-2026-09`
-**Generated:** 2026-09-11T18:51:13.968Z
+**Generated:** 2026-09-11T20:00:27.223Z
 
 ## Verdict
 
@@ -125,7 +125,7 @@
 }
 ```
 
-### E7_honesty_refuse_engine_pin_live_crawl — Honesty refuses engine-pin / live-crawl / Skillarum / sixth door
+### E7_honesty_refuse_engine_pin_live_crawl — Honesty refuses engine-pin / live-crawl / Skillarum
 
 - **Pass:** `true`
 - **Interpretation:** Explicit refusal of overclaim rails.
@@ -134,8 +134,8 @@
 ```json
 {
   "id": "E7_honesty_refuse_engine_pin_live_crawl",
-  "title": "Honesty refuses engine-pin / live-crawl / Skillarum / sixth door",
-  "honestySnippet": "Application companion under AI catalog layer · Tier B fixtures under Φ_EGS. Portable SKILL.md corpus · pointer-first load · local discover→render→index. Solar AR4524/AR4530 are filing characters only. Not an engine pin, not a live public crawl proof, not Skillarum embed, not a sixth cruise door, not infinite GPU-free scaling — skills do not replace whitepapers.",
+  "title": "Honesty refuses engine-pin / live-crawl / Skillarum",
+  "honestySnippet": "Application companion under AI catalog layer · Tier B fixtures under Φ_EGS. Portable SKILL.md corpus · pointer-first load · local discover→render→index. Solar AR4524/AR4530 are filing characters only. Not an engine pin, not a live public crawl proof, not Skillarum embed, not infinite GPU-free scaling — skills do not replace whitepapers.",
   "pass": true,
   "interpretation": "Explicit refusal of overclaim rails.",
   "honesty": "Softens draft claims to application companion only."
@@ -174,7 +174,7 @@
 }
 ```
 
-### E10_application_companion_identity — Application companion identity · not engine pin / not sixth door
+### E10_application_companion_identity — Application companion identity · not engine pin
 
 - **Pass:** `true`
 - **Interpretation:** Companion identity locked for registry / shelf sync.
@@ -183,10 +183,9 @@
 ```json
 {
   "id": "E10_application_companion_identity",
-  "title": "Application companion identity · not engine pin / not sixth door",
+  "title": "Application companion identity · not engine pin",
   "corpusId": "fractiskills-full-local-corpus",
   "enginePin": false,
-  "sixthCruiseDoor": false,
   "pass": true,
   "interpretation": "Companion identity locked for registry / shelf sync.",
   "honesty": "Identity labels — not marketplace or physics claims."
@@ -195,4 +194,4 @@
 
 ## Honesty boundary
 
-Application companion under AI catalog layer · Tier B fixtures under Φ_EGS. Portable SKILL.md corpus · pointer-first load · local discover→render→index. Solar AR4524/AR4530 are filing characters only. Not an engine pin, not a live public crawl proof, not Skillarum embed, not a sixth cruise door, not infinite GPU-free scaling — skills do not replace whitepapers.
+Application companion under AI catalog layer · Tier B fixtures under Φ_EGS. Portable SKILL.md corpus · pointer-first load · local discover→render→index. Solar AR4524/AR4530 are filing characters only. Not an engine pin, not a live public crawl proof, not Skillarum embed, not infinite GPU-free scaling — skills do not replace whitepapers.

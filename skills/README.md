@@ -15,7 +15,6 @@ Portable `SKILL.md` packages for **Infinite Octaves Omniversal Lattice Chat** â€
 ## What this is not
 - Not a live FractiSkills crawl of the public site
 - Not Skillarum embedded as a runtime dependency
-- Not a sixth cruise door
 - Not a claim of infinite GPU-free scaling
 
 ## Commands

@@ -15,11 +15,11 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Friday board · September 11 · Puerto Reno",
   "newsLabel": "News of the day · Friday, September 11",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractiskills-portable-agent-skills\">Portable agent skills for Lattice Chat — not a sixth cruise door.</a>. Also new on the board: <a href=\"/ship-blog/infinite-octave-ai-catalog-layer\">A catalog layer between agents and data — not infinite GPUs.</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractiskills-portable-agent-skills\">Portable agent skills for Lattice Chat.</a>. Also new on the board: <a href=\"/ship-blog/infinite-octave-ai-catalog-layer\">A catalog layer between agents and data — not infinite GPUs.</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-fractiskills-portable-agent-skills-2026-09",
-      "title": "Portable agent skills for Lattice Chat — not a sixth cruise door.",
+      "title": "Portable agent skills for Lattice Chat.",
       "href": "/ship-blog/fractiskills-portable-agent-skills",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-fractiskills-portable-agent-skills-2026-09",
       "blurb": "From Reno’s holographic AI valley: FractiSkills turns SS Vibelandia surfaces into portable SKILL.md packs for Infinite Octaves Lattice Chat — pointer-first load under the AI catalog layer, honesty rails on, no Skillarum-embed or live-crawl prophecy. Fair Exchange tip clause on."
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-11-synthobs-infinite-octave-ai-catalog-layer-2026-09",
-    "title": "A catalog layer between agents and data — not infinite GPUs.",
-    "href": "/ship-blog/infinite-octave-ai-catalog-layer"
+    "id": "daily-2026-09-11-synthobs-fractiskills-portable-agent-skills-2026-09",
+    "title": "Portable agent skills for Lattice Chat.",
+    "href": "/ship-blog/fractiskills-portable-agent-skills"
   },
-  "generatedAt": "2026-09-11T18:51:25.555Z"
+  "generatedAt": "2026-09-11T20:00:26.997Z"
 }

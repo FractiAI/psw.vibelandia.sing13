@@ -12,7 +12,6 @@ export const FRACTISKILLS = Object.freeze({
   id: 'fractiskills-full-local-corpus',
   category: 'lattice-catalog-application-companion',
   enginePin: false,
-  sixthCruiseDoor: false,
   skillCountExpected: 400,
   skillCountFloor: 200,
   indexRel: 'skills/index.json',
@@ -33,4 +32,4 @@ export const FAIR_EXCHANGE_CLAUSE =
   'Financial grants, institutional funding, or academic utility micro-grants are subject to partial refund or adjustment depending on overall delivery, depth of insight, and practical utility, functioning akin to an intellectual performance tip.';
 
 export const HONESTY =
-  'Application companion under AI catalog layer · Tier B fixtures under Φ_EGS. Portable SKILL.md corpus · pointer-first load · local discover→render→index. Solar AR4524/AR4530 are filing characters only. Not an engine pin, not a live public crawl proof, not Skillarum embed, not a sixth cruise door, not infinite GPU-free scaling — skills do not replace whitepapers.';
+  'Application companion under AI catalog layer · Tier B fixtures under Φ_EGS. Portable SKILL.md corpus · pointer-first load · local discover→render→index. Solar AR4524/AR4530 are filing characters only. Not an engine pin, not a live public crawl proof, not Skillarum embed, not infinite GPU-free scaling — skills do not replace whitepapers.';

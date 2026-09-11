@@ -6,12 +6,14 @@ export function FrontierCeoBanner() {
       <p className="frontier-ceo-banner__body">
         Are you a <a href="/frontier">frontier</a> CEO looking for your next big challenge? We are
         looking for a CEO to help roll out the next layer of AI —{' '}
-        <a href="/lattice">Lattice Chat</a>. A tremendous opportunity for the right executive.
-        Contact Valet Pru at{' '}
+        <a href="/lattice#ai-catalog-layer-intro">Infinite Octaves Omniversal Lattice Chat</a>, the
+        catalog layer woven between agentic IDEs and ship data. A tremendous opportunity for the
+        right executive. Contact Valet Pru at{' '}
         <a href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20Frontier%20CEO%20inquiry">
           valetpru@gmail.com
         </a>
-        . Start with the three papers:{' '}
+        . Start with:{' '}
+        <a href="/ship-blog/infinite-octave-ai-catalog-layer">Catalog layer</a> ·{' '}
         <a href="/ship-blog/what-it-means-to-be-frontier">Frontier</a> ·{' '}
         <a href="/ship-blog/pdvsa-gateway-ops-mockup">Gateway</a> ·{' '}
         <a href="/ship-blog/moving-up-the-stack">Moving up the stack</a>. Catalog:{' '}

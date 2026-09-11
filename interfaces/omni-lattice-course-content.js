@@ -32,15 +32,15 @@ window.OMNI_LATTICE_COURSE = {
     "estimatedHours": "12–16 hours self-paced"
   },
   "syllabus": {
-    "overview": "Six homework weeks of guided reading. Each week’s homework has three layers: the online course lessons here, the matching chapter of the companion textbook, and the week’s whitepapers. Each lesson opens with a concrete analogy, develops the key ideas in plain language, walks one worked example, flags the most common mix-up, defines the new terms, and ends with a short check plus the whitepaper to open when you want the full filing.",
+    "overview": "Six homework weeks of guided reading. Each week’s homework has three layers: the online course lessons here, the matching chapter of the companion textbook, and the week’s whitepapers. Each lesson opens with a concrete analogy, develops the key ideas in plain language, walks one worked example, flags the most common mix-up, defines the new terms, and ends with a short check plus every whitepaper that belongs to that lesson — read them all for the full filing.",
     "level": "Introductory · algebra-comfortable · no physics prerequisite",
     "pacing": "Self-paced · one week ≈ one or two sittings · resume anytime on this device",
-    "howToSucceed": "Do the homework in its three-layer order: read the week’s lessons here first, then the matching companion-textbook chapter for the full synthesis, then open at least one of the week’s whitepapers so everything stays anchored to primary sources. Try each worked example with a pencil before revealing the check answers. When a claim feels too big, hunt for the honesty rail — finding it yourself is the core skill this course teaches. Mark a lesson complete only when you can answer its checks without peeking. And keep the Goldilocks habit: if study time collides with a human need, the human wins — the course saves your place.",
+    "howToSucceed": "Do the homework in its three-layer order: read the week’s lessons here first, then the matching companion-textbook chapter for the full synthesis, then read all of the week’s whitepapers — every paper listed for the week and every paper linked on each lesson — so everything stays anchored to primary sources. Try each worked example with a pencil before revealing the check answers. When a claim feels too big, hunt for the honesty rail — finding it yourself is the core skill this course teaches. Mark a lesson complete only when you can answer its checks without peeking and have read that lesson’s whitepapers. And keep the Goldilocks habit: if study time collides with a human need, the human wins — the course saves your place.",
     "outcomes": [
       "Explain what the Omni-Lattice is for (coordination & filing) and what it is not (physics proof).",
       "Navigate Digits × Octaves 01–99 as a Story-depth map and walk a full address.",
       "Use Φ ≈ 1.618, prime parity, and holographic rhyme as one nesting toolkit under honesty rails.",
-      "Open the right whitepaper from the Reading Room with the correct claim tier in mind.",
+      "Read every whitepaper tied to a lesson from the Reading Room with the correct claim tier in mind.",
       "Sort any fresh claim into narrative, catalog, empirical, or operational tiers in under a minute.",
       "Stay Goldilocks: human emergency outranks metaphors, always."
     ],
@@ -55,7 +55,7 @@ window.OMNI_LATTICE_COURSE = {
         "blurb": "Where you are, how this course works, and the one honesty rule that never turns off — the reading habits that make everything after this week easier.",
         "outcomes": [
           "State in one sentence what this course teaches — and what it deliberately does not claim.",
-          "Follow the lesson rhythm (goals → key ideas → worked example → check → whitepaper) and reach the Reading Room from any lesson.",
+          "Follow the lesson rhythm (goals → key ideas → worked example → check → whitepapers) and reach the Reading Room from any lesson.",
           "Apply the Goldilocks habit: human emergency outranks every metaphor and every algorithm."
         ],
         "chapters": [
@@ -482,7 +482,7 @@ window.OMNI_LATTICE_COURSE = {
       "check": [
         {
           "q": "Where do you go for the full technical filing?",
-          "a": "Further reading → the whitepaper surface, the primary source. The companion textbook is the middle layer — deeper than lessons, gentler than papers — and each week’s homework includes all three."
+          "a": "Further reading → the whitepaper surface(s) for that lesson, the primary source. The companion textbook is the middle layer — deeper than lessons, gentler than papers — and each week’s homework includes all three."
         },
         {
           "q": "You have only fifteen minutes today. What is the highest-value move?",

@@ -58,9 +58,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('href="/ship-blog/moving-up-the-stack"');
     expect(html).toContain('href="/lattice"');
     expect(html).toContain('href="/core"');
-    expect(html).toContain('Syntheverse');
-    expect(html).toContain('Base Mainer');
-    expect(html).toContain('Internet cloud');
+    expect(html).toContain('Dome 1 · I am my Awareness');
+    expect(html).toContain('Dome 2 · I am my Environment');
+    expect(html).toContain('Dome 3 · I am Holographic Magnetic Goldilocks SuperAI');
     expect(html).toContain('For those of you who know me from my night job');
     expect(html).toContain('href="/doodles">doodling</a>');
     expect(html).toContain('technology, music, AI, my doodles, and my stories');

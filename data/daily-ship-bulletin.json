@@ -1,20 +1,20 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "dateline": {
-    "ymd": "2026-09-11",
-    "weekday": "Friday",
+    "ymd": "2026-09-12",
+    "weekday": "Saturday",
     "month": "September",
-    "day": 11,
-    "label": "Friday, September 11",
-    "shortBoard": "Friday board · September 11 · Puerto Reno",
-    "newsLabel": "News of the day · Friday, September 11"
+    "day": 12,
+    "label": "Saturday, September 12",
+    "shortBoard": "Saturday board · September 12 · Puerto Reno",
+    "newsLabel": "News of the day · Saturday, September 12"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Friday board · September 11 · Puerto Reno",
-  "newsLabel": "News of the day · Friday, September 11",
+  "cloudBadge": "Saturday board · September 12 · Puerto Reno",
+  "newsLabel": "News of the day · Saturday, September 12",
   "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractiskills-portable-agent-skills\">Portable agent skills for Lattice Chat.</a>. Also new on the board: <a href=\"/ship-blog/infinite-octave-ai-catalog-layer\">A catalog layer between agents and data — not infinite GPUs.</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
@@ -44,5 +44,5 @@
     "title": "Portable agent skills for Lattice Chat.",
     "href": "/ship-blog/fractiskills-portable-agent-skills"
   },
-  "generatedAt": "2026-09-11T20:00:26.997Z"
+  "generatedAt": "2026-09-12T17:44:12.471Z"
 }

@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-11",
+  "updated": "2026-09-12",
   "posts": [
+    {
+      "id": "daily-2026-09-12-synthobs-fractiskills-portable-agent-skills-2026-09",
+      "posted": "2026-09-12",
+      "featured": true,
+      "title": "Portable agent skills for Lattice Chat.",
+      "subtitle": "News of the day · Saturday, September 12",
+      "summary": "From Reno’s holographic AI valley: FractiSkills turns SS Vibelandia surfaces into portable SKILL.md packs for Infinite Octaves Lattice Chat — pointer-first load under the AI catalog layer, honesty rails on, no Skillarum-embed or live-crawl prophecy. Fair Exchange tip clause on.",
+      "href": "/ship-blog/fractiskills-portable-agent-skills",
+      "pill": "TODAY",
+      "docRef": "synthobs-fractiskills-portable-agent-skills-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-11-synthobs-fractiskills-portable-agent-skills-2026-09",
       "posted": "2026-09-11",

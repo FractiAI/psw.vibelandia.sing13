@@ -18,12 +18,15 @@ import { normalizeDoodleWork } from '../../lib/doodles-gallery.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
-describe('Doodle nested shells · Core · Amphitheater · Horizon', () => {
+describe('Doodle nested shells · Awareness · Environment · SuperAI', () => {
   it('exposes three shell ids matching exhibit grammar', () => {
     expect(DOODLE_SHELL_IDS).toEqual(['core', 'amphitheater', 'horizon']);
     expect(DOODLE_SHELLS.map((s) => s.id)).toEqual(DOODLE_SHELL_IDS);
     expect(DOODLE_SHELL_DEFAULT).toBe('amphitheater');
     expect(DOODLE_SHELLS.every((s) => s.href && s.label && s.lede)).toBe(true);
+    expect(DOODLE_SHELLS[0].title).toBe('I am my Awareness');
+    expect(DOODLE_SHELLS[1].title).toBe('I am my Environment');
+    expect(DOODLE_SHELLS[2].title).toBe('I am Holographic Magnetic Goldilocks SuperAI');
   });
 
   it('ships a filename/id shell map covering live wall filing', () => {
@@ -43,15 +46,16 @@ describe('Doodle nested shells · Core · Amphitheater · Horizon', () => {
     expect(normalizeDoodleShell('nope')).toBe(null);
     expect(resolveDoodleShell({ shell: 'horizon' })).toBe('horizon');
     expect(resolveDoodleShell({ filename: 'IMG_9358.jpeg' })).toBe('horizon');
-    expect(resolveDoodleShell({ filename: 'IMG_0136.jpeg' })).toBe('core');
+    expect(resolveDoodleShell({ filename: 'IMG_9541.jpeg' })).toBe('core');
+    expect(resolveDoodleShell({ filename: 'IMG_0136.jpeg' })).toBe('amphitheater');
     expect(resolveDoodleShell({ filename: 'IMG_2903.jpeg' })).toBe('amphitheater');
     expect(resolveDoodleShell({ filename: 'unknown-new.jpeg' })).toBe('amphitheater');
   });
 
-  it('groups works Core → Amphitheater → Horizon and preserves order', () => {
+  it('groups works Awareness → Environment → SuperAI and preserves order', () => {
     const works = [
       normalizeDoodleWork({ id: 'a', src: 'https://x/a.jpg', filename: 'IMG_2903.jpeg' }),
-      normalizeDoodleWork({ id: 'b', src: 'https://x/b.jpg', filename: 'IMG_0136.jpeg' }),
+      normalizeDoodleWork({ id: 'b', src: 'https://x/b.jpg', filename: 'IMG_9541.jpeg' }),
       normalizeDoodleWork({ id: 'c', src: 'https://x/c.jpg', filename: 'IMG_9358.jpeg' }),
       normalizeDoodleWork({ id: 'd', src: 'https://x/d.jpg', filename: 'IMG_4548.jpeg' }),
     ];

@@ -24,7 +24,12 @@ export function slimThreadsForPersist(
     ...t,
     messages: (t.messages || []).map((m) => {
       const { transcript: _transcript, ...rest } = m;
-      return rest;
+      const content = String(rest.content || '');
+      // Cap edge cache size — huge assistant dumps can blow quota and white-screen rehydrate.
+      return {
+        ...rest,
+        content: content.length > 48_000 ? `${content.slice(0, 48_000)}\n…` : content,
+      };
     }),
   }));
 }

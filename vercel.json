@@ -2532,7 +2532,7 @@
     },
     "api/doodles.js": {
       "maxDuration": 300,
-      "includeFiles": "{lib/**}"
+      "includeFiles": "{lib/**,data/doodles-shell-map.json}"
     },
     "api/catalog-track.js": {
       "maxDuration": 60

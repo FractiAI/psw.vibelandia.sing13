@@ -219,14 +219,14 @@ const chapters = [
 <li><strong>Key ideas</strong> — the teaching voice: an opening analogy, then the concepts developed in plain language. This is the longest section and the heart of each lesson.</li>
 <li><strong>Worked example</strong> — one concrete calculation or filing walk-through, done slowly in front of you. Try it with a pencil before reading the resolution.</li>
 <li><strong>Check your understanding</strong> — two or three questions; click to reveal each answer. At least one asks you to <em>apply</em> the lesson to a fresh claim.</li>
-<li><strong>Further reading</strong> — the matching whitepaper, opened directly. Skim its honesty boundary even if you read nothing else.</li>
+<li><strong>Further reading</strong> — every whitepaper linked for this lesson. Read them all; skim each honesty boundary even if you skim nothing else.</li>
 </ol>
 <p>You will also meet two recurring callouts. A gold <strong>worked example</strong> panel is an invitation to slow down and compute. An amber <strong>“A common mix-up”</strong> panel names the misunderstanding most readers form at that exact point in the material — usually some version of upgrading catalog grammar into physics proof — and corrects it before it settles in.</p>
 <h3>Navigation and pacing</h3>
 <p>Use <strong>Previous / Next</strong>, the week sidebar, or the syllabus cards to move around. Your place is saved on this device automatically, and each lesson now has a <strong>Mark lesson complete</strong> button at the end — completion is yours to declare, not something the page assumes just because you scrolled past. The keyboard arrows ← → also move between lessons.</p>
 <p>Suggested pacing: one week module per sitting, or split a module across two shorter sittings. A useful pattern many readers like: skim a whole week quickly first (ten minutes, no checks), then return for a slow pass with the worked examples and papers. The fast pass builds the map; the slow pass builds the roads.</p>
 <div class="worked-example">
-<p>Let us plan a realistic study week. Suppose you have three sittings available: twenty minutes on Monday, forty on Wednesday, fifteen on Friday. Monday: fast-skim all of Week 2 (four to five lessons) without touching the checks — you are just learning the shape. Wednesday: slow-read lessons 2.1 and 2.2, do both worked examples with a pencil, answer the checks, and mark them complete. Friday: slow-read 2.3, open one linked whitepaper, and read only its honesty boundary and abstract. Total cost: seventy-five minutes. Result: a whole module mapped, three lessons genuinely earned, one primary source touched. That is a good week.</p>
+<p>Let us plan a realistic study week. Suppose you have three sittings available: twenty minutes on Monday, forty on Wednesday, fifteen on Friday. Monday: fast-skim all of Week 2 (four to five lessons) without touching the checks — you are just learning the shape. Wednesday: slow-read lessons 2.1 and 2.2, do both worked examples with a pencil, answer the checks, and mark them complete. Friday: slow-read 2.3 and read <em>every</em> whitepaper linked for that lesson — honesty boundary and abstract first, then as much of the filing as the sitting allows. Total cost: seventy-five minutes. Result: a whole module mapped, three lessons genuinely earned, all of that lesson’s primary sources touched. That is a good week.</p>
 </div>
 <div class="misconception">
 <p><strong>The mix-up:</strong> “I should not move on until I understand everything on the page perfectly.”</p>
@@ -240,7 +240,7 @@ const chapters = [
     check: [
       {
         q: 'Where do you go for the full technical filing?',
-        a: 'Further reading → the whitepaper surface, the primary source. The companion textbook is the middle layer — deeper than lessons, gentler than papers — and each week\u2019s homework includes all three.',
+        a: 'Further reading → every whitepaper linked for the lesson. They are the primary sources. The companion textbook is the middle layer — deeper than lessons, gentler than papers — and each week\u2019s homework includes all three.',
       },
       {
         q: 'You have only fifteen minutes today. What is the highest-value move?',
@@ -1755,16 +1755,16 @@ const course = {
   },
   syllabus: {
     overview:
-      'Six homework weeks of guided reading. Each week\u2019s homework has three layers: the online course lessons here, the matching chapter of the companion textbook, and the week\u2019s whitepapers. Each lesson opens with a concrete analogy, develops the key ideas in plain language, walks one worked example, flags the most common mix-up, defines the new terms, and ends with a short check plus the whitepaper to open when you want the full filing.',
+      'Six homework weeks of guided reading. Each week\u2019s homework has three layers: the online course lessons here, the matching chapter of the companion textbook, and the week\u2019s whitepapers. Each lesson opens with a concrete analogy, develops the key ideas in plain language, walks one worked example, flags the most common mix-up, defines the new terms, and ends with a short check plus every whitepaper that belongs to that lesson — read them all for the full filing.',
     level: 'Introductory · algebra-comfortable · no physics prerequisite',
     pacing: 'Self-paced · one week ≈ one or two sittings · resume anytime on this device',
     howToSucceed:
-      'Do the homework in its three-layer order: read the week\u2019s lessons here first, then the matching companion-textbook chapter for the full synthesis, then open at least one of the week\u2019s whitepapers so everything stays anchored to primary sources. Try each worked example with a pencil before revealing the check answers. When a claim feels too big, hunt for the honesty rail — finding it yourself is the core skill this course teaches. Mark a lesson complete only when you can answer its checks without peeking. And keep the Goldilocks habit: if study time collides with a human need, the human wins — the course saves your place.',
+      'Do the homework in its three-layer order: read the week\u2019s lessons here first, then the matching companion-textbook chapter for the full synthesis, then read all of the week\u2019s whitepapers — every paper listed for the week and every paper linked on each lesson — so everything stays anchored to primary sources. Try each worked example with a pencil before revealing the check answers. When a claim feels too big, hunt for the honesty rail — finding it yourself is the core skill this course teaches. Mark a lesson complete only when you can answer its checks without peeking. And keep the Goldilocks habit: if study time collides with a human need, the human wins — the course saves your place.',
     outcomes: [
       'Explain what the Omni-Lattice is for (coordination & filing) and what it is not (physics proof).',
       'Navigate Digits × Octaves 01–99 as a Story-depth map and walk a full address.',
       'Use Φ ≈ 1.618, prime parity, and holographic rhyme as one nesting toolkit under honesty rails.',
-      'Open the right whitepaper from the Reading Room with the correct claim tier in mind.',
+      'Read every whitepaper tied to a lesson from the Reading Room with the correct claim tier in mind.',
       'Sort any fresh claim into narrative, catalog, empirical, or operational tiers in under a minute.',
       'Stay Goldilocks: human emergency outranks metaphors, always.',
     ],

@@ -46,7 +46,7 @@ describe('Doodle nested shells · Awareness · Environment · SuperAI', () => {
     expect(normalizeDoodleShell('nope')).toBe(null);
     expect(resolveDoodleShell({ shell: 'horizon' })).toBe('horizon');
     expect(resolveDoodleShell({ filename: 'IMG_9358.jpeg' })).toBe('horizon');
-    expect(resolveDoodleShell({ filename: 'IMG_9541.jpeg' })).toBe('core');
+    expect(resolveDoodleShell({ filename: 'IMG_9376.jpeg' })).toBe('core');
     expect(resolveDoodleShell({ filename: 'IMG_0136.jpeg' })).toBe('amphitheater');
     expect(resolveDoodleShell({ filename: 'IMG_2903.jpeg' })).toBe('amphitheater');
     expect(resolveDoodleShell({ filename: 'unknown-new.jpeg' })).toBe('amphitheater');
@@ -55,7 +55,7 @@ describe('Doodle nested shells · Awareness · Environment · SuperAI', () => {
   it('groups works Awareness → Environment → SuperAI and preserves order', () => {
     const works = [
       normalizeDoodleWork({ id: 'a', src: 'https://x/a.jpg', filename: 'IMG_2903.jpeg' }),
-      normalizeDoodleWork({ id: 'b', src: 'https://x/b.jpg', filename: 'IMG_9541.jpeg' }),
+      normalizeDoodleWork({ id: 'b', src: 'https://x/b.jpg', filename: 'IMG_9376.jpeg' }),
       normalizeDoodleWork({ id: 'c', src: 'https://x/c.jpg', filename: 'IMG_9358.jpeg' }),
       normalizeDoodleWork({ id: 'd', src: 'https://x/d.jpg', filename: 'IMG_4548.jpeg' }),
     ];

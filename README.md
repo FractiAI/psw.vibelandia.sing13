@@ -275,7 +275,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-13** · **299** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-13** · **302** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -315,6 +315,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-holographic-singularity-crystal-2026-09.html`](/interfaces/blog-holographic-singularity-crystal-2026-09.html) | Holographic Singularity Crystal · Net Zero · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-human-reality-bridge-2026-08.html`](/interfaces/blog-human-reality-bridge-2026-08.html) | Humans as reality bridges — routers and awareness wormholes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html`](/interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html) | AI catalog layer · Between agents and data · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-infinite-octave-egs-catalog-2026-09.html`](/interfaces/blog-infinite-octave-egs-catalog-2026-09.html) | Infinite Octave EGS Catalog — beyond the brute-force treadmill · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-prime-parity-2026-09.html`](/interfaces/blog-infinite-octave-prime-parity-2026-09.html) | Infinite Octave Prime-Parity · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octaves-omniversal-2026-08.html`](/interfaces/blog-infinite-octaves-omniversal-2026-08.html) | Your valet just got Infinite Octaves · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-invisible-frontier-gates-ai-2026-08.html`](/interfaces/blog-invisible-frontier-gates-ai-2026-08.html) | The Invisible Frontier — responding to Bill Gates’s AI warnings · Ship blog · SS Vibelandia |
@@ -453,6 +454,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
+| [`/interfaces/infinite-octave-egs-catalog-briefing-portals.html`](/interfaces/infinite-octave-egs-catalog-briefing-portals.html) | Decision Portals · Infinite Octave EGS Catalog · SS Vibelandia |
+| [`/interfaces/infinite-octave-egs-catalog-brochure.html`](/interfaces/infinite-octave-egs-catalog-brochure.html) | Infinite Octave EGS Catalog · Product Brochure · SS Vibelandia |
 | [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Reality Bridge/Routers · SS Vibelandia |
 | [`/interfaces/journeys.html`](/interfaces/journeys.html) | Journeys · Adventures aboard SS Vibelandia |
 | [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Next layer in the stack · Product brochure · FractiAI |

@@ -1309,6 +1309,38 @@
       "destination": "/interfaces/pacing-paradox-briefing-portals.html"
     },
     {
+      "source": "/ship-blog/infinite-octave-egs-catalog",
+      "destination": "/interfaces/blog-infinite-octave-egs-catalog-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/infinite-octave-egs-catalog/",
+      "destination": "/interfaces/blog-infinite-octave-egs-catalog-2026-09.html"
+    },
+    {
+      "source": "/infinite-octave-egs-catalog",
+      "destination": "/interfaces/infinite-octave-egs-catalog-brochure.html"
+    },
+    {
+      "source": "/infinite-octave-egs-catalog/",
+      "destination": "/interfaces/infinite-octave-egs-catalog-brochure.html"
+    },
+    {
+      "source": "/infinite-octave-egs-catalog/briefing",
+      "destination": "/interfaces/infinite-octave-egs-catalog-briefing-portals.html"
+    },
+    {
+      "source": "/infinite-octave-egs-catalog/briefing/",
+      "destination": "/interfaces/infinite-octave-egs-catalog-briefing-portals.html"
+    },
+    {
+      "source": "/executive/infinite-octave-egs-catalog",
+      "destination": "/interfaces/infinite-octave-egs-catalog-briefing-portals.html"
+    },
+    {
+      "source": "/executive/infinite-octave-egs-catalog/",
+      "destination": "/interfaces/infinite-octave-egs-catalog-briefing-portals.html"
+    },
+    {
       "source": "/ship-blog/invisible-frontier",
       "destination": "/interfaces/blog-invisible-frontier-gates-ai-2026-08.html"
     },

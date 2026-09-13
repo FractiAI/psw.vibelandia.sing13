@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "e4d0898b0a5fecb4",
+  "auditId": "dc3ded7af14cccaa",
   "paperId": "synthobs-infinite-octave-ai-catalog-layer-2026-09",
   "sourcePath": "docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-11T16:14:40.216Z"
+          "invokedAt": "2026-09-13T09:26:01.354Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-11T16:14:40.215Z",
-  "completedAt": "2026-09-11T16:14:40.217Z",
+  "startedAt": "2026-09-13T09:26:01.353Z",
+  "completedAt": "2026-09-13T09:26:01.354Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,11 +125,11 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1369,
+      "wordCount": 1560,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 12,
+        "links": 17,
         "numbered": 6,
         "citeLines": 2
       }

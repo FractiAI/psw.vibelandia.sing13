@@ -3,7 +3,10 @@ import { describe, expect, it } from 'vitest';
 import {
   LATTICE_CATALOG_LAYER,
   LATTICE_CATALOG_LAYER_CONTENT,
+  CATALOG_LAYER_INNOVATIONS,
+  CATALOG_LAYER_INNOVATIONS_HONESTY,
   renderLatticeCatalogLayerBandHtml,
+  renderCatalogLayerInnovationsHtml,
 } from '../../lib/lattice-catalog-layer.mjs';
 import { CATALOG_CATEGORIES } from '../../lib/whitepaper-catalog.mjs';
 import { SITE_QUICKLINK_SECONDARY, SITE_PRIMER_LINE } from '../../lib/site-focus.mjs';
@@ -68,6 +71,49 @@ describe('AI catalog layer · Infinite Octaves Omniversal Lattice Chat', () => {
   it('keeps lattice landing stack section as the home for #ai-catalog-layer-intro', () => {
     const lattice = read('interfaces/lattice-v1618.html');
     expect(lattice).toContain('id="ai-catalog-layer-intro"');
-    expect(lattice).toContain('Where this layer sits');
+    expect(lattice).toMatch(/Where this layer sits|Where this layer sits/i);
+  });
+
+  it('defines four catalog-layer innovations with unique deliverables', () => {
+    expect(CATALOG_LAYER_INNOVATIONS).toHaveLength(4);
+    const ids = CATALOG_LAYER_INNOVATIONS.map((i) => i.id);
+    expect(ids).toEqual([
+      'volumetric-interference',
+      'golden-ratio-cataloging',
+      'prime-container-storage',
+      'holographic-rhyme-wiring',
+    ]);
+    for (const inn of CATALOG_LAYER_INNOVATIONS) {
+      expect(inn.delivers, inn.id).toBeTruthy();
+      expect(inn.withoutIt, inn.id).toMatch(/without/i);
+      expect(inn.href, inn.id).toMatch(/^\//);
+    }
+    expect(CATALOG_LAYER_INNOVATIONS_HONESTY).toMatch(/Soft Story|catalog/i);
+    const block = renderCatalogLayerInnovationsHtml();
+    expect(block).toContain('id="catalog-layer-innovations"');
+    expect(block).toContain('Cannot achieve without it');
+    expect(block).toContain('/ship-blog/prime-indexed-volumetric-storage');
+    expect(block).toContain('/ship-blog/holographic-rhyme');
+  });
+
+  it('features the four innovations on catalog-layer guest surfaces', () => {
+    for (const rel of [
+      'interfaces/lattice-v1618.html',
+      'interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html',
+      'interfaces/infinite-octave-egs-catalog-brochure.html',
+      'interfaces/infinite-octave-egs-catalog-briefing-portals.html',
+      'interfaces/blog-infinite-octave-egs-catalog-2026-09.html',
+      'interfaces/prime-vault-demos.html',
+      'interfaces/lattice-brochure.html',
+      'interfaces/lattice-learn-more.html',
+    ]) {
+      const html = read(rel);
+      expect(html, `${rel} innovations block`).toContain('id="catalog-layer-innovations"');
+      expect(html, `${rel} volumetric`).toContain('volumetric-interference');
+      expect(html, `${rel} golden ratio`).toContain('golden-ratio-cataloging');
+      expect(html, `${rel} prime container`).toContain('prime-container-storage');
+      expect(html, `${rel} holographic rhyme`).toContain('holographic-rhyme-wiring');
+      expect(html, `${rel} without-it claim`).toContain('Cannot achieve without it');
+    }
   });
 });

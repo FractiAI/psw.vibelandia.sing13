@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "7751395d9d878b64",
+  "auditId": "e447e2227fe7dc52",
   "paperId": "synthobs-infinite-octave-egs-catalog-frontier-2026-09",
   "sourcePath": "docs/SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-13T06:27:17.243Z"
+          "invokedAt": "2026-09-13T09:26:01.480Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-13T06:27:17.242Z",
-  "completedAt": "2026-09-13T06:27:17.243Z",
+  "startedAt": "2026-09-13T09:26:01.479Z",
+  "completedAt": "2026-09-13T09:26:01.481Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1149,
+      "wordCount": 1228,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

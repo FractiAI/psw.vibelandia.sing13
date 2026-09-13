@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-13T01:45:17.374Z",
+  "updatedAt": "2026-09-13T09:26:01.485Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-infinite-octave-egs-catalog-frontier-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-13T09:26:01.484Z",
+      "body": "Infinite Octave EGS Catalog: Architecting the Frontier Beyond Brute-Force Chaos",
+      "presenceHue": "gold",
+      "paperId": "synthobs-infinite-octave-egs-catalog-frontier-2026-09",
+      "artifact": {
+        "title": "Infinite Octave EGS Catalog: Architecting the Frontier Beyond Brute-Force Chaos",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md",
+        "url": "/whitepaper/infinite-octave-egs-catalog",
+        "paperId": "synthobs-infinite-octave-egs-catalog-frontier-2026-09",
+        "docId": "WP-SYNTHOBS-INFINITE-OCTAVE-EGS-CATALOG-FRONTIER-2026-09-13",
+        "published": "2026-09-13",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-infinite-octave-ai-catalog-layer-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-13T09:26:01.356Z",
+      "body": "The Infinite Octave Omniversal Lattice: A New Catalog Layer for the AI Stack and Resonant Data Management (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-infinite-octave-ai-catalog-layer-2026-09",
+      "artifact": {
+        "title": "The Infinite Octave Omniversal Lattice: A New Catalog Layer for the AI Stack and Resonant Data Management (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md",
+        "url": "/whitepaper/infinite-octave-ai-catalog-layer",
+        "paperId": "synthobs-infinite-octave-ai-catalog-layer-2026-09",
+        "docId": "WP-SYNTHOBS-INFINITE-OCTAVE-AI-CATALOG-LAYER-2026-09-11",
+        "published": "2026-09-11T19:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-pacing-paradox-amodei-frontier-2026-09",
       "type": "ArtifactEvent",

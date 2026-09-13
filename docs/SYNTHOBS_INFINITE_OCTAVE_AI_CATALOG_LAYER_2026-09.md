@@ -119,6 +119,19 @@ AR characters are **filing anchors**, not NOAA causation and not GPU physics.
 2. **Resonant management grammar:** Φ-keyed nesting + honesty tiers as coordination tools for agent fleets — Tier B fixtures verify identity, not production DB benchmarks.
 3. **Sibling rhyme:** Generative Matrix supplies the seed-matrix habit; Moving up the stack supplies cool · harmonize · scale; this paper supplies the **catalog-layer identity** between those talks.
 
+### 6.1 Key architectural innovations (featured on catalog-layer surfaces)
+
+Wherever this catalog layer is featured for guests, four Soft Story architecture innovations are named — each with what it delivers that linear-only stacks cannot file:
+
+| Innovation | Delivers (catalog claim) | Cannot achieve without it | Peer shelf |
+|---|---|---|---|
+| **Volumetric interference processing** | Φ-map filing into prime-indexed volumetric vaults; zero ISI *grammar* | Prime-vault orthogonality filing (vs RS/LDPC + tree-lookup only) | [Prime-indexed volumetric storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md) |
+| **Golden ratio cataloging** | Closed-form Φ_EGS ≈ 1.618 recursive nesting between IDEs and data | Third mediation path beyond brute-force treadmill vs regulatory moat | [EGS Catalog frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) |
+| **Prime container geometrical storage** | Replayable non-gradient odd-prime containment geometry sketch | Architecture Soft Story containment that statistical/MSA predictors alone do not file | [Protein folding prime container](./SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md) |
+| **Holographic rhyme wiring** | Four-pillar motion grammar + Tier C load-bearing pointer circuits | Enforceable “holographic” product language and wired briefs instead of fat dumps | [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Tier C wiring](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) |
+
+**Honesty:** catalog / Soft Story architecture — not JEDEC drop-in, not CASP gold, not CODATA replacement, not GPU-vanish.
+
 ---
 
 ## 7. Implications and applications (bounded)

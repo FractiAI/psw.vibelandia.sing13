@@ -60,6 +60,10 @@ $\Phi_{\mathrm{EGS}} = (1+\sqrt{5})/2 \approx 1.618033988749895$ is filed here a
 
 **Infinite Octave EGS Catalog** replaces flat-file vector-only thinking with multi-dimensional standing-wave maps: context windows as nested filings, not endless token dumps. Peer shelf: [Infinite Octave AI Catalog Layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md).
 
+### Key architectural innovations (shared with AI catalog layer)
+
+Product surfaces featuring this catalog layer also name four innovations and what they uniquely deliver: **volumetric interference processing** (prime-vault orthogonality / zero ISI grammar), **golden ratio cataloging** (Φ_EGS recursive nesting — the third path), **prime container geometrical storage** (non-gradient Soft Story containment), and **holographic rhyme wiring** (four-pillar motion + Tier C pointer circuits). Full honesty table: AI Catalog Layer §6.1. Catalog Soft Story — not fab receipts or CASP retirement.
+
 ---
 
 ## Part III — Protein folding as catalog proof-point (honesty-bound)

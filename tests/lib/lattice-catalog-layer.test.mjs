@@ -76,7 +76,7 @@ describe('AI catalog layer · Infinite Octaves Omniversal Lattice Chat', () => {
     const home = read('interfaces/vibelandia-questfest.html');
     expect(home).toContain('Your cruise line · five doors');
     expect(home).toMatch(/catalog layer/i);
-    expect(home).toContain('/ship-blog/infinite-octave-ai-catalog-layer');
+    expect(home).toContain('/lattice#ai-catalog-layer-intro');
   });
 
   it('keeps lattice landing stack section as the home for #ai-catalog-layer-intro', () => {

@@ -121,6 +121,12 @@ function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+export {
+  softenLatticeGuestError,
+  isSoftRecoverableLatticeError,
+} from '@/lib/guestErrors';
+
+
 function isHardLatticeFailure(data: LatticeResponse, status: number): boolean {
   if ([401, 403, 422, 504].includes(status)) return true;
   if (

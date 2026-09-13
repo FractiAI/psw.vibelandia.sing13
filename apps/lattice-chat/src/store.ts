@@ -27,6 +27,7 @@ import {
 } from '@/repositories';
 import { COLLAB_SHARED_AGENT_THREAD_ID } from '@/feed/collabSharedThread';
 import { slimThreadsForPersist } from '@/threadHistory';
+import { softenLatticeGuestError } from '@/lib/guestErrors';
 
 const STORAGE_KEY = 'lattice-v1618-edge';
 
@@ -409,7 +410,7 @@ export const useLatticeStore = create<LatticeState>()(
       clearLiveTranscript: () => set({ liveTranscript: [] }),
       setRemoteCollabLive: (live) => set({ remoteCollabLive: live }),
       clearRemoteCollabLive: () => set({ remoteCollabLive: null }),
-      setError: (msg) => set({ error: msg }),
+      setError: (msg) => set({ error: msg ? softenLatticeGuestError(msg) : null }),
       setAgentId: (threadId, agentId) => {
         set((s) => ({
           threads: s.threads.map((t) =>

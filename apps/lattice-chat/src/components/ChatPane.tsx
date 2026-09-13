@@ -17,6 +17,7 @@ import {
   threadAwaitingAssistant,
   verifyLatticeAccess,
 } from '@/api';
+import { isSoftRecoverableLatticeError } from '@/lib/guestErrors';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { MarkdownBody } from '@/components/MarkdownBody';
@@ -278,17 +279,34 @@ export function ChatPane({
       : statusHint;
 
   useEffect(() => {
-    function onVis() {
-      if (document.visibilityState !== 'visible') return;
+    let hiddenAt = 0;
+    function resumeAfterReturn() {
       const s = useLatticeStore.getState();
       if (!threadAwaitingAssistant(s.activeThreadId)) return;
-      // Do not pile recover on a live primary SSE (sending) — that causes attach thrash.
-      if (s.sending && s.sendPhase === 'sending') return;
       if (!s.sending && s.sendPhase === 'idle' && !s.pending) return;
+      const awayMs = hiddenAt ? Date.now() - hiddenAt : 0;
+      // Brief blips: keep primary SSE. After a real leave, SSE is usually dead while
+      // phase is still "sending" — recover instead of waiting on a zombie stream.
+      if (s.sending && s.sendPhase === 'sending' && awayMs < 2500) return;
       void checkPendingLatticeReply();
     }
+    function onVis() {
+      if (document.visibilityState === 'hidden') {
+        hiddenAt = Date.now();
+        return;
+      }
+      if (document.visibilityState !== 'visible') return;
+      resumeAfterReturn();
+    }
+    function onPageShow(ev: PageTransitionEvent) {
+      if (ev.persisted) resumeAfterReturn();
+    }
     document.addEventListener('visibilitychange', onVis);
-    return () => document.removeEventListener('visibilitychange', onVis);
+    window.addEventListener('pageshow', onPageShow);
+    return () => {
+      document.removeEventListener('visibilitychange', onVis);
+      window.removeEventListener('pageshow', onPageShow);
+    };
   }, []);
 
   async function onSubmit(e: FormEvent) {
@@ -769,7 +787,7 @@ export function ChatPane({
               </button>
             </>
           ) : null}
-          {lastIsUser ? (
+          {lastIsUser || isSoftRecoverableLatticeError(error) ? (
             <>
               {' '}
               <button type="button" className="error-check-btn" onClick={() => void onCheckReply()}>
@@ -777,7 +795,7 @@ export function ChatPane({
               </button>
             </>
           ) : null}
-          {signedIn ? (
+          {signedIn && !isSoftRecoverableLatticeError(error) ? (
             <>
               {' '}
               <button

@@ -1285,6 +1285,30 @@
       "destination": "/interfaces/blog-pacing-paradox-2026-09.html"
     },
     {
+      "source": "/pacing-paradox",
+      "destination": "/interfaces/pacing-paradox-brochure.html"
+    },
+    {
+      "source": "/pacing-paradox/",
+      "destination": "/interfaces/pacing-paradox-brochure.html"
+    },
+    {
+      "source": "/pacing-paradox/briefing",
+      "destination": "/interfaces/pacing-paradox-briefing-portals.html"
+    },
+    {
+      "source": "/pacing-paradox/briefing/",
+      "destination": "/interfaces/pacing-paradox-briefing-portals.html"
+    },
+    {
+      "source": "/executive/pacing-paradox",
+      "destination": "/interfaces/pacing-paradox-briefing-portals.html"
+    },
+    {
+      "source": "/executive/pacing-paradox/",
+      "destination": "/interfaces/pacing-paradox-briefing-portals.html"
+    },
+    {
       "source": "/ship-blog/invisible-frontier",
       "destination": "/interfaces/blog-invisible-frontier-gates-ai-2026-08.html"
     },

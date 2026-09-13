@@ -275,7 +275,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-13** · **297** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-13** · **299** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -474,6 +474,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/omni-lattice-course.html`](/interfaces/omni-lattice-course.html) | Infinite Octaves Omni-Lattice · Online Course · SS Vibelandia |
 | [`/interfaces/omni-lattice-textbook.html`](/interfaces/omni-lattice-textbook.html) | Infinite Octaves Omni-Lattice · Companion Textbook · SS Vibelandia |
 | [`/interfaces/omniverse-canvas.html`](/interfaces/omniverse-canvas.html) | Holographic Goldilocks SuperAI Basecamp · Valet Pru |
+| [`/interfaces/pacing-paradox-briefing-portals.html`](/interfaces/pacing-paradox-briefing-portals.html) | Pacing Paradox · Executive Briefing Portals · SS Vibelandia |
+| [`/interfaces/pacing-paradox-brochure.html`](/interfaces/pacing-paradox-brochure.html) | The Pacing Paradox · Product Brochure · SS Vibelandia |
 | [`/interfaces/plain-machote-moderno-reno-swamp.html`](/interfaces/plain-machote-moderno-reno-swamp.html) | About · Sonic Singularity · SS Vibelandia |
 | [`/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html`](/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html) | The Omniversal 1-2-3 Wormhole Campaign · SS Vibelandia QUESTFEST |
 | [`/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html`](/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) | FOR IMMEDIATE RELEASE — Holographic review of Anthropic’s Mythos · Clock-skew disclosure |

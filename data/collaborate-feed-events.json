@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-11T20:00:47.912Z",
+  "updatedAt": "2026-09-13T01:45:17.374Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-pacing-paradox-amodei-frontier-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-13T01:45:17.371Z",
+      "body": "The Pacing Paradox: Examining Dario Amodei’s \"We Must Pace the Frontier\"",
+      "presenceHue": "gold",
+      "paperId": "synthobs-pacing-paradox-amodei-frontier-2026-09",
+      "artifact": {
+        "title": "The Pacing Paradox: Examining Dario Amodei’s \"We Must Pace the Frontier\"",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md",
+        "url": "/whitepaper/pacing-paradox",
+        "paperId": "synthobs-pacing-paradox-amodei-frontier-2026-09",
+        "docId": "WP-SYNTHOBS-PACING-PARADOX-AMODEI-FRONTIER-2026-09-13",
+        "published": "2026-09-13",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-fractiskills-portable-agent-skills-2026-09",
       "type": "ArtifactEvent",

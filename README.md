@@ -275,7 +275,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-13** · **296** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-13** · **297** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -337,6 +337,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Syntheverse Omniversal Node Alignment Mapping · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-time-crystal-engine-2026-09.html`](/interfaces/blog-omniversal-time-crystal-engine-2026-09.html) | Omniversal Time-Crystal Engine · DNA Soft Story clocks · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html`](/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html) | Run the pipeline or withhold the claim · Open empirical science · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-pacing-paradox-2026-09.html`](/interfaces/blog-pacing-paradox-2026-09.html) | The Pacing Paradox — examining Amodei’s “pace the frontier” · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | One brief for Production, Field, Compliance, Export · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth letting go — a story filed at the planet’s core · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · SS Vibelandia |

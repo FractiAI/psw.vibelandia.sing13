@@ -365,9 +365,6 @@ grid-template-columns: 1fr;
 @media (min-width: 720px) {
 .cat-innov__grid { grid-template-columns: 1fr 1fr; }
 }
-@media (min-width: 1100px) {
-.cat-innov__grid { grid-template-columns: repeat(3, 1fr); }
-}
 .cat-innov__card {
 margin: 0;
 padding: 0.9rem 1rem 1rem;
@@ -403,6 +400,9 @@ margin: 0.35rem 0 0;
 font-size: 0.72rem;
 line-height: 1.35;
 color: rgba(244, 239, 227, 0.55);
+}
+@media (min-width: 1100px) {
+.cat-innov__grid { grid-template-columns: repeat(3, 1fr); }
 }
 .cat-innov__security {
 margin: 1.15rem 0 0;

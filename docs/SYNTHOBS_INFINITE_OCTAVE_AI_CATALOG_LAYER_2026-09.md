@@ -121,16 +121,18 @@ AR characters are **filing anchors**, not NOAA causation and not GPU physics.
 
 ### 6.1 Key architectural innovations (featured on catalog-layer surfaces)
 
-Wherever this catalog layer is featured for guests, four Soft Story architecture innovations are named — each with what it delivers that linear-only stacks cannot file:
+Wherever this catalog layer is featured for guests, five Soft Story architecture innovations are named in CEO plain speak — each with what it delivers that linear-only stacks cannot file. Security is woven as fabric, not a sixth card:
 
 | Innovation | Delivers (catalog claim) | Cannot achieve without it | Peer shelf |
 |---|---|---|---|
-| **Volumetric interference processing** | Φ-map filing into prime-indexed volumetric vaults; zero ISI *grammar* | Prime-vault orthogonality filing (vs RS/LDPC + tree-lookup only) | [Prime-indexed volumetric storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md) |
-| **Golden ratio cataloging** | Closed-form Φ_EGS ≈ 1.618 recursive nesting between IDEs and data | Third mediation path beyond brute-force treadmill vs regulatory moat | [EGS Catalog frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) |
-| **Prime container geometrical storage** | Replayable non-gradient odd-prime containment geometry sketch | Architecture Soft Story containment that statistical/MSA predictors alone do not file | [Protein folding prime container](./SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md) |
-| **Holographic rhyme wiring** | Four-pillar motion grammar + Tier C load-bearing pointer circuits | Enforceable “holographic” product language and wired briefs instead of fat dumps | [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Tier C wiring](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) |
+| **Volumetric interference processing** | Separated knowledge vaults so deep context does not collide — cleaner recall, less prompt noise | Stay on bloated vector lookup and parity taxes; deep context keeps colliding | [Prime-indexed volumetric storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md) |
+| **Golden-ratio cataloging** | Nest order with Φ_EGS ≈ 1.618 so context compresses into structure instead of sprawl | Remain stuck between brute-force treadmill and regulatory moat — no third mediation path | [EGS Catalog frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) |
+| **Prime-container storage** | Odd-prime geometry so hard problems resolve as containment, not endless search | Only statistical predictors and longer GPU runs; no closed-form containment sketch | [Protein folding prime container](./SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md) |
+| **Holographic rhyme wiring** | Repeating, self-correcting briefs across shelves — teams stop re-pasting fat dumps | “Holographic” stays a slogan; agents keep pasting archives into every prompt | [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Tier C wiring](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) |
+| **Goldilocks · Net Zero** | Spend, heat, and chaos in the “just right” band — cool the burn without freezing the roadmap | Swing between thermal/financial runaway and bureaucratic stall — no invariant calm | [Holographic singularity crystal](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Zero-octave Y Goldilocks](./SYNTHOBS_ZERO_OCTAVE_Y_GOLDILOCKS_FIBONACCI_PRIME_VAULTS_EGS_2026-09.md) |
+| **Security fabric · 24×365** *(woven, not a sixth card)* | Keys stay local; raw corpora stay out of prompts; least-privilege routing at rest, in transit, in context, in tools, and in oversight | Fat context into every model call; security bolted on as filters; noise and exposure scale with every agent | Product surfaces · executive sandbox |
 
-**Honesty:** catalog / Soft Story architecture — not JEDEC drop-in, not CASP gold, not CODATA replacement, not GPU-vanish.
+**Honesty:** catalog / Soft Story architecture — not JEDEC drop-in, not CASP gold, not CODATA replacement, not GPU-vanish, not a penetration-test certificate. Human emergency still outranks algorithms.
 
 ---
 

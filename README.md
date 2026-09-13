@@ -454,7 +454,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
-| [`/interfaces/infinite-octave-egs-catalog-briefing-portals.html`](/interfaces/infinite-octave-egs-catalog-briefing-portals.html) | Decision Portals · Infinite Octave EGS Catalog · SS Vibelandia |
+| [`/interfaces/infinite-octave-egs-catalog-briefing-portals.html`](/interfaces/infinite-octave-egs-catalog-briefing-portals.html) | Executive Sandbox · Infinite Octave EGS Catalog · SS Vibelandia |
 | [`/interfaces/infinite-octave-egs-catalog-brochure.html`](/interfaces/infinite-octave-egs-catalog-brochure.html) | Infinite Octave EGS Catalog · Product Brochure · SS Vibelandia |
 | [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Reality Bridge/Routers · SS Vibelandia |
 | [`/interfaces/journeys.html`](/interfaces/journeys.html) | Journeys · Adventures aboard SS Vibelandia |

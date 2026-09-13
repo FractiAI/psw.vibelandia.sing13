@@ -62,7 +62,7 @@ $\Phi_{\mathrm{EGS}} = (1+\sqrt{5})/2 \approx 1.618033988749895$ is filed here a
 
 ### Key architectural innovations (shared with AI catalog layer)
 
-Product surfaces featuring this catalog layer also name four innovations and what they uniquely deliver: **volumetric interference processing** (prime-vault orthogonality / zero ISI grammar), **golden ratio cataloging** (Φ_EGS recursive nesting — the third path), **prime container geometrical storage** (non-gradient Soft Story containment), and **holographic rhyme wiring** (four-pillar motion + Tier C pointer circuits). Full honesty table: AI Catalog Layer §6.1. Catalog Soft Story — not fab receipts or CASP retirement.
+Product surfaces featuring this catalog layer name five innovations and what they uniquely deliver in CEO plain speak: **volumetric interference processing** (separated knowledge vaults · deep context without collision), **golden-ratio cataloging** (Φ_EGS ≈ 1.618 nest order instead of sprawl), **prime-container storage** (odd-prime geometry · structure over endless search), **holographic rhyme wiring** (repeating · self-correcting briefs across shelves), and **Goldilocks · Net Zero** (just right · cool the burn without freezing innovation). **Security fabric · 24×365** is woven at the catalog boundary — keys stay local, raw corpora stay out of prompts — not sold as a bolt-on. Full honesty table: AI Catalog Layer §6.1. Catalog Soft Story — not fab receipts, CASP retirement, or a penetration-test certificate.
 
 ---
 

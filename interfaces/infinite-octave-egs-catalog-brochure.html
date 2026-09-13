@@ -6,10 +6,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Infinite Octave EGS Catalog · Product Brochure · SS Vibelandia</title>
-  <meta name="description" content="SS Vibelandia product brochure: Infinite Octave EGS Catalog mediation layer keyed by Φ_EGS ≈ 1.618 — catalog architecture beside brute-force and regulatory moats. Honesty-bound; not a physics proof." />
+  <meta name="description" content="CEO product brochure: Infinite Octave EGS Catalog — the third path beyond burn and freeze. A mediation layer between models and enterprise data. Honesty-bound; not a physics proof." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/infinite-octave-egs-catalog" />
   <meta property="og:title" content="Infinite Octave EGS Catalog · SS Vibelandia Product Brochure" />
-  <meta property="og:description" content="Third path for enterprise AI: catalog mediation keyed by Φ_EGS ≈ 1.618. Navy-gold voyage brochure + decision portals." />
+  <meta property="og:description" content="Third path beyond burn and freeze. Navy-gold voyage brochure + executive sandbox for leaders." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/infinite-octave-egs-catalog/hero.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,99 +20,155 @@
   <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
   <style>
     html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }
-    .egs-portal-grid {
+
+    .egs-motion-rise {
+      animation: vb-pub-rise 0.9s ease both;
+    }
+    .egs-motion-fade {
+      animation: vb-pub-rise 1.1s ease 0.12s both;
+    }
+
+    /* Visual stack — three bands (models → catalog → data) */
+    .egs-stack {
+      margin: 1.35rem 0 1.85rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: 0.35rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(6, 10, 18, 0.55);
+      overflow: hidden;
+    }
+    .egs-stack__band {
+      margin: 0;
+      padding: 1rem 1.15rem;
+      display: grid;
+      gap: 0.2rem;
+      transition: background 0.35s ease, border-color 0.35s ease;
+    }
+    .egs-stack__band--top {
+      background: linear-gradient(90deg, rgba(12, 22, 40, 0.95), rgba(16, 28, 48, 0.72));
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    }
+    .egs-stack__band--mid {
+      background:
+        linear-gradient(105deg, rgba(212, 175, 55, 0.18), transparent 55%),
+        rgba(18, 32, 56, 0.95);
+      border-top: 1px solid rgba(212, 175, 55, 0.42);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.42);
+      animation: egs-mid-glow 4.5s ease-in-out infinite alternate;
+    }
+    .egs-stack__band--bot {
+      background: linear-gradient(90deg, rgba(10, 16, 28, 0.98), rgba(14, 24, 42, 0.78));
+    }
+    @keyframes egs-mid-glow {
+      from { box-shadow: inset 0 0 0 rgba(212, 175, 55, 0); }
+      to { box-shadow: inset 0 0 48px -18px rgba(212, 175, 55, 0.35); }
+    }
+    .egs-stack__kicker {
+      margin: 0;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand-gold, #d4af37);
+    }
+    .egs-stack__title {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      font-weight: 600;
+      color: var(--brand-gold-hi, #fef3c7);
+      line-height: 1.2;
+    }
+    .egs-stack__band--mid .egs-stack__title {
+      color: #fff8e7;
+    }
+    .egs-stack__note {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--brand-muted, #a8a29e);
+      line-height: 1.4;
+      max-width: 36rem;
+    }
+
+    /* Transparency · who never learns the math */
+    .egs-who {
+      display: grid;
       gap: 0.85rem;
       margin: 1.25rem 0 1.75rem;
     }
-    .egs-portal {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
+    @media (min-width: 720px) {
+      .egs-who { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .egs-who__col {
+      margin: 0;
+      padding: 1rem 1.05rem 1.15rem;
+      border-left: 3px solid rgba(212, 175, 55, 0.45);
+      background: rgba(12, 22, 40, 0.55);
+    }
+    .egs-who__role {
+      margin: 0 0 0.35rem;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand-gold, #d4af37);
+    }
+    .egs-who__col h3 {
+      margin: 0 0 0.4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--brand-gold-hi, #fef3c7);
+      line-height: 1.2;
+    }
+    .egs-who__col p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--brand-muted, #a8a29e);
+      line-height: 1.45;
+    }
+
+    /* Sandbox teaser */
+    .egs-sandbox {
+      margin: 1.75rem 0;
+      padding: 1.15rem 1.2rem 1.35rem;
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      background:
+        linear-gradient(135deg, rgba(212, 175, 55, 0.08), transparent 55%),
+        rgba(8, 14, 26, 0.9);
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 860px) {
+      .egs-sandbox {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        align-items: center;
+      }
+    }
+    .egs-sandbox h2 { margin-top: 0; }
+    .egs-sandbox__media {
+      overflow: hidden;
       border: 1px solid rgba(212, 175, 55, 0.28);
-      background: rgba(12, 22, 40, 0.72);
-      overflow: hidden;
-      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .egs-portal:hover,
-    .egs-portal:focus-visible {
-      border-color: rgba(254, 243, 199, 0.55);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 36px -18px rgba(212, 175, 55, 0.45);
-      outline: none;
-    }
-    .egs-portal__media {
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
       background: #0a1220;
+      min-height: 10rem;
     }
-    .egs-portal__media img {
+    .egs-sandbox__media img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
       transform: scale(1.02);
       transition: transform 0.55s ease;
+      animation: vb-pub-drift 18s ease-in-out infinite alternate;
     }
-    .egs-portal:hover .egs-portal__media img {
-      transform: scale(1.06);
+    .egs-sandbox:hover .egs-sandbox__media img {
+      transform: scale(1.05);
     }
-    .egs-portal__body {
-      padding: 0.85rem 0.95rem 1.05rem;
-    }
-    .egs-portal__num {
-      margin: 0 0 0.25rem;
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--brand-gold, #d4af37);
-    }
-    .egs-portal__title {
-      margin: 0 0 0.35rem;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--brand-gold-hi, #fef3c7);
-      line-height: 1.2;
-    }
-    .egs-portal__lede {
-      margin: 0;
-      font-size: 0.84rem;
-      color: var(--brand-muted, #a8a29e);
-      line-height: 1.45;
-    }
-    .egs-motion-rise {
-      animation: vb-pub-rise 0.9s ease both;
-    }
-    .egs-exec-band {
-      margin: 1.75rem 0;
-      padding: 1.15rem 1.2rem;
-      border: 1px solid rgba(212, 175, 55, 0.32);
-      background:
-        linear-gradient(135deg, rgba(212, 175, 55, 0.08), transparent 55%),
-        rgba(8, 14, 26, 0.9);
-    }
-    .egs-exec-band h2 {
-      margin-top: 0;
-    }
-    .egs-ascii {
-      margin: 1.25rem 0 1.75rem;
-      padding: 1.1rem 1.15rem;
-      overflow-x: auto;
-      border: 1px solid rgba(212, 175, 55, 0.28);
-      background: rgba(6, 10, 18, 0.92);
-      color: var(--brand-champagne, #f5e6c8);
-      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.72rem;
-      line-height: 1.45;
-      white-space: pre;
-    }
+
+    /* Pricing */
     .egs-tiers {
       display: grid;
       gap: 0.85rem;
-      margin: 1.25rem 0 1.75rem;
+      margin: 1.25rem 0 1rem;
     }
     @media (min-width: 860px) {
       .egs-tiers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -121,6 +177,11 @@
       padding: 1rem 1.05rem 1.15rem;
       border: 1px solid rgba(212, 175, 55, 0.28);
       background: rgba(12, 22, 40, 0.72);
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+    .egs-tier:hover {
+      border-color: rgba(254, 243, 199, 0.45);
+      transform: translateY(-2px);
     }
     .egs-tier__num {
       margin: 0 0 0.35rem;
@@ -148,13 +209,51 @@
       color: var(--brand-muted, #a8a29e);
       line-height: 1.45;
     }
-    .egs-xyz {
+    .egs-pricing-honesty {
+      margin: 0 0 1.75rem;
+      font-size: 0.82rem;
+      color: var(--brand-muted, #a8a29e);
+      line-height: 1.4;
+    }
+
+    /* Access steps */
+    .egs-access {
       display: grid;
       gap: 0.85rem;
       margin: 1.25rem 0 1.75rem;
+      counter-reset: egs-step;
     }
     @media (min-width: 720px) {
-      .egs-xyz { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .egs-access { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .egs-access__step {
+      margin: 0;
+      padding: 1rem 1.05rem 1.15rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(12, 22, 40, 0.72);
+      counter-increment: egs-step;
+    }
+    .egs-access__step::before {
+      content: "Step " counter(egs-step, decimal-leading-zero);
+      display: block;
+      margin: 0 0 0.35rem;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand-gold, #d4af37);
+    }
+    .egs-access__step h3 {
+      margin: 0 0 0.4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--brand-gold-hi, #fef3c7);
+    }
+    .egs-access__step p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--brand-muted, #a8a29e);
+      line-height: 1.45;
     }
   </style>
   <style id="catalog-layer-innovations-style">
@@ -167,6 +266,9 @@ grid-template-columns: 1fr;
 }
 @media (min-width: 720px) {
 .cat-innov__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1100px) {
+.cat-innov__grid { grid-template-columns: repeat(3, 1fr); }
 }
 .cat-innov__card {
 margin: 0;
@@ -204,7 +306,24 @@ font-size: 0.72rem;
 line-height: 1.35;
 color: rgba(244, 239, 227, 0.55);
 }
-  </style>
+.cat-innov__security {
+margin: 1.15rem 0 0;
+padding: 0.95rem 1rem 1rem;
+border-left: 3px solid #c9a227;
+background: rgba(8, 18, 40, 0.72);
+}
+.cat-innov__security h3 {
+margin: 0 0 0.35rem;
+font-size: 1.05rem;
+color: #fff8e7;
+}
+.cat-innov__security p {
+margin: 0 0 0.45rem;
+font-size: 0.9rem;
+line-height: 1.4;
+color: rgba(244, 239, 227, 0.9);
+}
+</style>
 </head>
 <body class="voyage-flagship vb-pub">
   <nav class="vb-pub-topnav" aria-label="Site">
@@ -229,15 +348,13 @@ color: rgba(244, 239, 227, 0.55);
     </div>
     <div class="vb-pub-hero__veil" aria-hidden="true"></div>
     <div class="vb-pub-hero__inner">
-      <p class="vb-pub-eyebrow">☀ SS Vibelandia · Infinite Octave EGS Catalog · Navy &amp; gold</p>
+      <p class="vb-pub-eyebrow">☀ SS Vibelandia · Navy &amp; gold</p>
       <h1 class="vb-pub-title">Infinite Octave EGS Catalog</h1>
-      <p class="vb-pub-tagline">Architecting the frontier beyond brute-force chaos.<br />
-      Catalog mediation keyed by Φ<sub>EGS</sub> ≈ 1.618 — not a physics proof.</p>
+      <p class="vb-pub-tagline">The third path beyond burn and freeze.<br />
+      A calm mediation layer between your models and your data — for leaders who want control without teaching the company a new religion.</p>
       <div class="vb-pub-rule" aria-hidden="true"></div>
       <div class="vb-pub-cta-row">
-        <a class="vb-pub-btn vb-pub-btn--gold" href="/infinite-octave-egs-catalog/briefing">Open decision portals</a>
-        <a class="vb-pub-btn vb-pub-btn--ghost" href="/ship-blog/infinite-octave-egs-catalog">Plain-language note</a>
-        <a class="vb-pub-btn vb-pub-btn--ghost" href="/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-egs-catalog-frontier-2026-09">Whitepaper</a>
+        <a class="vb-pub-btn vb-pub-btn--gold" href="/infinite-octave-egs-catalog/briefing#portal-sandbox">Open the executive sandbox</a>
       </div>
     </div>
   </header>
@@ -245,232 +362,244 @@ color: rgba(244, 239, 227, 0.55);
   <article class="wrap vb-pub-wrap">
     <nav class="nav" aria-label="Site (compact)">
       <a href="/questfest">SS VIBELANDIA</a>
-      <a href="/infinite-octave-egs-catalog/briefing">Decision portals</a>
+      <a href="/infinite-octave-egs-catalog/briefing#portal-sandbox">Executive sandbox</a>
       <a href="/executive-onboarding">Executive onboarding</a>
       <a href="/demonstrations">Demonstrations</a>
       <a href="/lattice#ai-catalog-layer-intro">Lattice catalog layer</a>
     </nav>
 
-    <p class="lead egs-motion-rise">Welcome aboard. This brochure places the <strong>Infinite Octave EGS Catalog</strong> as a guest-facing enterprise product on the navy-gold resort vessel: a holographic mediation layer between raw enterprise data and AI orchestration agents, keyed by El Gran Sol’s fractal constant (Φ<sub>EGS</sub> ≈ 1.618) as <em>design language</em> — not a CODATA replacement, not a claim that compute clusters vanish as physics.</p>
+    <p class="lead egs-motion-rise">Most AI budgets still force a bad choice: spend harder, or slow everything down. <strong>Infinite Octave EGS Catalog</strong> is the product brochure for a third option — install a mediation layer so teams ship clearer work, customers only see better answers, and leadership keeps cost and chaos in range.</p>
 
-    <p class="honesty"><strong>Honesty first:</strong> voyage / catalog enterprise placement. Not finished AGI proof, not audited fab receipts, not securities advice. Protein folding appears only as Soft Story / architecture contrast — not CASP retirement. Hardware / K8s / USA-made language is offered roadmap until ops receipts publish. Human emergency still outranks algorithms. Fair Exchange via the Purser.</p>
+    <p class="honesty" id="honesty"><strong>Honesty first:</strong> this is a voyage / catalog enterprise product — architecture and placement language, not finished AGI proof, not audited fab receipts, not securities advice. Hardware and cluster paths are offered roadmap until ops receipts publish. Human emergency still outranks algorithms. Fair Exchange via the Purser.</p>
 
-    <figure class="vb-pub-plate">
-      <img
-        src="/interfaces/assets/infinite-octave-egs-catalog/layer-plate.jpg"
-        width="1280"
-        height="720"
-        alt="Catalog mediation plate: enterprise data nesting into an Infinite Octave EGS Catalog layer before AI agents"
-        loading="lazy"
-        decoding="async"
-      />
-      <figcaption>Install the catalog between warehouses and agents — mediation grammar, not magic silicon</figcaption>
-    </figure>
-
-    <h2 id="dilemma">CEO dilemma · brute-force vs regulatory moat</h2>
-    <p>Leadership often faces a false binary: burn gigawatts on opaque brute-force SuperAI, or lobby for regulatory moats that freeze innovation into compliance theater. Both stay <em>inside</em> linear-only scaling when architecture never gets a third seat at the table.</p>
-    <div class="vb-pub-spreads" aria-label="CEO dilemma beats">
-      <article class="vb-pub-spread" id="beat-brute">
-        <p class="vb-pub-spread__num">I</p>
-        <h3>Brute-force treadmill</h3>
-        <p>More parameters, larger contexts, heavier power — thermal, financial, and entropy costs climb without an invariant nesting grammar.</p>
-      </article>
-      <article class="vb-pub-spread" id="beat-moat">
-        <p class="vb-pub-spread__num">II</p>
-        <h3>Regulatory moat</h3>
-        <p>Safety filters and compliance walls matter — and can harden lifeless control when they bandage architecture instead of revising it.</p>
-      </article>
-      <article class="vb-pub-spread" id="beat-third">
+    <section id="stuck-choice" aria-labelledby="stuck-choice-h">
+      <h2 id="stuck-choice-h">The stuck choice</h2>
+      <p class="egs-motion-fade">Leadership keeps getting offered the same two beats. Neither one is a strategy for the next decade.</p>
+      <div class="vb-pub-spreads" aria-label="Stuck choice beats">
+        <article class="vb-pub-spread" id="beat-burn">
+          <p class="vb-pub-spread__num">I</p>
+          <h3>Burn</h3>
+          <p>More models, bigger contexts, heavier power bills. The treadmill gets hotter and the answers do not get proportionally clearer.</p>
+        </article>
+        <article class="vb-pub-spread" id="beat-freeze">
+          <p class="vb-pub-spread__num">II</p>
+          <h3>Freeze</h3>
+          <p>Slow the race with compliance walls. Safety matters — and can harden into theater that freezes innovation without fixing how work is filed.</p>
+        </article>
+      </div>
+      <article class="vb-pub-spread" id="beat-third" style="margin-top:0.85rem">
         <p class="vb-pub-spread__num">III</p>
-        <h3>Third path · catalog</h3>
-        <p>Infinite Octave EGS Catalog files mediation: nested coherence between data sources and agents — placement grammar, not overnight transformer retirement.</p>
+        <h3>Third path · the catalog</h3>
+        <p>Put a mediation layer between models and enterprise data. Order the briefs. Cut the noise. Keep humans in charge. That is Infinite Octave EGS Catalog.</p>
       </article>
-    </div>
+    </section>
 
-    <h2 id="phi-egs">Φ<sub>EGS</sub> ≈ 1.618 as design key</h2>
-    <p>Φ<sub>EGS</sub> = (1+√5)/2 ≈ 1.618033988749895 is filed here as the foundational <strong>design / harmonic ratio</strong> for recursive self-similarity across informational and cognitive <em>catalog</em> architectures. Downstream shelves (agents, RAG, enterprise knowledge) nest as recursive iterations of that key — a closed-form geometric attractor for filing, not a CODATA constant for ħ, c, or G.</p>
-    <p>Flat-file vector-only thinking yields to multi-dimensional standing-wave maps: context windows as nested filings, not endless token dumps. Peer shelf: <a href="/lattice#ai-catalog-layer-intro">Infinite Octave AI Catalog Layer</a>.</p>
+    <section id="where-it-sits" aria-labelledby="where-it-sits-h">
+      <h2 id="where-it-sits-h">Where it sits</h2>
+      <p>Three bands. Models stay models. Data stays data. The catalog is the calm office in between — not a sixth cruise door, not another dashboard for guests to memorize.</p>
+      <div class="egs-stack" aria-label="Catalog stack · three bands">
+        <div class="egs-stack__band egs-stack__band--top">
+          <p class="egs-stack__kicker">Band 01 · Top</p>
+          <p class="egs-stack__title">Models &amp; agentic IDEs</p>
+          <p class="egs-stack__note">The tools your teams already use stay where they are.</p>
+        </div>
+        <div class="egs-stack__band egs-stack__band--mid">
+          <p class="egs-stack__kicker">Band 02 · Install here</p>
+          <p class="egs-stack__title">Infinite Octave EGS Catalog</p>
+          <p class="egs-stack__note">Mediation layer: sharper briefs, less prompt sprawl, clearer oversight for the Bridge.</p>
+        </div>
+        <div class="egs-stack__band egs-stack__band--bot">
+          <p class="egs-stack__kicker">Band 03 · Bottom</p>
+          <p class="egs-stack__title">Ship doors &amp; enterprise data</p>
+          <p class="egs-stack__note">Warehouses, object stores, and guest surfaces keep their own identities.</p>
+        </div>
+      </div>
+      <figure class="vb-pub-plate">
+        <img
+          src="/interfaces/assets/infinite-octave-egs-catalog/layer-plate.jpg"
+          width="1280"
+          height="720"
+          alt="Catalog mediation plate sitting between enterprise data and AI tools"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Install between warehouses and agents — placement product, not magic silicon</figcaption>
+      </figure>
+    </section>
 
-    <!-- CATALOG_LAYER_INNOVATIONS_START -->
+    <section id="transparency" aria-labelledby="transparency-h">
+      <h2 id="transparency-h">Who never has to learn the math</h2>
+      <p>The catalog does the filing. People feel outcomes. Φ and nesting grammar stay under the hood unless someone chooses to open the whitepaper.</p>
+      <div class="egs-who" aria-label="Transparency by audience">
+        <article class="egs-who__col" id="who-executives">
+          <p class="egs-who__role">Executives</p>
+          <h3>Control and cost calm</h3>
+          <p>See spend, risk, and pace without becoming the resident theorist. Ask for with/without scenarios in the sandbox — not a lecture on constants.</p>
+        </article>
+        <article class="egs-who__col" id="who-teams">
+          <p class="egs-who__role">Teams</p>
+          <h3>Sharper briefs</h3>
+          <p>Agents and builders get ordered context instead of pasting the warehouse into every prompt. Less noise. Same tools.</p>
+        </article>
+        <article class="egs-who__col" id="who-customers">
+          <p class="egs-who__role">Customers</p>
+          <h3>Faster, cleaner answers</h3>
+          <p>They only see better service. They never have to learn Φ, catalogs, or how the mediation layer is wired.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="egs-sandbox" id="sandbox" aria-labelledby="sandbox-h">
+      <div>
+        <h2 id="sandbox-h">Try it in the executive sandbox</h2>
+        <p style="margin-top:0">Portal 02 is the live decision room: walk a with/without scenario, keep honesty rails visible, and leave with a placement ask — not a jargon deck.</p>
+        <div class="vb-pub-cta-row">
+          <a class="vb-pub-btn vb-pub-btn--gold" href="/infinite-octave-egs-catalog/briefing#portal-sandbox">Open Portal 02 · sandbox</a>
+          <a class="vb-pub-btn vb-pub-btn--ghost" href="/infinite-octave-egs-catalog/briefing">All decision portals</a>
+        </div>
+      </div>
+      <a class="egs-sandbox__media" href="/infinite-octave-egs-catalog/briefing#portal-sandbox" aria-label="Enter Portal 02 executive sandbox">
+        <img
+          src="/interfaces/assets/infinite-octave-egs-catalog/portal.jpg"
+          width="640"
+          height="480"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    </section>
+
+<!-- CATALOG_LAYER_INNOVATIONS_START -->
 <section class="cat-innov" id="catalog-layer-innovations" aria-labelledby="catalog-layer-innovations-h">
   <h2 id="catalog-layer-innovations-h">Key architectural innovations</h2>
-  <p class="cat-innov__lead">What the Infinite Octaves catalog layer files that linear-only stacks cannot — each with what you lose if you skip it.</p>
+  <p class="cat-innov__lead">What the Infinite Octaves catalog layer files that linear-only stacks cannot — each with what you lose if you skip it. Security is woven through the fabric, not sold as a bolt-on.</p>
   <div class="cat-innov__grid">
 <article class="cat-innov__card" id="volumetric-interference">
   <h3 class="cat-innov__title">Volumetric interference processing</h3>
-  <p class="cat-innov__label">Prime-indexed volumetric vaults · zero ISI grammar</p>
-  <p class="cat-innov__delivers"><strong>Delivers:</strong> Algebraic Φ-map filing of payloads into prime-indexed volumetric vaults — absolute orthogonality framed as zero inter-symbol interference in the prime-vault grammar.</p>
-  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without this shelf you stay on RS/LDPC parity taxes and LBA/B⁺-tree lookup habits; you cannot file memory as Infinite Octaves prime-vault orthogonality.</p>
+  <p class="cat-innov__label">Separated knowledge vaults · deep context without collision</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Files enterprise knowledge into separated vaults so signals do not collide when context gets deep — cleaner recall, less prompt noise.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it you stay on bloated vector lookup and parity taxes; deep context keeps colliding and burning tokens.</p>
   <p class="cat-innov__links"><a href="/ship-blog/prime-indexed-volumetric-storage">Volumetric storage note</a></p>
   <p class="cat-innov__honesty">Catalog framing — not a JEDEC drop-in or measured ECC retirement.</p>
 </article>
 <article class="cat-innov__card" id="golden-ratio-cataloging">
-  <h3 class="cat-innov__title">Golden ratio cataloging</h3>
-  <p class="cat-innov__label">Φ_EGS ≈ 1.618 recursive nesting</p>
-  <p class="cat-innov__delivers"><strong>Delivers:</strong> Closed-form harmonic nesting between agentic IDEs and resonant data — context as multi-dimensional standing-wave maps keyed by El Gran Sol’s fractal constant.</p>
-  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without Φ_EGS cataloging you remain trapped in the brute-force treadmill vs regulatory-moat binary; you cannot file a third mediation path with absolute structural nesting order.</p>
+  <h3 class="cat-innov__title">Golden-ratio cataloging</h3>
+  <p class="cat-innov__label">Φ_EGS ≈ 1.618 · nest order instead of sprawl</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Orders nesting with El Gran Sol’s fractal constant (Φ_EGS ≈ 1.618) so context compresses into structure instead of sprawling into more spend.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it you remain stuck choosing between the brute-force treadmill and the regulatory moat — no third mediation path with structural order.</p>
   <p class="cat-innov__links"><a href="/infinite-octave-egs-catalog">EGS Catalog brochure</a></p>
   <p class="cat-innov__honesty">Design / catalog key — not a CODATA replacement for ħ, c, or G.</p>
 </article>
 <article class="cat-innov__card" id="prime-container-storage">
-  <h3 class="cat-innov__title">Prime container geometrical storage</h3>
-  <p class="cat-innov__label">Odd-prime containment vaults · geometry sketch</p>
-  <p class="cat-innov__delivers"><strong>Delivers:</strong> Replayable non-gradient prime-vault containment that maps sequences into odd-prime geometrical vaults under Φ_EGS — Soft Story contrast to brute-force conformational search.</p>
-  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without prime-container geometry you only have statistical/MSA predictors; you cannot file a closed-form Infinite Octaves containment sketch as architecture grammar.</p>
+  <h3 class="cat-innov__title">Prime-container storage</h3>
+  <p class="cat-innov__label">Odd-prime geometry · structure over endless search</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Holds structure in odd-prime geometry so hard problems resolve as containment, not endless brute-force search.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it you only have statistical predictors and longer GPU runs; you cannot file a closed-form containment sketch as architecture.</p>
   <p class="cat-innov__links"><a href="/ship-blog/protein-folding-prime-container">Prime-container note</a></p>
   <p class="cat-innov__honesty">Architecture Soft Story — not CASP gold, not clinical, not AlphaFold retirement.</p>
 </article>
 <article class="cat-innov__card" id="holographic-rhyme-wiring">
   <h3 class="cat-innov__title">Holographic rhyme wiring</h3>
-  <p class="cat-innov__label">Four-pillar rhyme · Tier C wiring lattices</p>
-  <p class="cat-innov__delivers"><strong>Delivers:</strong> Enforceable repeating · self-similar · self-correcting · recursive motion grammar plus load-bearing narrative pointer circuits that route agent intent across catalog boundaries.</p>
-  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without holographic rhyme wiring, “holographic” stays a free-floating adjective and narrative shelves stay inert archives — agents re-paste fat dumps instead of routing by wired briefs.</p>
+  <p class="cat-innov__label">Repeating · self-correcting briefs across shelves</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Routes agent intent across shelves with repeating, self-correcting briefs — so teams stop re-pasting fat dumps.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it “holographic” stays a slogan and agents keep pasting archives into every prompt.</p>
   <p class="cat-innov__links"><a href="/ship-blog/holographic-rhyme">Holographic rhyme note</a> <a href="/ship-blog/tier-c-holographic-wiring">Tier C wiring</a></p>
   <p class="cat-innov__honesty">Catalog motion + wiring grammar — not a claim that prose causes physics.</p>
 </article>
+<article class="cat-innov__card" id="goldilocks-net-zero">
+  <h3 class="cat-innov__title">Goldilocks · Net Zero</h3>
+  <p class="cat-innov__label">Just right · cool the burn without freezing innovation</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Keeps spend, heat, and chaos in the “just right” band — cool the burn without freezing the roadmap. Net-zero calm as an operating target, not a slogan.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it you swing between thermal and financial runaway on one side and bureaucratic stall on the other — no invariant calm for the enterprise.</p>
+  <p class="cat-innov__links"><a href="/ship-blog/holographic-singularity-crystal">Net Zero crystal note</a> <a href="/ship-blog/zero-octave-y-goldilocks">Y Goldilocks note</a></p>
+  <p class="cat-innov__honesty">Goldilocks / Net Zero as catalog operating grammar — not a claim of measured zero-joule compute or finished CODATA replacement.</p>
+</article>
   </div>
-  <p class="cat-innov__rail">Four catalog-layer innovations as Infinite Octaves Soft Story architecture — not finished physics, fab, or JEDEC proofs. Human emergency still outranks algorithms.</p>
+<aside class="cat-innov__security" id="security-fabric-24x365" aria-label="Security fabric · 24×365">
+  <h3>Security fabric · 24×365</h3>
+  <p>Security is built into how the catalog files and routes knowledge — not bolted on after the fact.</p>
+  <p><strong>Delivers:</strong> Keys stay local. Raw corpora stay out of every prompt. The layer indexes schemas as nested filings and routes agents with least privilege across data at rest, in transit, in context windows, in tools, and in executive oversight — always on.</p>
+  <p><strong>How:</strong> Cryptographic handshake in a local KMS → catalog container as an interceptor in your cluster → continuous coherence checks. USA-made sovereign enclave path for the CISO when you move from sandbox to production.</p>
+  <p><strong>Cannot achieve without it:</strong> Without catalog-boundary mediation you keep shipping fat context into every model call and bolting security on as filters — noise, drift, and exposure scale with every agent.</p>
+  <p class="cat-innov__honesty">Architecture fabric and deployment path — not a penetration-test certificate or finished ops receipt for every enterprise. Human emergency still outranks algorithms.</p>
+</aside>
+  <p class="cat-innov__rail">Five catalog-layer innovations as Infinite Octaves Soft Story architecture — not finished physics, fab, or JEDEC proofs. Security is woven as 24×365 fabric at the catalog boundary. Human emergency still outranks algorithms.</p>
 </section>
 <!-- CATALOG_LAYER_INNOVATIONS_END -->
 
-<h2 id="placement">Catalog placement</h2>
-    <pre class="egs-ascii" aria-label="Catalog placement diagram">[ Raw enterprise data ]  (warehouses · object stores · local DBs)
-            │
-            ▼
-╔══════════════════════════════════════════════╗
-║  INFINITE OCTAVE EGS CATALOG (install here) ║
-║  Φ_EGS recursive nesting · standing-wave map ║
-╚══════════════════════════════════════════════╝
-            │
-            ▼
-[ AI orchestration &amp; agents ]  (LLMs · RAG · enterprise agents)</pre>
-    <p>Delivered as catalog product language: sovereign hardware enclave narrative (USA-made keycard for CTO/CISO boarding), Kubernetes container + SDK as mediation layer, three-step handshake → inject → calibrate. Label as <strong>roadmap / offered architecture</strong> until ops receipts are published.</p>
-
-    <h2 id="protein">Protein folding · honesty-bound proof-point</h2>
-    <p>Protein folding is the biophysical process by which a chain finds its functional conformation. It is <strong>not</strong> best told only as “search every atomic permutation on a GPU farm.”</p>
-    <p>Under EGS Soft Story grammar, folding is filed as <strong>harmonic resonance / prime-container nesting</strong> rather than pure combinatorial search — see <a href="/ship-blog/protein-folding-prime-container">Protein Folding Prime Container</a>. <strong>Honesty pinch:</strong> near-instant catalog resolution and “zero thermal blowup” are architecture Soft Story — not audited CASP medals, not measured megawatt invoices, not a claim that CASP is retired.</p>
-
-    <h2 id="pricing">Harmonic value tiers</h2>
-    <p>Published rate card with Fair Exchange refund clause. Not guaranteed ROI. Not a securities prospectus.</p>
-    <div class="egs-tiers" aria-label="Pricing tiers">
-      <article class="egs-tier" id="tier-1">
-        <p class="egs-tier__num">Tier 1</p>
-        <h3>Sovereign Node</h3>
-        <p class="egs-tier__price">$3,500 / mo</p>
-        <p>Dept / skunkworks · up to 10M catalog nodes · K8s + SDK · $42k ACV.</p>
-      </article>
-      <article class="egs-tier" id="tier-2">
-        <p class="egs-tier__num">Tier 2</p>
-        <h3>Multi-Scalar Grid</h3>
-        <p class="egs-tier__price">$12,500 / mo</p>
-        <p>Production · holographic catalog · sovereign enclave module · 24/7 support · $150k ACV base.</p>
-      </article>
-      <article class="egs-tier" id="tier-3">
-        <p class="egs-tier__num">Tier 3</p>
-        <h3>Frontier Global Grid</h3>
-        <p class="egs-tier__price">Custom · $350k+ ARR</p>
-        <p>Multi-region · aqueous/DNA Soft Story modeling across octaves · custom Fair Exchange.</p>
-      </article>
-    </div>
-
-    <h2 id="set-player-frontier">Set · Player · Frontier Game</h2>
-    <div class="egs-xyz" aria-label="Set Player Frontier Game">
-      <article class="vb-pub-spread">
-        <p class="vb-pub-spread__num">X</p>
-        <h3>Set &amp; Cast</h3>
-        <p>Local enterprise nodes and devices rendering outputs.</p>
-      </article>
-      <article class="vb-pub-spread">
-        <p class="vb-pub-spread__num">Y</p>
-        <h3>Player</h3>
-        <p>Executive and engineering operators setting gravity.</p>
-      </article>
-      <article class="vb-pub-spread">
-        <p class="vb-pub-spread__num">Z</p>
-        <h3>Frontier Game</h3>
-        <p>Open-source invariant framework and market domain — Goldilocks: not too hot, not too cold.</p>
-      </article>
-    </div>
-    <p>Goldilocks ops: not too hot (bypass pure brute-force burn as <em>design goal</em>), not too cold (no per-seat stagnation taxes as <em>product promise</em>). Live Soft Story labs and SS Vibelandia decision portals operational today as guest surfaces.</p>
-
-    <section class="egs-exec-band" id="briefing" aria-labelledby="briefing-h">
-      <h2 id="briefing-h">S.S. Vibelandia · decision portals</h2>
-      <p class="lead" style="margin-top:0">Four gangway doors for leaders. Each portal is a short briefing room — same honesty rails, same Goldilocks SuperAI standard.</p>
-      <div class="egs-portal-grid">
-        <a class="egs-portal" href="/infinite-octave-egs-catalog/briefing#portal-treadmill">
-          <div class="egs-portal__media">
-            <img src="/interfaces/assets/infinite-octave-egs-catalog/portal.jpg" width="640" height="480" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="egs-portal__body">
-            <p class="egs-portal__num">Portal 01</p>
-            <h3 class="egs-portal__title">Brute-force treadmill</h3>
-            <p class="egs-portal__lede">False binary: burn gigawatts or freeze behind regulatory moats.</p>
-          </div>
-        </a>
-        <a class="egs-portal" href="/infinite-octave-egs-catalog/briefing#portal-catalog">
-          <div class="egs-portal__media">
-            <img src="/interfaces/assets/infinite-octave-egs-catalog/layer-plate.jpg" width="640" height="480" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="egs-portal__body">
-            <p class="egs-portal__num">Portal 02</p>
-            <h3 class="egs-portal__title">Φ<sub>EGS</sub> catalog layer</h3>
-            <p class="egs-portal__lede">Mediation grammar between data sources and orchestration agents.</p>
-          </div>
-        </a>
-        <a class="egs-portal" href="/infinite-octave-egs-catalog/briefing#portal-protein">
-          <div class="egs-portal__media">
-            <img src="/interfaces/assets/infinite-octave-egs-catalog/hero.jpg" width="640" height="480" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="egs-portal__body">
-            <p class="egs-portal__num">Portal 03</p>
-            <h3 class="egs-portal__title">Protein folding proof-point</h3>
-            <p class="egs-portal__lede">Harmonic filing vs GPU search — Soft Story, not CASP retirement.</p>
-          </div>
-        </a>
-        <a class="egs-portal" href="/infinite-octave-egs-catalog/briefing#portal-goldilocks">
-          <div class="egs-portal__media">
-            <img src="/interfaces/assets/infinite-octave-egs-catalog/portal.jpg" width="640" height="480" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="egs-portal__body">
-            <p class="egs-portal__num">Portal 04</p>
-            <h3 class="egs-portal__title">Placement · pricing · action</h3>
-            <p class="egs-portal__lede">Tiers, Fair Exchange, and what leaders do today.</p>
-          </div>
-        </a>
+    <section id="pricing" aria-labelledby="pricing-h">
+      <h2 id="pricing-h">Pricing</h2>
+      <p>Published rate card. Fair Exchange refund clause stays on. Start small, scale when the sandbox earns the next tier.</p>
+      <div class="egs-tiers" aria-label="Pricing tiers">
+        <article class="egs-tier" id="tier-1">
+          <p class="egs-tier__num">Tier 1</p>
+          <h3>Sovereign Node</h3>
+          <p class="egs-tier__price">$3,500 / mo</p>
+          <p>Dept / skunkworks · up to 10M catalog nodes · K8s + SDK · ~$42k ACV.</p>
+        </article>
+        <article class="egs-tier" id="tier-2">
+          <p class="egs-tier__num">Tier 2</p>
+          <h3>Multi-Scalar Grid</h3>
+          <p class="egs-tier__price">$12,500 / mo</p>
+          <p>Production mediation · sovereign enclave module · 24/7 support · ~$150k ACV base.</p>
+        </article>
+        <article class="egs-tier" id="tier-3">
+          <p class="egs-tier__num">Tier 3</p>
+          <h3>Frontier Global Grid</h3>
+          <p class="egs-tier__price">Custom · from $350k+ ARR</p>
+          <p>Multi-region · custom Fair Exchange · Bridge-grade oversight across markets.</p>
+        </article>
       </div>
-      <div class="vb-pub-cta-row">
-        <a class="vb-pub-btn vb-pub-btn--gold" href="/infinite-octave-egs-catalog/briefing">Enter all decision portals</a>
-        <a class="vb-pub-btn vb-pub-btn--ghost" href="/executive-onboarding">Executive onboarding course</a>
-        <a class="vb-pub-btn vb-pub-btn--ghost" href="/demonstrations">Demonstrations</a>
+      <p class="egs-pricing-honesty" id="pricing-honesty"><strong>Honesty:</strong> published rate card · not guaranteed ROI · not a securities prospectus.</p>
+    </section>
+
+    <section id="access" aria-labelledby="access-h">
+      <h2 id="access-h">Access · three steps</h2>
+      <p>No membership maze. Open the room, run the scenario, then deploy when the placement is clear.</p>
+      <div class="egs-access" aria-label="Three access steps">
+        <article class="egs-access__step" id="access-1">
+          <h3>Open the sandbox</h3>
+          <p>Enter Portal 02 on the decision deck. Same honesty rails as this brochure.</p>
+        </article>
+        <article class="egs-access__step" id="access-2">
+          <h3>Run with / without</h3>
+          <p>Compare mediation on versus linear sprawl. Keep humans first in every room.</p>
+        </article>
+        <article class="egs-access__step" id="access-3">
+          <h3>Deploy the layer</h3>
+          <p>Handshake · inject · calibrate. Roadmap language until your ops receipts publish.</p>
+        </article>
       </div>
     </section>
 
     <h2 id="where">Where am I on the ship?</h2>
     <ul class="plain">
-      <li><strong>This brochure</strong> — product gangway for Infinite Octave EGS Catalog.</li>
-      <li><strong>Decision portals</strong> — executive rooms on Bridge vocabulary.</li>
-      <li><strong>Ship-blog</strong> — plain-language pier at <a href="/ship-blog/infinite-octave-egs-catalog">/ship-blog/infinite-octave-egs-catalog</a>.</li>
+      <li><strong>This brochure</strong> — CEO gangway for Infinite Octave EGS Catalog.</li>
+      <li><strong>Executive sandbox</strong> — Portal 02 at <a href="/infinite-octave-egs-catalog/briefing#portal-sandbox">/infinite-octave-egs-catalog/briefing#portal-sandbox</a>.</li>
+      <li><strong>Ship-blog</strong> — plain pier at <a href="/ship-blog/infinite-octave-egs-catalog">/ship-blog/infinite-octave-egs-catalog</a>.</li>
       <li><strong>Catalog layer intro</strong> — <a href="/lattice#ai-catalog-layer-intro">/lattice#ai-catalog-layer-intro</a>.</li>
       <li><strong>Peer chart</strong> — <a href="/pacing-paradox">Pacing Paradox</a> · architecture beside the race.</li>
     </ul>
 
     <h2 id="do">What can I do here?</h2>
     <ul class="plain">
-      <li>Walk the four decision portals and keep honesty rails visible.</li>
-      <li>Open the whitepaper when you need the full filing.</li>
+      <li>Open the executive sandbox and keep honesty rails visible.</li>
+      <li>Read the <a href="/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-egs-catalog-frontier-2026-09">whitepaper</a> only when you want the full filing.</li>
       <li>Tour <a href="/demonstrations">demonstrations</a> and the <a href="/lattice#ai-catalog-layer-intro">Lattice catalog layer</a>.</li>
       <li>Ask Lattice Chat for nested Goldilocks counsel — not frantic dump-the-warehouse.</li>
-      <li>Tip Fair Exchange when deeper CEO walks or custom briefings are needed: <a href="mailto:info@fractiai.com">info@fractiai.com</a>.</li>
+      <li>Tip Fair Exchange for deeper CEO walks: <a href="mailto:info@fractiai.com">info@fractiai.com</a>.</li>
     </ul>
 
-    <div class="voyage-purser">
+    <div class="voyage-purser" id="purser">
       <p class="voyage-purser__h">Purser’s Desk · Universal Fair Exchange</p>
       <p>Give value. Receive value. Correct mistakes. A portion of transaction value remains subject to refund or adjustment depending on verified computational efficiency saved, resonance, utility, and depth of delivery.</p>
       <p style="margin-top:0.5rem">Deck 4 · The Grove Promenade · <a href="mailto:info@fractiai.com?subject=Purser%20Fair%20Exchange%20%C2%B7%20Infinite%20Octave%20EGS%20Catalog">info@fractiai.com</a></p>
     </div>
 
-    <div class="cta-row">
-      <a class="btn btn-gold" href="/infinite-octave-egs-catalog/briefing">Decision portals</a>
+    <div class="cta-row" id="footer-ctas">
+      <a class="btn btn-gold" href="/infinite-octave-egs-catalog/briefing#portal-sandbox">Open the executive sandbox</a>
+      <a class="btn btn-ghost" href="/infinite-octave-egs-catalog/briefing">Decision portals</a>
       <a class="btn btn-ghost" href="/ship-blog/infinite-octave-egs-catalog">Ship-blog note</a>
       <a class="btn btn-ghost" href="/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-egs-catalog-frontier-2026-09">Whitepaper</a>
       <a class="btn btn-ghost" href="/demonstrations">Demonstrations</a>

@@ -5,11 +5,11 @@
   <script src="/interfaces/vbi18n-failopen.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Decision Portals · Infinite Octave EGS Catalog · SS Vibelandia</title>
-  <meta name="description" content="S.S. Vibelandia decision portals for Infinite Octave EGS Catalog — four gangway rooms: treadmill vs moat, Φ_EGS catalog layer, protein folding honesty, Goldilocks placement action." />
+  <title>Executive Sandbox · Infinite Octave EGS Catalog · SS Vibelandia</title>
+  <meta name="description" content="CEO-grade local sandbox for Infinite Octave EGS Catalog — with vs without catalog layer, Soft Story metrics, five innovations, and open · run · deploy access." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/infinite-octave-egs-catalog/briefing" />
-  <meta property="og:title" content="Decision Portals · Infinite Octave EGS Catalog · SS Vibelandia" />
-  <meta property="og:description" content="Four Bridge decision rooms for leaders. Navy-gold hospitality · honesty rails · Goldilocks SuperAI catalog mediation." />
+  <meta property="og:title" content="Executive Sandbox · Infinite Octave EGS Catalog · SS Vibelandia" />
+  <meta property="og:description" content="Interactive local sandbox: with vs without the catalog layer. Navy-gold voyage brochure · Soft Story metrics · honesty rails." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/infinite-octave-egs-catalog/portal.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
   <style>
     html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }
+
     .egsb-door-rail {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -56,6 +57,7 @@
       background: rgba(212, 175, 55, 0.12);
       outline: none;
     }
+
     .egsb-room {
       scroll-margin-top: 4.5rem;
       margin: 0 0 2.25rem;
@@ -63,29 +65,6 @@
       border-bottom: 1px solid rgba(212, 175, 55, 0.18);
     }
     .egsb-room:last-of-type { border-bottom: 0; }
-    .egsb-room__layout {
-      display: grid;
-      gap: 1rem;
-    }
-    @media (min-width: 860px) {
-      .egsb-room__layout {
-        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-        align-items: start;
-      }
-    }
-    .egsb-room__media {
-      overflow: hidden;
-      border: 1px solid rgba(212, 175, 55, 0.28);
-      background: #0a1220;
-      min-height: 12rem;
-    }
-    .egsb-room__media img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      animation: vb-pub-drift 18s ease-in-out infinite alternate;
-    }
     .egsb-kicker {
       margin: 0 0 0.35rem;
       font-size: 0.68rem;
@@ -101,63 +80,278 @@
       color: var(--brand-gold-hi, #fef3c7);
       line-height: 1.15;
     }
-    .egsb-points {
-      margin: 0.85rem 0 0;
-      padding: 0;
-      list-style: none;
-    }
-    .egsb-points li {
-      position: relative;
-      padding: 0.45rem 0 0.45rem 1rem;
-      border-left: 2px solid rgba(212, 175, 55, 0.35);
-      margin-bottom: 0.45rem;
-      color: var(--brand-muted, #a8a29e);
-      font-size: 0.95rem;
-    }
-    .egsb-points li strong { color: var(--brand-champagne, #f5e6c8); }
     .egsb-exec-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.55rem;
       margin: 1.5rem 0 0.5rem;
     }
-    .egsb-live {
-      display: inline-flex;
+
+    /* Portal 01 · stack */
+    .egsb-stack {
+      margin: 1rem 0 0;
+      display: grid;
+      gap: 0.55rem;
+      max-width: 40rem;
+    }
+    .egsb-stack__band {
+      position: relative;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      background: rgba(10, 18, 32, 0.85);
+      cursor: pointer;
+      transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .egsb-stack__band:hover,
+    .egsb-stack__band:focus-visible {
+      border-color: rgba(254, 243, 199, 0.45);
+      outline: none;
+    }
+    .egsb-stack__band--catalog {
+      border-color: rgba(212, 175, 55, 0.45);
+      background:
+        linear-gradient(135deg, rgba(212, 175, 55, 0.14), transparent 60%),
+        rgba(12, 22, 40, 0.92);
+    }
+    .egsb-stack__band.is-lit,
+    .egsb-stack.is-catalog-lit .egsb-stack__band--catalog {
+      border-color: rgba(254, 243, 199, 0.7);
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 12px 36px -18px rgba(212, 175, 55, 0.55);
+      transform: translateY(-2px);
+      background:
+        linear-gradient(135deg, rgba(212, 175, 55, 0.22), transparent 55%),
+        rgba(18, 28, 48, 0.95);
+    }
+    .egsb-stack__label {
+      margin: 0;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand-gold, #d4af37);
+    }
+    .egsb-stack__title {
+      margin: 0.25rem 0 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--brand-champagne, #f5e6c8);
+    }
+    .egsb-stack__caption {
+      margin: 0.85rem 0 0;
+      min-height: 2.8rem;
+      padding: 0.75rem 0.9rem;
+      border-left: 2px solid rgba(212, 175, 55, 0.45);
+      color: var(--brand-muted, #a8a29e);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      opacity: 0.55;
+      transition: opacity 0.3s ease, color 0.3s ease;
+    }
+    .egsb-stack__caption.is-on {
+      opacity: 1;
+      color: var(--brand-champagne, #f5e6c8);
+    }
+    .egsb-access-callout {
+      margin: 1.1rem 0 0;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      background: rgba(212, 175, 55, 0.08);
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: var(--brand-champagne, #f5e6c8);
+    }
+    .egsb-stack-svg {
+      width: 100%;
+      max-width: 40rem;
+      height: auto;
+      margin: 0.75rem 0 0;
+      display: block;
+    }
+    .egsb-stack-svg .band-fill { transition: fill 0.3s ease, stroke 0.3s ease; }
+    .egsb-stack.is-catalog-lit .band-catalog-fill {
+      fill: rgba(212, 175, 55, 0.28);
+      stroke: rgba(254, 243, 199, 0.75);
+    }
+
+    /* Portal 02 · sandbox */
+    .egsb-fn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0.85rem 0 1rem;
+    }
+    .egsb-fn {
+      appearance: none;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans', system-ui, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand-champagne, #f5e6c8);
+      background: rgba(12, 22, 40, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      padding: 0.55rem 0.75rem;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+    .egsb-fn:hover,
+    .egsb-fn:focus-visible {
+      border-color: rgba(254, 243, 199, 0.55);
+      outline: none;
+    }
+    .egsb-fn.is-active {
+      color: #0a1220;
+      background: var(--brand-gold, #d4af37);
+      border-color: var(--brand-gold-hi, #fef3c7);
+    }
+
+    .egsb-toggle-wrap {
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.75rem;
+      margin: 0 0 1.15rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(8, 14, 26, 0.9);
+    }
+    .egsb-toggle-wrap__label {
+      margin: 0;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand-gold, #d4af37);
+    }
+    .egsb-toggle {
+      display: inline-flex;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      overflow: hidden;
+    }
+    .egsb-toggle button {
+      appearance: none;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans', system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.65rem 1rem;
+      border: 0;
+      color: var(--brand-muted, #a8a29e);
+      background: rgba(12, 22, 40, 0.95);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .egsb-toggle button.is-active[data-mode="without"] {
+      color: #fef3c7;
+      background: rgba(160, 60, 48, 0.55);
+    }
+    .egsb-toggle button.is-active[data-mode="with"] {
+      color: #0a1220;
+      background: var(--brand-gold, #d4af37);
+    }
+    .egsb-scenario-note {
+      margin: 0;
+      flex: 1 1 12rem;
+      font-size: 0.88rem;
+      color: var(--brand-champagne, #f5e6c8);
+      line-height: 1.4;
+    }
+
+    .egsb-compare {
+      display: grid;
+      gap: 0.85rem;
+    }
+    @media (min-width: 720px) {
+      .egsb-compare { grid-template-columns: 1fr 1fr; }
+    }
+    .egsb-card {
+      margin: 0;
+      padding: 1rem 1.05rem 1.1rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(8, 14, 26, 0.88);
+      transition: opacity 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .egsb-card.is-dim {
+      opacity: 0.42;
+      border-color: rgba(212, 175, 55, 0.12);
+    }
+    .egsb-card.is-focus {
+      border-color: rgba(254, 243, 199, 0.55);
+      box-shadow: 0 14px 40px -22px rgba(212, 175, 55, 0.5);
+    }
+    .egsb-card__h {
+      margin: 0 0 0.65rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand-gold, #d4af37);
+    }
+    .egsb-metric {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.35rem 0.75rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+      font-size: 0.9rem;
+    }
+    .egsb-metric:last-child { border-bottom: 0; }
+    .egsb-metric__name { color: var(--brand-muted, #a8a29e); }
+    .egsb-metric__val {
+      font-weight: 700;
+      color: var(--brand-champagne, #f5e6c8);
+      text-align: right;
+    }
+    .egsb-metric__val--warn { color: #f0a090; }
+    .egsb-metric__val--good { color: #c8e6a8; }
+
+    .egsb-steps {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+    @media (min-width: 860px) {
+      .egsb-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .egsb-step {
+      padding: 1rem 1.05rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(8, 14, 26, 0.88);
+    }
+    .egsb-step__n {
+      margin: 0 0 0.35rem;
       font-size: 0.65rem;
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #fef3c7;
-      background: rgba(196, 92, 58, 0.35);
-      border: 1px solid rgba(254, 243, 199, 0.25);
-      padding: 0.28rem 0.55rem;
-      margin-bottom: 0.75rem;
+      color: var(--brand-gold, #d4af37);
     }
-    .egsb-live::before {
-      content: "";
-      width: 0.45rem;
-      height: 0.45rem;
-      border-radius: 50%;
-      background: #f5f0e8;
-      animation: egsb-pulse 1.2s ease-in-out infinite;
+    .egsb-step h3 {
+      margin: 0 0 0.4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--brand-gold-hi, #fef3c7);
     }
-    @keyframes egsb-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
+    .egsb-step p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--brand-muted, #a8a29e);
+      line-height: 1.45;
     }
-    .egsb-ascii {
-      margin: 0.85rem 0 0;
-      padding: 0.85rem 0.95rem;
-      overflow-x: auto;
-      border: 1px solid rgba(212, 175, 55, 0.22);
-      background: rgba(6, 10, 18, 0.92);
-      color: var(--brand-champagne, #f5e6c8);
-      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.65rem;
-      line-height: 1.4;
-      white-space: pre;
+    .egsb-step.is-done {
+      border-color: rgba(212, 175, 55, 0.5);
+      background:
+        linear-gradient(135deg, rgba(212, 175, 55, 0.12), transparent 60%),
+        rgba(8, 14, 26, 0.92);
+    }
+    .egsb-sec-pointer {
+      margin: 1rem 0 0;
+      font-size: 0.9rem;
+      color: var(--brand-muted, #a8a29e);
+      line-height: 1.45;
     }
   </style>
   <style id="catalog-layer-innovations-style">
@@ -170,6 +364,9 @@ grid-template-columns: 1fr;
 }
 @media (min-width: 720px) {
 .cat-innov__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1100px) {
+.cat-innov__grid { grid-template-columns: repeat(3, 1fr); }
 }
 .cat-innov__card {
 margin: 0;
@@ -207,18 +404,35 @@ font-size: 0.72rem;
 line-height: 1.35;
 color: rgba(244, 239, 227, 0.55);
 }
-  </style>
+.cat-innov__security {
+margin: 1.15rem 0 0;
+padding: 0.95rem 1rem 1rem;
+border-left: 3px solid #c9a227;
+background: rgba(8, 18, 40, 0.72);
+}
+.cat-innov__security h3 {
+margin: 0 0 0.35rem;
+font-size: 1.05rem;
+color: #fff8e7;
+}
+.cat-innov__security p {
+margin: 0 0 0.45rem;
+font-size: 0.9rem;
+line-height: 1.4;
+color: rgba(244, 239, 227, 0.9);
+}
+</style>
 </head>
 <body class="voyage-flagship vb-pub">
   <nav class="vb-pub-topnav" aria-label="Site">
     <a href="/questfest">SS VIBELANDIA</a><span class="dot" aria-hidden="true">·</span>
     <a href="/infinite-octave-egs-catalog">Brochure</a><span class="dot" aria-hidden="true">·</span>
-    <span class="here">Decision portals</span><span class="dot" aria-hidden="true">·</span>
+    <span class="here">Executive sandbox</span><span class="dot" aria-hidden="true">·</span>
     <a href="/executive-onboarding">Executive onboarding</a><span class="dot" aria-hidden="true">·</span>
     <a href="/lattice-chat/">Lattice Chat</a>
   </nav>
 
-  <header class="vb-pub-hero" style="min-height:min(68vh,560px)" aria-label="Decision portals">
+  <header class="vb-pub-hero" style="min-height:min(72vh,600px)" aria-label="Infinite Octave EGS Catalog executive sandbox">
     <div class="vb-pub-hero__media" aria-hidden="true">
       <img
         src="/interfaces/assets/infinite-octave-egs-catalog/portal.jpg"
@@ -231,185 +445,456 @@ color: rgba(244, 239, 227, 0.55);
     </div>
     <div class="vb-pub-hero__veil" aria-hidden="true"></div>
     <div class="vb-pub-hero__inner">
-      <p class="vb-pub-eyebrow">☀ S.S. Vibelandia · Bridge · Decision portals</p>
-      <h1 class="vb-pub-title">Decision Portals</h1>
-      <p class="vb-pub-tagline">Four rooms for leaders walking Infinite Octave EGS Catalog.<br />
-      False binary first. Catalog grammar second. Human emergency always first.</p>
+      <p class="vb-pub-eyebrow">☀ S.S. Vibelandia · Bridge · Local sandbox</p>
+      <h1 class="vb-pub-title">Infinite Octave EGS Catalog</h1>
+      <p class="vb-pub-tagline">Executive sandbox — see the catalog layer with your own hands.<br />
+      Compare with vs without. No uploads. No keys. Soft Story numbers only.</p>
       <div class="vb-pub-rule" aria-hidden="true"></div>
       <div class="vb-pub-cta-row">
-        <a class="vb-pub-btn vb-pub-btn--gold" href="#portal-treadmill">Start Portal 01</a>
+        <a class="vb-pub-btn vb-pub-btn--gold" href="#portal-sandbox">Open the sandbox</a>
         <a class="vb-pub-btn vb-pub-btn--ghost" href="/infinite-octave-egs-catalog">Product brochure</a>
-        <a class="vb-pub-btn vb-pub-btn--ghost" href="/interfaces/executive-ai-onboard/">Interactive SPA</a>
+        <a class="vb-pub-btn vb-pub-btn--ghost" href="#portal-stack">Where it sits</a>
       </div>
     </div>
   </header>
 
   <article class="wrap vb-pub-wrap">
-    <p class="lead">You are on the Bridge decision deck. These portals are hospitality rooms for executives — not a membership test, not medical advice, not a legal brief. Φ<sub>EGS</sub> ≈ 1.618 stays design language. Protein folding stays Soft Story contrast — not CASP retirement.</p>
+    <p class="lead">This page is a CEO walkthrough you can run in the browser. Pick an executive function, flip the catalog layer on or off, and read Soft Story metrics side by side — then see how the architecture and access path fit together.</p>
 
-    <p class="honesty"><strong>Ship promise:</strong> SuperAI stays Goldilocks — not too much machine, not too little human. Catalog mediation is placement grammar, not finished AGI proof. NPCs inhabit. Players set the gravity. Both belong. Purser remedies remain open.</p>
+    <p class="honesty"><strong>Honesty rail:</strong> Soft Story demonstration numbers — not live telemetry from your estate. Φ<sub>EGS</sub> ≈ 1.618 is a design / catalog key, not a replacement for measured physics constants. This sandbox is not a penetration-test certificate. Human emergency still outranks algorithms.</p>
 
-    <nav class="egsb-door-rail" aria-label="Decision portal doors">
-      <a href="#portal-treadmill">01 · Treadmill</a>
-      <a href="#portal-catalog">02 · Catalog</a>
-      <a href="#portal-protein">03 · Protein</a>
-      <a href="#portal-goldilocks">04 · Action</a>
+    <nav class="egsb-door-rail" aria-label="Executive sandbox doors">
+      <a href="#portal-stack">01 · Where it sits</a>
+      <a href="#portal-sandbox">02 · With vs without</a>
+      <a href="#portal-architecture">03 · Architecture</a>
+      <a href="#portal-access">04 · Open · Run · Deploy</a>
     </nav>
 
-    <section class="egsb-room" id="portal-treadmill" aria-labelledby="portal-treadmill-h">
-      <div class="egsb-room__layout">
-        <div class="egsb-room__media">
-          <img src="/interfaces/assets/infinite-octave-egs-catalog/hero.jpg" width="1280" height="720" alt="Navy-gold voyage vessel framing the brute-force versus moat dilemma" loading="lazy" decoding="async" />
+    <!-- PORTAL 01 -->
+    <section class="egsb-room" id="portal-stack" aria-labelledby="portal-stack-h">
+      <p class="egsb-kicker">Portal 01 · Visual AI stack</p>
+      <h2 id="portal-stack-h">Where the catalog layer sits</h2>
+      <p>Three bands. Models and IDEs on top. Ship doors and enterprise data below. The Infinite Octaves catalog layer in the middle — the mediation surface leadership funds when briefs need to get sharper without asking every team to learn the machinery.</p>
+
+      <div class="egsb-stack" id="egsb-stack" data-lit="0">
+        <div
+          class="egsb-stack__band"
+          data-band="models"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+        >
+          <p class="egsb-stack__label">Band A</p>
+          <p class="egsb-stack__title">Models &amp; IDEs</p>
         </div>
-        <div>
-          <p class="egsb-live">Briefing live</p>
-          <p class="egsb-kicker">Portal 01 · False binary</p>
-          <h2 id="portal-treadmill-h">Brute-force treadmill vs regulatory moat</h2>
-          <p>Executive leadership often faces a false binary: burn gigawatts on opaque brute-force SuperAI, or lobby for regulatory moats that freeze innovation. Both can stay inside linear-only scaling when architecture never gets a third seat.</p>
-          <ul class="egsb-points">
-            <li><strong>Treadmill risk</strong> — more parameters, larger contexts, heavier power inject thermal, financial, and entropy costs without nesting grammar.</li>
-            <li><strong>Moat risk</strong> — compliance walls matter, and can harden lifeless control theater when they bandage architecture instead of revising it.</li>
-            <li><strong>Executive ask</strong> — separate “slow the race” and “burn harder” from “change the mediation layer.” Peer: <a href="/pacing-paradox/briefing">Pacing Paradox portals</a>.</li>
-          </ul>
+        <div
+          class="egsb-stack__band egsb-stack__band--catalog"
+          data-band="catalog"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+        >
+          <p class="egsb-stack__label">Band B · highlight me</p>
+          <p class="egsb-stack__title">Infinite Octaves catalog layer</p>
         </div>
+        <div
+          class="egsb-stack__band"
+          data-band="doors"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+        >
+          <p class="egsb-stack__label">Band C</p>
+          <p class="egsb-stack__title">Ship doors &amp; enterprise data</p>
+        </div>
+      </div>
+
+      <svg class="egsb-stack-svg" viewBox="0 0 640 168" role="img" aria-label="Three-band AI stack diagram">
+        <rect class="band-fill" x="8" y="8" width="624" height="44" rx="2" fill="rgba(12,22,40,0.9)" stroke="rgba(212,175,55,0.28)" />
+        <text x="28" y="36" fill="#f5e6c8" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="600">Models &amp; IDEs</text>
+        <rect class="band-fill band-catalog-fill" x="8" y="62" width="624" height="44" rx="2" fill="rgba(212,175,55,0.12)" stroke="rgba(212,175,55,0.45)" />
+        <text x="28" y="90" fill="#fef3c7" font-family="Cormorant Garamond, Georgia, serif" font-size="18" font-weight="600">Infinite Octaves catalog layer</text>
+        <rect class="band-fill" x="8" y="116" width="624" height="44" rx="2" fill="rgba(12,22,40,0.9)" stroke="rgba(212,175,55,0.28)" />
+        <text x="28" y="144" fill="#f5e6c8" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="600">Ship doors &amp; enterprise data</text>
+      </svg>
+
+      <p class="egsb-stack__caption" id="egsb-stack-caption" aria-live="polite">
+        Hover or click the middle band to light the catalog layer.
+      </p>
+      <p class="egsb-access-callout">
+        <strong>Easy access:</strong> Teams and customers never need the math — they only see better outcomes. Executives keep control and cost calm; operators keep a clear deploy path.
+      </p>
+    </section>
+
+    <!-- PORTAL 02 -->
+    <section class="egsb-room" id="portal-sandbox" aria-labelledby="portal-sandbox-h">
+      <p class="egsb-kicker">Portal 02 · Sandbox organization</p>
+      <h2 id="portal-sandbox-h">With catalog layer vs without</h2>
+      <p>Choose the brief your seat cares about, then flip the layer on or off. Metrics update instantly. Everything stays on this page — no backend, no uploads, no API keys.</p>
+      <p class="honesty" style="margin-top:0.75rem"><strong>Sandbox demonstration — not your live telemetry.</strong></p>
+
+      <p class="egsb-kicker" style="margin-top:1.1rem">Executive function</p>
+      <div class="egsb-fn-row" role="group" aria-label="Executive function">
+        <button type="button" class="egsb-fn is-active" data-fn="board" aria-pressed="true">Board budget brief</button>
+        <button type="button" class="egsb-fn" data-fn="risk" aria-pressed="false">Risk / exception review</button>
+        <button type="button" class="egsb-fn" data-fn="customer" aria-pressed="false">Customer answer pack</button>
+        <button type="button" class="egsb-fn" data-fn="compliance" aria-pressed="false">Compliance evidence pack</button>
+      </div>
+
+      <div class="egsb-toggle-wrap">
+        <p class="egsb-toggle-wrap__label">Catalog layer</p>
+        <div class="egsb-toggle" role="group" aria-label="With or without catalog layer">
+          <button type="button" data-mode="without" aria-pressed="false">Without</button>
+          <button type="button" class="is-active" data-mode="with" aria-pressed="true">With</button>
+        </div>
+        <p class="egsb-scenario-note" id="egsb-scenario-note">Board budget brief · catalog layer ON</p>
+      </div>
+
+      <div class="egsb-compare" id="egsb-compare" aria-live="polite">
+        <!-- filled by script -->
       </div>
     </section>
 
-    <section class="egsb-room" id="portal-catalog" aria-labelledby="portal-catalog-h">
-      <div class="egsb-room__layout">
-        <div class="egsb-room__media">
-          <img src="/interfaces/assets/infinite-octave-egs-catalog/layer-plate.jpg" width="1280" height="720" alt="Catalog mediation layer plate between enterprise data and AI agents" loading="lazy" decoding="async" />
-        </div>
-        <div>
-          <p class="egsb-kicker">Portal 02 · El Gran Sol</p>
-          <h2 id="portal-catalog-h">Φ<sub>EGS</sub> catalog mediation layer</h2>
-          <p>Φ<sub>EGS</sub> ≈ 1.618 is filed as a <strong>structural / architectural</strong> key for recursive self-similarity — how this ship compresses catalog depth between raw enterprise data and AI orchestration agents.</p>
-          <pre class="egsb-ascii" aria-label="Catalog placement diagram">[ Raw enterprise data ]
-            │
-            ▼
-║  INFINITE OCTAVE EGS CATALOG  ║
-║  Φ_EGS nesting · standing-wave ║
-            │
-            ▼
-[ AI orchestration &amp; agents ]</pre>
-          <ul class="egsb-points">
-            <li><strong>What it is</strong> — holographic mediation grammar; context windows as nested filings, not endless token dumps.</li>
-            <li><strong>What it is not</strong> — a CODATA replacement for ħ, c, or G; proof that “compute clusters are obsolete” as physics.</li>
-            <li><strong>Executive ask</strong> — fund catalog mediation and nesting leverage, not only cluster race budgets. See <a href="/lattice#ai-catalog-layer-intro">Lattice catalog layer</a> and <a href="/ship-blog/moving-up-the-stack">Moving up the stack</a>.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- PORTAL 03 -->
+    <section class="egsb-room" id="portal-architecture" aria-labelledby="portal-architecture-h">
+      <p class="egsb-kicker">Portal 03 · Architecture</p>
+      <h2 id="portal-architecture-h">Five innovations + security fabric</h2>
+      <p>What the catalog layer files that a linear-only stack cannot — each with what you lose if you skip it. After sync, the security fabric lives under <a href="#security-fabric-24x365">#security-fabric-24x365</a>: keys stay local, raw corpora stay out of every prompt, and human emergency still outranks algorithms.</p>
 
 <!-- CATALOG_LAYER_INNOVATIONS_START -->
 <section class="cat-innov" id="catalog-layer-innovations" aria-labelledby="catalog-layer-innovations-h">
   <h2 id="catalog-layer-innovations-h">Key architectural innovations</h2>
-  <p class="cat-innov__lead">What the Infinite Octaves catalog layer files that linear-only stacks cannot — each with what you lose if you skip it.</p>
+  <p class="cat-innov__lead">What the Infinite Octaves catalog layer files that linear-only stacks cannot — each with what you lose if you skip it. Security is woven through the fabric, not sold as a bolt-on.</p>
   <div class="cat-innov__grid">
 <article class="cat-innov__card" id="volumetric-interference">
   <h3 class="cat-innov__title">Volumetric interference processing</h3>
-  <p class="cat-innov__label">Prime-indexed volumetric vaults · zero ISI grammar</p>
-  <p class="cat-innov__delivers"><strong>Delivers:</strong> Algebraic Φ-map filing of payloads into prime-indexed volumetric vaults — absolute orthogonality framed as zero inter-symbol interference in the prime-vault grammar.</p>
-  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without this shelf you stay on RS/LDPC parity taxes and LBA/B⁺-tree lookup habits; you cannot file memory as Infinite Octaves prime-vault orthogonality.</p>
+  <p class="cat-innov__label">Separated knowledge vaults · deep context without collision</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Files enterprise knowledge into separated vaults so signals do not collide when context gets deep — cleaner recall, less prompt noise.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it you stay on bloated vector lookup and parity taxes; deep context keeps colliding and burning tokens.</p>
   <p class="cat-innov__links"><a href="/ship-blog/prime-indexed-volumetric-storage">Volumetric storage note</a></p>
   <p class="cat-innov__honesty">Catalog framing — not a JEDEC drop-in or measured ECC retirement.</p>
 </article>
 <article class="cat-innov__card" id="golden-ratio-cataloging">
-  <h3 class="cat-innov__title">Golden ratio cataloging</h3>
-  <p class="cat-innov__label">Φ_EGS ≈ 1.618 recursive nesting</p>
-  <p class="cat-innov__delivers"><strong>Delivers:</strong> Closed-form harmonic nesting between agentic IDEs and resonant data — context as multi-dimensional standing-wave maps keyed by El Gran Sol’s fractal constant.</p>
-  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without Φ_EGS cataloging you remain trapped in the brute-force treadmill vs regulatory-moat binary; you cannot file a third mediation path with absolute structural nesting order.</p>
+  <h3 class="cat-innov__title">Golden-ratio cataloging</h3>
+  <p class="cat-innov__label">Φ_EGS ≈ 1.618 · nest order instead of sprawl</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Orders nesting with El Gran Sol’s fractal constant (Φ_EGS ≈ 1.618) so context compresses into structure instead of sprawling into more spend.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it you remain stuck choosing between the brute-force treadmill and the regulatory moat — no third mediation path with structural order.</p>
   <p class="cat-innov__links"><a href="/infinite-octave-egs-catalog">EGS Catalog brochure</a></p>
   <p class="cat-innov__honesty">Design / catalog key — not a CODATA replacement for ħ, c, or G.</p>
 </article>
 <article class="cat-innov__card" id="prime-container-storage">
-  <h3 class="cat-innov__title">Prime container geometrical storage</h3>
-  <p class="cat-innov__label">Odd-prime containment vaults · geometry sketch</p>
-  <p class="cat-innov__delivers"><strong>Delivers:</strong> Replayable non-gradient prime-vault containment that maps sequences into odd-prime geometrical vaults under Φ_EGS — Soft Story contrast to brute-force conformational search.</p>
-  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without prime-container geometry you only have statistical/MSA predictors; you cannot file a closed-form Infinite Octaves containment sketch as architecture grammar.</p>
+  <h3 class="cat-innov__title">Prime-container storage</h3>
+  <p class="cat-innov__label">Odd-prime geometry · structure over endless search</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Holds structure in odd-prime geometry so hard problems resolve as containment, not endless brute-force search.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it you only have statistical predictors and longer GPU runs; you cannot file a closed-form containment sketch as architecture.</p>
   <p class="cat-innov__links"><a href="/ship-blog/protein-folding-prime-container">Prime-container note</a></p>
   <p class="cat-innov__honesty">Architecture Soft Story — not CASP gold, not clinical, not AlphaFold retirement.</p>
 </article>
 <article class="cat-innov__card" id="holographic-rhyme-wiring">
   <h3 class="cat-innov__title">Holographic rhyme wiring</h3>
-  <p class="cat-innov__label">Four-pillar rhyme · Tier C wiring lattices</p>
-  <p class="cat-innov__delivers"><strong>Delivers:</strong> Enforceable repeating · self-similar · self-correcting · recursive motion grammar plus load-bearing narrative pointer circuits that route agent intent across catalog boundaries.</p>
-  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without holographic rhyme wiring, “holographic” stays a free-floating adjective and narrative shelves stay inert archives — agents re-paste fat dumps instead of routing by wired briefs.</p>
+  <p class="cat-innov__label">Repeating · self-correcting briefs across shelves</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Routes agent intent across shelves with repeating, self-correcting briefs — so teams stop re-pasting fat dumps.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it “holographic” stays a slogan and agents keep pasting archives into every prompt.</p>
   <p class="cat-innov__links"><a href="/ship-blog/holographic-rhyme">Holographic rhyme note</a> <a href="/ship-blog/tier-c-holographic-wiring">Tier C wiring</a></p>
   <p class="cat-innov__honesty">Catalog motion + wiring grammar — not a claim that prose causes physics.</p>
 </article>
+<article class="cat-innov__card" id="goldilocks-net-zero">
+  <h3 class="cat-innov__title">Goldilocks · Net Zero</h3>
+  <p class="cat-innov__label">Just right · cool the burn without freezing innovation</p>
+  <p class="cat-innov__delivers"><strong>Delivers:</strong> Keeps spend, heat, and chaos in the “just right” band — cool the burn without freezing the roadmap. Net-zero calm as an operating target, not a slogan.</p>
+  <p class="cat-innov__without"><strong>Cannot achieve without it:</strong> Without it you swing between thermal and financial runaway on one side and bureaucratic stall on the other — no invariant calm for the enterprise.</p>
+  <p class="cat-innov__links"><a href="/ship-blog/holographic-singularity-crystal">Net Zero crystal note</a> <a href="/ship-blog/zero-octave-y-goldilocks">Y Goldilocks note</a></p>
+  <p class="cat-innov__honesty">Goldilocks / Net Zero as catalog operating grammar — not a claim of measured zero-joule compute or finished CODATA replacement.</p>
+</article>
   </div>
-  <p class="cat-innov__rail">Four catalog-layer innovations as Infinite Octaves Soft Story architecture — not finished physics, fab, or JEDEC proofs. Human emergency still outranks algorithms.</p>
+<aside class="cat-innov__security" id="security-fabric-24x365" aria-label="Security fabric · 24×365">
+  <h3>Security fabric · 24×365</h3>
+  <p>Security is built into how the catalog files and routes knowledge — not bolted on after the fact.</p>
+  <p><strong>Delivers:</strong> Keys stay local. Raw corpora stay out of every prompt. The layer indexes schemas as nested filings and routes agents with least privilege across data at rest, in transit, in context windows, in tools, and in executive oversight — always on.</p>
+  <p><strong>How:</strong> Cryptographic handshake in a local KMS → catalog container as an interceptor in your cluster → continuous coherence checks. USA-made sovereign enclave path for the CISO when you move from sandbox to production.</p>
+  <p><strong>Cannot achieve without it:</strong> Without catalog-boundary mediation you keep shipping fat context into every model call and bolting security on as filters — noise, drift, and exposure scale with every agent.</p>
+  <p class="cat-innov__honesty">Architecture fabric and deployment path — not a penetration-test certificate or finished ops receipt for every enterprise. Human emergency still outranks algorithms.</p>
+</aside>
+  <p class="cat-innov__rail">Five catalog-layer innovations as Infinite Octaves Soft Story architecture — not finished physics, fab, or JEDEC proofs. Security is woven as 24×365 fabric at the catalog boundary. Human emergency still outranks algorithms.</p>
 </section>
 <!-- CATALOG_LAYER_INNOVATIONS_END -->
 
-
-    <section class="egsb-room" id="portal-protein" aria-labelledby="portal-protein-h">
-      <div class="egsb-room__layout">
-        <div class="egsb-room__media">
-          <img src="/interfaces/assets/infinite-octave-egs-catalog/portal.jpg" width="1152" height="864" alt="Holographic decision doorway for protein folding Soft Story contrast" loading="lazy" decoding="async" />
-        </div>
-        <div>
-          <p class="egsb-kicker">Portal 03 · Soft Story proof-point</p>
-          <h2 id="portal-protein-h">Protein folding · catalog contrast (honesty)</h2>
-          <p>Protein folding is not best told only as “search every atomic permutation on a GPU farm.” Under EGS Soft Story grammar, folding files as harmonic resonance / prime-container nesting rather than pure combinatorial search.</p>
-          <ul class="egsb-points">
-            <li><strong>Catalog claim</strong> — architecture contrast: harmonic filing vs brute-force search as Soft Story grammar.</li>
-            <li><strong>Does not claim</strong> — CASP retirement; zero thermal blowup as measured wet-lab fact; petawatt replacement invoices.</li>
-            <li><strong>Peer shelf</strong> — <a href="/ship-blog/protein-folding-prime-container">Protein Folding Prime Container</a> · keep the honesty pinch visible in every executive room.</li>
-          </ul>
-        </div>
-      </div>
+      <p class="egsb-sec-pointer">Security is woven through the catalog — not bolted on after the fact. See the fabric block above once innovations are synced.</p>
     </section>
 
-    <section class="egsb-room" id="portal-goldilocks" aria-labelledby="portal-goldilocks-h">
-      <div class="egsb-room__layout">
-        <div class="egsb-room__media">
-          <img src="/interfaces/assets/infinite-octave-egs-catalog/hero.jpg" width="1280" height="720" alt="SS Vibelandia navy-gold vessel for Goldilocks placement action" loading="lazy" decoding="async" />
-        </div>
-        <div>
-          <p class="egsb-kicker">Portal 04 · Placement · pricing · Fair Exchange</p>
-          <h2 id="portal-goldilocks-h">What leaders do today</h2>
-          <p>Install the catalog between warehouses and agents. Price tiers are a published rate card — not securities advice. Fair Exchange keeps reciprocal rails open.</p>
-          <ul class="egsb-points">
-            <li><strong>Tier 1 · Sovereign Node</strong> — $3,500 / mo · dept / skunkworks · K8s + SDK.</li>
-            <li><strong>Tier 2 · Multi-Scalar Grid</strong> — $12,500 / mo · production holographic catalog · 24/7 support.</li>
-            <li><strong>Tier 3 · Frontier Global Grid</strong> — custom from $350k+ ARR · multi-region Soft Story modeling.</li>
-            <li><strong>Set · Player · Frontier Game</strong> — nodes render · operators set gravity · open-source invariant market domain.</li>
-            <li><strong>Walk the ship</strong> — <a href="/demonstrations">Demonstrations</a> · <a href="/lattice#ai-catalog-layer-intro">Catalog layer</a> · <a href="/lattice-chat/">Lattice Chat</a>.</li>
-            <li><strong>Human hand</strong> — <a href="mailto:info@fractiai.com">info@fractiai.com</a>.</li>
-          </ul>
-        </div>
+    <!-- PORTAL 04 -->
+    <section class="egsb-room" id="portal-access" aria-labelledby="portal-access-h">
+      <p class="egsb-kicker">Portal 04 · Access</p>
+      <h2 id="portal-access-h">Open · Run · Deploy</h2>
+      <p>Three steps. You already completed the first by opening this page. Run a with/without scenario above, then talk to us about handshake · inject · calibrate when you are ready to place the layer in your stack.</p>
+
+      <ol class="egsb-steps">
+        <li class="egsb-step is-done">
+          <p class="egsb-step__n">Step 01</p>
+          <h3>Open sandbox</h3>
+          <p>Done. You are on the Bridge executive sandbox — local only, Soft Story metrics, no credentials required.</p>
+        </li>
+        <li class="egsb-step">
+          <p class="egsb-step__n">Step 02</p>
+          <h3>Run a scenario</h3>
+          <p>Pick a function in Portal 02, toggle with vs without, and read the side-by-side Soft Story comparison.</p>
+        </li>
+        <li class="egsb-step">
+          <p class="egsb-step__n">Step 03</p>
+          <h3>Deploy</h3>
+          <p>Handshake · inject · calibrate — place the mediation layer between your models and your data when the board is ready.</p>
+        </li>
+      </ol>
+
+      <p class="honesty" style="margin-top:1.15rem"><strong>Transparency promise:</strong> Executives see control and cost calm. Teams get sharper briefs. Customers only see faster, cleaner answers — they never have to learn Φ or the catalog math.</p>
+
+      <div class="egsb-exec-links">
+        <a class="vb-pub-btn vb-pub-btn--gold" href="/infinite-octave-egs-catalog">Product brochure</a>
+        <a class="vb-pub-btn vb-pub-btn--ghost" href="/lattice-chat/">Lattice Chat</a>
+        <a class="vb-pub-btn vb-pub-btn--ghost" href="/executive-onboarding">Executive onboarding</a>
+        <a class="vb-pub-btn vb-pub-btn--ghost" href="mailto:info@fractiai.com?subject=Infinite%20Octave%20EGS%20Catalog%20%C2%B7%20Executive%20sandbox">info@fractiai.com</a>
       </div>
     </section>
-
-    <h2 id="exec-stack">Executive stack · continue the course</h2>
-    <p>These portals sit beside the ship’s executive learning rails and the Infinite Octave AI Catalog Layer. Open the interactive course when you want timed modules and newscast briefings.</p>
-    <div class="egsb-exec-links">
-      <a class="vb-pub-btn vb-pub-btn--gold" href="/executive-onboarding">Executive onboarding hub</a>
-      <a class="vb-pub-btn vb-pub-btn--ghost" href="/interfaces/executive-ai-onboard/">Executive AI onboard SPA</a>
-      <a class="vb-pub-btn vb-pub-btn--ghost" href="/lattice#ai-catalog-layer-intro">Lattice catalog layer</a>
-      <a class="vb-pub-btn vb-pub-btn--ghost" href="/demonstrations">Demonstrations</a>
-      <a class="vb-pub-btn vb-pub-btn--ghost" href="/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-egs-catalog-frontier-2026-09">Full whitepaper</a>
-      <a class="vb-pub-btn vb-pub-btn--ghost" href="/ship-blog/infinite-octave-egs-catalog">Ship-blog note</a>
-    </div>
 
     <div class="voyage-purser">
       <p class="voyage-purser__h">Purser’s Desk · Universal Fair Exchange</p>
       <p>Deeper CEO walks, custom domain maps, and integrator briefings tip reciprocal rails. A portion of value remains subject to refund or adjustment on verified utility. Old School honor.</p>
-      <p style="margin-top:0.5rem"><a href="mailto:info@fractiai.com?subject=Decision%20portals%20%C2%B7%20Infinite%20Octave%20EGS%20Catalog">info@fractiai.com</a></p>
+      <p style="margin-top:0.5rem"><a href="mailto:info@fractiai.com?subject=Executive%20sandbox%20%C2%B7%20Infinite%20Octave%20EGS%20Catalog">info@fractiai.com</a></p>
     </div>
 
     <div class="cta-row">
       <a class="btn btn-gold" href="/infinite-octave-egs-catalog">Back to product brochure</a>
-      <a class="btn btn-ghost" href="/pacing-paradox">Pacing Paradox brochure</a>
+      <a class="btn btn-ghost" href="#portal-sandbox">Return to sandbox</a>
       <a class="btn btn-ghost" href="/questfest">QUESTFEST</a>
     </div>
     <footer>
       Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞^∞
     </footer>
   </article>
+
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script>
+(function () {
+  'use strict';
+
+  var CAPTION_ON =
+    'Teams and customers never need the math — they only see better outcomes.';
+  var CAPTION_OFF =
+    'Hover or click the middle band to light the catalog layer.';
+
+  var METRICS = {
+    board: {
+      label: 'Board budget brief',
+      without: {
+        time: { text: 'High · days of assembly', tone: 'warn' },
+        noise: { text: 'High · scattered decks', tone: 'warn' },
+        tokens: { text: 'High · fat context dumps', tone: 'warn' },
+        quality: { text: 'Uneven · rewrite loops', tone: 'warn' },
+        exposure: { text: 'High · raw corpora in prompts', tone: 'warn' }
+      },
+      with: {
+        time: { text: 'Low · hours to a clean brief', tone: 'good' },
+        noise: { text: 'Low · nested filings', tone: 'good' },
+        tokens: { text: 'Compressed · structure over sprawl', tone: 'good' },
+        quality: { text: 'Steady · board-ready spine', tone: 'good' },
+        exposure: { text: 'Contained · schemas, not dumps', tone: 'good' }
+      }
+    },
+    risk: {
+      label: 'Risk / exception review',
+      without: {
+        time: { text: 'High · chase across tools', tone: 'warn' },
+        noise: { text: 'High · exception fog', tone: 'warn' },
+        tokens: { text: 'High · repeated pastes', tone: 'warn' },
+        quality: { text: 'Uneven · missed edges', tone: 'warn' },
+        exposure: { text: 'High · privilege sprawl', tone: 'warn' }
+      },
+      with: {
+        time: { text: 'Low · routed exceptions', tone: 'good' },
+        noise: { text: 'Low · clear exception lanes', tone: 'good' },
+        tokens: { text: 'Compressed · least-privilege briefs', tone: 'good' },
+        quality: { text: 'Steady · reviewable trail', tone: 'good' },
+        exposure: { text: 'Contained · boundary mediation', tone: 'good' }
+      }
+    },
+    customer: {
+      label: 'Customer answer pack',
+      without: {
+        time: { text: 'High · wait on specialists', tone: 'warn' },
+        noise: { text: 'High · internal jargon leak', tone: 'warn' },
+        tokens: { text: 'High · over-shared context', tone: 'warn' },
+        quality: { text: 'Uneven · tone drift', tone: 'warn' },
+        exposure: { text: 'High · back-office detail leaks', tone: 'warn' }
+      },
+      with: {
+        time: { text: 'Low · pack in one pass', tone: 'good' },
+        noise: { text: 'Low · customer-facing only', tone: 'good' },
+        tokens: { text: 'Compressed · outcome briefs', tone: 'good' },
+        quality: { text: 'Steady · clear answers', tone: 'good' },
+        exposure: { text: 'Contained · no math, no dumps', tone: 'good' }
+      }
+    },
+    compliance: {
+      label: 'Compliance evidence pack',
+      without: {
+        time: { text: 'High · manual evidence hunt', tone: 'warn' },
+        noise: { text: 'High · duplicate artifacts', tone: 'warn' },
+        tokens: { text: 'High · unscoped corpora', tone: 'warn' },
+        quality: { text: 'Uneven · gaps under audit', tone: 'warn' },
+        exposure: { text: 'High · over-collection risk', tone: 'warn' }
+      },
+      with: {
+        time: { text: 'Low · filed evidence spines', tone: 'good' },
+        noise: { text: 'Low · scoped filings', tone: 'good' },
+        tokens: { text: 'Compressed · schema-first packs', tone: 'good' },
+        quality: { text: 'Steady · audit-ready shape', tone: 'good' },
+        exposure: { text: 'Contained · least privilege', tone: 'good' }
+      }
+    }
+  };
+
+  var METRIC_ROWS = [
+    { key: 'time', name: 'Time-to-brief' },
+    { key: 'noise', name: 'Context noise' },
+    { key: 'tokens', name: 'Token bloat proxy' },
+    { key: 'quality', name: 'Outcome quality' },
+    { key: 'exposure', name: 'Security exposure' }
+  ];
+
+  var state = { fn: 'board', mode: 'with' };
+
+  function $(sel, root) {
+    return (root || document).querySelector(sel);
+  }
+  function $all(sel, root) {
+    return Array.prototype.slice.call((root || document).querySelectorAll(sel));
+  }
+
+  function setStackLit(on) {
+    var stack = $('#egsb-stack');
+    var caption = $('#egsb-stack-caption');
+    if (!stack || !caption) return;
+    stack.classList.toggle('is-catalog-lit', on);
+    stack.setAttribute('data-lit', on ? '1' : '0');
+    $all('.egsb-stack__band', stack).forEach(function (band) {
+      var isCat = band.getAttribute('data-band') === 'catalog';
+      band.classList.toggle('is-lit', on && isCat);
+      band.setAttribute('aria-pressed', on && isCat ? 'true' : 'false');
+    });
+    caption.textContent = on ? CAPTION_ON : CAPTION_OFF;
+    caption.classList.toggle('is-on', on);
+  }
+
+  function bindStack() {
+    var stack = $('#egsb-stack');
+    if (!stack) return;
+    var catalog = $('.egsb-stack__band--catalog', stack);
+
+    function light() { setStackLit(true); }
+    function dim() {
+      if (document.activeElement === catalog) return;
+      setStackLit(false);
+    }
+
+    $all('.egsb-stack__band', stack).forEach(function (band) {
+      var isCat = band.getAttribute('data-band') === 'catalog';
+      band.addEventListener('mouseenter', function () {
+        setStackLit(isCat);
+      });
+      band.addEventListener('mouseleave', dim);
+      band.addEventListener('focus', function () {
+        setStackLit(isCat);
+      });
+      band.addEventListener('blur', dim);
+      band.addEventListener('click', function () {
+        setStackLit(isCat ? !stack.classList.contains('is-catalog-lit') : false);
+      });
+      band.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          band.click();
+        }
+      });
+    });
+  }
+
+  function metricCell(entry) {
+    var tone = entry.tone === 'good' ? 'egsb-metric__val--good' : 'egsb-metric__val--warn';
+    return (
+      '<span class="egsb-metric__val ' + tone + '">' + entry.text + '</span>'
+    );
+  }
+
+  function renderCard(side, data, focused) {
+    var rows = METRIC_ROWS.map(function (row) {
+      return (
+        '<div class="egsb-metric">' +
+          '<span class="egsb-metric__name">' + row.name + '</span>' +
+          metricCell(data[row.key]) +
+        '</div>'
+      );
+    }).join('');
+    var title = side === 'without' ? 'Without catalog layer' : 'With catalog layer';
+    var focusClass = focused ? ' is-focus' : ' is-dim';
+    return (
+      '<article class="egsb-card' + focusClass + '" data-side="' + side + '">' +
+        '<p class="egsb-card__h">' + title + '</p>' +
+        rows +
+      '</article>'
+    );
+  }
+
+  function renderCompare() {
+    var pack = METRICS[state.fn] || METRICS.board;
+    var root = $('#egsb-compare');
+    var note = $('#egsb-scenario-note');
+    if (!root) return;
+    root.innerHTML =
+      renderCard('without', pack.without, state.mode === 'without') +
+      renderCard('with', pack.with, state.mode === 'with');
+    if (note) {
+      note.textContent =
+        pack.label +
+        ' · catalog layer ' +
+        (state.mode === 'with' ? 'ON' : 'OFF');
+    }
+  }
+
+  function bindFunctions() {
+    $all('.egsb-fn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        state.fn = btn.getAttribute('data-fn') || 'board';
+        $all('.egsb-fn').forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        renderCompare();
+      });
+    });
+  }
+
+  function bindToggle() {
+    $all('.egsb-toggle button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        state.mode = btn.getAttribute('data-mode') || 'with';
+        $all('.egsb-toggle button').forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        renderCompare();
+      });
+    });
+  }
+
+  bindStack();
+  bindFunctions();
+  bindToggle();
+  renderCompare();
+  setStackLit(false);
+})();
+  </script>
 </body>
 </html>

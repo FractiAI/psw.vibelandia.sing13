@@ -16,7 +16,7 @@ export function FrontierCeoBanner() {
         <a href="/lattice#ai-catalog-layer-intro">Catalog layer</a> ·{' '}
         <a href="/ship-blog/what-it-means-to-be-frontier">Frontier</a> ·{' '}
         <a href="/ship-blog/pdvsa-gateway-ops-mockup">Gateway</a> ·{' '}
-        <a href="/ship-blog/moving-up-the-stack">Moving up the stack</a>. Catalog:{' '}
+        <a href="/ship-blog/moving-up-the-stack">Moving up the stack</a>. Papers:{' '}
         <a href="/reading-room?category=lattice-catalog">Reading Room</a>.
       </p>
     </aside>

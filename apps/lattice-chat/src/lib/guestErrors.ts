@@ -12,7 +12,7 @@ export function softenLatticeGuestError(msg: string): string {
   const raw = (msg || '').trim();
   if (!raw) return raw;
   if (STREAM_DETACHED_RE.test(raw)) {
-    return 'Live thought stream paused after leaving this tab — tap Check for reply (no page refresh needed).';
+    return 'Live thought stream paused after leaving this tab — tap Check for reply. Stay on this page; no refresh needed.';
   }
   if (/send interrupted/i.test(raw) && /hard refresh/i.test(raw)) {
     return 'Send interrupted — tap Check for reply before re-pasting the prompt.';

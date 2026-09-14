@@ -1,6 +1,8 @@
 import type { ChatThread } from '@/types';
 
-export const MAX_PERSISTED_THREADS = 40;
+/** Keep edge cache lean — bloated history + doodle wall share origin quota and can crash the tab. */
+export const MAX_PERSISTED_THREADS = 24;
+export const MAX_PERSISTED_MESSAGE_CHARS = 24_000;
 
 /** Past chats a signed-in seat can pick — keep the active draft visible too. */
 export function listSelectableChats(
@@ -16,6 +18,7 @@ export function listSelectableChats(
 export function slimThreadsForPersist(
   threads: ChatThread[],
   max = MAX_PERSISTED_THREADS,
+  maxChars = MAX_PERSISTED_MESSAGE_CHARS,
 ): ChatThread[] {
   const sorted = [...threads].sort(
     (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
@@ -28,7 +31,7 @@ export function slimThreadsForPersist(
       // Cap edge cache size — huge assistant dumps can blow quota and white-screen rehydrate.
       return {
         ...rest,
-        content: content.length > 48_000 ? `${content.slice(0, 48_000)}\n…` : content,
+        content: content.length > maxChars ? `${content.slice(0, maxChars)}\n…` : content,
       };
     }),
   }));

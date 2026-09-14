@@ -8,6 +8,7 @@ describe('Lattice Chat guest stream errors', () => {
   it('rewrites Run stream is no longer available without asking for Hard refresh', () => {
     const out = softenLatticeGuestError('Run stream is no longer available');
     expect(out).toMatch(/Check for reply/i);
+    expect(out).toMatch(/no refresh needed/i);
     expect(out).not.toMatch(/Hard refresh/i);
     expect(isSoftRecoverableLatticeError(out)).toBe(true);
     expect(isSoftRecoverableLatticeError('Run stream is no longer available')).toBe(true);

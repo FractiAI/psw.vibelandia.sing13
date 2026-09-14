@@ -1,16 +1,18 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
+import { LATTICE_EDGE_STORAGE_KEY, prunePersistedEdgeBlob } from '@/lib/edgeStorage';
 
 type Props = { children: ReactNode };
-type State = { error: Error | null };
+type State = { error: Error | null; recoverKey: number };
 
 /**
  * Catch mount/rehydrate throws so Lattice Chat does not white-screen the tab.
- * Player 1 can hard-refresh the edge without losing BYOK keys (separate storage).
+ * Soft recover remounts in-place (composer draft lives in sessionStorage).
+ * Hard refresh clears chat cache only — BYOK keys stay in provider key slots.
  */
 export class ErrorBoundary extends Component<Props, State> {
-  state: State = { error: null };
+  state: State = { error: null, recoverKey: 0 };
 
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error: Error): Partial<State> {
     return { error };
   }
 
@@ -18,10 +20,28 @@ export class ErrorBoundary extends Component<Props, State> {
     console.error('[lattice-chat] render crash', error, info?.componentStack);
   }
 
+  private softRecover = () => {
+    try {
+      const raw = localStorage.getItem(LATTICE_EDGE_STORAGE_KEY);
+      if (raw && raw.length > 800_000) {
+        const pruned = prunePersistedEdgeBlob(raw, 6);
+        if (pruned) localStorage.setItem(LATTICE_EDGE_STORAGE_KEY, pruned);
+        else localStorage.removeItem(LATTICE_EDGE_STORAGE_KEY);
+      }
+    } catch {
+      try {
+        localStorage.removeItem(LATTICE_EDGE_STORAGE_KEY);
+      } catch {
+        /* ignore */
+      }
+    }
+    this.setState((s) => ({ error: null, recoverKey: s.recoverKey + 1 }));
+  };
+
   private hardRefresh = () => {
     try {
       // Drop corrupted chat cache only — BYOK keys stay in provider key slots.
-      localStorage.removeItem('lattice-v1618-edge');
+      localStorage.removeItem(LATTICE_EDGE_STORAGE_KEY);
     } catch {
       /* ignore */
     }
@@ -35,7 +55,9 @@ export class ErrorBoundary extends Component<Props, State> {
   };
 
   render() {
-    if (!this.state.error) return this.props.children;
+    if (!this.state.error) {
+      return <div key={this.state.recoverKey}>{this.props.children}</div>;
+    }
     return (
       <div
         role="alert"
@@ -55,25 +77,43 @@ export class ErrorBoundary extends Component<Props, State> {
           Lattice Chat hit a snag
         </h1>
         <p style={{ margin: 0, maxWidth: '28rem', opacity: 0.85, lineHeight: 1.5 }}>
-          The edge cache may be bloated after a heavy doodle wall. Refresh clears chat cache only —
-          your API keys stay on-device.
+          Usually a bloated on-device chat cache (heavy sessions share browser storage with the doodle
+          wall). Try Continue first — your typed draft is kept in this tab. Full refresh only if
+          Continue fails; API keys stay on-device either way.
         </p>
-        <button
-          type="button"
-          onClick={this.hardRefresh}
-          style={{
-            justifySelf: 'center',
-            padding: '0.65rem 1.25rem',
-            borderRadius: '6px',
-            border: '1px solid rgba(240, 215, 140, 0.45)',
-            background: 'linear-gradient(180deg, #2a2218, #16120c)',
-            color: '#f0d78c',
-            fontWeight: 600,
-            cursor: 'pointer',
-          }}
-        >
-          Refresh Lattice Chat
-        </button>
+        <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <button
+            type="button"
+            onClick={this.softRecover}
+            style={{
+              padding: '0.65rem 1.25rem',
+              borderRadius: '6px',
+              border: '1px solid rgba(240, 215, 140, 0.45)',
+              background: 'linear-gradient(180deg, #2a2218, #16120c)',
+              color: '#f0d78c',
+              fontWeight: 600,
+              cursor: 'pointer',
+            }}
+          >
+            Continue (keep draft)
+          </button>
+          <button
+            type="button"
+            onClick={this.hardRefresh}
+            style={{
+              padding: '0.65rem 1.25rem',
+              borderRadius: '6px',
+              border: '1px solid rgba(240, 230, 210, 0.25)',
+              background: 'transparent',
+              color: '#f0e6d2',
+              fontWeight: 500,
+              cursor: 'pointer',
+              opacity: 0.9,
+            }}
+          >
+            Clear cache &amp; reload
+          </button>
+        </div>
       </div>
     );
   }

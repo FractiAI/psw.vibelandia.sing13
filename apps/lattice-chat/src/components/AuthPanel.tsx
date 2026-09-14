@@ -201,7 +201,14 @@ export function AuthPanel({
   );
 }
 
-export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => void }) {
+export function SignedInBar({
+  onOpenKeySettings,
+  hideHardRefresh = false,
+}: {
+  onOpenKeySettings?: () => void;
+  /** Soft stream / in-flight recover — do not offer a second “refresh page” prompt. */
+  hideHardRefresh?: boolean;
+}) {
   const userEmail = useLatticeStore((s) => s.userEmail);
   const privilege = useLatticeStore((s) => s.privilege);
   const clearUserEmail = useLatticeStore((s) => s.clearUserEmail);
@@ -225,18 +232,20 @@ export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => v
           if (onOpenKeySettings) onOpenKeySettings();
         }}
       />
-      <button
-        type="button"
-        className="signed-in-refresh"
-        disabled={refreshing}
-        title="Clear chat cache and stuck runs, then reload. Keeps your email and API keys."
-        onClick={() => {
-          setRefreshing(true);
-          hardRefreshEdge();
-        }}
-      >
-        {refreshing ? 'Refreshing…' : 'Hard refresh'}
-      </button>
+      {!hideHardRefresh ? (
+        <button
+          type="button"
+          className="signed-in-refresh"
+          disabled={refreshing}
+          title="Clear chat cache and stuck runs, then reload. Keeps your email and API keys."
+          onClick={() => {
+            setRefreshing(true);
+            hardRefreshEdge();
+          }}
+        >
+          {refreshing ? 'Refreshing…' : 'Hard refresh'}
+        </button>
+      ) : null}
       <button type="button" className="signed-in-out" onClick={() => clearUserEmail()}>
         Sign out
       </button>

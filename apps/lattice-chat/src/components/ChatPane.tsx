@@ -18,6 +18,11 @@ import {
   verifyLatticeAccess,
 } from '@/api';
 import { isSoftRecoverableLatticeError } from '@/lib/guestErrors';
+import {
+  clearComposerDraft,
+  readComposerDraft,
+  writeComposerDraft,
+} from '@/lib/composerDraft';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { MarkdownBody } from '@/components/MarkdownBody';
@@ -90,8 +95,9 @@ export function ChatPane({
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const ensureSharedCollabThread = useLatticeStore((s) => s.ensureSharedCollabThread);
   const selectThread = useLatticeStore((s) => s.selectThread);
-  const [draft, setDraft] = useState('');
+  const [draft, setDraft] = useState(() => readComposerDraft(null));
   const [attachments, setAttachments] = useState<LatticeAttachment[]>([]);
+  const draftThreadRef = useRef<string | null>(null);
   const [attachHint, setAttachHint] = useState<string | null>(null);
   const [elapsedSec, setElapsedSec] = useState(0);
   const [checking, setChecking] = useState(false);
@@ -169,12 +175,30 @@ export function ChatPane({
     else ensureThread();
   }, [ensureThread, ensureSharedCollabThread, sharedCollab]);
 
+  // Survive remount / soft crash recovery — drafts live in sessionStorage per thread.
+  useEffect(() => {
+    const tid = activeThreadId;
+    if (draftThreadRef.current === tid) return;
+    if (draftThreadRef.current) {
+      writeComposerDraft(draftThreadRef.current, draft);
+    }
+    draftThreadRef.current = tid;
+    setDraft(readComposerDraft(tid));
+    // Intentionally omit `draft` — only swap when the active thread changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeThreadId]);
+
+  useEffect(() => {
+    writeComposerDraft(activeThreadId, draft);
+  }, [activeThreadId, draft]);
+
   useEffect(() => {
     if (!agentSeedPrompt) return;
     setDraft(agentSeedPrompt);
+    writeComposerDraft(activeThreadId, agentSeedPrompt);
     onAgentSeedConsumed?.();
     inputRef.current?.focus();
-  }, [agentSeedPrompt, onAgentSeedConsumed]);
+  }, [agentSeedPrompt, onAgentSeedConsumed, activeThreadId]);
 
   useEffect(() => {
     const sync = (detail?: { changed?: boolean }) => {
@@ -318,6 +342,7 @@ export function ChatPane({
     const text = draft;
     const wire = attachmentsForWire(attachments);
     setDraft('');
+    clearComposerDraft(activeThreadId);
     revokeAttachmentPreviews(attachments);
     setAttachments([]);
     setAttachHint(null);
@@ -489,7 +514,15 @@ export function ChatPane({
             ) : null}
           </div>
           {signedIn && !compact ? (
-            <SignedInBar onOpenKeySettings={() => setKeySettingsOpen(true)} />
+            <SignedInBar
+              onOpenKeySettings={() => setKeySettingsOpen(true)}
+              hideHardRefresh={
+                isSoftRecoverableLatticeError(error) ||
+                sendPhase === 'sending' ||
+                sendPhase === 'recovering' ||
+                Boolean(pending)
+              }
+            />
           ) : null}
         </div>
         {!compact ? (

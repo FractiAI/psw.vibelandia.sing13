@@ -28,8 +28,12 @@ import {
 import { COLLAB_SHARED_AGENT_THREAD_ID } from '@/feed/collabSharedThread';
 import { slimThreadsForPersist } from '@/threadHistory';
 import { softenLatticeGuestError } from '@/lib/guestErrors';
+import {
+  LATTICE_EDGE_STORAGE_KEY,
+  latticeEdgeJsonStorage,
+} from '@/lib/edgeStorage';
 
-const STORAGE_KEY = 'lattice-v1618-edge';
+const STORAGE_KEY = LATTICE_EDGE_STORAGE_KEY;
 
 export type SendPhase = 'idle' | 'sending' | 'recovering' | 'stuck';
 
@@ -487,6 +491,7 @@ export const useLatticeStore = create<LatticeState>()(
     }),
     {
       name: STORAGE_KEY,
+      storage: latticeEdgeJsonStorage,
       partialize: (s) => ({
         threads: slimThreadsForPersist(s.threads),
         activeThreadId: s.activeThreadId,
@@ -503,7 +508,16 @@ export const useLatticeStore = create<LatticeState>()(
           ? { ...s.pending, prompt: String(s.pending.prompt || '').slice(0, 8000) }
           : null,
       }),
-      onRehydrateStorage: () => (state) => {
+      onRehydrateStorage: () => (state, error) => {
+        if (error) {
+          console.warn('[lattice-chat] edge rehydrate failed — starting clean (keys kept)', error);
+          try {
+            localStorage.removeItem(STORAGE_KEY);
+          } catch {
+            /* ignore */
+          }
+          return;
+        }
         if (!state) return;
         const provider = state.provider || readActiveProvider();
         saveActiveProvider(provider);

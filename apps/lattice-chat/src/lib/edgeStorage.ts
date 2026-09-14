@@ -1,9 +1,9 @@
 /**
  * Safe edge localStorage for Lattice Chat persist.
  * Quota blowups (often after heavy doodle + long transcripts) must not crash the tab mid-type.
+ *
+ * Pure module — no zustand import — so root vitest can cover prune helpers without app deps.
  */
-
-import { createJSONStorage, type StateStorage } from 'zustand/middleware';
 
 export const LATTICE_EDGE_STORAGE_KEY = 'lattice-v1618-edge';
 
@@ -41,15 +41,16 @@ export function prunePersistedEdgeBlob(raw: string, keepThreads = 8): string | n
   }
 }
 
-export const latticeEdgeStateStorage: StateStorage = {
-  getItem: (name) => {
+/** Zustand StateStorage-shaped adapter (duck-typed; no zustand import). */
+export const latticeEdgeStateStorage = {
+  getItem: (name: string): string | null => {
     try {
       return localStorage.getItem(name);
     } catch {
       return null;
     }
   },
-  setItem: (name, value) => {
+  setItem: (name: string, value: string): void => {
     try {
       localStorage.setItem(name, value);
       return;
@@ -82,7 +83,7 @@ export const latticeEdgeStateStorage: StateStorage = {
       }
     }
   },
-  removeItem: (name) => {
+  removeItem: (name: string): void => {
     try {
       localStorage.removeItem(name);
     } catch {
@@ -90,5 +91,3 @@ export const latticeEdgeStateStorage: StateStorage = {
     }
   },
 };
-
-export const latticeEdgeJsonStorage = createJSONStorage(() => latticeEdgeStateStorage);

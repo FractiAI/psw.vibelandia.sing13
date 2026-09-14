@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 import { isRememberedEmailFresh, normalizeEmail } from '@/access';
 import {
   catalogForProvider,
@@ -30,10 +30,11 @@ import { slimThreadsForPersist } from '@/threadHistory';
 import { softenLatticeGuestError } from '@/lib/guestErrors';
 import {
   LATTICE_EDGE_STORAGE_KEY,
-  latticeEdgeJsonStorage,
+  latticeEdgeStateStorage,
 } from '@/lib/edgeStorage';
 
 const STORAGE_KEY = LATTICE_EDGE_STORAGE_KEY;
+const latticeEdgeJsonStorage = createJSONStorage(() => latticeEdgeStateStorage);
 
 export type SendPhase = 'idle' | 'sending' | 'recovering' | 'stuck';
 

@@ -14,7 +14,7 @@ const PINNED_TRACK_IDS: Record<string, readonly string[]> = {
 const PINNED_NAMES: Record<string, string> = {
   [CONCIERTO_PRELUDE_PLAYLIST_ID]: 'Holographic Magnetic Goldilocks Art SS Canvas Landing',
   [RECEPTION_PLAYLIST_ID]: 'SS Vibelandia Check-In',
-  [SIN_CITY_PLAYLIST_ID]: 'SS Vibelandia Sin City',
+  [SIN_CITY_PLAYLIST_ID]: 'SS Vibelandia Wrong Side of Town',
   [READING_ROOM_PLAYLIST_ID]: 'SS Vibelandia Reading Room',
 };
 

@@ -1,5 +1,5 @@
 /**
- * Sin City · Deck 3 Night soundtrack autoplays on /voyage/deck-3-night.
+ * Wrong Side of Town · Deck 3 Night soundtrack autoplays on /voyage/deck-3-night.
  * Unified page soundtrack with popup handoff on navigation.
  */
 (function () {
@@ -13,7 +13,7 @@
       staticPlaylist: (window.QV_PAGE_SOUNDTRACK_PLAYLISTS || {})['pl-sin-city'] || [],
       btnId: 'sin-city-hero-score',
       audioId: 'sin-city-hero-audio',
-      label: 'Sin City soundtrack',
+      label: 'Wrong Side of Town soundtrack',
       autoplay: true,
     });
   }

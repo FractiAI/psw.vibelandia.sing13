@@ -13,7 +13,7 @@ function read(rel) {
   return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-describe('Sin City · experience page', () => {
+describe('Wrong Side of Town · experience page', () => {
   it('renders ep-hero shell with concert program CTA and Sound on', () => {
     const html = renderSinCityPageHtml();
     expect(html).toContain('ep-hero ep-hero--sin-city');

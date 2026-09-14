@@ -32,7 +32,7 @@ export const PLAYLIST_PROGRAM_ROUTES: Record<string, PlaylistProgramMeta> = {
     label: PROGRAM_CTA_LABEL,
     readLabel: 'Read the night program →',
     downloadLabel: 'Download program (PDF)',
-    note: 'Deck 3 Night program — Sin City originals only.',
+    note: 'Deck 3 Night program — Wrong Side of Town originals only.',
   },
   [READING_ROOM_PLAYLIST_ID]: {
     route: '/reading-room-program',

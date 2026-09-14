@@ -177,7 +177,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     const deckImages = new Set();
     for (const deck of VOYAGE_DECKS) {
       const html = read(`interfaces/voyage/${deck.slug}.html`);
-      // Experience-upgraded decks (Sin City) use full-bleed ep-hero background-image.
+      // Experience-upgraded decks (Wrong Side of Town) use full-bleed ep-hero background-image.
       expect(
         html.includes(`src="${deck.image}"`) || html.includes(`background-image:url('${deck.image}')`),
       ).toBe(true);

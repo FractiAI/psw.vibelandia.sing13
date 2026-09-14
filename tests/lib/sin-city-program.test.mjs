@@ -16,8 +16,8 @@ function read(rel) {
   return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-describe('Sin City · night program', () => {
-  it('matches Sin City playlist track order', () => {
+describe('Wrong Side of Town · night program', () => {
+  it('matches Wrong Side of Town playlist track order', () => {
     expect(() => assertSinCityProgramTrackOrder()).not.toThrow();
     expect(SIN_CITY_PROGRAM_TRACKS).toHaveLength(SIN_CITY_PLAYLIST_TRACK_IDS.length);
     expect(SIN_CITY_PROGRAM_TRACKS[0].title).toContain('holographic tonight');
@@ -30,7 +30,7 @@ describe('Sin City · night program', () => {
 
   it('renders Broadway-style program page with download and track notes', () => {
     const html = renderSinCityProgramPageHtml();
-    expect(html).toContain('Sin City Night Program');
+    expect(html).toContain('Wrong Side of Town Night Program');
     expect(html).toContain('Download program (PDF)');
     expect(html).toContain('let\'s go holographic tonight');
     expect(html).toContain('Honesty boundary');

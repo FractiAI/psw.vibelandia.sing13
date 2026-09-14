@@ -59,7 +59,7 @@ describe('Program Bach host layer · instrument plates', () => {
     );
   });
 
-  it('maps every Sin City track to a Bach-conductor instrument scene', () => {
+  it('maps every Wrong Side of Town track to a Bach-conductor instrument scene', () => {
     assertKit(
       SIN_CITY_PLAYLIST_TRACK_IDS,
       SIN_CITY_PROGRAM_IMAGE_SCENES,

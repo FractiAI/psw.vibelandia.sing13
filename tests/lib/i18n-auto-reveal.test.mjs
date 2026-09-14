@@ -19,7 +19,7 @@ describe('i18n-auto · reveal safety', () => {
     expect(js).toContain('i18n-auto: apply failed');
   });
 
-  it('loads i18n before soundtrack on Reading Room, Front Desk, Sin City, and QUESTFEST home', () => {
+  it('loads i18n before soundtrack on Reading Room, Front Desk, Wrong Side of Town, and QUESTFEST home', () => {
     const rr = read('interfaces/reading-room.html');
     const fd = read('interfaces/front-desk.html');
     const sc = read('interfaces/voyage/deck-3-night.html');

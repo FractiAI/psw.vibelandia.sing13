@@ -16,13 +16,13 @@ function read(rel) {
   return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-describe('Sin City · jukebox playlist', () => {
+describe('Wrong Side of Town · jukebox playlist', () => {
   it('opens with let\'s go holographic tonight', () => {
     expect(SIN_CITY_PLAYLIST_ID).toBe('pl-sin-city');
     expect(SIN_CITY_PLAYLIST_TRACK_IDS[0]).toBe(SIN_CITY_OPENING_TRACK_ID);
     expect(SIN_CITY_PLAYLIST_TRACK_IDS).toHaveLength(7);
     expect(SIN_CITY_PLAYLIST_TRACK_IDS[1]).toBe('trk-srv-5c34e10b-b181-47ff-b348-9afbaf06c083');
-    expect(SIN_CITY_PLAYLIST.name).toBe('SS Vibelandia Sin City');
+    expect(SIN_CITY_PLAYLIST.name).toBe('SS Vibelandia Wrong Side of Town');
   });
 
   it('is registered in static catalog and server reserved ids', () => {
@@ -33,7 +33,7 @@ describe('Sin City · jukebox playlist', () => {
     expect(read('lib/catalog-server.mjs')).toContain("'pl-sin-city'");
   });
 
-  it('Deck 3 Night page autoplays Sin City soundtrack', () => {
+  it('Deck 3 Night page autoplays Wrong Side of Town soundtrack', () => {
     const js = read('interfaces/sin-city-autoplay.js');
     const page = read('interfaces/voyage/deck-3-night.html');
     expect(js).toContain("playlistId: 'pl-sin-city'");

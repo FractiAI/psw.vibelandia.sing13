@@ -1,4 +1,4 @@
-/** Sin City · Deck 3 Night soundtrack — shared jukebox playlist (static catalog). */
+/** Wrong Side of Town · Deck 3 Night soundtrack — shared jukebox playlist (static catalog). */
 export const SIN_CITY_PLAYLIST_ID = 'pl-sin-city';
 
 export const SIN_CITY_OPENING_TRACK_ID =

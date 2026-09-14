@@ -499,7 +499,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/reading-room.html`](/interfaces/reading-room.html) | Reading Room · Deep Memory · SS Vibelandia |
 | [`/interfaces/reno-interpretation.html`](/interfaces/reno-interpretation.html) | The Reno Interpretation · Mirror Lattice · FractiAI |
 | [`/interfaces/ship-blog-index.html`](/interfaces/ship-blog-index.html) | Ship blog · All plain-language notes · SS Vibelandia |
-| [`/interfaces/sin-city-night-program.html`](/interfaces/sin-city-night-program.html) | Sin City Night Program · J.S. Bach · SS Vibelandia |
+| [`/interfaces/sin-city-night-program.html`](/interfaces/sin-city-night-program.html) | Wrong Side of Town Night Program · J.S. Bach · SS Vibelandia |
 | [`/interfaces/sing13-edge-onboarding.html`](/interfaces/sing13-edge-onboarding.html) | Sonic Singularity Sing! 13 · Edge onboarding · plain talk |
 | [`/interfaces/site-gravity-audit-2026-08.html`](/interfaces/site-gravity-audit-2026-08.html) | Site gravity audit · Art vs general website · SS Vibelandia · Aug 2026 |
 | [`/interfaces/ss-vibelandia.html`](/interfaces/ss-vibelandia.html) | SS Vibelandia · The Noah’s Ark of the Intelligence Age |
@@ -626,7 +626,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/voyage/cabin-st-601-680.html`](/interfaces/voyage/cabin-st-601-680.html) | ST-601–680 · Lattice Studio Staterooms · SS Vibelandia |
 | [`/interfaces/voyage/curated-community.html`](/interfaces/voyage/curated-community.html) | ◉ Curated community · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-2-core.html`](/interfaces/voyage/deck-2-core.html) | Deck 2 — Core · SS Vibelandia Voyage |
-| [`/interfaces/voyage/deck-3-night.html`](/interfaces/voyage/deck-3-night.html) | Sin City · Deck 3 — Night · SS Vibelandia |
+| [`/interfaces/voyage/deck-3-night.html`](/interfaces/voyage/deck-3-night.html) | Wrong Side of Town · Deck 3 — Night · SS Vibelandia |
 | [`/interfaces/voyage/deck-4-5-grove.html`](/interfaces/voyage/deck-4-5-grove.html) | Decks 4–5 — Grove · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-6-7-horizon.html`](/interfaces/voyage/deck-6-7-horizon.html) | Decks 6–7 — Horizon · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-8-veranda.html`](/interfaces/voyage/deck-8-veranda.html) | Deck 8 — Veranda · SS Vibelandia Voyage |

@@ -805,6 +805,22 @@
       "destination": "/interfaces/voyage/deck-3-night.html"
     },
     {
+      "source": "/wrong-side-of-town",
+      "destination": "/interfaces/voyage/deck-3-night.html"
+    },
+    {
+      "source": "/wrong-side-of-town/",
+      "destination": "/interfaces/voyage/deck-3-night.html"
+    },
+    {
+      "source": "/wrong-side",
+      "destination": "/interfaces/voyage/deck-3-night.html"
+    },
+    {
+      "source": "/wrong-side/",
+      "destination": "/interfaces/voyage/deck-3-night.html"
+    },
+    {
       "source": "/voyage/deck-2-core",
       "destination": "/interfaces/voyage/deck-2-core.html"
     },
@@ -1658,6 +1674,14 @@
     },
     {
       "source": "/sin-city-program/",
+      "destination": "/interfaces/sin-city-night-program.html"
+    },
+    {
+      "source": "/wrong-side-of-town-program",
+      "destination": "/interfaces/sin-city-night-program.html"
+    },
+    {
+      "source": "/wrong-side-of-town-program/",
       "destination": "/interfaces/sin-city-night-program.html"
     },
     {

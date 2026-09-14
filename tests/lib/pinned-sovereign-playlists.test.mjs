@@ -24,7 +24,7 @@ describe('Pinned sovereign jukebox playlists', () => {
       'Holographic Magnetic Goldilocks Art SS Canvas Landing',
     );
     expect(byId[RECEPTION_PLAYLIST_ID]?.name).toBe('SS Vibelandia Check-In');
-    expect(byId[SIN_CITY_PLAYLIST_ID]?.name).toBe('SS Vibelandia Sin City');
+    expect(byId[SIN_CITY_PLAYLIST_ID]?.name).toBe('SS Vibelandia Wrong Side of Town');
     expect(byId[READING_ROOM_PLAYLIST_ID]?.name).toBe('SS Vibelandia Reading Room');
   });
 

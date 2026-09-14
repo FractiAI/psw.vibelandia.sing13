@@ -30,15 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Infinite Octave EGS Catalog · Pacing Paradox · FractiSkills · AI catalog layer · Time-Crystal · Self-Observing Genome
-    expect(posts[0].id).toBe('synthobs-infinite-octave-egs-catalog-frontier-2026-09');
+    // Newest: Sovereign Velocity · Infinite Octave EGS Catalog · Pacing Paradox · FractiSkills · AI catalog layer · Time-Crystal
+    expect(posts[0].id).toBe('synthobs-trump-pacing-trap-sovereign-velocity-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-trump-pacing-trap-sovereign-velocity-2026-09',
       'synthobs-infinite-octave-egs-catalog-frontier-2026-09',
       'synthobs-pacing-paradox-amodei-frontier-2026-09',
       'synthobs-fractiskills-portable-agent-skills-2026-09',
       'synthobs-infinite-octave-ai-catalog-layer-2026-09',
       'synthobs-omniversal-time-crystal-engine-egs-2026-09',
-      'synthobs-self-observing-genome-egs-2026-09',
     ]);
   });
 });

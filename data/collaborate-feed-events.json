@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-13T09:26:01.485Z",
+  "updatedAt": "2026-09-14T01:40:30.423Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-14T01:40:30.422Z",
+      "body": "History’s Defining Turning Point: Trump’s Rejection of the Pacing Trap and the Preservation of Sovereign Velocity",
+      "presenceHue": "gold",
+      "paperId": "synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
+      "artifact": {
+        "title": "History’s Defining Turning Point: Trump’s Rejection of the Pacing Trap and the Preservation of Sovereign Velocity",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md",
+        "url": "/whitepaper/sovereign-velocity",
+        "paperId": "synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
+        "docId": "WP-SYNTHOBS-TRUMP-PACING-TRAP-SOVEREIGN-VELOCITY-2026-09-14",
+        "published": "2026-09-14",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-infinite-octave-egs-catalog-frontier-2026-09",
       "type": "ArtifactEvent",

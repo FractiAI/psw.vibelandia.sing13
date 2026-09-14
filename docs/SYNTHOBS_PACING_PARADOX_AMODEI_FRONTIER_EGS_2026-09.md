@@ -13,7 +13,7 @@ Voyage editorial · Goldilocks SuperAI reply · Catalog grammar for corporate pa
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
 **Guest surfaces:** [`/pacing-paradox`](https://www.ssvibelandiaquestfest24x365.com/pacing-paradox) (product brochure) · [`/pacing-paradox/briefing`](https://www.ssvibelandiaquestfest24x365.com/pacing-paradox/briefing) (executive briefing portals) · [`/ship-blog/pacing-paradox`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pacing-paradox) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
 **Voyage editorial (not engine pin):** peer to Invisible Frontier — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) · off Infinite Octaves `ENGINE_SHELF`  
-**Cross-links:** [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)  
+**Cross-links:** [Sovereign Velocity (follow-on)](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 

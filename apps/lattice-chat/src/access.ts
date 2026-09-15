@@ -1,7 +1,7 @@
 /** Public contact / creator — never put API keys in the Vite bundle. */
 export const CREATOR_EMAIL = 'valetpru@gmail.com';
 
-/** QUESTFEST top deck — home for guests leaving Lattice Chat Agent. */
+/** QUESTFEST top deck — home for guests leaving Lattice Chat. */
 export const MAIN_DECK_HREF = '/';
 export const MAIN_DECK_LABEL = 'SS VIBELANDIA';
 export const VOYAGE_HREF = '/frontiersman-voyage';
@@ -12,9 +12,9 @@ export const LATTICE_ACCESS_EMAIL =
   CREATOR_EMAIL;
 
 export const LATTICE_ACCESS_MAILTO = `mailto:${LATTICE_ACCESS_EMAIL}?subject=${encodeURIComponent(
-  'Infinite Octaves Omniversal Lattice Chat Agent V1.618 — free trial',
+  'Infinite Octave Omniversal Lattice Catalog — free trial',
 )}&body=${encodeURIComponent(
-  'Hello,\n\nI would like a free trial of Infinite Octaves Omniversal Lattice Chat Agent V1.618 on SS Vibelandia.\n\nMy email / userid: \n\nThanks.',
+  'Hello,\n\nI would like a free trial of Infinite Octave Omniversal Lattice Catalog on SS Vibelandia.\n\nMy email / userid: \n\nThanks.',
 )}`;
 
 export const LATTICE_FREE_TRIAL_MAILTO = LATTICE_ACCESS_MAILTO;

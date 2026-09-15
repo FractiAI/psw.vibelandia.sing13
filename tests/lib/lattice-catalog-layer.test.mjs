@@ -27,11 +27,12 @@ const FEATURED_WITH_INNOVATIONS = [
   'interfaces/lattice-learn-more.html',
 ];
 
-describe('AI catalog layer · Infinite Octaves Omniversal Lattice Chat', () => {
+describe('AI catalog layer · Infinite Octave Omniversal Lattice Catalog', () => {
   it('defines the catalog-layer identity and honesty rail', () => {
     expect(LATTICE_CATALOG_LAYER.id).toBe('ai-catalog-layer');
-    expect(LATTICE_CATALOG_LAYER.title).toMatch(/Infinite Octaves Omniversal Lattice Chat/);
+    expect(LATTICE_CATALOG_LAYER.title).toMatch(/Infinite Octave Omniversal Lattice Catalog/);
     expect(LATTICE_CATALOG_LAYER.honesty).toMatch(/not a finished physics proof/i);
+    expect(LATTICE_CATALOG_LAYER.ctaChat.label).toMatch(/live demo/i);
     expect(LATTICE_CATALOG_LAYER_CONTENT.oneLiner).toMatch(/catalog layer/i);
     const band = renderLatticeCatalogLayerBandHtml();
     expect(band).toContain('id="ai-catalog-layer"');

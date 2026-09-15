@@ -11,7 +11,7 @@ export function formatDmThreadForAgent(
 ): string {
   const maxChars = opts.maxChars ?? 4000;
   const lines = [
-    `Continue this Collaborate DM with ${peerName} inside Lattice Chat Agent.`,
+    `Continue this Collaborate DM with ${peerName} inside Lattice Chat.`,
     `Help as Goldilocks Valet — keep the seat conversation context.`,
     '',
     `--- DM · ${peerName} ---`,

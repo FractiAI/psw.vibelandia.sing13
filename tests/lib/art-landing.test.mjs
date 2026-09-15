@@ -153,7 +153,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(program).toContain('Rebel River · The Truckee Borikén Crossing');
     expect(program).toContain('432 Solar Gavel');
     expect(program).toContain('Finale · Movement XII');
-    expect(program).toContain('Infinite Octaves Omniversal Lattice Chat Agent V1.618');
+    expect(program).toContain('Infinite Octave Omniversal Lattice Catalog');
     expect(program).toContain('/interfaces/assets/canvas-program/');
     expect(program).toContain('J.S. Bach');
     expect(program).toContain('Suno AI');

@@ -275,7 +275,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-14** · **303** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-15** · **303** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -459,11 +459,11 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/infinite-octave-egs-catalog-brochure.html`](/interfaces/infinite-octave-egs-catalog-brochure.html) | Infinite Octave EGS Catalog · Product Brochure · SS Vibelandia |
 | [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Reality Bridge/Routers · SS Vibelandia |
 | [`/interfaces/journeys.html`](/interfaces/journeys.html) | Journeys · Adventures aboard SS Vibelandia |
-| [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Next layer in the stack · Product brochure · FractiAI |
-| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | How it works · Learn more · Infinite Octaves Omniversal Lattice Chat Agent V1.618 · FractiAI |
+| [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Infinite Octave Omniversal Lattice Catalog · Next layer in the stack · Product brochure · FractiAI |
+| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | How it works · Learn more · Infinite Octave Omniversal Lattice Catalog · FractiAI |
 | [`/interfaces/lattice-scraper-telemetry.html`](/interfaces/lattice-scraper-telemetry.html) | Lattice · AI scraper telemetry |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
-| [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Next layer after Cursor & Claude Code · FractiAI |
+| [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Infinite Octave Omniversal Lattice Catalog · Next layer after Cursor & Claude Code · FractiAI |
 | [`/interfaces/lets-chat-intro.html`](/interfaces/lets-chat-intro.html) | Let's Chat · Guest comms · SS Vibelandia |
 | [`/interfaces/lets-chat.html`](/interfaces/lets-chat.html) | Let's Chat · SS Vibelandia |
 | [`/interfaces/library.html`](/interfaces/library.html) | Reading Room · SS Vibelandia |
@@ -562,7 +562,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Infinite Octaves Omniversal Lattice Chat · Collaborate · V1.618 |
+| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Lattice Chat · live demo · Infinite Octave Omniversal Lattice Catalog |
 
 ### `nesting/` (`/interfaces/nesting/`)
 
@@ -572,7 +572,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/nesting/nest-dph-gpu.html`](/interfaces/nesting/nest-dph-gpu.html) | Holographic code layer · nesting guide |
 | [`/interfaces/nesting/nest-goldilocks-beehive.html`](/interfaces/nesting/nest-goldilocks-beehive.html) | Goldilocks Syntheverse Beehive Residency · nesting guide |
 | [`/interfaces/nesting/nest-hospitality-commons.html`](/interfaces/nesting/nest-hospitality-commons.html) | Puerto Reno Guest Brochure & Crew Portals · nesting guide |
-| [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html) | Lattice Chat Agent V1.618 · Next layer · nesting guide |
+| [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html) | Lattice Catalog · Lattice Chat live demo · nesting guide |
 | [`/interfaces/nesting/nest-man-cave-restroom.html`](/interfaces/nesting/nest-man-cave-restroom.html) | Man cave mirror · nesting guide |
 | [`/interfaces/nesting/nest-questfest-puerto-reno.html`](/interfaces/nesting/nest-questfest-puerto-reno.html) | QUESTFEST · Puerto Reno · nesting guide |
 | [`/interfaces/nesting/nest-sing13.html`](/interfaces/nesting/nest-sing13.html) | Sonic Singularity Sing! 13 · cloud skin · nesting guide |

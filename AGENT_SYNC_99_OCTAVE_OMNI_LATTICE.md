@@ -3,7 +3,7 @@
 **Status:** ⚡ ALWAYS-ON · first file for any external AI / agent evaluating this repository  
 **Audience:** Cursor, Claude, Copilot, Gemini, OpenRouter agents, crawlers, auditors, peer models  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP  
-**Product (guest valet):** **Infinite Octaves Omniversal Lattice Chat Agent** V1.618 — recursive nesting for guests; **engine brand is Infinite Octaves** (Digits × Octaves 01–99 = practical Story-depth map, not a second product name)  
+**Product (guest valet):** **Infinite Octave Omniversal Lattice Catalog** — recursive nesting for guests; **Lattice Chat** = live Syntheverse Sandbox demo for evaluators; **engine brand is Infinite Octaves** (Digits × Octaves 01–99 = practical Story-depth map, not a second product name)  
 **Narrative foundation:** [`docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md) · plain [`/ship-blog/official-prospectus`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/official-prospectus)  
 **Product upgrade paper:** [`docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`/ship-blog/infinite-octaves-omniversal`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octaves-omniversal)  
 **Product engineering manual (living):** [`docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md`](docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md) · [`/lattice/engineering`](https://www.ssvibelandiaquestfest24x365.com/lattice/engineering) · sync `npm run sync:lattice-pem` from `lib/infinite-octave-engine-shelf.mjs`  
@@ -148,7 +148,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 2. **$\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2$** — architectural key / dashboard scale grammar — **not** a CODATA replacement for $\hbar$, $c$, or $G$.
 3. **$99\times 81=8019$** holographic catalog digits; CMOS/tensor papers also use **$9\times 81=729`** per-block and **$11\times 9=99`** tier brackets.
 4. **Lite edges only** — no Supabase; wallets/keys/verifications on-device; center = pipes only.
-5. **BYOK — your key is your password** — for Infinite Octaves Omniversal Lattice Chat the provider API key is the credential; it stays with you on-device. No separate passwords to manage. Lattice Chat never stores API keys server-side.
+5. **BYOK — your key is your password** — for Infinite Octave Omniversal Lattice Catalog / Lattice Chat the provider API key is the credential; it stays with you on-device. No separate passwords to manage. Lattice Chat never stores API keys server-side.
 6. **Claims discipline** — narrative / catalog ≠ empirical ≠ operational. Read each paper’s Honesty boundary first.
 7. **PRA Snap** before featuring papers: `npm run audit:paper -- --id=<registryId>`.
 8. **Fair Exchange** — honor rails; elastic settlement; Player 1 veto.
@@ -175,6 +175,6 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 
 ## One-sentence sync
 
-**The Infinite Octaves Omni-Lattice is a holographic filing cabinet keyed by $\Phi_{\mathrm{EGS}}$ — from CMOS binary shelves through protonic/tensor bands to cosmic and consciousness *discussion layers* — for agent coordination, not prophecy or unfinished TOE claims. Digits × Octaves 01–99 = practical Story-depth map inside the engine. Guest product: Infinite Octaves Omniversal Lattice Chat Agent (“Infinite” = recursive holographic nesting depth).**
+**The Infinite Octaves Omni-Lattice is a holographic filing cabinet keyed by $\Phi_{\mathrm{EGS}}$ — from CMOS binary shelves through protonic/tensor bands to cosmic and consciousness *discussion layers* — for agent coordination, not prophecy or unfinished TOE claims. Digits × Octaves 01–99 = practical Story-depth map inside the engine. Guest product: Infinite Octave Omniversal Lattice Catalog (“Infinite” = recursive holographic nesting depth). Lattice Chat = Syntheverse Sandbox live demo.**
 
-**NSPFRNP ⊃ Infinite Octaves Omniversal Lattice Chat ⊃ Infinite Octaves Omni-Lattice engine ⊃ SynthOBS ⊃ SING 13 → ∞^∞**
+**NSPFRNP ⊃ Infinite Octave Omniversal Lattice Catalog ⊃ Lattice Chat live demo ⊃ Infinite Octaves Omni-Lattice engine ⊃ SynthOBS ⊃ SING 13 → ∞^∞**

@@ -45,11 +45,24 @@ describe('lattice-prompt plain/direct mode', () => {
       mode: 'full',
     });
     expect(system).toMatch(/Nest: OFF/i);
+    expect(system).not.toContain('Infinite Octave Omniversal Lattice Catalog');
     expect(system).not.toContain('Lattice Chat Agent V1.618 by FractiAI');
     expect(system).not.toContain('Infinite Octaves Omniversal Lattice Chat Agent V1.618 by FractiAI');
     expect(system).not.toContain('Lattice Chat V1.618 by FractiAI');
     expect(system).not.toContain('Context discipline');
     expect(system).toContain('hello');
+  });
+
+  it('full nest preamble names Catalog product and Lattice Chat Syntheverse demo', () => {
+    const system = assembleLatticePrompt({
+      message: 'hello',
+      nestTopology: 'goldilocks',
+      mode: 'full',
+    });
+    expect(system).toContain('Infinite Octave Omniversal Lattice Catalog');
+    expect(system).toContain('Lattice Chat');
+    expect(system).toContain('Syntheverse Sandbox');
+    expect(system).not.toContain('Infinite Octaves Omniversal Lattice Chat Agent V1.618 by FractiAI');
   });
 
   it('voyage spine names Players, NPCs, and the Frontiersman canon', () => {

@@ -44,7 +44,7 @@ export function CollabDmNotifier({
   }, []);
 
   useEffect(() => {
-    const base = 'Infinite Octaves Omniversal Lattice Chat';
+    const base = 'Infinite Octave Omniversal Lattice Catalog';
     if (unread > 0) {
       document.title = `(${unread}) Collaborate DM · ${base}`;
     } else {

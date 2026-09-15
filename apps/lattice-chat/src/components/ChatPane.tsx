@@ -426,7 +426,7 @@ export function ChatPane({
                   'Lattice Chat'
                 ) : (
                   <>
-                    <span className="chat-wordmark__full">Infinite Octaves Omniversal Lattice Chat</span>
+                    <span className="chat-wordmark__full">Lattice Chat</span>
                     <span className="chat-wordmark__short">Lattice</span>
                   </>
                 )}
@@ -436,7 +436,11 @@ export function ChatPane({
                   <a className="deck-home-link" href={MAIN_DECK_HREF} title={`Back to ${MAIN_DECK_LABEL} main deck`}>
                     {MAIN_DECK_LABEL}
                   </a>
-                  {' · Goldilocks Valet · Deck 2 Core'}
+                  {' · live demo · Syntheverse Sandbox · '}
+                  <a className="deck-home-link" href="/lattice#ai-catalog-layer-intro" title="Infinite Octave Omniversal Lattice Catalog">
+                    Catalog
+                  </a>
+                  {' · Deck 2 Core'}
                   {activeRepo ? (
                     <>
                       {' · '}
@@ -581,16 +585,18 @@ export function ChatPane({
               </a>
               {' · 24×365'}
             </p>
-            <p className="empty-lead">Welcome aboard — Players and NPCs both belong</p>
+            <p className="empty-lead">Lattice Chat · live demo · Syntheverse Sandbox</p>
             <p className="ai-act-notice ai-act-notice--empty" role="status">
-              <strong>You are interacting with an AI system.</strong> Lattice Chat Agent replies are
-              machine-generated. This is not a human operator.{' '}
+              <strong>You are interacting with an AI system.</strong> Lattice Chat replies are
+              machine-generated. This is the evaluator live demo of{' '}
+              <a href="/lattice#ai-catalog-layer-intro">Infinite Octave Omniversal Lattice Catalog</a>
+              {' '}inside the Syntheverse Sandbox — not a human operator and not a production data plane.{' '}
               <a href="/ai-transparency">AI transparency</a>
             </p>
             <p className="empty-hint">
-              This is Deck 2 — the Core of the holographic resort vessel. NPCs inhabit. Players
-              set the gravity. SuperAI stays Goldilocks: not too much machine, not too little human.
-              Token Maxing on your keys; intentions matter — we do not help with malice or ill will.
+              Safe try-on for evaluators: bring your own key, keep corpora out of the prompt, and explore
+              nested routing without touching production stores. Token Maxing on your keys; intentions
+              matter — we do not help with malice or ill will.
             </p>
             <p className="empty-hint empty-hint--bridge">
               Email + your key + pick Cursor, Claude, or Gemini.{' '}
@@ -622,7 +628,7 @@ export function ChatPane({
             <p className="empty-eyebrow">Bridge access</p>
             <p className="empty-lead">Bring your key to the bridge</p>
             <p className="empty-hint">
-              <strong>Your key is your password</strong> for Infinite Octaves Omniversal Lattice Chat — paste a
+              <strong>Your key is your password</strong> for Infinite Octave Omniversal Lattice Catalog — paste a
               Cursor, Claude, or Gemini key for this device. It stays with you. No separate
               passwords to manage. We never store it on our server — Fair Exchange, your edge.
             </p>

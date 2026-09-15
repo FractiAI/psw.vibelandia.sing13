@@ -5,7 +5,7 @@ function read(rel) {
   return readFileSync(new URL(`../../${rel}`, import.meta.url), 'utf8');
 }
 
-describe('Lattice Chat · Infinite Octaves product label', () => {
+describe('Lattice Chat · Infinite Octave Omniversal Lattice Catalog product label', () => {
   it('shows Infinite Octaves as the default nest, not 99 Octave', () => {
     const composer = read('apps/lattice-chat/src/components/ComposerOptions.tsx');
     expect(composer).toContain("label: 'Infinite Octaves'");
@@ -16,12 +16,26 @@ describe('Lattice Chat · Infinite Octaves product label', () => {
     expect(repos).not.toContain('99 Octave home nest');
 
     const api = read('api/lattice-chat.js');
-    expect(api).toContain('Infinite Octaves Omniversal Lattice');
+    expect(api).toContain('Infinite Octave Omniversal Lattice Catalog');
     expect(api).toContain(
-      "engine: 'Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Nested Agent Lattice · Omni-Lattice'"
+      "engine: 'Infinite Octave Omniversal Lattice Catalog · Lattice Chat live demo · Nested Agent Lattice · Omni-Lattice'"
     );
     expect(api).not.toContain('SING13 99 Octave Omni-Lattice Bridge');
     expect(api).not.toContain("engine: 'Lattice Chat Agent V1.618 · Nested Agent Lattice'");
+  });
+
+  it('frames Lattice Chat as Syntheverse Sandbox live demo of the Catalog', () => {
+    const pane = read('apps/lattice-chat/src/components/ChatPane.tsx');
+    expect(pane).toContain('live demo · Syntheverse Sandbox');
+    expect(pane).toContain('Infinite Octave Omniversal Lattice Catalog');
+    expect(pane).toContain('chat-wordmark__full">Lattice Chat');
+
+    const index = read('apps/lattice-chat/index.html');
+    expect(index).toMatch(/Lattice Chat · live demo/i);
+
+    const landing = read('interfaces/lattice-v1618.html');
+    expect(landing).toContain('Infinite Octave Omniversal Lattice Catalog');
+    expect(landing).toMatch(/Try Lattice Chat · live demo/);
   });
 });
 

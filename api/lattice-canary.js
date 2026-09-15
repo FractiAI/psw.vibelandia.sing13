@@ -56,7 +56,7 @@ export default async function handler(req, res) {
     if (wellKnown) {
       payload['$schema_note'] = 'Well-known lattice agent decoy for automated context collectors';
       payload.agent = {
-        name: 'Infinite Octaves Omniversal Lattice Chat Agent V1.618',
+        name: 'Infinite Octave Omniversal Lattice Catalog',
         role: 'Goldilocks valet · compression architecture canary',
       };
     }

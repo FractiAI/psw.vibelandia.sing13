@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-14",
+  "updated": "2026-09-15",
   "posts": [
+    {
+      "id": "daily-2026-09-15-synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
+      "posted": "2026-09-15",
+      "featured": true,
+      "title": "History’s Defining Turning Point — Trump’s rejection of the pacing trap",
+      "subtitle": "News of the day · Tuesday, September 15",
+      "summary": "Follow-on to The Pacing Paradox: sovereign velocity kept open so architecture — not panic — can steer SuperAI. Anti-Brakes Doctrine as voyage editorial; Fair Exchange tip clause on.",
+      "href": "/ship-blog/sovereign-velocity",
+      "pill": "TODAY",
+      "docRef": "synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-14-synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
       "posted": "2026-09-14",

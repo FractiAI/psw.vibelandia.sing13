@@ -1,20 +1,20 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-09-14",
+  "date": "2026-09-15",
   "dateline": {
-    "ymd": "2026-09-14",
-    "weekday": "Monday",
+    "ymd": "2026-09-15",
+    "weekday": "Tuesday",
     "month": "September",
-    "day": 14,
-    "label": "Monday, September 14",
-    "shortBoard": "Monday board · September 14 · Puerto Reno",
-    "newsLabel": "News of the day · Monday, September 14"
+    "day": 15,
+    "label": "Tuesday, September 15",
+    "shortBoard": "Tuesday board · September 15 · Puerto Reno",
+    "newsLabel": "News of the day · Tuesday, September 15"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Monday board · September 14 · Puerto Reno",
-  "newsLabel": "News of the day · Monday, September 14",
+  "cloudBadge": "Tuesday board · September 15 · Puerto Reno",
+  "newsLabel": "News of the day · Tuesday, September 15",
   "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/sovereign-velocity\">History’s Defining Turning Point — Trump’s rejection of the pacing trap</a>. Also new on the board: <a href=\"/ship-blog/pacing-paradox\">The Pacing Paradox — Amodei’s frontier slowdown, charted</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
@@ -44,5 +44,5 @@
     "title": "History’s Defining Turning Point — Trump’s rejection of the pacing trap",
     "href": "/ship-blog/sovereign-velocity"
   },
-  "generatedAt": "2026-09-14T19:49:16.970Z"
+  "generatedAt": "2026-09-15T18:54:16.170Z"
 }

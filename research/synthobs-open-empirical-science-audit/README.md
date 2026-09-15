@@ -1,6 +1,6 @@
 # synthobs-open-empirical-science-audit
 
-Corpus audit for **From Infinite Octave Cataloging to Open Empirical Science** — classifies monorepo research packages into Tier A (public-data wet lab), Tier B (deterministic fixtures), Tier C (catalog-only).
+Corpus audit for **From Infinite Octave Cataloging to Open Empirical Science** — classifies monorepo research packages into Tier A (public-data wet lab), Tier B (deterministic fixtures), Tier C (catalog · holographic / entanglement wiring · partial empirical via Tier B fixtures).
 
 ```bash
 # From SING13 root

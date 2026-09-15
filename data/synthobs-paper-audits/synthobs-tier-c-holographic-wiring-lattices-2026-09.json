@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "8a596368ed2610f1",
+  "auditId": "5695d8daee8afa68",
   "paperId": "synthobs-tier-c-holographic-wiring-lattices-2026-09",
   "sourcePath": "docs/SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-10T16:41:05.036Z"
+          "invokedAt": "2026-09-15T05:27:48.424Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-10T16:41:05.034Z",
-  "completedAt": "2026-09-10T16:41:05.036Z",
+  "startedAt": "2026-09-15T05:27:48.423Z",
+  "completedAt": "2026-09-15T05:27:48.425Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1222,
+      "wordCount": 1293,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

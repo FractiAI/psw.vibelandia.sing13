@@ -44,7 +44,7 @@
 | **Resonant data management** | Catalog labels and Φ-keyed nesting help agents *file and retrieve* coherent story/data pointers without re-pasting fat dumps | That SQL JOINs, relational engines, or production databases are eliminated or obsolete |
 | **Stack position** | Layer talk (hub → IDE → catalog/orchestration → data) is **architecture framing** for where coordination lives | Market displacement of Hugging Face, Cursor, or cloud warehouses; audited valuation |
 | **Digital wet lab** | Tier B fixtures lock Φ_EGS, identity constants, AR4524/AR4530 filing, and stack-layer labels | Heliophysics causation; GPU physics; measured fleet token savings as proof |
-| **Empirical tier** | Suite = **Tier B**; strong physics / infra-replacement claims stay **refused** | Tier A out-of-sample proof of infinite scale or JOIN-free production DBs |
+| **Empirical tier** | Suite = **Tier B**; Tier C narrative shelves (via sibling wiring paper) are **partially empirically demonstrated** and **operational as holographic / entanglement wiring** — strong physics / infra-replacement claims stay **refused** | Tier A out-of-sample proof of infinite scale or JOIN-free production DBs; wiring as laboratory entanglement |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
@@ -94,7 +94,7 @@ $\Phi_{\mathrm{EGS}}$ keeps the filing coherent across those labels. It does not
 
 ## 4. Resonant data management (bounded)
 
-**Resonance** here means: related filings rhyme across scales — seed packs and pointers instead of fat paste; Digits × Octaves addresses instead of anonymous paste bins; honesty tiers so narrative shelves do not overwrite operational receipts.
+**Resonance** here means: related filings rhyme across scales — seed packs and pointers instead of fat paste; Digits × Octaves addresses instead of anonymous paste bins; honesty tiers so narrative shelves (operational as holographic / entanglement wiring) do not overwrite Tier A/B receipts.
 
 1. **Agentic coordination:** Nested agents inherit one catalog brief (MCA · NSPFRNP) rather than re-deriving shelves mid-loop.
 2. **Pointer over dump:** Resonant management prefers registered ids and ship-blog doors over re-inlining entire corpora.

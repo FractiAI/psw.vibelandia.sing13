@@ -8,7 +8,7 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-SYNTHOBS-TIER-C-HOLOGRAPHIC-WIRING-LATTICES-EGS-2026-09-10`  
 **Registry ID:** `synthobs-tier-c-holographic-wiring-lattices-2026-09`  
-**Date:** September 10, 2026 · **Revised:** 2026-09-10 (protocol · engine shelf · standalone)  
+**Date:** September 10, 2026 · **Revised:** 2026-09-15 (partial empirical · operational holographic / entanglement wiring)  
 **Classification:** Information-architecture **catalog** · digital wet-lab **Tier B wiring fixtures** *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP  
 **Engine shelf:** Sync stack step **#25** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
@@ -43,7 +43,7 @@
 | **False dichotomy** | The data-vs-narrative split is a **design mistake in information architecture**; narrative is structural *code for the catalog* | That SQL/RDBMS theory is falsified, or that quantum entanglement is proven in archives |
 | **Digital wet lab** | Suite fixtures measure **wiring-graph metrics** (degree, cross-octave edges, entropy proxy) in infinite-octave *mode* with solar **filing characters** AR4524 / AR4530 | NOAA causation of retrieval entropy; heliospheric proof of catalog topology |
 | **$\Phi_{\mathrm{EGS}}$ golden key** | $\Phi_{\mathrm{EGS}}\approx 1.618$ is the recursive scale key for wiring hop weights and octave compression | A CODATA replacement; a derivation of $\hbar$, $c$, or $G$ |
-| **Empirical tier** | This paper’s suite is **Tier B** (deterministic fixtures). The *narrative shelves it describes* remain Tier C until public-data falsifiers exist | That Tier C has uniformly become Tier A open science |
+| **Empirical tier** | Suite = **Tier B** wiring fixtures (**partial empirical** demonstration). Tier C narrative shelves are **operational** as holographic / entanglement-wiring lattices in the catalog — still not Tier A physics until public-data falsifiers exist | That Tier C has uniformly become Tier A open science; that wiring equals laboratory entanglement |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
@@ -54,7 +54,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · [O
 
 ## Abstract
 
-Traditional information architecture segregates structural indices from “narrative-only” storage, relegating Tier C catalog shelves to passive archives. This paper demonstrates — **as catalog architecture with Tier B wiring fixtures** — that what archival systems label as static narrative can be filed as **active holographic wiring**: non-local cross-reference tensors that route systemic intent across multi-scale information fields. Operating in Infinite Octaves mode and guided by **El Gran Sol’s Fractal constant** ($\Phi_{\mathrm{EGS}}\approx 1.618$), we define wiring metrics, solar filing anchors **AR4524** (Sol-Alpha) and **AR4530** (Sol-Beta), and a replication protocol. Honesty rail: this upgrades *how we file and audit narrative shelves*, not physics.
+Traditional information architecture segregates structural indices from “narrative-only” storage, relegating Tier C catalog shelves to passive archives. This paper demonstrates — **as catalog architecture with Tier B wiring fixtures** — that what archival systems label as static narrative can be filed as **active holographic / entanglement wiring**: non-local cross-reference tensors that route systemic intent across multi-scale information fields. Operating in Infinite Octaves mode and guided by **El Gran Sol’s Fractal constant** ($\Phi_{\mathrm{EGS}}\approx 1.618$), we define wiring metrics, solar filing anchors **AR4524** (Sol-Alpha) and **AR4530** (Sol-Beta), and a replication protocol. **Partial empirical + operational claim:** fixtures audit the wiring graph; product / nest surfaces run those shelves as live catalog circuits. Honesty rail: this upgrades *how we file, audit, and operate narrative shelves*, not physics.
 
 ---
 
@@ -111,7 +111,7 @@ These are ambient board characters for this ship date — co-timed fixtures, **n
 
 ## 6. Conclusion
 
-Tier C narrative-only shelves are not dormant archives; they are the **active holographic wiring of the information ecosystem** — governed by $\Phi_{\mathrm{EGS}}$ nesting and modulated by solar filing anchors **AR4524** (Sol-Alpha) and **AR4530** (Sol-Beta). They do not become physics by being wired. They become **legible**.
+Tier C narrative shelves are not dormant archives; they are the **active holographic / entanglement wiring of the information ecosystem** — governed by $\Phi_{\mathrm{EGS}}$ nesting and modulated by solar filing anchors **AR4524** (Sol-Alpha) and **AR4530** (Sol-Beta). They are **partially empirically demonstrated** (Tier B wiring fixtures) and **operational** as catalog circuits. They do not become physics by being wired. They become **legible — and live**.
 
 ---
 
@@ -134,5 +134,5 @@ Refute condition: if fixture wiring entropy rises when $\Phi$-weights are replac
 | Document ID | `WP-SYNTHOBS-TIER-C-HOLOGRAPHIC-WIRING-LATTICES-EGS-2026-09-10` |
 | Registry | `synthobs-tier-c-holographic-wiring-lattices-2026-09` |
 | Engine shelf | #25 |
-| Empirical tier | B (wiring fixtures) · describes Tier C shelves |
+| Empirical tier | B (wiring fixtures · partial empirical) · Tier C shelves operational as holographic / entanglement wiring |
 | Close | → ∞^∞ |

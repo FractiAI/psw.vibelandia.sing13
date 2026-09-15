@@ -44,7 +44,7 @@
 | **Resonant data management** | Catalog labels and Φ-keyed nesting help agents *file and retrieve* coherent story/data pointers without re-pasting fat dumps | That SQL JOINs, relational engines, or production databases are eliminated or obsolete |
 | **Stack position** | Layer talk (hub → IDE → catalog/orchestration → data) is **architecture framing** for where coordination lives | Market displacement of Hugging Face, Cursor, or cloud warehouses; audited valuation |
 | **Digital wet lab** | Tier B fixtures lock Φ_EGS, identity constants, AR4524/AR4530 filing, and stack-layer labels | Heliophysics causation; GPU physics; measured fleet token savings as proof |
-| **Empirical tier** | Suite = **Tier B**; strong physics / infra-replacement claims stay **refused** | Tier A out-of-sample proof of infinite scale or JOIN-free production DBs |
+| **Empirical tier** | Suite = **Tier B**; Tier C narrative shelves (via sibling wiring paper) are **partially empirically demonstrated** and **operational as holographic / entanglement wiring** — strong physics / infra-replacement claims stay **refused** | Tier A out-of-sample proof of infinite scale or JOIN-free production DBs; wiring as laboratory entanglement |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
@@ -94,7 +94,7 @@ $\Phi_{\mathrm{EGS}}$ keeps the filing coherent across those labels. It does not
 
 ## 4. Resonant data management (bounded)
 
-**Resonance** here means: related filings rhyme across scales — seed packs and pointers instead of fat paste; Digits × Octaves addresses instead of anonymous paste bins; honesty tiers so narrative shelves do not overwrite operational receipts.
+**Resonance** here means: related filings rhyme across scales — seed packs and pointers instead of fat paste; Digits × Octaves addresses instead of anonymous paste bins; honesty tiers so narrative shelves (operational as holographic / entanglement wiring) do not overwrite Tier A/B receipts.
 
 1. **Agentic coordination:** Nested agents inherit one catalog brief (MCA · NSPFRNP) rather than re-deriving shelves mid-loop.
 2. **Pointer over dump:** Resonant management prefers registered ids and ship-blog doors over re-inlining entire corpora.
@@ -118,6 +118,21 @@ AR characters are **filing anchors**, not NOAA causation and not GPU physics.
 1. **Named shelf:** The Infinite Octave Omniversal Lattice is filed as an explicit **AI catalog layer** between agentic IDE and data altitudes.
 2. **Resonant management grammar:** Φ-keyed nesting + honesty tiers as coordination tools for agent fleets — Tier B fixtures verify identity, not production DB benchmarks.
 3. **Sibling rhyme:** Generative Matrix supplies the seed-matrix habit; Moving up the stack supplies cool · harmonize · scale; this paper supplies the **catalog-layer identity** between those talks.
+
+### 6.1 Key architectural innovations (featured on catalog-layer surfaces)
+
+Wherever this catalog layer is featured for guests, five Soft Story architecture innovations are named in CEO plain speak — each with what it delivers that linear-only stacks cannot file. Security is woven as fabric, not a sixth card:
+
+| Innovation | Delivers (catalog claim) | Cannot achieve without it | Peer shelf |
+|---|---|---|---|
+| **Volumetric interference processing** | Separated knowledge vaults so deep context does not collide — cleaner recall, less prompt noise | Stay on bloated vector lookup and parity taxes; deep context keeps colliding | [Prime-indexed volumetric storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md) |
+| **Golden-ratio cataloging** | Nest order with Φ_EGS ≈ 1.618 so context compresses into structure instead of sprawl | Remain stuck between brute-force treadmill and regulatory moat — no third mediation path | [EGS Catalog frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) |
+| **Prime-container storage** | Odd-prime geometry so hard problems resolve as containment, not endless search | Only statistical predictors and longer GPU runs; no closed-form containment sketch | [Protein folding prime container](./SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md) |
+| **Holographic rhyme wiring** | Repeating, self-correcting briefs across shelves — teams stop re-pasting fat dumps | “Holographic” stays a slogan; agents keep pasting archives into every prompt | [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Tier C wiring](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) |
+| **Goldilocks · Net Zero** | Spend, heat, and chaos in the “just right” band — cool the burn without freezing the roadmap | Swing between thermal/financial runaway and bureaucratic stall — no invariant calm | [Holographic singularity crystal](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Zero-octave Y Goldilocks](./SYNTHOBS_ZERO_OCTAVE_Y_GOLDILOCKS_FIBONACCI_PRIME_VAULTS_EGS_2026-09.md) |
+| **Security fabric · 24×365** *(woven, not a sixth card)* | Keys stay local; raw corpora stay out of prompts; least-privilege routing at rest, in transit, in context, in tools, and in oversight | Fat context into every model call; security bolted on as filters; noise and exposure scale with every agent | Product surfaces · executive sandbox |
+
+**Honesty:** catalog / Soft Story architecture — not JEDEC drop-in, not CASP gold, not CODATA replacement, not GPU-vanish, not a penetration-test certificate. Human emergency still outranks algorithms.
 
 ---
 

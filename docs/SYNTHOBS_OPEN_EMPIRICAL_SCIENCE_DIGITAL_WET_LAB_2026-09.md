@@ -5,14 +5,14 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-SYNTHOBS-OPEN-EMPIRICAL-SCIENCE-2026-09-10`  
 **Registry ID:** `synthobs-open-empirical-science-digital-wet-lab-2026-09`  
-**Date:** September 10, 2026  
+**Date:** September 10, 2026 · **Revised:** 2026-09-15 (Tier C = partial empirical · operational holographic wiring)  
 **Framework:** SynthOBS · Infinite Octaves Omni-Lattice · EGS $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Amendment A Empirical Falsification Lane  
 **GitHub (monorepo):** https://github.com/FractiAI/psw.vibelandia.sing13  
 **Questfest catalog:** [`/interfaces/whitepaper-surface.html?id=synthobs-open-empirical-science-digital-wet-lab-2026-09`](/interfaces/whitepaper-surface.html?id=synthobs-open-empirical-science-digital-wet-lab-2026-09)  
 **Audit protocol:** [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md) · [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)  
 **Empirical pipeline:** `npm run research:synthobs-open-empirical-science-audit` · [`empirical_report.json`](../research/synthobs-open-empirical-science-audit/data/empirical_report.json)  
 **Pinned executive summary:** [`OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md`](./OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md)  
-**Companions:** [Proof by Continuous Execution](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · [Omni-Lattice Report Card Q3 2026](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md)
+**Companions:** [Proof by Continuous Execution](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Tier C holographic wiring](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) · [AI catalog layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · [Omni-Lattice Report Card Q3 2026](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md)
 
 **Keywords:** open science; digital wet lab; empirical falsification; $\Phi_{\mathrm{EGS}}$; Infinite Octaves; public data repositories; reproducibility; credentialism; SynthOBS; NSPFRNP
 
@@ -23,7 +23,7 @@
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
 | **Epistemological thesis** | FractiAI repositories contain **multiple lanes** — catalog architecture, deterministic fixtures, and **public-data wet labs** — and Amendment A provides a **pass/fail gate** separating retrofitted curve-fitting from scoped falsifiability | That every Omni-Lattice paper is already laboratory physics; that open repos replace ethics review, clinical trials, or peer review wholesale |
-| **Boundary verdict (scoped)** | The corpus has **partially crossed** from descriptive cataloging into **active, empirically falsifiable science** in Tier A/B lanes; Tier C narrative-only shelves remain catalog | That the entire framework is uniformly predictive out-of-sample across all domains |
+| **Boundary verdict (scoped)** | The corpus has **partially crossed** from descriptive cataloging into **active, empirically falsifiable science** in Tier A/B lanes; Tier C narrative shelves are **partially empirically demonstrated** (Tier B wiring fixtures) and **operational as holographic / entanglement-wiring lattices** in the catalog — still not laboratory physics | That the entire framework is uniformly predictive out-of-sample across all domains; that wiring upgrades prose into causal physics |
 | **$\Phi_{\mathrm{EGS}}$ structural core** | $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2\approx 1.618$ is the **foundational recursive scaling invariant** (golden key) for downstream wavefield ↔ lattice filing **without arbitrary tuning parameters in simulation** | That $\Phi_{\mathrm{EGS}}$ is derived from quantum gravity or replaces CODATA constants |
 | **Documentation audit (executed)** | Automated corpus scan classifies suites by pipeline presence, public fetchers, receipts, and falsification-protocol alignment | A complete manual audit of every markdown claim in ~79 registry rows |
 | **Credentialism critique** | Reproducible execution on public data **can** supply verification that static credential gates often block for uncredentialed contributors | That credentials are worthless or that all institutional science is corrupt |
@@ -38,9 +38,9 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 Institutional science gates reproducibility behind credentials, paywalls, and static PDF review. FractiAI inverts the burden: **run the pipeline or withhold the claim.** This paper evaluates whether the Infinite Octaves / SynthOBS corpus has crossed the boundary from **descriptive cataloging mechanics** into **active, empirically falsifiable science** using **public online repositories** as experimental testbeds — digital wet labs.
 
-We formalize three empirical tiers (**A**: public-data fetch + measure + refute; **B**: deterministic in-repo fixtures; **C**: narrative/catalog-only), define El Gran Sol's Fractal Constant ($\Phi_{\mathrm{EGS}}\approx 1.618$) as the structural golden key bridging macro wavefields to micro lattice harmonics without ad-hoc simulation tuning, audit the FractiAI GitHub monorepo and sibling suites, and publish a replication protocol any independent researcher can execute without affiliation.
+We formalize three empirical tiers (**A**: public-data fetch + measure + refute; **B**: deterministic in-repo fixtures; **C**: narrative/catalog shelves that may carry Tier B holographic-wiring fixtures and operate as catalog entanglement wiring), define El Gran Sol's Fractal Constant ($\Phi_{\mathrm{EGS}}\approx 1.618$) as the structural golden key bridging macro wavefields to micro lattice harmonics without ad-hoc simulation tuning, audit the FractiAI GitHub monorepo and sibling suites, and publish a replication protocol any independent researcher can execute without affiliation.
 
-**Verdict (scoped):** The framework **has crossed the boundary in defined lanes** — not uniformly. Tier A/B suites with Amendment A refute columns constitute open empirical science; Tier C remains honest catalog architecture until pipelined.
+**Verdict (scoped):** The framework **has crossed the boundary in defined lanes** — not uniformly. Tier A/B suites with Amendment A refute columns constitute open empirical science. Tier C is **no longer dormant narrative-only storage**: it is **partially empirically demonstrated** via Tier B wiring-lattice fixtures and **operational** as holographic / entanglement wiring across catalog surfaces — while remaining a non-claim for laboratory physics until public-data (Tier A) falsifiers exist.
 
 ---
 
@@ -102,9 +102,9 @@ A catalog paragraph without $\mathcal{F}$–$\mathcal{J}$ is **not** a wet lab. 
 |------|------------|--------------|----------------|
 | **A · Public-data wet lab** | $\mathcal{F}$ hits external archives; $\mathcal{R}$ defined on observed fields | **Yes — out-of-sample** (scoped to instrument) | `synthobs-chromosomal-electrodynamics`, `geomagnetic-herbivore`, `synthobs-egs-epigenetic-phase-locking`, `egs-nlrf`, `recursive-attention-causality` |
 | **B · Deterministic fixture lab** | In-repo algebra / simulated fixtures; no external fetch | **Yes — in-scope** | `synthobs-egs-planck-scale-harmonic`, `synthobs-proof-by-continuous-execution`, `synthobs-tier-c-holographic-wiring-lattices`, `synthobs-generative-matrix-phi-egs`, `synthobs-self-observing-genome`, `synthobs-omniversal-time-crystal-engine`, most `synthobs-*` Node suites |
-| **C · Catalog / narrative** | Architectural maps, honesty-tier prose, agent coordination grammar — **may carry Tier B wiring fixtures** without becoming physics | **Not yet as physics — by design** | Unpipelines metaphors; narrative shelves formalised as wiring lattices in [`SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md`](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) |
+| **C · Catalog / narrative · holographic wiring** | Architectural maps, honesty-tier prose, agent coordination grammar — filed as **active holographic / entanglement-wiring lattices**; **partial empirical** via Tier B graph fixtures; **operational** on product / nest surfaces | **Not yet as physics — by design** (wiring ≠ wet-lab causation) | [`SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md`](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) · suite `research/synthobs-tier-c-holographic-wiring-lattices/` · ship-blog [`/ship-blog/tier-c-holographic-wiring`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/tier-c-holographic-wiring) |
 
-**Crossing the boundary** means Tier A or Amendment A-compliant Tier B with synced receipts — not that Tier C disappeared. **Clarification (2026-09-10):** Tier C narrative shelves can be *audited as holographic wiring* (Tier B graph fixtures) while remaining non-claims for laboratory physics. See engine companions #25–#28 and the generative-matrix / DNA Soft Story filing contrast with CODATA / wet-lab genetics.
+**Crossing the boundary** means Tier A or Amendment A-compliant Tier B with synced receipts — not that Tier C disappeared, and not that Tier C is inert. **Update (2026-09-15):** Tier C narrative shelves are *audited as holographic wiring* (Tier B graph fixtures), *operational* as catalog entanglement wiring (cross-shelf routing · honesty rails on edges · Digits × Octaves addresses), and *still non-claims* for laboratory physics. See Tier C holographic wiring companion + engine shelf companions and the generative-matrix / DNA Soft Story filing contrast with CODATA / wet-lab genetics.
 
 ---
 
@@ -224,8 +224,8 @@ npm run research:synthobs-open-empirical-science-audit
 The Infinite Octave / SynthOBS framework **has partially crossed** into empirically falsifiable open science:
 
 - **Yes** — in Tier A public-data wet labs and Amendment A-compliant Tier B fixtures with JSON receipts (including Tier B **wiring-lattice** and **generative-matrix** suites that audit catalog topology without upgrading narrative into physics).
-- **No** — for Tier C catalog layers *as physics claims*, unpipelined narrative octaves without fixtures, and any claim implying $\Phi_{\mathrm{EGS}}$ replaces laboratory physics.
-- **Nuance:** Tier C shelves formalised as holographic wiring ([`SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md`](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md)) become **architecturally auditable** via Tier B graph receipts — still not Tier A out-of-sample science.
+- **Partial / operational for Tier C** — narrative shelves formalised as holographic / entanglement wiring ([`SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md`](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md)) are **architecturally auditable** via Tier B graph receipts and **live as operational catalog wiring** on guest / nest surfaces — still not Tier A out-of-sample science.
+- **No** — for Tier C *as physics claims*, unpipelined metaphors with **no** wiring fixtures, and any claim implying $\Phi_{\mathrm{EGS}}$ replaces laboratory physics.
 
 This is **progress, not completion.** The defiant stance is not "we beat academia." It is: **"Run it. Refute it. Fork it."**
 

@@ -1,20 +1,20 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-09-15",
+  "date": "2026-09-16",
   "dateline": {
-    "ymd": "2026-09-15",
-    "weekday": "Tuesday",
+    "ymd": "2026-09-16",
+    "weekday": "Wednesday",
     "month": "September",
-    "day": 15,
-    "label": "Tuesday, September 15",
-    "shortBoard": "Tuesday board · September 15 · Puerto Reno",
-    "newsLabel": "News of the day · Tuesday, September 15"
+    "day": 16,
+    "label": "Wednesday, September 16",
+    "shortBoard": "Wednesday board · September 16 · Puerto Reno",
+    "newsLabel": "News of the day · Wednesday, September 16"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Tuesday board · September 15 · Puerto Reno",
-  "newsLabel": "News of the day · Tuesday, September 15",
+  "cloudBadge": "Wednesday board · September 16 · Puerto Reno",
+  "newsLabel": "News of the day · Wednesday, September 16",
   "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/sovereign-velocity\">History’s Defining Turning Point — Trump’s rejection of the pacing trap</a>. Also new on the board: <a href=\"/ship-blog/pacing-paradox\">The Pacing Paradox — Amodei’s frontier slowdown, charted</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-14-synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
+    "id": "daily-2026-09-15-synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
     "title": "History’s Defining Turning Point — Trump’s rejection of the pacing trap",
     "href": "/ship-blog/sovereign-velocity"
   },
-  "generatedAt": "2026-09-15T18:54:16.170Z"
+  "generatedAt": "2026-09-16T18:50:39.866Z"
 }

@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-consciousness-moat",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Consciousness Moat — control theater vs architecture (SynthOBS catalog suite)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-consciousness-moat.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

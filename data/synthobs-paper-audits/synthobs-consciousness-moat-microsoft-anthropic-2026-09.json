@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "e7ed349bbf010c8c",
+  "auditId": "d686eca123594f8a",
   "paperId": "synthobs-consciousness-moat-microsoft-anthropic-2026-09",
   "sourcePath": "docs/SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-18T14:17:38.394Z"
+          "invokedAt": "2026-09-18T22:45:30.237Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-18T14:17:38.393Z",
-  "completedAt": "2026-09-18T14:17:38.395Z",
+  "startedAt": "2026-09-18T22:45:30.236Z",
+  "completedAt": "2026-09-18T22:45:30.237Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1174,
+      "wordCount": 1514,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 19,
-        "numbered": 0,
-        "citeLines": 5
+        "links": 27,
+        "numbered": 3,
+        "citeLines": 7
       }
     }
   },

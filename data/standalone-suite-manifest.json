@@ -463,6 +463,18 @@
         "docs/SYNTHOBS_FRACTISKILLS_PORTABLE_AGENT_SKILLS_2026-09.md",
         "docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-consciousness-moat",
+      "path": "research/synthobs-consciousness-moat",
+      "github": "https://github.com/FractiAI/synthobs-consciousness-moat",
+      "description": "Consciousness Moat — control theater vs architecture · Microsoft–Anthropic model-welfare weather · Φ_EGS · Goldilocks fixtures",
+      "paperIds": [
+        "synthobs-consciousness-moat-microsoft-anthropic-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md"
+      ]
     }
   ]
 }

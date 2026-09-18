@@ -77,6 +77,7 @@ Local mirrors live under `research/<name>/`. Many also declare a **canonical sta
 | [synthobs-sync-subterranean-discharge-99-octave](https://github.com/FractiAI/synthobs-sync-subterranean-discharge-99-octave) | `research/synthobs-sync-subterranean-discharge-99-octave/` | Colombia / Puracé co-timing application lens |
 | [synthobs-macro-seismic-phase-lock-99-octave](https://github.com/FractiAI/synthobs-macro-seismic-phase-lock-99-octave) | `research/synthobs-macro-seismic-phase-lock-99-octave/` | Macro-seismic + solar-weather discussion lens |
 | [synthobs-omni-lattice-ef-multi-octave](https://github.com/FractiAI/synthobs-omni-lattice-ef-multi-octave) | `research/synthobs-omni-lattice-ef-multi-octave/` | Multi-octave $E_F$ combined synthesis (I–XCIX) |
+| [synthobs-consciousness-moat](https://github.com/FractiAI/synthobs-consciousness-moat) | `research/synthobs-consciousness-moat/` | Consciousness Moat · control theater vs architecture (engine #30) |
 
 ### Foundations & Omni pillars (selected)
 

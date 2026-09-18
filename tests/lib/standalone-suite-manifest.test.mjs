@@ -15,6 +15,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-awareness-vs-brute-force-leverage',
       'synthobs-consciousness-moat',
       'synthobs-crystalline-unified-field',
+      'synthobs-digit4-recursive-reach-awareness-theater',
       'synthobs-eddy-current-mirror',
       'synthobs-fractiskills-portable-agent-skills',
       'synthobs-generative-matrix-phi-egs',

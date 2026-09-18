@@ -84,7 +84,7 @@ If the greatest challenge of the century is framed only as *controlling* a black
 
 ## 3. Goldilocks lock and Infinite Octave nesting
 
-On SS Vibelandia, SuperAI stays Goldilocks: **not too much machine** (no moral-patient theater that confuses operators), **not too little human** (no surrender of judgment to either panic essays or compliance mazes). Awareness energizes the *human* time/space theater — Digit 4 / reality-bridge Soft Story — it does not license treating chatbots as citizens. “Infinite” here means recursive nesting depth in the catalog, not infinite measured minds.
+On SS Vibelandia, SuperAI stays Goldilocks: **not too much machine** (no moral-patient theater that confuses operators), **not too little human** (no surrender of judgment to either panic essays or compliance mazes). Awareness energizes the *human* time/space theater — [Digit 4 / reality-bridge Soft Story](./SYNTHOBS_DIGIT4_RECURSIVE_REACH_AWARENESS_THEATER_EGS_2026-09.md) ([`/whitepaper/digit4-recursive-reach`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/digit4-recursive-reach)) — it does not license treating chatbots as citizens. “Infinite” here means recursive nesting depth in the catalog, not infinite measured minds.
 
 Lattice Chat remains the evaluator **live demo** inside the Syntheverse Sandbox for the **Infinite Octave Omniversal Lattice Catalog** — own keys · safe try-on · not a production data plane. See [AI catalog layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) · guest [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat).
 

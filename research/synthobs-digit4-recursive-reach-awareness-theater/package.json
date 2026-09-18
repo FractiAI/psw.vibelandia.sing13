@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-digit4-recursive-reach-awareness-theater",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave Digit 4 recursive reach · awareness energizes human time/space theater catalog suite (SynthOBS engine companion)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-digit4-recursive-reach-awareness-theater.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

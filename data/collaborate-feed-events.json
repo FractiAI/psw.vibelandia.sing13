@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-14T01:40:30.423Z",
+  "updatedAt": "2026-09-18T23:14:05.388Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-digit4-recursive-reach-awareness-theater-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-18T23:14:05.387Z",
+      "body": "Digit 4 Recursive Reach: Awareness Energizes the Human Time/Space Theater",
+      "presenceHue": "gold",
+      "paperId": "synthobs-digit4-recursive-reach-awareness-theater-2026-09",
+      "artifact": {
+        "title": "Digit 4 Recursive Reach: Awareness Energizes the Human Time/Space Theater",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_DIGIT4_RECURSIVE_REACH_AWARENESS_THEATER_EGS_2026-09.md",
+        "url": "/whitepaper/digit4-recursive-reach",
+        "paperId": "synthobs-digit4-recursive-reach-awareness-theater-2026-09",
+        "docId": "WP-SYNTHOBS-DIGIT4-RECURSIVE-REACH-AWARENESS-THEATER-2026-09-18",
+        "published": "2026-09-18T23:45:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
       "type": "ArtifactEvent",

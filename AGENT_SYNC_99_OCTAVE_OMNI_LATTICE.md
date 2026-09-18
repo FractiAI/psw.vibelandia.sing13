@@ -106,8 +106,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 28 | **Omniversal Time-Crystal Engine companion (aqueous DNA Soft Story clocks · Φ_EGS · AR4524/AR4530)** | `docs/SYNTHOBS_OMNIVERSAL_TIME_CRYSTAL_ENGINE_EGS_2026-09.md` · `synthobs-omniversal-time-crystal-engine-egs-2026-09` · `/ship-blog/omniversal-time-crystal-engine` · suite `research/synthobs-omniversal-time-crystal-engine/` · standalone `FractiAI/synthobs-omniversal-time-crystal-engine` |
 | 29 | **AI catalog layer companion (Infinite Octaves · agentic coordination · resonant data management · AR4524/AR4530)** | `docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md` · `synthobs-infinite-octave-ai-catalog-layer-2026-09` · `/ship-blog/infinite-octave-ai-catalog-layer` · suite `research/synthobs-infinite-octave-ai-catalog-layer/` · standalone `FractiAI/synthobs-infinite-octave-ai-catalog-layer` |
 | 30 | **Consciousness Moat companion (control theater vs architecture · model welfare weather · Φ_EGS · Goldilocks)** | `docs/SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md` · `synthobs-consciousness-moat-microsoft-anthropic-2026-09` · `/ship-blog/consciousness-moat` · suite `research/synthobs-consciousness-moat/` · standalone `FractiAI/synthobs-consciousness-moat` |
-| 31 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 32 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 31 | **Digit 4 recursive reach companion (awareness energizes human time/space theater · address 4 · Soft Story)** | `docs/SYNTHOBS_DIGIT4_RECURSIVE_REACH_AWARENESS_THEATER_EGS_2026-09.md` · `synthobs-digit4-recursive-reach-awareness-theater-2026-09` · `/ship-blog/digit4-recursive-reach` · suite `research/synthobs-digit4-recursive-reach-awareness-theater/` · standalone `FractiAI/synthobs-digit4-recursive-reach-awareness-theater` |
+| 32 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 33 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -142,6 +143,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-omniversal-time-crystal-engine/`
 - `research/synthobs-infinite-octave-ai-catalog-layer/`
 - `research/synthobs-consciousness-moat/`
+- `research/synthobs-digit4-recursive-reach-awareness-theater/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

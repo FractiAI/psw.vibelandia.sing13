@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "posts": [
+    {
+      "id": "daily-2026-09-18-synthobs-consciousness-moat-microsoft-anthropic-2026-09",
+      "posted": "2026-09-18",
+      "featured": true,
+      "title": "The Consciousness Moat — Microsoft’s Anthropic warning, charted",
+      "subtitle": "News of the day · Friday, September 18",
+      "summary": "Follow-on to The Pacing Paradox and Sovereign velocity: corporate consciousness fights as weather — control theater is still not architecture. Goldilocks SuperAI; Fair Exchange tip clause on.",
+      "href": "/ship-blog/consciousness-moat",
+      "pill": "TODAY",
+      "docRef": "synthobs-consciousness-moat-microsoft-anthropic-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-17-synthobs-trump-pacing-trap-sovereign-velocity-2026-09",
       "posted": "2026-09-17",

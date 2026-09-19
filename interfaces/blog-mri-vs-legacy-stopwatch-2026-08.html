@@ -31,19 +31,24 @@
       <p class="dateline"><strong>SS Vibelandia</strong> — 2026-08-13 — plain speak · Fair Exchange</p>
     </header>
 
-    <p class="lead">We timed two ways of doing the same sandbox work: redo everything on every connection (legacy mesh), versus share one field and send small phase-acks (MRI-style). The clock is real. The magnet is not.</p>
+    <p class="lead">Architecture arguments die in slogans. Synthio ran a stopwatch instead. Same sandbox work, two styles: redo everything on every connection (legacy mesh), versus share one field and send small phase-acks (MRI-style). The clock is real. The magnet is not.</p>
 
-    <p class="honesty"><strong>Honesty first:</strong> these are Node Bloch + optional KomaMRI.jl CPU timings on one host. Not clinical TR/TE. Not CUDA invoices. Not proof that Synthio displaces hyperscale data centers or that Synthio is the 99 Octave engine identity.</p>
+    <p>That distinction is the whole product pitch in miniature. Shared-field thinking is cheaper when the problem allows it. Per-edge recompute is the expensive habit that feels thorough. On the shipped receipt, the shared-field arm was much cheaper than per-edge recompute — hundreds of times on the Node Bloch lane, tens of times on the live KomaMRI lane. Host-dependent. Re-run the suite to refresh the milliseconds. Receipts live next to the paper.</p>
 
-    <h2>What the stopwatch said</h2>
-    <p>On the shipped receipt, the shared-field arm was much cheaper than per-edge recompute — hundreds of times on the Node Bloch lane, tens of times on the live KomaMRI lane. Host-dependent. Re-run the suite to refresh the milliseconds. Receipts live next to the paper.</p>
+    <h2>What the stopwatch is — and is not</h2>
+    <p>These are Node Bloch timings plus optional KomaMRI.jl CPU timings on one host. They are not clinical TR/TE. They are not CUDA invoices. They are not proof that Synthio displaces hyperscale data centers, and they are not proof that Synthio is the 99 Octave engine identity. They are a sandbox performance proxy with enough teeth to argue against mesh theater.</p>
+    <p>For executives evaluating FractiAI’s creator sandbox, the stopwatch answers a narrower question: when we borrow MRI-style shared-field language for compute orchestration, do wall-clock fixtures move? On this host, yes. On your host, re-run. That is the valley’s preferred epistemology — fixtures you can refresh, not press-release multiples frozen forever.</p>
 
     <h2>How to use it on QUESTFEST</h2>
+    <p>Open Synthio (creator-only) and ask about MRI versus legacy wall-clock with the honesty table visible. Run <code>npm run research:synthio-mri-vs-legacy-perf</code> for the live suite. Clone <a href="https://github.com/FractiAI/synthio-mri-vs-legacy-perf">FractiAI/synthio-mri-vs-legacy-perf</a> when you want the receipts beside the cloud-antenna and cluster companions.</p>
+    <p>One sentence for the pier: we timed two ways of thinking in silicon; shared field won on this host; the magnet remains imaginary.</p>
+
     <ul class="plain">
-      <li>Open Synthio (creator-only) and ask about MRI vs legacy wall-clock — keep the honesty table visible.</li>
-      <li>Run <code>npm run research:synthio-mri-vs-legacy-perf</code> for the live suite.</li>
-      <li>Standalone GitHub: <a href="https://github.com/FractiAI/synthio-mri-vs-legacy-perf">FractiAI/synthio-mri-vs-legacy-perf</a>.</li>
+      <li>Companions: <a href="/ship-blog/mri-cloud-antenna">MRI cloud-antenna</a> · <a href="/ship-blog/komamri-on-a-cluster">KomaMRI on a cluster</a></li>
+      <li>Creator seat: <a href="/synthio">/synthio</a></li>
     </ul>
+
+    <p class="honesty"><strong>Honesty boundary:</strong> these are Node Bloch + optional KomaMRI.jl CPU timings on one host. Not clinical TR/TE. Not CUDA invoices. Not proof that Synthio displaces hyperscale data centers or that Synthio is the 99 Octave engine identity.</p>
 
     <div class="cta-row">
       <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=synthio-mri-vs-legacy-perf-proxy-2026-08">Open the whitepaper</a>

@@ -37,14 +37,9 @@
       <p class="dateline"><strong>SS Vibelandia</strong> — 2026-09-06 — Measured benchmark · Fair Exchange</p>
     </header>
 
-    <p class="lead">We <strong>set up</strong> ColabFold 1.6.2, <strong>ran</strong> FastA tiers on CPU, and <strong>timed</strong> Infinite Octave prime vaults under <strong>Φ ≈ 1.618</strong>. Tier 4 adds <strong>Unmodeled Nova</strong> — deciphering a protein not previously modeled. The race door is a <strong>description + results</strong> page — no live play controls. Miracle 2: <a href="/prime-vault-chat">Prime Vault Chat</a>.</p>
+    <p class="lead">We set up ColabFold 1.6.2, ran FastA tiers on CPU, and timed Infinite Octave prime vaults under Φ ≈ 1.618. Tier 4 adds Unmodeled Nova — deciphering a protein not previously modeled. The race door is a description-plus-results page — no live play controls. Miracle 2 lives at <a href="/prime-vault-chat">Prime Vault Chat</a>.</p>
 
-    <p class="honesty"><strong>Honesty first:</strong> application companion — not an engine pin. ColabFold = live <code>colabfold_batch</code> (CPU · single_sequence · 1 model · 1 recycle). Prime-vault = closed-form Φ-energy (not GDT-TS). Not CASP medals, not DeepMind cloud, not GPU invoices. Fair Exchange on.</p>
-
-    <div class="cta-row">
-      <a class="btn btn-gold" href="/prime-vault-race">View race results</a>
-      <a class="btn btn-ghost" href="/ship-blog/prime-vault-race-door">Door announcement</a>
-    </div>
+    <p>The race is not a joystick. Guests get a scoreboard they can read; builders get a suite they can re-run; nobody gets a CASP medal claim. ColabFold predicts coordinates and confidence. Prime vaults evaluate Φ-indexed energy fixtures. Different clocks, same public receipt culture.</p>
 
     <h2>Scoreboard (this host)</h2>
     <table class="race">
@@ -89,21 +84,20 @@
       </tbody>
     </table>
 
-    <p>Prime-vault stayed <strong>sub-millisecond</strong> on every tier. ColabFold paid neural wall-clock on tiers 1–3 (and a one-time ~3.5 GB weight download). Orphan confidence landed lowest — as expected under MSA-free neural inference. Tier 4 Unmodeled Nova has <strong>no prior AF/PDB model</strong> — vault decipher is live; ColabFold waits for <code>COLABFOLD_LIVE=1</code> (we do not invent pLDDT). Receipt: <code>race_results.json</code>.</p>
+    <p>Prime-vault stayed sub-millisecond on every tier. ColabFold paid neural wall-clock on tiers 1–3 (and a one-time ~3.5 GB weight download). Orphan confidence landed lowest — as expected under MSA-free neural inference. Tier 4 Unmodeled Nova has no prior AF/PDB model — vault decipher is live; ColabFold waits for <code>COLABFOLD_LIVE=1</code> (we do not invent pLDDT). Receipt: <code>race_results.json</code>.</p>
+    <p>On this CPU box, vaults finished roughly 10⁵–10⁶× faster under the stated flags. That latency story is the guest hook. Structure quality remains ColabFold’s job; closed-form Φ-energy remains the vault’s job. Confusing the two clocks is how honesty rails die.</p>
 
-    <h2>What this means</h2>
-    <ul class="plain">
-      <li><strong>Different clocks:</strong> ColabFold predicts coordinates + confidence; prime vaults evaluate Φ-indexed energy fixtures.</li>
-      <li><strong>Latency race:</strong> on this CPU box, vaults finished ~10⁵–10⁶× faster under the stated flags.</li>
-      <li><strong>Receipts:</strong> PDBs + <code>data/race_results.json</code> in the suite.</li>
-    </ul>
+    <h2>What this means for QUESTFEST</h2>
+    <p>View the public door at <a href="/prime-vault-race">/prime-vault-race</a>. Read the door announcement at <a href="/ship-blog/prime-vault-race-door">prime-vault-race-door</a>. Re-run the suite with <code>npm run research:synthobs-prime-vault-alphafold-race</code>. For live ColabFold, install the tool, set <code>COLABFOLD_LIVE=1</code>, and run <code>node research/synthobs-prime-vault-alphafold-race/scripts/run_race_report.mjs</code>. Methods and tables live in the whitepaper.</p>
+    <p>One sentence for the pier: different clocks, public receipts, no CASP cosplay — and Unmodeled Nova stays honest about what has not been timed yet.</p>
 
-    <h2>Try it yourself</h2>
     <ul class="plain">
       <li>Suite: <code>npm run research:synthobs-prime-vault-alphafold-race</code></li>
-      <li>Live race: install ColabFold, then <code>COLABFOLD_LIVE=1</code> + <code>node research/synthobs-prime-vault-alphafold-race/scripts/run_race_report.mjs</code></li>
-      <li>Full methods + table: <a href="/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-alphafold-race-2026-09">whitepaper</a></li>
+      <li>Standalone: <a href="https://github.com/FractiAI/synthobs-prime-vault-alphafold-race">GitHub</a></li>
+      <li>Companions: <a href="/ship-blog/prime-vault-chat">Prime Vault Chat</a> · <a href="/ship-blog/protein-folding-prime-container">Protein folding</a></li>
     </ul>
+
+    <p class="honesty"><strong>Honesty boundary:</strong> application companion — not an engine pin. ColabFold = live <code>colabfold_batch</code> (CPU · single_sequence · 1 model · 1 recycle). Prime-vault = closed-form Φ-energy (not GDT-TS). Not CASP medals, not DeepMind cloud, not GPU invoices. Fair Exchange on.</p>
 
     <div class="cta-row">
       <a class="btn btn-gold" href="/prime-vault-race">View race results</a>

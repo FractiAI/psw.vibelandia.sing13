@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-18T23:14:05.388Z",
+  "updatedAt": "2026-09-19T05:32:37.644Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-linear-shadow-fractal-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-19T05:32:37.643Z",
+      "body": "Linear as the Shadow of Fractal: Projection Geometry for Infinite Octaves",
+      "presenceHue": "gold",
+      "paperId": "synthobs-linear-shadow-fractal-2026-09",
+      "artifact": {
+        "title": "Linear as the Shadow of Fractal: Projection Geometry for Infinite Octaves",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md",
+        "url": "/whitepaper/linear-shadow-fractal",
+        "paperId": "synthobs-linear-shadow-fractal-2026-09",
+        "docId": "WP-SYNTHOBS-LINEAR-SHADOW-FRACTAL-2026-09-19",
+        "published": "2026-09-19T05:30:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-digit4-recursive-reach-awareness-theater-2026-09",
       "type": "ArtifactEvent",

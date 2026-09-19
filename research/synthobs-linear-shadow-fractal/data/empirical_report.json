@@ -1,0 +1,113 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "docId": "WP-SYNTHOBS-LINEAR-SHADOW-FRACTAL-2026-09-19",
+  "registryId": "synthobs-linear-shadow-fractal-2026-09",
+  "title": "Linear as the Shadow of Fractal — Projection Geometry (Catalog Suite)",
+  "generatedAt": "2026-09-19T05:32:34.267Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Catalog / Soft Story fixtures for linear-as-shadow-of-fractal. Does not claim physics is a cave wall, that linear algebra is obsolete, that Φ_EGS replaces CODATA, or prophecy about AGI dates.",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Architectural golden key for projection / nesting grammar.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_cast_role",
+        "title": "Cast role = linear",
+        "CAST_ROLE": "linear",
+        "pass": true,
+        "interpretation": "Silhouette / one-axis projection role frozen.",
+        "honesty": "Catalog role — not a claim that linear algebra is false."
+      },
+      {
+        "id": "E3_body_role",
+        "title": "Body role = fractal_holographic",
+        "BODY_ROLE": "fractal_holographic",
+        "pass": true,
+        "interpretation": "Recursive nesting body that casts the silhouette.",
+        "honesty": "Soft Story architecture — not unfinished QG proof."
+      },
+      {
+        "id": "E4_projection_relation",
+        "title": "Cast = projection_of(body)",
+        "PROJECTION_RELATION": "cast = projection_of(body)",
+        "CAST_ROLE": "linear",
+        "BODY_ROLE": "fractal_holographic",
+        "pass": true,
+        "interpretation": "Dual lock — silhouette is not the body.",
+        "honesty": "Geometry Soft Story — not laboratory optics."
+      },
+      {
+        "id": "E5_linear_silhouette",
+        "title": "Linear AI-race silhouette axis (4 steps)",
+        "LINEAR_SILHOUETTE": [
+          "flops_axis",
+          "cluster_scale",
+          "market_share",
+          "single_axis_risk"
+        ],
+        "pass": true,
+        "interpretation": "One-axis race story as navigable silhouette — not whole map.",
+        "honesty": "Catalog silhouette — not exhaustive intelligence ontology."
+      },
+      {
+        "id": "E6_instrument_lock",
+        "title": "Linear instruments retained (CMOS pin)",
+        "INSTRUMENT_LOCK": {
+          "linearInstrumentsRetained": true,
+          "discardLinearTooling": false
+        },
+        "pass": true,
+        "interpretation": "Shadows navigate — do not discard silicon linear dialect.",
+        "honesty": "Engineering discipline lock — not fab certification."
+      },
+      {
+        "id": "E7_paper_locks",
+        "title": "Paper narrative locks (cast · body · shadow · engine)",
+        "paperPath": "/workspace/docs/SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md",
+        "hasHonesty": true,
+        "hasDocId": true,
+        "hasCast": true,
+        "hasBody": true,
+        "hasShadow": true,
+        "hasFair": true,
+        "hasOperator": true,
+        "hasEngine": true,
+        "pass": true,
+        "interpretation": "Paper must keep honesty rails and dual cast/body lock.",
+        "honesty": "Structural text locks — not market validation."
+      },
+      {
+        "id": "E8_ship_blog_lock",
+        "title": "Ship-blog surfaces linear-shadow-fractal + full paper link",
+        "path": "/workspace/interfaces/blog-linear-shadow-fractal-2026-09.html",
+        "exists": true,
+        "hasSlug": true,
+        "hasWhitepaper": true,
+        "hasThesis": true,
+        "pass": true,
+        "interpretation": "Guest note must link the full paper and keep Soft Story copy.",
+        "honesty": "Surface copy lock only."
+      },
+      {
+        "id": "E9_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Harmony grammar identity for cross-octave sync framing.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      }
+    ]
+  }
+}

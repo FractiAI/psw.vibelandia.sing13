@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-linear-shadow-fractal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave linear-as-shadow-of-fractal projection geometry catalog suite (SynthOBS engine companion)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-linear-shadow-fractal.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

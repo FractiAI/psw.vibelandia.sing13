@@ -11,17 +11,41 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const MIN_WORDS = 850;
 const MIN_H2 = 3;
 
-function articleMetrics(html) {
+/** Outer ship-blog article (class=wrap), depth-aware so nested card <article>s do not truncate. */
+function extractOuterArticle(html) {
   const clean = html
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .replace(/<style[\s\S]*?<\/style>/gi, '');
-  const articleMatch = clean.match(/<article[\s\S]*?<\/article>/i);
-  const article = articleMatch ? articleMatch[0] : clean;
+  const wrapOpen = clean.match(/<article\b[^>]*class=["'][^"']*\bwrap\b[^"']*["'][^>]*>/i);
+  const startIdx = wrapOpen ? wrapOpen.index : clean.search(/<article\b/i);
+  if (startIdx < 0) return clean;
+  const from = clean.slice(startIdx);
+  let depth = 0;
+  let end = from.length;
+  for (const m of from.matchAll(/<\/?article\b[^>]*>/gi)) {
+    const tag = m[0];
+    if (/^<\//.test(tag)) {
+      depth -= 1;
+      if (depth === 0) {
+        end = m.index + tag.length;
+        break;
+      }
+    } else {
+      depth += 1;
+    }
+  }
+  return from.slice(0, end);
+}
+
+function articleMetrics(html) {
+  const article = extractOuterArticle(html);
   const text = article.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
   const words = text ? text.split(/\s+/).length : 0;
   const h2 = (article.match(/<h2\b/gi) || []).length;
-  const honestyIdx = article.search(/class=["'][^"']*honesty/i);
-  const leadIdx = article.search(/class=["'][^"']*lead/i);
+  // End-rail honesty = the main article's `.honesty` paragraph (not micro-copy inside innovation cards).
+  const honestyMatches = [...article.matchAll(/<p\b[^>]*class=["'][^"']*\bhonesty\b[^"']*["'][^>]*>/gi)];
+  const honestyIdx = honestyMatches.length ? honestyMatches[honestyMatches.length - 1].index : -1;
+  const leadIdx = article.search(/class=["'][^"']*\blead\b/i);
   const firstH2 = article.search(/<h2\b/i);
   return {
     words,

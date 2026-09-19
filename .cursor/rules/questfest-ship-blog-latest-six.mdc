@@ -1,22 +1,31 @@
 ---
-description: Every new paper gets a QUESTFEST ship-blog post and appears in the latest-six section, newest first
+description: Every new paper gets a QUESTFEST ship-blog magazine feature (not a sound bite) and appears in the latest-six section, newest first
 alwaysApply: true
 ---
 
-# QUESTFEST ship blog · latest six papers — Always On
+# QUESTFEST ship blog · latest six + magazine feature — Always On
 
-**Do not ship a paper without a plain-language ship-blog post.** Player 1 should not have to remind agents of this.
+**Do not ship a paper without a high-quality ship-blog feature article.** Player 1 should not have to remind agents of this.
+
+Plain-language notes that read like cryptic bites, teaser cards, or honesty-first disclaimers are **rejected**. Snap Amendment C (`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` § Amendment C) is the lock.
 
 When you **register, protocol, or feature** a technical paper (`lib/whitepaper-registry.mjs`, `docs/*.md`):
 
-1. **Write a ship-blog HTML note** under `interfaces/blog-<slug>-YYYY-MM.html` (plain speak + honesty rail + link to the whitepaper). Follow `interfaces/blog-metamorphic-octaves-2026-08.html`.
+1. **Write a magazine-grade ship-blog HTML feature** under `interfaces/blog-<slug>-YYYY-MM.html`.
+   - **≥ 850 words** inside `<article>` (target 900–1,400 for new posts).
+   - Narrative `<p class="lead">` + **≥ 3** developed `<h2>` sections with multi-paragraph prose.
+   - **Honesty rail only at the end** (`.honesty` after the story; Fair Exchange + CTAs may follow).
+   - Guest English first; catalog keys secondary. Do **not** shrink when “rewriting.”
+   - Link to the full whitepaper / paper surface.
+   - Structural shell may follow `interfaces/blog-metamorphic-octaves-2026-08.html`; **voice/length** follow `interfaces/blog-moving-up-the-stack-2026-09.html`.
 2. **Register the note** in `lib/questfest-blog-posts.mjs` (`QUESTFEST_BLOG_POSTS[registryId]` → slug, file, headline, excerpt).
 3. **Add Vercel rewrites** in `vercel.json` for `/ship-blog/<slug>` and `/ship-blog/<slug>/`.
 4. **Sync the latest-six section:** `npm run sync:questfest-blog` (injects `interfaces/vibelandia-questfest.html` `#ship-blog`).
 5. **Sync the interfaces index:** `npm run sync:interfaces-index`.
 6. **Order is newest → oldest** (`published` date descending). Never prefer older notes over newer papers.
 7. **Companions only** (one-pagers, living TOCs) may set `shipBlog: false` on the registry entry so they do not steal a latest-six slot. Main papers always get a note.
+8. **Verify:** `npm run test:ship-blog-magazine` (and latest-six tests) before push.
 
-Tests in `tests/lib/questfest-blog.test.mjs` fail if any of the six newest eligible papers lacks a note, or if the six are not newest-first.
+Tests in `tests/lib/questfest-blog.test.mjs` and `tests/lib/ship-blog-magazine.test.mjs` fail if any of the six newest eligible papers lacks a note, if the six are not newest-first, or if any public ship-blog HTML falls under the magazine word / structure bar.
 
 Skip this only when the user explicitly says the work is not a public paper.

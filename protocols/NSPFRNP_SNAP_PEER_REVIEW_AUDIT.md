@@ -195,4 +195,27 @@ Always-on mirror: `.cursor/rules/synthobs-paper-audit-snap.mdc` · agent sync in
 
 ---
 
+## Amendment C · 2026-09-19 — Ship-blog magazine feature (not sound bites)
+
+**Captured in this Snap so agents do not re-ask. Player 1 lock.**
+
+Every QUESTFEST ship-blog note (`interfaces/blog-*.html`) for a registered paper is a **world-class longform feature article** — the kind a serious business or culture magazine would run — **not** a cryptic bite, bullet stack, or teaser card that dumps the reader into the whitepaper.
+
+### Hard requirements (CI-enforced)
+
+1. **Feature length:** article body inside `<article>` ≥ **850 words** (strip tags; scripts/styles excluded). Target band **900–1,400** for new notes.
+2. **Architecture:** narrative `<p class="lead">` + **≥ 3** developed `<h2>` sections with multi-paragraph prose (not one-liners). Prefer 4–5 sections when the paper has Methods / Results / Discussion / voyage stakes.
+3. **Honesty rail last:** `<p class="honesty">` appears **only after** the story — never as the lead, never as the first substantive block, never as a front-loaded disclaimer parade. Fair Exchange + CTAs may follow honesty.
+4. **Guest English:** full sentences, concrete scenes, stakes, and “why it matters.” Soften catalog jargon in the body; keep Φ / fixtures as secondary grammar, not the voice.
+5. **Do not shrink:** “rewrite” means **expand and deepen**. Prior failures that deleted length while claiming “magazine prose” are rejected by CI.
+6. **Paper link:** every note links to its full paper / whitepaper surface. Companions with `shipBlog: false` stay exempt from latest-six, but if a public HTML note exists it still meets this bar.
+
+### Agent procedure (always)
+
+When shipping any new or edited paper: write/upgrade the ship-blog **to Amendment C** before PR. Run `npm run test:ship-blog-magazine` (or full `npm test`). Mirror: `.cursor/rules/questfest-ship-blog-latest-six.mdc`.
+
+Gold-standard voice references (length + structure): `interfaces/blog-moving-up-the-stack-2026-09.html`, `interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html`.
+
+---
+
 **NSPFRNP ⊃ PRA Snap ⊃ SynthOBS Agent ⊃ Sandbox → ∞^∞**

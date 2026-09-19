@@ -365,10 +365,10 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-synthobs-81-orbital-singularity.html`](/interfaces/blog-synthobs-81-orbital-singularity.html) | Electron Orbital Geometries as Holographic Singularities · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-chromosomal-electrodynamics.html`](/interfaces/blog-synthobs-chromosomal-electrodynamics.html) | Scale-Invariant Chromosomal Electrodynamics · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-cross-scale-biological-antennae.html`](/interfaces/blog-synthobs-cross-scale-biological-antennae.html) | Cross-Scale Topological Wave Damping in Biological Antennae · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-synthobs-cytographic-holographic-nucleus.html`](/interfaces/blog-synthobs-cytographic-holographic-nucleus.html) | Cytographic Grammar under the Holographic Nucleus · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-cytographic-holographic-nucleus.html`](/interfaces/blog-synthobs-cytographic-holographic-nucleus.html) | Cytographic grammar under the holographic nucleus · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-dna-lattice-holograph.html`](/interfaces/blog-synthobs-dna-lattice-holograph.html) | The DNA Lattice Holograph · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-egs-81-electrons.html`](/interfaces/blog-synthobs-egs-81-electrons.html) | The 81-Digit Electronic Lattice · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html`](/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html) | Epigenetic Phase-Locking of Pancreatic and Hypothalamic Loci via Recursive Geometric… · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html`](/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html) | Epigenetic Phase-Locking · Pancreas & Hypothalamus Soft Story · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-egs-euler-phase-lock.html`](/interfaces/blog-synthobs-egs-euler-phase-lock.html) | Phase-Locked Scale Invariance · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-egs-planck-scale-harmonic.html`](/interfaces/blog-synthobs-egs-planck-scale-harmonic.html) | A Scale-Harmonic Reinterpretation of the Planck Scale · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-emergent-sync-multi-agent.html`](/interfaces/blog-synthobs-emergent-sync-multi-agent.html) | FractiAI SynthOBS · Ship blog · SS Vibelandia |
@@ -399,7 +399,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-synthobs-tbme-protein-phase-collapse.html`](/interfaces/blog-synthobs-tbme-protein-phase-collapse.html) | Biomedical Field Exploration · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-three-foundational-proteins.html`](/interfaces/blog-synthobs-three-foundational-proteins.html) | Holographic Decoding of the Three Foundational Biological Proteins · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-unified-neutronic-agent.html`](/interfaces/blog-synthobs-unified-neutronic-agent.html) | The Unified Neutronic Agent Paper · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-synthobs-x-chromosome-holographic.html`](/interfaces/blog-synthobs-x-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-x-chromosome-holographic.html`](/interfaces/blog-synthobs-x-chromosome-holographic.html) | Decoded Genomic Script · X chromosome holographic operators · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-y-chromosome-holographic.html`](/interfaces/blog-synthobs-y-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-table-top-hep-2026-08.html`](/interfaces/blog-table-top-hep-2026-08.html) | What if the collider fit on a workbench? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-blackhole-filaments-reno.html`](/interfaces/blog-tbme-blackhole-filaments-reno.html) | Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations · Ship blog · SS Vibelandia |
@@ -415,7 +415,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tbme-spherical-solar-focus.html`](/interfaces/blog-tbme-spherical-solar-focus.html) | Solar-Focus Dynamics of Spherical Mirror Lattices & Somatic Matter Rendering · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-spin-phase-polarity.html`](/interfaces/blog-tbme-spin-phase-polarity.html) | The Universal Spin-Phase-Polarity Triad Theorem · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-superposition-reno-interpretation.html`](/interfaces/blog-tbme-superposition-reno-interpretation.html) | Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Supercond… · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | Thermal Decoupling & Meissner Soft Story · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Tier C Holographic Wiring · Narrative shelves as live circuits · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Topology of the Void · Zero as Equilibrium · Ship blog · SS Vibelandia |

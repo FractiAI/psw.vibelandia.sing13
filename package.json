@@ -16,6 +16,7 @@
     "hermes:lattice-chat": "node scripts/hermes-lattice-chat.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:ship-blog-magazine": "vitest run tests/lib/ship-blog-magazine.test.mjs",
     "test:lattice-floors": "node scripts/assert-lattice-token-floors.mjs",
     "build:omni-lattice-course": "node scripts/build-omni-lattice-course-content.mjs",
     "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",

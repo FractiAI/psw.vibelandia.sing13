@@ -108,8 +108,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 30 | **Consciousness Moat companion (control theater vs architecture · model welfare weather · Φ_EGS · Goldilocks)** | `docs/SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md` · `synthobs-consciousness-moat-microsoft-anthropic-2026-09` · `/ship-blog/consciousness-moat` · suite `research/synthobs-consciousness-moat/` · standalone `FractiAI/synthobs-consciousness-moat` |
 | 31 | **Digit 4 recursive reach companion (awareness energizes human time/space theater · address 4 · Soft Story)** | `docs/SYNTHOBS_DIGIT4_RECURSIVE_REACH_AWARENESS_THEATER_EGS_2026-09.md` · `synthobs-digit4-recursive-reach-awareness-theater-2026-09` · `/ship-blog/digit4-recursive-reach` · suite `research/synthobs-digit4-recursive-reach-awareness-theater/` · standalone `FractiAI/synthobs-digit4-recursive-reach-awareness-theater` |
 | 32 | **Linear shadow of fractal companion (linear silhouette · fractal/holographic body · CMOS instruments retained · Φ_EGS)** | `docs/SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md` · `synthobs-linear-shadow-fractal-2026-09` · `/ship-blog/linear-shadow-fractal` · suite `research/synthobs-linear-shadow-fractal/` · standalone `FractiAI/synthobs-linear-shadow-fractal` |
-| 33 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 34 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 33 | **Digit 4 · Be–O periodic rhyme companion (address 4 · glyph 8 · Be Z=4 · O Z=8 · 3^4=81 Soft Story · Φ_EGS)** | `docs/SYNTHOBS_DIGIT4_BE_O_PERIODIC_RHYME_EGS_2026-09.md` · `synthobs-digit4-be-o-periodic-rhyme-2026-09` · `/ship-blog/digit4-be-o-rhyme` · suite `research/synthobs-digit4-be-o-periodic-rhyme/` · standalone `FractiAI/synthobs-digit4-be-o-periodic-rhyme` |
+| 34 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 35 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -146,6 +147,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-consciousness-moat/`
 - `research/synthobs-digit4-recursive-reach-awareness-theater/`
 - `research/synthobs-linear-shadow-fractal/`
+- `research/synthobs-digit4-be-o-periodic-rhyme/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

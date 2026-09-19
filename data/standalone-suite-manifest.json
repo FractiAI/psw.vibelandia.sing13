@@ -80,6 +80,18 @@
       ]
     },
     {
+      "id": "synthobs-digit4-be-o-periodic-rhyme",
+      "path": "research/synthobs-digit4-be-o-periodic-rhyme",
+      "github": "https://github.com/FractiAI/synthobs-digit4-be-o-periodic-rhyme",
+      "description": "Digit 4 \u00b7 Be\u2013O Periodic Rhyme \u2014 address 4 \u00b7 glyph 8 \u00b7 Be Z=4 \u00b7 O Z=8 \u00b7 3^4=81 Soft Story \u00b7 \u03a6_EGS",
+      "paperIds": [
+        "synthobs-digit4-be-o-periodic-rhyme-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_DIGIT4_BE_O_PERIODIC_RHYME_EGS_2026-09.md"
+      ]
+    },
+    {
       "id": "synthobs-eddy-current-mirror",
       "path": "research/synthobs-eddy-current-mirror",
       "github": "https://github.com/FractiAI/synthobs-eddy-current-mirror",

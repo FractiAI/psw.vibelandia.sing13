@@ -1317,6 +1317,14 @@
       "destination": "/interfaces/blog-linear-shadow-fractal-2026-09.html"
     },
     {
+      "source": "/ship-blog/digit4-be-o-rhyme",
+      "destination": "/interfaces/blog-digit4-be-o-rhyme-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/digit4-be-o-rhyme/",
+      "destination": "/interfaces/blog-digit4-be-o-rhyme-2026-09.html"
+    },
+    {
       "source": "/ship-blog/sovereign-velocity",
       "destination": "/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html"
     },

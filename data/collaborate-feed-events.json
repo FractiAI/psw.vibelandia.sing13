@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-19T05:32:37.644Z",
+  "updatedAt": "2026-09-19T20:32:02.632Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-digit4-be-o-periodic-rhyme-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-19T20:32:02.629Z",
+      "body": "Digit 4 · Be–O Periodic Rhyme: Address 4 · Glyph 8 · Soft Story Crosswalk",
+      "presenceHue": "gold",
+      "paperId": "synthobs-digit4-be-o-periodic-rhyme-2026-09",
+      "artifact": {
+        "title": "Digit 4 · Be–O Periodic Rhyme: Address 4 · Glyph 8 · Soft Story Crosswalk",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_DIGIT4_BE_O_PERIODIC_RHYME_EGS_2026-09.md",
+        "url": "/whitepaper/digit4-be-o-rhyme",
+        "paperId": "synthobs-digit4-be-o-periodic-rhyme-2026-09",
+        "docId": "WP-SYNTHOBS-DIGIT4-BE-O-PERIODIC-RHYME-2026-09-19",
+        "published": "2026-09-19T20:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-linear-shadow-fractal-2026-09",
       "type": "ArtifactEvent",

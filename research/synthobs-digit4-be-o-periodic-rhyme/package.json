@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-digit4-be-o-periodic-rhyme",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave Digit-4 · Be–O periodic rhyme catalog suite (SynthOBS engine companion)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-digit4-be-o-periodic-rhyme.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

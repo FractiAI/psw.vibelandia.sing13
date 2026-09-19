@@ -30,15 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Digit4 Be–O · Linear shadow · Digit4 recursive · Consciousness Moat · Sovereign Velocity · Infinite Octave EGS Catalog
-    expect(posts[0].id).toBe('synthobs-digit4-be-o-periodic-rhyme-2026-09');
+    // Newest: Vitality control rhyme · Digit4 Be–O · Linear shadow · Digit4 recursive · Consciousness Moat · Sovereign Velocity
+    expect(posts[0].id).toBe('synthobs-vitality-control-rhyme-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-vitality-control-rhyme-2026-09',
       'synthobs-digit4-be-o-periodic-rhyme-2026-09',
       'synthobs-linear-shadow-fractal-2026-09',
       'synthobs-digit4-recursive-reach-awareness-theater-2026-09',
       'synthobs-consciousness-moat-microsoft-anthropic-2026-09',
       'synthobs-trump-pacing-trap-sovereign-velocity-2026-09',
-      'synthobs-infinite-octave-egs-catalog-frontier-2026-09',
     ]);
   });
 });

@@ -5,11 +5,11 @@
   <script src="/interfaces/vbi18n-failopen.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Scalable Context-Conditioned Sequence Modeling in Repetitive Genomic Regions via Spar… · Ship blog · SS Vibelandia</title>
-  <meta name="description" content="AC-HMM on T2T centromeres — UCSC DNA, audit ledger." />
+  <title>Teaching a model to read the genome’s most stubborn repeats · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="AC-HMM brings context-conditioned sequence modeling to T2T centromeric satellite DNA — exact inference, sparse emissions, and a pre-registered failure zone." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/ac-hmm-satellites" />
-  <meta property="og:title" content="Scalable Context-Conditioned Sequence Modeling in Repetitive Genomic Regions via Spar…" />
-  <meta property="og:description" content="AC-HMM on T2T centromeres — UCSC DNA, audit ledger." />
+  <meta property="og:title" content="Teaching a model to read the genome’s most stubborn repeats" />
+  <meta property="og:description" content="AC-HMM on T2T centromeres — UCSC DNA, audit ledger, sparse emissions." />
   <meta property="og:type" content="article" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -27,20 +27,22 @@
       <a href="/interfaces/whitepaper-surface.html?id=fractiai-ac-hmm-satellites-2026">Whitepaper</a>
     </nav>
     <header>
-      <p class="kicker">Ship blog · reproducible-research</p>
-      <h1>Scalable Context-Conditioned Sequence Modeling in Repetitive Genomic Regions via Spar…</h1>
-      <p class="dateline"><strong>SS Vibelandia</strong> — 2026-06-17 — plain speak · Fair Exchange</p>
+      <p class="kicker">Ship blog · Reproducible research</p>
+      <h1>Teaching a model to read the genome’s most stubborn repeats</h1>
+      <p class="dateline"><strong>SS Vibelandia</strong> — 2026-06-17 · Fair Exchange</p>
     </header>
 
-    <p class="lead">AC-HMM on T2T centromeres — UCSC DNA, audit ledger. This quick read is a plain-language entry point — not a substitute for the full paper, and not clinical, financial, or space-weather advice unless the paper explicitly says so.</p>
+    <p class="lead">For decades, the centers of human chromosomes were a blur: dense alpha-satellite arrays that defeated both classical sequence models and the newest neural stacks. The Telomere-to-Telomere assembly finally opened those regions. The harder question was how to model them without either exploding a Hidden Markov Model’s state space or drowning a Transformer in low-entropy noise.</p>
 
-    <p class="honesty"><strong>Honesty first:</strong> architectural maps, catalog labels, and simulator grammar stay in their tier tables. We do not upgrade narrative filing cabinets into finished physics proofs, medical guidance, or prophecy engines.</p>
+    <p>The Active Context Hidden Markov Model — AC-HMM — keeps classical transitions intact and injects deterministic, history-derived context into the emission side. Exact forward-backward inference stays. Baum-Welch stays. The parameter bill drops, because context is looked up rather than reinvented as another stochastic layer.</p>
 
-    <h2>What this paper is for</h2>
-    <p>Use it to orient on QUESTFEST and in Lattice Chat — a readable on-ramp before you open the technical whitepaper. Run the linked research pipeline when the paper ships one; otherwise treat receipts inside the doc as the authority.</p>
+    <p>Centromeric High-Order Repeats shape chromosomal identity and segregation; structural variation there is medically relevant; and until T2T-CHM13, much of the sequence itself was missing. A model that can score those landscapes out of sample — and transfer frozen parameters across chromosomes — is a usable instrument for assemblies that finally include the hard parts.</p>
 
-    <h2>Next step</h2>
-    <p>Open the whitepaper for Document ID, honesty boundary, and SynthOBS operator line. Pair with nest <strong>Infinite Octaves</strong> (engine map Digits × Octaves 01–99) when the topic sits on the Omni-Lattice engine shelf.</p>
+    <p>The paper evaluates spatial folds on public UCSC DNA from the T2T reference, reports log-likelihood gains under cross-chromosomal transfer (Chr11 → ChrX), and runs Leave-One-HOR-Out holdouts. Equally important is the pre-registered failure zone: high-entropy retrotransposon insertions that break the periodic inductive bias. Naming where the method loses is how reproducible genomics stays welcome in serious rooms.</p>
+
+    <p>On QUESTFEST, treat this note as the on-ramp. The whitepaper carries Document ID, methods, audit ledger, and the full honesty table. Pair it with Lattice Chat when you want nested agents to discuss sparse emissions without inventing clinical claims.</p>
+
+    <p class="honesty"><strong>Honesty boundary:</strong> computational genomics on public assemblies — not clinical advice, not a claim that centromeres are “solved,” and not an upgrade of narrative filing cabinets into finished physics proofs.</p>
 
     <div class="cta-row">
       <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=fractiai-ac-hmm-satellites-2026">Open the whitepaper</a>

@@ -135,8 +135,11 @@
     window.addEventListener('storage', function (e) {
       if (e.key === 'letschat.unread.v1') updateLcBadge();
     });
-    // Periodic refresh to catch counts written by other tabs/windows
-    window.setInterval(updateLcBadge, 10000);
+    // Periodic refresh only while visible — avoid wakeups on blog/whitepaper tabs.
+    window.setInterval(function () {
+      if (document.hidden) return;
+      updateLcBadge();
+    }, 10000);
   }
 
   // --- Lattice Chat Collaborate unread badge ---
@@ -185,8 +188,11 @@
     window.addEventListener('storage', function (e) {
       if (e.key === 'lattice-collab.unread.v1') updateCollabBadge();
     });
-    // Periodic refresh to catch counts written by other tabs/windows
-    window.setInterval(function () { updateCollabBadge(); }, 10000);
+    // Periodic refresh only while visible — avoid wakeups on blog/whitepaper tabs.
+    window.setInterval(function () {
+      if (document.hidden) return;
+      updateCollabBadge();
+    }, 10000);
   }
 
   // --- End Lattice Chat Collaborate unread badge ---
@@ -258,7 +264,9 @@
       document.querySelector('.brochure-nav') ||
       document.querySelector('.ark-hero__nav') ||
       document.querySelector('.cm-topnav') ||
-      document.querySelector('.lib-nav')
+      document.querySelector('.lib-nav') ||
+      document.querySelector('.vb-pub-topnav') ||
+      document.querySelector('article.wrap > nav.nav')
     );
   }
 

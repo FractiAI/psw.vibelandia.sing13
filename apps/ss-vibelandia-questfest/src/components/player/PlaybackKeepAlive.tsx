@@ -19,7 +19,7 @@ export function PlaybackKeepAlive() {
     <audio
       ref={backgroundRef}
       className={IOS_PLAYABLE_MEDIA_CLASS}
-      preload="auto"
+      preload="metadata"
       playsInline
       aria-hidden
       data-qv-playback-keepalive

@@ -177,19 +177,18 @@ export function BridgePlayer({
             /* ignore */
           }
         }
-        bg.src = src;
-        bg.currentTime = 0;
-        bg.volume = gainRef.current;
-        pb.setBackgroundHandoffActive(true);
-        pb.setPlaying(true);
-        void bg
-          .play()
-          .then(() => pb.setPlaying(true))
-          .catch(() => {
-            pb.setPlaybackError('Background autoplay blocked — return to the tab and tap ▶.');
-            pb.setPlaying(false);
-            pb.setBackgroundHandoffActive(false);
-          });
+        // Safari drops gesture entitlement once the tab is hidden. Assigning a
+        // new src + play() here surfaces "Background autoplay blocked" and can
+        // keep a zombie decoder alive across blog/whitepaper tabs. Soft-pause
+        // instead; resume on return + tap ▶.
+        try {
+          bg.pause();
+        } catch {
+          /* ignore */
+        }
+        pb.setPlaying(false);
+        pb.setBackgroundHandoffActive(false);
+        pb.setPlaybackError('Paused in background — return to Now Playing and tap ▶.');
         return;
       }
 

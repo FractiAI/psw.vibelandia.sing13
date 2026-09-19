@@ -102,8 +102,28 @@
     return true;
   }
 
+  /**
+   * Desktop popup handoff only. Mobile Safari turns leave-bridge popups into
+   * zombie jukebox tabs → background autoplay errors + WebKit OOM reloads on
+   * blogs/whitepapers. Mirror page-soundtrack.js policy.
+   */
+  function canUseBrowsePopup() {
+    if (typeof window.QV_canUseSoundPopup === 'function') {
+      return window.QV_canUseSoundPopup();
+    }
+    if (window.__QV_FORCE_SOUND_POPUP__ === true) return true;
+    if (window.__QV_FORCE_SOUND_POPUP__ === false) return false;
+    try {
+      if (window.matchMedia('(pointer: coarse)').matches) return false;
+      if (window.matchMedia('(max-width: 900px)').matches) return false;
+    } catch (e) {
+      /* ignore */
+    }
+    return true;
+  }
+
   function openBrowse(url) {
-    if (window.QV_canUseSoundPopup && !window.QV_canUseSoundPopup()) return null;
+    if (!canUseBrowsePopup()) return null;
     var win = null;
     try {
       win = window.open(url, BROWSE_NAME, BROWSE_FEATURES);
@@ -122,6 +142,15 @@
       return window.open(url, '_blank', 'noopener,noreferrer');
     } catch (e3) {
       return null;
+    }
+  }
+
+  /** Same-tab leave when popup handoff is banned (mobile) or blocked. */
+  function navigateAway(href) {
+    try {
+      window.location.assign(href);
+    } catch (e) {
+      window.location.href = href;
     }
   }
 
@@ -221,9 +250,21 @@
 
     var url = resolveUrl(anchor.getAttribute('href'));
     if (!url) return;
+    // Mobile / popup-banned: same-tab leave so the jukebox unloads (no zombie
+    // background audio fighting Safari while reading blogs/whitepapers).
+    if (!canUseBrowsePopup()) {
+      return;
+    }
+    var browseWin = openBrowse(url.href);
+    if (browseWin) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      return;
+    }
+    // Popup blocked on desktop — fall through to same-tab navigation.
     evt.preventDefault();
     evt.stopPropagation();
-    openBrowse(url.href);
+    navigateAway(url.href);
   }
 
   function boot() {

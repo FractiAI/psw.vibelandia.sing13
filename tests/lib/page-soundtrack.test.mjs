@@ -40,7 +40,21 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('QV_isPageSoundtrackPlaying');
     expect(js).toContain('isPrimaryShipDoor');
     expect(js).toContain('browseWin');
+    expect(js).toContain('canUseBrowsePopup');
+    // Soundtrack leave still must not force same-tab unload when popup is banned.
     expect(js).not.toContain('window.location.href = url');
+  });
+
+  it('mobile leave-bridge uses same-tab navigation (no zombie jukebox)', () => {
+    const js = read('interfaces/site-jukebox.js');
+    expect(js).toContain('canUseBrowsePopup');
+    expect(js).toContain("matchMedia('(pointer: coarse)')");
+    expect(js).toContain('navigateAway');
+    expect(js).toContain('window.location.assign(href)');
+    const bridgeLeave = js.slice(js.indexOf('if (!isBridgeSurface())'));
+    const leaveHandler = bridgeLeave.slice(bridgeLeave.indexOf('var anchor = t.closest'));
+    expect(leaveHandler).toContain('if (!canUseBrowsePopup())');
+    expect(leaveHandler).toContain('navigateAway(url.href)');
   });
 
   it('opens concert program in browse popup so soundtrack keeps playing', () => {

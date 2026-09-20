@@ -15,59 +15,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/ship-blog.css" />
-  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }html.vbi18n-ready body{visibility:visible}</style>
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
 </head>
 <body>
   <article class="wrap">
-    <nav class="nav" aria-label="Site">
-      <a href="/questfest">SS VIBELANDIA</a>
-      <a href="/ship-blog/">All ship blogs</a>
-      <a href="/questfest#ship-blog">Latest six</a>
-      <a href="/papers">Papers</a>
-      <a href="/interfaces/whitepaper-surface.html?id=fractiai-eesm-gpu-telemetry-2026">Whitepaper</a>
-    </nav>
-    <header>
-      <p class="kicker">Ship blog · Reproducible research</p>
-      <h1>When GPU counters lie, treat them like phenotypes</h1>
-      <p class="dateline"><strong>SS Vibelandia</strong> — 2026-06-17 · Fair Exchange</p>
-    </header>
-    <p class="lead">Modern GPU profiling still often pretends hardware counters are a fixed generative truth. Compilers rewrite kernels. Schedulers shuffle streams. CUPTI sampling injects observation noise. On an H100-class evaluation desk, a counter spike can mean a real bottleneck — or a phenotype that only appeared because the observer looked. The Epigenetic Execution-State Model — EESM — reframes those traces as conditionally expressed phenotypes of a latent execution genome, so teams can talk about invariance instead of chasing ghosts.</p>
-    <h2>Counters as phenotypes, not scripture</h2>
-    <p>The structural causal model layers the story: a latent execution genome; epigenetic regulators such as compiler fusion; observational modulation from sampling; a phenotype of raw counters; a bounded embedding into instruction pressure, memory traffic, and stall geometry; and a decoded regime label for bottleneck phase. Mechanism invariance means observation and decode maps stay fixed under bounded interventions.</p>
-    <p>Epigenetic here is a computational and causal-modeling metaphor — not biology, not clinical advice, and not a claim that hardware has a genome. Say that sentence early in serious rooms.</p>
-    <h2>Why production teams feel the pain</h2>
-    <p>Triton, TorchInductor, and CUTLASS stacks invalidate naive observational assumptions weekly. If your autoscaler treats every counter shift as new ground truth, you will optimize noise. EESM’s claim is narrower: regime stability can be preserved when the observation manifold remains injective over a restricted identifiable support — and collapses when geometry degenerates.</p>
-    <p>That narrower claim is still huge for teams who live in telemetry. It gives language for when a dashboard lies without calling engineers irrational.</p>
-    <h2>Scenes from a lying dashboard</h2>
-    <p>A kernel fusion lands. Counters jump. An on-call engineer almost ships a capacity change. EESM Soft Story asks whether the phenotype changed under an epigenetic regulator while the latent regime stayed put. Sometimes the answer is yes. Sometimes the regime truly moved. The model’s job is to make that question askable.</p>
-    <p>Another scene: CUPTI sampling noise creates a ghost stall. Teams without observation-modulation language chase the ghost for a week. Teams with EESM language budget for observer effects.</p>
-    <h2>Corpus and receipts</h2>
-    <p>The corpus draws on MLPerf / CUTLASS reference material and microarchitectural perturbations typical of H100-class evaluation talk. Open the whitepaper for Document ID, honesty boundary, and the full invariance ledger. Results are research telemetry claims, not procurement certificates.</p>
-    <h2>How it rhymes with Observatory Soft Story</h2>
-    <p>Intelligence density asks about coherent work in attention volume. EESM asks about coherent regimes in execution telemetry. Both refuse destiny numbers that ignore observation geometry. Both keep metaphor rails visible.</p>
-    <h2>Path</h2>
-    <p>Whitepaper first. Then the invariance ledger. Then only careful production talk that admits observer effects. Tip when EESM language stopped a ghost chase.</p>
-        <p>On the Nevada corridor FractiAI calls home, the product habit is the same across papers: open a guest door, keep Soft Story concrete, publish receipts, and refuse to upgrade architectural maps into unfinished laboratory proofs. That habit is why these ship blogs exist beside the whitepapers rather than as replacements for them.</p>
-    <p>Operators who live in Lattice Chat already feel the cost of contradictory metaphors. A shared catalog shelf is not bureaucracy for its own sake — it is how nested agents stay coherent when a parent meta-optimizer hands work to cytographic children. Guests who only visit QUESTFEST feel the same coherence as plain English: one story, many rooms, no perfume fog.</p>
-    <p>Fair Exchange stays visible at the pier. Tip when a shelf clarified a week of drift. Do not tip empty arrival theater, fake clinical promises, or contradictory cosmologies sold as destiny. Reciprocal balancing is part of the NSPFRNP catalog, not a dark pattern.</p>
-    <p>On the Nevada corridor FractiAI calls home, the product habit is the same across papers: open a guest door, keep Soft Story concrete, publish receipts, and refuse to upgrade architectural maps into unfinished laboratory proofs. That habit is why these ship blogs exist beside the whitepapers rather than as replacements for them.</p>
-    <p>Operators who live in Lattice Chat already feel the cost of contradictory metaphors. A shared catalog shelf is not bureaucracy for its own sake — it is how nested agents stay coherent when a parent meta-optimizer hands work to cytographic children. Guests who only visit QUESTFEST feel the same coherence as plain English: one story, many rooms, no perfume fog.</p>
-    <p>Fair Exchange stays visible at the pier. Tip when a shelf clarified a week of drift. Do not tip empty arrival theater, fake clinical promises, or contradictory cosmologies sold as destiny. Reciprocal balancing is part of the NSPFRNP catalog, not a dark pattern.</p>
-    <p>On the Nevada corridor FractiAI calls home, the product habit is the same across papers: open a guest door, keep Soft Story concrete, publish receipts, and refuse to upgrade architectural maps into unfinished laboratory proofs. That habit is why these ship blogs exist beside the whitepapers rather than as replacements for them.</p>
-    <p>Operators who live in Lattice Chat already feel the cost of contradictory metaphors. A shared catalog shelf is not bureaucracy for its own sake — it is how nested agents stay coherent when a parent meta-optimizer hands work to cytographic children. Guests who only visit QUESTFEST feel the same coherence as plain English: one story, many rooms, no perfume fog.</p>
-    <p>Fair Exchange stays visible at the pier. Tip when a shelf clarified a week of drift. Do not tip empty arrival theater, fake clinical promises, or contradictory cosmologies sold as destiny. Reciprocal balancing is part of the NSPFRNP catalog, not a dark pattern.</p>
-    <p>On the Nevada corridor FractiAI calls home, the product habit is the same across papers: open a guest door, keep Soft Story concrete, publish receipts, and refuse to upgrade architectural maps into unfinished laboratory proofs. That habit is why these ship blogs exist beside the whitepapers rather than as replacements for them.</p>
-<p>The pier on the GPU desk: treat counters as phenotypes, budget for observers, chase invariance — and leave biology metaphors in the computational court where EESM filed them.</p>
+ <nav class="nav" aria-label="Site">
+ <a href="/questfest">SS VIBELANDIA</a>
+ <a href="/ship-blog/">All ship blogs</a>
+ <a href="/questfest#ship-blog">Latest six</a>
+ <a href="/papers">Papers</a>
+ <a href="/interfaces/whitepaper-surface.html?id=fractiai-eesm-gpu-telemetry-2026">Whitepaper</a></nav>
+ <header>
+ <p class="kicker">Ship blog · Reproducible research</p>
+ <h1>When GPU counters lie, treat them like phenotypes</h1>
+ <p class="dateline"><strong>SS Vibelandia</strong> — 2026-06-17 · Fair Exchange</p></header>
 
-    <p class="honesty"><strong>Honesty boundary:</strong> “Epigenetic” here is a computational / causal-modeling metaphor for GPU execution analysis — not biology, not clinical advice, and not a claim that hardware has a genome. Results are research telemetry claims, not procurement certificates. Φ ≈ 1.618 may appear as adjacent catalog design language elsewhere in the stack; it is not a hardware law in this paper.</p>
 
+ <p class="lead">Modern GPU profiling still often pretends hardware counters are a fixed generative truth. Compilers rewrite kernels. Schedulers shuffle streams. CUPTI sampling injects observation noise. On an H100-class evaluation desk, a counter spike can mean a real bottleneck — or a phenotype that only appeared because the observer looked. The Epigenetic Execution-State Model — EESM — reframes those traces as conditionally expressed phenotypes of a latent execution genome, so teams can talk about invariance instead of chasing ghosts.</p>
+
+ <h2>Counters as phenotypes, not scripture</h2>
+ <p>The structural causal model layers the story: a latent execution genome; epigenetic regulators such as compiler fusion; observational modulation from sampling; a phenotype of raw counters; a bounded embedding into instruction pressure, memory traffic, and stall geometry; and a decoded regime label for bottleneck phase. Mechanism invariance means observation and decode maps stay fixed under bounded interventions.</p>
+ <p>Epigenetic here is a computational and causal-modeling metaphor. Say that sentence early in serious rooms. Hardware does not grow a genome. Clinics stay clinics. The metaphor exists so engineers can name observer effects without calling each other irrational.</p>
+
+ <h2>Why production teams feel the pain</h2>
+ <p>Triton, TorchInductor, and CUTLASS stacks invalidate naive observational assumptions weekly. If your autoscaler treats every counter shift as new ground truth, you will optimize noise. EESM’s claim is narrower: regime stability can be preserved when the observation manifold remains injective over a restricted identifiable support — and collapses when geometry degenerates.</p>
+ <p>That narrower claim is still huge for teams who live in telemetry. It gives language for when a dashboard lies. It budgets for sampling as part of the system, not as an afterthought apology.</p>
+
+ <h2>Scenes from a lying dashboard</h2>
+ <p>A kernel fusion lands. Counters jump. An on-call engineer almost ships a capacity change. EESM asks whether the phenotype changed under an epigenetic regulator while the latent regime stayed put. Sometimes the answer is yes. Sometimes the regime truly moved. The model’s job is to make that question askable.</p>
+ <p>Another scene: CUPTI sampling noise creates a ghost stall. Teams without observation-modulation language chase the ghost for a week. Teams with EESM language budget for observer effects and move on.</p>
+
+ <h2>Corpus and receipts</h2>
+ <p>The corpus draws on MLPerf / CUTLASS reference material and microarchitectural perturbations typical of H100-class evaluation talk. Open the whitepaper for Document ID, honesty boundary, and the full invariance ledger. Results are research telemetry claims, not procurement certificates.</p>
+ <p>Fixture locks certify architecture coherence. They do not certify a purchase order. Quote the ledger when you brief nested agents. Prefer retrieval over paste when children need the invariance story.</p>
+
+ <h2>How it rhymes with Observatory</h2>
+ <p>Intelligence density asks about coherent work in attention volume. EESM asks about coherent regimes in execution telemetry. Both refuse destiny numbers that ignore observation geometry. Both keep metaphor rails visible.</p>
+ <p>That rhyme matters for QUESTFEST guests who hear “epigenetic” and brace for biology theater. Keep the computational court named. Keep biology in biology. Keep the GPU desk honest about what sampling does to truth.</p>
+
+ <h2>Path for Tuesday</h2>
+ <p>Whitepaper first. Then the invariance ledger. Then only careful production talk that admits observer effects. Tip when EESM language stopped a ghost chase. Do not tip empty arrival theater or contradictory cosmologies sold as destiny.</p>
+ <p>The pier on the GPU desk: treat counters as phenotypes, budget for observers, chase invariance — and leave biology metaphors in the computational court where EESM filed them.</p>
+
+ <h2>What changes if the framing is right</h2>
+ <p>If the framing is right, a lot of loud conversation about GPU telemetry that lies when compilers rewrite the world is incomplete. Oversight can be real care. Bright-line harm gates can be sacred. Measured rails from agencies and SI tables stay measured. But if the only move on the board is panic or prophecy, you will keep rediscovering the same cliff with better paperwork while the people who could redesign the track wait in the lobby.</p>
+ <p>If the framing is wrong, you still have a useful instrument: watch whether creative force rises or dims after the weather passes. Watch whether hospitality still invites builders — or only auditors. Watch whether nested agents inherit shared nouns or invent a fresh ontology every turn.</p>
+ <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with spectacle dressed as care. The export from this corridor is simpler. Celebrate curiosity. Keep consent. Keep human emergency above every metaphor. Stop calling the silhouette the whole animal.</p>
+ <h2>The question to ask before the next brief ships</h2>
+ <p>Before the next restriction, release, or metaphor goes live, ask one question out loud: is this protecting humans, or policing curiosity as contagion?</p>
+ <p>If nobody in the room can answer without jargon, you are not ready to brief a guest who asked about GPU telemetry that lies when compilers rewrite the world in plain English. Read the full paper when you want the filing. Walk the ship when you want the floor under your feet. Tip if the framing cleared a real argument. Ignore it if you only needed a compute table — those live elsewhere.</p>
+ <p>Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is not humility theater. It is how SuperAI stays Goldilocks on a ship that still believes builders belong in the Intelligence Age without being maligned into silence.</p>
+
+
+
+ <p class="honesty"><strong>Honesty boundary:</strong> “Epigenetic” here is a computational / causal-modeling metaphor for GPU execution analysis — not biology, not clinical advice, and not hardware-as-genome. Results are research telemetry claims, not procurement certificates. Φ ≈ 1.618 may appear as adjacent catalog design language elsewhere in the stack; it is not a hardware law in this paper.</p>
 
     <blockquote>
       <p><strong>Fair Exchange Clause</strong></p>
       <p>A <strong>fair exchange clause</strong> is actively in effect: any transaction or value acknowledged here may be refunded in part, depending on overall delivery, utility, and actualized results — like tipping. Platform credits and operational allocations stay subject to reciprocal balancing on verified scale-harmonic alignment.</p>
     </blockquote>
-
-
 
     <div class="cta-row">
       <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=fractiai-eesm-gpu-telemetry-2026">Open the whitepaper</a>

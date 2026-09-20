@@ -28,6 +28,11 @@ export const body = `<p class="lead">Architecture arguments die in slogans. Synt
     <h2>How creators should use the note</h2>
     <p>Open the whitepaper honesty table before romance. Re-run timings when you quote them. Keep JSON receipts beside public claims. Brief guests in plain speech: two styles, one host, one faster, rails intact. Tip when delivery landed. Do not tip empty magnet theater. Parents teaching kids science-fair honesty already run a softer drill: say what you measured, say what you did not.</p>
 
+    <h2>Slogans lose; receipts remain at home too</h2>
+    <p>Households already prefer stopwatch honesty over slogan weather. Grocery math beats a vague promise that dinner will “just work.” Rent math beats a brochure about lifestyle. Paycheck math beats a corporate speech about transformation. The MRI-versus-legacy note is that same preference applied to sandbox craft: time two habits, keep the rails, refuse to upgrade a proxy into a clinic or a hyperscale crown.</p>
+
+    <p>Friends arguing about the fastest way to pack a car for a weekend already know reuse beats redo-everything. Kids timing homework systems already know a shared folder beats rebuilding the pile every night. Bring that ordinary sense to Synthio briefs and the corridor stays walkable for guests who asked about speed without asking for medical theater.</p>
+
     <h2>Closing pier</h2>
     <p>Slogans lose; receipts remain. Before the next agent ships a “MRI is faster” paragraph, ask whether the stopwatch was re-run and whether the honesty table was read. If nobody can answer without jargon, you are not ready to brief a guest who asked about Synthio and hospitals in the same breath. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes creators with fire — and households watching invoices — belong in the Intelligence Age without being sold certainty from a slogan alone.</p>`;
 

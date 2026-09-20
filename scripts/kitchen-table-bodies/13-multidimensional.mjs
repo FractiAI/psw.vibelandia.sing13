@@ -28,6 +28,9 @@ export const body = `<p class="lead">Flat screens taught a generation that “ho
     <h2>Misreads that waste a week</h2>
     <p>Three cheap upgrades show up weekly. First: “hologram means the screen is magic.” No — flat screens remain flat screens. Second: “xD±yD proves infinite density.” No — it is cross-scale filing grammar. Third: “the ship is mailing crystals.” No — the ship is teaching nested helpers to rhyme across shelves. Kill those upgrades early. Let the shelf stay useful for people who need coherence without losing the kitchen-table seatbelt.</p>
 
+    <h2>What the corridor protects</h2>
+    <p>The corridor protects coherence without crystal cosplay. It protects nested helpers from dialect islands. It protects guests from being sold a mail-order hologram. It protects households from another week of chrome that does not help rent, school, or craft. Along warehouse districts where GPUs hum louder than the river some nights, that protection is the product constraint behind every paragraph on this pier.</p>
+
     <h2>Closing pier</h2>
     <p>Before the next agent ships a hologram paragraph, ask: is this protecting cross-scale craft, or rehearsing crystal theater while honesty stays unread? If nobody can answer without jargon, you are not ready to brief a guest who asked about holograms and Infinite Octaves in the same breath. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes builders and households belong in the Intelligence Age without being sold certainty from a shiny rectangle alone.</p>`;
 

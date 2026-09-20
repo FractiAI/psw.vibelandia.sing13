@@ -28,6 +28,9 @@ export const body = `<p class="lead">Papers on this edge do not get featured bec
     <h2>What a good receipt looks like</h2>
     <p>A good receipt names the paper, the rubric, the score, the blockers, and the pass state. It lives where operators can find it. It can be re-run. It does not replace Player 1 editorial veto. It does not certify unfinished science as finished. It does make featuring a checkable weather report instead of a vibe. Households already prefer that kind of receipt when a school sends grades home.</p>
 
+    <h2>NSPFRNP as the larger weather</h2>
+    <p>Snap sits inside a larger natural-coordination weather: MCA rhythm, Seed:Edge pairs, Fair Exchange, lite edges, nested helpers that report to parents. Peer review teeth are one shell of that weather. Guests who only wanted a rubber stamp will be disappointed. Guests who wanted a festival ship that refuses to feature unfinished upgrades as finished science will find a tool. Families already want that tool in softer clothes — school honesty, contractor receipts, town-hall minutes that match what happened on Main Street.</p>
+
     <h2>Closing on an honest pier</h2>
     <p>Papers get teeth here because guests deserve them and because nested helpers inherit whatever we publish. Open the whitepaper surface when you want the protocol depth. Walk the ship blog when you want the human door. Tip if utility landed. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors — and builders checking receipts at work — belong in the Intelligence Age without being sold certainty from an unchecked title alone.</p>`;
 

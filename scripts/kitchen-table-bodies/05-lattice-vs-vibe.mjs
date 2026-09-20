@@ -1,0 +1,42 @@
+/** Kitchen-table rewrite · lattice vs vibe coding */
+export const file = 'blog-lattice-vs-vibe-coding-2026-09.html';
+
+export const body = `<p class="lead">The industry argument about “vibe coding” usually ends in vibes. SS Vibelandia ran something colder: paired Cursor receipts across design, write, and deploy, comparing Infinite Octaves Lattice Chat against flat vibe prompts. On committed receipts, Lattice designs better unprompted and writes cleaner code — same correctness, smaller diffs, tests present, fewer tool thrash loops — while vibe coding only ties when you explicitly ask for nesting. About 1.618 stays catalog grammar on the Lattice side, not a magic compile flag. If you have ever paid a freelancers’ invoice for a sprawling rewrite that “worked” but left the next person stranded, you already know why reviewable diffs matter at the kitchen table of a small business.</p>
+
+    <p>Moving up the stack already argued cool · harmonize · scale. This note shows receipts. Guests who want ideology can keep the timeline fights. Guests who want operational contrast open the whitepaper, the suite, and /lattice/proof. The win condition is not mystique. It is banded plans versus flat lists, and diffs that stay reviewable when a teammate at work has to ship on Tuesday while rent still comes due at home.</p>
+
+    <h2>What the paired comparison actually did</h2>
+    <p>Same tasks. Paired Cursor receipts. Design lane, write lane, deploy lane. Lattice Chat loaded Infinite Octaves nesting. Vibe prompts stayed flat unless nesting was explicitly requested. Outcomes were scored on structure of plans, correctness of code, size of diffs, presence of tests, and tool-call thrash. That is empirical with committed artifacts — weather you can check, not a promise your next invoice drops seventy percent.</p>
+
+    <p>Open-ended tool tours can erase the advantage. If you let either side wander without a brief, you are measuring chaos, not Lattice. The win conditions assume a bounded ask and a reviewable receipt trail. Roam theater is the enemy of both sides — the way a family road trip without a destination burns gas and patience at once, and the way a side hustle without a brief burns nights and still leaves the job board looking thin.</p>
+
+    <p>Builders should hear that as product discipline. Defaults matter. Token burn matters. Reviewability matters. A banded plan is easier to hand to a child helper without renegotiating the religion of “done.” Parents teaching kids homework know the same pattern: a clear outline beats a pile of sticky notes that looked busy at midnight. Neighbors who have hired a contractor know it too: a clean change list beats a remodel that “worked” but can’t be maintained.</p>
+
+    <h2>Design: banded plans beat flat lists</h2>
+    <p>Unprompted, Lattice produced banded plans — nested shelves, Seed:Edge order, MCA rhythm. Vibe produced flat lists that looked busy and traveled poorly into implementation. When vibe was explicitly asked to nest, it could tie. That is useful weather: nesting is a skill you can request, and Lattice carries it as default rather than as a special plea.</p>
+
+    <p>Flat lists flatter urgency. Banded plans survive contact with Tuesday. Nested helpers inherit the bands. Humans reviewing the bands can see which shell is irreducible and which shell is decoration. Decorations are where token burn hides — and where a paycheck gets spent on thrash instead of craft. Main Street shops that keep a clear recipe board ship food faster than kitchens that reinvent dinner every night from a scrap pile while the dinner table waits.</p>
+
+    <h2>Write: same correctness, better diffs</h2>
+    <p>Correctness tied often enough that “Lattice writes magical code” would be overclaim. What did not tie: minimal diffs, test presence, fewer tool thrash loops. Lattice prefers crystallize — irreducible shells — over sprawling rewrites. Vibe can still ship correct code while leaving a mess for the next human. Nevada’s valley prefers the mess to be optional — the same preference a household has when the previous tenant left tools scattered and the next family has to clean before they can cook.</p>
+
+    <p>Minimal diffs are hospitality for reviewers. Tests are hospitality for the future. Fewer tool calls are hospitality for the invoice. None of that requires mystique. All of it requires a brief that refuses roam when the seed is enough — the same hospitality a neighbor shows when they return your tools clean, and the same hospitality a school shows when homework instructions fit on one page.</p>
+
+    <p>Deploy lanes told the same story in quieter clothes: nesting defaults reduce thrash when the ask is bounded. When the ask is an open safari, both sides look dramatic and both sides waste heat. Households know heat: the utility bill after you leave every light on “just in case,” or the overtime hours after a vague brief at work.</p>
+
+    <h2>How to read the receipts without cosplay</h2>
+    <p>Do not crown Lattice as the forever winner of every invoice. Do say: on these committed receipts, unprompted design favored Lattice; write favored Lattice on diff hygiene and tests; vibe ties when nesting is explicitly demanded. Run the suite. Open Lattice Chat. Keep honesty habits when you quote the paper.</p>
+
+    <p>Try Lattice Chat as Syntheverse Sandbox live demo with your keys. Visit the standalone GitHub. Tip under Fair Exchange if the comparison clarified your team’s default brief. If a press draft upgrades the comparison into a universal law of software, rewrite toward paired receipts under bounded asks. Keep unfinished myths unfinished. Keep FLOPs tables where FLOPs tables belong. People who only needed vibes can keep their vibes. People who needed a kitchen-table argument about invoices get this pier.</p>
+
+    <h2>What teams should change on Monday</h2>
+    <p>Change the default brief before you change the model. Ask for banded plans. Ask for minimal diffs. Ask for tests. Ask children to inherit shared nouns. Measure thrash against last week’s vibe baseline. Share the receipt without mythology. Keep BYOK posture. Keys on the edge. Center as pipes. Lite edges only. No heavy password theater pretending to be architecture.</p>
+
+    <p>Along the Truckee corridor, warehouse GPU heat and river cool air argue all summer. That argument is a good metaphor for Lattice versus vibe: ambition and restraint in one climate. SS Vibelandia ships both. Guests who only wanted a vibe can still leave with a map. Guests who wanted rigor can still find the receipt path. That dual door is the product constraint behind every paragraph on this pier — and it is how a town keeps both the festival and the school year running while families still need paychecks.</p>
+
+    <h2>Closing pier</h2>
+    <p>Reno does not need another AI coding religion. It needs paired receipts and loud honesty. This note ships both. Open the whitepaper. Run the suite. Prefer banded plans. Prefer reviewable diffs. Prefer cool · harmonize · scale over safari theater. The Reno / Truckee corridor protects a stubborn order: hospitality before jargon, receipts before prophecy, human emergency above every metaphor. When coastal decks ship chrome first, builders learn to perform. When Nevada ships doors first, builders learn to deliver — and households watching the invoice learn whether Tuesday still has craft left in it.</p>
+
+    <p>Fair Exchange stays on. Tip for depth. Adjust when delivery is thin. Nested helpers report to parents without mesh-syncing sideways. Player 1 retains editorial veto. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes builders — and households watching the invoice — deserve defaults that nest and invoices that survive contact with Tuesday.</p>`;
+
+export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Paired comparison on committed Cursor receipts — Soft Story / empirical receipts under bounded asks — not a promise your next invoice drops 70%. Open-ended tool tours can erase the advantage. The win comes from seed packs + pointers + no roam when the seed is enough — not from φ math alone. Structural context-load figures are chars÷4 estimates, not vendor bills. Φ ≈ 1.618 remains design language / catalog key, not a CODATA replacement.</p>`;

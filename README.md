@@ -291,9 +291,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | A crowded calendar is still not destiny · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Eighty-two light switches, not eighty-two black holes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-vs-brute-force-2026-09.html`](/interfaces/blog-awareness-vs-brute-force-2026-09.html) | Knowing the drawer beats ransacking the house · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexisting with AI and Super AI — which quadrant are you? · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Same filing cabinet, silicon labels on the drawers · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | You still have a post on this ship · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | When the ground and the volcano share one news week · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | They’re fighting over model welfare — and missing the architecture · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | One crystal. Three faces. Speed · distance · time. · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-be-o-rhyme-2026-09.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09.html) | Address four, glyph eight — and why Be and O keep showing up · Ship blog · SS Vibelandia |

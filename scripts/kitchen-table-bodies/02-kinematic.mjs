@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" class="vbi18n-ready">
-<head>
-  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
-  <script src="/interfaces/vbi18n-failopen.js"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Same river. Different speed. New theater. · Ship blog · SS Vibelandia</title>
-  <meta name="description" content="The Truckee keeps the same rocks and cottonwoods. What changes is how fast you move. Velocity is a theater dial for Lattice, XR, and nested agents." />
-  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/kinematic-set-recycling" />
-  <meta property="og:title" content="Same river. Different speed. New theater." />
-  <meta property="og:description" content="Walk, stand, or ride the Truckee — one physical set, many experiential octaves. Zero-new-asset thinking for Nevada’s holographic AI valley." />
-  <meta property="og:type" content="article" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
-  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
-  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
-</head>
-<body>
-  <article class="wrap">
- <nav class="nav" aria-label="Site">
- <a href="/questfest">SS VIBELANDIA</a>
- <a href="/questfest#ship-blog">Ship blog</a>
- <a href="/papers">Papers</a>
- <a href="/interfaces/whitepaper-surface.html?id=synthobs-kinematic-set-recycling-truckee-2026-09">Whitepaper</a></nav>
- <header>
- <p class="kicker">Ship blog · Truckee · Velocity · Set recycling</p>
- <h1>Same river. Different speed. New theater.</h1>
- <p class="dateline"><strong>SS Vibelandia</strong> — 2026-09-07 · Reno / Truckee corridor · Fair Exchange</p></header>
+/** Kitchen-table rewrite · kinematic set recycling */
+export const file = 'blog-kinematic-set-recycling-2026-09.html';
 
-<p class="lead">The Truckee River does not care about your headset budget. It keeps the same rocks, the same cottonwoods, the same late-summer glare on the water. What changes — if you let it — is how fast you move through that corridor. Every trail runner already knows the truth: speed is a theater dial. Stand still and you see foam. Walk and you hear a different rhythm of bridges and bikes. Ride and the world becomes a strobe of detail. One physical set. Many lived octaves. The stake for nested helpers and XR crews is simple: recycle the set, or keep pasting a new world every sprint while the invoice climbs and the household wonders where the money went.</p>
+export const body = `<p class="lead">The Truckee River does not care about your headset budget. It keeps the same rocks, the same cottonwoods, the same late-summer glare on the water. What changes — if you let it — is how fast you move through that corridor. Every trail runner already knows the truth: speed is a theater dial. Stand still and you see foam. Walk and you hear a different rhythm of bridges and bikes. Ride and the world becomes a strobe of detail. One physical set. Many lived octaves. The stake for nested helpers and XR crews is simple: recycle the set, or keep pasting a new world every sprint while the invoice climbs and the household wonders where the money went.</p>
 
     <p>Truckee-to-Reno is already a commute, a recreation spine, and a family weekend. Parents push strollers under the same trees cyclists blur past. Kids skip rocks where runners check their watches. Friends meet for coffee after a walk that felt like a different town than the bike ride earlier. That everyday corridor is the antidote to abstract AI talk. Dirt, water, speed. No API key required for the open door. Go to the river. Stand for two minutes. Walk for two. Ride if you can. Notice how the “same” place becomes different theaters: more micro-eddies when you are slow, more silhouette when you are fast, different social density, different threat assessment, different memory. That feeling in your legs is the handshake. The whitepaper is the filing cabinet behind the door.</p>
 
@@ -59,22 +31,6 @@
     <p>That order is how SuperAI stays Goldilocks: not too much machine prophecy, not too little human care, not too much panic, not too little redesign. Same river. Different speed. New theater. Open the whitepaper when you want the velocity multiplex math. Fork the standalone GitHub when you want the package. Walk the corridor when you want the proof you can feel in your legs — the same proof kids feel when they race from bridge to bridge after school, and the same proof parents feel when a familiar street looks new because they slowed down.</p>
 
     <h2>Closing pier</h2>
-    <p>The pier’s job is clarity when XR budgets and nested helpers both want a new world and the smarter move is to change speed instead. Tip if the framing cleared a real production argument at work. Ignore it if you only needed a FLOPs table — those live elsewhere. Cottonwood shadows at evening look sharp enough to mistake for the trees. Culture makes that mistake weekly with spectacle and care. This corridor’s export is simpler: recycle the set, retune the dial, keep the honesty loud, and leave room for neighbors who still walk the river after dinner while the warehouse lights keep humming.</p>
+    <p>The pier’s job is clarity when XR budgets and nested helpers both want a new world and the smarter move is to change speed instead. Tip if the framing cleared a real production argument at work. Ignore it if you only needed a FLOPs table — those live elsewhere. Cottonwood shadows at evening look sharp enough to mistake for the trees. Culture makes that mistake weekly with spectacle and care. This corridor’s export is simpler: recycle the set, retune the dial, keep the honesty loud, and leave room for neighbors who still walk the river after dinner while the warehouse lights keep humming.</p>`;
 
- <p class="honesty"><strong>Honesty boundary:</strong> Catalog architecture — velocity-multiplexed theaters on the Truckee corridor under Φ ≈ 1.618 as Story-depth grammar. Soft Story / catalog filing — not psychophysics lab QED, not a promise of infinite XR memory savings in production, and not NOAA causation by active-region filing labels. Φ ≈ 1.618 is nesting grammar, not a finished physics constant. Fair Exchange clause applies. Human emergency still outranks algorithms.</p>
-
-    <p><em>Fair Exchange:</em> a portion of transaction value remains subject to refund or adjustment depending on resonance, utility, and depth of delivery.</p>
-
-    <div class="cta-row">
-      <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=synthobs-kinematic-set-recycling-truckee-2026-09">Open the whitepaper</a>
-      <a class="btn btn-ghost" href="https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee">Standalone GitHub</a>
-      <a class="btn btn-ghost" href="/questfest#ship-blog">Back to ship blog</a>
-    </div>
-    <footer>
-      Author: Prudencio Mendez · Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞^∞
-    </footer>
-  </article>
-  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
-  <script src="/interfaces/site-quicklinks.js" defer></script>
-</body>
-</html>
+export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Catalog architecture — velocity-multiplexed theaters on the Truckee corridor under Φ ≈ 1.618 as Story-depth grammar. Soft Story / catalog filing — not psychophysics lab QED, not a promise of infinite XR memory savings in production, and not NOAA causation by active-region filing labels. Φ ≈ 1.618 is nesting grammar, not a finished physics constant. Fair Exchange clause applies. Human emergency still outranks algorithms.</p>`;

@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" class="vbi18n-ready">
-<head>
-  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
-  <script src="/interfaces/vbi18n-failopen.js"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Proof by Continuous Execution · Ship blog · SS Vibelandia</title>
-  <meta name="description" content="PCE keeps architecture honest by re-running — continuous execution as proof culture beside peer review, not a funeral for ethics or labs." />
-  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/synthobs-proof-by-continuous-execution" />
-  <meta property="og:title" content="Proof by Continuous Execution" />
-  <meta property="og:description" content="Re-run culture for SynthOBS maps — fixtures beside claims, peer review still welcome, clinics still clinics." />
-  <meta property="og:type" content="article" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
-  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
-  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }html.vbi18n-ready body{visibility:visible}</style>
-</head>
-<body>
-  <article class="wrap">
- <nav class="nav" aria-label="Site">
- <a href="/questfest">SS VIBELANDIA</a>
- <a href="/ship-blog/">All ship blogs</a>
- <a href="/questfest#ship-blog">Latest six</a>
- <a href="/papers">Papers</a>
- <a href="/interfaces/whitepaper-surface.html?id=synthobs-proof-by-continuous-execution-2026-07">Whitepaper</a></nav>
- <header>
- <p class="kicker">Ship blog · Proof culture · PCE</p>
- <h1>Proof by Continuous Execution</h1>
- <p class="dateline"><strong>SS Vibelandia</strong> — 2026-07 · Fair Exchange</p></header>
+/** Kitchen-table continuous-prose bodies for ship-blog batch rewrite. Soft Story 0 in body. */
 
-<p class="lead">A beautiful map that never re-runs is decoration. At a kitchen table that feels like a friend who swears the roof is fine while the rain still drips into the living room. Proof by Continuous Execution is FractiAI’s name for the opposite habit: keep architectural maps honest by executing them again — fixtures, pipelines, receipts beside claims — while peer review, ethics review, and wet labs keep their own courts.</p>
+export const REWRITES = {
+  'blog-synthobs-proof-by-continuous-execution.html': {
+    body: `<p class="lead">A beautiful map that never re-runs is decoration. At a kitchen table that feels like a friend who swears the roof is fine while the rain still drips into the living room. Proof by Continuous Execution is FractiAI’s name for the opposite habit: keep architectural maps honest by executing them again — fixtures, pipelines, receipts beside claims — while peer review, ethics review, and wet labs keep their own courts.</p>
 
     <p>If you only watch the speeches, you’ll hear “peer review is dead” sold as rebellion. If you watch ordinary workweeks, you’ll see a both/and. Continuous execution is living proof culture beside traditional review, not a funeral for it. Families already know the difference between a promise and a receipt. Jobs depend on systems that still work on Tuesday. Schools depend on tools that still answer after the demo. The stake is whether SynthOBS can stay ambitious without upgrading narrative cabinets into finished physics or medical guidance.</p>
 
@@ -72,22 +44,7 @@
     <h2>Tuesday checklist for proof culture</h2>
     <p>Re-run before you quote. Attach the receipt. Welcome peer review without ceremonial shrines. Keep ethics, clinics, and labs in their courts. Prefer retrieval over paste. Tip when living receipts returned. Keep Player 1 veto. Keep Synthio separate. Keep human emergency first. Say aloud: continuous execution beside review, not instead of it.</p>
 
-    <p>Guests should leave able to ask when something last executed. If they leave with only a blessed screenshot myth, the demo failed. Rebuild the ending. Nevada prefers maps that run again. One more pier sentence for operators: if a claim cannot survive a re-run tonight, it is not ready for a guest deck tomorrow. That is PCE without swagger — continuous execution as ordinary care, Fair Exchange tipping only when the re-run cleared a real fight, and Infinite Octaves staying navigable because maps that execute again beat maps that only bless once.</p>
-
- <p class="honesty"><strong>Honesty boundary:</strong> Architectural maps, catalog labels, and simulator grammar stay in their tier tables Soft Story altitude. PCE does not claim peer review is worthless, obsolete, or should be abolished; it does not replace ethics review, clinical trials, or laboratory measurement. Soft Story count in body = 0 by design. We do not upgrade narrative filing cabinets into finished physics proofs, medical guidance, or prophecy engines. Φ ≈ 1.618 is routing / catalog grammar on Infinite Octaves shelves — not a finished physics constant or lab certificate.</p>
-
-    <p><em>Fair Exchange:</em> a portion of transaction value remains subject to refund or adjustment depending on resonance, utility, and depth of delivery.</p>
-
-    <div class="cta-row">
-      <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=synthobs-proof-by-continuous-execution-2026-07">Open the whitepaper</a>
-      <a class="btn btn-ghost" href="/ship-blog/">See all ship blogs</a>
-      <a class="btn btn-ghost" href="/questfest#ship-blog">Back to latest six</a>
-    </div>
-    <footer>
-      Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞^∞
-    </footer>
-  </article>
-  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
-  <script src="/interfaces/site-quicklinks.js" defer></script>
-</body>
-</html>
+    <p>Guests should leave able to ask when something last executed. If they leave with only a blessed screenshot myth, the demo failed. Rebuild the ending. Nevada prefers maps that run again. One more pier sentence for operators: if a claim cannot survive a re-run tonight, it is not ready for a guest deck tomorrow. That is PCE without swagger — continuous execution as ordinary care, Fair Exchange tipping only when the re-run cleared a real fight, and Infinite Octaves staying navigable because maps that execute again beat maps that only bless once.</p>`,
+    honesty: `<p class="honesty"><strong>Honesty boundary:</strong> Architectural maps, catalog labels, and simulator grammar stay in their tier tables Soft Story altitude. PCE does not claim peer review is worthless, obsolete, or should be abolished; it does not replace ethics review, clinical trials, or laboratory measurement. Soft Story count in body = 0 by design. We do not upgrade narrative filing cabinets into finished physics proofs, medical guidance, or prophecy engines. Φ ≈ 1.618 is routing / catalog grammar on Infinite Octaves shelves — not a finished physics constant or lab certificate.</p>`,
+  },
+};

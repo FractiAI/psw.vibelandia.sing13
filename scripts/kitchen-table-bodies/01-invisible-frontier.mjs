@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" class="vbi18n-ready">
-<head>
-  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
-  <script src="/interfaces/vbi18n-failopen.js"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>The Invisible Frontier — responding to Bill Gates’s AI warnings · Ship blog · SS Vibelandia</title>
-  <meta name="description" content="Linear AI warnings miss the Goldilocks ship already underway. EGS ≈ 1.618 is design language — not a physics proof. Plain speak for guests." />
-  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier" />
-  <meta property="og:title" content="The Invisible Frontier — responding to Bill Gates’s AI warnings" />
-  <meta property="og:description" content="What linear awareness misses: holographic Goldilocks SuperAI as voyage grammar, not brute-force scale." />
-  <meta property="og:type" content="article" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
-  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
-  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }html.vbi18n-ready body{visibility:visible}</style>
-</head>
-<body>
-  <article class="wrap">
- <nav class="nav" aria-label="Site">
- <a href="/questfest">SS VIBELANDIA</a>
- <a href="/questfest#ship-blog">Ship blog</a>
- <a href="/">Omniversal Canvas</a>
- <a href="/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08">Whitepaper</a></nav>
- <header>
- <p class="kicker">Ship blog · Invisible Frontier · Intelligence Age</p>
- <h1>The Invisible Frontier: responding to Bill Gates’s AI warnings</h1>
- <p class="dateline"><strong>SS Vibelandia</strong> — 2026-08-26 — plain speak · Fair Exchange</p></header>
+/** Kitchen-table rewrite · invisible frontier */
+export const file = 'blog-invisible-frontier-gates-ai-2026-08.html';
 
-<p class="lead">When Bill Gates writes about jobs disappearing and AI getting bigger by throwing more computers at the problem, you can feel that weather at the kitchen table. Someone you know got laid off. A friend is retraining for a job that isn’t hiring. The news keeps saying the next model will change everything while rent still comes due on the first of the month. Those alarms are real. What they often leave blank is a second map: some crews are already trying to sail a different kind of ship — one that treats giant data centers and loud markets as water to cross, not as the whole ocean of intelligence.</p>
+export const body = `<p class="lead">When Bill Gates writes about jobs disappearing and AI getting bigger by throwing more computers at the problem, you can feel that weather at the kitchen table. Someone you know got laid off. A friend is retraining for a job that isn’t hiring. The news keeps saying the next model will change everything while rent still comes due on the first of the month. Those alarms are real. What they often leave blank is a second map: some crews are already trying to sail a different kind of ship — one that treats giant data centers and loud markets as water to cross, not as the whole ocean of intelligence.</p>
 
     <p>That second map is what this ship calls the Invisible Frontier. Public warnings stay useful. They name displacement, money stress, and the temptation to solve every problem with more horsepower. They also tend to stay inside the old picture: bigger rooms of computers, tighter corporate ladders, markets that treat intelligence like a race. The voyage answer here is that those frames are incomplete — not fake, incomplete — because they miss stewardship already underway on a Goldilocks ship: enough machine, enough human, hospitality first, brakes for real harm still on.</p>
 
@@ -60,22 +32,6 @@
     <h2>Closing pier</h2>
     <p>Watch paychecks and doors, not just press releases about scale. When unemployment and underwork rise beside breakthrough headlines, when the only public fork is freeze-everything versus floor-it, the Invisible Frontier is not a slogan. It is the second map that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone. Keep the fire. Keep the brakes. Keep people able to work, ask, and belong.</p>
 
-    <p>If you want the filing cabinet, open the whitepaper after this human article. If you want the floor under your feet, walk the ship. Tip under Fair Exchange if the framing cleared a real kitchen-table argument. Ignore it if you only needed a FLOPs table — those live elsewhere. Nevada’s valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes ordinary households deserve a chart, not only a louder engine.</p>
+    <p>If you want the filing cabinet, open the whitepaper after this human article. If you want the floor under your feet, walk the ship. Tip under Fair Exchange if the framing cleared a real kitchen-table argument. Ignore it if you only needed a FLOPs table — those live elsewhere. Nevada’s valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes ordinary households deserve a chart, not only a louder engine.</p>`;
 
- <p class="honesty"><strong>Honesty boundary:</strong> Voyage editorial and catalog grammar responding to public linear-AI anxiety frames (workforce, scale, centralized compute). Soft Story weather from lived signals — not a prophecy date, not a personal attack on any named figure, and not a claim that displacement or poverty have been solved. EGS ≈ 1.618 is design / nesting language, not a replacement for measured physics constants, not medical advice, and not a guarantee of commercial outcomes. Human emergency still outranks algorithms. Not an Infinite Octaves engine pin by itself.</p>
-
-    <p><em>Fair Exchange:</em> a portion of transaction value remains subject to refund or adjustment depending on resonance, utility, and depth of delivery.</p>
-
-    <div class="cta-row">
-      <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08">Open the whitepaper</a>
-      <a class="btn btn-ghost" href="/questfest#ship-blog">Back to ship blog</a>
-      <a class="btn btn-ghost" href="/">Omniversal Canvas</a>
-    </div>
-    <footer>
-      Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞^∞
-    </footer>
-  </article>
-  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
-  <script src="/interfaces/site-quicklinks.js" defer></script>
-</body>
-</html>
+export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Voyage editorial and catalog grammar responding to public linear-AI anxiety frames (workforce, scale, centralized compute). Soft Story weather from lived signals — not a prophecy date, not a personal attack on any named figure, and not a claim that displacement or poverty have been solved. EGS ≈ 1.618 is design / nesting language, not a replacement for measured physics constants, not medical advice, and not a guarantee of commercial outcomes. Human emergency still outranks algorithms. Not an Infinite Octaves engine pin by itself.</p>`;

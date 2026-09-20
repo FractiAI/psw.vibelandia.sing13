@@ -6,19 +6,19 @@ export const body = `<p class="lead">Papers on this edge do not get featured bec
     <p>Autonomous edges can publish fast. Fast without teeth becomes rumor. Snap is how SS Vibelandia keeps proportionate claims when nested helpers want to upgrade a filing cabinet into unfinished science. Families already prefer receipts over vibes when hiring a contractor. Neighbors already prefer school grades that mean something over stickers that flatter. This pier is that ordinary preference applied to whitepapers.</p>
 
     <h2>Why peer review needs teeth on an autonomous edge</h2>
-    <p>Without a loop, featuring becomes taste. With a loop, featuring becomes weather you can check: structural rubric, blockers, receipts in data/synthobs-paper-audits, max iterations, plateau rules. Guests can open a receipt. Captains can refuse a soft-pass feature until honesty holds. Builders at work can re-run npm audit:paper without waiting for a personality contest.</p>
+    <p>Without a loop, featuring becomes taste. With a loop, featuring becomes weather you can check: checklist rubric, blockers, receipts in data/synthobs-paper-audits, max iterations, plateau rules. Guests can open a receipt. Captains can refuse a soft-pass feature until honesty holds. Builders at work can re-run npm audit:paper without waiting for a personality contest.</p>
 
     <p>That matters when the street is full of breakthrough language and thinner paychecks. People are tired of being sold certainty from HTML alone. Snap does not fix unemployment. It does refuse to feature unfinished physics as if it were finished while households are already stressed. Hospitality includes saying no.</p>
 
     <h2>How the loop stops without infinite spin</h2>
-    <p>Default automated path is structural rubric only — no API keys required. Full dual-make LLM lane is optional when keys and flags are present. Max iterations default to six. Plateau stops the spin when score deltas go flat. Pass bar sits at high overall score with zero critical blockers. That is product discipline, not infinite bureaucracy — the way a household stops arguing the same chore list after two rounds of no new information.</p>
+    <p>Default automated path is checklist rubric only — no API keys required. Full dual-make LLM lane is optional when keys and flags are present. Max iterations default to six. Plateau stops the spin when score deltas go flat. Pass bar sits at high overall score with zero critical blockers. That is product discipline, not infinite bureaucracy — the way a household stops arguing the same chore list after two rounds of no new information.</p>
 
     <p>Player 1 “ship it” still means commit → push → PR → land on main when the write-on seat says so. Snap Amendment B keeps that lock explicit. Guests should hear it as accountability, not as occult process. Main Street understands accountability when a shop posts hours and keeps them.</p>
 
     <h2>What counts as a critical blocker</h2>
-    <p>Missing honesty boundary. Missing Document ID. Operator line absent. Claims that jump tier tables mid-sentence. Soft Story altitude sold as finished lab proof. Mid-body litigation theater that belongs only at the end rail. Those are the kinds of teeth that keep a magazine feature from becoming a cult leaflet. School teachers already mark missing citations. Snap is the edge twin of that habit.</p>
+    <p>Missing honesty boundary. Missing Document ID. Operator line absent. Claims that jump tier tables mid-sentence. Catalog-tier altitude sold as finished lab proof. Mid-body litigation theater that belongs only at the end rail. Those are the kinds of teeth that keep a magazine feature from becoming a cult leaflet. School teachers already mark missing citations. Snap is the edge twin of that habit.</p>
 
-    <p>About 1.618 may appear as design language in audited papers. It never buys a free pass. CODATA and agency courts stay named in honesty rails when relevant. Human emergency still outranks algorithms — including any romance about nested care.</p>
+    <p>About 1.618 may appear as design language in audited papers. It never buys a free pass. official constants tables and agency courts stay named in honesty rails when relevant. Human emergency still outranks algorithms — including any romance about nested care.</p>
 
     <h2>Why guests should care</h2>
     <p>Because featured papers become the nouns nested helpers inherit. Because QUESTFEST guests meet ship-blog doors before whitepapers. Because families walking Journey after dinner deserve rails that were checked. Because builders quoting empirics deserve receipts that re-run. Tip under Fair Exchange if Snap clarity cooled a real argument about what may be featured. Adjust when delivery is thin.</p>
@@ -30,6 +30,9 @@ export const body = `<p class="lead">Papers on this edge do not get featured bec
 
     <h2>NSPFRNP as the larger weather</h2>
     <p>Snap sits inside a larger natural-coordination weather: MCA rhythm, Seed:Edge pairs, Fair Exchange, lite edges, nested helpers that report to parents. Peer review teeth are one shell of that weather. Guests who only wanted a rubber stamp will be disappointed. Guests who wanted a festival ship that refuses to feature unfinished upgrades as finished science will find a tool. Families already want that tool in softer clothes — school honesty, contractor receipts, town-hall minutes that match what happened on Main Street.</p>
+
+    <h2>What guests should demand from a featured paper</h2>
+    <p>Demand an honesty rail you can find without a treasure hunt. Demand a Document ID. Demand a receipt path that re-runs. Demand that catalog-tier altitude stay named only where the end rail belongs — not sprinkled through the body like a legal brief pretending to be journalism. Demand that featured status mean teeth, not vibes. Households already demand that softer form from schools and contractors. This edge should not ask less of its whitepapers while people on Main Street are already tired of unchecked breakthrough language.</p>
 
     <h2>Closing on an honest pier</h2>
     <p>Papers get teeth here because guests deserve them and because nested helpers inherit whatever we publish. Open the whitepaper surface when you want the protocol depth. Walk the ship blog when you want the human door. Tip if utility landed. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors — and builders checking receipts at work — belong in the Intelligence Age without being sold certainty from an unchecked title alone.</p>`;

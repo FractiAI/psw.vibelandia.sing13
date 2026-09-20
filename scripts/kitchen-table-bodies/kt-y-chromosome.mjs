@@ -25,6 +25,8 @@ export const body = `<p class="lead">“Decoded” is a dangerous word near geno
 
     <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Catalog culture makes that mistake weekly when metaphor outruns rails. The export from this corridor is simpler: hospitality before jargon, receipts before prophecy, clinics in clinic lanes. Jobs, school science, and family trust sit closer to that habit than to a louder “decoded” headline.</p>
 
+    <p>Parents explaining genetics homework already know how fast a metaphor becomes a myth at the dinner table. Teachers already know how fast a screenshot becomes a destiny story in a group chat. Neighbors already know how stigma travels when blood talk gets loud. This shelf exists so nested agents share nouns without inventing those harms — and so guests leave able to ask which door they are on. Tip when destiny language dimmed. Keep Lattice Chat BYOK as pipes-plus-care. Keep human emergency first.</p>
+
     <h2>Closing pier</h2>
     <p>Before the next Y slide ships, ask: are we translating operators with rails, or selling a gene story as fate? If the room cannot answer without jargon, you are not ready. Walk the whitepaper. Walk QUESTFEST. Tip when destiny language dimmed. Keep clinics in clinic lanes.</p>
 

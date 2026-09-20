@@ -25,6 +25,8 @@ export const body = `<p class="lead">Automation speeches can make a whole dinner
 
     <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly when one glamorous post gets called the whole ship. The export from this corridor is simpler: staff the quadrants, keep hospitality, stop forcing every neighbor to audition for the same spotlight.</p>
 
+    <p>Households already staff posts without calling it philosophy. Someone cooks. Someone pays bills. Someone listens at bedtime. Someone fixes the hinge. Automating one post does not erase the others. AI headlines that forget that staff map leave people feeling exiled when they still have craft to offer. This coexistence note is a polite correction: you still have a post; learn tools without surrendering presence; keep rails visible; tip when honey is deep. Jobs, school craft, and family trust sit closer to that correction than to a crown name for the next leap.</p>
+
     <h2>Closing pier</h2>
     <p>Before the next model release rewrites your calendar, ask one question out loud: which posts did we staff, and which did we pretend everyone must audition for? If nobody can answer without jargon, you are not ready. Walk the ship. Tip for delivery. Keep monoculture decks elsewhere.</p>
 

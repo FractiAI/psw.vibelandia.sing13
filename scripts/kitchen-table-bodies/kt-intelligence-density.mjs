@@ -20,6 +20,8 @@ export const body = `<p class="lead">“Smarter” is a word that sells tickets.
 
     <p>Along the corridor, warehouse GPU heat and river cool air argue all summer. Ambition and restraint in one climate. This shelf belongs there: ambition enough to audit simulation signal, restraint enough to keep clinics and AGI crowns elsewhere. Coastal decks often ship metaphor and forget the seatbelt. Nevada prints the seatbelt first.</p>
 
+    <p>Households already ask better versions of the density question. Did the school software still load this morning? Did the job board still have openings that match the training course? Did the helper that used to brainstorm still meet curiosity at the door? Density talk that ignores those questions is theater. Density talk that answers them with receipts is hospitality. Tip under Fair Exchange when swagger quieted and evidence language rose. Keep kids’ safety and family emergencies above every clever frame.</p>
+
     <h2>What changes if density talk stays honest</h2>
     <p>If the framing is right, a lot of “we got denser” conversation gets shorter — or gets receipts. New models can still delight. New demos can still pack insight. But shared audit habits stop every Tuesday from reinventing swagger. If the framing is wrong for a partner, you still have a useful instrument: watch whether evidence language rises. Watch whether clinical cosplay dims. Watch whether Fair Exchange tips follow delivery. Watch whether job boards and classroom tools still work after the metaphor gets loud.</p>
 

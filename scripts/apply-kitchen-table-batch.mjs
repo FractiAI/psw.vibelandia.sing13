@@ -2,9 +2,10 @@
 /**
  * Apply kitchen-table continuous-prose rewrites to assigned ship-blog HTML files.
  * Preserves nav / header / CTA / footer; replaces body + honesty.
- * Accepts either:
- *   - scripts/kitchen-table-bodies/*.mjs exporting { file, body, honesty }
- *   - scripts/kitchen-table-bodies/batch-bodies.mjs exporting { REWRITES }
+ *
+ * Dedupes by file: prefers exports from kt-*.mjs over numbered/batch sources.
+ * Usage: node scripts/apply-kitchen-table-batch.mjs [blog-file.html ...]
+ *        node scripts/apply-kitchen-table-batch.mjs --kt-only [blog-file.html ...]
  */
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, basename } from 'node:path';
@@ -12,6 +13,10 @@ import { auditShipBlogFile } from '../lib/ship-blog-magazine.mjs';
 
 const DIR = join(process.cwd(), 'interfaces');
 const BODIES = join(process.cwd(), 'scripts/kitchen-table-bodies');
+
+const args = process.argv.slice(2);
+const ktOnly = args.includes('--kt-only');
+const filter = args.filter((a) => a !== '--kt-only');
 
 function replaceCore(html, bodyHtml, honestyHtml) {
   const artMatch = html.match(/<article[\s\S]*?<\/article>/i);
@@ -37,34 +42,47 @@ ${fair}
   return html.replace(artMatch[0], newArticle);
 }
 
-const jobs = [];
+/** Higher score wins when multiple modules target the same file. */
+function priority(source) {
+  if (source.startsWith('kt-')) return 100;
+  if (source === 'batch-bodies') return 10;
+  return 50; // numbered modules
+}
 
-const batchPath = join(BODIES, 'batch-bodies.mjs');
-if (existsSync(batchPath)) {
-  const mod = await import(batchPath);
+const byFile = new Map();
+
+function consider(job) {
+  if (!job.file || !job.body || !job.honesty) return;
+  const prev = byFile.get(job.file);
+  if (!prev || priority(job.source) >= priority(prev.source)) {
+    byFile.set(job.file, job);
+  }
+}
+
+if (!ktOnly && existsSync(join(BODIES, 'batch-bodies.mjs'))) {
+  const mod = await import(join(BODIES, 'batch-bodies.mjs'));
   const map = mod.REWRITES || mod.BODIES || {};
   for (const [file, payload] of Object.entries(map)) {
-    jobs.push({ source: 'batch-bodies', file, ...payload });
+    consider({ source: 'batch-bodies', file, ...payload });
   }
 }
 
 for (const name of readdirSync(BODIES).filter((n) => n.endsWith('.mjs') && n !== 'batch-bodies.mjs').sort()) {
+  if (ktOnly && !name.startsWith('kt-')) continue;
   const mod = await import(join(BODIES, name));
   if (mod.file && mod.body && mod.honesty) {
-    jobs.push({ source: basename(name), file: mod.file, body: mod.body, honesty: mod.honesty });
+    consider({ source: basename(name), file: mod.file, body: mod.body, honesty: mod.honesty });
   }
 }
 
-const filter = process.argv.slice(2);
-const selected = filter.length ? jobs.filter((j) => filter.includes(j.file)) : jobs;
+let selected = [...byFile.values()];
+if (filter.length) {
+  selected = selected.filter((j) => filter.includes(j.file));
+}
 
 const results = [];
 for (const job of selected) {
-  const { file, body, honesty } = job;
-  if (!file || !body || !honesty) {
-    results.push({ file, error: 'missing export' });
-    continue;
-  }
+  const { file, body, honesty, source } = job;
   const path = join(DIR, file);
   const html = readFileSync(path, 'utf8');
   const next = replaceCore(html, body, honesty);
@@ -72,6 +90,7 @@ for (const job of selected) {
   const a = auditShipBlogFile(path);
   results.push({
     file,
+    source,
     words: a.words,
     passesLength: a.passesLength,
     honestyEnd: a.honestyEnd,

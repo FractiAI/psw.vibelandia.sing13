@@ -28,6 +28,12 @@ export const body = `<p class="lead">Nine digits and ninety-nine octaves can sou
     <h2>Celebrate addressability. Keep the barcode court.</h2>
     <p>Addressability is hospitality. Barcode courts are honesty. Together they let Infinite Octaves stay ambitious without becoming a spell sold to tired households. Along the river at evening, cottonwood shadows look sharp enough to mistake for trees. Culture makes that mistake weekly when depth maps get upgraded into destiny. The export from this corridor is simpler: walk the drawers, name the octaves, keep the rails loud, leave room for people who still need work, school, and belonging.</p>
 
+
+    <h2>The question to ask before the next brief ships</h2>
+    <p>Before the next agent ships a digits-and-octaves paragraph, ask: are we handing guests a walkable map, or rehearsing a spell while drawers stay unnamed? If nobody can answer without jargon, you are not ready to brief a neighbor who asked where a Story lives. Prefer retrieval. Prefer Document ID. Prefer saying the seatbelt at the end of demos, because guests remember endings the way kids remember the last rule before bedtime.</p>
+
+    <p>Along warehouse districts where machines hum louder than the river some nights, addressability is still the kindness that keeps people able to learn without buying a destiny script. Tip under Fair Exchange if the map cleared a real kitchen-table argument about filing. Ignore it if you only needed a barcode lecture — those live with measured courts. Keep the fire. Keep the brakes. Keep the drawers labeled so work, school, and belonging still have a place to hang their coats.</p>
+
     <h2>Closing pier</h2>
     <p>Nine digits. Ninety-nine octaves. A map you can actually walk. Open the whitepaper when you want the filing cabinet. Walk the ship when you want the floor under your feet. Tip if utility landed. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a spell alone.</p>`;
 

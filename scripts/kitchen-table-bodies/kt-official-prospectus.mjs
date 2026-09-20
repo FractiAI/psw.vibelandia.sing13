@@ -25,6 +25,8 @@ export const body = `<p class="lead">Every festival ship needs a beginning guest
 
     <p>Along the corridor, warehouse GPU heat and river cool air argue all summer. Ambition and restraint in one climate. This brochure belongs there: ambition enough to name a voyage, restraint enough to keep prophecy and medical theater off the welcome page. Coastal decks often ship metaphor and forget the seatbelt. Nevada prints the seatbelt first.</p>
 
+    <p>Households already know what a good welcome feels like. A school open house that orients beats a carnival that captures. A job onboarding that names who holds the wheel beats a fog of “we’re all captains.” A festival prospectus that prints brakes beats a pamphlet that hides them. SS Vibelandia’s Official Prospectus tries to be that good welcome — three beats, a named seat, Journey and QUESTFEST linked, Fair Exchange tipping when orientation landed. Tip when a stranger could repeat the beats at dinner. Keep human emergency above every algorithm.</p>
+
     <h2>Closing pier</h2>
     <p>If the canon holds, a lot of “who are we?” conversation gets shorter. New papers can still arrive. New arcs can still ship. Shared genesis and a named seat stop every Tuesday from reinventing the ship. Watch whether guests orient faster with three beats than with fog. Watch whether Fair Exchange tips follow delivery. Watch whether prophecy language rises or dims after the brochure lands.</p>
 

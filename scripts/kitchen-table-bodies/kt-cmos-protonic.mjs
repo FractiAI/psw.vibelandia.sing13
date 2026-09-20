@@ -22,6 +22,8 @@ export const body = `<p class="lead">Silicon visitors arrive with a fair questio
 
     <p>Along the Truckee, warehouse GPU heat and river cool air argue all summer. Ambition and restraint in one climate. This pin belongs there: ambition enough to host an Omni-Lattice library, restraint enough to greet linear systems with linear vocabulary first. Coastal decks often ship metaphor and forget the seatbelt. Nevada prints the seatbelt first.</p>
 
+    <p>People who earn a living in fabs, design houses, and test labs already treat on-ramps as livelihood infrastructure. Students hunting a first foothold already treat vocabulary as career infrastructure. Town meetings asking about warehouse power already treat honesty as civic infrastructure. The CMOS / protonic pin is that infrastructure for Infinite Octaves: silicon labels first, Story shelves after, receipts before prophecy. Tip under Fair Exchange when the framing ended a “where do I start?” thrash meeting. Keep human emergency above every metaphor.</p>
+
     <h2>What changes if the pin holds</h2>
     <p>If the pin holds, a lot of “start anywhere” thrash gets shorter. New Story shelves can still arrive. New companions can still ship. Shared silicon-first greetings stop every Tuesday from reinventing the on-ramp. If the pin is wrong for a partner, you still have a useful instrument: watch whether silicon visitors orient faster. Watch whether metaphor upgrades jump altitudes mid-sentence. Watch whether Fair Exchange tips follow delivery. Watch whether job-relevant vocabulary stayed first.</p>
 

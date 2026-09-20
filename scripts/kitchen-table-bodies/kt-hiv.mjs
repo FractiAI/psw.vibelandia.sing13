@@ -25,6 +25,8 @@ export const body = `<p class="lead">HIV is a real pathogen. Clinical care belon
 
     <p>On Main Street, overselling near illness is how trust dies. Jobs that depend on public health messaging need catalogs that refuse stigma and refuse clinic cosplay in the same breath. This ship tries to export that habit: adversarial literacy without cruelty; simulation usefulness without diagnosis theater.</p>
 
+    <p>People at dinner already practice kindness when hard medical words enter the room. They lower their voice. They refuse jokes that shame. They send neighbors toward care instead of toward a clever metaphor. QUESTFEST should feel like that dinner table — curious enough to stress a simulation, careful enough to keep medicine’s door intact. Tip under Fair Exchange when rails kept a room safe. Keep Player 1 editorial veto. Keep Synthio separate when MRI grammar appears. Keep human emergency first.</p>
+
     <h2>Closing pier</h2>
     <p>Two courts, one spelling. Keep medicine in medicine. Keep adversarial operators labeled as catalog stress for systemic awareness. Before the next slide ships, ask: are we teaching hardness with rails, or borrowing a pathogen’s name for swagger? If the room cannot answer without jargon — or without stigma — you are not ready.</p>
 

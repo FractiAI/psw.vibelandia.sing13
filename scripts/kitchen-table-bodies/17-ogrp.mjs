@@ -25,6 +25,11 @@ export const body = `<p class="lead">Most routing systems optimize for speed and
 
     <p>Along the Truckee corridor, warehouse heat and river cool air argue all summer. Traffic weather argues too — ambition to move, restraint to refuse crush. OGRP should feel like that climate settled kindly: enough motion to earn a living, enough slack to keep people safe, enough honesty to refuse magical ETAs while rent still comes due.</p>
 
+    <h2>Further rooms on the pier</h2>
+    <p>Municipal demos can use OGRP language when nested helpers brief density and timing without improvising private traffic religions. Product teams can use it when surge math starts eating paychecks while empty cars still circle the block. Families can use the plain sentence at dinner: not too empty, not too crushed, enough to move, enough to stay human. That is Goldilocks without a physics lecture.</p>
+
+    <p>Further rooms peer Invisible Frontier, Moving up the stack, Consciousness Moat, and Vitality Control when the street argument is really about jobs, doors, and control theater. OGRP stays the rideshare leaf: accept in band, defer out of band, keep receipts, keep human emergency first when a neighbor needs help more than a routing metaphor.</p>
+
     <h2>Closing pier</h2>
     <p>Before the next agent ships a rideshare paragraph, ask: are we optimizing for enoughness, or dumping friction onto the street and calling it speed? If nobody can answer without jargon, you are not ready to brief a guest who asked about Goldilocks and surge pricing in the same breath. Open the whitepaper when you want the filing cabinet. Walk the ship when you want the floor under your feet. Tip if utility landed. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors — drivers, riders, families after school — belong in the Intelligence Age without being sold certainty from a speed-only scoreboard alone.</p>`;
 

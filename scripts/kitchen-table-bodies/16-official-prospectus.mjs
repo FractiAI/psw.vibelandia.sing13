@@ -28,6 +28,11 @@ export const body = `<p class="lead">Every festival ship needs a beginning guest
     <h2>What changes if the canon holds</h2>
     <p>Nested helpers inherit a shared beginning instead of improvising origins every sprint. Guests stop asking “who steers?” in a panic voice. Builders stop treating voyage canon as optional poetry. Paychecks and doors still matter more than chrome — and the prospectus refuses to pretend otherwise. Cool · harmonize · scale peers from Moving up the stack. Invisible Frontier peers when linear warnings stay incomplete. Consciousness Moat peers when control theater tries to replace architecture.</p>
 
+    <h2>What a stranger should be able to repeat</h2>
+    <p>After one read, a stranger at the kitchen table should be able to repeat: genesis under design language near 1.618, Borikén convergence as cultural weather, Reno as the present pier, a captain’s seat you can point at, hospitality before prophecy. If they leave with solar causation romance or medical tuning therapy, the brochure failed. Rebuild with plain speech until dinner conversation can carry it without fog.</p>
+
+    <p>Kids after school, builders after a shift, neighbors walking Main Street — all deserve that repeatable beginning. Nested helpers inherit it too. When the beginning is clear, Tuesday stays walkable. When the beginning is fog, every sprint invents a private origin story and the invoice climbs while trust thins.</p>
+
     <h2>Closing pier</h2>
     <p>The voyage has a beginning, and a captain’s seat now. Open the whitepaper surface when you want Document ID depth. Walk QUESTFEST when you want the floor under your feet. Tip if utility landed. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors — families, builders, kids after school — belong in the Intelligence Age without being sold fog from a brochure that forgot to name the seat.</p>`;
 

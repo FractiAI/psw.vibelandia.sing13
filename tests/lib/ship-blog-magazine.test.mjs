@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import {
   SHIP_BLOG_MIN_ARTICLE_WORDS,
+  SHIP_BLOG_JOURNALISM_WINDOW,
   auditAllShipBlogs,
+  auditShipBlogFile,
+  listRecentShipBlogHtmlFiles,
 } from '../../lib/ship-blog-magazine.mjs';
 
 describe('QUESTFEST ship-blog magazine snap', () => {
@@ -20,5 +23,20 @@ describe('QUESTFEST ship-blog magazine snap', () => {
       .filter((a) => !a.honestyEnd)
       .map((a) => a.file.split('/').pop());
     expect(early).toEqual([]);
+  });
+
+  it(`locks the ${SHIP_BLOG_JOURNALISM_WINDOW} newest notes to journalism voice (not legal-brief body)`, async () => {
+    const recent = await listRecentShipBlogHtmlFiles(SHIP_BLOG_JOURNALISM_WINDOW);
+    expect(recent.length).toBe(SHIP_BLOG_JOURNALISM_WINDOW);
+    const fails = [];
+    for (const row of recent) {
+      const audit = auditShipBlogFile(row.file);
+      if (!audit.passesVoice) {
+        fails.push(
+          `${row.file.split('/').pop()}: softStory=${audit.voice.softStory} refusalH2=${audit.voice.refusalH2} doesNotClaim=${audit.voice.doesNotClaim} meta=${audit.voice.metaJargon} tables=${audit.voice.tables}`,
+        );
+      }
+    }
+    expect(fails).toEqual([]);
   });
 });

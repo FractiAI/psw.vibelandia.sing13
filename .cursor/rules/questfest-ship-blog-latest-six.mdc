@@ -9,15 +9,16 @@ alwaysApply: true
 
 ## Magazine feature snap (mandatory)
 
-Ship-blog posts are **full articles**, not cryptic bites or catalog blurbs.
+Ship-blog posts are **full articles**, not cryptic bites, catalog blurbs, or **legal briefs**.
 
-1. **Voice:** World-class business / culture feature prose (clear narrative arc, concrete scenes, named stakes). Do **not** name third-party magazines.
+1. **Voice:** Explanatory business / tech **feature journalism** — scene, stake, plain-English explanation, pier close. Punchy lead. Named stakes. Do **not** name third-party magazines. Do **not** write mid-body “what this does not claim” sections; do **not** spam “Soft Story”; park CODATA / PRA / ENGINE_SHELF in the end honesty rail only.
 2. **Length:** ≥ **900** article prose words inside `<article>` after stripping nav, honesty rail, footer, and CTA row. Helper: `lib/ship-blog-magazine.mjs` (`SHIP_BLOG_MIN_ARTICLE_WORDS`).
 3. **Honesty rail at the end only:** one `<p class="honesty">…</p>` after the body (before or just above CTA/footer). Do not lead with honesty or sprinkle it through the piece.
 4. **Structure:** kicker · headline · dateline · lead · several `<h2>` sections · closing pier line · honesty · Fair Exchange (optional short) · CTA · footer.
 5. **Claims:** Keep Φ_EGS / catalog keys proportionate; full honesty stays at the end rail.
+6. **Journalism window:** the **21 newest** eligible notes must pass `journalismVoiceSmell` (≤3 Soft Story, zero refusal H2s, zero does-not-claim litigation in body, ≤2 meta jargon, no body tables).
 
-CI: `tests/lib/questfest-blog.test.mjs` + `tests/lib/ship-blog-magazine.test.mjs` enforce latest-six **and** magazine length / honesty placement for every `interfaces/blog-*.html`.
+CI: `tests/lib/questfest-blog.test.mjs` + `tests/lib/ship-blog-magazine.test.mjs` enforce latest-six, magazine length / honesty, and journalism voice on the newest twenty-one.
 
 Protocol: `protocols/QUESTFEST_SHIP_BLOG_MAGAZINE_SNAP_NSPFRNP.md`.
 
@@ -25,7 +26,7 @@ Protocol: `protocols/QUESTFEST_SHIP_BLOG_MAGAZINE_SNAP_NSPFRNP.md`.
 
 When you **register, protocol, or feature** a technical paper (`lib/whitepaper-registry.mjs`, `docs/*.md`):
 
-1. **Write a magazine-grade ship-blog HTML article** under `interfaces/blog-<slug>-YYYY-MM.html` (feature prose + honesty rail **at the end** + link to the whitepaper). Voice peers: `interfaces/blog-prime-indexed-volumetric-storage-2026-09.html`, `interfaces/blog-pacing-paradox-2026-09.html` (expand beyond bite length).
+1. **Write a magazine-grade ship-blog HTML article** under `interfaces/blog-<slug>-YYYY-MM.html` (feature prose + honesty rail **at the end** + link to the whitepaper). Voice peers: recently revoiced notes under `interfaces/blog-*-2026-09.html` after the journalism snap.
 2. **Register the note** in `lib/questfest-blog-posts.mjs` (`QUESTFEST_BLOG_POSTS[registryId]` → slug, file, headline, excerpt).
 3. **Add Vercel rewrites** in `vercel.json` for `/ship-blog/<slug>` and `/ship-blog/<slug>/`.
 4. **Sync the latest-six section:** `npm run sync:questfest-blog` (injects `interfaces/vibelandia-questfest.html` `#ship-blog`).
@@ -33,6 +34,6 @@ When you **register, protocol, or feature** a technical paper (`lib/whitepaper-r
 6. **Order is newest → oldest** (`published` date descending). Never prefer older notes over newer papers.
 7. **Companions only** (one-pagers, living TOCs) may set `shipBlog: false` on the registry entry so they do not steal a latest-six slot. Main papers always get a note.
 
-Tests fail if any of the six newest eligible papers lacks a note, if the six are not newest-first, or if any ship-blog HTML fails the magazine snap.
+Tests fail if any of the six newest eligible papers lacks a note, if the six are not newest-first, or if any ship-blog HTML fails the magazine snap (or the 21 newest fail journalism voice).
 
 Skip this only when the user explicitly says the work is not a public paper.

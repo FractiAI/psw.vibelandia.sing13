@@ -11,15 +11,15 @@
 
 ## Abstract
 
-This protocol locks **magazine-grade feature length** and **honesty-at-end placement** for every QUESTFEST / SS Vibelandia ship-blog HTML note under `interfaces/blog-*.html`. It is an **editorial delivery** rule — not an empirical physics paper, not a claim that Φ_EGS replaces CODATA, and not a requirement to name third-party publications. Companion always-on Cursor rule: `.cursor/rules/questfest-ship-blog-latest-six.mdc`. Measurement helper: `lib/ship-blog-magazine.mjs` (`SHIP_BLOG_MIN_ARTICLE_WORDS = 900`).
+This protocol locks **magazine-grade feature length**, **honesty-at-end placement**, and **journalism voice** (not legal-brief body) for QUESTFEST / SS Vibelandia ship-blog HTML notes under `interfaces/blog-*.html`. It is an **editorial delivery** rule — not an empirical physics paper, not a claim that Φ_EGS replaces CODATA, and not a requirement to name third-party publications. Companion always-on Cursor rule: `.cursor/rules/questfest-ship-blog-latest-six.mdc`. Measurement helper: `lib/ship-blog-magazine.mjs` (`SHIP_BLOG_MIN_ARTICLE_WORDS = 900`).
 
 ---
 
 ## Introduction · Purpose
 
-Every ship-blog post must read as a **full feature article** — narrative arc, concrete stakes, guest-clear English — not a cryptic catalog bite. Honesty boundaries stay **at the end**, not as the lead. Latest-six ordering (newest → oldest) remains mandatory when registering papers.
+Every ship-blog post must read as a **full feature article** — narrative arc, concrete stakes, guest-clear English — not a cryptic catalog bite and **not a courtroom / protocol brief**. Think explanatory business-tech feature: open on a human stake, explain what is changing, show why it matters, then park the seatbelts at the end. Honesty boundaries stay **at the end**, not as the lead and not sprinkled through mid-body refusal sections. Latest-six ordering (newest → oldest) remains mandatory when registering papers.
 
-Player 1 asked for this snap after short rewrites still left most notes under feature length. This document crystallizes the bar so agents cannot ship bites by habit.
+Player 1 asked for this snap after short rewrites still left most notes under feature length, then asked again when long notes still sounded like legal documents. This document crystallizes both bars so agents cannot ship bites **or** briefs by habit.
 
 ---
 
@@ -29,7 +29,8 @@ Player 1 asked for this snap after short rewrites still left most notes under fe
 |------|------|------|
 | **Length** | ≥ 900 article prose words (`lib/ship-blog-magazine.mjs`) | ⚙ operational |
 | **Honesty placement** | Single `<p class="honesty">` after the body; ≤ 120 prose words after it (Fair Exchange line OK) | ⚙ operational |
-| **Voice** | Feature journalism clarity — do **not** name third-party publications | 🜛 editorial |
+| **Journalism voice (21 newest)** | Body must pass `journalismVoiceSmell`: ≤3 “Soft Story”, zero mid-body refusal H2s, zero “does not claim” / “do not conclude” litigation in body, ≤2 meta jargon hits (CODATA / PRA Snap / ENGINE_SHELF), zero `<table>` in body | ⚙ operational |
+| **Voice craft** | Feature journalism clarity — scene · stake · explanation · pier close. Do **not** name third-party publications | 🜛 editorial |
 | **Claims** | $\Phi_{\mathrm{EGS}} \approx 1.618$ remains design language / catalog key unless the linked paper’s honesty says otherwise | 📐 catalog |
 | **Latest six** | Newest → oldest; every new eligible paper gets a note | ⚙ operational |
 
@@ -65,8 +66,18 @@ Article prose = text inside `<article>` after stripping `<nav>`, `<p class="hone
 ### MCA cycle (author lane)
 
 1. **Metabolize** — paper thesis + guest door (where on the ship / what to do).
-2. **Crystallize** — headline, lead, 4–7 section heads, end honesty rail.
-3. **Animate** — write `interfaces/blog-*.html`; register; `npm run sync:questfest-blog`; `npm run sync:interfaces-index`; run tests.
+2. **Crystallize** — punchy headline, human lead, 4–7 section heads that teach (not litigate), end honesty rail.
+3. **Animate** — write `interfaces/blog-*.html` in journalism voice; register; `npm run sync:questfest-blog`; `npm run sync:interfaces-index`; run tests.
+
+### Journalism voice · do / don’t
+
+| Do | Don’t (body) |
+|----|--------------|
+| Open on a concrete scene or tension a smart guest feels | Lead with seatbelts, honesty rails, or “what this is not” |
+| Explain the idea in plain English like a feature desk | Repeat “Soft Story” as a legal label every sentence |
+| Name stakes: who cares, what changes if the idea is right | Mid-article H2s that refuse claims (“What builders should not conclude”) |
+| One light uncertainty beat if needed, then move | “Does not claim / do not conclude / not a claim that” litigation loops |
+| Park CODATA / PRA / ENGINE_SHELF / full honesty in the end rail | Tables of locks, protocol IDs, or registry meta in the feature body |
 
 ---
 
@@ -76,6 +87,7 @@ Article prose = text inside `<article>` after stripping `<nav>`, `<p class="hone
 |---------|----------------|
 | Length | `passesLength === true` for every `blog-*.html` |
 | Honesty end | `honestyEnd === true` for every `blog-*.html` |
+| Journalism voice | `passesVoice === true` for the **21 newest** eligible notes (`SHIP_BLOG_JOURNALISM_WINDOW`) |
 | Latest six | Six newest eligible papers each have a note; order newest → oldest |
 | This protocol PRA | Structural overall ≥ 0.85, zero critical blockers |
 

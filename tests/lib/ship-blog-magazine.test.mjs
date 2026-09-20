@@ -25,9 +25,9 @@ describe('QUESTFEST ship-blog magazine snap', () => {
     expect(early).toEqual([]);
   });
 
-  it(`locks the ${SHIP_BLOG_JOURNALISM_WINDOW} newest notes to journalism voice (not legal-brief body)`, async () => {
+  it('locks every eligible ship-blog note to journalism voice (vitality peer · Soft Story 0 in body)', async () => {
     const recent = await listRecentShipBlogHtmlFiles(SHIP_BLOG_JOURNALISM_WINDOW);
-    expect(recent.length).toBe(SHIP_BLOG_JOURNALISM_WINDOW);
+    expect(recent.length).toBeGreaterThanOrEqual(80);
     const fails = [];
     for (const row of recent) {
       const audit = auditShipBlogFile(row.file);
@@ -37,6 +37,17 @@ describe('QUESTFEST ship-blog magazine snap', () => {
         );
       }
     }
+    expect(fails).toEqual([]);
+  });
+
+  it('also locks unregistered blog-*.html files that sit outside the registry map', () => {
+    const audits = auditAllShipBlogs();
+    const fails = audits
+      .filter((a) => !a.passesVoice)
+      .map(
+        (a) =>
+          `${a.file.split('/').pop()}: softStory=${a.voice.softStory} refusalH2=${a.voice.refusalH2} doesNotClaim=${a.voice.doesNotClaim} meta=${a.voice.metaJargon} tables=${a.voice.tables}`,
+      );
     expect(fails).toEqual([]);
   });
 });

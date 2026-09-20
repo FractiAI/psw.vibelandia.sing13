@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "fd80357d154a93ed",
+  "auditId": "5dbc395d136f16fc",
   "paperId": "QUESTFEST_SHIP_BLOG_MAGAZINE_SNAP_NSPFRNP",
   "sourcePath": "protocols/QUESTFEST_SHIP_BLOG_MAGAZINE_SNAP_NSPFRNP.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-19T06:12:32.526Z"
+          "invokedAt": "2026-09-20T11:18:07.949Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-19T06:12:32.525Z",
-  "completedAt": "2026-09-19T06:12:32.526Z",
+  "startedAt": "2026-09-20T11:18:07.948Z",
+  "completedAt": "2026-09-20T11:18:07.949Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 812,
+      "wordCount": 1145,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

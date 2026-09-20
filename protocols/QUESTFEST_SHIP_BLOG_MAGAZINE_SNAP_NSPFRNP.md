@@ -11,7 +11,7 @@
 
 ## Abstract
 
-This protocol locks **magazine-grade feature length**, **honesty-at-end placement**, and **journalism voice** (not legal-brief body) for QUESTFEST / SS Vibelandia ship-blog HTML notes under `interfaces/blog-*.html`. It is an **editorial delivery** rule — not an empirical physics paper, not a claim that Φ_EGS replaces CODATA, and not a requirement to name third-party publications. Companion always-on Cursor rule: `.cursor/rules/questfest-ship-blog-latest-six.mdc`. Measurement helper: `lib/ship-blog-magazine.mjs` (`SHIP_BLOG_MIN_ARTICLE_WORDS = 900`).
+This protocol locks **magazine-grade feature length**, **honesty-at-end placement**, and **journalism voice** (not legal-brief body) for QUESTFEST / SS Vibelandia ship-blog HTML notes under `interfaces/blog-*.html`. Soft Story mentions in the article body must be **zero** (vitality peer: `/ship-blog/vitality-control-rhyme`). It is an **editorial delivery** rule — not an empirical physics paper, not a claim that Φ_EGS replaces CODATA, and not a requirement to name third-party publications. Companion always-on Cursor rule: `.cursor/rules/questfest-ship-blog-latest-six.mdc`. Measurement helper: `lib/ship-blog-magazine.mjs` (`SHIP_BLOG_MIN_ARTICLE_WORDS = 900`, `SHIP_BLOG_MAX_SOFT_STORY = 0`).
 
 ---
 
@@ -29,8 +29,8 @@ Player 1 asked for this snap after short rewrites still left most notes under fe
 |------|------|------|
 | **Length** | ≥ 900 article prose words (`lib/ship-blog-magazine.mjs`) | ⚙ operational |
 | **Honesty placement** | Single `<p class="honesty">` after the body; ≤ 120 prose words after it (Fair Exchange line OK) | ⚙ operational |
-| **Journalism voice (21 newest)** | Body must pass `journalismVoiceSmell`: ≤3 “Soft Story”, zero mid-body refusal H2s, zero “does not claim” / “do not conclude” litigation in body, ≤2 meta jargon hits (CODATA / PRA Snap / ENGINE_SHELF), zero `<table>` in body | ⚙ operational |
-| **Voice craft** | Feature journalism clarity — scene · stake · explanation · pier close. Do **not** name third-party publications | 🜛 editorial |
+| **Journalism voice (full corpus)** | Every `blog-*.html` body must pass `journalismVoiceSmell`: **Soft Story = 0** in body, zero mid-body refusal H2s, zero “does not claim” / “do not conclude” litigation in body, ≤2 meta jargon hits (CODATA / PRA Snap / ENGINE_SHELF), zero `<table>` in body | ⚙ operational |
+| **Voice craft** | Feature journalism clarity — scene · stake · explanation · pier close. Peer: `/ship-blog/vitality-control-rhyme`. Do **not** name third-party publications. Park catalog labels in the end honesty rail | 🜛 editorial |
 | **Claims** | $\Phi_{\mathrm{EGS}} \approx 1.618$ remains design language / catalog key unless the linked paper’s honesty says otherwise | 📐 catalog |
 | **Latest six** | Newest → oldest; every new eligible paper gets a note | ⚙ operational |
 
@@ -74,10 +74,11 @@ Article prose = text inside `<article>` after stripping `<nav>`, `<p class="hone
 | Do | Don’t (body) |
 |----|--------------|
 | Open on a concrete scene or tension a smart guest feels | Lead with seatbelts, honesty rails, or “what this is not” |
-| Explain the idea in plain English like a feature desk | Repeat “Soft Story” as a legal label every sentence |
+| Explain the idea in plain English like a feature desk | Use “Soft Story” as a body label (count must be **0**; honesty rail may name the tier) |
 | Name stakes: who cares, what changes if the idea is right | Mid-article H2s that refuse claims (“What builders should not conclude”) |
 | One light uncertainty beat if needed, then move | “Does not claim / do not conclude / not a claim that” litigation loops |
 | Park CODATA / PRA / ENGINE_SHELF / full honesty in the end rail | Tables of locks, protocol IDs, or registry meta in the feature body |
+| Match vitality peer punch: short sentences, doors & workshops, human stakes | Catalog jargon loops that never land a scene |
 
 ---
 
@@ -87,7 +88,7 @@ Article prose = text inside `<article>` after stripping `<nav>`, `<p class="hone
 |---------|----------------|
 | Length | `passesLength === true` for every `blog-*.html` |
 | Honesty end | `honestyEnd === true` for every `blog-*.html` |
-| Journalism voice | `passesVoice === true` for the **21 newest** eligible notes (`SHIP_BLOG_JOURNALISM_WINDOW`) |
+| Journalism voice | `passesVoice === true` for **every** `blog-*.html` (`SHIP_BLOG_MAX_SOFT_STORY = 0`; full-corpus lock) |
 | Latest six | Six newest eligible papers each have a note; order newest → oldest |
 | This protocol PRA | Structural overall ≥ 0.85, zero critical blockers |
 

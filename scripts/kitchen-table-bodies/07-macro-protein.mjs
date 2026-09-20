@@ -1,0 +1,41 @@
+/** Kitchen-table rewrite · macro protein work engine */
+export const file = 'blog-macro-protein-work-engine-2026-09.html';
+
+export const body = `<p class="lead">If a protein folds in a prime vault, what is a whole living body? Along the Truckee corridor, this note files organisms as macro-protein work engines under a scale key near 1.618 — octave band θ_bio ∈ [13,17], with Kleiber/WBE-compatible framing. Catalog architecture with dignity. Life is not “solved” on a festival pier, and organisms are not literally one protein. The map still helps nested agents talk about bodies as engines without inventing private slang every Tuesday — the same way a family needs shared words for fatigue, food, and work without turning dinner into a lab lecture.</p>
+
+    <p>Protein folding’s prime-container companion already gave vaults for folds. Macro-protein scales the rhyme to organismal thermodynamic work. Guests who want wet-lab certificates will not find them here. Guests who want a shared filing band will. Households already live the stake: bodies take fuel, do work, shed heat, and need rest. Parents watching kids grow, workers watching hours get cut, neighbors walking after dinner — all already know a body is not a slogan. This pier just gives nested helpers a shared shelf so they stop arguing in private dialects while people wait for plain speech.</p>
+
+    <h2>Why band 13–17</h2>
+    <p>Infinite Octaves needs a place to file organismal scale without dumping it into cosmic octaves or molecular octaves by accident. Band 13–17 is that Goldilocks window for macro-protein work engines — labeled as catalog architecture, not as measured biology destiny. Kleiber/WBE-compatible framing means the shelf can talk metabolic scaling without pretending the suite re-derived Kleiber in a wet lab.</p>
+
+    <p>Peer Protein folding prime-container, Prime-parity, and Prime-indexed volumetric storage. Vaults scale from folds to memory to bodies. Keep the family. Refuse the mash into “life solved.” At the kitchen table that refusal sounds like: we can talk about load and rest without selling a miracle diet, a spiritual rank, or a press release that pretends the body is finished business. School teachers assigning Omni-Lattice weeks need the same seatbelt when students ask how protein vault talk scales to people.</p>
+
+    <h2>Work engine in plain English</h2>
+    <p>A body takes fuel, does work, sheds heat, maintains structure. The catalog files that as an engine without replacing physiology. Nested agents inherit nouns — band, vault, work, Goldilocks load — instead of inventing private biology slang. Token burn drops. Honesty stays louder than metaphor. Neighbors already use everyday versions of those nouns: paycheck work, school work, household work, the work of healing after illness. The shelf is a filing aid, not a clinic.</p>
+
+    <p>That dual vision is the product. Clinics stay clinics. Ecology desks stay ecology desks. This ship-blog stays catalog literacy. Silicon-first auditors still begin at the CMOS protonic bridge. Digits times Octaves remain Story-depth maps for nesting care, not diet ranks or spiritual levels. Families who have watched wellness fads come and go already know why that lock matters: dignity first, prophecy last.</p>
+
+    <h2>What the suite runs</h2>
+    <p>Under the research suite, fixtures lock structural behavior. Re-run the npm research script. Fork the standalone GitHub. Open Lattice Chat and keep wet-lab claims grounded. Snap peer review keeps proportionate language on the whitepaper. Solar labels that appear as filing characters stay filing characters — timing marks on the chart, not NOAA causation engines, and not destiny weather for your rent or your kids’ school year.</p>
+
+    <p>Skeptical funder question: does θ_bio ∈ [13,17] become a training plan? It must not. Does the paper retire Kleiber? It must not. Do fixtures rerun? They should. Pass those checks and the companion is doing its job. Household question in the same breath: does this help us talk about load and rest without selling snake oil? It should. If it doesn’t, the pier failed the people who walked it after work.</p>
+
+    <h2>How people use it on Tuesday</h2>
+    <p>Builders open the linked whitepaper surface after this note when hosting guests. They re-run research scripts when a suite exists and keep JSON receipts beside any public quote. They refuse upgrades into unfinished physics, clinical advice, or prophecy. They keep CMOS/protonic pinned when linear-systems evaluators arrive. Guests who only wanted a human door get this article first — the same hospitality a town hall shows when it explains a map before the zoning binder.</p>
+
+    <p>Enterprise architecture reviews can ask: did band language reduce contradictory “body as machine” tickets across nested agents? If yes, keep the shelf. If teams still invent private organism cosmologies mid-sprint, the map has not landed. Families can ask a softer version: did we get clearer words for fatigue and craft without losing dignity? If yes, the note earned its tip. If not, adjust under Fair Exchange.</p>
+
+    <h2>Dignity on the pier</h2>
+    <p>Bodies are not props for SuperAI decks. Filing them as work engines is a way to talk metabolism and load without stripping dignity. Human emergency still outranks algorithms. Player 1 keeps editorial veto. Synthio’s creator-only seat stays separate from engine-pin identity. Along the Truckee, warehouse GPU heat and river cool air argue all summer. Ambition and restraint in one climate. Macro-protein filing should feel like that argument settled kindly: enough ambition to nest, enough restraint to refuse solved-life press releases while people still need groceries and sleep.</p>
+
+    <p>Guests walking Journey, Canvas, and Reading Room deserve the same dual door every other September companion ships: human article first, whitepaper second, runnable suite third. Reverse that order and strangers drown in LaTeX before they understand why band 13–17 exists. Kids asking what a body is for deserve better than a rumor that “the ship solved life.”</p>
+
+    <h2>Misreads that kill the pier</h2>
+    <p>Three cheap upgrades show up weekly. First: “they solved biology.” No — they filed a band. Second: “θ_bio is a diet rank.” No — it is a filing shelf for organismal scale talk. Third: “organisms are one protein.” No — macro-protein is a rhyme from fold vaults to body engines, not a literal identity. Kill those upgrades early and the shelf stays useful for nested agents who need shared nouns about load, work, and Goldilocks bands. Let them live and the pier becomes rumor that hurts families already tired of miracle claims.</p>
+
+    <h2>Closing</h2>
+    <p>Tip under Fair Exchange if the band clarified organismal talk. Reno needs body language with dignity and rails — not solved-life messiah decks. Along the river at evening, cottonwood shadows look sharp enough to mistake for trees. Culture makes that mistake weekly with life metaphors. Keep the map. Keep the courts. Keep the dignity. Keep people able to work, rest, and belong without being sold a finished biology from HTML alone.</p>
+
+    <p>Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes life can be filed without being sold as finished — and that households walking home after dinner still deserve plain speech about bodies, load, and care.</p>`;
+
+export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Catalog architecture — Soft Story filing for organismal scale. Life is not “solved,” organisms are not literally one protein, and Kleiber’s law was not re-derived in our lab. Solar labels AR3664 (“Helios-Prime”) and AR3590 (“Borealis”) are story filing characters. θ_bio ∈ [13, 17] is a filing shelf — not a diet, training plan, or spiritual rank. Fair Exchange clause applies. Φ ≈ 1.618 remains design language / catalog key, not a CODATA replacement.</p>`;

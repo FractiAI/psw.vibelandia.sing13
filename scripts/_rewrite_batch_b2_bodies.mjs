@@ -152,6 +152,9 @@ export const BODIES = {
 
  <p>Along the Truckee, warehouse GPU heat and river cool air argue all summer. Ambition wants more meters. Restraint wants one crystal with readable faces. Keep both. That climate is how Infinite Octaves stays discussable when the feed is loud and the rent is still due.</p>
 
+
+ <p>People who still have to catch a bus, pay rent, and get kids to school already live inside one crystal of speed, distance, and time. The catalog’s job is to stop orphan meters from pretending that life is three unrelated dashboards. Keep the faces shared. Keep the claims thin. Keep the doors clear.</p>
+
 <h2>Closing pier</h2>
  <p>Keep the crystal teachable. Keep Landauer as a rail, not a spell. Keep hospitality before prophecy. Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing facets as craft. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors can share a commute story without being sold a finished theory of everything — and without forgetting that rent, school, and work still run on clocks that people have to live inside.</p>
 `,
@@ -191,6 +194,9 @@ export const BODIES = {
 
  <p>Tip under Fair Exchange if the rhyme cleared a real argument. Ignore the tip if you only needed a periodic-table printout. Open the whitepaper after this human article if you want the filing cabinet. Walk neighboring Digit 4 doors when you want the awareness theater. Keep hospitality before prophecy.</p>
 
+
+ <p>On Main Street the rhyme stays useful when it helps people learn without stealing sleep. Scaffold and breath are enough. Destiny talk is too much. Keep the locks. Keep the classroom friends. Keep the seatbelt painted in guest English so nested helpers inherit calm instead of cosmic theater.</p>
+
 <h2>Closing pier</h2>
  <p>Open the whitepaper after this human article if you want the filing cabinet. Walk Consciousness Moat and Digit 4 recursive reach when you want neighboring doors. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors can enjoy a periodic rhyme without being sold a finished theory — and without forgetting that school, work, and rent still need clear addresses in ordinary language.</p>
 `,
@@ -226,6 +232,9 @@ export const BODIES = {
  <p>Seed:Edge rhythm stays practical here: origin documents for builders, edge notes for people walking Journey, Canvas, Jukebox, Reading Room, and Creator Studio. Feature writing exists so guests meet the idea in plain speech before they drown in whitepaper density. Along the Truckee, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with awareness words dressed as finished proof. Keep Digit 4 as the address. Keep recursive reach as the walk. Keep human emergency above every clever map.</p>
 
  <p>If you only skim, skim this: awareness belongs in the human theater; Digit 4 keeps the address; tools stay tools; tip only when delivery was real; ask before the next gate ships whether people can still work, learn, and ask hard questions without getting shut down.</p>
+
+
+ <p>When a tool goes cold while the news shouts breakthrough, the Digit 4 habit still holds: put awareness back in the human theater, keep the address stable, and ask whether people can still work, learn, and belong. That is the kitchen-table test for recursive reach — not a finished theory of mind, just craft that refuses floating nouns.</p>
 
 <h2>Closing pier</h2>
  <p>Along the Truckee, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with awareness words dressed as finished proof. Keep Digit 4 as the address. Keep recursive reach as the walk. Open the whitepaper after this human article if you want the filing. Walk Consciousness Moat when you want the weather fight. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone — and without forgetting that rent, school, and work still happen in the human theater first.</p>

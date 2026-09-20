@@ -35,6 +35,9 @@ export const BODIES = {
 
  <p>What changes if the index holds shows up in ordinary weeks. Fewer dialect islands mean fewer contradictory tickets. Cleaner demos mean fewer Friday myths that die on Monday. Clearer doors mean a guest can find the June shelf without paying confusion rent. People who earn a living writing briefs already know renamed rooms multiply meetings. Indexes refuse that multiplication without refusing wonder.</p>
 
+
+ <p>Indexes are hospitality for loud shelves. Manifestos multiply dialects. Shared pointers cool the room. Keep Digital Pru as the compute/broadcast naming layer, keep June mathematics findable, and keep households free of myth compressions that freeze hiring and thin the job board.</p>
+
 <h2>Closing pier</h2>
  <p>What changes if the index holds: fewer dialect islands, cleaner demos, clearer doors for people who still have rent due while the shelf grows. Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors can navigate a mathematics shelf without being sold a miracle card — and without forgetting that jobs and school still need honest maps.</p>
 `,
@@ -142,6 +145,9 @@ export const BODIES = {
 
  <p>The pier question is whether a hydrogen hypothesis can stay exploratory while still being useful. The ship’s answer is yes — if receipts stay lit, if QED stays the measured rail when the exploratory term vanishes, and if festival wonder never steals a diligence packet’s honesty. Keep school science and research jobs in view. Keep rent and work in view. Keep hospitality before prophecy.</p>
 
+
+ <p>Hydrogen remains the discipline test on purpose. Stay proportionate on the simplest atom and louder rooms get easier. Fail the test and every poster becomes a throne speech. Keep receipts. Keep school science honest. Keep research jobs protected by proportion when the feed wants miracles.</p>
+
 <h2>Closing pier</h2>
  <p>Keep the postulate exploratory. Keep the receipts lit. Keep human emergency above every clever map. Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes people can explore a hydrogen lattice without selling a finished theory — and without forgetting that school, work, and rent still need honesty more than they need a throne.</p>
 `,
@@ -179,6 +185,9 @@ export const BODIES = {
 
 
  <p>Connection without causation theater is how a loud week stays livable. File items together. Refuse forced authorship. Keep agency phones above feeds for hazard. Keep whitepaper tiers above screenshots for catalog claims. Keep dinner-table calm above cosmic theater. That literacy is the big picture this ship is willing to stand behind.</p>
+
+
+ <p>A loud scroll is not a finished map. Connection literacy is the map skill: bulletin yes, forced authorship no, agency phones first for hazard, whitepaper tiers for catalog claims, dinner-table calm above cosmic theater. That is how neighbors stay connected without being sold certainty from a single feed.</p>
 
 <h2>Closing pier</h2>
  <p>Big picture, small claims. Connection without causation theater. Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors can feel connected without being sold certainty from a single loud scroll — and without forgetting that school, work, and rent still need clear doors.</p>

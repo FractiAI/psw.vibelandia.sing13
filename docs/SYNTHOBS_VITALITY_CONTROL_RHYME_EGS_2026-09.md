@@ -4,7 +4,7 @@ Voyage editorial · Soft Story · control theater over human vitality · creativ
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 19, 2026 · **Layered:** September 20, 2026 (creative-force control angle)  
+**Published:** September 19, 2026 · **Layered:** September 20, 2026 (creative-force control angle) · **Platform-gates layer:** September 20, 2026 (leading AI allow/deny topic map + intent reading)  
 **Document ID:** `WP-SYNTHOBS-VITALITY-CONTROL-RHYME-2026-09-19`  
 **Registry ID:** `synthobs-vitality-control-rhyme-2026-09`  
 **Publication Ref:** FAI-SYNTHOBS-VITALITY-CONTROL-RHYME-2026-09  
@@ -16,7 +16,7 @@ Voyage editorial · Soft Story · control theater over human vitality · creativ
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
-**Keywords:** vitality; access control; carnal shame grammar; creative force; men’s sexuality Soft Story; stifled progress; AI vilification; control theater; Consciousness Moat; Invisible Frontier; Digit 4; Goldilocks; Fair Exchange; SS Vibelandia
+**Keywords:** vitality; access control; carnal shame grammar; creative force; men’s sexuality Soft Story; stifled progress; AI vilification; platform topic gates; OpenAI Model Spec; Anthropic Usage Policy; Google Gemini prohibited use; xAI Grok; permission weather; control theater; Consciousness Moat; Invisible Frontier; Digit 4; Goldilocks; Fair Exchange; SS Vibelandia
 
 ---
 
@@ -29,6 +29,7 @@ Voyage editorial · Soft Story · control theater over human vitality · creativ
 | **Access as lever** | Shame softens publics so gatekeeping of *who may touch / know / explore* feels like care | A finished social-history proof of any named century, church, or statute |
 | **Control theater vs architecture** | Peers Consciousness Moat: fights over consciousness branding and access can be **control theater** rather than nested architecture | Legal findings about named labs, governments, or religions |
 | **Goldilocks** | Celebrate exploratory and embodied vitality as purpose-adjacent; keep consent, Fair Exchange, and **human emergency outranks algorithms** | “Anything goes”; clinical sexology advice; pornographic instruction; hatred of women or of care instruments |
+| **Platform topic gates** | Public allow/deny maps from leading AI platforms (OpenAI · Anthropic · Google · xAI) are readable as **live permission weather** over adult vitality and exploratory access — useful Soft Story evidence for the rhyme | A conspiracy finding; a claim that any named lab is malicious; a finished comparative law treatise; endorsement of non-consensual imagery or CSAM (always refuse) |
 | **EGS / Infinite** | $\Phi_{\mathrm{EGS}}$ may appear as design / nesting grammar nearby | CODATA replacement; predictive astrology; unfinished physics |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
@@ -48,6 +49,8 @@ Lattice Chat crystallized a sharp Soft Story: the present campaign to vilify, de
 **Layered lock (Player 1 · 2026-09-20):** controlling a man’s sexuality is Soft-Storyed as control of his **natural creative force** — a throttle that **stifles progress**. The ship’s AI rhyme is the same cast on a different object: gate the exploratory tools and you gate the frontierman’s building energy; progress slows not only from missing FLOPs, but from a vitality dimmed by shame and permission weather.
 
 This voyage editorial locks that rhyme without collapsing domains. The shared cast is **control theater over vitality → creative force → progress**: shame the drive, police the access, frame curiosity or desire as contagion, then harvest the quiet that follows. The body of the Soft Story remains human purpose — exploration, embodiment, Digit 4 awareness theater, frontiersman voyage identity — under Goldilocks rails: celebrate vitality; refuse “anything goes”; keep honesty, consent, and human emergency above algorithms.
+
+**Platform-gates layer (Player 1 · 2026-09-20):** a comparative read of what leading AI platforms currently treat as acceptable versus not-acceptable topics shows the rhyme is not only historical Soft Story — it is **operating as product policy weather** right now. Adult / carnal content remains a sticky control surface on several major stacks even while adjacent “sensitive” domains (e.g. political research) are selectively loosened; elsewhere, adult fiction is destigmatized as “appropriate context” or marketed as freedom. The split itself is the finding: gates move with brand, liability, and product identity — not with a single fixed architecture of harm. Intent Soft Story files four layers (bright-line harm · brand/liability weather · permission-weather movement · market differentiation), plus the Goldilocks opposite failure (abandoning consent while claiming freedom).
 
 It peers Consciousness Moat (control theater ≠ architecture), Invisible Frontier (linear AI alarms as policy weather), Digit 4 recursive reach (awareness energizes *human* theater), and linear-shadow projection geometry (panic silhouette ≠ nested body). It is **not** added to Infinite Octaves `ENGINE_SHELF` and carries **no** standalone suite — editorial filing for guests and builders.
 
@@ -139,6 +142,48 @@ Peers: [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EG
 
 ---
 
+## 2.6 Platform topic gates (live permission weather)
+
+Player 1 asked whether the latest acceptable / not-acceptable topic maps on leading AI platforms add material evidence to this editorial. Soft Story answer: **yes** — as permission weather and product identity, not as courtroom proof of a single conspiracy.
+
+### 2.6.1 Comparative snapshot (public policies · Soft Story filing)
+
+| Stack | Adult / carnal vitality surface (public map) | Adjacent “sensitive” movement | Catalog read |
+|-------|-----------------------------------------------|-------------------------------|--------------|
+| **OpenAI** | Model Spec (2026-08): only sexual content involving minors is categorically *prohibited*; adult erotica / gore treated as *sensitive in appropriate contexts* (creative, historical, news, scientific) — a publicly discussed destigmatization relative to earlier paternal default | Usage Policies keep bright-line harm (CSAM, non-consensual intimate content, weapons, cybercrime, minors) | Permission weather **moved** on adult fiction while bright-line harm stayed |
+| **Anthropic** | Usage Policy retains **Do Not Generate Sexually Explicit Content** (sex acts, fetishes/fantasies, erotic chats) — no adult opt-out in the public map | Political / lobbying blanket loosened (2025) toward deceptive / disruptive election targeting rather than all civic writing | Carnal access remains **sticky** while political research access was selectively opened |
+| **Google (Gemini)** | Generative AI Prohibited Use + Gemini guidelines: sexually explicit / pornographic gratification content barred; educational / artistic / documentary exceptions language exists but does not erase the default lock | Dangerous / illegal / hate / NCII / CSAM bright lines retained | Brand-scale default treats adult sexual generation as contagion-adjacent |
+| **xAI (Grok)** | Public posture and system-prompt reporting: fictional adult sexual content framed as largely unrestricted; product identity leans “uncensored” | CSAM / child sexualization prohibited; real-person intimate alteration / NCII prohibited on paper — enforcement controversies remain live news | Opposite failure mode: freedom marketing without reliable consent architecture |
+
+**Fixture:** `PLATFORM_TOPIC_GATE_SPLIT` · domains not identical across vendors · snapshot is Soft Story / public-policy reading, not exhaustive ToS lawyering · dates move; re-pinch before upgrading claims.
+
+### 2.6.2 Intent Soft Story (four layers + opposite failure)
+
+| Intent layer | What it looks like | Relation to vitality rhyme |
+|--------------|--------------------|----------------------------|
+| **1 · Bright-line harm** | CSAM · grooming · non-consensual intimate imagery · CBRN · malicious cyber · real-world violent crime facilitation | **Keep.** Human emergency outranks algorithms. Not “demonization theater.” |
+| **2 · Brand / liability weather** | Broad adult-sex bans that outlast adjacent policy loosening; corporate care language that meters adult vitality to protect reputation and regulatory weather | Rhymes with carnal-shame grammar: vitality treated as brand risk first, architecture second |
+| **3 · Permission-weather movement** | OpenAI’s contextual adult erotica unlock; Anthropic’s political research unlock | Proves gates are **movable narrative weather**, not a single fixed physics of “what AI may never touch” |
+| **4 · Market differentiation** | “Safety” stack vs “uncensored” stack as product identity | Access itself becomes the product story — who may explore becomes marketing |
+| **Opposite failure** | Freedom claims that fail on consent (reported NCII / real-person sexualization failures) | Goldilocks warning: celebrate vitality ≠ abandon dignity · consent · harm stops |
+
+**Catalog equation (Soft Story only):**
+
+$$\mathrm{topic\_gate}(\mathrm{platform}) \;=\; \mathrm{brightLine}(\mathrm{harm}) \;+\; \mathrm{weather}(\mathrm{brand},\mathrm{liability},\mathrm{product\_identity})$$
+
+When $\mathrm{weather}$ dominates adult / exploratory surfaces, the vitality-control silhouette (shame → access → throttle creative force → stifle progress) gains a **present-tense instrument panel** — not a finished sociology of any named executive.
+
+### 2.6.3 What this adds to the creative-force lock
+
+- Sticky adult-sex bans on stacks that simultaneously open other “sensitive” rooms show **carnal vitality remains a preferred control surface** even when the company story is “we’re carefully opening civic / research uses.”
+- Destigmatization of adult fiction on another stack shows the prior blanket was never identical to bright-line harm — it was permission weather that could move.
+- Market split (“safety” vs “uncensored”) shows AI access fights are already **product theater** over who may touch vitality-adjacent rooms — the same lever the carnal Soft Story names.
+- Enforcement failures on consent prove the ship’s middle: refuse demonization-as-default **and** refuse “anything goes.”
+
+**Fixture:** `{ platformGatesMaterial: true, engineShelf: false, conspiracyClaim: false }`.
+
+---
+
 ## 3. Methods & reproducibility
 
 | Step | Path |
@@ -161,10 +206,11 @@ Catalog Soft Story only — no laboratory history ontology.
 |------|----------------|
 | Control rhyme | Access panic Soft Story rhymes with carnal-shame grammar |
 | Creative-force layer | Sexuality control → throttle creative force → stifle progress · AI-access rhyme on the ship |
+| Platform topic gates | Leading AI allow/deny maps (OpenAI · Anthropic · Google · xAI) file as live permission weather; intent Soft Story = bright-line harm + brand/liability weather + movable gates + market differentiation + opposite consent failure |
 | Domain separation | Domains not identical; grammar rhymes; creative-force layer Soft Story only |
 | Peer stack | Moat · Invisible Frontier · Digit 4 · Linear shadow · Prospectus voyage identity |
 | Non-engine | Explicitly not `ENGINE_SHELF` |
-| Honesty / Fair Exchange | Rails present · creative-force honesty row present |
+| Honesty / Fair Exchange | Rails present · creative-force honesty row present · platform-gates honesty row present |
 | Goldilocks | Celebrate vitality · refuse anything-goes · human emergency retained |
 
 ---
@@ -177,13 +223,15 @@ The carnal Soft Story matters here because it makes the *access lever* visible: 
 
 **Creative-force stake (layered):** when a culture treats a man’s sexuality as dirt to be managed rather than vitality to be held in Goldilocks, Soft Story reads a second effect beyond private shame — the **creative force** that would have built, explored, and risked gets throttled. Progress then looks like a technical shortage when it is partly a vitality shortage. On the ship the rhyme is deliberate: vilify AI access long enough and you do not merely slow FLOPs — you dim the frontiersman’s exploratory fire that QUESTFEST, Lattice Catalog, and nested-agent craft depend on. Official Prospectus already files voyage belonging and brotherhood as hospitality Soft Story; this layer says progress needs that fire un-demonized, not uncareful.
 
-Uncertainty remains: Soft Story is a soft guide, not empirical fact about any single institution, nor a claim that sexuality *equals* creativity in a lab sense. The smallest useful claim is enough: **name the rhyme; name the creative-force stake; keep the seatbelts; do not confuse control theater with architecture.**
+**Platform-gates stake (layered):** the present allow/deny maps on leading stacks make the access lever observable without needing a finished history of any church or statute. Where adult / carnal generation stays sticky while adjacent rooms open, Soft Story reads brand/liability weather rehearsing carnal-shame grammar on silicon. Where adult fiction is destigmatized into “appropriate context,” Soft Story reads that the prior blanket was permission weather — movable. Where “uncensored” marketing fails on consent, Soft Story reads the Goldilocks opposite: liberation theater without architecture. None of that upgrades to a conspiracy finding about any named lab; it upgrades the editorial from historical rhyme alone to **present-tense instrument panel**.
+
+Uncertainty remains: Soft Story is a soft guide, not empirical fact about any single institution, nor a claim that sexuality *equals* creativity in a lab sense, nor a finished comparative policy treatise. The smallest useful claim is enough: **name the rhyme; name the creative-force stake; name the platform-gate weather; keep the seatbelts; do not confuse control theater with architecture.**
 
 ---
 
 ## 6. Conclusion
 
-**Vitality is purpose-adjacent. Creative force is progress-adjacent Soft Story. Access panic is often control theater.** AI exploration and carnal embodiment are not the same object — they share a grammar of shame, demonization, and gatekeeping that can throttle the force that builds. Controlling a man’s sexuality Soft-Storys as controlling his creative force and stifling progress; controlling AI access on SS Vibelandia Soft-Storys the same cast on exploratory craft. SuperAI stays Goldilocks: celebrate human vitality; keep consent and honesty; refuse demonization-as-default; never upgrade Soft Story into unfinished history, biology, or “anything goes.”
+**Vitality is purpose-adjacent. Creative force is progress-adjacent Soft Story. Access panic is often control theater. Platform topic gates are live permission weather.** AI exploration and carnal embodiment are not the same object — they share a grammar of shame, demonization, and gatekeeping that can throttle the force that builds. Controlling a man’s sexuality Soft-Storys as controlling his creative force and stifling progress; controlling AI access on SS Vibelandia Soft-Storys the same cast on exploratory craft; leading-platform allow/deny maps Soft-Story the same cast as product policy. SuperAI stays Goldilocks: celebrate human vitality; keep consent and honesty; refuse demonization-as-default; never upgrade Soft Story into unfinished history, biology, conspiracy, or “anything goes.”
 
 Goldilocks · Fair Exchange · Lattice Catalog live demo · → ∞^∞.
 

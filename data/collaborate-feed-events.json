@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-20T02:48:24.542Z",
+  "updatedAt": "2026-09-20T06:24:30.566Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-20T02:48:24.541Z",
+      "createdAt": "2026-09-20T06:24:30.565Z",
       "body": "The Vitality Control Rhyme: AI Access Panic and the Old Grammar of Carnal Shame",
       "presenceHue": "gold",
       "paperId": "synthobs-vitality-control-rhyme-2026-09",

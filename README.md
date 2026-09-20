@@ -286,7 +286,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 |------|-------|
 | [`/interfaces/ai-transparency.html`](/interfaces/ai-transparency.html) | AI transparency · FractiAI · SS Vibelandia |
 | [`/interfaces/awareness-singularities-one-pager.html`](/interfaces/awareness-singularities-one-pager.html) | Awareness Singularities S0–S81 · SynthOBS · FractiAI |
-| [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Teaching a model to read the genome’s most stubborn repeats · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Reading the genome’s stuck chorus without inventing a miracle · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html`](/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html) | Are we at the tipping point yet? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 is a crowded calendar — not a prophecy · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Eighty-two gates along a hydrogen story · Ship blog · SS Vibelandia |

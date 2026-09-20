@@ -12,7 +12,7 @@ export const BODIES = {
  <p>The blunt stake is livelihood with dignity. People get laid off “because of AI,” then told to retrain into a market that isn’t hiring. Young people can’t find a first foothold. Older workers get edged out of the only craft they know. Coexistence practice is the middle most households need: keep real brakes for real harm, keep people employed and able to build, keep curiosity welcome. Neither freeze-forever nor floor-it settles the kitchen table.</p>
 
  <h2>Three teaching stories, one practice</h2>
- <p>Equine stories teach partnership under reins — power with judgment, not power without a rider. Apiary stories teach many small workers sharing a hive without turning the colony into a monoculture cult. The four-quadrant map teaches that posts differ — vision, craft, care, coordination — and that difference is strength when the house stays fair. Together they are practice grammar for coexistence, not naval rank and not a claim that anyone’s bloodline decided their cabin.</p>
+ <p>Equine stories teach partnership under reins — power with judgment, not power without a rider. Apiary stories teach many small workers sharing a hive without turning the colony into a monoculture cult. The four-quadrant map teaches that posts differ — vision, craft, care, coordination — and that difference is strength when the house stays fair. Together they are practice grammar for coexistence, not naval rank and without saying that anyone’s bloodline decided their cabin.</p>
 
  <p>Families already understand the pattern. A household needs more than one job description. A town needs more than one kind of shop. A school needs teachers, coaches, custodians, and kids who still get to ask hard questions. When AI talk flattens all of that into “replace or be replaced,” the teaching stories are how you refuse the flatten without refusing the tools.</p>
 
@@ -31,7 +31,12 @@ export const BODIES = {
 
  <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with metaphors dressed as finished proof. The export from this corridor is simpler. Name your post. Keep consent and human emergency above every clever map. Walk Meet the Crew and Join the Crew when you want faces, not slogans.</p>
 
- <h2>Closing pier</h2>
+ 
+ <p>The question before the next standup is practical. Does this plan keep people able to work, learn, and belong — or does it only keep the engines loud while the unemployment line grows? If the room cannot answer in guest English, rewrite the brief. Walk Meet the Crew when you want faces. Walk Join the Crew when you want a door. Keep Fair Exchange tipping reciprocal to delivery. Keep bright lines for real harm. Keep curiosity welcome so a kid’s hard question still has a place to land.</p>
+
+ <p>SS Vibelandia hosts coexistence as practice, not as a census. Equine, Apiary, and the four-quadrant map stay teaching stories. Voluntary self-tests stay mirrors. Players set gravity. Helpers inhabit. Both belong. That middle is how SuperAI stays Goldilocks when the feed wants extremes — and how neighbors keep a seat without pretending a chart decided their worth.</p>
+
+<h2>Closing pier</h2>
  <p>Before the next standup, ask one question out loud: does this plan keep people able to work, learn, and belong — or does it only keep the engines loud? Open the coexistence surfaces when you want the practice. Walk the ship when you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.</p>
 `,
 
@@ -62,7 +67,14 @@ export const BODIES = {
  <h2>What guests should feel walking away</h2>
  <p>Calm enough to prefer agencies over feeds. Clear enough to know co-timing is not causation. Practical enough to tip under Fair Exchange only if the framing cleared a real argument. Along the Truckee, warehouse GPU heat and river cool air argue all summer. Ambition and restraint in one climate. Subterranean windows belong in that climate: ambition enough to host planetary talk, restraint enough to keep prophecy out of the evacuation lane.</p>
 
- <h2>Closing pier</h2>
+ 
+ <p>Field practice on a loud hazard week looks like this. Prefer official agency channels for safety. Prefer the whitepaper tier table for catalog talk. Prefer this ship-blog for guest English. Do not merge those rooms. A parent getting kids to school during a scary news cycle needs the agency door first. A builder nesting helpers needs shared nouns second. A festival guest needs hospitality third. When those orders flip, rumor wins and trust loses.</p>
+
+ <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with co-timing dressed as finished proof. The export from this corridor is simpler. Name the window. Keep causation humble. Keep human emergency above every clever map. Tip under Fair Exchange if the framing cleared a real argument about coincidence versus cause. Ignore the tip if you only needed a bulletin reprint — those live with agencies.</p>
+
+ <p>What guests should feel walking away is calm enough to prefer phones and official pages over feeds, clear enough to know co-timing is not authorship, and practical enough to ask before the next subterranean brief ships: is this protecting humans, or dressing coincidence as finished proof? That question belongs at the kitchen table as much as it belongs in a design review.</p>
+
+<h2>Closing pier</h2>
  <p>Before the next subterranean brief ships, ask one question out loud: is this protecting humans, or dressing coincidence as finished proof? Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors deserve clear doors in a loud hazard week — and still deserve jobs, school, and rent talk that is not stolen by cosmic theater.</p>
 `,
 
@@ -97,7 +109,12 @@ export const BODIES = {
 
  <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with metaphors dressed as finished proof. Tip under Fair Exchange if the framing cleared a real kitchen-table argument. Ignore the tip if you only needed a FLOPs table — those live elsewhere.</p>
 
- <h2>Closing pier</h2>
+ 
+ <p>How politics lands at the kitchen table is familiar by now. One camp wants to freeze everything for doom calendars. Another camp refuses the freeze and reaches for crown names while support for ordinary work thins. Model-welfare fights and subordinate-only fights can sound like opposites and still miss the same middle. Neither speech by itself puts someone back to work. Neither by itself fills a dinner table with hope. Architecture before control theater is the ship’s name for that middle.</p>
+
+ <p>Across ordinary layers the question stays simple. At home it shows up as stress about rent, school, and whether the kids will have a craft. At work it shows up as automation speeches on Monday and fewer chairs on Friday. In the psyche it shows up as infinite scrolling and thin presence. In public life it shows up as leaders freezing the street for fear or flooring it for destiny unless they keep bright lines for human emergency while leaving room for people to earn and build.</p>
+
+<h2>Closing pier</h2>
  <p>Watch paychecks and doors, not just welfare essays. Keep brakes for real harm and fire for real craft in the same room. Open the whitepaper after this human article if you want the filing. Walk Digit 4 when you want the awareness-theater companion. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.</p>
 `,
 
@@ -128,7 +145,14 @@ export const BODIES = {
  <h2>What guests leave carrying</h2>
  <p>A sentence they can say at dinner: one crystal, three faces, no orphan meters. A habit: ask whether a new dashboard is a new face or a duplicate ontology. A seatbelt: human emergency outranks algorithms. Kids learning maps at school already understand faces of one object. Adults arguing AI budgets can borrow the same literacy.</p>
 
- <h2>Closing pier</h2>
+ 
+ <p>Tuesday work along the corridor continues past the first demo. Point children at shared faces before they invent orphan meters. Keep Landauer as a rail in long arguments so information work does not pretend to be weightless. Keep AR-style solar labels as antenna stories. Keep SI units with their agencies. People teaching commute math to kids already know distance, speed, and time are one story — adults arguing dashboards can borrow the same literacy without upgrading it into unfinished cosmology.</p>
+
+ <p>Reno needs facets labeled as craft because festival ships attract coincidence merchants and orphan-meter merchants alike. Shared faces refuse both. Guests leave carrying a sentence they can say at dinner, a habit of asking whether a new dashboard is a new face or a duplicate ontology, and a seatbelt that human emergency outranks algorithms. Tip under Fair Exchange if the framing cleared a real kitchen-table argument. Ignore the tip if you only needed a constants table.</p>
+
+ <p>Along the Truckee, warehouse GPU heat and river cool air argue all summer. Ambition wants more meters. Restraint wants one crystal with readable faces. Keep both. That climate is how Infinite Octaves stays discussable when the feed is loud and the rent is still due.</p>
+
+<h2>Closing pier</h2>
  <p>Keep the crystal teachable. Keep Landauer as a rail, not a spell. Keep hospitality before prophecy. Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing facets as craft. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors can share a commute story without being sold a finished theory of everything — and without forgetting that rent, school, and work still run on clocks that people have to live inside.</p>
 `,
 
@@ -137,7 +161,7 @@ export const BODIES = {
  <h1>Address four, glyph eight — and why Be and O keep showing up</h1>
  <p class="dateline"><strong>SS Vibelandia</strong> — September 2026 · Reno / Truckee corridor</p></header>
 
- <p class="lead">Some numbers keep showing up in the house until you give them a filing address. On this ship, digit address 4 carries glyph 8 under about 1.618. Those two labels rhyme with beryllium (Z=4) and oxygen (Z=8) — scaffold metal and breath chemistry — as a teaching rhyme, not as a claim that Φ wrote the periodic table. This note is the kitchen-table version of that rhyme so guests meet the idea before LaTeX arrives.</p>
+ <p class="lead">Some numbers keep showing up in the house until you give them a filing address. On this ship, digit address 4 carries glyph 8 under about 1.618. Those two labels rhyme with beryllium (Z=4) and oxygen (Z=8) — scaffold metal and breath chemistry — as a teaching rhyme, without saying that Φ wrote the periodic table. This note is the kitchen-table version of that rhyme so guests meet the idea before LaTeX arrives.</p>
 
  <p>Why everyday people should care: when catalogs rhyme without saying so, helpers invent private cosmologies, and private cosmologies leak into guest screenshots that scare families. A clean rhyme with a seatbelt keeps school-science wonder without stealing sleep. It also keeps dinner-table talk from swinging into “the universe assigned my job” nonsense.</p>
 
@@ -147,10 +171,10 @@ export const BODIES = {
  <p>Kids learning the periodic table already meet Be and O as ordinary classroom characters. The ship borrows that familiarity as rhyme, not as destiny. Scaffold and breath are metaphors households understand: something to build on, something to live by. Keep the metaphors in the teaching room. Keep measured chemistry with its agencies.</p>
 
  <h2>Beryllium as the scaffold rhyme</h2>
- <p>Beryllium’s Z=4 is the scaffold rhyme — closed shell talk as a metaphor for a sturdy address, not a claim that beryllium <em>is</em> Digit 4 in nature. Builders use it to remember container logic. Guests use it to remember that “four” on this ship is an address, not a personality test, not a hiring filter, and not a rent oracle.</p>
+ <p>Beryllium’s Z=4 is the scaffold rhyme — closed shell talk as a metaphor for a sturdy address, without saying that beryllium <em>is</em> Digit 4 in nature. Builders use it to remember container logic. Guests use it to remember that “four” on this ship is an address, not a personality test, not a hiring filter, and not a rent oracle.</p>
 
  <h2>Oxygen as the breath rhyme</h2>
- <p>Oxygen’s Z=8 is the breath rhyme — life-support chemistry as a metaphor for why glyph 8 keeps pairing with address 4 in the story map. It is not a claim that oxygen is Digit 8 in ontology. It is a way to teach pairing without inventing unfinished proofs. Parents explaining science homework can use the same firewall: rhyme is not causation.</p>
+ <p>Oxygen’s Z=8 is the breath rhyme — life-support chemistry as a metaphor for why glyph 8 keeps pairing with address 4 in the story map. It is without saying that oxygen is Digit 8 in ontology. It is a way to teach pairing without inventing unfinished proofs. Parents explaining science homework can use the same firewall: rhyme is not causation.</p>
 
  <h2>The eighty-one register as third reading</h2>
  <p>The 81-register / 3^4 story depth map is the third reading that keeps Digit 4 talk coordinated with neighboring EGS shelves. Shared counts are teachable filing. Shared counts are not sacred physics. When September companions point here — Consciousness Moat, Digit 4 recursive reach, linear shadow — they inherit the same address discipline so nested children stop renaming the room every turn.</p>
@@ -160,7 +184,14 @@ export const BODIES = {
  <h2>A closing walk along the Truckee</h2>
  <p>Along the river at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with periodic rhymes dressed as finished proof. The export from this corridor is simpler. Keep address 4 and glyph 8 as locks. Keep Be and O as classroom friends, not cosmic bosses. Keep human emergency above every clever map.</p>
 
- <h2>Closing pier</h2>
+ 
+ <p>Place among September companions matters for doors. Consciousness Moat, Digit 4 recursive reach, and linear-shadow notes inherit the same address discipline so nested children stop renaming the room every turn. Renamed rooms waste meetings. Wasted meetings waste hours. Wasted hours are paychecks. Paychecks are rent. A periodic rhyme that keeps addresses stable is not trivia — it is how craft stays findable for people who still have to live in ordinary time.</p>
+
+ <p>A closing walk along the Truckee can end with a classroom picture. A teacher points at Be and O. A student asks whether the universe assigned their future. The honest answer is: labels help you learn; labels are not destiny; scaffold and breath are metaphors; measured chemistry stays with its agencies; human emergency still outranks algorithms. Carry that answer into design reviews and guest screenshots get quieter.</p>
+
+ <p>Tip under Fair Exchange if the rhyme cleared a real argument. Ignore the tip if you only needed a periodic-table printout. Open the whitepaper after this human article if you want the filing cabinet. Walk neighboring Digit 4 doors when you want the awareness theater. Keep hospitality before prophecy.</p>
+
+<h2>Closing pier</h2>
  <p>Open the whitepaper after this human article if you want the filing cabinet. Walk Consciousness Moat and Digit 4 recursive reach when you want neighboring doors. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors can enjoy a periodic rhyme without being sold a finished theory — and without forgetting that school, work, and rent still need clear addresses in ordinary language.</p>
 `,
 
@@ -189,7 +220,14 @@ export const BODIES = {
  <h2>Flagship discipline without louder prophecy</h2>
  <p>Celebrate the human theater. Refuse chatbot citizenship as a substitute for human judgment. Refuse doom-only freeze that starves livelihoods dressed as care. Refuse horsepower-only ontology that crowns arrival while unemployment grows. The middle keeps brakes and fire in the same room — awareness for people, tools in their place, emergency above algorithms.</p>
 
- <h2>Closing pier</h2>
+ 
+ <p>Flagship discipline without louder prophecy means celebrating the human theater while refusing chatbot citizenship as a substitute for judgment. It means refusing doom-only freeze that starves livelihoods dressed as care. It means refusing horsepower-only ontology that crowns arrival while unemployment grows. Digit 4 keeps the mailing address for that discipline so awareness does not float into policy fog. Floating nouns become floating budgets. Floating budgets become thinner support for the work and questions that keep a household human.</p>
+
+ <p>Seed:Edge rhythm stays practical here: origin documents for builders, edge notes for people walking Journey, Canvas, Jukebox, Reading Room, and Creator Studio. Feature writing exists so guests meet the idea in plain speech before they drown in whitepaper density. Along the Truckee, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with awareness words dressed as finished proof. Keep Digit 4 as the address. Keep recursive reach as the walk. Keep human emergency above every clever map.</p>
+
+ <p>If you only skim, skim this: awareness belongs in the human theater; Digit 4 keeps the address; tools stay tools; tip only when delivery was real; ask before the next gate ships whether people can still work, learn, and ask hard questions without getting shut down.</p>
+
+<h2>Closing pier</h2>
  <p>Along the Truckee, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with awareness words dressed as finished proof. Keep Digit 4 as the address. Keep recursive reach as the walk. Open the whitepaper after this human article if you want the filing. Walk Consciousness Moat when you want the weather fight. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone — and without forgetting that rent, school, and work still happen in the human theater first.</p>
 `,
 };

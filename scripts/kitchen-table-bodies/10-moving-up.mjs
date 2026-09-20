@@ -1,0 +1,36 @@
+/** Kitchen-table rewrite · moving up the stack */
+export const file = 'blog-moving-up-the-stack-2026-09.html';
+
+export const body = `<p class="lead">Moving up the stack is not a slogan about climbing corporate ladders while paychecks thin. On this ship it is a three-word weather report: cool · harmonize · scale. Cool means less thrash and less token burn. Harmonize means shared shelves so nested helpers stop inventing private religions mid-sprint. Scale means nesting care that still leaves room for people to earn a living, ask hard questions, and keep craft on Tuesday. If you have watched a company announce “AI transformation” while hours get cut and the job board goes quiet, you already know why this pier starts at the kitchen table.</p>
+
+    <p>Coastal decks often price Lattice as if it lived next to hubs and IDEs. The $7.5B figure was a peer-shelf misread — treating nesting architecture like another coding toy. Coding receipts stay on the receipt shelf. Moving up the stack is the valuation companion that asks a different question: what happens when you cool burn, harmonize helpers, and scale nested care instead of only buying louder engines? Families asking whether the kids will have a craft already live inside that question.</p>
+
+    <h2>Cool without freezing livelihoods</h2>
+    <p>Cool is not “pause forever because the machines might end the world.” Cool is less thrash: fewer tool safaris, fewer contradictory dumps, fewer invoices that buy fog. Real harm still deserves brakes — kids, real crime, real weapons. Those brakes are not the same as starving curiosity and ordinary building, then calling the empty paycheck “safety.” Households feel the difference when a tool that used to help goes cold while rent still comes due.</p>
+
+    <p>On receipts, cool shows up as smaller diffs, fewer roam loops, and briefs that refuse to reinvent the river every sprint. Peer Lattice versus vibe coding for paired Cursor weather. Peer Invisible Frontier when linear warnings stay inside horsepower-only frames. Cool is hospitality for the invoice and for the next human who has to maintain the work.</p>
+
+    <h2>Harmonize without velvet ropes</h2>
+    <p>Harmonize means shared nouns across nested helpers: Seed:Edge, MCA rhythm, Digits × Octaves as Story-depth map, about 1.618 as nesting grammar. It does not mean a private club where only crowned experts may try. Vitality Control and Consciousness Moat peer when access fights dress up as care. Keys you hold yourself, invitations that stay clear, doors that still open for curious guests — that is harmonize at street level.</p>
+
+    <p>Parents already harmonize a household without calling it architecture: shared chore lists, shared school calendars, shared dinner times. When every kid invents a private schedule, the living room becomes a war. Nested agents are not children, but the rhyme holds: shared shelves beat dialect islands. Main Street shops that share a recipe board ship food faster than kitchens that reinvent dinner from scraps every night.</p>
+
+    <h2>Scale without horsepower-only theater</h2>
+    <p>Scale here is nested care depth — not infinite measured physics tiers and not unbounded API spend. Infinite Octaves means recursive hospitality with rails. SuperAI stays Goldilocks when it refuses both extremes: doom-only freeze that starves livelihoods dressed as care, and horsepower-only ontology that crowns arrival while unemployment lines grow. Watch paychecks and doors, not just press releases.</p>
+
+    <p>Enterprise reviewers who only wanted a FLOPs table will be disappointed. Guests who wanted a kitchen-table argument about why nesting can cool burn and keep people building will find a chart. Tip under Fair Exchange if the framing cleared a real valuation fight at work. Adjust when delivery is thin.</p>
+
+    <h2>What the suite and whitepaper are for</h2>
+    <p>Open the whitepaper after this human article. Run the research suite when you quote empirics. Keep JSON receipts beside public claims. About 1.618 stays design language for nesting depth unless honesty tables say otherwise — and even then it does not replace official constants tables. Silicon-first auditors still begin at the CMOS protonic bridge. Moving up the stack rides as an application companion on the Infinite Octaves sync shelf — cool · harmonize · scale as valuation grammar, not as a prophecy that markets must obey.</p>
+
+    <p>Along the Truckee corridor, warehouse GPU heat and river cool air argue all summer. That climate is the product metaphor: ambition and restraint in one valley. Coastal chrome often ships heat without cool air. Nevada prints both. Families walking after dinner still need both too — energy to build, cool enough air to breathe.</p>
+
+    <h2>How executives mishear the three words</h2>
+    <p>Some hear “cool” as freeze hiring and freeze curiosity. Some hear “harmonize” as centralize control until doors chill. Some hear “scale” as buy more racks and call it destiny. All three misreads miss the household middle: keep real brakes for real harm, keep people employed and able to learn, keep nested helpers coherent without turning the street into a compliance theater.</p>
+
+    <p>The pacing paradox peer notes the trap of slowing a race only to keep control of the same track. Moving up the stack asks whether the track should remain the only track. Invisible Frontier answers linear anxiety with a second map. Consciousness Moat separates control theater from architecture. Read them as a corridor. People who only wanted a winner for the timeline wars can keep the wars. People who needed a chart for Tuesday get this pier.</p>
+
+    <h2>Closing pier</h2>
+    <p>Cool the burn. Harmonize the shelves. Scale nested care without mistaking louder engines for a good life. Watch paychecks, job boards, school footholds, and curiosity doors — not only breakthrough language. Open the whitepaper when you want the filing cabinet. Walk QUESTFEST when you want the floor under your feet. Tip if utility landed. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold a valuation fairy tale from a headline alone.</p>`;
+
+export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Valuation / architecture companion Soft Story — cool · harmonize · scale as nested-care grammar under Φ ≈ 1.618. Not a market prediction, not a promise of invoice cuts, not a CODATA replacement. Coding receipts stay on their receipt shelf; this note is the peer-shelf correction to pricing Lattice as a hub/IDE twin. Human emergency still outranks algorithms.</p>`;

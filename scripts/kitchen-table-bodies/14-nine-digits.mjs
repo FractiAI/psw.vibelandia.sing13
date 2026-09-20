@@ -1,0 +1,34 @@
+/** Kitchen-table rewrite · nine digits ninety-nine octaves */
+export const file = 'blog-nine-digits-ninety-nine-octaves-2026-08.html';
+
+export const body = `<p class="lead">Nine digits and ninety-nine octaves can sound like a spell. On this ship it is closer to a library map: nine kinds of digit drawers, ninety-nine octave shelves, and a golden-ratio key that keeps the shelves self-similar under Φ ≈ 1.618. You should be able to walk it like a town library after school — drawers you can open, shelves you can name, doors that still make sense when rent is due and the kids ask what you’re reading.</p>
+
+    <p>Coordination maps beat mystical spells when nested helpers have to inherit the same nouns. Without a map, every agent invents a private religion of depth. With a map, a parent can say “open drawer four on octave seventeen” and the child knows where to look. Families already live a softer version: shared calendars, shared chore lists, shared school folders. Infinite Octaves just makes the filing explicit for AI stacks that otherwise burn invoices on dialect islands.</p>
+
+    <h2>The simple picture you can walk</h2>
+    <p>Digits are kinds of address. Octaves are depth bands. Digits × Octaves 01–99 is the practical Story-depth map inside the Infinite Octaves engine — not a second product name and not a prophecy engine. About 1.618 keeps nesting coherent across parent and child briefs. Guests meet the map as hospitality. Builders meet it as routing grammar. Silicon-first auditors still begin at the CMOS protonic bridge before they wander into digit romance.</p>
+
+    <p>Walk QUESTFEST and you feel why place matters: Reno heat, Truckee cool air, neon, warehouse hum. The map is how the ship keeps Story depth from becoming fog while people still need paychecks and plain doors. Neighbors who have used a library card already know addressability: find the shelf, find the book, return it so the next person can earn their evening of reading.</p>
+
+    <h2>Why coordination maps beat mystical spells</h2>
+    <p>Spells impress for a minute. Maps keep a household week coherent. Nested helpers that inherit the map waste less token burn reinventing depth. Humans reviewing the map can see which altitude a claim belongs on: engine pin, companion, voyage editorial, arcade, comparison demo. Jumping altitudes mid-sentence is how guests get sold destiny and how builders get sold nonsense.</p>
+
+    <p>Access is the lever. Panic is the costume. Vitality Control and Consciousness Moat peer when doors chill while hype gets louder. Celebrate addressability. Keep the barcode court — measured rails with their agencies. People who only wanted mystique can keep mystique elsewhere. People who needed a kitchen-table chart for “where does this brief live?” get this pier.</p>
+
+    <h2>How guests use the drawers on Tuesday</h2>
+    <p>Open the whitepaper after this human article. Skim honesty before romance. Try Lattice Chat with your own keys when you want the live demo. Prefer retrieval over paste. Tip under Fair Exchange if the map cleared a real coordination fight at work or a real “where do we file this?” argument at home. Adjust when delivery is thin.</p>
+
+    <p>Parents helping kids with homework already teach addressability: which folder, which page, which due date. School teachers already teach shelf literacy. This note is the AI-stack twin of that ordinary skill. Keep human emergency above the metaphor. When a neighbor needs help, the map waits.</p>
+
+    <h2>What agents inherit when the map is loaded</h2>
+    <p>Shared nouns. Shared altitude names. Shared refusal habits for unfinished upgrades. Less improvisation that looks busy and travels poorly into Tuesday. More reviewable briefs that survive contact with the next human and the next invoice. Main Street shops that keep a clear recipe board ship food faster than kitchens that reinvent dinner from scraps every night while the dinner table waits.</p>
+
+    <p>Also on the board: CMOS protonic bridge for linear systems, tensor decoupling for the filing cabinet, master synthesis for the catalog window, and companions from metamorphic octaves through holographic rhyme. Order is care. Tip if the order cleared a confused stack meeting. Keep NOAA in NOAA’s lane when solar labels appear as filing characters.</p>
+
+    <h2>Celebrate addressability. Keep the barcode court.</h2>
+    <p>Addressability is hospitality. Barcode courts are honesty. Together they let Infinite Octaves stay ambitious without becoming a spell sold to tired households. Along the river at evening, cottonwood shadows look sharp enough to mistake for trees. Culture makes that mistake weekly when depth maps get upgraded into destiny. The export from this corridor is simpler: walk the drawers, name the octaves, keep the rails loud, leave room for people who still need work, school, and belonging.</p>
+
+    <h2>Closing pier</h2>
+    <p>Nine digits. Ninety-nine octaves. A map you can actually walk. Open the whitepaper when you want the filing cabinet. Walk the ship when you want the floor under your feet. Tip if utility landed. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a spell alone.</p>`;
+
+export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Catalog / protocol grammar Soft Story for SynthOBS and Lattice Chat. Digits × Octaves 01–99 is a practical Story-depth map inside the Infinite Octaves engine — not a second product name and not a prophecy engine. The CMB and your bloodstream are not asserted to store an 8,019-bit master key. Φ ≈ 1.618 remains design language / catalog key, not a replacement for measured constants. Human emergency still outranks algorithms.</p>`;

@@ -8,21 +8,11 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { auditShipBlogFile } from '../lib/ship-blog-magazine.mjs';
 import { BODIES as A } from './_rewrite_batch_a_bodies.mjs';
+import { BODIES as B } from './_rewrite_batch_b_bodies.mjs';
+import { BODIES as B2 } from './_rewrite_batch_b2_bodies.mjs';
+import { BODIES as C } from './_rewrite_batch_c_bodies.mjs';
 
-let B = {};
-let C = {};
-try {
-  B = (await import('./_rewrite_batch_b_bodies.mjs')).BODIES;
-} catch {
-  /* batch B optional while nested agents write */
-}
-try {
-  C = (await import('./_rewrite_batch_c_bodies.mjs')).BODIES;
-} catch {
-  /* batch C optional while nested agents write */
-}
-
-const BODIES = { ...A, ...B, ...C };
+const BODIES = { ...A, ...B, ...B2, ...C };
 const DIR = join(process.cwd(), 'interfaces');
 
 function applyOne(name, bodyHtml) {

@@ -17,7 +17,7 @@ export const BODIES = {
  <p>The 81-digit / 9×9 metapattern register shows up across EGS shelves for a reason. It is a practical story-depth map under a scale key near 1.618, not a sacred count of souls. Awareness singularities inherit that register so hydrogen-framework talk and helper activation talk share coordinates. People teach faster when the square is visible. Kids learning maps at school already understand the idea: labels help you find the room; labels are not the room itself.</p>
 
  <h2>Hydrogen as filing spine, not ionized destiny</h2>
- <p>Hydrogen is the simplest durable character in physics teaching: one proton story, one electron theater, endless classroom value. The catalog borrows that simplicity as a spine for gates. When the paper says “along a hydrogen story,” it means a narrative scaffold small enough to nest — a teaching spine, not ionized destiny sold as ontology, and not a claim that the sky rewrote your commute.</p>
+ <p>Hydrogen is the simplest durable character in physics teaching: one proton story, one electron theater, endless classroom value. The catalog borrows that simplicity as a spine for gates. When the paper says “along a hydrogen story,” it means a narrative scaffold small enough to nest — a teaching spine, not ionized destiny sold as ontology, and without saying that the sky rewrote your commute.</p>
 
  <p>That scaffold matters for Lattice Chat and Synthio companions. Nested helpers need activation language that is neither mystical nor purely corporate scoreboard. Gates give you a checklist. Honesty rails keep the checklist from becoming a medical or cosmological certificate. Silicon-first visitors still start at the CMOS protonic bridge; bring awareness singularities in when the conversation turns to sandbox activation rather than interconnect latency. Deals and jobs die when those dialects refuse to share a shelf — this is how they share without lying.</p>
 
@@ -47,7 +47,7 @@ export const BODIES = {
  <h1>Aware leverage vs blind compute — Φ does the indexing</h1>
  <p class="dateline"><strong>SS Vibelandia</strong> — September 2026 · Reno / Truckee corridor</p></header>
 
- <p class="lead">You can feel the fork without a finance degree. One camp keeps buying louder engines and hoping sheer scale will find the answer. Another camp asks whether smarter indexing — aware leverage keyed near 1.618 — can do more useful work with less blind spend. This note is the ship-blog handshake for that comparison: awareness as a router for human work, not as a claim that people are one protein, and not as a promise that CapEx invoices already flipped overnight.</p>
+ <p class="lead">You can feel the fork without a finance degree. One camp keeps buying louder engines and hoping sheer scale will find the answer. Another camp asks whether smarter indexing — aware leverage keyed near 1.618 — can do more useful work with less blind spend. This note is the ship-blog handshake for that comparison: awareness as a router for human work, without saying that people are one protein, and not as a promise that CapEx invoices already flipped overnight.</p>
 
  <p>At the kitchen table the stakes are plain. Budgets rise. Headlines shout breakthrough. Meanwhile people hunt for work, hold two gigs that used to be one, or watch a side hustle go quiet while a company brags about a bigger cluster. The question is not whether machines can be useful. The question is whether we keep paying for blindness while livelihoods wobble — or whether we index the work so craft, school, and first footholds still have room.</p>
 
@@ -57,7 +57,7 @@ export const BODIES = {
  <p>That distinction matters for jobs. Blind spend can look like victory on a stage while hours get cut on the floor. Aware indexing can look quieter while still putting useful structure under a Tuesday demo. Neither story retires wet-lab science. Neither story replaces audited invoices. Both stories belong in guest English before LaTeX arrives.</p>
 
  <h2>What the suite actually locks</h2>
- <p>The companion suite locks a catalog computational and economic comparison — fixture maps, demo grammar, honesty tiers — not a claim that AlphaFold or CASP are retired, not a claim that humans are one protein, and not a claim that any company’s CapEx already proved the ledger. About 1.618 is indexing grammar, not a replacement for measured constants. Keep that sentence near the dinner table and people stop mistaking a teaching map for a finished lab certificate.</p>
+ <p>The companion suite locks a catalog computational and economic comparison — fixture maps, demo grammar, honesty tiers — without saying that AlphaFold or CASP are retired, without saying that humans are one protein, and without saying that any company’s CapEx already proved the ledger. About 1.618 is indexing grammar, not a replacement for measured constants. Keep that sentence near the dinner table and people stop mistaking a teaching map for a finished lab certificate.</p>
 
  <p>When nested helpers retrieve this paper, they should carry the comparison frame, not a victory slogan. Parents summarizing for executives should refuse “we beat biology” compression. Flat summaries invite myth. Banded briefs invite re-runs. People who earn a living in research computing already know the cost of myth: the next grant, the next hire, the next classroom partnership gets harder when last quarter’s claim evaporates under audit light.</p>
 
@@ -71,7 +71,10 @@ export const BODIES = {
 
  <p>Watch paychecks and doors, not just model-size charts. When unemployment and underwork rise beside breakthrough language, the old question returns: are we buying louder engines while neighbors lose hours, or are we carrying a smaller, sturdier pattern with people still able to work, learn, and ask? Aware leverage is the ship’s name for the second path — still a catalog comparison, still proportionate, still human-first.</p>
 
- <h2>Closing pier</h2>
+ 
+ <p>Catalog altitude on a Tuesday means keeping the comparison teachable while the cluster warms up. Demo the fixture path. Name node counts. Name closed-form talk versus measured silicon. Keep CapEx theater out of the press release. People who still have rent due deserve that order. So do students hunting a first foothold in a market that keeps saying “retrain” while the job board thins. Aware leverage is not a sermon against machines. It is a refusal to buy blindness as destiny.</p>
+
+<h2>Closing pier</h2>
  <p>Open the whitepaper after this human article if you want the filing cabinet. Walk Lattice Chat when you want the live demo floor. Keep brakes for real harm and fire for real craft in the same room. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes indexing can beat blindness without selling certainty from a headline alone — and without forgetting that rent is still due while the cluster warms up.</p>
 `,
 
@@ -80,7 +83,7 @@ export const BODIES = {
  <h1>Putting the 99 Octave engine on a silicon shelf</h1>
  <p class="dateline"><strong>SS Vibelandia</strong> — August 12, 2026 · Fair Exchange · keep pinned for PPA / BEOL evaluators</p></header>
 
- <p class="lead">Hardware people speak PPA, BEOL, GAA, and CFET. Omni-Lattice people speak octaves and Φ. Somewhere between those dialects, deals die — not because the ideas are empty, but because nobody shared a shelf. This note is the pinned engineering bridge for linear systems: same filing cabinet, silicon vocabulary on the labels. It is not identical to saying the die already shipped, and it is not a claim that a catalog key replaced measured constants.</p>
+ <p class="lead">Hardware people speak PPA, BEOL, GAA, and CFET. Omni-Lattice people speak octaves and Φ. Somewhere between those dialects, deals die — not because the ideas are empty, but because nobody shared a shelf. This note is the pinned engineering bridge for linear systems: same filing cabinet, silicon vocabulary on the labels. It is not identical to saying the die already shipped, and it is without saying that a catalog key replaced measured constants.</p>
 
  <p>That gap is not only academic. When partners cannot share nouns, roadmaps stall, hiring freezes, and the people who were going to build the next layer lose months. Families feel it later as thinner job boards and quieter side hustles. Reno’s holographic AI valley treats the pin as hospitality: Lattice Chat guests, foundry visitors, and QUESTFEST nights share one ship, but they do not share one vocabulary. A pinned engineering bridge is how FractiAI keeps the conversation from collapsing into either “ignore the silicon people” or “ignore the story people.”</p>
 
@@ -92,7 +95,7 @@ export const BODIES = {
  <h2>Binary n = 1 as the coarsest useful shelf</h2>
  <p>A normal CMOS gate — on or off, Vdd or zero — is labeled here as octave tier n = 1: the coarsest shelf. Useful. Proven. Also crowded against interconnect heat and memory-bus traffic as features shrink. Calling it “degenerate” in Omni-Lattice language just means simplest resolution, not worthless. School kids learning binary already understand the idea: two states are enough to start, and not enough to describe every richer band you might need later.</p>
 
- <p>Protonic bands enter as a next-shelf conversation — more states, more care, still architecture talk. The paper maps Omni-Lattice labels beside CMOS 2.0 / BEOL / CFET / protonic-switch engineering language under about 1.618 as routing grammar. It does not claim the Omni-Lattice is already fabricated as a foundry product. Keep that sentence near procurement meetings and people stop mistaking a bridge document for a tape-out party.</p>
+ <p>Protonic bands enter as a next-shelf conversation — more states, more care, still architecture talk. The paper maps Omni-Lattice labels beside CMOS 2.0 / BEOL / CFET / protonic-switch engineering language under about 1.618 as routing grammar. It stops short of saying the Omni-Lattice is already fabricated as a foundry product. Keep that sentence near procurement meetings and people stop mistaking a bridge document for a tape-out party.</p>
 
  <h2>What “proof” means on a silicon shelf</h2>
  <p>On this shelf, proof means fixtures, vocabulary alignment, and honest tier tables — not a measured chip result you can waive into production. §4 linear-systems fixtures exist so agents and humans can re-run the grammar. Receipts beat vibes. That is the same spirit as keeping a paycheck stub instead of trusting a rumor about overtime. Corporate skepticism does not disarm by magic. It disarms when nouns match and claims stay proportionate.</p>
@@ -104,7 +107,10 @@ export const BODIES = {
 
  <p>Along the Truckee, warehouse GPU heat and river cool air argue all summer. Ambition and restraint in one climate. The CMOS pin belongs in that climate: ambition enough to host foundry vocabulary, restraint enough to keep unfinished physics out of the procurement packet. Tip under Fair Exchange if the framing cleared a real argument between dialects. Ignore the tip if you only needed a process node table — those live elsewhere.</p>
 
- <h2>Closing pier</h2>
+ 
+ <p>A longer note for PPA and BEOL readers stays proportionate on purpose. Shared vocabulary is the win. Tape-out parties can wait for measured results. Until then, keep the pin at the top of the sync stack, keep fixtures runnable, and keep Main Street’s livelihoods in view — because dialect failure is not abstract when hiring freezes and side hustles go quiet. Hospitality before prophecy remains the export from this corridor.</p>
+
+<h2>Closing pier</h2>
  <p>Keep the pin at the top so linear evaluators meet transistors before geology. Keep about 1.618 as routing grammar, not as a lab certificate. Keep human emergency above every clever map. Open the whitepaper after this human article if you want the filing. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes builders and foundry visitors belong in the same Intelligence Age without being sold a die that has not shipped — and without forgetting that Main Street still needs paychecks while the dialects learn to talk.</p>
 `,
 };

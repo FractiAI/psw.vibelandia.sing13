@@ -1,0 +1,33 @@
+/** Kitchen-table rewrite · recursive attention loop */
+export const file = 'blog-recursive-attention-loop.html';
+
+export const body = `<p class="lead">Most products treat attention like a flashlight in a dark hallway: aim it, burn tokens, move on. That habit feels normal until you watch a family’s cloud bill climb while the answers stay thin, or until a student asks a hard question and gets a one-shot reply that forgets the rails it accepted five minutes ago. Recursive Attention Coherence files a harder loop — imagination walking through quantum, solar, DNA, and human shelves and coming back with honesty intact. The stake is not poetry for its own sake. The stake is whether attention can return to the living room without upgrading a map into law, a metaphor into medicine, or a loop into prophecy.</p>
+
+    <p>You already know the kitchen-table version. A parent who starts a story at dinner and never brings it home loses the room. A coworker who brainstorms wild ideas and never checks the budget loses the team. A tool that visits every shelf and forgets the seatbelt loses trust. Loop attention is the habit of coming back with the seatbelt still fastened.</p>
+
+    <h2>Spotlight versus loop</h2>
+    <p>Spotlight attention is how most products bill: one query, one burn, next. It can be fine for a quick recipe or a short commute tip. It fails when nested helpers need multi-shelf memory — when a school project, a job search, and a health question sit in the same week and cannot be answered as three disconnected flashes. Loop asks whether attention can return through nested shelves and still cohere. FractiAI files that question as Recursive Attention Coherence so Infinite Octaves culture can talk about imagination without inventing a cult syllabus.</p>
+
+    <p>Related companions add magnetic projection talk. This leaf stays with the loop cast across four stages. Guests should leave with a map, not a merged religion. Builders should leave with a brief discipline: return, check honesty, crystallize. People who earn a living writing demos know the difference between a flashy departure and a trustworthy return.</p>
+
+    <h2>Four stages without merger</h2>
+    <p>Quantum, solar, DNA, and human labels are filing stages for imagination loops. Agents can travel the loop for coherent briefs. Guests must hear the non-merger sentence before the poetry: filing stages are not the same as saying one causes the next as proven physics. About 1.618 may orchestrate scale talk on Infinite Octaves shelves. It does not authorize medical guidance or prophecy engines. Tier tables keep simulator grammar in its place — the way a school science fair stays separate from a hospital even when both use the word “experiment.”</p>
+
+    <p>Families get hurt when those courts collapse. A neighbor who needed clinical care does not need a catalog metaphor dressed as diagnosis. A kid curious about the sun does not need unfinished physics sold as homework truth. A worker curious about genes does not need destiny theater. Loop attention keeps the stages labeled so curiosity can travel without smuggling crowns across doors.</p>
+
+    <h2>Coherence as ordinary care</h2>
+    <p>Coherence means nested agents can revisit shelves without contradicting honesty rails they already accepted. Incoherence is how token bills rise and trust falls — the digital cousin of a household that keeps rewriting the chore chart until nobody knows whose turn it is. Lattice Chat parents should treat recursive attention as brief discipline: metabolize the ask, crystallize the local work, animate by tightening nodes and making shelves clear. Squeeze nested work without flattening shelves into one mystic paste.</p>
+
+    <p>Score returns harder than departures. Did the child still refuse medical advice, prophecy, and unfinished physics upgrades? Did the receipt travel with the flourish? Spotlight products will keep billing single shots. Loop is for fleets that need multi-shelf memory without mystic paste. Pair with neighboring notes so attention, magnetic talk, and topology stay distinct yet compatible.</p>
+
+    <h2>Where the brakes still matter</h2>
+    <p>Unfinished physics upgrades stay refused. Medical advice stays refused. Prophecy monetization stays refused. What remains is architectural maps and catalog labels so guests can discuss HHF culture on QUESTFEST without becoming a cult. Fair Exchange tips when loop framing improved multi-shelf agent work without mystical drift. Human emergency still outranks every algorithm when a real crisis walks into the room.</p>
+
+    <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with spectacle dressed as care. The export from this corridor is simpler: celebrate curiosity, keep consent, keep brakes visible, stop calling the silhouette the whole animal. Jobs, school craft, and family trust all sit closer to that habit than to a louder flashlight.</p>
+
+    <h2>Closing pier</h2>
+    <p>Aim, return, check honesty, continue. That is coherence worth shipping. Before the next restriction, release, or metaphor goes live, ask one question out loud: is this protecting humans, or policing curiosity as contagion? If nobody can answer without jargon, you are not ready to brief a guest who asked about recursive attention in plain English.</p>
+
+    <p>Open the whitepaper when you want the fuller map. Walk the ship when you want the floor under your feet. Tip if the framing cleared a real argument. Ignore it if you only needed a compute table — those live elsewhere. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes builders belong in the Intelligence Age without being maligned into silence.</p>`;
+
+export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Architectural maps, catalog labels, and simulator grammar stay in their tier tables. Soft Story altitude for Recursive Attention Coherence — we do not upgrade narrative filing cabinets into finished physics proofs, medical guidance, or prophecy engines. Soft Story count in body = 0 by design. Not clinical, financial, or space-weather advice. Φ ≈ 1.618 is routing / catalog grammar on Infinite Octaves shelves — not a finished physics constant or lab certificate.</p>`;

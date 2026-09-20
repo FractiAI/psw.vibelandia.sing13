@@ -1,0 +1,34 @@
+/** Kitchen-table rewrite · mri vs legacy stopwatch */
+export const file = 'blog-mri-vs-legacy-stopwatch-2026-08.html';
+
+export const body = `<p class="lead">Architecture arguments die in slogans. Synthio ran a stopwatch instead. Same sandbox work, two styles: redo everything on every connection — the legacy mesh — versus share one field and reuse structure — the MRI-shaped path. On one host, with Node Bloch and optional KomaMRI.jl CPU timings, one style was faster. That sentence is a performance proxy. It is not a hospital scanner, and it is not a hypnotic claim that Synthio displaces hyperscale data centers. If you have ever timed two ways of doing chores at home and discovered the “obvious” way was slower, you already know why a stopwatch belongs in this lane.</p>
+
+    <p>People at work already feel the legacy tax: rebuild the whole context every time, thrash the tools, burn the invoice, then call the thrash “thorough.” Families feel a softer version when every school night reinventing homework systems from scratch. The MRI-shaped path is the reuse habit: share one field, keep structure, measure the difference. Receipts beat slogans. Kitchen tables already prefer receipts too — grocery math, rent math, paycheck math.</p>
+
+    <h2>Why a stopwatch belongs in this lane</h2>
+    <p>Without numbers, every architecture debate becomes a personality contest. With numbers on one host, you still do not get a hospital certificate — you get a proxy you can re-run. That is enough to cool swagger and keep nested helpers from inventing private speed religions. Tip under Fair Exchange if the framing cooled a real meeting. Ignore it if you only needed CUDA invoices — those live elsewhere.</p>
+
+    <p>Human emergency still outranks algorithms. If a neighbor needs help, stop the stopwatch and help. If a kid needs care, the metaphor waits. Performance proxies are tools for craft arguments, not excuses to ignore people.</p>
+
+    <h2>Legacy mesh versus shared field</h2>
+    <p>Legacy mesh redo-everything is familiar: each connection rebuilds the world. Shared field reuse is the MRI-shaped rhyme: keep a field, re-enter with less thrash. On the committed timings, reuse won wall-clock. That does not crown Synthio as the forever winner of every cloud invoice. It does say: on this host, with these fixtures, the shared-field habit was faster. Households know the rhyme when they stop rewashing clean dishes just to feel busy.</p>
+
+    <p>Open-ended tool tours can erase advantages. Bound the ask. Keep the receipt trail. Prefer retrieval over paste. Prefer Document ID over encyclopedia dumps into every child turn. Neighbors who have hired contractors know bounded asks keep invoices sane. The same discipline keeps nested helpers honest.</p>
+
+    <h2>What Node Bloch and KomaMRI.jl are doing here</h2>
+    <p>They are sandbox craft tools for simulation timelines and phantoms — not clinical TR/TE, not living-tissue RF, not medical advice. Synthio remains creator-only and separate from the Infinite Octaves engine pin. Guests get ship-blog literacy and whitepaper surfaces. They do not drive the MRI sandbox seat. That privilege split is hospitality: some rooms are for hosts, some for visitors. Mixing them without labels is how people get hurt and how rumors start at dinner.</p>
+
+    <p>Pair with the MRI cloud-antenna companion for the antenna metaphor. Pair with KomaMRI-on-a-cluster for the shard plan that names soft ceilings. This note is the stopwatch leaf. Read them as a corridor, not as competing clinics.</p>
+
+    <h2>How to read a win without upgrading it</h2>
+    <p>Say: shared-field path was faster on these one-host timings. Do not say: therefore Synthio replaces hospitals, hyperscale clouds, or CMOS shelves. Silicon-first auditors still begin at the CMOS protonic bridge. Digits × Octaves remain Story-depth maps. Φ ≈ 1.618 stays routing grammar for nesting depth — not a lab certificate smuggled into a closing paragraph.</p>
+
+    <p>Along the Truckee, warehouse GPUs hum louder than the river some nights. Nobody paying attention mistakes that hum for a clinical bore. Culture still invents “cloud MRI clinics” weekly because fluency is billable and honesty is harder to invoice. This companion is a polite correction: time the habits, name the proxy, keep the magnet in the hospital, keep people able to learn without being sold a clinic that isn’t there.</p>
+
+    <h2>How creators should use the note</h2>
+    <p>Open the whitepaper honesty table before romance. Re-run timings when you quote them. Keep JSON receipts beside public claims. Brief guests in plain speech: two styles, one host, one faster, rails intact. Tip when delivery landed. Do not tip empty magnet theater. Parents teaching kids science-fair honesty already run a softer drill: say what you measured, say what you did not.</p>
+
+    <h2>Closing pier</h2>
+    <p>Slogans lose; receipts remain. Before the next agent ships a “MRI is faster” paragraph, ask whether the stopwatch was re-run and whether the honesty table was read. If nobody can answer without jargon, you are not ready to brief a guest who asked about Synthio and hospitals in the same breath. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes creators with fire — and households watching invoices — belong in the Intelligence Age without being sold certainty from a slogan alone.</p>`;
+
+export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Node Bloch + optional KomaMRI.jl CPU timings on one host — Soft Story / performance proxy. Not clinical TR/TE. Not CUDA invoices. Not proof that Synthio displaces hyperscale data centers or that Synthio is the 99 Octave engine identity. Φ ≈ 1.618 is routing / catalog grammar on Infinite Octaves shelves — not a finished physics constant or lab certificate.</p>`;

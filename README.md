@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-20** · **308** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-20** · **309** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -327,6 +327,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-vs-vibe-coding-2026-09.html`](/interfaces/blog-lattice-vs-vibe-coding-2026-09.html) | Lattice beats vibe coding on design, write, and deploy · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-linear-horsepower-collapse-2026-09.html`](/interfaces/blog-linear-horsepower-collapse-2026-09.html) | More engines, empty workshops: when linear AI horsepower stops buying progress · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | Keep the dials — stop worshipping the silhouette · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as work engines — filing life in octave band 13–17 · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as magnets that hum · Ship blog · SS Vibelandia |

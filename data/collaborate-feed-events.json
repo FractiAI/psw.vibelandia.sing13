@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-20T06:24:30.566Z",
+  "updatedAt": "2026-09-20T19:19:33.097Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-ai-layer-triple-tipping-point-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-20T19:19:33.096Z",
+      "body": "Are We at the Triple Tipping Point Yet? — Sodom / Noah Rhymes Over Today’s AI Layer",
+      "presenceHue": "gold",
+      "paperId": "synthobs-ai-layer-triple-tipping-point-2026-09",
+      "artifact": {
+        "title": "Are We at the Triple Tipping Point Yet? — Sodom / Noah Rhymes Over Today’s AI Layer",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_AI_LAYER_TRIPLE_TIPPING_POINT_EGS_2026-09.md",
+        "url": "/whitepaper/ai-layer-triple-tipping-point",
+        "paperId": "synthobs-ai-layer-triple-tipping-point-2026-09",
+        "docId": "WP-SYNTHOBS-AI-LAYER-TRIPLE-TIPPING-POINT-2026-09-20",
+        "published": "2026-09-20T20:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-vitality-control-rhyme-2026-09",
       "type": "ArtifactEvent",

@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-20** · **309** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-20** · **310** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -287,6 +287,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/ai-transparency.html`](/interfaces/ai-transparency.html) | AI transparency · FractiAI · SS Vibelandia |
 | [`/interfaces/awareness-singularities-one-pager.html`](/interfaces/awareness-singularities-one-pager.html) | Awareness Singularities S0–S81 · SynthOBS · FractiAI |
 | [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Teaching a model to read the genome’s most stubborn repeats · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html`](/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html) | Are we at the tipping point yet? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 is a crowded calendar — not a prophecy · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Eighty-two gates along a hydrogen story · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-vs-brute-force-2026-09.html`](/interfaces/blog-awareness-vs-brute-force-2026-09.html) | Awareness vs Brute-Force · Ship blog · SS Vibelandia |
@@ -327,7 +328,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-vs-vibe-coding-2026-09.html`](/interfaces/blog-lattice-vs-vibe-coding-2026-09.html) | Lattice beats vibe coding on design, write, and deploy · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-linear-horsepower-collapse-2026-09.html`](/interfaces/blog-linear-horsepower-collapse-2026-09.html) | More engines, empty workshops: when linear AI horsepower stops buying progress · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-linear-horsepower-collapse-2026-09.html`](/interfaces/blog-linear-horsepower-collapse-2026-09.html) | More engines, thinner paychecks: when linear AI horsepower stops buying a living · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | Keep the dials — stop worshipping the silhouette · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as work engines — filing life in octave band 13–17 · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as magnets that hum · Ship blog · SS Vibelandia |

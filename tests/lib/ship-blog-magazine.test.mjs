@@ -25,7 +25,7 @@ describe('QUESTFEST ship-blog magazine snap', () => {
     expect(early).toEqual([]);
   });
 
-  it('locks every eligible ship-blog note to journalism voice (vitality peer · Soft Story 0 in body)', async () => {
+  it('locks every eligible ship-blog note to journalism voice (kitchen-table peer · Soft Story 0 · everyday anchors)', async () => {
     const recent = await listRecentShipBlogHtmlFiles(SHIP_BLOG_JOURNALISM_WINDOW);
     expect(recent.length).toBeGreaterThanOrEqual(80);
     const fails = [];
@@ -33,7 +33,7 @@ describe('QUESTFEST ship-blog magazine snap', () => {
       const audit = auditShipBlogFile(row.file);
       if (!audit.passesVoice) {
         fails.push(
-          `${row.file.split('/').pop()}: softStory=${audit.voice.softStory} refusalH2=${audit.voice.refusalH2} doesNotClaim=${audit.voice.doesNotClaim} meta=${audit.voice.metaJargon} tables=${audit.voice.tables}`,
+          `${row.file.split('/').pop()}: softStory=${audit.voice.softStory} refusalH2=${audit.voice.refusalH2} doesNotClaim=${audit.voice.doesNotClaim} meta=${audit.voice.metaJargon} tables=${audit.voice.tables} emptyWorkshop=${audit.voice.emptyWorkshopMetaphor} everyday=${audit.voice.everydayAnchors}`,
         );
       }
     }
@@ -46,7 +46,7 @@ describe('QUESTFEST ship-blog magazine snap', () => {
       .filter((a) => !a.passesVoice)
       .map(
         (a) =>
-          `${a.file.split('/').pop()}: softStory=${a.voice.softStory} refusalH2=${a.voice.refusalH2} doesNotClaim=${a.voice.doesNotClaim} meta=${a.voice.metaJargon} tables=${a.voice.tables}`,
+          `${a.file.split('/').pop()}: softStory=${a.voice.softStory} refusalH2=${a.voice.refusalH2} doesNotClaim=${a.voice.doesNotClaim} meta=${a.voice.metaJargon} tables=${a.voice.tables} emptyWorkshop=${a.voice.emptyWorkshopMetaphor} everyday=${a.voice.everydayAnchors}`,
       );
     expect(fails).toEqual([]);
   });

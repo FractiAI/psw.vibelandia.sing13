@@ -30,15 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Linear horsepower collapse · Vitality · Digit4 Be–O · Linear shadow · Digit4 recursive · Consciousness Moat
-    expect(posts[0].id).toBe('synthobs-linear-horsepower-collapse-2026-09');
+    // Newest: AI-layer triple tipping point · Linear horsepower · Vitality · Digit4 Be–O · Linear shadow · Digit4 recursive
+    expect(posts[0].id).toBe('synthobs-ai-layer-triple-tipping-point-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-ai-layer-triple-tipping-point-2026-09',
       'synthobs-linear-horsepower-collapse-2026-09',
       'synthobs-vitality-control-rhyme-2026-09',
       'synthobs-digit4-be-o-periodic-rhyme-2026-09',
       'synthobs-linear-shadow-fractal-2026-09',
       'synthobs-digit4-recursive-reach-awareness-theater-2026-09',
-      'synthobs-consciousness-moat-microsoft-anthropic-2026-09',
     ]);
   });
 });

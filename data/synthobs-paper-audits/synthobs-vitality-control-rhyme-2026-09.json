@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "b403115d6784209e",
+  "auditId": "37bb46cf2d151709",
   "paperId": "synthobs-vitality-control-rhyme-2026-09",
   "sourcePath": "docs/SYNTHOBS_VITALITY_CONTROL_RHYME_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-19T21:55:50.947Z"
+          "invokedAt": "2026-09-20T02:48:24.538Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-19T21:55:50.946Z",
-  "completedAt": "2026-09-19T21:55:50.947Z",
+  "startedAt": "2026-09-20T02:48:24.537Z",
+  "completedAt": "2026-09-20T02:48:24.539Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1451,
+      "wordCount": 2147,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 20,
-        "numbered": 7,
+        "links": 21,
+        "numbered": 9,
         "citeLines": 5
       }
     }

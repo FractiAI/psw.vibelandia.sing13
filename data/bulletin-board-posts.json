@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-20",
+  "updated": "2026-09-21",
   "posts": [
+    {
+      "id": "daily-2026-09-21-synthobs-holographic-homeostasis-2026-09",
+      "posted": "2026-09-21",
+      "featured": true,
+      "title": "Stability isn’t sitting still",
+      "subtitle": "News of the day · Monday, September 21",
+      "summary": "A spinning top stays up because it moves. Families, crews, and AI tools stay workable the same way — parts and whole keep adjusting. Fair Exchange tip clause on.",
+      "href": "/ship-blog/holographic-homeostasis",
+      "pill": "TODAY",
+      "docRef": "synthobs-holographic-homeostasis-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-20-synthobs-linear-horsepower-collapse-2026-09",
       "posted": "2026-09-20",

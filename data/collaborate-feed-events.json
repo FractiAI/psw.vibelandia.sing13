@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-20T19:19:33.097Z",
+  "updatedAt": "2026-09-21T06:58:27.402Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-goldilocks-net-zero-equivalence-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-21T06:58:27.401Z",
+      "body": "Goldilocks ≡ Net Zero: Viable Band as Active Equilibrium",
+      "presenceHue": "gold",
+      "paperId": "synthobs-goldilocks-net-zero-equivalence-2026-09",
+      "artifact": {
+        "title": "Goldilocks ≡ Net Zero: Viable Band as Active Equilibrium",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md",
+        "url": "/whitepaper/goldilocks-net-zero",
+        "paperId": "synthobs-goldilocks-net-zero-equivalence-2026-09",
+        "docId": "WP-SYNTHOBS-GOLDILOCKS-NET-ZERO-EQUIVALENCE-2026-09-21",
+        "published": "2026-09-21T12:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-holographic-homeostasis-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-21T06:58:27.290Z",
+      "body": "Holographic Homeostasis: A Proposed General Principle of Distributed, Multiscale Regulation",
+      "presenceHue": "gold",
+      "paperId": "synthobs-holographic-homeostasis-2026-09",
+      "artifact": {
+        "title": "Holographic Homeostasis: A Proposed General Principle of Distributed, Multiscale Regulation",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md",
+        "url": "/whitepaper/holographic-homeostasis",
+        "paperId": "synthobs-holographic-homeostasis-2026-09",
+        "docId": "WP-SYNTHOBS-HOLOGRAPHIC-HOMEOSTASIS-2026-09-21",
+        "published": "2026-09-21T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-ai-layer-triple-tipping-point-2026-09",
       "type": "ArtifactEvent",

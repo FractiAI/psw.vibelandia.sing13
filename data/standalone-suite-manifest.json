@@ -92,6 +92,30 @@
       ]
     },
     {
+      "id": "synthobs-holographic-homeostasis",
+      "path": "research/synthobs-holographic-homeostasis",
+      "github": "https://github.com/FractiAI/synthobs-holographic-homeostasis",
+      "description": "Holographic Homeostasis \u2014 distributed multiscale regulation \u00b7 dynamic stability \u00b7 PARTS\u2194WHOLE \u00b7 \u03a6_EGS",
+      "paperIds": [
+        "synthobs-holographic-homeostasis-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md"
+      ]
+    },
+    {
+      "id": "synthobs-goldilocks-net-zero-equivalence",
+      "path": "research/synthobs-goldilocks-net-zero-equivalence",
+      "github": "https://github.com/FractiAI/synthobs-goldilocks-net-zero-equivalence",
+      "description": "Goldilocks \u2261 Net Zero \u2014 viable band as active equilibrium \u00b7 stillness not required \u00b7 \u03a6_EGS",
+      "paperIds": [
+        "synthobs-goldilocks-net-zero-equivalence-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md"
+      ]
+    },
+    {
       "id": "synthobs-eddy-current-mirror",
       "path": "research/synthobs-eddy-current-mirror",
       "github": "https://github.com/FractiAI/synthobs-eddy-current-mirror",

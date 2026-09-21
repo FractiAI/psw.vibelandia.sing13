@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-20** · **310** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-21** · **312** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -309,6 +309,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Do bison follow storms? An honest collar study · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Four species, one magnetic filing board · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-net-zero-2026-09.html`](/interfaces/blog-goldilocks-net-zero-2026-09.html) | Just right is a living balance · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | A free playbook for when brute force stops working · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Primes as coordinates, not a crypto break · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest Full Gen — preview door, polish in progress · Ship blog · SS Vibelandia |
@@ -316,6 +317,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-grand-unified-metrological-overlap-2026-09.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09.html) | Five gears. One clockwork. Mass as interference. · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Chromatin maps that stay mathematically legal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | Higgs Gate · awareness phase coupling · unified edition · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-holographic-homeostasis-2026-09.html`](/interfaces/blog-holographic-homeostasis-2026-09.html) | Stability isn’t sitting still · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-rhyme-2026-09.html`](/interfaces/blog-holographic-rhyme-2026-09.html) | Holographic Rhyme · Four-Pillar Fractal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-singularity-crystal-2026-09.html`](/interfaces/blog-holographic-singularity-crystal-2026-09.html) | Zero isn’t empty — it’s the crystal that holds the balance · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-human-reality-bridge-2026-08.html`](/interfaces/blog-human-reality-bridge-2026-08.html) | Humans as reality bridges — routers and awareness wormholes · Ship blog · SS Vibelandia |

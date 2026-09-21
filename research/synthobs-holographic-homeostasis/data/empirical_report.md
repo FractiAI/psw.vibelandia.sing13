@@ -1,0 +1,211 @@
+# Holographic Homeostasis — Distributed Multiscale Regulation (Catalog Suite)
+
+**Document ID:** `WP-SYNTHOBS-HOLOGRAPHIC-HOMEOSTASIS-2026-09-21`
+**Registry ID:** `synthobs-holographic-homeostasis-2026-09`
+**Generated:** 2026-09-21T06:58:22.317Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 9 / 9 |
+| Φ_EGS | 1.618033988749895 |
+
+## Experiments
+
+### E1_phi_egs — Φ_EGS fixture
+
+- **Pass:** `true`
+- **Interpretation:** Architectural golden key for nesting / viability grammar.
+- **Honesty:** Not a replacement for ℏ, c, or G.
+
+```json
+{
+  "id": "E1_phi_egs",
+  "title": "Φ_EGS fixture",
+  "PHI_EGS": 1.618033988749895,
+  "expected": 1.618033988749895,
+  "pass": true,
+  "interpretation": "Architectural golden key for nesting / viability grammar.",
+  "honesty": "Not a replacement for ℏ, c, or G."
+}
+```
+
+### E2_central_loop — Central loop PARTS↔WHOLE↔PARTS
+
+- **Pass:** `true`
+- **Interpretation:** Reciprocal whole–part regulation lock.
+- **Honesty:** Catalog architecture — not AdS/CFT claim.
+
+```json
+{
+  "id": "E2_central_loop",
+  "title": "Central loop PARTS↔WHOLE↔PARTS",
+  "CENTRAL_LOOP": "PARTS↔WHOLE↔PARTS",
+  "pass": true,
+  "interpretation": "Reciprocal whole–part regulation lock.",
+  "honesty": "Catalog architecture — not AdS/CFT claim."
+}
+```
+
+### E3_dynamic_stability — Dynamic stability (stillness not required)
+
+- **Pass:** `true`
+- **Interpretation:** Stability can be produced by organized continuous activity.
+- **Honesty:** Spinning-top analogy — not proof of the full hypothesis.
+
+```json
+{
+  "id": "E3_dynamic_stability",
+  "title": "Dynamic stability (stillness not required)",
+  "DYNAMIC_STABILITY": true,
+  "STATIC_STILLNESS_REQUIRED": false,
+  "pass": true,
+  "interpretation": "Stability can be produced by organized continuous activity.",
+  "honesty": "Spinning-top analogy — not proof of the full hypothesis."
+}
+```
+
+### E4_characteristics — Seven defining characteristics
+
+- **Pass:** `true`
+- **Interpretation:** Hypothesis traits frozen for suite replay.
+- **Honesty:** Catalog checklist — not clinical protocol.
+
+```json
+{
+  "id": "E4_characteristics",
+  "title": "Seven defining characteristics",
+  "CHARACTERISTICS": [
+    "dynamic",
+    "regulatory",
+    "distributed",
+    "reciprocal",
+    "multiscale",
+    "adaptive",
+    "goldilocks_oriented"
+  ],
+  "pass": true,
+  "interpretation": "Hypothesis traits frozen for suite replay.",
+  "honesty": "Catalog checklist — not clinical protocol."
+}
+```
+
+### E5_nested_scales — Nested scale ladder (7 levels)
+
+- **Pass:** `true`
+- **Interpretation:** Comparable architecture may recur — not identical mechanisms.
+- **Honesty:** Hypothesis ladder — not claim every scale is identical.
+
+```json
+{
+  "id": "E5_nested_scales",
+  "title": "Nested scale ladder (7 levels)",
+  "NESTED_SCALES": [
+    "molecule",
+    "cell",
+    "tissue",
+    "organ",
+    "organism",
+    "population",
+    "ecosystem"
+  ],
+  "pass": true,
+  "interpretation": "Comparable architecture may recur — not identical mechanisms.",
+  "honesty": "Hypothesis ladder — not claim every scale is identical."
+}
+```
+
+### E6_paper_locks — Paper narrative locks (loop · dynamic · Goldilocks · engine)
+
+- **Pass:** `true`
+- **Interpretation:** Paper must keep honesty rails and reciprocal loop.
+- **Honesty:** Structural text locks — not market validation.
+
+```json
+{
+  "id": "E6_paper_locks",
+  "title": "Paper narrative locks (loop · dynamic · Goldilocks · engine)",
+  "paperPath": "/workspace/docs/SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md",
+  "hasHonesty": true,
+  "hasDocId": true,
+  "hasLoop": true,
+  "hasDynamic": true,
+  "hasGoldilocks": true,
+  "hasFair": true,
+  "hasOperator": true,
+  "hasEngine": true,
+  "pass": true,
+  "interpretation": "Paper must keep honesty rails and reciprocal loop.",
+  "honesty": "Structural text locks — not market validation."
+}
+```
+
+### E7_ship_blog_lock — Ship-blog surfaces holographic-homeostasis + full paper link
+
+- **Pass:** `true`
+- **Interpretation:** Guest note must link the full paper and keep kitchen-table copy.
+- **Honesty:** Surface copy lock only.
+
+```json
+{
+  "id": "E7_ship_blog_lock",
+  "title": "Ship-blog surfaces holographic-homeostasis + full paper link",
+  "path": "/workspace/interfaces/blog-holographic-homeostasis-2026-09.html",
+  "exists": true,
+  "hasSlug": true,
+  "hasWhitepaper": true,
+  "hasThesis": true,
+  "pass": true,
+  "interpretation": "Guest note must link the full paper and keep kitchen-table copy.",
+  "honesty": "Surface copy lock only."
+}
+```
+
+### E8_prediction_set — Seven testable prediction slots A–G
+
+- **Pass:** `true`
+- **Interpretation:** Hypothesis must stay distinguishable via reciprocal cross-scale checks.
+- **Honesty:** Prediction slots — not completed empirics.
+
+```json
+{
+  "id": "E8_prediction_set",
+  "title": "Seven testable prediction slots A–G",
+  "predictionIds": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
+  ],
+  "pass": true,
+  "interpretation": "Hypothesis must stay distinguishable via reciprocal cross-scale checks.",
+  "honesty": "Prediction slots — not completed empirics."
+}
+```
+
+### E9_phi_squared_identity — Φ² = Φ + 1
+
+- **Pass:** `true`
+- **Interpretation:** Harmony grammar identity for cross-octave sync framing.
+- **Honesty:** Algebra of Φ — replayable fixture.
+
+```json
+{
+  "id": "E9_phi_squared_identity",
+  "title": "Φ² = Φ + 1",
+  "lhs": 2.618033988749895,
+  "rhs": 2.618033988749895,
+  "pass": true,
+  "interpretation": "Harmony grammar identity for cross-octave sync framing.",
+  "honesty": "Algebra of Φ — replayable fixture."
+}
+```
+
+## Honesty boundary
+
+Catalog / Soft Story fixtures for Holographic Homeostasis. Does not claim physics holography in biology, established scientific law status, medical advice, CODATA replacement, or that every ecosystem is proven holographically homeostatic.

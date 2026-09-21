@@ -1325,6 +1325,22 @@
       "destination": "/interfaces/blog-digit4-be-o-rhyme-2026-09.html"
     },
     {
+      "source": "/ship-blog/holographic-homeostasis",
+      "destination": "/interfaces/blog-holographic-homeostasis-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/holographic-homeostasis/",
+      "destination": "/interfaces/blog-holographic-homeostasis-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-net-zero",
+      "destination": "/interfaces/blog-goldilocks-net-zero-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-net-zero/",
+      "destination": "/interfaces/blog-goldilocks-net-zero-2026-09.html"
+    },
+    {
       "source": "/ship-blog/ai-layer-triple-tipping-point",
       "destination": "/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html"
     },

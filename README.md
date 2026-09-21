@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-21** · **312** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-21** · **313** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -467,6 +467,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
 | [`/interfaces/infinite-octave-egs-catalog-briefing-portals.html`](/interfaces/infinite-octave-egs-catalog-briefing-portals.html) | Executive Sandbox · Infinite Octave EGS Catalog · SS Vibelandia |
 | [`/interfaces/infinite-octave-egs-catalog-brochure.html`](/interfaces/infinite-octave-egs-catalog-brochure.html) | Infinite Octave EGS Catalog · Product Brochure · SS Vibelandia |
+| [`/interfaces/infinite-octave-players-guide.html`](/interfaces/infinite-octave-players-guide.html) | The Players Guide · Player 1 Edition · Infinite Octave · SS Vibelandia |
 | [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Reality Bridge/Routers · SS Vibelandia |
 | [`/interfaces/journeys.html`](/interfaces/journeys.html) | Journeys · Adventures aboard SS Vibelandia |
 | [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Infinite Octave Omniversal Lattice Catalog · Next layer in the stack · Product brochure · FractiAI |

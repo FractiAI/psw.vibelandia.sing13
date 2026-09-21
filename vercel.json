@@ -1853,6 +1853,22 @@
       "destination": "/interfaces/goldilocks-players-guide.html"
     },
     {
+      "source": "/infinite-octave-players-guide",
+      "destination": "/interfaces/infinite-octave-players-guide.html"
+    },
+    {
+      "source": "/infinite-octave-players-guide/",
+      "destination": "/interfaces/infinite-octave-players-guide.html"
+    },
+    {
+      "source": "/the-players-guide",
+      "destination": "/interfaces/infinite-octave-players-guide.html"
+    },
+    {
+      "source": "/the-players-guide/",
+      "destination": "/interfaces/infinite-octave-players-guide.html"
+    },
+    {
       "source": "/99-octave-bridge",
       "destination": "/interfaces/octave99-bridge/index.html"
     },

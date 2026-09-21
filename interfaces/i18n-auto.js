@@ -353,7 +353,8 @@
     }
     if (
       p.indexOf('players-guide') !== -1 ||
-      p.indexOf('goldilocks-players-guide') !== -1
+      p.indexOf('goldilocks-players-guide') !== -1 ||
+      p.indexOf('infinite-octave-players-guide') !== -1
     ) {
       return 'guide';
     }

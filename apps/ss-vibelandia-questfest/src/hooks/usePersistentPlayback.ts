@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
-import { resumeOrPlayTrack, resumePlaybackIfNeeded } from '@/lib/trackPlayback';
+import { pausePlayback, resumeOrPlayTrack, resumePlaybackIfNeeded } from '@/lib/trackPlayback';
 import {
   getPlaybackPlaylistCoverSource,
   resolvePlayingCoverSrc,
@@ -82,9 +82,7 @@ export function usePersistentPlayback() {
         else resumePlaybackIfNeeded();
       });
       navigator.mediaSession.setActionHandler('pause', () => {
-        usePlaybackStore.getState().setPlaying(false);
-        const el = document.querySelector<HTMLAudioElement>('audio.sp-global-audio');
-        el?.pause();
+        pausePlayback();
       });
     } catch {
       /* unsupported */

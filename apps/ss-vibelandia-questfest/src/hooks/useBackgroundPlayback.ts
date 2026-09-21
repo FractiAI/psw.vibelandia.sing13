@@ -8,6 +8,7 @@ import {
   resolvePlayingCoverSrc,
 } from '@/lib/playingCover';
 import { getSimpleAudioElement, urlMatchesElement } from '@/lib/simplePlayback';
+import { markAppPause, pausePlayback } from '@/lib/trackPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
 
@@ -261,7 +262,9 @@ export function useBackgroundPlayback({
         void bg
           .play()
           .then(() => {
+            markAppPause();
             el.pause();
+            usePlaybackStore.getState().setPlaying(true);
             setBackgroundHandoffActive(true);
             handoffBusyRef.current = false;
           })
@@ -392,7 +395,9 @@ export function useBackgroundPlayback({
         .play()
         .then(() => {
           if (cancelled) return;
+          markAppPause();
           el.pause();
+          usePlaybackStore.getState().setPlaying(true);
           setBackgroundHandoffActive(true);
           handoffBusyRef.current = false;
         })
@@ -431,7 +436,12 @@ export function useBackgroundPlayback({
   useEffect(() => {
     if (isPlaying || !backgroundHandoffActive) return;
     const bg = backgroundAudioRef.current ?? getPlaybackMedia().background;
-    if (bg && !bg.paused) return;
+    // Browser / UI may clear play-intent while the handoff element is still
+    // audible — restore intent instead of killing the stream mid-song.
+    if (bg && mediaIsAudible(bg)) {
+      usePlaybackStore.getState().setPlaying(true);
+      return;
+    }
     bg?.pause();
     setBackgroundHandoffActive(false);
   }, [isPlaying, backgroundHandoffActive, backgroundAudioRef, setBackgroundHandoffActive]);
@@ -456,7 +466,9 @@ export function useBackgroundPlayback({
         setPlaying(true);
         onRequestResumeRef.current?.({ userInitiated: true });
       });
-      navigator.mediaSession.setActionHandler('pause', () => setPlaying(false));
+      navigator.mediaSession.setActionHandler('pause', () => {
+        pausePlayback();
+      });
       navigator.mediaSession.setActionHandler('nexttrack', () => onNextTrack?.());
       navigator.mediaSession.setActionHandler('previoustrack', null);
       navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';

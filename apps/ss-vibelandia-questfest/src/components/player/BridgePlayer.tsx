@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
+import { shouldAdvanceOnBackgroundHandoff } from '@/lib/backgroundHandoff';
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import {
   getSimpleAudioElement,
@@ -156,11 +157,12 @@ export function BridgePlayer({
 
       const pb = usePlaybackStore.getState();
       const bg = getPlaybackMedia().background;
-      const handoff =
-        allowBackgroundPlay &&
-        (pb.backgroundHandoffActive || document.hidden) &&
-        bg &&
-        document.hidden;
+      const handoff = shouldAdvanceOnBackgroundHandoff({
+        allowBackgroundPlay,
+        documentHidden: document.hidden,
+        hasBackgroundElement: !!bg,
+        handoffAlreadyActive: pb.backgroundHandoffActive,
+      });
 
       pb.setPlaybackError(null);
       pb.setTrack(trackId);
@@ -170,6 +172,7 @@ export function BridgePlayer({
       if (handoff) {
         const el = getSimpleAudioElement();
         if (el) {
+          markAppPause();
           el.pause();
           try {
             el.removeAttribute('src');
@@ -177,18 +180,31 @@ export function BridgePlayer({
             /* ignore */
           }
         }
-        // Safari drops gesture entitlement once the tab is hidden. Assigning a
-        // new src + play() here surfaces "Background autoplay blocked" and can
-        // keep a zombie decoder alive across blog/whitepaper tabs. Soft-pause
-        // instead; resume on return + tap ▶.
-        try {
-          bg.pause();
-        } catch {
-          /* ignore */
-        }
-        pb.setPlaying(false);
-        pb.setBackgroundHandoffActive(false);
-        pb.setPlaybackError('Paused in background — return to Now Playing and tap ▶.');
+        // Keep the playlist alive on the hidden handoff element. Soft-pause only
+        // if the browser blocks background autoplay (common on Safari after the
+        // tab has been hidden long enough to drop gesture entitlement).
+        bg.src = src;
+        bg.currentTime = 0;
+        bg.volume = gainRef.current;
+        pb.setBackgroundHandoffActive(true);
+        pb.setPlaying(true);
+        pb.setPlaybackError(null);
+        void bg
+          .play()
+          .then(() => {
+            pb.setPlaying(true);
+            pb.setBackgroundHandoffActive(true);
+          })
+          .catch(() => {
+            try {
+              bg.pause();
+            } catch {
+              /* ignore */
+            }
+            pb.setPlaying(false);
+            pb.setBackgroundHandoffActive(false);
+            pb.setPlaybackError('Paused in background — return to Now Playing and tap ▶.');
+          });
         return;
       }
 

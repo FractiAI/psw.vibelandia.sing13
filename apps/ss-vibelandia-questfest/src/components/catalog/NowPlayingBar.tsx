@@ -403,6 +403,11 @@ export function NowPlayingBar({
 
     if (!isPlaying) {
       el.pause();
+      // Keep audible handoff alive when play-intent was cleared while hidden.
+      if (handoff && bg && !bg.paused && document.hidden) {
+        usePlaybackStore.getState().setPlaying(true);
+        return;
+      }
       if (!handoff) bg?.pause();
       return;
     }

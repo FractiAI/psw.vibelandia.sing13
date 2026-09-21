@@ -46,11 +46,14 @@ describe('AI catalog layer · Infinite Octave Omniversal Lattice Catalog', () =>
     expect(cat.label).toMatch(/AI catalog layer/i);
   });
 
-  it('exposes Lattice in secondary quicklinks toward catalog intro', () => {
+  it('exposes Lattice in secondary quicklinks at catalog page top', () => {
     expect(SITE_QUICKLINK_SECONDARY).toContain('ql-catalog-layer-link');
-    expect(SITE_QUICKLINK_SECONDARY).toContain('/lattice#ai-catalog-layer-intro');
+    expect(SITE_QUICKLINK_SECONDARY).toContain('href="/lattice"');
+    expect(SITE_QUICKLINK_SECONDARY).not.toContain('#ai-catalog-layer-intro');
     expect(SITE_PRIMER_LINE).toMatch(/catalog layer/i);
+    expect(SITE_PRIMER_LINE).not.toContain('#ai-catalog-layer-intro');
     expect(PLAYER_SPINE_LINE).toMatch(/catalog layer/i);
+    expect(PLAYER_SPINE_LINE).not.toContain('#ai-catalog-layer-intro');
   });
 
   it('weaves catalog-layer copy into native surface content (no bolted chrome band)', () => {
@@ -77,13 +80,16 @@ describe('AI catalog layer · Infinite Octave Omniversal Lattice Catalog', () =>
     const home = read('interfaces/vibelandia-questfest.html');
     expect(home).toContain('Your cruise line · five doors');
     expect(home).toMatch(/catalog layer/i);
-    expect(home).toContain('/lattice#ai-catalog-layer-intro');
+    expect(home).toContain('href="/lattice"');
+    expect(home).not.toContain('#ai-catalog-layer-intro');
   });
 
-  it('keeps lattice landing stack section as the home for #ai-catalog-layer-intro', () => {
+  it('keeps stack section on lattice landing but guest catalog links open page top', () => {
     const lattice = read('interfaces/lattice-v1618.html');
     expect(lattice).toContain('id="ai-catalog-layer-intro"');
     expect(lattice).toMatch(/Where this layer sits/i);
+    expect(LATTICE_CATALOG_LAYER.ctaPrimary.href).toBe('/lattice');
+    expect(LATTICE_CATALOG_LAYER.ctaPrimary.href).not.toContain('#');
   });
 
   it('defines five catalog-layer innovations with unique deliverables plus security fabric', () => {

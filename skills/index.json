@@ -16,7 +16,7 @@
         "moving-up-the-stack"
       ],
       "routes": [
-        "/lattice#ai-catalog-layer-intro",
+        "/lattice",
         "/ship-blog/infinite-octave-ai-catalog-layer"
       ],
       "sources": [

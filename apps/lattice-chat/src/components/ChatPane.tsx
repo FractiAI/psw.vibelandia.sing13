@@ -437,7 +437,7 @@ export function ChatPane({
                     {MAIN_DECK_LABEL}
                   </a>
                   {' · live demo · Syntheverse Sandbox · '}
-                  <a className="deck-home-link" href="/lattice#ai-catalog-layer-intro" title="Infinite Octave Omniversal Lattice Catalog">
+                  <a className="deck-home-link" href="/lattice" title="Infinite Octave Omniversal Lattice Catalog">
                     Catalog
                   </a>
                   {' · Deck 2 Core'}
@@ -589,7 +589,7 @@ export function ChatPane({
             <p className="ai-act-notice ai-act-notice--empty" role="status">
               <strong>You are interacting with an AI system.</strong> Lattice Chat replies are
               machine-generated. This is the evaluator live demo of{' '}
-              <a href="/lattice#ai-catalog-layer-intro">Infinite Octave Omniversal Lattice Catalog</a>
+              <a href="/lattice">Infinite Octave Omniversal Lattice Catalog</a>
               {' '}inside the Syntheverse Sandbox — not a human operator and not a production data plane.{' '}
               <a href="/ai-transparency">AI transparency</a>
             </p>

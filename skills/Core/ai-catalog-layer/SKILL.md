@@ -3,7 +3,7 @@ id: ai-catalog-layer
 name: AI catalog layer companion
 description: Infinite Octaves as new category layer between agentic IDEs and resonant data.
 tags: ["catalog-layer","ai-stack","resonant-data","moving-up-the-stack"]
-routes: ["/lattice#ai-catalog-layer-intro","/ship-blog/infinite-octave-ai-catalog-layer"]
+routes: ["/lattice","/ship-blog/infinite-octave-ai-catalog-layer"]
 sources: ["docs/SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md","interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html","lib/lattice-catalog-layer.mjs"]
 ---
 

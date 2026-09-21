@@ -1,6 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { shouldAdvanceOnBackgroundHandoff } from '../../lib/background-handoff.mjs';
+import {
+  shouldAdvanceOnBackgroundHandoff,
+  shouldStartBackgroundHandoff,
+} from '../../lib/background-handoff.mjs';
 
 function read(rel) {
   return readFileSync(new URL(`../../${rel}`, import.meta.url), 'utf8');
@@ -34,6 +37,25 @@ describe('background handoff · no soft-pause by default', () => {
     ).toBe(false);
   });
 
+  it('skips starting a second stream when primary is still audible', () => {
+    expect(
+      shouldStartBackgroundHandoff({
+        allowBackgroundPlay: true,
+        documentHidden: true,
+        hasBackgroundElement: true,
+        primaryStillAudible: true,
+      }),
+    ).toBe(false);
+    expect(
+      shouldStartBackgroundHandoff({
+        allowBackgroundPlay: true,
+        documentHidden: true,
+        hasBackgroundElement: true,
+        primaryStillAudible: false,
+      }),
+    ).toBe(true);
+  });
+
   it('BridgePlayer tries background play() and soft-pauses only on failure', () => {
     const src = read('apps/ss-vibelandia-questfest/src/components/player/BridgePlayer.tsx');
     expect(src).toContain('shouldAdvanceOnBackgroundHandoff');
@@ -44,5 +66,12 @@ describe('background handoff · no soft-pause by default', () => {
     expect(src).not.toMatch(
       /Soft-pause\s+instead;[\s\S]{0,80}pb\.setPlaying\(false\)/,
     );
+  });
+
+  it('useBackgroundPlayback only hands off after primary stalls', () => {
+    const src = read('apps/ss-vibelandia-questfest/src/hooks/useBackgroundPlayback.ts');
+    expect(src).toContain('shouldStartBackgroundHandoff');
+    expect(src).toContain('primaryStillAudible');
+    expect(src).toContain('mediaIsAudible(handoffEl)');
   });
 });

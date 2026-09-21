@@ -7,6 +7,7 @@ import {
   getPlaybackPlaylistCoverSource,
   resolvePlayingCoverSrc,
 } from '@/lib/playingCover';
+import { shouldStartBackgroundHandoff } from '@/lib/backgroundHandoff';
 import { getSimpleAudioElement, urlMatchesElement } from '@/lib/simplePlayback';
 import { markAppPause, pausePlayback } from '@/lib/trackPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -250,28 +251,64 @@ export function useBackgroundPlayback({
       const { el, bg } = syncMediaRefs(mediaRef, backgroundAudioRef);
       const tr = trackRef.current;
       if (!el || !bg || !tr || !isPlayingRef.current) return;
-      if (usePlaybackStore.getState().backgroundHandoffActive && mediaIsAudible(bg)) return;
 
-      void resolveHandoffUrl(tr).then((url) => {
-        if (!url) return;
-        flushPlaybackSession();
-        handoffBusyRef.current = true;
-        bg.src = url;
-        bg.currentTime = el.currentTime;
-        bg.volume = el.volume;
-        void bg
-          .play()
-          .then(() => {
-            markAppPause();
-            el.pause();
-            usePlaybackStore.getState().setPlaying(true);
-            setBackgroundHandoffActive(true);
-            handoffBusyRef.current = false;
+      // Let the browser settle — many desktops keep primary audio alive when
+      // hidden. Only open a second stream if primary already stalled.
+      window.setTimeout(() => {
+        if (!document.hidden || handoffBusyRef.current || !isPlayingRef.current) return;
+        const pair = syncMediaRefs(mediaRef, backgroundAudioRef);
+        const primary = pair.el;
+        const handoffEl = pair.bg;
+        const trackNow = trackRef.current;
+        if (!primary || !handoffEl || !trackNow) return;
+
+        if (
+          !shouldStartBackgroundHandoff({
+            allowBackgroundPlay: true,
+            documentHidden: document.hidden,
+            hasBackgroundElement: true,
+            primaryStillAudible: mediaIsAudible(primary),
+            handoffAlreadyAudible: mediaIsAudible(handoffEl),
           })
-          .catch(() => {
-            handoffBusyRef.current = false;
-          });
-      });
+        ) {
+          if (mediaIsAudible(handoffEl)) setBackgroundHandoffActive(true);
+          return;
+        }
+
+        void resolveHandoffUrl(trackNow).then((url) => {
+          if (!url || !document.hidden || !isPlayingRef.current) return;
+          flushPlaybackSession();
+          handoffBusyRef.current = true;
+          const liveAt = primary.currentTime;
+          if (!urlMatchesElement(handoffEl, url) || !handoffEl.src) {
+            handoffEl.src = url;
+          }
+          try {
+            handoffEl.currentTime = liveAt;
+          } catch {
+            /* ignore */
+          }
+          handoffEl.volume = primary.volume;
+          void handoffEl
+            .play()
+            .then(() => {
+              if (!mediaIsAudible(handoffEl)) {
+                handoffBusyRef.current = false;
+                return;
+              }
+              // Only stop primary after the handoff stream is confirmed audible.
+              markAppPause();
+              primary.pause();
+              usePlaybackStore.getState().setPlaying(true);
+              setBackgroundHandoffActive(true);
+              handoffBusyRef.current = false;
+            })
+            .catch(() => {
+              // Leave primary alone — it may still resume on return.
+              handoffBusyRef.current = false;
+            });
+        });
+      }, 80);
     };
 
     const resumeIfStalled = () => {
@@ -380,21 +417,39 @@ export function useBackgroundPlayback({
 
     const { el, bg } = syncMediaRefs(mediaRef, backgroundAudioRef);
     if (!el || !bg) return;
-    if (usePlaybackStore.getState().backgroundHandoffActive && bg.src) return;
+    if (
+      !shouldStartBackgroundHandoff({
+        allowBackgroundPlay: true,
+        documentHidden: true,
+        hasBackgroundElement: true,
+        primaryStillAudible: mediaIsAudible(el),
+        handoffAlreadyAudible:
+          usePlaybackStore.getState().backgroundHandoffActive && mediaIsAudible(bg),
+      })
+    ) {
+      return;
+    }
 
     let cancelled = false;
     let onReady: (() => void) | null = null;
 
     const handoff = (url: string) => {
       if (cancelled || handoffBusyRef.current) return;
+      if (mediaIsAudible(el)) return;
       handoffBusyRef.current = true;
-      bg.src = url;
+      if (!urlMatchesElement(bg, url) || !bg.src) {
+        bg.src = url;
+      }
       bg.currentTime = Math.min(el.currentTime || 0, Number.isFinite(bg.duration) ? bg.duration : el.currentTime || 0);
       bg.volume = el.volume;
       void bg
         .play()
         .then(() => {
           if (cancelled) return;
+          if (!mediaIsAudible(bg)) {
+            handoffBusyRef.current = false;
+            return;
+          }
           markAppPause();
           el.pause();
           usePlaybackStore.getState().setPlaying(true);

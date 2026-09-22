@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "0833429410d0177a",
-  "paperId": "synthobs-rsi-phi-egs-fidelity-2026-09",
-  "sourcePath": "docs/SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md",
+  "auditId": "9e629976680f43e4",
+  "paperId": "synthobs-egs-recursive-self-improvement-fidelity-2026-09",
+  "sourcePath": "docs/SYNTHOBS_EGS_RECURSIVE_SELF_IMPROVEMENT_FIDELITY_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-22T02:01:56.452Z"
+          "invokedAt": "2026-09-22T02:01:56.348Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-22T02:01:56.450Z",
-  "completedAt": "2026-09-22T02:01:56.452Z",
+  "startedAt": "2026-09-22T02:01:56.347Z",
+  "completedAt": "2026-09-22T02:01:56.348Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 2096,
+      "wordCount": 597,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 24,
-        "numbered": 8,
-        "citeLines": 6
+        "links": 9,
+        "numbered": 5,
+        "citeLines": 3
       }
     }
   },

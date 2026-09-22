@@ -1341,6 +1341,14 @@
       "destination": "/interfaces/blog-goldilocks-net-zero-2026-09.html"
     },
     {
+      "source": "/ship-blog/egs-recursive-fidelity",
+      "destination": "/interfaces/blog-egs-recursive-fidelity-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/egs-recursive-fidelity/",
+      "destination": "/interfaces/blog-egs-recursive-fidelity-2026-09.html"
+    },
+    {
       "source": "/ship-blog/ai-layer-triple-tipping-point",
       "destination": "/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html"
     },

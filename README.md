@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-22** · **313** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-22** · **314** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -302,6 +302,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Thought meets its mirror — and slows into matter · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | When GPU counters lie, treat them like phenotypes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | A hydrogen lattice hypothesis that keeps its receipts · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-egs-recursive-fidelity-2026-09.html`](/interfaces/blog-egs-recursive-fidelity-2026-09.html) | When AI starts rewriting itself, one number stops being optional · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | The Big Picture: Everything is Connected · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html`](/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html) | FractiSkills · Portable agent skills · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — one tribe, many homes · Ship blog · SS Vibelandia |

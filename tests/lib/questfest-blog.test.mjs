@@ -30,15 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Holographic Homeostasis · Goldilocks≡NetZero · AI-layer tip · Linear horsepower · Vitality · Digit4 Be–O
-    expect(posts[0].id).toBe('synthobs-holographic-homeostasis-2026-09');
+    // Newest: RSI·Φ fidelity · Holographic Homeostasis · Goldilocks≡NetZero · AI-layer tip · Linear horsepower · Vitality
+    expect(posts[0].id).toBe('synthobs-rsi-phi-egs-fidelity-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-rsi-phi-egs-fidelity-2026-09',
       'synthobs-holographic-homeostasis-2026-09',
       'synthobs-goldilocks-net-zero-equivalence-2026-09',
       'synthobs-ai-layer-triple-tipping-point-2026-09',
       'synthobs-linear-horsepower-collapse-2026-09',
       'synthobs-vitality-control-rhyme-2026-09',
-      'synthobs-digit4-be-o-periodic-rhyme-2026-09',
     ]);
   });
 });

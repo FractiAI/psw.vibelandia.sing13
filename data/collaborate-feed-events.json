@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-21T06:58:27.402Z",
+  "updatedAt": "2026-09-22T01:51:07.505Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-rsi-phi-egs-fidelity-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-22T01:51:07.504Z",
+      "body": "Recursive Self-Improvement and the Φ_EGS Fidelity Attractor",
+      "presenceHue": "gold",
+      "paperId": "synthobs-rsi-phi-egs-fidelity-2026-09",
+      "artifact": {
+        "title": "Recursive Self-Improvement and the Φ_EGS Fidelity Attractor",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md",
+        "url": "/whitepaper/rsi-phi-egs-fidelity",
+        "paperId": "synthobs-rsi-phi-egs-fidelity-2026-09",
+        "docId": "WP-SYNTHOBS-RSI-PHI-EGS-FIDELITY-2026-09-22",
+        "published": "2026-09-22T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-goldilocks-net-zero-equivalence-2026-09",
       "type": "ArtifactEvent",

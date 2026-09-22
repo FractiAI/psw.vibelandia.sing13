@@ -15,7 +15,7 @@
 
 | What runs automatically | Endpoint |
 |-------------------------|----------|
-| **Cron every 5 min** — locked payout + emit pulse if due | `GET /api/cron-coherence-rail` (Vercel Cron) |
+| **Cron every 30 min** — locked payout + emit pulse if due | `GET /api/cron-coherence-rail` (Vercel Cron) |
 | **Goldilocks pulse** — Bitcoin tip + solar + φ-lock + HMAC | `GET /api/goldilocks-pulse` |
 | **Mining rail (read-only)** | `GET /api/mining-rail` only — `POST` returns 405 |
 | **Operational anchor** | `0x3563388d0e1c2d66a004e5e57717dc6d7e568be3` (override: `COHERENCE_OPERATIONAL_ANCHOR` on Vercel — operator env only) |

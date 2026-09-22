@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm ci && npm run build:questfest-bridge && npm run build:executive-onboard && npm run build:lattice-chat",
+  "buildCommand": "node scripts/vercel-smart-build.mjs",
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
@@ -2696,15 +2696,15 @@
   "crons": [
     {
       "path": "/api/cron-coherence-rail",
-      "schedule": "*/5 * * * *"
+      "schedule": "*/30 * * * *"
     },
     {
       "path": "/api/cron-websdr-capture",
-      "schedule": "*/10 * * * *"
+      "schedule": "*/30 * * * *"
     },
     {
       "path": "/api/cron-turner-bison-ingest",
-      "schedule": "*/5 * * * *"
+      "schedule": "*/30 * * * *"
     },
     {
       "path": "/api/cron-daily-ship-bulletin",

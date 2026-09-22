@@ -7,8 +7,8 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-CHAT-PEM-2026-09`  
 **Registry ID:** `lattice-chat-product-engineering-manual-2026-09`  
-**Date:** 2026-09-21
-**Published:** 2026-09-21
+**Date:** 2026-09-22
+**Published:** 2026-09-22
 **Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · BYOK · PRA Snap  
 **Live chat:** [`/lattice-chat?nest=octave99`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99)  
 **Product hero:** [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · primer [`/lattice/learn`](https://www.ssvibelandiaquestfest24x365.com/lattice/learn) · this manual [`/lattice/engineering`](https://www.ssvibelandiaquestfest24x365.com/lattice/engineering)  
@@ -21,9 +21,9 @@
 ---
 
 <!-- AUTO:LATTICE-PEM-META:BEGIN -->
-**Engine shelf sync:** 2026-09-21 · **37** ordered steps (**35** registry papers) · generator `npm run sync:lattice-pem`
+**Engine shelf sync:** 2026-09-22 · **37** ordered steps (**35** registry papers) · generator `npm run sync:lattice-pem`
 
-When a paper is **added to the Infinite Octaves engine pin**, append it to `ENGINE_SHELF` in `lib/infinite-octave-engine-shelf.mjs`, then re-run the sync (Cursor PRA stop hook does this automatically for matching engine / PEM / AGENT_SYNC edits). Digits × Octaves 01–99 remain the practical Story-depth map — not a second product brand. Application companions (PDVSA, macro-protein, …) stay off this shelf.
+When a paper is **added to the Infinite Octaves engine pin**, append it to `ENGINE_SHELF` in `lib/infinite-octave-engine-shelf.mjs`, then re-run the sync (Cursor PRA stop hook does this automatically for matching engine / PEM / AGENT_SYNC edits). The same sync refreshes living engine-shelf appendices on the **online course** (`/omni-lattice-course`) and **companion textbook** (`/omni-lattice-textbook`). Digits × Octaves 01–99 remain the practical Story-depth map — not a second product brand. Application companions (PDVSA, macro-protein, …) stay off this shelf.
 <!-- AUTO:LATTICE-PEM-META:END -->
 
 ---
@@ -52,7 +52,7 @@ $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2\approx 1.618$ is an **architectural scale ke
 |------|--------|
 | 1 | Author + register the paper (`lib/whitepaper-registry.mjs`, Honesty, Document ID, ship-blog if eligible, suite if empirical) |
 | 2 | **Pin to engine:** append an ordered row to `ENGINE_SHELF` in [`lib/infinite-octave-engine-shelf.mjs`](../lib/infinite-octave-engine-shelf.mjs) |
-| 3 | Run **`npm run sync:lattice-pem`** — rewrites AUTO blocks here + in `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` |
+| 3 | Run **`npm run sync:lattice-pem`** — rewrites AUTO blocks here + in `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` **and** living engine-shelf appendices on `/omni-lattice-course` + `/omni-lattice-textbook` |
 | 4 | Nest `octave99` prompts pick up the new pin **at runtime** from the same shelf module (no separate string edit in `lib/lattice-prompt.mjs`) |
 | 5 | Cursor PRA **stop** hook also runs this sync when engine-shelf / PEM / AGENT_SYNC / shelf paper paths were touched |
 
@@ -67,7 +67,7 @@ $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2\approx 1.618$ is an **architectural scale ke
 | Step | Command / path |
 |------|----------------|
 | Shelf source of truth | [`lib/infinite-octave-engine-shelf.mjs`](../lib/infinite-octave-engine-shelf.mjs) · `ENGINE_SHELF` |
-| Sync PEM + AGENT_SYNC | `npm run sync:lattice-pem` · [`scripts/sync-lattice-chat-pem.mjs`](../scripts/sync-lattice-chat-pem.mjs) |
+| Sync PEM + AGENT_SYNC + course/textbook living shelves | `npm run sync:lattice-pem` · [`scripts/sync-lattice-chat-pem.mjs`](../scripts/sync-lattice-chat-pem.mjs) |
 | Sync module | [`lib/lattice-chat-pem.mjs`](../lib/lattice-chat-pem.mjs) |
 | Nest pin (runtime) | [`lib/lattice-prompt.mjs`](../lib/lattice-prompt.mjs) · `renderEnginePinClause()` |
 | Tests | `tests/lib/lattice-chat-pem.test.mjs` · `npm test -- tests/lib/lattice-chat-pem.test.mjs` |

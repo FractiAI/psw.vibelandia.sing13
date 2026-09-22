@@ -1646,6 +1646,7 @@ const chapters = [
 <h3>The doors</h3>
 <ul>
 <li><a href="/reading-room#papers">Reading Room · whitepapers</a> — the primary sources, each with its honesty rail. Good first ambition: re-read one paper from this course cold and notice how much more it says now.</li>
+<li><a href="/omni-lattice-course#engine-shelf-now">Living engine shelf</a> on this course page — refreshes whenever a paper is pinned into Infinite Octaves (<code>npm run sync:lattice-pem</code>), same generator as the Living PEM and companion textbook.</li>
 <li><a href="/lattice">Lattice Chat</a> — BYOK conversation on the Infinite Octaves nest. Ask it to walk a filing with you; hold it to the same tier discipline you hold the papers to.</li>
 <li><a href="/questfest">QUESTFEST board</a> — the ship board, where new papers land with plain-language notes, newest first.</li>
 <li><a href="/journey">Journey</a> · <a href="/art">Omniversal Canvas</a> · <a href="/frontiersman-voyage">Frontiersman voyage</a> — the narrative decks, best enjoyed now that you can tell story tier from catalog tier without effort.</li>
@@ -1686,6 +1687,14 @@ const chapters = [
       wp(
         'synthobs-infinite-octaves-omniversal-lattice-2026-08',
         'Lattice Chat whitepaper',
+      ),
+      wp(
+        'synthobs-holographic-homeostasis-2026-09',
+        'Holographic Homeostasis',
+      ),
+      wp(
+        'synthobs-goldilocks-net-zero-equivalence-2026-09',
+        'Goldilocks ≡ Net Zero',
       ),
     ],
     next: null,

@@ -130,6 +130,18 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(agent).toContain('PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09');
   });
 
+  it('course + textbook carry living engine-shelf AUTO markers with current pins', () => {
+    const course = read('interfaces/omni-lattice-course.html');
+    const textbook = read('interfaces/omni-lattice-textbook.html');
+    for (const html of [course, textbook]) {
+      expect(html).toContain('AUTO:OMNI-LATTICE-LEARNING-SHELF:BEGIN');
+      expect(html).toContain('Living engine shelf');
+      expect(html).toContain('/whitepaper/holographic-homeostasis');
+      expect(html).toContain('/whitepaper/goldilocks-net-zero');
+      expect(html).toContain('sync:lattice-pem');
+    }
+  });
+
   it('exposes /lattice/engineering route', () => {
     const vercel = read('vercel.json');
     expect(vercel).toContain('/lattice/engineering');

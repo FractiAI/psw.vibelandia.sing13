@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "posts": [
+    {
+      "id": "daily-2026-09-23-synthobs-ns-unforced-phi-egs-goldilocks-2026-09",
+      "posted": "2026-09-23",
+      "featured": true,
+      "title": "Coffee without the spoon",
+      "subtitle": "News of the day · Wednesday, September 23",
+      "summary": "OpenAI’s announced Navier–Stokes win leans on a smooth outside force. The everyday unforced question is still open — framed here with the golden nesting key, not a prize claim. Fair Exchange tip clause on.",
+      "href": "/ship-blog/navier-stokes-unforced-phi-egs",
+      "pill": "TODAY",
+      "docRef": "synthobs-ns-unforced-phi-egs-goldilocks-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-22-synthobs-rsi-phi-egs-fidelity-2026-09",
       "posted": "2026-09-22",

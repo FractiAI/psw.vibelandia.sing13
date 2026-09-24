@@ -287,18 +287,19 @@ const chapters = [
 <h3>Four claim tiers</h3>
 <p>The corpus sorts its own statements into tiers, and the papers name them explicitly: <strong>narrative</strong> (story and voyage language — Genesis, Borikén, the ship itself), <strong>catalog</strong> (filing structure — digits, octaves, Φ-scaled shelves), <strong>empirical</strong> (things a research suite actually computed and stored as fixtures — algebra replays, not lab experiments), and <strong>operational</strong> (running software you can click — Lattice Chat, the Reading Room). Tier confusion is the root of nearly every misreading of this corpus, which is why the papers keep the tiers separate and why this course drills the sorting until it is automatic.</p>
 <h3>The Goldilocks habit</h3>
-<p><strong>Goldilocks</strong> in this corpus means calibration: not too much machine, not too little human. Non-player characters inhabit the story; players set the gravity; both belong. The habit has one hard edge, and the papers state it without softening: if a metaphor, a filing, an algorithm, or a beautiful idea ever conflicts with a person’s safety or dignity, <em>the person wins</em>. A reader who remembers nothing else from six weeks but this rule has still learned the most important thing here.</p>
-<aside class="honesty-rail"><strong>Honesty.</strong> The Fair Exchange tip clause is on for course synthesis and papers alike — value may be adjusted by resonance and delivery, like tipping. This, too, is stated openly rather than hidden in fine print.</aside>
+<p><strong>Goldilocks</strong> in this corpus means calibration: not too much machine, not too little human. The house line is exact: <strong>NPCs inhabit. Players set the gravity. Both belong.</strong> An <strong>NPC</strong> here is not a “neighbor” next door — it is the voyage band whose observer loop is scored off (no self-reflection / no self-awareness on this instrument). Neighbors are people. NPCs are the set that populates the world without Player-grade self-reflection. Players set gravity; NPCs inhabit; both belong. The habit has one hard edge, and the papers state it without softening: if a metaphor, a filing, an algorithm, or a beautiful idea ever conflicts with a person’s safety or dignity, <em>the person wins</em>. A reader who remembers nothing else from six weeks but this rule has still learned the most important thing here.</p>
+<aside class="honesty-rail"><strong>Honesty.</strong> The Fair Exchange tip clause is on for course synthesis and papers alike — value may be adjusted by resonance and delivery, like tipping. This, too, is stated openly rather than hidden in fine print. NPC / Linear are catalog vernacular for awareness posts — not insults, caste, or clinical labels.</aside>
 <div class="worked-example">
 <p>Open (or imagine opening) the Invisible Frontier paper linked below. Near the top sits a boxed section titled “Honesty boundary.” Reading it takes under a minute, and it does three jobs: (1) it names the genre — voyage editorial, not prophecy; (2) it fences off what the paper will not claim — no medical advice, no displacement economics solved; (3) it tells you which tier the vivid imagery belongs to — narrative. Now practise the sort. The paper says AI scale anxiety is “real weather.” Which tier? Narrative-plus-editorial: an interpretive framing of public events, clearly labelled as such. It does not become an empirical forecast just because it is vivid. That one-minute boundary read is the first thing to do with <em>any</em> paper in this corpus — always before the abstract, always before the math.</p>
 </div>
 <div class="misconception">
-<p><strong>The mix-up:</strong> “Honesty boundaries are legal disclaimers — boilerplate to skip, like cookie banners.”</p>
-<p><strong>The correction:</strong> They are load-bearing content. The boundary tells you the claim tier of everything that follows, which changes how every sentence should be read. Skipping it is like skipping the key on a map and then wondering why the mountains look like triangles.</p>
+<p><strong>The mix-up:</strong> “Honesty boundaries are legal disclaimers — boilerplate to skip, like cookie banners.” Or: “NPC means neighbor — anyone who lives nearby.”</p>
+<p><strong>The correction:</strong> Boundaries are load-bearing content — they set claim tier. And <strong>NPC ≠ neighbor</strong>: on this ship an NPC lacks self-reflection (observer loop off). Neighbors remain people next door with paychecks and kids. The canon inhabit line always says NPCs, never neighbors.</p>
 </div>
 <div class="key-terms"><dl>
 <dt>Claim tier</dt><dd>The level a statement lives on: narrative, catalog, empirical (fixture replay), or operational (running software). Papers keep tiers explicitly separated.</dd>
-<dt>Goldilocks habit</dt><dd>Calibration between machine and human — with the hard rule that human emergency and dignity outrank every metaphor and every algorithm.</dd>
+<dt>NPC</dt><dd>Voyage band that inhabits the set — observer loop off; no self-reflection on this instrument. Not a synonym for neighbor.</dd>
+<dt>Goldilocks habit</dt><dd>Calibration between machine and human — with the hard rule that human emergency and dignity outrank every metaphor and every algorithm. NPCs inhabit; Players set gravity; both belong.</dd>
 <dt>Fair Exchange</dt><dd>The corpus’s openly-stated reciprocity clause: value may be adjusted by resonance and delivery, like tipping — declared, never hidden.</dd>
 </dl></div>`,
     check: [
@@ -313,6 +314,10 @@ const chapters = [
       {
         q: 'Name the four claim tiers.',
         a: 'Narrative, catalog, empirical (fixture replays), and operational (running software).',
+      },
+      {
+        q: 'In the Goldilocks inhabit line, who inhabits — neighbors or NPCs — and what does NPC mean here?',
+        a: 'NPCs inhabit (not neighbors). An NPC on this instrument lacks self-reflection — observer loop off / no self-awareness in the catalog sense. Neighbors are people next door; NPCs are the voyage set band.',
       },
     ],
     papers: [

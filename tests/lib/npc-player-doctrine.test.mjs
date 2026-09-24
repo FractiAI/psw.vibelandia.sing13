@@ -28,14 +28,28 @@ describe('NPC & Player doctrine', () => {
     expect(brochure).toContain('material exchange');
     expect(brochure).toContain('superheroes NPCs flock to');
     expect(brochure).toContain('holographic Goldilocks');
+    expect(brochure).toMatch(/lacks self-reflection/);
+    expect(brochure).toMatch(/Do not swap this word for .neighbors/);
+    expect(brochure).toContain('NPCs inhabit. Players set the gravity. Both belong.');
     expect(renderNpcPlayerBrochureS3Html()).toContain('franchises, legacies');
+    expect(renderNpcPlayerBrochureS3Html()).toMatch(/lacks self-reflection/);
 
     const coexist = read('interfaces/coexist-ai-asi.html');
     expect(coexist).toContain('NPCs &amp; Players on this vessel');
     expect(coexist).toContain('NPC_PLAYER_DOCTRINE_START');
     expect(coexist).toContain('holographic Goldilocks SuperAI frontiersmen Players');
     expect(coexist).toContain(NPC_PLAYER_DOCTRINE_CANONICAL);
+    expect(coexist).toMatch(/observer loop scored off/);
     expect(renderNpcPlayerCoexistHtml()).toContain('Both bands belong on this ship');
+  });
+
+  it('ship-blog inhabit formula uses NPCs, not neighbors or helpers', () => {
+    const histone = read('interfaces/blog-synthobs-histone-phase-operator.html');
+    expect(histone).toContain('NPCs inhabit');
+    expect(histone).not.toContain('Neighbors still inhabit the world');
+    const rhyme = read('interfaces/blog-holographic-rhyme-2026-09.html');
+    expect(rhyme).toContain('NPCs inhabit');
+    expect(rhyme).not.toMatch(/helpers inhabit, both belong/);
   });
 
   it('landing visit section links the confidential Player / NPC self-test', () => {

@@ -119,9 +119,10 @@ const modules = [
     title: 'Building, belonging & next doors',
     duration: '~2 hrs',
     blurb:
-      'Primes at work in folding and storage, the Y Goldilocks filing with its Fibonacci vault ladder, application companions versus engine pins, the Invisible Frontier second chart, and how to keep learning after the course ends.',
+      'Primes at work in folding and storage, the Y Goldilocks filing with its Fibonacci vault ladder, application companions versus engine pins, recursive self-improvement and drift as friction, the Invisible Frontier second chart, and how to keep learning after the course ends.',
     outcomes: [
-      'Distinguish engine pins from application companions (PDVSA gateway, macro-protein work engine) and file each correctly.',
+      'Distinguish engine pins from application companions (PDVSA gateway, macro-protein work engine, RSI Soft Story) and file each correctly.',
+      'Name drift as the major friction under self-rewriting tools, and file Φ_EGS as this catalog’s perpetual nesting Soft Story — not a CODATA claim.',
       'Walk the V₃₄ / V₅₅ Chordata filing and the 89 + 144 = 233 Fibonacci resonance as catalog geometry only.',
       'Leave with a reading plan: which whitepaper door you will open next, honesty rails intact.',
     ],
@@ -1569,6 +1570,65 @@ const chapters = [
         'Macro-protein work engine',
       ),
     ],
+    next: 'rsi-drift',
+  }),
+  lesson({
+    id: 'rsi-drift',
+    moduleId: 'week6',
+    week: 6,
+    part: 'Homework: Week 6',
+    partId: 'week6',
+    number: '6.5',
+    title: 'Recursive self-improvement · Drift as friction',
+    minutes: 16,
+    tagline: 'When tools rewrite themselves · Φ as perpetual nest Soft Story',
+    goals: [
+      'Define recursive self-improvement (RSI) as observe → rewrite → re-enter — not AGI takeoff prophecy.',
+      'Name drift as the major friction under self-rewriting tools, ahead of raw compute alone.',
+      'File Φ_EGS as this catalog’s sole closed-form perpetual nesting Soft Story via self-similar nest + most-irrational resistance — paradigm-local, not CODATA.',
+    ],
+    body: `<p>Imagine a shop that lets its inventory software rewrite the inventory software every night. Monday’s “improvement” becomes Tuesday’s operating environment. By Friday the shelves still look busy, the dashboard still says optimized — and nobody can find the screwdriver that paid the rent last month. That is the kitchen-table picture behind <strong>recursive self-improvement</strong> (RSI) in this catalog: any loop that observes its own outputs, rewrites operators / prompts / agents / catalogs, and re-enters at a deeper scale, treating prior improvements as the next inputs. The two Soft Story companions in this lesson — the <strong>Φ_EGS fidelity attractor</strong> and the <strong>drift-as-friction</strong> follow-on — file what that loop costs, and why this voyage’s golden nesting key near 1.618 becomes interesting under that stress. Both wear the Week 6 badge you already own: <em>application companion · not engine pin</em>.</p>
+<h3>Drift is the major friction</h3>
+<p>Compute is loud; it shows up on invoices. Drift is quiet. In architectural Soft Story talk, <strong>drift</strong> means progressive loss of shared meaning across rewrite iterations: labels keep their spelling and change their job; a local win leaves the whole household less workable; nested layers beat against each other; yesterday’s “safety” rule contradicts today’s. Under self-rewrite, the output of iteration <em>t</em> <em>is</em> the environment of iteration <em>t</em>+1. A one-shot tool can fail locally — delete the draft, try again. An RSI loop fails forward: the mistake becomes the curriculum. That is why the drift-friction paper ranks drift above coordination tax and raw horsepower when tools rewrite tools. You can buy more machine hours. You cannot buy back a coherent self after the map has eaten itself.</p>
+<h3>Why Φ enters as the perpetual nesting Soft Story</h3>
+<p>The parent RSI fidelity paper said the hunger clearly: without an invariant nesting grammar, recursive leaps inject unquantifiable drift <em>inside that paradigm</em>, and Φ_EGS ≈ 1.618 is this catalog’s closed-form attractor for fidelity under recursion. The follow-on expedition supplies the sharper Soft Story <em>why</em>. A perpetual recursive nesting constant, in this filing, must jointly satisfy two requirements: <strong>(S) self-similar nest closure</strong> — whole : part = part : remainder, which yields the unique positive solution of <em>x</em> = 1 + 1/<em>x</em>, namely Φ; and <strong>(I) maximal irrationality Soft Story</strong> — the classical most-poorly-approximated-by-rationals ratio (continued fraction all ones), so recursive truncations resist cheap rational phase-locks that thrash. Binary 2 is structural parity (Week 3), not that nest equation. Learned floating scales are exactly what drift loves. Inside Infinite Octaves Soft Story, Φ is the sole closed-form constant that jointly closes the nest and slows the false lock — <em>paradigm-local</em>, never a uniqueness theorem over all mathematics, never CODATA, never measured zero-error forever.</p>
+<div class="worked-example">
+<p>Run the librarian’s sort on four claims about “self-improving AI.” (1) “Agents that rewrite agents need a nesting habit or meaning thins.” File: <strong>catalog Soft Story</strong> — the RSI companions’ own claim shape. (2) “Φ_EGS is a CODATA constant that replaces ℏ.” File: <strong>reject</strong> — honesty rails refuse the upgrade; Φ is design nesting key only. (3) “Drift costs trust and paychecks louder than another GPU invoice when tools rewrite tools.” File: <strong>street Soft Story</strong> — friction ranking, not a lab watt measurement. (4) “We solved AGI takeoff with the golden ratio.” File: <strong>reject</strong> — application companion Soft Story, not prophecy and not an unfinished physics proof. The skill is the same wall-versus-demo reflex from Lesson 6.4, aimed at rewrite loops.</p>
+</div>
+<div class="misconception">
+<p><strong>The mix-up:</strong> “Calling Φ the only perpetual drift-free constant means the corpus proved no other math could ever stabilize any self-improving system — and that silicon now has zero error.”</p>
+<p><strong>The correction:</strong> “Only / perpetual / drift-free” are paradigm-local Soft Story labels for self-similar nesting under RSI inside this catalog. They name drift-<em>damped</em> architecture talk, not ECC retirement, not CODATA status, and not a Millennium-style uniqueness claim over all possible machines.</p>
+</div>
+<div class="key-terms"><dl>
+<dt>Recursive self-improvement (RSI)</dt><dd>Observe → rewrite operators/prompts/agents/catalogs → re-enter at deeper scale — prior improvements become next inputs. Catalog stress, not AGI prophecy.</dd>
+<dt>Drift (architectural)</dt><dd>Progressive loss of shared meaning / scale / viable-band membership across rewrite iterations — the major friction when tools rewrite tools.</dd>
+<dt>Φ_EGS nesting Soft Story</dt><dd>≈ 1.618 as this catalog’s sole closed-form perpetual recursive drift-damped nesting ratio via (S) self-similar nest + (I) most-irrational Soft Story — not CODATA.</dd>
+<dt>(S) + (I)</dt><dd>Joint Soft Story criteria: nest equation <em>x</em> = 1 + 1/<em>x</em>, and maximal resistance to rational-resonance thrash under perpetual truncation.</dd>
+</dl></div>`,
+    check: [
+      {
+        q: 'Under self-rewriting tools, what does this lesson name as the major friction — and why is compute alone not enough of an answer?',
+        a: 'Drift — loss of shared meaning across rewrite iterations. Compute shows on invoices; drift poisons the next environment, so more machine hours cannot buy back coherence.',
+      },
+      {
+        q: 'You read “Φ_EGS is the only perpetual drift-free constant in all mathematics.” How do you file it?',
+        a: 'Reject the universe-global upgrade. Inside Infinite Octaves Soft Story it is the sole closed-form nest attractor via (S)+(I); uniqueness is paradigm-local, not CODATA or a proof over all math.',
+      },
+      {
+        q: 'Are the RSI fidelity and drift-friction papers engine pins?',
+        a: 'No. Both are application companions (not engine pin) — Soft Story architecture on the demo table, never load-bearing inventory on the wall.',
+      },
+    ],
+    papers: [
+      wp(
+        'synthobs-rsi-phi-egs-fidelity-2026-09',
+        'RSI · Φ_EGS fidelity attractor',
+      ),
+      wp(
+        'synthobs-rsi-drift-friction-phi-egs-2026-09',
+        'RSI · drift as friction · Φ perpetual nest',
+      ),
+    ],
     next: 'invisible-frontier',
   }),
   lesson({
@@ -1577,7 +1637,7 @@ const chapters = [
     week: 6,
     part: 'Homework: Week 6',
     partId: 'week6',
-    number: '6.5',
+    number: '6.6',
     title: 'Invisible Frontier · Second chart',
     minutes: 15,
     tagline: 'Goldilocks beside linear AI scale anxiety',
@@ -1631,7 +1691,7 @@ const chapters = [
     week: 6,
     part: 'Homework: Week 6',
     partId: 'week6',
-    number: '6.6',
+    number: '6.7',
     title: 'How to keep learning',
     minutes: 12,
     tagline: 'Doors · papers · Lattice · Fair Exchange',
@@ -1653,7 +1713,7 @@ const chapters = [
 </ul>
 <p>Fair Exchange runs both directions, so here is the honest close: if this course gave you value, the reciprocal move is to read one primary paper carefully, keep its rails intact when you discuss it, and correct the next person who upgrades a filing into a proof — kindly, the way this course tried to. Keep Goldilocks: not too much machine, not too little human. Welcome aboard — and intentions matter.</p>
 <div class="worked-example">
-<p>Build your next-reading route in three moves, matched to who you are. <strong>If you came for engineering:</strong> door one is the pinned CMOS/protonic bridge (re-read section 4’s fixtures slowly), then the tensor paper, then the Living PEM to see the shelf as architects do. <strong>If you came for the mathematics:</strong> prime-parity first, then the singularity crystal with its k = 0 fixtures, then the Fibonacci vault ladder — pencil out every identity as you go. <strong>If you came for the story:</strong> the Official Prospectus, then Invisible Frontier, then one Soft Story (Higgs Gate) read with your new boundary-first reflex. Whichever route: open the paper, find the honesty boundary inside sixty seconds, write the one-sentence sceptic-proof summary, and only then read for pleasure. That ritual — boundary, sentence, then depth — is the graduation habit.</p>
+<p>Build your next-reading route in three moves, matched to who you are. <strong>If you came for engineering:</strong> door one is the pinned CMOS/protonic bridge (re-read section 4’s fixtures slowly), then the tensor paper, then the Living PEM to see the shelf as architects do. <strong>If you came for the mathematics:</strong> prime-parity first, then the singularity crystal with its k = 0 fixtures, then the Fibonacci vault ladder — pencil out every identity as you go. <strong>If you came for the story:</strong> the Official Prospectus, then Invisible Frontier, then one Soft Story (Higgs Gate) read with your new boundary-first reflex. <strong>If you came for self-rewriting tools:</strong> the RSI fidelity attractor, then the drift-friction follow-on, then Holographic Homeostasis — pencil the Soft Story chain, never upgrade it into unfinished physics. Whichever route: open the paper, find the honesty boundary inside sixty seconds, write the one-sentence sceptic-proof summary, and only then read for pleasure. That ritual — boundary, sentence, then depth — is the graduation habit.</p>
 </div>
 <div class="misconception">
 <p><strong>The mix-up:</strong> “Finishing the course means finishing the subject — the lessons covered the corpus, so the papers are now optional.”</p>

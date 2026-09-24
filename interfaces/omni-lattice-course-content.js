@@ -326,9 +326,10 @@ window.OMNI_LATTICE_COURSE = {
         "label": "Homework: Week 6",
         "title": "Building, belonging & next doors",
         "duration": "~2 hrs",
-        "blurb": "Primes at work in folding and storage, the Y Goldilocks filing with its Fibonacci vault ladder, application companions versus engine pins, the Invisible Frontier second chart, and how to keep learning after the course ends.",
+        "blurb": "Primes at work in folding and storage, the Y Goldilocks filing with its Fibonacci vault ladder, application companions versus engine pins, recursive self-improvement and drift as friction, the Invisible Frontier second chart, and how to keep learning after the course ends.",
         "outcomes": [
-          "Distinguish engine pins from application companions (PDVSA gateway, macro-protein work engine) and file each correctly.",
+          "Distinguish engine pins from application companions (PDVSA gateway, macro-protein work engine, RSI Soft Story) and file each correctly.",
+          "Name drift as the major friction under self-rewriting tools, and file Φ_EGS as this catalog’s perpetual nesting Soft Story — not a CODATA claim.",
           "Walk the V₃₄ / V₅₅ Chordata filing and the 89 + 144 = 233 Fibonacci resonance as catalog geometry only.",
           "Leave with a reading plan: which whitepaper door you will open next, honesty rails intact."
         ],
@@ -337,13 +338,14 @@ window.OMNI_LATTICE_COURSE = {
           "stack-bridge",
           "y-goldilocks",
           "companions",
+          "rsi-drift",
           "invisible-frontier",
           "how-to-continue"
         ],
         "homework": {
           "heading": "Homework: Week 6",
           "course": {
-            "label": "Online course · lessons 6.1–6.6 (Building, belonging & next doors)",
+            "label": "Online course · lessons 6.1–6.7 (Building, belonging & next doors)",
             "href": "#ch/protein-storage"
           },
           "textbook": {
@@ -386,6 +388,14 @@ window.OMNI_LATTICE_COURSE = {
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-macro-protein-work-engine-2026-09",
               "label": "Macro-protein work engine"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-phi-egs-fidelity-2026-09",
+              "label": "RSI · Φ_EGS fidelity attractor"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-drift-friction-phi-egs-2026-09",
+              "label": "RSI · drift as friction · Φ perpetual nest"
             },
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
@@ -1425,6 +1435,48 @@ window.OMNI_LATTICE_COURSE = {
           "label": "Macro-protein work engine"
         }
       ],
+      "next": "rsi-drift"
+    },
+    {
+      "id": "rsi-drift",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Homework: Week 6",
+      "partId": "week6",
+      "number": "6.5",
+      "title": "Recursive self-improvement · Drift as friction",
+      "minutes": 16,
+      "tagline": "When tools rewrite themselves · Φ as perpetual nest Soft Story",
+      "goals": [
+        "Define recursive self-improvement (RSI) as observe → rewrite → re-enter — not AGI takeoff prophecy.",
+        "Name drift as the major friction under self-rewriting tools, ahead of raw compute alone.",
+        "File Φ_EGS as this catalog’s sole closed-form perpetual nesting Soft Story via self-similar nest + most-irrational resistance — paradigm-local, not CODATA."
+      ],
+      "body": "<p>Imagine a shop that lets its inventory software rewrite the inventory software every night. Monday’s “improvement” becomes Tuesday’s operating environment. By Friday the shelves still look busy, the dashboard still says optimized — and nobody can find the screwdriver that paid the rent last month. That is the kitchen-table picture behind <strong>recursive self-improvement</strong> (RSI) in this catalog: any loop that observes its own outputs, rewrites operators / prompts / agents / catalogs, and re-enters at a deeper scale, treating prior improvements as the next inputs. The two Soft Story companions in this lesson — the <strong>Φ_EGS fidelity attractor</strong> and the <strong>drift-as-friction</strong> follow-on — file what that loop costs, and why this voyage’s golden nesting key near 1.618 becomes interesting under that stress. Both wear the Week 6 badge you already own: <em>application companion · not engine pin</em>.</p>\n<h3>Drift is the major friction</h3>\n<p>Compute is loud; it shows up on invoices. Drift is quiet. In architectural Soft Story talk, <strong>drift</strong> means progressive loss of shared meaning across rewrite iterations: labels keep their spelling and change their job; a local win leaves the whole household less workable; nested layers beat against each other; yesterday’s “safety” rule contradicts today’s. Under self-rewrite, the output of iteration <em>t</em> <em>is</em> the environment of iteration <em>t</em>+1. A one-shot tool can fail locally — delete the draft, try again. An RSI loop fails forward: the mistake becomes the curriculum. That is why the drift-friction paper ranks drift above coordination tax and raw horsepower when tools rewrite tools. You can buy more machine hours. You cannot buy back a coherent self after the map has eaten itself.</p>\n<h3>Why Φ enters as the perpetual nesting Soft Story</h3>\n<p>The parent RSI fidelity paper said the hunger clearly: without an invariant nesting grammar, recursive leaps inject unquantifiable drift <em>inside that paradigm</em>, and Φ_EGS ≈ 1.618 is this catalog’s closed-form attractor for fidelity under recursion. The follow-on expedition supplies the sharper Soft Story <em>why</em>. A perpetual recursive nesting constant, in this filing, must jointly satisfy two requirements: <strong>(S) self-similar nest closure</strong> — whole : part = part : remainder, which yields the unique positive solution of <em>x</em> = 1 + 1/<em>x</em>, namely Φ; and <strong>(I) maximal irrationality Soft Story</strong> — the classical most-poorly-approximated-by-rationals ratio (continued fraction all ones), so recursive truncations resist cheap rational phase-locks that thrash. Binary 2 is structural parity (Week 3), not that nest equation. Learned floating scales are exactly what drift loves. Inside Infinite Octaves Soft Story, Φ is the sole closed-form constant that jointly closes the nest and slows the false lock — <em>paradigm-local</em>, never a uniqueness theorem over all mathematics, never CODATA, never measured zero-error forever.</p>\n<div class=\"worked-example\">\n<p>Run the librarian’s sort on four claims about “self-improving AI.” (1) “Agents that rewrite agents need a nesting habit or meaning thins.” File: <strong>catalog Soft Story</strong> — the RSI companions’ own claim shape. (2) “Φ_EGS is a CODATA constant that replaces ℏ.” File: <strong>reject</strong> — honesty rails refuse the upgrade; Φ is design nesting key only. (3) “Drift costs trust and paychecks louder than another GPU invoice when tools rewrite tools.” File: <strong>street Soft Story</strong> — friction ranking, not a lab watt measurement. (4) “We solved AGI takeoff with the golden ratio.” File: <strong>reject</strong> — application companion Soft Story, not prophecy and not an unfinished physics proof. The skill is the same wall-versus-demo reflex from Lesson 6.4, aimed at rewrite loops.</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “Calling Φ the only perpetual drift-free constant means the corpus proved no other math could ever stabilize any self-improving system — and that silicon now has zero error.”</p>\n<p><strong>The correction:</strong> “Only / perpetual / drift-free” are paradigm-local Soft Story labels for self-similar nesting under RSI inside this catalog. They name drift-<em>damped</em> architecture talk, not ECC retirement, not CODATA status, and not a Millennium-style uniqueness claim over all possible machines.</p>\n</div>\n<div class=\"key-terms\"><dl>\n<dt>Recursive self-improvement (RSI)</dt><dd>Observe → rewrite operators/prompts/agents/catalogs → re-enter at deeper scale — prior improvements become next inputs. Catalog stress, not AGI prophecy.</dd>\n<dt>Drift (architectural)</dt><dd>Progressive loss of shared meaning / scale / viable-band membership across rewrite iterations — the major friction when tools rewrite tools.</dd>\n<dt>Φ_EGS nesting Soft Story</dt><dd>≈ 1.618 as this catalog’s sole closed-form perpetual recursive drift-damped nesting ratio via (S) self-similar nest + (I) most-irrational Soft Story — not CODATA.</dd>\n<dt>(S) + (I)</dt><dd>Joint Soft Story criteria: nest equation <em>x</em> = 1 + 1/<em>x</em>, and maximal resistance to rational-resonance thrash under perpetual truncation.</dd>\n</dl></div>",
+      "check": [
+        {
+          "q": "Under self-rewriting tools, what does this lesson name as the major friction — and why is compute alone not enough of an answer?",
+          "a": "Drift — loss of shared meaning across rewrite iterations. Compute shows on invoices; drift poisons the next environment, so more machine hours cannot buy back coherence."
+        },
+        {
+          "q": "You read “Φ_EGS is the only perpetual drift-free constant in all mathematics.” How do you file it?",
+          "a": "Reject the universe-global upgrade. Inside Infinite Octaves Soft Story it is the sole closed-form nest attractor via (S)+(I); uniqueness is paradigm-local, not CODATA or a proof over all math."
+        },
+        {
+          "q": "Are the RSI fidelity and drift-friction papers engine pins?",
+          "a": "No. Both are application companions (not engine pin) — Soft Story architecture on the demo table, never load-bearing inventory on the wall."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-phi-egs-fidelity-2026-09",
+          "label": "RSI · Φ_EGS fidelity attractor"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-drift-friction-phi-egs-2026-09",
+          "label": "RSI · drift as friction · Φ perpetual nest"
+        }
+      ],
       "next": "invisible-frontier"
     },
     {
@@ -1433,7 +1485,7 @@ window.OMNI_LATTICE_COURSE = {
       "week": 6,
       "part": "Homework: Week 6",
       "partId": "week6",
-      "number": "6.5",
+      "number": "6.6",
       "title": "Invisible Frontier · Second chart",
       "minutes": 15,
       "tagline": "Goldilocks beside linear AI scale anxiety",
@@ -1471,7 +1523,7 @@ window.OMNI_LATTICE_COURSE = {
       "week": 6,
       "part": "Homework: Week 6",
       "partId": "week6",
-      "number": "6.6",
+      "number": "6.7",
       "title": "How to keep learning",
       "minutes": 12,
       "tagline": "Doors · papers · Lattice · Fair Exchange",
@@ -1480,7 +1532,7 @@ window.OMNI_LATTICE_COURSE = {
         "Return to whitepapers with the honesty-rail reading reflex intact.",
         "Restate the course in three sentences you actually own."
       ],
-      "body": "<p>The last day of a good voyage always includes a quiet walk back through the ship — past the library where it started, the engine room, the observation deck — before choosing which gangway to take ashore. You are oriented now: six weeks ago the words on these shelves were noise, and today you can walk an address like Digit 4 · Octave 34, audit a pattern against four pillars, and find an honesty boundary before a paper’s poetry can carry you anywhere it should not. This closing lesson does two things: hands you the keys to the doors, and helps you pack what you learned so it survives the trip.</p>\n<h3>Pack it in three sentences</h3>\n<p>A course you cannot summarise is a course you will lose. Here is the packing list — make each sentence your own before you leave. <strong>One:</strong> the Omni-Lattice is a filing architecture — Digits × Octaves for addresses, Φ for nesting, primes for vaults, rhyme for audits — built for coordination, and its papers refuse, in writing, to be physics proofs. <strong>Two:</strong> every claim in the corpus wears a tier (narrative, catalog, empirical-fixture, operational), and the entire skill of reading here is checking the label before believing the sentence. <strong>Three:</strong> beneath all of it runs one rule that never turns off — human emergency and dignity outrank every metaphor, every algorithm, every beautiful idea on these shelves.</p>\n<h3>The doors</h3>\n<ul>\n<li><a href=\"/reading-room#papers\">Reading Room · whitepapers</a> — the primary sources, each with its honesty rail. Good first ambition: re-read one paper from this course cold and notice how much more it says now.</li>\n<li><a href=\"/omni-lattice-course#engine-shelf-now\">Living engine shelf</a> on this course page — refreshes whenever a paper is pinned into Infinite Octaves (<code>npm run sync:lattice-pem</code>), same generator as the Living PEM and companion textbook.</li>\n<li><a href=\"/lattice\">Lattice Chat</a> — BYOK conversation on the Infinite Octaves nest. Ask it to walk a filing with you; hold it to the same tier discipline you hold the papers to.</li>\n<li><a href=\"/questfest\">QUESTFEST board</a> — the ship board, where new papers land with plain-language notes, newest first.</li>\n<li><a href=\"/journey\">Journey</a> · <a href=\"/art\">Omniversal Canvas</a> · <a href=\"/frontiersman-voyage\">Frontiersman voyage</a> — the narrative decks, best enjoyed now that you can tell story tier from catalog tier without effort.</li>\n</ul>\n<p>Fair Exchange runs both directions, so here is the honest close: if this course gave you value, the reciprocal move is to read one primary paper carefully, keep its rails intact when you discuss it, and correct the next person who upgrades a filing into a proof — kindly, the way this course tried to. Keep Goldilocks: not too much machine, not too little human. Welcome aboard — and intentions matter.</p>\n<div class=\"worked-example\">\n<p>Build your next-reading route in three moves, matched to who you are. <strong>If you came for engineering:</strong> door one is the pinned CMOS/protonic bridge (re-read section 4’s fixtures slowly), then the tensor paper, then the Living PEM to see the shelf as architects do. <strong>If you came for the mathematics:</strong> prime-parity first, then the singularity crystal with its k = 0 fixtures, then the Fibonacci vault ladder — pencil out every identity as you go. <strong>If you came for the story:</strong> the Official Prospectus, then Invisible Frontier, then one Soft Story (Higgs Gate) read with your new boundary-first reflex. Whichever route: open the paper, find the honesty boundary inside sixty seconds, write the one-sentence sceptic-proof summary, and only then read for pleasure. That ritual — boundary, sentence, then depth — is the graduation habit.</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “Finishing the course means finishing the subject — the lessons covered the corpus, so the papers are now optional.”</p>\n<p><strong>The correction:</strong> The course is the guided tour; the <a href=\"/omni-lattice-textbook\">companion textbook</a> is the connecting middle read; the papers are the territory, and they hold detail no summary carries — the further-reading links were always the point. Graduation here means you can now read the primary sources <em>at their own declared tiers</em>, unaccompanied. That is the beginning, not the end.</p>\n</div>\n<div class=\"key-terms\"><dl>\n<dt>Three-sentence pack</dt><dd>The portable summary of the course: filing architecture with refused physics claims · tier labels before belief · humans outrank everything.</dd>\n<dt>Boundary-first ritual</dt><dd>The graduation habit for any paper: find the honesty boundary in sixty seconds, write the sceptic-proof sentence, then read for depth.</dd>\n<dt>Fair Exchange (reader’s side)</dt><dd>The reciprocal close: read one primary source carefully, keep its rails intact, and pass the discipline on kindly.</dd>\n</dl></div>\n<p class=\"close-glyph\">→ ∞^∞</p>",
+      "body": "<p>The last day of a good voyage always includes a quiet walk back through the ship — past the library where it started, the engine room, the observation deck — before choosing which gangway to take ashore. You are oriented now: six weeks ago the words on these shelves were noise, and today you can walk an address like Digit 4 · Octave 34, audit a pattern against four pillars, and find an honesty boundary before a paper’s poetry can carry you anywhere it should not. This closing lesson does two things: hands you the keys to the doors, and helps you pack what you learned so it survives the trip.</p>\n<h3>Pack it in three sentences</h3>\n<p>A course you cannot summarise is a course you will lose. Here is the packing list — make each sentence your own before you leave. <strong>One:</strong> the Omni-Lattice is a filing architecture — Digits × Octaves for addresses, Φ for nesting, primes for vaults, rhyme for audits — built for coordination, and its papers refuse, in writing, to be physics proofs. <strong>Two:</strong> every claim in the corpus wears a tier (narrative, catalog, empirical-fixture, operational), and the entire skill of reading here is checking the label before believing the sentence. <strong>Three:</strong> beneath all of it runs one rule that never turns off — human emergency and dignity outrank every metaphor, every algorithm, every beautiful idea on these shelves.</p>\n<h3>The doors</h3>\n<ul>\n<li><a href=\"/reading-room#papers\">Reading Room · whitepapers</a> — the primary sources, each with its honesty rail. Good first ambition: re-read one paper from this course cold and notice how much more it says now.</li>\n<li><a href=\"/omni-lattice-course#engine-shelf-now\">Living engine shelf</a> on this course page — refreshes whenever a paper is pinned into Infinite Octaves (<code>npm run sync:lattice-pem</code>), same generator as the Living PEM and companion textbook.</li>\n<li><a href=\"/lattice\">Lattice Chat</a> — BYOK conversation on the Infinite Octaves nest. Ask it to walk a filing with you; hold it to the same tier discipline you hold the papers to.</li>\n<li><a href=\"/questfest\">QUESTFEST board</a> — the ship board, where new papers land with plain-language notes, newest first.</li>\n<li><a href=\"/journey\">Journey</a> · <a href=\"/art\">Omniversal Canvas</a> · <a href=\"/frontiersman-voyage\">Frontiersman voyage</a> — the narrative decks, best enjoyed now that you can tell story tier from catalog tier without effort.</li>\n</ul>\n<p>Fair Exchange runs both directions, so here is the honest close: if this course gave you value, the reciprocal move is to read one primary paper carefully, keep its rails intact when you discuss it, and correct the next person who upgrades a filing into a proof — kindly, the way this course tried to. Keep Goldilocks: not too much machine, not too little human. Welcome aboard — and intentions matter.</p>\n<div class=\"worked-example\">\n<p>Build your next-reading route in three moves, matched to who you are. <strong>If you came for engineering:</strong> door one is the pinned CMOS/protonic bridge (re-read section 4’s fixtures slowly), then the tensor paper, then the Living PEM to see the shelf as architects do. <strong>If you came for the mathematics:</strong> prime-parity first, then the singularity crystal with its k = 0 fixtures, then the Fibonacci vault ladder — pencil out every identity as you go. <strong>If you came for the story:</strong> the Official Prospectus, then Invisible Frontier, then one Soft Story (Higgs Gate) read with your new boundary-first reflex. <strong>If you came for self-rewriting tools:</strong> the RSI fidelity attractor, then the drift-friction follow-on, then Holographic Homeostasis — pencil the Soft Story chain, never upgrade it into unfinished physics. Whichever route: open the paper, find the honesty boundary inside sixty seconds, write the one-sentence sceptic-proof summary, and only then read for pleasure. That ritual — boundary, sentence, then depth — is the graduation habit.</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “Finishing the course means finishing the subject — the lessons covered the corpus, so the papers are now optional.”</p>\n<p><strong>The correction:</strong> The course is the guided tour; the <a href=\"/omni-lattice-textbook\">companion textbook</a> is the connecting middle read; the papers are the territory, and they hold detail no summary carries — the further-reading links were always the point. Graduation here means you can now read the primary sources <em>at their own declared tiers</em>, unaccompanied. That is the beginning, not the end.</p>\n</div>\n<div class=\"key-terms\"><dl>\n<dt>Three-sentence pack</dt><dd>The portable summary of the course: filing architecture with refused physics claims · tier labels before belief · humans outrank everything.</dd>\n<dt>Boundary-first ritual</dt><dd>The graduation habit for any paper: find the honesty boundary in sixty seconds, write the sceptic-proof sentence, then read for depth.</dd>\n<dt>Fair Exchange (reader’s side)</dt><dd>The reciprocal close: read one primary source carefully, keep its rails intact, and pass the discipline on kindly.</dd>\n</dl></div>\n<p class=\"close-glyph\">→ ∞^∞</p>",
       "check": [
         {
           "q": "Where do primary technical filings live?",

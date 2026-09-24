@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-23T00:22:59.704Z",
+  "updatedAt": "2026-09-24T03:06:34.260Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-rsi-drift-friction-phi-egs-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-24T03:06:34.260Z",
+      "body": "Recursive Self-Improvement · Drift as Friction · Φ_EGS as the Perpetual Nesting Constant",
+      "presenceHue": "gold",
+      "paperId": "synthobs-rsi-drift-friction-phi-egs-2026-09",
+      "artifact": {
+        "title": "Recursive Self-Improvement · Drift as Friction · Φ_EGS as the Perpetual Nesting Constant",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_RSI_DRIFT_FRICTION_PHI_EGS_PERPETUAL_2026-09.md",
+        "url": "/whitepaper/rsi-drift-friction-phi-egs",
+        "paperId": "synthobs-rsi-drift-friction-phi-egs-2026-09",
+        "docId": "WP-SYNTHOBS-RSI-DRIFT-FRICTION-PHI-EGS-2026-09-24",
+        "published": "2026-09-24T03:10:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-ns-unforced-phi-egs-goldilocks-2026-09",
       "type": "ArtifactEvent",

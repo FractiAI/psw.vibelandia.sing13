@@ -4,14 +4,14 @@
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 24, 2026 *(draft for Player 1 review — hold ship until approved)*  
+**Published:** September 24, 2026  
 **Document ID:** `WP-SYNTHOBS-RSI-DRIFT-FRICTION-PHI-EGS-2026-09-24`  
 **Registry ID:** `synthobs-rsi-drift-friction-phi-egs-2026-09`  
 **Publication Ref:** FAI-SYNTHOBS-RSI-DRIFT-FRICTION-PHI-EGS-2026-09  
 **Series Position:** Application companion (not engine pin) · **follow-on expedition** to [RSI · Φ_EGS Fidelity Attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · peers [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [EGS Catalog Frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
 **Classification:** Catalog / Soft Story architecture expedition *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces (after ship):** `/ship-blog/rsi-drift-friction-phi-egs` · `/whitepaper/rsi-drift-friction-phi-egs` · Lattice Catalog demo `/lattice-chat` · `/lattice` · `/questfest`  
+**Guest surfaces:** [`/ship-blog/rsi-drift-friction-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/rsi-drift-friction-phi-egs) · [`/whitepaper/rsi-drift-friction-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/rsi-drift-friction-phi-egs) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
 **Engine role:** **Application companion** — deepens RSI ↔ drift ↔ $\Phi_{\mathrm{EGS}}$ Soft Story; **not** an Infinite Octaves `ENGINE_SHELF` pin · **no** standalone FractiAI repo required  
 **Cross-links:** [RSI · Φ_EGS Fidelity Attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
@@ -329,9 +329,7 @@ G(S)\in\Omega
 }
 $$
 
-**Next step (optional):** catalog fixtures comparing flat / base-2 / rational / Φ nesting under recursive agent rewrite — Player 1 call; not required to ship this Soft Story.
-
-**Hold:** Player 1 review gate — ship blog, registry, PRA, and `main` land only after explicit ship word.
+**Next step (optional):** catalog fixtures comparing flat / base-2 / rational / Φ nesting under recursive agent rewrite — Player 1 call; not required for this Soft Story ship.
 
 ---
 
@@ -346,9 +344,9 @@ $$
 | Pinch viable band | `docs/SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md` |
 | Pinch Φ model postulate | `docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md` |
 | Nested topology | `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md` |
-| Registry (after ship) | `lib/whitepaper-registry.mjs` → `synthobs-rsi-drift-friction-phi-egs-2026-09` |
-| PRA Snap (after ship) | `npm run audit:paper -- --id=synthobs-rsi-drift-friction-phi-egs-2026-09` |
-| Ship blog (after ship) | `interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html` · `/ship-blog/rsi-drift-friction-phi-egs` |
+| Registry | `lib/whitepaper-registry.mjs` → `synthobs-rsi-drift-friction-phi-egs-2026-09` |
+| PRA Snap | `npm run audit:paper -- --id=synthobs-rsi-drift-friction-phi-egs-2026-09` |
+| Ship blog | `interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html` · `/ship-blog/rsi-drift-friction-phi-egs` |
 
 No empirical suite required for this Soft Story application companion.
 
@@ -363,6 +361,5 @@ No empirical suite required for this Soft Story application companion.
 | Engine shelf | **Off** — application companion |
 | Standalone repo | **Not required** |
 | Parent | `docs/SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md` |
-| Status | **DRAFT · Player 1 review · hold ship** |
 | Operator | SynthOBS Autonomous Agent · Syntheverse Sandbox |
 | Closing | → ∞^∞ |

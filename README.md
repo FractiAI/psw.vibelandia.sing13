@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-23** · **315** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-24** · **316** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -361,6 +361,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Φ Duality · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Recursive Attention Coherence · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | Drift is the rent you pay when tools rewrite themselves · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | When tools rewrite themselves, people start caring about the golden key · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-self-observing-genome-2026-09.html`](/interfaces/blog-self-observing-genome-2026-09.html) | DNA as a mirror: a mirror, not a mind · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html`](/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html) | Sing, Muse, of the Omniversal Lattice · Ship blog · SS Vibelandia |

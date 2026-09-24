@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "posts": [
+    {
+      "id": "daily-2026-09-24-synthobs-rsi-drift-friction-phi-egs-2026-09",
+      "posted": "2026-09-24",
+      "featured": true,
+      "title": "Drift is the rent you pay when tools rewrite themselves",
+      "subtitle": "News of the day · Thursday, September 24",
+      "summary": "Self-rewriting tools make drift the major friction. This ship’s golden nesting key near 1.618 is the closed-form habit that keeps meaning workable across loops. Fair Exchange tip clause on.",
+      "href": "/ship-blog/rsi-drift-friction-phi-egs",
+      "pill": "TODAY",
+      "docRef": "synthobs-rsi-drift-friction-phi-egs-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-23-synthobs-ns-unforced-phi-egs-goldilocks-2026-09",
       "posted": "2026-09-23",

@@ -1,6 +1,11 @@
-# EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment
+# EGS Recursive Fidelity Test (ERFT) · Version Two — Fair Scoreboard
 
 **Subtitle:** When the same information is transformed again and again, does incorporating $\Phi_{\mathrm{EGS}}$ reduce cumulative fidelity drift versus matched recursion without it?
+
+**Current version (live):** `ERFT-V2-2026-09-25` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
+**Do not use as live results:** `ERFT-V1-2026-09-25` (construction-bias receipt only — baseline inherited least-drift via milder coarsening)
+
+**One-line V2 verdict:** Repair yes · partial $\Phi$ leads on fair matched classes · baseline no longer least-drift by construction · blind ladder / sweep refuse a full crown.
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -17,7 +22,7 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
-**Keywords:** ERFT; recursive fidelity; drift; RSI; Φ_EGS; falsifiable; five-arm; blind constant; constant sweep; holographic homeostasis; Infinite Octaves; Fair Exchange; NSPFRNP
+**Keywords:** ERFT; ERFT-V2; recursive fidelity; drift; RSI; Φ_EGS; falsifiable; five-arm; blind constant; constant sweep; holographic homeostasis; Infinite Octaves; Fair Exchange; NSPFRNP
 
 ---
 

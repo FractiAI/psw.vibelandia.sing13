@@ -17,7 +17,7 @@ const ROOT = path.resolve(__dirname, '..');
 /** slug → frontiersman headline (campfire-short, voyage-forward) */
 const TITLES = {
   'rsi-drift-friction-phi-egs': 'Watch Out for the Drift',
-  'erft-recursive-fidelity': 'We Ran the Drift Test. The Favorite Number Lost.',
+  'erft-recursive-fidelity': 'Version Two Results: Who Won the Drift Test',
   'navier-stokes-unforced-phi-egs': 'The Coffee, Not the Spoon',
   'rsi-phi-egs-fidelity': 'When Tools Rewrite Themselves',
   'holographic-homeostasis': 'Stay Steady on the Move',

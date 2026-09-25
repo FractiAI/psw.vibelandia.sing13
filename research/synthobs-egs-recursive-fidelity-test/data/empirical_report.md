@@ -1,9 +1,9 @@
-# EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment
+# EGS Recursive Fidelity Test (ERFT) · Version Two — Fair Scoreboard
 
 **Document ID:** `WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25`
 **Registry ID:** `synthobs-egs-recursive-fidelity-test-erft-2026-09`
 **Protocol:** `ERFT-V2-2026-09-25`
-**Generated:** 2026-09-25T07:29:48.174Z
+**Generated:** 2026-09-25T15:04:06.352Z
 
 ## Verdict
 

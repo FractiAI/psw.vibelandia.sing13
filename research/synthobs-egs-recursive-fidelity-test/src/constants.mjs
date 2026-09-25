@@ -1,6 +1,7 @@
 /**
- * ERFT — EGS Recursive Fidelity Test (V1 protocol locks)
+ * ERFT — EGS Recursive Fidelity Test (V2 protocol locks)
  * Falsifiable recursive-drift experiment. Does NOT assume Φ is correct.
+ * Live protocol: ERFT-V2-2026-09-25 (V1 = construction-bias receipt only).
  */
 export const PHI_EGS = (1 + Math.sqrt(5)) / 2; // ≈ 1.618033988749895
 export const SQRT2 = Math.SQRT2;
@@ -9,13 +10,13 @@ export const E_CONST = Math.E;
 export const DOC_ID = 'WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25';
 export const REGISTRY_ID = 'synthobs-egs-recursive-fidelity-test-erft-2026-09';
 export const STUDY_TITLE =
-  'EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment';
+  'EGS Recursive Fidelity Test (ERFT) · Version Two — Fair Scoreboard';
 export const PAPER_NAME = 'SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md';
 export const SHIP_BLOG_SLUG = 'erft-recursive-fidelity';
 export const SHIP_BLOG_FILE = 'blog-erft-recursive-fidelity-2026-09.html';
 export const STANDALONE_REPO = 'https://github.com/FractiAI/synthobs-egs-recursive-fidelity-test';
 
-/** Pre-registered generation depth for V1. */
+/** Pre-registered generation depth for V2. */
 export const GENERATIONS = 24;
 
 /** Held-out fraction for constant-sweep validation (anti curve-fitting). */

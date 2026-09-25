@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "78d832349e3e905e",
+  "auditId": "38067fa618533902",
   "paperId": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
   "sourcePath": "docs/SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-25T04:05:24.797Z"
+          "invokedAt": "2026-09-25T04:53:35.197Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-25T04:05:24.796Z",
-  "completedAt": "2026-09-25T04:05:24.797Z",
+  "startedAt": "2026-09-25T04:53:35.195Z",
+  "completedAt": "2026-09-25T04:53:35.197Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 896,
+      "wordCount": 1255,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

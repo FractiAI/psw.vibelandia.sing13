@@ -4,7 +4,7 @@
 
 - Paper: `docs/SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md`
 - Registry: `synthobs-egs-recursive-fidelity-test-erft-2026-09`
-- Ship blog: `/ship-blog/erft-recursive-fidelity` · **Watch the Recursion**
+- Ship blog: `/ship-blog/erft-recursive-fidelity` · **We Ran the Drift Test. The Favorite Number Lost.**
 - Whitepaper: `/whitepaper/erft-recursive-fidelity`
 - Run: `npm run research:synthobs-egs-recursive-fidelity-test` (SING13 root) or `node scripts/run_empirical_pipeline.mjs`
 

@@ -4,7 +4,7 @@
   "registryId": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
   "title": "EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment",
   "protocol": "ERFT-V1-2026-09-25",
-  "generatedAt": "2026-09-25T04:05:24.459Z",
+  "generatedAt": "2026-09-25T04:54:07.315Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "ERFT V1 is a controlled, falsifiable recursive-fidelity protocol. It does not assume Φ_EGS is correct, does not claim CODATA status, does not prove AGI safety, and does not upgrade Soft Story nesting grammar into unfinished physics. Suite pass = protocol integrity + reproducible fixtures; empirical Φ advantage is a measured outcome that may fail.",
   "preRegisteredHypothesis": {

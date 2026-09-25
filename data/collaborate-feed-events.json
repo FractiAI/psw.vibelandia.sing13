@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-25T04:05:24.801Z",
+  "updatedAt": "2026-09-25T04:53:35.201Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-25T04:05:24.800Z",
+      "createdAt": "2026-09-25T04:53:35.199Z",
       "body": "EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment",
       "presenceHue": "gold",
       "paperId": "synthobs-egs-recursive-fidelity-test-erft-2026-09",

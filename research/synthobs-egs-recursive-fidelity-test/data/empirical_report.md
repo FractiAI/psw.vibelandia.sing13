@@ -3,7 +3,7 @@
 **Document ID:** `WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25`
 **Registry ID:** `synthobs-egs-recursive-fidelity-test-erft-2026-09`
 **Protocol:** `ERFT-V1-2026-09-25`
-**Generated:** 2026-09-25T04:05:24.459Z
+**Generated:** 2026-09-25T04:54:07.315Z
 
 ## Verdict
 

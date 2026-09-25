@@ -122,13 +122,70 @@ A meaningful $\Phi$ advantage requires reducing cumulative drift across domains,
 
 ---
 
-## 7. Suite · course · textbook
+## 7. V1 results (receipt `2026-09-25T04:05:24.459Z`)
+
+Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V1-2026-09-25` · generations $N=24$.
+
+### 7.1 Suite integrity
+
+| Metric | Value |
+|--------|-------|
+| Experiments | 8 / 8 pass |
+| Suite pass means | Protocol integrity + reproducible fixtures — **not** that $\Phi$ won |
+| $\Phi$ a priori assumed? | **No** |
+
+### 7.2 Five-arm matched recursion (E1) — who won lowest final RFD by mechanism class
+
+Across V1 fixture domains scored in E1:
+
+| Mechanism | Lowest-RFD winner (domains) |
+|-----------|-----------------------------|
+| Scaling | Mixed (baseline majority; one $\sqrt{2}$; one random) |
+| Recursive weighting | **Baseline** (6 / 6) |
+| Hierarchical resolution | **Baseline** (6 / 6) |
+| Recursive feedback | **$e$** (6 / 6) |
+| Recursive compression | **Baseline** (6 / 6) |
+
+$\Phi$ did **not** dominate any mechanism class on this fixture set.
+
+### 7.3 Blind constant ladder (E2) — recursive compression
+
+Ranked by lowest final RFD (unlabeled at compare time):
+
+| Rank | $c$ | Notes |
+|------|-----|-------|
+| 1 | $1.0$ | Baseline |
+| 2–3 | $1.414\ldots$, $1.5$ | Tied above $\Phi$ |
+| **4** | **$1.618033988749895$** | **$\Phi$** |
+| 5–7 | $1.7$, $2.0$, $e$ | Higher drift |
+
+### 7.4 Continuous sweep (E3) — recursive feedback · train/hold
+
+| Split | Minimum-$c$ | Near $\Phi$? |
+|-------|-------------|--------------|
+| Train | $c = 2.5$ | **No** |
+| Hold-out | $c = 1.25$ | **No** |
+
+### 7.5 Drift-slope snapshot (E4) — recursive compression
+
+At generation 1 both baseline and $\Phi$ take a similar first compression bite (RFD $\approx 0.192$), then plateau across remaining generations. V1 does **not** show $\Phi$ converting cumulative error into a clearly superior attractor on this locked compression fixture.
+
+### 7.6 Readout (honest)
+
+**V1 empirical claim for the locked fixture set:** the strong hypothesis — “$\Phi$ reduces cumulative recursive fidelity drift versus matched controls and decoys” — is **not supported**. Suite integrity passed. $\Phi$ advantage failed the pre-registered bar. A null is a valid scientific outcome and is published on purpose.
+
+Later revisions may attach live public downloads without changing the arm/mechanism honesty lock.
+
+---
+
+## 8. Suite · course · textbook
 
 - Run: `npm run research:synthobs-egs-recursive-fidelity-test`  
 - Standalone: `FractiAI/synthobs-egs-recursive-fidelity-test`  
-- Course lesson **6.5b** / textbook **§6.5b** teach ERFT beside RSI Soft Story (Week 6)
+- Course lesson **6.5b** / textbook **§6.5b** teach ERFT beside RSI Soft Story (Week 6), including the V1 null readout
 
 ---
+
 
 ## Document ID
 

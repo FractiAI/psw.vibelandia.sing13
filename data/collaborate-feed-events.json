@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-24T03:06:34.260Z",
+  "updatedAt": "2026-09-25T04:05:24.801Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-egs-recursive-fidelity-test-erft-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-25T04:05:24.800Z",
+      "body": "EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment",
+      "presenceHue": "gold",
+      "paperId": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
+      "artifact": {
+        "title": "EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md",
+        "url": "/whitepaper/erft-recursive-fidelity",
+        "paperId": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
+        "docId": "WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25",
+        "published": "2026-09-25T04:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-rsi-drift-friction-phi-egs-2026-09",
       "type": "ArtifactEvent",

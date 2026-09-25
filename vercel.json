@@ -1325,12 +1325,28 @@
       "destination": "/interfaces/blog-digit4-be-o-rhyme-2026-09.html"
     },
     {
+      "source": "/ship-blog/erft-recursive-fidelity",
+      "destination": "/interfaces/blog-erft-recursive-fidelity-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/erft-recursive-fidelity/",
+      "destination": "/interfaces/blog-erft-recursive-fidelity-2026-09.html"
+    },
+    {
       "source": "/ship-blog/rsi-drift-friction-phi-egs",
       "destination": "/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html"
     },
     {
       "source": "/ship-blog/rsi-drift-friction-phi-egs/",
       "destination": "/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html"
+    },
+    {
+      "source": "/lattice/agent-status",
+      "destination": "/interfaces/lattice-agent-status.html"
+    },
+    {
+      "source": "/lattice/agent-status/",
+      "destination": "/interfaces/lattice-agent-status.html"
     },
     {
       "source": "/ship-blog/navier-stokes-unforced-phi-egs",

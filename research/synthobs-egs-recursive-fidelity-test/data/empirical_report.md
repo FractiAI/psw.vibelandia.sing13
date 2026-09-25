@@ -1,0 +1,2393 @@
+# EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment
+
+**Document ID:** `WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25`
+**Registry ID:** `synthobs-egs-recursive-fidelity-test-erft-2026-09`
+**Protocol:** `ERFT-V1-2026-09-25`
+**Generated:** 2026-09-25T04:05:24.459Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 8 / 8 |
+| Φ_EGS (one arm) | 1.618033988749895 |
+| Suite pass means | Protocol executed reproducibly with locked arms/mechanisms/metrics — NOT that Φ won. |
+
+## Experiments
+
+### E0_protocol_locks — Pre-registered protocol locks (φ not assumed)
+
+- **Pass:** `true`
+- **Interpretation:** V1 freezes arms, mechanisms, depth, and null-ok honesty before reading outcomes.
+- **Honesty:** Protocol lock ≠ physics proof.
+
+```json
+{
+  "id": "E0_protocol_locks",
+  "title": "Pre-registered protocol locks (φ not assumed)",
+  "PROTOCOL_VERSION": "ERFT-V1-2026-09-25",
+  "GENERATIONS": 24,
+  "MECHANISMS": [
+    "scaling",
+    "recursive_weighting",
+    "hierarchical_resolution",
+    "recursive_feedback",
+    "recursive_compression"
+  ],
+  "NAMED_ARMS": {
+    "baseline": 1,
+    "egs": 1.618033988749895,
+    "sqrt2": 1.4142135623730951,
+    "e": 2.718281828459045
+  },
+  "hypothesis": {
+    "claim": "If Φ_EGS reduces cumulative recursive fidelity drift vs matched controls, the advantage must appear across domains, mechanisms, decoy constants, and held-out series — without assuming Φ a priori.",
+    "null_ok": true,
+    "win_requires": [
+      "lower cumulative RFD vs baseline at depth N",
+      "advantage across ≥3 independent domains",
+      "survives decoy constants (√2, e, blind ladder)",
+      "survives held-out series",
+      "not a single-metric fluke"
+    ],
+    "suite_pass_means": "Protocol executed reproducibly with locked arms/mechanisms/metrics — NOT that Φ won."
+  },
+  "pass": true,
+  "interpretation": "V1 freezes arms, mechanisms, depth, and null-ok honesty before reading outcomes.",
+  "honesty": "Protocol lock ≠ physics proof."
+}
+```
+
+### E1_five_arm_matched — Five-arm matched recursion (baseline · Φ · √2 · e · random)
+
+- **Pass:** `true`
+- **Interpretation:** Identical recursion/evaluator; only c differs. Compare cumulative RFD trajectories — do not crown Φ unless it wins fair.
+- **Honesty:** Proxy fixtures for V1; live public pulls can extend domains later.
+
+```json
+{
+  "id": "E1_five_arm_matched",
+  "title": "Five-arm matched recursion (baseline · Φ · √2 · e · random)",
+  "rows": [
+    {
+      "domain": "synthetic_logistic",
+      "domainClass": "synthetic",
+      "mechanism": "scaling",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 1.3324663851227103e-16,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 1.8983931121963689e-16,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 2.057823720638246e-16,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 1.5154773039150995e-16,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 7.994798310736263e-17,
+          "fidelity_final": 0.9999999999999999,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 1.791726674482041e-16,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "synthetic_logistic",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_weighting",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 5.463690523629807e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 8.7289520232855e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 5.795118929344973e-17,
+          "fidelity_final": 0.9999999999999999,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 8.993834424997155e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 5.43054346022841e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "synthetic_logistic",
+      "domainClass": "synthetic",
+      "mechanism": "hierarchical_resolution",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.19361223437890016,
+          "fidelity_final": 0.36373631641666104,
+          "drift_slope_b": 0,
+          "drift_a": 0.19361223437890024
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.194520508847673,
+          "fidelity_final": 0.3525704350127202,
+          "drift_slope_b": -1.896454861476919e-15,
+          "drift_a": 0.19452050884767397
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.19361223437890016,
+          "fidelity_final": 0.36373631641666104,
+          "drift_slope_b": 0,
+          "drift_a": 0.19361223437890024
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.20323734161169743,
+          "fidelity_final": 0.2140173646598256,
+          "drift_slope_b": -2.844682292215378e-15,
+          "drift_a": 0.20323734161169893
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.19361223437890016,
+          "fidelity_final": 0.36373631641666104,
+          "drift_slope_b": 0,
+          "drift_a": 0.19361223437890024
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.194520508847673,
+          "fidelity_final": 0.3525704350127202,
+          "drift_slope_b": -1.896454861476919e-15,
+          "drift_a": 0.19452050884767397
+        }
+      }
+    },
+    {
+      "domain": "synthetic_logistic",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_feedback",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.2072851950416031,
+          "fidelity_final": 0.10235547365555987,
+          "drift_slope_b": 0.02511370665696811,
+          "drift_a": 0.1930817354243225
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.2065169288198201,
+          "fidelity_final": 0.14754617222583702,
+          "drift_slope_b": 0.028316050585408818,
+          "drift_a": 0.19022098632632042
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.20677203953969425,
+          "fidelity_final": 0.134498723406927,
+          "drift_slope_b": 0.020031170906662357,
+          "drift_a": 0.19485295005012576
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.2052405207464236,
+          "fidelity_final": 0.1949300184365301,
+          "drift_slope_b": 0.10893805708826652,
+          "drift_a": 0.15134319010596253
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.20705785082831832,
+          "fidelity_final": 0.11766429585724693,
+          "drift_slope_b": 0.017444390962846973,
+          "drift_a": 0.19664364567190395
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.20590574496846253,
+          "fidelity_final": 0.17305622787130298,
+          "drift_slope_b": 0.06124959498323267,
+          "drift_a": 0.17327392385016768
+        }
+      }
+    },
+    {
+      "domain": "synthetic_logistic",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_compression",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.19361223437890016,
+          "fidelity_final": 0.36373631641666104,
+          "drift_slope_b": 0,
+          "drift_a": 0.19361223437890024
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.194520508847673,
+          "fidelity_final": 0.3525704350127201,
+          "drift_slope_b": -1.896454861476919e-15,
+          "drift_a": 0.19452050884767397
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.194520508847673,
+          "fidelity_final": 0.3525704350127201,
+          "drift_slope_b": -1.896454861476919e-15,
+          "drift_a": 0.19452050884767397
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.20372230412476655,
+          "fidelity_final": 0.20333144613227996,
+          "drift_slope_b": -2.844682292215378e-15,
+          "drift_a": 0.20372230412476805
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.19361223437890016,
+          "fidelity_final": 0.36373631641666104,
+          "drift_slope_b": 0,
+          "drift_a": 0.19361223437890024
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.20323734161169743,
+          "fidelity_final": 0.2140173646598256,
+          "drift_slope_b": -2.844682292215378e-15,
+          "drift_a": 0.20323734161169893
+        }
+      }
+    },
+    {
+      "domain": "synthetic_ar1",
+      "domainClass": "synthetic",
+      "mechanism": "scaling",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 2.7107710477314485e-17,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 3.507343755504859e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 4.5707938704431335e-17,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 4.850732515216727e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 7.561379877605816e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 9.400582267292452e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "synthetic_ar1",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_weighting",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 2.493961072396304e-17,
+          "fidelity_final": 0.9999999999999998,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 3.851986804173802e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 1.7704394049126984e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 1.512335729391766e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 6.877915409524074e-17,
+          "fidelity_final": 0.9999999999999998,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "synthetic_ar1",
+      "domainClass": "synthetic",
+      "mechanism": "hierarchical_resolution",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.0604131014207815,
+          "fidelity_final": 0.9539135495556329,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.06041310142078094
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.07839410039799649,
+          "fidelity_final": 0.9222954170924127,
+          "drift_slope_b": 1.896454861476919e-15,
+          "drift_a": 0.0783941003979961
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.0604131014207815,
+          "fidelity_final": 0.9539135495556329,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.06041310142078094
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.09344538151631081,
+          "fidelity_final": 0.8894326636561474,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.09344538151630989
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.0604131014207815,
+          "fidelity_final": 0.9539135495556329,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.06041310142078094
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.07839410039799649,
+          "fidelity_final": 0.9222954170924127,
+          "drift_slope_b": 1.896454861476919e-15,
+          "drift_a": 0.0783941003979961
+        }
+      }
+    },
+    {
+      "domain": "synthetic_ar1",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_feedback",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.1161968694049594,
+          "fidelity_final": 0.8290707466577312,
+          "drift_slope_b": 0.2388642510395625,
+          "drift_a": 0.055207422600983956
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.10508153021282712,
+          "fidelity_final": 0.8605063554874214,
+          "drift_slope_b": 0.2785454700579304,
+          "drift_a": 0.04419311533228816
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.10825176160330885,
+          "fidelity_final": 0.851877866966354,
+          "drift_slope_b": 0.2638666081614607,
+          "drift_a": 0.04755959112877259
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.09267874504202767,
+          "fidelity_final": 0.8917028426486303,
+          "drift_slope_b": 0.36095878864287173,
+          "drift_a": 0.030649342512827655
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.11232107723281858,
+          "fidelity_final": 0.8404083542077342,
+          "drift_slope_b": 0.248946657258587,
+          "drift_a": 0.051650871662757614
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.09857516783418832,
+          "fidelity_final": 0.8773780456003027,
+          "drift_slope_b": 0.31689111073886483,
+          "drift_a": 0.03705739388584963
+        }
+      }
+    },
+    {
+      "domain": "synthetic_ar1",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_compression",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.06041310142078149,
+          "fidelity_final": 0.953913549555633,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.06041310142078094
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.07839410039799646,
+          "fidelity_final": 0.9222954170924126,
+          "drift_slope_b": 1.896454861476919e-15,
+          "drift_a": 0.0783941003979961
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.07839410039799646,
+          "fidelity_final": 0.9222954170924126,
+          "drift_slope_b": 1.896454861476919e-15,
+          "drift_a": 0.0783941003979961
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.09810765787995876,
+          "fidelity_final": 0.8780601391873379,
+          "drift_slope_b": 0,
+          "drift_a": 0.09810765787995879
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.06041310142078149,
+          "fidelity_final": 0.953913549555633,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.06041310142078094
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.09344538151631081,
+          "fidelity_final": 0.8894326636561474,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.09344538151630989
+        }
+      }
+    },
+    {
+      "domain": "synthetic_seasonal",
+      "domainClass": "synthetic",
+      "mechanism": "scaling",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 6.638168205731153e-16,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 3.501165364565901e-15,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 3.2728049099669922e-15,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 1.1814880548240293e-15,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 3.4852869817619288e-15,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 4.705040823708615e-15,
+          "fidelity_final": 1.0000000000000004,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "synthetic_seasonal",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_weighting",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 5.9529077749218605e-16,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 2.3577540566139035e-15,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 7.771561172376096e-16,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 8.101585801848734e-16,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 9.51817968857363e-16,
+          "fidelity_final": 0.9999999999999998,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "synthetic_seasonal",
+      "domainClass": "synthetic",
+      "mechanism": "hierarchical_resolution",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.39575692060322937,
+          "fidelity_final": 0.9626328598130788,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.39575692060322565
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.6364451399505074,
+          "fidelity_final": 0.9002482801899105,
+          "drift_slope_b": 9.482274307384595e-16,
+          "drift_a": 0.6364451399505059
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.39575692060322937,
+          "fidelity_final": 0.9626328598130788,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.39575692060322565
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.8433214989859006,
+          "fidelity_final": 0.8169696786620007,
+          "drift_slope_b": -1.1852842884230744e-16,
+          "drift_a": 0.8433214989859008
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.39575692060322937,
+          "fidelity_final": 0.9626328598130788,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.39575692060322565
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.6364451399505074,
+          "fidelity_final": 0.9002482801899105,
+          "drift_slope_b": 9.482274307384595e-16,
+          "drift_a": 0.6364451399505059
+        }
+      }
+    },
+    {
+      "domain": "synthetic_seasonal",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_feedback",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 1.3092073285933452,
+          "fidelity_final": 0.8185462436495339,
+          "drift_slope_b": 0.5764639405224119,
+          "drift_a": 0.2292376119737874
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 1.1047944882054073,
+          "fidelity_final": 0.9402750680541107,
+          "drift_slope_b": 0.6886527228220108,
+          "drift_a": 0.13258973053559336
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 1.1686599302776752,
+          "fidelity_final": 0.9227150389807317,
+          "drift_slope_b": 0.6604347534780611,
+          "drift_a": 0.15431477648677483
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.8417448338116225,
+          "fidelity_final": 0.9718621196761769,
+          "drift_slope_b": 0.7772941238840448,
+          "drift_a": 0.07472255454101988
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 1.244940743728979,
+          "fidelity_final": 0.8847647561099181,
+          "drift_slope_b": 0.6200198978096686,
+          "drift_a": 0.18838839328270768
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.9673536144307634,
+          "fidelity_final": 0.9609982694678073,
+          "drift_slope_b": 0.7389921617084931,
+          "drift_a": 0.09784509084530864
+        }
+      }
+    },
+    {
+      "domain": "synthetic_seasonal",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_compression",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.39575692060322937,
+          "fidelity_final": 0.9626328598130788,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.39575692060322565
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.6364451399505074,
+          "fidelity_final": 0.9002482801899105,
+          "drift_slope_b": 1.422341146107689e-15,
+          "drift_a": 0.6364451399505051
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.6364451399505074,
+          "fidelity_final": 0.9002482801899105,
+          "drift_slope_b": 1.422341146107689e-15,
+          "drift_a": 0.6364451399505051
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 1.0046910654519219,
+          "fidelity_final": 0.7268668989440444,
+          "drift_slope_b": -7.408026802644215e-18,
+          "drift_a": 1.0046910654519219
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.39575692060322937,
+          "fidelity_final": 0.9626328598130788,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.39575692060322565
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.8433214989859005,
+          "fidelity_final": 0.8169696786620003,
+          "drift_slope_b": -2.3705685768461487e-16,
+          "drift_a": 0.843321498985901
+        }
+      }
+    },
+    {
+      "domain": "synthetic_powerlaw",
+      "domainClass": "synthetic",
+      "mechanism": "scaling",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 7.11041574233649e-18,
+          "fidelity_final": 0.9999999999999999,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 5.343599051693462e-17,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 3.46605716418581e-18,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 9.537282257888177e-18,
+          "fidelity_final": 0.9999999999999999,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 3.7492237858746173e-17,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 3.299289739850768e-17,
+          "fidelity_final": 0.9999999999999999,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "synthetic_powerlaw",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_weighting",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 7.631890007281575e-18,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 1.6998824115777383e-17,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 8.999531141768199e-18,
+          "fidelity_final": 0.9999999999999999,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 5.564397649400971e-18,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 6.176146993408045e-18,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "synthetic_powerlaw",
+      "domainClass": "synthetic",
+      "mechanism": "hierarchical_resolution",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.018098355729364454,
+          "fidelity_final": 0.9785623265565091,
+          "drift_slope_b": -1.1378729168861512e-14,
+          "drift_a": 0.01809835572936498
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.025620315669534693,
+          "fidelity_final": 0.9568892376121926,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.025620315669534453
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.018098355729364454,
+          "fidelity_final": 0.9785623265565091,
+          "drift_slope_b": -1.1378729168861512e-14,
+          "drift_a": 0.01809835572936498
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.03106052555322004,
+          "fidelity_final": 0.9364206910141484,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.031060525553219753
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.018098355729364454,
+          "fidelity_final": 0.9785623265565091,
+          "drift_slope_b": -1.1378729168861512e-14,
+          "drift_a": 0.01809835572936498
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.025620315669534693,
+          "fidelity_final": 0.9568892376121926,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.025620315669534453
+        }
+      }
+    },
+    {
+      "domain": "synthetic_powerlaw",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_feedback",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.03266470891277201,
+          "fidelity_final": 0.9306537513814581,
+          "drift_slope_b": 0.3352729976394995,
+          "drift_a": 0.01153174705466095
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.02848378617580473,
+          "fidelity_final": 0.9473925997477829,
+          "drift_slope_b": 0.399720507965007,
+          "drift_a": 0.008282386376682396
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.02964305038354165,
+          "fidelity_final": 0.9429882730772619,
+          "drift_slope_b": 0.379365813925129,
+          "drift_a": 0.00916374467186111
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.024069102875452573,
+          "fidelity_final": 0.9625211186272526,
+          "drift_slope_b": 0.49174297810782275,
+          "drift_a": 0.005297995211173474
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.031165459003498108,
+          "fidelity_final": 0.9369288692978373,
+          "drift_slope_b": 0.3554921637511598,
+          "drift_a": 0.010351689238169879
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.026152428791814935,
+          "fidelity_final": 0.955705070869283,
+          "drift_slope_b": 0.44577328100863395,
+          "drift_a": 0.00661822599376989
+        }
+      }
+    },
+    {
+      "domain": "synthetic_powerlaw",
+      "domainClass": "synthetic",
+      "mechanism": "recursive_compression",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.018098355729364454,
+          "fidelity_final": 0.9785623265565091,
+          "drift_slope_b": -1.1378729168861512e-14,
+          "drift_a": 0.01809835572936498
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.025620315669534696,
+          "fidelity_final": 0.9568892376121925,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.025620315669534453
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.025620315669534696,
+          "fidelity_final": 0.9568892376121925,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.025620315669534453
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.03522146726102152,
+          "fidelity_final": 0.9179857287487747,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.03522146726102119
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.018098355729364454,
+          "fidelity_final": 0.9785623265565091,
+          "drift_slope_b": -1.1378729168861512e-14,
+          "drift_a": 0.01809835572936498
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.03106052555322004,
+          "fidelity_final": 0.9364206910141484,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 0.031060525553219753
+        }
+      }
+    },
+    {
+      "domain": "env_co2_proxy",
+      "domainClass": "environmental",
+      "mechanism": "scaling",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 2.040878629308206e-14,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 7.912269044865669e-14,
+          "fidelity_final": 0.9999999999999997,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 3.674955604818067e-14,
+          "fidelity_final": 0.9999999999999998,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 1.2120951076064997e-13,
+          "fidelity_final": 0.9999999999999997,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 7.904288942941303e-14,
+          "fidelity_final": 0.9999999999999993,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 7.502873729216785e-14,
+          "fidelity_final": 1.0000000000000004,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "env_co2_proxy",
+      "domainClass": "environmental",
+      "mechanism": "recursive_weighting",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 7.912269044865669e-14,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 5.0493548554981854e-14,
+          "fidelity_final": 0.9999999999999994,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 2.886238236725078e-14,
+          "fidelity_final": 1.0000000000000004,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 2.7288911567313107e-14,
+          "fidelity_final": 1.0000000000000002,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 6.57011938504117e-14,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "env_co2_proxy",
+      "domainClass": "environmental",
+      "mechanism": "hierarchical_resolution",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.3799920591362522,
+          "fidelity_final": 0.9991013584889686,
+          "drift_slope_b": 2.844682292215378e-15,
+          "drift_a": 0.3799920591362495
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.6063945504476193,
+          "fidelity_final": 0.9977099223456483,
+          "drift_slope_b": 9.482274307384595e-16,
+          "drift_a": 0.6063945504476178
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.3799920591362522,
+          "fidelity_final": 0.9991013584889686,
+          "drift_slope_b": 2.844682292215378e-15,
+          "drift_a": 0.3799920591362495
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.7999808637491974,
+          "fidelity_final": 0.9960109627026734,
+          "drift_slope_b": 2.3705685768461487e-16,
+          "drift_a": 0.7999808637491969
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.3799920591362522,
+          "fidelity_final": 0.9991013584889686,
+          "drift_slope_b": 2.844682292215378e-15,
+          "drift_a": 0.3799920591362495
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.6063945504476193,
+          "fidelity_final": 0.9977099223456483,
+          "drift_slope_b": 9.482274307384595e-16,
+          "drift_a": 0.6063945504476178
+        }
+      }
+    },
+    {
+      "domain": "env_co2_proxy",
+      "domainClass": "environmental",
+      "mechanism": "recursive_feedback",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 1.262812237361833,
+          "fidelity_final": 0.9900374550611855,
+          "drift_slope_b": 0.6199330523092311,
+          "drift_a": 0.19380176597027998
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 1.0532175074782715,
+          "fidelity_final": 0.9930915365143094,
+          "drift_slope_b": 0.725937199838374,
+          "drift_a": 0.11188629433621086
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 1.1187520929576709,
+          "fidelity_final": 0.9921968483292841,
+          "drift_slope_b": 0.7004583499207684,
+          "drift_a": 0.1299945690577183
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.7851521225108408,
+          "fidelity_final": 0.9961800971534764,
+          "drift_slope_b": 0.7988233720371241,
+          "drift_a": 0.06432541597612382
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 1.1970040939044262,
+          "fidelity_final": 0.9910567191379364,
+          "drift_slope_b": 0.662472158274498,
+          "drift_a": 0.15875041885264557
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.9125669007732761,
+          "fidelity_final": 0.994826487011058,
+          "drift_slope_b": 0.7687847781567674,
+          "drift_a": 0.08324934985790704
+        }
+      }
+    },
+    {
+      "domain": "env_co2_proxy",
+      "domainClass": "environmental",
+      "mechanism": "recursive_compression",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0.3799920591362522,
+          "fidelity_final": 0.9991013584889686,
+          "drift_slope_b": 2.844682292215378e-15,
+          "drift_a": 0.3799920591362495
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 0.6063945504476193,
+          "fidelity_final": 0.9977099223456483,
+          "drift_slope_b": 9.482274307384595e-16,
+          "drift_a": 0.6063945504476178
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 0.6063945504476193,
+          "fidelity_final": 0.9977099223456483,
+          "drift_slope_b": 9.482274307384595e-16,
+          "drift_a": 0.6063945504476178
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 0.9740858205073285,
+          "fidelity_final": 0.994079976545586,
+          "drift_slope_b": 0,
+          "drift_a": 0.9740858205073284
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 0.3799920591362522,
+          "fidelity_final": 0.9991013584889686,
+          "drift_slope_b": 2.844682292215378e-15,
+          "drift_a": 0.3799920591362495
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 0.7999808637491973,
+          "fidelity_final": 0.9960109627026731,
+          "drift_slope_b": 4.741137153692297e-16,
+          "drift_a": 0.7999808637491964
+        }
+      }
+    },
+    {
+      "domain": "astro_sunspot_proxy",
+      "domainClass": "astronomical",
+      "mechanism": "scaling",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 5.900916318210353e-16,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 1.391227289766308e-14,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 2.504438972801054e-14,
+          "fidelity_final": 0.9999999999999998,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 3.651979875739285e-14,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 1.5390810804112496e-14,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 5.196229235052126e-14,
+          "fidelity_final": 0.9999999999999997,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "astro_sunspot_proxy",
+      "domainClass": "astronomical",
+      "mechanism": "recursive_weighting",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 0,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 5.748018213432514e-15,
+          "fidelity_final": 0.9999999999999998,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 1.754714427105095e-14,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 6.701922693602289e-15,
+          "fidelity_final": 0.9999999999999998,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 4.01679856379412e-15,
+          "fidelity_final": 1,
+          "drift_slope_b": null,
+          "drift_a": null
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 6.66526902781645e-15,
+          "fidelity_final": 0.9999999999999997,
+          "drift_slope_b": null,
+          "drift_a": null
+        }
+      }
+    },
+    {
+      "domain": "astro_sunspot_proxy",
+      "domainClass": "astronomical",
+      "mechanism": "hierarchical_resolution",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 1.8556041753877182,
+          "fidelity_final": 0.9986639493734002,
+          "drift_slope_b": 4.741137153692297e-16,
+          "drift_a": 1.8556041753877157
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 2.3689177181706054,
+          "fidelity_final": 0.9978218523255764,
+          "drift_slope_b": 9.482274307384595e-16,
+          "drift_a": 2.3689177181705996
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 1.8556041753877182,
+          "fidelity_final": 0.9986639493734002,
+          "drift_slope_b": 4.741137153692297e-16,
+          "drift_a": 1.8556041753877157
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 2.752553694335608,
+          "fidelity_final": 0.9970584138771647,
+          "drift_slope_b": -1.896454861476919e-15,
+          "drift_a": 2.752553694335621
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 1.8556041753877182,
+          "fidelity_final": 0.9986639493734002,
+          "drift_slope_b": 4.741137153692297e-16,
+          "drift_a": 1.8556041753877157
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 2.3689177181706054,
+          "fidelity_final": 0.9978218523255764,
+          "drift_slope_b": 9.482274307384595e-16,
+          "drift_a": 2.3689177181705996
+        }
+      }
+    },
+    {
+      "domain": "astro_sunspot_proxy",
+      "domainClass": "astronomical",
+      "mechanism": "recursive_feedback",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 2.3702169058125713,
+          "fidelity_final": 0.9979188659744711,
+          "drift_slope_b": 0.12379959859309692,
+          "drift_a": 1.5898941031883411
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 2.2080827984256435,
+          "fidelity_final": 0.9981477555280311,
+          "drift_slope_b": 0.13974494944867366,
+          "drift_a": 1.4289802495039656
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 2.2485083703216278,
+          "fidelity_final": 0.9980893472067143,
+          "drift_slope_b": 0.12907494326049654,
+          "drift_a": 1.496331163259654
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 2.0682838849210454,
+          "fidelity_final": 0.9983551605446704,
+          "drift_slope_b": 0.2217241964917626,
+          "drift_a": 1.067235461474995
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 2.306174683264106,
+          "fidelity_final": 0.9980076421797985,
+          "drift_slope_b": 0.12226041359668714,
+          "drift_a": 1.5594149146101601
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 2.1324559601693864,
+          "fidelity_final": 0.9982592359151319,
+          "drift_slope_b": 0.17510954034943704,
+          "drift_a": 1.2533702595949614
+        }
+      }
+    },
+    {
+      "domain": "astro_sunspot_proxy",
+      "domainClass": "astronomical",
+      "mechanism": "recursive_compression",
+      "arms": {
+        "baseline": {
+          "c": 1,
+          "rfd_final": 1.8556041753877182,
+          "fidelity_final": 0.9986639493734002,
+          "drift_slope_b": 4.741137153692297e-16,
+          "drift_a": 1.8556041753877157
+        },
+        "egs": {
+          "c": 1.618033988749895,
+          "rfd_final": 2.368917718170606,
+          "fidelity_final": 0.9978218523255763,
+          "drift_slope_b": -9.482274307384595e-16,
+          "drift_a": 2.368917718170611
+        },
+        "sqrt2": {
+          "c": 1.4142135623730951,
+          "rfd_final": 2.368917718170606,
+          "fidelity_final": 0.9978218523255763,
+          "drift_slope_b": -9.482274307384595e-16,
+          "drift_a": 2.368917718170611
+        },
+        "e": {
+          "c": 2.718281828459045,
+          "rfd_final": 2.8832214562263023,
+          "fidelity_final": 0.9967721602728465,
+          "drift_slope_b": 3.792909722953838e-15,
+          "drift_a": 2.883221456226275
+        },
+        "random_0": {
+          "c": 1.1866168970242144,
+          "rfd_final": 1.8556041753877182,
+          "fidelity_final": 0.9986639493734002,
+          "drift_slope_b": 4.741137153692297e-16,
+          "drift_a": 1.8556041753877157
+        },
+        "random_1": {
+          "c": 2.125803225208074,
+          "rfd_final": 2.752553694335609,
+          "fidelity_final": 0.9970584138771641,
+          "drift_slope_b": -1.896454861476919e-15,
+          "drift_a": 2.7525536943356217
+        }
+      }
+    }
+  ],
+  "pass": true,
+  "interpretation": "Identical recursion/evaluator; only c differs. Compare cumulative RFD trajectories — do not crown Φ unless it wins fair.",
+  "honesty": "Proxy fixtures for V1; live public pulls can extend domains later."
+}
+```
+
+### E2_blind_constant_ladder — Blind constant ladder (φ unlabeled at compare time)
+
+- **Pass:** `true`
+- **Interpretation:** If φ repeatedly lands near minimum drift across domains, evidence strengthens; V1 records rank without special-casing.
+- **Honesty:** Single-series blind ladder is illustrative; multi-domain aggregation is the real test.
+
+```json
+{
+  "id": "E2_blind_constant_ladder",
+  "title": "Blind constant ladder (φ unlabeled at compare time)",
+  "mechanism": "recursive_compression",
+  "results": [
+    {
+      "c": 1,
+      "rfd_final": 0.4005241243038165,
+      "slope_b": -1.896454861476919e-15,
+      "is_phi": false
+    },
+    {
+      "c": 1.41421356237,
+      "rfd_final": 0.6319687488018048,
+      "slope_b": 1.422341146107689e-15,
+      "is_phi": false
+    },
+    {
+      "c": 1.5,
+      "rfd_final": 0.6319687488018048,
+      "slope_b": 1.422341146107689e-15,
+      "is_phi": false
+    },
+    {
+      "c": 1.618033988749895,
+      "rfd_final": 0.6319687488018048,
+      "slope_b": 1.422341146107689e-15,
+      "is_phi": true
+    },
+    {
+      "c": 1.7,
+      "rfd_final": 0.6319687488018048,
+      "slope_b": 1.422341146107689e-15,
+      "is_phi": false
+    },
+    {
+      "c": 2,
+      "rfd_final": 0.8341246011471678,
+      "slope_b": 1.1852842884230744e-16,
+      "is_phi": false
+    },
+    {
+      "c": 2.718281828459045,
+      "rfd_final": 1.0049705491212078,
+      "slope_b": 1.111204020396632e-17,
+      "is_phi": false
+    }
+  ],
+  "ranked_c": [
+    1,
+    1.41421356237,
+    1.5,
+    1.618033988749895,
+    1.7,
+    2,
+    2.718281828459045
+  ],
+  "phi_rank_by_lowest_rfd": 4,
+  "pass": true,
+  "interpretation": "If φ repeatedly lands near minimum drift across domains, evidence strengthens; V1 records rank without special-casing.",
+  "honesty": "Single-series blind ladder is illustrative; multi-domain aggregation is the real test."
+}
+```
+
+### E3_constant_sweep — Continuous Drift(c) sweep with train/hold split
+
+- **Pass:** `true`
+- **Interpretation:** Pronounced minimum near φ on held-out kinds would be interesting; absence falsifies the strong claim for this mechanism/fixture set.
+- **Honesty:** Sweep minima are fixture-relative; do not promote to CODATA.
+
+```json
+{
+  "id": "E3_constant_sweep",
+  "title": "Continuous Drift(c) sweep with train/hold split",
+  "mechanism": "recursive_feedback",
+  "HOLD_OUT_FRACTION": 0.25,
+  "train_min": {
+    "c": 2.5,
+    "rfd": 0.40000975898986746
+  },
+  "hold_min": {
+    "c": 1.25,
+    "rfd": 0.9707818132032735
+  },
+  "train_min_near_phi": false,
+  "hold_min_near_phi": false,
+  "train_curve_sample": [
+    {
+      "c": 1,
+      "rfd": 0.6329358867705146
+    },
+    {
+      "c": 1.125,
+      "rfd": 0.6073475550504535
+    },
+    {
+      "c": 1.25,
+      "rfd": 0.5790968051797012
+    },
+    {
+      "c": 1.375,
+      "rfd": 0.5548166570547662
+    },
+    {
+      "c": 1.5,
+      "rfd": 0.5305220816088521
+    },
+    {
+      "c": 1.625,
+      "rfd": 0.5066862352397188
+    },
+    {
+      "c": 1.75,
+      "rfd": 0.49099466064819947
+    },
+    {
+      "c": 1.875,
+      "rfd": 0.4694244222600862
+    },
+    {
+      "c": 2,
+      "rfd": 0.45641184912469956
+    },
+    {
+      "c": 2.125,
+      "rfd": 0.4421053275183776
+    },
+    {
+      "c": 2.25,
+      "rfd": 0.4227445693398081
+    },
+    {
+      "c": 2.375,
+      "rfd": 0.4129347282505476
+    },
+    {
+      "c": 2.5,
+      "rfd": 0.40000975898986746
+    }
+  ],
+  "hold_curve_sample": [
+    {
+      "c": 1,
+      "rfd": 1.126457023097005
+    },
+    {
+      "c": 1.125,
+      "rfd": 1.1197587800761508
+    },
+    {
+      "c": 1.25,
+      "rfd": 0.9707818132032735
+    },
+    {
+      "c": 1.375,
+      "rfd": 1.0610163613460706
+    },
+    {
+      "c": 1.5,
+      "rfd": 1.0933272846944206
+    },
+    {
+      "c": 1.625,
+      "rfd": 1.102613836349466
+    },
+    {
+      "c": 1.75,
+      "rfd": 1.02385443259417
+    },
+    {
+      "c": 1.875,
+      "rfd": 0.9927645962482151
+    },
+    {
+      "c": 2,
+      "rfd": 1.0011286636368022
+    },
+    {
+      "c": 2.125,
+      "rfd": 1.0085089925910362
+    },
+    {
+      "c": 2.25,
+      "rfd": 1.099295364668452
+    },
+    {
+      "c": 2.375,
+      "rfd": 1.0244150868723454
+    },
+    {
+      "c": 2.5,
+      "rfd": 0.9905895644540756
+    }
+  ],
+  "pass": true,
+  "interpretation": "Pronounced minimum near φ on held-out kinds would be interesting; absence falsifies the strong claim for this mechanism/fixture set.",
+  "honesty": "Sweep minima are fixture-relative; do not promote to CODATA."
+}
+```
+
+### E4_drift_slope — Drift slope contrast (power-law RFD ≈ a n^b)
+
+- **Pass:** `true`
+- **Interpretation:** Hypothesis interest is whether φ changes error-accumulation exponent — not only generation-1 RMSE.
+- **Honesty:** Power-law fit is a pre-registered summary, not proof of a bounded attractor.
+
+```json
+{
+  "id": "E4_drift_slope",
+  "title": "Drift slope contrast (power-law RFD ≈ a n^b)",
+  "mechanism": "recursive_compression",
+  "arms": {
+    "baseline": {
+      "c": 1,
+      "slope": {
+        "a": 0.1920686934444848,
+        "b": 1.896454861476919e-15,
+        "ok": true
+      },
+      "rfd_curve": [
+        {
+          "n": 0,
+          "rfd": 0,
+          "F": 1
+        },
+        {
+          "n": 1,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 2,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 3,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 4,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 5,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 6,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 7,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 8,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 9,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 10,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 11,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 12,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 13,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 14,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 15,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 16,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 17,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 18,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 19,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 20,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 21,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 22,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 23,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        },
+        {
+          "n": 24,
+          "rfd": 0.19206869344448574,
+          "F": 0.3713598278936095
+        }
+      ]
+    },
+    "egs": {
+      "c": 1.618033988749895,
+      "slope": {
+        "a": 0.19264910218906725,
+        "b": 0,
+        "ok": true
+      },
+      "rfd_curve": [
+        {
+          "n": 0,
+          "rfd": 0,
+          "F": 1
+        },
+        {
+          "n": 1,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831201
+        },
+        {
+          "n": 2,
+          "rfd": 0.19264910218906722,
+          "F": 0.36440561748312006
+        },
+        {
+          "n": 3,
+          "rfd": 0.1926491021890672,
+          "F": 0.3644056174831201
+        },
+        {
+          "n": 4,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831201
+        },
+        {
+          "n": 5,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831202
+        },
+        {
+          "n": 6,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 7,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 8,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 9,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 10,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 11,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 12,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 13,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 14,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 15,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 16,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 17,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 18,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 19,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 20,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 21,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 22,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 23,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 24,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        }
+      ]
+    },
+    "sqrt2": {
+      "c": 1.4142135623730951,
+      "slope": {
+        "a": 0.19264910218906725,
+        "b": 0,
+        "ok": true
+      },
+      "rfd_curve": [
+        {
+          "n": 0,
+          "rfd": 0,
+          "F": 1
+        },
+        {
+          "n": 1,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831201
+        },
+        {
+          "n": 2,
+          "rfd": 0.19264910218906722,
+          "F": 0.36440561748312006
+        },
+        {
+          "n": 3,
+          "rfd": 0.1926491021890672,
+          "F": 0.3644056174831201
+        },
+        {
+          "n": 4,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831201
+        },
+        {
+          "n": 5,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831202
+        },
+        {
+          "n": 6,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 7,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 8,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 9,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 10,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 11,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 12,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 13,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 14,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 15,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 16,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 17,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 18,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 19,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 20,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 21,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 22,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 23,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        },
+        {
+          "n": 24,
+          "rfd": 0.19264910218906722,
+          "F": 0.3644056174831205
+        }
+      ]
+    },
+    "e": {
+      "c": 2.718281828459045,
+      "slope": {
+        "a": 0.20278971791814615,
+        "b": -9.482274307384595e-16,
+        "ok": true
+      },
+      "rfd_curve": [
+        {
+          "n": 0,
+          "rfd": 0,
+          "F": 1
+        },
+        {
+          "n": 1,
+          "rfd": 0.20278971791814557,
+          "F": 0.20276147130007904
+        },
+        {
+          "n": 2,
+          "rfd": 0.2027897179181456,
+          "F": 0.2027614713000788
+        },
+        {
+          "n": 3,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 4,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 5,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 6,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 7,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 8,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 9,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 10,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 11,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 12,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 13,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 14,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 15,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 16,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 17,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 18,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 19,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 20,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 21,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 22,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 23,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        },
+        {
+          "n": 24,
+          "rfd": 0.20278971791814568,
+          "F": 0.2027614713000789
+        }
+      ]
+    }
+  },
+  "pass": true,
+  "interpretation": "Hypothesis interest is whether φ changes error-accumulation exponent — not only generation-1 RMSE.",
+  "honesty": "Power-law fit is a pre-registered summary, not proof of a bounded attractor."
+}
+```
+
+### E5_phi_not_assumed — Falsifiability lock — Φ is one arm among peers
+
+- **Pass:** `true`
+- **Interpretation:** Design question: does incorporating φ reduce cumulative fidelity drift vs identical recursion without φ / with decoys?
+- **Honesty:** A null result is a valid scientific outcome for this suite.
+
+```json
+{
+  "id": "E5_phi_not_assumed",
+  "title": "Falsifiability lock — Φ is one arm among peers",
+  "PRE_REGISTERED_HYPOTHESIS": {
+    "claim": "If Φ_EGS reduces cumulative recursive fidelity drift vs matched controls, the advantage must appear across domains, mechanisms, decoy constants, and held-out series — without assuming Φ a priori.",
+    "null_ok": true,
+    "win_requires": [
+      "lower cumulative RFD vs baseline at depth N",
+      "advantage across ≥3 independent domains",
+      "survives decoy constants (√2, e, blind ladder)",
+      "survives held-out series",
+      "not a single-metric fluke"
+    ],
+    "suite_pass_means": "Protocol executed reproducibly with locked arms/mechanisms/metrics — NOT that Φ won."
+  },
+  "STANDALONE_REPO": "https://github.com/FractiAI/synthobs-egs-recursive-fidelity-test",
+  "pass": true,
+  "interpretation": "Design question: does incorporating φ reduce cumulative fidelity drift vs identical recursion without φ / with decoys?",
+  "honesty": "A null result is a valid scientific outcome for this suite."
+}
+```
+
+### E6_paper_locks — Paper presence + honesty / falsifiability locks
+
+- **Pass:** `true`
+- **Interpretation:** Paper must state controlled design and refuse Φ-assumed framing.
+- **Honesty:** Structural lock only.
+
+```json
+{
+  "id": "E6_paper_locks",
+  "title": "Paper presence + honesty / falsifiability locks",
+  "checks": {
+    "hasHonesty": true,
+    "hasDocId": true,
+    "hasErft": true,
+    "hasFalsifiable": true,
+    "hasNotAssume": true,
+    "hasFiveArm": true
+  },
+  "pass": true,
+  "interpretation": "Paper must state controlled design and refuse Φ-assumed framing.",
+  "honesty": "Structural lock only."
+}
+```
+
+### E7_ship_blog_lock — Ship-blog magazine lock
+
+- **Pass:** `true`
+- **Interpretation:** Frontiersman magazine note required for paper ship.
+- **Honesty:** Structural lock.
+
+```json
+{
+  "id": "E7_ship_blog_lock",
+  "title": "Ship-blog magazine lock",
+  "SHIP_BLOG_SLUG": "erft-recursive-fidelity",
+  "checks": {
+    "exists": true,
+    "hasHonestyRail": true,
+    "hasErft": true
+  },
+  "pass": true,
+  "interpretation": "Frontiersman magazine note required for paper ship.",
+  "honesty": "Structural lock."
+}
+```
+
+## Honesty boundary
+
+ERFT V1 is a controlled, falsifiable recursive-fidelity protocol. It does not assume Φ_EGS is correct, does not claim CODATA status, does not prove AGI safety, and does not upgrade Soft Story nesting grammar into unfinished physics. Suite pass = protocol integrity + reproducible fixtures; empirical Φ advantage is a measured outcome that may fail.

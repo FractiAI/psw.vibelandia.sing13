@@ -339,6 +339,7 @@ window.OMNI_LATTICE_COURSE = {
           "y-goldilocks",
           "companions",
           "rsi-drift",
+          "erft",
           "invisible-frontier",
           "how-to-continue"
         ],
@@ -396,6 +397,10 @@ window.OMNI_LATTICE_COURSE = {
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-drift-friction-phi-egs-2026-09",
               "label": "RSI · drift as friction · Φ perpetual nest"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-egs-recursive-fidelity-test-erft-2026-09",
+              "label": "ERFT · controlled recursive fidelity test"
             },
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
@@ -1479,6 +1484,52 @@ window.OMNI_LATTICE_COURSE = {
         {
           "href": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-drift-friction-phi-egs-2026-09",
           "label": "RSI · drift as friction · Φ perpetual nest"
+        }
+      ],
+      "next": "erft"
+    },
+    {
+      "id": "erft",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Homework: Week 6",
+      "partId": "week6",
+      "number": "6.5b",
+      "title": "ERFT · Watch the recursion (falsifiable drift test)",
+      "minutes": 18,
+      "tagline": "Same recursion · five arms · φ not assumed · null OK",
+      "goals": [
+        "State the ERFT question: does baking φ into matched recursion reduce cumulative fidelity drift vs controls?",
+        "Name the five arms (baseline · Φ · √2 · e · random) and why decoys matter.",
+        "File suite pass as protocol integrity — not “Φ won” — and treat a null result as valid."
+      ],
+      "body": "<p>Lesson 6.5 named the Soft Story: when tools rewrite themselves, drift is the major friction, and this catalog files a nesting key near 1.618 as its perpetual nest habit. This lesson puts that claim on a <strong>falsifiable workbench</strong>. Call it <strong>ERFT</strong> — the EGS Recursive Fidelity Test. The design question is blunt and kitchen-table clear: take the same information, transform it again and again with the <em>same</em> recursive machine, and ask whether explicitly incorporating ≈1.618 reduces how fast the result drifts from the original, compared with an otherwise identical recursion that uses no special constant — or that uses other famous constants instead.</p>\n<h3>Matched recursion · one dial changes</h3>\n<p>ERFT refuses the easy cheat of “Model A versus Model B.” Control and test share data, compute budget, recursion depth, and the frozen evaluator. The only intentional difference is the constant <em>c</em> threaded into the recursion. Five arms keep the comparison honest: baseline (<em>c</em> = 1), EGS (φ ≈ 1.618033988749895), √2, <em>e</em>, and seeded random draws from a fixed interval. If “any constant helps,” the decoys will show it. If φ genuinely changes cumulative drift, it has to beat that crowd across domains — not win a one-shot beauty contest at generation 1.</p>\n<h3>Drift curves, not vibes</h3>\n<p>At every generation the suite measures Recursive Fidelity Drift — how far the current representation sits from the original — and also fits a simple drift-slope summary so the <em>shape</em> of error growth is visible. Mechanisms under lock include scaling, recursive weighting, hierarchical resolution, homeostatic feedback (gain 1/<em>c</em>), and recursive compression (compress the compression). A blind constant ladder and a continuous sweep with a held-out split fight the temptation to curve-fit φ into the story after the fact.</p>\n<div class=\"worked-example\">\n<p>Sort four claims. (1) “We ran matched recursion with five arms and φ reduced cumulative RFD on held-out series.” File: <strong>empirical outcome</strong> — interesting if true, still not CODATA. (2) “Suite passed, therefore φ is proven fundamental.” File: <strong>reject</strong> — suite pass means the protocol executed reproducibly; φ win is optional. (3) “Null result: φ did not beat √2 or baseline on V1 fixtures.” File: <strong>valid science</strong> — the protocol was built to allow this. (4) “ERFT assumes the golden ratio is correct.” File: <strong>reject</strong> — φ is one labeled arm among peers; the hypothesis is pre-registered as falsifiable.</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “Shipping ERFT means the corpus already proved φ always wins recursive fidelity contests.”</p>\n<p><strong>The correction:</strong> Shipping ERFT means the controlled test is executable. Outcomes can favor φ, favor a decoy, or land near null. Honesty is the point.</p>\n</div>\n<div class=\"key-terms\"><dl>\n<dt>ERFT</dt><dd>EGS Recursive Fidelity Test — controlled recursive-drift experiment with matched recursion and multi-arm constants.</dd>\n<dt>RFD</dt><dd>Recursive Fidelity Drift — distance between generation <em>n</em> and the original <em>D</em>₀ (RMSE primary in V1).</dd>\n<dt>Five-arm design</dt><dd>Baseline · Φ · √2 · <em>e</em> · random — decoys prevent “any constant helps” excuses.</dd>\n<dt>Suite pass</dt><dd>Protocol integrity + reproducible fixtures — explicitly <em>not</em> “Φ won.”</dd>\n</dl></div>",
+      "check": [
+        {
+          "q": "What is the ERFT design question in one sentence?",
+          "a": "Under matched recursion, does incorporating φ reduce cumulative fidelity drift versus the same process without φ / with decoy constants?"
+        },
+        {
+          "q": "Why include √2, e, and random arms instead of only φ vs baseline?",
+          "a": "So a win cannot be dismissed as “adding any constant helps” — φ must beat distinctive decoys."
+        },
+        {
+          "q": "If the suite reports all_pass but φ did not minimize drift, what happened?",
+          "a": "Valid outcome. Suite pass means the protocol ran cleanly; φ advantage is a separate empirical readout that may fail."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-egs-recursive-fidelity-test-erft-2026-09",
+          "label": "ERFT · controlled recursive fidelity test"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-drift-friction-phi-egs-2026-09",
+          "label": "RSI · drift as friction · Φ perpetual nest"
+        },
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-phi-egs-fidelity-2026-09",
+          "label": "RSI · Φ_EGS fidelity attractor"
         }
       ],
       "next": "invisible-frontier"

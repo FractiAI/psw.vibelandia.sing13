@@ -1,0 +1,26 @@
+{
+  "schema": "lattice-agent-status/v1",
+  "updatedAt": "2026-09-25T04:06:00.619Z",
+  "state": "in_progress",
+  "task": "ERFT V1 + durable status",
+  "summary": "Pre-commit: suite 8/8 PRA pass course/textbook wired",
+  "branch": "cursor/erft-recursive-fidelity-status-5d4a",
+  "prUrl": "",
+  "commit": "",
+  "done": [
+    "status receipt",
+    "ERFT suite",
+    "paper",
+    "blog",
+    "course 6.5b",
+    "textbook 1.7",
+    "PRA"
+  ],
+  "next": [
+    "commit",
+    "PR",
+    "merge main",
+    "standalone publish"
+  ],
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox · Lattice Chat"
+}

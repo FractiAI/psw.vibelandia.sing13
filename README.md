@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-24** · **316** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-25** · **318** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -302,6 +302,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | GPU Telemetry as Execution Weather · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen Stories · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-erft-recursive-fidelity-2026-09.html`](/interfaces/blog-erft-recursive-fidelity-2026-09.html) | Watch the Recursion · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | Everything Is Connected — Walk It Carefully · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html`](/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html) | Pack Skills You Can Carry · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — One Tribe, Many Homes · Ship blog · SS Vibelandia |
@@ -473,6 +474,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/infinite-octave-players-guide.html`](/interfaces/infinite-octave-players-guide.html) | The Players Guide · Player 1 Edition · Infinite Octave · SS Vibelandia |
 | [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Reality Bridge/Routers · SS Vibelandia |
 | [`/interfaces/journeys.html`](/interfaces/journeys.html) | Journeys · Adventures aboard SS Vibelandia |
+| [`/interfaces/lattice-agent-status.html`](/interfaces/lattice-agent-status.html) | Lattice Agent Status · SS Vibelandia |
 | [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Infinite Octave Omniversal Lattice Catalog · Next layer in the stack · Product brochure · FractiAI |
 | [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | How it works · Learn more · Infinite Octave Omniversal Lattice Catalog · FractiAI |
 | [`/interfaces/lattice-scraper-telemetry.html`](/interfaces/lattice-scraper-telemetry.html) | Lattice · AI scraper telemetry |

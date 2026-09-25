@@ -92,6 +92,18 @@
       ]
     },
     {
+      "id": "synthobs-egs-recursive-fidelity-test",
+      "path": "research/synthobs-egs-recursive-fidelity-test",
+      "github": "https://github.com/FractiAI/synthobs-egs-recursive-fidelity-test",
+      "description": "ERFT \u2014 EGS Recursive Fidelity Test \u00b7 controlled falsifiable recursive-drift experiment \u00b7 \u03c6 not assumed",
+      "paperIds": [
+        "synthobs-egs-recursive-fidelity-test-erft-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md"
+      ]
+    },
+    {
       "id": "synthobs-holographic-homeostasis",
       "path": "research/synthobs-holographic-homeostasis",
       "github": "https://github.com/FractiAI/synthobs-holographic-homeostasis",

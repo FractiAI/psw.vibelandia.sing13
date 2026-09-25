@@ -1,0 +1,14 @@
+# Durable agent status receipt — Always On
+
+**Problem this locks:** Background / Cloud Agent chat replies sometimes vanish; Player 1 should never have to ask “did we finish?” without a checkable receipt.
+
+## Mandatory habit (substantial work)
+
+1. **Start:** `node scripts/write-agent-status.mjs --state=in_progress --task="…" --summary="…" --branch="…"`
+2. **Mid-ship / after each major land:** update with `--done="a|b|c" --next="x|y"`
+3. **End of turn (even if blocked):** `--state=done|blocked|failed` + clear `--summary`
+4. Surfaces: `data/lattice-agent-status.json` · `GET /api/lattice-agent-status` · `/lattice/agent-status`
+
+Guest honor rails do **not** skip this for Player 1 ship threads. Keep the receipt honest — if unfinished, say unfinished.
+
+Close substantive turns with → ∞^∞.

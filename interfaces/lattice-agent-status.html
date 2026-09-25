@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lattice Agent Status · SS Vibelandia</title>
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <style>
+    :root { --ink:#1a1f2e; --muted:#5a6478; --line:#d8c9a0; --bg:#f7f3ea; }
+    body { margin:0; font-family:"Source Sans 3", system-ui, sans-serif; background:linear-gradient(160deg,#f7f3ea,#eef2f7 55%,#f3efe6); color:var(--ink); }
+    .wrap { max-width:42rem; margin:0 auto; padding:2rem 1.25rem 3rem; }
+    h1 { font-family:"Cormorant Garamond", Georgia, serif; font-size:2rem; margin:0 0 .35rem; }
+    .meta { color:var(--muted); font-size:.95rem; margin-bottom:1.25rem; }
+    pre { background:#fff; border:1px solid var(--line); padding:1rem; overflow:auto; border-radius:4px; font-size:.85rem; line-height:1.45; }
+    .state { display:inline-block; font-weight:700; letter-spacing:.04em; text-transform:uppercase; font-size:.75rem; }
+    a { color:#8a6a12; }
+    nav a { margin-right:1rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav><a href="/lattice-chat">Lattice Chat</a><a href="/questfest">QUESTFEST</a><a href="/api/lattice-agent-status">JSON</a></nav>
+    <h1>Lattice Agent Status</h1>
+    <p class="meta">Durable receipt for background runs. If a chat reply goes missing, check here or <code>/api/lattice-agent-status</code>.</p>
+    <p>State: <span class="state" id="state">loading…</span></p>
+    <pre id="out">Loading…</pre>
+  </div>
+  <script>
+    fetch('/api/lattice-agent-status')
+      .then((r) => r.json())
+      .then((j) => {
+        const s = j.status || { state: 'idle', task: 'none', summary: 'No receipt yet' };
+        document.getElementById('state').textContent = s.state || 'unknown';
+        document.getElementById('out').textContent = JSON.stringify(s, null, 2);
+      })
+      .catch((e) => {
+        document.getElementById('state').textContent = 'error';
+        document.getElementById('out').textContent = String(e);
+      });
+  </script>
+</body>
+</html>

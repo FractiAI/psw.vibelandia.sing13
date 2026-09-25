@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
-  "suiteId": "synthobs-linear-shadow-fractal",
+  "suiteId": "synthobs-egs-recursive-fidelity-test",
   "createRepo": true,
-  "requestedAt": "2026-09-19T05:30:00.000Z",
-  "note": "Publish Linear as the Shadow of Fractal companion + Infinite Octaves ENGINE_SHELF #32 · cast=linear · body=fractal/holographic · CMOS instruments retained"
+  "requestedAt": "2026-09-25T05:00:00.000Z",
+  "note": "Publish ERFT · EGS Recursive Fidelity Test standalone · controlled falsifiable recursive-drift experiment · φ not assumed · V1 null readout published · application companion (not engine pin)"
 }

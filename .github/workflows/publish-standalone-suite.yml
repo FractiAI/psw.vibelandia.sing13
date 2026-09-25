@@ -15,6 +15,7 @@ on:
           - synthobs-pdvsa-gateway-ops-mockup
           - synthobs-ibm-sna-tcpip-gateway-omni-lattice
           - synthobs-lattice-vs-vibe-coding
+          - synthobs-egs-recursive-fidelity-test
       create_repo:
         description: 'Create empty FractiAI repo if missing (needs org PAT)'
         required: false

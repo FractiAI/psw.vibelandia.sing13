@@ -54,7 +54,21 @@ export const MECHANISMS = Object.freeze([
   'recursive_compression',
 ]);
 
-export const PROTOCOL_VERSION = 'ERFT-V1-2026-09-25';
+/**
+ * V2 anti-bias locks — c selects geometry, not “how hard we mash.”
+ * V1 tied coarsening block/factor to c (so c=1 was mildest) and left
+ * scaling/weighting near-identity; baseline then “won” least drift by construction.
+ */
+export const ANTI_BASELINE_BIAS = Object.freeze({
+  version: 2,
+  rule:
+    'Transform severity is fixed across arms; c only picks chord / phase / mix geometry. Coarsening block size must not be a monotonic function of c.',
+  fixed_block: 4,
+  fixed_feedback_gain: 0.45,
+  fixed_mix_weight: 0.5,
+});
+
+export const PROTOCOL_VERSION = 'ERFT-V2-2026-09-25';
 
 export const PRE_REGISTERED_HYPOTHESIS = Object.freeze({
   claim:
@@ -69,7 +83,9 @@ export const PRE_REGISTERED_HYPOTHESIS = Object.freeze({
   ],
   suite_pass_means:
     'Protocol executed reproducibly with locked arms/mechanisms/metrics — NOT that Φ won.',
+  anti_baseline_bias:
+    'Baseline (c=1) must not inherit least-drift by construction via milder coarsening or null transforms.',
 });
 
 export const HONESTY =
-  'ERFT V1 is a controlled, falsifiable recursive-fidelity protocol. It does not assume Φ_EGS is correct, does not claim CODATA status, does not prove AGI safety, and does not upgrade Soft Story nesting grammar into unfinished physics. Suite pass = protocol integrity + reproducible fixtures; empirical Φ advantage is a measured outcome that may fail.';
+  'ERFT V2 is a controlled, falsifiable recursive-fidelity protocol (V1 construction bias repaired). It does not assume Φ_EGS is correct, does not claim CODATA status, does not prove AGI safety, and does not upgrade Soft Story nesting grammar into unfinished physics. Suite pass = protocol integrity + reproducible fixtures; empirical Φ advantage is a measured outcome that may fail.';

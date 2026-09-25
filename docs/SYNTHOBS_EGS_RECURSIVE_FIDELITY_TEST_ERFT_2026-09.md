@@ -33,7 +33,7 @@
 |------|--------|----------------|
 | **Design** | Controlled recursive-drift experiment comparing matched recursion **with** vs **without** $\Phi_{\mathrm{EGS}}$, plus decoy constants | That $\Phi_{\mathrm{EGS}}$ is assumed correct a priori |
 | **Suite pass** | Protocol integrity + reproducible fixtures (arms, mechanisms, metrics locked) | That $\Phi$ “won” the drift contest |
-| **Empirics (V1)** | Synthetic + proxy domain series under identical recursion/evaluator | Live NOAA/Yahoo/CDC pulls as required for V1 (extendable) |
+| **Empirics (V2)** | Synthetic + proxy domain series under identical recursion/evaluator; anti-baseline-bias locks | Live NOAA/Yahoo/CDC pulls as required (extendable) |
 | **Peers** | Positions beside RSI Soft Story papers and homeostasis grammar | CODATA replacement; AGI solved; ECC zero-error; clinical advice |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
@@ -55,7 +55,7 @@ Recent RSI methodology stresses matched persistence-on/off runs and frozen evalu
 3. Measure **Recursive Fidelity Drift** $\mathrm{RFD}_n = \mathrm{Dist}(D_n, D_0)$ and the drift slope.  
 4. Compare five arms + blind ladder + continuous sweep with train/hold split.
 
-**V1 ships executable** under `research/synthobs-egs-recursive-fidelity-test/` with protocol id `ERFT-V1-2026-09-25`. Suite pass means the protocol ran cleanly — **not** that $\Phi$ minimized drift.
+**V2 ships executable** under `research/synthobs-egs-recursive-fidelity-test/` with protocol id `ERFT-V2-2026-09-25`. Suite pass means the protocol ran cleanly — **not** that $\Phi$ minimized drift. V1 (`ERFT-V1-2026-09-25`) is retained as the construction-bias receipt: coarsening tied to $c$ made baseline ($c=1$) the mildest dial.
 
 ---
 
@@ -87,23 +87,25 @@ Comparison is **$\phi$ vs no special constant vs other distinctive constants** �
 
 ---
 
-## 3. Mechanisms (pre-registered)
+## 3. Mechanisms (pre-registered · V2 geometry locks)
 
-Identical recursion; only $c$ changes:
+Identical recursion; only $c$ changes. **V2 rule:** transform severity is fixed across arms; $c$ selects chord / phase / mix geometry. Coarsening block size is **not** a monotonic function of $c$ (the V1 failure mode that gifted least-drift to baseline).
 
-| ID | Mechanism | Sketch |
-|----|-----------|--------|
-| A | Scaling | energy-normalized scale by $c$ |
-| B | Recursive weighting | $(x_n + c x_{n-1})/(1+c)$ |
-| C | Hierarchical resolution | contract/expand with $c$-linked factor |
-| D | Recursive feedback | $x_{n+1}=x_n + c^{-1}(T(x_n)-x_n)$ (homeostasis gain) |
-| E | Recursive compression | block-mean compress → reconstruct (strong fidelity stress) |
+| ID | Mechanism | V2 sketch |
+|----|-----------|-----------|
+| A | Scaling | Fixed mix weight; $c$ blends two fixed circular chords |
+| B | Recursive weighting | Fixed blend; $c$ blends two fixed spatial lags (no identity trap) |
+| C | Hierarchical resolution | Fixed block; always 50/50 dual-phase contract/expand; $c$ phases residual reinjection |
+| D | Recursive feedback | Fixed gain (not $1/c$); fixed target blend; $c$ sets drive period via non-monotone map |
+| E | Recursive compression | Fixed block; always 50/50 sharp/soft recon; $c$ phases residual reinjection |
+
+Anti-bias experiment **E0b** locks: no identity trap on scaling/weighting; coarsening RFD not strictly monotone in $c$; feedback not inverse-gain; baseline not majority champ across mechanism classes; first-step severity parity on hierarchical/compression.
 
 ---
 
-## 4. Domains (V1 fixtures)
+## 4. Domains (fixtures)
 
-V1 uses **synthetic ground-truth systems** plus **proxy** environmental / astronomical / financial / biological series (deterministic generators with public-shape statistics). Later revisions may attach live public downloads without changing the arm/mechanism locks.
+V2 uses the same **synthetic ground-truth systems** plus **proxy** environmental / astronomical / financial / biological series (deterministic generators with public-shape statistics). Later revisions may attach live public downloads without weakening the anti-baseline-bias lock.
 
 ---
 
@@ -118,35 +120,36 @@ V1 uses **synthetic ground-truth systems** plus **proxy** environmental / astron
 
 ## 6. What counts as compelling (pre-registered)
 
-A meaningful $\Phi$ advantage requires reducing cumulative drift across domains, surviving decoys, depths, held-out series, and multiple metrics — with $\Phi$ specified before final hold-out examination. **Absence of advantage falsifies the strong claim for the locked V1 fixture set.**
+A meaningful $\Phi$ advantage requires reducing cumulative drift across domains, surviving decoys, depths, held-out series, and multiple metrics — with $\Phi$ specified before final hold-out examination. **Absence of advantage falsifies the strong claim for the locked fixture set.** Construction bias that gifts least-drift to baseline also falsifies the *test*, not the hypothesis — repaired in V2.
 
 ---
 
-## 7. V1 results (receipt `2026-09-25T04:05:24.459Z`)
+## 7. V2 results (receipt `2026-09-25T07:26:59.769Z`)
 
-Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V1-2026-09-25` · generations $N=24$.
+Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V2-2026-09-25` · generations $N=24$.
 
 ### 7.1 Suite integrity
 
 | Metric | Value |
 |--------|-------|
-| Experiments | 8 / 8 pass |
+| Experiments | 9 / 9 pass (includes **E0b** anti-baseline-bias) |
 | Suite pass means | Protocol integrity + reproducible fixtures — **not** that $\Phi$ won |
 | $\Phi$ a priori assumed? | **No** |
+| Baseline least-drift by construction? | **No** (E0b pass; baseline mechanism-class majorities $= 0$ on lock slice) |
 
-### 7.2 Five-arm matched recursion (E1) — who won lowest final RFD by mechanism class
+### 7.2 Five-arm matched recursion (E1) — named-arm lowest final RFD by mechanism class
 
-Across V1 fixture domains scored in E1:
+Across V2 fixture domains scored in E1 (named arms only):
 
 | Mechanism | Lowest-RFD winner (domains) |
 |-----------|-----------------------------|
-| Scaling | Mixed (baseline majority; one $\sqrt{2}$; one random) |
-| Recursive weighting | **Baseline** (6 / 6) |
-| Hierarchical resolution | **Baseline** (6 / 6) |
-| Recursive feedback | **$e$** (6 / 6) |
-| Recursive compression | **Baseline** (6 / 6) |
+| Scaling | **$\Phi$** (5 / 6); baseline 1 |
+| Recursive weighting | **$\Phi$** (4 / 6); mixed decoys |
+| Hierarchical resolution | Mixed ($\sqrt{2}$ / $e$ / $\Phi$) — **not** baseline-dominated |
+| Recursive feedback | **$\Phi$** (6 / 6) |
+| Recursive compression | Mixed ($e$ / $\Phi$ / $\sqrt{2}$ / baseline) |
 
-$\Phi$ did **not** dominate any mechanism class on this fixture set.
+Mean final RFD across E1 cells (lower is better): $\Phi$ lowest among named+random arms; **baseline among the highest** (no longer the least-drift champion).
 
 ### 7.3 Blind constant ladder (E2) — recursive compression
 
@@ -154,27 +157,31 @@ Ranked by lowest final RFD (unlabeled at compare time):
 
 | Rank | $c$ | Notes |
 |------|-----|-------|
-| 1 | $1.0$ | Baseline |
-| 2–3 | $1.414\ldots$, $1.5$ | Tied above $\Phi$ |
-| **4** | **$1.618033988749895$** | **$\Phi$** |
-| 5–7 | $1.7$, $2.0$, $e$ | Higher drift |
+| 1 | $2.0$ | |
+| 2–5 | $1.7$, $1.5$, $\sqrt{2}$, $e$ | |
+| **6** | **$1.618033988749895$** | **$\Phi$** |
+| 7 | $1.0$ | Baseline — **highest** drift on this ladder |
 
 ### 7.4 Continuous sweep (E3) — recursive feedback · train/hold
 
 | Split | Minimum-$c$ | Near $\Phi$? |
 |-------|-------------|--------------|
-| Train | $c = 2.5$ | **No** |
-| Hold-out | $c = 1.25$ | **No** |
+| Train | $c = 1.75$ | **No** ($\|1.75-\Phi\| > 0.06$) |
+| Hold-out | $c = 1.75$ | **No** |
 
 ### 7.5 Drift-slope snapshot (E4) — recursive compression
 
-At generation 1 both baseline and $\Phi$ take a similar first compression bite (RFD $\approx 0.192$), then plateau across remaining generations. V1 does **not** show $\Phi$ converting cumulative error into a clearly superior attractor on this locked compression fixture.
+Named arms plateau near the same final RFD ($\approx 0.208$) after the shared fixed-block compression bite — severity parity holding; geometry differences do not crown a free attractor on this single compression fixture.
 
 ### 7.6 Readout (honest)
 
-**V1 empirical claim for the locked fixture set:** the strong hypothesis — “$\Phi$ reduces cumulative recursive fidelity drift versus matched controls and decoys” — is **not supported**. Suite integrity passed. $\Phi$ advantage failed the pre-registered bar. A null is a valid scientific outcome and is published on purpose.
+**V2 construction claim:** baseline no longer inherits least-drift from milder coarsening or null transforms. E0b locks passed.
 
-Later revisions may attach live public downloads without changing the arm/mechanism honesty lock.
+**V2 empirical claim for the strong pre-registered hypothesis** (“$\Phi$ reduces cumulative recursive fidelity drift versus matched controls and decoys across domains, blind ladder, and held-out sweep”): **not fully supported**. $\Phi$ leads several E1 mechanism classes and has the lowest E1 mean RFD, but the blind ladder ranks $\Phi$ 6th and the sweep minimum sits at $1.75$, not at $\Phi$. Partial leads ≠ pre-registered win. Publish both the repair and the incomplete crown.
+
+### 7.7 V1 footnote (construction bias)
+
+V1 (`ERFT-V1-2026-09-25`) reported baseline winning weighting / hierarchical / compression classes and ranking first on the blind ladder. That readout was **contaminated**: hierarchical factor $=\mathrm{round}(c+1)$ and compression block $=\mathrm{round}(2c)$ made $c=1$ the mildest dial; scaling/weighting were near-identity. V1 remains on file as the bug receipt, not as a physics claim against $\Phi$.
 
 ---
 
@@ -182,7 +189,7 @@ Later revisions may attach live public downloads without changing the arm/mechan
 
 - Run: `npm run research:synthobs-egs-recursive-fidelity-test`  
 - Standalone: `FractiAI/synthobs-egs-recursive-fidelity-test`  
-- Course lesson **6.5b** / textbook **§6.5b** teach ERFT beside RSI Soft Story (Week 6), including the V1 null readout
+- Course lesson **6.5b** / textbook **§6.5b** teach ERFT beside RSI Soft Story (Week 6), including the V2 anti-bias repair and honest incomplete crown
 
 ---
 

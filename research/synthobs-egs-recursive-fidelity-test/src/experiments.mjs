@@ -1,6 +1,8 @@
 /**
- * ERFT V1 — numeric recursive fidelity experiments.
+ * ERFT V2 — numeric recursive fidelity experiments.
  * Same recursion / evaluator / depth; only the constant c changes.
+ * V2: c selects geometry (chord / phase / mix); transform severity is fixed
+ * so baseline (c=1) cannot inherit least-drift by milder coarsening.
  * Suite pass = protocol integrity. Φ win is optional empirical outcome.
  */
 import fs from 'node:fs';
@@ -30,6 +32,7 @@ import {
   MECHANISMS,
   PROTOCOL_VERSION,
   PRE_REGISTERED_HYPOTHESIS,
+  ANTI_BASELINE_BIAS,
 } from './constants.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -114,72 +117,144 @@ function smooth3(xs) {
   return out;
 }
 
-/** Mechanism A — scaling with energy restore (avoids trivial blow-up). */
-function mechScaling(xs, c) {
-  const m = mean(xs) || 1;
-  const scaled = new Float64Array(xs.length);
-  for (let i = 0; i < xs.length; i++) scaled[i] = (xs[i] / m) * (c * m);
-  return normalizeEnergy(scaled, Math.sqrt(mean(xs.map((x) => x * x)) || 1));
+/** Fixed-severity block-mean compress → expand (optional circular offset). */
+function blockMeanExpand(xs, block, offset = 0) {
+  const b = Math.max(2, block | 0);
+  const n = xs.length;
+  const off = ((offset % b) + b) % b;
+  const codes = [];
+  for (let start = 0; start < n; start += b) {
+    let s = 0;
+    let count = 0;
+    for (let k = 0; k < b; k++) {
+      const j = (start + off + k) % n;
+      s += xs[j];
+      count++;
+    }
+    codes.push(s / count);
+  }
+  const out = new Float64Array(n);
+  for (let i = 0; i < n; i++) {
+    const idx = Math.min(codes.length - 1, Math.floor(((i - off + n) % n) / b));
+    out[i] = codes[idx];
+  }
+  return out;
 }
 
-/** Mechanism B — recursive weighting with lag-1. */
+/** Non-monotone unit map — c picks geometry without ordering severity by |c|. */
+function geometryUnit(c) {
+  return 0.5 + 0.5 * Math.sin(c * Math.PI * 0.85);
+}
+
+/**
+ * Mechanism A — scaling as circular shear.
+ * Fixed mix weight + two fixed chords; c only blends which chord (geometry).
+ */
+function mechScaling(xs, c) {
+  const n = xs.length;
+  const w = ANTI_BASELINE_BIAS.fixed_mix_weight;
+  const u = geometryUnit(c);
+  const s1 = 2;
+  const s2 = 5;
+  const out = new Float64Array(n);
+  for (let i = 0; i < n; i++) {
+    const a = xs[(i + s1) % n];
+    const b = xs[(i + s2) % n];
+    const mix = (1 - u) * a + u * b;
+    out[i] = (1 - w) * xs[i] + w * mix;
+  }
+  return out;
+}
+
+/**
+ * Mechanism B — recursive weighting with fixed lag budget.
+ * Fixed blend weight; c blends two fixed lags (no shorter-lag gift to c=1).
+ */
 function mechRecursiveWeighting(xs, c, prev) {
   const p = prev || xs;
-  const out = new Float64Array(xs.length);
-  const den = 1 + c;
-  for (let i = 0; i < xs.length; i++) {
-    out[i] = (xs[i] + c * p[i]) / den;
+  const n = xs.length;
+  const w = ANTI_BASELINE_BIAS.fixed_mix_weight;
+  const u = geometryUnit(c);
+  const out = new Float64Array(n);
+  for (let i = 0; i < n; i++) {
+    const mix = (1 - u) * p[(i + 2) % n] + u * p[(i + 5) % n];
+    out[i] = (1 - w) * xs[i] + w * mix;
   }
   return out;
 }
 
-/** Mechanism C — hierarchical resolution (contract → expand). */
+/**
+ * Mechanism C — hierarchical resolution.
+ * Always 50/50 of two equal-severity phase offsets; c only phases residual reinjection.
+ */
 function mechHierarchical(xs, c) {
-  const factor = Math.max(2, Math.min(8, Math.round(c + 1)));
-  const coarse = [];
-  for (let i = 0; i < xs.length; i += factor) {
-    let s = 0;
-    let n = 0;
-    for (let j = i; j < Math.min(xs.length, i + factor); j++) {
-      s += xs[j];
-      n++;
-    }
-    coarse.push(s / n);
-  }
+  const block = ANTI_BASELINE_BIAS.fixed_block;
+  const a = blockMeanExpand(xs, block, 0);
+  const b = blockMeanExpand(xs, block, Math.floor(block / 2));
+  const amp = 0.3; // fixed reinjection severity
   const out = new Float64Array(xs.length);
   for (let i = 0; i < xs.length; i++) {
-    out[i] = coarse[Math.min(coarse.length - 1, Math.floor(i / factor))];
-  }
-  return normalizeEnergy(out, Math.sqrt(mean(xs.map((x) => x * x)) || 1));
-}
-
-/** Mechanism D — recursive feedback / homeostasis gain 1/c. */
-function mechFeedback(xs, c) {
-  const target = smooth3(xs);
-  const gain = 1 / c;
-  const out = new Float64Array(xs.length);
-  for (let i = 0; i < xs.length; i++) {
-    out[i] = xs[i] + gain * (target[i] - xs[i]);
+    const base = 0.5 * a[i] + 0.5 * b[i];
+    const hp = xs[i] - base;
+    out[i] = base + amp * hp * Math.cos((2 * Math.PI * i) / (4 + 8 * geometryUnit(c)));
   }
   return out;
 }
 
-/** Mechanism E — recursive compression (block mean → reconstruct). */
-function mechCompression(xs, c) {
-  const block = Math.max(2, Math.min(12, Math.round(c * 2)));
-  const codes = [];
-  for (let i = 0; i < xs.length; i += block) {
-    let s = 0;
-    let n = 0;
-    for (let j = i; j < Math.min(xs.length, i + block); j++) {
-      s += xs[j];
-      n++;
-    }
-    codes.push(s / n);
-  }
+/**
+ * Mechanism D — recursive feedback / homeostasis.
+ * Fixed gain + fixed target blend; c sets drive period via non-monotone geometryUnit.
+ */
+function mechFeedback(xs, c) {
+  const gain = ANTI_BASELINE_BIAS.fixed_feedback_gain;
+  const targetSmooth = smooth3(xs);
+  const targetBlock = blockMeanExpand(xs, 3, 0);
+  let rms = 0;
+  for (const x of xs) rms += x * x;
+  rms = Math.sqrt(rms / xs.length) || 1;
+  const drive = 0.08; // fixed
+  const period = 4 + 8 * geometryUnit(c); // ∈ [4,12], not monotone in c
   const out = new Float64Array(xs.length);
   for (let i = 0; i < xs.length; i++) {
-    out[i] = codes[Math.min(codes.length - 1, Math.floor(i / block))];
+    const t = 0.5 * targetSmooth[i] + 0.5 * targetBlock[i];
+    out[i] =
+      xs[i] +
+      gain * (t - xs[i]) +
+      drive * rms * Math.sin((2 * Math.PI * i) / period);
+  }
+  return out;
+}
+
+/**
+ * Mechanism E — recursive compression.
+ * Always 50/50 sharp/soft recon (equal code budget); c phases residual reinjection.
+ */
+function mechCompression(xs, c) {
+  const block = ANTI_BASELINE_BIAS.fixed_block;
+  const n = xs.length;
+  const codes = [];
+  for (let i = 0; i < n; i += block) {
+    let s = 0;
+    let count = 0;
+    for (let j = i; j < Math.min(n, i + block); j++) {
+      s += xs[j];
+      count++;
+    }
+    codes.push(s / count);
+  }
+  const amp = 0.3;
+  const out = new Float64Array(n);
+  for (let i = 0; i < n; i++) {
+    const idx = Math.min(codes.length - 1, Math.floor(i / block));
+    const sharp = codes[idx];
+    const f = i / block;
+    const i0 = Math.min(codes.length - 1, Math.floor(f));
+    const i1 = Math.min(codes.length - 1, i0 + 1);
+    const t = f - i0;
+    const soft = (1 - t) * codes[i0] + t * codes[i1];
+    const base = 0.5 * sharp + 0.5 * soft;
+    const hp = xs[i] - base;
+    out[i] = base + amp * hp * Math.cos((2 * Math.PI * i) / (4 + 8 * geometryUnit(c)));
   }
   return out;
 }
@@ -345,19 +420,147 @@ function experimentProtocolLocks() {
     Object.keys(NAMED_ARMS).length === 4 &&
     GENERATIONS >= 16 &&
     PRE_REGISTERED_HYPOTHESIS.null_ok === true &&
-    PRE_REGISTERED_HYPOTHESIS.suite_pass_means.includes('NOT that Φ won');
+    PRE_REGISTERED_HYPOTHESIS.suite_pass_means.includes('NOT that Φ won') &&
+    PROTOCOL_VERSION.startsWith('ERFT-V2') &&
+    ANTI_BASELINE_BIAS.version === 2;
   return {
     id: 'E0_protocol_locks',
-    title: 'Pre-registered protocol locks (φ not assumed)',
+    title: 'Pre-registered protocol locks (φ not assumed · V2 anti-bias)',
     PROTOCOL_VERSION,
     GENERATIONS,
     MECHANISMS: [...MECHANISMS],
     NAMED_ARMS: { ...NAMED_ARMS },
+    ANTI_BASELINE_BIAS,
     hypothesis: PRE_REGISTERED_HYPOTHESIS,
     pass: ok,
     interpretation:
-      'V1 freezes arms, mechanisms, depth, and null-ok honesty before reading outcomes.',
+      'V2 freezes arms, mechanisms, depth, null-ok honesty, and anti-baseline-bias geometry locks before reading outcomes.',
     honesty: 'Protocol lock ≠ physics proof.',
+  };
+}
+
+/**
+ * E0b — Construction anti-bias: baseline must not inherit least-drift
+ * from milder coarsening or null transforms (the V1 failure mode).
+ */
+function experimentAntiBaselineBias() {
+  const rng = mulberry32(0xa7b1);
+  const probe = makeSeries('seasonal', 128, rng);
+  const named = Object.entries(NAMED_ARMS);
+
+  // (1) First-step RFD must be clearly nonzero for scaling + weighting (no identity trap).
+  const firstStep = {};
+  for (const mech of ['scaling', 'recursive_weighting']) {
+    firstStep[mech] = {};
+    for (const [name, c] of named) {
+      const next = applyMechanism(mech, probe, c, probe);
+      firstStep[mech][name] = rmse(next, probe);
+    }
+  }
+  const noIdentityTrap = ['scaling', 'recursive_weighting'].every((mech) =>
+    named.every(([name]) => firstStep[mech][name] > 1e-6),
+  );
+
+  // (2) Hierarchical + compression: final RFD on blind ladder must NOT be
+  //     strictly sorted ascending with c (V1: smaller c ⇒ lower RFD always).
+  function ladderRfds(mech) {
+    return BLIND_CONSTANTS.map((c) => ({
+      c,
+      rfd: finalRfd(runRecursion(probe, mech, c, 12)),
+    }));
+  }
+  const hier = ladderRfds('hierarchical_resolution');
+  const comp = ladderRfds('recursive_compression');
+  function strictlyMonotoneAscendingByC(rows) {
+    for (let i = 1; i < rows.length; i++) {
+      if (!(rows[i].rfd > rows[i - 1].rfd + 1e-9)) return false;
+    }
+    return true;
+  }
+  const notMonotoneCoarsening =
+    !strictlyMonotoneAscendingByC(hier) && !strictlyMonotoneAscendingByC(comp);
+
+  // (3) Feedback must not recreate gain=1/c (where larger c always wins least drift).
+  const fb = named.map(([name, c]) => ({
+    name,
+    c,
+    rfd: finalRfd(runRecursion(probe, 'recursive_feedback', c, 12)),
+  }));
+  const fbSortedByC = [...fb].sort((a, b) => a.c - b.c);
+  const feedbackNotInverseGain = !fbSortedByC.every((row, i, arr) => {
+    if (i === 0) return true;
+    return row.rfd < arr[i - 1].rfd - 1e-9; // strictly falling RFD as c rises
+  });
+
+  // (4) Named-arm majorities mirroring E1 fixture order (shared series per domain):
+  //     baseline must not own ≥3 mechanism classes (V1 construction failure mode).
+  const mechWinners = {};
+  const tallyByMech = Object.fromEntries(MECHANISMS.map((m) => [m, {}]));
+  const lockRng = mulberry32(0xe8f7);
+  const lockDomains = DOMAINS.slice(0, 4);
+  for (const d of lockDomains) {
+    const series = makeSeries(d.kind, 256, lockRng);
+    for (const mech of MECHANISMS) {
+      let best = null;
+      for (const [name, c] of named) {
+        const r = finalRfd(runRecursion(series, mech, c, GENERATIONS));
+        if (!best || r < best.rfd) best = { name, rfd: r };
+      }
+      tallyByMech[mech][best.name] = (tallyByMech[mech][best.name] || 0) + 1;
+    }
+  }
+  let baselineMechMajorities = 0;
+  for (const mech of MECHANISMS) {
+    const tally = tallyByMech[mech];
+    let top = null;
+    for (const [name, count] of Object.entries(tally)) {
+      if (!top || count > top.count) top = { name, count };
+    }
+    mechWinners[mech] = top.name;
+    if (top.name === 'baseline') baselineMechMajorities += 1;
+  }
+  const baselineNotMajorityChamp = baselineMechMajorities <= 2;
+
+  // (5) Severity parity: first-step RFD for hierarchical/compression should be
+  //     similar across named arms (no c=1 mild path).
+  function firstStepSpread(mech) {
+    const vals = named.map(([, c]) => rmse(applyMechanism(mech, probe, c, probe), probe));
+    const lo = Math.min(...vals);
+    const hi = Math.max(...vals);
+    return { lo, hi, ratio: hi / Math.max(lo, 1e-12) };
+  }
+  const hierSpread = firstStepSpread('hierarchical_resolution');
+  const compSpread = firstStepSpread('recursive_compression');
+  const severityParity = hierSpread.ratio < 1.35 && compSpread.ratio < 1.35;
+
+  const pass =
+    noIdentityTrap &&
+    notMonotoneCoarsening &&
+    feedbackNotInverseGain &&
+    baselineNotMajorityChamp &&
+    severityParity;
+
+  return {
+    id: 'E0b_anti_baseline_bias',
+    title: 'Anti-baseline-bias construction locks (V2)',
+    first_step_rfd: firstStep,
+    hierarchical_ladder: hier,
+    compression_ladder: comp,
+    feedback_named: fb,
+    mechanism_winners_on_probe: mechWinners,
+    baseline_wins_on_probe: baselineMechMajorities,
+    severity_parity: { hierarchical: hierSpread, compression: compSpread },
+    checks: {
+      noIdentityTrap,
+      notMonotoneCoarsening,
+      feedbackNotInverseGain,
+      baselineNotMajorityChamp,
+      severityParity,
+    },
+    pass,
+    interpretation:
+      'Fails if c=1 is still the mildest dial or if scaling/weighting are null transforms — the V1 construction bug.',
+    honesty: 'Anti-bias lock ≠ Φ win. Empirical outcomes still free to null.',
   };
 }
 
@@ -567,6 +770,7 @@ function experimentShipBlogLock() {
 export async function runAllExperiments() {
   const experiments = [
     experimentProtocolLocks(),
+    experimentAntiBaselineBias(),
     experimentFiveArmMatched(),
     experimentBlindLadder(),
     experimentConstantSweep(),

@@ -1,6 +1,10 @@
-# EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment
+# EGS Recursive Fidelity Test (ERFT) V2 — Fair Recursive-Drift Scoreboard
+
+**Protocol:** `ERFT-V2-2026-09-25` · **not** V1 (`ERFT-V1-2026-09-25` = construction-bias receipt only)
 
 **Subtitle:** When the same information is transformed again and again, does incorporating $\Phi_{\mathrm{EGS}}$ reduce cumulative fidelity drift versus matched recursion without it?
+
+**V2 results (one screen):** Suite **9/9** (incl. E0b anti-baseline-bias). Baseline mechanism-class majorities = **0**. Φ leads scaling / weighting / feedback among named arms; mean RFD lowest for Φ; baseline among highest. Blind ladder: Φ **6th**, baseline **last**. Sweep min at **1.75** — strong multi-bar claim **not fully supported**. Repair yes · crown no.
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

@@ -1644,7 +1644,7 @@ const chapters = [
     part: 'Homework: Week 6',
     partId: 'week6',
     number: '6.5b',
-    title: 'ERFT · Drift test V2 (anti-bias repair)',
+    title: 'ERFT Version Two · Fair scoreboard (results)',
     minutes: 20,
     tagline: 'Same recursion · five arms · baseline must not inherit least drift',
     goals: [

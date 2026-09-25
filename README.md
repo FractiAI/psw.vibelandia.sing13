@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-25** · **318** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-25** · **319** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -655,6 +655,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/voyage/live-in-frequency.html`](/interfaces/voyage/live-in-frequency.html) | ∞ Live in frequency · SS Vibelandia Voyage |
 | [`/interfaces/voyage/live-the-vibe.html`](/interfaces/voyage/live-the-vibe.html) | Live the vibe · SS Vibelandia Voyage |
 | [`/interfaces/voyage/luxury-redefined.html`](/interfaces/voyage/luxury-redefined.html) | ✦ Luxury redefined · SS Vibelandia Voyage |
+| [`/interfaces/voyage/players-set-the-gravity.html`](/interfaces/voyage/players-set-the-gravity.html) | Players Set the Gravity · Navigation Chart · SS Vibelandia |
 | [`/interfaces/voyage/prepare.html`](/interfaces/voyage/prepare.html) | Prepare · SS Vibelandia Voyage |
 | [`/interfaces/voyage/select.html`](/interfaces/voyage/select.html) | Select · SS Vibelandia Voyage |
 

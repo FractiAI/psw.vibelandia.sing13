@@ -493,6 +493,22 @@
       "destination": "/interfaces/voyage/decks.html"
     },
     {
+      "source": "/voyage/players-set-the-gravity",
+      "destination": "/interfaces/voyage/players-set-the-gravity.html"
+    },
+    {
+      "source": "/voyage/players-set-the-gravity/",
+      "destination": "/interfaces/voyage/players-set-the-gravity.html"
+    },
+    {
+      "source": "/gravity-chart",
+      "destination": "/interfaces/voyage/players-set-the-gravity.html"
+    },
+    {
+      "source": "/gravity-chart/",
+      "destination": "/interfaces/voyage/players-set-the-gravity.html"
+    },
+    {
       "source": "/omniverse-canvas",
       "destination": "/interfaces/omniverse-canvas.html"
     },

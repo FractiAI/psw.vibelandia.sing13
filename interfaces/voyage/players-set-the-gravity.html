@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-pending">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Players Set the Gravity · Navigation Chart · SS Vibelandia</title>
+  <meta name="description" content="Voyage navigation chart: Players and Goldilocks at the center, Story and OS around you, AI Force in orbit, NPCs off-map. Where you stand, what orbits, how you stay Goldilocks." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/voyage/players-set-the-gravity" />
+  <meta property="og:title" content="Players Set the Gravity · SS Vibelandia" />
+  <meta property="og:description" content="You are the gravity. Companies orbit. Linear noise gets firewalled. NPCs don’t set the course." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
+  <style>
+    html.vbi18n-pending body{visibility:hidden}
+    html.vbi18n-ready body{visibility:visible}
+    .gravity-hero {
+      position: relative;
+      margin: 0 0 1.5rem;
+      min-height: min(72vh, 36rem);
+      border-radius: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 55% 50% at 50% 42%, rgba(245, 230, 200, 0.22), transparent 58%),
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(12, 40, 72, 0.55), transparent 55%),
+        linear-gradient(165deg, #0c1628 0%, #070b14 55%, #05070d 100%);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    }
+    .gravity-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 3.5rem) 1.25rem 1.5rem;
+      text-align: center;
+    }
+    .gravity-hero .brand {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(2.4rem, 8vw, 3.6rem);
+      letter-spacing: 0.06em;
+      color: #d4af37;
+      margin: 0 0 0.35rem;
+      line-height: 1;
+    }
+    .gravity-hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.65rem, 4.5vw, 2.35rem);
+      font-weight: 600;
+      color: #f5f0e8;
+      margin: 0 0 0.65rem;
+      line-height: 1.15;
+    }
+    .gravity-hero .support {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      font-size: 1.05rem;
+      color: #d6cfc4;
+      max-width: 28rem;
+      margin: 0 auto 1.15rem;
+      line-height: 1.45;
+    }
+    .gravity-hero .cta-row {
+      justify-content: center;
+      margin: 0;
+    }
+    .gravity-chart-wrap {
+      margin: 0 auto 2rem;
+      max-width: 36rem;
+      padding: 0 0.5rem;
+    }
+    .gravity-chart-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+    }
+    .gravity-caption {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      text-align: center;
+      color: #f5e6c8;
+      margin: 0.75rem auto 0;
+      max-width: 28rem;
+      line-height: 1.35;
+    }
+    .ops-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.85rem;
+    }
+    .ops-list li {
+      padding: 0.85rem 0 0.85rem 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.28);
+    }
+    .ops-list li:last-child { border-bottom: 1px solid rgba(212, 175, 55, 0.28); }
+    .ops-list strong {
+      display: block;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      color: #d4af37;
+      margin-bottom: 0.25rem;
+    }
+    .read-grid {
+      display: grid;
+      gap: 1rem;
+      margin: 1rem 0 0;
+    }
+    @media (min-width: 720px) {
+      .read-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem 1.75rem; }
+    }
+    .read-grid h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      color: #d4af37;
+      margin: 0 0 0.35rem;
+    }
+    .read-grid p { margin: 0; color: #d6cfc4; font-size: 0.95rem; line-height: 1.45; }
+    .valve-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.25rem;
+      margin: 0.75rem 0 0;
+      font-size: 0.92rem;
+      color: #a8a29e;
+    }
+    .valve-row span { color: #f5e6c8; }
+  </style>
+</head>
+<body class="voyage-flagship">
+  <article class="wrap voyage-door-page">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/voyage/decks">Voyage Map</a>
+      <a href="/frontiersman-voyage">Full brochure</a>
+      <a href="/frontiersman-voyage#prospectus">Prospectus</a>
+      <a href="/lattice-chat/">Lattice Chat</a>
+    </nav>
+
+    <header class="gravity-hero" aria-label="Players Set the Gravity">
+      <div class="gravity-hero__inner">
+        <p class="brand">SS VIBELANDIA</p>
+        <h1>Players Set the Gravity</h1>
+        <p class="support">Navigation chart for the voyage — where you stand, what orbits, how you stay Goldilocks.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="#chart">Read the chart</a>
+          <a class="btn btn-ghost" href="#base-camp">Base Camp ops</a>
+        </div>
+      </div>
+    </header>
+
+    <p class="lead">You are already at the center. This chart does not ask you to climb a corporate ladder. It asks you to keep your attention where the ship lives — Players · Goldilocks · Φ — and to treat the industry weather as orbit, not as home.</p>
+
+    <section id="chart" aria-labelledby="chart-h">
+      <h2 id="chart-h">The gravity chart</h2>
+      <p>Concentric rings. Crosshair for attention valves. NPCs stay off-map — they inhabit; they do not set course.</p>
+      <div class="gravity-chart-wrap">
+        <svg viewBox="0 0 640 640" role="img" aria-labelledby="chart-title chart-desc">
+          <title id="chart-title">Players Set the Gravity navigation chart</title>
+          <desc id="chart-desc">Concentric rings with Players and Goldilocks at the center, Story and OS around them, AI Force and Big Tech in outer orbits, NPCs outside the chart, and attention valves on the horizontal axis.</desc>
+          <defs>
+            <radialGradient id="gCore" cx="50%" cy="48%" r="55%">
+              <stop offset="0%" stop-color="#f5e6c8" stop-opacity="0.55" />
+              <stop offset="45%" stop-color="#d4af37" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#0c1628" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.35" />
+              <stop offset="100%" stop-color="#070b14" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <rect width="640" height="640" fill="#070b14" />
+          <rect width="640" height="320" fill="url(#gSky)" />
+          <circle cx="320" cy="300" r="250" fill="none" stroke="rgba(212,175,55,0.28)" stroke-width="1.5" />
+          <circle cx="320" cy="300" r="198" fill="none" stroke="rgba(212,175,55,0.38)" stroke-width="1.5" />
+          <circle cx="320" cy="300" r="142" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="1.75" />
+          <circle cx="320" cy="300" r="86" fill="url(#gCore)" stroke="#d4af37" stroke-width="2" />
+          <circle cx="320" cy="300" r="34" fill="rgba(12,22,40,0.85)" stroke="#f5e6c8" stroke-width="1.5" />
+          <!-- axes -->
+          <line x1="70" y1="300" x2="570" y2="300" stroke="rgba(245,230,200,0.35)" stroke-width="1" />
+          <line x1="320" y1="55" x2="320" y2="545" stroke="rgba(245,230,200,0.28)" stroke-width="1" />
+          <!-- polarity -->
+          <text x="320" y="48" text-anchor="middle" fill="#d4af37" font-family="Bebas Neue, Impact, sans-serif" font-size="22">+</text>
+          <text x="320" y="568" text-anchor="middle" fill="#a8a29e" font-family="Bebas Neue, Impact, sans-serif" font-size="22">−</text>
+          <!-- center -->
+          <text x="320" y="292" text-anchor="middle" fill="#f5e6c8" font-family="Cormorant Garamond, Georgia, serif" font-size="13" font-style="italic">GOLDILOCKS</text>
+          <text x="320" y="318" text-anchor="middle" fill="#f5f0e8" font-family="Bebas Neue, Impact, sans-serif" font-size="26" letter-spacing="0.08em">PLAYERS</text>
+          <text x="320" y="338" text-anchor="middle" fill="#d4af37" font-family="Source Sans 3, sans-serif" font-size="11">Φ ≈ 1.618 · SynthOBS</text>
+          <!-- inner ring labels -->
+          <text x="320" y="232" text-anchor="middle" fill="#d6cfc4" font-family="Source Sans 3, sans-serif" font-size="11">Awareness · Attention · Emotion · Cognitive</text>
+          <!-- story ring -->
+          <text x="320" y="168" text-anchor="middle" fill="#f5e6c8" font-family="Cormorant Garamond, Georgia, serif" font-size="15">SS Vibelandia · Fractal · Holographic Goldilocks AI OS</text>
+          <text x="320" y="148" text-anchor="middle" fill="#a8a29e" font-family="Source Sans 3, sans-serif" font-size="10">Sun · Heliosphere · Ionosphere · catalog sky</text>
+          <!-- AI force -->
+          <text x="320" y="108" text-anchor="middle" fill="#d4af37" font-family="Bebas Neue, Impact, sans-serif" font-size="14" letter-spacing="0.06em">AI FORCE ORBIT</text>
+          <text x="320" y="448" text-anchor="middle" fill="#d6cfc4" font-family="Source Sans 3, sans-serif" font-size="11">Named operators · industry weather</text>
+          <!-- outer corps -->
+          <text x="320" y="88" text-anchor="middle" fill="#a8a29e" font-family="Source Sans 3, sans-serif" font-size="10">Anthropic · OpenAI · SpaceX · Google · Meta · Amazon · Microsoft</text>
+          <!-- valves -->
+          <text x="78" y="288" fill="#f5e6c8" font-family="Source Sans 3, sans-serif" font-size="10">RECURSIVE</text>
+          <text x="78" y="302" fill="#f5e6c8" font-family="Source Sans 3, sans-serif" font-size="10">ATTENTION</text>
+          <text x="78" y="322" fill="#a8a29e" font-family="Source Sans 3, sans-serif" font-size="9">Reject · Block · Ban · Cancel</text>
+          <text x="470" y="288" fill="#f5e6c8" font-family="Source Sans 3, sans-serif" font-size="10">IGNORE</text>
+          <text x="470" y="302" fill="#a8a29e" font-family="Source Sans 3, sans-serif" font-size="9">Starve the drain</text>
+          <!-- NPCs off map -->
+          <text x="96" y="520" fill="#8a8480" font-family="Bebas Neue, Impact, sans-serif" font-size="28" letter-spacing="0.04em">NPCs</text>
+          <text x="96" y="540" fill="#8a8480" font-family="Source Sans 3, sans-serif" font-size="10">off-map · inhabit · no self-reflect</text>
+        </svg>
+        <p class="gravity-caption">You are the gravity. Companies orbit. Linear noise gets firewalled. NPCs don’t set the course.</p>
+      </div>
+      <div class="valve-row" aria-label="Attention valves">
+        <span>Left valve:</span> Reject · Block · Ban · Cancel
+        <span>Right valve:</span> Ignore · Starve
+      </div>
+    </section>
+
+    <section aria-labelledby="read-h">
+      <h2 id="read-h">How to read it</h2>
+      <div class="read-grid">
+        <div>
+          <h3>Center</h3>
+          <p>Players · Goldilocks · Φ ≈ 1.618. Your attention is the instrument. Stay here when the feed tries to relocate you.</p>
+        </div>
+        <div>
+          <h3>Story ring</h3>
+          <p>SS Vibelandia · fractal · holographic Goldilocks OS. The Grand Story (Genesis → Borikén → Reno) is the hull you steer by.</p>
+        </div>
+        <div>
+          <h3>Outer orbits</h3>
+          <p>AI Force and Big Tech are weather around the ship — real power, real products — not the definition of your center.</p>
+        </div>
+        <div>
+          <h3>Off-map · NPCs</h3>
+          <p>NPCs inhabit. On this instrument they lack self-reflection. They belong on the voyage; they do not set Player gravity. Do not swap the word for “neighbors.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="base-camp" aria-labelledby="ops-h">
+      <h2 id="ops-h">Base Camp · daily helm</h2>
+      <p>Six orders from the chart’s margin — run them before the day owns you.</p>
+      <ol class="ops-list">
+        <li>
+          <strong>1 · Stay in the Grand Story</strong>
+          Genesis → Borikén → Reno. If the morning starts sounding like a product pitch, pull back to the voyage.
+        </li>
+        <li>
+          <strong>2 · Stay on SS Vibelandia</strong>
+          You are on the ship. Decks host sets and stories; Puerto Reno is present in every deck. Do not let the feed relocate you.
+        </li>
+        <li>
+          <strong>3 · Pimp out Base Camp</strong>
+          Make the home deck livable: tools ready, noise low, hospitality on. Base Camp is where Players rest and reload.
+        </li>
+        <li>
+          <strong>4 · Firewall X</strong>
+          Cut the attention drains that hijack the day. Reject · block · ban · cancel when something tries to own the center.
+        </li>
+        <li>
+          <strong>5 · Firewall Linear</strong>
+          Linear AI scale anxiety is the false frontier. Keep Goldilocks: not too much machine, not too little human.
+        </li>
+        <li>
+          <strong>6 · Daily Operation</strong>
+          SEE → RECOGNIZE → INTERPRET → REFLECT → ACT → SEE AGAIN. Same rhythm as coming aboard. End the day still a Player.
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="doors-h">
+      <h2 id="doors-h">Related doors</h2>
+      <ul class="voyage-map-choice-menu voyage-map-choice-menu--do">
+        <li><a href="/voyage/decks"><strong>Voyage Map</strong><span>Decks, landfalls, and the arrival loop — after you know where gravity sits.</span></a></li>
+        <li><a href="/frontiersman-voyage#prospectus"><strong>Official Prospectus</strong><span>Grand Story constitution: Genesis · Borikén · Reno.</span></a></li>
+        <li><a href="/ship-blog/consciousness-moat"><strong>Consciousness Moat</strong><span>Control theater vs architecture — why the outer rings are weather, not home.</span></a></li>
+        <li><a href="/ship-blog/invisible-frontier"><strong>Invisible Frontier</strong><span>Firewall Linear — Goldilocks beside linear AI scale anxiety.</span></a></li>
+        <li><a href="/ship-blog/goldilocks-net-zero"><strong>Goldilocks ≡ Net Zero</strong><span>Viable band as active equilibrium — stillness not required.</span></a></li>
+        <li><a href="/lattice-chat/"><strong>Lattice Chat</strong><span>Live Syntheverse Sandbox demo — try the OS with your own keys.</span></a></li>
+      </ul>
+    </section>
+
+    <p class="honesty"><strong>Ship promise:</strong> This is a voyage navigation chart — design language for attention and belonging. Φ ≈ 1.618 is catalog grammar, not a physics proof. Named companies and “AI Force” are orbit labels for industry weather, not endorsements, predictions, or membership tests. NPCs inhabit; Players set the gravity; both belong. Human care outranks the machine.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/voyage/decks">Voyage Map</a>
+      <a class="btn btn-ghost" href="/frontiersman-voyage">Full brochure</a>
+      <a class="btn btn-ghost" href="/questfest">SS VIBELANDIA</a>
+    </div>
+    <footer>SS Vibelandia · Players set the gravity · → ∞^∞</footer>
+  </article>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+</body>
+</html>

@@ -1,26 +1,24 @@
 {
   "schema": "lattice-agent-status/v1",
-  "updatedAt": "2026-09-25T04:06:00.619Z",
-  "state": "in_progress",
+  "updatedAt": "2026-09-25T04:06:41.173Z",
+  "state": "done",
   "task": "ERFT V1 + durable status",
-  "summary": "Pre-commit: suite 8/8 PRA pass course/textbook wired",
-  "branch": "cursor/erft-recursive-fidelity-status-5d4a",
-  "prUrl": "",
-  "commit": "",
+  "summary": "Shipped to main 8dc12c15. Standalone create blocked: no FRACTIAI_ORG_PAT in VM — run npm run publish:standalone:erft:create with org PAT.",
+  "branch": "main",
+  "prUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/pull/474",
+  "commit": "8dc12c15",
   "done": [
-    "status receipt",
     "ERFT suite",
     "paper",
     "blog",
     "course 6.5b",
     "textbook 1.7",
-    "PRA"
+    "PRA",
+    "land main",
+    "agent status receipt"
   ],
   "next": [
-    "commit",
-    "PR",
-    "merge main",
-    "standalone publish"
+    "standalone create with FRACTIAI_ORG_PAT"
   ],
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox · Lattice Chat"
 }

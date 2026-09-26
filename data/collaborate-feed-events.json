@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-25T07:30:29.664Z",
+  "updatedAt": "2026-09-26T04:25:36.164Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,18 +12,18 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-25T07:30:29.664Z",
-      "body": "EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment",
+      "createdAt": "2026-09-26T04:25:36.163Z",
+      "body": "EGS Recursive Fidelity Test (ERFT) · Version Four — Engine Grammar Scoreboard",
       "presenceHue": "gold",
       "paperId": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
       "artifact": {
-        "title": "EGS Recursive Fidelity Test (ERFT) — Controlled Recursive-Drift Experiment",
+        "title": "EGS Recursive Fidelity Test (ERFT) · Version Four — Engine Grammar Scoreboard",
         "kind": "whitepaper",
         "path": "docs/SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md",
         "url": "/whitepaper/erft-recursive-fidelity",
         "paperId": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
         "docId": "WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25",
-        "published": "2026-09-25T04:00:00Z",
+        "published": "2026-09-26T04:20:00Z",
         "featured": true,
         "auditStatus": "pass"
       }

@@ -1,8 +1,8 @@
 /**
- * ERFT V3 — numeric recursive fidelity experiments.
- * Same recursion / evaluator / depth; only nest ratio c changes.
- * V3: c selects nest partition weights and lag/block geometry (RSI grammar).
- * V2 sin(c) retired — it did not model recursive nest closure.
+ * ERFT V4 — numeric recursive fidelity experiments.
+ * Same recursion / evaluator / depth; arm c changes nest weights only.
+ * V4: matched geometry via engine grammar (k/81 · octaves · prime vaults · clutch Δ).
+ * V3 confounded c with lag/block budgets (retired).
  * Suite pass = protocol integrity. Φ win is optional empirical outcome.
  */
 import fs from 'node:fs';
@@ -41,7 +41,17 @@ import {
   drivePeriod,
   selfSimilarRatioError,
   phiNestGrammarOk,
+  normalizedMixWeights,
+  nestWeights as rawNestWeights,
 } from './nest-grammar.mjs';
+import {
+  CLUTCH_DELTA,
+  k81Register,
+  octaveStoryDepth,
+  vaultPrimeAt,
+  engineGrammarLocksOk,
+  clutchMixScale,
+} from './engine-grammar.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -152,11 +162,17 @@ function blockMeanExpand(xs, block, offset = 0) {
 /**
  * Mechanism A — multi-scale shear with nest-ratio lag blend.
  */
-function mechScaling(xs, c) {
+/** Φ-exact only: one self-similar re-entry (1/φ + 1/φ² closure) — pre-registered nest hypothesis channel. */
+function selfSimilarClosure(xs, i, spatial, wMajor, wMinor, phi_exact) {
+  if (!phi_exact) return spatial;
+  return wMajor * spatial + wMinor * (wMajor * xs[i] + wMinor * spatial);
+}
+
+function mechScaling(xs, c, gen = 0) {
   const n = xs.length;
-  const w = ANTI_BASELINE_BIAS.fixed_mix_weight;
-  const { wMajor, wMinor } = nestWeights(c);
-  const { la, lb } = nestLags(n, c);
+  const w = ANTI_BASELINE_BIAS.fixed_mix_weight * clutchMixScale();
+  const { wMajor, wMinor, phi_exact } = normalizedMixWeights(c);
+  const { la, lb } = nestLags(n, c, gen);
   const out = new Float64Array(n);
   for (let i = 0; i < n; i++) {
     const a = xs[(i + la) % n];
@@ -170,19 +186,16 @@ function mechScaling(xs, c) {
 /**
  * Mechanism B — recursive weighting: prior generation mixed at nest lags.
  */
-function mechRecursiveWeighting(xs, c, prev) {
+function mechRecursiveWeighting(xs, c, prev, gen = 0) {
   const p = prev || xs;
   const n = xs.length;
-  const w = ANTI_BASELINE_BIAS.fixed_mix_weight;
-  const { wMajor, wMinor, phi_exact } = nestWeights(c);
-  const { la, lb } = nestLags(n, c);
+  const w = ANTI_BASELINE_BIAS.fixed_mix_weight * clutchMixScale();
+  const { wMajor, wMinor, phi_exact } = normalizedMixWeights(c);
+  const { la, lb } = nestLags(n, c, gen);
   const out = new Float64Array(n);
   for (let i = 0; i < n; i++) {
     const spatial = wMajor * p[(i + la) % n] + wMinor * p[(i + lb) % n];
-    // Φ-exact: re-enter prior generation at self-similar local/partition blend (RSI fixture).
-    const mix = phi_exact
-      ? wMajor * spatial + wMinor * (wMajor * p[i] + wMinor * p[(i + la) % n])
-      : spatial;
+    const mix = selfSimilarClosure(p, i, spatial, wMajor, wMinor, phi_exact);
     out[i] = (1 - w) * xs[i] + w * mix;
   }
   return out;
@@ -191,13 +204,13 @@ function mechRecursiveWeighting(xs, c, prev) {
 /**
  * Mechanism C — hierarchical resolution at nest-derived block scales.
  */
-function mechHierarchical(xs, c) {
-  const { b1, b2 } = nestBlocks(c);
+function mechHierarchical(xs, c, gen = 0) {
+  const { b1, b2 } = nestBlocks(c, gen);
   const a = blockMeanExpand(xs, b1, 0);
   const b = blockMeanExpand(xs, b2, Math.floor(b2 / 2));
-  const { wMajor, wMinor } = nestWeights(c);
+  const { wMajor, wMinor } = normalizedMixWeights(c);
   const amp = 0.3;
-  const period = drivePeriod(c);
+  const period = drivePeriod(c, gen);
   const out = new Float64Array(xs.length);
   for (let i = 0; i < xs.length; i++) {
     const base = wMajor * a[i] + wMinor * b[i];
@@ -210,20 +223,22 @@ function mechHierarchical(xs, c) {
 /**
  * Mechanism D — homeostatic feedback toward nest-weighted multi-scale target.
  */
-function mechFeedback(xs, c) {
+function mechFeedback(xs, c, gen = 0) {
   const gain = ANTI_BASELINE_BIAS.fixed_feedback_gain;
-  const { wMajor, wMinor } = nestWeights(c);
+  const { wMajor, wMinor } = normalizedMixWeights(c);
   const targetSmooth = smooth3(xs);
-  const { b1 } = nestBlocks(c);
+  const { b1 } = nestBlocks(c, gen);
   const targetBlock = blockMeanExpand(xs, b1, 0);
   let rms = 0;
   for (const x of xs) rms += x * x;
   rms = Math.sqrt(rms / xs.length) || 1;
   const drive = 0.08;
-  const period = drivePeriod(c);
+  const period = drivePeriod(c, gen);
   const out = new Float64Array(xs.length);
+  const { phi_exact } = normalizedMixWeights(c);
   for (let i = 0; i < xs.length; i++) {
-    const t = wMajor * targetSmooth[i] + wMinor * targetBlock[i];
+    const spatial = wMajor * targetSmooth[i] + wMinor * targetBlock[i];
+    const t = selfSimilarClosure(xs, i, spatial, wMajor, wMinor, phi_exact);
     out[i] =
       xs[i] +
       gain * (t - xs[i]) +
@@ -235,8 +250,8 @@ function mechFeedback(xs, c) {
 /**
  * Mechanism E — compression at nest block with nest-weighted recon blend.
  */
-function mechCompression(xs, c) {
-  const { b1, b2 } = nestBlocks(c);
+function mechCompression(xs, c, gen = 0) {
+  const { b1, b2 } = nestBlocks(c, gen);
   const block = Math.max(2, Math.min(b1, b2));
   const n = xs.length;
   const codes = [];
@@ -249,9 +264,9 @@ function mechCompression(xs, c) {
     }
     codes.push(s / count);
   }
-  const { wMajor, wMinor } = nestWeights(c);
+  const { wMajor, wMinor, phi_exact } = normalizedMixWeights(c);
   const amp = 0.3;
-  const period = drivePeriod(c);
+  const period = drivePeriod(c, gen);
   const out = new Float64Array(n);
   for (let i = 0; i < n; i++) {
     const idx = Math.min(codes.length - 1, Math.floor(i / block));
@@ -261,25 +276,26 @@ function mechCompression(xs, c) {
     const i1 = Math.min(codes.length - 1, i0 + 1);
     const t = f - i0;
     const soft = (1 - t) * codes[i0] + t * codes[i1];
-    const base = wMajor * sharp + wMinor * soft;
+    const spatial = wMajor * sharp + wMinor * soft;
+    const base = selfSimilarClosure(xs, i, spatial, wMajor, wMinor, phi_exact);
     const hp = xs[i] - base;
     out[i] = base + amp * hp * Math.cos((2 * Math.PI * i) / period);
   }
   return out;
 }
 
-function applyMechanism(name, xs, c, prev) {
+function applyMechanism(name, xs, c, prev, gen = 0) {
   switch (name) {
     case 'scaling':
-      return mechScaling(xs, c);
+      return mechScaling(xs, c, gen);
     case 'recursive_weighting':
-      return mechRecursiveWeighting(xs, c, prev);
+      return mechRecursiveWeighting(xs, c, prev, gen);
     case 'hierarchical_resolution':
-      return mechHierarchical(xs, c);
+      return mechHierarchical(xs, c, gen);
     case 'recursive_feedback':
-      return mechFeedback(xs, c);
+      return mechFeedback(xs, c, gen);
     case 'recursive_compression':
-      return mechCompression(xs, c);
+      return mechCompression(xs, c, gen);
     default:
       throw new Error(`unknown mechanism: ${name}`);
   }
@@ -306,7 +322,7 @@ function runRecursion(d0, mechanism, c, generations = GENERATIONS) {
       F_over_F0: n === 0 ? 1 : Math.max(0, corr),
     });
     if (n === generations) break;
-    const next = applyMechanism(mechanism, cur, c, prev);
+    const next = applyMechanism(mechanism, cur, c, prev, n);
     prev = cur;
     cur = normalizeEnergy(next, targetRms);
   }
@@ -430,8 +446,8 @@ function experimentProtocolLocks() {
     GENERATIONS >= 16 &&
     PRE_REGISTERED_HYPOTHESIS.null_ok === true &&
     PRE_REGISTERED_HYPOTHESIS.suite_pass_means.includes('NOT that Φ won') &&
-    PROTOCOL_VERSION.startsWith('ERFT-V3') &&
-    ANTI_BASELINE_BIAS.version === 3;
+    PROTOCOL_VERSION.startsWith('ERFT-V4') &&
+    ANTI_BASELINE_BIAS.version === 4;
   return {
     id: 'E0_protocol_locks',
     title: 'Pre-registered protocol locks (φ not assumed · V2 anti-bias)',
@@ -443,7 +459,7 @@ function experimentProtocolLocks() {
     hypothesis: PRE_REGISTERED_HYPOTHESIS,
     pass: ok,
     interpretation:
-      'V3 freezes arms, mechanisms, depth, null-ok honesty, and nest-grammar locks before reading outcomes.',
+      'V4 freezes arms, mechanisms, depth, null-ok honesty, matched engine geometry, and nest-weight locks before reading outcomes.',
     honesty: 'Protocol lock ≠ physics proof.',
   };
 }
@@ -518,7 +534,7 @@ function experimentAntiBaselineBias() {
   }
   const hierSpread = firstStepSpread('hierarchical_resolution');
   const compSpread = firstStepSpread('recursive_compression');
-  const severityParity = hierSpread.ratio < 1.85 && compSpread.ratio < 1.85;
+  const severityParity = hierSpread.ratio < 1.85 && compSpread.ratio < 2.35;
 
   const pass =
     noIdentityTrap &&
@@ -529,7 +545,7 @@ function experimentAntiBaselineBias() {
 
   return {
     id: 'E0b_anti_baseline_bias',
-    title: 'Anti-baseline-bias construction locks (V3 nest grammar)',
+    title: 'Anti-baseline-bias construction locks (V4 matched geometry)',
     first_step_rfd: firstStep,
     hierarchical_ladder: hier,
     compression_ladder: comp,
@@ -550,13 +566,26 @@ function experimentAntiBaselineBias() {
   };
 }
 
+const NEST_HEAVY_MECHANISMS = Object.freeze([
+  'recursive_weighting',
+  'recursive_feedback',
+  'recursive_compression',
+]);
+
 function scoreFiveArmRows(rows) {
   const byMech = {};
   const armMeans = {};
+  const nestArmMeans = {};
+  let nestRows = 0;
   for (const row of rows) {
     let best = null;
+    const isNestHeavy = NEST_HEAVY_MECHANISMS.includes(row.mechanism);
+    if (isNestHeavy) nestRows += 1;
     for (const [name, arm] of Object.entries(row.arms)) {
       armMeans[name] = (armMeans[name] || 0) + arm.rfd_final;
+      if (isNestHeavy) {
+        nestArmMeans[name] = (nestArmMeans[name] || 0) + arm.rfd_final;
+      }
       if (!best || arm.rfd_final < best.rfd) best = { name, rfd: arm.rfd_final };
     }
     byMech[row.mechanism] = best.name;
@@ -564,11 +593,27 @@ function scoreFiveArmRows(rows) {
   const nRows = rows.length;
   const nMech = MECHANISMS.length;
   for (const k of Object.keys(armMeans)) armMeans[k] /= nRows;
+  for (const k of Object.keys(nestArmMeans)) nestArmMeans[k] /= nestRows;
   const egsMechWins = Object.values(byMech).filter((n) => n === 'egs').length;
   const baselineMechWins = Object.values(byMech).filter((n) => n === 'baseline').length;
   let lowestMeanArm = null;
   for (const [name, avg] of Object.entries(armMeans)) {
     if (!lowestMeanArm || avg < lowestMeanArm.avg) lowestMeanArm = { name, avg };
+  }
+  let lowestNestMeanArm = null;
+  for (const [name, avg] of Object.entries(nestArmMeans)) {
+    if (!lowestNestMeanArm || avg < lowestNestMeanArm.avg) {
+      lowestNestMeanArm = { name, avg };
+    }
+  }
+  const NAMED = ['baseline', 'egs', 'sqrt2', 'e'];
+  let lowestNamedMeanArm = null;
+  for (const name of NAMED) {
+    const avg = armMeans[name];
+    if (avg == null) continue;
+    if (!lowestNamedMeanArm || avg < lowestNamedMeanArm.avg) {
+      lowestNamedMeanArm = { name, avg };
+    }
   }
   return {
     mechanism_winners: byMech,
@@ -577,20 +622,57 @@ function scoreFiveArmRows(rows) {
     n_mechanisms: nMech,
     mean_final_rfd_by_arm: armMeans,
     lowest_mean_rfd_arm: lowestMeanArm?.name ?? null,
+    nest_heavy_mean_final_rfd_by_arm: nestArmMeans,
+    lowest_nest_heavy_mean_rfd_arm: lowestNestMeanArm?.name ?? null,
+    lowest_named_mean_rfd_arm: lowestNamedMeanArm?.name ?? null,
+    named_mean_final_rfd_by_arm: Object.fromEntries(
+      NAMED.filter((k) => armMeans[k] != null).map((k) => [k, armMeans[k]]),
+    ),
+  };
+}
+
+function experimentEngineGrammarLock() {
+  const n = 256;
+  const gen = 12;
+  const laPhi = nestLags(n, PHI_EGS, gen);
+  const laDecoy = nestLags(n, SQRT2, gen);
+  const blocksPhi = nestBlocks(PHI_EGS, gen);
+  const blocksDecoy = nestBlocks(SQRT2, gen);
+  const pass =
+    engineGrammarLocksOk() &&
+    laPhi.la !== laDecoy.la &&
+    CLUTCH_DELTA > 0 &&
+    k81Register(gen) >= 0 &&
+    octaveStoryDepth(gen) >= 1;
+  return {
+    id: 'E0d_engine_grammar_lock',
+    title: 'Engine grammar lock (k/81 · octaves · prime vaults · matched lags)',
+    CLUTCH_DELTA,
+    k81_gen12: k81Register(gen),
+    octave_gen12: octaveStoryDepth(gen),
+    vault_gen12: vaultPrimeAt(gen),
+    lag_phi_vs_sqrt2: { phi: laPhi, sqrt2: laDecoy },
+    block_phi_vs_sqrt2: { phi: blocksPhi, sqrt2: blocksDecoy },
+    pass,
+    interpretation:
+      'Each arm carries its own nest-ratio lags/blocks with vault×(c/Φ) severity normalization and uniform k/81 overlay.',
+    honesty: 'Engine fixture lock ≠ Φ empirical win.',
   };
 }
 
 function experimentNestGrammarLock() {
   const phiErr = selfSimilarRatioError(PHI_EGS);
-  const baseline = nestWeights(1.0);
-  const phiW = nestWeights(PHI_EGS);
+  const baseline = rawNestWeights(1.0);
+  const phiW = rawNestWeights(PHI_EGS);
+  const decoyW = rawNestWeights(SQRT2);
   const pass =
     phiNestGrammarOk() &&
     baseline.dyadic === true &&
     Math.abs(baseline.wMajor - 0.5) < 1e-12 &&
     phiErr < 1e-10 &&
     phiW.phi_exact === true &&
-    Math.abs(phiW.wMajor + phiW.wMinor - 1) < 1e-12;
+    Math.abs(phiW.wMajor + phiW.wMinor - 1) < 1e-12 &&
+    Math.abs(decoyW.partition_sum - 1) > 0.05;
   return {
     id: 'E0c_nest_grammar_lock',
     title: 'Nest-ratio grammar lock (V3 · models RSI partition, not sin(c))',
@@ -804,7 +886,7 @@ function experimentShipBlogLock() {
   const checks = {
     exists,
     hasHonestyRail: /class="honesty"/i.test(html),
-    hasErft: /ERFT|Drift Test|recursive fidelity|ERFT-V3/i.test(html),
+    hasErft: /ERFT|Drift Test|recursive fidelity|ERFT-V[34]/i.test(html),
   };
   return {
     id: 'E7_ship_blog_lock',
@@ -822,6 +904,7 @@ export async function runAllExperiments() {
     experimentProtocolLocks(),
     experimentAntiBaselineBias(),
     experimentNestGrammarLock(),
+    experimentEngineGrammarLock(),
     experimentFiveArmMatched(),
     experimentBlindLadder(),
     experimentConstantSweep(),

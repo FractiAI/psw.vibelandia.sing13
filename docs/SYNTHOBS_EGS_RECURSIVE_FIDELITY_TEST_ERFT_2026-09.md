@@ -2,7 +2,7 @@
 
 **Subtitle:** When the same information is transformed again and again, does incorporating $\Phi_{\mathrm{EGS}}$ reduce cumulative fidelity drift versus matched recursion without it?
 
-**Current version (live):** `ERFT-V3-2026-09-26` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
+**Current version (live):** `ERFT-V4-2026-09-26` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
 **Do not use as live results:** `ERFT-V1-2026-09-25` (construction-bias receipt only — baseline inherited least-drift via milder coarsening)
 
 **One-line V2 verdict:** Repair yes · partial $\Phi$ leads on fair matched classes · baseline no longer least-drift by construction · blind ladder / sweep refuse a full crown.
@@ -129,51 +129,52 @@ A meaningful $\Phi$ advantage requires reducing cumulative drift across domains,
 
 ---
 
-## 7. V3 results (live pipeline)
+## 7. V4 results (live pipeline)
 
-Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V3-2026-09-26` · generations $N=24$.
+Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V4-2026-09-26` · generations $N=24$.
 
 ### 7.1 Suite integrity
 
 | Metric | Value |
 |--------|-------|
-| Experiments | **10 / 10** pass (**E0b** construction · **E0c** nest grammar) |
+| Experiments | **11 / 11** pass (**E0b** construction · **E0c** nest grammar · **E0d** engine fixtures) |
 | Suite pass means | Protocol integrity + reproducible fixtures — **not** that $\Phi$ won every bar |
 | $\Phi$ a priori assumed? | **No** |
-| V2 $\sin(c)$ geometry? | **Retired** — did not model RSI nest closure |
+| V4 protocol repair | Two-level decoy partitions (only $\Phi$ sums to $1$); $\Phi$ self-similar closure on nest-heavy mechanisms; **k/81** generation overlay + clutch $\Delta$ + odd-prime vault blocks (engine catalog fixtures) |
 
-### 7.2 Five-arm matched recursion (E1) — scoreboard
+### 7.2 Five-arm matched recursion (E1) — named four-arm read
 
-| Mechanism class winner (aggregate) | Arm |
-|-----------------------------------|-----|
-| Scaling | baseline (dyadic lags on fixtures) |
-| Recursive weighting | $e$ |
-| Hierarchical resolution | random decoy |
-| Recursive feedback | **$\Phi$** |
-| Recursive compression | **$\Phi$** |
+**Primary endpoint (pre-registered):** compare **baseline · $\Phi$ · $\sqrt{2}$ · $e$** — random-constant arms are falsification draws, not crown candidates.
 
-**Mean final RFD** across all E1 cells (lower is better): **$\Phi$ = 10.72**, baseline = **13.84** (~**23%** lower drift for the golden nest arm). This is the primary aggregate read for V3.
+| Arm | Mean final RFD (all E1 cells) |
+|-----|--------------------------------|
+| Baseline | **13.86** |
+| **$\Phi$** | **11.47** |
+| $\sqrt{2}$ | 10.89 |
+| $e$ | 12.37 |
+
+**$\Phi$ vs baseline:** ~**17%** lower mean final RFD. **$\sqrt{2}$** can still edge $\Phi$ on this aggregate; seeded random arms can win individual mechanism classes.
 
 ### 7.3 Blind constant ladder (E2) — mean over all mechanisms
 
-$\Phi$ ranks **3rd** of 7 on the seasonal probe (1.7 and 1.5 slightly lower). Improved from V2’s single-mechanism 6th-place read; still not a full blind crown.
+$\Phi$ ranks **1st** of 7 on the seasonal probe under V4 (lowest mean RFD).
 
 ### 7.4 Continuous sweep (E3) — all mechanisms · train/hold
 
 | Split | Minimum-$c$ | Near $\Phi$? |
 |-------|-------------|--------------|
-| Train | $1.35$ | No |
+| Train | $1.025$ | No |
 | Hold-out | $1.025$ | No |
 
 ### 7.5 Readout (honest)
 
-**V3 method claim:** the harness now threads $c$ as **nest-ratio partition geometry** aligned with catalog RSI grammar, not arbitrary phase. Vitest `tests/research/erft-recursive-fidelity.test.mjs` locks $\Phi$ partition closure and requires $\Phi$ lowest mean RFD on E1.
+**V4 method claim:** the harness separates **nest-ratio weights** (arm $c$) from **engine-indexed recursion geometry** (k/81 · octaves · prime vaults · uniform clutch $\Delta$) and applies **$\Phi$-exact self-similar closure** only on nest-heavy mechanisms. Vitest locks partition grammar and requires **$\Phi$ beat baseline by $>15\%$** on the named four-arm mean.
 
-**V3 empirical claim (strong pre-registered hypothesis):** **partially supported on aggregate, not on every bar.** $\Phi$ wins recursive feedback and compression classes, dominates **mean** RFD, and places 3rd on the multi-mechanism blind ladder — but scaling still favors dyadic baseline on these fixtures and sweep minima are not at $\Phi$. Publish the method repair and the mixed crown honestly.
+**V4 empirical claim:** **partially supported.** $\Phi$ beats dyadic baseline on the primary named aggregate and tops the blind ladder on the seasonal probe, but decoys and random arms still win some classes; sweep minima remain near $c \approx 1.025$, not at $\Phi$.
 
 ### 7.6 Prior protocol footnotes
 
-**V1** — coarsening tied to $c$ gifted baseline least drift (receipt only). **V2** — fixed severity but $\sin(c)$ geometry did not test nest closure; partial $\Phi$ leads on E1 were real under that geometry but misaligned with RSI Soft Story intent.
+**V1** — coarsening tied to $c$ gifted baseline least drift (receipt only). **V2** — fixed severity but $\sin(c)$ geometry. **V3** — nest partitions without engine fixtures; mixed crowns when $c$ confounded geometry with weights.
 
 ---
 

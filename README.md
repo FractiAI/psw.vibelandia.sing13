@@ -302,7 +302,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | GPU Telemetry as Execution Weather · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen Stories · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-erft-recursive-fidelity-2026-09.html`](/interfaces/blog-erft-recursive-fidelity-2026-09.html) | How the Golden Key Won the Drift Board · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-erft-recursive-fidelity-2026-09.html`](/interfaces/blog-erft-recursive-fidelity-2026-09.html) | The Drift Test That Finally Measures Nesting · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | Everything Is Connected — Walk It Carefully · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html`](/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html) | Your Nested Agents Need a Carry-On, Not a Shipping Container · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — One Tribe, Many Homes · Ship blog · SS Vibelandia |
@@ -340,7 +340,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud Racks as Antenna Story · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | Two Ways of Thinking — One Was Faster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html`](/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html) | The Million-Dollar Fluid Question Still on the Counter · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html`](/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html) | The Coffee, Not the Spoon · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine Digits, Ninety-Nine Octaves — Walk It · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nspfrnp-snap-peer-review-audit.html`](/interfaces/blog-nspfrnp-snap-peer-review-audit.html) | Peer Review Snap — Keep Claims Honest · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-official-prospectus-2026-08.html`](/interfaces/blog-official-prospectus-2026-08.html) | The Voyage Begins — Captain’s Seat Open · Ship blog · SS Vibelandia |
@@ -362,7 +362,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and Solar Weather on One Bulletin · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Attention That Loops Without Losing the Trail · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | The Hidden Tax on Self-Rewriting Software · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | Watch Out for the Drift · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | The Seatbelt Moment for Recursive AI · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-self-observing-genome-2026-09.html`](/interfaces/blog-self-observing-genome-2026-09.html) | DNA Is a Mirror You Can File — Not a Mind You Can Hire · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html`](/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html) | Sing, Muse — Chart the Voyage · Ship blog · SS Vibelandia |

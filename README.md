@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-26** · **324** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-26** · **328** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -297,7 +297,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-consciousness-moat-2026-09-old.html`](/interfaces/blog-consciousness-moat-2026-09-old.html) | The Machine-Feelings Fight Misses the Blueprint · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | They Argue Welfare — Miss the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Your Commute Is One Crystal, Not Three Meters · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-digit4-be-o-rhyme-2026-09.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09.html) | Four and Eight Are Memory, Not Destiny · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html) | Four and Eight Are Memory, Not Destiny · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-digit4-be-o-rhyme-2026-09.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09.html) | Four and Eight on the Trail Map · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-recursive-reach-2026-09-old.html`](/interfaces/blog-digit4-recursive-reach-2026-09-old.html) | Keep the Wheel in Human Hands · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-recursive-reach-2026-09.html`](/interfaces/blog-digit4-recursive-reach-2026-09.html) | Awareness Stays in Your Hands · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru — Your Goldilocks Valet · Ship blog · SS Vibelandia |
@@ -312,7 +313,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Bison, Magnets, and the Great Plains Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Herd Corridors Under One Magnetic Sky · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-goldilocks-net-zero-2026-09.html`](/interfaces/blog-goldilocks-net-zero-2026-09.html) | The Viable Middle Never Stops Moving · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-net-zero-2026-09-old.html`](/interfaces/blog-goldilocks-net-zero-2026-09-old.html) | The Viable Middle Never Stops Moving · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-net-zero-2026-09.html`](/interfaces/blog-goldilocks-net-zero-2026-09.html) | Just Right Means Keep Moving · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | A Free Playbook When Brute Force Fails · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Compress Without Crushing the Signal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest — Step Through the Door · Ship blog · SS Vibelandia |
@@ -334,12 +336,13 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | Noah’s Ark as System Generation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-vs-vibe-coding-2026-09.html`](/interfaces/blog-lattice-vs-vibe-coding-2026-09.html) | Does Lattice Code Better? Receipts Say Yes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-horsepower-collapse-2026-09.html`](/interfaces/blog-linear-horsepower-collapse-2026-09.html) | When Bigger Engines Stop Buying Livelihoods · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-linear-shadow-fractal-2026-09-new.html`](/interfaces/blog-linear-shadow-fractal-2026-09-new.html) | Trust the Trail, Not the Shadow · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | The Scoreboard Is Not the Whole Game · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-linear-shadow-fractal-2026-09-old.html`](/interfaces/blog-linear-shadow-fractal-2026-09-old.html) | The Scoreboard Is Not the Whole Game · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | Trust the Trail, Not the Shadow · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as Work Engines on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as Magnets That Hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Pressure Cooks You Denser — Stay Goldilocks · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-moving-up-the-stack-2026-09.html`](/interfaces/blog-moving-up-the-stack-2026-09.html) | Climb the Stack — Don’t Just Race It · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-moving-up-the-stack-2026-09-old.html`](/interfaces/blog-moving-up-the-stack-2026-09-old.html) | Climb the Stack — Don’t Just Race It · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-moving-up-the-stack-2026-09.html`](/interfaces/blog-moving-up-the-stack-2026-09.html) | Climb the Stack — Don't Just Race It · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud Racks as Antenna Story · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | Two Ways of Thinking — One Was Faster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
@@ -352,8 +355,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Align the Nodes Before You Sail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-time-crystal-engine-2026-09.html`](/interfaces/blog-omniversal-time-crystal-engine-2026-09.html) | The Clock Biology Keeps Teaching Designers · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html`](/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html) | Badge Optional, Terminal Required · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-pacing-paradox-2026-09-new.html`](/interfaces/blog-pacing-paradox-2026-09-new.html) | Slow the Race — or Change the Trail · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-pacing-paradox-2026-09.html`](/interfaces/blog-pacing-paradox-2026-09.html) | Slowing AI Won’t Fix a Bad Architecture · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-pacing-paradox-2026-09-old.html`](/interfaces/blog-pacing-paradox-2026-09-old.html) | Slowing AI Won’t Fix a Bad Architecture · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-pacing-paradox-2026-09.html`](/interfaces/blog-pacing-paradox-2026-09.html) | Slow the Race — or Change the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | One Brief for the Whole Crew · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth Letting Go at the Core · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | Plants Keep Building Under Pressure · Ship blog · SS Vibelandia |
@@ -362,6 +365,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-prime-vault-chat-2026-09.html`](/interfaces/blog-prime-vault-chat-2026-09.html) | Talk to the Vaults — Chat Is Open · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-vault-demos-2026-09.html`](/interfaces/blog-prime-vault-demos-2026-09.html) | Two Miracles on One Nevada Deck · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-vault-race-door-2026-09.html`](/interfaces/blog-prime-vault-race-door-2026-09.html) | The Race Scoreboard Is Live · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-protein-folding-prime-container-2026-09-new.html`](/interfaces/blog-protein-folding-prime-container-2026-09-new.html) | Proteins Meet the Prime Vaults · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-protein-folding-prime-container-2026-09.html`](/interfaces/blog-protein-folding-prime-container-2026-09.html) | Proteins Meet the Prime Vaults · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and Solar Weather on One Bulletin · Ship blog · SS Vibelandia |

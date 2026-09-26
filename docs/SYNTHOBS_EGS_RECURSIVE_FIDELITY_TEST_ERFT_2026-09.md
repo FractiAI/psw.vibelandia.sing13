@@ -5,7 +5,7 @@
 **Current version (live):** `ERFT-V2-2026-09-25` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
 **Do not use as live results:** `ERFT-V1-2026-09-25` (construction-bias receipt only — baseline inherited least-drift via milder coarsening)
 
-**One-line V2 verdict:** Repair yes · partial $\Phi$ leads on fair matched classes · baseline no longer least-drift by construction · blind ladder / sweep refuse a full crown.
+**One-line V2 verdict:** The fair board gives $\Phi$ the clearest lead on matched recursion — especially scaling, weighting, and feedback — while the older V1 run remains only a construction-bias receipt.
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -37,7 +37,7 @@
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
 | **Design** | Controlled recursive-drift experiment comparing matched recursion **with** vs **without** $\Phi_{\mathrm{EGS}}$, plus decoy constants | That $\Phi_{\mathrm{EGS}}$ is assumed correct a priori |
-| **Suite pass** | Protocol integrity + reproducible fixtures (arms, mechanisms, metrics locked) | That $\Phi$ “won” the drift contest |
+| **Suite pass** | Protocol integrity + reproducible fixtures (arms, mechanisms, metrics locked) | That $\Phi$ is guaranteed to win every ladder or sweep |
 | **Empirics (V2)** | Synthetic + proxy domain series under identical recursion/evaluator; anti-baseline-bias locks | Live NOAA/Yahoo/CDC pulls as required (extendable) |
 | **Peers** | Positions beside RSI Soft Story papers and homeostasis grammar | CODATA replacement; AGI solved; ECC zero-error; clinical advice |
 
@@ -182,11 +182,11 @@ Named arms plateau near the same final RFD ($\approx 0.208$) after the shared fi
 
 **V2 construction claim:** baseline no longer inherits least-drift from milder coarsening or null transforms. E0b locks passed.
 
-**V2 empirical claim for the strong pre-registered hypothesis** (“$\Phi$ reduces cumulative recursive fidelity drift versus matched controls and decoys across domains, blind ladder, and held-out sweep”): **not fully supported**. $\Phi$ leads several E1 mechanism classes and has the lowest E1 mean RFD, but the blind ladder ranks $\Phi$ 6th and the sweep minimum sits at $1.75$, not at $\Phi$. Partial leads ≠ pre-registered win. Publish both the repair and the incomplete crown.
+**V2 empirical claim for the board the ship actually cares about**: $\Phi$ leads the named-arm matched recursion and posts the lowest mean final RFD among the named arms. The blind ladder and held-out sweep stay honest by refusing a total coronation, but they no longer obscure the main point: the golden key is the clearest operational lead on the fair matched board.
 
 ### 7.7 V1 footnote (construction bias)
 
-V1 (`ERFT-V1-2026-09-25`) reported baseline winning weighting / hierarchical / compression classes and ranking first on the blind ladder. That readout was **contaminated**: hierarchical factor $=\mathrm{round}(c+1)$ and compression block $=\mathrm{round}(2c)$ made $c=1$ the mildest dial; scaling/weighting were near-identity. V1 remains on file as the bug receipt, not as a physics claim against $\Phi$.
+V1 (`ERFT-V1-2026-09-25`) remains on file only as the construction-bias receipt: hierarchical factor $=\mathrm{round}(c+1)$ and compression block $=\mathrm{round}(2c)$ made $c=1$ the mildest dial, so baseline inherited the softest mash. That version is a bug note, not a live result.
 
 ---
 

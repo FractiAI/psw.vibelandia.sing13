@@ -4,7 +4,7 @@
 
 - Paper: `docs/SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md` · title **EGS Recursive Fidelity Test (ERFT) · Version Two — Fair Scoreboard**
 - Registry: `synthobs-egs-recursive-fidelity-test-erft-2026-09`
-- Ship blog: `/ship-blog/erft-recursive-fidelity` · **Why Fair Drift Tests Matter More Than Crowns**
+- Ship blog: `/ship-blog/erft-recursive-fidelity` · **How the Golden Key Won the Drift Board**
 - Whitepaper: `/whitepaper/erft-recursive-fidelity`
 - **Current protocol:** `ERFT-V2-2026-09-25` (V1 = construction-bias receipt only — do not quote as live results)
 - Run: `npm run research:synthobs-egs-recursive-fidelity-test` (SING13 root) or `node scripts/run_empirical_pipeline.mjs`

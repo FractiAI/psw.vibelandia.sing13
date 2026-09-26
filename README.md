@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-26** · **335** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-26** · **340** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -296,13 +296,14 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | One Window on Quake and Volcano Alert · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09-old.html`](/interfaces/blog-consciousness-moat-2026-09-old.html) | The Machine-Feelings Fight Misses the Blueprint · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | They Argue Welfare — Miss the Trail · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-crystalline-unified-field-2026-09-new.html`](/interfaces/blog-crystalline-unified-field-2026-09-new.html) | Speed, Distance, Time — One Crystal · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Your Commute Is One Crystal, Not Three Meters · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-crystalline-unified-field-2026-09-old.html`](/interfaces/blog-crystalline-unified-field-2026-09-old.html) | Your Commute Is One Crystal, Not Three Meters · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Speed, Distance, Time — One Crystal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html) | Four and Eight Are Memory, Not Destiny · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-be-o-rhyme-2026-09.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09.html) | Four and Eight on the Trail Map · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-recursive-reach-2026-09-old.html`](/interfaces/blog-digit4-recursive-reach-2026-09-old.html) | Keep the Wheel in Human Hands · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-recursive-reach-2026-09.html`](/interfaces/blog-digit4-recursive-reach-2026-09.html) | Awareness Stays in Your Hands · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru — Your Goldilocks Valet · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-eddy-current-mirror-2026-09-new.html`](/interfaces/blog-eddy-current-mirror-2026-09-new.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | GPU Telemetry as Execution Weather · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen Stories · Ship blog · SS Vibelandia |
@@ -320,12 +321,13 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Compress Without Crushing the Signal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest — Step Through the Door · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Invert the Infinite Without Losing Home · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-grand-unified-metrological-overlap-2026-09-new.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09-new.html) | Five Gears, One Ship's Clock · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-grand-unified-metrological-overlap-2026-09.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09.html) | Five Gears, One Ship’s Clock · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Genomic Tokens That Keep Structure Honest · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | When the Universe Slows — Mass and Now · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-homeostasis-2026-09.html`](/interfaces/blog-holographic-homeostasis-2026-09.html) | Stay Steady on the Move · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-holographic-rhyme-2026-09-old.html`](/interfaces/blog-holographic-rhyme-2026-09-old.html) | How a Fractal Keeps Its Feet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-rhyme-2026-09.html`](/interfaces/blog-holographic-rhyme-2026-09.html) | How a Fractal Keeps Its Feet · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-holographic-rhyme-fractal-2026-09-new.html`](/interfaces/blog-holographic-rhyme-fractal-2026-09-new.html) | How a Fractal Keeps Its Feet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-singularity-crystal-2026-09-old.html`](/interfaces/blog-holographic-singularity-crystal-2026-09-old.html) | Zero Holds the Balance · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-singularity-crystal-2026-09.html`](/interfaces/blog-holographic-singularity-crystal-2026-09.html) | Zero Holds the Balance · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-human-reality-bridge-2026-08.html`](/interfaces/blog-human-reality-bridge-2026-08.html) | You Are the Reality Bridge · Ship blog · SS Vibelandia |
@@ -334,6 +336,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-infinite-octave-prime-parity-2026-09.html`](/interfaces/blog-infinite-octave-prime-parity-2026-09.html) | Why Two Stands Alone on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octaves-omniversal-2026-08.html`](/interfaces/blog-infinite-octaves-omniversal-2026-08.html) | Your Valet Just Got Infinite Octaves · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-invisible-frontier-gates-ai-2026-08.html`](/interfaces/blog-invisible-frontier-gates-ai-2026-08.html) | The Invisible Frontier — Warnings Answered · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-kinematic-set-recycling-2026-09-new.html`](/interfaces/blog-kinematic-set-recycling-2026-09-new.html) | Same River, New Speed, New Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-kinematic-set-recycling-2026-09.html`](/interfaces/blog-kinematic-set-recycling-2026-09.html) | Same River, New Speed, New Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | MRI Across Machines — A Plan, Not a Cluster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | Noah’s Ark as System Generation · Ship blog · SS Vibelandia |
@@ -348,6 +351,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-moving-up-the-stack-2026-09.html`](/interfaces/blog-moving-up-the-stack-2026-09.html) | Climb the Stack — Don't Just Race It · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud Racks as Antenna Story · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | Two Ways of Thinking — One Was Faster · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09-new.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09-new.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html`](/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html) | The Coffee, Not the Spoon · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine Digits, Ninety-Nine Octaves — Walk It · Ship blog · SS Vibelandia |
@@ -440,11 +444,12 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | When Stress Pushes the Field Outside · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | Drawers That Don’t Spill Into Each Other · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Your Basement Stories Still Carry Current · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-topology-of-the-void-2026-09-new.html`](/interfaces/blog-topology-of-the-void-2026-09-new.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-topology-of-the-void-2026-09-old.html`](/interfaces/blog-topology-of-the-void-2026-09-old.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three Nested Domes Families Can Walk · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-old.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-old.html) | Slowdown Talk and Floor-It Talk Both Miss Home · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html) | Keep the Frontier Open · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-viscosity-of-light-2026-09-new.html`](/interfaces/blog-viscosity-of-light-2026-09-new.html) | When Light Slows the Room Down · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-viscosity-of-light-2026-09.html`](/interfaces/blog-viscosity-of-light-2026-09.html) | When Light Slows the Room Down · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-vitality-control-rhyme-2026-09.html`](/interfaces/blog-vitality-control-rhyme-2026-09.html) | The Access Fight Behind the Safety Speeches · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What Frontier Means for Families · Ship blog · SS Vibelandia |

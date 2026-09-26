@@ -6,7 +6,7 @@
 - Registry: `synthobs-egs-recursive-fidelity-test-erft-2026-09`
 - Ship blog: `/ship-blog/erft-recursive-fidelity` · **Version Two Results: Who Won the Drift Test**
 - Whitepaper: `/whitepaper/erft-recursive-fidelity`
-- **Current protocol:** `ERFT-V2-2026-09-25` (V1 = construction-bias receipt only — do not quote as live results)
+- **Current protocol:** `ERFT-V3-2026-09-26` (V2 = sin geometry; V1 = construction-bias receipt)
 - Run: `npm run research:synthobs-egs-recursive-fidelity-test` (SING13 root) or `node scripts/run_empirical_pipeline.mjs`
 
 **Design:** five arms (baseline · Φ · √2 · e · random) · matched recursion · RFD curves · blind ladder · constant sweep with hold-out · **E0b anti-baseline-bias** (severity fixed; `c` = geometry only). Suite pass = protocol integrity, **not** “Φ won.”

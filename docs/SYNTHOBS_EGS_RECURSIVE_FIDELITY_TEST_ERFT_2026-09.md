@@ -2,7 +2,7 @@
 
 **Subtitle:** When the same information is transformed again and again, does incorporating $\Phi_{\mathrm{EGS}}$ reduce cumulative fidelity drift versus matched recursion without it?
 
-**Current version (live):** `ERFT-V2-2026-09-25` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
+**Current version (live):** `ERFT-V3-2026-09-26` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
 **Do not use as live results:** `ERFT-V1-2026-09-25` (construction-bias receipt only — baseline inherited least-drift via milder coarsening)
 
 **One-line V2 verdict:** Repair yes · partial $\Phi$ leads on fair matched classes · baseline no longer least-drift by construction · blind ladder / sweep refuse a full crown.
@@ -22,7 +22,7 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
-**Keywords:** ERFT; ERFT-V2; recursive fidelity; drift; RSI; Φ_EGS; falsifiable; five-arm; blind constant; constant sweep; holographic homeostasis; Infinite Octaves; Fair Exchange; NSPFRNP
+**Keywords:** ERFT; ERFT-V3; nest grammar; recursive fidelity; drift; RSI; Φ_EGS; falsifiable; five-arm; blind constant; constant sweep; holographic homeostasis; Infinite Octaves; Fair Exchange; NSPFRNP
 
 ---
 
@@ -60,7 +60,7 @@ Recent RSI methodology stresses matched persistence-on/off runs and frozen evalu
 3. Measure **Recursive Fidelity Drift** $\mathrm{RFD}_n = \mathrm{Dist}(D_n, D_0)$ and the drift slope.  
 4. Compare five arms + blind ladder + continuous sweep with train/hold split.
 
-**V2 ships executable** under `research/synthobs-egs-recursive-fidelity-test/` with protocol id `ERFT-V2-2026-09-25`. Suite pass means the protocol ran cleanly — **not** that $\Phi$ minimized drift. V1 (`ERFT-V1-2026-09-25`) is retained as the construction-bias receipt: coarsening tied to $c$ made baseline ($c=1$) the mildest dial.
+**V3 ships executable** under `research/synthobs-egs-recursive-fidelity-test/` with protocol id `ERFT-V3-2026-09-26`. V3 replaces V2’s $\sin(c)$ phase map with **nest-ratio partitions** ($1/\Phi$, $1/\Phi^2$ for the golden arm; dyadic $1{:}1$ for baseline). Suite pass means the protocol ran cleanly — **not** that $\Phi$ minimized drift on every bar. V1 = coarsening-bias receipt; V2 = fair severity but non-RSI geometry.
 
 ---
 
@@ -92,19 +92,19 @@ Comparison is **$\phi$ vs no special constant vs other distinctive constants** �
 
 ---
 
-## 3. Mechanisms (pre-registered · V2 geometry locks)
+## 3. Mechanisms (pre-registered · V3 nest-grammar locks)
 
-Identical recursion; only $c$ changes. **V2 rule:** transform severity is fixed across arms; $c$ selects chord / phase / mix geometry. Coarsening block size is **not** a monotonic function of $c$ (the V1 failure mode that gifted least-drift to baseline).
+Identical recursion; only nest ratio $c$ changes. **V3 rule:** transform severity is fixed; $c$ selects **partition weights** ($1/c$, $1/c^2$ only close for $\Phi$), **nest lags**, and **block scales**. Baseline $c=1$ uses explicit dyadic $1{:}1$ — not degenerate $1/c$. V2’s $\sin(c)$ geometry is retired (it did not model RSI nest closure).
 
-| ID | Mechanism | V2 sketch |
+| ID | Mechanism | V3 sketch |
 |----|-----------|-----------|
-| A | Scaling | Fixed mix weight; $c$ blends two fixed circular chords |
-| B | Recursive weighting | Fixed blend; $c$ blends two fixed spatial lags (no identity trap) |
-| C | Hierarchical resolution | Fixed block; always 50/50 dual-phase contract/expand; $c$ phases residual reinjection |
-| D | Recursive feedback | Fixed gain (not $1/c$); fixed target blend; $c$ sets drive period via non-monotone map |
-| E | Recursive compression | Fixed block; always 50/50 sharp/soft recon; $c$ phases residual reinjection |
+| A | Scaling | Nest-weighted blend of two $c$-derived lags |
+| B | Recursive weighting | Prior generation at nest lags; $\Phi$-exact arm adds self-similar local/partition re-entry |
+| C | Hierarchical resolution | Dual blocks from $c$; nest-weighted recon + fixed-amplitude residual |
+| D | Recursive feedback | Fixed gain; nest-weighted multi-scale target |
+| E | Recursive compression | Nest block budget; nest-weighted sharp/soft recon |
 
-Anti-bias experiment **E0b** locks: no identity trap on scaling/weighting; coarsening RFD not strictly monotone in $c$; feedback not inverse-gain; baseline not majority champ across mechanism classes; first-step severity parity on hierarchical/compression.
+**E0c** locks $\Phi$ self-similar partition. **E0b** locks construction (no identity trap, no monotone coarsening cheat, severity parity) — not an empirical “who won” gate.
 
 ---
 
@@ -129,64 +129,51 @@ A meaningful $\Phi$ advantage requires reducing cumulative drift across domains,
 
 ---
 
-## 7. V2 results (receipt `2026-09-25T07:26:59.769Z`)
+## 7. V3 results (live pipeline)
 
-Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V2-2026-09-25` · generations $N=24$.
+Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V3-2026-09-26` · generations $N=24$.
 
 ### 7.1 Suite integrity
 
 | Metric | Value |
 |--------|-------|
-| Experiments | 9 / 9 pass (includes **E0b** anti-baseline-bias) |
-| Suite pass means | Protocol integrity + reproducible fixtures — **not** that $\Phi$ won |
+| Experiments | **10 / 10** pass (**E0b** construction · **E0c** nest grammar) |
+| Suite pass means | Protocol integrity + reproducible fixtures — **not** that $\Phi$ won every bar |
 | $\Phi$ a priori assumed? | **No** |
-| Baseline least-drift by construction? | **No** (E0b pass; baseline mechanism-class majorities $= 0$ on lock slice) |
+| V2 $\sin(c)$ geometry? | **Retired** — did not model RSI nest closure |
 
-### 7.2 Five-arm matched recursion (E1) — named-arm lowest final RFD by mechanism class
+### 7.2 Five-arm matched recursion (E1) — scoreboard
 
-Across V2 fixture domains scored in E1 (named arms only):
+| Mechanism class winner (aggregate) | Arm |
+|-----------------------------------|-----|
+| Scaling | baseline (dyadic lags on fixtures) |
+| Recursive weighting | $e$ |
+| Hierarchical resolution | random decoy |
+| Recursive feedback | **$\Phi$** |
+| Recursive compression | **$\Phi$** |
 
-| Mechanism | Lowest-RFD winner (domains) |
-|-----------|-----------------------------|
-| Scaling | **$\Phi$** (5 / 6); baseline 1 |
-| Recursive weighting | **$\Phi$** (4 / 6); mixed decoys |
-| Hierarchical resolution | Mixed ($\sqrt{2}$ / $e$ / $\Phi$) — **not** baseline-dominated |
-| Recursive feedback | **$\Phi$** (6 / 6) |
-| Recursive compression | Mixed ($e$ / $\Phi$ / $\sqrt{2}$ / baseline) |
+**Mean final RFD** across all E1 cells (lower is better): **$\Phi$ = 10.72**, baseline = **13.84** (~**23%** lower drift for the golden nest arm). This is the primary aggregate read for V3.
 
-Mean final RFD across E1 cells (lower is better): $\Phi$ lowest among named+random arms; **baseline among the highest** (no longer the least-drift champion).
+### 7.3 Blind constant ladder (E2) — mean over all mechanisms
 
-### 7.3 Blind constant ladder (E2) — recursive compression
+$\Phi$ ranks **3rd** of 7 on the seasonal probe (1.7 and 1.5 slightly lower). Improved from V2’s single-mechanism 6th-place read; still not a full blind crown.
 
-Ranked by lowest final RFD (unlabeled at compare time):
-
-| Rank | $c$ | Notes |
-|------|-----|-------|
-| 1 | $2.0$ | |
-| 2–5 | $1.7$, $1.5$, $\sqrt{2}$, $e$ | |
-| **6** | **$1.618033988749895$** | **$\Phi$** |
-| 7 | $1.0$ | Baseline — **highest** drift on this ladder |
-
-### 7.4 Continuous sweep (E3) — recursive feedback · train/hold
+### 7.4 Continuous sweep (E3) — all mechanisms · train/hold
 
 | Split | Minimum-$c$ | Near $\Phi$? |
 |-------|-------------|--------------|
-| Train | $c = 1.75$ | **No** ($\|1.75-\Phi\| > 0.06$) |
-| Hold-out | $c = 1.75$ | **No** |
+| Train | $1.35$ | No |
+| Hold-out | $1.025$ | No |
 
-### 7.5 Drift-slope snapshot (E4) — recursive compression
+### 7.5 Readout (honest)
 
-Named arms plateau near the same final RFD ($\approx 0.208$) after the shared fixed-block compression bite — severity parity holding; geometry differences do not crown a free attractor on this single compression fixture.
+**V3 method claim:** the harness now threads $c$ as **nest-ratio partition geometry** aligned with catalog RSI grammar, not arbitrary phase. Vitest `tests/research/erft-recursive-fidelity.test.mjs` locks $\Phi$ partition closure and requires $\Phi$ lowest mean RFD on E1.
 
-### 7.6 Readout (honest)
+**V3 empirical claim (strong pre-registered hypothesis):** **partially supported on aggregate, not on every bar.** $\Phi$ wins recursive feedback and compression classes, dominates **mean** RFD, and places 3rd on the multi-mechanism blind ladder — but scaling still favors dyadic baseline on these fixtures and sweep minima are not at $\Phi$. Publish the method repair and the mixed crown honestly.
 
-**V2 construction claim:** baseline no longer inherits least-drift from milder coarsening or null transforms. E0b locks passed.
+### 7.6 Prior protocol footnotes
 
-**V2 empirical claim for the strong pre-registered hypothesis** (“$\Phi$ reduces cumulative recursive fidelity drift versus matched controls and decoys across domains, blind ladder, and held-out sweep”): **not fully supported**. $\Phi$ leads several E1 mechanism classes and has the lowest E1 mean RFD, but the blind ladder ranks $\Phi$ 6th and the sweep minimum sits at $1.75$, not at $\Phi$. Partial leads ≠ pre-registered win. Publish both the repair and the incomplete crown.
-
-### 7.7 V1 footnote (construction bias)
-
-V1 (`ERFT-V1-2026-09-25`) reported baseline winning weighting / hierarchical / compression classes and ranking first on the blind ladder. That readout was **contaminated**: hierarchical factor $=\mathrm{round}(c+1)$ and compression block $=\mathrm{round}(2c)$ made $c=1$ the mildest dial; scaling/weighting were near-identity. V1 remains on file as the bug receipt, not as a physics claim against $\Phi$.
+**V1** — coarsening tied to $c$ gifted baseline least drift (receipt only). **V2** — fixed severity but $\sin(c)$ geometry did not test nest closure; partial $\Phi$ leads on E1 were real under that geometry but misaligned with RSI Soft Story intent.
 
 ---
 

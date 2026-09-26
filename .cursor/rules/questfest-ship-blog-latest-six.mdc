@@ -11,12 +11,16 @@ alwaysApply: true
 
 Ship-blog posts are **full articles**, not cryptic bites, catalog blurbs, or **legal briefs**.
 
-1. **Voice:** Explanatory business / tech **feature journalism** in **kitchen-table everyday English** — continuous prose, daily-life stakes (jobs, rent, kids, curiosity doors). **Teaching H2s** (What broke/works, Why Main Street cares, How it works, Where to try) instead of catalog language. **Concrete contractor/kitchen analogies** not protocol abstractions. **Never "Closing pier" as H2** — fold pier close into final body section. **Ban Nevada valley stock formulas** ("From Reno's holographic AI valley", "Nevada's holographic AI valley"). Punchy lead without sound-bite stacks. Named stakes. **ERFT template peer:** `interfaces/blog-erft-recursive-fidelity-2026-09.html` (`/ship-blog/erft-recursive-fidelity`). Vitality peer still useful for access stakes. Do **not** name third-party magazines. Do **not** write mid-body “what this does not claim” sections; **Soft Story count in body = 0** (honesty rail may name the tier); park CODATA / PRA / ENGINE_SHELF in the end honesty rail only. Do **not** use empty workshops / empty rooms / quieter benches as unemployment stand-ins — say paychecks, laid off, job boards.
-2. **Length:** ≥ **900** article prose words inside `<article>` after stripping nav, honesty rail, footer, and CTA row. Helper: `lib/ship-blog-magazine.mjs` (`SHIP_BLOG_MIN_ARTICLE_WORDS`).
+**ERFT BENCHMARK STANDARD:** All posts must meet the editorial quality of `/ship-blog/erft-recursive-fidelity` (professional research introduction, clear problem→experiment→results structure, technical sophistication without jargon, ~1000 words, honest mixed results reporting).
+
+1. **Voice:** Explanatory business / tech **feature journalism** in **kitchen-table everyday English** — continuous prose, daily-life stakes (jobs, rent, kids, curiosity doors), scene, pier close. Punchy lead without sound-bite stacks. Named stakes. Peer: `interfaces/blog-ai-layer-triple-tipping-point-2026-09.html` (`/ship-blog/ai-layer-triple-tipping-point`). Vitality peer still useful for access stakes. Do **not** name third-party magazines. Do **not** write mid-body “what this does not claim” sections; **Soft Story count in body = 0** (honesty rail may name the tier); park CODATA / PRA / ENGINE_SHELF in the end honesty rail only. Do **not** use empty workshops / empty rooms / quieter benches as unemployment stand-ins — say paychecks, laid off, job boards.
+2. **Length:** ≥ **950** article prose words inside `<article>` after stripping nav, honesty rail, footer, and CTA row. **Target ~1000 words like ERFT benchmark** (ERFT = 973 words). Helper: `lib/ship-blog-magazine.mjs` (`SHIP_BLOG_MIN_ARTICLE_WORDS`).
 3. **Honesty rail at the end only:** one `<p class="honesty">…</p>` after the body (before or just above CTA/footer). Do not lead with honesty or sprinkle it through the piece.
-4. **Structure:** kicker · headline · dateline · lead · several **teaching** `<h2>` sections (What/Why/How patterns) · body includes pier close (no separate H2) · honesty · Fair Exchange `<p class="fair">` (required) · CTA `<div class="cta-row">` with `btn-gold` primary · footer.
-5. **Claims:** Keep Φ_EGS / catalog keys proportionate; full honesty stays at the end rail.
-6. **Journalism lock:** **every** `interfaces/blog-*.html` must pass `journalismVoiceSmell` (Soft Story **0**, zero refusal H2s, **zero "Closing pier" H2s**, **zero Nevada valley stock formulas**, zero does-not-claim litigation in body, ≤2 meta jargon, no body tables, **zero empty-workshop unemployment metaphors**, **≥2 everyday-life anchors**, **≥2 teaching H2s**, **required Fair Exchange class="fair"**, **required CTA btn-gold**).
+4. **Structure:** **Clear problem → experiment/analysis → results → qualifications structure** like ERFT. Kicker · headline · dateline · lead · several substantive `<h2>` sections · closing pier line · honesty · Fair Exchange (optional short) · CTA · footer.
+5. **Technical sophistication:** Each post must demonstrate **technical depth without jargon**, **mixed results reporting where appropriate**, and **honest qualifications** of findings like ERFT.
+6. **Unique content:** **Minimize boilerplate** — each post should have substantive, unique analysis rather than repetitive "weather outside the metaphor" sections.
+7. **Claims:** Keep Φ_EGS / catalog keys proportionate; full honesty stays at the end rail.
+8. **Journalism lock:** **every** `interfaces/blog-*.html` must pass `journalismVoiceSmell` (Soft Story **0**, zero refusal H2s, zero does-not-claim litigation in body, ≤2 meta jargon, no body tables, **zero empty-workshop unemployment metaphors**, **≥2 everyday-life anchors**).
 
 CI: `tests/lib/questfest-blog.test.mjs` + `tests/lib/ship-blog-magazine.test.mjs` enforce latest-six, magazine length / honesty, and journalism voice on the full corpus.
 
@@ -26,7 +30,7 @@ Protocol: `protocols/QUESTFEST_SHIP_BLOG_MAGAZINE_SNAP_NSPFRNP.md`.
 
 When you **register, protocol, or feature** a technical paper (`lib/whitepaper-registry.mjs`, `docs/*.md`):
 
-1. **Write a magazine-grade ship-blog HTML article** under `interfaces/blog-<slug>-YYYY-MM.html` (feature prose + honesty rail **at the end** + link to the whitepaper). **ERFT template peer:** `interfaces/blog-erft-recursive-fidelity-2026-09.html`.
+1. **Write a magazine-grade ship-blog HTML article** under `interfaces/blog-<slug>-YYYY-MM.html` (feature prose + honesty rail **at the end** + link to the whitepaper). Voice peer: `interfaces/blog-vitality-control-rhyme-2026-09.html`.
 2. **Register the note** in `lib/questfest-blog-posts.mjs` (`QUESTFEST_BLOG_POSTS[registryId]` → slug, file, headline, excerpt).
 3. **Add Vercel rewrites** in `vercel.json` for `/ship-blog/<slug>` and `/ship-blog/<slug>/`.
 4. **Sync the latest-six section:** `npm run sync:questfest-blog` (injects `interfaces/vibelandia-questfest.html` `#ship-blog`).

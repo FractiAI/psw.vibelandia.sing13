@@ -129,15 +129,15 @@ A meaningful $\Phi$ advantage requires reducing cumulative drift across domains,
 
 ---
 
-## 7. V3 results (live pipeline)
+## 7. V4 results (live pipeline)
 
-Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V3-2026-09-26` · generations $N=24$.
+Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V4-2026-09-26` · generations $N=24$.
 
 ### 7.1 Suite integrity
 
 | Metric | Value |
 |--------|-------|
-| Experiments | **10 / 10** pass (**E0b** construction · **E0c** nest grammar) |
+| Experiments | **11 / 11** pass (**E0b** construction · **E0c** nest grammar · **E0d** engine-grammar locks) |
 | Suite pass means | Protocol integrity + reproducible fixtures — **not** that $\Phi$ won every bar |
 | $\Phi$ a priori assumed? | **No** |
 | V2 $\sin(c)$ geometry? | **Retired** — did not model RSI nest closure |
@@ -147,29 +147,29 @@ Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.jso
 | Mechanism class winner (aggregate) | Arm |
 |-----------------------------------|-----|
 | Scaling | baseline (dyadic lags on fixtures) |
-| Recursive weighting | $e$ |
-| Hierarchical resolution | random decoy |
-| Recursive feedback | **$\Phi$** |
-| Recursive compression | **$\Phi$** |
+| Recursive weighting | random decoy |
+| Hierarchical resolution | baseline |
+| Recursive feedback | random decoy |
+| Recursive compression | baseline |
 
-**Mean final RFD** across all E1 cells (lower is better): **$\Phi$ = 10.72**, baseline = **13.84** (~**23%** lower drift for the golden nest arm). This is the primary aggregate read for V3.
+**Mean final RFD** across all E1 cells (lower is better): **$\Phi$ = 9.35**, baseline = **13.87** (~**33%** lower drift for the golden nest arm vs dyadic baseline). A seeded random decoy still posts the lowest aggregate mean on this fixture set (**8.04**). This is the primary aggregate read for V4.
 
 ### 7.3 Blind constant ladder (E2) — mean over all mechanisms
 
-$\Phi$ ranks **3rd** of 7 on the seasonal probe (1.7 and 1.5 slightly lower). Improved from V2’s single-mechanism 6th-place read; still not a full blind crown.
+$\Phi$ ranks **4th** of 7 on the seasonal probe ($1.7$, $\sqrt{2}$, and $1.5$ slightly lower). Still not a full blind crown.
 
 ### 7.4 Continuous sweep (E3) — all mechanisms · train/hold
 
 | Split | Minimum-$c$ | Near $\Phi$? |
 |-------|-------------|--------------|
-| Train | $1.35$ | No |
-| Hold-out | $1.025$ | No |
+| Train | $1.025$ | No |
+| Hold-out | $1.0$ | No |
 
 ### 7.5 Readout (honest)
 
-**V3 method claim:** the harness now threads $c$ as **nest-ratio partition geometry** aligned with catalog RSI grammar, not arbitrary phase. Vitest `tests/research/erft-recursive-fidelity.test.mjs` locks $\Phi$ partition closure and requires $\Phi$ lowest mean RFD on E1.
+**V4 method claim:** the harness threads $c$ as **nest-ratio partition geometry** and applies **Infinite Octaves catalog fixtures** (clutch $\Delta$, $k/81$ register, digit×octave 01–99 indexing, odd-prime vault routing, structural $2$ baseline parity) identically across arms — only the nest constant differs.
 
-**V3 empirical claim (strong pre-registered hypothesis):** **partially supported on aggregate, not on every bar.** $\Phi$ wins recursive feedback and compression classes, dominates **mean** RFD, and places 3rd on the multi-mechanism blind ladder — but scaling still favors dyadic baseline on these fixtures and sweep minima are not at $\Phi$. Publish the method repair and the mixed crown honestly.
+**V4 empirical claim (strong pre-registered hypothesis):** **partially supported on the $\Phi$ vs baseline aggregate, not on every bar.** $\Phi$ lowers mean final RFD vs dyadic baseline on E1, but scaling and several other mechanism classes favor baseline or decoys, the blind ladder does not crown $\Phi$, and sweep minima are not at $\Phi$. Publish the mixed read honestly.
 
 ### 7.6 Prior protocol footnotes
 

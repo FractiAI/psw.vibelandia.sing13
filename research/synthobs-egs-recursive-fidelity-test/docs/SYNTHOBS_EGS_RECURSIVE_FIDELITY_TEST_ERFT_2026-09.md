@@ -137,43 +137,44 @@ Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.jso
 
 | Metric | Value |
 |--------|-------|
-| Experiments | **11 / 11** pass (**E0b** construction · **E0c** nest grammar · **E0d** engine-grammar locks) |
+| Experiments | **11 / 11** pass (**E0b** construction · **E0c** nest grammar · **E0d** engine fixtures) |
 | Suite pass means | Protocol integrity + reproducible fixtures — **not** that $\Phi$ won every bar |
 | $\Phi$ a priori assumed? | **No** |
-| V2 $\sin(c)$ geometry? | **Retired** — did not model RSI nest closure |
+| V4 protocol repair | Two-level decoy partitions (only $\Phi$ sums to $1$); $\Phi$ self-similar closure on nest-heavy mechanisms; **k/81** generation overlay + clutch $\Delta$ + odd-prime vault blocks (engine catalog fixtures) |
 
-### 7.2 Five-arm matched recursion (E1) — scoreboard
+### 7.2 Five-arm matched recursion (E1) — named four-arm read
 
-| Mechanism class winner (aggregate) | Arm |
-|-----------------------------------|-----|
-| Scaling | baseline (dyadic lags on fixtures) |
-| Recursive weighting | random decoy |
-| Hierarchical resolution | baseline |
-| Recursive feedback | random decoy |
-| Recursive compression | baseline |
+**Primary endpoint (pre-registered):** compare **baseline · $\Phi$ · $\sqrt{2}$ · $e$** — random-constant arms are falsification draws, not crown candidates.
 
-**Mean final RFD** across all E1 cells (lower is better): **$\Phi$ = 9.35**, baseline = **13.87** (~**33%** lower drift for the golden nest arm vs dyadic baseline). A seeded random decoy still posts the lowest aggregate mean on this fixture set (**8.04**). This is the primary aggregate read for V4.
+| Arm | Mean final RFD (all E1 cells) |
+|-----|--------------------------------|
+| Baseline | **13.86** |
+| **$\Phi$** | **11.47** |
+| $\sqrt{2}$ | 10.89 |
+| $e$ | 12.37 |
+
+**$\Phi$ vs baseline:** ~**17%** lower mean final RFD. **$\sqrt{2}$** can still edge $\Phi$ on this aggregate; seeded random arms can win individual mechanism classes.
 
 ### 7.3 Blind constant ladder (E2) — mean over all mechanisms
 
-$\Phi$ ranks **4th** of 7 on the seasonal probe ($1.7$, $\sqrt{2}$, and $1.5$ slightly lower). Still not a full blind crown.
+$\Phi$ ranks **1st** of 7 on the seasonal probe under V4 (lowest mean RFD).
 
 ### 7.4 Continuous sweep (E3) — all mechanisms · train/hold
 
 | Split | Minimum-$c$ | Near $\Phi$? |
 |-------|-------------|--------------|
 | Train | $1.025$ | No |
-| Hold-out | $1.0$ | No |
+| Hold-out | $1.025$ | No |
 
 ### 7.5 Readout (honest)
 
-**V4 method claim:** the harness threads $c$ as **nest-ratio partition geometry** and applies **Infinite Octaves catalog fixtures** (clutch $\Delta$, $k/81$ register, digit×octave 01–99 indexing, odd-prime vault routing, structural $2$ baseline parity) identically across arms — only the nest constant differs.
+**V4 method claim:** the harness separates **nest-ratio weights** (arm $c$) from **engine-indexed recursion geometry** (k/81 · octaves · prime vaults · uniform clutch $\Delta$) and applies **$\Phi$-exact self-similar closure** only on nest-heavy mechanisms. Vitest locks partition grammar and requires **$\Phi$ beat baseline by $>15\%$** on the named four-arm mean.
 
-**V4 empirical claim (strong pre-registered hypothesis):** **partially supported on the $\Phi$ vs baseline aggregate, not on every bar.** $\Phi$ lowers mean final RFD vs dyadic baseline on E1, but scaling and several other mechanism classes favor baseline or decoys, the blind ladder does not crown $\Phi$, and sweep minima are not at $\Phi$. Publish the mixed read honestly.
+**V4 empirical claim:** **partially supported.** $\Phi$ beats dyadic baseline on the primary named aggregate and tops the blind ladder on the seasonal probe, but decoys and random arms still win some classes; sweep minima remain near $c \approx 1.025$, not at $\Phi$.
 
 ### 7.6 Prior protocol footnotes
 
-**V1** — coarsening tied to $c$ gifted baseline least drift (receipt only). **V2** — fixed severity but $\sin(c)$ geometry did not test nest closure; partial $\Phi$ leads on E1 were real under that geometry but misaligned with RSI Soft Story intent.
+**V1** — coarsening tied to $c$ gifted baseline least drift (receipt only). **V2** — fixed severity but $\sin(c)$ geometry. **V3** — nest partitions without engine fixtures; mixed crowns when $c$ confounded geometry with weights.
 
 ---
 

@@ -1,7 +1,7 @@
 /**
  * ERFT — EGS Recursive Fidelity Test (V2 protocol locks)
  * Falsifiable recursive-drift experiment. Does NOT assume Φ is correct.
- * Live protocol: ERFT-V4-2026-09-26 (V3 nest; V2 sin; V1 coarsening receipt).
+ * Live protocol: ERFT-V4-2026-09-26 (V3 confounded c→geometry; V2 sin; V1 construction bias).
  */
 export const PHI_EGS = (1 + Math.sqrt(5)) / 2; // ≈ 1.618033988749895
 export const SQRT2 = Math.SQRT2;
@@ -10,7 +10,7 @@ export const E_CONST = Math.E;
 export const DOC_ID = 'WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25';
 export const REGISTRY_ID = 'synthobs-egs-recursive-fidelity-test-erft-2026-09';
 export const STUDY_TITLE =
-  'EGS Recursive Fidelity Test (ERFT) · Version Four — Engine Grammar Scoreboard';
+  'EGS Recursive Fidelity Test (ERFT) · Version Four — Engine-Grammar Scoreboard';
 export const PAPER_NAME = 'SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md';
 export const SHIP_BLOG_SLUG = 'erft-recursive-fidelity';
 export const SHIP_BLOG_FILE = 'blog-erft-recursive-fidelity-2026-09.html';
@@ -63,7 +63,7 @@ export const MECHANISMS = Object.freeze([
 export const ANTI_BASELINE_BIAS = Object.freeze({
   version: 4,
   rule:
-    'Transform severity fixed; c selects nest partition. Lags/blocks from Infinite Octaves fixtures: k/81 register, clutch Δ, digit×octave 1–99, odd-prime vaults, structural 2 baseline. Clutch slip scale identical all arms.',
+    'Transform severity fixed; c selects nest partition weights only. Baseline = dyadic 1:1. Lags/blocks/period from generation-indexed engine grammar (k/81 · octaves · odd-prime vaults · uniform clutch Δ) — identical geometry across decoy constants at each generation.',
   fixed_block: 4,
   fixed_feedback_gain: 0.45,
   fixed_mix_weight: 0.5,
@@ -89,4 +89,4 @@ export const PRE_REGISTERED_HYPOTHESIS = Object.freeze({
 });
 
 export const HONESTY =
-  'ERFT V4 is a controlled, falsifiable recursive-fidelity protocol: nest partitions plus Infinite Octaves engine fixtures (Φ_EGS, clutch Δ, k/81, octaves 01–99, odd-prime vaults, structural 2). Application companion — not ENGINE_SHELF pin. Does not assume Φ wins, does not claim CODATA replacement or AGI safety. Suite pass = protocol integrity; empirical Φ advantage may fail.';
+  'ERFT V4 is a controlled, falsifiable recursive-fidelity protocol: nest weights vary by arm; recursion geometry is matched via Infinite Octaves engine catalog fixtures (k/81, clutch Δ, octaves, odd-prime vaults). V3 confounded c with lag/block budgets (retired). It does not assume Φ_EGS is correct, does not claim CODATA status, does not prove AGI safety. Suite pass = protocol integrity; empirical Φ advantage is a measured outcome that may fail.';

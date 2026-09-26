@@ -1097,7 +1097,8 @@ body {
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
-  animation: fade-up 220ms ease both;
+  /* Dedicated keyframes keep translateX(-50%) — fade-up alone overwrites centering. */
+  animation: jump-to-bottom-in 220ms ease both;
 }
 
 .jump-to-bottom:hover {
@@ -2135,6 +2136,17 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes jump-to-bottom-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
 

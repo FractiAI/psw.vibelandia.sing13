@@ -1,8 +1,8 @@
 import Markdown from 'react-markdown';
-import type React from 'react';
+import { memo, type ReactNode } from 'react';
 import remarkGfm from 'remark-gfm';
 
-export function MarkdownBody({
+export const MarkdownBody = memo(function MarkdownBody({
   children,
   className,
 }: {
@@ -19,7 +19,7 @@ export function MarkdownBody({
         disallowedElements={['script', 'style', 'iframe', 'object', 'embed']}
         unwrapDisallowed
         components={{
-          a: ({ href, children: linkChildren }: { href?: string; children?: React.ReactNode }) => (
+          a: ({ href, children: linkChildren }: { href?: string; children?: ReactNode }) => (
             <a href={href} target="_blank" rel="noopener noreferrer">
               {linkChildren}
             </a>
@@ -30,4 +30,4 @@ export function MarkdownBody({
       </Markdown>
     </div>
   );
-}
+});

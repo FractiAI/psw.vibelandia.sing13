@@ -1,4 +1,4 @@
-import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   isCreatorEmail,
   isRememberedEmailFresh,
@@ -13,36 +13,21 @@ import {
   latticeProgressHint,
   latticeProgressStep,
   loadLatticeModels,
-  sendLatticeMessage,
   threadAwaitingAssistant,
   verifyLatticeAccess,
 } from '@/api';
 import { isSoftRecoverableLatticeError } from '@/lib/guestErrors';
-import {
-  clearComposerDraft,
-  readComposerDraft,
-  writeComposerDraft,
-} from '@/lib/composerDraft';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
-import { MarkdownBody } from '@/components/MarkdownBody';
-import { ComposerOptions } from '@/components/ComposerOptions';
+import { ComposerBar } from '@/components/ComposerBar';
+import { MessageThread } from '@/components/MessageThread';
 import { KeySettingsPanel } from '@/components/KeySettings';
-import { TokenCompareFooter, hasMeasuredTokens } from '@/components/TokenCompare';
 import { hasProviderApiKey, subscribeProviderKeys } from '@/lib/providerKeys';
-import {
-  attachmentsForWire,
-  latticeAttachAccept,
-  LATTICE_ATTACH_MAX_FILES,
-  readLatticeFiles,
-  revokeAttachmentPreviews,
-  type LatticeAttachment,
-} from '@/lib/attachments';
 import { useLatticeStore } from '@/store';
 import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
 import { listSelectableChats } from '@/threadHistory';
 import { CollabDmBadge } from '@/components/collaborate/CollabDmNotifier';
-import { resolveClientCollabPeerId, peerNameForId } from '@/feed/seatIdentity';
+import { resolveClientCollabPeerId } from '@/feed/seatIdentity';
 import { useUnifiedFeed } from '@/feed/store';
 import { isIncomingCollabDm, unreadCountForPeer } from '@/feed/dm';
 import { isSharedCollabAgentThread } from '@/feed/syncCollaborateAgent';
@@ -78,27 +63,13 @@ export function ChatPane({
   const liveTranscript = useLatticeStore((s) => s.liveTranscript);
   const remoteCollabLive = useLatticeStore((s) => s.remoteCollabLive);
   const error = useLatticeStore((s) => s.error);
-  const agentMode = useLatticeStore((s) => s.agentMode);
-  const modelId = useLatticeStore((s) => s.modelId);
-  const models = useLatticeStore((s) => s.models);
   const provider = useLatticeStore((s) => s.provider);
-  const nestTopology = useLatticeStore((s) => s.nestTopology);
-  const agentRoster = useLatticeStore((s) => s.agentRoster);
   const activeRepoId = useLatticeStore((s) => s.activeRepoId);
   const repositories = useLatticeStore((s) => s.repositories);
-  const setAgentMode = useLatticeStore((s) => s.setAgentMode);
-  const setModelId = useLatticeStore((s) => s.setModelId);
-  const setProvider = useLatticeStore((s) => s.setProvider);
-  const setNestTopology = useLatticeStore((s) => s.setNestTopology);
-  const setAgentRoster = useLatticeStore((s) => s.setAgentRoster);
   const hardRefreshEdge = useLatticeStore((s) => s.hardRefreshEdge);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const ensureSharedCollabThread = useLatticeStore((s) => s.ensureSharedCollabThread);
   const selectThread = useLatticeStore((s) => s.selectThread);
-  const [draft, setDraft] = useState(() => readComposerDraft(null));
-  const [attachments, setAttachments] = useState<LatticeAttachment[]>([]);
-  const draftThreadRef = useRef<string | null>(null);
-  const [attachHint, setAttachHint] = useState<string | null>(null);
   const [elapsedSec, setElapsedSec] = useState(0);
   const [checking, setChecking] = useState(false);
   const [keySettingsOpen, setKeySettingsOpen] = useState(false);
@@ -107,8 +78,6 @@ export function ChatPane({
   const scrollRef = useRef<HTMLDivElement>(null);
   const stickToBottomRef = useRef(true);
   const [showJumpToBottom, setShowJumpToBottom] = useState(false);
-  const inputRef = useRef<HTMLTextAreaElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const resumedRef = useRef(false);
 
   const myCollabPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
@@ -134,10 +103,10 @@ export function ChatPane({
     }
     return Array.from(byPeer.values()).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   }, [feedItems, dmLastReadAt]);
-  const jumpToCollabDm = (peerId: string, focusMessageId?: string) => {
+  const jumpToCollabDm = useCallback((peerId: string, focusMessageId?: string) => {
     openPeerDm(peerId, focusMessageId ? { focusMessageId } : undefined);
     onOpenCollaborate?.();
-  };
+  }, [openPeerDm, onOpenCollaborate]);
   const onSharedSession =
     sharedCollab || isSharedCollabAgentThread(activeThreadId);
 
@@ -174,35 +143,6 @@ export function ChatPane({
     if (sharedCollab) ensureSharedCollabThread();
     else ensureThread();
   }, [ensureThread, ensureSharedCollabThread, sharedCollab]);
-
-  // Survive remount / soft crash recovery — drafts live in sessionStorage per thread.
-  useEffect(() => {
-    const tid = activeThreadId;
-    if (draftThreadRef.current === tid) return;
-    if (draftThreadRef.current) {
-      writeComposerDraft(draftThreadRef.current, draft);
-    }
-    draftThreadRef.current = tid;
-    setDraft(readComposerDraft(tid));
-    // Intentionally omit `draft` — only swap when the active thread changes.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeThreadId]);
-
-  // Debounced draft persistence to avoid sessionStorage latency on every keystroke
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      writeComposerDraft(activeThreadId, draft);
-    }, 300); // 300ms debounce
-    return () => clearTimeout(timeout);
-  }, [activeThreadId, draft]);
-
-  useEffect(() => {
-    if (!agentSeedPrompt) return;
-    setDraft(agentSeedPrompt);
-    writeComposerDraft(activeThreadId, agentSeedPrompt);
-    onAgentSeedConsumed?.();
-    inputRef.current?.focus();
-  }, [agentSeedPrompt, onAgentSeedConsumed, activeThreadId]);
 
   useEffect(() => {
     const sync = (detail?: { changed?: boolean }) => {
@@ -280,9 +220,16 @@ export function ChatPane({
   function jumpToLatest() {
     stickToBottomRef.current = true;
     setShowJumpToBottom(false);
-    const el = scrollRef.current;
-    if (el) el.scrollTop = el.scrollHeight;
-    else bottomRef.current?.scrollIntoView({ block: 'end' });
+    // Double-rAF: flex overflow scrollHeight can lag one frame; always
+    // also scroll the sentinel so the click never looks like a no-op.
+    requestAnimationFrame(() => {
+      const el = scrollRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+      requestAnimationFrame(() => {
+        if (el) el.scrollTop = el.scrollHeight;
+        bottomRef.current?.scrollIntoView({ block: 'end', behavior: 'auto' });
+      });
+    });
   }
   useEffect(() => {
     if (!showWorking) {
@@ -339,73 +286,19 @@ export function ChatPane({
     };
   }, []);
 
-  async function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!signedIn) return;
-    if (!draft.trim() && !attachments.length) return;
-    stickToBottomRef.current = true;
-    setShowJumpToBottom(false);
-    const text = draft;
-    const wire = attachmentsForWire(attachments);
-    setDraft('');
-    clearComposerDraft(activeThreadId);
-    revokeAttachmentPreviews(attachments);
-    setAttachments([]);
-    setAttachHint(null);
-    await sendLatticeMessage(text, wire);
-    inputRef.current?.focus();
-  }
-
-  async function onPickFiles(fileList: FileList | null) {
-    if (!fileList?.length) return;
-    if (!creatorAttach) {
-      const room = LATTICE_ATTACH_MAX_FILES - attachments.length;
-      if (room <= 0) {
-        setAttachHint(`Max ${LATTICE_ATTACH_MAX_FILES} files per send.`);
-        return;
-      }
-      const { attachments: next, errors } = await readLatticeFiles(
-        Array.from(fileList).slice(0, room),
-      );
-      if (errors.length) setAttachHint(errors.join(' · '));
-      else setAttachHint(null);
-      setAttachments((prev) => [...prev, ...next].slice(0, LATTICE_ATTACH_MAX_FILES));
-    } else {
-      const { attachments: next, errors } = await readLatticeFiles(Array.from(fileList), {
-        unlimited: true,
-      });
-      if (errors.length) setAttachHint(errors.join(' · '));
-      else setAttachHint(null);
-      setAttachments((prev) => [...prev, ...next]);
-    }
-    if (fileInputRef.current) fileInputRef.current.value = '';
-  }
-
-  function removeAttachment(index: number) {
-    setAttachments((prev) => {
-      const copy = [...prev];
-      const [removed] = copy.splice(index, 1);
-      if (removed?.previewUrl) URL.revokeObjectURL(removed.previewUrl);
-      return copy;
-    });
-  }
-
   async function onCheckReply() {
     setChecking(true);
     try {
       await checkPendingLatticeReply();
     } finally {
       setChecking(false);
-      inputRef.current?.focus();
     }
   }
 
-  function onKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      void onSubmit(e);
-    }
-  }
+  const onBeforeSend = useCallback(() => {
+    stickToBottomRef.current = true;
+    setShowJumpToBottom(false);
+  }, []);
 
   const step = latticeProgressStep(elapsedSec);
   const mm = String(Math.floor(elapsedSec / 60)).padStart(1, '0');
@@ -679,61 +572,13 @@ export function ChatPane({
               ))}
             </div>
           ) : null}
-          {thread.messages.map((m) => {
-            const userLabel =
-              m.role === 'user'
-                ? m.senderPeerId && myCollabPeerId && m.senderPeerId !== myCollabPeerId
-                  ? m.senderName || peerNameForId(m.senderPeerId)
-                  : 'You'
-                : null;
-            const isRemoteSeat =
-              m.role === 'user' &&
-              Boolean(m.senderPeerId) &&
-              Boolean(myCollabPeerId) &&
-              m.senderPeerId !== myCollabPeerId;
-            return (
-            <article
-              key={m.id}
-              className={`bubble bubble-${m.role}${isRemoteSeat ? ' bubble--collab-jump' : ''}`}
-              data-role={m.role}
-              data-sender={m.senderPeerId || undefined}
-              {...(isRemoteSeat
-                ? {
-                    role: 'link' as const,
-                    tabIndex: 0,
-                    title: `Open Collaborate chat with ${userLabel}`,
-                    onClick: () => jumpToCollabDm(m.senderPeerId!),
-                    onKeyDown: (e: KeyboardEvent) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        jumpToCollabDm(m.senderPeerId!);
-                      }
-                    },
-                  }
-                : {})}
-            >
-              <span className="bubble-role">
-                {m.role === 'user'
-                  ? userLabel
-                  : m.mode || m.model
-                    ? `Valet · ${m.mode || 'agent'}${m.model ? ` · ${m.model}` : ''}`
-                    : 'Valet'}
-              </span>
-              {m.role === 'assistant' && m.transcript?.length ? (
-                <AgentTranscript items={m.transcript} />
-              ) : m.role === 'assistant' ? (
-                <div className="bubble-body">
-                  <MarkdownBody>{m.content}</MarkdownBody>
-                </div>
-              ) : (
-                <div className="bubble-body">{m.content}</div>
-              )}
-              {m.role === 'assistant' && m.tokens && hasMeasuredTokens(m.tokens) ? (
-                <TokenCompareFooter tokens={m.tokens} />
-              ) : null}
-            </article>
-            );
-          })}
+          {thread.messages.length ? (
+            <MessageThread
+              messages={thread.messages}
+              myCollabPeerId={myCollabPeerId}
+              onJumpToCollabDm={jumpToCollabDm}
+            />
+          ) : null}
           </>
         )}
         {showRemoteWorking ? (
@@ -856,112 +701,15 @@ export function ChatPane({
         </p>
       ) : null}
 
-      <form className={`composer${signedIn && hasEdgeKey ? '' : ' composer--boarding'}`} onSubmit={onSubmit}>
-        {signedIn && hasEdgeKey ? (
-          <ComposerOptions
-            provider={provider}
-            mode={agentMode}
-            nestTopology={nestTopology}
-            agentRoster={agentRoster}
-            modelId={modelId}
-            models={models}
-            disabled={sending}
-            onProviderChange={setProvider}
-            onModeChange={setAgentMode}
-            onNestChange={setNestTopology}
-            onRosterChange={setAgentRoster}
-            onModelChange={setModelId}
-          />
-        ) : null}
-        {signedIn && hasEdgeKey && attachments.length ? (
-          <ul className="composer-attach-chips" aria-label="Attached files">
-            {attachments.map((a, i) => (
-              <li key={`${a.name}-${i}`} className="composer-attach-chip">
-                {a.previewUrl ? (
-                  <img src={a.previewUrl} alt="" className="composer-attach-thumb" />
-                ) : (
-                  <span className="composer-attach-doc" aria-hidden>
-                    📄
-                  </span>
-                )}
-                <span className="composer-attach-name">{a.name}</span>
-                <button
-                  type="button"
-                  className="composer-attach-remove"
-                  aria-label={`Remove ${a.name}`}
-                  disabled={sending && sendPhase !== 'stuck'}
-                  onClick={() => removeAttachment(i)}
-                >
-                  ×
-                </button>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-        {attachHint ? (
-          <p className="composer-attach-hint" role="status">
-            {attachHint}
-          </p>
-        ) : null}
-        <label className="sr-only" htmlFor="lattice-composer">
-          Message
-        </label>
-        <div className="composer-input-row">
-          <input
-            ref={fileInputRef}
-            type="file"
-            className="sr-only"
-            id="lattice-attach-input"
-            accept={latticeAttachAccept()}
-            multiple
-            disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
-            onChange={(e) => void onPickFiles(e.target.files)}
-          />
-          <button
-            type="button"
-            className="composer-attach-btn"
-            title={
-              creatorAttach
-                ? 'Attach images, PDFs, or text docs (Player 1 — no Lattice attach caps)'
-                : 'Attach images, PDFs, or text docs (Cursor and Claude can see images; PDFs as extracted text)'
-            }
-            aria-label="Attach images or documents"
-            disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
-            onClick={() => fileInputRef.current?.click()}
-          >
-            📎
-          </button>
-          <textarea
-            id="lattice-composer"
-            ref={inputRef}
-            rows={3}
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-            onKeyDown={onKeyDown}
-            placeholder={
-              showWorking
-                ? 'Your Valet is working… use Check for reply instead of re-pasting'
-                : !signedIn
-                  ? 'Welcome aboard — sign in above to chat…'
-                  : !hasEdgeKey
-                    ? 'Bring your key to the bridge above…'
-                    : 'Message your Goldilocks Valet…'
-            }
-            disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
-          />
-        </div>
-        <button
-          type="submit"
-          disabled={
-            !signedIn ||
-            !hasEdgeKey ||
-            (!draft.trim() && !attachments.length) ||
-            (sending && sendPhase !== 'stuck' && draft.trim() !== pending?.prompt)
-          }
-        >
-          {showWorking && draft.trim() === pending?.prompt ? 'Retry' : 'Send'}
-        </button>
-      </form>
+      <ComposerBar
+        signedIn={signedIn}
+        hasEdgeKey={hasEdgeKey}
+        creatorAttach={creatorAttach}
+        showWorking={showWorking}
+        agentSeedPrompt={agentSeedPrompt}
+        onAgentSeedConsumed={onAgentSeedConsumed}
+        onBeforeSend={onBeforeSend}
+      />
     </main>
   );
 }

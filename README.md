@@ -303,7 +303,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-digit4-recursive-reach-2026-09-old.html`](/interfaces/blog-digit4-recursive-reach-2026-09-old.html) | Keep the Wheel in Human Hands · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-recursive-reach-2026-09.html`](/interfaces/blog-digit4-recursive-reach-2026-09.html) | Awareness Stays in Your Hands · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru — Your Goldilocks Valet · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-eddy-current-mirror-2026-09-new.html`](/interfaces/blog-eddy-current-mirror-2026-09-new.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-eddy-current-mirror-2026-09-old.html`](/interfaces/blog-eddy-current-mirror-2026-09-old.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | GPU Telemetry as Execution Weather · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen Stories · Ship blog · SS Vibelandia |
@@ -321,8 +321,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Compress Without Crushing the Signal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest — Step Through the Door · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Invert the Infinite Without Losing Home · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-grand-unified-metrological-overlap-2026-09-new.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09-new.html) | Five Gears, One Ship's Clock · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-grand-unified-metrological-overlap-2026-09.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09.html) | Five Gears, One Ship’s Clock · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-grand-unified-metrological-overlap-2026-09-old.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09-old.html) | Five Gears, One Ship’s Clock · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-grand-unified-metrological-overlap-2026-09.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09.html) | Five Gears, One Ship's Clock · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Genomic Tokens That Keep Structure Honest · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | When the Universe Slows — Mass and Now · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-homeostasis-2026-09.html`](/interfaces/blog-holographic-homeostasis-2026-09.html) | Stay Steady on the Move · Ship blog · SS Vibelandia |
@@ -336,7 +336,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-infinite-octave-prime-parity-2026-09.html`](/interfaces/blog-infinite-octave-prime-parity-2026-09.html) | Why Two Stands Alone on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octaves-omniversal-2026-08.html`](/interfaces/blog-infinite-octaves-omniversal-2026-08.html) | Your Valet Just Got Infinite Octaves · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-invisible-frontier-gates-ai-2026-08.html`](/interfaces/blog-invisible-frontier-gates-ai-2026-08.html) | The Invisible Frontier — Warnings Answered · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-kinematic-set-recycling-2026-09-new.html`](/interfaces/blog-kinematic-set-recycling-2026-09-new.html) | Same River, New Speed, New Theater · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-kinematic-set-recycling-2026-09-old.html`](/interfaces/blog-kinematic-set-recycling-2026-09-old.html) | Same River, New Speed, New Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-kinematic-set-recycling-2026-09.html`](/interfaces/blog-kinematic-set-recycling-2026-09.html) | Same River, New Speed, New Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | MRI Across Machines — A Plan, Not a Cluster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | Noah’s Ark as System Generation · Ship blog · SS Vibelandia |
@@ -351,7 +351,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-moving-up-the-stack-2026-09.html`](/interfaces/blog-moving-up-the-stack-2026-09.html) | Climb the Stack — Don't Just Race It · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud Racks as Antenna Story · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | Two Ways of Thinking — One Was Faster · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09-new.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09-new.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09-old.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09-old.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html`](/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html) | The Coffee, Not the Spoon · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine Digits, Ninety-Nine Octaves — Walk It · Ship blog · SS Vibelandia |
@@ -449,7 +449,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three Nested Domes Families Can Walk · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-old.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-old.html) | Slowdown Talk and Floor-It Talk Both Miss Home · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html) | Keep the Frontier Open · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-viscosity-of-light-2026-09-new.html`](/interfaces/blog-viscosity-of-light-2026-09-new.html) | When Light Slows the Room Down · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-viscosity-of-light-2026-09-old.html`](/interfaces/blog-viscosity-of-light-2026-09-old.html) | When Light Slows the Room Down · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-viscosity-of-light-2026-09.html`](/interfaces/blog-viscosity-of-light-2026-09.html) | When Light Slows the Room Down · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-vitality-control-rhyme-2026-09.html`](/interfaces/blog-vitality-control-rhyme-2026-09.html) | The Access Fight Behind the Safety Speeches · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What Frontier Means for Families · Ship blog · SS Vibelandia |

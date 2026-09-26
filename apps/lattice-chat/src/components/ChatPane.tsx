@@ -188,8 +188,12 @@ export function ChatPane({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeThreadId]);
 
+  // Debounced draft persistence to avoid sessionStorage latency on every keystroke
   useEffect(() => {
-    writeComposerDraft(activeThreadId, draft);
+    const timeout = setTimeout(() => {
+      writeComposerDraft(activeThreadId, draft);
+    }, 300); // 300ms debounce
+    return () => clearTimeout(timeout);
   }, [activeThreadId, draft]);
 
   useEffect(() => {

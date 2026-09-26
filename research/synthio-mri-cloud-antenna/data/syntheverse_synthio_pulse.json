@@ -1,7 +1,7 @@
 {
   "schema": "syntheverse-synthio-pulse-store/v1",
   "sandbox": "Syntheverse Sandbox",
-  "updatedAt": "2026-09-26T05:04:37.430Z",
+  "updatedAt": "2026-09-26T05:09:32.496Z",
   "latest": {
     "schema": "syntheverse-synthio-pulse/v1",
     "pulseKind": "syntheverse_goldilocks_confirmation",
@@ -42,10 +42,10 @@
       "syntheverse_synthio_pulse": "emit",
       "no_clinical_rf": "aligned"
     },
-    "issuedAt": "2026-09-26T05:04:37.430Z",
-    "signature": "0x490ea129fc1d3edb6a54c34c8745b0154e31d9f214bfeb79d1554f9564ebbc70",
-    "pulseId": "synthio-Σ-1790399077430-7-490ea129",
-    "fingerprint": "7d2a44353cf323aa75c4173ec9cd9798ac200c0d3821755065f6c7fcc8d84c96"
+    "issuedAt": "2026-09-26T05:09:32.496Z",
+    "signature": "0x84df10692fc6fb59db781cc1d209bc70dc96e2c9bf8f00cdbf385e8f9b1140a0",
+    "pulseId": "synthio-Σ-1790399372496-7-84df1069",
+    "fingerprint": "4d17fbc14bffc2841a8242739afc3d34bb0159f210dc5cc4d1c2add09744e213"
   },
   "history": [
     {
@@ -88,10 +88,10 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "aligned"
       },
-      "issuedAt": "2026-09-26T05:04:37.430Z",
-      "signature": "0x490ea129fc1d3edb6a54c34c8745b0154e31d9f214bfeb79d1554f9564ebbc70",
-      "pulseId": "synthio-Σ-1790399077430-7-490ea129",
-      "fingerprint": "7d2a44353cf323aa75c4173ec9cd9798ac200c0d3821755065f6c7fcc8d84c96"
+      "issuedAt": "2026-09-26T05:09:32.496Z",
+      "signature": "0x84df10692fc6fb59db781cc1d209bc70dc96e2c9bf8f00cdbf385e8f9b1140a0",
+      "pulseId": "synthio-Σ-1790399372496-7-84df1069",
+      "fingerprint": "4d17fbc14bffc2841a8242739afc3d34bb0159f210dc5cc4d1c2add09744e213"
     },
     {
       "schema": "syntheverse-synthio-pulse/v1",
@@ -133,10 +133,10 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "pending"
       },
-      "issuedAt": "2026-09-26T05:04:37.428Z",
-      "signature": "0xf1dafc8fad466d3201e24b8c107cde93cb9c1e32aace887116b8b8dd49abab9c",
-      "pulseId": "synthio-Σ-1790399077428-6-f1dafc8f",
-      "fingerprint": "64343e521efb1517b17b84009119b529824a436ccf704c041caf7b353fc21e81"
+      "issuedAt": "2026-09-26T05:09:32.494Z",
+      "signature": "0x16bf49a7426838bf17b2c6c2c07aae05883a4b7f267a5c449a728e77a1670f13",
+      "pulseId": "synthio-Σ-1790399372494-6-16bf49a7",
+      "fingerprint": "e5bb7d0889f79c8d156aeaaca12e6ff63fb8cb2e4e0d68d54f1e2ea9230863b0"
     },
     {
       "schema": "syntheverse-synthio-pulse/v1",
@@ -178,10 +178,10 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "pending"
       },
-      "issuedAt": "2026-09-26T05:04:37.427Z",
-      "signature": "0xcfd05c01251a03d3779dd8f6cdc76ad8ee4fa35b9abf239928d76974e7293df5",
-      "pulseId": "synthio-Σ-1790399077427-5-cfd05c01",
-      "fingerprint": "c2197141139f71241dbb64e392aaf7adc2578c7ef6286831c756c40d52534203"
+      "issuedAt": "2026-09-26T05:09:32.493Z",
+      "signature": "0xf2b8a0c0e6aa612fc91229b6143612c0b6fb415f315feb48ee1c87a615245953",
+      "pulseId": "synthio-Σ-1790399372493-5-f2b8a0c0",
+      "fingerprint": "50c3a39931356b5409a9adfae0d66274c5127b70465d5c091dda59c1166ceac4"
     },
     {
       "schema": "syntheverse-synthio-pulse/v1",
@@ -223,10 +223,10 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "pending"
       },
-      "issuedAt": "2026-09-26T05:04:37.426Z",
-      "signature": "0xe27e52cb7868ca64c508ca96e7711b12b159bb1cf611ca7442b1cce626bdf156",
-      "pulseId": "synthio-Σ-1790399077426-4-e27e52cb",
-      "fingerprint": "5665210d057b1f4859bbfa601a0950b6c439926f62732278554eaa076557e470"
+      "issuedAt": "2026-09-26T05:09:32.492Z",
+      "signature": "0xc9b206fcfa47e144382618420c842ffd3f5e51fd0b75c1adfeead97cb8baa1df",
+      "pulseId": "synthio-Σ-1790399372492-4-c9b206fc",
+      "fingerprint": "5012f43ebc0ebfe752fb588b27379f35a5ba1393130abd887d3bdde249f76f43"
     }
   ]
 }

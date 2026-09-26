@@ -1,48 +1,48 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-09-25",
+  "date": "2026-09-26",
   "dateline": {
-    "ymd": "2026-09-25",
-    "weekday": "Friday",
+    "ymd": "2026-09-26",
+    "weekday": "Saturday",
     "month": "September",
-    "day": 25,
-    "label": "Friday, September 25",
-    "shortBoard": "Friday board · September 25 · Puerto Reno",
-    "newsLabel": "News of the day · Friday, September 25"
+    "day": 26,
+    "label": "Saturday, September 26",
+    "shortBoard": "Saturday board · September 26 · Puerto Reno",
+    "newsLabel": "News of the day · Saturday, September 26"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Friday board · September 25 · Puerto Reno",
-  "newsLabel": "News of the day · Friday, September 25",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/erft-recursive-fidelity\">Version Two Results: Who Won the Drift Test</a>. Also new on the board: <a href=\"/ship-blog/rsi-drift-friction-phi-egs\">Watch Out for the Drift</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Saturday board · September 26 · Puerto Reno",
+  "newsLabel": "News of the day · Saturday, September 26",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/erft-recursive-fidelity\">Why Fair Drift Tests Matter More Than Crowns</a>. Also new on the board: <a href=\"/ship-blog/rsi-drift-friction-phi-egs\">The Hidden Tax on Self-Rewriting Software</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
-      "title": "Version Two Results: Who Won the Drift Test",
+      "title": "Why Fair Drift Tests Matter More Than Crowns",
       "href": "/ship-blog/erft-recursive-fidelity",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-egs-recursive-fidelity-test-erft-2026-09",
-      "blurb": "Current protocol is ERFT-V2. Suite 9/9. Baseline no longer least-drift by construction. Φ leads some fair classes; blind ladder and sweep still refuse a crown. Fair Exchange tip clause on."
+      "blurb": "When AI tools rewrite themselves, trust dies if the scoreboard was soft. A fair drift test shows partial leads, mixed ladders, and no cheap crown — the habit operators need before paychecks dissolve."
     },
     {
       "id": "synthobs-rsi-drift-friction-phi-egs-2026-09",
-      "title": "Watch Out for the Drift",
+      "title": "The Hidden Tax on Self-Rewriting Software",
       "href": "/ship-blog/rsi-drift-friction-phi-egs",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-drift-friction-phi-egs-2026-09",
-      "blurb": "On the frontier, when tools rewrite themselves, drift is the rent that eats trust and paychecks. Watch the nesting key near 1.618 — the habit that keeps the trail coherent across loops. Fair Exchange tip clause on."
+      "blurb": "When tools rewrite themselves, the biggest bill is not the GPU invoice. Drift taxes trust, paychecks, and coherent next loops — and a nesting key near 1.618 keeps that tax from eating the house."
     },
     {
       "id": "synthobs-ns-unforced-phi-egs-goldilocks-2026-09",
-      "title": "The Coffee, Not the Spoon",
+      "title": "The Million-Dollar Fluid Question Still on the Counter",
       "href": "/ship-blog/navier-stokes-unforced-phi-egs",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-ns-unforced-phi-egs-goldilocks-2026-09",
-      "blurb": "OpenAI stirred the coffee with a spoon — forced blowup. Frontiersmen still ask about the coffee alone. That unforced trail stays open; we chart it with the golden key, not a prize claim. Fair Exchange tip clause on."
+      "blurb": "Headlines celebrated a forced singularity in fluid math. Most people still mean the quiet cup — coffee left alone. That unforced question stays open."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-24-synthobs-rsi-drift-friction-phi-egs-2026-09",
-    "title": "Watch Out for the Drift",
-    "href": "/ship-blog/rsi-drift-friction-phi-egs"
+    "id": "daily-2026-09-25-synthobs-egs-recursive-fidelity-test-erft-2026-09",
+    "title": "Why Fair Drift Tests Matter More Than Crowns",
+    "href": "/ship-blog/erft-recursive-fidelity"
   },
-  "generatedAt": "2026-09-25T19:13:27.125Z"
+  "generatedAt": "2026-09-26T03:25:26.307Z"
 }

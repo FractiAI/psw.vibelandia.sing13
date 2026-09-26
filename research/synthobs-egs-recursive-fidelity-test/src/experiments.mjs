@@ -754,7 +754,7 @@ function experimentShipBlogLock() {
   const checks = {
     exists,
     hasHonestyRail: /class="honesty"/i.test(html),
-    hasErft: /ERFT|Version Two Results|Who Won the Drift Test|recursive fidelity/i.test(html),
+    hasErft: /ERFT|Fair Drift Tests|Who Won the Drift Test|recursive fidelity/i.test(html),
   };
   return {
     id: 'E7_ship_blog_lock',

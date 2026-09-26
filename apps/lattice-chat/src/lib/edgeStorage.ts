@@ -7,6 +7,9 @@
 
 export const LATTICE_EDGE_STORAGE_KEY = 'lattice-v1618-edge';
 
+/** Soft ceiling before we proactively prune — stays under typical origin quotas with doodle wall. */
+export const LATTICE_EDGE_BLOB_BUDGET_CHARS = 600_000;
+
 function isQuotaError(err: unknown): boolean {
   if (!err || typeof err !== 'object') return false;
   const e = err as { name?: string; code?: number | string };
@@ -41,6 +44,59 @@ export function prunePersistedEdgeBlob(raw: string, keepThreads = 8): string | n
   }
 }
 
+/**
+ * Fit a persist blob under budget by successively keeping fewer threads.
+ * Returns null only when the blob is unparsable / empty of threads.
+ */
+export function fitPersistedEdgeBlob(
+  raw: string,
+  budgetChars = LATTICE_EDGE_BLOB_BUDGET_CHARS,
+): string | null {
+  if (!raw) return null;
+  if (raw.length <= budgetChars) return raw;
+  for (const keep of [12, 8, 6, 4, 2, 1]) {
+    const pruned = prunePersistedEdgeBlob(raw, keep);
+    if (pruned && pruned.length <= budgetChars) return pruned;
+    if (pruned && keep === 1) return pruned;
+  }
+  return null;
+}
+
+function writeEdgeValue(name: string, value: string): void {
+  const fitted = fitPersistedEdgeBlob(value) ?? value;
+  try {
+    localStorage.setItem(name, fitted);
+    return;
+  } catch (err) {
+    if (!isQuotaError(err)) {
+      console.warn('[lattice-chat] edge persist failed', err);
+      return;
+    }
+  }
+  // Quota: prune harder, then nuclear clear of this key only (BYOK keys untouched).
+  try {
+    const pruned = prunePersistedEdgeBlob(fitted, 6);
+    if (pruned) {
+      localStorage.setItem(name, pruned);
+      return;
+    }
+  } catch {
+    /* fall through */
+  }
+  try {
+    localStorage.removeItem(name);
+    const minimal = prunePersistedEdgeBlob(fitted, 2);
+    if (minimal) localStorage.setItem(name, minimal);
+  } catch (err) {
+    console.warn('[lattice-chat] edge persist quota — dropped chat cache to keep typing alive', err);
+    try {
+      localStorage.removeItem(name);
+    } catch {
+      /* ignore */
+    }
+  }
+}
+
 /** Zustand StateStorage-shaped adapter (duck-typed; no zustand import). */
 export const latticeEdgeStateStorage = {
   getItem: (name: string): string | null => {
@@ -51,37 +107,7 @@ export const latticeEdgeStateStorage = {
     }
   },
   setItem: (name: string, value: string): void => {
-    try {
-      localStorage.setItem(name, value);
-      return;
-    } catch (err) {
-      if (!isQuotaError(err)) {
-        console.warn('[lattice-chat] edge persist failed', err);
-        return;
-      }
-    }
-    // Quota: prune in place, then nuclear clear of this key only (BYOK keys untouched).
-    try {
-      const pruned = prunePersistedEdgeBlob(value, 6);
-      if (pruned) {
-        localStorage.setItem(name, pruned);
-        return;
-      }
-    } catch {
-      /* fall through */
-    }
-    try {
-      localStorage.removeItem(name);
-      const minimal = prunePersistedEdgeBlob(value, 2);
-      if (minimal) localStorage.setItem(name, minimal);
-    } catch (err) {
-      console.warn('[lattice-chat] edge persist quota — dropped chat cache to keep typing alive', err);
-      try {
-        localStorage.removeItem(name);
-      } catch {
-        /* ignore */
-      }
-    }
+    writeEdgeValue(name, value);
   },
   removeItem: (name: string): void => {
     try {

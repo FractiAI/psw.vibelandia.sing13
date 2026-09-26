@@ -309,6 +309,8 @@ export function ChatPane({
       if (!threadAwaitingAssistant(s.activeThreadId)) return;
       if (!s.sending && s.sendPhase === 'idle' && !s.pending) return;
       const awayMs = hiddenAt ? Date.now() - hiddenAt : 0;
+      // Primary SSE still open: do not open a second recover attach (race → dead turn).
+      if (s.primaryStreamLive && awayMs < 8_000) return;
       // Brief blips: keep primary SSE. After a real leave, SSE is usually dead while
       // phase is still "sending" — recover instead of waiting on a zombie stream.
       if (s.sending && s.sendPhase === 'sending' && awayMs < 2500) return;

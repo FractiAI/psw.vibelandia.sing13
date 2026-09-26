@@ -23,8 +23,10 @@ export class ErrorBoundary extends Component<Props, State> {
   private softRecover = () => {
     try {
       const raw = localStorage.getItem(LATTICE_EDGE_STORAGE_KEY);
-      if (raw && raw.length > 800_000) {
-        const pruned = prunePersistedEdgeBlob(raw, 6);
+      if (raw) {
+        // Always slim on crash recover — corrupt or mid-size blobs can still break remount.
+        const keep = raw.length > 400_000 ? 4 : 8;
+        const pruned = prunePersistedEdgeBlob(raw, keep);
         if (pruned) localStorage.setItem(LATTICE_EDGE_STORAGE_KEY, pruned);
         else localStorage.removeItem(LATTICE_EDGE_STORAGE_KEY);
       }

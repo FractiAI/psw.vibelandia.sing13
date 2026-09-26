@@ -622,6 +622,8 @@ async function tryRecoverOnce(
 /** Manual / visibility recover — no duplicate user bubble. */
 export async function checkPendingLatticeReply(): Promise<boolean> {
   const store = useLatticeStore.getState();
+  // Don't race an open primary SSE — watchdog will abort + recover when idle/hard-cap hits.
+  if (store.primaryStreamLive) return false;
   const pending = store.pending;
   const threadId = pending?.threadId || store.activeThreadId || store.ensureThread();
   const thread = store.threads.find((t) => t.id === threadId);
@@ -902,6 +904,7 @@ export async function sendLatticeMessage(
             /* ignore */
           }
           primaryStreamActive = false;
+          store.setPrimaryStreamLive(false);
           store.setSendProgress(
             'stuck',
             hardCap
@@ -943,12 +946,14 @@ export async function sendLatticeMessage(
   try {
     store.setSendProgress('sending', latticeProgressHint(0, 'sending'));
     primaryStreamActive = true;
+    store.setPrimaryStreamLive(true);
     markActivity();
     let { res, data } = await postLattice(wireBody, email, {
       signal: primaryAbort.signal,
       onActivity: markActivity,
     });
     primaryStreamActive = false;
+    store.setPrimaryStreamLive(false);
     if (settled) return;
     if (data.agentId) store.setAgentId(threadId, data.agentId);
 
@@ -1129,6 +1134,7 @@ export async function sendLatticeMessage(
     })();
   } finally {
     primaryStreamActive = false;
+    store.setPrimaryStreamLive(false);
     clearInterval(watchdog);
     clearInterval(statusTick);
     if (settled) store.setSending(false);

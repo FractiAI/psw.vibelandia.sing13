@@ -32,6 +32,7 @@ import {
   LATTICE_EDGE_STORAGE_KEY,
   latticeEdgeStateStorage,
 } from '@/lib/edgeStorage';
+import { mergeLiveTranscriptItem } from '@/lib/liveTranscriptCap';
 
 const STORAGE_KEY = LATTICE_EDGE_STORAGE_KEY;
 const latticeEdgeJsonStorage = createJSONStorage(() => latticeEdgeStateStorage);
@@ -73,6 +74,11 @@ type LatticeState = {
   sending: boolean;
   sendPhase: SendPhase;
   statusHint: string | null;
+  /**
+   * True while the primary SSE reader is open. Visibility recover must not
+   * open a second attach while this is live — that races the turn and looks like a crash.
+   */
+  primaryStreamLive: boolean;
   pending: PendingSend | null;
   /** Live stream-of-thought transcript while a run is in flight. */
   liveTranscript: TranscriptItem[];
@@ -117,6 +123,7 @@ type LatticeState = {
   clearUserEmail: () => void;
   setSending: (v: boolean) => void;
   setSendProgress: (phase: SendPhase, hint?: string | null) => void;
+  setPrimaryStreamLive: (v: boolean) => void;
   setPending: (pending: PendingSend | null) => void;
   patchPending: (patch: Partial<PendingSend>) => void;
   clearPending: () => void;
@@ -160,6 +167,7 @@ export const useLatticeStore = create<LatticeState>()(
       sending: false,
       sendPhase: 'idle',
       statusHint: null,
+      primaryStreamLive: false,
       pending: null,
       liveTranscript: [],
       remoteCollabLive: null,
@@ -372,46 +380,16 @@ export const useLatticeStore = create<LatticeState>()(
           statusHint: hint,
           sending: phase !== 'idle',
         }),
+      setPrimaryStreamLive: (v) => set({ primaryStreamLive: Boolean(v) }),
       setPending: (pending) => set({ pending }),
       patchPending: (patch) =>
         set((s) => (s.pending ? { pending: { ...s.pending, ...patch } } : {})),
-      clearPending: () => set({ pending: null, liveTranscript: [] }),
+      clearPending: () => set({ pending: null, liveTranscript: [], primaryStreamLive: false }),
       setLiveTranscript: (items) => set({ liveTranscript: items }),
       pushLiveTranscript: (item) =>
-        set((s) => {
-          const items = [...s.liveTranscript];
-          if (item.type === 'assistant' && items.length) {
-            const last = items[items.length - 1];
-            if (last.type === 'assistant') {
-              items[items.length - 1] = {
-                ...last,
-                text: `${last.text || ''}${item.text || ''}`,
-              };
-              return { liveTranscript: items };
-            }
-          }
-          if (item.type === 'thinking' && items.length) {
-            const last = items[items.length - 1];
-            if (last.type === 'thinking' && item.durationMs == null) {
-              items[items.length - 1] = {
-                ...last,
-                text: `${last.text || ''}${item.text || ''}`,
-              };
-              return { liveTranscript: items };
-            }
-          }
-          if (item.type === 'tool_call' && item.callId) {
-            const idx = items.findIndex(
-              (x) => x.type === 'tool_call' && x.callId === item.callId,
-            );
-            if (idx >= 0) {
-              items[idx] = { ...items[idx], ...item };
-              return { liveTranscript: items };
-            }
-          }
-          items.push(item);
-          return { liveTranscript: items };
-        }),
+        set((s) => ({
+          liveTranscript: mergeLiveTranscriptItem(s.liveTranscript, item),
+        })),
       clearLiveTranscript: () => set({ liveTranscript: [] }),
       setRemoteCollabLive: (live) => set({ remoteCollabLive: live }),
       clearRemoteCollabLive: () => set({ remoteCollabLive: null }),
@@ -434,6 +412,7 @@ export const useLatticeStore = create<LatticeState>()(
           threads: s.threads.map((t) => ({ ...t, agentId: undefined })),
           pending: s.pending ? { ...s.pending, agentId: undefined } : null,
           liveTranscript: [],
+          primaryStreamLive: false,
           sending: false,
           sendPhase: 'idle' as const,
           statusHint: null,
@@ -467,6 +446,7 @@ export const useLatticeStore = create<LatticeState>()(
           activeThreadId: null,
           pending: null,
           liveTranscript: [],
+          primaryStreamLive: false,
           sending: false,
           sendPhase: 'idle',
           statusHint: null,

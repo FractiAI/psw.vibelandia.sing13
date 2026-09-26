@@ -110,7 +110,33 @@ function normalizeReasoningLens(_raw) {
   return 'engine';
 }
 
+/** True once SSE headers (or any response) have already left the pipe.
+ * Twin of lib/lattice-sse-safe.mjs — kept inline (no top-level .mjs import; Vercel CJS compile).
+ */
+function latticeResponseAlreadyStreaming(res) {
+  if (!res) return false;
+  if (res.writableEnded) return true;
+  if (res.headersSent) return true;
+  try {
+    const ct = String(typeof res.getHeader === 'function' ? res.getHeader('Content-Type') || '' : '');
+    return /text\/event-stream/i.test(ct);
+  } catch {
+    return false;
+  }
+}
+
 function json(res, status, body) {
+  // Never flip an open SSE pipe to application/json — that hangs the client reader
+  // until idle abort and feels like a session crash.
+  if (latticeResponseAlreadyStreaming(res)) {
+    try {
+      sseWrite(res, 'error', { ...(body || {}), status });
+      if (!res.writableEnded) res.end();
+    } catch {
+      /* client gone */
+    }
+    return;
+  }
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
@@ -3066,9 +3092,11 @@ export default async function handler(req, res) {
     }
   } catch (outer) {
     console.error('[lattice-chat] outer', outer);
-    return json(res, 500, {
+    const payload = {
       error: outer instanceof Error ? outer.message : 'Lattice API failed',
       code: 'outer_error',
-    });
+    };
+    // json() itself is SSE-safe when headers already sent; keep this path explicit.
+    return json(res, 500, payload);
   }
 }

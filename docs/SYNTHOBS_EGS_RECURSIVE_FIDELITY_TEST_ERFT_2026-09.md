@@ -2,7 +2,7 @@
 
 **Subtitle:** When the same information is transformed again and again, does incorporating $\Phi_{\mathrm{EGS}}$ reduce cumulative fidelity drift versus matched recursion without it?
 
-**Current version (live):** `ERFT-V3-2026-09-26` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
+**Current version (live):** `ERFT-V4-2026-09-26` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
 **Do not use as live results:** `ERFT-V1-2026-09-25` (construction-bias receipt only — baseline inherited least-drift via milder coarsening)
 
 **One-line V2 verdict:** Repair yes · partial $\Phi$ leads on fair matched classes · baseline no longer least-drift by construction · blind ladder / sweep refuse a full crown.

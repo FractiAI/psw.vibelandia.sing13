@@ -1,7 +1,7 @@
 /**
  * ERFT — EGS Recursive Fidelity Test (V2 protocol locks)
  * Falsifiable recursive-drift experiment. Does NOT assume Φ is correct.
- * Live protocol: ERFT-V3-2026-09-26 (V2 = sin-geometry miss; V1 = construction-bias receipt).
+ * Live protocol: ERFT-V4-2026-09-26 (V3 nest; V2 sin; V1 coarsening receipt).
  */
 export const PHI_EGS = (1 + Math.sqrt(5)) / 2; // ≈ 1.618033988749895
 export const SQRT2 = Math.SQRT2;
@@ -10,7 +10,7 @@ export const E_CONST = Math.E;
 export const DOC_ID = 'WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25';
 export const REGISTRY_ID = 'synthobs-egs-recursive-fidelity-test-erft-2026-09';
 export const STUDY_TITLE =
-  'EGS Recursive Fidelity Test (ERFT) · Version Three — Nest-Grammar Scoreboard';
+  'EGS Recursive Fidelity Test (ERFT) · Version Four — Engine Grammar Scoreboard';
 export const PAPER_NAME = 'SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md';
 export const SHIP_BLOG_SLUG = 'erft-recursive-fidelity';
 export const SHIP_BLOG_FILE = 'blog-erft-recursive-fidelity-2026-09.html';
@@ -61,15 +61,15 @@ export const MECHANISMS = Object.freeze([
  * V2 sin(c) geometry did not model RSI nest closure; V1 tied coarsening to c.
  */
 export const ANTI_BASELINE_BIAS = Object.freeze({
-  version: 3,
+  version: 4,
   rule:
-    'Transform severity fixed; c selects nest partition (whole:part ≈ part:remainder). Baseline = dyadic 1:1. Block/lag budgets derived from c, not monotonic coarsening vs c.',
+    'Transform severity fixed; c selects nest partition. Lags/blocks from Infinite Octaves fixtures: k/81 register, clutch Δ, digit×octave 1–99, odd-prime vaults, structural 2 baseline. Clutch slip scale identical all arms.',
   fixed_block: 4,
   fixed_feedback_gain: 0.45,
   fixed_mix_weight: 0.5,
 });
 
-export const PROTOCOL_VERSION = 'ERFT-V3-2026-09-26';
+export const PROTOCOL_VERSION = 'ERFT-V4-2026-09-26';
 
 export const PRE_REGISTERED_HYPOTHESIS = Object.freeze({
   claim:
@@ -89,4 +89,4 @@ export const PRE_REGISTERED_HYPOTHESIS = Object.freeze({
 });
 
 export const HONESTY =
-  'ERFT V3 is a controlled, falsifiable recursive-fidelity protocol: nest-ratio partitions model catalog RSI grammar (V2 sin-geometry retired; V1 coarsening bias receipt). It does not assume Φ_EGS is correct, does not claim CODATA status, does not prove AGI safety, and does not upgrade Soft Story into unfinished physics. Suite pass = protocol integrity + reproducible fixtures; empirical Φ advantage is a measured outcome that may fail.';
+  'ERFT V4 is a controlled, falsifiable recursive-fidelity protocol: nest partitions plus Infinite Octaves engine fixtures (Φ_EGS, clutch Δ, k/81, octaves 01–99, odd-prime vaults, structural 2). Application companion — not ENGINE_SHELF pin. Does not assume Φ wins, does not claim CODATA replacement or AGI safety. Suite pass = protocol integrity; empirical Φ advantage may fail.';

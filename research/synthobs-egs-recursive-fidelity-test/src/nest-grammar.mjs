@@ -3,7 +3,8 @@
  * Φ uses exact self-similar partition (1/φ, 1/φ²). Baseline = dyadic 1:1.
  * Decoys use normalized (1/c, 1−1/c) — only φ closes 1/c + 1/c² = 1 exactly.
  */
-import { PHI_EGS } from './constants.mjs';
+import { PHI_EGS, GENERATIONS } from './constants.mjs';
+import { engineLags, engineBlocks } from './engine-grammar.mjs';
 
 export function nestWeights(c) {
   if (Math.abs(c - 1.0) < 1e-12) {
@@ -28,26 +29,16 @@ export function selfSimilarRatioError(c) {
   return Math.abs(wMajor / wMinor - c);
 }
 
-export function nestLags(n, c) {
-  if (Math.abs(c - 1.0) < 1e-12) {
-    const la = Math.max(1, Math.floor(n / 4));
-    const lb = Math.max(la + 1, Math.floor(n / 2));
-    return { la, lb };
-  }
-  const inv = 1 / c;
-  const la = Math.max(1, Math.min(n - 1, Math.round(n * inv)));
-  let lb = Math.max(1, Math.min(n - 1, Math.round(n * inv * inv)));
-  if (lb <= la) lb = Math.min(n - 1, la + Math.max(1, Math.round(n * inv * inv * inv)));
-  return { la, lb };
+/** V4: lags from engine grammar (octave · k/81 · clutch · prime vault). */
+export function nestLags(seriesLen, c, gen = 1, maxGen = GENERATIONS) {
+  const e = engineLags(seriesLen, c, gen, maxGen);
+  return { la: e.la, lb: e.lb };
 }
 
-export function nestBlocks(c) {
-  if (Math.abs(c - 1.0) < 1e-12) {
-    return { b1: 4, b2: 8 };
-  }
-  const b1 = Math.max(2, Math.round(c * 2));
-  const b2 = Math.max(b1 + 1, Math.round(c * c * 2));
-  return { b1, b2 };
+/** V4: blocks from engine grammar (octave · prime vault · structural 2 baseline). */
+export function nestBlocks(c, gen = 1, maxGen = GENERATIONS) {
+  const e = engineBlocks(c, gen, maxGen);
+  return { b1: e.b1, b2: e.b2 };
 }
 
 export function drivePeriod(c) {

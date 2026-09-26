@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-26** · **322** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-26** · **324** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -334,6 +334,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | Noah’s Ark as System Generation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-vs-vibe-coding-2026-09.html`](/interfaces/blog-lattice-vs-vibe-coding-2026-09.html) | Does Lattice Code Better? Receipts Say Yes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-horsepower-collapse-2026-09.html`](/interfaces/blog-linear-horsepower-collapse-2026-09.html) | When Bigger Engines Stop Buying Livelihoods · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-linear-shadow-fractal-2026-09-new.html`](/interfaces/blog-linear-shadow-fractal-2026-09-new.html) | Trust the Trail, Not the Shadow · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | The Scoreboard Is Not the Whole Game · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as Work Engines on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as Magnets That Hum · Ship blog · SS Vibelandia |
@@ -351,6 +352,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Align the Nodes Before You Sail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-time-crystal-engine-2026-09.html`](/interfaces/blog-omniversal-time-crystal-engine-2026-09.html) | The Clock Biology Keeps Teaching Designers · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html`](/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html) | Badge Optional, Terminal Required · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-pacing-paradox-2026-09-new.html`](/interfaces/blog-pacing-paradox-2026-09-new.html) | Slow the Race — or Change the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pacing-paradox-2026-09.html`](/interfaces/blog-pacing-paradox-2026-09.html) | Slowing AI Won’t Fix a Bad Architecture · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | One Brief for the Whole Crew · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth Letting Go at the Core · Ship blog · SS Vibelandia |
@@ -431,8 +433,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Your Basement Stories Still Carry Current · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three Nested Domes Families Can Walk · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-new.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-new.html) | Keep the Frontier Open · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html) | Slowdown Talk and Floor-It Talk Both Miss Home · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-old.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-old.html) | Slowdown Talk and Floor-It Talk Both Miss Home · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html) | Keep the Frontier Open · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-viscosity-of-light-2026-09.html`](/interfaces/blog-viscosity-of-light-2026-09.html) | When Light Slows the Room Down · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-vitality-control-rhyme-2026-09.html`](/interfaces/blog-vitality-control-rhyme-2026-09.html) | The Access Fight Behind the Safety Speeches · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What Frontier Means for Families · Ship blog · SS Vibelandia |

@@ -5,7 +5,7 @@
 **Current version (live):** `ERFT-V5-2026-09-27` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
 **Do not use as live causal results:** `ERFT-V4-2026-09-26` (combined Φ-enabled architecture — exploratory only) · `ERFT-V1-2026-09-25` (construction-bias receipt)
 
-**One-line V5 verdict:** Constant-neutral primary lane (ERFT-C) · generalized-closure secondary lane (ERFT-G) · paired Δ + sweep prominence · no Φ crown from architecture affordances.
+**One-line V5 verdict:** ERFT-C mixed/null (φ mean NRMSE 1.426 vs baseline 1.387; 80% cells favor φ but permutation $p\approx0.77$) · sweep minima away from φ · ERFT-G no Φ rescue · ERFT-D dynamic did not beat best fixed · no Φ crown.
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -153,6 +153,21 @@ A meaningful $\Phi$ advantage under **ERFT-C** requires lower paired drift acros
 
 Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json` · protocol `ERFT-V5-2026-09-27` · generations $N=24$.
 
+### 7.0 Findings at a glance (read this first)
+
+| Question | Finding on locked fixtures |
+|----------|----------------------------|
+| Did the suite run cleanly? | **Yes** — protocol integrity pass (E0–E7 + ED). Suite pass ≠ Φ won. |
+| Does numerical $c=\Phi$ reduce drift vs baseline under ERFT-C? | **Not established.** Mean NRMSE: baseline **1.387** · $\sqrt{2}$ **1.414** · $\Phi$ **1.426** · $e$ **1.481**. Φ lower in **80%** of paired cells, but mean $\Delta$ slightly favors baseline; bootstrap CI crosses 0; permutation $p\approx0.77$. |
+| Is $\Phi$ the drift-minimizing constant in the sweep family? | **No — falsified.** Train min $c^*\approx1.025$; hold min $\approx2.400$; neither near $1.618$. |
+| Do depth optima march toward $\Phi$? | **No.** $c^*_n$ does not systematically converge toward $\Phi$. |
+| Blind ladder rank for $\Phi$? | **4th of 7** (seasonal probe). |
+| Does symmetric grammar $C(c)$ help $\Phi$ specially (ERFT-G)? | **No.** Closure raised mean drift for every named arm; no disproportionate Φ benefit. |
+| Can dynamic multi-constant regulation beat the best fixed constant (ERFT-D)? | **Not on these fixtures.** Best fixed mean NRMSE ≈ **0.942** still matches/beats sequences, state-switch, and adaptive; random switching ≈ state-dependent; hypothesis **weakened**. |
+| What about V4’s ~17% φ-vs-baseline lead? | **Development evidence only** for the combined Φ-enabled architecture — not confirmatory constant-neutral isolation. |
+
+**Plain-language verdict:** Version Five separates “does the number φ matter?” from “does φ-shaped algebra matter?” and from “does switching among constants help?” On the current board the answers are mixed/null, no special grammar rescue, and dynamic regulation not yet better than the best fixed constant. That is a scientifically useful negative/mixed readout — not a crown for $\Phi_{\mathrm{EGS}}$.
+
 ### 7.1 Suite integrity
 
 | Metric | Value |
@@ -225,11 +240,27 @@ On the seasonal / recursive-weighting probe: $c^*_1{=}2.5$, $c^*_4{=}1.0$, $c^*_
 
 **Φ peer discipline:** Φ remains one candidate among peers. Q1–Q6 separately ask whether Φ outperforms fixed peers, appears preferentially in dynamic policies, improves inclusion/exclusion, or is distinguishable from a nearby continuous proxy ($\approx 1.6$).
 
-**Falsification allowed:** if the best fixed constant matches or beats dynamic policies, if random switching matches state-dependent rules, or if adaptive controllers collapse to one constant, the dynamic-regulation hypothesis is weakened — reported honestly. Live readout: `ED_dynamic_constant_regulation` in the empirical report.
+**Falsification allowed:** if the best fixed constant matches or beats dynamic policies, if random switching matches state-dependent rules, or if adaptive controllers collapse to one constant, the dynamic-regulation hypothesis is weakened — reported honestly.
+
+**Live ERFT-D readout** (`ED_dynamic_constant_regulation`):
+
+| Policy | Mean final NRMSE (lower better) |
+|--------|----------------------------------|
+| Best fixed constant (D0 aggregate) | **≈ 0.942** |
+| Best prescribed sequence (e repeated) | ≈ 0.943 |
+| State-dependent switch (D2) | ≈ 0.950 |
+| Random-switch control | ≈ 0.950 |
+| Adaptive look-ahead (D3) | ≈ 0.943 |
+| Adaptive without $\Phi$ / near-$\Phi$ proxy | ≈ 0.943 (indistinguishable) |
+
+- `dynamic_beats_best_fixed`: **false**
+- `best_fixed_matches_or_beats_dynamic`: **true**
+- `random_switching_equivalent`: **true**
+- $\Phi$ preferential in dynamic policy: **false** (selection probability ≈ 1%)
+- Inclusion/exclusion of $\Phi$: **no material change**
+- **Hypothesis weakened** on these fixtures — exploratory negative, not a Φ rescue and not a homeostasis proof.
 
 **Conceptual model:** recursive system → state → drift measurement → mode selection → transformation → new state, with mode set $\{1,\sqrt{2},\Phi,e,\ldots\}$.
-
-This is **not** a claim that holographic homeostasis is demonstrated, and **not** a rescue mechanism for Φ after V5's mixed/null constant-neutral findings.
 
 ---
 

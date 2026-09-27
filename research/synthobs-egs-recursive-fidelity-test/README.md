@@ -1,18 +1,25 @@
-# synthobs-egs-recursive-fidelity-test
+# EGS Recursive Fidelity Test (ERFT)
 
-**ERFT Version Two — Fair Scoreboard.** Controlled, falsifiable recursive-drift experiment. **Does not assume** $\Phi_{\mathrm{EGS}}$ is correct.
+Falsifiable recursive-fidelity / drift experiment for $\Phi_{\mathrm{EGS}}$.
 
-- Paper: `docs/SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md` · title **EGS Recursive Fidelity Test (ERFT) · Version Two — Fair Scoreboard**
-- Registry: `synthobs-egs-recursive-fidelity-test-erft-2026-09`
-- Ship blog: `/ship-blog/erft-recursive-fidelity` · **How the Golden Key Won the Drift Board**
-- Whitepaper: `/whitepaper/erft-recursive-fidelity`
-- **Current protocol:** `ERFT-V4-2026-09-26` (V3 nest-only; V2 sin; V1 construction-bias receipt)
-- Run: `npm run research:synthobs-egs-recursive-fidelity-test` (SING13 root) or `node scripts/run_empirical_pipeline.mjs`
+- **Current protocol:** `ERFT-V5-2026-09-27`
+  - **ERFT-C** — constant-neutral primary causal lane (identical algorithm; only scalar $c$)
+  - **ERFT-G** — generalized closure $C(c)$ for every arm (symmetric grammar lane)
+- **Retired as primary:** `ERFT-V4-2026-09-26` (combined Φ-enabled architecture — exploratory footnote)
+- **Also retired:** V3 nest-only · V2 sin · V1 construction-bias receipt
 
-**Design:** five arms (baseline · Φ · √2 · e · random) · matched recursion · RFD curves · blind ladder · constant sweep with hold-out · **E0b anti-baseline-bias** (severity fixed; `c` = geometry only). Suite pass = protocol integrity, **not** “Φ won.”
+## Run
 
-**V2 results (one line):** repair yes · Φ leads some fair classes · baseline last on blind ladder · sweep min at 1.75 · no full crown.
+```bash
+npm run research:synthobs-egs-recursive-fidelity-test
+# or from this directory:
+npm run research
+```
 
-Honesty: application companion · not engine pin · not CODATA · not AGI solved. Null and partial results are valid.
+## Honesty
 
-Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · → ∞^∞
+Suite pass = protocol integrity. Empirical $\Phi$ advantage is optional and may fail.
+V5 does **not** assume $\Phi$ is correct a priori. Sweep minima away from $\Phi$ are scientifically valuable.
+
+Paper: `docs/SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md`  
+Ship blog: `/ship-blog/erft-recursive-fidelity`

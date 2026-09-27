@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "posts": [
+    {
+      "id": "daily-2026-09-27-synthobs-egs-recursive-fidelity-test-erft-2026-09",
+      "posted": "2026-09-27",
+      "featured": true,
+      "title": "When Information Rewrites Itself, Does φ Reduce the Drift?",
+      "subtitle": "News of the day · Sunday, September 27",
+      "summary": "Version Five keeps constant-neutral (ERFT-C) and grammar (ERFT-G) as the confirmatory baseline. ERFT-D adds an exploratory dynamic-regulation lane — without rewriting the mixed V5 readout.",
+      "href": "/ship-blog/erft-recursive-fidelity",
+      "pill": "TODAY",
+      "docRef": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-26-synthobs-egs-recursive-fidelity-test-erft-2026-09",
       "posted": "2026-09-26",

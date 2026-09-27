@@ -1,48 +1,48 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-09-26",
+  "date": "2026-09-27",
   "dateline": {
-    "ymd": "2026-09-26",
-    "weekday": "Saturday",
+    "ymd": "2026-09-27",
+    "weekday": "Sunday",
     "month": "September",
-    "day": 26,
-    "label": "Saturday, September 26",
-    "shortBoard": "Saturday board · September 26 · Puerto Reno",
-    "newsLabel": "News of the day · Saturday, September 26"
+    "day": 27,
+    "label": "Sunday, September 27",
+    "shortBoard": "Sunday board · September 27 · Puerto Reno",
+    "newsLabel": "News of the day · Sunday, September 27"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Saturday board · September 26 · Puerto Reno",
-  "newsLabel": "News of the day · Saturday, September 26",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/erft-recursive-fidelity\">How the Golden Key Won the Drift Board</a>. Also new on the board: <a href=\"/ship-blog/rsi-drift-friction-phi-egs\">The Hidden Tax on Self-Rewriting Software</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Sunday board · September 27 · Puerto Reno",
+  "newsLabel": "News of the day · Sunday, September 27",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/erft-recursive-fidelity\">When Information Rewrites Itself, Does φ Reduce the Drift?</a>. Also new on the board: <a href=\"/ship-blog/rsi-drift-friction-phi-egs\">When Tools Rewrite Themselves, Is Drift the Real Rent?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
-      "title": "How the Golden Key Won the Drift Board",
+      "title": "When Information Rewrites Itself, Does φ Reduce the Drift?",
       "href": "/ship-blog/erft-recursive-fidelity",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-egs-recursive-fidelity-test-erft-2026-09",
-      "blurb": "When recursive tools rewrite themselves, a fair board shows the golden key leading the named arms. The old run is just the receipt; the live story is the drift board."
+      "blurb": "Version Five keeps constant-neutral (ERFT-C) and grammar (ERFT-G) as the confirmatory baseline. ERFT-D adds an exploratory dynamic-regulation lane — without rewriting the mixed V5 readout."
     },
     {
       "id": "synthobs-rsi-drift-friction-phi-egs-2026-09",
-      "title": "The Hidden Tax on Self-Rewriting Software",
+      "title": "When Tools Rewrite Themselves, Is Drift the Real Rent?",
       "href": "/ship-blog/rsi-drift-friction-phi-egs",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-rsi-drift-friction-phi-egs-2026-09",
-      "blurb": "When tools rewrite themselves, the biggest bill is not the GPU invoice. Drift taxes trust, paychecks, and coherent next loops — and a nesting key near 1.618 keeps that tax from eating the house."
+      "blurb": "Self-rewriting systems usually budget for GPUs and engineering time. The cost that shows up later is semantic drift—Tuesday’s “improvement” contradicting Monday’s logic. φ ≈ 1.618 is tested as a nesting habit that keeps the trail coherent."
     },
     {
       "id": "synthobs-ns-unforced-phi-egs-goldilocks-2026-09",
-      "title": "The Million-Dollar Fluid Question Still on the Counter",
+      "title": "After the Forced Blowup, Does Unforced Fluid Still Stay Regular?",
       "href": "/ship-blog/navier-stokes-unforced-phi-egs",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-ns-unforced-phi-egs-goldilocks-2026-09",
-      "blurb": "Headlines celebrated a forced singularity in fluid math. Most people still mean the quiet cup — coffee left alone. That unforced question stays open."
+      "blurb": "Forced blowup results answer a different question than unforced regularity. This note walks the catalog framing around φ ≈ 1.618 nesting without claiming a Clay prize win."
     }
   ],
   "leadBoard": {
     "id": "daily-2026-09-26-synthobs-egs-recursive-fidelity-test-erft-2026-09",
-    "title": "How the Golden Key Won the Drift Board",
+    "title": "When Information Rewrites Itself, Does φ Reduce the Drift?",
     "href": "/ship-blog/erft-recursive-fidelity"
   },
-  "generatedAt": "2026-09-26T03:59:33.243Z"
+  "generatedAt": "2026-09-27T18:57:57.198Z"
 }

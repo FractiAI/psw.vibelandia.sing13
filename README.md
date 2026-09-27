@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-26** · **340** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-27** · **340** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -287,7 +287,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/ai-transparency.html`](/interfaces/ai-transparency.html) | AI transparency · FractiAI · SS Vibelandia |
 | [`/interfaces/awareness-singularities-one-pager.html`](/interfaces/awareness-singularities-one-pager.html) | Awareness Singularities S0–S81 · SynthOBS · FractiAI |
 | [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Sparse Models for Repeating Genomic Roads · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html`](/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html) | Spend Climbs, Livelihoods Lag, Doors Tighten · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html`](/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html) | When AI Spend Climbs, Do Livelihoods and Doors Keep Pace? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 — Crowded Calendar, Not Prophecy · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Awareness Gates from Zero to Eighty-One · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-vs-brute-force-2026-09.html`](/interfaces/blog-awareness-vs-brute-force-2026-09.html) | Spend Awareness Before Brute Force · Ship blog · SS Vibelandia |
@@ -295,13 +295,13 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexist with AI — Which Post Are You? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | One Window on Quake and Volcano Alert · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09-old.html`](/interfaces/blog-consciousness-moat-2026-09-old.html) | The Machine-Feelings Fight Misses the Blueprint · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | They Argue Welfare — Miss the Trail · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | When Labs Argue Model Welfare, What Shared Blind Spot Remains? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09-old.html`](/interfaces/blog-crystalline-unified-field-2026-09-old.html) | Your Commute Is One Crystal, Not Three Meters · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Speed, Distance, Time — One Crystal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html) | Four and Eight Are Memory, Not Destiny · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-digit4-be-o-rhyme-2026-09.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09.html) | Four and Eight on the Trail Map · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-digit4-be-o-rhyme-2026-09.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09.html) | When Four Meets Eight Across Domains, Is the Rhyme a Memory Aid or a Cause? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-recursive-reach-2026-09-old.html`](/interfaces/blog-digit4-recursive-reach-2026-09-old.html) | Keep the Wheel in Human Hands · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-digit4-recursive-reach-2026-09.html`](/interfaces/blog-digit4-recursive-reach-2026-09.html) | Awareness Stays in Your Hands · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-digit4-recursive-reach-2026-09.html`](/interfaces/blog-digit4-recursive-reach-2026-09.html) | Can Deeper Awareness Stay in Human Hands? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru — Your Goldilocks Valet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09-old.html`](/interfaces/blog-eddy-current-mirror-2026-09-old.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
@@ -316,7 +316,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Herd Corridors Under One Magnetic Sky · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-net-zero-2026-09-old.html`](/interfaces/blog-goldilocks-net-zero-2026-09-old.html) | The Viable Middle Never Stops Moving · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-goldilocks-net-zero-2026-09.html`](/interfaces/blog-goldilocks-net-zero-2026-09.html) | Just Right Means Keep Moving · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-net-zero-2026-09.html`](/interfaces/blog-goldilocks-net-zero-2026-09.html) | Is “Just Right” a Moving Band, Not a Still Point? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | A Free Playbook When Brute Force Fails · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Compress Without Crushing the Signal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest — Step Through the Door · Ship blog · SS Vibelandia |
@@ -325,7 +325,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-grand-unified-metrological-overlap-2026-09.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09.html) | Five Gears, One Ship's Clock · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Genomic Tokens That Keep Structure Honest · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | When the Universe Slows — Mass and Now · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-holographic-homeostasis-2026-09.html`](/interfaces/blog-holographic-homeostasis-2026-09.html) | Stay Steady on the Move · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-holographic-homeostasis-2026-09.html`](/interfaces/blog-holographic-homeostasis-2026-09.html) | Can a System Stay Steady Only by Keeping Motion? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-rhyme-2026-09-old.html`](/interfaces/blog-holographic-rhyme-2026-09-old.html) | How a Fractal Keeps Its Feet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-rhyme-2026-09.html`](/interfaces/blog-holographic-rhyme-2026-09.html) | How a Fractal Keeps Its Feet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-singularity-crystal-2026-09-old.html`](/interfaces/blog-holographic-singularity-crystal-2026-09-old.html) | Zero Holds the Balance · Ship blog · SS Vibelandia |
@@ -343,7 +343,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-lattice-vs-vibe-coding-2026-09.html`](/interfaces/blog-lattice-vs-vibe-coding-2026-09.html) | Does Lattice Code Better? Receipts Say Yes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-horsepower-collapse-2026-09.html`](/interfaces/blog-linear-horsepower-collapse-2026-09.html) | When Bigger Engines Stop Buying Livelihoods · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09-old.html`](/interfaces/blog-linear-shadow-fractal-2026-09-old.html) | The Scoreboard Is Not the Whole Game · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | Trust the Trail, Not the Shadow · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | When Progress Is Measured on One Axis, What Does the Shadow Miss? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as Work Engines on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as Magnets That Hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Pressure Cooks You Denser — Stay Goldilocks · Ship blog · SS Vibelandia |
@@ -353,7 +353,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | Two Ways of Thinking — One Was Faster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09-old.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09-old.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html`](/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html) | Rhymes Across Decks, Not Flat Screens · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html`](/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html) | The Coffee, Not the Spoon · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html`](/interfaces/blog-navier-stokes-unforced-phi-egs-2026-09.html) | After the Forced Blowup, Does Unforced Fluid Still Stay Regular? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine Digits, Ninety-Nine Octaves — Walk It · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nspfrnp-snap-peer-review-audit.html`](/interfaces/blog-nspfrnp-snap-peer-review-audit.html) | Peer Review Snap — Keep Claims Honest · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-official-prospectus-2026-08.html`](/interfaces/blog-official-prospectus-2026-08.html) | The Voyage Begins — Captain’s Seat Open · Ship blog · SS Vibelandia |
@@ -379,8 +379,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and Solar Weather on One Bulletin · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Attention That Loops Without Losing the Trail · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | Watch Out for the Drift · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | When Tools Rewrite Themselves · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | When Tools Rewrite Themselves, Is Drift the Real Rent? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | When Tools Rewrite Themselves, Does φ Keep Meaning Intact? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-self-observing-genome-2026-09.html`](/interfaces/blog-self-observing-genome-2026-09.html) | DNA Is a Mirror You Can File — Not a Mind You Can Hire · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html`](/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html) | Sing, Muse — Chart the Voyage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A Smaller Pack for the Golden Key · Ship blog · SS Vibelandia |

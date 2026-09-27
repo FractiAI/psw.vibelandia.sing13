@@ -19,7 +19,7 @@ Ship-blog posts are **full articles**, not cryptic bites, catalog blurbs, or **l
 6. **Editorial restraint:** **Professional research blog tone**, not architecture theater gimmicks. When results are mixed, say so honestly. Clear **problem → experiment → hypothesis → results → qualifications → framework value → invitation** flow.
 7. **Journalism lock:** **every** `interfaces/blog-*.html` must pass `journalismVoiceSmell` (Soft Story **0**, zero refusal H2s, zero does-not-claim litigation in body, ≤2 meta jargon, no body tables, **zero empty-workshop unemployment metaphors**, **≥2 everyday-life anchors**). Magazine CI enforces **constraints**, not a ship/board template — do not re-template a passing research intro into theater.
 
-CI: `tests/lib/questfest-blog.test.mjs` + `tests/lib/ship-blog-magazine.test.mjs` enforce latest-six, magazine length / honesty, and journalism voice on the full corpus.
+CI: `tests/lib/questfest-blog.test.mjs` + `tests/lib/ship-blog-magazine.test.mjs` enforce latest-six, magazine length / honesty, journalism voice on the full corpus, and **ERFT research-intro shape** on the newest 25 (`erftResearchIntroShape` · FractiAI Research dateline · lead · ≥2 H2).
 
 Protocol: `protocols/QUESTFEST_SHIP_BLOG_MAGAZINE_SNAP_NSPFRNP.md`.
 

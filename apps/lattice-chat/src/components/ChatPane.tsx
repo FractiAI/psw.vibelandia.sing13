@@ -220,15 +220,19 @@ export function ChatPane({
   function jumpToLatest() {
     stickToBottomRef.current = true;
     setShowJumpToBottom(false);
-    // Double-rAF: flex overflow scrollHeight can lag one frame; always
-    // also scroll the sentinel so the click never looks like a no-op.
+    const el = scrollRef.current;
+    const run = () => {
+      if (el) {
+        el.scrollTop = el.scrollHeight;
+      }
+      bottomRef.current?.scrollIntoView({ block: 'end', behavior: 'auto' });
+    };
+    // Immediate + double-rAF: flex overflow scrollHeight can lag one frame;
+    // never leave the click looking like a no-op.
+    run();
     requestAnimationFrame(() => {
-      const el = scrollRef.current;
-      if (el) el.scrollTop = el.scrollHeight;
-      requestAnimationFrame(() => {
-        if (el) el.scrollTop = el.scrollHeight;
-        bottomRef.current?.scrollIntoView({ block: 'end', behavior: 'auto' });
-      });
+      run();
+      requestAnimationFrame(run);
     });
   }
   useEffect(() => {

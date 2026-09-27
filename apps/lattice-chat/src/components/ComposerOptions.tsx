@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { LATTICE_PROVIDERS, type LatticeProvider } from '@/lib/providerKeys';
 import { catalogForProvider, mergeProviderModels } from '@/modelCatalog';
 import type { AgentMode, LatticeModelOption, NestTopology } from '@/types';
@@ -46,7 +46,7 @@ function providerShort(id: LatticeProvider): string {
   return LATTICE_PROVIDERS.find((p) => p.id === id)?.short || id;
 }
 
-export function ComposerOptions({
+export const ComposerOptions = memo(function ComposerOptions({
   provider,
   mode,
   nestTopology,
@@ -241,4 +241,4 @@ export function ComposerOptions({
       ) : null}
     </div>
   );
-}
+});

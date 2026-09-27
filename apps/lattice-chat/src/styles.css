@@ -1082,7 +1082,7 @@ body {
   bottom: 0.85rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 6;
+  z-index: 20;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -1095,6 +1095,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.04em;
   cursor: pointer;
+  pointer-events: auto;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
   /* Dedicated keyframes keep translateX(-50%) — fade-up alone overwrites centering. */

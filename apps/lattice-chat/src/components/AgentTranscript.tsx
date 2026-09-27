@@ -92,9 +92,12 @@ function ToolCallBlock({
 export function AgentTranscript({
   items,
   live = false,
+  defaultOpen = true,
 }: {
   items: TranscriptItem[];
   live?: boolean;
+  /** Historical transcripts default closed so fat chats do not expand every thinking block. */
+  defaultOpen?: boolean;
 }) {
   if (!items.length) return null;
 
@@ -112,7 +115,7 @@ export function AgentTranscript({
               key={key}
               text={item.text}
               durationMs={item.durationMs}
-              defaultOpen={true}
+              defaultOpen={defaultOpen}
             />
           );
         }

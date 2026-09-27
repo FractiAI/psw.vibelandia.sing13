@@ -396,7 +396,7 @@ export function ChatPane({
                   type="button"
                   className="header-new-chat"
                   aria-label="New chat"
-                  disabled={!signedIn}
+                  title="Start a fresh chat"
                   onClick={() => onNewChat?.()}
                 >
                   <span aria-hidden="true">+</span>

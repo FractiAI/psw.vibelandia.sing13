@@ -22,7 +22,7 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
-**Keywords:** ERFT; ERFT-V5; ERFT-C; ERFT-G; constant-neutral; generalized closure; recursive fidelity; drift; RSI; Φ_EGS; falsifiable; five-arm; blind constant; constant sweep; paired delta; Infinite Octaves; Fair Exchange; NSPFRNP
+**Keywords:** ERFT; ERFT-V5; ERFT-C; ERFT-G; ERFT-D; dynamic regulation; constant-neutral; generalized closure; recursive fidelity; drift; RSI; Φ_EGS; falsifiable; five-arm; blind constant; constant sweep; paired delta; Infinite Octaves; Fair Exchange; NSPFRNP
 
 ---
 
@@ -36,9 +36,10 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Design** | Two-layer protocol: **ERFT-C** (constant-neutral) isolates numerical $c$; **ERFT-G** tests symmetric generalized closure $C(c)$ | That $\Phi_{\mathrm{EGS}}$ is assumed correct a priori |
+| **Design** | Two-layer protocol: **ERFT-C** (constant-neutral) isolates numerical $c$; **ERFT-G** tests symmetric generalized closure $C(c)$; **ERFT-D** exploratory dynamic $c_n$ | That $\Phi_{\mathrm{EGS}}$ is assumed correct a priori |
 | **Suite pass** | Protocol integrity + reproducible fixtures (arms, mechanisms, metrics locked) | That $\Phi$ “won” the drift contest |
 | **Empirics (V5)** | Synthetic + proxy domain series; paired $\Delta_i$; NRMSE; drift-geometry panel; depth optima | Live NOAA/Yahoo/CDC pulls as required (extendable) |
+| **ERFT-D** | Dynamic regulation among candidate modes (D0–D3); complexity accounting; falsification allowed | That dynamic switching proves holographic homeostasis or rescues Φ after V5 |
 | **V4 footnote** | V4 measured a **combined** Φ-enabled architecture (exploratory / development evidence) | That V4 isolated numerical $\Phi$ alone |
 | **Peers** | Positions beside RSI Soft Story papers and homeostasis grammar | CODATA replacement; AGI solved; ECC zero-error; clinical advice |
 
@@ -207,13 +208,36 @@ On the seasonal / recursive-weighting probe: $c^*_1{=}2.5$, $c^*_4{=}1.0$, $c^*_
 
 **V1** — coarsening tied to $c$ gifted baseline least drift. **V2** — fixed severity but $\sin(c)$ geometry. **V3** — nest partitions with $c$-geometry confound. **V4** — exploratory combined Φ-enabled architecture (Φ-specific closure); useful development evidence, **not** confirmatory constant-neutral isolation.
 
+### 7.9 ERFT-D · Dynamic Constant Regulation (exploratory extension)
+
+**ERFT-D does not rewrite §7.1–7.7.** V5 remains the locked confirmatory baseline. ERFT-D asks a different question:
+
+> Can recursive fidelity be improved by dynamically selecting among multiple constants ($c_n = G(\mathrm{state},n)$) rather than using one fixed $c$ throughout recursion?
+
+| Sub-lane | What it tests |
+|----------|----------------|
+| **D0** | Fixed-constant controls ($1$, $\sqrt{2}$, $\Phi$, $e$) — static policy baseline |
+| **D1** | Prescribed multi-constant sequences (alternating, cyclic, seeded random) |
+| **D2** | State-dependent switching from observable drift state only (frozen evaluator; no future leakage) |
+| **D3** | Adaptive one-step look-ahead on the candidate set (no hold-out peek; complexity accounted) |
+
+**Separate hypotheses (do not conflate):** numerical $c=\Phi$ (ERFT-C) · generalized algebra $C(c)$ (ERFT-G) · dynamic mode selection $c_n=G(D_n)$ (ERFT-D).
+
+**Φ peer discipline:** Φ remains one candidate among peers. Q1–Q6 separately ask whether Φ outperforms fixed peers, appears preferentially in dynamic policies, improves inclusion/exclusion, or is distinguishable from a nearby continuous proxy ($\approx 1.6$).
+
+**Falsification allowed:** if the best fixed constant matches or beats dynamic policies, if random switching matches state-dependent rules, or if adaptive controllers collapse to one constant, the dynamic-regulation hypothesis is weakened — reported honestly. Live readout: `ED_dynamic_constant_regulation` in the empirical report.
+
+**Conceptual model:** recursive system → state → drift measurement → mode selection → transformation → new state, with mode set $\{1,\sqrt{2},\Phi,e,\ldots\}$.
+
+This is **not** a claim that holographic homeostasis is demonstrated, and **not** a rescue mechanism for Φ after V5's mixed/null constant-neutral findings.
+
 ---
 
 ## 8. Suite · course · textbook
 
 - Run: `npm run research:synthobs-egs-recursive-fidelity-test`  
 - Standalone: `FractiAI/synthobs-egs-recursive-fidelity-test`  
-- Course lesson **6.5b** / textbook **§6.5b** teach ERFT beside RSI Soft Story (Week 6), including the V5 C/G split and honest incomplete crown
+- Course lesson **6.5b** / textbook **§6.5b** teach ERFT beside RSI Soft Story (Week 6), including the V5 C/G split and honest incomplete crown · ERFT-D as exploratory follow-on
 
 ---
 

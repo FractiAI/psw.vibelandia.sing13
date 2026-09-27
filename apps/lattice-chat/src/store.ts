@@ -33,6 +33,7 @@ import {
   latticeEdgeStateStorage,
 } from '@/lib/edgeStorage';
 import { mergeLiveTranscriptItem } from '@/lib/liveTranscriptCap';
+import { abortActiveLatticeSend } from '@/lib/primaryStreamAbort';
 
 const STORAGE_KEY = LATTICE_EDGE_STORAGE_KEY;
 const latticeEdgeJsonStorage = createJSONStorage(() => latticeEdgeStateStorage);
@@ -239,6 +240,7 @@ export const useLatticeStore = create<LatticeState>()(
       },
 
       newChat: () => {
+        abortActiveLatticeSend();
         // Always mint a fresh thread id so New chat never looks like “staying”
         // on the open conversation. Drop other empty drafts (keep shared collab).
         const t = emptyThread();
@@ -258,6 +260,8 @@ export const useLatticeStore = create<LatticeState>()(
           pending: null,
           liveTranscript: [],
           sending: false,
+          primaryStreamLive: false,
+          remoteCollabLive: null,
         }));
         return t.id;
       },

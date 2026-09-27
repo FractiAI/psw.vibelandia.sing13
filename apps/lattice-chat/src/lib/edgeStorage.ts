@@ -101,7 +101,20 @@ function writeEdgeValue(name: string, value: string): void {
 export const latticeEdgeStateStorage = {
   getItem: (name: string): string | null => {
     try {
-      return localStorage.getItem(name);
+      const raw = localStorage.getItem(name);
+      if (!raw) return null;
+      // Fit on read — legacy fat blobs freeze first paint before any write prune runs.
+      if (raw.length <= LATTICE_EDGE_BLOB_BUDGET_CHARS) return raw;
+      const fitted = fitPersistedEdgeBlob(raw);
+      if (fitted && fitted !== raw) {
+        try {
+          localStorage.setItem(name, fitted);
+        } catch {
+          /* ignore — still return fitted for this session */
+        }
+        return fitted;
+      }
+      return fitted ?? raw;
     } catch {
       return null;
     }

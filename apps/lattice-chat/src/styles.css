@@ -1192,6 +1192,23 @@ body {
   background: rgba(212, 175, 55, 0.12);
 }
 
+.msg-load-earlier {
+  align-self: center;
+  margin: 0.35rem 0 0.75rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--brand-gold, #d4af37);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.msg-load-earlier:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
 .bubble {
   max-width: min(42rem, 100%);
   animation: fade-up 280ms ease both;

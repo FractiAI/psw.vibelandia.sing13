@@ -63,7 +63,7 @@ export function HistoryRail({
         type="button"
         className="new-chat"
         onClick={handleNewChat}
-        disabled={!signedIn}
+        title={signedIn ? 'Start a fresh chat' : 'Clear this device chat and start fresh'}
       >
         <span className="new-chat-plus" aria-hidden="true">
           +

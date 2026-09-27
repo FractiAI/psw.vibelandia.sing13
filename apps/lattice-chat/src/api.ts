@@ -39,6 +39,11 @@ import {
   formatWireSize,
   prepareLatticeWireBody,
 } from '@/lib/requestBudget';
+import {
+  abortActiveLatticeSend,
+  clearPrimaryStreamAbort,
+  registerPrimaryStreamAbort,
+} from '@/lib/primaryStreamAbort';
 
 type LatticePrivilege = 'creator' | 'guest' | 'none';
 
@@ -824,9 +829,14 @@ export async function sendLatticeMessage(
   let primaryStreamActive = false;
   const startedAt = Date.now();
   let lastActivityAt = Date.now();
+  abortActiveLatticeSend();
   const primaryAbort = new AbortController();
+  registerPrimaryStreamAbort(primaryAbort, threadId);
   const markActivity = () => {
     lastActivityAt = Date.now();
+  };
+  const releasePrimaryAbort = () => {
+    clearPrimaryStreamAbort(primaryAbort);
   };
 
   const settleSuccess = (data: LatticeResponse) => {
@@ -867,11 +877,26 @@ export async function sendLatticeMessage(
   };
 
   // Status ticks: while primary SSE is live, stay on "sending" — do not fake recover/stuck.
+  // Bail if New chat cleared pending / switched threads — do not resurrect sending state.
   const statusTick = setInterval(() => {
     if (settled) return;
+    const snap = useLatticeStore.getState();
+    if (!snap.pending || snap.pending.threadId !== threadId) {
+      settled = true;
+      primaryStreamActive = false;
+      primaryAbort.abort();
+      releasePrimaryAbort();
+      clearInterval(statusTick);
+      clearInterval(watchdog);
+      return;
+    }
+    if (snap.activeThreadId !== threadId) {
+      // User left this thread — keep stream settling in background but do not fight UI.
+      return;
+    }
     const elapsed = Math.round((Date.now() - startedAt) / 1000);
     if (primaryStreamActive) {
-      const phase = useLatticeStore.getState().sendPhase;
+      const phase = snap.sendPhase;
       if (phase === 'sending' || phase === 'idle') {
         store.setSendProgress('sending', latticeProgressHint(elapsed, 'sending'));
       }
@@ -1137,6 +1162,7 @@ export async function sendLatticeMessage(
     store.setPrimaryStreamLive(false);
     clearInterval(watchdog);
     clearInterval(statusTick);
+    releasePrimaryAbort();
     if (settled) store.setSending(false);
   }
 }

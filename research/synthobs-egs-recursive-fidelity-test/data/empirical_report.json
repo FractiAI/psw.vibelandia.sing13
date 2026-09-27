@@ -4,9 +4,9 @@
   "registryId": "synthobs-egs-recursive-fidelity-test-erft-2026-09",
   "title": "EGS Recursive Fidelity Test (ERFT) · Version Five — Constant-Neutral + Grammar Split",
   "protocol": "ERFT-V5-2026-09-27",
-  "generatedAt": "2026-09-27T08:16:48.390Z",
+  "generatedAt": "2026-09-27T14:30:47.571Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "honestyBoundary": "ERFT V5 separates constant-neutral recursion (ERFT-C) from symmetric generalized-closure grammar (ERFT-G). V4 evidence remains exploratory for the combined Φ-enabled architecture and does not isolate numerical Φ alone. Suite pass = protocol integrity; empirical Φ advantage is a measured outcome that may fail. Not CODATA; not AGI safety proof.",
+  "honestyBoundary": "ERFT V5 separates constant-neutral recursion (ERFT-C) from symmetric generalized-closure grammar (ERFT-G). V4 evidence remains exploratory for the combined Φ-enabled architecture and does not isolate numerical Φ alone. ERFT-D is an exploratory dynamic-regulation extension that does not reinterpret V5. Suite pass = protocol integrity; empirical Φ advantage is a measured outcome that may fail. Not CODATA; not AGI safety proof.",
   "preRegisteredHypothesis": {
     "claim": "Q1 (ERFT-C): Does numerical c=Φ reduce drift under a constant-neutral recursion? Q2: Is Φ unusually low vs continuous c? Q3 (ERFT-G): Does generalized algebraic closure C(c) add stability, and does Φ benefit disproportionately?",
     "null_ok": true,
@@ -25,13 +25,16 @@
   },
   "results": {
     "all_pass": true,
-    "n_pass": 13,
-    "n_total": 13,
+    "n_pass": 14,
+    "n_total": 14,
     "PROTOCOL_VERSION": "ERFT-V5-2026-09-27",
     "PHI_EGS": 1.618033988749895,
     "layers": [
       "ERFT-C",
       "ERFT-G"
+    ],
+    "extensions": [
+      "ERFT-D"
     ],
     "experiments": [
       {
@@ -6446,6 +6449,597 @@
         "pass": true,
         "interpretation": "Frontiersman magazine note required for paper ship; must reflect V5 C/G split.",
         "honesty": "Structural lock."
+      },
+      {
+        "id": "ED_dynamic_constant_regulation",
+        "title": "ERFT-D · Dynamic Constant Regulation (exploratory extension)",
+        "extension": "ERFT-D",
+        "protocol": "ERFT-D-2026-09-27",
+        "preserves_v5": true,
+        "hypothesis": "Recursive stability may emerge from dynamic regulation among complementary modes rather than a single fixed constant. Φ is a peer candidate — not privileged.",
+        "conceptual_model": "recursive system → state → drift measurement → mode selection → transformation → new state",
+        "controller_info": {
+          "permitted": [
+            "current_nrmse_vs_d0",
+            "stepwise_rmse",
+            "delta_nrmse",
+            "path_length",
+            "recovery_ratio",
+            "drift_direction",
+            "recursion_depth",
+            "mechanism_id"
+          ],
+          "forbidden": [
+            "future_generations",
+            "held_out_target",
+            "evaluator_implementation",
+            "fixture_seeds_beyond_controller_split"
+          ],
+          "preregistered": true,
+          "tuned_on_holdout": false
+        },
+        "complexity": {
+          "controller_parameters": {
+            "D0": 0,
+            "D1": "sequence length = N (prescribed)",
+            "D2": "threshold rules on nrmse / drift direction (preregistered)",
+            "D3": "|C|=5 one-step trials per generation"
+          },
+          "candidate_constants": 5,
+          "switching_opportunities": 24,
+          "computational_cost_note": "D3 costs |C| extra mechanism evaluations per generation vs fixed; D2 is O(1) rule.",
+          "information": {
+            "permitted": [
+              "current_nrmse_vs_d0",
+              "stepwise_rmse",
+              "delta_nrmse",
+              "path_length",
+              "recovery_ratio",
+              "drift_direction",
+              "recursion_depth",
+              "mechanism_id"
+            ],
+            "forbidden": [
+              "future_generations",
+              "held_out_target",
+              "evaluator_implementation",
+              "fixture_seeds_beyond_controller_split"
+            ],
+            "preregistered": true,
+            "tuned_on_holdout": false
+          },
+          "hyperparameters_tuned_on_holdout": false,
+          "preregistered_rules": true
+        },
+        "D0_fixed_controls": {
+          "rows": [
+            {
+              "domain": "synthetic_logistic",
+              "mechanism": "scaling",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 0.9632241475247654,
+                  "path_length": 0.27990546629778457,
+                  "max_nrmse": 0.9632241475247654,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 0.9490543425356149,
+                  "path_length": 0.28762685283476436,
+                  "max_nrmse": 0.9651139411795453,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 0.952862035794312,
+                  "path_length": 0.2842297263234727,
+                  "max_nrmse": 0.9558253494385534,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 0.9366588285763439,
+                  "path_length": 0.30670949169702,
+                  "max_nrmse": 1.0033464661760045,
+                  "switching_cost": 0
+                }
+              }
+            },
+            {
+              "domain": "synthetic_logistic",
+              "mechanism": "recursive_weighting",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 0.959423849944964,
+                  "path_length": 0.4099682996921215,
+                  "max_nrmse": 1.0740860238793288,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 0.9443058263791976,
+                  "path_length": 0.43107486099678255,
+                  "max_nrmse": 1.1062288912931708,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 0.9479165145798701,
+                  "path_length": 0.42265020721165636,
+                  "max_nrmse": 1.0893659791466543,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 0.9343505465532876,
+                  "path_length": 0.4808993976183567,
+                  "max_nrmse": 1.1652794946367218,
+                  "switching_cost": 0
+                }
+              }
+            },
+            {
+              "domain": "synthetic_logistic",
+              "mechanism": "hierarchical_resolution",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 1.0062707455960218,
+                  "path_length": 0.3394175137508468,
+                  "max_nrmse": 1.0064919959553331,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 1.0061760367838057,
+                  "path_length": 0.34740565951295804,
+                  "max_nrmse": 1.006712057624639,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 1.0062063454704835,
+                  "path_length": 0.3447914128006341,
+                  "max_nrmse": 1.0066466276577526,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 1.0060353176123202,
+                  "path_length": 0.3595367694485759,
+                  "max_nrmse": 1.0069739981173074,
+                  "switching_cost": 0
+                }
+              }
+            },
+            {
+              "domain": "synthetic_seasonal",
+              "mechanism": "scaling",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 0.9699032814740499,
+                  "path_length": 1.791133155983516,
+                  "max_nrmse": 0.9699032814740499,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 0.9688596597308596,
+                  "path_length": 1.8856611845773419,
+                  "max_nrmse": 0.9999666532853648,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 0.969119825249067,
+                  "path_length": 1.846725256178577,
+                  "max_nrmse": 0.9896782608988457,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 0.9681010973244641,
+                  "path_length": 2.0894723703982887,
+                  "max_nrmse": 1.0390727084637363,
+                  "switching_cost": 0
+                }
+              }
+            },
+            {
+              "domain": "synthetic_seasonal",
+              "mechanism": "recursive_weighting",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 0.9687404888985722,
+                  "path_length": 2.689690747673889,
+                  "max_nrmse": 1.0939111100280028,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 0.9684885344978751,
+                  "path_length": 2.9296496883700986,
+                  "max_nrmse": 1.1373331217674714,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 0.9683703990154492,
+                  "path_length": 2.843763172685166,
+                  "max_nrmse": 1.120071706267019,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 0.970255104938051,
+                  "path_length": 3.3848487626925228,
+                  "max_nrmse": 1.1941706699889607,
+                  "switching_cost": 0
+                }
+              }
+            },
+            {
+              "domain": "synthetic_seasonal",
+              "mechanism": "hierarchical_resolution",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 0.997303045415724,
+                  "path_length": 2.712788725602731,
+                  "max_nrmse": 0.9988553361363367,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 0.9972426719966109,
+                  "path_length": 2.7928516568467563,
+                  "max_nrmse": 0.9988911749557098,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 0.9972700093245288,
+                  "path_length": 2.7653809876140865,
+                  "max_nrmse": 0.9988785734126575,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 0.9969684468450364,
+                  "path_length": 2.930703495311619,
+                  "max_nrmse": 0.999243093340088,
+                  "switching_cost": 0
+                }
+              }
+            },
+            {
+              "domain": "env_co2_proxy",
+              "mechanism": "scaling",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 0.966683382515414,
+                  "path_length": 5.678259994276231,
+                  "max_nrmse": 0.966683382515414,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 0.9659133524799274,
+                  "path_length": 6.013982088131025,
+                  "max_nrmse": 1.001578273711196,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 0.9661094719924852,
+                  "path_length": 5.883062519165273,
+                  "max_nrmse": 0.9915899045935245,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 0.9653220744855792,
+                  "path_length": 6.6784875536230635,
+                  "max_nrmse": 1.040615226571689,
+                  "switching_cost": 0
+                }
+              }
+            },
+            {
+              "domain": "env_co2_proxy",
+              "mechanism": "recursive_weighting",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 0.9659758128808795,
+                  "path_length": 8.666994833580706,
+                  "max_nrmse": 1.1030940173353585,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 0.9656824708471403,
+                  "path_length": 9.42563299557207,
+                  "max_nrmse": 1.1417572679484096,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 0.9655944855083559,
+                  "path_length": 9.153841634959672,
+                  "max_nrmse": 1.1244406618824048,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 0.9673686597480942,
+                  "path_length": 10.869063965336997,
+                  "max_nrmse": 1.200148344799231,
+                  "switching_cost": 0
+                }
+              }
+            },
+            {
+              "domain": "env_co2_proxy",
+              "mechanism": "hierarchical_resolution",
+              "arms": {
+                "baseline": {
+                  "c": 1,
+                  "final_nrmse": 0.7708496429956102,
+                  "path_length": 14.741115968904891,
+                  "max_nrmse": 0.7716899895460296,
+                  "switching_cost": 0
+                },
+                "egs": {
+                  "c": 1.618033988749895,
+                  "final_nrmse": 0.7539495780515793,
+                  "path_length": 13.774941997840925,
+                  "max_nrmse": 0.7551578155607888,
+                  "switching_cost": 0
+                },
+                "sqrt2": {
+                  "c": 1.4142135623730951,
+                  "final_nrmse": 0.7586173481716412,
+                  "path_length": 14.005045730205072,
+                  "max_nrmse": 0.7596755291763282,
+                  "switching_cost": 0
+                },
+                "e": {
+                  "c": 2.718281828459045,
+                  "final_nrmse": 0.7376895486068638,
+                  "path_length": 13.25263202795729,
+                  "max_nrmse": 0.7397362254506958,
+                  "switching_cost": 0
+                }
+              }
+            }
+          ],
+          "best_fixed_mean_nrmse": 0.942121193836411
+        },
+        "D1_prescribed_sequences": {
+          "phi_repeated": {
+            "n": 9,
+            "mean_final_nrmse": 0.9468737832149622,
+            "mean_path_length": 4.202165578700732,
+            "mean_max_nrmse": 1.0124539580611323,
+            "mean_switching_cost": 0,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 1
+          },
+          "baseline_repeated": {
+            "n": 9,
+            "mean_final_nrmse": 0.9522619493115541,
+            "mean_path_length": 4.1377492869162875,
+            "mean_max_nrmse": 0.9941054384588792,
+            "mean_switching_cost": 0,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 1
+          },
+          "sqrt2_repeated": {
+            "n": 9,
+            "mean_final_nrmse": 0.9482447927251878,
+            "mean_path_length": 4.1644533252610945,
+            "mean_max_nrmse": 1.0039359706055084,
+            "mean_switching_cost": 0,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 1
+          },
+          "e_repeated": {
+            "n": 9,
+            "mean_final_nrmse": 0.9427909410348698,
+            "mean_path_length": 4.475802160539782,
+            "mean_max_nrmse": 1.0430830674302876,
+            "mean_switching_cost": 0,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 1
+          },
+          "phi_e_1_sqrt2": {
+            "n": 9,
+            "mean_final_nrmse": 0.9488011545919883,
+            "mean_path_length": 4.2725743909410046,
+            "mean_max_nrmse": 1.0131097171147492,
+            "mean_switching_cost": 23,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "one_phi_e_sqrt2": {
+            "n": 9,
+            "mean_final_nrmse": 0.9465598509772614,
+            "mean_path_length": 4.157838656267853,
+            "mean_max_nrmse": 1.0059698450492889,
+            "mean_switching_cost": 23,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "phi_1_alt": {
+            "n": 9,
+            "mean_final_nrmse": 0.9498356019197062,
+            "mean_path_length": 4.195177937558529,
+            "mean_max_nrmse": 1.0068334514587374,
+            "mean_switching_cost": 23,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "seeded_random": {
+            "n": 9,
+            "mean_final_nrmse": 0.9475542923910094,
+            "mean_path_length": 4.272875902494589,
+            "mean_max_nrmse": 1.0209367066263118,
+            "mean_switching_cost": 18,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          }
+        },
+        "D2_state_dependent": {
+          "summary": {
+            "n": 9,
+            "mean_final_nrmse": 0.9497743416817408,
+            "mean_path_length": 4.163352751820932,
+            "mean_max_nrmse": 0.9973583770532621,
+            "mean_switching_cost": 12,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "random_control": {
+            "n": 9,
+            "mean_final_nrmse": 0.9498471341968059,
+            "mean_path_length": 4.274034564344366,
+            "mean_max_nrmse": 1.0089482113372097,
+            "mean_switching_cost": 19.666666666666668,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "policy_state_hist": {
+            "rising_picks": {
+              "baseline": 121,
+              "sqrt2": 0,
+              "egs": 0,
+              "e": 0,
+              "near_phi": 0
+            },
+            "falling_picks": {
+              "baseline": 0,
+              "sqrt2": 20,
+              "egs": 12,
+              "e": 54,
+              "near_phi": 0
+            }
+          }
+        },
+        "D3_adaptive": {
+          "summary": {
+            "n": 9,
+            "mean_final_nrmse": 0.9427592328411445,
+            "mean_path_length": 4.144610140925195,
+            "mean_max_nrmse": 0.9994554196315529,
+            "mean_switching_cost": 7,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "without_phi": {
+            "n": 9,
+            "mean_final_nrmse": 0.9427591785371283,
+            "mean_path_length": 4.143124739156544,
+            "mean_max_nrmse": 0.9993771349823304,
+            "mean_switching_cost": 7,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "near_phi_proxy": {
+            "n": 9,
+            "mean_final_nrmse": 0.9427591785371283,
+            "mean_path_length": 4.143124739156544,
+            "mean_max_nrmse": 0.9993771349823304,
+            "mean_switching_cost": 7,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          }
+        },
+        "comparison": {
+          "best_fixed_mean_nrmse": 0.942121193836411,
+          "best_sequence": {
+            "name": "e_repeated",
+            "mean_final_nrmse": 0.9427909410348698
+          },
+          "state_dependent": {
+            "n": 9,
+            "mean_final_nrmse": 0.9497743416817408,
+            "mean_path_length": 4.163352751820932,
+            "mean_max_nrmse": 0.9973583770532621,
+            "mean_switching_cost": 12,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "random_switch_control": {
+            "n": 9,
+            "mean_final_nrmse": 0.9498471341968059,
+            "mean_path_length": 4.274034564344366,
+            "mean_max_nrmse": 1.0089482113372097,
+            "mean_switching_cost": 19.666666666666668,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "adaptive": {
+            "n": 9,
+            "mean_final_nrmse": 0.9427592328411445,
+            "mean_path_length": 4.144610140925195,
+            "mean_max_nrmse": 0.9994554196315529,
+            "mean_switching_cost": 7,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "adaptive_without_phi": {
+            "n": 9,
+            "mean_final_nrmse": 0.9427591785371283,
+            "mean_path_length": 4.143124739156544,
+            "mean_max_nrmse": 0.9993771349823304,
+            "mean_switching_cost": 7,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "adaptive_near_phi_proxy": {
+            "n": 9,
+            "mean_final_nrmse": 0.9427591785371283,
+            "mean_path_length": 4.143124739156544,
+            "mean_max_nrmse": 0.9993771349823304,
+            "mean_switching_cost": 7,
+            "mean_catastrophic": 0,
+            "fraction_collapse_to_single": 0
+          },
+          "dynamic_beats_best_fixed": false
+        },
+        "phi_questions": {
+          "Q1_phi_outperforms_other_fixed": {
+            "phi_mean": 0.9466302748114013,
+            "baseline_mean": 0.9520415996940002,
+            "beats_baseline": true,
+            "is_best_fixed": false
+          },
+          "Q2_phi_preferential_in_dynamic": {
+            "mean_selection_prob": 0.009259259259259259,
+            "preferential": false
+          },
+          "Q3_inclusion_improves_dynamic": false,
+          "Q4_removal_hurts": false,
+          "Q5_nearby_equivalent": true,
+          "Q6_special_vs_numerical_location": false
+        },
+        "falsification": {
+          "best_fixed_matches_or_beats_dynamic": true,
+          "random_switching_equivalent": true,
+          "adaptive_collapses_to_one_constant": false,
+          "no_stable_state_policy": true,
+          "hypothesis_weakened": true
+        },
+        "pass": true,
+        "interpretation": "On these fixtures, dynamic regulation did not clearly outperform the best fixed constant under matched evaluation — or collapsed / matched random switching. Hypothesis weakened (not a Φ rescue).",
+        "honesty": "ERFT-D is an exploratory extension. It does not reinterpret ERFT-V5. V5 constant-neutral null/mixed findings remain intact. Not holographic-homeostasis proof. Not a Φ crown."
       }
     ]
   }

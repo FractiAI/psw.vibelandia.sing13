@@ -80,6 +80,16 @@ export const ANTI_BASELINE_BIAS = Object.freeze({
   layers: Object.freeze(['ERFT-C', 'ERFT-G']),
 });
 
+/** Exploratory extension — does not alter V5 confirmatory layers. */
+export const ERFT_D_EXTENSION = Object.freeze({
+  id: 'ERFT-D',
+  protocol: 'ERFT-D-2026-09-27',
+  role: 'exploratory_dynamic_regulation',
+  preserves_v5: true,
+  hypothesis:
+    'Recursive stability may emerge from dynamic regulation among complementary transformation modes rather than a single fixed constant.',
+});
+
 export const PROTOCOL_VERSION = 'ERFT-V5-2026-09-27';
 
 /**
@@ -111,4 +121,4 @@ export const PRE_REGISTERED_HYPOTHESIS = Object.freeze({
 });
 
 export const HONESTY =
-  'ERFT V5 separates constant-neutral recursion (ERFT-C) from symmetric generalized-closure grammar (ERFT-G). V4 evidence remains exploratory for the combined Φ-enabled architecture and does not isolate numerical Φ alone. Suite pass = protocol integrity; empirical Φ advantage is a measured outcome that may fail. Not CODATA; not AGI safety proof.';
+  'ERFT V5 separates constant-neutral recursion (ERFT-C) from symmetric generalized-closure grammar (ERFT-G). V4 evidence remains exploratory for the combined Φ-enabled architecture and does not isolate numerical Φ alone. ERFT-D is an exploratory dynamic-regulation extension that does not reinterpret V5. Suite pass = protocol integrity; empirical Φ advantage is a measured outcome that may fail. Not CODATA; not AGI safety proof.';

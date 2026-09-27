@@ -49,6 +49,8 @@ describe('ERFT V5 constant-neutral + grammar recursive fidelity', () => {
     expect(results.n_pass).toBe(results.n_total);
     expect(results.all_pass).toBe(true);
     expect(results.PROTOCOL_VERSION).toMatch(/^ERFT-V5-/);
+    expect(results.layers).toEqual(expect.arrayContaining(['ERFT-C', 'ERFT-G']));
+    expect(results.extensions).toEqual(expect.arrayContaining(['ERFT-D']));
     const e1 = results.experiments.find((e) => e.id === 'E1_five_arm_matched');
     expect(e1.mode).toBe('constant_neutral');
     expect(e1.scoreboard.paired_delta_baseline_minus_phi).toBeDefined();
@@ -59,6 +61,10 @@ describe('ERFT V5 constant-neutral + grammar recursive fidelity', () => {
     expect(e3.train_min).toBeDefined();
     const e3b = results.experiments.find((e) => e.id === 'E3b_depth_optima');
     expect(e3b.optima.length).toBeGreaterThanOrEqual(4);
+    const ed = results.experiments.find((e) => e.id === 'ED_dynamic_constant_regulation');
+    expect(ed).toBeDefined();
+    expect(ed.preserves_v5).toBe(true);
+    expect(ed.falsification).toBeDefined();
   });
 
   it('committed empirical report matches live V5 pipeline', async () => {

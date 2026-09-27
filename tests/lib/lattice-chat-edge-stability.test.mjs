@@ -17,6 +17,7 @@ import {
 } from '../../apps/lattice-chat/src/lib/liveTranscriptCap.ts';
 import {
   MAX_PERSISTED_MESSAGE_CHARS,
+  MAX_PERSISTED_MESSAGES_PER_THREAD,
   MAX_PERSISTED_THREADS,
   slimThreadsForPersist,
 } from '../../apps/lattice-chat/src/threadHistory.ts';
@@ -96,6 +97,52 @@ describe('Lattice Chat edge stability', () => {
       },
     ]);
     expect(out[0].messages[0].content.length).toBeLessThanOrEqual(MAX_PERSISTED_MESSAGE_CHARS + 2);
+  });
+
+  it('caps messages per thread on persist slim', () => {
+    expect(MAX_PERSISTED_MESSAGES_PER_THREAD).toBeLessThanOrEqual(48);
+    const messages = Array.from({ length: MAX_PERSISTED_MESSAGES_PER_THREAD + 20 }, (_, i) => ({
+      id: `m${i}`,
+      role: i % 2 ? 'assistant' : 'user',
+      content: `msg ${i}`,
+      createdAt: new Date(Date.now() + i).toISOString(),
+    }));
+    const out = slimThreadsForPersist([
+      {
+        id: 'long',
+        title: 'long chat',
+        updatedAt: new Date().toISOString(),
+        messages,
+      },
+    ]);
+    expect(out[0].messages.length).toBeLessThanOrEqual(MAX_PERSISTED_MESSAGES_PER_THREAD);
+  });
+
+  it('fits bloated blobs on getItem read path', async () => {
+    const { latticeEdgeStateStorage } = await import(
+      '../../apps/lattice-chat/src/lib/edgeStorage.ts'
+    );
+    const fatMsg = 'x'.repeat(40_000);
+    const threads = Array.from({ length: 20 }, (_, i) => ({
+      id: `t${i}`,
+      updatedAt: `2026-09-${String((i % 28) + 1).padStart(2, '0')}T00:00:00.000Z`,
+      messages: [{ id: `m${i}`, role: 'assistant', content: fatMsg }],
+    }));
+    const blob = JSON.stringify({ state: { threads }, version: 0 });
+    expect(blob.length).toBeGreaterThan(LATTICE_EDGE_BLOB_BUDGET_CHARS);
+    const store = new Map([['edge', blob]]);
+    globalThis.localStorage = {
+      getItem: (k) => (store.has(k) ? store.get(k) : null),
+      setItem: (k, v) => {
+        store.set(String(k), String(v));
+      },
+      removeItem: (k) => {
+        store.delete(k);
+      },
+    };
+    const got = latticeEdgeStateStorage.getItem('edge');
+    expect(got).toBeTruthy();
+    expect(got.length).toBeLessThanOrEqual(LATTICE_EDGE_BLOB_BUDGET_CHARS);
   });
 
   it('caps live transcript assistant growth', () => {

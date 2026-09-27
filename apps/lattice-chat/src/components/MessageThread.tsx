@@ -1,9 +1,12 @@
-import { KeyboardEvent, memo } from 'react';
+import { KeyboardEvent, memo, useMemo, useState } from 'react';
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { MarkdownBody } from '@/components/MarkdownBody';
 import { TokenCompareFooter, hasMeasuredTokens } from '@/components/TokenCompare';
 import { peerNameForId } from '@/feed/seatIdentity';
 import type { ChatMessage } from '@/types';
+
+/** Render window — full history stays in store; DOM only mounts the visible tail. */
+export const MESSAGE_RENDER_WINDOW = 40;
 
 type MessageThreadProps = {
   messages: ChatMessage[];
@@ -13,15 +16,32 @@ type MessageThreadProps = {
 
 /**
  * Memoized message list — must not re-render on composer keystrokes.
+ * Large threads only paint the latest window until the guest expands earlier turns.
  */
 export const MessageThread = memo(function MessageThread({
   messages,
   myCollabPeerId,
   onJumpToCollabDm,
 }: MessageThreadProps) {
+  const [showAll, setShowAll] = useState(false);
+  const hiddenCount = Math.max(0, messages.length - MESSAGE_RENDER_WINDOW);
+  const visible = useMemo(() => {
+    if (showAll || messages.length <= MESSAGE_RENDER_WINDOW) return messages;
+    return messages.slice(messages.length - MESSAGE_RENDER_WINDOW);
+  }, [messages, showAll]);
+
   return (
     <>
-      {messages.map((m) => {
+      {hiddenCount > 0 && !showAll ? (
+        <button
+          type="button"
+          className="msg-load-earlier"
+          onClick={() => setShowAll(true)}
+        >
+          Show {hiddenCount} earlier message{hiddenCount === 1 ? '' : 's'}
+        </button>
+      ) : null}
+      {visible.map((m) => {
         const userLabel =
           m.role === 'user'
             ? m.senderPeerId && myCollabPeerId && m.senderPeerId !== myCollabPeerId
@@ -62,7 +82,7 @@ export const MessageThread = memo(function MessageThread({
                   : 'Valet'}
             </span>
             {m.role === 'assistant' && m.transcript?.length ? (
-              <AgentTranscript items={m.transcript} />
+              <AgentTranscript items={m.transcript} defaultOpen={false} />
             ) : m.role === 'assistant' ? (
               <div className="bubble-body">
                 <MarkdownBody>{m.content}</MarkdownBody>

@@ -40,6 +40,7 @@ import {
   PRE_REGISTERED_HYPOTHESIS,
   ANTI_BASELINE_BIAS,
   ENGINEERING_THRESHOLD_PCT,
+  ERFT_D_EXTENSION,
 } from './constants.mjs';
 import {
   nestWeights,
@@ -64,6 +65,7 @@ import {
   engineGrammarLocksOk,
   clutchMixScale,
 } from './engine-grammar.mjs';
+import { runErftDExperiments } from './erft-d-dynamic-regulation.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -1162,6 +1164,7 @@ export async function runAllExperiments() {
     experimentPhiNotAssumed(),
     experimentPaperLocks(),
     experimentShipBlogLock(),
+    runErftDExperiments(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   return {
@@ -1171,6 +1174,7 @@ export async function runAllExperiments() {
     PROTOCOL_VERSION,
     PHI_EGS,
     layers: ['ERFT-C', 'ERFT-G'],
+    extensions: [ERFT_D_EXTENSION.id],
     experiments,
   };
 }

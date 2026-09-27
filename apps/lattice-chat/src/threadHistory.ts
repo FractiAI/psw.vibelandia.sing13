@@ -3,6 +3,8 @@ import type { ChatThread } from '@/types';
 /** Keep edge cache lean — bloated history + doodle wall share origin quota and can crash the tab. */
 export const MAX_PERSISTED_THREADS = 24;
 export const MAX_PERSISTED_MESSAGE_CHARS = 24_000;
+/** Hard cap per thread — one mega-conversation was freezing load + New chat. */
+export const MAX_PERSISTED_MESSAGES_PER_THREAD = 48;
 
 /** Past chats a signed-in seat can pick — keep the active draft visible too. */
 export function listSelectableChats(
@@ -19,20 +21,26 @@ export function slimThreadsForPersist(
   threads: ChatThread[],
   max = MAX_PERSISTED_THREADS,
   maxChars = MAX_PERSISTED_MESSAGE_CHARS,
+  maxMessages = MAX_PERSISTED_MESSAGES_PER_THREAD,
 ): ChatThread[] {
   const sorted = [...threads].sort(
     (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
   );
-  return sorted.slice(0, max).map((t) => ({
-    ...t,
-    messages: (t.messages || []).map((m) => {
-      const { transcript: _transcript, ...rest } = m;
-      const content = String(rest.content || '');
-      // Cap edge cache size — huge assistant dumps can blow quota and white-screen rehydrate.
-      return {
-        ...rest,
-        content: content.length > maxChars ? `${content.slice(0, maxChars)}\n…` : content,
-      };
-    }),
-  }));
+  return sorted.slice(0, max).map((t) => {
+    const msgs = t.messages || [];
+    const trimmed =
+      msgs.length > maxMessages ? msgs.slice(msgs.length - maxMessages) : msgs;
+    return {
+      ...t,
+      messages: trimmed.map((m) => {
+        const { transcript: _transcript, ...rest } = m;
+        const content = String(rest.content || '');
+        // Cap edge cache size — huge assistant dumps can blow quota and white-screen rehydrate.
+        return {
+          ...rest,
+          content: content.length > maxChars ? `${content.slice(0, maxChars)}\n…` : content,
+        };
+      }),
+    };
+  });
 }

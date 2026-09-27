@@ -75,7 +75,11 @@ describe('collaborate DM click-through wiring', () => {
     expect(store).toContain('dmFocusMessageId');
     const chat = readFileSync(join(root, 'apps/lattice-chat/src/components/ChatPane.tsx'), 'utf8');
     expect(chat).toContain('jumpToCollabDm');
-    expect(chat).toContain('bubble--collab-jump');
     expect(chat).toContain('collab-dm-inline');
+    const thread = readFileSync(
+      join(root, 'apps/lattice-chat/src/components/MessageThread.tsx'),
+      'utf8',
+    );
+    expect(thread).toContain('bubble--collab-jump');
   });
 });

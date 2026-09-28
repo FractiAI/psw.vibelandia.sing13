@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-28** · **340** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-28** · **341** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -307,6 +307,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | GPU Telemetry as Execution Weather · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen Stories · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-erft-e-continuous-regulation-2026-09.html`](/interfaces/blog-erft-e-continuous-regulation-2026-09.html) | After Nothing to Crown, Does Continuous Regulation Clear the Bar? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-erft-recursive-fidelity-2026-09.html`](/interfaces/blog-erft-recursive-fidelity-2026-09.html) | When Information Rewrites Itself, Does φ Reduce the Drift? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | Everything Is Connected — Walk It Carefully · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html`](/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html) | Your Nested Agents Need a Carry-On, Not a Shipping Container · Ship blog · SS Vibelandia |

@@ -1,7 +1,7 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-09-18",
+  "updatedAt": "2026-09-28",
   "suites": [
     {
       "id": "synthio-mri-cloud-antenna",
@@ -89,6 +89,18 @@
       ],
       "extraDocs": [
         "docs/SYNTHOBS_DIGIT4_BE_O_PERIODIC_RHYME_EGS_2026-09.md"
+      ]
+    },
+    {
+      "id": "synthobs-erft-e-continuous-regulation",
+      "path": "research/synthobs-erft-e-continuous-regulation",
+      "github": "https://github.com/FractiAI/synthobs-erft-e-continuous-regulation",
+      "description": "ERFT-E — Continuous Constant Regulation + Confirmatory Held-Out · preserves V5/D · ENGINE_SHELF gated (live: fail → application companion)",
+      "paperIds": [
+        "synthobs-erft-e-continuous-regulation-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_ERFT_E_CONTINUOUS_REGULATION_EGS_2026-09.md"
       ]
     },
     {

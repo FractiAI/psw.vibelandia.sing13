@@ -19,6 +19,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-digit4-recursive-reach-awareness-theater',
       'synthobs-eddy-current-mirror',
       'synthobs-egs-recursive-fidelity-test',
+      'synthobs-erft-e-continuous-regulation',
       'synthobs-fractiskills-portable-agent-skills',
       'synthobs-generative-matrix-phi-egs',
       'synthobs-goldilocks-net-zero-equivalence',

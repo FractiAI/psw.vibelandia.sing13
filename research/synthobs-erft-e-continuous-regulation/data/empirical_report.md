@@ -1,0 +1,403 @@
+# ERFT-E · Continuous Constant Regulation + Confirmatory Held-Out Expedition
+
+**Document ID:** `WP-SYNTHOBS-ERFT-E-CONTINUOUS-REGULATION-2026-09-28`
+**Registry ID:** `synthobs-erft-e-continuous-regulation-2026-09`
+**Protocol:** `ERFT-E-2026-09-28`
+**Generated:** 2026-09-28T03:58:44.213Z
+
+## Verdict (read first)
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass (protocol) | `true` |
+| Passed | 4 / 4 |
+| Better constant on holdout | `e` |
+| Better combination | `null` |
+| Nothing to crown | `true` |
+| ENGINE_SHELF inclusion recommended | `false` |
+| Φ_EGS (peer arm) | 1.618033988749895 |
+
+## Engine inclusion gate
+
+```json
+{
+  "id": "E3_engine_inclusion_gate",
+  "title": "ENGINE_SHELF significant-improvement gate",
+  "pass": true,
+  "gate": {
+    "id": "ERFT-E-ENGINE-GATE-2026-09-28",
+    "requires": [
+      "best_dynamic_mean_nrmse <= best_fixed_mean_nrmse * (1 - 0.15)",
+      "same direction on confirmatory held-out family",
+      "complexity_adjusted_score >= 0.05 (improvement_pct / log(1+params+mean_switches))",
+      "paired bootstrap 95% CI on Δ = best_fixed - best_dynamic excludes 0 favoring dynamic",
+      "advantage does not require Φ-only affordance or Φ privilege"
+    ],
+    "on_fail": "Do NOT add to Infinite Octaves ENGINE_SHELF; ship as application companion only.",
+    "on_pass": "Eligible for ENGINE_SHELF companion pin after PRA Snap + sync:lattice-pem."
+  },
+  "criteria": {
+    "holdout_beats_fixed_by_15pct": false,
+    "same_direction_train_hold": false,
+    "complexity_adjusted_score_ok": false,
+    "paired_ci_excludes_zero": false,
+    "no_phi_only_affordance": true
+  },
+  "passes": false,
+  "engine_inclusion_recommended": false,
+  "decision": "Do NOT add to Infinite Octaves ENGINE_SHELF; ship as application companion only.",
+  "phi_check": {
+    "requires_phi_privilege": false,
+    "train_best_fixed_is_phi": false,
+    "hold_best_fixed_is_phi": false,
+    "dynamic_mean_c_near_phi": false,
+    "note": "ERFT-E uses constant-neutral recursion only — no Φ-only grammar affordance."
+  },
+  "honesty": "Suite pass does not imply engine inclusion. engine_inclusion_recommended is the sole soft pin signal."
+}
+```
+
+Gate on fail: Do NOT add to Infinite Octaves ENGINE_SHELF; ship as application companion only.
+
+## Experiments
+
+### E0_protocol_locks — ERFT-E protocol locks · preserves V5/D · gate pre-registered
+
+- **Pass:** `true`
+
+```json
+{
+  "id": "E0_protocol_locks",
+  "title": "ERFT-E protocol locks · preserves V5/D · gate pre-registered",
+  "pass": true,
+  "protocol": "ERFT-E-2026-09-28",
+  "preserves_v5": true,
+  "preserves_erft_d": true,
+  "train_seed": 946177,
+  "hold_seed": 950273,
+  "hold_kinds": [
+    "chirp",
+    "step_recovery",
+    "heavy_tail",
+    "dual_season",
+    "mean_reverting_jump"
+  ],
+  "engineering_threshold_pct": 0.15,
+  "hypothesis": {
+    "claim": "Q1: On a new confirmatory held-out fixture family, do discrete dynamic policies beat best fixed? Q2: Does continuous c_n∈[1,2.5] regulation beat best fixed by a pre-registered complexity margin? Q3: Should ERFT-E enter ENGINE_SHELF?",
+    "null_ok": true,
+    "preserves": "ERFT-V5 mixed/null numerical φ and ERFT-D weakened dynamic-discrete remain intact — not reinterpreted.",
+    "suite_pass_means": "Protocol executed reproducibly with locked gates — NOT that continuous regulation won, and NOT that ENGINE_SHELF inclusion is automatic."
+  }
+}
+```
+
+### E1_confirmatory_held_out — Confirmatory held-out family · frozen novel fixtures
+
+- **Pass:** `true`
+- **Interpretation:** On confirmatory held-out, best fixed still matches or beats dynamic/continuous policies — replicates ERFT-D weakening on a new fixture family.
+
+```json
+{
+  "id": "E1_confirmatory_held_out",
+  "title": "Confirmatory held-out family · frozen novel fixtures",
+  "pass": true,
+  "label": "confirmatory_held_out_family",
+  "n_cells": 25,
+  "policies": {
+    "best_fixed": {
+      "mean_final_nrmse": 1.0875716160969184,
+      "mean_switches": 0,
+      "params": 0,
+      "arm": "e",
+      "arm_means": {
+        "baseline": 1.1189592816050453,
+        "sqrt2": 1.1154892316407534,
+        "egs": 1.1138273344598795,
+        "e": 1.1064365234158244
+      }
+    },
+    "discrete_state": {
+      "mean_final_nrmse": 1.123491627942771,
+      "mean_switches": 2.96,
+      "mean_param_path": 1.8293806066996887,
+      "mean_path_length": 3.338336639603455,
+      "mean_c": 1.165839120314555,
+      "n": 25,
+      "params": 4
+    },
+    "adaptive_discrete": {
+      "mean_final_nrmse": 1.0960391869355934,
+      "mean_switches": 5.6,
+      "mean_param_path": 7.533137084989847,
+      "mean_path_length": 3.4661737477073307,
+      "mean_c": 1.6280729447443514,
+      "n": 25,
+      "params": 4
+    },
+    "continuous_proportional": {
+      "mean_final_nrmse": 1.1199723906692622,
+      "mean_switches": 8.2,
+      "mean_param_path": 0.38720000000000043,
+      "mean_path_length": 3.338383185755918,
+      "mean_c": 1.0206,
+      "n": 25,
+      "params": 2
+    },
+    "continuous_gradient": {
+      "mean_final_nrmse": 1.0979139357991938,
+      "mean_switches": 17.76,
+      "mean_param_path": 6.0770279232189095,
+      "mean_path_length": 3.458291845733527,
+      "mean_c": 1.6141470535133131,
+      "n": 25,
+      "params": 31
+    },
+    "random_walk_control": {
+      "mean_final_nrmse": 1.1211436844409977,
+      "mean_switches": 21.32,
+      "mean_param_path": 1.018625559102744,
+      "mean_path_length": 3.35683617385474,
+      "mean_c": 1.135039331187727,
+      "n": 25,
+      "params": 1
+    }
+  },
+  "best_dynamic_name": "adaptive_discrete",
+  "best_dynamic": {
+    "mean_final_nrmse": 1.0960391869355934,
+    "mean_switches": 5.6,
+    "mean_param_path": 7.533137084989847,
+    "mean_path_length": 3.4661737477073307,
+    "mean_c": 1.6280729447443514,
+    "n": 25,
+    "params": 4
+  },
+  "best_fixed_mean_nrmse": 1.0875716160969184,
+  "best_fixed_arm": "e",
+  "improvement_pct": -0.00778575931308639,
+  "paired_delta_mean": -0.008467570838675234,
+  "paired_delta_ci95": {
+    "lo": -0.014332911526611066,
+    "hi": -0.0034031564975771245
+  },
+  "complexity_adjusted_score": -0.003297857177698966,
+  "beats_fixed_by_15pct": false,
+  "ci_excludes_zero_favoring_dynamic": false,
+  "dynamic_beats_best_fixed": false,
+  "interpretation": "On confirmatory held-out, best fixed still matches or beats dynamic/continuous policies — replicates ERFT-D weakening on a new fixture family."
+}
+```
+
+### E2_continuous_vs_discrete — Continuous c_n regulation vs discrete modes vs best fixed
+
+- **Pass:** `true`
+- **Interpretation:** Compares fixed, discrete state/adaptive, continuous proportional/gradient, and random-walk control under matched constant-neutral recursion.
+
+```json
+{
+  "id": "E2_continuous_vs_discrete",
+  "title": "Continuous c_n regulation vs discrete modes vs best fixed",
+  "pass": true,
+  "train": {
+    "label": "train_controller_family",
+    "n_cells": 25,
+    "policies": {
+      "best_fixed": {
+        "mean_final_nrmse": 2.144595344130705,
+        "mean_switches": 0,
+        "params": 0,
+        "arm": "baseline",
+        "arm_means": {
+          "baseline": 2.168659422176347,
+          "sqrt2": 2.275631895517885,
+          "egs": 2.322006344606917,
+          "e": 2.5185460099875523
+        }
+      },
+      "discrete_state": {
+        "mean_final_nrmse": 2.283853017697905,
+        "mean_switches": 2.24,
+        "mean_param_path": 1.3843961347997646,
+        "mean_path_length": 10.65909967058372,
+        "mean_c": 1.206011329583298,
+        "n": 25,
+        "params": 4
+      },
+      "adaptive_discrete": {
+        "mean_final_nrmse": 2.135816309734087,
+        "mean_switches": 5.28,
+        "mean_param_path": 7.358622529815205,
+        "mean_path_length": 10.855291061105323,
+        "mean_c": 1.7017814643472808,
+        "n": 25,
+        "params": 4
+      },
+      "continuous_proportional": {
+        "mean_final_nrmse": 2.2022664711402444,
+        "mean_switches": 8.8,
+        "mean_param_path": 0.4144000000000003,
+        "mean_path_length": 10.988878212819635,
+        "mean_c": 1.0224666666666666,
+        "n": 25,
+        "params": 2
+      },
+      "continuous_gradient": {
+        "mean_final_nrmse": 2.1753440393786603,
+        "mean_switches": 19.2,
+        "mean_param_path": 5.980315175436773,
+        "mean_path_length": 10.718364347344343,
+        "mean_c": 1.6924082584059272,
+        "n": 25,
+        "params": 31
+      },
+      "random_walk_control": {
+        "mean_final_nrmse": 2.261319129881306,
+        "mean_switches": 21.32,
+        "mean_param_path": 1.018625559102744,
+        "mean_path_length": 10.757227661564759,
+        "mean_c": 1.135039331187727,
+        "n": 25,
+        "params": 1
+      }
+    },
+    "best_dynamic_name": "adaptive_discrete",
+    "best_dynamic": {
+      "mean_final_nrmse": 2.135816309734087,
+      "mean_switches": 5.28,
+      "mean_param_path": 7.358622529815205,
+      "mean_path_length": 10.855291061105323,
+      "mean_c": 1.7017814643472808,
+      "n": 25,
+      "params": 4
+    },
+    "best_fixed_mean_nrmse": 2.144595344130705,
+    "best_fixed_arm": "baseline",
+    "improvement_pct": 0.004093562182089229,
+    "paired_delta_mean": 0.008779034396618798,
+    "paired_delta_ci95": {
+      "lo": -0.011002821427266572,
+      "hi": 0.040448977309202674
+    },
+    "complexity_adjusted_score": 0.001756742650969305,
+    "beats_fixed_by_15pct": false,
+    "ci_excludes_zero_favoring_dynamic": false,
+    "dynamic_beats_best_fixed": true
+  },
+  "hold": {
+    "best_fixed_arm": "e",
+    "best_fixed_mean_nrmse": 1.0875716160969184,
+    "best_dynamic_name": "adaptive_discrete",
+    "best_dynamic_mean_nrmse": 1.0960391869355934,
+    "improvement_pct": -0.00778575931308639,
+    "policies": {
+      "best_fixed": {
+        "mean_final_nrmse": 1.0875716160969184,
+        "mean_switches": 0,
+        "params": 0,
+        "arm": "e",
+        "arm_means": {
+          "baseline": 1.1189592816050453,
+          "sqrt2": 1.1154892316407534,
+          "egs": 1.1138273344598795,
+          "e": 1.1064365234158244
+        }
+      },
+      "discrete_state": {
+        "mean_final_nrmse": 1.123491627942771,
+        "mean_switches": 2.96,
+        "mean_param_path": 1.8293806066996887,
+        "mean_path_length": 3.338336639603455,
+        "mean_c": 1.165839120314555,
+        "n": 25,
+        "params": 4
+      },
+      "adaptive_discrete": {
+        "mean_final_nrmse": 1.0960391869355934,
+        "mean_switches": 5.6,
+        "mean_param_path": 7.533137084989847,
+        "mean_path_length": 3.4661737477073307,
+        "mean_c": 1.6280729447443514,
+        "n": 25,
+        "params": 4
+      },
+      "continuous_proportional": {
+        "mean_final_nrmse": 1.1199723906692622,
+        "mean_switches": 8.2,
+        "mean_param_path": 0.38720000000000043,
+        "mean_path_length": 3.338383185755918,
+        "mean_c": 1.0206,
+        "n": 25,
+        "params": 2
+      },
+      "continuous_gradient": {
+        "mean_final_nrmse": 1.0979139357991938,
+        "mean_switches": 17.76,
+        "mean_param_path": 6.0770279232189095,
+        "mean_path_length": 3.458291845733527,
+        "mean_c": 1.6141470535133131,
+        "n": 25,
+        "params": 31
+      },
+      "random_walk_control": {
+        "mean_final_nrmse": 1.1211436844409977,
+        "mean_switches": 21.32,
+        "mean_param_path": 1.018625559102744,
+        "mean_path_length": 3.35683617385474,
+        "mean_c": 1.135039331187727,
+        "n": 25,
+        "params": 1
+      }
+    }
+  },
+  "interpretation": "Compares fixed, discrete state/adaptive, continuous proportional/gradient, and random-walk control under matched constant-neutral recursion."
+}
+```
+
+### E3_engine_inclusion_gate — ENGINE_SHELF significant-improvement gate
+
+- **Pass:** `true`
+
+```json
+{
+  "id": "E3_engine_inclusion_gate",
+  "title": "ENGINE_SHELF significant-improvement gate",
+  "pass": true,
+  "gate": {
+    "id": "ERFT-E-ENGINE-GATE-2026-09-28",
+    "requires": [
+      "best_dynamic_mean_nrmse <= best_fixed_mean_nrmse * (1 - 0.15)",
+      "same direction on confirmatory held-out family",
+      "complexity_adjusted_score >= 0.05 (improvement_pct / log(1+params+mean_switches))",
+      "paired bootstrap 95% CI on Δ = best_fixed - best_dynamic excludes 0 favoring dynamic",
+      "advantage does not require Φ-only affordance or Φ privilege"
+    ],
+    "on_fail": "Do NOT add to Infinite Octaves ENGINE_SHELF; ship as application companion only.",
+    "on_pass": "Eligible for ENGINE_SHELF companion pin after PRA Snap + sync:lattice-pem."
+  },
+  "criteria": {
+    "holdout_beats_fixed_by_15pct": false,
+    "same_direction_train_hold": false,
+    "complexity_adjusted_score_ok": false,
+    "paired_ci_excludes_zero": false,
+    "no_phi_only_affordance": true
+  },
+  "passes": false,
+  "engine_inclusion_recommended": false,
+  "decision": "Do NOT add to Infinite Octaves ENGINE_SHELF; ship as application companion only.",
+  "phi_check": {
+    "requires_phi_privilege": false,
+    "train_best_fixed_is_phi": false,
+    "hold_best_fixed_is_phi": false,
+    "dynamic_mean_c_near_phi": false,
+    "note": "ERFT-E uses constant-neutral recursion only — no Φ-only grammar affordance."
+  },
+  "honesty": "Suite pass does not imply engine inclusion. engine_inclusion_recommended is the sole soft pin signal."
+}
+```
+
+## Honesty boundary
+
+ERFT-E is a controlled catalog expedition — confirmatory held-out + continuous regulation follow-on. It does not rewrite ERFT-V5 or ERFT-D. Suite pass ≠ φ crown ≠ ENGINE_SHELF pin. Engine inclusion requires the pre-registered significant-improvement gate. Catalog Soft Story / fixtures only — not CODATA, clinical, or AGI-safety proof.
+
+Standalone: https://github.com/FractiAI/synthobs-erft-e-continuous-regulation

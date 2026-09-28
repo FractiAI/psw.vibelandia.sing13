@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-erft-e-continuous-regulation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ERFT-E — Continuous Constant Regulation + Confirmatory Held-Out · preserves V5/D · ENGINE_SHELF gated",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT"
+}

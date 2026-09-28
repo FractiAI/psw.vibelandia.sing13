@@ -2,19 +2,19 @@
 
 **Subtitle:** Can $e$-driven transformation, $\varphi$-based recursive proportion, and prime-based containment collectively produce a Goldilocks regime of recursive evolution — nonzero change with bounded drift and minimal bleed?
 
-**Current protocol (live):** `EPH-RH-2026-09-28` · **Live results:** §7 · guest note [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis)
+**Current protocol (live):** `EPH-RH-D-2026-09-28` · **V1 locked:** `EPH-RH-2026-09-28` · **Live results:** §7 · guest note [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition)
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 28, 2026 (14:00Z live findings)  
+**Published:** September 28, 2026  
 **Document ID:** `WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28`  
 **Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`  
 **Publication Ref:** FAI-SYNTHOBS-E-PHI-PRIME-RH-2026-09  
 **Series Position:** Exploratory follow-on to [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Infinite Octave Prime Parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md)  
-**Classification:** Catalog / Soft Story exploratory computational experiment · application companion by default *(see Honesty boundary · significance gate)*  
+**Classification:** Catalog / Soft Story exploratory computational experiment · application companion by default *(see Honesty boundary · EPH-RH-D gate)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
 **Guest surfaces:** [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · [`/whitepaper/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)  
-**Engine pin:** **Withheld unless significance gate passes** — see §7. Default = application companion (not ENGINE_SHELF). Suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis`  
+**Engine pin:** **Withheld unless EPH-RH-D multidimensional gate passes** — see §7. V1 Goldilocks hit-rate null is locked development evidence (not the engine gate). Suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis`  
 **Cross-links:** [Homeostasis Expedition · Journey](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Prime parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md) · [Prime-indexed volumetric storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
@@ -126,14 +126,25 @@ Falsifiers include: unified no better than controls; drift falls but useful evol
 
 ---
 
-## 6. Significance gate (engine pin)
+## 6. Significance gates
 
-Pre-registered in `SIGNIFICANCE_GATE` (`research/synthobs-e-phi-prime-recursive-homeostasis/src/constants.mjs`):
+### 6.1 V1 Goldilocks hit-rate gate (locked · development only)
 
-- Unified Goldilocks hit-rate beats Control A by ≥ 0.15 absolute
-- Unified also beats Control B by ≥ 0.15 (randomized matched DOF)
-- Unified mean bleed strictly below Control A
-- Unified mean useful evolution $> 0$
+Pre-registered historically in `SIGNIFICANCE_GATE`. **No longer the engine pin.** Kept as the V1 free-run receipt: Control A was comparatively inert while unified carried a heavy transformation burden — so Goldilocks hit-rate rewarded stagnation.
+
+### 6.2 EPH-RH-D multidimensional gate (live engine pin)
+
+Pre-registered in `DIAGNOSTIC_GATE` / diagnostic matrix (`src/eph-rh-diagnostic.mjs`):
+
+Under **matched transformation budget** $Q$:
+
+- $E_U > E_A$
+- $B_U < B_A$
+- $D_U > 0$ and $D_U < D_{\mathrm{collapse}}$
+- $E_U/(D_U+\varepsilon) > E_A/(D_A+\varepsilon)$
+- $E_U/(D_U+\varepsilon) > E_{\mathrm{matched\ non\text{-}prime}}/(D+\varepsilon)$
+
+Independent unit of inference = fixture/seed (not generation-within-trajectory). Bootstrap CIs reported on efficiency.
 
 **If gate fails:** publish as exploratory application companion; **do not** pin to `ENGINE_SHELF`.  
 **If gate passes:** eligible for Infinite Octaves engine companion pin after registry sync.
@@ -142,30 +153,42 @@ Pre-registered in `SIGNIFICANCE_GATE` (`research/synthobs-e-phi-prime-recursive-
 
 ## 7. Live findings
 
-**One-line verdict:** Suite integrity **pass** (9/9). Hypothesis / significance gate **fail**. Ordinary recursion (Control A) beats the unified $e+\varphi+$prime stack on Goldilocks hit-rate. **Engine shelf WITHHELD.**
+**One-line verdict:** Suite integrity **pass** (15/15). **V1 free-run Goldilocks gate fail** (locked). **EPH-RH-D diagnostic gate fail** — regulator+prime beats Control A on $E/(D+\varepsilon)$ under matched budget, but **does not** beat matched non-prime containment on efficiency, and homeostatic recovery signature rate is **0**. **Engine shelf WITHHELD.**
 
-### 7.1 Findings table (primary)
+### 7.1 V1 free-run (locked development evidence)
 
-| Arm | Goldilocks rate | Mean bleed | Mean E | Mean final D |
-|-----|-----------------|------------|--------|--------------|
-| Control A (ordinary) | **0.823** | 0.0575 | 0.0236 | 0.543 |
-| Control B (randomized) | 0.495 | 0.0224 | 0.0715 | 1.334 |
-| Unified $e+\varphi+$prime | 0.234 | 0.0423 | 0.0388 | 1.387 |
+| Arm | Goldilocks rate | Mean bleed | Mean E | Mean final D | E/(D+ε) |
+|-----|-----------------|------------|--------|--------------|---------|
+| Control A (ordinary) | **0.823** | 0.0575 | 0.0236 | 0.543 | ~0.0435 |
+| Control B (randomized) | 0.495 | 0.0224 | 0.0715 | 1.334 | ~0.0536 |
+| Unified $e+\varphi+$prime (open-loop φ) | 0.234 | 0.0423 | 0.0388 | 1.387 | ~0.0280 |
 
-**Deltas (unified − A):** Goldilocks **−0.589** · bleed **−0.015** (slightly lower bleed) · evolution **+0.015**.  
-**Gate checks:** beatsA **false** · beatsB **false** · bleedOk **true** · eOk **true**.  
-**Significance gate:** `false` · **Engine shelf decision:** WITHHOLD — publish as exploratory application companion only.
+**Diagnosis (not a crown refusal of the idea):** Control A changes very little; unified is forced to transform+restructure+contain. Goldilocks hit-rate therefore rewards persistence. Ablating open-loop φ → e+prime Goldilocks **0.807** — the V1 φ *structure* stage was overdriving, not “φ is false.”
 
-### 7.2 Secondary diagnostics
+### 7.2 EPH-RH-D matched-budget diagnostic (engine gate)
 
-- **Ablations:** dropping $\varphi$ (e+prime only) raises Goldilocks rate to **0.807** — nearly Control A. Full combo is **not** uniquely best. Dropping prime containment collapses Goldilocks to **0** (elevated bleed proxy).
-- **Best $\varphi\times e$ formulation:** `sequential_e_then_phi` / `magnitude_e_structure_phi` (tied, Goldilocks 0.234) — none rescues the gate.
-- **Best prime schedule:** `index` (lowest mean bleed 0.036; still reduces bleed vs Control A). Zero-bleed ≈ 0 **not** observed.
-- **Nonzero bounded attractor:** late-path mean $D^*\approx 1.38$ with $E>0$ — nonzero/bounded/evolving on raw attractor metrics, but **does not** clear the primary Goldilocks-vs-controls gate.
+Question: *At equal amounts of transformation $Q$, does $e\times\varphi\times$prime (with φ as proportional regulator) produce more recoverable evolution with less bleed than ordinary recursion and matched non-prime containment?*
+
+| Arm | Mean D | Mean B | Mean E | E/(D+ε) | Mean Q |
+|-----|--------|--------|--------|---------|--------|
+| Control A (matched intensity) | 0.967 | 0.0377 | 0.0081 | 0.0106 | 1.03† |
+| Control B random | 1.043 | 0.0600 | 0.1529 | **0.1734** | 2.63 |
+| Matched non-prime + regulator | 1.147 | 0.0379 | 0.0289 | **0.0342** | 2.25 |
+| Unified regulator + prime | 1.198 | **0.0351** | 0.0274 | 0.0294 | 2.26 |
+| Open-loop φ (V1-style) @ matched Q | 1.386 | 0.0558 | 0.0599 | 0.0415 | 2.51 |
+
+† Control A still under-spent $Q$ target (max steps) — even intensity-scaled ordinary recursion cannot fully match architecture path length on these fixtures.
+
+**Checks:** $E_U>E_A$ **true** · $B_U<B_A$ **true** · $D$ positive/bounded **true** · $E/D$ above A **true** · $E/D$ above matched non-prime **false** · $E/D$ above open-loop **false**.  
+**Diagnostic gate:** `false` · **Engine shelf:** WITHHOLD.  
+**Best order:** `e_phi_p` · **φ strength sweep:** flat (~0.029 at 0.25–1.5) · **Homeostatic signature rate:** **0** (high-D did not self-correct under current regulator).  
+**Prime vs matched non-prime:** prime wins bleed (0.035 vs 0.038); **loses** efficiency (0.029 vs 0.034) → containment helps; primality not uniquely necessary here.
 
 ### 7.3 Plain-language observed answer
 
-**Nothing to pin.** The combined architecture is **not** a significant improvement over ordinary recursion on these fixtures. Control A spends far more generations inside the Goldilocks band. Unified slightly lowers mean bleed and keeps useful evolution positive, but pays for that with higher drift and a much worse Goldilocks hit-rate. The randomized matched-DOF control also beats unified on Goldilocks rate. Therefore: do **not** adopt $e+\varphi+$primes as an engine nesting grammar from this run; do **not** reinterpret ERFT’s “nothing to crown” as rescued by composition.
+**V1:** nothing to pin on Goldilocks hit-rate — the metric mixed “does less” with “stays in band.” Evolution efficiency already showed unified spending ~2.55× drift for only ~1.64× evolution.
+
+**EPH-RH-D:** Under matched transformation budget, φ-as-regulator + prime **does** beat intensity-scaled ordinary recursion on useful evolution and on $E/(D+\varepsilon)$, with slightly lower bleed. That answers the cleaner question partially. It still **fails** the engine gate because (1) matched **non-prime** containment + the same regulator is *more* efficient than prime, (2) open-loop φ at matched $Q$ posts higher raw $E$ (at higher bleed/drift), and (3) perturbation recovery shows **no** homeostatic negative-feedback signature yet. So: do **not** pin the engine; do **not** claim primality is the mechanism; do treat “φ overdrive in V1” and “equal-budget efficiency vs A” as the real diagnostic leads.
 
 ---
 
@@ -199,6 +222,6 @@ Suite path: `research/synthobs-e-phi-prime-recursive-homeostasis/`
 
 ## Honesty boundary (closing)
 
-Exploratory Soft Story / catalog computational experiment. Does not claim finished physics, fab proof, clinical validation, or that primality causes zero bleed. ERFT-V5/D baselines untouched. Engine pin requires the pre-registered significance gate.
+Exploratory Soft Story / catalog computational experiment. Does not claim finished physics, fab proof, clinical validation, or that primality causes zero bleed. ERFT-V5/D baselines untouched. V1 Goldilocks hit-rate null is locked development evidence. Engine pin requires the EPH-RH-D matched-budget multidimensional gate (evolution efficiency · containment · φ-as-regulator).
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox → ∞^∞

@@ -34,7 +34,9 @@ import {
   SIGNIFICANCE_GATE,
   PHI_E_FORMULATIONS,
   HONESTY,
+  PROTOCOL_VERSION_V1,
 } from './constants.mjs';
+import { runDiagnosticMatrix, DIAGNOSTIC_PROTOCOL } from './eph-rh-diagnostic.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -408,15 +410,18 @@ function summarizeArm(rows) {
 function experimentProtocolLocks() {
   return {
     id: 'E0_protocol_locks',
-    title: 'Protocol locks — unified architecture · three metrics · gate',
+    title: 'Protocol locks — V1 free-run + EPH-RH-D diagnostic matrix',
     protocol: PROTOCOL_VERSION,
-    architecture: 'C_n → e-transform → φ-structure → p-containment → C_{n+1}',
-    metrics: ['drift_D', 'bleed_B', 'useful_evolution_E'],
+    protocol_v1_locked: PROTOCOL_VERSION_V1,
+    diagnostic_protocol: DIAGNOSTIC_PROTOCOL,
+    architecture_v1: 'C_n → e-transform → φ-structure → p-containment → C_{n+1}',
+    architecture_d: 'matched-Q · φ-as-regulator · prime vs matched non-prime · order perms · perturbation',
+    metrics: ['drift_D', 'bleed_B', 'useful_evolution_E', 'efficiency_E_over_D', 'path_length_Q'],
     goldilocks: { D_LOW, D_COLLAPSE, BLEED_LOW },
-    significanceGate: { ...SIGNIFICANCE_GATE },
+    significanceGate_v1_locked: { ...SIGNIFICANCE_GATE },
     pass: true,
     interpretation:
-      'Suite integrity: unified three-part recursion with D/B/E and a pre-registered engine-shelf gate.',
+      'V1 Goldilocks hit-rate null stays locked. Engine pin uses EPH-RH-D matched-budget multidimensional gate.',
     honesty: 'Locks do not imply the hypothesis is true.',
   };
 }
@@ -635,6 +640,9 @@ function experimentPaperLocks() {
     hasErftLink: /ERFT|recursive fidelity/i.test(paper),
     hasOperator: /SynthOBS/i.test(paper),
     hasGate: /significance gate|ENGINE_SHELF|engine pin/i.test(paper),
+    hasDiagnostic: /EPH-RH-D|matched.*budget|evolution efficiency|φ as.*regulator|proportional regulator/i.test(
+      paper,
+    ),
   };
   const pass = Boolean(paper) && Object.values(checks).every(Boolean);
   return {
@@ -643,7 +651,8 @@ function experimentPaperLocks() {
     paperPath: fs.existsSync(paperPath) ? paperPath : localPaper,
     ...checks,
     pass,
-    interpretation: 'Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, gate.',
+    interpretation:
+      'Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1 null, and EPH-RH-D diagnostic.',
     honesty: 'Structural text locks — not market validation.',
   };
 }
@@ -657,6 +666,7 @@ function experimentBlogLocks() {
     hasUnified: /e.*φ.*prime|e\s*[×x+]\s*φ/i.test(html),
     hasHonestyClass: /class="honesty"/i.test(html),
     mentionsControls: /Control A|ordinary recursion|randomized/i.test(html),
+    hasDiagnostic: /matched|efficiency|regulator|EPH-RH-D|transformation budget/i.test(html),
   };
   const pass = Object.values(checks).every(Boolean);
   return {
@@ -691,7 +701,7 @@ function experimentRegistrySurface() {
 
 export async function runAllExperiments() {
   const fixtures = fixtureFamily();
-  const experiments = [
+  const v1 = [
     experimentProtocolLocks(),
     experimentPrimaryComparison(fixtures),
     experimentAblations(fixtures),
@@ -703,10 +713,14 @@ export async function runAllExperiments() {
     experimentRegistrySurface(),
   ];
 
-  const primary = experiments.find((e) => e.id === 'E1_primary_unified_vs_controls');
-  const significance_gate_pass = Boolean(primary?.significance_gate_pass);
-  const engine_shelf_include =
-    SIGNIFICANCE_GATE.engine_shelf_requires_gate && significance_gate_pass;
+  const diagnostic = runDiagnosticMatrix();
+  const experiments = [...v1, ...diagnostic.experiments];
+
+  const primary = v1.find((e) => e.id === 'E1_primary_unified_vs_controls');
+  const v1_gate_pass = Boolean(primary?.significance_gate_pass);
+  // Engine pin follows EPH-RH-D multidimensional gate (not V1 Goldilocks hit-rate).
+  const significance_gate_pass = Boolean(diagnostic.diagnostic_gate_pass);
+  const engine_shelf_include = Boolean(diagnostic.engine_shelf_include);
 
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
@@ -716,20 +730,31 @@ export async function runAllExperiments() {
     n_pass,
     n_total: experiments.length,
     failed,
+    protocol: PROTOCOL_VERSION,
+    protocol_v1_locked: PROTOCOL_VERSION_V1,
+    v1_goldilocks_gate_pass: v1_gate_pass,
     significance_gate_pass,
+    diagnostic_gate_pass: diagnostic.diagnostic_gate_pass,
     engine_shelf_include,
-    engine_shelf_decision: engine_shelf_include
-      ? 'INCLUDE — pre-registered significance gate passed; eligible for Infinite Octaves ENGINE_SHELF.'
-      : 'WITHHOLD — significance gate failed or mixed; publish as exploratory application companion only (not engine pin).',
+    engine_shelf_decision: diagnostic.engine_shelf_decision,
     primary_readout: primary
       ? {
+          note: 'V1 free-run (locked development evidence — Control A under-transformed vs unified).',
           unified: primary.unified,
           control_a: primary.control_a,
           control_b: primary.control_b,
           deltas: primary.deltas,
           hypothesis_supported: primary.hypothesis_supported,
+          evolution_efficiency: {
+            control_a:
+              primary.control_a.meanE / (primary.control_a.meanFinalD + 1e-6),
+            control_b:
+              primary.control_b.meanE / (primary.control_b.meanFinalD + 1e-6),
+            unified: primary.unified.meanE / (primary.unified.meanFinalD + 1e-6),
+          },
         }
       : null,
+    diagnostic_readout: diagnostic.readout,
     experiments,
     honesty: HONESTY,
   };

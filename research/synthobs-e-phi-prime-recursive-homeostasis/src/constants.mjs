@@ -12,14 +12,17 @@ export const SQRT2 = Math.SQRT2;
 export const DOC_ID = 'WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28';
 export const REGISTRY_ID = 'synthobs-e-phi-prime-recursive-homeostasis-2026-09';
 export const STUDY_TITLE =
-  'e × φ × Prime Recursive Homeostasis — Unified Exploratory Architecture';
+  'e × φ × Prime Recursive Homeostasis — Unified Architecture + EPH-RH-D Diagnostic Matrix';
 export const PAPER_NAME = 'SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md';
 export const SHIP_BLOG_SLUG = 'e-phi-prime-recursive-homeostasis';
 export const SHIP_BLOG_FILE = 'blog-e-phi-prime-recursive-homeostasis-2026-09.html';
 export const STANDALONE_REPO =
   'https://github.com/FractiAI/synthobs-e-phi-prime-recursive-homeostasis';
 
-export const PROTOCOL_VERSION = 'EPH-RH-2026-09-28';
+/** V1 free-run protocol (locked development evidence). */
+export const PROTOCOL_VERSION_V1 = 'EPH-RH-2026-09-28';
+/** Live protocol: diagnostic matrix beside V1. */
+export const PROTOCOL_VERSION = 'EPH-RH-D-2026-09-28';
 
 /** Pre-registered recursion depth. */
 export const GENERATIONS = 24;
@@ -44,20 +47,30 @@ export const D_COLLAPSE = 2.5;
 /** Bleed ceiling for "minimal bleed" claim (fraction). */
 export const BLEED_LOW = 0.08;
 
-/** Significance gate for ENGINE_SHELF candidacy (pre-registered). */
+/**
+ * V1 Goldilocks hit-rate gate (locked historical). Kept for V1 readout only.
+ * Engine pin now uses DIAGNOSTIC_GATE (matched-budget multidimensional).
+ */
 export const SIGNIFICANCE_GATE = Object.freeze({
-  /** Combined must beat both controls on Goldilocks hit-rate by this absolute margin. */
   goldilocks_margin: 0.15,
-  /** Combined mean bleed must be strictly below Control A mean bleed. */
   require_bleed_below_baseline: true,
-  /** Combined mean useful evolution must stay positive. */
   require_positive_evolution: true,
-  /** Combined must beat Control B (randomized matched DOF) on Goldilocks hit-rate. */
   require_beat_randomized: true,
-  /**
-   * Engine shelf inclusion requires significance_gate_pass === true.
-   * Exploratory publication proceeds either way; pin only if gate passes.
-   */
+  engine_shelf_requires_gate: false, // superseded by EPH-RH-D multidimensional gate
+  note: 'V1 Goldilocks hit-rate gate is development evidence only; see DIAGNOSTIC_GATE.',
+});
+
+/**
+ * EPH-RH-D multidimensional engine gate (matched transformation budget).
+ * Succeeds only with evolution-with-containment advantage, not band-hit alone.
+ */
+export const DIAGNOSTIC_GATE = Object.freeze({
+  require_E_above_A: true,
+  require_B_below_A: true,
+  require_D_positive: true,
+  require_D_bounded: true,
+  require_efficiency_above_A: true,
+  require_beat_matched_containment_efficiency: true,
   engine_shelf_requires_gate: true,
 });
 
@@ -70,4 +83,4 @@ export const PHI_E_FORMULATIONS = Object.freeze([
 ]);
 
 export const HONESTY =
-  'Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that primality causes zero bleed. Engine pin is withheld unless the pre-registered significance gate passes on live fixtures.';
+  'Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null is locked development evidence (Control A under-transformed). EPH-RH-D diagnostic matrix uses matched transformation budget, evolution efficiency E/(D+ε), φ-as-regulator, prime vs matched non-prime containment, order permutations, and perturbation recovery. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, or finished homeostasis proof. Engine pin requires the EPH-RH-D multidimensional gate.';

@@ -48,23 +48,49 @@ function mdReport(report) {
   ];
   if (report.results.primary_readout) {
     const p = report.results.primary_readout;
-    lines.push('## Primary readout (unified vs controls)');
+    lines.push('## V1 free-run readout (locked development evidence)');
     lines.push('');
-    lines.push('| Arm | Goldilocks rate | Mean bleed | Mean E | Mean final D |');
-    lines.push('|-----|-----------------|------------|--------|--------------|');
+    lines.push(p.note || '');
+    lines.push('');
+    lines.push('| Arm | Goldilocks rate | Mean bleed | Mean E | Mean final D | E/(D+ε) |');
+    lines.push('|-----|-----------------|------------|--------|--------------|--------|');
+    const eff = p.evolution_efficiency || {};
     lines.push(
-      `| Control A | ${p.control_a.goldilocksRate.toFixed(3)} | ${p.control_a.meanB.toFixed(4)} | ${p.control_a.meanE.toFixed(4)} | ${p.control_a.meanFinalD.toFixed(4)} |`,
+      `| Control A | ${p.control_a.goldilocksRate.toFixed(3)} | ${p.control_a.meanB.toFixed(4)} | ${p.control_a.meanE.toFixed(4)} | ${p.control_a.meanFinalD.toFixed(4)} | ${(eff.control_a ?? 0).toFixed(4)} |`,
     );
     lines.push(
-      `| Control B (randomized) | ${p.control_b.goldilocksRate.toFixed(3)} | ${p.control_b.meanB.toFixed(4)} | ${p.control_b.meanE.toFixed(4)} | ${p.control_b.meanFinalD.toFixed(4)} |`,
+      `| Control B (randomized) | ${p.control_b.goldilocksRate.toFixed(3)} | ${p.control_b.meanB.toFixed(4)} | ${p.control_b.meanE.toFixed(4)} | ${p.control_b.meanFinalD.toFixed(4)} | ${(eff.control_b ?? 0).toFixed(4)} |`,
     );
     lines.push(
-      `| Unified e+φ+prime | ${p.unified.goldilocksRate.toFixed(3)} | ${p.unified.meanB.toFixed(4)} | ${p.unified.meanE.toFixed(4)} | ${p.unified.meanFinalD.toFixed(4)} |`,
+      `| Unified e+φ+prime | ${p.unified.goldilocksRate.toFixed(3)} | ${p.unified.meanB.toFixed(4)} | ${p.unified.meanE.toFixed(4)} | ${p.unified.meanFinalD.toFixed(4)} | ${(eff.unified ?? 0).toFixed(4)} |`,
     );
     lines.push('');
     lines.push(
-      `Hypothesis supported (gate): \`${p.hypothesis_supported}\`. Deltas: Goldilocks vs A = ${p.deltas.goldilocks_vs_A.toFixed(3)}, vs B = ${p.deltas.goldilocks_vs_B.toFixed(3)}, bleed vs A = ${p.deltas.bleed_vs_A.toFixed(4)}.`,
+      `V1 Goldilocks gate: \`${p.hypothesis_supported}\`. Deltas: Goldilocks vs A = ${p.deltas.goldilocks_vs_A.toFixed(3)}, vs B = ${p.deltas.goldilocks_vs_B.toFixed(3)}, bleed vs A = ${p.deltas.bleed_vs_A.toFixed(4)}.`,
     );
+    lines.push('');
+  }
+  if (report.results.diagnostic_readout) {
+    const d = report.results.diagnostic_readout;
+    const mb = d.matched_budget;
+    lines.push('## EPH-RH-D matched-budget readout (engine gate)');
+    lines.push('');
+    lines.push('| Arm | Mean D | Mean B | Mean E | E/(D+ε) | Mean Q |');
+    lines.push('|-----|--------|--------|--------|--------|--------|');
+    for (const [name, s] of [
+      ['Control A (matched intensity)', mb.A],
+      ['Control B random', mb.B],
+      ['Matched non-prime + regulator', mb.M],
+      ['Unified regulator + prime', mb.U],
+      ['Open-loop φ (V1-style)', mb.Open],
+    ]) {
+      lines.push(
+        `| ${name} | ${s.meanD.toFixed(4)} | ${s.meanB.toFixed(4)} | ${s.meanE.toFixed(4)} | ${s.meanEfficiency.toFixed(4)} | ${s.meanQ.toFixed(3)} |`,
+      );
+    }
+    lines.push('');
+    lines.push(`Checks: \`${JSON.stringify(d.checks)}\``);
+    lines.push(`Best order: \`${d.bestOrder}\` · Best φ strength: \`${d.bestPhiStrength}\` · Homeostatic signature rate: \`${d.homeostaticSignatureRate}\``);
     lines.push('');
   }
   lines.push('## Experiments');
@@ -118,15 +144,27 @@ async function main() {
         n_pass: results.n_pass,
         n_total: results.n_total,
         failed: results.failed,
-        significance_gate_pass: results.significance_gate_pass,
+        protocol: results.protocol,
+        v1_goldilocks_gate_pass: results.v1_goldilocks_gate_pass,
+        diagnostic_gate_pass: results.diagnostic_gate_pass,
         engine_shelf_include: results.engine_shelf_include,
         engine_shelf_decision: results.engine_shelf_decision,
-        primary: results.primary_readout
+        primary_v1: results.primary_readout
           ? {
               unified_goldilocks: results.primary_readout.unified.goldilocksRate,
               control_a_goldilocks: results.primary_readout.control_a.goldilocksRate,
-              control_b_goldilocks: results.primary_readout.control_b.goldilocksRate,
-              hypothesis_supported: results.primary_readout.hypothesis_supported,
+              evolution_efficiency: results.primary_readout.evolution_efficiency,
+            }
+          : null,
+        diagnostic: results.diagnostic_readout
+          ? {
+              checks: results.diagnostic_readout.checks,
+              U_eff: results.diagnostic_readout.matched_budget.U.meanEfficiency,
+              A_eff: results.diagnostic_readout.matched_budget.A.meanEfficiency,
+              M_eff: results.diagnostic_readout.matched_budget.M.meanEfficiency,
+              bestOrder: results.diagnostic_readout.bestOrder,
+              bestPhiStrength: results.diagnostic_readout.bestPhiStrength,
+              homeostaticSignatureRate: results.diagnostic_readout.homeostaticSignatureRate,
             }
           : null,
       },

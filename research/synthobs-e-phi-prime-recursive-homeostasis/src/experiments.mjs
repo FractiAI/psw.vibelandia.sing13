@@ -35,8 +35,11 @@ import {
   PHI_E_FORMULATIONS,
   HONESTY,
   PROTOCOL_VERSION_V1,
+  PROTOCOL_VERSION_D,
+  D2_GATE,
 } from './constants.mjs';
 import { runDiagnosticMatrix, DIAGNOSTIC_PROTOCOL } from './eph-rh-diagnostic.mjs';
+import { runD2Diagnostic, D2_PROTOCOL } from './eph-rh-d2.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -714,13 +717,14 @@ export async function runAllExperiments() {
   ];
 
   const diagnostic = runDiagnosticMatrix();
-  const experiments = [...v1, ...diagnostic.experiments];
+  const d2 = runD2Diagnostic();
+  const experiments = [...v1, ...diagnostic.experiments, ...d2.experiments];
 
   const primary = v1.find((e) => e.id === 'E1_primary_unified_vs_controls');
   const v1_gate_pass = Boolean(primary?.significance_gate_pass);
-  // Engine pin follows EPH-RH-D multidimensional gate (not V1 Goldilocks hit-rate).
-  const significance_gate_pass = Boolean(diagnostic.diagnostic_gate_pass);
-  const engine_shelf_include = Boolean(diagnostic.engine_shelf_include);
+  // Engine pin follows EPH-RH-D2 (loss-aware F / adaptive φ / coupled) — not V1 or D.
+  const significance_gate_pass = Boolean(d2.d2_gate_pass);
+  const engine_shelf_include = Boolean(d2.engine_shelf_include);
 
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
@@ -732,11 +736,15 @@ export async function runAllExperiments() {
     failed,
     protocol: PROTOCOL_VERSION,
     protocol_v1_locked: PROTOCOL_VERSION_V1,
+    protocol_d_locked: PROTOCOL_VERSION_D,
+    protocol_d2: D2_PROTOCOL,
     v1_goldilocks_gate_pass: v1_gate_pass,
-    significance_gate_pass,
     diagnostic_gate_pass: diagnostic.diagnostic_gate_pass,
+    d2_gate_pass: d2.d2_gate_pass,
+    significance_gate_pass,
     engine_shelf_include,
-    engine_shelf_decision: diagnostic.engine_shelf_decision,
+    engine_shelf_decision: d2.engine_shelf_decision,
+    d2_gate: { ...D2_GATE },
     primary_readout: primary
       ? {
           note: 'V1 free-run (locked development evidence — Control A under-transformed vs unified).',
@@ -755,6 +763,7 @@ export async function runAllExperiments() {
         }
       : null,
     diagnostic_readout: diagnostic.readout,
+    d2_readout: d2.readout,
     experiments,
     honesty: HONESTY,
   };

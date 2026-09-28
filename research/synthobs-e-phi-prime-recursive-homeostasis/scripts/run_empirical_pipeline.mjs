@@ -73,7 +73,7 @@ function mdReport(report) {
   if (report.results.diagnostic_readout) {
     const d = report.results.diagnostic_readout;
     const mb = d.matched_budget;
-    lines.push('## EPH-RH-D matched-budget readout (engine gate)');
+    lines.push('## EPH-RH-D matched-budget readout (locked diagnostic evidence)');
     lines.push('');
     lines.push('| Arm | Mean D | Mean B | Mean E | E/(D+ε) | Mean Q |');
     lines.push('|-----|--------|--------|--------|--------|--------|');
@@ -91,6 +91,40 @@ function mdReport(report) {
     lines.push('');
     lines.push(`Checks: \`${JSON.stringify(d.checks)}\``);
     lines.push(`Best order: \`${d.bestOrder}\` · Best φ strength: \`${d.bestPhiStrength}\` · Homeostatic signature rate: \`${d.homeostaticSignatureRate}\``);
+    lines.push('');
+  }
+  if (report.results.d2_readout) {
+    const d2 = report.results.d2_readout;
+    const b = d2.board;
+    lines.push('## EPH-RH-D2 exact-Q / loss-aware F readout (engine gate)');
+    lines.push('');
+    lines.push(
+      'Hypothesis rewrite: homeostasis = controlled transformation + adaptive proportional regulation + bounded compartmentalization. Metrics: step ΔX, irreversible loss L, identity I, F=(E·R·I)/(L+λB+ε).',
+    );
+    lines.push('');
+    lines.push('| Arm | Mean F | Mean L | Mean B | Mean E | Mean stepΔX | Mean Q |');
+    lines.push('|-----|--------|--------|--------|--------|-------------|--------|');
+    for (const [name, s] of [
+      ['Control A', b.control_a],
+      ['Random', b.random],
+      ['Sequential G (e→φ→p)', b.sequential],
+      ['Coupled H (e×φ×p)', b.coupled],
+      ['Open-loop φ sequential', b.openloop_seq],
+      ['Matched non-prime coupled', b.matched_nonprime_coupled],
+    ]) {
+      lines.push(
+        `| ${name} | ${s.mean_F.toFixed(4)} | ${s.mean_L.toFixed(4)} | ${s.mean_B.toFixed(4)} | ${s.mean_E.toFixed(4)} | ${s.mean_stepD.toFixed(4)} | ${s.mean_Q.toFixed(3)} |`,
+      );
+    }
+    lines.push('');
+    lines.push(`D2 checks: \`${JSON.stringify(d2.checks)}\``);
+    lines.push(
+      `Novelty inflation audit: E/D random leads=\`${d2.noveltyInflation.E_over_D_random_leads}\` · F random=${d2.noveltyInflation.random_F.toFixed(4)} · F coupled=${d2.noveltyInflation.coupled_F.toFixed(4)}`,
+    );
+    lines.push(
+      `Interaction: sequential F=${d2.interaction.sequential_F.toFixed(4)} · coupled F=${d2.interaction.coupled_F.toFixed(4)} · Δ=${d2.interaction.coupled_minus_sequential.toFixed(4)}`,
+    );
+    lines.push(`New-attractor homeostasis rate: \`${d2.homeostaticNewAttractorRate}\``);
     lines.push('');
   }
   lines.push('## Experiments');

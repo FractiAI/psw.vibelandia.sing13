@@ -1,7 +1,7 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-09-18",
+  "updatedAt": "2026-09-28",
   "suites": [
     {
       "id": "synthio-mri-cloud-antenna",
@@ -89,6 +89,18 @@
       ],
       "extraDocs": [
         "docs/SYNTHOBS_DIGIT4_BE_O_PERIODIC_RHYME_EGS_2026-09.md"
+      ]
+    },
+    {
+      "id": "synthobs-e-phi-prime-recursive-homeostasis",
+      "path": "research/synthobs-e-phi-prime-recursive-homeostasis",
+      "github": "https://github.com/FractiAI/synthobs-e-phi-prime-recursive-homeostasis",
+      "description": "e \u00d7 \u03c6 \u00d7 prime recursive homeostasis \u2014 unified exploratory architecture \u00b7 significance gate \u00b7 engine pin only if gate passes",
+      "paperIds": [
+        "synthobs-e-phi-prime-recursive-homeostasis-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md"
       ]
     },
     {

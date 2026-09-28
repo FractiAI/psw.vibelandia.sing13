@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-28** · **340** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-28** · **341** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -303,6 +303,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-digit4-recursive-reach-2026-09-old.html`](/interfaces/blog-digit4-recursive-reach-2026-09-old.html) | Keep the Wheel in Human Hands · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-recursive-reach-2026-09.html`](/interfaces/blog-digit4-recursive-reach-2026-09.html) | Can Deeper Awareness Stay in Human Hands? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru — Your Goldilocks Valet · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-e-phi-prime-recursive-homeostasis-2026-09.html`](/interfaces/blog-e-phi-prime-recursive-homeostasis-2026-09.html) | When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09-old.html`](/interfaces/blog-eddy-current-mirror-2026-09-old.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | GPU Telemetry as Execution Weather · Ship blog · SS Vibelandia |

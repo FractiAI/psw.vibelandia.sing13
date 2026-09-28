@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "posts": [
+    {
+      "id": "daily-2026-09-28-synthobs-e-phi-prime-recursive-homeostasis-2026-09",
+      "posted": "2026-09-28",
+      "featured": true,
+      "title": "When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?",
+      "subtitle": "News of the day · Monday, September 28",
+      "summary": "V1+D nulls locked. EPH-RH-D2 exact-Q loss-aware F: coupled adaptive beats A and matched non-prime; sequential still beats coupled; open-loop still beats adaptive — engine pin withheld.",
+      "href": "/ship-blog/e-phi-prime-recursive-homeostasis",
+      "pill": "TODAY",
+      "docRef": "synthobs-e-phi-prime-recursive-homeostasis-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-27-synthobs-egs-recursive-fidelity-test-erft-2026-09",
       "posted": "2026-09-27",

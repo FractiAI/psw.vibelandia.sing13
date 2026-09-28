@@ -17,6 +17,10 @@ import {
   verifyLatticeAccess,
 } from '@/api';
 import { isSoftRecoverableLatticeError } from '@/lib/guestErrors';
+import {
+  decideBackgroundResume,
+} from '@/lib/backgroundReplySurface';
+import { abortActiveLatticeSend } from '@/lib/primaryStreamAbort';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { ComposerBar } from '@/components/ComposerBar';
@@ -198,6 +202,32 @@ export function ChatPane({
     setShowJumpToBottom(false);
   }, [activeThreadId]);
 
+  // Background / long cloud runs: keep auto-attaching so a finished reply surfaces
+  // without Player 1 typing "Update me on last request".
+  useEffect(() => {
+    if (!showWorking || !signedIn) return;
+    if (sendPhase !== 'stuck' && sendPhase !== 'recovering') return;
+    let cancelled = false;
+    const tick = () => {
+      if (cancelled) return;
+      const s = useLatticeStore.getState();
+      if (!threadAwaitingAssistant(s.activeThreadId)) return;
+      if (s.primaryStreamLive) {
+        abortActiveLatticeSend();
+        s.setPrimaryStreamLive(false);
+      }
+      void checkPendingLatticeReply();
+    };
+    const id = window.setInterval(tick, 20_000);
+    // Kick once shortly after entering stuck/recovering.
+    const kick = window.setTimeout(tick, 2_500);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+      window.clearTimeout(kick);
+    };
+  }, [showWorking, sendPhase, signedIn, activeThreadId]);
+
   useEffect(() => {
     // Only pin to bottom when the user is already near the end (or just sent).
     // Do not re-scroll on wait-timer ticks — that blocked reading earlier turns.
@@ -259,17 +289,34 @@ export function ChatPane({
 
   useEffect(() => {
     let hiddenAt = 0;
+    const baseTitle =
+      typeof document !== 'undefined' ? document.title || 'Lattice Chat' : 'Lattice Chat';
+
     function resumeAfterReturn() {
       const s = useLatticeStore.getState();
-      if (!threadAwaitingAssistant(s.activeThreadId)) return;
-      if (!s.sending && s.sendPhase === 'idle' && !s.pending) return;
       const awayMs = hiddenAt ? Date.now() - hiddenAt : 0;
-      // Primary SSE still open: do not open a second recover attach (race → dead turn).
-      if (s.primaryStreamLive && awayMs < 8_000) return;
-      // Brief blips: keep primary SSE. After a real leave, SSE is usually dead while
-      // phase is still "sending" — recover instead of waiting on a zombie stream.
-      if (s.sending && s.sendPhase === 'sending' && awayMs < 2500) return;
-      void checkPendingLatticeReply();
+      const decision = decideBackgroundResume({
+        awaitingAssistant: threadAwaitingAssistant(s.activeThreadId),
+        sending: s.sending,
+        sendPhase: s.sendPhase,
+        hasPending: Boolean(s.pending),
+        primaryStreamLive: s.primaryStreamLive,
+        awayMs,
+      });
+      if (decision.action === 'noop' || decision.action === 'keep_primary') return;
+      if (decision.action === 'abort_and_recover') {
+        abortActiveLatticeSend();
+        useLatticeStore.getState().setPrimaryStreamLive(false);
+      }
+      void checkPendingLatticeReply().then((ok) => {
+        if (ok && typeof document !== 'undefined' && document.visibilityState === 'visible') {
+          // Soft ping — reply landed after background; restore title shortly.
+          document.title = '● Reply ready · Lattice Chat';
+          window.setTimeout(() => {
+            if (document.title.startsWith('● Reply ready')) document.title = baseTitle;
+          }, 4000);
+        }
+      });
     }
     function onVis() {
       if (document.visibilityState === 'hidden') {
@@ -282,11 +329,19 @@ export function ChatPane({
     function onPageShow(ev: PageTransitionEvent) {
       if (ev.persisted) resumeAfterReturn();
     }
+    function onFocus() {
+      // Some browsers skip visibilitychange on alt-tab; still flush zombie streams
+      // — but only after a real hide (hiddenAt set), not every window focus click.
+      if (!hiddenAt) return;
+      if (document.visibilityState === 'visible') resumeAfterReturn();
+    }
     document.addEventListener('visibilitychange', onVis);
     window.addEventListener('pageshow', onPageShow);
+    window.addEventListener('focus', onFocus);
     return () => {
       document.removeEventListener('visibilitychange', onVis);
       window.removeEventListener('pageshow', onPageShow);
+      window.removeEventListener('focus', onFocus);
     };
   }, []);
 

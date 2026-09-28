@@ -223,3 +223,74 @@ describe('Lattice Chat SSE-safe outer errors', () => {
     expect(calls[0].status).toBe(500);
   });
 });
+
+describe('Lattice Chat background reply surface', () => {
+  it('keeps primary SSE through brief focus blips', async () => {
+    const {
+      decideBackgroundResume,
+      BACKGROUND_BLIP_MS,
+    } = await import('../../apps/lattice-chat/src/lib/backgroundReplySurface.ts');
+    expect(
+      decideBackgroundResume({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'sending',
+        hasPending: true,
+        primaryStreamLive: true,
+        awayMs: BACKGROUND_BLIP_MS - 100,
+      }).action,
+    ).toBe('keep_primary');
+  });
+
+  it('aborts zombie primary after a real background leave', async () => {
+    const { decideBackgroundResume } = await import(
+      '../../apps/lattice-chat/src/lib/backgroundReplySurface.ts'
+    );
+    expect(
+      decideBackgroundResume({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'sending',
+        hasPending: true,
+        primaryStreamLive: true,
+        awayMs: 12_000,
+      }).action,
+    ).toBe('abort_and_recover');
+  });
+
+  it('recovers when primary is already dead but turn is still awaiting', async () => {
+    const { decideBackgroundResume } = await import(
+      '../../apps/lattice-chat/src/lib/backgroundReplySurface.ts'
+    );
+    expect(
+      decideBackgroundResume({
+        awaitingAssistant: true,
+        sending: false,
+        sendPhase: 'stuck',
+        hasPending: true,
+        primaryStreamLive: false,
+        awayMs: 30_000,
+      }).action,
+    ).toBe('recover');
+  });
+
+  it('flags zombie primary for Check-for-reply instead of no-op', async () => {
+    const { shouldAbortZombiePrimaryForRecover } = await import(
+      '../../apps/lattice-chat/src/lib/backgroundReplySurface.ts'
+    );
+    expect(
+      shouldAbortZombiePrimaryForRecover({
+        primaryStreamLive: true,
+        hasPending: true,
+        awaitingAssistant: true,
+      }),
+    ).toBe(true);
+    expect(
+      shouldAbortZombiePrimaryForRecover({
+        primaryStreamLive: true,
+        hasPending: false,
+        awaitingAssistant: false,
+      }),
+    ).toBe(false);
+  });
+});

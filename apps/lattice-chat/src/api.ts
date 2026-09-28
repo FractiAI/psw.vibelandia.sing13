@@ -44,6 +44,7 @@ import {
   clearPrimaryStreamAbort,
   registerPrimaryStreamAbort,
 } from '@/lib/primaryStreamAbort';
+import { shouldAbortZombiePrimaryForRecover } from '@/lib/backgroundReplySurface';
 
 type LatticePrivilege = 'creator' | 'guest' | 'none';
 
@@ -627,8 +628,6 @@ async function tryRecoverOnce(
 /** Manual / visibility recover — no duplicate user bubble. */
 export async function checkPendingLatticeReply(): Promise<boolean> {
   const store = useLatticeStore.getState();
-  // Don't race an open primary SSE — watchdog will abort + recover when idle/hard-cap hits.
-  if (store.primaryStreamLive) return false;
   const pending = store.pending;
   const threadId = pending?.threadId || store.activeThreadId || store.ensureThread();
   const thread = store.threads.find((t) => t.id === threadId);
@@ -638,6 +637,23 @@ export async function checkPendingLatticeReply(): Promise<boolean> {
   if (!prompt || !awaitingAssistant(threadId)) {
     store.setSending(false);
     store.clearPending();
+    return false;
+  }
+
+  // Tab blur / background: primary SSE is often a zombie (timers throttled, stream
+  // detached) while primaryStreamLive stays true. Abort it so recover can flush
+  // the finished cloud reply — otherwise Player 1 must nudge for status.
+  if (
+    shouldAbortZombiePrimaryForRecover({
+      primaryStreamLive: store.primaryStreamLive,
+      hasPending: Boolean(pending),
+      awaitingAssistant: true,
+    })
+  ) {
+    abortActiveLatticeSend();
+    store.setPrimaryStreamLive(false);
+  } else if (store.primaryStreamLive) {
+    // Genuine live primary with no pending race — let watchdog finish.
     return false;
   }
 

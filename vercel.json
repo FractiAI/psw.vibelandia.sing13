@@ -661,6 +661,14 @@
       "destination": "/interfaces/journey/cartagena-spice-stone.html"
     },
     {
+      "source": "/journey/homeostasis-expedition",
+      "destination": "/interfaces/journey/homeostasis-expedition.html"
+    },
+    {
+      "source": "/journey/homeostasis-expedition/",
+      "destination": "/interfaces/journey/homeostasis-expedition.html"
+    },
+    {
       "source": "/journey/truckee-sierra-forage",
       "destination": "/interfaces/journey/truckee-sierra-forage.html"
     },

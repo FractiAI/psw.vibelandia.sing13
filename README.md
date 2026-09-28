@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-28** · **342** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-28** · **343** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -589,6 +589,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/journey/bridge-solar-watch.html`](/interfaces/journey/bridge-solar-watch.html) | Bridge · Proto & Electro Watch · Journey · SS Vibelandia |
 | [`/interfaces/journey/cartagena-spice-stone.html`](/interfaces/journey/cartagena-spice-stone.html) | Cartagena · Spice & Stone · Journey · SS Vibelandia |
 | [`/interfaces/journey/goldilocks-quest.html`](/interfaces/journey/goldilocks-quest.html) | Goldilocks Quest · Restricted Goggles · Journey · SS Vibelandia |
+| [`/interfaces/journey/homeostasis-expedition.html`](/interfaces/journey/homeostasis-expedition.html) | Homeostasis Expedition · Amazon River Frontier · Journey · SS Vibelandia |
 | [`/interfaces/journey/omniversal-canvas-walk.html`](/interfaces/journey/omniversal-canvas-walk.html) | Omniversal Canvas · Exhibit Walk · Journey · SS Vibelandia |
 | [`/interfaces/journey/prime-vault-chat.html`](/interfaces/journey/prime-vault-chat.html) | Prime Vault Chat · Miracle 2 · Journey · SS Vibelandia |
 | [`/interfaces/journey/prime-vault-race.html`](/interfaces/journey/prime-vault-race.html) | Prime-Vault Race · ColabFold Arena · Journey · SS Vibelandia |

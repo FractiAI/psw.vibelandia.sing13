@@ -5,7 +5,7 @@
 **Current version (live):** `ERFT-V5-2026-09-27` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
 **Do not use as live causal results:** `ERFT-V4-2026-09-26` (combined Φ-enabled architecture — exploratory only) · `ERFT-V1-2026-09-25` (construction-bias receipt)
 
-**One-line V5 verdict:** ERFT-C mixed/null (φ mean NRMSE 1.426 vs baseline 1.387; 80% cells favor φ but permutation $p\approx0.77$) · sweep minima away from φ · ERFT-G no Φ rescue · ERFT-D dynamic did not beat best fixed · no Φ crown.
+**One-line V5 verdict:** **Nothing to crown** — no better constant to adopt, no winning combination. ERFT-C named mean favors **baseline ($c=1$)** at 1.387 over φ 1.426 (80% cells favor φ but permutation $p\approx0.77$) · sweep minima $\approx1.025$ / $\approx2.4$ (not φ) · ERFT-G no Φ rescue · ERFT-D best fixed edged by **$e$** but sequences/controllers did not beat fixed · no Φ crown.
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -157,16 +157,18 @@ Source: `research/synthobs-egs-recursive-fidelity-test/data/empirical_report.jso
 
 | Question | Finding on locked fixtures |
 |----------|----------------------------|
-| Did the suite run cleanly? | **Yes** — protocol integrity pass (E0–E7 + ED). Suite pass ≠ Φ won. |
-| Does numerical $c=\Phi$ reduce drift vs baseline under ERFT-C? | **Not established.** Mean NRMSE: baseline **1.387** · $\sqrt{2}$ **1.414** · $\Phi$ **1.426** · $e$ **1.481**. Φ lower in **80%** of paired cells, but mean $\Delta$ slightly favors baseline; bootstrap CI crosses 0; permutation $p\approx0.77$. |
+| Did the suite run cleanly? | **Yes** — protocol integrity pass (E0–E7 + ED). Suite pass ≠ a crown. |
+| Is there a better constant to adopt? | **No universal winner.** Named-arm mean favors **baseline ($c=1$)** at **1.387** over $\sqrt{2}$ **1.414**, $\Phi$ **1.426**, $e$ **1.481** — a small mean edge for baseline, not a magic-number claim. Sweep train min $\approx1.025$ and hold min $\approx2.4$ refuse any single stable optimum (including $\Phi$). |
+| Is there a better combination of constants? | **No.** ERFT-D sequences and controllers did **not** beat best fixed (≈ **0.942**). Best prescribed sequence was **$e$ repeated** (a single constant, not a mix). Alternating / state / adaptive policies failed or matched random. |
+| Does numerical $c=\Phi$ reduce drift vs baseline under ERFT-C? | **Not established.** Φ lower in **80%** of paired cells, but mean $\Delta$ slightly favors baseline; bootstrap CI crosses 0; permutation $p\approx0.77$. |
 | Is $\Phi$ the drift-minimizing constant in the sweep family? | **No — falsified.** Train min $c^*\approx1.025$; hold min $\approx2.400$; neither near $1.618$. |
 | Do depth optima march toward $\Phi$? | **No.** $c^*_n$ does not systematically converge toward $\Phi$. |
 | Blind ladder rank for $\Phi$? | **4th of 7** (seasonal probe). |
 | Does symmetric grammar $C(c)$ help $\Phi$ specially (ERFT-G)? | **No.** Closure raised mean drift for every named arm; no disproportionate Φ benefit. |
-| Can dynamic multi-constant regulation beat the best fixed constant (ERFT-D)? | **Not on these fixtures.** Best fixed mean NRMSE ≈ **0.942** still matches/beats sequences, state-switch, and adaptive; random switching ≈ state-dependent; hypothesis **weakened**. |
+| Can dynamic multi-constant regulation beat the best fixed constant (ERFT-D)? | **Not on these fixtures.** On D0 fixed controls, **$e$** edged the named set (≈0.943), then $\sqrt{2}$, $\Phi$, baseline — but that local edge is not a general adoption claim, and dynamics still lost to best fixed. Hypothesis **weakened**. |
 | What about V4’s ~17% φ-vs-baseline lead? | **Development evidence only** for the combined Φ-enabled architecture — not confirmatory constant-neutral isolation. |
 
-**Plain-language verdict:** Version Five separates “does the number φ matter?” from “does φ-shaped algebra matter?” and from “does switching among constants help?” On the current board the answers are mixed/null, no special grammar rescue, and dynamic regulation not yet better than the best fixed constant. That is a scientifically useful negative/mixed readout — not a crown for $\Phi_{\mathrm{EGS}}$.
+**Plain-language verdict:** **Nothing to crown.** Version Five separates “does the number φ matter?” from “does φ-shaped algebra matter?” and from “does switching among constants help?” On the current board: baseline edged the named mean; the sweep refuses a stable optimum; no special grammar rescue; no multi-constant combo beat best fixed. That is a scientifically useful negative/mixed readout — not a crown for $\Phi_{\mathrm{EGS}}$.
 
 ### 7.1 Suite integrity
 
@@ -246,13 +248,14 @@ On the seasonal / recursive-weighting probe: $c^*_1{=}2.5$, $c^*_4{=}1.0$, $c^*_
 
 | Policy | Mean final NRMSE (lower better) |
 |--------|----------------------------------|
-| Best fixed constant (D0 aggregate) | **≈ 0.942** |
-| Best prescribed sequence (e repeated) | ≈ 0.943 |
+| Best fixed constant (D0 aggregate) | **≈ 0.942** (named D0 means: **$e$ ≈ 0.943** · $\Phi$ ≈ 0.947 · $\sqrt{2}$ ≈ 0.948 · baseline ≈ 0.952) |
+| Best prescribed sequence (**$e$ repeated** — not a mix) | ≈ 0.943 |
 | State-dependent switch (D2) | ≈ 0.950 |
 | Random-switch control | ≈ 0.950 |
 | Adaptive look-ahead (D3) | ≈ 0.943 |
 | Adaptive without $\Phi$ / near-$\Phi$ proxy | ≈ 0.943 (indistinguishable) |
 
+- **Better combination?** **No** — no sequenced or dynamic policy beat best fixed.
 - `dynamic_beats_best_fixed`: **false**
 - `best_fixed_matches_or_beats_dynamic`: **true**
 - `random_switching_equivalent`: **true**

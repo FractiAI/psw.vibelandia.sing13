@@ -1,0 +1,520 @@
+# e × φ × Prime Recursive Homeostasis — Unified Exploratory Architecture
+
+**Document ID:** `WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28`
+**Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`
+**Protocol:** `EPH-RH-2026-09-28`
+**Generated:** 2026-09-28T04:02:47.298Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass (suite integrity) | `true` |
+| Passed | 9 / 9 |
+| Significance gate | `false` |
+| Engine shelf include | `false` |
+| Φ_EGS | 1.618033988749895 |
+| e | 2.718281828459045 |
+
+**Engine shelf decision:** WITHHOLD — significance gate failed or mixed; publish as exploratory application companion only (not engine pin).
+
+## Primary readout (unified vs controls)
+
+| Arm | Goldilocks rate | Mean bleed | Mean E | Mean final D |
+|-----|-----------------|------------|--------|--------------|
+| Control A | 0.823 | 0.0575 | 0.0236 | 0.5433 |
+| Control B (randomized) | 0.495 | 0.0224 | 0.0715 | 1.3339 |
+| Unified e+φ+prime | 0.234 | 0.0423 | 0.0388 | 1.3869 |
+
+Hypothesis supported (gate): `false`. Deltas: Goldilocks vs A = -0.589, vs B = -0.260, bleed vs A = -0.0152.
+
+## Experiments
+
+### E0_protocol_locks — Protocol locks — unified architecture · three metrics · gate
+
+- **Pass:** `true`
+- **Interpretation:** Suite integrity: unified three-part recursion with D/B/E and a pre-registered engine-shelf gate.
+- **Honesty:** Locks do not imply the hypothesis is true.
+
+```json
+{
+  "id": "E0_protocol_locks",
+  "title": "Protocol locks — unified architecture · three metrics · gate",
+  "protocol": "EPH-RH-2026-09-28",
+  "architecture": "C_n → e-transform → φ-structure → p-containment → C_{n+1}",
+  "metrics": [
+    "drift_D",
+    "bleed_B",
+    "useful_evolution_E"
+  ],
+  "goldilocks": {
+    "D_LOW": 0.05,
+    "D_COLLAPSE": 2.5,
+    "BLEED_LOW": 0.08
+  },
+  "significanceGate": {
+    "goldilocks_margin": 0.15,
+    "require_bleed_below_baseline": true,
+    "require_positive_evolution": true,
+    "require_beat_randomized": true,
+    "engine_shelf_requires_gate": true
+  },
+  "pass": true,
+  "interpretation": "Suite integrity: unified three-part recursion with D/B/E and a pre-registered engine-shelf gate.",
+  "honesty": "Locks do not imply the hypothesis is true."
+}
+```
+
+### E1_primary_unified_vs_controls — Primary — unified e+φ+prime vs Control A / Control B
+
+- **Pass:** `true`
+- **Interpretation:** Unified architecture did NOT clear the significance gate — exploratory negative/mixed on these fixtures.
+- **Honesty:** Primary hypothesis concerns the COMBINATION. Null/mixed is a valid scientific outcome.
+
+```json
+{
+  "id": "E1_primary_unified_vs_controls",
+  "title": "Primary — unified e+φ+prime vs Control A / Control B",
+  "control_a": {
+    "n": 8,
+    "meanFinalD": 0.5432526331745945,
+    "meanFinalB": 0.03183902121570145,
+    "meanFinalE": 0.006895999812315879,
+    "meanD": 0.43044087516786766,
+    "meanB": 0.05745918216400598,
+    "meanE": 0.02364870650157334,
+    "goldilocksRate": 0.8229166666666667,
+    "attractorD": 0.5264298722040408,
+    "fractionPositiveE": 1,
+    "fractionBleedLow": 0.75
+  },
+  "control_b": {
+    "n": 8,
+    "meanFinalD": 1.333864116884288,
+    "meanFinalB": 0.003800719076086491,
+    "meanFinalE": 0.0012985004428102158,
+    "meanD": 1.2304202931233537,
+    "meanB": 0.022428789727108114,
+    "meanE": 0.07146486493106119,
+    "goldilocksRate": 0.49479166666666663,
+    "attractorD": 1.3313178430890353,
+    "fractionPositiveE": 1,
+    "fractionBleedLow": 1
+  },
+  "unified": {
+    "n": 8,
+    "meanFinalD": 1.3868908117232488,
+    "meanFinalB": 0.04917858584005903,
+    "meanFinalE": 0.0016538695664819842,
+    "meanD": 1.3174437352091282,
+    "meanB": 0.04226173578533123,
+    "meanE": 0.03881916627509832,
+    "goldilocksRate": 0.234375,
+    "attractorD": 1.3800119047090953,
+    "fractionPositiveE": 1,
+    "fractionBleedLow": 1
+  },
+  "deltas": {
+    "goldilocks_vs_A": -0.5885416666666667,
+    "goldilocks_vs_B": -0.26041666666666663,
+    "bleed_vs_A": -0.015197446378674748,
+    "evolution_vs_A": 0.015170459773524981
+  },
+  "significance_gate_pass": false,
+  "gate_checks": {
+    "beatsA": false,
+    "beatsB": false,
+    "bleedOk": true,
+    "eOk": true
+  },
+  "hypothesis_supported": false,
+  "pass": true,
+  "interpretation": "Unified architecture did NOT clear the significance gate — exploratory negative/mixed on these fixtures.",
+  "honesty": "Primary hypothesis concerns the COMBINATION. Null/mixed is a valid scientific outcome."
+}
+```
+
+### E2_ablations — Ablations — remove e, φ, or prime from the unified stack
+
+- **Pass:** `true`
+- **Interpretation:** At least one ablation matched/beat the full combination — combination not uniquely necessary here.
+- **Honesty:** Ablations are secondary; primary claim is still E1 combination vs controls.
+
+```json
+{
+  "id": "E2_ablations",
+  "title": "Ablations — remove e, φ, or prime from the unified stack",
+  "summaries": {
+    "unified": {
+      "n": 8,
+      "meanFinalD": 1.3868908117232488,
+      "meanFinalB": 0.04917858584005903,
+      "meanFinalE": 0.0016538695664819842,
+      "meanD": 1.3174437352091282,
+      "meanB": 0.04226173578533123,
+      "meanE": 0.03881916627509832,
+      "goldilocksRate": 0.234375,
+      "attractorD": 1.3800119047090953,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    },
+    "ablate_e": {
+      "n": 8,
+      "meanFinalD": 1.3347301513776455,
+      "meanFinalB": 0.023478887196790463,
+      "meanFinalE": 0.0019158825765402338,
+      "meanD": 1.2913188631052488,
+      "meanB": 0.04346483601116855,
+      "meanE": 0.038716039483887923,
+      "goldilocksRate": 0.203125,
+      "attractorD": 1.3379941334527392,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 0.875
+    },
+    "ablate_phi": {
+      "n": 8,
+      "meanFinalD": 0.9111007173483996,
+      "meanFinalB": 0.04167169777819118,
+      "meanFinalE": 0.04101658336830921,
+      "meanD": 0.6259127116650125,
+      "meanB": 0.04105291142266526,
+      "meanE": 0.05228089559149244,
+      "goldilocksRate": 0.8072916666666666,
+      "attractorD": 0.8646651331926714,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    },
+    "ablate_prime": {
+      "n": 8,
+      "meanFinalD": 1.4206023380100374,
+      "meanFinalB": 0.17999999999999997,
+      "meanFinalE": 0.002768922008659127,
+      "meanD": 1.336550483132079,
+      "meanB": 0.18000000000000005,
+      "meanE": 0.03755284488617537,
+      "goldilocksRate": 0,
+      "attractorD": 1.4189609625461583,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 0
+    }
+  },
+  "combination_required_for_best": false,
+  "pass": true,
+  "interpretation": "At least one ablation matched/beat the full combination — combination not uniquely necessary here.",
+  "honesty": "Ablations are secondary; primary claim is still E1 combination vs controls."
+}
+```
+
+### E3_phi_e_formulations — φ × e interaction formulations (not declared EGS a priori)
+
+- **Pass:** `true`
+- **Interpretation:** Best formulation on Goldilocks rate: sequential_e_then_phi.
+- **Honesty:** Comparing formulations is exploratory; none is crowned EGS law.
+
+```json
+{
+  "id": "E3_phi_e_formulations",
+  "title": "φ × e interaction formulations (not declared EGS a priori)",
+  "byForm": {
+    "sequential_e_then_phi": {
+      "n": 8,
+      "meanFinalD": 1.3868908117232488,
+      "meanFinalB": 0.04917858584005903,
+      "meanFinalE": 0.0016538695664819842,
+      "meanD": 1.3174437352091282,
+      "meanB": 0.04226173578533123,
+      "meanE": 0.03881916627509832,
+      "goldilocksRate": 0.234375,
+      "attractorD": 1.3800119047090953,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    },
+    "e_pow_k_phi": {
+      "n": 8,
+      "meanFinalD": 1.4833047093364136,
+      "meanFinalB": 0.05541260169567007,
+      "meanFinalE": 0.001654033009482703,
+      "meanD": 1.3539470221661982,
+      "meanB": 0.04447782183879091,
+      "meanE": 0.03873204340049748,
+      "goldilocksRate": 0.22395833333333334,
+      "attractorD": 1.4564929622004181,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    },
+    "phi_times_e_k": {
+      "n": 8,
+      "meanFinalD": 1.8077276718593551,
+      "meanFinalB": 0.06709548102689804,
+      "meanFinalE": 0.0016538657284380144,
+      "meanD": 1.6707204553617152,
+      "meanB": 0.053397828690382676,
+      "meanE": 0.03935827931663213,
+      "goldilocksRate": 0.21875,
+      "attractorD": 1.801967634628767,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    },
+    "magnitude_e_structure_phi": {
+      "n": 8,
+      "meanFinalD": 1.3868908117232488,
+      "meanFinalB": 0.04917858584005903,
+      "meanFinalE": 0.0016538695664819842,
+      "meanD": 1.3174437352091282,
+      "meanB": 0.04226173578533123,
+      "meanE": 0.03881916627509832,
+      "goldilocksRate": 0.234375,
+      "attractorD": 1.3800119047090953,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    }
+  },
+  "ranked": [
+    {
+      "formulation": "sequential_e_then_phi",
+      "goldilocksRate": 0.234375,
+      "meanB": 0.04226173578533123,
+      "meanE": 0.03881916627509832
+    },
+    {
+      "formulation": "magnitude_e_structure_phi",
+      "goldilocksRate": 0.234375,
+      "meanB": 0.04226173578533123,
+      "meanE": 0.03881916627509832
+    },
+    {
+      "formulation": "e_pow_k_phi",
+      "goldilocksRate": 0.22395833333333334,
+      "meanB": 0.04447782183879091,
+      "meanE": 0.03873204340049748
+    },
+    {
+      "formulation": "phi_times_e_k",
+      "goldilocksRate": 0.21875,
+      "meanB": 0.053397828690382676,
+      "meanE": 0.03935827931663213
+    }
+  ],
+  "best": "sequential_e_then_phi",
+  "pass": true,
+  "interpretation": "Best formulation on Goldilocks rate: sequential_e_then_phi.",
+  "honesty": "Comparing formulations is exploratory; none is crowned EGS law."
+}
+```
+
+### E4_prime_schedules — Prime scheduling — size · boundary · interval · index
+
+- **Pass:** `true`
+- **Interpretation:** Prime scheduling reduced mean bleed vs ordinary recursion (best mode: index). Zero-bleed≈0 not required.
+- **Honesty:** Primality is a hypothesis for containment — not presumed causal.
+
+```json
+{
+  "id": "E4_prime_schedules",
+  "title": "Prime scheduling — size · boundary · interval · index",
+  "byMode": {
+    "container_size": {
+      "n": 8,
+      "meanFinalD": 1.3868908117232488,
+      "meanFinalB": 0.04917858584005903,
+      "meanFinalE": 0.0016538695664819842,
+      "meanD": 1.3174437352091282,
+      "meanB": 0.04226173578533123,
+      "meanE": 0.03881916627509832,
+      "goldilocksRate": 0.234375,
+      "attractorD": 1.3800119047090953,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    },
+    "boundary": {
+      "n": 8,
+      "meanFinalD": 1.3868908117232488,
+      "meanFinalB": 0.04917858584005903,
+      "meanFinalE": 0.0016538695664819842,
+      "meanD": 1.3174437352091282,
+      "meanB": 0.04226173578533123,
+      "meanE": 0.03881916627509832,
+      "goldilocksRate": 0.234375,
+      "attractorD": 1.3800119047090953,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    },
+    "interval": {
+      "n": 8,
+      "meanFinalD": 1.4200232828028354,
+      "meanFinalB": 0.12,
+      "meanFinalE": 0.0027868396451281308,
+      "meanD": 1.3368838335709368,
+      "meanB": 0.09855543898929506,
+      "meanE": 0.037534139190930425,
+      "goldilocksRate": 0.05208333333333333,
+      "attractorD": 1.4185287878578605,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 0
+    },
+    "index": {
+      "n": 8,
+      "meanFinalD": 1.3910321732266284,
+      "meanFinalB": 0.04582867308927862,
+      "meanFinalE": 0.0008499673486155404,
+      "meanD": 1.3197871087026227,
+      "meanB": 0.035689446421360495,
+      "meanE": 0.03845592870988164,
+      "goldilocksRate": 0.2604166666666667,
+      "attractorD": 1.3870077962616083,
+      "fractionPositiveE": 1,
+      "fractionBleedLow": 1
+    }
+  },
+  "ranked": [
+    {
+      "mode": "index",
+      "goldilocksRate": 0.2604166666666667,
+      "meanB": 0.035689446421360495,
+      "bleedAdvantageVsOrdinary": 0.021769735742645485
+    },
+    {
+      "mode": "container_size",
+      "goldilocksRate": 0.234375,
+      "meanB": 0.04226173578533123,
+      "bleedAdvantageVsOrdinary": 0.015197446378674748
+    },
+    {
+      "mode": "boundary",
+      "goldilocksRate": 0.234375,
+      "meanB": 0.04226173578533123,
+      "bleedAdvantageVsOrdinary": 0.015197446378674748
+    },
+    {
+      "mode": "interval",
+      "goldilocksRate": 0.05208333333333333,
+      "meanB": 0.09855543898929506,
+      "bleedAdvantageVsOrdinary": -0.04109625682528908
+    }
+  ],
+  "best": "index",
+  "control_a_meanB": 0.05745918216400598,
+  "zero_bleed_observed": false,
+  "bleed_reduced_vs_baseline": true,
+  "pass": true,
+  "interpretation": "Prime scheduling reduced mean bleed vs ordinary recursion (best mode: index). Zero-bleed≈0 not required.",
+  "honesty": "Primality is a hypothesis for containment — not presumed causal."
+}
+```
+
+### E5_nonzero_attractor — Emergent attractor — D* > 0 bounded with useful evolution?
+
+- **Pass:** `true`
+- **Interpretation:** Late-path drift sits in a nonzero bounded band with positive useful evolution — consistent with evolution-without-dissolution on these fixtures.
+- **Honesty:** Attractor talk is fixture-relative — not a proof of physical homeostasis.
+
+```json
+{
+  "id": "E5_nonzero_attractor",
+  "title": "Emergent attractor — D* > 0 bounded with useful evolution?",
+  "meanAttractorD": 1.3800119047090953,
+  "attractors": [
+    1.4669404737389975,
+    1.118119607614622,
+    1.506252543153226,
+    1.453455950074405,
+    1.4634963757873531,
+    1.1242456189080818,
+    1.508989816455801,
+    1.3985948519402756
+  ],
+  "nonzero_bounded": true,
+  "meanE": 0.03881916627509832,
+  "evolving": true,
+  "pass": true,
+  "interpretation": "Late-path drift sits in a nonzero bounded band with positive useful evolution — consistent with evolution-without-dissolution on these fixtures.",
+  "honesty": "Attractor talk is fixture-relative — not a proof of physical homeostasis."
+}
+```
+
+### E6_paper_locks — Paper narrative locks
+
+- **Pass:** `true`
+- **Interpretation:** Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, gate.
+- **Honesty:** Structural text locks — not market validation.
+
+```json
+{
+  "id": "E6_paper_locks",
+  "title": "Paper narrative locks",
+  "paperPath": "/workspace/docs/SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md",
+  "hasHonesty": true,
+  "hasDocId": true,
+  "hasUnified": true,
+  "hasBleed": true,
+  "hasDrift": true,
+  "hasEvolution": true,
+  "hasFalsification": true,
+  "hasErftLink": true,
+  "hasOperator": true,
+  "hasGate": true,
+  "pass": true,
+  "interpretation": "Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, gate.",
+  "honesty": "Structural text locks — not market validation."
+}
+```
+
+### E7_blog_locks — Ship-blog live-findings locks
+
+- **Pass:** `true`
+- **Interpretation:** Blog must lead with observed answer and name the unified architecture.
+- **Honesty:** Editorial lock — not empirical proof.
+
+```json
+{
+  "id": "E7_blog_locks",
+  "title": "Ship-blog live-findings locks",
+  "blogPath": "/workspace/interfaces/blog-e-phi-prime-recursive-homeostasis-2026-09.html",
+  "slug": "e-phi-prime-recursive-homeostasis",
+  "exists": true,
+  "hasLiveFindings": true,
+  "hasUnified": true,
+  "hasHonestyClass": true,
+  "mentionsControls": true,
+  "pass": true,
+  "interpretation": "Blog must lead with observed answer and name the unified architecture.",
+  "honesty": "Editorial lock — not empirical proof."
+}
+```
+
+### E8_registry_surface — Registry / standalone surface constants
+
+- **Pass:** `true`
+- **Interpretation:** Ids point at the unified e×φ×prime expedition.
+- **Honesty:** Naming lock.
+
+```json
+{
+  "id": "E8_registry_surface",
+  "title": "Registry / standalone surface constants",
+  "DOC_ID": "WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28",
+  "REGISTRY_ID": "synthobs-e-phi-prime-recursive-homeostasis-2026-09",
+  "STANDALONE_REPO": "https://github.com/FractiAI/synthobs-e-phi-prime-recursive-homeostasis",
+  "PAPER_NAME": "SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md",
+  "SHIP_BLOG_FILE": "blog-e-phi-prime-recursive-homeostasis-2026-09.html",
+  "pass": true,
+  "interpretation": "Ids point at the unified e×φ×prime expedition.",
+  "honesty": "Naming lock."
+}
+```
+
+## Significance gate (pre-registered)
+
+```json
+{
+  "goldilocks_margin": 0.15,
+  "require_bleed_below_baseline": true,
+  "require_positive_evolution": true,
+  "require_beat_randomized": true,
+  "engine_shelf_requires_gate": true
+}
+```
+
+## Honesty boundary
+
+Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that primality causes zero bleed. Engine pin is withheld unless the pre-registered significance gate passes on live fixtures.

@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
-  "suiteId": "synthobs-egs-recursive-fidelity-test",
+  "suiteId": "synthobs-e-phi-prime-recursive-homeostasis",
   "createRepo": true,
-  "requestedAt": "2026-09-25T05:00:00.000Z",
-  "note": "Publish ERFT · EGS Recursive Fidelity Test standalone · controlled falsifiable recursive-drift experiment · φ not assumed · V1 null readout published · application companion (not engine pin)"
+  "requestedAt": "2026-09-28T12:30:00.000Z",
+  "note": "Publish e×φ×prime recursive homeostasis standalone · unified exploratory architecture · significance gate FAILED · engine pin WITHHELD · application companion (not ENGINE_SHELF)"
 }

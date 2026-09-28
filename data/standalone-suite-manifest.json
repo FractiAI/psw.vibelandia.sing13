@@ -92,6 +92,18 @@
       ]
     },
     {
+      "id": "synthobs-e-phi-prime-recursive-homeostasis",
+      "path": "research/synthobs-e-phi-prime-recursive-homeostasis",
+      "github": "https://github.com/FractiAI/synthobs-e-phi-prime-recursive-homeostasis",
+      "description": "e × φ × prime recursive homeostasis — unified exploratory architecture · significance gate · engine pin only if gate passes",
+      "paperIds": [
+        "synthobs-e-phi-prime-recursive-homeostasis-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md"
+      ]
+    },
+    {
       "id": "synthobs-erft-e-continuous-regulation",
       "path": "research/synthobs-erft-e-continuous-regulation",
       "github": "https://github.com/FractiAI/synthobs-erft-e-continuous-regulation",

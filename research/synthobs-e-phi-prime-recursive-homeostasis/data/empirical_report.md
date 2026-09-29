@@ -1,22 +1,22 @@
-# e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA + IA-R + IA-Δ reconcile
+# e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA + IA-R + IA-Δ + held-out
 
 **Document ID:** `WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28`
 **Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`
-**Protocol:** `EPH-IA-DELTA-2026-09-29`
-**Generated:** 2026-09-29T15:53:26.973Z
+**Protocol:** `EPH-IA-DELTA-HO-2026-09-29`
+**Generated:** 2026-09-29T16:07:23.158Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass (suite integrity) | `true` |
-| Passed | 36 / 36 |
+| Passed | 37 / 37 |
 | Significance gate | `true` |
 | Engine shelf include | `true` |
 | Φ_EGS | 1.618033988749895 |
 | e | 2.718281828459045 |
 
-**Engine shelf decision:** INCLUDE — EPH-IA-Δ reconciliation cleared three-axis Goldilocks + useful commits (e frozen; E2 signal preserved).
+**Engine shelf decision:** INCLUDE — EPH-IA-Δ-HO held-out cleared three-axis + useful commits (e+ρ frozen; development Δ locked).
 
 ## V1 free-run readout (locked development evidence)
 
@@ -97,9 +97,9 @@ Freezes IA e-cost pattern. Arms: A · φ · φ+prime · e-forward · e+inverse �
 
 IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated_RCR_above_A":false,"E_over_loss_above_e_forward":false,"E_over_loss_above_A":false,"commit_rate_positive":true,"useful_E_positive":true,"identity_preserved":true,"canonical_retain_RCR_above_e_forward":true,"inverse_restores_RCR":true}`
 
-## EPH-IA-Δ selective reconciliation readout (engine gate)
+## EPH-IA-Δ development readout (locked fixture evidence)
 
-Freezes e + E2 three-axis signal. Arms: A · E2 · E3 · E4 · Δ-reconcile (ρ). Metrics: RCR · L · B · E · E/(L+ε) · raw commit · useful commit. Three-axis Goldilocks = RCR>A ∧ B<A ∧ E>A.
+Freezes e + E2 directional signal. Arms: A · E2 · E3 · E4 · Δ-reconcile (ρ). Three-axis = RCR>A ∧ B<A ∧ E>A.
 
 | Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit | Useful commit |
 |-----|----------|--------|--------|--------|---------|--------|---------------|
@@ -109,36 +109,52 @@ Freezes e + E2 three-axis signal. Arms: A · E2 · E3 · E4 · Δ-reconcile (ρ)
 | E4 E4 verify→commit (over-conservative) | 0.6555 | 0.3445 | 0.3007 | 0.0060 | 0.0174 | 0.4167 | 0.1458 |
 | R Δ-reconcile (Explore→Organize→Contain→ρ→Verify→Commit) | 0.7500 | 0.2500 | 0.2901 | 0.0206 | 0.0824 | 0.5000 | 0.5000 |
 
-IAD checks: `{"E2_three_axis":true,"reconcile_three_axis":true,"reconcile_beats_E4_on_E":true,"reconcile_RCR_above_E4":true,"useful_commit_rate_floor":true,"e_frozen":true,"E4_over_conservative":true}`
-Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":true},"E4":{"RCR_above_A":false,"B_below_A":true,"E_above_A":false,"pass":false},"R":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":true}}`
+IAD-dev checks: `{"E2_three_axis":true,"reconcile_three_axis":true,"reconcile_beats_E4_on_E":true,"reconcile_RCR_above_E4":true,"useful_commit_rate_floor":true,"e_frozen":true,"rho_frozen":true,"E4_over_conservative":true}`
+
+## EPH-IA-Δ-HO held-out readout (live engine gate)
+
+Same frozen e + ρ on unseen fixtures. Settled INCLUDE requires development pass + held-out pass.
+
+| Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit | Useful commit |
+|-----|----------|--------|--------|--------|---------|--------|---------------|
+| A Control A (plain) | 0.7624 | 0.2376 | 0.3065 | 0.0172 | 0.0725 | 0.0000 | 0.0000 |
+| E2 E2 lossless + identity retain (frozen signal) | 0.8750 | 0.1250 | 0.2943 | 0.0206 | 0.1644 | 0.0000 | 0.0000 |
+| E3 E3 explore-only; identity retained | 0.8750 | 0.1250 | 0.2948 | 0.0030 | 0.0241 | 0.0000 | 0.0000 |
+| E4 E4 verify→commit (over-conservative) | 0.7866 | 0.2134 | 0.3065 | 0.0057 | 0.0267 | 0.4167 | 0.1354 |
+| R Δ-reconcile (Explore→Organize→Contain→ρ→Verify→Commit) | 0.8750 | 0.1250 | 0.2943 | 0.0206 | 0.1646 | 0.5000 | 0.5000 |
+
+IAD-HO checks: `{"E2_three_axis":true,"reconcile_three_axis":true,"reconcile_beats_E4_on_E":true,"reconcile_RCR_above_E4":true,"useful_commit_rate_floor":true,"e_frozen":true,"rho_frozen":true,"E4_over_conservative":true}`
+Held-out three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":true},"E4":{"RCR_above_A":true,"B_below_A":false,"E_above_A":false,"pass":false},"R":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":true}}`
 
 ## Experiments
 
-### E0_protocol_locks — Protocol locks — V1/D/D2/IA/IAR nulls + EPH-IA-Δ reconcile
+### E0_protocol_locks — Protocol locks — V1/D/D2/IA/IAR/IAD nulls + EPH-IA-Δ-HO held-out
 
 - **Pass:** `true`
-- **Interpretation:** V1/D/D2/IA/IAR nulls stay locked (E2 three-axis frozen). Engine pin uses EPH-IA-Δ reconcile gate.
+- **Interpretation:** V1/D/D2/IA/IAR/IAD-dev nulls stay locked. Engine pin uses EPH-IA-Δ-HO held-out gate.
 - **Honesty:** Locks do not imply the hypothesis is true.
 
 ```json
 {
   "id": "E0_protocol_locks",
-  "title": "Protocol locks — V1/D/D2/IA/IAR nulls + EPH-IA-Δ reconcile",
-  "protocol": "EPH-IA-DELTA-2026-09-29",
+  "title": "Protocol locks — V1/D/D2/IA/IAR/IAD nulls + EPH-IA-Δ-HO held-out",
+  "protocol": "EPH-IA-DELTA-HO-2026-09-29",
   "protocol_v1_locked": "EPH-RH-2026-09-28",
   "protocol_d_locked": "EPH-RH-D-2026-09-28",
   "protocol_d2_locked": "EPH-RH-D2-2026-09-28",
   "protocol_ia_locked": "EPH-IA-2026-09-29",
   "protocol_iar_locked": "EPH-IA-R-2026-09-29",
+  "protocol_iad_locked": "EPH-IA-DELTA-2026-09-29",
   "diagnostic_protocol": "EPH-RH-D-2026-09-28",
   "ia_protocol": "EPH-IA-2026-09-29",
   "iar_protocol": "EPH-IA-R-2026-09-29",
   "iad_protocol": "EPH-IA-DELTA-2026-09-29",
+  "iad_ho_protocol": "EPH-IA-DELTA-HO-2026-09-29",
   "architecture_v1": "C_n → e-transform → φ-structure → p-containment → C_{n+1}",
   "architecture_d": "matched-Q · φ-as-regulator · prime vs matched non-prime · order perms · perturbation",
   "architecture_ia": "encode→store→transform→retrieve→reconstruct · e=continuous update · φ=hierarchical allocation · primes=factorized addressing · IFE/RCR · ablations A–I",
   "architecture_iar": "e reversibility · dual-state identity≠explore · Transform→Organize→Contain→Verify→Commit · E2 three-axis freeze",
-  "architecture_iad": "Canonical → e-Explore → φ-Organize → p-Contain → Δ-Reconcile → Verify → Commit · three-axis Goldilocks · Useful Commit Rate",
+  "architecture_iad": "Canonical → e-Explore → φ-Organize → p-Contain → Δ-Reconcile → Verify → Commit · three-axis · Useful Commit · held-out confirm",
   "metrics": [
     "drift_D",
     "bleed_B",
@@ -166,7 +182,7 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
     "note": "V1 Goldilocks hit-rate gate is development evidence only; see DIAGNOSTIC_GATE."
   },
   "pass": true,
-  "interpretation": "V1/D/D2/IA/IAR nulls stay locked (E2 three-axis frozen). Engine pin uses EPH-IA-Δ reconcile gate.",
+  "interpretation": "V1/D/D2/IA/IAR/IAD-dev nulls stay locked. Engine pin uses EPH-IA-Δ-HO held-out gate.",
   "honesty": "Locks do not imply the hypothesis is true."
 }
 ```
@@ -541,7 +557,7 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
 ### E6_paper_locks — Paper narrative locks
 
 - **Pass:** `true`
-- **Interpretation:** Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA/IAR nulls, and EPH-IA-Δ reconcile fork.
+- **Interpretation:** Paper must keep unified hypothesis, prior nulls, EPH-IA-Δ, and held-out confirmation.
 - **Honesty:** Structural text locks — not market validation.
 
 ```json
@@ -563,8 +579,9 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
   "hasIA": true,
   "hasIAR": true,
   "hasIAD": true,
+  "hasHeldOut": true,
   "pass": true,
-  "interpretation": "Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA/IAR nulls, and EPH-IA-Δ reconcile fork.",
+  "interpretation": "Paper must keep unified hypothesis, prior nulls, EPH-IA-Δ, and held-out confirmation.",
   "honesty": "Structural text locks — not market validation."
 }
 ```
@@ -572,7 +589,7 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
 ### E7_blog_locks — Ship-blog live-findings locks
 
 - **Pass:** `true`
-- **Interpretation:** Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R + IA-Δ forks.
+- **Interpretation:** Blog must cover IA + IA-R + IA-Δ + held-out confirmation.
 - **Honesty:** Editorial lock — not empirical proof.
 
 ```json
@@ -590,8 +607,9 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
   "hasIA": true,
   "hasIAR": true,
   "hasIAD": true,
+  "hasHeldOut": true,
   "pass": true,
-  "interpretation": "Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R + IA-Δ forks.",
+  "interpretation": "Blog must cover IA + IA-R + IA-Δ + held-out confirmation.",
   "honesty": "Editorial lock — not empirical proof."
 }
 ```
@@ -2234,16 +2252,16 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
 }
 ```
 
-### IAD1_delta_reconcile_board — EPH-IA-Δ — selective reconciliation beside frozen e
+### IAD1_delta_reconcile_board — EPH-IA-Δ — selective reconciliation beside frozen e (development fixtures)
 
 - **Pass:** `true`
-- **Interpretation:** Δ-reconcile clears three-axis Goldilocks vs A while preserving E2-direction gains with useful commits — mechanism signal for bounded recursive evolution.
-- **Honesty:** Does not rewrite IAR/IA/V1/D/D2. e transform frozen. E2 is the locked positive mechanism signal; ρ tests selective novelty commit.
+- **Interpretation:** Development Δ clears three-axis + useful commits — locked fixture evidence; held-out is the settled pin.
+- **Honesty:** E2 remains a directional signal (useful commit=0 on E2 arm). Development INCLUDE is not a settled crown.
 
 ```json
 {
   "id": "IAD1_delta_reconcile_board",
-  "title": "EPH-IA-Δ — selective reconciliation beside frozen e",
+  "title": "EPH-IA-Δ — selective reconciliation beside frozen e (development fixtures)",
   "protocol": "EPH-IA-DELTA-2026-09-29",
   "locked_iar_protocol": "EPH-IA-R-2026-09-29",
   "locked_ia_protocol": "EPH-IA-2026-09-29",
@@ -2341,25 +2359,26 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
     "reconcile_RCR_above_E4": true,
     "useful_commit_rate_floor": true,
     "e_frozen": true,
+    "rho_frozen": true,
     "E4_over_conservative": true
   },
   "iad_gate_pass": true,
   "pass": true,
-  "interpretation": "Δ-reconcile clears three-axis Goldilocks vs A while preserving E2-direction gains with useful commits — mechanism signal for bounded recursive evolution.",
-  "honesty": "Does not rewrite IAR/IA/V1/D/D2. e transform frozen. E2 is the locked positive mechanism signal; ρ tests selective novelty commit."
+  "interpretation": "Development Δ clears three-axis + useful commits — locked fixture evidence; held-out is the settled pin.",
+  "honesty": "E2 remains a directional signal (useful commit=0 on E2 arm). Development INCLUDE is not a settled crown."
 }
 ```
 
-### IAD2_E2_three_axis_lock — Freeze E2 three-axis Goldilocks signal (RCR↑ E↑ B↓ vs A)
+### IAD2_E2_three_axis_lock — Freeze E2 three-axis directional signal (RCR↑ E↑ B↓ vs A; commit=0)
 
 - **Pass:** `true`
-- **Interpretation:** E2 still shows simultaneous RCR↑ E↑ B↓ vs A — freeze as mechanism evidence before crowning ρ.
+- **Interpretation:** E2 directional signal still locks on development fixtures — not evolutionary utility (commit=0).
 - **Honesty:** Do not retune e to manufacture this lock.
 
 ```json
 {
   "id": "IAD2_E2_three_axis_lock",
-  "title": "Freeze E2 three-axis Goldilocks signal (RCR↑ E↑ B↓ vs A)",
+  "title": "Freeze E2 three-axis directional signal (RCR↑ E↑ B↓ vs A; commit=0)",
   "E2": {
     "RCR": 0.75,
     "E": 0.02057556674137402,
@@ -2377,49 +2396,165 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
     "pass": true
   },
   "pass": true,
-  "interpretation": "E2 still shows simultaneous RCR↑ E↑ B↓ vs A — freeze as mechanism evidence before crowning ρ.",
+  "interpretation": "E2 directional signal still locks on development fixtures — not evolutionary utility (commit=0).",
   "honesty": "Do not retune e to manufacture this lock."
 }
 ```
 
-### IAD3_useful_commit_rate — Useful Commit Rate — commits satisfying three-axis / eligible
+### IAD3_useful_commit_rate — Useful Commit Rate — development board
 
 - **Pass:** `true`
-- **Interpretation:** Raw commit rate can hide stagnation (commit almost nothing) or garbage commits. Useful Commit Rate requires RCR>A ∧ B<A ∧ E>A on the committed step.
+- **Interpretation:** Useful Commit Rate requires RCR>A ∧ B<A ∧ E>A on the committed step.
 - **Honesty:** Prevents the trivial “commit nothing” Goldilocks cheat.
 
 ```json
 {
   "id": "IAD3_useful_commit_rate",
-  "title": "Useful Commit Rate — commits satisfying three-axis / eligible",
+  "title": "Useful Commit Rate — development board",
   "E4_raw_commit": 0.41666666666666663,
   "E4_useful_commit": 0.14583333333333334,
   "R_raw_commit": 0.5,
   "R_useful_commit": 0.5,
   "floor": 0.1,
   "pass": true,
-  "interpretation": "Raw commit rate can hide stagnation (commit almost nothing) or garbage commits. Useful Commit Rate requires RCR>A ∧ B<A ∧ E>A on the committed step.",
+  "interpretation": "Useful Commit Rate requires RCR>A ∧ B<A ∧ E>A on the committed step.",
   "honesty": "Prevents the trivial “commit nothing” Goldilocks cheat."
 }
 ```
 
-### IAD4_lineage_lock — Lineage lock — … → EPH-IA-R → EPH-IA-Δ
+### IAD4_lineage_lock — Lineage lock — … → EPH-IA-Δ → EPH-IA-Δ-HO
 
 - **Pass:** `true`
-- **Interpretation:** Not another e sweep — selective novelty under recoverable identity.
+- **Interpretation:** Not another e/ρ sweep — confirmatory held-out only.
 - **Honesty:** Prior layers stay locked.
 
 ```json
 {
   "id": "IAD4_lineage_lock",
-  "title": "Lineage lock — … → EPH-IA-R → EPH-IA-Δ",
+  "title": "Lineage lock — … → EPH-IA-Δ → EPH-IA-Δ-HO",
   "lineage": [
-    "EPH-IA-R: e-forward destroys RCR; E2 lossless+identity is first three-axis signal; E4 over-conservative",
-    "EPH-IA-Δ: freeze e + E2; add ρ reconciliation; three-axis Goldilocks + useful commit rate"
+    "EPH-IA-R: E2 three-axis directional signal; useful commit=0; E4 over-conservative",
+    "EPH-IA-Δ: freeze e + E2; ρ on development fixtures",
+    "EPH-IA-Δ-HO: same ρ + frozen e on held-out fixtures — settled pin gate"
   ],
   "pass": true,
-  "interpretation": "Not another e sweep — selective novelty under recoverable identity.",
+  "interpretation": "Not another e/ρ sweep — confirmatory held-out only.",
   "honesty": "Prior layers stay locked."
+}
+```
+
+### IAD5_heldout_confirmation — EPH-IA-Δ-HO — held-out confirmation (frozen e + ρ)
+
+- **Pass:** `true`
+- **Interpretation:** Held-out replicates E2-direction three-axis + useful commits under frozen e+ρ — settled companion INCLUDE eligible.
+- **Honesty:** Held-out fixtures were not used to design ρ. Failure is a valid scientific outcome.
+
+```json
+{
+  "id": "IAD5_heldout_confirmation",
+  "title": "EPH-IA-Δ-HO — held-out confirmation (frozen e + ρ)",
+  "protocol": "EPH-IA-DELTA-HO-2026-09-29",
+  "board": {
+    "A": {
+      "id": "A",
+      "name": "Control A (plain)",
+      "mode": "control_a",
+      "mean_RCR": 0.762422005646048,
+      "mean_L": 0.2375779943539521,
+      "mean_B": 0.3065286195634053,
+      "mean_E": 0.017235372678561463,
+      "mean_Eff": 0.07254586090588339,
+      "mean_commit_rate": 0,
+      "mean_useful_commit_rate": 0
+    },
+    "E2": {
+      "id": "E2",
+      "name": "E2 lossless + identity retain (frozen signal)",
+      "mode": "e2_lossless",
+      "mean_RCR": 0.875,
+      "mean_L": 0.125,
+      "mean_B": 0.29430334619790033,
+      "mean_E": 0.020551341508244496,
+      "mean_Eff": 0.16440941679062165,
+      "mean_commit_rate": 0,
+      "mean_useful_commit_rate": 0
+    },
+    "E3": {
+      "id": "E3",
+      "name": "E3 explore-only; identity retained",
+      "mode": "e3_canonical",
+      "mean_RCR": 0.875,
+      "mean_L": 0.125,
+      "mean_B": 0.29478275812990345,
+      "mean_E": 0.003010102994737781,
+      "mean_Eff": 0.024080631312851746,
+      "mean_commit_rate": 0,
+      "mean_useful_commit_rate": 0
+    },
+    "E4": {
+      "id": "E4",
+      "name": "E4 verify→commit (over-conservative)",
+      "mode": "e4_gate",
+      "mean_RCR": 0.7865827361190638,
+      "mean_L": 0.21341726388093618,
+      "mean_B": 0.3065399096268705,
+      "mean_E": 0.00569414290920021,
+      "mean_Eff": 0.026680672992340115,
+      "mean_commit_rate": 0.41666666666666663,
+      "mean_useful_commit_rate": 0.13541666666666669
+    },
+    "R": {
+      "id": "R",
+      "name": "Δ-reconcile (Explore→Organize→Contain→ρ→Verify→Commit)",
+      "mode": "reconcile",
+      "mean_RCR": 0.875,
+      "mean_L": 0.125,
+      "mean_B": 0.29430334619790033,
+      "mean_E": 0.020570686880757326,
+      "mean_Eff": 0.16456417853263033,
+      "mean_commit_rate": 0.5,
+      "mean_useful_commit_rate": 0.5
+    }
+  },
+  "three_axis": {
+    "E2": {
+      "RCR_above_A": true,
+      "B_below_A": true,
+      "E_above_A": true,
+      "pass": true
+    },
+    "E4": {
+      "RCR_above_A": true,
+      "B_below_A": false,
+      "E_above_A": false,
+      "pass": false
+    },
+    "R": {
+      "RCR_above_A": true,
+      "B_below_A": true,
+      "E_above_A": true,
+      "pass": true
+    }
+  },
+  "baselines_A": {
+    "RCR": 0.762422005646048,
+    "B": 0.3065286195634053,
+    "E": 0.017235372678561463
+  },
+  "checks": {
+    "E2_three_axis": true,
+    "reconcile_three_axis": true,
+    "reconcile_beats_E4_on_E": true,
+    "reconcile_RCR_above_E4": true,
+    "useful_commit_rate_floor": true,
+    "e_frozen": true,
+    "rho_frozen": true,
+    "E4_over_conservative": true
+  },
+  "iad_ho_gate_pass": true,
+  "pass": true,
+  "interpretation": "Held-out replicates E2-direction three-axis + useful commits under frozen e+ρ — settled companion INCLUDE eligible.",
+  "honesty": "Held-out fixtures were not used to design ρ. Failure is a valid scientific outcome."
 }
 ```
 
@@ -2438,4 +2573,4 @@ Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":
 
 ## Honesty boundary
 
-Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, EPH-RH-D2 loss-aware F / adaptive / coupled withhold, EPH-IA information-architecture withhold, and EPH-IA-R e-reversibility withhold (E2 three-axis signal frozen) are locked development/diagnostic evidence. EPH-IA-Δ freezes e and E2 and tests selective reconciliation (ρ) with three-axis Goldilocks + Useful Commit Rate — not another e sweep. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that prior nulls are rescinded. Engine pin requires the EPH-IA-Δ gate.
+Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1/D/D2/IA nulls and EPH-IA-R E2 directional signal (useful commit=0) are locked. EPH-IA-Δ development fixture evidence is locked. Live pin follows EPH-IA-Δ-HO held-out confirmation with e+ρ frozen — three-axis Goldilocks + Useful Commit Rate. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that e×φ×prime are causal constants.

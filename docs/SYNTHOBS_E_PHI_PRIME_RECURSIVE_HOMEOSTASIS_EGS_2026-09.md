@@ -2,7 +2,7 @@
 
 **Subtitle:** Can $e$-driven transformation, $\varphi$-based recursive proportion, and prime-based containment collectively produce a Goldilocks regime of recursive evolution — nonzero change with bounded drift and minimal bleed?
 
-**Current protocol (live):** `EPH-IA-DELTA-2026-09-29` · **IAR locked:** `EPH-IA-R-2026-09-29` · **IA locked:** `EPH-IA-2026-09-29` · **D2 locked:** `EPH-RH-D2-2026-09-28` · **D locked:** `EPH-RH-D-2026-09-28` · **V1 locked:** `EPH-RH-2026-09-28` · **Live results:** §7 · guest note [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition)
+**Current protocol (live):** `EPH-IA-DELTA-HO-2026-09-29` · **IAD-dev locked:** `EPH-IA-DELTA-2026-09-29` · **IAR locked:** `EPH-IA-R-2026-09-29` · **IA locked:** `EPH-IA-2026-09-29` · **D2 locked:** `EPH-RH-D2-2026-09-28` · **D locked:** `EPH-RH-D-2026-09-28` · **V1 locked:** `EPH-RH-2026-09-28` · **Live results:** §7 · guest note [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition)
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -11,10 +11,10 @@
 **Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`  
 **Publication Ref:** FAI-SYNTHOBS-E-PHI-PRIME-RH-2026-09  
 **Series Position:** Exploratory follow-on to [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Infinite Octave Prime Parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md)  
-**Classification:** Catalog / Soft Story exploratory computational experiment · application companion by default *(see Honesty boundary · EPH-IA-Δ gate)*  
+**Classification:** Catalog / Soft Story exploratory computational experiment · application companion by default *(see Honesty boundary · EPH-IA-Δ-HO held-out gate)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
 **Guest surfaces:** [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · [`/whitepaper/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)  
-**Engine pin:** **Withheld unless EPH-IA-Δ gate passes** — see §7. V1 / EPH-RH-D / EPH-RH-D2 / EPH-IA / EPH-IA-R nulls are locked development/diagnostic evidence (E2 three-axis signal frozen). Suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis`  
+**Engine pin:** **Withheld unless EPH-IA-Δ-HO held-out gate passes** — see §7. V1 / EPH-RH-D / EPH-RH-D2 / EPH-IA / EPH-IA-R nulls are locked development/diagnostic evidence (E2 three-axis signal frozen). Suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis`  
 **Cross-links:** [Homeostasis Expedition · Journey](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Prime parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md) · [Prime-indexed volumetric storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
@@ -201,7 +201,7 @@ Gate requires: E2 three-axis lock; reconcile three-axis vs A; reconcile beats E4
 
 ## 7. Live findings
 
-**One-line verdict:** Suite integrity **pass**. **V1 / D / D2 / IA / IAR gates fail** (locked). E2 = frozen **three-axis directional signal** (RCR↑ · E↑ · B↓ vs A) with **useful commit $=0$** — not evolutionary utility. **EPH-IA-Δ gate pass on these fixtures** — $\rho$ preserves E2 three-axis and converts exploration into useful commit rate ~0.50. **Engine shelf:** companion INCLUDE on fixtures only; **held-out confirmation still required** before treating as settled mechanism. Not a finished crown of $e\times\varphi\times$prime as constants.
+**One-line verdict:** Suite integrity **pass**. **V1 / D / D2 / IA / IAR gates fail** (locked). E2 = frozen **three-axis directional signal** (useful commit $=0$). **EPH-IA-Δ development** locked pass (useful commit ~0.50). **EPH-IA-Δ-HO held-out gate pass** — same frozen $e$+$\rho$ on unseen fixtures replicates E2-direction three-axis with useful commit ~0.50. **Engine shelf:** companion **INCLUDE** (held-out confirmed). Not a finished physics crown of $e\times\varphi\times$prime as causal constants.
 
 ### 7.1 V1 free-run (locked development evidence)
 
@@ -310,11 +310,27 @@ Hypothesis rewrite: measure **irreversible loss** $L$ and **identity invariants*
 **Three-axis R:** RCR$>$A **true** · $B<$A **true** · $E>$A **true**.  
 **IAD gate:** `true` · **Engine shelf:** INCLUDE.
 
-**What Δ established (fixture evidence):** Explore → Measure → Repair → Verify → Commit, with $\rho$ as reconciliation (not a new mathematical constant). Frozen $e$ value-deltas are recoverability-destructive under $\alpha$-blend; $\rho$ adopts explore structure (φ/p addresses) while preserving canonical values, journals E2-style novelty, and commits only when three-axis vs A holds. On these fixtures, Δ **preserves the E2 three-axis advantage** (RCR 0.750 · E 0.021 · B 0.290) **and** converts previously uncommitted exploration into useful commit rate **0.50** (floor 0.10; beats E4 on $E$ and RCR). **Burden of proof for a settled pin:** held-out / repeated fixtures with $e$ and $\rho$ thresholds frozen — not another constant retune.
+**What Δ established (fixture evidence):** Explore → Measure → Repair → Verify → Commit, with $\rho$ as reconciliation (not a new mathematical constant). Frozen $e$ value-deltas are recoverability-destructive under $\alpha$-blend; $\rho$ adopts explore structure (φ/p addresses) while preserving canonical values, journals E2-style novelty, and commits only when three-axis vs A holds. On these fixtures, Δ **preserves the E2 three-axis advantage** (RCR 0.750 · E 0.021 · B 0.290) **and** converts previously uncommitted exploration into useful commit rate **0.50** (floor 0.10; beats E4 on $E$ and RCR). **Burden of proof for a settled pin:** held-out / repeated fixtures with $e$ and $\rho$ thresholds frozen — see §7.6b.
+
+### 7.6b EPH-IA-Δ-HO — held-out confirmation (live settled pin)
+
+**Question:** With $e$ and $\rho$ frozen (no retune on held-out), does the development Δ three-axis + useful-commit pattern replicate on unseen fixtures?
+
+| Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit | Useful commit |
+|-----|----------|--------|--------|--------|---------|--------|---------------|
+| A Control A (plain) | 0.7624 | 0.2376 | 0.3065 | 0.0172 | 0.0724 | 0 | 0 |
+| E2 lossless + identity (frozen signal) | **0.8750** | **0.1250** | **0.2943** | **0.0206** | **0.1648** | 0 | 0 |
+| E4 verify→commit (over-conservative) | 0.7866 | 0.2134 | 0.3065 | 0.0057 | 0.0267 | 0.4167 | 0.1354 |
+| R Δ-reconcile (ρ) | **0.8750** | **0.1250** | **0.2943** | **0.0206** | **0.1648** | **0.5000** | **0.5000** |
+
+**IAD-HO checks:** E2 three-axis **true** · reconcile three-axis **true** · reconcile $E>$E4 **true** · reconcile RCR$>$E4 **true** · useful-commit floor **true** · $e$ frozen **true** · $\rho$ frozen **true**.  
+**IAD-HO gate:** `true` · **Engine shelf:** INCLUDE.
+
+**Desired optimum (met on held-out):** E2-direction RCR↑ · E↑ · B↓ vs A **plus** useful commit ≥ 0.10 (here 0.50), without retuning $e$ or $\rho$.
 
 ### 7.7 Plain-language observed answer
 
-**Mechanism identified → promising signal identified → fixture operationalization positive → held-out still open.**
+**Mechanism identified → directional signal (E2) → fixture Δ operationalization → held-out confirmation pass.**
 
 | Constant / architecture | Live status |
 |-------------------------|-------------|
@@ -325,11 +341,12 @@ Hypothesis rewrite: measure **irreversible loss** $L$ and **identity invariants*
 | Adaptive / loss-aware / coupled (EPH-RH-D2) | Exact $Q$ fair; $F$ beats A + matched non-prime; sequential still beats coupled; open-loop still beats adaptive; new-attractor rate 0 (locked) |
 | Information architecture (EPH-IA) | φ mild IFE lead; $e$-update costs RCR; no complementarity (locked withhold) |
 | e-reversibility / dual-state (EPH-IA-R) | E2 = three-axis **directional** signal (useful commit $=0$); E4 over-conservative → **WITHHOLD** (locked) |
-| Selective reconcile (EPH-IA-Δ) | On these fixtures: preserves E2 three-axis **and** useful commit ~0.50 → gate **pass** / companion INCLUDE; **held-out confirmation required** before settled pin |
+| Selective reconcile (EPH-IA-Δ) | Development fixtures: E2-direction + useful commit ~0.50 → locked pass |
+| Held-out confirm (EPH-IA-Δ-HO) | Unseen fixtures: replicates three-axis + useful commit ~0.50 → **INCLUDE** |
 
 **Sharper hypothesis (falsifiable, not a constant crown):** homeostasis may be a property of the **architecture governing exploration vs identity** — not of $e$, $\varphi$, or primes as magic constants. $\rho$ tests the missing middle between destruction ($e$-forward) and stagnation (E4).
 
-**Combination to crown:** none as physics law. Do **not** retune $e$. Do **not** treat E2 alone as evolutionary utility. Δ fixture receipt is positive; held-out repetitions are the next decisive check.
+**Combination to crown:** none as physics law. Do **not** retune $e$ or $\rho$. Do **not** treat E2 alone as evolutionary utility. Held-out confirmation passed on these unseen fixtures — companion INCLUDE; still not a finished physics crown.
 
 ---
 
@@ -343,7 +360,8 @@ Hypothesis rewrite: measure **irreversible loss** $L$ and **identity invariants*
 | EPH-RH V1/D/D2 | Does unified $e+\varphi+$prime regulate recursive evolution / loss-aware $F$? |
 | EPH-IA (locked) | Do $e$/$\varphi$/primes improve encode→store→retrieve→reconstruct under matched budgets? |
 | EPH-IA-R (locked) | Does removing $e$’s loss channel + dual-state verify/commit recover useful change? (E2 three-axis freeze) |
-| **EPH-IA-Δ (this live gate)** | Can $\rho$-reconcile preserve E2 gains while restoring useful commitment — without retuning $e$? |
+| EPH-IA-Δ (locked) | Can $\rho$-reconcile preserve E2 gains with useful commits on development fixtures? |
+| **EPH-IA-Δ-HO (this live gate)** | Does frozen $e$+$\rho$ replicate on held-out fixtures? |
 
 Do **not** describe this work as proving Holographic Homeostasis. Dynamic switching / unified operators / information architecture / dual-state commit / selective reconcile remain falsifiable empirical propositions.
 
@@ -366,6 +384,6 @@ Suite path: `research/synthobs-e-phi-prime-recursive-homeostasis/`
 
 ## Honesty boundary (closing)
 
-Exploratory Soft Story / catalog computational experiment. Does not claim finished physics, fab proof, clinical validation, or that primality causes zero bleed. ERFT-V5/D baselines untouched. V1 / D / D2 / IA nulls locked. EPH-IA-R E2 is a **three-axis directional signal only** (useful commit $=0$ — not evolutionary utility). Engine pin follows the EPH-IA-Δ gate ($e$ frozen · three-axis · Useful Commit Rate) — live fixture result INCLUDE; **held-out confirmation still required** before treating $\rho$ as a settled mechanism. Does not validate $e\times\varphi\times$prime as causal constants.
+Exploratory Soft Story / catalog computational experiment. Does not claim finished physics, fab proof, clinical validation, or that primality causes zero bleed. ERFT-V5/D baselines untouched. V1 / D / D2 / IA nulls locked. EPH-IA-R E2 is a **three-axis directional signal only** (useful commit $=0$ — not evolutionary utility). Engine pin follows the EPH-IA-Δ-HO held-out gate ($e$+$\rho$ frozen · three-axis · Useful Commit Rate) — live held-out result INCLUDE. Does not validate $e\times\varphi\times$prime as causal constants.
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox → ∞^∞

@@ -173,6 +173,16 @@ function fixtureFamily() {
   }));
 }
 
+/** Held-out family — distinct seeds + rotated kinds; never used to tune ρ/e. */
+function fixtureFamilyHeldOut() {
+  const kinds = ['seasonal', 'trend', 'block', 'sparse'];
+  return Array.from({ length: FIXTURE_COUNT }, (_, i) => ({
+    id: `IAH${i}`,
+    kind: kinds[(i + 2) % kinds.length],
+    x0: makeFixture(FIXTURE_SEED + 0x9e00 + i * 113, kinds[(i + 2) % kinds.length]),
+  }));
+}
+
 /**
  * φ hierarchical level weights — proportional allocation rule, not a scalar multiply.
  * Level ℓ gets capacity ∝ φ^{-ℓ} (normalized to SLOT_BUDGET).
@@ -662,6 +672,7 @@ export const iaLedger = Object.freeze({
   measureBleed,
   recoverableInfo,
   fixtureFamily,
+  fixtureFamilyHeldOut,
   mean,
   EPS,
   SLOT_BUDGET,

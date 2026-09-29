@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "5ff9ad58988aee85",
+  "auditId": "7aa3275a81a1a75c",
   "paperId": "synthobs-e-phi-prime-recursive-homeostasis-2026-09",
   "sourcePath": "docs/SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-29T15:53:30.160Z"
+          "invokedAt": "2026-09-29T16:07:36.458Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-29T15:53:30.158Z",
-  "completedAt": "2026-09-29T15:53:30.161Z",
+  "startedAt": "2026-09-29T16:07:36.456Z",
+  "completedAt": "2026-09-29T16:07:36.459Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 3752,
+      "wordCount": 3947,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

@@ -3,28 +3,22 @@
  *
  * Freezes EPH-IA-R board (esp. E2 three-axis signal). Does NOT retune e.
  *
- * IAR finding: E2 (lossless + identity retain) simultaneously improved
- *   RCR↑ · E↑ · B↓ vs Control A — first coherent Goldilocks-direction signal.
- * E4 verify→commit protected identity by refusing most transforms (over-conservative).
- *
- * This fork asks: can Δ-reconcile extract useful novelty from frozen e-explore
- * without forcing the entire canonical representation through destructive mutation?
+ * Development board (locked): E2 three-axis directional signal; ρ fixture INCLUDE.
+ * Held-out board (live gate): same ρ + frozen e on unseen fixtures — required for settled pin.
  *
  *   Canonical → e-Explore → φ-Organize → p-Contain → Δ-Reconcile → Verify → Commit
  *
- * Δ = X_explored − X_canonical  decomposed toward max(Δ_novel)
- * subject to Δ_loss ≤ L_max, Δ_bleed ≤ B_max, RCR ≥ RCR_min.
- *
- * Three-axis Goldilocks (not one scalar):
- *   RCR > RCR_A  ∧  B < B_A  ∧  E > E_A
- *
+ * Three-axis Goldilocks: RCR > RCR_A ∧ B < B_A ∧ E > E_A
  * Useful Commit Rate = commits satisfying all three / eligible explorations
  */
 import { FIXTURE_SEED, PRIME_SCHEDULE } from './constants.mjs';
 import { iaLedger, IA_PROTOCOL } from './eph-ia.mjs';
 import { IAR_PROTOCOL } from './eph-ia-r.mjs';
 
+/** Development Δ protocol (locked fixture evidence). */
 export const IAD_PROTOCOL = 'EPH-IA-DELTA-2026-09-29';
+/** Live protocol: held-out confirmation beside frozen e + ρ. */
+export const IAD_HO_PROTOCOL = 'EPH-IA-DELTA-HO-2026-09-29';
 
 const {
   encode,
@@ -35,6 +29,7 @@ const {
   measureBleed,
   recoverableInfo,
   fixtureFamily,
+  fixtureFamilyHeldOut,
   mean,
   EPS,
   IA_GENERATIONS,
@@ -47,9 +42,8 @@ export const RECONCILE_DEFAULTS = Object.freeze({
 });
 
 /**
- * Engine pin: reconciliation must clear three-axis Goldilocks vs A,
- * beat E4 on useful evolution, and show useful-commit rate above floor.
- * E2 three-axis signal must remain locked true (mechanism freeze).
+ * Development Δ gate (locked fixture evidence).
+ * Engine pin now also requires IAD_HO_GATE on held-out fixtures.
  */
 export const IAD_GATE = Object.freeze({
   require_E2_three_axis: true,
@@ -59,8 +53,26 @@ export const IAD_GATE = Object.freeze({
   require_useful_commit_rate_floor: true,
   useful_commit_rate_floor: 0.1,
   require_e_frozen: true,
+  engine_shelf_requires_gate: false, // superseded by held-out gate
+  note: 'Development Δ fixture evidence. Settled pin follows IAD_HO_GATE.',
+});
+
+/**
+ * Held-out Δ gate — same ρ, frozen e, unseen fixtures.
+ * Settled engine companion INCLUDE only if development Δ AND held-out both pass.
+ */
+export const IAD_HO_GATE = Object.freeze({
+  require_dev_iad_pass: true,
+  require_E2_three_axis: true,
+  require_reconcile_three_axis: true,
+  require_reconcile_beats_E4_on_E: true,
+  require_reconcile_RCR_above_E4: true,
+  require_useful_commit_rate_floor: true,
+  useful_commit_rate_floor: 0.1,
+  require_e_frozen: true,
+  require_rho_frozen: true,
   engine_shelf_requires_gate: true,
-  note: 'Do not retune e. Freeze E2 signal. Test whether ρ-reconcile preserves E2 gains with real commits.',
+  note: 'Do not retune e or ρ on held-out. Confirm E2-direction + useful commits replicate.',
 });
 
 function mulberry32(seed) {
@@ -457,9 +469,9 @@ export const IAD_ARMS = Object.freeze([
   { id: 'R', mode: 'reconcile', name: 'Δ-reconcile (Explore→Organize→Contain→ρ→Verify→Commit)' },
 ]);
 
-function summarize(arm, fixtures, bounds) {
+function summarize(arm, fixtures, bounds, seedBase) {
   const rows = fixtures.map((f, i) =>
-    runArm(f.x0, arm.mode, FIXTURE_SEED + 0x5d00 + i * 43 + arm.id.charCodeAt(0) * 19, bounds),
+    runArm(f.x0, arm.mode, seedBase + i * 43 + arm.id.charCodeAt(0) * 19, bounds),
   );
   const mean_RCR = mean(rows.map((r) => r.RCR));
   const mean_L = mean(rows.map((r) => r.L));
@@ -478,10 +490,7 @@ function summarize(arm, fixtures, bounds) {
   };
 }
 
-export function runDeltaReconcile() {
-  const fixtures = fixtureFamily();
-
-  // Pass 1: Control A defines three-axis baselines (frozen e elsewhere).
+function runDeltaBoard(fixtures, seedBase, floor) {
   const boundsProbe = {
     R_min: 0.55,
     RCR_min: 0.7,
@@ -491,8 +500,7 @@ export function runDeltaReconcile() {
     B_A: 0.35,
     E_A: 0.01,
   };
-  const A_probe = summarize(IAD_ARMS[0], fixtures, boundsProbe);
-  // Soft floors sit at A means — hard commit requires beating A (three-axis).
+  const A_probe = summarize(IAD_ARMS[0], fixtures, boundsProbe, seedBase);
   const bounds = {
     R_min: 0.55,
     RCR_min: A_probe.mean_RCR,
@@ -505,7 +513,7 @@ export function runDeltaReconcile() {
 
   const board = {};
   for (const arm of IAD_ARMS) {
-    board[arm.id] = summarize(arm, fixtures, bounds);
+    board[arm.id] = summarize(arm, fixtures, bounds, seedBase);
   }
 
   const A = board.A;
@@ -522,13 +530,14 @@ export function runDeltaReconcile() {
     reconcile_three_axis: r_axis.pass,
     reconcile_beats_E4_on_E: R.mean_E > E4.mean_E,
     reconcile_RCR_above_E4: R.mean_RCR > E4.mean_RCR,
-    useful_commit_rate_floor: R.mean_useful_commit_rate >= IAD_GATE.useful_commit_rate_floor,
-    e_frozen: true, // structural — same eTransform, no retune
+    useful_commit_rate_floor: R.mean_useful_commit_rate >= floor,
+    e_frozen: true,
+    rho_frozen: true,
     E4_over_conservative:
       E4.mean_useful_commit_rate < 0.1 || E4.mean_E < A.mean_E,
   };
 
-  const iad_gate_pass =
+  const gate_pass =
     checks.E2_three_axis &&
     checks.reconcile_three_axis &&
     checks.reconcile_beats_E4_on_E &&
@@ -536,79 +545,154 @@ export function runDeltaReconcile() {
     checks.useful_commit_rate_floor &&
     checks.e_frozen;
 
+  return {
+    board,
+    three_axis: { E2: e2_axis, E4: e4_axis, R: r_axis },
+    baselines_A: { RCR: A.mean_RCR, B: A.mean_B, E: A.mean_E },
+    checks,
+    gate_pass,
+    A,
+    E2,
+    E4,
+    R,
+  };
+}
+
+export function runDeltaReconcile() {
+  // Development fixtures (locked evidence) — seed base preserved from prior Δ ship
+  const dev = runDeltaBoard(fixtureFamily(), FIXTURE_SEED + 0x5d00, IAD_GATE.useful_commit_rate_floor);
+  // Held-out fixtures — distinct seeds; same frozen e + ρ (no retune)
+  const ho = runDeltaBoard(
+    fixtureFamilyHeldOut(),
+    FIXTURE_SEED + 0xb700,
+    IAD_HO_GATE.useful_commit_rate_floor,
+  );
+
+  const iad_gate_pass = dev.gate_pass;
+  const iad_ho_gate_pass =
+    (!IAD_HO_GATE.require_dev_iad_pass || iad_gate_pass) &&
+    ho.checks.E2_three_axis &&
+    ho.checks.reconcile_three_axis &&
+    ho.checks.reconcile_beats_E4_on_E &&
+    ho.checks.reconcile_RCR_above_E4 &&
+    ho.checks.useful_commit_rate_floor &&
+    ho.checks.e_frozen &&
+    ho.checks.rho_frozen;
+
+  const engine_shelf_include =
+    IAD_HO_GATE.engine_shelf_requires_gate && iad_ho_gate_pass;
+
   const experiments = [
     {
       id: 'IAD1_delta_reconcile_board',
-      title: 'EPH-IA-Δ — selective reconciliation beside frozen e',
+      title: 'EPH-IA-Δ — selective reconciliation beside frozen e (development fixtures)',
       protocol: IAD_PROTOCOL,
       locked_iar_protocol: IAR_PROTOCOL,
       locked_ia_protocol: IA_PROTOCOL,
-      board: Object.fromEntries(IAD_ARMS.map((a) => [a.id, board[a.id]])),
-      three_axis: { E2: e2_axis, E4: e4_axis, R: r_axis },
-      baselines_A: { RCR: A.mean_RCR, B: A.mean_B, E: A.mean_E },
-      checks,
+      board: Object.fromEntries(IAD_ARMS.map((a) => [a.id, dev.board[a.id]])),
+      three_axis: dev.three_axis,
+      baselines_A: dev.baselines_A,
+      checks: dev.checks,
       iad_gate_pass,
       pass: true,
       interpretation: iad_gate_pass
-        ? 'Δ-reconcile clears three-axis Goldilocks vs A while preserving E2-direction gains with useful commits — mechanism signal for bounded recursive evolution.'
-        : 'Δ-reconcile does not yet clear the three-axis / useful-commit gate — report which checks failed; E2 three-axis freeze remains the diagnostic lead.',
+        ? 'Development Δ clears three-axis + useful commits — locked fixture evidence; held-out is the settled pin.'
+        : 'Development Δ failed — do not proceed to held-out crowning.',
       honesty:
-        'Does not rewrite IAR/IA/V1/D/D2. e transform frozen. E2 is the locked positive mechanism signal; ρ tests selective novelty commit.',
+        'E2 remains a directional signal (useful commit=0 on E2 arm). Development INCLUDE is not a settled crown.',
     },
     {
       id: 'IAD2_E2_three_axis_lock',
-      title: 'Freeze E2 three-axis Goldilocks signal (RCR↑ E↑ B↓ vs A)',
-      E2: { RCR: E2.mean_RCR, E: E2.mean_E, B: E2.mean_B },
-      A: { RCR: A.mean_RCR, E: A.mean_E, B: A.mean_B },
-      three_axis: e2_axis,
-      pass: e2_axis.pass,
-      interpretation: e2_axis.pass
-        ? 'E2 still shows simultaneous RCR↑ E↑ B↓ vs A — freeze as mechanism evidence before crowning ρ.'
-        : 'E2 three-axis signal did not replicate — stop and re-audit IAR E2 before further architecture work.',
+      title: 'Freeze E2 three-axis directional signal (RCR↑ E↑ B↓ vs A; commit=0)',
+      E2: { RCR: dev.E2.mean_RCR, E: dev.E2.mean_E, B: dev.E2.mean_B },
+      A: { RCR: dev.A.mean_RCR, E: dev.A.mean_E, B: dev.A.mean_B },
+      three_axis: dev.three_axis.E2,
+      pass: dev.three_axis.E2.pass,
+      interpretation: dev.three_axis.E2.pass
+        ? 'E2 directional signal still locks on development fixtures — not evolutionary utility (commit=0).'
+        : 'E2 three-axis signal did not replicate — stop before held-out.',
       honesty: 'Do not retune e to manufacture this lock.',
     },
     {
       id: 'IAD3_useful_commit_rate',
-      title: 'Useful Commit Rate — commits satisfying three-axis / eligible',
-      E4_raw_commit: E4.mean_commit_rate,
-      E4_useful_commit: E4.mean_useful_commit_rate,
-      R_raw_commit: R.mean_commit_rate,
-      R_useful_commit: R.mean_useful_commit_rate,
+      title: 'Useful Commit Rate — development board',
+      E4_raw_commit: dev.E4.mean_commit_rate,
+      E4_useful_commit: dev.E4.mean_useful_commit_rate,
+      R_raw_commit: dev.R.mean_commit_rate,
+      R_useful_commit: dev.R.mean_useful_commit_rate,
       floor: IAD_GATE.useful_commit_rate_floor,
       pass: true,
       interpretation:
-        'Raw commit rate can hide stagnation (commit almost nothing) or garbage commits. Useful Commit Rate requires RCR>A ∧ B<A ∧ E>A on the committed step.',
+        'Useful Commit Rate requires RCR>A ∧ B<A ∧ E>A on the committed step.',
       honesty: 'Prevents the trivial “commit nothing” Goldilocks cheat.',
     },
     {
       id: 'IAD4_lineage_lock',
-      title: 'Lineage lock — … → EPH-IA-R → EPH-IA-Δ',
+      title: 'Lineage lock — … → EPH-IA-Δ → EPH-IA-Δ-HO',
       lineage: [
-        'EPH-IA-R: e-forward destroys RCR; E2 lossless+identity is first three-axis signal; E4 over-conservative',
-        'EPH-IA-Δ: freeze e + E2; add ρ reconciliation; three-axis Goldilocks + useful commit rate',
+        'EPH-IA-R: E2 three-axis directional signal; useful commit=0; E4 over-conservative',
+        'EPH-IA-Δ: freeze e + E2; ρ on development fixtures',
+        'EPH-IA-Δ-HO: same ρ + frozen e on held-out fixtures — settled pin gate',
       ],
       pass: true,
-      interpretation: 'Not another e sweep — selective novelty under recoverable identity.',
+      interpretation: 'Not another e/ρ sweep — confirmatory held-out only.',
       honesty: 'Prior layers stay locked.',
+    },
+    {
+      id: 'IAD5_heldout_confirmation',
+      title: 'EPH-IA-Δ-HO — held-out confirmation (frozen e + ρ)',
+      protocol: IAD_HO_PROTOCOL,
+      board: Object.fromEntries(IAD_ARMS.map((a) => [a.id, ho.board[a.id]])),
+      three_axis: ho.three_axis,
+      baselines_A: ho.baselines_A,
+      checks: ho.checks,
+      iad_ho_gate_pass,
+      pass: true,
+      interpretation: iad_ho_gate_pass
+        ? 'Held-out replicates E2-direction three-axis + useful commits under frozen e+ρ — settled companion INCLUDE eligible.'
+        : 'Held-out failed one or more checks — withhold settled pin; report failures; do not retune e/ρ on held-out.',
+      honesty:
+        'Held-out fixtures were not used to design ρ. Failure is a valid scientific outcome.',
     },
   ];
 
   return {
-    protocol: IAD_PROTOCOL,
+    protocol: IAD_HO_PROTOCOL,
+    protocol_iad_dev_locked: IAD_PROTOCOL,
     experiments,
     readout: {
-      protocol: IAD_PROTOCOL,
-      board,
-      three_axis: { E2: e2_axis, E4: e4_axis, R: r_axis },
-      checks,
-      baselines_A: { RCR: A.mean_RCR, B: A.mean_B, E: A.mean_E },
+      protocol: IAD_HO_PROTOCOL,
+      development: {
+        protocol: IAD_PROTOCOL,
+        board: dev.board,
+        three_axis: dev.three_axis,
+        checks: dev.checks,
+        baselines_A: dev.baselines_A,
+        gate_pass: iad_gate_pass,
+      },
+      heldout: {
+        protocol: IAD_HO_PROTOCOL,
+        board: ho.board,
+        three_axis: ho.three_axis,
+        checks: ho.checks,
+        baselines_A: ho.baselines_A,
+        gate_pass: iad_ho_gate_pass,
+      },
+      // Compat: top-level board = development (prior consumers)
+      board: dev.board,
+      three_axis: dev.three_axis,
+      checks: dev.checks,
+      baselines_A: dev.baselines_A,
     },
-    checks,
+    checks: dev.checks,
+    heldout_checks: ho.checks,
     iad_gate_pass,
-    engine_shelf_include: IAD_GATE.engine_shelf_requires_gate && iad_gate_pass,
-    engine_shelf_decision:
-      IAD_GATE.engine_shelf_requires_gate && iad_gate_pass
-        ? 'INCLUDE — EPH-IA-Δ reconciliation cleared three-axis Goldilocks + useful commits (e frozen; E2 signal preserved).'
-        : 'WITHHOLD — EPH-IA-Δ gate failed/mixed; E2 three-axis freeze + prior nulls remain; application companion only.',
+    iad_ho_gate_pass,
+    engine_shelf_include,
+    engine_shelf_decision: engine_shelf_include
+      ? 'INCLUDE — EPH-IA-Δ-HO held-out cleared three-axis + useful commits (e+ρ frozen; development Δ locked).'
+      : iad_gate_pass
+        ? 'WITHHOLD settled pin — development Δ passed but held-out failed/mixed; fixture INCLUDE only.'
+        : 'WITHHOLD — development Δ failed; E2 directional freeze + prior nulls remain.',
   };
 }

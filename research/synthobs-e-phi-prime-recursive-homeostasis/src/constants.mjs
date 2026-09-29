@@ -12,7 +12,7 @@ export const SQRT2 = Math.SQRT2;
 export const DOC_ID = 'WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28';
 export const REGISTRY_ID = 'synthobs-e-phi-prime-recursive-homeostasis-2026-09';
 export const STUDY_TITLE =
-  'e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA + IA-R + IA-Δ reconcile';
+  'e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA + IA-R + IA-Δ + held-out';
 export const PAPER_NAME = 'SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md';
 export const SHIP_BLOG_SLUG = 'e-phi-prime-recursive-homeostasis';
 export const SHIP_BLOG_FILE = 'blog-e-phi-prime-recursive-homeostasis-2026-09.html';
@@ -29,8 +29,10 @@ export const PROTOCOL_VERSION_D2 = 'EPH-RH-D2-2026-09-28';
 export const PROTOCOL_VERSION_IA = 'EPH-IA-2026-09-29';
 /** EPH-IA-R e-reversibility + dual-state (locked withhold; E2 three-axis signal). */
 export const PROTOCOL_VERSION_IAR = 'EPH-IA-R-2026-09-29';
-/** Live protocol: EPH-IA-Δ selective reconciliation (ρ) beside frozen e. */
-export const PROTOCOL_VERSION = 'EPH-IA-DELTA-2026-09-29';
+/** EPH-IA-Δ selective reconciliation on development fixtures (locked). */
+export const PROTOCOL_VERSION_IAD = 'EPH-IA-DELTA-2026-09-29';
+/** Live protocol: EPH-IA-Δ held-out confirmation (frozen e + ρ). */
+export const PROTOCOL_VERSION = 'EPH-IA-DELTA-HO-2026-09-29';
 
 /** Pre-registered recursion depth. */
 export const GENERATIONS = 24;
@@ -131,13 +133,12 @@ export const IAR_GATE = Object.freeze({
   require_identity_preserved: true,
   rcr_margin: 0.05,
   engine_shelf_requires_gate: false, // superseded by IAD_GATE
-  note: 'EPH-IA-R gate is locked withhold evidence; E2 three-axis freeze feeds EPH-IA-Δ; engine pin follows IAD_GATE.',
+  note: 'EPH-IA-R gate is locked withhold evidence; E2 three-axis freeze feeds EPH-IA-Δ; engine pin follows IAD_HO_GATE.',
 });
 
 /**
- * EPH-IA-Δ gate — selective reconciliation (ρ) beside frozen e.
- * Three-axis Goldilocks (RCR↑ ∧ B↓ ∧ E↑ vs A) + useful commit rate.
- * Does NOT retune e. Freezes E2 as the positive mechanism signal.
+ * EPH-IA-Δ gate — development fixtures (locked).
+ * Settled pin follows IAD_HO_GATE (held-out).
  */
 export const IAD_GATE = Object.freeze({
   require_E2_three_axis: true,
@@ -147,8 +148,25 @@ export const IAD_GATE = Object.freeze({
   require_useful_commit_rate_floor: true,
   useful_commit_rate_floor: 0.1,
   require_e_frozen: true,
+  engine_shelf_requires_gate: false, // superseded by IAD_HO_GATE
+  note: 'Development Δ fixture evidence. Settled pin follows IAD_HO_GATE.',
+});
+
+/**
+ * EPH-IA-Δ-HO gate — held-out confirmation beside frozen e + ρ.
+ */
+export const IAD_HO_GATE = Object.freeze({
+  require_dev_iad_pass: true,
+  require_E2_three_axis: true,
+  require_reconcile_three_axis: true,
+  require_reconcile_beats_E4_on_E: true,
+  require_reconcile_RCR_above_E4: true,
+  require_useful_commit_rate_floor: true,
+  useful_commit_rate_floor: 0.1,
+  require_e_frozen: true,
+  require_rho_frozen: true,
   engine_shelf_requires_gate: true,
-  note: 'Do not retune e. Freeze E2 signal. Test whether ρ-reconcile preserves E2 gains with real commits.',
+  note: 'Do not retune e or ρ on held-out. Confirm fixture Δ replicates.',
 });
 
 /** φ×e interaction formulations under test (not declared EGS a priori). */
@@ -160,4 +178,4 @@ export const PHI_E_FORMULATIONS = Object.freeze([
 ]);
 
 export const HONESTY =
-  'Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, EPH-RH-D2 loss-aware F / adaptive / coupled withhold, EPH-IA information-architecture withhold, and EPH-IA-R e-reversibility withhold (E2 three-axis signal frozen) are locked development/diagnostic evidence. EPH-IA-Δ freezes e and E2 and tests selective reconciliation (ρ) with three-axis Goldilocks + Useful Commit Rate — not another e sweep. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that prior nulls are rescinded. Engine pin requires the EPH-IA-Δ gate.';
+  'Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1/D/D2/IA nulls and EPH-IA-R E2 directional signal (useful commit=0) are locked. EPH-IA-Δ development fixture evidence is locked. Live pin follows EPH-IA-Δ-HO held-out confirmation with e+ρ frozen — three-axis Goldilocks + Useful Commit Rate. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that e×φ×prime are causal constants.';

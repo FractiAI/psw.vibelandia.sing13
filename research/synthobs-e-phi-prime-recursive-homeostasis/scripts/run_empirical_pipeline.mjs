@@ -170,10 +170,18 @@ function mdReport(report) {
   }
   if (report.results.iad_readout) {
     const iad = report.results.iad_readout;
-    lines.push('## EPH-IA-Δ selective reconciliation readout (engine gate)');
+    const boardRow = (board, ids) => {
+      for (const id of ids) {
+        const s = board[id];
+        lines.push(
+          `| ${id} ${s.name} | ${s.mean_RCR.toFixed(4)} | ${s.mean_L.toFixed(4)} | ${s.mean_B.toFixed(4)} | ${s.mean_E.toFixed(4)} | ${s.mean_Eff.toFixed(4)} | ${s.mean_commit_rate.toFixed(4)} | ${s.mean_useful_commit_rate.toFixed(4)} |`,
+        );
+      }
+    };
+    lines.push('## EPH-IA-Δ development readout (locked fixture evidence)');
     lines.push('');
     lines.push(
-      'Freezes e + E2 three-axis signal. Arms: A · E2 · E3 · E4 · Δ-reconcile (ρ). Metrics: RCR · L · B · E · E/(L+ε) · raw commit · useful commit. Three-axis Goldilocks = RCR>A ∧ B<A ∧ E>A.',
+      'Freezes e + E2 directional signal. Arms: A · E2 · E3 · E4 · Δ-reconcile (ρ). Three-axis = RCR>A ∧ B<A ∧ E>A.',
     );
     lines.push('');
     lines.push(
@@ -182,16 +190,29 @@ function mdReport(report) {
     lines.push(
       '|-----|----------|--------|--------|--------|---------|--------|---------------|',
     );
-    for (const id of ['A', 'E2', 'E3', 'E4', 'R']) {
-      const s = iad.board[id];
+    boardRow(iad.development?.board || iad.board, ['A', 'E2', 'E3', 'E4', 'R']);
+    lines.push('');
+    lines.push(`IAD-dev checks: \`${JSON.stringify(iad.development?.checks || iad.checks)}\``);
+    lines.push('');
+    if (iad.heldout) {
+      lines.push('## EPH-IA-Δ-HO held-out readout (live engine gate)');
+      lines.push('');
       lines.push(
-        `| ${id} ${s.name} | ${s.mean_RCR.toFixed(4)} | ${s.mean_L.toFixed(4)} | ${s.mean_B.toFixed(4)} | ${s.mean_E.toFixed(4)} | ${s.mean_Eff.toFixed(4)} | ${s.mean_commit_rate.toFixed(4)} | ${s.mean_useful_commit_rate.toFixed(4)} |`,
+        'Same frozen e + ρ on unseen fixtures. Settled INCLUDE requires development pass + held-out pass.',
       );
+      lines.push('');
+      lines.push(
+        '| Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit | Useful commit |',
+      );
+      lines.push(
+        '|-----|----------|--------|--------|--------|---------|--------|---------------|',
+      );
+      boardRow(iad.heldout.board, ['A', 'E2', 'E3', 'E4', 'R']);
+      lines.push('');
+      lines.push(`IAD-HO checks: \`${JSON.stringify(iad.heldout.checks)}\``);
+      lines.push(`Held-out three-axis: \`${JSON.stringify(iad.heldout.three_axis)}\``);
+      lines.push('');
     }
-    lines.push('');
-    lines.push(`IAD checks: \`${JSON.stringify(iad.checks)}\``);
-    lines.push(`Three-axis: \`${JSON.stringify(iad.three_axis)}\``);
-    lines.push('');
   }
   lines.push('## Experiments');
   lines.push('');
@@ -251,6 +272,7 @@ async function main() {
         ia_gate_pass: results.ia_gate_pass,
         iar_gate_pass: results.iar_gate_pass,
         iad_gate_pass: results.iad_gate_pass,
+        iad_ho_gate_pass: results.iad_ho_gate_pass,
         engine_shelf_include: results.engine_shelf_include,
         engine_shelf_decision: results.engine_shelf_decision,
         primary_v1: results.primary_readout

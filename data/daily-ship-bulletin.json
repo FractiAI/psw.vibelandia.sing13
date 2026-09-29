@@ -1,28 +1,28 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "dateline": {
-    "ymd": "2026-09-28",
-    "weekday": "Monday",
+    "ymd": "2026-09-29",
+    "weekday": "Tuesday",
     "month": "September",
-    "day": 28,
-    "label": "Monday, September 28",
-    "shortBoard": "Monday board · September 28 · Puerto Reno",
-    "newsLabel": "News of the day · Monday, September 28"
+    "day": 29,
+    "label": "Tuesday, September 29",
+    "shortBoard": "Tuesday board · September 29 · Puerto Reno",
+    "newsLabel": "News of the day · Tuesday, September 29"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Monday board · September 28 · Puerto Reno",
-  "newsLabel": "News of the day · Monday, September 28",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/e-phi-prime-recursive-homeostasis\">When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?</a>. Also new on the board: <a href=\"/ship-blog/erft-e-continuous-regulation\">After Nothing to Crown, Does Continuous Regulation Clear the Bar?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/erft-recursive-fidelity\">When Information Rewrites Itself, Does φ Reduce the Drift?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Tuesday board · September 29 · Puerto Reno",
+  "newsLabel": "News of the day · Tuesday, September 29",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/e-phi-prime-recursive-homeostasis\">When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?</a>. Also new on the board: <a href=\"/ship-blog/erft-e-continuous-regulation\">After Nothing to Crown, Does Continuous Regulation Clear the Bar?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-e-phi-prime-recursive-homeostasis-2026-09",
       "title": "When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?",
       "href": "/ship-blog/e-phi-prime-recursive-homeostasis",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-e-phi-prime-recursive-homeostasis-2026-09",
-      "blurb": "V1+D nulls locked. EPH-RH-D2 exact-Q loss-aware F: coupled adaptive beats A and matched non-prime; sequential still beats coupled; open-loop still beats adaptive — engine pin withheld."
+      "blurb": "Final Soft Story: held-out Δ confirms E2-direction three-axis + useful commit ~0.50 with e+ρ frozen — Infinite Octaves ENGINE_SHELF companion #36."
     },
     {
       "id": "synthobs-erft-e-continuous-regulation-2026-09",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-27-synthobs-egs-recursive-fidelity-test-erft-2026-09",
-    "title": "When Information Rewrites Itself, Does φ Reduce the Drift?",
-    "href": "/ship-blog/erft-recursive-fidelity"
+    "id": "daily-2026-09-28-synthobs-e-phi-prime-recursive-homeostasis-2026-09",
+    "title": "When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?",
+    "href": "/ship-blog/e-phi-prime-recursive-homeostasis"
   },
-  "generatedAt": "2026-09-28T21:12:13.632Z"
+  "generatedAt": "2026-09-29T19:56:55.573Z"
 }

@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "posts": [
+    {
+      "id": "daily-2026-09-29-synthobs-e-phi-prime-recursive-homeostasis-2026-09",
+      "posted": "2026-09-29",
+      "featured": true,
+      "title": "When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?",
+      "subtitle": "News of the day · Tuesday, September 29",
+      "summary": "Final Soft Story: held-out Δ confirms E2-direction three-axis + useful commit ~0.50 with e+ρ frozen — Infinite Octaves ENGINE_SHELF companion #36.",
+      "href": "/ship-blog/e-phi-prime-recursive-homeostasis",
+      "pill": "TODAY",
+      "docRef": "synthobs-e-phi-prime-recursive-homeostasis-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-28-synthobs-e-phi-prime-recursive-homeostasis-2026-09",
       "posted": "2026-09-28",

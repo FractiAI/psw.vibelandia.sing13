@@ -150,10 +150,10 @@ function mdReport(report) {
   }
   if (report.results.iar_readout) {
     const iar = report.results.iar_readout;
-    lines.push('## EPH-IA-R e-reversibility / dual-state readout (engine gate)');
+    lines.push('## EPH-IA-R e-reversibility / dual-state readout (locked withhold · E2 freeze)');
     lines.push('');
     lines.push(
-      'Freezes IA e-cost pattern. Arms: A · φ · φ+prime · e-forward · e+inverse · e+lossless · e+canonical retain · dual-state verify→commit. Metrics: RCR · L · B · E · E/(L+ε) · commit rate.',
+      'Freezes IA e-cost pattern. Arms: A · φ · φ+prime · e-forward · e+inverse · e+lossless · e+canonical retain · dual-state verify→commit. Metrics: RCR · L · B · E · E/(L+ε) · commit rate. E2 three-axis signal feeds EPH-IA-Δ.',
     );
     lines.push('');
     lines.push('| Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit rate |');
@@ -166,6 +166,31 @@ function mdReport(report) {
     }
     lines.push('');
     lines.push(`IAR checks: \`${JSON.stringify(iar.checks)}\``);
+    lines.push('');
+  }
+  if (report.results.iad_readout) {
+    const iad = report.results.iad_readout;
+    lines.push('## EPH-IA-Δ selective reconciliation readout (engine gate)');
+    lines.push('');
+    lines.push(
+      'Freezes e + E2 three-axis signal. Arms: A · E2 · E3 · E4 · Δ-reconcile (ρ). Metrics: RCR · L · B · E · E/(L+ε) · raw commit · useful commit. Three-axis Goldilocks = RCR>A ∧ B<A ∧ E>A.',
+    );
+    lines.push('');
+    lines.push(
+      '| Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit | Useful commit |',
+    );
+    lines.push(
+      '|-----|----------|--------|--------|--------|---------|--------|---------------|',
+    );
+    for (const id of ['A', 'E2', 'E3', 'E4', 'R']) {
+      const s = iad.board[id];
+      lines.push(
+        `| ${id} ${s.name} | ${s.mean_RCR.toFixed(4)} | ${s.mean_L.toFixed(4)} | ${s.mean_B.toFixed(4)} | ${s.mean_E.toFixed(4)} | ${s.mean_Eff.toFixed(4)} | ${s.mean_commit_rate.toFixed(4)} | ${s.mean_useful_commit_rate.toFixed(4)} |`,
+      );
+    }
+    lines.push('');
+    lines.push(`IAD checks: \`${JSON.stringify(iad.checks)}\``);
+    lines.push(`Three-axis: \`${JSON.stringify(iad.three_axis)}\``);
     lines.push('');
   }
   lines.push('## Experiments');
@@ -225,6 +250,7 @@ async function main() {
         d2_gate_pass: results.d2_gate_pass,
         ia_gate_pass: results.ia_gate_pass,
         iar_gate_pass: results.iar_gate_pass,
+        iad_gate_pass: results.iad_gate_pass,
         engine_shelf_include: results.engine_shelf_include,
         engine_shelf_decision: results.engine_shelf_decision,
         primary_v1: results.primary_readout

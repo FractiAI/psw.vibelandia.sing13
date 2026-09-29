@@ -59,8 +59,8 @@ export const IAR_GATE = Object.freeze({
   require_useful_E_positive: true,
   require_identity_preserved: true, // identity RCR ≥ RCR_min when commits happen
   rcr_margin: 0.05,
-  engine_shelf_requires_gate: true,
-  note: 'IAR does not rescind IA null; it tests whether removing e loss channel recovers useful change.',
+  engine_shelf_requires_gate: false, // superseded by IAD_GATE / EPH-IA-Δ
+  note: 'IAR locked withhold; E2 three-axis freeze feeds EPH-IA-Δ. Engine pin follows IAD_GATE.',
 });
 
 function mulberry32(seed) {

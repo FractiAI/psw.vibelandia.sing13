@@ -38,14 +38,17 @@ import {
   PROTOCOL_VERSION_D,
   PROTOCOL_VERSION_D2,
   PROTOCOL_VERSION_IA,
+  PROTOCOL_VERSION_IAR,
   D2_GATE,
   IA_GATE,
   IAR_GATE,
+  IAD_GATE,
 } from './constants.mjs';
 import { runDiagnosticMatrix, DIAGNOSTIC_PROTOCOL } from './eph-rh-diagnostic.mjs';
 import { runD2Diagnostic, D2_PROTOCOL } from './eph-rh-d2.mjs';
 import { runInformationArchitecture, IA_PROTOCOL } from './eph-ia.mjs';
 import { runIARDiagnostic, IAR_PROTOCOL } from './eph-ia-r.mjs';
+import { runDeltaReconcile, IAD_PROTOCOL } from './eph-ia-delta.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -419,21 +422,25 @@ function summarizeArm(rows) {
 function experimentProtocolLocks() {
   return {
     id: 'E0_protocol_locks',
-    title: 'Protocol locks — V1/D/D2/IA nulls + EPH-IA-R e-reversibility',
+    title: 'Protocol locks — V1/D/D2/IA/IAR nulls + EPH-IA-Δ reconcile',
     protocol: PROTOCOL_VERSION,
     protocol_v1_locked: PROTOCOL_VERSION_V1,
     protocol_d_locked: PROTOCOL_VERSION_D,
     protocol_d2_locked: PROTOCOL_VERSION_D2,
     protocol_ia_locked: PROTOCOL_VERSION_IA,
+    protocol_iar_locked: PROTOCOL_VERSION_IAR,
     diagnostic_protocol: DIAGNOSTIC_PROTOCOL,
     ia_protocol: IA_PROTOCOL,
     iar_protocol: IAR_PROTOCOL,
+    iad_protocol: IAD_PROTOCOL,
     architecture_v1: 'C_n → e-transform → φ-structure → p-containment → C_{n+1}',
     architecture_d: 'matched-Q · φ-as-regulator · prime vs matched non-prime · order perms · perturbation',
     architecture_ia:
       'encode→store→transform→retrieve→reconstruct · e=continuous update · φ=hierarchical allocation · primes=factorized addressing · IFE/RCR · ablations A–I',
     architecture_iar:
-      'e reversibility · dual-state identity≠explore · Transform→Organize→Contain→Verify→Commit',
+      'e reversibility · dual-state identity≠explore · Transform→Organize→Contain→Verify→Commit · E2 three-axis freeze',
+    architecture_iad:
+      'Canonical → e-Explore → φ-Organize → p-Contain → Δ-Reconcile → Verify → Commit · three-axis Goldilocks · Useful Commit Rate',
     metrics: [
       'drift_D',
       'bleed_B',
@@ -445,12 +452,13 @@ function experimentProtocolLocks() {
       'compression_C',
       'E_over_loss',
       'commit_rate',
+      'useful_commit_rate',
     ],
     goldilocks: { D_LOW, D_COLLAPSE, BLEED_LOW },
     significanceGate_v1_locked: { ...SIGNIFICANCE_GATE },
     pass: true,
     interpretation:
-      'V1/D/D2/IA nulls stay locked. Engine pin uses EPH-IA-R e-reversibility / dual-state gate.',
+      'V1/D/D2/IA/IAR nulls stay locked (E2 three-axis frozen). Engine pin uses EPH-IA-Δ reconcile gate.',
     honesty: 'Locks do not imply the hypothesis is true.',
   };
 }
@@ -674,6 +682,7 @@ function experimentPaperLocks() {
     ),
     hasIA: /EPH-IA|information architecture|IFE|encode.*store.*retrieve|Recursive Conservation/i.test(paper),
     hasIAR: /EPH-IA-R|reversib|dual-state|verify.*commit|identity.*explore/i.test(paper),
+    hasIAD: /EPH-IA-Δ|EPH-IA-DELTA|reconcil|Useful Commit|three-axis/i.test(paper),
   };
   const pass = Boolean(paper) && Object.values(checks).every(Boolean);
   return {
@@ -683,7 +692,7 @@ function experimentPaperLocks() {
     ...checks,
     pass,
     interpretation:
-      'Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA nulls, and EPH-IA-R e-reversibility fork.',
+      'Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA/IAR nulls, and EPH-IA-Δ reconcile fork.',
     honesty: 'Structural text locks — not market validation.',
   };
 }
@@ -700,6 +709,7 @@ function experimentBlogLocks() {
     hasDiagnostic: /matched|efficiency|regulator|EPH-RH-D|transformation budget/i.test(html),
     hasIA: /EPH-IA|information architecture|IFE|storage|retrieval|reconstruct/i.test(html),
     hasIAR: /EPH-IA-R|reversib|dual-state|verify|commit|identity/i.test(html),
+    hasIAD: /EPH-IA-Δ|reconcil|Useful Commit|three-axis|E2/i.test(html),
   };
   const pass = Object.values(checks).every(Boolean);
   return {
@@ -709,7 +719,7 @@ function experimentBlogLocks() {
     slug: SHIP_BLOG_SLUG,
     ...checks,
     pass,
-    interpretation: 'Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R forks.',
+    interpretation: 'Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R + IA-Δ forks.',
     honesty: 'Editorial lock — not empirical proof.',
   };
 }
@@ -750,19 +760,21 @@ export async function runAllExperiments() {
   const d2 = runD2Diagnostic();
   const ia = runInformationArchitecture();
   const iar = runIARDiagnostic();
+  const iad = runDeltaReconcile();
   const experiments = [
     ...v1,
     ...diagnostic.experiments,
     ...d2.experiments,
     ...ia.experiments,
     ...iar.experiments,
+    ...iad.experiments,
   ];
 
   const primary = v1.find((e) => e.id === 'E1_primary_unified_vs_controls');
   const v1_gate_pass = Boolean(primary?.significance_gate_pass);
-  // Engine pin follows EPH-IA-R (e-reversibility / dual-state) — not V1/D/D2/IA.
-  const significance_gate_pass = Boolean(iar.iar_gate_pass);
-  const engine_shelf_include = Boolean(iar.engine_shelf_include);
+  // Engine pin follows EPH-IA-Δ (selective reconcile) — not V1/D/D2/IA/IAR.
+  const significance_gate_pass = Boolean(iad.iad_gate_pass);
+  const engine_shelf_include = Boolean(iad.engine_shelf_include);
 
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
@@ -779,18 +791,22 @@ export async function runAllExperiments() {
     protocol_d2: D2_PROTOCOL,
     protocol_ia_locked: PROTOCOL_VERSION_IA,
     protocol_ia: IA_PROTOCOL,
+    protocol_iar_locked: PROTOCOL_VERSION_IAR,
     protocol_iar: IAR_PROTOCOL,
+    protocol_iad: IAD_PROTOCOL,
     v1_goldilocks_gate_pass: v1_gate_pass,
     diagnostic_gate_pass: diagnostic.diagnostic_gate_pass,
     d2_gate_pass: d2.d2_gate_pass,
     ia_gate_pass: ia.ia_gate_pass,
     iar_gate_pass: iar.iar_gate_pass,
+    iad_gate_pass: iad.iad_gate_pass,
     significance_gate_pass,
     engine_shelf_include,
-    engine_shelf_decision: iar.engine_shelf_decision,
+    engine_shelf_decision: iad.engine_shelf_decision,
     d2_gate: { ...D2_GATE },
     ia_gate: { ...IA_GATE },
     iar_gate: { ...IAR_GATE },
+    iad_gate: { ...IAD_GATE },
     primary_readout: primary
       ? {
           note: 'V1 free-run (locked development evidence — Control A under-transformed vs unified).',
@@ -812,6 +828,7 @@ export async function runAllExperiments() {
     d2_readout: d2.readout,
     ia_readout: ia.readout,
     iar_readout: iar.readout,
+    iad_readout: iad.readout,
     experiments,
     honesty: HONESTY,
   };

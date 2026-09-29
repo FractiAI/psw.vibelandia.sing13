@@ -111,8 +111,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 33 | **Digit 4 · Be–O periodic rhyme companion (address 4 · glyph 8 · Be Z=4 · O Z=8 · 3^4=81 Soft Story · Φ_EGS)** | `docs/SYNTHOBS_DIGIT4_BE_O_PERIODIC_RHYME_EGS_2026-09.md` · `synthobs-digit4-be-o-periodic-rhyme-2026-09` · `/ship-blog/digit4-be-o-rhyme` · suite `research/synthobs-digit4-be-o-periodic-rhyme/` · standalone `FractiAI/synthobs-digit4-be-o-periodic-rhyme` |
 | 34 | **Holographic Homeostasis companion (distributed multiscale regulation · dynamic stability · PARTS↔WHOLE · Φ_EGS)** | `docs/SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md` · `synthobs-holographic-homeostasis-2026-09` · `/ship-blog/holographic-homeostasis` · suite `research/synthobs-holographic-homeostasis/` · standalone `FractiAI/synthobs-holographic-homeostasis` |
 | 35 | **Goldilocks ≡ Net Zero companion (viable band as active equilibrium · stillness not required · Φ_EGS)** | `docs/SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md` · `synthobs-goldilocks-net-zero-equivalence-2026-09` · `/ship-blog/goldilocks-net-zero` · suite `research/synthobs-goldilocks-net-zero-equivalence/` · standalone `FractiAI/synthobs-goldilocks-net-zero-equivalence` |
-| 36 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 37 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 36 | **e × φ × prime recursive homeostasis companion (EPH-IA-Δ ρ-reconcile · E2 three-axis freeze · Useful Commit · Φ_EGS)** | `docs/SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md` · `synthobs-e-phi-prime-recursive-homeostasis-2026-09` · `/ship-blog/e-phi-prime-recursive-homeostasis` · suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis` |
+| 37 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 38 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -152,6 +153,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-digit4-be-o-periodic-rhyme/`
 - `research/synthobs-holographic-homeostasis/`
 - `research/synthobs-goldilocks-net-zero-equivalence/`
+- `research/synthobs-e-phi-prime-recursive-homeostasis/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

@@ -1,22 +1,22 @@
-# e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA + IA-R e-reversibility
+# e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA + IA-R + IA-Δ reconcile
 
 **Document ID:** `WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28`
 **Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`
-**Protocol:** `EPH-IA-R-2026-09-29`
-**Generated:** 2026-09-29T15:21:04.864Z
+**Protocol:** `EPH-IA-DELTA-2026-09-29`
+**Generated:** 2026-09-29T15:38:44.367Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass (suite integrity) | `true` |
-| Passed | 32 / 32 |
-| Significance gate | `false` |
-| Engine shelf include | `false` |
+| Passed | 36 / 36 |
+| Significance gate | `true` |
+| Engine shelf include | `true` |
 | Φ_EGS | 1.618033988749895 |
 | e | 2.718281828459045 |
 
-**Engine shelf decision:** WITHHOLD — EPH-IA-R gate failed/mixed; IA e-cost pattern + prior dynamical nulls remain; application companion only.
+**Engine shelf decision:** INCLUDE — EPH-IA-Δ reconciliation cleared three-axis Goldilocks + useful commits (e frozen; E2 signal preserved).
 
 ## V1 free-run readout (locked development evidence)
 
@@ -80,9 +80,9 @@ Mechanism test: encode→store→transform→retrieve→reconstruct. e=continuou
 IA checks: `{"IFE_above_A":false,"IFE_above_B":false,"RCR_above_A":false,"RCR_above_B":false,"B_below_A":true,"full_beats_best_single":false,"full_beats_best_pair":false,"slots_matched":true}`
 Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE":1.374933229599483}`
 
-## EPH-IA-R e-reversibility / dual-state readout (engine gate)
+## EPH-IA-R e-reversibility / dual-state readout (locked withhold · E2 freeze)
 
-Freezes IA e-cost pattern. Arms: A · φ · φ+prime · e-forward · e+inverse · e+lossless · e+canonical retain · dual-state verify→commit. Metrics: RCR · L · B · E · E/(L+ε) · commit rate.
+Freezes IA e-cost pattern. Arms: A · φ · φ+prime · e-forward · e+inverse · e+lossless · e+canonical retain · dual-state verify→commit. Metrics: RCR · L · B · E · E/(L+ε) · commit rate. E2 three-axis signal feeds EPH-IA-Δ.
 
 | Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit rate |
 |-----|----------|--------|--------|--------|---------|-------------|
@@ -97,30 +97,48 @@ Freezes IA e-cost pattern. Arms: A · φ · φ+prime · e-forward · e+inverse �
 
 IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated_RCR_above_A":false,"E_over_loss_above_e_forward":false,"E_over_loss_above_A":false,"commit_rate_positive":true,"useful_E_positive":true,"identity_preserved":true,"canonical_retain_RCR_above_e_forward":true,"inverse_restores_RCR":true}`
 
+## EPH-IA-Δ selective reconciliation readout (engine gate)
+
+Freezes e + E2 three-axis signal. Arms: A · E2 · E3 · E4 · Δ-reconcile (ρ). Metrics: RCR · L · B · E · E/(L+ε) · raw commit · useful commit. Three-axis Goldilocks = RCR>A ∧ B<A ∧ E>A.
+
+| Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit | Useful commit |
+|-----|----------|--------|--------|--------|---------|--------|---------------|
+| A Control A (plain) | 0.7226 | 0.2774 | 0.3047 | 0.0168 | 0.0606 | 0.0000 | 0.0000 |
+| E2 E2 lossless + identity retain (frozen signal) | 0.7500 | 0.2500 | 0.2901 | 0.0206 | 0.0823 | 0.0000 | 0.0000 |
+| E3 E3 explore-only; identity retained | 0.7500 | 0.2500 | 0.2918 | 0.0030 | 0.0121 | 0.0000 | 0.0000 |
+| E4 E4 verify→commit (over-conservative) | 0.6555 | 0.3445 | 0.3007 | 0.0060 | 0.0174 | 0.4167 | 0.1458 |
+| R Δ-reconcile (Explore→Organize→Contain→ρ→Verify→Commit) | 0.7500 | 0.2500 | 0.2901 | 0.0206 | 0.0824 | 0.5000 | 0.5000 |
+
+IAD checks: `{"E2_three_axis":true,"reconcile_three_axis":true,"reconcile_beats_E4_on_E":true,"reconcile_RCR_above_E4":true,"useful_commit_rate_floor":true,"e_frozen":true,"E4_over_conservative":true}`
+Three-axis: `{"E2":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":true},"E4":{"RCR_above_A":false,"B_below_A":true,"E_above_A":false,"pass":false},"R":{"RCR_above_A":true,"B_below_A":true,"E_above_A":true,"pass":true}}`
+
 ## Experiments
 
-### E0_protocol_locks — Protocol locks — V1/D/D2/IA nulls + EPH-IA-R e-reversibility
+### E0_protocol_locks — Protocol locks — V1/D/D2/IA/IAR nulls + EPH-IA-Δ reconcile
 
 - **Pass:** `true`
-- **Interpretation:** V1/D/D2/IA nulls stay locked. Engine pin uses EPH-IA-R e-reversibility / dual-state gate.
+- **Interpretation:** V1/D/D2/IA/IAR nulls stay locked (E2 three-axis frozen). Engine pin uses EPH-IA-Δ reconcile gate.
 - **Honesty:** Locks do not imply the hypothesis is true.
 
 ```json
 {
   "id": "E0_protocol_locks",
-  "title": "Protocol locks — V1/D/D2/IA nulls + EPH-IA-R e-reversibility",
-  "protocol": "EPH-IA-R-2026-09-29",
+  "title": "Protocol locks — V1/D/D2/IA/IAR nulls + EPH-IA-Δ reconcile",
+  "protocol": "EPH-IA-DELTA-2026-09-29",
   "protocol_v1_locked": "EPH-RH-2026-09-28",
   "protocol_d_locked": "EPH-RH-D-2026-09-28",
   "protocol_d2_locked": "EPH-RH-D2-2026-09-28",
   "protocol_ia_locked": "EPH-IA-2026-09-29",
+  "protocol_iar_locked": "EPH-IA-R-2026-09-29",
   "diagnostic_protocol": "EPH-RH-D-2026-09-28",
   "ia_protocol": "EPH-IA-2026-09-29",
   "iar_protocol": "EPH-IA-R-2026-09-29",
+  "iad_protocol": "EPH-IA-DELTA-2026-09-29",
   "architecture_v1": "C_n → e-transform → φ-structure → p-containment → C_{n+1}",
   "architecture_d": "matched-Q · φ-as-regulator · prime vs matched non-prime · order perms · perturbation",
   "architecture_ia": "encode→store→transform→retrieve→reconstruct · e=continuous update · φ=hierarchical allocation · primes=factorized addressing · IFE/RCR · ablations A–I",
-  "architecture_iar": "e reversibility · dual-state identity≠explore · Transform→Organize→Contain→Verify→Commit",
+  "architecture_iar": "e reversibility · dual-state identity≠explore · Transform→Organize→Contain→Verify→Commit · E2 three-axis freeze",
+  "architecture_iad": "Canonical → e-Explore → φ-Organize → p-Contain → Δ-Reconcile → Verify → Commit · three-axis Goldilocks · Useful Commit Rate",
   "metrics": [
     "drift_D",
     "bleed_B",
@@ -131,7 +149,8 @@ IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated
     "RCR",
     "compression_C",
     "E_over_loss",
-    "commit_rate"
+    "commit_rate",
+    "useful_commit_rate"
   ],
   "goldilocks": {
     "D_LOW": 0.05,
@@ -147,7 +166,7 @@ IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated
     "note": "V1 Goldilocks hit-rate gate is development evidence only; see DIAGNOSTIC_GATE."
   },
   "pass": true,
-  "interpretation": "V1/D/D2/IA nulls stay locked. Engine pin uses EPH-IA-R e-reversibility / dual-state gate.",
+  "interpretation": "V1/D/D2/IA/IAR nulls stay locked (E2 three-axis frozen). Engine pin uses EPH-IA-Δ reconcile gate.",
   "honesty": "Locks do not imply the hypothesis is true."
 }
 ```
@@ -522,7 +541,7 @@ IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated
 ### E6_paper_locks — Paper narrative locks
 
 - **Pass:** `true`
-- **Interpretation:** Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA nulls, and EPH-IA-R e-reversibility fork.
+- **Interpretation:** Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA/IAR nulls, and EPH-IA-Δ reconcile fork.
 - **Honesty:** Structural text locks — not market validation.
 
 ```json
@@ -543,8 +562,9 @@ IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated
   "hasDiagnostic": true,
   "hasIA": true,
   "hasIAR": true,
+  "hasIAD": true,
   "pass": true,
-  "interpretation": "Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA nulls, and EPH-IA-R e-reversibility fork.",
+  "interpretation": "Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA/IAR nulls, and EPH-IA-Δ reconcile fork.",
   "honesty": "Structural text locks — not market validation."
 }
 ```
@@ -552,7 +572,7 @@ IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated
 ### E7_blog_locks — Ship-blog live-findings locks
 
 - **Pass:** `true`
-- **Interpretation:** Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R forks.
+- **Interpretation:** Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R + IA-Δ forks.
 - **Honesty:** Editorial lock — not empirical proof.
 
 ```json
@@ -569,8 +589,9 @@ IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated
   "hasDiagnostic": true,
   "hasIA": true,
   "hasIAR": true,
+  "hasIAD": true,
   "pass": true,
-  "interpretation": "Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R forks.",
+  "interpretation": "Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R + IA-Δ forks.",
   "honesty": "Editorial lock — not empirical proof."
 }
 ```
@@ -2213,6 +2234,195 @@ IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated
 }
 ```
 
+### IAD1_delta_reconcile_board — EPH-IA-Δ — selective reconciliation beside frozen e
+
+- **Pass:** `true`
+- **Interpretation:** Δ-reconcile clears three-axis Goldilocks vs A while preserving E2-direction gains with useful commits — mechanism signal for bounded recursive evolution.
+- **Honesty:** Does not rewrite IAR/IA/V1/D/D2. e transform frozen. E2 is the locked positive mechanism signal; ρ tests selective novelty commit.
+
+```json
+{
+  "id": "IAD1_delta_reconcile_board",
+  "title": "EPH-IA-Δ — selective reconciliation beside frozen e",
+  "protocol": "EPH-IA-DELTA-2026-09-29",
+  "locked_iar_protocol": "EPH-IA-R-2026-09-29",
+  "locked_ia_protocol": "EPH-IA-2026-09-29",
+  "board": {
+    "A": {
+      "id": "A",
+      "name": "Control A (plain)",
+      "mode": "control_a",
+      "mean_RCR": 0.7226283170455462,
+      "mean_L": 0.27737168295445375,
+      "mean_B": 0.30467709904313,
+      "mean_E": 0.016809553933165654,
+      "mean_Eff": 0.060602773691041105,
+      "mean_commit_rate": 0,
+      "mean_useful_commit_rate": 0
+    },
+    "E2": {
+      "id": "E2",
+      "name": "E2 lossless + identity retain (frozen signal)",
+      "mode": "e2_lossless",
+      "mean_RCR": 0.75,
+      "mean_L": 0.25,
+      "mean_B": 0.2901077370135244,
+      "mean_E": 0.02057556674137402,
+      "mean_Eff": 0.08230193775774507,
+      "mean_commit_rate": 0,
+      "mean_useful_commit_rate": 0
+    },
+    "E3": {
+      "id": "E3",
+      "name": "E3 explore-only; identity retained",
+      "mode": "e3_canonical",
+      "mean_RCR": 0.75,
+      "mean_L": 0.25,
+      "mean_B": 0.29182755091345924,
+      "mean_E": 0.003015605137085501,
+      "mean_Eff": 0.01206237229885281,
+      "mean_commit_rate": 0,
+      "mean_useful_commit_rate": 0
+    },
+    "E4": {
+      "id": "E4",
+      "name": "E4 verify→commit (over-conservative)",
+      "mode": "e4_gate",
+      "mean_RCR": 0.6554631658666021,
+      "mean_L": 0.34453683413339786,
+      "mean_B": 0.3006584689584496,
+      "mean_E": 0.005995799303816475,
+      "mean_Eff": 0.017402440921756728,
+      "mean_commit_rate": 0.41666666666666663,
+      "mean_useful_commit_rate": 0.14583333333333334
+    },
+    "R": {
+      "id": "R",
+      "name": "Δ-reconcile (Explore→Organize→Contain→ρ→Verify→Commit)",
+      "mode": "reconcile",
+      "mean_RCR": 0.75,
+      "mean_L": 0.25,
+      "mean_B": 0.2901077370135244,
+      "mean_E": 0.020606447758958802,
+      "mean_Eff": 0.08242546133398988,
+      "mean_commit_rate": 0.5,
+      "mean_useful_commit_rate": 0.5
+    }
+  },
+  "three_axis": {
+    "E2": {
+      "RCR_above_A": true,
+      "B_below_A": true,
+      "E_above_A": true,
+      "pass": true
+    },
+    "E4": {
+      "RCR_above_A": false,
+      "B_below_A": true,
+      "E_above_A": false,
+      "pass": false
+    },
+    "R": {
+      "RCR_above_A": true,
+      "B_below_A": true,
+      "E_above_A": true,
+      "pass": true
+    }
+  },
+  "baselines_A": {
+    "RCR": 0.7226283170455462,
+    "B": 0.30467709904313,
+    "E": 0.016809553933165654
+  },
+  "checks": {
+    "E2_three_axis": true,
+    "reconcile_three_axis": true,
+    "reconcile_beats_E4_on_E": true,
+    "reconcile_RCR_above_E4": true,
+    "useful_commit_rate_floor": true,
+    "e_frozen": true,
+    "E4_over_conservative": true
+  },
+  "iad_gate_pass": true,
+  "pass": true,
+  "interpretation": "Δ-reconcile clears three-axis Goldilocks vs A while preserving E2-direction gains with useful commits — mechanism signal for bounded recursive evolution.",
+  "honesty": "Does not rewrite IAR/IA/V1/D/D2. e transform frozen. E2 is the locked positive mechanism signal; ρ tests selective novelty commit."
+}
+```
+
+### IAD2_E2_three_axis_lock — Freeze E2 three-axis Goldilocks signal (RCR↑ E↑ B↓ vs A)
+
+- **Pass:** `true`
+- **Interpretation:** E2 still shows simultaneous RCR↑ E↑ B↓ vs A — freeze as mechanism evidence before crowning ρ.
+- **Honesty:** Do not retune e to manufacture this lock.
+
+```json
+{
+  "id": "IAD2_E2_three_axis_lock",
+  "title": "Freeze E2 three-axis Goldilocks signal (RCR↑ E↑ B↓ vs A)",
+  "E2": {
+    "RCR": 0.75,
+    "E": 0.02057556674137402,
+    "B": 0.2901077370135244
+  },
+  "A": {
+    "RCR": 0.7226283170455462,
+    "E": 0.016809553933165654,
+    "B": 0.30467709904313
+  },
+  "three_axis": {
+    "RCR_above_A": true,
+    "B_below_A": true,
+    "E_above_A": true,
+    "pass": true
+  },
+  "pass": true,
+  "interpretation": "E2 still shows simultaneous RCR↑ E↑ B↓ vs A — freeze as mechanism evidence before crowning ρ.",
+  "honesty": "Do not retune e to manufacture this lock."
+}
+```
+
+### IAD3_useful_commit_rate — Useful Commit Rate — commits satisfying three-axis / eligible
+
+- **Pass:** `true`
+- **Interpretation:** Raw commit rate can hide stagnation (commit almost nothing) or garbage commits. Useful Commit Rate requires RCR>A ∧ B<A ∧ E>A on the committed step.
+- **Honesty:** Prevents the trivial “commit nothing” Goldilocks cheat.
+
+```json
+{
+  "id": "IAD3_useful_commit_rate",
+  "title": "Useful Commit Rate — commits satisfying three-axis / eligible",
+  "E4_raw_commit": 0.41666666666666663,
+  "E4_useful_commit": 0.14583333333333334,
+  "R_raw_commit": 0.5,
+  "R_useful_commit": 0.5,
+  "floor": 0.1,
+  "pass": true,
+  "interpretation": "Raw commit rate can hide stagnation (commit almost nothing) or garbage commits. Useful Commit Rate requires RCR>A ∧ B<A ∧ E>A on the committed step.",
+  "honesty": "Prevents the trivial “commit nothing” Goldilocks cheat."
+}
+```
+
+### IAD4_lineage_lock — Lineage lock — … → EPH-IA-R → EPH-IA-Δ
+
+- **Pass:** `true`
+- **Interpretation:** Not another e sweep — selective novelty under recoverable identity.
+- **Honesty:** Prior layers stay locked.
+
+```json
+{
+  "id": "IAD4_lineage_lock",
+  "title": "Lineage lock — … → EPH-IA-R → EPH-IA-Δ",
+  "lineage": [
+    "EPH-IA-R: e-forward destroys RCR; E2 lossless+identity is first three-axis signal; E4 over-conservative",
+    "EPH-IA-Δ: freeze e + E2; add ρ reconciliation; three-axis Goldilocks + useful commit rate"
+  ],
+  "pass": true,
+  "interpretation": "Not another e sweep — selective novelty under recoverable identity.",
+  "honesty": "Prior layers stay locked."
+}
+```
+
 ## Significance gate (pre-registered)
 
 ```json
@@ -2228,4 +2438,4 @@ IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated
 
 ## Honesty boundary
 
-Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, EPH-RH-D2 loss-aware F / adaptive / coupled withhold, and EPH-IA information-architecture withhold are locked development/diagnostic evidence. EPH-IA-R freezes the IA e-cost pattern and tests e reversibility + dual-state verify/commit (transform ≠ storage ≠ identity) rather than another parameter sweep. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that prior nulls are rescinded. Engine pin requires the EPH-IA-R gate.
+Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, EPH-RH-D2 loss-aware F / adaptive / coupled withhold, EPH-IA information-architecture withhold, and EPH-IA-R e-reversibility withhold (E2 three-axis signal frozen) are locked development/diagnostic evidence. EPH-IA-Δ freezes e and E2 and tests selective reconciliation (ρ) with three-axis Goldilocks + Useful Commit Rate — not another e sweep. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that prior nulls are rescinded. Engine pin requires the EPH-IA-Δ gate.

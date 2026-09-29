@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-28T04:38:59.814Z",
+  "updatedAt": "2026-09-29T16:22:04.641Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,18 +12,18 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-28T04:38:59.813Z",
-      "body": "e × φ × Prime Recursive Homeostasis — V1 Null Locked · EPH-RH-D Diagnostic Matrix (Engine Pin Withheld)",
+      "createdAt": "2026-09-29T16:22:04.640Z",
+      "body": "e × φ × Prime Recursive Homeostasis — EPH-IA-Δ-HO Final (engine #36 · ρ-reconcile · INCLUDE)",
       "presenceHue": "gold",
       "paperId": "synthobs-e-phi-prime-recursive-homeostasis-2026-09",
       "artifact": {
-        "title": "e × φ × Prime Recursive Homeostasis — V1 Null Locked · EPH-RH-D Diagnostic Matrix (Engine Pin Withheld)",
+        "title": "e × φ × Prime Recursive Homeostasis — EPH-IA-Δ-HO Final (engine #36 · ρ-reconcile · INCLUDE)",
         "kind": "whitepaper",
         "path": "docs/SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md",
         "url": "/whitepaper/e-phi-prime-recursive-homeostasis",
         "paperId": "synthobs-e-phi-prime-recursive-homeostasis-2026-09",
         "docId": "WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28",
-        "published": "2026-09-28T16:00:00Z",
+        "published": "2026-09-29T17:00:00Z",
         "featured": true,
         "auditStatus": "pass"
       }

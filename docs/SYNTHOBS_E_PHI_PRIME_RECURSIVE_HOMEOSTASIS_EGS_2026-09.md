@@ -10,11 +10,11 @@
 **Document ID:** `WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28`  
 **Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`  
 **Publication Ref:** FAI-SYNTHOBS-E-PHI-PRIME-RH-2026-09  
-**Series Position:** Exploratory follow-on to [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Infinite Octave Prime Parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md)  
-**Classification:** Catalog / Soft Story exploratory computational experiment · application companion by default *(see Honesty boundary · EPH-IA-Δ-HO held-out gate)*  
+**Series Position:** Infinite Octaves engine companion **#36** · exploratory follow-on to [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Infinite Octave Prime Parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md)  
+**Classification:** Catalog / Soft Story companion · final held-out expedition filing · structural fixtures *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
 **Guest surfaces:** [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · [`/whitepaper/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)  
-**Engine pin:** **Withheld unless EPH-IA-Δ-HO held-out gate passes** — see §7. V1 / EPH-RH-D / EPH-RH-D2 / EPH-IA / EPH-IA-R nulls are locked development/diagnostic evidence (E2 three-axis signal frozen). Suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis`  
+**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion **#36** — e × φ × prime recursive homeostasis (EPH-IA-Δ-HO · ρ-reconcile · three-axis Goldilocks · e frozen) · suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md). V1 / D / D2 / IA / IAR nulls remain locked development evidence (E2 three-axis directional signal frozen).  
 **Cross-links:** [Homeostasis Expedition · Journey](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Prime parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md) · [Prime-indexed volumetric storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
@@ -53,7 +53,7 @@ $$
 C_n \xrightarrow{e\text{-transformation}} T_n \xrightarrow{\varphi\text{-structuring}} S_n \xrightarrow{p_n\text{-containment}} C_{n+1}
 $$
 
-The target is **evolution without dissolution**: $D>0$, $B\approx 0$ (or low), $E>0$ — nonzero drift, minimal bleed, useful evolution. Matched controls are ordinary recursion (Control A) and a randomized matched-DOF architecture (Control B). A pre-registered **significance gate** decides whether the result is strong enough for Infinite Octaves `ENGINE_SHELF` inclusion; exploratory publication proceeds either way.
+The target is **evolution without dissolution**: $D>0$, $B\approx 0$ (or low), $E>0$ — nonzero drift, minimal bleed, useful evolution. Matched controls are ordinary recursion (Control A) and a randomized matched-DOF architecture (Control B). A pre-registered **significance gate** (escalating through V1 → D → D2 → IA → IAR → Δ → Δ-HO) decides Infinite Octaves `ENGINE_SHELF` inclusion. **Live settled answer (§7.6b):** held-out confirmation with frozen $e$+$\rho$ passes — companion **INCLUDE** as engine feature **#36**. Not a physics crown of $e\times\varphi\times$prime as causal constants.
 
 ---
 
@@ -201,7 +201,7 @@ Gate requires: E2 three-axis lock; reconcile three-axis vs A; reconcile beats E4
 
 ## 7. Live findings
 
-**One-line verdict:** Suite integrity **pass**. **V1 / D / D2 / IA / IAR gates fail** (locked). E2 = frozen **three-axis directional signal** (useful commit $=0$). **EPH-IA-Δ development** locked pass (useful commit ~0.50). **EPH-IA-Δ-HO held-out gate pass** — same frozen $e$+$\rho$ on unseen fixtures replicates E2-direction three-axis with useful commit ~0.50. **Engine shelf:** companion **INCLUDE** (held-out confirmed). Not a finished physics crown of $e\times\varphi\times$prime as causal constants.
+**One-line verdict:** Suite integrity **pass**. **V1 / D / D2 / IA / IAR gates fail** (locked). E2 = frozen **three-axis directional signal** (useful commit $=0$). **EPH-IA-Δ development** locked pass (useful commit ~0.50). **EPH-IA-Δ-HO held-out gate pass** — same frozen $e$+$\rho$ on unseen fixtures replicates E2-direction three-axis with useful commit ~0.50. **Engine shelf:** companion **INCLUDE** as Infinite Octaves feature **#36** (held-out confirmed · final Soft Story filing). Not a finished physics crown of $e\times\varphi\times$prime as causal constants.
 
 ### 7.1 V1 free-run (locked development evidence)
 
@@ -324,9 +324,9 @@ Hypothesis rewrite: measure **irreversible loss** $L$ and **identity invariants*
 | R Δ-reconcile (ρ) | **0.8750** | **0.1250** | **0.2943** | **0.0206** | **0.1648** | **0.5000** | **0.5000** |
 
 **IAD-HO checks:** E2 three-axis **true** · reconcile three-axis **true** · reconcile $E>$E4 **true** · reconcile RCR$>$E4 **true** · useful-commit floor **true** · $e$ frozen **true** · $\rho$ frozen **true**.  
-**IAD-HO gate:** `true` · **Engine shelf:** INCLUDE.
+**IAD-HO gate:** `true` · **Engine shelf:** INCLUDE · **Feature order:** `#36`.
 
-**Desired optimum (met on held-out):** E2-direction RCR↑ · E↑ · B↓ vs A **plus** useful commit ≥ 0.10 (here 0.50), without retuning $e$ or $\rho$.
+**Desired optimum (met on held-out):** E2-direction RCR↑ · E↑ · B↓ vs A **plus** useful commit ≥ 0.10 (here 0.50), without retuning $e$ or $\rho$. Final Soft Story filing for the Infinite Octaves engine pin.
 
 ### 7.7 Plain-language observed answer
 
@@ -346,7 +346,7 @@ Hypothesis rewrite: measure **irreversible loss** $L$ and **identity invariants*
 
 **Sharper hypothesis (falsifiable, not a constant crown):** homeostasis may be a property of the **architecture governing exploration vs identity** — not of $e$, $\varphi$, or primes as magic constants. $\rho$ tests the missing middle between destruction ($e$-forward) and stagnation (E4).
 
-**Combination to crown:** none as physics law. Do **not** retune $e$ or $\rho$. Do **not** treat E2 alone as evolutionary utility. Held-out confirmation passed on these unseen fixtures — companion INCLUDE; still not a finished physics crown.
+**Combination to crown:** none as physics law. Do **not** retune $e$ or $\rho$. Do **not** treat E2 alone as evolutionary utility. Held-out confirmation passed on these unseen fixtures — settled Infinite Octaves engine companion **#36** (INCLUDE); still not a finished physics crown.
 
 ---
 
@@ -384,6 +384,6 @@ Suite path: `research/synthobs-e-phi-prime-recursive-homeostasis/`
 
 ## Honesty boundary (closing)
 
-Exploratory Soft Story / catalog computational experiment. Does not claim finished physics, fab proof, clinical validation, or that primality causes zero bleed. ERFT-V5/D baselines untouched. V1 / D / D2 / IA nulls locked. EPH-IA-R E2 is a **three-axis directional signal only** (useful commit $=0$ — not evolutionary utility). Engine pin follows the EPH-IA-Δ-HO held-out gate ($e$+$\rho$ frozen · three-axis · Useful Commit Rate) — live held-out result INCLUDE. Does not validate $e\times\varphi\times$prime as causal constants.
+Final Soft Story / catalog computational filing for Infinite Octaves `ENGINE_SHELF` companion **#36**. Does not claim finished physics, fab proof, clinical validation, or that primality causes zero bleed. ERFT-V5/D baselines untouched. V1 / D / D2 / IA nulls locked. EPH-IA-R E2 is a **three-axis directional signal only** (useful commit $=0$ — not evolutionary utility). Settled pin follows the EPH-IA-Δ-HO held-out gate ($e$+$\rho$ frozen · three-axis · Useful Commit Rate) — live held-out INCLUDE. Does not validate $e\times\varphi\times$prime as causal constants.
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox → ∞^∞

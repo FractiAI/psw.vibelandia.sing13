@@ -274,7 +274,93 @@ describe('Lattice Chat background reply surface', () => {
     ).toBe('recover');
   });
 
-  it('flags zombie primary for Check-for-reply instead of no-op', async () => {
+  it('force-aborts long-lived sending zombies by pending age', async () => {
+    const {
+      decideBackgroundResume,
+      BACKGROUND_FORCE_RECOVER_MS,
+    } = await import('../../apps/lattice-chat/src/lib/backgroundReplySurface.ts');
+    expect(
+      decideBackgroundResume({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'sending',
+        hasPending: true,
+        primaryStreamLive: true,
+        awayMs: 0,
+        pendingAgeMs: BACKGROUND_FORCE_RECOVER_MS + 500,
+      }).action,
+    ).toBe('abort_and_recover');
+  });
+
+  it('polls flush while still sending once pending is old or tab is hidden', async () => {
+    const {
+      shouldPollBackgroundFlush,
+      BACKGROUND_FORCE_RECOVER_MS,
+    } = await import('../../apps/lattice-chat/src/lib/backgroundReplySurface.ts');
+    expect(
+      shouldPollBackgroundFlush({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'sending',
+        hasPending: true,
+        pendingAgeMs: 1000,
+        documentHidden: false,
+      }),
+    ).toBe(false);
+    expect(
+      shouldPollBackgroundFlush({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'sending',
+        hasPending: true,
+        pendingAgeMs: BACKGROUND_FORCE_RECOVER_MS + 100,
+        documentHidden: false,
+      }),
+    ).toBe(true);
+    expect(
+      shouldPollBackgroundFlush({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'sending',
+        hasPending: true,
+        pendingAgeMs: 500,
+        documentHidden: true,
+      }),
+    ).toBe(true);
+    expect(
+      shouldPollBackgroundFlush({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'stuck',
+        hasPending: true,
+        pendingAgeMs: 0,
+        documentHidden: false,
+      }),
+    ).toBe(true);
+  });
+
+  it('recovers on focus without a prior hide when pending is old', async () => {
+    const {
+      shouldRecoverOnFocusWithoutHide,
+      BACKGROUND_FORCE_RECOVER_MS,
+    } = await import('../../apps/lattice-chat/src/lib/backgroundReplySurface.ts');
+    expect(
+      shouldRecoverOnFocusWithoutHide({
+        awaitingAssistant: true,
+        hasPending: true,
+        pendingAgeMs: BACKGROUND_FORCE_RECOVER_MS - 100,
+      }),
+    ).toBe(false);
+    expect(
+      shouldRecoverOnFocusWithoutHide({
+        awaitingAssistant: true,
+        hasPending: true,
+        pendingAgeMs: BACKGROUND_FORCE_RECOVER_MS + 100,
+      }),
+    ).toBe(true);
+  });
+
+  it('flags zombie primary for Check-for-reply even without pending', async () => {
     const { shouldAbortZombiePrimaryForRecover } = await import(
       '../../apps/lattice-chat/src/lib/backgroundReplySurface.ts'
     );
@@ -282,6 +368,13 @@ describe('Lattice Chat background reply surface', () => {
       shouldAbortZombiePrimaryForRecover({
         primaryStreamLive: true,
         hasPending: true,
+        awaitingAssistant: true,
+      }),
+    ).toBe(true);
+    expect(
+      shouldAbortZombiePrimaryForRecover({
+        primaryStreamLive: true,
+        hasPending: false,
         awaitingAssistant: true,
       }),
     ).toBe(true);

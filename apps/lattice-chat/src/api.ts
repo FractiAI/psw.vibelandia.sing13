@@ -653,7 +653,7 @@ export async function checkPendingLatticeReply(): Promise<boolean> {
     abortActiveLatticeSend();
     store.setPrimaryStreamLive(false);
   } else if (store.primaryStreamLive) {
-    // Genuine live primary with no pending race — let watchdog finish.
+    // Genuine live primary with no awaiting turn — let watchdog finish.
     return false;
   }
 

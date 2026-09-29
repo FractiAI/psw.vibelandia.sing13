@@ -18,7 +18,11 @@ import {
 } from '@/api';
 import { isSoftRecoverableLatticeError } from '@/lib/guestErrors';
 import {
+  BACKGROUND_FLUSH_POLL_MS,
+  BACKGROUND_FORCE_RECOVER_MS,
   decideBackgroundResume,
+  shouldPollBackgroundFlush,
+  shouldRecoverOnFocusWithoutHide,
 } from '@/lib/backgroundReplySurface';
 import { abortActiveLatticeSend } from '@/lib/primaryStreamAbort';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
@@ -203,30 +207,60 @@ export function ChatPane({
   }, [activeThreadId]);
 
   // Background / long cloud runs: keep auto-attaching so a finished reply surfaces
-  // without Player 1 typing "Update me on last request".
+  // without Player 1 typing "Update me on last request" / "response not shown".
+  // Also poll while still "sending" once the pending turn is old or the tab is
+  // hidden — background throttle often never flips the phase to stuck/recovering.
   useEffect(() => {
     if (!showWorking || !signedIn) return;
-    if (sendPhase !== 'stuck' && sendPhase !== 'recovering') return;
     let cancelled = false;
     const tick = () => {
       if (cancelled) return;
       const s = useLatticeStore.getState();
       if (!threadAwaitingAssistant(s.activeThreadId)) return;
+      const pendingAgeMs = s.pending?.startedAt
+        ? Date.now() - s.pending.startedAt
+        : 0;
+      const documentHidden =
+        typeof document !== 'undefined' && document.visibilityState === 'hidden';
+      if (
+        !shouldPollBackgroundFlush({
+          awaitingAssistant: true,
+          sending: s.sending,
+          sendPhase: s.sendPhase,
+          hasPending: Boolean(s.pending),
+          pendingAgeMs,
+          documentHidden,
+        })
+      ) {
+        return;
+      }
       if (s.primaryStreamLive) {
         abortActiveLatticeSend();
         s.setPrimaryStreamLive(false);
       }
       void checkPendingLatticeReply();
     };
-    const id = window.setInterval(tick, 20_000);
-    // Kick once shortly after entering stuck/recovering.
+    const id = window.setInterval(tick, BACKGROUND_FLUSH_POLL_MS);
+    // Kick once shortly after entering a working turn / stuck state.
     const kick = window.setTimeout(tick, 2_500);
+    // When the tab is hidden, also schedule a near-term flush so we do not rely
+    // solely on throttled intervals (browsers often clamp them to ≥1 min).
+    let hiddenKick: number | undefined;
+    const onVisForPoll = () => {
+      if (document.visibilityState === 'hidden') {
+        hiddenKick = window.setTimeout(tick, BACKGROUND_FORCE_RECOVER_MS);
+      }
+    };
+    document.addEventListener('visibilitychange', onVisForPoll);
+    if (document.visibilityState === 'hidden') onVisForPoll();
     return () => {
       cancelled = true;
       window.clearInterval(id);
       window.clearTimeout(kick);
+      if (hiddenKick) window.clearTimeout(hiddenKick);
+      document.removeEventListener('visibilitychange', onVisForPoll);
     };
-  }, [showWorking, sendPhase, signedIn, activeThreadId]);
+  }, [showWorking, sendPhase, signedIn, activeThreadId, pending?.startedAt]);
 
   useEffect(() => {
     // Only pin to bottom when the user is already near the end (or just sent).
@@ -292,16 +326,49 @@ export function ChatPane({
     const baseTitle =
       typeof document !== 'undefined' ? document.title || 'Lattice Chat' : 'Lattice Chat';
 
-    function resumeAfterReturn() {
+    function markReplyReady() {
+      if (typeof document === 'undefined' || document.visibilityState !== 'visible') return;
+      document.title = '● Reply ready · Lattice Chat';
+      window.setTimeout(() => {
+        if (document.title.startsWith('● Reply ready')) document.title = baseTitle;
+      }, 4000);
+    }
+
+    function resumeAfterReturn(opts?: { forceWithoutHide?: boolean }) {
       const s = useLatticeStore.getState();
+      const awaiting = threadAwaitingAssistant(s.activeThreadId);
+      const pendingAgeMs = s.pending?.startedAt ? Date.now() - s.pending.startedAt : 0;
       const awayMs = hiddenAt ? Date.now() - hiddenAt : 0;
+
+      // Embedded webviews / IDE panes sometimes never fire visibilitychange.
+      // If the pending turn is old enough, still flush on focus/pageshow.
+      if (
+        opts?.forceWithoutHide &&
+        !hiddenAt &&
+        shouldRecoverOnFocusWithoutHide({
+          awaitingAssistant: awaiting,
+          hasPending: Boolean(s.pending),
+          pendingAgeMs,
+        })
+      ) {
+        if (s.primaryStreamLive) {
+          abortActiveLatticeSend();
+          useLatticeStore.getState().setPrimaryStreamLive(false);
+        }
+        void checkPendingLatticeReply().then((ok) => {
+          if (ok) markReplyReady();
+        });
+        return;
+      }
+
       const decision = decideBackgroundResume({
-        awaitingAssistant: threadAwaitingAssistant(s.activeThreadId),
+        awaitingAssistant: awaiting,
         sending: s.sending,
         sendPhase: s.sendPhase,
         hasPending: Boolean(s.pending),
         primaryStreamLive: s.primaryStreamLive,
         awayMs,
+        pendingAgeMs,
       });
       if (decision.action === 'noop' || decision.action === 'keep_primary') return;
       if (decision.action === 'abort_and_recover') {
@@ -309,13 +376,7 @@ export function ChatPane({
         useLatticeStore.getState().setPrimaryStreamLive(false);
       }
       void checkPendingLatticeReply().then((ok) => {
-        if (ok && typeof document !== 'undefined' && document.visibilityState === 'visible') {
-          // Soft ping — reply landed after background; restore title shortly.
-          document.title = '● Reply ready · Lattice Chat';
-          window.setTimeout(() => {
-            if (document.title.startsWith('● Reply ready')) document.title = baseTitle;
-          }, 4000);
-        }
+        if (ok) markReplyReady();
       });
     }
     function onVis() {
@@ -325,23 +386,42 @@ export function ChatPane({
       }
       if (document.visibilityState !== 'visible') return;
       resumeAfterReturn();
+      // Clear hide stamp after a successful return path so the next focus
+      // does not re-trigger from a stale leave.
+      hiddenAt = 0;
     }
     function onPageShow(ev: PageTransitionEvent) {
-      if (ev.persisted) resumeAfterReturn();
+      if (ev.persisted) resumeAfterReturn({ forceWithoutHide: true });
+      else resumeAfterReturn({ forceWithoutHide: true });
     }
     function onFocus() {
-      // Some browsers skip visibilitychange on alt-tab; still flush zombie streams
-      // — but only after a real hide (hiddenAt set), not every window focus click.
-      if (!hiddenAt) return;
-      if (document.visibilityState === 'visible') resumeAfterReturn();
+      // Prefer visibilitychange; still flush when hide was missed (webview) or
+      // when a real hide was recorded.
+      if (hiddenAt) {
+        if (document.visibilityState === 'visible') resumeAfterReturn();
+        return;
+      }
+      resumeAfterReturn({ forceWithoutHide: true });
+    }
+    function onFreeze() {
+      // Page Lifecycle: tab frozen — treat as a leave so resume can recover.
+      if (!hiddenAt) hiddenAt = Date.now();
+    }
+    function onResume() {
+      resumeAfterReturn({ forceWithoutHide: true });
     }
     document.addEventListener('visibilitychange', onVis);
     window.addEventListener('pageshow', onPageShow);
     window.addEventListener('focus', onFocus);
+    // freeze/resume are experimental Page Lifecycle events — guard add.
+    document.addEventListener('freeze', onFreeze);
+    document.addEventListener('resume', onResume);
     return () => {
       document.removeEventListener('visibilitychange', onVis);
       window.removeEventListener('pageshow', onPageShow);
       window.removeEventListener('focus', onFocus);
+      document.removeEventListener('freeze', onFreeze);
+      document.removeEventListener('resume', onResume);
     };
   }, []);
 

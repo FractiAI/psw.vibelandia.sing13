@@ -652,6 +652,23 @@ function experimentNoScalarMultiplier(board) {
   };
 }
 
+/** Shared ledger primitives for EPH-IA-R (e-reversibility / dual-state) follow-ons. */
+export const iaLedger = Object.freeze({
+  encode,
+  reconstruct,
+  cloneMem,
+  eTransform,
+  plainTransform,
+  measureBleed,
+  recoverableInfo,
+  fixtureFamily,
+  mean,
+  EPS,
+  SLOT_BUDGET,
+  IA_GENERATIONS,
+  FIXTURE_SEED,
+});
+
 export function runInformationArchitecture() {
   const fixtures = fixtureFamily();
   const board = {};

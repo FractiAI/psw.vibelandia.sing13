@@ -148,6 +148,26 @@ function mdReport(report) {
     lines.push(`Best single: \`${JSON.stringify(ia.best_single)}\` · Best pair: \`${JSON.stringify(ia.best_pair)}\``);
     lines.push('');
   }
+  if (report.results.iar_readout) {
+    const iar = report.results.iar_readout;
+    lines.push('## EPH-IA-R e-reversibility / dual-state readout (engine gate)');
+    lines.push('');
+    lines.push(
+      'Freezes IA e-cost pattern. Arms: A · φ · φ+prime · e-forward · e+inverse · e+lossless · e+canonical retain · dual-state verify→commit. Metrics: RCR · L · B · E · E/(L+ε) · commit rate.',
+    );
+    lines.push('');
+    lines.push('| Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit rate |');
+    lines.push('|-----|----------|--------|--------|--------|---------|-------------|');
+    for (const id of ['A', 'D', 'G', 'E0', 'E1', 'E2', 'E3', 'E4']) {
+      const s = iar.board[id];
+      lines.push(
+        `| ${id} ${s.name} | ${s.mean_RCR.toFixed(4)} | ${s.mean_L.toFixed(4)} | ${s.mean_B.toFixed(4)} | ${s.mean_E.toFixed(4)} | ${s.mean_Eff.toFixed(4)} | ${s.mean_commit_rate.toFixed(4)} |`,
+      );
+    }
+    lines.push('');
+    lines.push(`IAR checks: \`${JSON.stringify(iar.checks)}\``);
+    lines.push('');
+  }
   lines.push('## Experiments');
   lines.push('');
   for (const e of report.results.experiments) {
@@ -204,6 +224,7 @@ async function main() {
         diagnostic_gate_pass: results.diagnostic_gate_pass,
         d2_gate_pass: results.d2_gate_pass,
         ia_gate_pass: results.ia_gate_pass,
+        iar_gate_pass: results.iar_gate_pass,
         engine_shelf_include: results.engine_shelf_include,
         engine_shelf_decision: results.engine_shelf_decision,
         primary_v1: results.primary_readout

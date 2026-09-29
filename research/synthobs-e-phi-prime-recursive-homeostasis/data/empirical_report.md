@@ -1,22 +1,22 @@
-# e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA Information Architecture
+# e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA + IA-R e-reversibility
 
 **Document ID:** `WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28`
 **Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`
-**Protocol:** `EPH-IA-2026-09-29`
-**Generated:** 2026-09-29T14:41:35.358Z
+**Protocol:** `EPH-IA-R-2026-09-29`
+**Generated:** 2026-09-29T15:21:04.864Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass (suite integrity) | `true` |
-| Passed | 28 / 28 |
+| Passed | 32 / 32 |
 | Significance gate | `false` |
 | Engine shelf include | `false` |
 | Φ_EGS | 1.618033988749895 |
 | e | 2.718281828459045 |
 
-**Engine shelf decision:** WITHHOLD — EPH-IA gate failed/mixed; V1/D/D2 dynamical nulls remain; application companion only.
+**Engine shelf decision:** WITHHOLD — EPH-IA-R gate failed/mixed; IA e-cost pattern + prior dynamical nulls remain; application companion only.
 
 ## V1 free-run readout (locked development evidence)
 
@@ -80,27 +80,47 @@ Mechanism test: encode→store→transform→retrieve→reconstruct. e=continuou
 IA checks: `{"IFE_above_A":false,"IFE_above_B":false,"RCR_above_A":false,"RCR_above_B":false,"B_below_A":true,"full_beats_best_single":false,"full_beats_best_pair":false,"slots_matched":true}`
 Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE":1.374933229599483}`
 
+## EPH-IA-R e-reversibility / dual-state readout (engine gate)
+
+Freezes IA e-cost pattern. Arms: A · φ · φ+prime · e-forward · e+inverse · e+lossless · e+canonical retain · dual-state verify→commit. Metrics: RCR · L · B · E · E/(L+ε) · commit rate.
+
+| Arm | Mean RCR | Mean L | Mean B | Mean E | E/(L+ε) | Commit rate |
+|-----|----------|--------|--------|--------|---------|-------------|
+| A Control A (plain) | 0.7197 | 0.2803 | 0.3081 | 0.0169 | 0.0604 | 0.0000 |
+| D φ hierarchy only | 0.7247 | 0.2753 | 0.3048 | 0.0168 | 0.0611 | 0.0000 |
+| G φ + prime containment | 0.7273 | 0.2727 | 0.3088 | 0.0168 | 0.0617 | 0.0000 |
+| E0 e-forward only (IA-style) | 0.6113 | 0.3887 | 0.3029 | 0.0074 | 0.0190 | 0.0000 |
+| E1 e-forward + exact inverse | 0.7208 | 0.2792 | 0.3064 | 0.0168 | 0.0603 | 0.0000 |
+| E2 e-forward + lossless delta / identity retain | 0.7500 | 0.2500 | 0.2901 | 0.0206 | 0.0822 | 0.0000 |
+| E3 e-forward on explore; identity retained | 0.7500 | 0.2500 | 0.2921 | 0.0030 | 0.0119 | 0.0000 |
+| E4 dual-state verify→commit (T→O→C→V→Commit) | 0.7105 | 0.2895 | 0.2975 | 0.0026 | 0.0090 | 0.2396 |
+
+IAR checks: `{"e_forward_costs_RCR":true,"gated_RCR_above_e_forward":true,"gated_RCR_above_A":false,"E_over_loss_above_e_forward":false,"E_over_loss_above_A":false,"commit_rate_positive":true,"useful_E_positive":true,"identity_preserved":true,"canonical_retain_RCR_above_e_forward":true,"inverse_restores_RCR":true}`
+
 ## Experiments
 
-### E0_protocol_locks — Protocol locks — V1/D/D2 dynamical nulls + EPH-IA information architecture
+### E0_protocol_locks — Protocol locks — V1/D/D2/IA nulls + EPH-IA-R e-reversibility
 
 - **Pass:** `true`
-- **Interpretation:** V1/D/D2 dynamical nulls stay locked. Engine pin uses EPH-IA information-architecture gate (IFE/RCR/bleed + complementarity).
+- **Interpretation:** V1/D/D2/IA nulls stay locked. Engine pin uses EPH-IA-R e-reversibility / dual-state gate.
 - **Honesty:** Locks do not imply the hypothesis is true.
 
 ```json
 {
   "id": "E0_protocol_locks",
-  "title": "Protocol locks — V1/D/D2 dynamical nulls + EPH-IA information architecture",
-  "protocol": "EPH-IA-2026-09-29",
+  "title": "Protocol locks — V1/D/D2/IA nulls + EPH-IA-R e-reversibility",
+  "protocol": "EPH-IA-R-2026-09-29",
   "protocol_v1_locked": "EPH-RH-2026-09-28",
   "protocol_d_locked": "EPH-RH-D-2026-09-28",
   "protocol_d2_locked": "EPH-RH-D2-2026-09-28",
+  "protocol_ia_locked": "EPH-IA-2026-09-29",
   "diagnostic_protocol": "EPH-RH-D-2026-09-28",
   "ia_protocol": "EPH-IA-2026-09-29",
+  "iar_protocol": "EPH-IA-R-2026-09-29",
   "architecture_v1": "C_n → e-transform → φ-structure → p-containment → C_{n+1}",
   "architecture_d": "matched-Q · φ-as-regulator · prime vs matched non-prime · order perms · perturbation",
   "architecture_ia": "encode→store→transform→retrieve→reconstruct · e=continuous update · φ=hierarchical allocation · primes=factorized addressing · IFE/RCR · ablations A–I",
+  "architecture_iar": "e reversibility · dual-state identity≠explore · Transform→Organize→Contain→Verify→Commit",
   "metrics": [
     "drift_D",
     "bleed_B",
@@ -109,7 +129,9 @@ Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE
     "path_length_Q",
     "IFE",
     "RCR",
-    "compression_C"
+    "compression_C",
+    "E_over_loss",
+    "commit_rate"
   ],
   "goldilocks": {
     "D_LOW": 0.05,
@@ -125,7 +147,7 @@ Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE
     "note": "V1 Goldilocks hit-rate gate is development evidence only; see DIAGNOSTIC_GATE."
   },
   "pass": true,
-  "interpretation": "V1/D/D2 dynamical nulls stay locked. Engine pin uses EPH-IA information-architecture gate (IFE/RCR/bleed + complementarity).",
+  "interpretation": "V1/D/D2/IA nulls stay locked. Engine pin uses EPH-IA-R e-reversibility / dual-state gate.",
   "honesty": "Locks do not imply the hypothesis is true."
 }
 ```
@@ -500,7 +522,7 @@ Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE
 ### E6_paper_locks — Paper narrative locks
 
 - **Pass:** `true`
-- **Interpretation:** Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2 nulls, and EPH-IA information-architecture fork.
+- **Interpretation:** Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA nulls, and EPH-IA-R e-reversibility fork.
 - **Honesty:** Structural text locks — not market validation.
 
 ```json
@@ -520,8 +542,9 @@ Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE
   "hasGate": true,
   "hasDiagnostic": true,
   "hasIA": true,
+  "hasIAR": true,
   "pass": true,
-  "interpretation": "Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2 nulls, and EPH-IA information-architecture fork.",
+  "interpretation": "Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2/IA nulls, and EPH-IA-R e-reversibility fork.",
   "honesty": "Structural text locks — not market validation."
 }
 ```
@@ -529,7 +552,7 @@ Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE
 ### E7_blog_locks — Ship-blog live-findings locks
 
 - **Pass:** `true`
-- **Interpretation:** Blog must lead with observed answer, name the unified architecture, and cover the IA fork.
+- **Interpretation:** Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R forks.
 - **Honesty:** Editorial lock — not empirical proof.
 
 ```json
@@ -545,8 +568,9 @@ Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE
   "mentionsControls": true,
   "hasDiagnostic": true,
   "hasIA": true,
+  "hasIAR": true,
   "pass": true,
-  "interpretation": "Blog must lead with observed answer, name the unified architecture, and cover the IA fork.",
+  "interpretation": "Blog must lead with observed answer, name the unified architecture, and cover IA + IA-R forks.",
   "honesty": "Editorial lock — not empirical proof."
 }
 ```
@@ -1989,6 +2013,206 @@ Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE
 }
 ```
 
+### IAR1_e_reversibility_board — EPH-IA-R — e reversibility + dual-state verify/commit
+
+- **Pass:** `true`
+- **Interpretation:** Dual-state / reversibility does not yet clear the IAR gate — report which checks failed; IA e-cost pattern remains the diagnostic lead.
+- **Honesty:** Does not rewrite IA/V1/D/D2 nulls. Tests whether removing e’s information-loss channel enables bounded evolution with recoverable identity.
+
+```json
+{
+  "id": "IAR1_e_reversibility_board",
+  "title": "EPH-IA-R — e reversibility + dual-state verify/commit",
+  "protocol": "EPH-IA-R-2026-09-29",
+  "locked_ia_protocol": "EPH-IA-2026-09-29",
+  "board": {
+    "A": {
+      "id": "A",
+      "name": "Control A (plain)",
+      "mode": "control_a",
+      "mean_RCR": 0.7196920174260876,
+      "mean_L": 0.2803079825739123,
+      "mean_B": 0.3081408423121268,
+      "mean_E": 0.01691893821085247,
+      "mean_Eff": 0.06035817352514295,
+      "mean_identity_RCR": 0.6718801838018207,
+      "mean_commit_rate": 0,
+      "mean_R_final": 0.5460295395768081
+    },
+    "D": {
+      "id": "D",
+      "name": "φ hierarchy only",
+      "mode": "phi_only",
+      "mean_RCR": 0.7246677676068971,
+      "mean_L": 0.27533223239310295,
+      "mean_B": 0.3048474315901703,
+      "mean_E": 0.01681873426892988,
+      "mean_Eff": 0.06108501368595122,
+      "mean_identity_RCR": 0.6730119093990545,
+      "mean_commit_rate": 0,
+      "mean_R_final": 0.5501672574562656
+    },
+    "G": {
+      "id": "G",
+      "name": "φ + prime containment",
+      "mode": "phi_prime",
+      "mean_RCR": 0.7273282909635986,
+      "mean_L": 0.27267170903640137,
+      "mean_B": 0.30881553223356184,
+      "mean_E": 0.016817614764851312,
+      "mean_Eff": 0.0616769269806396,
+      "mean_identity_RCR": 0.6714715269299513,
+      "mean_commit_rate": 0,
+      "mean_R_final": 0.5525844267083877
+    },
+    "E0": {
+      "id": "E0",
+      "name": "e-forward only (IA-style)",
+      "mode": "e_forward",
+      "mean_RCR": 0.611294993485258,
+      "mean_L": 0.38870500651474205,
+      "mean_B": 0.3028658285449761,
+      "mean_E": 0.007386626064470433,
+      "mean_Eff": 0.019003117885162624,
+      "mean_identity_RCR": 0.6698939687724834,
+      "mean_commit_rate": 0,
+      "mean_R_final": 0.4608804025400855
+    },
+    "E1": {
+      "id": "E1",
+      "name": "e-forward + exact inverse",
+      "mode": "e_inverse",
+      "mean_RCR": 0.7207968712073431,
+      "mean_L": 0.27920312879265685,
+      "mean_B": 0.30643493795502175,
+      "mean_E": 0.016844119682290076,
+      "mean_Eff": 0.060329049413158545,
+      "mean_identity_RCR": 0.673509266929312,
+      "mean_commit_rate": 0,
+      "mean_R_final": 0.5466427467380776
+    },
+    "E2": {
+      "id": "E2",
+      "name": "e-forward + lossless delta / identity retain",
+      "mode": "e_lossless_delta",
+      "mean_RCR": 0.75,
+      "mean_L": 0.25,
+      "mean_B": 0.2901077370135244,
+      "mean_E": 0.020560353037480883,
+      "mean_Eff": 0.0822410831855908,
+      "mean_identity_RCR": 0.75,
+      "mean_commit_rate": 0,
+      "mean_R_final": 0.5717570739679192
+    },
+    "E3": {
+      "id": "E3",
+      "name": "e-forward on explore; identity retained",
+      "mode": "e_canonical_retain",
+      "mean_RCR": 0.75,
+      "mean_L": 0.25,
+      "mean_B": 0.2920955866820616,
+      "mean_E": 0.0029667552451778127,
+      "mean_Eff": 0.011866973512817201,
+      "mean_identity_RCR": 0.75,
+      "mean_commit_rate": 0,
+      "mean_R_final": 0.5717570739679192
+    },
+    "E4": {
+      "id": "E4",
+      "name": "dual-state verify→commit (T→O→C→V→Commit)",
+      "mode": "e_gate_commit",
+      "mean_RCR": 0.7105080885508208,
+      "mean_L": 0.2894919114491792,
+      "mean_B": 0.29745460978225907,
+      "mean_E": 0.0026165370877607647,
+      "mean_Eff": 0.009038345963853077,
+      "mean_identity_RCR": 0.7212381358221333,
+      "mean_commit_rate": 0.23958333333333334,
+      "mean_R_final": 0.5359170535244996
+    }
+  },
+  "checks": {
+    "e_forward_costs_RCR": true,
+    "gated_RCR_above_e_forward": true,
+    "gated_RCR_above_A": false,
+    "E_over_loss_above_e_forward": false,
+    "E_over_loss_above_A": false,
+    "commit_rate_positive": true,
+    "useful_E_positive": true,
+    "identity_preserved": true,
+    "canonical_retain_RCR_above_e_forward": true,
+    "inverse_restores_RCR": true
+  },
+  "iar_gate_pass": false,
+  "commit_thresholds": {
+    "R_min": 0.55,
+    "RCR_min": 0.92,
+    "B_max": 0.32,
+    "E_min": 0.0001
+  },
+  "pass": true,
+  "interpretation": "Dual-state / reversibility does not yet clear the IAR gate — report which checks failed; IA e-cost pattern remains the diagnostic lead.",
+  "honesty": "Does not rewrite IA/V1/D/D2 nulls. Tests whether removing e’s information-loss channel enables bounded evolution with recoverable identity."
+}
+```
+
+### IAR2_e_cost_cluster_lock — Confirm IA pattern — e-forward collapses RCR vs A
+
+- **Pass:** `true`
+- **Interpretation:** IA diagnostic pattern replicates: e-forward is an information-destroying transform on these fixtures.
+- **Honesty:** Freeze this as diagnostic evidence; do not silently retune e to erase it.
+
+```json
+{
+  "id": "IAR2_e_cost_cluster_lock",
+  "title": "Confirm IA pattern — e-forward collapses RCR vs A",
+  "e_forward_RCR": 0.611294993485258,
+  "control_a_RCR": 0.7196920174260876,
+  "gap": 0.10839702394082962,
+  "pass": true,
+  "interpretation": "IA diagnostic pattern replicates: e-forward is an information-destroying transform on these fixtures.",
+  "honesty": "Freeze this as diagnostic evidence; do not silently retune e to erase it."
+}
+```
+
+### IAR3_separation_of_functions — Transform ≠ storage ≠ identity (dual-state architecture)
+
+- **Pass:** `true`
+- **Interpretation:** IAR implements systems architecture (evolution / organization / containment as roles) rather than one compound mathematical operator.
+- **Honesty:** Architectural claim; live board decides whether verify/commit helps.
+
+```json
+{
+  "id": "IAR3_separation_of_functions",
+  "title": "Transform ≠ storage ≠ identity (dual-state architecture)",
+  "architecture": "Transform → Organize → Contain → Verify → Commit; explore mutates; identity commits only under R/B/E thresholds",
+  "sequential_vs_coupled_note": "D2 locked: sequential beat coupled — supports separation of functions over compound E×Φ×P",
+  "pass": true,
+  "interpretation": "IAR implements systems architecture (evolution / organization / containment as roles) rather than one compound mathematical operator.",
+  "honesty": "Architectural claim; live board decides whether verify/commit helps."
+}
+```
+
+### IAR4_lineage_lock — Lineage lock — ERFT → … → EPH-IA → EPH-IA-R
+
+- **Pass:** `true`
+- **Interpretation:** Targeted e investigation — not another full e/φ/prime parameter sweep.
+- **Honesty:** Prior layers stay locked.
+
+```json
+{
+  "id": "IAR4_lineage_lock",
+  "title": "Lineage lock — ERFT → … → EPH-IA → EPH-IA-R",
+  "lineage": [
+    "EPH-IA: info lifecycle; e costs RCR (locked null / withhold)",
+    "EPH-IA-R: e reversibility + dual-state verify/commit?"
+  ],
+  "pass": true,
+  "interpretation": "Targeted e investigation — not another full e/φ/prime parameter sweep.",
+  "honesty": "Prior layers stay locked."
+}
+```
+
 ## Significance gate (pre-registered)
 
 ```json
@@ -2004,4 +2228,4 @@ Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE
 
 ## Honesty boundary
 
-Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, and EPH-RH-D2 loss-aware F / adaptive / coupled withhold are locked development/diagnostic evidence (dynamical controller layers). EPH-IA tests the category-error fork: e / φ / primes as information-organization primitives (continuous update · hierarchical φ allocation · prime factorization addressing) on an encode→store→transform→retrieve→reconstruct ledger, with IFE / RCR / bleed / compression and primary ablations A–I. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that dynamical nulls are rescinded. Engine pin requires the EPH-IA gate.
+Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, EPH-RH-D2 loss-aware F / adaptive / coupled withhold, and EPH-IA information-architecture withhold are locked development/diagnostic evidence. EPH-IA-R freezes the IA e-cost pattern and tests e reversibility + dual-state verify/commit (transform ≠ storage ≠ identity) rather than another parameter sweep. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that prior nulls are rescinded. Engine pin requires the EPH-IA-R gate.

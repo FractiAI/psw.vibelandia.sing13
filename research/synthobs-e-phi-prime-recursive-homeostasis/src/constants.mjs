@@ -12,7 +12,7 @@ export const SQRT2 = Math.SQRT2;
 export const DOC_ID = 'WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28';
 export const REGISTRY_ID = 'synthobs-e-phi-prime-recursive-homeostasis-2026-09';
 export const STUDY_TITLE =
-  'e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA Information Architecture';
+  'e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA + IA-R e-reversibility';
 export const PAPER_NAME = 'SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md';
 export const SHIP_BLOG_SLUG = 'e-phi-prime-recursive-homeostasis';
 export const SHIP_BLOG_FILE = 'blog-e-phi-prime-recursive-homeostasis-2026-09.html';
@@ -25,8 +25,10 @@ export const PROTOCOL_VERSION_V1 = 'EPH-RH-2026-09-28';
 export const PROTOCOL_VERSION_D = 'EPH-RH-D-2026-09-28';
 /** EPH-RH-D2 adaptive / loss-aware / coupled (locked withhold). */
 export const PROTOCOL_VERSION_D2 = 'EPH-RH-D2-2026-09-28';
-/** Live protocol: EPH-IA information-architecture mechanism test. */
-export const PROTOCOL_VERSION = 'EPH-IA-2026-09-29';
+/** EPH-IA information-architecture mechanism test (locked withhold). */
+export const PROTOCOL_VERSION_IA = 'EPH-IA-2026-09-29';
+/** Live protocol: EPH-IA-R e-reversibility + dual-state verify/commit. */
+export const PROTOCOL_VERSION = 'EPH-IA-R-2026-09-29';
 
 /** Pre-registered recursion depth. */
 export const GENERATIONS = 24;
@@ -97,8 +99,7 @@ export const D2_GATE = Object.freeze({
 
 /**
  * EPH-IA gate — information lifecycle (encode→store→transform→retrieve→reconstruct).
- * IFE = recoverable / representation cost; RCR = recursive conservation ratio.
- * Ablations A–I are primary (complementarity), not secondary.
+ * Locked withhold evidence; engine pin follows IAR_GATE.
  */
 export const IA_GATE = Object.freeze({
   require_IFE_above_A: true,
@@ -110,6 +111,24 @@ export const IA_GATE = Object.freeze({
   require_full_beats_best_pair: true,
   require_superadditive: true,
   superadditive_margin: 0.02,
+  engine_shelf_requires_gate: false, // superseded by IAR_GATE
+  note: 'EPH-IA gate is locked withhold evidence; engine pin follows IAR_GATE.',
+});
+
+/**
+ * EPH-IA-R gate — e reversibility + dual-state verify/commit.
+ * Tests whether removing e’s information-loss channel recovers useful change
+ * with bounded bleed and recoverable identity.
+ */
+export const IAR_GATE = Object.freeze({
+  require_gated_RCR_above_e_forward: true,
+  require_gated_RCR_above_A: true,
+  require_E_over_loss_above_e_forward: true,
+  require_E_over_loss_above_A: true,
+  require_commit_rate_positive: true,
+  require_useful_E_positive: true,
+  require_identity_preserved: true,
+  rcr_margin: 0.05,
   engine_shelf_requires_gate: true,
 });
 
@@ -122,4 +141,4 @@ export const PHI_E_FORMULATIONS = Object.freeze([
 ]);
 
 export const HONESTY =
-  'Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, and EPH-RH-D2 loss-aware F / adaptive / coupled withhold are locked development/diagnostic evidence (dynamical controller layers). EPH-IA tests the category-error fork: e / φ / primes as information-organization primitives (continuous update · hierarchical φ allocation · prime factorization addressing) on an encode→store→transform→retrieve→reconstruct ledger, with IFE / RCR / bleed / compression and primary ablations A–I. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that dynamical nulls are rescinded. Engine pin requires the EPH-IA gate.';
+  'Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, EPH-RH-D2 loss-aware F / adaptive / coupled withhold, and EPH-IA information-architecture withhold are locked development/diagnostic evidence. EPH-IA-R freezes the IA e-cost pattern and tests e reversibility + dual-state verify/commit (transform ≠ storage ≠ identity) rather than another parameter sweep. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that prior nulls are rescinded. Engine pin requires the EPH-IA-R gate.';

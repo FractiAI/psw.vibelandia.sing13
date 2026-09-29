@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-29** · **343** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-29** · **345** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -315,6 +315,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — One Tribe, Many Homes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-generative-matrix-phi-egs-2026-09.html`](/interfaces/blog-generative-matrix-phi-egs-2026-09.html) | Stop Paying for Twenty Origin Stories · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Bison, Magnets, and the Great Plains Trail · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-golden-y-frontier-club-2026-09.html`](/interfaces/blog-golden-y-frontier-club-2026-09.html) | When Frontiersmen Need a Basecamp Between Trail and Port, Does a Club Hold? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Herd Corridors Under One Magnetic Sky · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-net-zero-2026-09-old.html`](/interfaces/blog-goldilocks-net-zero-2026-09-old.html) | The Viable Middle Never Stops Moving · Ship blog · SS Vibelandia |
@@ -483,6 +484,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/front-desk.html`](/interfaces/front-desk.html) | Front Desk · SS Vibelandia check-in |
 | [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure · SS Vibelandia |
 | [`/interfaces/get-started.html`](/interfaces/get-started.html) | Welcome aboard · SS Vibelandia · Goldilocks Cruiseship |
+| [`/interfaces/golden-y-frontier-club.html`](/interfaces/golden-y-frontier-club.html) | Golden Y Frontier Club · Basecamp for Today’s Practicing Frontiersmen · SS Vibelandia |
 | [`/interfaces/goldilocks-beehive-residency.html`](/interfaces/goldilocks-beehive-residency.html) | Goldilocks Syntheverse Beehive Residency · Machote Moderno members |
 | [`/interfaces/goldilocks-os.html`](/interfaces/goldilocks-os.html) | Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia |
 | [`/interfaces/goldilocks-players-guide.html`](/interfaces/goldilocks-players-guide.html) | Holographic Goldilocks Players Guide · Free · SS Vibelandia QUESTFEST |

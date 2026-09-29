@@ -1,22 +1,22 @@
-# e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 Diagnostic Fork
+# e × φ × Prime Recursive Homeostasis — Unified Architecture + D/D2 + IA Information Architecture
 
 **Document ID:** `WP-SYNTHOBS-E-PHI-PRIME-RECURSIVE-HOMEOSTASIS-2026-09-28`
 **Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`
-**Protocol:** `EPH-RH-D2-2026-09-28`
-**Generated:** 2026-09-28T04:37:26.174Z
+**Protocol:** `EPH-IA-2026-09-29`
+**Generated:** 2026-09-29T14:41:35.358Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass (suite integrity) | `true` |
-| Passed | 22 / 22 |
+| Passed | 28 / 28 |
 | Significance gate | `false` |
 | Engine shelf include | `false` |
 | Φ_EGS | 1.618033988749895 |
 | e | 2.718281828459045 |
 
-**Engine shelf decision:** WITHHOLD — EPH-RH-D2 gate failed/mixed; V1 and D nulls remain; application companion only.
+**Engine shelf decision:** WITHHOLD — EPH-IA gate failed/mixed; V1/D/D2 dynamical nulls remain; application companion only.
 
 ## V1 free-run readout (locked development evidence)
 
@@ -61,29 +61,55 @@ Novelty inflation audit: E/D random leads=`true` · F random=3.3525 · F coupled
 Interaction: sequential F=3.0739 · coupled F=2.8538 · Δ=-0.2202
 New-attractor homeostasis rate: `0`
 
+## EPH-IA information-architecture readout (engine gate)
+
+Mechanism test: encode→store→transform→retrieve→reconstruct. e=continuous EMA update · φ=hierarchical capacity allocation · primes=factorized addressing. Metrics: IFE=recoverable/cost · RCR · bleed B · compression C. Ablations A–I are primary.
+
+| Arm | Mean IFE | Mean RCR | Mean B | Mean C | Mean R₀ | Mean R_final |
+|-----|----------|----------|--------|--------|---------|--------------|
+| A Raw/unstructured | 1.3738 | 0.7243 | 0.3044 | 0.4000 | 0.5718 | 0.5495 |
+| B Matched-complexity random | 1.3757 | 0.7252 | 0.3098 | 0.4000 | 0.5718 | 0.5503 |
+| C Prime addressing only | 1.3694 | 0.7216 | 0.3052 | 0.4000 | 0.5718 | 0.5477 |
+| D φ hierarchy only | 1.3808 | 0.7276 | 0.3051 | 0.4000 | 0.5718 | 0.5523 |
+| E e continuous update only | 1.1595 | 0.6143 | 0.3040 | 0.4000 | 0.5718 | 0.4638 |
+| F e + φ | 1.1552 | 0.6119 | 0.3030 | 0.4000 | 0.5718 | 0.4621 |
+| G φ + prime | 1.3749 | 0.7249 | 0.3054 | 0.4000 | 0.5718 | 0.5500 |
+| H e + prime | 1.1469 | 0.6077 | 0.3035 | 0.4000 | 0.5718 | 0.4587 |
+| I e + φ + prime (full) | 1.1478 | 0.6086 | 0.3030 | 0.4000 | 0.5718 | 0.4591 |
+
+IA checks: `{"IFE_above_A":false,"IFE_above_B":false,"RCR_above_A":false,"RCR_above_B":false,"B_below_A":true,"full_beats_best_single":false,"full_beats_best_pair":false,"slots_matched":true}`
+Best single: `{"id":"D","IFE":1.3808457405675114}` · Best pair: `{"id":"G","IFE":1.374933229599483}`
+
 ## Experiments
 
-### E0_protocol_locks — Protocol locks — V1 free-run + EPH-RH-D diagnostic matrix
+### E0_protocol_locks — Protocol locks — V1/D/D2 dynamical nulls + EPH-IA information architecture
 
 - **Pass:** `true`
-- **Interpretation:** V1 Goldilocks hit-rate null stays locked. Engine pin uses EPH-RH-D matched-budget multidimensional gate.
+- **Interpretation:** V1/D/D2 dynamical nulls stay locked. Engine pin uses EPH-IA information-architecture gate (IFE/RCR/bleed + complementarity).
 - **Honesty:** Locks do not imply the hypothesis is true.
 
 ```json
 {
   "id": "E0_protocol_locks",
-  "title": "Protocol locks — V1 free-run + EPH-RH-D diagnostic matrix",
-  "protocol": "EPH-RH-D2-2026-09-28",
+  "title": "Protocol locks — V1/D/D2 dynamical nulls + EPH-IA information architecture",
+  "protocol": "EPH-IA-2026-09-29",
   "protocol_v1_locked": "EPH-RH-2026-09-28",
+  "protocol_d_locked": "EPH-RH-D-2026-09-28",
+  "protocol_d2_locked": "EPH-RH-D2-2026-09-28",
   "diagnostic_protocol": "EPH-RH-D-2026-09-28",
+  "ia_protocol": "EPH-IA-2026-09-29",
   "architecture_v1": "C_n → e-transform → φ-structure → p-containment → C_{n+1}",
   "architecture_d": "matched-Q · φ-as-regulator · prime vs matched non-prime · order perms · perturbation",
+  "architecture_ia": "encode→store→transform→retrieve→reconstruct · e=continuous update · φ=hierarchical allocation · primes=factorized addressing · IFE/RCR · ablations A–I",
   "metrics": [
     "drift_D",
     "bleed_B",
     "useful_evolution_E",
     "efficiency_E_over_D",
-    "path_length_Q"
+    "path_length_Q",
+    "IFE",
+    "RCR",
+    "compression_C"
   ],
   "goldilocks": {
     "D_LOW": 0.05,
@@ -99,7 +125,7 @@ New-attractor homeostasis rate: `0`
     "note": "V1 Goldilocks hit-rate gate is development evidence only; see DIAGNOSTIC_GATE."
   },
   "pass": true,
-  "interpretation": "V1 Goldilocks hit-rate null stays locked. Engine pin uses EPH-RH-D matched-budget multidimensional gate.",
+  "interpretation": "V1/D/D2 dynamical nulls stay locked. Engine pin uses EPH-IA information-architecture gate (IFE/RCR/bleed + complementarity).",
   "honesty": "Locks do not imply the hypothesis is true."
 }
 ```
@@ -474,7 +500,7 @@ New-attractor homeostasis rate: `0`
 ### E6_paper_locks — Paper narrative locks
 
 - **Pass:** `true`
-- **Interpretation:** Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1 null, and EPH-RH-D diagnostic.
+- **Interpretation:** Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2 nulls, and EPH-IA information-architecture fork.
 - **Honesty:** Structural text locks — not market validation.
 
 ```json
@@ -493,8 +519,9 @@ New-attractor homeostasis rate: `0`
   "hasOperator": true,
   "hasGate": true,
   "hasDiagnostic": true,
+  "hasIA": true,
   "pass": true,
-  "interpretation": "Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1 null, and EPH-RH-D diagnostic.",
+  "interpretation": "Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2 nulls, and EPH-IA information-architecture fork.",
   "honesty": "Structural text locks — not market validation."
 }
 ```
@@ -502,7 +529,7 @@ New-attractor homeostasis rate: `0`
 ### E7_blog_locks — Ship-blog live-findings locks
 
 - **Pass:** `true`
-- **Interpretation:** Blog must lead with observed answer and name the unified architecture.
+- **Interpretation:** Blog must lead with observed answer, name the unified architecture, and cover the IA fork.
 - **Honesty:** Editorial lock — not empirical proof.
 
 ```json
@@ -517,8 +544,9 @@ New-attractor homeostasis rate: `0`
   "hasHonestyClass": true,
   "mentionsControls": true,
   "hasDiagnostic": true,
+  "hasIA": true,
   "pass": true,
-  "interpretation": "Blog must lead with observed answer and name the unified architecture.",
+  "interpretation": "Blog must lead with observed answer, name the unified architecture, and cover the IA fork.",
   "honesty": "Editorial lock — not empirical proof."
 }
 ```
@@ -1676,6 +1704,291 @@ New-attractor homeostasis rate: `0`
 }
 ```
 
+### IA1_information_architecture_board — EPH-IA — recursive storage / compression / retrieval / reconstruction
+
+- **Pass:** `true`
+- **Interpretation:** Information-architecture hypothesis not established on these fixtures — full stack fails one or more IFE/RCR/bleed/complementarity checks vs A/B and ablations.
+- **Honesty:** Does not rewrite V1/D/D2 dynamical nulls. Tests representation lifecycle, not Goldilocks hit-rate or E/D controllers. Soft Story / fixture evidence only.
+
+```json
+{
+  "id": "IA1_information_architecture_board",
+  "title": "EPH-IA — recursive storage / compression / retrieval / reconstruction",
+  "protocol": "EPH-IA-2026-09-29",
+  "board": {
+    "A": {
+      "name": "Raw/unstructured",
+      "mean_IFE": 1.373833731010027,
+      "mean_RCR": 0.7242586920680505,
+      "mean_B": 0.30437707747444154,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.5495348662377418,
+      "mean_slots": 84
+    },
+    "B": {
+      "name": "Matched-complexity random",
+      "mean_IFE": 1.3756783129159367,
+      "mean_RCR": 0.7252309672896421,
+      "mean_B": 0.30979621810406055,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.5502727008446875,
+      "mean_slots": 84
+    },
+    "C": {
+      "name": "Prime addressing only",
+      "mean_IFE": 1.3693696834367415,
+      "mean_RCR": 0.7215994364596188,
+      "mean_B": 0.3051982048577171,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.5477492427443802,
+      "mean_slots": 84
+    },
+    "D": {
+      "name": "φ hierarchy only",
+      "mean_IFE": 1.3808457405675114,
+      "mean_RCR": 0.7275861462285864,
+      "mean_B": 0.30505272082306395,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.5523396770727451,
+      "mean_slots": 84
+    },
+    "E": {
+      "name": "e continuous update only",
+      "mean_IFE": 1.1595042285849912,
+      "mean_RCR": 0.6142564208005191,
+      "mean_B": 0.30396648890183725,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.4638028509382251,
+      "mean_slots": 84
+    },
+    "F": {
+      "name": "e + φ",
+      "mean_IFE": 1.15524052761803,
+      "mean_RCR": 0.6118956877485502,
+      "mean_B": 0.3030083742897457,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.46209736628773956,
+      "mean_slots": 84
+    },
+    "G": {
+      "name": "φ + prime",
+      "mean_IFE": 1.374933229599483,
+      "mean_RCR": 0.7248970522505421,
+      "mean_B": 0.3053745337470207,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.5499746667730228,
+      "mean_slots": 84
+    },
+    "H": {
+      "name": "e + prime",
+      "mean_IFE": 1.1468696736183759,
+      "mean_RCR": 0.6077150883243508,
+      "mean_B": 0.3034543300021977,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.45874901631702397,
+      "mean_slots": 84
+    },
+    "I": {
+      "name": "e + φ + prime (full)",
+      "mean_IFE": 1.1477668477289455,
+      "mean_RCR": 0.608627625427378,
+      "mean_B": 0.30297880057406945,
+      "mean_C": 0.39999999999999997,
+      "mean_R0": 0.5717570739679192,
+      "mean_R_final": 0.459107886858426,
+      "mean_slots": 84
+    }
+  },
+  "checks": {
+    "IFE_above_A": false,
+    "IFE_above_B": false,
+    "RCR_above_A": false,
+    "RCR_above_B": false,
+    "B_below_A": true,
+    "full_beats_best_single": false,
+    "full_beats_best_pair": false,
+    "slots_matched": true
+  },
+  "ia_gate_pass": false,
+  "pass": true,
+  "interpretation": "Information-architecture hypothesis not established on these fixtures — full stack fails one or more IFE/RCR/bleed/complementarity checks vs A/B and ablations.",
+  "honesty": "Does not rewrite V1/D/D2 dynamical nulls. Tests representation lifecycle, not Goldilocks hit-rate or E/D controllers. Soft Story / fixture evidence only."
+}
+```
+
+### IA2_ablation_complementarity — Ablations A–I — where does any advantage originate?
+
+- **Pass:** `true`
+- **Interpretation:** Full stack does not beat best pair/single on IFE — no clean complementarity win; report which component (if any) carries the load.
+- **Honesty:** Ablations are primary for the info-architecture hypothesis, not secondary footnotes.
+
+```json
+{
+  "id": "IA2_ablation_complementarity",
+  "title": "Ablations A–I — where does any advantage originate?",
+  "complementarity": {
+    "best_single_id": "D",
+    "best_single_IFE": 1.3808457405675114,
+    "best_pair_id": "G",
+    "best_pair_IFE": 1.374933229599483,
+    "full_IFE": 1.1477668477289455,
+    "full_beats_best_single": false,
+    "full_beats_best_pair": false,
+    "prime_leads_bleed": false,
+    "phi_leads_R0": true,
+    "e_leads_RCR": false
+  },
+  "pass": true,
+  "interpretation": "Full stack does not beat best pair/single on IFE — no clean complementarity win; report which component (if any) carries the load.",
+  "honesty": "Ablations are primary for the info-architecture hypothesis, not secondary footnotes."
+}
+```
+
+### IA3_component_information_jobs — Component jobs — prime address · φ hierarchy · e continuous update
+
+- **Pass:** `true`
+- **Interpretation:** Each constant is scored on its information job (addressing / hierarchical allocation / continuous update) — not as a scalar multiplier.
+- **Honesty:** Role assignment is architectural; live numbers decide whether the assignment helps.
+
+```json
+{
+  "id": "IA3_component_information_jobs",
+  "title": "Component jobs — prime address · φ hierarchy · e continuous update",
+  "prime": {
+    "IFE": 1.3693696834367415,
+    "B": 0.3051982048577171,
+    "RCR": 0.7215994364596188,
+    "vs_A_IFE": -0.004464047573285557
+  },
+  "phi": {
+    "IFE": 1.3808457405675114,
+    "R0": 0.5717570739679192,
+    "RCR": 0.7275861462285864,
+    "vs_A_IFE": 0.007012009557484378
+  },
+  "e": {
+    "IFE": 1.1595042285849912,
+    "RCR": 0.6142564208005191,
+    "vs_A_IFE": -0.2143295024250358
+  },
+  "pass": true,
+  "interpretation": "Each constant is scored on its information job (addressing / hierarchical allocation / continuous update) — not as a scalar multiplier.",
+  "honesty": "Role assignment is architectural; live numbers decide whether the assignment helps."
+}
+```
+
+### IA4_matched_representation_budget — Matched representation budget (slot count)
+
+- **Pass:** `true`
+- **Interpretation:** All arms store ≈84 slots — IFE differences are not free extra storage.
+- **Honesty:** Representation cost must be matched before crowning an architecture.
+
+```json
+{
+  "id": "IA4_matched_representation_budget",
+  "title": "Matched representation budget (slot count)",
+  "slot_budget": 84,
+  "mean_slots_by_arm": {
+    "A": 84,
+    "B": 84,
+    "C": 84,
+    "D": 84,
+    "E": 84,
+    "F": 84,
+    "G": 84,
+    "H": 84,
+    "I": 84
+  },
+  "all_matched": true,
+  "pass": true,
+  "interpretation": "All arms store ≈84 slots — IFE differences are not free extra storage.",
+  "honesty": "Representation cost must be matched before crowning an architecture."
+}
+```
+
+### IA5_no_scalar_multiplier_lock — Prohibit scalar-multiplier implementations of e / φ / primes
+
+- **Pass:** `true`
+- **Interpretation:** φ allocates hierarchical capacity; e sets a continuous EMA update kernel; primes assign factorization addresses — none is x′=c·x.
+- **Honesty:** Implementation lock against the category error that produced flat φ-strength sweeps in D.
+
+```json
+{
+  "id": "IA5_no_scalar_multiplier_lock",
+  "title": "Prohibit scalar-multiplier implementations of e / φ / primes",
+  "phi_capacities": [
+    38,
+    23,
+    14,
+    9
+  ],
+  "phi_capacity_mean_ratio": 1.6168622038187255,
+  "phi_shaped_hierarchy": true,
+  "e_kernel_alpha": 0.3077993724446537,
+  "prime_address_sample": [
+    {
+      "i": 0,
+      "address": 2
+    },
+    {
+      "i": 1,
+      "address": 3
+    },
+    {
+      "i": 2,
+      "address": 2
+    },
+    {
+      "i": 3,
+      "address": 5
+    },
+    {
+      "i": 4,
+      "address": 2
+    },
+    {
+      "i": 5,
+      "address": 7
+    }
+  ],
+  "pass": true,
+  "interpretation": "φ allocates hierarchical capacity; e sets a continuous EMA update kernel; primes assign factorization addresses — none is x′=c·x.",
+  "honesty": "Implementation lock against the category error that produced flat φ-strength sweeps in D."
+}
+```
+
+### IA6_lineage_lock — Lineage lock — ERFT → ERFT-D → EPH-RH V1/D/D2 → EPH-IA
+
+- **Pass:** `true`
+- **Interpretation:** IA is the mechanism test after dynamical layers exposed the category error.
+- **Honesty:** Prior nulls stay locked development/diagnostic evidence.
+
+```json
+{
+  "id": "IA6_lineage_lock",
+  "title": "Lineage lock — ERFT → ERFT-D → EPH-RH V1/D/D2 → EPH-IA",
+  "lineage": [
+    "ERFT: special constant recursive fidelity?",
+    "ERFT-D: dynamic multi-constant regulation?",
+    "EPH-RH V1: e+φ+prime dynamical Goldilocks? (locked null)",
+    "EPH-RH-D: matched-Q regulator efficiency? (locked null)",
+    "EPH-RH-D2: loss-aware F / adaptive φ / coupled? (locked withhold)",
+    "EPH-IA: information lifecycle — encode→store→transform→retrieve→reconstruct?"
+  ],
+  "pass": true,
+  "interpretation": "IA is the mechanism test after dynamical layers exposed the category error.",
+  "honesty": "Prior nulls stay locked development/diagnostic evidence."
+}
+```
+
 ## Significance gate (pre-registered)
 
 ```json
@@ -1691,4 +2004,4 @@ New-attractor homeostasis rate: `0`
 
 ## Honesty boundary
 
-Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null and EPH-RH-D matched-budget E/(D+ε) nulls are locked development/diagnostic evidence. EPH-RH-D2 tests the rewritten hypothesis: controlled transformation + adaptive proportional regulation + bounded compartmentalization, with exact Q_MAX, irreversible loss L (not origin drift D), identity invariants I, composite F=(E·R·I)/(L+λB+ε), sequential G vs coupled H, and perturbation→new-attractor homeostasis. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, or finished homeostasis proof. Engine pin requires the EPH-RH-D2 gate.
+Exploratory computational catalog suite for a unified e+φ+prime recursive architecture. V1 free-run Goldilocks hit-rate null, EPH-RH-D matched-budget E/(D+ε) null, and EPH-RH-D2 loss-aware F / adaptive / coupled withhold are locked development/diagnostic evidence (dynamical controller layers). EPH-IA tests the category-error fork: e / φ / primes as information-organization primitives (continuous update · hierarchical φ allocation · prime factorization addressing) on an encode→store→transform→retrieve→reconstruct ledger, with IFE / RCR / bleed / compression and primary ablations A–I. Soft Story / fixture evidence only. Does not claim physical law, CODATA replacement, clinical validation, finished homeostasis proof, or that dynamical nulls are rescinded. Engine pin requires the EPH-IA gate.

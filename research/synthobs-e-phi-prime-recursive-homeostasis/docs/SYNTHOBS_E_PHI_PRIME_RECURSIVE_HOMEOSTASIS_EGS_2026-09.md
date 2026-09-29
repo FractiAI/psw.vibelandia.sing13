@@ -2,7 +2,7 @@
 
 **Subtitle:** Can $e$-driven transformation, $\varphi$-based recursive proportion, and prime-based containment collectively produce a Goldilocks regime of recursive evolution — nonzero change with bounded drift and minimal bleed?
 
-**Current protocol (live):** `EPH-RH-D-2026-09-28` · **V1 locked:** `EPH-RH-2026-09-28` · **Live results:** §7 · guest note [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition)
+**Current protocol (live):** `EPH-IA-2026-09-29` · **D2 locked:** `EPH-RH-D2-2026-09-28` · **D locked:** `EPH-RH-D-2026-09-28` · **V1 locked:** `EPH-RH-2026-09-28` · **Live results:** §7 · guest note [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition)
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -11,10 +11,10 @@
 **Registry ID:** `synthobs-e-phi-prime-recursive-homeostasis-2026-09`  
 **Publication Ref:** FAI-SYNTHOBS-E-PHI-PRIME-RH-2026-09  
 **Series Position:** Exploratory follow-on to [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Infinite Octave Prime Parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md)  
-**Classification:** Catalog / Soft Story exploratory computational experiment · application companion by default *(see Honesty boundary · EPH-RH-D gate)*  
+**Classification:** Catalog / Soft Story exploratory computational experiment · application companion by default *(see Honesty boundary · EPH-IA gate)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
 **Guest surfaces:** [`/ship-blog/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/e-phi-prime-recursive-homeostasis) · [`/whitepaper/e-phi-prime-recursive-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/e-phi-prime-recursive-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)  
-**Engine pin:** **Withheld unless EPH-RH-D multidimensional gate passes** — see §7. V1 Goldilocks hit-rate null is locked development evidence (not the engine gate). Suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis`  
+**Engine pin:** **Withheld unless EPH-IA gate passes** — see §7. V1 / EPH-RH-D / EPH-RH-D2 dynamical nulls are locked development/diagnostic evidence. Suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis`  
 **Cross-links:** [Homeostasis Expedition · Journey](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · [ERFT](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Prime parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md) · [Prime-indexed volumetric storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
@@ -132,19 +132,33 @@ Falsifiers include: unified no better than controls; drift falls but useful evol
 
 Pre-registered historically in `SIGNIFICANCE_GATE`. **No longer the engine pin.** Kept as the V1 free-run receipt: Control A was comparatively inert while unified carried a heavy transformation burden — so Goldilocks hit-rate rewarded stagnation.
 
-### 6.2 EPH-RH-D multidimensional gate (live engine pin)
+### 6.2 EPH-RH-D multidimensional gate (locked diagnostic evidence)
 
-Pre-registered in `DIAGNOSTIC_GATE` / diagnostic matrix (`src/eph-rh-diagnostic.mjs`):
+Pre-registered in `DIAGNOSTIC_GATE` / `src/eph-rh-diagnostic.mjs`. Uses $E/(D+\varepsilon)$ under approximately matched $Q$. **No longer the engine pin** — see §6.3. Locked receipt: beats Control A on efficiency; loses to matched non-prime; homeostatic signature rate 0.
 
-Under **matched transformation budget** $Q$:
+### 6.3 EPH-RH-D2 gate (locked diagnostic evidence)
 
-- $E_U > E_A$
-- $B_U < B_A$
-- $D_U > 0$ and $D_U < D_{\mathrm{collapse}}$
-- $E_U/(D_U+\varepsilon) > E_A/(D_A+\varepsilon)$
-- $E_U/(D_U+\varepsilon) > E_{\mathrm{matched\ non\text{-}prime}}/(D+\varepsilon)$
+Pre-registered in `D2_GATE` / `src/eph-rh-d2.mjs`. Rewritten dynamical hypothesis (exact $Q$, loss-aware $F$, adaptive φ, coupled $H$ vs sequential $G$). **No longer the engine pin** — see §6.4. Locked receipt: $F$ beats A + matched non-prime; sequential still beats coupled; open-loop still beats adaptive; new-attractor rate 0.
 
-Independent unit of inference = fixture/seed (not generation-within-trajectory). Bootstrap CIs reported on efficiency.
+### 6.4 EPH-IA gate (live engine pin)
+
+Pre-registered in `IA_GATE` / `src/eph-ia.mjs`. **Category-error fork:** prior layers tested $e$/$\varphi$/primes as transformation/control operators. EPH-IA tests them as **information-organization primitives** on a ledger:
+
+$$
+\text{Information}
+\rightarrow
+\underbrace{e}_{\text{continuous update}}
+\rightarrow
+\underbrace{\varphi}_{\text{hierarchical allocation}}
+\rightarrow
+\underbrace{\text{prime structure}}_{\text{factorized addressing}}
+\rightarrow
+\text{store}\rightarrow\text{retrieve}\rightarrow\text{reconstruct}
+$$
+
+Primary metrics: $\mathrm{IFE}=\text{recoverable}/\text{representation cost}$, $\mathrm{RCR}=\text{recoverable after recursion}/\text{recoverable at encode}$, bleed $B$, compression $C$. **Ablations A–I are primary** (complementarity), not secondary footnotes. Scalar-multiplier implementations of $e$/$\varphi$/primes are prohibited.
+
+Gate requires full stack $I$ to beat unstructured $A$ and matched-random $B$ on IFE and RCR, reduce bleed vs $A$, and beat best single + best pair on IFE (superadditive margin).
 
 **If gate fails:** publish as exploratory application companion; **do not** pin to `ENGINE_SHELF`.  
 **If gate passes:** eligible for Infinite Octaves engine companion pin after registry sync.
@@ -153,7 +167,7 @@ Independent unit of inference = fixture/seed (not generation-within-trajectory).
 
 ## 7. Live findings
 
-**One-line verdict:** Suite integrity **pass** (15/15). **V1 free-run Goldilocks gate fail** (locked). **EPH-RH-D diagnostic gate fail** — regulator+prime beats Control A on $E/(D+\varepsilon)$ under matched budget, but **does not** beat matched non-prime containment on efficiency, and homeostatic recovery signature rate is **0**. **Engine shelf WITHHELD.**
+**One-line verdict:** Suite integrity **pass**. **V1 / EPH-RH-D / EPH-RH-D2 dynamical gates fail** (locked). **EPH-IA gate fail** — matched slot budget fair; φ hierarchy alone leads IFE; full $e+\varphi+$prime loses IFE/RCR because the $e$-update kernel costs recursive conservation; no superadditive complementarity. **Engine shelf WITHHELD.**
 
 ### 7.1 V1 free-run (locked development evidence)
 
@@ -165,7 +179,7 @@ Independent unit of inference = fixture/seed (not generation-within-trajectory).
 
 **Diagnosis (not a crown refusal of the idea):** Control A changes very little; unified is forced to transform+restructure+contain. Goldilocks hit-rate therefore rewards persistence. Ablating open-loop φ → e+prime Goldilocks **0.807** — the V1 φ *structure* stage was overdriving, not “φ is false.”
 
-### 7.2 EPH-RH-D matched-budget diagnostic (engine gate)
+### 7.2 EPH-RH-D matched-budget diagnostic (locked)
 
 Question: *At equal amounts of transformation $Q$, does $e\times\varphi\times$prime (with φ as proportional regulator) produce more recoverable evolution with less bleed than ordinary recursion and matched non-prime containment?*
 
@@ -177,18 +191,71 @@ Question: *At equal amounts of transformation $Q$, does $e\times\varphi\times$pr
 | Unified regulator + prime | 1.198 | **0.0351** | 0.0274 | 0.0294 | 2.26 |
 | Open-loop φ (V1-style) @ matched Q | 1.386 | 0.0558 | 0.0599 | 0.0415 | 2.51 |
 
-† Control A still under-spent $Q$ target (max steps) — even intensity-scaled ordinary recursion cannot fully match architecture path length on these fixtures.
+† Control A under-spent $Q$ under the D protocol (max-step cap) — confound removed in D2 by exact $Q=Q_{\max}$.
 
 **Checks:** $E_U>E_A$ **true** · $B_U<B_A$ **true** · $D$ positive/bounded **true** · $E/D$ above A **true** · $E/D$ above matched non-prime **false** · $E/D$ above open-loop **false**.  
-**Diagnostic gate:** `false` · **Engine shelf:** WITHHOLD.  
-**Best order:** `e_phi_p` · **φ strength sweep:** flat (~0.029 at 0.25–1.5) · **Homeostatic signature rate:** **0** (high-D did not self-correct under current regulator).  
-**Prime vs matched non-prime:** prime wins bleed (0.035 vs 0.038); **loses** efficiency (0.029 vs 0.034) → containment helps; primality not uniquely necessary here.
+**Diagnostic gate:** `false` (locked). **Best order:** `e_phi_p` · **φ strength sweep:** flat · **Homeostatic signature rate:** **0**.
 
-### 7.3 Plain-language observed answer
+### 7.3 EPH-RH-D2 — exact $Q$, loss-aware $F$, adaptive φ, coupled vs sequential (locked)
 
-**V1:** nothing to pin on Goldilocks hit-rate — the metric mixed “does less” with “stays in band.” Evolution efficiency already showed unified spending ~2.55× drift for only ~1.64× evolution.
+Hypothesis rewrite: measure **irreversible loss** $L$ and **identity invariants** $I$ separately from origin drift; terminate every arm at exact $Q_{\max}=2.4$; compare sequential $G=P\circ\Phi\circ E$ to coupled $H$ with interaction term $E\Phi P$; run adaptive $\varphi_n=\varphi_0(1+k(D^*-D_n))$ vs open-loop φ.
 
-**EPH-RH-D:** Under matched transformation budget, φ-as-regulator + prime **does** beat intensity-scaled ordinary recursion on useful evolution and on $E/(D+\varepsilon)$, with slightly lower bleed. That answers the cleaner question partially. It still **fails** the engine gate because (1) matched **non-prime** containment + the same regulator is *more* efficient than prime, (2) open-loop φ at matched $Q$ posts higher raw $E$ (at higher bleed/drift), and (3) perturbation recovery shows **no** homeostatic negative-feedback signature yet. So: do **not** pin the engine; do **not** claim primality is the mechanism; do treat “φ overdrive in V1” and “equal-budget efficiency vs A” as the real diagnostic leads.
+| Arm | Mean F | Mean L | Mean B | Mean E | Mean step ΔX | Mean Q |
+|-----|--------|--------|--------|--------|--------------|--------|
+| Control A | 1.8449 | 0.0746 | 0.0569 | 0.1129 | 0.1283 | **2.400** |
+| Random | **3.3525** | 0.0609 | 0.0504 | 0.2965 | 0.4614 | **2.400** |
+| Sequential G ($e\to\varphi\to p$) | **3.0739** | 0.0656 | **0.0372** | 0.1026 | 0.1205 | **2.400** |
+| Coupled H ($e\times\varphi\times p$) | 2.8538 | 0.0685 | 0.0398 | 0.1037 | 0.1196 | **2.400** |
+| Open-loop φ sequential | 3.1576 | **0.0554** | 0.0478 | 0.1102 | 0.2976 | **2.400** |
+| Matched non-prime coupled | 1.9534 | 0.0683 | 0.0384 | 0.1036 | 0.1196 | **2.400** |
+
+**D2 checks:** $F>$A **true** · $F>$matched-nonprime **true** · $L<$A **true** · $B<$A **true** · $\Delta X>0$ **true** · coupled$>$sequential **false** · adaptive$>$open-loop **false** · $Q$ matched all **true**.  
+**D2 gate:** `false` (locked) · **Engine shelf:** deferred to EPH-IA.  
+**Novelty audit:** $E/D$ still lets random lead; $F$ narrows but does **not** erase random advantage (3.35 vs 2.85).  
+**Interaction:** sequential $F$ 3.07 > coupled $F$ 2.85 — compositional $E\Phi P$ does **not** beat pipeline $G$ on these fixtures.  
+**Adaptive vs open-loop:** open-loop still higher $F$ and lower $L$ — adaptive regulator not yet the homeostatic win.  
+**New-attractor homeostasis rate:** **0**.  
+**Prime vs matched non-prime (same coupling):** prime wins $F$ (2.85 vs 1.95) under D2 metrics.
+
+### 7.4 EPH-IA — information architecture ledger (live engine gate)
+
+**Category-error correction:** dynamical layers asked whether $e$/$\varphi$/primes improve a trajectory. EPH-IA asks whether they improve the **information lifecycle** — encode → store → transform → retrieve → reconstruct — under matched representation budget (84 slots).
+
+| Arm | Mean IFE | Mean RCR | Mean B | Mean C | Mean R₀ | Mean R_final |
+|-----|----------|----------|--------|--------|---------|--------------|
+| A Raw/unstructured | 1.3738 | 0.7243 | 0.3044 | 0.4000 | 0.5718 | 0.5495 |
+| B Matched-complexity random | 1.3757 | 0.7252 | 0.3098 | 0.4000 | 0.5718 | 0.5503 |
+| C Prime addressing only | 1.3694 | 0.7216 | 0.3052 | 0.4000 | 0.5718 | 0.5477 |
+| D φ hierarchy only | **1.3808** | **0.7276** | 0.3051 | 0.4000 | 0.5718 | **0.5523** |
+| E e continuous update only | 1.1595 | 0.6143 | 0.3040 | 0.4000 | 0.5718 | 0.4638 |
+| F e + φ | 1.1552 | 0.6119 | 0.3030 | 0.4000 | 0.5718 | 0.4621 |
+| G φ + prime | 1.3749 | 0.7249 | 0.3054 | 0.4000 | 0.5718 | 0.5500 |
+| H e + prime | 1.1469 | 0.6077 | 0.3035 | 0.4000 | 0.5718 | 0.4587 |
+| I e + φ + prime (full) | 1.1478 | 0.6086 | **0.3030** | 0.4000 | 0.5718 | 0.4591 |
+
+**IA checks:** IFE$>$A **false** · IFE$>$B **false** · RCR$>$A **false** · RCR$>$B **false** · $B<$A **true** · full$>$best single **false** · full$>$best pair **false** · slots matched **true**.  
+**IA gate:** `false` · **Engine shelf:** WITHHOLD.  
+**Best single:** D (φ hierarchy) IFE ≈ 1.381 · **Best pair:** G (φ+prime) IFE ≈ 1.375.  
+**Complementarity:** full stack does **not** beat best single or best pair — no superadditive $e\times\varphi\times$prime signal on these fixtures.  
+**Component read:** φ hierarchical allocation is the mild IFE/RCR leader; prime addressing alone does not beat unstructured on IFE; the $e$ continuous-update kernel **costs** recursive conservation (RCR drops ~0.72 → ~0.61) and pulls every $e$-containing arm below A/B.  
+**Bleed:** full stack slightly below A (0.303 vs 0.304) — weak containment edge, not a crown.
+
+### 7.5 Plain-language observed answer
+
+**Nothing crowned. Four locked layers of evidence, one honest mechanism test.**
+
+| Constant / architecture | Live status |
+|-------------------------|-------------|
+| Single nest constant (ERFT) | Nothing to crown (locked) |
+| Dynamic multi-constant (ERFT-D) | Nothing to crown (locked) |
+| Open-loop $e\times\varphi\times$prime (V1) | Goldilocks hit-rate null — metric rewarded stagnation (locked) |
+| Matched-$Q$ regulator+prime (EPH-RH-D) | Beats ordinary recursion on $E/D$; loses to matched non-prime; no homeostasis (locked) |
+| Adaptive / loss-aware / coupled (EPH-RH-D2) | Exact $Q$ fair; $F$ beats A + matched non-prime; sequential still beats coupled; open-loop still beats adaptive; new-attractor rate 0 (locked) |
+| Information architecture (EPH-IA) | Matched slots; φ hierarchy mild IFE lead; full stack loses IFE/RCR (e-update costs conservation); no complementarity → **WITHHOLD** |
+
+**What the category-error fork established:** asking mathematical structures to *control dynamics* and asking them to *organize information* are different experiments. On the information ledger, φ-as-hierarchy is the only mild positive; $e$-as-continuous-update currently harms RCR; primes-as-addresses do not uniquely win IFE; the product is not superadditive.
+
+**Combination to crown:** **none.** Do not pin Infinite Octaves on $e$, $\varphi$, primes, or their product. Keep as Soft Story / application companion. Next confirmatory work (if any) should freeze IA metrics and attack held-out fixtures — or stop. Do **not** retune dynamical controllers to rescue V1/D/D2.
 
 ---
 
@@ -199,9 +266,10 @@ Question: *At equal amounts of transformation $Q$, does $e\times\varphi\times$pr
 | ERFT-C | Does numerical $c=\varphi$ reduce drift alone? |
 | ERFT-G | Does symmetric nest grammar help? |
 | ERFT-D | Does dynamic multi-constant regulation beat best fixed? |
-| **This paper** | Does unified $e+\varphi+$prime produce evolution-without-dissolution? |
+| EPH-RH V1/D/D2 | Does unified $e+\varphi+$prime regulate recursive evolution / loss-aware $F$? |
+| **EPH-IA (this live gate)** | Do $e$/$\varphi$/primes improve encode→store→retrieve→reconstruct under matched budgets? |
 
-Do **not** describe this work as proving Holographic Homeostasis. Dynamic switching / unified operators remain falsifiable empirical propositions.
+Do **not** describe this work as proving Holographic Homeostasis. Dynamic switching / unified operators / information architecture remain falsifiable empirical propositions.
 
 ---
 
@@ -222,6 +290,6 @@ Suite path: `research/synthobs-e-phi-prime-recursive-homeostasis/`
 
 ## Honesty boundary (closing)
 
-Exploratory Soft Story / catalog computational experiment. Does not claim finished physics, fab proof, clinical validation, or that primality causes zero bleed. ERFT-V5/D baselines untouched. V1 Goldilocks hit-rate null is locked development evidence. Engine pin requires the EPH-RH-D matched-budget multidimensional gate (evolution efficiency · containment · φ-as-regulator).
+Exploratory Soft Story / catalog computational experiment. Does not claim finished physics, fab proof, clinical validation, or that primality causes zero bleed. ERFT-V5/D baselines untouched. V1 Goldilocks hit-rate null, EPH-RH-D $E/(D+\varepsilon)$ null, and EPH-RH-D2 loss-aware $F$ withhold are locked dynamical development/diagnostic evidence. Engine pin requires the EPH-IA gate (IFE · RCR · bleed · complementarity on the information ledger) — live result WITHHOLD.
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox → ∞^∞

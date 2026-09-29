@@ -36,10 +36,13 @@ import {
   HONESTY,
   PROTOCOL_VERSION_V1,
   PROTOCOL_VERSION_D,
+  PROTOCOL_VERSION_D2,
   D2_GATE,
+  IA_GATE,
 } from './constants.mjs';
 import { runDiagnosticMatrix, DIAGNOSTIC_PROTOCOL } from './eph-rh-diagnostic.mjs';
 import { runD2Diagnostic, D2_PROTOCOL } from './eph-rh-d2.mjs';
+import { runInformationArchitecture, IA_PROTOCOL } from './eph-ia.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -413,18 +416,32 @@ function summarizeArm(rows) {
 function experimentProtocolLocks() {
   return {
     id: 'E0_protocol_locks',
-    title: 'Protocol locks — V1 free-run + EPH-RH-D diagnostic matrix',
+    title: 'Protocol locks — V1/D/D2 dynamical nulls + EPH-IA information architecture',
     protocol: PROTOCOL_VERSION,
     protocol_v1_locked: PROTOCOL_VERSION_V1,
+    protocol_d_locked: PROTOCOL_VERSION_D,
+    protocol_d2_locked: PROTOCOL_VERSION_D2,
     diagnostic_protocol: DIAGNOSTIC_PROTOCOL,
+    ia_protocol: IA_PROTOCOL,
     architecture_v1: 'C_n → e-transform → φ-structure → p-containment → C_{n+1}',
     architecture_d: 'matched-Q · φ-as-regulator · prime vs matched non-prime · order perms · perturbation',
-    metrics: ['drift_D', 'bleed_B', 'useful_evolution_E', 'efficiency_E_over_D', 'path_length_Q'],
+    architecture_ia:
+      'encode→store→transform→retrieve→reconstruct · e=continuous update · φ=hierarchical allocation · primes=factorized addressing · IFE/RCR · ablations A–I',
+    metrics: [
+      'drift_D',
+      'bleed_B',
+      'useful_evolution_E',
+      'efficiency_E_over_D',
+      'path_length_Q',
+      'IFE',
+      'RCR',
+      'compression_C',
+    ],
     goldilocks: { D_LOW, D_COLLAPSE, BLEED_LOW },
     significanceGate_v1_locked: { ...SIGNIFICANCE_GATE },
     pass: true,
     interpretation:
-      'V1 Goldilocks hit-rate null stays locked. Engine pin uses EPH-RH-D matched-budget multidimensional gate.',
+      'V1/D/D2 dynamical nulls stay locked. Engine pin uses EPH-IA information-architecture gate (IFE/RCR/bleed + complementarity).',
     honesty: 'Locks do not imply the hypothesis is true.',
   };
 }
@@ -646,6 +663,7 @@ function experimentPaperLocks() {
     hasDiagnostic: /EPH-RH-D|matched.*budget|evolution efficiency|φ as.*regulator|proportional regulator/i.test(
       paper,
     ),
+    hasIA: /EPH-IA|information architecture|IFE|encode.*store.*retrieve|Recursive Conservation/i.test(paper),
   };
   const pass = Boolean(paper) && Object.values(checks).every(Boolean);
   return {
@@ -655,7 +673,7 @@ function experimentPaperLocks() {
     ...checks,
     pass,
     interpretation:
-      'Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1 null, and EPH-RH-D diagnostic.',
+      'Paper must keep unified hypothesis, D/B/E, falsification, ERFT lineage, V1/D/D2 nulls, and EPH-IA information-architecture fork.',
     honesty: 'Structural text locks — not market validation.',
   };
 }
@@ -670,6 +688,7 @@ function experimentBlogLocks() {
     hasHonestyClass: /class="honesty"/i.test(html),
     mentionsControls: /Control A|ordinary recursion|randomized/i.test(html),
     hasDiagnostic: /matched|efficiency|regulator|EPH-RH-D|transformation budget/i.test(html),
+    hasIA: /EPH-IA|information architecture|IFE|storage|retrieval|reconstruct/i.test(html),
   };
   const pass = Object.values(checks).every(Boolean);
   return {
@@ -679,7 +698,7 @@ function experimentBlogLocks() {
     slug: SHIP_BLOG_SLUG,
     ...checks,
     pass,
-    interpretation: 'Blog must lead with observed answer and name the unified architecture.',
+    interpretation: 'Blog must lead with observed answer, name the unified architecture, and cover the IA fork.',
     honesty: 'Editorial lock — not empirical proof.',
   };
 }
@@ -718,13 +737,19 @@ export async function runAllExperiments() {
 
   const diagnostic = runDiagnosticMatrix();
   const d2 = runD2Diagnostic();
-  const experiments = [...v1, ...diagnostic.experiments, ...d2.experiments];
+  const ia = runInformationArchitecture();
+  const experiments = [
+    ...v1,
+    ...diagnostic.experiments,
+    ...d2.experiments,
+    ...ia.experiments,
+  ];
 
   const primary = v1.find((e) => e.id === 'E1_primary_unified_vs_controls');
   const v1_gate_pass = Boolean(primary?.significance_gate_pass);
-  // Engine pin follows EPH-RH-D2 (loss-aware F / adaptive φ / coupled) — not V1 or D.
-  const significance_gate_pass = Boolean(d2.d2_gate_pass);
-  const engine_shelf_include = Boolean(d2.engine_shelf_include);
+  // Engine pin follows EPH-IA (information architecture) — not V1, D, or D2.
+  const significance_gate_pass = Boolean(ia.ia_gate_pass);
+  const engine_shelf_include = Boolean(ia.engine_shelf_include);
 
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
@@ -737,14 +762,18 @@ export async function runAllExperiments() {
     protocol: PROTOCOL_VERSION,
     protocol_v1_locked: PROTOCOL_VERSION_V1,
     protocol_d_locked: PROTOCOL_VERSION_D,
+    protocol_d2_locked: PROTOCOL_VERSION_D2,
     protocol_d2: D2_PROTOCOL,
+    protocol_ia: IA_PROTOCOL,
     v1_goldilocks_gate_pass: v1_gate_pass,
     diagnostic_gate_pass: diagnostic.diagnostic_gate_pass,
     d2_gate_pass: d2.d2_gate_pass,
+    ia_gate_pass: ia.ia_gate_pass,
     significance_gate_pass,
     engine_shelf_include,
-    engine_shelf_decision: d2.engine_shelf_decision,
+    engine_shelf_decision: ia.engine_shelf_decision,
     d2_gate: { ...D2_GATE },
+    ia_gate: { ...IA_GATE },
     primary_readout: primary
       ? {
           note: 'V1 free-run (locked development evidence — Control A under-transformed vs unified).',
@@ -764,6 +793,7 @@ export async function runAllExperiments() {
       : null,
     diagnostic_readout: diagnostic.readout,
     d2_readout: d2.readout,
+    ia_readout: ia.readout,
     experiments,
     honesty: HONESTY,
   };

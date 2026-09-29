@@ -127,6 +127,27 @@ function mdReport(report) {
     lines.push(`New-attractor homeostasis rate: \`${d2.homeostaticNewAttractorRate}\``);
     lines.push('');
   }
+  if (report.results.ia_readout) {
+    const ia = report.results.ia_readout;
+    lines.push('## EPH-IA information-architecture readout (engine gate)');
+    lines.push('');
+    lines.push(
+      'Mechanism test: encode→store→transform→retrieve→reconstruct. e=continuous EMA update · φ=hierarchical capacity allocation · primes=factorized addressing. Metrics: IFE=recoverable/cost · RCR · bleed B · compression C. Ablations A–I are primary.',
+    );
+    lines.push('');
+    lines.push('| Arm | Mean IFE | Mean RCR | Mean B | Mean C | Mean R₀ | Mean R_final |');
+    lines.push('|-----|----------|----------|--------|--------|---------|--------------|');
+    for (const id of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']) {
+      const s = ia.board[id];
+      lines.push(
+        `| ${id} ${s.name} | ${s.mean_IFE.toFixed(4)} | ${s.mean_RCR.toFixed(4)} | ${s.mean_B.toFixed(4)} | ${s.mean_C.toFixed(4)} | ${s.mean_R0.toFixed(4)} | ${s.mean_R_final.toFixed(4)} |`,
+      );
+    }
+    lines.push('');
+    lines.push(`IA checks: \`${JSON.stringify(ia.checks)}\``);
+    lines.push(`Best single: \`${JSON.stringify(ia.best_single)}\` · Best pair: \`${JSON.stringify(ia.best_pair)}\``);
+    lines.push('');
+  }
   lines.push('## Experiments');
   lines.push('');
   for (const e of report.results.experiments) {
@@ -181,6 +202,8 @@ async function main() {
         protocol: results.protocol,
         v1_goldilocks_gate_pass: results.v1_goldilocks_gate_pass,
         diagnostic_gate_pass: results.diagnostic_gate_pass,
+        d2_gate_pass: results.d2_gate_pass,
+        ia_gate_pass: results.ia_gate_pass,
         engine_shelf_include: results.engine_shelf_include,
         engine_shelf_decision: results.engine_shelf_decision,
         primary_v1: results.primary_readout

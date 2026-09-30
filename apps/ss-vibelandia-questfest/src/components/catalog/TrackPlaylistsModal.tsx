@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { isMasterPlaylist } from '@/lib/catalogSeed';
+import { jukeboxPlaylistEditHref } from '@/lib/jukeboxRoutes';
+import { PLAIN } from '@/lib/plainSpeak';
 
 interface TrackPlaylistsModalProps {
   open: boolean;
@@ -10,6 +13,7 @@ interface TrackPlaylistsModalProps {
 }
 
 export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: TrackPlaylistsModalProps) {
+  const navigate = useNavigate();
   const playlists = useCatalogStore((s) => s.playlists);
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const setTrackPlaylistMembership = useCatalogStore((s) => s.setTrackPlaylistMembership);
@@ -47,12 +51,9 @@ export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: Trac
   };
 
   const handleNewPlaylist = () => {
-    const id = createPlaylist('New playlist');
-    setSelected((prev) => {
-      const next = new Set(prev);
-      next.add(id);
-      return next;
-    });
+    const id = createPlaylist(PLAIN.newPlaylist, undefined, { trackIds: [trackId] });
+    onClose();
+    navigate(jukeboxPlaylistEditHref(id));
   };
 
   const canSave =
@@ -67,16 +68,18 @@ export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: Trac
         </h2>
         <p className="modal-body">
           Check every playlist that should include this song. Changes apply when you tap Save. The Master catalog
-          always keeps every upload.
+          always keeps every upload. Tap <strong>+ New playlist</strong> to open the editor with this song already
+          included.
         </p>
         <div className="sp-track-pl-toolbar">
           <button type="button" className="sp-library-new" onClick={handleNewPlaylist}>
-            + New playlist
+            + {PLAIN.newPlaylist}
           </button>
         </div>
         {userPlaylists.length === 0 ? (
           <p className="sp-empty">
-            No playlists yet — tap <strong>+ New playlist</strong>, then check the list and Save.
+            No playlists yet — tap <strong>+ {PLAIN.newPlaylist}</strong> to name it and keep this song in the
+            editor.
           </p>
         ) : (
           <ul className="sp-track-pl-list">

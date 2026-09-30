@@ -195,7 +195,11 @@ interface CatalogState {
   getResolvedTrackIds: (playlistId?: string) => string[];
   getChildPlaylists: (playlistId: string) => PlaylistDef[];
   listAllTracks: () => TrackDef[];
-  createPlaylist: (name: string, parentPlaylistId?: string) => string;
+  createPlaylist: (
+    name: string,
+    parentPlaylistId?: string,
+    opts?: { trackIds?: string[] },
+  ) => string;
   renamePlaylist: (id: string, name: string) => void;
   updatePlaylist: (
     id: string,
@@ -588,8 +592,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
   listAllTracks: () => Object.values(get().tracks),
 
-  createPlaylist: (name, parentPlaylistId) => {
+  createPlaylist: (name, parentPlaylistId, opts) => {
     const id = `pl-${Date.now()}`;
+    const seedTrackIds = [
+      ...new Set((opts?.trackIds ?? []).filter((tid) => typeof tid === 'string' && tid.length > 0)),
+    ];
     set((s) => {
       let playlists: PlaylistDef[] = [
         ...s.playlists,
@@ -598,7 +605,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           name: name.trim() || 'New playlist',
           kind: 'sovereign',
           description: '',
-          trackIds: [],
+          trackIds: seedTrackIds.filter((tid) => Boolean(s.tracks[tid])),
         },
       ];
       if (

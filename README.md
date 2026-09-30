@@ -328,7 +328,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-grand-unified-metrological-overlap-2026-09.html`](/interfaces/blog-grand-unified-metrological-overlap-2026-09.html) | Five Gears, One Ship's Clock · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Genomic Tokens That Keep Structure Honest · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | When the Universe Slows — Mass and Now · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-holographic-homeostasis-2026-09.html`](/interfaces/blog-holographic-homeostasis-2026-09.html) | Can a System Stay Steady Only by Keeping Motion? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-holographic-homeostasis-2026-09.html`](/interfaces/blog-holographic-homeostasis-2026-09.html) | First Fruit: Can a System Stay Steady Only by Keeping Motion? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-rhyme-2026-09-old.html`](/interfaces/blog-holographic-rhyme-2026-09-old.html) | How a Fractal Keeps Its Feet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-rhyme-2026-09.html`](/interfaces/blog-holographic-rhyme-2026-09.html) | How a Fractal Keeps Its Feet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-singularity-crystal-2026-09-old.html`](/interfaces/blog-holographic-singularity-crystal-2026-09-old.html) | Zero Holds the Balance · Ship blog · SS Vibelandia |

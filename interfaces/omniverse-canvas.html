@@ -605,6 +605,96 @@
       .hero__video { display: none !important; }
     }
 
+    .canvas-hh-announcement {
+      margin: 0;
+      padding: 1rem 1.25rem 1.1rem;
+      padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+      text-align: center;
+      background:
+        radial-gradient(ellipse 80% 120% at 50% 0%, rgba(212, 175, 55, 0.22), transparent 55%),
+        linear-gradient(105deg, rgba(28, 18, 8, 0.99), rgba(10, 28, 36, 0.99) 55%, rgba(14, 16, 28, 0.99));
+      border-bottom: 2px solid rgba(212, 175, 55, 0.65);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: var(--champagne);
+    }
+    .canvas-hh-announcement__kicker {
+      display: block;
+      margin: 0 0 0.4rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .canvas-hh-announcement strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .canvas-hh-announcement a {
+      color: var(--gold-hi);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .canvas-hh-announcement a:hover { color: #fff; }
+    .canvas-hh-feature {
+      margin: 0 0 1.25rem;
+      padding: 1.15rem 1.2rem 1.25rem;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background:
+        linear-gradient(160deg, rgba(212, 175, 55, 0.12), transparent 42%),
+        rgba(8, 12, 20, 0.55);
+      text-align: left;
+    }
+    .canvas-hh-feature__kicker {
+      margin: 0 0 0.35rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .canvas-hh-feature__title {
+      margin: 0 0 0.45rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.35rem, 3vw, 1.7rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: #fff;
+    }
+    .canvas-hh-feature__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .canvas-hh-feature__title a:hover {
+      color: var(--gold-hi);
+      text-decoration: underline;
+      text-underline-offset: 0.12em;
+    }
+    .canvas-hh-feature__body {
+      margin: 0 0 0.75rem;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--text-soft);
+    }
+    .canvas-hh-feature__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem 1rem;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    .canvas-hh-feature__links a {
+      color: var(--gold-hi);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
     .canvas-ceo-announcement {
       margin: 0;
       padding: 0.85rem 1.15rem;
@@ -756,6 +846,17 @@
       <button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>
     </div>
   </nav>
+
+  <aside class="canvas-hh-announcement" aria-label="Holographic Homeostasis — first fruit of the Homeostasis Expedition">
+    <span class="canvas-hh-announcement__kicker">First fruit · Homeostasis Expedition · just opened</span>
+    <strong>Holographic Homeostasis</strong> is live — the first public fruit from our
+    <a href="/journey/homeostasis-expedition">Homeostasis Expedition</a> launched last week.
+    Architecture for recursive systems that must explore, preserve, reconcile, and commit without wiping identity.
+    Read the <a href="/press/holographic-homeostasis">announcement</a> ·
+    <a href="/architects/holographic-homeostasis">architect briefing</a> ·
+    <a href="/ship-blog/holographic-homeostasis">ship blog</a> ·
+    <a href="/whitepaper/holographic-homeostasis">whitepaper</a>.
+  </aside>
 
   <aside class="canvas-ceo-announcement" aria-label="Looking for Frontier CEO">
     <span class="canvas-ceo-announcement__kicker">Announcement: Looking for Frontier CEO</span>
@@ -961,30 +1062,49 @@
       </ul>
     </section>
     <section class="band band--ship-news" id="ship-news" aria-labelledby="ship-news-h">
-      <p class="news-kicker" id="canvas-news-label">News of the day · Saturday, September 26</p>
+      <p class="news-kicker" id="canvas-news-label">News of the day · Wednesday, September 30</p>
       <h2 id="ship-news-h">News of the voyage</h2>
       <p>The newest ship notes lead here automatically — the same board Valet Pru keeps on QUESTFEST for guests who want today’s word from the deck.</p>
+      <aside class="canvas-hh-feature" aria-label="Featured · Holographic Homeostasis first fruit">
+        <p class="canvas-hh-feature__kicker">Featured · first fruit of last week’s expedition</p>
+        <h3 class="canvas-hh-feature__title">
+          <a href="/ship-blog/holographic-homeostasis">Holographic Homeostasis — first fruit now open</a>
+        </h3>
+        <p class="canvas-hh-feature__body">
+          Last week we launched the <a href="/journey/homeostasis-expedition">Homeostasis Expedition</a>.
+          Today’s public fruit: a demonstrated engineering layer for recursive systems that must change
+          without treating every improvement as irreversible identity replacement —
+          explore · preserve · reconcile · verify · commit.
+        </p>
+        <p class="canvas-hh-feature__links">
+          <a href="/press/holographic-homeostasis">Announcement</a>
+          <a href="/architects/holographic-homeostasis">Architect briefing</a>
+          <a href="/ship-blog/holographic-homeostasis">Ship blog</a>
+          <a href="/whitepaper/holographic-homeostasis">Whitepaper</a>
+          <a href="/whitepaper/e-phi-prime-recursive-homeostasis">ρ held-out companion</a>
+        </p>
+      </aside>
       <!-- CANVAS_SHIP_NEWS_BEGIN -->
       <ul class="ship-news-list" id="canvas-news-list">
         <li>
-          <a href="/ship-blog/erft-recursive-fidelity">
-            <p class="ship-news-date">2026-09-26</p>
-            <p class="ship-news-title">How the Golden Key Won the Drift Board</p>
-            <p class="ship-news-blurb">When recursive tools rewrite themselves, a fair board shows the golden key leading the named arms. The old run is just the receipt; the live story is the drift board.</p>
+          <a href="/ship-blog/holographic-homeostasis">
+            <p class="ship-news-date">2026-09-30</p>
+            <p class="ship-news-title">First Fruit: Can a System Stay Steady Only by Keeping Motion?</p>
+            <p class="ship-news-blurb">First fruit of the Homeostasis Expedition launched last week: Holographic Homeostasis — explore, preserve, reconcile, verify, commit — so recursive systems can change without wiping identity.</p>
           </a>
         </li>
         <li>
-          <a href="/ship-blog/rsi-drift-friction-phi-egs">
-            <p class="ship-news-date">2026-09-26</p>
-            <p class="ship-news-title">The Hidden Tax on Self-Rewriting Software</p>
-            <p class="ship-news-blurb">When tools rewrite themselves, the biggest bill is not the GPU invoice. Drift taxes trust, paychecks, and coherent next loops — and a nesting key near 1.618 keeps that tax from eating the house.</p>
+          <a href="/ship-blog/e-phi-prime-recursive-homeostasis">
+            <p class="ship-news-date">2026-09-30</p>
+            <p class="ship-news-title">When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?</p>
+            <p class="ship-news-blurb">Final Soft Story: held-out Δ confirms E2-direction three-axis + useful commit ~0.50 with e+ρ frozen — Infinite Octaves ENGINE_SHELF companion #36.</p>
           </a>
         </li>
         <li>
-          <a href="/ship-blog/navier-stokes-unforced-phi-egs">
-            <p class="ship-news-date">2026-09-26</p>
-            <p class="ship-news-title">The Million-Dollar Fluid Question Still on the Counter</p>
-            <p class="ship-news-blurb">Headlines celebrated a forced singularity in fluid math. Most people still mean the quiet cup — coffee left alone. That unforced question stays open.</p>
+          <a href="/ship-blog/erft-e-continuous-regulation">
+            <p class="ship-news-date">2026-09-30</p>
+            <p class="ship-news-title">After Nothing to Crown, Does Continuous Regulation Clear the Bar?</p>
+            <p class="ship-news-blurb">ERFT-E live run: confirmatory held-out and continuous c_n failed the engine gate. Best fixed still edged controllers (named mean toward e); nothing to crown for ENGINE_SHELF — application companion only.</p>
           </a>
         </li>
       </ul>

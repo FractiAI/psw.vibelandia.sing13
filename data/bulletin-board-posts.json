@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "posts": [
+    {
+      "id": "daily-2026-09-30-synthobs-holographic-homeostasis-2026-09",
+      "posted": "2026-09-30",
+      "featured": true,
+      "title": "First Fruit: Can a System Stay Steady Only by Keeping Motion?",
+      "subtitle": "News of the day · Wednesday, September 30",
+      "summary": "First fruit of the Homeostasis Expedition launched last week: Holographic Homeostasis — explore, preserve, reconcile, verify, commit — so recursive systems can change without wiping identity.",
+      "href": "/ship-blog/holographic-homeostasis",
+      "pill": "TODAY",
+      "docRef": "synthobs-holographic-homeostasis-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-29-synthobs-e-phi-prime-recursive-homeostasis-2026-09",
       "posted": "2026-09-29",

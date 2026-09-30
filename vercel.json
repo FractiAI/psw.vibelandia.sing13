@@ -2689,6 +2689,30 @@
       "destination": "/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html"
     },
     {
+      "source": "/press/holographic-homeostasis",
+      "destination": "/interfaces/press-release-holographic-homeostasis-rsi-2026-09.html"
+    },
+    {
+      "source": "/press/holographic-homeostasis/",
+      "destination": "/interfaces/press-release-holographic-homeostasis-rsi-2026-09.html"
+    },
+    {
+      "source": "/architects/holographic-homeostasis",
+      "destination": "/interfaces/holographic-homeostasis-architects.html"
+    },
+    {
+      "source": "/architects/holographic-homeostasis/",
+      "destination": "/interfaces/holographic-homeostasis-architects.html"
+    },
+    {
+      "source": "/holographic-homeostasis",
+      "destination": "/interfaces/holographic-homeostasis-architects.html"
+    },
+    {
+      "source": "/holographic-homeostasis/",
+      "destination": "/interfaces/holographic-homeostasis-architects.html"
+    },
+    {
       "source": "/whitepaper/synthobs-emergent-sync-multi-agent",
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026"
     },

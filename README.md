@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-29** · **345** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-30** · **347** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -492,6 +492,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/harmonopoly-guide.html`](/interfaces/harmonopoly-guide.html) | Harmonopoly · Game, tech & math guide |
 | [`/interfaces/harmonopoly.html`](/interfaces/harmonopoly.html) | Harmonopoly · Goldilocks Rush |
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
+| [`/interfaces/holographic-homeostasis-architects.html`](/interfaces/holographic-homeostasis-architects.html) | Holographic Homeostasis for Frontier AI Architects · FractiAI |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
 | [`/interfaces/infinite-octave-egs-catalog-briefing-portals.html`](/interfaces/infinite-octave-egs-catalog-briefing-portals.html) | Executive Sandbox · Infinite Octave EGS Catalog · SS Vibelandia |
@@ -527,6 +528,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html`](/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html) | FOR IMMEDIATE RELEASE — Erdős 353 response · Holographic Goldilocks AIOS |
 | [`/interfaces/press-release-etcon-reno-desert-may-2026.html`](/interfaces/press-release-etcon-reno-desert-may-2026.html) | FOR IMMEDIATE RELEASE — ETCon: Reno Desert Interdimensional Edition · final call |
 | [`/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html`](/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html) | FOR IMMEDIATE RELEASE — Golden Bachdoor Hit Factory wins the 30-day streaming showdown |
+| [`/interfaces/press-release-holographic-homeostasis-rsi-2026-09.html`](/interfaces/press-release-holographic-homeostasis-rsi-2026-09.html) | FOR IMMEDIATE RELEASE — Introducing Holographic Homeostasis · FractiAI |
 | [`/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html`](/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html) | FOR IMMEDIATE RELEASE — Machote Moderno Magazine launches members-only catalog & Goldilocks Beehive offers |
 | [`/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html`](/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html) | FOR IMMEDIATE RELEASE — Universal Checkmate Royal Flush · King Bee stratification |
 | [`/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html`](/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html) | FOR IMMEDIATE RELEASE — Chipless, Datacenterless AI · SynthOBS RSI validation |

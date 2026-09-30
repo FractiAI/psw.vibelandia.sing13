@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Holographic Homeostasis for Frontier AI Architects · FractiAI</title>
+  <meta
+    name="description"
+    content="Decision briefing for frontier AI architects: the RSI identity problem, Infinite Octave Omniversal Lattice Catalog layer, and how Holographic Homeostasis (ρ-reconcile) helps systems explore without irreversible rewrite."
+  />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/architects/holographic-homeostasis" />
+  <meta property="og:title" content="Holographic Homeostasis · Frontier AI Architect briefing" />
+  <meta property="og:description" content="Problems you are already hitting in recursive systems — and an engineering layer that separates exploration from canonical commitment." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/architects/holographic-homeostasis" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/images/lattice-artdeco-square.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --text: #f5f0e8;
+      --soft: #d6cfc4;
+      --muted: #a8a29e;
+      --bg: #0a0806;
+      --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+      --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(90% 55% at 50% -10%, rgba(212, 175, 55, 0.14), transparent 55%),
+        radial-gradient(70% 40% at 100% 0%, rgba(245, 230, 200, 0.06), transparent 50%),
+        linear-gradient(165deg, #1a120c 0%, var(--bg) 42%, #050403 100%);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 3.5rem;
+    }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.55rem;
+      align-items: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+      color: var(--muted);
+    }
+    .topnav a { color: var(--champagne); text-decoration: none; }
+    .topnav a:hover { color: var(--gold-hi); text-decoration: underline; }
+    .topnav .dot { opacity: 0.5; }
+    .topnav .here { color: var(--gold); }
+    .eyebrow {
+      margin: 0 0 0.4rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .brand {
+      margin: 0 0 0.55rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      line-height: 1.15;
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6.5vw, 2.85rem);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--gold-hi);
+      line-height: 1.1;
+    }
+    .lede {
+      margin: 0.85rem 0 0;
+      font-size: 1.12rem;
+      color: var(--soft);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.25rem 0 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1rem;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: var(--champagne);
+      background: transparent;
+    }
+    .btn:hover { border-color: var(--gold); color: var(--gold-hi); text-decoration: none; }
+    .btn-primary {
+      border-color: transparent;
+      color: #1a120c;
+      background: linear-gradient(90deg, #c9a227, #8a6a14);
+    }
+    .btn-primary:hover { color: #0a0806; filter: brightness(1.06); }
+    section {
+      margin-top: 2.25rem;
+      padding-top: 0.25rem;
+    }
+    h2 {
+      margin: 0 0 0.55rem;
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--gold-hi);
+      letter-spacing: 0.03em;
+    }
+    h3 {
+      margin: 1.35rem 0 0.45rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--champagne);
+    }
+    p { margin: 0 0 0.85rem; color: var(--soft); }
+    p strong { color: var(--text); }
+    ul, ol {
+      margin: 0 0 1rem;
+      padding-left: 1.2rem;
+      color: var(--soft);
+    }
+    li { margin-bottom: 0.4rem; }
+    .pathway {
+      margin: 1rem 0 1.15rem;
+      padding: 0.9rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--gold-hi);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(20, 16, 12, 0.45);
+    }
+    .toc {
+      margin: 1.5rem 0 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(212,175,55,0.28);
+      background: rgba(20,16,12,0.45);
+    }
+    .toc h2 { font-size: 1.05rem; margin: 0 0 0.55rem; }
+    .toc ol {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: 0.28rem;
+    }
+    .toc a { color: var(--champagne); text-decoration: none; font-size: 0.9rem; }
+    .toc a:hover { color: var(--gold-hi); text-decoration: underline; }
+    .callout {
+      margin: 0.9rem 0 1rem;
+      padding: 0.85rem 1rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(212,175,55,0.07);
+      color: var(--soft);
+    }
+    .callout strong { color: var(--text); }
+    .fail-grid {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1rem 0 1.15rem;
+    }
+    @media (min-width: 640px) {
+      .fail-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .fail {
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      background: rgba(12, 10, 8, 0.55);
+    }
+    .fail h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+    .fail p { margin: 0; font-size: 0.92rem; }
+    .rule {
+      margin: 1.75rem 0 0;
+      border: 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.28);
+    }
+    .paper-list {
+      list-style: none;
+      margin: 0.85rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.65rem;
+    }
+    .paper-list a {
+      display: block;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      color: var(--champagne);
+      text-decoration: none;
+      background: rgba(20, 16, 12, 0.4);
+    }
+    .paper-list a:hover { border-color: var(--gold); color: var(--gold-hi); }
+    .paper-list .t { display: block; font-weight: 700; color: var(--gold-hi); margin-bottom: 0.2rem; }
+    .paper-list .e { display: block; font-size: 0.88rem; color: var(--muted); }
+    .honesty {
+      margin-top: 2rem;
+      padding: 0.95rem 1.05rem;
+      border-left: 3px solid var(--champagne);
+      background: rgba(245, 230, 200, 0.05);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .honesty a { color: var(--champagne); }
+    .footer {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .footer a { color: var(--champagne); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topnav" aria-label="Site">
+      <a href="/press/holographic-homeostasis">Announcement</a>
+      <span class="dot">·</span>
+      <a href="/whitepaper/holographic-homeostasis">Whitepaper</a>
+      <span class="dot">·</span>
+      <a href="/lattice/how">Catalog primer</a>
+      <span class="dot">·</span>
+      <span class="here" aria-current="page">Architect briefing</span>
+    </nav>
+
+    <p class="eyebrow">Frontier AI · Decision briefing</p>
+    <p class="brand">FractiAI · Infinite Octave Omniversal Lattice Catalog</p>
+    <h1>Holographic Homeostasis for the people who own the recursion loop</h1>
+    <p class="lede">
+      You already know how to generate a better successor. The harder job is deciding which changes become the system —
+      without dissolving identity into irreversible drift, and without freezing into safe stagnation.
+    </p>
+
+    <div class="cta-row" aria-label="Primary actions">
+      <a class="btn btn-primary" href="/whitepaper/holographic-homeostasis">Read the whitepaper →</a>
+      <a class="btn" href="/press/holographic-homeostasis">Engineering announcement</a>
+      <a class="btn" href="/whitepaper/e-phi-prime-recursive-homeostasis">ρ held-out companion</a>
+    </div>
+
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#problems">Problems you are already encountering</a></li>
+        <li><a href="#catalog">The catalog layer (what we actually ship)</a></li>
+        <li><a href="#homeostasis">How Holographic Homeostasis helps</a></li>
+        <li><a href="#rho">ρ-Reconcile as the missing middle</a></li>
+        <li><a href="#evaluate">What to evaluate next</a></li>
+      </ol>
+    </nav>
+
+    <section id="problems">
+      <h2>Problems you are already encountering</h2>
+      <p>
+        If you lead recursive / self-improving systems — agent loops that rewrite tools, long-running research agents,
+        architecture search, continual learning, or machine-written codebases — the failure modes tend to cluster.
+        Not as philosophy. As operations.
+      </p>
+
+      <div class="fail-grid">
+        <div class="fail">
+          <h3>Uncontrolled accept</h3>
+          <p>Every “improvement” lands. Recoverability drops. Small irreversible edits compound across generations. Identity bleeds.</p>
+        </div>
+        <div class="fail">
+          <h3>Over-safe refuse</h3>
+          <p>Gates reject almost everything. Identity holds, evolution stalls. The system looks stable because it barely moves.</p>
+        </div>
+        <div class="fail">
+          <h3>Pretty exploration, zero commit</h3>
+          <p>Metrics improve on paper while useful commitment stays at zero. Directional signal without evolutionary utility.</p>
+        </div>
+        <div class="fail">
+          <h3>No identity boundary</h3>
+          <p>Exploration and canonical state share one write path. There is no place to keep “what we are” while testing “what we might become.”</p>
+        </div>
+      </div>
+
+      <p>
+        The RSI conversation usually asks: <em>how do we generate a better version?</em>
+        Architects also need: <em>how do we decide what is allowed to become the new canonical state?</em>
+      </p>
+    </section>
+
+    <hr class="rule" />
+
+    <section id="catalog">
+      <h2>The catalog layer (what we actually ship)</h2>
+      <p>
+        <strong>Infinite Octave Omniversal Lattice Catalog</strong> is FractiAI’s AI-stack catalog layer —
+        a structured filing system for recursive, holographic, Goldilocks-bounded system design.
+        Lattice Chat is the live Syntheverse Sandbox demo of that catalog (try-on · own keys · not a production data plane).
+      </p>
+      <p>
+        The engine pin underneath is the <strong>Infinite Octaves Omni-Lattice</strong>
+        (Digits × Octaves 01–99 as Story-depth map; “Infinite” = recursive holographic nesting depth, not infinite measured physics tiers).
+        Papers and companions sit on an explicit shelf with honesty rails — Soft Story vs empirical vs operational claims stay separated.
+      </p>
+      <div class="callout">
+        <strong>Why architects care about a catalog layer:</strong>
+        recursive systems accumulate operators, prompts, tools, and policies faster than teams can narrate them.
+        A catalog forces named pathways, falsifiable gates, and “what we may claim” boundaries —
+        so self-modification does not become undocumented folklore.
+      </div>
+      <p>
+        Start with the primer if you are new to the stack:
+        <a href="/lattice/how">How Lattice / Infinite Octave Catalog works</a>.
+      </p>
+    </section>
+
+    <hr class="rule" />
+
+    <section id="homeostasis">
+      <h2>How Holographic Homeostasis helps</h2>
+      <p>
+        Holographic Homeostasis is the engineering layer for <strong>continuity under change</strong>.
+        “Holographic” here means architectural — state can be represented, transformed, preserved, and reconstructed across interacting layers —
+        not a claim about physical holography. “Homeostasis” means continuous change inside a viable band of identity and structure.
+      </p>
+      <p class="pathway">Explore → Organize → Contain → Reconcile → Verify → Commit</p>
+      <p>
+        Candidate modifications are not auto-canonical. The system keeps a live distinction between
+        <strong>what it is</strong> and <strong>what it is exploring becoming</strong>, then selectively reconciles.
+      </p>
+      <h3>What this gives your team</h3>
+      <ul>
+        <li>An explicit identity boundary (canonical state remains available as an anchor)</li>
+        <li>An exploration boundary (novelty can move without mandatory rewrite)</li>
+        <li>A commit gate (useful, recoverable change can land; destructive change can be refused)</li>
+        <li>A vocabulary for RSI safety that is architectural, not only policy prose</li>
+      </ul>
+      <p>
+        Full Soft Story framing and honesty tables:
+        <a href="/whitepaper/holographic-homeostasis">/whitepaper/holographic-homeostasis</a>.
+      </p>
+    </section>
+
+    <hr class="rule" />
+
+    <section id="rho">
+      <h2>ρ-Reconcile as the missing middle</h2>
+      <p>
+        Selective reconciliation (ρ) is the practical mechanism between “accept everything” and “preserve everything.”
+        It searches a controlled combination of canonical and explored state, scoring for recoverability, useful evolution,
+        bounded loss, containment, and commitment behavior — then verifies before commit.
+      </p>
+      <p>
+        The held-out empirical companion filing is
+        <a href="/whitepaper/e-phi-prime-recursive-homeostasis">e × φ × prime recursive homeostasis</a>
+        (Infinite Octaves engine feature #36). On those fixtures, ρ preserved the strong exploration three-axis direction
+        <strong>and</strong> produced nontrivial useful commits — with <em>e</em> frozen. That is Soft Story / catalog evidence of an architecture,
+        not a physics crown of constants.
+      </p>
+      <div class="callout">
+        <strong>One-line for the exec deck:</strong>
+        We can explore with e-class novelty, keep identity recoverable, and commit only when the change earns it —
+        instead of destruction, freeze, or zero-commit theater.
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <section id="evaluate">
+      <h2>What to evaluate next</h2>
+      <ol>
+        <li>Read the announcement for the public claim shape: <a href="/press/holographic-homeostasis">/press/holographic-homeostasis</a></li>
+        <li>Read the whitepaper honesty rails: <a href="/whitepaper/holographic-homeostasis">/whitepaper/holographic-homeostasis</a></li>
+        <li>Inspect the ρ held-out companion numbers: <a href="/whitepaper/e-phi-prime-recursive-homeostasis">/whitepaper/e-phi-prime-recursive-homeostasis</a></li>
+        <li>Walk the expedition trail: <a href="/journey/homeostasis-expedition">/journey/homeostasis-expedition</a></li>
+        <li>Try the catalog live demo (BYOK): <a href="/lattice">Lattice Chat</a></li>
+      </ol>
+      <p>
+        Contact for serious technical evaluation:
+        <a href="mailto:info@fractiai.com?subject=Holographic%20Homeostasis%20architect%20evaluation">info@fractiai.com</a>.
+      </p>
+
+      <ul class="paper-list" aria-label="Primary documents">
+        <li>
+          <a href="/whitepaper/holographic-homeostasis">
+            <span class="t">Holographic Homeostasis whitepaper</span>
+            <span class="e">Distributed multiscale regulation · PARTS↔WHOLE · Soft Story companion</span>
+          </a>
+        </li>
+        <li>
+          <a href="/whitepaper/e-phi-prime-recursive-homeostasis">
+            <span class="t">e × φ × prime recursive homeostasis</span>
+            <span class="e">ρ-reconcile · held-out INCLUDE · engine feature #36 · e frozen</span>
+          </a>
+        </li>
+        <li>
+          <a href="/press/holographic-homeostasis">
+            <span class="t">Engineering announcement</span>
+            <span class="e">Public RSI continuity &amp; reconciliation layer launch note</span>
+          </a>
+        </li>
+        <li>
+          <a href="/ship-blog/holographic-homeostasis">
+            <span class="t">Ship-blog · Holographic Homeostasis</span>
+            <span class="e">Plain-language research intro</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <p class="honesty">
+      <strong>Honesty rail:</strong>
+      Soft Story / catalog engineering briefing. Does not claim finished physics, universal intelligence theory,
+      CODATA substitution, clinical validation, or that recursive self-improvement is solved.
+      Empirical fixture numbers belong to the linked whitepapers and research suites.
+      Φ<sub>EGS</sub> ≈ 1.618 is design / catalog language — not a substitute for evidence.
+    </p>
+
+    <footer class="footer">
+      <p>
+        Infinite Octave Holographic Homeostasis™ · FractiAI<br />
+        Explore. Preserve. Reconcile. Verify. Evolve. → ∞^∞
+      </p>
+      <p style="margin-top:0.75rem;">
+        <a href="/press/holographic-homeostasis">Announcement</a>
+        · <a href="/whitepaper/holographic-homeostasis">Whitepaper</a>
+        · <a href="/lattice/how">Catalog primer</a>
+        · <a href="/questfest">QUESTFEST</a>
+      </p>
+    </footer>
+  </main>
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

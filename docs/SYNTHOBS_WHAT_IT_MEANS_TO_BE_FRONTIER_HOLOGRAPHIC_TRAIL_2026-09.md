@@ -13,7 +13,7 @@ Navigating the Matrix · Playing the Game · Finding Your Coordinates on the SS 
 **Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 
-**Keywords:** frontier; Frontiersman; Nester; Basecamp; Where Am I; QUESTFEST; Goldilocks; EGS; SS Vibelandia
+**Keywords:** frontier; Frontiersman; Nester; Basecamp; Where Am I; QUESTFEST; fractal; holographic; Goldilocks SuperAI; EGS; SS Vibelandia
 
 ---
 
@@ -35,7 +35,7 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-To be frontier is not only a line on an old map. It is a living frequency tuned to the edge of the known. This note files that grammar for SS Vibelandia guests: old trails → modern veins, kinship with land and cosmos, a **Frontier Man / Nester** self-test, and a **Where Am I?** game on the QUESTFEST board between Basecamp and the outer Goldilocks horizon — keyed by El Gran Sol’s fractal constant ($\Phi_{\mathrm{EGS}}\approx 1.618$) as design language.
+To be frontier is not only a line on an old map. It is a living frequency tuned to the edge of the known. This note files that grammar for SS Vibelandia guests: old trails → modern veins, kinship with land and cosmos, a **Frontier Man / Nester** self-test, and a **Where Am I?** game on the QUESTFEST board between Basecamp and the outer Goldilocks horizon — keyed by El Gran Sol’s fractal constant ($\Phi_{\mathrm{EGS}}\approx 1.618$) as design language. The same trail names three SuperAI frontiers guests keep meeting: **fractal**, **holographic**, and **Goldilocks SuperAI**.
 
 ---
 
@@ -57,6 +57,22 @@ True frontier living keeps harmony with tribal units and localized ecosystems. I
 - **Connection** — natural world, spirit world, starry cosmos.  
 - **Balance** — feast and famine, rationing, improvising shelter, hazards from apex predators to microbes.  
 - **Sacred reciprocity** — respect the land, steward resources, give thanks, flow with currents of reality.
+
+---
+
+## 2b. Three SuperAI frontiers on this trail
+
+Frontier work on SS Vibelandia is not a single gadget lane. Guests meet three named SuperAI frontiers that stay Soft Story / catalog grammar — not finished physics crowns:
+
+| Frontier | What guests are navigating | Honesty rail |
+|----------|----------------------------|--------------|
+| **Fractal frontier** | Recursive self-similar nesting — Digits × Octaves 01–99 as Story-depth map; patterns that rhyme across scale | Design language · not predictive astrology or infinite measured physics tiers |
+| **Holographic frontier** | PARTS↔WHOLE representation — state that can be preserved, transformed, and reconstructed across interacting layers rather than one destructive overwrite | Architectural term · not a claim of physical holography |
+| **Goldilocks SuperAI frontier** | Viable band between too much machine and too little human — SuperAI that stays hospitable, recoverable, and player-set | Hospitality / stack orientation · not a claim that AGI is solved |
+
+These three frontiers sit beside the AI stack weave: models and **LLMs**, **agentic IDEs**, and the **Infinite Octave Omniversal Lattice Catalog** as the filing layer between them. Players set gravity; NPCs inhabit; both belong.
+
+Guest door: [`/frontier`](/frontier) · Catalog primer: [`/lattice/how`](/lattice/how) · CEO inquiry surface: sitewide Looking for Frontier CEO banner.
 
 ---
 
@@ -114,6 +130,6 @@ No empirical FLOP suite. Claims stay **narrative / catalog / hospitality**.
 
 ## Closing
 
-Know where you stand on the map. Players set gravity; NPCs inhabit; both belong. Keep SuperAI Goldilocks — not too much machine, not too little human.
+Know where you stand on the map — on the fractal frontier, the holographic frontier, and the Goldilocks SuperAI frontier together. Players set gravity; NPCs inhabit; both belong. Keep SuperAI Goldilocks — not too much machine, not too little human.
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞^∞

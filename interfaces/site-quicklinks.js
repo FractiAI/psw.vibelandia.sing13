@@ -312,6 +312,39 @@
     );
   }
 
+  /** Shared Frontier CEO announcement — keep in sync with Canvas / QUESTFEST / Lattice Chat. */
+  var CEO_ANNOUNCEMENT_HTML =
+    '<aside class="qv-ceo-announcement" aria-label="Looking for Frontier CEO">' +
+    '<span class="qv-ceo-announcement__kicker">Announcement: Looking for Frontier CEO</span>' +
+    'Are you a <a href="/frontier">frontier</a> CEO looking for your next big challenge? We are looking for a CEO to help roll out the next layer of AI — ' +
+    '<a href="/lattice">Infinite Octave Omniversal Lattice Catalog</a>, woven between agentic IDEs and LLMs. ' +
+    'Contact Valet Pru at <a href="mailto:valetpru@gmail.com?subject=Lattice%20Catalog%20Frontier%20CEO%20inquiry">valetpru@gmail.com</a>. ' +
+    'Start with: <a href="/lattice">Catalog layer</a> · <a href="/ship-blog/what-it-means-to-be-frontier">Frontier</a> · ' +
+    '<a href="/ship-blog/pdvsa-gateway-ops-mockup">Gateway</a> · <a href="/ship-blog/moving-up-the-stack">Moving up the stack</a>. ' +
+    'Papers: <a href="/reading-room?category=lattice-catalog">Reading Room</a>.' +
+    '</aside>';
+
+  function injectCeoAnnouncement() {
+    if (
+      document.querySelector(
+        '.qv-ceo-announcement, .ship-ceo-announcement, .canvas-ceo-announcement, .frontier-ceo-banner'
+      )
+    ) {
+      return;
+    }
+    var aside = document.createElement('div');
+    aside.innerHTML = CEO_ANNOUNCEMENT_HTML;
+    var node = aside.firstChild;
+    if (!node) return;
+    var quick = document.querySelector('.qv-top-quicklinks');
+    if (quick && quick.parentNode) {
+      quick.parentNode.insertBefore(node, quick.nextSibling);
+    } else {
+      document.body.insertBefore(node, document.body.firstChild);
+    }
+    document.body.classList.add('qv-has-ceo-announcement');
+  }
+
   function injectTopQuicklinks() {
     if (onBridge) return;
     if (document.querySelector('.qv-top-quicklinks')) return;
@@ -467,6 +500,7 @@
 
   function boot() {
     injectTopQuicklinks();
+    injectCeoAnnouncement();
     injectFooterQuicklinks();
     ensureShareQrModal();
     ensureQuicklinkBadgeAnchors();

@@ -238,9 +238,181 @@
       color: var(--muted);
     }
     .footer a { color: var(--champagne); }
+    .btn-ghost-link {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      font-size: inherit;
+      font-weight: 600;
+      color: var(--champagne);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-ghost-link:hover { color: var(--gold-hi); text-decoration: underline; }
+    .hh-letter-root {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 1.25rem 0.85rem 2rem;
+      overflow: auto;
+      background: rgba(4, 3, 2, 0.78);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    .hh-letter-root.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .hh-letter {
+      width: min(38rem, 100%);
+      margin: 1.5rem auto;
+      padding: 1.35rem 1.25rem 1.4rem;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      background:
+        radial-gradient(80% 40% at 50% 0%, rgba(212, 175, 55, 0.12), transparent 55%),
+        linear-gradient(180deg, #16110c 0%, #0c0907 100%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+      color: var(--soft);
+      transform: translateY(0.65rem);
+      transition: transform 0.22s ease;
+    }
+    .hh-letter-root.is-open .hh-letter { transform: translateY(0); }
+    .hh-letter__kicker {
+      margin: 0 0 0.35rem;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .hh-letter h2 {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.45rem, 4.5vw, 1.85rem);
+      font-weight: 600;
+      color: var(--gold-hi);
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+    }
+    .hh-letter__meta {
+      margin: 0 0 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .hh-letter__body {
+      max-height: min(58vh, 28rem);
+      overflow: auto;
+      padding-right: 0.35rem;
+      margin-bottom: 1rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.22);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+      padding-top: 0.85rem;
+      padding-bottom: 0.85rem;
+    }
+    .hh-letter__body p { margin: 0 0 0.8rem; font-size: 0.95rem; color: var(--soft); }
+    .hh-letter__body p:last-child { margin-bottom: 0; }
+    .hh-letter__body strong { color: var(--text); }
+    .hh-letter__salute {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--champagne);
+    }
+    .hh-letter__sign {
+      margin-top: 0.85rem;
+      font-size: 0.9rem;
+      color: var(--champagne);
+    }
+    .hh-letter__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .hh-letter__dismiss-note {
+      margin: 0.65rem 0 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    body.hh-letter-open { overflow: hidden; }
+    @media (prefers-reduced-motion: reduce) {
+      .hh-letter-root, .hh-letter { transition: none; }
+    }
   </style>
 </head>
 <body>
+  <div
+    id="hh-dear-labs"
+    class="hh-letter-root"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="hh-dear-labs-title"
+    aria-hidden="true"
+    hidden
+  >
+    <div class="hh-letter" role="document">
+      <p class="hh-letter__kicker">Open letter · Frontier AI Labs</p>
+      <h2 id="hh-dear-labs-title">Dear OpenAI, Anthropic, Google DeepMind, Meta, and every lab shipping recursive agents</h2>
+      <p class="hh-letter__meta">FractiAI · Infinite Octave Holographic Homeostasis™ · September 30, 2026</p>
+      <div class="hh-letter__body">
+        <p class="hh-letter__salute">You are solving the wrong half of the problem first.</p>
+        <p>
+          Generating a better successor is only half of recursive self-improvement.
+          The other half — the half that decides whether your systems still <em>are</em> themselves after a thousand self-edits —
+          is deciding which changes become canonical.
+        </p>
+        <p>
+          Most of your public RSI conversation still sounds like: <strong>how do we make a better version?</strong>
+          We are asking the harder engineering question: <strong>how does the system decide which parts of its own evolution are allowed to rewrite what it fundamentally is?</strong>
+        </p>
+        <p>
+          Uncontrolled accept destroys recoverability. Over-safe refuse freezes evolution.
+          Pretty exploration with zero useful commit is theater. If your agents rewrite prompts, tools, memory, policies, and code
+          on a single write path, you do not have an identity boundary — you have hope.
+        </p>
+        <p>
+          FractiAI has engineered and demonstrated a recursive architecture that separates
+          <strong>Explore → Organize → Contain → Reconcile → Verify → Commit</strong>.
+          Selective reconciliation (ρ) keeps a live distinction between what the system is and what it is exploring becoming,
+          then commits only recoverable, useful novelty. Held-out Soft Story fixtures show the strong exploration direction
+          <em>and</em> nontrivial useful commits — with exploration energy frozen, not retuned to manufacture a prettier score.
+        </p>
+        <p>
+          We are not claiming RSI is solved. We are not crowning a magic constant. We are not selling finished physics.
+          We <em>are</em> claiming something narrower and more actionable than another safety essay:
+          there is now an Infinite Octave engine layer you can evaluate for continuity under change.
+        </p>
+        <p>
+          If your org owns long-running agentic systems, autonomous research loops, self-modifying toolchains,
+          or architecture search — look at the architecture between evolution and identity before the next generation
+          of irreversible rewrites compounds into a product you cannot recover.
+        </p>
+        <p>
+          The system does not have to choose between evolution and identity.
+          There can be an architecture between them. We built one. Evaluate it.
+        </p>
+        <p class="hh-letter__sign">
+          — FractiAI<br />
+          Infinite Octave Holographic Homeostasis™<br />
+          Explore. Preserve. Reconcile. Verify. Evolve.
+        </p>
+      </div>
+      <div class="hh-letter__actions">
+        <a class="btn btn-primary" href="/whitepaper/holographic-homeostasis">Read the whitepaper →</a>
+        <a class="btn" href="/whitepaper/e-phi-prime-recursive-homeostasis">ρ held-out companion</a>
+        <button type="button" class="btn" id="hh-dear-labs-continue" data-hh-letter-close>Continue to briefing</button>
+      </div>
+      <p class="hh-letter__dismiss-note">Soft Story / catalog challenge — not a claim that RSI is solved. Escape or backdrop also dismisses.</p>
+    </div>
+  </div>
+
   <main class="wrap">
     <nav class="topnav" aria-label="Site">
       <a href="/press/holographic-homeostasis">Announcement</a>
@@ -248,6 +420,8 @@
       <a href="/whitepaper/holographic-homeostasis">Whitepaper</a>
       <span class="dot">·</span>
       <a href="/lattice/how">Catalog primer</a>
+      <span class="dot">·</span>
+      <button type="button" class="btn-ghost-link" id="hh-dear-labs-reopen" data-hh-letter-open>Dear AI Labs letter</button>
       <span class="dot">·</span>
       <span class="here" aria-current="page">Architect briefing</span>
     </nav>
@@ -264,6 +438,7 @@
       <a class="btn btn-primary" href="/whitepaper/holographic-homeostasis">Read the whitepaper →</a>
       <a class="btn" href="/press/holographic-homeostasis">Engineering announcement</a>
       <a class="btn" href="/whitepaper/e-phi-prime-recursive-homeostasis">ρ held-out companion</a>
+      <button type="button" class="btn" data-hh-letter-open>Dear AI Labs letter</button>
     </div>
 
     <nav class="toc" aria-label="On this page">
@@ -446,6 +621,7 @@
       <p style="margin-top:0.75rem;">
         <a href="/press/holographic-homeostasis">Announcement</a>
         · <a href="/whitepaper/holographic-homeostasis">Whitepaper</a>
+        · <button type="button" class="btn-ghost-link" data-hh-letter-open>Dear AI Labs letter</button>
         · <a href="/lattice/how">Catalog primer</a>
         · <a href="/questfest">QUESTFEST</a>
       </p>
@@ -453,5 +629,80 @@
   </main>
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script>
+    (function () {
+      var STORAGE_KEY = 'hh-dear-labs-dismissed-v1';
+      var root = document.getElementById('hh-dear-labs');
+      var continueBtn = document.getElementById('hh-dear-labs-continue');
+      if (!root) return;
+
+      var lastFocus = null;
+
+      function isOpen() {
+        return root.classList.contains('is-open');
+      }
+
+      function openLetter(opts) {
+        opts = opts || {};
+        if (isOpen()) return;
+        lastFocus = document.activeElement;
+        root.hidden = false;
+        root.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('hh-letter-open');
+        // force layout before transition
+        void root.offsetWidth;
+        root.classList.add('is-open');
+        if (continueBtn) continueBtn.focus();
+        if (opts.persistOpen === false) {
+          /* reopen only */
+        }
+      }
+
+      function closeLetter(opts) {
+        opts = opts || {};
+        if (!isOpen() && root.hidden) return;
+        root.classList.remove('is-open');
+        document.body.classList.remove('hh-letter-open');
+        root.setAttribute('aria-hidden', 'true');
+        window.setTimeout(function () {
+          if (!isOpen()) root.hidden = true;
+        }, 220);
+        if (opts.remember !== false) {
+          try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+        }
+        if (lastFocus && typeof lastFocus.focus === 'function') {
+          try { lastFocus.focus(); } catch (e) {}
+        }
+      }
+
+      document.querySelectorAll('[data-hh-letter-open]').forEach(function (el) {
+        el.addEventListener('click', function () { openLetter({ persistOpen: false }); });
+      });
+      document.querySelectorAll('[data-hh-letter-close]').forEach(function (el) {
+        el.addEventListener('click', function () { closeLetter({ remember: true }); });
+      });
+
+      root.addEventListener('click', function (ev) {
+        if (ev.target === root) closeLetter({ remember: true });
+      });
+
+      document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape' && isOpen()) {
+          ev.preventDefault();
+          closeLetter({ remember: true });
+        }
+      });
+
+      var dismissed = false;
+      try { dismissed = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+      if (!dismissed) {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function () { openLetter(); });
+        } else {
+          openLetter();
+        }
+      }
+    })();
+  </script>
 </body>
 </html>

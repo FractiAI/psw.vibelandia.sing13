@@ -6,8 +6,11 @@ import {
   CATALOG_LAYER_INNOVATIONS,
   CATALOG_LAYER_INNOVATIONS_HONESTY,
   CATALOG_LAYER_SECURITY_FABRIC,
+  CATALOG_LAYER_BELL_CURVE_IMAGE,
+  CATALOG_LAYER_BELL_CURVE_BENEFITS,
   renderLatticeCatalogLayerBandHtml,
   renderCatalogLayerInnovationsHtml,
+  renderCatalogLayerBellCurveFigureHtml,
 } from '../../lib/lattice-catalog-layer.mjs';
 import { CATALOG_CATEGORIES } from '../../lib/whitepaper-catalog.mjs';
 import { SITE_QUICKLINK_SECONDARY, SITE_PRIMER_LINE } from '../../lib/site-focus.mjs';
@@ -25,6 +28,11 @@ const FEATURED_WITH_INNOVATIONS = [
   'interfaces/blog-infinite-octave-egs-catalog-2026-09.html',
   'interfaces/lattice-brochure.html',
   'interfaces/lattice-learn-more.html',
+];
+
+const FEATURED_WITH_BELL_CURVE = [
+  ...FEATURED_WITH_INNOVATIONS,
+  'interfaces/holographic-homeostasis-architects.html',
 ];
 
 describe('AI catalog layer · Infinite Octave Omniversal Lattice Catalog', () => {
@@ -87,9 +95,29 @@ describe('AI catalog layer · Infinite Octave Omniversal Lattice Catalog', () =>
   it('keeps stack section on lattice landing but guest catalog links open page top', () => {
     const lattice = read('interfaces/lattice-v1618.html');
     expect(lattice).toContain('id="ai-catalog-layer-intro"');
-    expect(lattice).toMatch(/Where this layer sits/i);
+    expect(lattice).toMatch(/Where the catalog layer sits/i);
+    expect(lattice).toContain(CATALOG_LAYER_BELL_CURVE_IMAGE.src);
     expect(LATTICE_CATALOG_LAYER.ctaPrimary.href).toBe('/lattice');
     expect(LATTICE_CATALOG_LAYER.ctaPrimary.href).not.toContain('#');
+  });
+
+  it('ships IDE–Catalog–LLM bell-curve figure with feature bullets on catalog intros', () => {
+    expect(CATALOG_LAYER_BELL_CURVE_IMAGE.src).toContain('catalog-layer-bell-curve-ide-llm');
+    expect(CATALOG_LAYER_BELL_CURVE_BENEFITS.length).toBeGreaterThanOrEqual(7);
+    expect(CATALOG_LAYER_BELL_CURVE_BENEFITS.join(' ')).toMatch(
+      /woven between agentic IDEs and LLMs/i,
+    );
+    const figure = renderCatalogLayerBellCurveFigureHtml();
+    expect(figure).toContain('id="catalog-layer-bell-curve"');
+    expect(figure).toContain('Features &amp; benefits');
+    expect(figure).toContain(CATALOG_LAYER_BELL_CURVE_IMAGE.src);
+    for (const rel of FEATURED_WITH_BELL_CURVE) {
+      const html = read(rel);
+      expect(html, `${rel} bell curve`).toContain('id="catalog-layer-bell-curve"');
+      expect(html, `${rel} image`).toContain(CATALOG_LAYER_BELL_CURVE_IMAGE.src);
+      expect(html, `${rel} benefits`).toContain('Features &amp; benefits');
+      expect(html, `${rel} IDE label`).toMatch(/Agentic IDEs/i);
+    }
   });
 
   it('defines five catalog-layer innovations with unique deliverables plus security fabric', () => {

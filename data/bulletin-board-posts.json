@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "posts": [
+    {
+      "id": "daily-2026-10-01-synthobs-humans-ai-infinite-octave-offset-2026-10",
+      "posted": "2026-10-01",
+      "featured": true,
+      "title": "Are Humans and Today’s AI Just Different Octaves of the Same Stack?",
+      "subtitle": "News of the day · Thursday, October 1",
+      "summary": "Catalog Soft Story: humans at Digit 4→5, LLMs/agentic IDEs at Digit 5–6, Tilly Norwood as Digit 5/8 costume theater — octave offset using Infinite Octaves, not an engine shelf pin.",
+      "href": "/ship-blog/humans-ai-octave-offset",
+      "pill": "TODAY",
+      "docRef": "synthobs-humans-ai-infinite-octave-offset-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-30-synthobs-holographic-homeostasis-2026-09",
       "posted": "2026-09-30",

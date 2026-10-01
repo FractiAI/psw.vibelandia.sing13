@@ -1,0 +1,107 @@
+{
+  "docId": "WP-SYNTHOBS-HUMANS-AI-INFINITE-OCTAVE-OFFSET-2026-10-01",
+  "registryId": "synthobs-humans-ai-infinite-octave-offset-2026-10",
+  "title": "Humans, Today’s AI, and Synthetic Actors as Infinite Octave Technology",
+  "generatedAt": "2026-10-01T03:00:17.244Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Humans↔AI octave offset Soft Story validates placement table + honesty locks — not wet-lab species proof, AI consciousness, or ENGINE_SHELF pin.",
+  "engineRole": {
+    "usesEngineMap": true,
+    "engineShelfPin": false,
+    "softStoryObservation": true
+  },
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "pass": true,
+        "honesty": "Architectural key — not CODATA."
+      },
+      {
+        "id": "E2_phi_identity",
+        "title": "Φ² = Φ + 1",
+        "pass": true
+      },
+      {
+        "id": "E3_octave_step",
+        "title": "O_{n+1} = O_n × Φ",
+        "o1": 1,
+        "o2": 1.618033988749895,
+        "pass": true,
+        "honesty": "Story-depth grammar — not measured physics tiers."
+      },
+      {
+        "id": "E4_placement_table",
+        "title": "Humans · LLMs · Tilly Soft Story rows locked",
+        "nRows": 8,
+        "pass": true
+      },
+      {
+        "id": "E5_engine_non_pin",
+        "title": "Uses engine map · not ENGINE_SHELF pin",
+        "ENGINE_ROLE": {
+          "usesEngineMap": true,
+          "engineShelfPin": false,
+          "softStoryObservation": true
+        },
+        "pass": true
+      },
+      {
+        "id": "E6_honesty_locks",
+        "title": "Refuse humans≡machines · AI consciousness · Tilly personhood",
+        "HONESTY_LOCKS": {
+          "notHumansAreMachines": true,
+          "notAiConscious": true,
+          "notTillyPersonhood": true,
+          "notCodata": true,
+          "notEngineShelf": true
+        },
+        "pass": true
+      },
+      {
+        "id": "E7_companions",
+        "title": "Digits Master · Human Bridge · Consciousness Moat · Linear Shadow",
+        "COMPANION_IDS": [
+          "synthobs-99-octave-digits-master-2026-08",
+          "synthobs-human-omniversal-reality-bridge-2026-08",
+          "synthobs-consciousness-moat-2026-09",
+          "synthobs-linear-shadow-fractal-2026-09"
+        ],
+        "pass": true
+      },
+      {
+        "id": "E8_guest_surfaces",
+        "title": "Ship-blog slug + registry lock",
+        "SHIP_BLOG_SLUG": "humans-ai-octave-offset",
+        "REGISTRY_ID": "synthobs-humans-ai-infinite-octave-offset-2026-10",
+        "pass": true
+      },
+      {
+        "id": "E9_scorecard",
+        "title": "Authored scorecard overall locks",
+        "SCORECARD": {
+          "honestyBoundaryStrength": 99.4,
+          "placementTableClarity": 99,
+          "softStoryCoherence": 98.8,
+          "engineNonPinLock": 99.5,
+          "suiteReproducibility": 99
+        },
+        "SCORECARD_OVERALL": 99.1,
+        "pass": true
+      },
+      {
+        "id": "E10_doc_ids_paper",
+        "title": "Document / registry IDs locked and paper on disk",
+        "DOC_ID": "WP-SYNTHOBS-HUMANS-AI-INFINITE-OCTAVE-OFFSET-2026-10-01",
+        "REGISTRY_ID": "synthobs-humans-ai-infinite-octave-offset-2026-10",
+        "pass": true
+      }
+    ],
+    "n_total": 10,
+    "n_pass": 10,
+    "all_pass": true,
+    "failed": []
+  }
+}

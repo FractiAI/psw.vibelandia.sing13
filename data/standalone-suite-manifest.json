@@ -1,8 +1,20 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-10-01",
   "suites": [
+    {
+      "id": "synthobs-humans-ai-infinite-octave-offset",
+      "path": "research/synthobs-humans-ai-infinite-octave-offset",
+      "github": "https://github.com/FractiAI/synthobs-humans-ai-infinite-octave-offset",
+      "description": "Humans · today\u2019s AI · synthetic actors as Infinite Octave Soft Story placement \u2014 Digits \u00d7 Octaves observation using the engine map \u00b7 not ENGINE_SHELF",
+      "paperIds": [
+        "synthobs-humans-ai-infinite-octave-offset-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_HUMANS_AI_INFINITE_OCTAVE_OFFSET_EGS_2026-10.md"
+      ]
+    },
     {
       "id": "synthio-mri-cloud-antenna",
       "path": "research/synthio-mri-cloud-antenna",

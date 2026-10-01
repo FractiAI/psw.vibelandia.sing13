@@ -16,6 +16,12 @@ on:
           - synthobs-ibm-sna-tcpip-gateway-omni-lattice
           - synthobs-lattice-vs-vibe-coding
           - synthobs-egs-recursive-fidelity-test
+          - synthobs-humans-ai-infinite-octave-offset
+          - synthobs-e-phi-prime-recursive-homeostasis
+          - synthobs-holographic-homeostasis
+          - synthobs-erft-e-continuous-regulation
+          - synthobs-consciousness-moat
+          - synthobs-human-omniversal-reality-bridge
       create_repo:
         description: 'Create empty FractiAI repo if missing (needs org PAT)'
         required: false

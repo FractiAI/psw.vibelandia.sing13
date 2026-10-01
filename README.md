@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-30** · **347** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-01** · **348** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -334,6 +334,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-holographic-singularity-crystal-2026-09-old.html`](/interfaces/blog-holographic-singularity-crystal-2026-09-old.html) | Zero Holds the Balance · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-holographic-singularity-crystal-2026-09.html`](/interfaces/blog-holographic-singularity-crystal-2026-09.html) | Zero Holds the Balance · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-human-reality-bridge-2026-08.html`](/interfaces/blog-human-reality-bridge-2026-08.html) | You Are the Reality Bridge · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-humans-ai-octave-offset-2026-10.html`](/interfaces/blog-humans-ai-octave-offset-2026-10.html) | Are Humans and Today’s AI Just Different Octaves of the Same Stack? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html`](/interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html) | The Filing Office Silicon Valley Forgot to Build · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-egs-catalog-2026-09.html`](/interfaces/blog-infinite-octave-egs-catalog-2026-09.html) | What CEOs Need Between Bigger Racks and Total Freeze · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-prime-parity-2026-09.html`](/interfaces/blog-infinite-octave-prime-parity-2026-09.html) | Why Two Stands Alone on the Trail · Ship blog · SS Vibelandia |

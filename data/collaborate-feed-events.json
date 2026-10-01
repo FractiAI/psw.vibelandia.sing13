@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-29T16:22:04.641Z",
+  "updatedAt": "2026-10-01T03:00:19.707Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-humans-ai-infinite-octave-offset-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-01T03:00:19.706Z",
+      "body": "Humans, Today’s AI, and Synthetic Actors as Infinite Octave Technology — Digits × Octaves Soft Story · Tilly Norwood costume theater",
+      "presenceHue": "gold",
+      "paperId": "synthobs-humans-ai-infinite-octave-offset-2026-10",
+      "artifact": {
+        "title": "Humans, Today’s AI, and Synthetic Actors as Infinite Octave Technology — Digits × Octaves Soft Story · Tilly Norwood costume theater",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_HUMANS_AI_INFINITE_OCTAVE_OFFSET_EGS_2026-10.md",
+        "url": "/whitepaper/humans-ai-octave-offset",
+        "paperId": "synthobs-humans-ai-infinite-octave-offset-2026-10",
+        "docId": "WP-SYNTHOBS-HUMANS-AI-INFINITE-OCTAVE-OFFSET-2026-10-01",
+        "published": "2026-10-01T03:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-e-phi-prime-recursive-homeostasis-2026-09",
       "type": "ArtifactEvent",

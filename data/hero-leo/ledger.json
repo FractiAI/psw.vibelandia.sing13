@@ -1,11 +1,11 @@
 {
   "schema": "hero-leo-ledger/v1",
   "expedition_id": "homeostasis-expedition",
-  "updatedAt": "2026-10-02T17:30:00.000Z",
+  "updatedAt": "2026-10-02T17:52:48.562Z",
   "stats": {
-    "prospects_scanned": 63,
+    "prospects_scanned": 123,
     "note": "prospects_scanned counts curated literature pointers + Beyond CRISPR corpus rows actually processed in suite runs — not fabricated web crawls.",
-    "last_scout_id": "SCOUT-2026-10-02T1745"
+    "last_scout_id": "SCOUT-2026-10-02T1754"
   },
   "investigations": [
     {
@@ -55,7 +55,8 @@
         "provenance": true,
         "scientificUsefulness": true,
         "publicationReadiness": true
-      }
+      },
+      "lab": "digital"
     },
     {
       "expedition_id": "homeostasis-expedition",
@@ -103,7 +104,8 @@
         "provenance": true,
         "scientificUsefulness": true,
         "publicationReadiness": true
-      }
+      },
+      "lab": "digital"
     },
     {
       "expedition_id": "homeostasis-expedition",
@@ -151,7 +153,8 @@
         "provenance": true,
         "scientificUsefulness": true,
         "publicationReadiness": false
-      }
+      },
+      "lab": "digital"
     },
     {
       "expedition_id": "homeostasis-expedition",
@@ -199,7 +202,8 @@
         "provenance": true,
         "scientificUsefulness": true,
         "publicationReadiness": false
-      }
+      },
+      "lab": "digital"
     },
     {
       "expedition_id": "homeostasis-expedition",
@@ -240,6 +244,57 @@
       "publicationCriteria": {
         "scientificSignificance": true,
         "novelty": false,
+        "evidence": true,
+        "reproducibility": true,
+        "falsifiability": true,
+        "alternativeExplanations": true,
+        "documentation": true,
+        "provenance": true,
+        "scientificUsefulness": true,
+        "publicationReadiness": false
+      },
+      "lab": "digital"
+    },
+    {
+      "expedition_id": "homeostasis-expedition",
+      "investigation_id": "INV-HE-2026-10-02-006",
+      "prospect_id": "P-C11-WETLAB-PILOT",
+      "timestamp": "2026-10-02T17:54:36.783Z",
+      "lab": "digital",
+      "research_domain": "biology / information architecture",
+      "question": "Which kill-if-fails branch of the C11 lab brief yields the cheapest high-information computational preflight?",
+      "motivation": "Gap lead already at E3; need least-friction path before wet-lab spend.",
+      "observation": "Scout board SCOUT-2026-10-02T1754 rank #1; priority_score=1.169",
+      "known_explanations": "Debris / DGR / retron reclassification",
+      "novel_hypothesis": "Which kill-if-fails branch of the C11 lab brief yields the cheapest high-information computational preflight?",
+      "prediction": "Compare exclusion panels (DGR VR flatness, retron msDNA fingerprints) against public motif catalogs.",
+      "null_hypothesis": "No computational preflight separates product fingerprints from known writer classes.",
+      "test_method": "Hero Leo Digital Lab computational completion (catalog + local receipts); not wet-lab.",
+      "controls": "Null-first; rediscovery labeling; human gate for external publish.",
+      "evidence_sources": [
+        "/journey/beyond-crispr-c11-lab-brief",
+        "/whitepaper/beyond-crispr-discovery"
+      ],
+      "analysis": "Null-first card written. Predicted test: Compare exclusion panels (DGR VR flatness, retron msDNA fingerprints) against public motif catalogs.. Competing explanation: Debris / DGR / retron reclassification.",
+      "result": "Computational research note completed for “C11 ART-class lagged cassette pilot design stress-test”. Evidence remains below wet-lab (E1). Next escalate only if Player 1 authorizes higher-friction work.",
+      "alternative_explanations": "Debris / DGR / retron reclassification",
+      "falsification_status": "open",
+      "evidence_level": "E1",
+      "novelty_status": "NOVEL_PREDICTION",
+      "replication_status": "computational_only",
+      "confidence": "low–medium (computational note)",
+      "friction_estimate": "0.45",
+      "information_gain": "0.9",
+      "next_action": "Player 1 review; escalate only with authorization.",
+      "publication_status": "RESEARCH_NOTE",
+      "artifact_links": [
+        "/journey/beyond-crispr-c11-lab-brief",
+        "/whitepaper/beyond-crispr-discovery"
+      ],
+      "human_review_status": "pending",
+      "publicationCriteria": {
+        "scientificSignificance": true,
+        "novelty": true,
         "evidence": true,
         "reproducibility": true,
         "falsifiability": true,

@@ -1,8 +1,8 @@
 /**
- * GET  /api/hero-leo — dashboard
- * POST /api/hero-leo { action: 'scout' | 'complete', prospectIds?: string[] }
+ * GET  /api/hero-leo — dashboard (+ Digital Lab)
+ * POST /api/hero-leo { action: 'scout' | 'complete' | 'suite-run', prospectIds?: string[] }
  *
- * Scout/complete persist under data/hero-leo/ when the filesystem is writable
+ * Scout/complete/suite-run persist under data/hero-leo/ when the filesystem is writable
  * (local, CI, Cloud Agent). On read-only hosts, returns an error hint to use CLI.
  */
 function parseBody(req) {
@@ -25,11 +25,14 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(204).end();
 
   try {
-    const { buildDashboard, HERO_LEO_SCHEMA } = await import('../lib/hero-leo.mjs');
+    const { HERO_LEO_SCHEMA } = await import('../lib/hero-leo.mjs');
+    const { buildDashboardWithDigitalLab, buildDigitalLab, runDigitalLabSuite } = await import(
+      '../lib/hero-leo-digital-lab.mjs'
+    );
 
     if (req.method === 'GET') {
       const view = String(req.query?.view || 'dashboard').toLowerCase();
-      const dash = buildDashboard();
+      const dash = buildDashboardWithDigitalLab();
       if (view === 'status') {
         return res.status(200).json({ ok: true, schema: HERO_LEO_SCHEMA, status: dash.status });
       }
@@ -45,6 +48,9 @@ module.exports = async function handler(req, res) {
           schema: HERO_LEO_SCHEMA,
           prospectBoard: dash.prospectBoard,
         });
+      }
+      if (view === 'digital-lab' || view === 'digitallab') {
+        return res.status(200).json({ ok: true, schema: HERO_LEO_SCHEMA, digitalLab: dash.digitalLab });
       }
       return res.status(200).json({ ok: true, ...dash });
     }
@@ -64,7 +70,7 @@ module.exports = async function handler(req, res) {
             action: 'scout',
             topN: board.nReturned,
             prospectBoard: board,
-            dashboard: buildDashboard(),
+            dashboard: buildDashboardWithDigitalLab(),
           });
         } catch (err) {
           return res.status(503).json({
@@ -87,7 +93,7 @@ module.exports = async function handler(req, res) {
             ok: true,
             action: 'complete',
             ...result,
-            dashboard: buildDashboard(),
+            dashboard: buildDashboardWithDigitalLab(),
           });
         } catch (err) {
           return res.status(503).json({
@@ -99,10 +105,28 @@ module.exports = async function handler(req, res) {
         }
       }
 
+      if (action === 'suite-run' || action === 'digital-lab-suite') {
+        try {
+          const result = runDigitalLabSuite();
+          return res.status(result.ok ? 200 : 502).json({
+            ...result,
+            dashboard: buildDashboardWithDigitalLab(),
+            digitalLab: buildDigitalLab(),
+          });
+        } catch (err) {
+          return res.status(503).json({
+            ok: false,
+            error: 'suite_run_failed',
+            message: err?.message || String(err),
+            hint: 'Filesystem may be read-only. Run: npm run hero-leo:digital-lab',
+          });
+        }
+      }
+
       return res.status(400).json({
         ok: false,
         error: 'unknown_action',
-        hint: "Use action: 'scout' or 'complete'",
+        hint: "Use action: 'scout' | 'complete' | 'suite-run'",
       });
     }
 

@@ -19,6 +19,7 @@
     "test:ship-blog-magazine": "vitest run tests/lib/ship-blog-magazine.test.mjs",
     "hero-leo:scout": "node scripts/hero-leo-scout.mjs",
     "hero-leo:complete": "HERO_LEO_ACTION=complete node scripts/hero-leo-scout.mjs --complete",
+    "hero-leo:digital-lab": "node scripts/hero-leo-digital-lab.mjs",
     "test:lattice-floors": "node scripts/assert-lattice-token-floors.mjs",
     "build:omni-lattice-course": "node scripts/build-omni-lattice-course-content.mjs",
     "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",

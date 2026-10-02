@@ -1,7 +1,7 @@
 {
   "schema": "hero-leo-prospect-board/v1",
-  "scoutId": "SCOUT-2026-10-02T1745",
-  "generatedAt": "2026-10-02T17:45:42.895Z",
+  "scoutId": "SCOUT-2026-10-02T1754",
+  "generatedAt": "2026-10-02T17:54:36.782Z",
   "expedition_id": "homeostasis-expedition",
   "nCatalog": 15,
   "nReturned": 11,
@@ -29,7 +29,7 @@
         "/whitepaper/beyond-crispr-discovery"
       ],
       "already_completed": false,
-      "selection_status": "available"
+      "selection_status": "completed"
     },
     {
       "rank": 2,

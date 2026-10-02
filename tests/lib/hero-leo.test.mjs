@@ -8,6 +8,12 @@ import {
   loadStatus,
 } from '../../lib/hero-leo.mjs';
 import { runFullScout, completeSelectedProspects, TOP_N } from '../../lib/hero-leo-scout.mjs';
+import {
+  buildDashboardWithDigitalLab,
+  buildDigitalLab,
+  LAB_DIGITAL,
+  loadScoreReceipt,
+} from '../../lib/hero-leo-digital-lab.mjs';
 
 describe('hero-leo homeostasis scout', () => {
   it('loads config with publication gate (not hard-coded only in UI)', () => {
@@ -67,12 +73,38 @@ describe('hero-leo homeostasis scout', () => {
   });
 
   it('completes selected prospects into ledger research notes', () => {
-    runFullScout({ topN: TOP_N });
+    const board = runFullScout({ topN: TOP_N });
+    const pick =
+      board.prospects.find((p) => !p.already_completed && p.selection_status !== 'completed') ||
+      board.prospects[0];
+    expect(pick?.prospect_id).toBeTruthy();
     const before = loadLedger().investigations.length;
-    const result = completeSelectedProspects(['P-PUBLICATION-GATE-CAL']);
+    const result = completeSelectedProspects([pick.prospect_id]);
     expect(result.ok).toBe(true);
-    expect(result.completed.some((c) => c.prospect_id === 'P-PUBLICATION-GATE-CAL')).toBe(true);
+    expect(result.completed.some((c) => c.prospect_id === pick.prospect_id)).toBe(true);
     expect(loadLedger().investigations.length).toBeGreaterThanOrEqual(before);
     expect(loadStatus().autonomousProcessRunning).toBe(false);
+    const row = loadLedger().investigations.find((i) => i.prospect_id === pick.prospect_id);
+    expect(row?.lab).toBe(LAB_DIGITAL);
+  });
+
+  it('Digital Lab loads Beyond CRISPR score receipt and tags lab:digital', () => {
+    const cfg = loadConfig();
+    expect(cfg.digitalLab.labTag).toBe('digital');
+    expect(cfg.digitalLab.wetLabOutOfScope).toBe(true);
+    const receipt = loadScoreReceipt();
+    expect(receipt.available).toBe(true);
+    expect(typeof receipt.all_pass).toBe('boolean');
+    expect(receipt.lead).toBeTruthy();
+    expect(Array.isArray(receipt.gapDiscoveryIds)).toBe(true);
+    const dl = buildDigitalLab();
+    expect(dl.schema).toBe('hero-leo-digital-lab/v1');
+    expect(dl.lab).toBe(LAB_DIGITAL);
+    expect(dl.wetLabOutOfScope).toBe(true);
+    expect(dl.digitalInvestigations.length).toBeGreaterThan(0);
+    expect(dl.digitalInvestigations.every((i) => i.lab === LAB_DIGITAL)).toBe(true);
+    const dash = buildDashboardWithDigitalLab();
+    expect(dash.digitalLab.suiteRun.suiteId).toContain('beyond-crispr');
+    expect(buildDashboard().schema).toBe('hero-leo-dashboard/v1');
   });
 });

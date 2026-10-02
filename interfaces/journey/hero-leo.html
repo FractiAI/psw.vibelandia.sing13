@@ -37,6 +37,10 @@
     .hl-prospect{display:grid;grid-template-columns:auto 1fr;gap:.35rem .75rem;align-items:start}
     .hl-prospect label{cursor:pointer}
     .hl-msg{min-height:1.25rem;margin:.5rem 0 0;font-size:.95rem}
+    .hl-dl-grid{display:grid;gap:1rem}
+    @media(min-width:800px){.hl-dl-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .hl-dl-col h3{margin:0 0 .5rem;font-size:1.05rem;font-family:Cormorant Garamond,Georgia,serif}
+    .hl-dl-col p{margin:0 0 .45rem;font-size:.95rem;line-height:1.4}
   </style>
 </head>
 <body class="voyage-flagship vb-pub">
@@ -49,10 +53,40 @@
   <main class="vb-pub-main">
     <p class="vb-pub-kicker">Homeostasis Expedition · SS Vibelandia / FractiAI</p>
     <h1>Hero Leo</h1>
-    <p class="vb-pub-lead">Autonomous Scientific Scout — prospect → falsify → capture → publish when merited. Press <strong>Scout fully</strong> to return the top 11 ranked prospects, then select one, several, or all for Leo to complete as computational research notes.</p>
+    <p class="vb-pub-lead">Autonomous Scientific Scout — prospect → falsify → capture → publish when merited. Press <strong>Scout fully</strong> to return the top 11 ranked prospects, then select one, several, or all for Leo to complete as <strong>lab: digital</strong> research notes. Wet lab stays out of this cockpit.</p>
 
     <p>Status: <span class="hl-state" id="state" data-live="false">loading…</span></p>
     <p class="hl-v" id="label"></p>
+
+    <section class="hl-panel" id="digital-lab" aria-labelledby="dl-h">
+      <h2 id="dl-h">Digital Lab</h2>
+      <p class="hl-k">Computational evidence lane · suite run · score receipt · complete prospects</p>
+      <div class="hl-dl-grid">
+        <div class="hl-dl-col">
+          <h3>Suite run</h3>
+          <p id="dl-suite">—</p>
+          <div class="hl-scout-actions">
+            <button type="button" class="primary" id="btn-suite">Run Beyond CRISPR suite</button>
+          </div>
+        </div>
+        <div class="hl-dl-col">
+          <h3>Score receipt</h3>
+          <p id="dl-receipt">—</p>
+          <ul class="hl-list" id="dl-top"></ul>
+        </div>
+        <div class="hl-dl-col">
+          <h3>Complete prospects</h3>
+          <p id="dl-complete">—</p>
+          <div class="hl-scout-actions">
+            <button type="button" id="btn-dl-to-scout">Open scout board</button>
+            <button type="button" class="primary" id="btn-dl-complete" disabled>Complete selected</button>
+          </div>
+        </div>
+      </div>
+      <p class="hl-msg" id="dl-msg"></p>
+      <p class="hl-k">Recent lab: digital ledger rows</p>
+      <ul class="hl-list" id="dl-ledger"></ul>
+    </section>
 
     <section class="hl-panel" id="scout" aria-labelledby="scout-h">
       <h2 id="scout-h">Player 1 · Scout command</h2>
@@ -124,7 +158,7 @@
       <a class="vb-pub-btn vb-pub-btn--ghost" href="/api/hero-leo">Raw dashboard JSON</a>
     </div>
 
-    <p class="honesty"><strong>Honesty:</strong> Scout ranks an authorized SING13 prospect catalog (not paywall scraping, not wet-lab). Completing a prospect writes a computational research note (typically E1) with null-first cards — not automatic journal publication. Rediscovery is labeled rediscovery. On read-only hosts use <code>npm run hero-leo:scout</code> / <code>hero-leo:complete</code>. Human approval still required for final external publish. SynthOBS · Syntheverse Sandbox · not medical advice · not ENGINE_SHELF.</p>
+    <p class="honesty"><strong>Honesty:</strong> Scout ranks an authorized SING13 prospect catalog (not paywall scraping, not wet-lab). Digital Lab tags (<code>lab: digital</code>) mark computational suite runs, score receipts, and prospect completions only — wet lab stays out. Completing a prospect writes a computational research note (typically E1) with null-first cards — not automatic journal publication. Rediscovery is labeled rediscovery. On read-only hosts use <code>npm run hero-leo:scout</code> / <code>hero-leo:complete</code> / <code>hero-leo:digital-lab</code>. Human approval still required for final external publish. SynthOBS · Syntheverse Sandbox · not medical advice · not ENGINE_SHELF.</p>
   </main>
   <footer class="vj-foot">
     <a href="/journey/homeostasis-expedition">Expedition</a>
@@ -147,11 +181,62 @@
       el.className = 'hl-msg ' + (ok === true ? 'hl-ok' : ok === false ? 'hl-err' : '');
       el.textContent = text || '';
     }
+    function setDlMsg(text, ok) {
+      const el = document.getElementById('dl-msg');
+      el.className = 'hl-msg ' + (ok === true ? 'hl-ok' : ok === false ? 'hl-err' : '');
+      el.textContent = text || '';
+    }
+    function renderDigitalLab(dl) {
+      if (!dl) {
+        document.getElementById('dl-suite').textContent = 'Digital Lab unavailable.';
+        return;
+      }
+      const sr = dl.suiteRun || {};
+      const pass =
+        sr.all_pass === true ? 'GREEN' : sr.all_pass === false ? 'NEEDS ATTENTION' : 'NO RECEIPT';
+      document.getElementById('dl-suite').innerHTML =
+        `<span class="hl-badge">lab: digital</span> ` +
+        `<strong>${esc(pass)}</strong><br/>` +
+        `${esc(sr.suiteId || '—')}<br/>` +
+        `${esc(sr.n_pass ?? '—')} / ${esc(sr.n_total ?? '—')} experiments · ${esc(sr.generatedAt || 'not run')}`;
+
+      const rec = dl.scoreReceipt || {};
+      document.getElementById('dl-receipt').innerHTML =
+        `Lead <strong>${esc(rec.lead || '—')}</strong> · gaps ${esc((rec.gapDiscoveryIds || []).join(', ') || '—')}<br/>` +
+        `Positive control ${esc((rec.positiveControlIds || []).join(', ') || '—')} · declaredWinner <code>${esc(String(rec.declaredWinner))}</code>`;
+      document.getElementById('dl-top').innerHTML = (rec.top || [])
+        .slice(0, 6)
+        .map(
+          (t) =>
+            `<li><span class="hl-badge">${esc(t.id)}</span><span class="hl-badge">${esc(t.literatureStatus || t.role)}</span> ${esc(t.provisionalName || '')}</li>`,
+        )
+        .join('') || '<li>No score receipt loaded.</li>';
+
+      const cp = dl.completeProspects || {};
+      document.getElementById('dl-complete').textContent =
+        cp.scoutId
+          ? `${cp.scoutId}: ${cp.nAvailable} available of ${cp.nOnBoard} on board · ${cp.nDigitalLedger} lab:digital ledger rows`
+          : cp.hint || 'Scout first, then complete.';
+      document.getElementById('btn-dl-complete').disabled = selectedIds().length === 0;
+
+      document.getElementById('dl-ledger').innerHTML = (dl.digitalInvestigations || [])
+        .slice()
+        .reverse()
+        .slice(0, 8)
+        .map(
+          (i) =>
+            `<li><span class="hl-badge">lab: digital</span><span class="hl-badge">${esc(i.evidence_level)}</span><span class="hl-badge">${esc(i.novelty_status)}</span> <strong>${esc(i.investigation_id)}</strong><div>${esc(i.question)}</div></li>`,
+        )
+        .join('') || '<li>No lab:digital rows yet.</li>';
+    }
     function selectedIds() {
       return [...document.querySelectorAll('input[name="prospect"]:checked')].map((el) => el.value);
     }
     function syncCompleteEnabled() {
-      document.getElementById('btn-complete').disabled = selectedIds().length === 0;
+      const empty = selectedIds().length === 0;
+      document.getElementById('btn-complete').disabled = empty;
+      const dlBtn = document.getElementById('btn-dl-complete');
+      if (dlBtn) dlBtn.disabled = empty;
     }
     function renderProspects(board) {
       const meta = document.getElementById('scout-meta');
@@ -224,13 +309,15 @@
         .join('');
 
       renderProspects(d.prospectBoard);
+      renderDigitalLab(d.digitalLab);
 
       document.getElementById('timeline').innerHTML = (d.timeline?.events || [])
         .slice()
         .reverse()
         .map((e) => {
           const link = e.href ? `<a href="${esc(e.href)}">open</a>` : '';
-          return `<li><span class="hl-badge">${esc(e.type)}</span> <strong>${esc(e.timestamp?.slice(0, 10))}</strong> — ${esc(e.summary)} ${link}</li>`;
+          const lab = e.lab ? `<span class="hl-badge">lab: ${esc(e.lab)}</span>` : '';
+          return `<li>${lab}<span class="hl-badge">${esc(e.type)}</span> <strong>${esc(e.timestamp?.slice(0, 10))}</strong> — ${esc(e.summary)} ${link}</li>`;
         })
         .join('');
 
@@ -240,7 +327,9 @@
         .map((i) => {
           const gate = (d.publicationGates || []).find((g) => g.investigation_id === i.investigation_id)?.gate;
           const gateLabel = gate ? (gate.pass ? 'gate:pass' : 'gate:hold') : '';
+          const labBadge = i.lab ? `<span class="hl-badge">lab: ${esc(i.lab)}</span>` : '';
           return `<li>
+            ${labBadge}
             <span class="hl-badge">${esc(i.evidence_level)}</span>
             <span class="hl-badge">${esc(i.novelty_status)}</span>
             <span class="hl-badge">${esc(i.publication_status)}</span>
@@ -305,12 +394,12 @@
       });
       syncCompleteEnabled();
     });
-    document.getElementById('btn-complete').addEventListener('click', () => {
+    function completeSelected(msgFn) {
       const ids = selectedIds();
       if (!ids.length) return;
-      const btn = document.getElementById('btn-complete');
-      btn.disabled = true;
-      setMsg(`Completing ${ids.length} prospect(s)…`, null);
+      document.getElementById('btn-complete').disabled = true;
+      document.getElementById('btn-dl-complete').disabled = true;
+      msgFn(`Completing ${ids.length} prospect(s) as lab:digital notes…`, null);
       fetch('/api/hero-leo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -320,11 +409,39 @@
         .then((j) => {
           if (!j.ok) throw new Error(j.hint || j.message || j.error || 'complete_failed');
           const n = (j.completed || []).filter((c) => c.investigation_id).length;
-          setMsg(`Completed ${n} investigation(s). Ledger updated.`, true);
+          msgFn(`Completed ${n} lab:digital investigation(s). Ledger updated.`, true);
           renderDashboard(j.dashboard || j);
         })
-        .catch((e) => setMsg(String(e.message || e), false))
+        .catch((e) => msgFn(String(e.message || e), false))
         .finally(syncCompleteEnabled);
+    }
+    document.getElementById('btn-complete').addEventListener('click', () => completeSelected(setMsg));
+    document.getElementById('btn-dl-complete').addEventListener('click', () => completeSelected(setDlMsg));
+    document.getElementById('btn-dl-to-scout').addEventListener('click', () => {
+      document.getElementById('scout').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    document.getElementById('btn-suite').addEventListener('click', () => {
+      const btn = document.getElementById('btn-suite');
+      btn.disabled = true;
+      setDlMsg('Running Beyond CRISPR suite (Digital Lab)…', null);
+      fetch('/api/hero-leo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'suite-run' }),
+      })
+        .then((r) => r.json())
+        .then((j) => {
+          if (!j.ok) throw new Error(j.hint || j.message || j.error || 'suite_run_failed');
+          setDlMsg(
+            `Suite green — ${j.scoreReceipt?.n_pass}/${j.scoreReceipt?.n_total}; lead=${j.scoreReceipt?.lead || '—'}`,
+            true,
+          );
+          renderDashboard(j.dashboard || j);
+        })
+        .catch((e) => setDlMsg(String(e.message || e), false))
+        .finally(() => {
+          btn.disabled = false;
+        });
     });
     refresh().catch((e) => {
       document.getElementById('state').textContent = 'OFFLINE';

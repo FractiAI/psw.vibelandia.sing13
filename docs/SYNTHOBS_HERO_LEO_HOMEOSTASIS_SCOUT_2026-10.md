@@ -91,7 +91,7 @@ Metrics exposed by `/api/hero-leo` are computed from these files. Zero active in
 
 Player 1 can press **Scout fully** on `/journey/hero-leo` (or `npm run hero-leo:scout`). Leo ranks the authorized prospect catalog and returns the **top 11**. Player 1 selects one, several, or all, then **Complete selected** (`npm run hero-leo:complete -- --ids=…` or `--all`).
 
-Completions write **computational research notes** (typically E1) with null-first cards into the ledger — not automatic journal publication and not wet-lab claims.
+Completions write **computational research notes** (typically E1) with null-first cards into the ledger — not automatic journal publication and not wet-lab claims. Each completion is tagged **`lab: digital`**.
 
 | Piece | Path |
 |-------|------|
@@ -100,11 +100,28 @@ Completions write **computational research notes** (typically E1) with null-firs
 | Scout engine | `lib/hero-leo-scout.mjs` |
 | API | `POST /api/hero-leo` `{ "action":"scout" }` / `{ "action":"complete", "prospectIds":[...] }` |
 
+## 4.1 Digital Lab panel (operational)
+
+First-class **Digital Lab** on `/journey/hero-leo#digital-lab`:
+
+1. **Suite run** — re-run Beyond CRISPR empirical pipeline (`npm run hero-leo:digital-lab` or `POST { "action":"suite-run" }`).  
+2. **Score receipt** — compact projection of `empirical_report.json` (`all_pass`, `n_pass`/`n_total`, lead, gaps, positive controls, top queue).  
+3. **Complete prospects** — same computational completion path as Scout; ledger rows carry `lab: "digital"`.
+
+Wet-lab execution remains **out of scope** for this panel (`config.digitalLab.wetLabOutOfScope`).
+
+| Piece | Path |
+|-------|------|
+| Digital Lab library | `lib/hero-leo-digital-lab.mjs` |
+| CLI | `npm run hero-leo:digital-lab` (`--receipt` for score-only) |
+| API views | `GET /api/hero-leo?view=digital-lab` · `POST` `suite-run` |
+| Config | `data/hero-leo/config.json` → `digitalLab` |
+
 ## 5. Not yet claimed (Phases 4–7+)
 
 - Continuous background prospecting daemon without Player 1 press  
 - Automatic whitepaper / blog / repository generation without human gate  
-- Wet-lab execution  
+- Wet-lab execution (Digital Lab does not claim wet-lab)  
 - Independent external replication  
 - That completing a prospect equals experimentally established discovery  
 
@@ -115,8 +132,8 @@ Completions write **computational research notes** (typically E1) with null-firs
 
 | Tier | Claim |
 |------|--------|
-| **Operational** | Cockpit, API, ledger R/W helpers, publication-gate evaluation, Player 1 scout→top-11→select→complete loop, regenerable vitest locks, honest WAITING status when no process runs |
-| **Empirical (seed / scout)** | Ledger rows mirror Beyond CRISPR suite receipts and computational completions of selected catalog prospects (typically E1 notes) |
+| **Operational** | Cockpit, API, ledger R/W helpers, publication-gate evaluation, Player 1 scout→top-11→select→complete loop, Digital Lab panel (`lab: digital` tags · suite run · score receipt), regenerable vitest locks, honest WAITING status when no process runs |
+| **Empirical (seed / scout)** | Ledger rows mirror Beyond CRISPR suite receipts and computational completions of selected catalog prospects (typically E1 notes); Digital Lab score receipt is fixture summary only |
 | **Soft Story / expedition** | Scout metaphor; research-homeostasis language for process balance |
 | **Not claimed** | Continuous daemon without Player 1 press; wet-lab confirmation; auto journal publish; ENGINE_SHELF pin; Infinite Octaves / Φ_EGS as biological law; clinical advice; novelty inflation (rediscovery must be labeled rediscovery) |
 

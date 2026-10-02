@@ -41,5 +41,15 @@
     "OFFLINE",
     "INITIALIZING"
   ],
-  "honesty": "Never simulate activity. Zero metrics are valid. Publication only after gate + human approval for external claims."
+  "digitalLab": {
+    "labTag": "digital",
+    "wetLabOutOfScope": true,
+    "suite": {
+      "id": "synthobs-beyond-crispr-biological-discovery",
+      "reportRel": "research/synthobs-beyond-crispr-biological-discovery/data/empirical_report.json",
+      "npmScript": "research:synthobs-beyond-crispr-biological-discovery"
+    },
+    "honesty": "Digital Lab = suite run · score receipt · computational prospect completion. Wet lab stays out of this panel."
+  },
+  "honesty": "Never simulate activity. Zero metrics are valid. Publication only after gate + human approval for external claims. Digital Lab tags (lab:digital) mark computational evidence only."
 }

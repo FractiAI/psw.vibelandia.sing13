@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "ff6dd5d7874d2219",
+  "auditId": "dd306410526636a2",
   "paperId": "docs-SYNTHOBS_HERO_LEO_HOMEOSTASIS_SCOUT_2026-10",
   "sourcePath": "docs/SYNTHOBS_HERO_LEO_HOMEOSTASIS_SCOUT_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,20 +43,20 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-02T17:38:15.141Z"
+          "invokedAt": "2026-10-02T17:39:41.576Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-02T17:38:15.140Z",
-  "completedAt": "2026-10-02T17:38:15.141Z",
+  "startedAt": "2026-10-02T17:39:41.576Z",
+  "completedAt": "2026-10-02T17:39:41.577Z",
   "iterations": 1,
-  "overallScore": 0.667,
+  "overallScore": 0.971,
   "passThreshold": 0.85,
   "convergence": {
-    "status": "capped",
-    "reason": "structural_blockers"
+    "status": "pass",
+    "reason": "threshold_met"
   },
   "rubric": {
     "honestyBoundary": {
@@ -95,50 +95,43 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.667,
-      "criticalBlockers": [
-        "missing_honesty_boundary"
-      ],
+      "overallScore": 0.971,
+      "criticalBlockers": [],
       "scores": {
-        "honestyBoundary": 0.2,
-        "methodsRepro": 0.6,
+        "honestyBoundary": 1,
+        "methodsRepro": 1,
         "claimsProportionate": 1,
-        "structure": 0.65,
-        "references": 0.7,
-        "abstractTitle": 0.55,
+        "structure": 0.95,
+        "references": 1,
+        "abstractTitle": 1,
         "synthobsAttribution": 1,
-        "technicalPrecision": 0.7
+        "technicalPrecision": 0.85
       }
     }
   ],
   "final": {
     "mode": "structural",
     "scores": {
-      "honestyBoundary": 0.2,
-      "methodsRepro": 0.6,
+      "honestyBoundary": 1,
+      "methodsRepro": 1,
       "claimsProportionate": 1,
-      "structure": 0.65,
-      "references": 0.7,
-      "abstractTitle": 0.55,
+      "structure": 0.95,
+      "references": 1,
+      "abstractTitle": 1,
       "synthobsAttribution": 1,
-      "technicalPrecision": 0.7
+      "technicalPrecision": 0.85
     },
-    "overallScore": 0.667,
-    "criticalBlockers": [
-      "missing_honesty_boundary"
-    ],
-    "suggestions": [
-      "Add an explicit Honesty boundary section with tier table.",
-      "Document methods, data sources, and reproducibility commands."
-    ],
+    "overallScore": 0.971,
+    "criticalBlockers": [],
+    "suggestions": [],
     "meta": {
-      "wordCount": 232,
+      "wordCount": 808,
       "overclaims": [],
       "refs": {
-        "hasRefsSection": false,
-        "links": 3,
-        "numbered": 0,
-        "citeLines": 3
+        "hasRefsSection": true,
+        "links": 4,
+        "numbered": 6,
+        "citeLines": 4
       }
     }
   },

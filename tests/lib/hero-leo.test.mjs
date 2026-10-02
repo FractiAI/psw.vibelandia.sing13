@@ -7,6 +7,7 @@ import {
   loadLedger,
   loadStatus,
 } from '../../lib/hero-leo.mjs';
+import { runFullScout, completeSelectedProspects, TOP_N } from '../../lib/hero-leo-scout.mjs';
 
 describe('hero-leo homeostasis scout', () => {
   it('loads config with publication gate (not hard-coded only in UI)', () => {
@@ -51,5 +52,27 @@ describe('hero-leo homeostasis scout', () => {
     expect(dash.metrics.autonomous_process_running).toBe(false);
     expect(dash.achievements.unlocked.length).toBeGreaterThan(0);
     expect(dash.timeline.events.length).toBeGreaterThan(0);
+  });
+
+  it('full scout returns top 11 prospects for Player 1 selection', () => {
+    const board = runFullScout({ topN: TOP_N });
+    expect(board.nReturned).toBe(TOP_N);
+    expect(board.prospects).toHaveLength(TOP_N);
+    expect(board.prospects[0].rank).toBe(1);
+    expect(board.prospects[0].prospect_id).toBeTruthy();
+    expect(board.prospects[0].null_hypothesis).toBeTruthy();
+    const dash = buildDashboard();
+    expect(dash.prospectBoard?.scoutId).toBe(board.scoutId);
+    expect(dash.status.autonomousProcessRunning).toBe(false);
+  });
+
+  it('completes selected prospects into ledger research notes', () => {
+    runFullScout({ topN: TOP_N });
+    const before = loadLedger().investigations.length;
+    const result = completeSelectedProspects(['P-PUBLICATION-GATE-CAL']);
+    expect(result.ok).toBe(true);
+    expect(result.completed.some((c) => c.prospect_id === 'P-PUBLICATION-GATE-CAL')).toBe(true);
+    expect(loadLedger().investigations.length).toBeGreaterThanOrEqual(before);
+    expect(loadStatus().autonomousProcessRunning).toBe(false);
   });
 });

@@ -63,6 +63,35 @@
       "summary": "Hero Leo cockpit online. State WAITING — no autonomous daemon running.",
       "investigation_id": null,
       "href": "/journey/hero-leo"
+    },
+    {
+      "id": "EVT-SCOUT-SCOUT-2026-10-02T1745",
+      "timestamp": "2026-10-02T17:45:42.746Z",
+      "type": "prospect",
+      "summary": "Hero Leo scouted catalog (15) and returned top 11 prospects.",
+      "href": "/journey/hero-leo#scout"
+    },
+    {
+      "id": "EVT-SCOUT-SCOUT-2026-10-02T1745",
+      "timestamp": "2026-10-02T17:45:42.748Z",
+      "type": "prospect",
+      "summary": "Hero Leo scouted catalog (15) and returned top 11 prospects.",
+      "href": "/journey/hero-leo#scout"
+    },
+    {
+      "id": "EVT-INV-HE-2026-10-02-005",
+      "timestamp": "2026-10-02T17:45:42.749Z",
+      "type": "computational_test",
+      "summary": "Completed prospect P-PUBLICATION-GATE-CAL → INV-HE-2026-10-02-005 (SYNTHESIS, E2).",
+      "investigation_id": "INV-HE-2026-10-02-005",
+      "href": "/journey/hero-leo#ledger"
+    },
+    {
+      "id": "EVT-SCOUT-SCOUT-2026-10-02T1745",
+      "timestamp": "2026-10-02T17:45:42.895Z",
+      "type": "prospect",
+      "summary": "Hero Leo scouted catalog (15) and returned top 11 prospects.",
+      "href": "/journey/hero-leo#scout"
     }
   ]
 }

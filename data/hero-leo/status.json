@@ -1,20 +1,21 @@
 {
   "schema": "hero-leo-status/v1",
-  "updatedAt": "2026-10-02T17:30:00.000Z",
+  "updatedAt": "2026-10-02T17:45:42.896Z",
   "state": "WAITING",
-  "label": "Hero Leo — Research Engine Ready",
+  "label": "Hero Leo — Scout complete · awaiting Player 1 selection",
   "currentMission": "Homeostasis Expedition · Scientific Scout",
   "currentInvestigationId": null,
   "currentQuestion": "How do complex systems maintain useful states while continuously changing?",
   "currentHypothesis": null,
   "currentNull": null,
   "currentEvidenceLevel": null,
-  "currentAction": "No autonomous investigation process is running. Ledger and cockpit are live; prospecting engine (Phase 3) is not yet connected as a continuous daemon.",
-  "nextAction": "Await operator start of next investigation or Phase 3 prospect queue run.",
-  "lastCompletedAction": "Seeded discovery ledger from Beyond CRISPR Biological Discovery Challenge (fixture suite, positive-control reframe, Phase 2b prompt, C11 lab brief).",
+  "currentAction": "Scout SCOUT-2026-10-02T1745 returned top 11 prospects. Select one, several, or all to complete.",
+  "nextAction": "Player 1: select prospects in the cockpit and press Complete selected.",
+  "lastCompletedAction": "Full scout ranked 15 catalog frontiers → top 11.",
   "latestAchievementId": "first_contact",
-  "latestDiscoveryId": "INV-HE-2026-10-02-003",
+  "latestDiscoveryId": "INV-HE-2026-10-02-005",
   "latestPublicationId": "PUB-HE-2026-10-02-001",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "autonomousProcessRunning": false
+  "autonomousProcessRunning": false,
+  "latestScoutId": "SCOUT-2026-10-02T1745"
 }

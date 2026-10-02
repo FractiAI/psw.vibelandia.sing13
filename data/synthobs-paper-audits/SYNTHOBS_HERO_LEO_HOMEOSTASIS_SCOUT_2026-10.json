@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "e4b75aa4ccc1536d",
+  "auditId": "e82b161148bca6a5",
   "paperId": "SYNTHOBS_HERO_LEO_HOMEOSTASIS_SCOUT_2026-10",
   "sourcePath": "docs/SYNTHOBS_HERO_LEO_HOMEOSTASIS_SCOUT_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-02T17:39:01.574Z"
+          "invokedAt": "2026-10-02T17:45:43.012Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-02T17:39:01.573Z",
-  "completedAt": "2026-10-02T17:39:01.575Z",
+  "startedAt": "2026-10-02T17:45:43.011Z",
+  "completedAt": "2026-10-02T17:45:43.012Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 808,
+      "wordCount": 920,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

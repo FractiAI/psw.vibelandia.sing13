@@ -87,13 +87,27 @@ Metrics exposed by `/api/hero-leo` are computed from these files. Zero active in
 
 ---
 
-## 4. Not yet claimed (Phases 3–7)
+## 4. Phase 3 — Player 1 scout button (operational)
 
-- Continuous autonomous prospecting daemon  
+Player 1 can press **Scout fully** on `/journey/hero-leo` (or `npm run hero-leo:scout`). Leo ranks the authorized prospect catalog and returns the **top 11**. Player 1 selects one, several, or all, then **Complete selected** (`npm run hero-leo:complete -- --ids=…` or `--all`).
+
+Completions write **computational research notes** (typically E1) with null-first cards into the ledger — not automatic journal publication and not wet-lab claims.
+
+| Piece | Path |
+|-------|------|
+| Prospect catalog | `data/hero-leo/prospect-catalog.json` |
+| Latest scout board | `data/hero-leo/prospects.json` |
+| Scout engine | `lib/hero-leo-scout.mjs` |
+| API | `POST /api/hero-leo` `{ "action":"scout" }` / `{ "action":"complete", "prospectIds":[...] }` |
+
+## 5. Not yet claimed (Phases 4–7+)
+
+- Continuous background prospecting daemon without Player 1 press  
 - Automatic whitepaper / blog / repository generation without human gate  
 - Wet-lab execution  
 - Independent external replication  
-- That Hero Leo has “discovered new biology” beyond labeled ledger tiers  
+- That completing a prospect equals experimentally established discovery  
+
 
 ---
 
@@ -101,10 +115,10 @@ Metrics exposed by `/api/hero-leo` are computed from these files. Zero active in
 
 | Tier | Claim |
 |------|--------|
-| **Operational** | Cockpit, API, ledger R/W helpers, publication-gate evaluation, regenerable vitest locks, honest WAITING status when no process runs |
-| **Empirical (seed)** | Ledger rows mirror Beyond CRISPR suite receipts, honesty correction (C4 rediscovery), C11 prediction brief, Phase 2b prompt audit — as documented in those artifacts |
+| **Operational** | Cockpit, API, ledger R/W helpers, publication-gate evaluation, Player 1 scout→top-11→select→complete loop, regenerable vitest locks, honest WAITING status when no process runs |
+| **Empirical (seed / scout)** | Ledger rows mirror Beyond CRISPR suite receipts and computational completions of selected catalog prospects (typically E1 notes) |
 | **Soft Story / expedition** | Scout metaphor; research-homeostasis language for process balance |
-| **Not claimed** | Continuous autonomous discovery daemon; wet-lab confirmation of C11; ENGINE_SHELF pin; Infinite Octaves / Φ_EGS as biological law; clinical advice; novelty inflation (rediscovery must be labeled rediscovery) |
+| **Not claimed** | Continuous daemon without Player 1 press; wet-lab confirmation; auto journal publish; ENGINE_SHELF pin; Infinite Octaves / Φ_EGS as biological law; clinical advice; novelty inflation (rediscovery must be labeled rediscovery) |
 
 Φ_EGS ≈ 1.618 is design grammar only if mentioned in honesty rails — never a confirmatory research goal for Hero Leo.
 

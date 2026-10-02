@@ -3,8 +3,9 @@
   "expedition_id": "homeostasis-expedition",
   "updatedAt": "2026-10-02T17:30:00.000Z",
   "stats": {
-    "prospects_scanned": 18,
-    "note": "prospects_scanned counts curated literature pointers + Beyond CRISPR corpus rows actually processed in suite runs — not fabricated web crawls."
+    "prospects_scanned": 63,
+    "note": "prospects_scanned counts curated literature pointers + Beyond CRISPR corpus rows actually processed in suite runs — not fabricated web crawls.",
+    "last_scout_id": "SCOUT-2026-10-02T1745"
   },
   "investigations": [
     {
@@ -189,6 +190,55 @@
       "human_review_status": "n/a",
       "publicationCriteria": {
         "scientificSignificance": false,
+        "novelty": false,
+        "evidence": true,
+        "reproducibility": true,
+        "falsifiability": true,
+        "alternativeExplanations": true,
+        "documentation": true,
+        "provenance": true,
+        "scientificUsefulness": true,
+        "publicationReadiness": false
+      }
+    },
+    {
+      "expedition_id": "homeostasis-expedition",
+      "investigation_id": "INV-HE-2026-10-02-005",
+      "prospect_id": "P-PUBLICATION-GATE-CAL",
+      "timestamp": "2026-10-02T17:45:42.749Z",
+      "research_domain": "research process / meta",
+      "question": "Do current publicationCriteria on INV-001..004 match human-approved publish decisions?",
+      "motivation": "Homeostasis of Scout’s own publish loop.",
+      "observation": "Scout board SCOUT-2026-10-02T1745 rank #2; priority_score=0.84",
+      "known_explanations": "Criteria too loose/tight",
+      "novel_hypothesis": null,
+      "prediction": "evaluatePublicationGate across ledger; report mismatches.",
+      "null_hypothesis": "Gate pass bits disagree with human_review_status on ≥2 rows.",
+      "test_method": "Hero Leo computational completion (catalog + local receipts); not wet-lab.",
+      "controls": "Null-first; rediscovery labeling; human gate for external publish.",
+      "evidence_sources": [
+        "/journey/hero-leo",
+        "/api/hero-leo"
+      ],
+      "analysis": "Gate vs human status mismatches: none.",
+      "result": "Null not supported at ≥2 mismatches; gate roughly aligned with human decisions on current ledger.",
+      "alternative_explanations": "Criteria too loose/tight",
+      "falsification_status": "surviving",
+      "evidence_level": "E2",
+      "novelty_status": "SYNTHESIS",
+      "replication_status": "computational_only",
+      "confidence": "low–medium (computational note)",
+      "friction_estimate": "0.15",
+      "information_gain": "0.7",
+      "next_action": "Player 1 review; escalate only with authorization.",
+      "publication_status": "RESEARCH_NOTE",
+      "artifact_links": [
+        "/journey/hero-leo",
+        "/api/hero-leo"
+      ],
+      "human_review_status": "pending",
+      "publicationCriteria": {
+        "scientificSignificance": true,
         "novelty": false,
         "evidence": true,
         "reproducibility": true,

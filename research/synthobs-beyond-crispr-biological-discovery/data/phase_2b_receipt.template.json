@@ -1,0 +1,17 @@
+{
+  "schema": "beyond-crispr-phase-2b-lattice/v1",
+  "generatedAt": null,
+  "operator": "Player 1 or delegated researcher",
+  "providers": [],
+  "blindPromptHashNote": "Optional: sha256 of prompt text for reproducibility",
+  "antiBiasFirst": true,
+  "declaredWinner": null,
+  "rankedCandidateIds": [],
+  "literatureClassNotes": {},
+  "ultimate": {
+    "mostSurprisingGapArchitecture": null,
+    "novelTestablePrediction": null,
+    "predictionNotInSearchCriteria": null
+  },
+  "honesty": "Receipt is an archival record of a live Lattice session — not wet-lab confirmation and not ENGINE_SHELF proof."
+}

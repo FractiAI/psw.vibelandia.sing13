@@ -21,6 +21,7 @@ import {
 import { CANDIDATES } from './candidates.mjs';
 import { runLiteratureScan } from './literature-scan.mjs';
 import { runBlindDiscoveryProtocol } from './blind-discovery.mjs';
+import { exportPhase2bBundle, phase2bPromptAudit } from './phase-2b-lattice.mjs';
 import {
   buildResearchQueue,
   answerUltimateQuestions,
@@ -32,6 +33,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
 const MONOREPO_DOCS = path.resolve(PKG_ROOT, '..', '..', 'docs');
 const MONOREPO_BLOG = path.resolve(PKG_ROOT, '..', '..', 'interfaces', SHIP_BLOG_FILE);
+const PHASE_2B_DOC = path.join(PKG_ROOT, 'docs', 'PHASE_2B_LATTICE_BLIND_DISCOVERY_PROTOCOL_2026-10.md');
+const C11_LAB_BRIEF = path.join(PKG_ROOT, 'docs', 'C11_ART_CLASS_WET_LAB_BRIEF_2026-10.md');
+const PHASE_2B_JOURNEY = path.resolve(PKG_ROOT, '..', '..', 'interfaces', 'journey', 'beyond-crispr-phase-2b.html');
+const C11_JOURNEY = path.resolve(PKG_ROOT, '..', '..', 'interfaces', 'journey', 'beyond-crispr-c11-lab-brief.html');
 
 function experimentAntiBiasFirst() {
   const results = CANDIDATES.map((c) => ({
@@ -210,6 +215,26 @@ function experimentBlindDiscoveryPhases() {
   };
 }
 
+function experimentPhase2bLatticeLane() {
+  const audit = phase2bPromptAudit();
+  const bundle = exportPhase2bBundle();
+  const docOk = fs.existsSync(PHASE_2B_DOC);
+  const labOk = fs.existsSync(C11_LAB_BRIEF);
+  const edgeOk = fs.existsSync(PHASE_2B_JOURNEY) && fs.existsSync(C11_JOURNEY);
+  return {
+    id: 'E10_phase_2b_lattice_lane',
+    title: 'Phase 2b Lattice blind prompt + C11 lab brief surfaces',
+    pass: audit.pass && docOk && labOk && edgeOk && bundle.receiptTemplate.schema?.includes('phase-2b'),
+    audit,
+    docOk,
+    labOk,
+    edgeOk,
+    latticeChatUrl: bundle.latticeChatUrl,
+    honesty:
+      'Phase 2b exports prompt/receipt only — live BYOK sessions are operator-run, not CI-claimed.',
+  };
+}
+
 export function runAllExperiments() {
   const queue = buildResearchQueue();
   const answers = answerUltimateQuestions(queue);
@@ -225,6 +250,7 @@ export function runAllExperiments() {
     experimentCorpusPointers(),
     experimentMultiOctaveCoverage(),
     experimentBlindDiscoveryPhases(),
+    experimentPhase2bLatticeLane(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   return {

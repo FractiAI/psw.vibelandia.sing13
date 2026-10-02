@@ -9,6 +9,7 @@
     "url": "https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery.git"
   },
   "scripts": {
-    "research": "node scripts/run_empirical_pipeline.mjs"
+    "research": "node scripts/run_empirical_pipeline.mjs",
+    "export:phase-2b": "node scripts/export-phase-2b-prompt.mjs"
   }
 }

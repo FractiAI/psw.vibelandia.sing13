@@ -1,6 +1,6 @@
 {
   "schema": "synthobs-beyond-crispr-biological-discovery/v1",
-  "generatedAt": "2026-10-02T17:10:19.076Z",
+  "generatedAt": "2026-10-02T17:17:47.077Z",
   "DOC_ID": "WP-SYNTHOBS-BEYOND-CRISPR-BIOLOGICAL-DISCOVERY-2026-10-02",
   "REGISTRY_ID": "synthobs-beyond-crispr-biological-discovery-2026-10",
   "STUDY_TITLE": "Beyond CRISPR — Biological Discovery Challenge (Catalog Suite)",
@@ -423,11 +423,27 @@
           "C2"
         ],
         "honesty": "Shortlist is computational triage for follow-up — not a wet-lab claim and not a winner declaration. Prefer kill-if-fails over confirmation."
+      },
+      {
+        "id": "E10_phase_2b_lattice_lane",
+        "title": "Phase 2b Lattice blind prompt + C11 lab brief surfaces",
+        "pass": true,
+        "audit": {
+          "pass": true,
+          "leaks": [],
+          "charCount": 3017,
+          "honesty": "Blind prompt must not name fixture IDs or positive-control systems. Live runs are operator-owned (BYOK, privacy, cost)."
+        },
+        "docOk": true,
+        "labOk": true,
+        "edgeOk": true,
+        "latticeChatUrl": "https://www.ssvibelandiaquestfest24x365.com/lattice-chat",
+        "honesty": "Phase 2b exports prompt/receipt only — live BYOK sessions are operator-run, not CI-claimed."
       }
     ],
     "all_pass": true,
-    "n_pass": 9,
-    "n_total": 9
+    "n_pass": 10,
+    "n_total": 10
   },
   "researchQueue": {
     "honesty": "Ranked research queue sorts by researchInterest for triage only. No candidate is crowned a discovery. Positive-control rediscovery ≠ novel biology.",

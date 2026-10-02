@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-02** · **353** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-02** · **355** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -595,6 +595,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | Path | Title |
 |------|-------|
 | [`/interfaces/journey/bachdoor-music-lab.html`](/interfaces/journey/bachdoor-music-lab.html) | Golden Bachdoor · Music Lab · Journey · SS Vibelandia |
+| [`/interfaces/journey/beyond-crispr-c11-lab-brief.html`](/interfaces/journey/beyond-crispr-c11-lab-brief.html) | C11 · ART-Class Cassette · Minimum Wet-Lab Brief · Journey |
+| [`/interfaces/journey/beyond-crispr-phase-2b.html`](/interfaces/journey/beyond-crispr-phase-2b.html) | Beyond CRISPR · Phase 2b Lattice Blind Discovery · Journey |
 | [`/interfaces/journey/boriken-convergence.html`](/interfaces/journey/boriken-convergence.html) | Borikén · Great Convergence · Journey · SS Vibelandia |
 | [`/interfaces/journey/bridge-solar-watch.html`](/interfaces/journey/bridge-solar-watch.html) | Bridge · Proto & Electro Watch · Journey · SS Vibelandia |
 | [`/interfaces/journey/cartagena-spice-stone.html`](/interfaces/journey/cartagena-spice-stone.html) | Cartagena · Spice & Stone · Journey · SS Vibelandia |

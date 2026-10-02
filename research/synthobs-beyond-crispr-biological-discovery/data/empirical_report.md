@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-BEYOND-CRISPR-BIOLOGICAL-DISCOVERY-2026-10-02`
 **Registry ID:** `synthobs-beyond-crispr-biological-discovery-2026-10`
-**Generated:** 2026-10-02T17:10:19.076Z
+**Generated:** 2026-10-02T17:17:47.077Z
 **Standalone:** https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery
 
 ## Discovery question
@@ -14,7 +14,7 @@ Does biology contain a distributed molecular system that senses a state, transfo
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 9 / 9 |
+| Passed | 10 / 10 |
 | Φ_EGS (honesty rail only) | 1.618033988749895 |
 | Declared winner | `null` |
 
@@ -100,6 +100,11 @@ After a controlled priming exposure, ART-class cassette-intact strains will show
 
 - **pass:** `true`
 - **honesty:** Shortlist is computational triage for follow-up — not a wet-lab claim and not a winner declaration. Prefer kill-if-fails over confirmation.
+
+### E10_phase_2b_lattice_lane — Phase 2b Lattice blind prompt + C11 lab brief surfaces
+
+- **pass:** `true`
+- **honesty:** Phase 2b exports prompt/receipt only — live BYOK sessions are operator-run, not CI-claimed.
 
 ## Honesty
 

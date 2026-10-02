@@ -1,0 +1,33 @@
+Biological Discovery Challenge (blind lane)
+
+Mission
+Search for a potentially novel biological information-processing architecture that conventional annotation may treat as separate, unexplained parts. Do not assume the answer exists. Do not force observations into any pre-specified framework vocabulary.
+
+Starting observation
+AI-assisted genomic surveys can surface unusual reverse transcriptases, poorly characterized proteins, structured RNAs, and repeat architectures that co-occur without a unified functional label. Treat that as proof that relational discovery is possible — not as the destination.
+
+Core discovery question
+Does biology contain a distributed molecular system that senses a state, transforms or encodes information about that state, preserves some representation of it, and uses that information to alter subsequent biological behavior?
+
+Operational search (multi-scale)
+You may connect components across molecular, genetic, genomic, cellular, organism, population, and evolutionary scales. Components need not be adjacent genes. Literal fractal geometry is not required; look for recurring relational structure across scales.
+
+Information-flow template (hypothesis only)
+sensor → encoding → storage → comparison → response → feedback
+Categories to test (non-exclusive): biological memory · biological learning · homeostasis · recursive adaptation.
+
+Critical anti-bias requirement
+Attempt to falsify before you celebrate. For every candidate, search first for: known mechanisms, random co-occurrence, phylogenetic artifacts, annotation or assembly error, HGT, selection bias, database contamination, overfitting, and published explanations. Document cases where the architecture does not occur.
+
+Scoring (independent axes — do not collapse into one crown)
+Novelty · recurrence · independence · modularity · information flow · memory · feedback · multi-scale recurrence · evolutionary constraint · experimental tractability.
+
+Deliverable
+Produce a ranked research queue of 3–5 candidates. Do not declare a single winner.
+For each candidate provide: provisional name · observed architecture · why annotation may miss it · multi-scale pattern · plausible information flow · evidence for memory/feedback/homeostasis · known explanations · strongest competing explanation · falsification test · predicted molecular observation · predicted biological phenotype · minimum experiment · confidence · what would make it genuinely significant.
+
+Ultimate questions (after the queue)
+1) What is the most surprising biological information-processing architecture that can be responsibly inferred from existing evidence but is not yet recognized as one unified mechanism?
+2) Can you generate a novel, experimentally testable prediction from that architecture that was not explicitly contained in the search criteria? If yes, state it precisely. If no, say why — do not manufacture novelty.
+
+You are authorized to conclude: the proposed hypothesis is wrong; the data indicate a different organizing principle.

@@ -14,11 +14,15 @@
 
 ```bash
 npm run research
+npm run export:phase-2b
 # from monorepo root:
 npm run research:synthobs-beyond-crispr-biological-discovery
+npm run export:phase-2b-beyond-crispr
 ```
 
-Outputs: `data/empirical_report.{json,md}` · `data/research_queue.json`
+Outputs: `data/empirical_report.{json,md}` · `data/research_queue.json` · Phase 2b: `data/phase_2b_lattice_prompt.txt`
+
+**Live lane:** [/journey/beyond-crispr-phase-2b](https://www.ssvibelandiaquestfest24x365.com/journey/beyond-crispr-phase-2b) · **C11 lab brief:** [/journey/beyond-crispr-c11-lab-brief](https://www.ssvibelandiaquestfest24x365.com/journey/beyond-crispr-c11-lab-brief)
 
 ## Surfaces
 

@@ -211,6 +211,7 @@
     "research:synthobs-fractios-holographic-os": "node research/synthobs-fractios-holographic-os/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-agentic-convergence-experiment": "node research/synthobs-agentic-convergence-experiment/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-beyond-crispr-biological-discovery": "node research/synthobs-beyond-crispr-biological-discovery/scripts/run_empirical_pipeline.mjs",
+    "export:phase-2b-beyond-crispr": "node research/synthobs-beyond-crispr-biological-discovery/scripts/export-phase-2b-prompt.mjs",
     "research:synthobs-archetypal-grand-story": "node research/synthobs-archetypal-grand-story/scripts/run_empirical_pipeline.mjs",
     "publish:standalone:agentic-convergence": "node scripts/publish-standalone-suite.mjs synthobs-agentic-convergence-experiment",
     "publish:standalone:agentic-convergence:create": "node scripts/publish-standalone-suite.mjs synthobs-agentic-convergence-experiment --create-repo",

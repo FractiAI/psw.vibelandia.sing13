@@ -669,6 +669,22 @@
       "destination": "/interfaces/journey/homeostasis-expedition.html"
     },
     {
+      "source": "/journey/beyond-crispr-phase-2b",
+      "destination": "/interfaces/journey/beyond-crispr-phase-2b.html"
+    },
+    {
+      "source": "/journey/beyond-crispr-phase-2b/",
+      "destination": "/interfaces/journey/beyond-crispr-phase-2b.html"
+    },
+    {
+      "source": "/journey/beyond-crispr-c11-lab-brief",
+      "destination": "/interfaces/journey/beyond-crispr-c11-lab-brief.html"
+    },
+    {
+      "source": "/journey/beyond-crispr-c11-lab-brief/",
+      "destination": "/interfaces/journey/beyond-crispr-c11-lab-brief.html"
+    },
+    {
       "source": "/journey/truckee-sierra-forage",
       "destination": "/interfaces/journey/truckee-sierra-forage.html"
     },

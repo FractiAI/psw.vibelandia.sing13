@@ -13,6 +13,7 @@ import {
   researchInterest,
 } from '../../research/synthobs-beyond-crispr-biological-discovery/src/scoring.mjs';
 import { runAllExperiments } from '../../research/synthobs-beyond-crispr-biological-discovery/src/experiments.mjs';
+import { phase2bPromptAudit } from '../../research/synthobs-beyond-crispr-biological-discovery/src/phase-2b-lattice.mjs';
 
 describe('beyond-crispr biological discovery', () => {
   it('locks document and registry ids', () => {
@@ -67,5 +68,12 @@ describe('beyond-crispr biological discovery', () => {
     const report = runAllExperiments();
     expect(report.all_pass).toBe(true);
     expect(report.n_pass).toBe(report.n_total);
+    expect(report.n_total).toBeGreaterThanOrEqual(10);
+  });
+
+  it('exports a leak-free Phase 2b Lattice prompt', () => {
+    const audit = phase2bPromptAudit();
+    expect(audit.pass).toBe(true);
+    expect(audit.leaks).toEqual([]);
   });
 });

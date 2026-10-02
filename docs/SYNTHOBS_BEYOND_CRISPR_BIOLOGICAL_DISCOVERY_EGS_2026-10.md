@@ -153,6 +153,7 @@ npm run research:synthobs-beyond-crispr-biological-discovery
 | E7 | Monorepo paper + ship-blog pointers |
 | E8 | Multi-band scale coverage (operational fractal) |
 | E9 | Blind discovery phases + unexplained-gap shortlist (excludes positive control) |
+| E10 | Phase 2b Lattice prompt export + C11 lab brief journey surfaces |
 
 **Outputs:** `data/empirical_report.{json,md}` · `data/research_queue.json`
 
@@ -165,7 +166,9 @@ npm run research:synthobs-beyond-crispr-biological-discovery
 5. Wet-lab (documented follow-up — cheapest clean prediction first)  
 6. Kill if it fails  
 
-**Phase 2b (documented follow-up):** live multi-provider Lattice Chat discovery sessions with the same anti-bias prompt — requires separate privacy / cost protocol; not claimed by this land.
+**Phase 2b (operational · BYOK):** live Lattice Chat blind discovery — export prompt `npm run export:phase-2b-beyond-crispr` · journey [`/journey/beyond-crispr-phase-2b`](https://www.ssvibelandiaquestfest24x365.com/journey/beyond-crispr-phase-2b) · protocol `docs/SYNTHOBS_BEYOND_CRISPR_PHASE_2B_LATTICE_2026-10.md`. Archive receipts locally; compare live queue to literature (rediscovery ≠ gap). Not executed inside CI.
+
+**C11 wet-lab brief:** [`/journey/beyond-crispr-c11-lab-brief`](https://www.ssvibelandiaquestfest24x365.com/journey/beyond-crispr-c11-lab-brief) · `docs/SYNTHOBS_BEYOND_CRISPR_C11_ART_CLASS_WET_LAB_BRIEF_2026-10.md` — minimum kill-if-fails design for gap lead; not wet-lab confirmation.
 
 ---
 

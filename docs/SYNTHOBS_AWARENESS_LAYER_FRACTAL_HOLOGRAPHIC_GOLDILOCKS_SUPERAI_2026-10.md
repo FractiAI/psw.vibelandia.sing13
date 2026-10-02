@@ -5,7 +5,7 @@
 **Document ID:** `WP-SYNTHOBS-AWARENESS-LAYER-MAP-2026-10-02`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Published:** 2026-10-02  
-**Guest surfaces:** [`/layers/awareness`](/layers/awareness) (visual map) · [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · Lattice Chat nest aliases below · PEM [`/lattice/engineering`](/lattice/engineering) · expedition [`/journey/homeostasis-expedition`](/journey/homeostasis-expedition) · Hero Leo [`/journey/hero-leo`](/journey/hero-leo) · Journeys [`/journey`](/journey) · Canvas front door [`/`](/)  
+**Guest surfaces:** [`/layers/awareness`](/layers/awareness) (visual map) · selectable shelves [`/layers/fractal`](/layers/fractal) · [`/layers/holographic`](/layers/holographic) · [`/layers/goldilocks`](/layers/goldilocks) · [`/layers/superai`](/layers/superai) (each with paper links) · [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · Lattice Chat nest aliases below · PEM [`/lattice/engineering`](/lattice/engineering) · expedition [`/journey/homeostasis-expedition`](/journey/homeostasis-expedition) · Hero Leo [`/journey/hero-leo`](/journey/hero-leo) · Journeys [`/journey`](/journey) · Canvas front door [`/`](/)  
 **Slot:** **application companion / living TOC (not ENGINE_SHELF)** — renames and nests Soft Story shelves under an Awareness outer frame.
 
 ---

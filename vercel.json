@@ -249,6 +249,38 @@
       "destination": "/interfaces/layers-awareness.html"
     },
     {
+      "source": "/layers/fractal",
+      "destination": "/interfaces/layers-fractal.html"
+    },
+    {
+      "source": "/layers/fractal/",
+      "destination": "/interfaces/layers-fractal.html"
+    },
+    {
+      "source": "/layers/holographic",
+      "destination": "/interfaces/layers-holographic.html"
+    },
+    {
+      "source": "/layers/holographic/",
+      "destination": "/interfaces/layers-holographic.html"
+    },
+    {
+      "source": "/layers/goldilocks",
+      "destination": "/interfaces/layers-goldilocks.html"
+    },
+    {
+      "source": "/layers/goldilocks/",
+      "destination": "/interfaces/layers-goldilocks.html"
+    },
+    {
+      "source": "/layers/superai",
+      "destination": "/interfaces/layers-superai.html"
+    },
+    {
+      "source": "/layers/superai/",
+      "destination": "/interfaces/layers-superai.html"
+    },
+    {
       "source": "/whitepaper/awareness-layer",
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-awareness-layer-map-2026-10"
     },

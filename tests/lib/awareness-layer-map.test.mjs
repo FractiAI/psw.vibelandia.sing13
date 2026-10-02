@@ -3,9 +3,13 @@ import {
   AWARENESS_LAYERS,
   AWARENESS_NEST_ALIASES,
   isAwarenessNestAlias,
+  layerById,
+  layerHref,
+  papersForLayer,
   renderAwarenessLayerClause,
 } from '../../lib/awareness-layer-map.mjs';
 import { normalizeNestTopology, buildNestDirective } from '../../lib/lattice-prompt.mjs';
+import { WHITEPAPER_REGISTRY } from '../../lib/whitepaper-registry.mjs';
 
 describe('awareness layer map', () => {
   it('defines four inner layers under Awareness', () => {
@@ -34,11 +38,27 @@ describe('awareness layer map', () => {
     expect(clause).toMatch(/Awareness Layer/i);
     expect(clause).toMatch(/Fractal Layer/i);
     expect(clause).toMatch(/SuperAI Layer/i);
+    expect(clause).toContain('/layers/fractal');
+    expect(clause).toContain('/layers/superai');
     const directive = buildNestDirective('awareness', '', 'map the layers');
     expect(directive).toMatch(/INFINITE OCTAVES OMNIVERSAL LATTICE/i);
     expect(directive).toContain('Awareness Layer');
     expect(directive).toContain('SuperAI Layer');
     expect(directive).toContain('/whitepaper/awareness-layer');
     expect(directive).toContain('/layers/awareness');
+  });
+
+  it('exposes selectable guest hrefs and paper shelves per layer', () => {
+    for (const L of AWARENESS_LAYERS) {
+      expect(L.href).toBe(`/layers/${L.id}`);
+      expect(layerHref(L.id)).toBe(L.href);
+      expect(layerById(L.id)?.name).toBe(L.name);
+      const papers = papersForLayer(L.id);
+      expect(papers.length).toBeGreaterThanOrEqual(5);
+      for (const p of papers) {
+        expect(WHITEPAPER_REGISTRY[p.id], `missing registry ${p.id}`).toBeTruthy();
+        expect(p.whitepaper).toMatch(/^\/whitepaper\//);
+      }
+    }
   });
 });

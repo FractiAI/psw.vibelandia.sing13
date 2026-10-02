@@ -44,9 +44,32 @@
 
 .aw-layer-strip__shelves > li {
   margin: 0;
-  padding: 0.7rem 0.75rem 0.8rem;
+  padding: 0;
   border-top: 2px solid var(--aw-gold);
   background: color-mix(in srgb, var(--aw-gold) 6%, transparent);
+}
+
+/* Whole shelf is a selectable hit target */
+.aw-layer-strip__shelves > li > a.aw-layer-strip__hit,
+.aw-layer-strip__shelves > li > a.aw-layer-strip__name {
+  display: block;
+  padding: 0.7rem 0.75rem 0.8rem;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.aw-layer-strip__shelves > li > a.aw-layer-strip__hit:hover,
+.aw-layer-strip__shelves > li > a.aw-layer-strip__name:hover,
+.aw-layer-strip__shelves > li > a.aw-layer-strip__hit:focus-visible,
+.aw-layer-strip__shelves > li > a.aw-layer-strip__name:focus-visible {
+  background: color-mix(in srgb, var(--aw-gold) 16%, transparent);
+  outline: none;
+}
+
+.aw-layer-strip__shelves > li.is-here,
+.aw-layer-strip__shelves > li:has(a[aria-current="page"]) {
+  background: color-mix(in srgb, var(--aw-gold) 14%, transparent);
 }
 
 .aw-layer-strip__name {
@@ -58,10 +81,13 @@
   color: inherit;
 }
 
+a.aw-layer-strip__name .aw-layer-strip__was,
 .aw-layer-strip__was {
   display: block;
   margin-top: 0.28rem;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
   font-size: 0.88rem;
+  font-weight: 400;
   line-height: 1.35;
   opacity: 0.82;
 }
@@ -70,6 +96,25 @@
   margin: 0.95rem 0 0;
   font-size: 1.02rem;
   line-height: 1.45;
+}
+
+.aw-layer-strip__compose a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--aw-gold) 55%, transparent);
+}
+
+.aw-layer-strip__compose a:hover,
+.aw-layer-strip__compose a:focus-visible {
+  color: var(--aw-gold);
+  outline: none;
+}
+
+.aw-layer-strip__compose a[aria-current="page"],
+.aw-layer-strip__compose a.is-here {
+  color: var(--aw-gold);
+  text-decoration: none;
 }
 
 .aw-layer-strip__compose strong {
@@ -100,6 +145,7 @@
   font-size: 1.05rem;
 }
 
-.aw-layer-strip--compact .aw-layer-strip__shelves > li {
+.aw-layer-strip--compact .aw-layer-strip__shelves > li > a.aw-layer-strip__hit,
+.aw-layer-strip--compact .aw-layer-strip__shelves > li > a.aw-layer-strip__name {
   padding: 0.5rem 0.55rem 0.55rem;
 }

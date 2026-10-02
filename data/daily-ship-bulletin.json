@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Friday board · October 2 · Puerto Reno",
   "newsLabel": "News of the day · Friday, October 2",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/archetypal-grand-story\">If Every Life Is a Mix of Story Characters, What Is the Hero Actually Returning To?</a>. Also new on the board: <a href=\"/ship-blog/fractios-holographic-os\">If Recursive Tools Keep Changing Themselves, What Operating Layer Keeps Identity Intact?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/agentic-convergence\">If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path?</a>. Also new on the board: <a href=\"/ship-blog/archetypal-grand-story\">If Every Life Is a Mix of Story Characters, What Is the Hero Actually Returning To?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-agentic-convergence-experiment-2026-10",
+      "title": "If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path?",
+      "href": "/ship-blog/agentic-convergence",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-agentic-convergence-experiment-2026-10",
+      "blurb": "Agentic Convergence: blind independent optimizers, curated literature scan, portability gate — application companion, not ENGINE_SHELF."
+    },
     {
       "id": "synthobs-archetypal-grand-story-heros-return-2026-10",
       "title": "If Every Life Is a Mix of Story Characters, What Is the Hero Actually Returning To?",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/fractios-holographic-os",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-fractios-holographic-os-2026-10",
       "blurb": "FractiOS as holographic OS firmware for the estate — Explore→Commit regulator — application companion, not the voyage narrative template."
-    },
-    {
-      "id": "synthobs-humans-ai-infinite-octave-offset-2026-10",
-      "title": "Are Humans and Today’s AI Just Different Octaves of the Same Stack?",
-      "href": "/ship-blog/humans-ai-octave-offset",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-humans-ai-infinite-octave-offset-2026-10",
-      "blurb": "Catalog Soft Story: humans at Digit 4→5, LLMs/agentic IDEs at Digit 5–6, Tilly Norwood as Digit 5/8 costume theater — octave offset using Infinite Octaves, not an engine shelf pin."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-02-synthobs-fractios-holographic-os-2026-10",
-    "title": "If Recursive Tools Keep Changing Themselves, What Operating Layer Keeps Identity Intact?",
-    "href": "/ship-blog/fractios-holographic-os"
+    "id": "daily-2026-10-02-synthobs-agentic-convergence-experiment-2026-10",
+    "title": "If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path?",
+    "href": "/ship-blog/agentic-convergence"
   },
-  "generatedAt": "2026-10-02T04:59:16.680Z"
+  "generatedAt": "2026-10-02T08:01:33.815Z"
 }

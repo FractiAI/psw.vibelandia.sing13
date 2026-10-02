@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-02",
   "suites": [
     {
+      "id": "synthobs-agentic-convergence-experiment",
+      "path": "research/synthobs-agentic-convergence-experiment",
+      "github": "https://github.com/FractiAI/synthobs-agentic-convergence-experiment",
+      "description": "Agentic Convergence Experiment — blind independent optimizers · literature scan · portability gate · application companion (not ENGINE_SHELF)",
+      "paperIds": [
+        "synthobs-agentic-convergence-experiment-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_AGENTIC_CONVERGENCE_EXPERIMENT_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-archetypal-grand-story",
       "path": "research/synthobs-archetypal-grand-story",
       "github": "https://github.com/FractiAI/synthobs-archetypal-grand-story",

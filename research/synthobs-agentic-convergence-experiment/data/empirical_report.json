@@ -1,0 +1,302 @@
+{
+  "schema": "synthobs-agentic-convergence-experiment/v1",
+  "generatedAt": "2026-10-02T08:01:33.533Z",
+  "DOC_ID": "WP-SYNTHOBS-AGENTIC-CONVERGENCE-EXPERIMENT-2026-10-02",
+  "REGISTRY_ID": "synthobs-agentic-convergence-experiment-2026-10",
+  "STUDY_TITLE": "Agentic Convergence Experiment — Blind Independent Optimizers (Catalog Suite)",
+  "STANDALONE_REPO": "https://github.com/FractiAI/synthobs-agentic-convergence-experiment",
+  "results": {
+    "DOC_ID": "WP-SYNTHOBS-AGENTIC-CONVERGENCE-EXPERIMENT-2026-10-02",
+    "REGISTRY_ID": "synthobs-agentic-convergence-experiment-2026-10",
+    "PHI_EGS": 1.618033988749895,
+    "HONESTY": "Application companion Soft Story / catalog fixtures. Not ENGINE_SHELF. Not finished physics. Fixture-agent convergence ≠ live multi-LLM proof. Φ_EGS is design grammar used only in post-hoc honesty rails — never in agent objectives. Literature scan is curated, not exhaustive meta-analysis.",
+    "experiments": [
+      {
+        "id": "E1_blind_objective_lock",
+        "title": "Blind objective — forbidden framework tokens absent",
+        "forbidden": [
+          "fractal",
+          "holographic",
+          "goldilocks",
+          "infinite octave",
+          "infinite octaves",
+          "recursive homeostasis",
+          "phi_egs",
+          "φ_egs",
+          "φ",
+          "ahois"
+        ],
+        "objectiveHits": [],
+        "pass": true,
+        "interpretation": "Agents optimize useful information / prediction cost only.",
+        "honesty": "Does not prove live LLM blindness; locks fixture objective text."
+      },
+      {
+        "id": "E2_ahois_clue_path",
+        "title": "AHOIS named as precursor clue path",
+        "path": [
+          "conventional representation",
+          "apparent nuisance",
+          "alternative representation",
+          "hidden information",
+          "useful encoding",
+          "adaptive measurement"
+        ],
+        "pass": true,
+        "interpretation": "AHOIS is the miniature representational path this experiment generalizes.",
+        "honesty": "Named protocol clue — not a prior empirical crown."
+      },
+      {
+        "id": "E3_train_convergence",
+        "title": "Independent explorers beat flat control on structural properties",
+        "summary": {
+          "meanExplorer": 0.6104529802951258,
+          "meanControl": 0.4648770372117107,
+          "margin": 0.14557594308341515,
+          "explorerIds": [
+            "A_energy_keep",
+            "B_pyramid",
+            "C_local_global",
+            "D_bounded_adapt"
+          ],
+          "controlIds": [
+            "Z_flat_control"
+          ],
+          "scores": [
+            {
+              "agentId": "A_energy_keep",
+              "isControl": false,
+              "properties": {
+                "multiscale_compression": 0.41164860387451446,
+                "hierarchical_coarse_to_fine": 0.7474211983493332,
+                "local_preserves_global": 0.8472601044917654,
+                "bounded_recursive_adaptation": 0.25,
+                "predictive_utility": 0.8281342340912867
+              },
+              "meanProp": 0.5640824766789032,
+              "predictiveRmse": 0.17186576590871322
+            },
+            {
+              "agentId": "B_pyramid",
+              "isControl": false,
+              "properties": {
+                "multiscale_compression": 0.3979119410711813,
+                "hierarchical_coarse_to_fine": 0.9482313857583107,
+                "local_preserves_global": 0.8475065805139161,
+                "bounded_recursive_adaptation": 0.25,
+                "predictive_utility": 0.8496758096524196
+              },
+              "meanProp": 0.610912476835852,
+              "predictiveRmse": 0.15032419034758038
+            },
+            {
+              "agentId": "C_local_global",
+              "isControl": false,
+              "properties": {
+                "multiscale_compression": 0.4116810974242736,
+                "hierarchical_coarse_to_fine": 0.7478718626057447,
+                "local_preserves_global": 0.9460745030860086,
+                "bounded_recursive_adaptation": 0.25,
+                "predictive_utility": 0.8172625226042003
+              },
+              "meanProp": 0.5889068657790067,
+              "predictiveRmse": 0.18273747739579976
+            },
+            {
+              "agentId": "D_bounded_adapt",
+              "isControl": false,
+              "properties": {
+                "multiscale_compression": 0.3413251897865496,
+                "hierarchical_coarse_to_fine": 0.7272558158943837,
+                "local_preserves_global": 0.8230594018660327,
+                "bounded_recursive_adaptation": 0.82,
+                "predictive_utility": 0.6942901378195299
+              },
+              "meanProp": 0.6779101018867415,
+              "predictiveRmse": 0.3057098621804701
+            },
+            {
+              "agentId": "Z_flat_control",
+              "isControl": true,
+              "properties": {
+                "multiscale_compression": 0.0894229216909258,
+                "hierarchical_coarse_to_fine": 0.6952269825910687,
+                "local_preserves_global": 0.8248582445648482,
+                "bounded_recursive_adaptation": 0.25,
+                "predictive_utility": 0.3117900900240319
+              },
+              "meanProp": 0.4648770372117107,
+              "predictiveRmse": 0.6882099099759681
+            }
+          ]
+        },
+        "gate": 0.12,
+        "pass": true,
+        "paths": [
+          {
+            "agentId": "A_energy_keep",
+            "steps": 3,
+            "architecture": "energy_bin_keep"
+          },
+          {
+            "agentId": "B_pyramid",
+            "steps": 6,
+            "architecture": "coarse_to_fine_pyramid"
+          },
+          {
+            "agentId": "C_local_global",
+            "steps": 18,
+            "architecture": "local_patch_global_envelope"
+          },
+          {
+            "agentId": "D_bounded_adapt",
+            "steps": 25,
+            "architecture": "bounded_recursive_adaptation"
+          },
+          {
+            "agentId": "Z_flat_control",
+            "steps": 2,
+            "architecture": "flat_random_keep"
+          }
+        ],
+        "interpretation": "Explorers independently invent reps that score higher on multiscale / hierarchical / local-global / bounded-adapt properties than flat control.",
+        "honesty": "Post-hoc property labels; agents were not told fractal/holographic/Goldilocks."
+      },
+      {
+        "id": "E4_heldout_portability",
+        "title": "Same scorers on held-out noisier landscape",
+        "landscapeId": "landscape_ace2027",
+        "noiseScale": 0.55,
+        "summary": {
+          "meanExplorer": 0.6027075397866186,
+          "meanControl": 0.4525653672420997,
+          "margin": 0.1501421725445189,
+          "explorerIds": [
+            "A_energy_keep",
+            "B_pyramid",
+            "C_local_global",
+            "D_bounded_adapt"
+          ],
+          "controlIds": [
+            "Z_flat_control"
+          ],
+          "scores": [
+            {
+              "agentId": "A_energy_keep",
+              "isControl": false,
+              "properties": {
+                "multiscale_compression": 0.3484783611258678,
+                "hierarchical_coarse_to_fine": 0.74598888973088,
+                "local_preserves_global": 0.8466574944496137,
+                "bounded_recursive_adaptation": 0.25,
+                "predictive_utility": 0.7713456007967069
+              },
+              "meanProp": 0.5477811863265903,
+              "predictiveRmse": 0.22865439920329308
+            },
+            {
+              "agentId": "B_pyramid",
+              "isControl": false,
+              "properties": {
+                "multiscale_compression": 0.36404164477351203,
+                "hierarchical_coarse_to_fine": 0.9469986685518027,
+                "local_preserves_global": 0.8465993311913178,
+                "bounded_recursive_adaptation": 0.25,
+                "predictive_utility": 0.8062463579268022
+              },
+              "meanProp": 0.6019099111291581,
+              "predictiveRmse": 0.19375364207319778
+            },
+            {
+              "agentId": "C_local_global",
+              "isControl": false,
+              "properties": {
+                "multiscale_compression": 0.3913366619976394,
+                "hierarchical_coarse_to_fine": 0.7449237333177116,
+                "local_preserves_global": 0.939779965360205,
+                "bounded_recursive_adaptation": 0.25,
+                "predictive_utility": 0.7009314129601663
+              },
+              "meanProp": 0.581510090168889,
+              "predictiveRmse": 0.2990685870398337
+            },
+            {
+              "agentId": "D_bounded_adapt",
+              "isControl": false,
+              "properties": {
+                "multiscale_compression": 0.33211230927989216,
+                "hierarchical_coarse_to_fine": 0.7343137878665011,
+                "local_preserves_global": 0.8320897889409549,
+                "bounded_recursive_adaptation": 0.82,
+                "predictive_utility": 0.7163688197263178
+              },
+              "meanProp": 0.679628971521837,
+              "predictiveRmse": 0.2836311802736821
+            },
+            {
+              "agentId": "Z_flat_control",
+              "isControl": true,
+              "properties": {
+                "multiscale_compression": 0.08124121047419583,
+                "hierarchical_coarse_to_fine": 0.6795660350225446,
+                "local_preserves_global": 0.7994542234716583,
+                "bounded_recursive_adaptation": 0.25,
+                "predictive_utility": 0.2951770377593783
+              },
+              "meanProp": 0.4525653672420997,
+              "predictiveRmse": 0.7048229622406217
+            }
+          ]
+        },
+        "portable": true,
+        "gate": 0.08,
+        "pass": true,
+        "interpretation": "Margin persists under new seed / higher noise — structure not a single-dataset artifact.",
+        "honesty": "Gate 0.08; fixture portability ≠ universal physics."
+      },
+      {
+        "id": "E5_literature_scan",
+        "title": "Curated literature / data scan",
+        "n": 8,
+        "tagCounts": {
+          "compression": 2,
+          "information": 1,
+          "hierarchical": 2,
+          "multiscale": 2,
+          "predictive_coding": 2,
+          "hierarchy": 2,
+          "renormalization": 1,
+          "representation_learning": 2,
+          "sparse_coding": 1,
+          "homeostasis_rhyme": 1
+        },
+        "pass": true,
+        "honesty": "Curated scan of available canonical literature pointers for protocol design. Not a systematic review, not CODATA, not proof of Infinite Octaves.",
+        "sampleIds": [
+          "shannon1948",
+          "mallat1989",
+          "rao1999",
+          "wilson1971",
+          "hinton2006",
+          "olshausen1996",
+          "friston2010",
+          "bengio2013"
+        ]
+      },
+      {
+        "id": "E6_corpus_pointers",
+        "title": "Monorepo paper + ship-blog present",
+        "paperPath": "/workspace/docs/SYNTHOBS_AGENTIC_CONVERGENCE_EXPERIMENT_EGS_2026-10.md",
+        "blogPath": "/workspace/interfaces/blog-agentic-convergence-2026-10.html",
+        "pass": true,
+        "paperOk": true,
+        "blogOk": true,
+        "interpretation": "Seed:Edge surfaces exist for guest + auditor paths.",
+        "honesty": "Application companion Soft Story / catalog fixtures. Not ENGINE_SHELF. Not finished physics. Fixture-agent convergence ≠ live multi-LLM proof. Φ_EGS is design grammar used only in post-hoc honesty rails — never in agent objectives. Literature scan is curated, not exhaustive meta-analysis."
+      }
+    ],
+    "all_pass": true,
+    "n_pass": 6,
+    "n_total": 6
+  }
+}

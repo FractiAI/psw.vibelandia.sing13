@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-02T04:50:00.825Z",
+  "updatedAt": "2026-10-02T08:01:28.456Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-agentic-convergence-experiment-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-02T08:01:28.455Z",
+      "body": "Agentic Convergence Experiment — Blind Independent Optimizers, Literature Scan, and Portable Structure",
+      "presenceHue": "gold",
+      "paperId": "synthobs-agentic-convergence-experiment-2026-10",
+      "artifact": {
+        "title": "Agentic Convergence Experiment — Blind Independent Optimizers, Literature Scan, and Portable Structure",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_AGENTIC_CONVERGENCE_EXPERIMENT_EGS_2026-10.md",
+        "url": "/whitepaper/agentic-convergence",
+        "paperId": "synthobs-agentic-convergence-experiment-2026-10",
+        "docId": "WP-SYNTHOBS-AGENTIC-CONVERGENCE-EXPERIMENT-2026-10-02",
+        "published": "2026-10-02T08:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-archetypal-grand-story-heros-return-2026-10",
       "type": "ArtifactEvent",

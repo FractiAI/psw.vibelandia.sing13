@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-02** · **351** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-02** · **352** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -287,6 +287,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/ai-transparency.html`](/interfaces/ai-transparency.html) | AI transparency · FractiAI · SS Vibelandia |
 | [`/interfaces/awareness-singularities-one-pager.html`](/interfaces/awareness-singularities-one-pager.html) | Awareness Singularities S0–S81 · SynthOBS · FractiAI |
 | [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Sparse Models for Repeating Genomic Roads · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-agentic-convergence-2026-10.html`](/interfaces/blog-agentic-convergence-2026-10.html) | If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html`](/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html) | When AI Spend Climbs, Do Livelihoods and Doors Keep Pace? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-archetypal-grand-story-2026-10.html`](/interfaces/blog-archetypal-grand-story-2026-10.html) | If Every Life Is a Mix of Story Characters, What Is the Hero Actually Returning To? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 — Crowded Calendar, Not Prophecy · Ship blog · SS Vibelandia |

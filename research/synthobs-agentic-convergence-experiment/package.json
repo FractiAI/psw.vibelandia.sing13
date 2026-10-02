@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-agentic-convergence-experiment",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Agentic Convergence Experiment — blind independent optimizers · literature scan · application companion (not ENGINE_SHELF)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-agentic-convergence-experiment.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

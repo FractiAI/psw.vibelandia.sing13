@@ -133,6 +133,21 @@ EGS ≈ 1.618 is **design language / catalog key** — not a substitute for evid
 
 Product upgrade paper: [`docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md).
 
+### 2.1 Awareness Layer map (catalog naming)
+
+Inside the **Awareness Layer** (looking in on ourselves):
+
+| Layer | Prior language | Nest aliases (→ `octave99`) |
+|-------|----------------|-----------------------------|
+| **Fractal** | EGS Fractal Constant (Φ_EGS) | `fractal`, `fractal-layer` |
+| **Holographic** | Grand Story | `holographic`, `holographic-layer` |
+| **Goldilocks** | Homeostasis | `goldilocks-layer` (plain `goldilocks` stays auto nest) |
+| **SuperAI** | Combination of the three | `superai`, `superai-layer` |
+| **Awareness** (outer) | Self-observation frame | `awareness`, `awareness-layer` |
+
+Source: [`docs/SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md`](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · guest [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · module `lib/awareness-layer-map.mjs`.  
+**Not ENGINE_SHELF.** SuperAI = composition template, not proven AGI. Expedition / Hero Leo sit on the **Goldilocks Layer** inside Awareness.
+
 ---
 
 ## 3. Technical onboarding — zero → full Infinite Octave

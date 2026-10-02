@@ -241,6 +241,22 @@
       "destination": "/interfaces/whitepaper-surface.html?id=lattice-chat-product-engineering-manual-2026-09"
     },
     {
+      "source": "/layers/awareness",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-awareness-layer-map-2026-10"
+    },
+    {
+      "source": "/layers/awareness/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-awareness-layer-map-2026-10"
+    },
+    {
+      "source": "/whitepaper/awareness-layer",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-awareness-layer-map-2026-10"
+    },
+    {
+      "source": "/whitepaper/awareness-layer/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-awareness-layer-map-2026-10"
+    },
+    {
       "source": "/lattice/pem",
       "destination": "/interfaces/whitepaper-surface.html?id=lattice-chat-product-engineering-manual-2026-09"
     },

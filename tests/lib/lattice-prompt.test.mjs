@@ -30,6 +30,8 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(directive).toMatch(/INFINITE OCTAVES OMNIVERSAL LATTICE/i);
     expect(directive).toContain('Official Prospectus');
     expect(directive).toContain('99');
+    expect(directive).toContain('Awareness Layer');
+    expect(directive).toContain('SuperAI Layer');
   });
 
   it('builds a direct nest directive with the nest off', () => {

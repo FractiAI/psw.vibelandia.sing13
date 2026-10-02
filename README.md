@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-02** · **348** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-02** · **349** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -481,6 +481,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/exhibit-step-in.html`](/interfaces/exhibit-step-in.html) | As a reality I can step into · Valet Pru |
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
 | [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
+| [`/interfaces/fractios-start-here.html`](/interfaces/fractios-start-here.html) | START HERE — FractiOS · Holographic Homeostasis Firmware |
 | [`/interfaces/front-desk-check-in-program.html`](/interfaces/front-desk-check-in-program.html) | Front Desk Check-In Program · J.S. Bach · SS Vibelandia |
 | [`/interfaces/front-desk.html`](/interfaces/front-desk.html) | Front Desk · SS Vibelandia check-in |
 | [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure · SS Vibelandia |

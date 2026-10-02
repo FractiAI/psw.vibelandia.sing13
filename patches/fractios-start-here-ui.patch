@@ -1,0 +1,319 @@
+From e681744d1019e1a278cbb9a7f65f011627188eb8 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Fri, 2 Oct 2026 04:00:46 +0000
+Subject: [PATCH] feat(ui): Start Here HTML surface at /start-here
+
+Render START_HERE.md as interfaces/start-here.html, serve it from the
+zero-dep HTTP server, and link it from the operator console.
+---
+ START_HERE.md                    |   1 +
+ interfaces/README.md             |   1 +
+ interfaces/operator-console.html |   1 +
+ interfaces/start-here.html       | 208 +++++++++++++++++++++++++++++++
+ src/web/server.mjs               |  24 +++-
+ 5 files changed, 234 insertions(+), 1 deletion(-)
+ create mode 100644 interfaces/start-here.html
+
+diff --git a/START_HERE.md b/START_HERE.md
+index a136525..04a54b7 100644
+--- a/START_HERE.md
++++ b/START_HERE.md
+@@ -10,6 +10,7 @@
+ 
+ | Door | Open it for | Tier |
+ |---|---|---|
++| **Start-here UI** | `npm run serve` → [`http://127.0.0.1:8181/start-here`](http://127.0.0.1:8181/start-here) · file [`interfaces/start-here.html`](interfaces/start-here.html) · SING 13 mirror `/fractios/start-here` | operational |
+ | [`README.md`](README.md) | Architecture, the six HH stages, integration notes, full quickstart | operational |
+ | [`docs/README.md`](docs/README.md) | The modular treatise — index + 8 content modules: definitions · metrics · constants · gates · regulator · repos-layer · empirical-suite · honesty | operational |
+ | **Operator console** | `node cli/fractios.mjs serve` → `http://127.0.0.1:8181` — drill explorations, regulate the estate, watch the 57-node manifest validate live | operational |
+diff --git a/interfaces/README.md b/interfaces/README.md
+index 29d04db..e37d940 100644
+--- a/interfaces/README.md
++++ b/interfaces/README.md
+@@ -15,6 +15,7 @@
+ 
+ | File | One-line abstract |
+ |---|---|
++| `start-here.html` | START_HERE.md as a zero-dep HTML door — three doors, 60-second run, hierarchy, commit gate; served at `GET /start-here`. |
+ | `operator-console.html` | Single-file operator console (dark-lattice, vanilla JS, zero external fetches) over the `/api/*` surfaces — pipeline strip, explorer drill, estate panel, regulator drill, experiments panel. |
+ 
+ ## Conventions (mandatory)
+diff --git a/interfaces/operator-console.html b/interfaces/operator-console.html
+index 65cc110..40308dd 100644
+--- a/interfaces/operator-console.html
++++ b/interfaces/operator-console.html
+@@ -123,6 +123,7 @@
+ </head>
+ <body>
+ <header>
++  <div class="ident" style="margin-bottom:8px;"><a href="/start-here">← START HERE</a> · operator console</div>
+   <h1 id="study-title">FractiOS — Holographic Homeostasis Firmware Layer</h1>
+   <div class="ident hdr-meta" id="ident-line">DOC_ID · REGISTRY_ID · OPERATOR · AUDIT_PROTOCOL — loading…</div>
+   <div class="banner"><span class="tier">[honesty boundary — always visible]</span> <span id="honesty-banner">loading…</span></div>
+diff --git a/interfaces/start-here.html b/interfaces/start-here.html
+new file mode 100644
+index 0000000..61f092a
+--- /dev/null
++++ b/interfaces/start-here.html
+@@ -0,0 +1,208 @@
++<!doctype html>
++<html lang="en">
++<head>
++  <meta charset="utf-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1" />
++  <meta name="theme-color" content="#06080d" />
++  <title>START HERE — FractiOS · Holographic Homeostasis Firmware</title>
++  <style>
++    :root {
++      --bg: #06080d;
++      --panel: #0b0f16;
++      --panel-2: #0e131c;
++      --line: #1a2230;
++      --line-thin: #131a26;
++      --gold: #d4a94e;
++      --gold-dim: #8a6d31;
++      --text: #c9d4e3;
++      --dim: #77839a;
++      --faint: #4a5568;
++      --ok: #6fcf8f;
++      --warn: #e0b46a;
++      --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
++    }
++    * { box-sizing: border-box; }
++    html { background: var(--bg); }
++    body {
++      margin: 0; color: var(--text); background: var(--bg);
++      font-family: var(--mono); font-size: 13px; line-height: 1.55;
++      background-image:
++        linear-gradient(var(--line-thin) 1px, transparent 1px),
++        linear-gradient(90deg, var(--line-thin) 1px, transparent 1px);
++      background-size: 28px 28px;
++      min-height: 100vh;
++    }
++    header, footer, main { max-width: 880px; margin: 0 auto; padding: 18px 20px; }
++    main { padding-top: 0; padding-bottom: 36px; }
++    h1 { font-size: 17px; letter-spacing: .06em; color: var(--gold); margin: 0 0 4px; font-weight: 600; }
++    h2 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; font-weight: 600; }
++    a { color: var(--gold); }
++    a:hover { color: #f0d48a; }
++    .ident { color: var(--dim); font-size: 11px; letter-spacing: .04em; margin-top: 6px; }
++    .site-nav {
++      display: flex; flex-wrap: wrap; gap: 8px 14px; margin-bottom: 14px;
++      font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
++    }
++    .site-nav a { color: var(--dim); text-decoration: none; border-bottom: 1px solid transparent; }
++    .site-nav a:hover { color: var(--gold); border-bottom-color: var(--gold-dim); }
++    .site-nav .here { color: var(--gold); }
++    .banner {
++      border: 1px solid var(--gold-dim); border-left: 3px solid var(--gold);
++      background: var(--panel); padding: 10px 12px; margin-top: 12px; color: var(--warn); font-size: 12px;
++    }
++    .banner .tier { color: var(--gold); }
++    .lede {
++      border: 1px solid var(--line); background: var(--panel);
++      padding: 14px 16px; margin: 14px 0; color: var(--text);
++    }
++    .lede strong { color: var(--gold); font-weight: 600; }
++    section {
++      border: 1px solid var(--line); background: var(--panel);
++      margin: 14px 0; padding: 14px 16px;
++    }
++    .strip { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 4px; }
++    .stage {
++      border: 1px solid var(--line); background: var(--panel-2); padding: 6px 12px;
++      color: var(--dim); letter-spacing: .06em; font-size: 11px;
++    }
++    .stage.on { border-color: var(--gold); color: var(--gold); }
++    .arrow { color: var(--faint); }
++    .doors { display: grid; gap: 10px; }
++    .door {
++      display: block; text-decoration: none; color: inherit;
++      border: 1px solid var(--line); background: var(--panel-2);
++      padding: 12px 14px;
++    }
++    .door:hover { border-color: var(--gold-dim); }
++    .door .t { color: var(--gold); font-size: 13px; letter-spacing: .04em; display: block; margin-bottom: 4px; }
++    .door .e { color: var(--dim); font-size: 12px; }
++    .door .tier {
++      display: inline-block; margin-top: 8px; font-size: 10px; letter-spacing: .1em;
++      text-transform: uppercase; color: var(--ok); border: 1px solid #2b4a36; padding: 2px 8px;
++    }
++    pre {
++      margin: 0; padding: 12px 14px; background: var(--panel-2); border: 1px solid var(--line);
++      overflow-x: auto; color: var(--text); font-size: 12px; line-height: 1.6;
++    }
++    pre .c { color: var(--dim); }
++    table { width: 100%; border-collapse: collapse; font-size: 12px; }
++    th { text-align: left; color: var(--dim); font-weight: 400; letter-spacing: .08em; text-transform: uppercase; font-size: 10px; }
++    th, td { border-bottom: 1px solid var(--line-thin); padding: 7px 8px; vertical-align: top; }
++    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
++    .btn {
++      display: inline-block; text-decoration: none;
++      background: var(--panel-2); color: var(--gold); border: 1px solid var(--gold-dim);
++      padding: 8px 14px; font-size: 12px; letter-spacing: .08em;
++    }
++    .btn:hover { border-color: var(--gold); color: #f0d48a; }
++    .btn-primary { border-color: var(--gold); background: #16120a; }
++    .muted { color: var(--dim); font-size: 12px; }
++    .chain { color: var(--faint); font-size: 11px; margin-top: 10px; letter-spacing: .03em; }
++    footer { color: var(--faint); font-size: 11px; padding-top: 0; }
++  </style>
++</head>
++<body>
++  <header>
++    <nav class="site-nav" aria-label="FractiOS">
++      <a class="here" href="/start-here" aria-current="page">Start here</a>
++      <a href="/">Operator console</a>
++      <a href="https://github.com/FractiAI/FractiOS" rel="noopener">Repo</a>
++      <a href="https://www.ssvibelandiaquestfest24x365.com/fractios/start-here">SING 13 mirror</a>
++    </nav>
++    <h1>START HERE — FractiOS</h1>
++    <div class="ident">WP-FRACTIOS-HOLOGRAPHIC-HOMEOSTASIS-2026-09-30 · fractios-2026-09 · v0.1618 · SynthOBS Autonomous Agent · Syntheverse Sandbox</div>
++    <div class="banner">
++      <span class="tier">[honesty boundary — always visible]</span>
++      Catalog engineering, not finished physics. Φ<sub>EGS</sub> = (1+√5)/2 is a design grammar, not a physics constant. Nothing here claims RSI is solved. Correlation is not causation.
++    </div>
++  </header>
++
++  <main>
++    <p class="lede">
++      <strong>FractiOS is the holographic homeostasis firmware layer for the FractiAI estate</strong> —
++      a zero-dependency Node ESM kernel that imports all 57 estate repos as a
++      <em>manifest</em> (never clones them) and runs every change through one disciplined pipeline:
++    </p>
++    <div class="strip" aria-label="HH pipeline stages">
++      <span class="stage on">Explore</span><span class="arrow">→</span>
++      <span class="stage on">Organize</span><span class="arrow">→</span>
++      <span class="stage on">Contain</span><span class="arrow">→</span>
++      <span class="stage on">Reconcile</span><span class="arrow">→</span>
++      <span class="stage on">Verify</span><span class="arrow">→</span>
++      <span class="stage on">Commit</span>
++    </div>
++
++    <section aria-labelledby="doors-h">
++      <h2 id="doors-h">Three doors</h2>
++      <div class="doors">
++        <a class="door" href="https://github.com/FractiAI/FractiOS/blob/main/README.md" rel="noopener">
++          <span class="t">README.md</span>
++          <span class="e">Architecture, the six HH stages, integration notes, full quickstart</span>
++          <span class="tier">operational</span>
++        </a>
++        <a class="door" href="https://github.com/FractiAI/FractiOS/blob/main/docs/README.md" rel="noopener">
++          <span class="t">docs/README.md</span>
++          <span class="e">Modular treatise — definitions · metrics · constants · gates · regulator · repos-layer · empirical-suite · honesty</span>
++          <span class="tier">operational</span>
++        </a>
++        <a class="door" href="/">
++          <span class="t">Operator console</span>
++          <span class="e">Live on this server — explorations, estate regulation, 57-node manifest</span>
++          <span class="tier">operational</span>
++        </a>
++      </div>
++    </section>
++
++    <section aria-labelledby="run-h">
++      <h2 id="run-h">60-second run · Node ≥ 20 · no install step</h2>
++      <pre><span class="c"># from a fresh clone</span>
++npm run research   <span class="c"># E1..E9 empirical suite → expect 9/9, exit 0</span>
++npm run boot       <span class="c"># boot envelope: registry, stages, loop, constants</span>
++npm run serve      <span class="c"># this console at http://127.0.0.1:8181</span>
++node cli/fractios.mjs repos check   <span class="c"># manifest vs disk</span></pre>
++      <div class="cta-row">
++        <a class="btn btn-primary" href="/">Open operator console →</a>
++        <a class="btn" href="https://github.com/FractiAI/FractiOS/blob/main/START_HERE.md" rel="noopener">Source · START_HERE.md</a>
++      </div>
++    </section>
++
++    <section aria-labelledby="hierarchy-h">
++      <h2 id="hierarchy-h">Fractal self-documenting hierarchy</h2>
++      <p class="muted" style="margin:0 0 10px;">
++        Every folder carries the trio — <code>README.md</code> · <code>AGENTS.md</code> · <code>FRACTAL.md</code>.
++      </p>
++      <table>
++        <thead>
++          <tr><th>Scale</th><th>Where</th></tr>
++        </thead>
++        <tbody>
++          <tr><td>Whole tree</td><td>root trio + FRACTIOS_EDGE_ONBOARDING.md</td></tr>
++          <tr><td>Computation</td><td><code>src/kernel/</code> trio</td></tr>
++          <tr><td>Estate boundary</td><td><code>src/repos/</code> trio</td></tr>
++          <tr><td>Operator surface</td><td><code>interfaces/</code> + <code>src/web/</code> trios</td></tr>
++          <tr><td>Verification</td><td><code>experiments/</code> · state ledger <code>data/</code> (generated — never hand-edit)</td></tr>
++        </tbody>
++      </table>
++    </section>
++
++    <section aria-labelledby="gate-h">
++      <h2 id="gate-h">First commit gate · in one breath</h2>
++      <p style="margin:0; color: var(--text);">
++        An exploration commits only if it clears the three-axis Goldilocks gate vs Control A
++        (<code>RCR &gt; RCR_A ∧ B &lt; B_A ∧ E &gt; E_A</code>). The Useful Commit Rate floor (≥ 0.10) is a
++        <strong style="color:var(--gold); font-weight:600;">population gate</strong> —
++        report-only below <code>UCR_MIN_ELIGIBLE = 8</code> eligible explorations, so single honest
++        candidates are never over-refused.
++      </p>
++      <p class="chain">
++        Voice tiers: mythic · operational · verified ·
++        Supersets: NSPFRNP &gt; BBHE &gt; EGS Fractal &gt; Seed:Edge &gt; Executive Prompts &gt; Lite Edges → ∞^∞
++      </p>
++    </section>
++  </main>
++
++  <footer>
++    FractiOS · Holographic Homeostasis firmware · served at /start-here · operator console at /
++  </footer>
++</body>
++</html>
+diff --git a/src/web/server.mjs b/src/web/server.mjs
+index 0244bb1..7f423b1 100755
+--- a/src/web/server.mjs
++++ b/src/web/server.mjs
+@@ -8,6 +8,7 @@
+ //
+ // Routes (every API response is a JSON envelope {success, ...}; fail-closed):
+ //   GET  /                    -> interfaces/operator-console.html (text/html)
++//   GET  /start-here          -> interfaces/start-here.html (text/html) — START_HERE.md UI
+ //   GET  /api/status          -> boot-shape record + nodeCount from the manifest
+ //   GET  /api/repos           -> { nodes, validation } against the vault root
+ //   GET  /api/repos/<name>    -> single manifest node or 404 {success:false}
+@@ -270,6 +271,15 @@ function serveConsole() {
+   return { body: fs.readFileSync(consolePath), contentType: 'text/html; charset=utf-8' };
+ }
+ 
++/** @returns {{body: Buffer, contentType: string}} START_HERE.md as a zero-dep HTML surface */
++function serveStartHere() {
++  const startPath = safeJoin('interfaces', 'start-here.html');
++  if (!fs.existsSync(startPath)) {
++    throw new Error(`start-here UI missing at ${startPath}`);
++  }
++  return { body: fs.readFileSync(startPath), contentType: 'text/html; charset=utf-8' };
++}
++
+ /**
+  * @param {import('node:http').ServerResponse} res
+  * @param {number} status
+@@ -359,8 +369,20 @@ async function handle(req, res) {
+       return;
+     }
+ 
++    if (req.method === 'GET' && segments.length === 1 && segments[0] === 'start-here') {
++      const { body, contentType } = serveStartHere();
++      res.writeHead(200, {
++        'content-type': contentType,
++        'content-length': Buffer.byteLength(body),
++        'cache-control': 'no-store',
++        'x-content-type-options': 'nosniff',
++      });
++      res.end(body);
++      return;
++    }
++
+     if (segments[0] !== 'api') {
+-      sendJson(res, 404, fail(`not found: ${req.method} ${route.pathname} (operator console at /, API under /api/)`));
++      sendJson(res, 404, fail(`not found: ${req.method} ${route.pathname} (operator console at /, start-here at /start-here, API under /api/)`));
+       return;
+     }
+ 
+-- 
+2.43.0
+

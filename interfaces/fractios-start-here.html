@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>START HERE — FractiOS · Holographic Homeostasis Firmware</title>
+  <meta name="description" content="FractiOS start door: Holographic Homeostasis firmware for the FractiAI estate. Explore → Organize → Contain → Reconcile → Verify → Commit. Catalog engineering — not finished physics." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/fractios/start-here" />
+  <meta property="og:title" content="START HERE — FractiOS · Holographic Homeostasis Firmware" />
+  <meta property="og:description" content="Zero-dep Node ESM estate regulator. Three doors · 60-second run · First Fruit of the Homeostasis Expedition firmware twin." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #06080d;
+      --panel: #0b0f16;
+      --panel-2: #0e131c;
+      --line: #1a2230;
+      --line-thin: #131a26;
+      --gold: #d4a94e;
+      --gold-dim: #8a6d31;
+      --text: #c9d4e3;
+      --dim: #77839a;
+      --faint: #4a5568;
+      --ok: #6fcf8f;
+      --warn: #e0b46a;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); }
+    body {
+      margin: 0; color: var(--text); background: var(--bg);
+      font-family: var(--mono); font-size: 13px; line-height: 1.55;
+      background-image:
+        linear-gradient(var(--line-thin) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line-thin) 1px, transparent 1px);
+      background-size: 28px 28px;
+      min-height: 100vh;
+    }
+    header, footer, main { max-width: 880px; margin: 0 auto; padding: 18px 20px; }
+    main { padding-top: 0; padding-bottom: 36px; }
+    h1 { font-size: 17px; letter-spacing: .06em; color: var(--gold); margin: 0 0 4px; font-weight: 600; }
+    h2 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; font-weight: 600; }
+    a { color: var(--gold); }
+    a:hover { color: #f0d48a; }
+    .ident { color: var(--dim); font-size: 11px; letter-spacing: .04em; margin-top: 6px; }
+    .site-nav {
+      display: flex; flex-wrap: wrap; gap: 8px 14px; margin-bottom: 14px;
+      font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    }
+    .site-nav a { color: var(--dim); text-decoration: none; border-bottom: 1px solid transparent; }
+    .site-nav a:hover { color: var(--gold); border-bottom-color: var(--gold-dim); }
+    .site-nav .here { color: var(--gold); }
+    .banner {
+      border: 1px solid var(--gold-dim); border-left: 3px solid var(--gold);
+      background: var(--panel); padding: 10px 12px; margin-top: 12px; color: var(--warn); font-size: 12px;
+    }
+    .banner .tier { color: var(--gold); }
+    .lede {
+      border: 1px solid var(--line); background: var(--panel);
+      padding: 14px 16px; margin: 14px 0; color: var(--text);
+    }
+    .lede strong { color: var(--gold); font-weight: 600; }
+    section {
+      border: 1px solid var(--line); background: var(--panel);
+      margin: 14px 0; padding: 14px 16px;
+    }
+    .strip { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 4px; }
+    .stage {
+      border: 1px solid var(--line); background: var(--panel-2); padding: 6px 12px;
+      color: var(--dim); letter-spacing: .06em; font-size: 11px;
+    }
+    .stage.on { border-color: var(--gold); color: var(--gold); }
+    .arrow { color: var(--faint); }
+    .doors { display: grid; gap: 10px; }
+    .door {
+      display: block; text-decoration: none; color: inherit;
+      border: 1px solid var(--line); background: var(--panel-2);
+      padding: 12px 14px;
+    }
+    .door:hover { border-color: var(--gold-dim); }
+    .door .t { color: var(--gold); font-size: 13px; letter-spacing: .04em; display: block; margin-bottom: 4px; }
+    .door .e { color: var(--dim); font-size: 12px; }
+    .door .tier {
+      display: inline-block; margin-top: 8px; font-size: 10px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ok); border: 1px solid #2b4a36; padding: 2px 8px;
+    }
+    pre {
+      margin: 0; padding: 12px 14px; background: var(--panel-2); border: 1px solid var(--line);
+      overflow-x: auto; color: var(--text); font-size: 12px; line-height: 1.6;
+    }
+    pre .c { color: var(--dim); }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { text-align: left; color: var(--dim); font-weight: 400; letter-spacing: .08em; text-transform: uppercase; font-size: 10px; }
+    th, td { border-bottom: 1px solid var(--line-thin); padding: 7px 8px; vertical-align: top; }
+    td a { text-decoration: none; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+    .btn {
+      display: inline-block; text-decoration: none;
+      background: var(--panel-2); color: var(--gold); border: 1px solid var(--gold-dim);
+      padding: 8px 14px; font-size: 12px; letter-spacing: .08em;
+    }
+    .btn:hover { border-color: var(--gold); color: #f0d48a; }
+    .btn-primary { border-color: var(--gold); background: #16120a; }
+    .muted { color: var(--dim); font-size: 12px; }
+    .chain { color: var(--faint); font-size: 11px; margin-top: 10px; letter-spacing: .03em; }
+    footer { color: var(--faint); font-size: 11px; padding-top: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/architects/holographic-homeostasis">Architect briefing</a>
+      <a href="/press/holographic-homeostasis">Announcement</a>
+      <a href="/ship-blog/holographic-homeostasis">Ship blog</a>
+      <a href="/whitepaper/holographic-homeostasis">Whitepaper</a>
+      <a href="/journey/homeostasis-expedition">Expedition</a>
+      <a class="here" href="/fractios/start-here" aria-current="page">FractiOS · Start here</a>
+    </nav>
+    <h1>START HERE — FractiOS</h1>
+    <div class="ident">WP-FRACTIOS-HOLOGRAPHIC-HOMEOSTASIS-2026-09-30 · fractios-2026-09 · v0.1618 · SynthOBS Autonomous Agent · Syntheverse Sandbox</div>
+    <div class="banner">
+      <span class="tier">[honesty boundary — always visible]</span>
+      Catalog engineering, not finished physics. Φ<sub>EGS</sub> = (1+√5)/2 is a design grammar, not a physics constant. Nothing here claims RSI is solved. Correlation is not causation.
+    </div>
+  </header>
+
+  <main>
+    <p class="lede">
+      <strong>FractiOS is the holographic homeostasis firmware layer for the FractiAI estate</strong> —
+      a zero-dependency Node ESM kernel that imports all 57 estate repos as a
+      <em>manifest</em> (never clones them) and runs every change through one disciplined pipeline:
+    </p>
+    <div class="strip" aria-label="HH pipeline stages">
+      <span class="stage on">Explore</span><span class="arrow">→</span>
+      <span class="stage on">Organize</span><span class="arrow">→</span>
+      <span class="stage on">Contain</span><span class="arrow">→</span>
+      <span class="stage on">Reconcile</span><span class="arrow">→</span>
+      <span class="stage on">Verify</span><span class="arrow">→</span>
+      <span class="stage on">Commit</span>
+    </div>
+    <p class="muted" style="margin: 10px 0 0;">
+      First Fruit of the Homeostasis Expedition · firmware twin of the SING 13 Soft Story —
+      not an Infinite Octaves engine shelf pin.
+    </p>
+
+    <section aria-labelledby="doors-h">
+      <h2 id="doors-h">Three doors</h2>
+      <div class="doors">
+        <a class="door" href="https://github.com/FractiAI/FractiOS/blob/main/README.md" rel="noopener">
+          <span class="t">README.md</span>
+          <span class="e">Architecture, the six HH stages, integration notes, full quickstart</span>
+          <span class="tier">operational</span>
+        </a>
+        <a class="door" href="https://github.com/FractiAI/FractiOS/blob/main/docs/README.md" rel="noopener">
+          <span class="t">docs/README.md</span>
+          <span class="e">Modular treatise — definitions · metrics · constants · gates · regulator · repos-layer · empirical-suite · honesty</span>
+          <span class="tier">operational</span>
+        </a>
+        <a class="door" href="https://github.com/FractiAI/FractiOS#60-second-run" rel="noopener">
+          <span class="t">Operator console</span>
+          <span class="e"><code>npm run serve</code> → http://127.0.0.1:8181 — explorations, estate regulation, 57-node manifest live</span>
+          <span class="tier">operational</span>
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="run-h">
+      <h2 id="run-h">60-second run · Node ≥ 20 · no install step</h2>
+      <pre><span class="c"># clone the firmware</span>
+git clone https://github.com/FractiAI/FractiOS && cd FractiOS
+
+npm run research   <span class="c"># E1..E9 empirical suite → expect 9/9, exit 0</span>
+npm run boot       <span class="c"># boot envelope: registry, stages, loop, constants</span>
+npm run serve      <span class="c"># operator console at http://127.0.0.1:8181</span>
+node cli/fractios.mjs repos check   <span class="c"># manifest vs disk</span></pre>
+      <div class="cta-row" style="margin-top:14px;">
+        <a class="btn btn-primary" href="https://github.com/FractiAI/FractiOS" rel="noopener">Open FractiOS repo →</a>
+        <a class="btn" href="https://github.com/FractiAI/FractiOS/blob/main/START_HERE.md" rel="noopener">Source · START_HERE.md</a>
+        <a class="btn" href="/architects/holographic-homeostasis">Back to architect briefing</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="hierarchy-h">
+      <h2 id="hierarchy-h">Fractal self-documenting hierarchy</h2>
+      <p class="muted" style="margin:0 0 10px;">
+        Every folder carries the trio — <code>README.md</code> · <code>AGENTS.md</code> · <code>FRACTAL.md</code>.
+        The root trio governs the whole tree; every folder mirrors it.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Scale</th><th>Where</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Whole tree</td><td>root trio + <a href="https://github.com/FractiAI/FractiOS/blob/main/FRACTIOS_EDGE_ONBOARDING.md" rel="noopener">FRACTIOS_EDGE_ONBOARDING.md</a></td></tr>
+          <tr><td>Computation</td><td><code>src/kernel/</code> trio</td></tr>
+          <tr><td>Estate boundary</td><td><code>src/repos/</code> trio</td></tr>
+          <tr><td>Operator surface</td><td><code>interfaces/</code> + <code>src/web/</code> trios</td></tr>
+          <tr><td>Verification</td><td><code>experiments/</code> · state ledger <code>data/</code> (generated — never hand-edit)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="gate-h">
+      <h2 id="gate-h">First commit gate · in one breath</h2>
+      <p style="margin:0; color: var(--text);">
+        An exploration commits only if it clears the three-axis Goldilocks gate vs Control A
+        (<code>RCR &gt; RCR_A ∧ B &lt; B_A ∧ E &gt; E_A</code>). The Useful Commit Rate floor (≥ 0.10) is a
+        <strong style="color:var(--gold); font-weight:600;">population gate</strong> —
+        report-only below <code>UCR_MIN_ELIGIBLE = 8</code> eligible explorations, so single honest
+        candidates are never over-refused.
+      </p>
+      <p class="chain">
+        Voice tiers: mythic · operational · verified ·
+        Supersets: NSPFRNP &gt; BBHE &gt; EGS Fractal &gt; Seed:Edge &gt; Executive Prompts &gt; Lite Edges → ∞^∞
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    FractiOS · Holographic Homeostasis firmware · First Fruit of the Homeostasis Expedition ·
+    not ENGINE_SHELF · guest path on SING 13 · source of truth
+    <a href="https://github.com/FractiAI/FractiOS/blob/main/START_HERE.md" rel="noopener">FractiAI/FractiOS · START_HERE.md</a>
+  </footer>
+</body>
+</html>

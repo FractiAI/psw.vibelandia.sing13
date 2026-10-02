@@ -2721,6 +2721,22 @@
       "destination": "/interfaces/holographic-homeostasis-architects.html"
     },
     {
+      "source": "/fractios",
+      "destination": "/interfaces/fractios-start-here.html"
+    },
+    {
+      "source": "/fractios/",
+      "destination": "/interfaces/fractios-start-here.html"
+    },
+    {
+      "source": "/fractios/start-here",
+      "destination": "/interfaces/fractios-start-here.html"
+    },
+    {
+      "source": "/fractios/start-here/",
+      "destination": "/interfaces/fractios-start-here.html"
+    },
+    {
       "source": "/whitepaper/synthobs-emergent-sync-multi-agent",
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026"
     },

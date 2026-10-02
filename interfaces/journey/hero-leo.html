@@ -248,16 +248,21 @@
         syncCompleteEnabled();
         return;
       }
-      meta.textContent = `${board.scoutId} · ${board.nReturned} of ${board.nCatalog} catalog frontiers · ${board.generatedAt || ''}`;
+      const selectable = (board.prospects || []).filter(
+        (p) => p.selection_status !== 'completed' && !p.already_completed,
+      ).length;
+      meta.textContent = `${board.scoutId} · ${board.nReturned} of ${board.nCatalog} catalog frontiers · ${selectable} selectable · ${board.generatedAt || ''}`;
       list.innerHTML = board.prospects
         .map((p) => {
           const done = p.selection_status === 'completed' || p.already_completed;
+          const pid = String(p.prospect_id || '');
+          const idAttr = 'pr-' + pid.replace(/[^a-zA-Z0-9_-]/g, '_');
           return `<li class="hl-prospect">
-            <input type="checkbox" name="prospect" id="pr-${esc(p.prospect_id)}" value="${esc(p.prospect_id)}" ${done ? 'disabled' : ''} />
-            <label for="pr-${esc(p.prospect_id)}">
+            <input type="checkbox" name="prospect" id="${esc(idAttr)}" value="${esc(pid)}" ${done ? 'disabled' : ''} data-rank="${esc(p.rank)}" />
+            <label for="${esc(idAttr)}">
               <span class="hl-badge">#${esc(p.rank)}</span>
               <span class="hl-badge">score ${esc(p.priority_score)}</span>
-              ${done ? '<span class="hl-badge">done</span>' : ''}
+              ${done ? '<span class="hl-badge">in ledger</span>' : ''}
               <strong>${esc(p.title)}</strong>
               <div>${esc(p.question)}</div>
               <div style="opacity:.8;margin-top:.25rem;font-size:.92rem">Null: ${esc(p.null_hypothesis)} · Test: ${esc(p.predicted_test)}</div>
@@ -268,8 +273,32 @@
       list.querySelectorAll('input[name="prospect"]').forEach((el) => el.addEventListener('change', syncCompleteEnabled));
       syncCompleteEnabled();
     }
+    function parseJsonResponse(r) {
+      return r.text().then((text) => {
+        let j = null;
+        try {
+          j = text ? JSON.parse(text) : null;
+        } catch {
+          const snippet = (text || '').slice(0, 160).replace(/\s+/g, ' ');
+          throw new Error(
+            r.ok
+              ? `Bad JSON from /api/hero-leo (${r.status}). ${snippet || 'empty body'}`
+              : `Request failed HTTP ${r.status}. ${snippet || r.statusText || 'no body'}`,
+          );
+        }
+        if (!r.ok) {
+          throw new Error(
+            (j && (j.hint || j.message || j.error)) || `HTTP ${r.status} ${r.statusText || ''}`.trim(),
+          );
+        }
+        if (!j || j.ok === false) {
+          throw new Error((j && (j.hint || j.message || j.error)) || 'request_failed');
+        }
+        return j;
+      });
+    }
     function renderDashboard(d) {
-      if (!d.ok) throw new Error(d.error || 'load_failed');
+      if (!d || d.ok === false) throw new Error((d && (d.error || d.message)) || 'load_failed');
       const s = d.status || {};
       const live = !!s.autonomousProcessRunning;
       const stateEl = document.getElementById('state');
@@ -360,7 +389,7 @@
     }
     function refresh() {
       return fetch('/api/hero-leo')
-        .then((r) => r.json())
+        .then(parseJsonResponse)
         .then(renderDashboard);
     }
     document.getElementById('btn-scout').addEventListener('click', () => {
@@ -372,10 +401,10 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'scout' }),
       })
-        .then((r) => r.json())
+        .then(parseJsonResponse)
         .then((j) => {
-          if (!j.ok) throw new Error(j.hint || j.message || j.error || 'scout_failed');
-          setMsg(`Scout complete — top ${j.topN} prospects ready.`, true);
+          const nSel = j.nSelectable ?? j.prospectBoard?.nSelectable ?? j.topN;
+          setMsg(`Scout complete — ${j.topN} prospects · ${nSel} selectable. Select all ticks every open row.`, true);
           renderDashboard(j.dashboard || j);
         })
         .catch((e) => setMsg(String(e.message || e), false))
@@ -384,20 +413,40 @@
         });
     });
     document.getElementById('btn-select-all').addEventListener('click', () => {
-      document.querySelectorAll('input[name="prospect"]:not(:disabled)').forEach((el) => {
+      const boxes = [...document.querySelectorAll('input[name="prospect"]')];
+      const open = boxes.filter((el) => !el.disabled);
+      const locked = boxes.filter((el) => el.disabled);
+      open.forEach((el) => {
         el.checked = true;
       });
       syncCompleteEnabled();
+      if (!boxes.length) {
+        setMsg('No prospect board yet — press Scout fully first.', false);
+        return;
+      }
+      if (locked.length) {
+        const ranks = locked.map((el) => el.getAttribute('data-rank') || '?').join(', ');
+        setMsg(
+          `Selected ${open.length} of ${boxes.length}. Skipped #${ranks} (already in ledger — re-scout for a fresh top 11).`,
+          open.length > 0,
+        );
+      } else {
+        setMsg(`Selected all ${open.length} prospects on the board.`, true);
+      }
     });
     document.getElementById('btn-select-none').addEventListener('click', () => {
       document.querySelectorAll('input[name="prospect"]').forEach((el) => {
         el.checked = false;
       });
       syncCompleteEnabled();
+      setMsg('Selection cleared.', true);
     });
     function completeSelected(msgFn) {
       const ids = selectedIds();
-      if (!ids.length) return;
+      if (!ids.length) {
+        msgFn('Select at least one open prospect first.', false);
+        return;
+      }
       document.getElementById('btn-complete').disabled = true;
       document.getElementById('btn-dl-complete').disabled = true;
       msgFn(`Completing ${ids.length} prospect(s) as lab:digital notes…`, null);
@@ -406,12 +455,20 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'complete', prospectIds: ids }),
       })
-        .then((r) => r.json())
+        .then(parseJsonResponse)
         .then((j) => {
-          if (!j.ok) throw new Error(j.hint || j.message || j.error || 'complete_failed');
           const n = (j.completed || []).filter((c) => c.investigation_id).length;
-          msgFn(`Completed ${n} lab:digital investigation(s). Ledger updated.`, true);
-          renderDashboard(j.dashboard || j);
+          const skipped = (j.completed || []).filter((c) => c.skipped).length;
+          const persistHint =
+            j.persist?.lastWrite && j.persist.lastWrite !== 'fs'
+              ? ` · persist=${j.persist.lastWrite}`
+              : '';
+          msgFn(
+            `Completed ${n} lab:digital investigation(s)${skipped ? ` · ${skipped} already in ledger` : ''}${persistHint}. Ledger updated.`,
+            true,
+          );
+          if (j.dashboard) renderDashboard(j.dashboard);
+          else return refresh();
         })
         .catch((e) => msgFn(String(e.message || e), false))
         .finally(syncCompleteEnabled);
@@ -430,14 +487,14 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'suite-run' }),
       })
-        .then((r) => r.json())
+        .then(parseJsonResponse)
         .then((j) => {
-          if (!j.ok) throw new Error(j.hint || j.message || j.error || 'suite_run_failed');
           setDlMsg(
             `Suite green — ${j.scoreReceipt?.n_pass}/${j.scoreReceipt?.n_total}; lead=${j.scoreReceipt?.lead || '—'}`,
             true,
           );
-          renderDashboard(j.dashboard || j);
+          if (j.dashboard) renderDashboard(j.dashboard);
+          else return refresh();
         })
         .catch((e) => setDlMsg(String(e.message || e), false))
         .finally(() => {

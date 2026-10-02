@@ -3,7 +3,7 @@
  * POST /api/hero-leo { action: 'scout' | 'complete' | 'suite-run', prospectIds?: string[] }
  *
  * Scout/complete/suite-run persist under data/hero-leo/ when the filesystem is writable
- * (local, CI, Cloud Agent). On read-only hosts, returns an error hint to use CLI.
+ * (local, CI, Cloud Agent). On read-only hosts, memory + Vercel Blob (when token set).
  */
 function parseBody(req) {
   if (req.body == null || req.body === '') return {};
@@ -13,6 +13,22 @@ function parseBody(req) {
   } catch {
     return {};
   }
+}
+
+async function withHeroLeoPersist(fn) {
+  const { hydrateHeroLeoFromBlob, persistHeroLeoToBlob, getLastWritePersist } = await import(
+    '../lib/hero-leo.mjs'
+  );
+  await hydrateHeroLeoFromBlob();
+  const result = await fn();
+  const blob = await persistHeroLeoToBlob();
+  return {
+    ...result,
+    persist: {
+      lastWrite: getLastWritePersist(),
+      blob: blob.ok ? { written: blob.written } : { ok: false, reason: blob.reason },
+    },
+  };
 }
 
 module.exports = async function handler(req, res) {
@@ -25,10 +41,13 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(204).end();
 
   try {
-    const { HERO_LEO_SCHEMA } = await import('../lib/hero-leo.mjs');
+    const { HERO_LEO_SCHEMA, hydrateHeroLeoFromBlob } = await import('../lib/hero-leo.mjs');
     const { buildDashboardWithDigitalLab, buildDigitalLab, runDigitalLabSuite } = await import(
       '../lib/hero-leo-digital-lab.mjs'
     );
+
+    // Always hydrate overlays before reads so production Blob state is visible.
+    await hydrateHeroLeoFromBlob();
 
     if (req.method === 'GET') {
       const view = String(req.query?.view || 'dashboard').toLowerCase();
@@ -64,20 +83,24 @@ module.exports = async function handler(req, res) {
 
       if (action === 'scout') {
         try {
-          const board = runFullScout({ topN: Number(body.topN) || TOP_N });
-          return res.status(200).json({
-            ok: true,
-            action: 'scout',
-            topN: board.nReturned,
-            prospectBoard: board,
-            dashboard: buildDashboardWithDigitalLab(),
+          const out = await withHeroLeoPersist(async () => {
+            const board = runFullScout({ topN: Number(body.topN) || TOP_N });
+            return {
+              ok: true,
+              action: 'scout',
+              topN: board.nReturned,
+              nSelectable: board.nSelectable,
+              prospectBoard: board,
+              dashboard: buildDashboardWithDigitalLab(),
+            };
           });
+          return res.status(200).json(out);
         } catch (err) {
           return res.status(503).json({
             ok: false,
             error: 'scout_persist_failed',
             message: err?.message || String(err),
-            hint: 'Filesystem may be read-only. Run: npm run hero-leo:scout',
+            hint: 'Filesystem may be read-only and Blob unavailable. Run: npm run hero-leo:scout',
           });
         }
       }
@@ -85,34 +108,41 @@ module.exports = async function handler(req, res) {
       if (action === 'complete') {
         const prospectIds = Array.isArray(body.prospectIds) ? body.prospectIds : [];
         try {
-          const result = completeSelectedProspects(prospectIds);
-          if (!result.ok) {
-            return res.status(400).json(result);
-          }
-          return res.status(200).json({
-            ok: true,
-            action: 'complete',
-            ...result,
-            dashboard: buildDashboardWithDigitalLab(),
+          const out = await withHeroLeoPersist(async () => {
+            const result = completeSelectedProspects(prospectIds);
+            if (!result.ok) return result;
+            return {
+              ok: true,
+              action: 'complete',
+              ...result,
+              dashboard: buildDashboardWithDigitalLab(),
+            };
           });
+          if (!out.ok) {
+            return res.status(400).json(out);
+          }
+          return res.status(200).json(out);
         } catch (err) {
           return res.status(503).json({
             ok: false,
             error: 'complete_persist_failed',
             message: err?.message || String(err),
-            hint: 'Filesystem may be read-only. Run: npm run hero-leo:complete -- --ids=P1,P2',
+            hint: 'Filesystem may be read-only and Blob unavailable. Run: npm run hero-leo:complete -- --ids=P1,P2',
           });
         }
       }
 
       if (action === 'suite-run' || action === 'digital-lab-suite') {
         try {
-          const result = runDigitalLabSuite();
-          return res.status(result.ok ? 200 : 502).json({
-            ...result,
-            dashboard: buildDashboardWithDigitalLab(),
-            digitalLab: buildDigitalLab(),
+          const out = await withHeroLeoPersist(async () => {
+            const result = runDigitalLabSuite();
+            return {
+              ...result,
+              dashboard: buildDashboardWithDigitalLab(),
+              digitalLab: buildDigitalLab(),
+            };
           });
+          return res.status(out.ok ? 200 : 502).json(out);
         } catch (err) {
           return res.status(503).json({
             ok: false,

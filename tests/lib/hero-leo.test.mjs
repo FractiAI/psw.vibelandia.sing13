@@ -67,9 +67,23 @@ describe('hero-leo homeostasis scout', () => {
     expect(board.prospects[0].rank).toBe(1);
     expect(board.prospects[0].prospect_id).toBeTruthy();
     expect(board.prospects[0].null_hypothesis).toBeTruthy();
+    // Prefer available rows so Select all 11 can tick every checkbox
+    expect(board.nSelectable).toBe(TOP_N);
+    expect(board.prospects.every((p) => !p.already_completed)).toBe(true);
+    expect(board.prospects[0].selection_status).toBe('available');
     const dash = buildDashboard();
     expect(dash.prospectBoard?.scoutId).toBe(board.scoutId);
     expect(dash.status.autonomousProcessRunning).toBe(false);
+  });
+
+  it('scout defers already-ledgered prospects out of the selectable top 11', () => {
+    const before = runFullScout({ topN: TOP_N });
+    const pick = before.prospects[0].prospect_id;
+    completeSelectedProspects([pick]);
+    const after = runFullScout({ topN: TOP_N });
+    expect(after.prospects.every((p) => p.prospect_id !== pick || p.already_completed)).toBe(true);
+    expect(after.prospects.filter((p) => !p.already_completed)).toHaveLength(TOP_N);
+    expect(after.prospects[0].prospect_id).not.toBe(pick);
   });
 
   it('completes selected prospects into ledger research notes', () => {

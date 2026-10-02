@@ -242,11 +242,11 @@
     },
     {
       "source": "/layers/awareness",
-      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-awareness-layer-map-2026-10"
+      "destination": "/interfaces/layers-awareness.html"
     },
     {
       "source": "/layers/awareness/",
-      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-awareness-layer-map-2026-10"
+      "destination": "/interfaces/layers-awareness.html"
     },
     {
       "source": "/whitepaper/awareness-layer",

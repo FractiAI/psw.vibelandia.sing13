@@ -145,8 +145,8 @@ Inside the **Awareness Layer** (looking in on ourselves):
 | **SuperAI** | Combination of the three | `superai`, `superai-layer` |
 | **Awareness** (outer) | Self-observation frame | `awareness`, `awareness-layer` |
 
-Source: [`docs/SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md`](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · guest [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · module `lib/awareness-layer-map.mjs`.  
-**Not ENGINE_SHELF.** SuperAI = composition template, not proven AGI. Expedition / Hero Leo sit on the **Goldilocks Layer** inside Awareness.
+Source: [`docs/SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md`](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · guest visual map [`/layers/awareness`](/layers/awareness) · whitepaper [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · module `lib/awareness-layer-map.mjs`.  
+**Not ENGINE_SHELF.** SuperAI = composition template, not proven AGI. Expedition / Hero Leo sit on the **Goldilocks Layer** inside Awareness. Guest strips also appear on `/`, `/journey`, `/journey/hero-leo`, and `/journey/homeostasis-expedition`.
 
 ---
 

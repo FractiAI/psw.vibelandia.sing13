@@ -39,5 +39,6 @@ describe('awareness layer map', () => {
     expect(directive).toContain('Awareness Layer');
     expect(directive).toContain('SuperAI Layer');
     expect(directive).toContain('/whitepaper/awareness-layer');
+    expect(directive).toContain('/layers/awareness');
   });
 });

@@ -7,8 +7,8 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-CHAT-PEM-2026-09`  
 **Registry ID:** `lattice-chat-product-engineering-manual-2026-09`  
-**Date:** 2026-09-29
-**Published:** 2026-09-29
+**Date:** 2026-10-02
+**Published:** 2026-10-02
 **Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · BYOK · PRA Snap  
 **Live chat:** [`/lattice-chat?nest=octave99`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99)  
 **Product hero:** [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · primer [`/lattice/learn`](https://www.ssvibelandiaquestfest24x365.com/lattice/learn) · this manual [`/lattice/engineering`](https://www.ssvibelandiaquestfest24x365.com/lattice/engineering)  
@@ -21,7 +21,7 @@
 ---
 
 <!-- AUTO:LATTICE-PEM-META:BEGIN -->
-**Engine shelf sync:** 2026-09-29 · **38** ordered steps (**36** registry papers) · generator `npm run sync:lattice-pem`
+**Engine shelf sync:** 2026-10-02 · **38** ordered steps (**36** registry papers) · generator `npm run sync:lattice-pem`
 
 When a paper is **added to the Infinite Octaves engine pin**, append it to `ENGINE_SHELF` in `lib/infinite-octave-engine-shelf.mjs`, then re-run the sync (Cursor PRA stop hook does this automatically for matching engine / PEM / AGENT_SYNC edits). The same sync refreshes living engine-shelf appendices on the **online course** (`/omni-lattice-course`) and **companion textbook** (`/omni-lattice-textbook`). Digits × Octaves 01–99 remain the practical Story-depth map — not a second product brand. Application companions (PDVSA, macro-protein, …) stay off this shelf.
 <!-- AUTO:LATTICE-PEM-META:END -->

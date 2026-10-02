@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "bd7e58d81d116692",
+  "auditId": "2d268475675b8300",
   "paperId": "synthobs-holographic-homeostasis-2026-09",
   "sourcePath": "docs/SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-21T06:58:27.287Z"
+          "invokedAt": "2026-10-02T04:03:28.425Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-21T06:58:27.286Z",
-  "completedAt": "2026-09-21T06:58:27.288Z",
+  "startedAt": "2026-10-02T04:03:28.423Z",
+  "completedAt": "2026-10-02T04:03:28.426Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1840,
+      "wordCount": 1887,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 18,
+        "links": 21,
         "numbered": 7,
-        "citeLines": 6
+        "citeLines": 9
       }
     }
   },

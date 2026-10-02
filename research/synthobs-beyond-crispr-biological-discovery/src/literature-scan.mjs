@@ -88,6 +88,30 @@ export const LITERATURE_CORPUS = Object.freeze([
     tags: ['ai_assisted_discovery', 'genomic_neighborhood', 'method_peer'],
     note: 'Starting observation: AI can surface overlooked relational architectures — motivation, not endpoint.',
   },
+  {
+    id: 'lowey2020',
+    cite: 'Lowey, H., et al. (2020). CBASS immunity uses CARF-related effectors to sense 3′–5′ and 2′–5′ linked cyclic oligonucleotide signals and protect bacteria from phage infection. Cell.',
+    tags: ['cbass', 'second_messenger', 'positive_control'],
+    note: 'Positive-control depth: CBASS effector logic is experimentally characterized — rediscovery ≠ novelty.',
+  },
+  {
+    id: 'millman2020cbass',
+    cite: 'Millman, A., et al. (2020). Bacterial Retrons Function In Anti-Phage Defense / related CBASS surveys documenting thousands of cyclic-oligonucleotide systems (class pointer).',
+    tags: ['cbass', 'survey', 'positive_control'],
+    note: 'Scale of known CBASS diversity — framework validation corpus, not gap lead.',
+  },
+  {
+    id: 'anthropic_art_class',
+    cite: 'Anthropic ART-class reporting (method peer): unusual reverse transcriptase + partner gene + long repeat array after large RT survey; biological function unresolved at publication time.',
+    tags: ['ai_assisted_discovery', 'reverse_transcriptase', 'gap_architecture', 'unresolved_function'],
+    note: 'Gap seed: protein-centric AI found a cassette; information-loop identity remains open — C11 class.',
+  },
+  {
+    id: 'dgr_natbiotech_2026',
+    cite: 'DGR-based targeted hypermutagenesis applications (Nature Biotechnology class pointer, 2026): diversify selected sequences for phage host range, dCas9 variants, nanobodies.',
+    tags: ['dgr', 'templated_diversification', 'biotech_application'],
+    note: 'DGR as future-diversity writer is technologically active — still partially_known as unified architecture peer, not a blank gap.',
+  },
 ]);
 
 export function runLiteratureScan() {

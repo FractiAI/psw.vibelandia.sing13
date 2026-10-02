@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-BEYOND-CRISPR-BIOLOGICAL-DISCOVERY-2026-10-02`
 **Registry ID:** `synthobs-beyond-crispr-biological-discovery-2026-10`
-**Generated:** 2026-10-02T15:15:59.025Z
+**Generated:** 2026-10-02T17:10:19.076Z
 **Standalone:** https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery
 
 ## Discovery question
@@ -14,34 +14,47 @@ Does biology contain a distributed molecular system that senses a state, transfo
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 8 / 8 |
+| Passed | 9 / 9 |
 | Φ_EGS (honesty rail only) | 1.618033988749895 |
 | Declared winner | `null` |
 
 ## Research queue (top 5 · triage only)
 
-- **C4** · Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar class) · interest=0.5271 · role=under_unified_lead_candidate
-- **C2** · Directed Templated Diversification Engines (DTDEs / DGRs) · interest=0.4787 · role=under_unified_lead_candidate
+- **C11** · ART-class unresolved RT–partner–long-repeat architectures · interest=0.4666 · role=gap_discovery_candidate
 - **C7** · Chromatin epigenetic state recorders · interest=0.4395 · role=known_peer_low_novelty
 - **C8** · Prion / conformational protein memory · interest=0.4245 · role=active_research_candidate
+- **C2** · Directed Templated Diversification Engines (DTDEs / DGRs) · interest=0.4239 · role=active_research_candidate
 - **C5** · piRNA cluster / TE silencing memory · interest=0.4055 · role=known_peer_low_novelty
+- **C3** · Retron / multicopy ssDNA reverse-transcript writers · interest=0.4024 · role=active_research_candidate
 
 ## Ultimate answers
 
-**Most surprising architecture:** Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar class)
+**Framework validation (positive control):** Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar class)
 
-Second-messenger cyclic oligonucleotide immune hubs (CBASS / Thoeris / Pycsar class): infection state is encoded into a small-molecule message that triggers cell-fate effectors. Conventional annotation often lists polymerase and effector ORFs separately; the unified sensor→encode→respond architecture is still under-recognized relative to CRISPR spacer memory.
+Positive-control rediscovery: cyclic-oligonucleotide immune signaling (CBASS / Thoeris / Pycsar) is already experimentally characterized (sensor → cyclic nucleotide messenger → effector → cell fate). The protocol’s job here is to recover that distributed information-flow architecture from first principles — demonstrating methodological reach — not to claim newly discovered biology.
 
-**Novel prediction:**
+**Most surprising gap architecture:** ART-class unresolved RT–partner–long-repeat architectures
 
-Separable polymerase-dead vs effector-dead alleles will produce opposite molecular signatures under matched MOI: polymerase-dead → no cyclic messenger accumulation and no abortive phenotype; effector-dead → messenger accumulates without cell-fate change. This double dissociation is not entailed by “find another CRISPR-like cutter” search criteria and falsifies a pure nuclease-centric model of the cassette.
+Most surprising *gap* architecture under current fixtures: ART-class unresolved RT–partner–long-repeat cassettes. Components co-occur; the complete sense→encode→store→compare→respond loop is not adequately explained in published work. This is a discovery target, not a rediscovery trophy.
+
+**Novel prediction (gap lead):**
+
+After a controlled priming exposure, ART-class cassette-intact strains will show a lagged change in infection or mobile-element outcomes versus RT-dead and partner-dead isogenics, accompanied by a partner-dependent nucleic product that does not match canonical DGR template–VR or retron msDNA fingerprints. Search criteria asked for sense→encode→store→respond architectures generally; they did not specify this lagged isogenic dissociation for unresolved RT–partner–repeat cassettes.
+
+## Blind discovery shortlist
+
+- **C11** · genuinely_unexplained · interest=0.4666
+- **C12** · genuinely_unexplained · interest=0.3922
+- **C13** · genuinely_unexplained · interest=0.3715
+- **C8** · partially_known · interest=0.4245
+- **C2** · partially_known · interest=0.4239
 
 ## Experiments
 
 ### E1_anti_bias_first — Anti-bias / falsification controls run before queue ranking
 
 - **pass:** `true`
-- **interpretation:** Candidates are demoted by confound risk and known-explanation adequacy; CRISPR resemblance is not rewarded.
+- **interpretation:** Candidates are demoted by confound risk and known-explanation adequacy; CRISPR resemblance is not rewarded; literatureStatus is mandatory.
 - **honesty:** Fixture anti-bias floors ≠ wet-lab null models.
 
 ### E2_no_framework_confirmation — Discovery does not confirm Infinite Octave / fractal biology slogans
@@ -64,18 +77,18 @@ Separable polymerase-dead vs effector-dead alleles will produce opposite molecul
 ### E5_ranked_research_queue — Ranked research queue without declaring a winner
 
 - **pass:** `true`
-- **honesty:** Ranked research queue sorts by researchInterest for triage only. No candidate is crowned a discovery.
+- **honesty:** Ranked research queue sorts by researchInterest for triage only. No candidate is crowned a discovery. Positive-control rediscovery ≠ novel biology.
 
-### E6_ultimate_questions — Most surprising architecture + novel falsifiable prediction
+### E6_ultimate_questions — Gap architecture + novel prediction (C4 = positive control only)
 
 - **pass:** `true`
-- **honesty:** Answers are literature-grounded triage conclusions from fixture scores. Not wet-lab discovery. Not ENGINE_SHELF physics. Prefer falsification over confirmation.
+- **honesty:** Answers are literature-grounded triage conclusions from fixture scores. Not wet-lab discovery. Not ENGINE_SHELF physics. Prefer falsification over confirmation. Positive-control ≠ novelty.
 
 ### E7_corpus_pointers — Monorepo paper + ship-blog present
 
 - **pass:** `true`
 - **interpretation:** Seed:Edge surfaces for homeostasis expedition + reading room.
-- **honesty:** Application companion Soft Story / catalog discovery protocol. Not ENGINE_SHELF. Not wet-lab CRISPR replacement. Not finished biology law. Candidate scores are literature-grounded fixtures for falsifiable triage — not experimental confirmation. Φ_EGS is design grammar in honesty rails only. Literature scan is curated, not PRISMA. Do not manufacture novelty.
+- **honesty:** Application companion Soft Story / catalog discovery protocol. Not ENGINE_SHELF. Not wet-lab CRISPR replacement. Not finished biology law. Candidate scores are literature-grounded fixtures for falsifiable triage — not experimental confirmation. CBASS/Thoeris (C4) is a positive-control rediscovery case, not a claim of newly discovered biology. Discovery focus is genuinely_unexplained gap architectures. Φ_EGS is design grammar in honesty rails only. Literature scan is curated, not PRISMA. Do not manufacture novelty.
 
 ### E8_multi_octave_recurrence — Candidates span multiple biological scale bands (operational fractal)
 
@@ -83,8 +96,13 @@ Separable polymerase-dead vs effector-dead alleles will produce opposite molecul
 - **interpretation:** Octave search is operational recurrence of relational structure — not literal fractal geometry proof.
 - **honesty:** Scale labels are catalog filing aids, not new astronomy or wet-lab tiers.
 
+### E9_blind_discovery_phases — Blind discovery phases + unexplained-gap shortlist (excludes positive control)
+
+- **pass:** `true`
+- **honesty:** Shortlist is computational triage for follow-up — not a wet-lab claim and not a winner declaration. Prefer kill-if-fails over confirmation.
+
 ## Honesty
 
-Application companion Soft Story / catalog discovery protocol. Not ENGINE_SHELF. Not wet-lab CRISPR replacement. Not finished biology law. Candidate scores are literature-grounded fixtures for falsifiable triage — not experimental confirmation. Φ_EGS is design grammar in honesty rails only. Literature scan is curated, not PRISMA. Do not manufacture novelty.
+Application companion Soft Story / catalog discovery protocol. Not ENGINE_SHELF. Not wet-lab CRISPR replacement. Not finished biology law. Candidate scores are literature-grounded fixtures for falsifiable triage — not experimental confirmation. CBASS/Thoeris (C4) is a positive-control rediscovery case, not a claim of newly discovered biology. Discovery focus is genuinely_unexplained gap architectures. Φ_EGS is design grammar in honesty rails only. Literature scan is curated, not PRISMA. Do not manufacture novelty.
 
 → ∞^∞

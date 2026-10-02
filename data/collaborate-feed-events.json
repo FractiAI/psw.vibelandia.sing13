@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-02T15:16:06.731Z",
+  "updatedAt": "2026-10-02T17:10:37.288Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-10-02T15:16:06.729Z",
+      "createdAt": "2026-10-02T17:10:37.287Z",
       "body": "Beyond CRISPR — Biological Discovery Challenge: Multi-Scale Relational Search for Biological Information-Processing Architectures",
       "presenceHue": "gold",
       "paperId": "synthobs-beyond-crispr-biological-discovery-2026-10",

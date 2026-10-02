@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "acb6b037945b1c1b",
+  "auditId": "db9d7185545bb593",
   "paperId": "synthobs-beyond-crispr-biological-discovery-2026-10",
   "sourcePath": "docs/SYNTHOBS_BEYOND_CRISPR_BIOLOGICAL_DISCOVERY_EGS_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-02T15:16:06.727Z"
+          "invokedAt": "2026-10-02T17:10:37.283Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-02T15:16:06.726Z",
-  "completedAt": "2026-10-02T15:16:06.727Z",
+  "startedAt": "2026-10-02T17:10:37.282Z",
+  "completedAt": "2026-10-02T17:10:37.284Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1477,
+      "wordCount": 1884,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
         "links": 4,
-        "numbered": 20,
+        "numbered": 32,
         "citeLines": 21
       }
     }

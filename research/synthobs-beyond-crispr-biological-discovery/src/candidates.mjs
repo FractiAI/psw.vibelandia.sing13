@@ -13,6 +13,7 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C1',
     provisionalName: 'CRISPR-Cas adaptive spacer memory',
+    literatureStatus: 'known',
     observedArchitecture:
       'Sensor (foreign nucleic acid) → encode (spacer acquisition) → store (CRISPR array) → compare (crRNA guide) → response (cleavage/interference) → feedback (primed acquisition)',
     whyAnnotationMisses:
@@ -67,6 +68,7 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C2',
     provisionalName: 'Directed Templated Diversification Engines (DTDEs / DGRs)',
+    literatureStatus: 'partially_known',
     observedArchitecture:
       'Reverse transcriptase + template RNA/DNA + target gene variable region → directed, mutagenic rewrite that diversifies a protein tip without rewriting the whole gene',
     whyAnnotationMisses:
@@ -97,7 +99,7 @@ export const CANDIDATES = Object.freeze([
     significanceIfTrue:
       'Would show biology can *write future diversity* on purpose — not only remember past invaders — a different information job than CRISPR.',
     scores: /** @type {ScoreCard} */ ({
-      novelty: 0.78,
+      novelty: 0.62,
       recurrence: 0.72,
       independence: 0.7,
       modularity: 0.8,
@@ -109,12 +111,12 @@ export const CANDIDATES = Object.freeze([
       experimentalTractability: 0.7,
     }),
     antiBias: {
-      knownMechanismExplains: 0.55,
-      randomCoOccurrenceRisk: 0.2,
-      phylogeneticArtifactRisk: 0.25,
-      annotationErrorRisk: 0.3,
-      hgtConfoundRisk: 0.4,
-      publishedExplanationAdequacy: 0.55,
+      knownMechanismExplains: 0.72,
+      randomCoOccurrenceRisk: 0.18,
+      phylogeneticArtifactRisk: 0.2,
+      annotationErrorRisk: 0.25,
+      hgtConfoundRisk: 0.35,
+      publishedExplanationAdequacy: 0.72,
       architectureAbsentCasesDocumented: true,
     },
     categories: ['biological_learning', 'recursive_adaptation'],
@@ -122,6 +124,7 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C3',
     provisionalName: 'Retron / multicopy ssDNA reverse-transcript writers',
+    literatureStatus: 'partially_known',
     observedArchitecture:
       'Reverse transcriptase produces multicopy single-stranded DNA products from structured RNA; neighborhood proteins couple products to defense or regulatory outcomes',
     whyAnnotationMisses:
@@ -175,10 +178,11 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C4',
     provisionalName: 'Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar class)',
+    literatureStatus: 'positive_control',
     observedArchitecture:
       'Viral-state sensor → polymerase synthesizes cyclic oligonucleotide second messenger → effector binds messenger → cell-fate response (often abortive)',
     whyAnnotationMisses:
-      'Polymerases, effectors, and accessory ORFs are frequently annotated as separate hypotheticals; the messenger is invisible to gene-name pipelines.',
+      'Polymerases, effectors, and accessory ORFs are frequently annotated as separate hypotheticals; the messenger is invisible to gene-name pipelines — useful for testing whether relational search recovers distributed info-flow.',
     multiScalePattern:
       'Molecular (cOS / CD-NTase) · genetic (operon neighborhoods) · cellular (suicide / dormancy) · population (phage suppression) · evolutionary (convergent messenger chemistries)',
     informationFlow:
@@ -187,48 +191,49 @@ export const CANDIDATES = Object.freeze([
     evidenceFeedback: 'Cell fate removes infected hosts from the productive phage pool.',
     evidenceHomeostasis: 'Population-level viability band under phage pressure via sacrificial cells.',
     knownExplanations:
-      'CBASS/Thoeris literature describes messenger chemistry and effectors; still under-taught as a *general* sensor→encode→respond class outside specialist circles.',
+      'CBASS / Thoeris / Pycsar are extensively characterized: phage detection → CD-NTase / TIR → cyclic nucleotide messenger → Cap / effector → defense or cell death. Large-scale surveys report thousands of CBASS systems. This is NOT newly discovered biology.',
     noveltyAssessment:
-      'High as unified architecture recognition: the surprising object is the *messenger encode step*, not another nuclease.',
+      'Low as new biology. High as *positive-control* for the protocol: can multi-scale relational search rediscover a known distributed sensor→encode→respond architecture from first principles?',
     strongestCompetingExplanation:
-      'Each system is a standalone abortive-infection gadget; no need for a cross-system information architecture.',
+      'Published CBASS literature already fully explains the causal chain — treat as framework validation, not a discovery claim.',
     falsificationTest:
-      'If polymerase-dead alleles retain effector activation without messenger, the encode-step collapses.',
+      'Framework-validation experiment: if polymerase-dead vs effector-dead alleles fail to separate messenger from phenotype as published work predicts, the *search framing* of encode-step recovery is unreliable and must be revised before trusting gap leads.',
     predictedMolecularObservation:
-      'Messenger accumulates after infection-relevant cues and is required for effector engagement.',
+      'Messenger accumulates after infection-relevant cues and is required for effector engagement (replicates known CBASS biochemistry).',
     predictedBiologicalPhenotype:
       'Polymerase KO: sensing without abortive phenotype; effector KO: messenger accumulates without cell-fate change.',
     minimumExperiment:
-      'Separable polymerase/effector alleles + messenger LC-MS + phage fitness under controlled MOI.',
-    confidence: 'medium–high literature; medium as "under-recognized unified mechanism"',
+      'Separable polymerase/effector alleles + messenger LC-MS + phage fitness under controlled MOI — used to validate protocol recovery, not to claim novelty.',
+    confidence: 'high as known mechanism; high as positive-control role; zero as "new architecture discovery"',
     significanceIfTrue:
-      'Would elevate second-messenger encoding as a prokaryotic information architecture peer — or predecessor in abstraction — to spacer memory.',
+      'Validates that the methodology recovers distributed information-flow architectures. Then point the same machinery at genuinely unexplained gaps.',
     scores: /** @type {ScoreCard} */ ({
-      novelty: 0.82,
-      recurrence: 0.7,
-      independence: 0.75,
+      novelty: 0.22,
+      recurrence: 0.88,
+      independence: 0.8,
       modularity: 0.85,
-      informationFlow: 0.9,
+      informationFlow: 0.92,
       memory: 0.48,
-      feedback: 0.82,
-      multiScale: 0.8,
-      evolutionaryConstraint: 0.72,
-      experimentalTractability: 0.68,
+      feedback: 0.85,
+      multiScale: 0.84,
+      evolutionaryConstraint: 0.8,
+      experimentalTractability: 0.78,
     }),
     antiBias: {
-      knownMechanismExplains: 0.5,
-      randomCoOccurrenceRisk: 0.15,
-      phylogeneticArtifactRisk: 0.2,
-      annotationErrorRisk: 0.35,
-      hgtConfoundRisk: 0.4,
-      publishedExplanationAdequacy: 0.5,
+      knownMechanismExplains: 0.92,
+      randomCoOccurrenceRisk: 0.12,
+      phylogeneticArtifactRisk: 0.15,
+      annotationErrorRisk: 0.2,
+      hgtConfoundRisk: 0.35,
+      publishedExplanationAdequacy: 0.92,
       architectureAbsentCasesDocumented: true,
     },
-    categories: ['biological_homeostasis', 'recursive_adaptation'],
+    categories: ['biological_homeostasis', 'recursive_adaptation', 'positive_control'],
   },
   {
     id: 'C5',
     provisionalName: 'piRNA cluster / TE silencing memory',
+    literatureStatus: 'known',
     observedArchitecture:
       'Transposon encounter → piRNA cluster encoding → piRNA guides → silencing of matching TEs → feedback into cluster content over generations',
     whyAnnotationMisses:
@@ -278,6 +283,7 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C6',
     provisionalName: 'Toxin–antitoxin / abortive-infection population switches',
+    literatureStatus: 'known',
     observedArchitecture:
       'Infection or stress tip balance → toxin liberation → cell stall/death → population phage suppression; antitoxin restores viable band',
     whyAnnotationMisses:
@@ -325,6 +331,7 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C7',
     provisionalName: 'Chromatin epigenetic state recorders',
+    literatureStatus: 'known',
     observedArchitecture:
       'Environmental/developmental cue → chromatin mark / DNA methylation / histone state → retained representation → altered future transcription',
     whyAnnotationMisses:
@@ -371,6 +378,7 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C8',
     provisionalName: 'Prion / conformational protein memory',
+    literatureStatus: 'partially_known',
     observedArchitecture:
       'Protein conformational state templates identical folds → propagates a non-nucleic representation of prior state → alters phenotype',
     whyAnnotationMisses:
@@ -419,6 +427,7 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C9',
     provisionalName: 'Restriction–modification / DNA Argonaute neighborhood defense',
+    literatureStatus: 'known',
     observedArchitecture:
       'Recognize non-self DNA patterns → cut or guide interference → protect self via methylation or guide RNA; neighborhoods often co-occur with poorly annotated ORFs',
     whyAnnotationMisses:
@@ -464,6 +473,7 @@ export const CANDIDATES = Object.freeze([
   {
     id: 'C10',
     provisionalName: 'Integron cassette capture as adaptive genomic encoding',
+    literatureStatus: 'partially_known',
     observedArchitecture:
       'Environmental gene cassettes → site-specific recombination into integron array → ordered expression potential → alters future antimicrobial / stress responses',
     whyAnnotationMisses:
@@ -514,4 +524,195 @@ export const CANDIDATES = Object.freeze([
     },
     categories: ['biological_learning', 'biological_memory', 'recursive_adaptation'],
   },
+
+  {
+    id: 'C11',
+    provisionalName: 'ART-class unresolved RT–partner–long-repeat architectures',
+    literatureStatus: 'genuinely_unexplained',
+    sixPointGap: {
+      sensesState: 'unknown — hypothesized phage / mobile-element / stress encounter',
+      encodesRepresentation: 'hypothesized via RT products + long repeat array',
+      storesRepresentation: 'long repeat array + partner gene products (unproven)',
+      retrievesOrCompares: 'unmapped',
+      altersFutureBehavior: 'unresolved phenotype',
+      previouslyUnrecognized: true,
+    },
+    observedArchitecture:
+      'Unusual reverse transcriptase + adjacent poorly characterized partner gene + long repeat array co-occurring without a complete published causal chain from state sensing to altered future behavior',
+    whyAnnotationMisses:
+      'Components may be annotated as separate RT, hypothetical protein, and repeat region; conventional pipelines reward local neighborhoods but do not certify an information-processing loop. AI RT surveys surface the pattern; function remains open.',
+    multiScalePattern:
+      'Molecular (atypical RT) · genetic (partner ORF) · genomic (long repeats) · cellular (unknown) · evolutionary (recurrent RT–repeat grammar across genomes)',
+    informationFlow:
+      'Unknown. Candidate question: does the cassette sense a state, write a durable representation into/near the repeats, and later change host or mobile-element behavior?',
+    evidenceMemory: 'Repeat array is a plausible durable store — not proven as state memory.',
+    evidenceFeedback: 'Not established; phenotype unmapped.',
+    evidenceHomeostasis: 'Not established.',
+    knownExplanations:
+      'No adequate published mechanism equates this class to CRISPR, DGR, retron defense, or CBASS. Competing mundane accounts: selfish mobile debris, assembly artifact, or unfinished annotation of a known class.',
+    noveltyAssessment:
+      'High as *unresolved architecture*: the discovery object is whether a sensor→encode→store→compare→respond loop exists at all — not another cutter.',
+    strongestCompetingExplanation:
+      'Phage/mobile debris or misassembled repeats around an orphan RT with no unified information job.',
+    falsificationTest:
+      'If partner KO + RT KO + repeat deletion produce no separable molecular intermediate and no reproducible phenotype under controlled infection/stress panels, demote from gap lead to debris.',
+    predictedMolecularObservation:
+      'Under inducing conditions, a partner-dependent non-genomic or atypical nucleic product accumulates that is absent in RT-dead alleles and does not match canonical DGR template–VR or retron msDNA fingerprints.',
+    predictedBiologicalPhenotype:
+      'Cassette-intact strains alter subsequent infection or mobile-element outcomes relative to RT-dead / partner-dead isogenics after a priming exposure — a lagged behavioral change, not only acute toxicity.',
+    minimumExperiment:
+      'Build RT-dead, partner-dead, and repeat-truncation alleles in one tractable host; assay nucleic products + serial infection/stress with lagged phenotype readouts.',
+    confidence: 'low–medium as architecture claim; high as unresolved-gap priority',
+    significanceIfTrue:
+      'Would be a previously unrecognized biological information-processing architecture (sense→encode→store→alter future behavior) — significance from the mechanism, not from AI rediscovery theater.',
+    scores: /** @type {ScoreCard} */ ({
+      novelty: 0.9,
+      recurrence: 0.55,
+      independence: 0.6,
+      modularity: 0.7,
+      informationFlow: 0.58,
+      memory: 0.45,
+      feedback: 0.4,
+      multiScale: 0.62,
+      evolutionaryConstraint: 0.5,
+      experimentalTractability: 0.55,
+    }),
+    antiBias: {
+      knownMechanismExplains: 0.2,
+      randomCoOccurrenceRisk: 0.35,
+      phylogeneticArtifactRisk: 0.3,
+      annotationErrorRisk: 0.4,
+      hgtConfoundRisk: 0.5,
+      publishedExplanationAdequacy: 0.22,
+      architectureAbsentCasesDocumented: true,
+    },
+    categories: ['gap_discovery', 'biological_memory', 'recursive_adaptation'],
+  },
+  {
+    id: 'C12',
+    provisionalName: 'Orphan cyclic-messenger synthases without mapped effectors',
+    literatureStatus: 'genuinely_unexplained',
+    sixPointGap: {
+      sensesState: 'plausible (sensor domains sometimes present)',
+      encodesRepresentation: 'plausible cyclic nucleotide / oligo product',
+      storesRepresentation: 'short-lived messenger — incomplete without effector',
+      retrievesOrCompares: 'unmapped if effector absent',
+      altersFutureBehavior: 'unmapped phenotype',
+      previouslyUnrecognized: true,
+    },
+    observedArchitecture:
+      'CD-NTase / TIR-like domains that look like messenger encoders occurring without annotated Cap / NADase / pore-forming effectors in the same neighborhood — incomplete CBASS-like grammar',
+    whyAnnotationMisses:
+      'Synthase ORFs are labeled; missing effectors look like annotation gaps or truncated operons. Relational search asks whether remote effectors, novel messengers, or non-immune roles complete an unrecognized loop.',
+    multiScalePattern:
+      'Molecular (synthase) · genetic (incomplete operons) · genomic (dispersed loci) · cellular (unknown) · evolutionary (partial cassettes recur)',
+    informationFlow:
+      'Hypothesized encode step without a proven retrieve/respond partner — either a true gap architecture or a broken cassette.',
+    evidenceMemory: 'Messenger chemistry would be short-term encoding if product exists.',
+    evidenceFeedback: 'Unknown without effector.',
+    evidenceHomeostasis: 'Unknown.',
+    knownExplanations:
+      'Incomplete / degraded CBASS cassettes, misannotation, or remote effector unused by current HMM catalogs. Complete CBASS is explained; *orphan synthase neighborhoods* are not.',
+    noveltyAssessment:
+      'High as gap: either novel effector classes / remote wiring, or systematic false positives the protocol must learn to kill.',
+    strongestCompetingExplanation:
+      'Pseudogenized or horizontally fragmented CBASS fragments with no functional information loop.',
+    falsificationTest:
+      'If synthase-active alleles produce no diffusible messenger *and* no phenotype vs catalytic-dead controls across infection panels, treat as non-functional debris.',
+    predictedMolecularObservation:
+      'Catalytically intact orphan synthases produce a detectable cyclic nucleotide / oligo under inducing conditions that does not match the host’s annotated CBASS messenger set — or no product (kill case).',
+    predictedBiologicalPhenotype:
+      'Messenger-positive orphans alter phage or stress outcomes only when a previously unannotated remote partner is present; remote-partner deletion abolishes phenotype while messenger still accumulates.',
+    minimumExperiment:
+      'Heterologous expression of orphan synthase ± genome-wide remote-partner screen + LC-MS messenger profiling + phage assays.',
+    confidence: 'low — high kill risk; valuable negative-result machine',
+    significanceIfTrue:
+      'Would extend second-messenger immune logic into unrecognized remote wiring — a systems-level architecture conventional local annotation misses.',
+    scores: /** @type {ScoreCard} */ ({
+      novelty: 0.86,
+      recurrence: 0.5,
+      independence: 0.55,
+      modularity: 0.75,
+      informationFlow: 0.52,
+      memory: 0.35,
+      feedback: 0.38,
+      multiScale: 0.58,
+      evolutionaryConstraint: 0.45,
+      experimentalTractability: 0.5,
+    }),
+    antiBias: {
+      knownMechanismExplains: 0.35,
+      randomCoOccurrenceRisk: 0.4,
+      phylogeneticArtifactRisk: 0.28,
+      annotationErrorRisk: 0.45,
+      hgtConfoundRisk: 0.48,
+      publishedExplanationAdequacy: 0.28,
+      architectureAbsentCasesDocumented: true,
+    },
+    categories: ['gap_discovery', 'biological_homeostasis'],
+  },
+  {
+    id: 'C13',
+    provisionalName: 'Cryptic variable-region diversifiers without canonical DGR annotation',
+    literatureStatus: 'genuinely_unexplained',
+    sixPointGap: {
+      sensesState: 'unknown selective regime',
+      encodesRepresentation: 'hypothesized template-guided rewrite',
+      storesRepresentation: 'variable region sequence ensemble',
+      retrievesOrCompares: 'protein tip vs environment (hypothesized)',
+      altersFutureBehavior: 'hypothesized host-range / adhesion change',
+      previouslyUnrecognized: true,
+    },
+    observedArchitecture:
+      'RT-adjacent loci showing VR-like diversity spikes without a clear annotated template–VR pair — possible unrecognized directed diversification engines',
+    whyAnnotationMisses:
+      'DGR HMMs miss noncanonical cassettes; diversity looks like ordinary mutation or assembly noise unless template dependence is tested.',
+    multiScalePattern:
+      'Molecular (RT) · genetic (cryptic cassette) · genomic (diversity hotspots) · population (allele spectra) · evolutionary (recurrent RT–diversity neighborhoods)',
+    informationFlow:
+      'If real: template-guided writing of future tip diversity that changes subsequent matching behavior — a different job than spacer memory of past invaders.',
+    evidenceMemory: 'VR ensemble as stored possibility space — only if template-dependent.',
+    evidenceFeedback: 'Successful tips alter future infection/adhesion odds — unproven for cryptic set.',
+    evidenceHomeostasis: 'Possible dynamic matching band — unproven.',
+    knownExplanations:
+      'Canonical DGRs are explained. Cryptic diversifiers may be assembly artifacts, sequencing error, or unannotated true DGRs — the *unexplained* object is which metagenomic VR-like spikes are directed engines.',
+    noveltyAssessment:
+      'High as gap discovery among unexplained diversity engines; low if all reduce to known DGRs after better annotation.',
+    strongestCompetingExplanation:
+      'Sequencing/assembly artifact or ordinary mutational hotspots near RTs.',
+    falsificationTest:
+      'If diversity spikes disappear under higher-quality long-read assemblies *or* persist but are RT- and template-independent, demote the directed-engine claim.',
+    predictedMolecularObservation:
+      'Long-read validation retains a template–VR dependency; RT-dead alleles flatten nonsynonymous VR spikes that wild-type maintains under partner fluctuation.',
+    predictedBiologicalPhenotype:
+      'Cryptic-cassette intact lineages adapt host-range or adhesion faster across serial partner shifts than RT-dead isogenics — without acquiring CRISPR spacers.',
+    minimumExperiment:
+      'Long-read reassembly of top cryptic loci + RT KO + VR deep sequencing under controlled partner fluctuation.',
+    confidence: 'low–medium; artifact risk explicit',
+    significanceIfTrue:
+      'Would enlarge the family of future-diversity writers beyond catalogued DGRs — unrecognized information architecture, not rediscovered CBASS.',
+    scores: /** @type {ScoreCard} */ ({
+      novelty: 0.84,
+      recurrence: 0.48,
+      independence: 0.52,
+      modularity: 0.68,
+      informationFlow: 0.6,
+      memory: 0.5,
+      feedback: 0.55,
+      multiScale: 0.6,
+      evolutionaryConstraint: 0.48,
+      experimentalTractability: 0.48,
+    }),
+    antiBias: {
+      knownMechanismExplains: 0.3,
+      randomCoOccurrenceRisk: 0.42,
+      phylogeneticArtifactRisk: 0.45,
+      annotationErrorRisk: 0.5,
+      hgtConfoundRisk: 0.4,
+      publishedExplanationAdequacy: 0.25,
+      architectureAbsentCasesDocumented: true,
+    },
+    categories: ['gap_discovery', 'biological_learning', 'recursive_adaptation'],
+  },
+
 ]);

@@ -45,10 +45,25 @@ export const SCORE_AXES = Object.freeze([
 /** Minimum candidates and literature rows for suite pass. */
 export const MIN_CANDIDATES = 8;
 export const MIN_LITERATURE = 8;
+/** Shortlist size for wet-lab triage (Phase 3): protect against falling in love with one pattern. */
+export const SHORTLIST_MIN = 3;
+export const SHORTLIST_MAX = 5;
+
+/**
+ * Literature classification — independent of queue sort.
+ * positive_control = known architecture used to validate that the protocol recovers distributed info-flow.
+ * genuinely_unexplained = function / complete architecture not adequately explained by published work.
+ */
+export const LITERATURE_STATUS = Object.freeze([
+  'known',
+  'partially_known',
+  'genuinely_unexplained',
+  'positive_control',
+]);
 
 /** Queue sort uses researchInterest — not a declared winner. */
 export const QUEUE_HONESTY =
-  'Ranked research queue sorts by researchInterest for triage only. No candidate is crowned a discovery.';
+  'Ranked research queue sorts by researchInterest for triage only. No candidate is crowned a discovery. Positive-control rediscovery ≠ novel biology.';
 
 export const HONESTY =
-  'Application companion Soft Story / catalog discovery protocol. Not ENGINE_SHELF. Not wet-lab CRISPR replacement. Not finished biology law. Candidate scores are literature-grounded fixtures for falsifiable triage — not experimental confirmation. Φ_EGS is design grammar in honesty rails only. Literature scan is curated, not PRISMA. Do not manufacture novelty.';
+  'Application companion Soft Story / catalog discovery protocol. Not ENGINE_SHELF. Not wet-lab CRISPR replacement. Not finished biology law. Candidate scores are literature-grounded fixtures for falsifiable triage — not experimental confirmation. CBASS/Thoeris (C4) is a positive-control rediscovery case, not a claim of newly discovered biology. Discovery focus is genuinely_unexplained gap architectures. Φ_EGS is design grammar in honesty rails only. Literature scan is curated, not PRISMA. Do not manufacture novelty.';

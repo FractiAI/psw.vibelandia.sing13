@@ -1,90 +1,61 @@
 {
-  "generatedAt": "2026-10-02T15:15:59.025Z",
+  "generatedAt": "2026-10-02T17:10:19.076Z",
   "declaredWinner": null,
   "ranked": [
     {
-      "id": "C4",
-      "provisionalName": "Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar class)",
-      "role": "under_unified_lead_candidate",
-      "researchInterest": 0.5271,
+      "id": "C11",
+      "provisionalName": "ART-class unresolved RT–partner–long-repeat architectures",
+      "literatureStatus": "genuinely_unexplained",
+      "role": "gap_discovery_candidate",
+      "researchInterest": 0.4666,
       "antiBiasPass": true,
       "antiBiasNotes": "Survived primary anti-bias floors (still may be fully explained by prior literature).",
       "scores": {
-        "novelty": 0.82,
-        "recurrence": 0.7,
-        "independence": 0.75,
-        "modularity": 0.85,
-        "informationFlow": 0.9,
-        "memory": 0.48,
-        "feedback": 0.82,
-        "multiScale": 0.8,
-        "evolutionaryConstraint": 0.72,
-        "experimentalTractability": 0.68
+        "novelty": 0.9,
+        "recurrence": 0.55,
+        "independence": 0.6,
+        "modularity": 0.7,
+        "informationFlow": 0.58,
+        "memory": 0.45,
+        "feedback": 0.4,
+        "multiScale": 0.62,
+        "evolutionaryConstraint": 0.5,
+        "experimentalTractability": 0.55
       },
       "categories": [
-        "biological_homeostasis",
+        "gap_discovery",
+        "biological_memory",
         "recursive_adaptation"
       ],
-      "strongestCompetingExplanation": "Each system is a standalone abortive-infection gadget; no need for a cross-system information architecture.",
-      "falsificationTest": "If polymerase-dead alleles retain effector activation without messenger, the encode-step collapses.",
-      "predictedMolecularObservation": "Messenger accumulates after infection-relevant cues and is required for effector engagement.",
-      "predictedBiologicalPhenotype": "Polymerase KO: sensing without abortive phenotype; effector KO: messenger accumulates without cell-fate change.",
-      "minimumExperiment": "Separable polymerase/effector alleles + messenger LC-MS + phage fitness under controlled MOI.",
-      "confidence": "medium–high literature; medium as \"under-recognized unified mechanism\"",
-      "significanceIfTrue": "Would elevate second-messenger encoding as a prokaryotic information architecture peer — or predecessor in abstraction — to spacer memory.",
-      "noveltyAssessment": "High as unified architecture recognition: the surprising object is the *messenger encode step*, not another nuclease.",
-      "observedArchitecture": "Viral-state sensor → polymerase synthesizes cyclic oligonucleotide second messenger → effector binds messenger → cell-fate response (often abortive)",
-      "whyAnnotationMisses": "Polymerases, effectors, and accessory ORFs are frequently annotated as separate hypotheticals; the messenger is invisible to gene-name pipelines.",
-      "multiScalePattern": "Molecular (cOS / CD-NTase) · genetic (operon neighborhoods) · cellular (suicide / dormancy) · population (phage suppression) · evolutionary (convergent messenger chemistries)",
-      "possibleInformationFlow": "Transient infection state encoded into a small-molecule message that triggers a stereotyped effector program.",
-      "evidenceMemory": "Short-lived messenger memory of recent sensing; some systems couple to durable downstream states.",
-      "evidenceFeedback": "Cell fate removes infected hosts from the productive phage pool.",
-      "evidenceHomeostasis": "Population-level viability band under phage pressure via sacrificial cells.",
-      "knownExplanations": "CBASS/Thoeris literature describes messenger chemistry and effectors; still under-taught as a *general* sensor→encode→respond class outside specialist circles."
-    },
-    {
-      "id": "C2",
-      "provisionalName": "Directed Templated Diversification Engines (DTDEs / DGRs)",
-      "role": "under_unified_lead_candidate",
-      "researchInterest": 0.4787,
-      "antiBiasPass": true,
-      "antiBiasNotes": "Survived primary anti-bias floors (still may be fully explained by prior literature).",
-      "scores": {
-        "novelty": 0.78,
-        "recurrence": 0.72,
-        "independence": 0.7,
-        "modularity": 0.8,
-        "informationFlow": 0.84,
-        "memory": 0.62,
-        "feedback": 0.75,
-        "multiScale": 0.78,
-        "evolutionaryConstraint": 0.74,
-        "experimentalTractability": 0.7
-      },
-      "categories": [
-        "biological_learning",
-        "recursive_adaptation"
-      ],
-      "strongestCompetingExplanation": "DGRs are already explained as localized hypermutation gadgets; no broader principle required.",
-      "falsificationTest": "If VR diversity is indistinguishable from local mutation hotspots without template dependence, the templated-engine claim fails.",
-      "predictedMolecularObservation": "Template–VR pairing and RT dependence are required for localized nonsynonymous spikes.",
-      "predictedBiologicalPhenotype": "Loss of RT collapses tip diversity and reduces adaptation speed under fluctuating partners.",
-      "minimumExperiment": "RT knockout + deep VR sequencing under controlled partner fluctuation vs template-intact controls.",
-      "confidence": "medium — mechanism known; unification under-recognized",
-      "significanceIfTrue": "Would show biology can *write future diversity* on purpose — not only remember past invaders — a different information job than CRISPR.",
-      "noveltyAssessment": "High as a *unified information-processing* framing: directed rewrite for future matching, not spacer storage of past invaders.",
-      "observedArchitecture": "Reverse transcriptase + template RNA/DNA + target gene variable region → directed, mutagenic rewrite that diversifies a protein tip without rewriting the whole gene",
-      "whyAnnotationMisses": "RT, VR, and accessory ORFs are often annotated separately; co-occurrence without a cutter label looks like junk or phage debris.",
-      "multiScalePattern": "Molecular (error-prone RT) · genetic (cassette) · cellular (surface/receptor diversity) · population (escape / adhesion variants) · evolutionary (recurrent cassette architecture)",
-      "possibleInformationFlow": "Prior selective pressure is hypothesized to condition which diversified variants persist; template guides *where* diversity is written.",
-      "evidenceMemory": "Template region preserves a reference while VR accumulates directed changes.",
-      "evidenceFeedback": "Successful variants alter future host–virus or adhesion outcomes.",
-      "evidenceHomeostasis": "Diversification can keep a viable matching band under shifting partners — dynamic, not static.",
-      "knownExplanations": "Diversity-generating retroelements are published; often framed as niche mutagenesis, not as a general information architecture peer to CRISPR memory."
+      "strongestCompetingExplanation": "Phage/mobile debris or misassembled repeats around an orphan RT with no unified information job.",
+      "falsificationTest": "If partner KO + RT KO + repeat deletion produce no separable molecular intermediate and no reproducible phenotype under controlled infection/stress panels, demote from gap lead to debris.",
+      "predictedMolecularObservation": "Under inducing conditions, a partner-dependent non-genomic or atypical nucleic product accumulates that is absent in RT-dead alleles and does not match canonical DGR template–VR or retron msDNA fingerprints.",
+      "predictedBiologicalPhenotype": "Cassette-intact strains alter subsequent infection or mobile-element outcomes relative to RT-dead / partner-dead isogenics after a priming exposure — a lagged behavioral change, not only acute toxicity.",
+      "minimumExperiment": "Build RT-dead, partner-dead, and repeat-truncation alleles in one tractable host; assay nucleic products + serial infection/stress with lagged phenotype readouts.",
+      "confidence": "low–medium as architecture claim; high as unresolved-gap priority",
+      "significanceIfTrue": "Would be a previously unrecognized biological information-processing architecture (sense→encode→store→alter future behavior) — significance from the mechanism, not from AI rediscovery theater.",
+      "noveltyAssessment": "High as *unresolved architecture*: the discovery object is whether a sensor→encode→store→compare→respond loop exists at all — not another cutter.",
+      "observedArchitecture": "Unusual reverse transcriptase + adjacent poorly characterized partner gene + long repeat array co-occurring without a complete published causal chain from state sensing to altered future behavior",
+      "whyAnnotationMisses": "Components may be annotated as separate RT, hypothetical protein, and repeat region; conventional pipelines reward local neighborhoods but do not certify an information-processing loop. AI RT surveys surface the pattern; function remains open.",
+      "multiScalePattern": "Molecular (atypical RT) · genetic (partner ORF) · genomic (long repeats) · cellular (unknown) · evolutionary (recurrent RT–repeat grammar across genomes)",
+      "possibleInformationFlow": "Unknown. Candidate question: does the cassette sense a state, write a durable representation into/near the repeats, and later change host or mobile-element behavior?",
+      "evidenceMemory": "Repeat array is a plausible durable store — not proven as state memory.",
+      "evidenceFeedback": "Not established; phenotype unmapped.",
+      "evidenceHomeostasis": "Not established.",
+      "knownExplanations": "No adequate published mechanism equates this class to CRISPR, DGR, retron defense, or CBASS. Competing mundane accounts: selfish mobile debris, assembly artifact, or unfinished annotation of a known class.",
+      "sixPointGap": {
+        "sensesState": "unknown — hypothesized phage / mobile-element / stress encounter",
+        "encodesRepresentation": "hypothesized via RT products + long repeat array",
+        "storesRepresentation": "long repeat array + partner gene products (unproven)",
+        "retrievesOrCompares": "unmapped",
+        "altersFutureBehavior": "unresolved phenotype",
+        "previouslyUnrecognized": true
+      }
     },
     {
       "id": "C7",
       "provisionalName": "Chromatin epigenetic state recorders",
+      "literatureStatus": "known",
       "role": "known_peer_low_novelty",
       "researchInterest": 0.4395,
       "antiBiasPass": true,
@@ -121,11 +92,13 @@
       "evidenceMemory": "Mitotic and some transgenerational mark retention (taxon-dependent).",
       "evidenceFeedback": "Expression changes alter metabolism and further marking.",
       "evidenceHomeostasis": "Keeps expression in viable bands under fluctuating cues.",
-      "knownExplanations": "Vast epigenetics literature; SING13 Soft Story peers exist (histone / phase-lock papers)."
+      "knownExplanations": "Vast epigenetics literature; SING13 Soft Story peers exist (histone / phase-lock papers).",
+      "sixPointGap": null
     },
     {
       "id": "C8",
       "provisionalName": "Prion / conformational protein memory",
+      "literatureStatus": "partially_known",
       "role": "active_research_candidate",
       "researchInterest": 0.4245,
       "antiBiasPass": true,
@@ -160,11 +133,55 @@
       "evidenceMemory": "Conformational inheritance without DNA sequence change.",
       "evidenceFeedback": "Phenotype can reinforce conditions favoring the fold.",
       "evidenceHomeostasis": "Usually pathological; some yeast prions act as bet-hedging switches.",
-      "knownExplanations": "Prion biology is published; SING13 Soft Story peer exists (prion-refold paper)."
+      "knownExplanations": "Prion biology is published; SING13 Soft Story peer exists (prion-refold paper).",
+      "sixPointGap": null
+    },
+    {
+      "id": "C2",
+      "provisionalName": "Directed Templated Diversification Engines (DTDEs / DGRs)",
+      "literatureStatus": "partially_known",
+      "role": "active_research_candidate",
+      "researchInterest": 0.4239,
+      "antiBiasPass": true,
+      "antiBiasNotes": "Survived primary anti-bias floors (still may be fully explained by prior literature).",
+      "scores": {
+        "novelty": 0.62,
+        "recurrence": 0.72,
+        "independence": 0.7,
+        "modularity": 0.8,
+        "informationFlow": 0.84,
+        "memory": 0.62,
+        "feedback": 0.75,
+        "multiScale": 0.78,
+        "evolutionaryConstraint": 0.74,
+        "experimentalTractability": 0.7
+      },
+      "categories": [
+        "biological_learning",
+        "recursive_adaptation"
+      ],
+      "strongestCompetingExplanation": "DGRs are already explained as localized hypermutation gadgets; no broader principle required.",
+      "falsificationTest": "If VR diversity is indistinguishable from local mutation hotspots without template dependence, the templated-engine claim fails.",
+      "predictedMolecularObservation": "Template–VR pairing and RT dependence are required for localized nonsynonymous spikes.",
+      "predictedBiologicalPhenotype": "Loss of RT collapses tip diversity and reduces adaptation speed under fluctuating partners.",
+      "minimumExperiment": "RT knockout + deep VR sequencing under controlled partner fluctuation vs template-intact controls.",
+      "confidence": "medium — mechanism known; unification under-recognized",
+      "significanceIfTrue": "Would show biology can *write future diversity* on purpose — not only remember past invaders — a different information job than CRISPR.",
+      "noveltyAssessment": "High as a *unified information-processing* framing: directed rewrite for future matching, not spacer storage of past invaders.",
+      "observedArchitecture": "Reverse transcriptase + template RNA/DNA + target gene variable region → directed, mutagenic rewrite that diversifies a protein tip without rewriting the whole gene",
+      "whyAnnotationMisses": "RT, VR, and accessory ORFs are often annotated separately; co-occurrence without a cutter label looks like junk or phage debris.",
+      "multiScalePattern": "Molecular (error-prone RT) · genetic (cassette) · cellular (surface/receptor diversity) · population (escape / adhesion variants) · evolutionary (recurrent cassette architecture)",
+      "possibleInformationFlow": "Prior selective pressure is hypothesized to condition which diversified variants persist; template guides *where* diversity is written.",
+      "evidenceMemory": "Template region preserves a reference while VR accumulates directed changes.",
+      "evidenceFeedback": "Successful variants alter future host–virus or adhesion outcomes.",
+      "evidenceHomeostasis": "Diversification can keep a viable matching band under shifting partners — dynamic, not static.",
+      "knownExplanations": "Diversity-generating retroelements are published; often framed as niche mutagenesis, not as a general information architecture peer to CRISPR memory.",
+      "sixPointGap": null
     },
     {
       "id": "C5",
       "provisionalName": "piRNA cluster / TE silencing memory",
+      "literatureStatus": "known",
       "role": "known_peer_low_novelty",
       "researchInterest": 0.4055,
       "antiBiasPass": true,
@@ -200,11 +217,13 @@
       "evidenceMemory": "Cluster content is heritable sequence memory of TE families.",
       "evidenceFeedback": "Silencing success changes TE load and subsequent cluster evolution.",
       "evidenceHomeostasis": "Keeps TE activity in a viable band for germline integrity.",
-      "knownExplanations": "piRNA pathway is extensively published in animals."
+      "knownExplanations": "piRNA pathway is extensively published in animals.",
+      "sixPointGap": null
     },
     {
       "id": "C3",
       "provisionalName": "Retron / multicopy ssDNA reverse-transcript writers",
+      "literatureStatus": "partially_known",
       "role": "active_research_candidate",
       "researchInterest": 0.4024,
       "antiBiasPass": true,
@@ -240,11 +259,62 @@
       "evidenceMemory": "msDNA can persist as a molecular product reflecting cassette state.",
       "evidenceFeedback": "Defense activation alters survival under phage load.",
       "evidenceHomeostasis": "Abortive infection trades cell death for population protection.",
-      "knownExplanations": "Retrons explained as msDNA producers; phage-defense coupling increasingly documented."
+      "knownExplanations": "Retrons explained as msDNA producers; phage-defense coupling increasingly documented.",
+      "sixPointGap": null
+    },
+    {
+      "id": "C12",
+      "provisionalName": "Orphan cyclic-messenger synthases without mapped effectors",
+      "literatureStatus": "genuinely_unexplained",
+      "role": "gap_discovery_candidate",
+      "researchInterest": 0.3922,
+      "antiBiasPass": true,
+      "antiBiasNotes": "Survived primary anti-bias floors (still may be fully explained by prior literature).",
+      "scores": {
+        "novelty": 0.86,
+        "recurrence": 0.5,
+        "independence": 0.55,
+        "modularity": 0.75,
+        "informationFlow": 0.52,
+        "memory": 0.35,
+        "feedback": 0.38,
+        "multiScale": 0.58,
+        "evolutionaryConstraint": 0.45,
+        "experimentalTractability": 0.5
+      },
+      "categories": [
+        "gap_discovery",
+        "biological_homeostasis"
+      ],
+      "strongestCompetingExplanation": "Pseudogenized or horizontally fragmented CBASS fragments with no functional information loop.",
+      "falsificationTest": "If synthase-active alleles produce no diffusible messenger *and* no phenotype vs catalytic-dead controls across infection panels, treat as non-functional debris.",
+      "predictedMolecularObservation": "Catalytically intact orphan synthases produce a detectable cyclic nucleotide / oligo under inducing conditions that does not match the host’s annotated CBASS messenger set — or no product (kill case).",
+      "predictedBiologicalPhenotype": "Messenger-positive orphans alter phage or stress outcomes only when a previously unannotated remote partner is present; remote-partner deletion abolishes phenotype while messenger still accumulates.",
+      "minimumExperiment": "Heterologous expression of orphan synthase ± genome-wide remote-partner screen + LC-MS messenger profiling + phage assays.",
+      "confidence": "low — high kill risk; valuable negative-result machine",
+      "significanceIfTrue": "Would extend second-messenger immune logic into unrecognized remote wiring — a systems-level architecture conventional local annotation misses.",
+      "noveltyAssessment": "High as gap: either novel effector classes / remote wiring, or systematic false positives the protocol must learn to kill.",
+      "observedArchitecture": "CD-NTase / TIR-like domains that look like messenger encoders occurring without annotated Cap / NADase / pore-forming effectors in the same neighborhood — incomplete CBASS-like grammar",
+      "whyAnnotationMisses": "Synthase ORFs are labeled; missing effectors look like annotation gaps or truncated operons. Relational search asks whether remote effectors, novel messengers, or non-immune roles complete an unrecognized loop.",
+      "multiScalePattern": "Molecular (synthase) · genetic (incomplete operons) · genomic (dispersed loci) · cellular (unknown) · evolutionary (partial cassettes recur)",
+      "possibleInformationFlow": "Hypothesized encode step without a proven retrieve/respond partner — either a true gap architecture or a broken cassette.",
+      "evidenceMemory": "Messenger chemistry would be short-term encoding if product exists.",
+      "evidenceFeedback": "Unknown without effector.",
+      "evidenceHomeostasis": "Unknown.",
+      "knownExplanations": "Incomplete / degraded CBASS cassettes, misannotation, or remote effector unused by current HMM catalogs. Complete CBASS is explained; *orphan synthase neighborhoods* are not.",
+      "sixPointGap": {
+        "sensesState": "plausible (sensor domains sometimes present)",
+        "encodesRepresentation": "plausible cyclic nucleotide / oligo product",
+        "storesRepresentation": "short-lived messenger — incomplete without effector",
+        "retrievesOrCompares": "unmapped if effector absent",
+        "altersFutureBehavior": "unmapped phenotype",
+        "previouslyUnrecognized": true
+      }
     },
     {
       "id": "C10",
       "provisionalName": "Integron cassette capture as adaptive genomic encoding",
+      "literatureStatus": "partially_known",
       "role": "active_research_candidate",
       "researchInterest": 0.3825,
       "antiBiasPass": true,
@@ -281,11 +351,63 @@
       "evidenceMemory": "Array content is durable genomic memory of acquired cassettes.",
       "evidenceFeedback": "Expression and selection reshape which cassettes persist.",
       "evidenceHomeostasis": "Expands response repertoire under antibiotic/stress regimes.",
-      "knownExplanations": "Integron literature is established in antibiotic resistance."
+      "knownExplanations": "Integron literature is established in antibiotic resistance.",
+      "sixPointGap": null
+    },
+    {
+      "id": "C13",
+      "provisionalName": "Cryptic variable-region diversifiers without canonical DGR annotation",
+      "literatureStatus": "genuinely_unexplained",
+      "role": "gap_discovery_candidate",
+      "researchInterest": 0.3715,
+      "antiBiasPass": true,
+      "antiBiasNotes": "Survived primary anti-bias floors (still may be fully explained by prior literature).",
+      "scores": {
+        "novelty": 0.84,
+        "recurrence": 0.48,
+        "independence": 0.52,
+        "modularity": 0.68,
+        "informationFlow": 0.6,
+        "memory": 0.5,
+        "feedback": 0.55,
+        "multiScale": 0.6,
+        "evolutionaryConstraint": 0.48,
+        "experimentalTractability": 0.48
+      },
+      "categories": [
+        "gap_discovery",
+        "biological_learning",
+        "recursive_adaptation"
+      ],
+      "strongestCompetingExplanation": "Sequencing/assembly artifact or ordinary mutational hotspots near RTs.",
+      "falsificationTest": "If diversity spikes disappear under higher-quality long-read assemblies *or* persist but are RT- and template-independent, demote the directed-engine claim.",
+      "predictedMolecularObservation": "Long-read validation retains a template–VR dependency; RT-dead alleles flatten nonsynonymous VR spikes that wild-type maintains under partner fluctuation.",
+      "predictedBiologicalPhenotype": "Cryptic-cassette intact lineages adapt host-range or adhesion faster across serial partner shifts than RT-dead isogenics — without acquiring CRISPR spacers.",
+      "minimumExperiment": "Long-read reassembly of top cryptic loci + RT KO + VR deep sequencing under controlled partner fluctuation.",
+      "confidence": "low–medium; artifact risk explicit",
+      "significanceIfTrue": "Would enlarge the family of future-diversity writers beyond catalogued DGRs — unrecognized information architecture, not rediscovered CBASS.",
+      "noveltyAssessment": "High as gap discovery among unexplained diversity engines; low if all reduce to known DGRs after better annotation.",
+      "observedArchitecture": "RT-adjacent loci showing VR-like diversity spikes without a clear annotated template–VR pair — possible unrecognized directed diversification engines",
+      "whyAnnotationMisses": "DGR HMMs miss noncanonical cassettes; diversity looks like ordinary mutation or assembly noise unless template dependence is tested.",
+      "multiScalePattern": "Molecular (RT) · genetic (cryptic cassette) · genomic (diversity hotspots) · population (allele spectra) · evolutionary (recurrent RT–diversity neighborhoods)",
+      "possibleInformationFlow": "If real: template-guided writing of future tip diversity that changes subsequent matching behavior — a different job than spacer memory of past invaders.",
+      "evidenceMemory": "VR ensemble as stored possibility space — only if template-dependent.",
+      "evidenceFeedback": "Successful tips alter future infection/adhesion odds — unproven for cryptic set.",
+      "evidenceHomeostasis": "Possible dynamic matching band — unproven.",
+      "knownExplanations": "Canonical DGRs are explained. Cryptic diversifiers may be assembly artifacts, sequencing error, or unannotated true DGRs — the *unexplained* object is which metagenomic VR-like spikes are directed engines.",
+      "sixPointGap": {
+        "sensesState": "unknown selective regime",
+        "encodesRepresentation": "hypothesized template-guided rewrite",
+        "storesRepresentation": "variable region sequence ensemble",
+        "retrievesOrCompares": "protein tip vs environment (hypothesized)",
+        "altersFutureBehavior": "hypothesized host-range / adhesion change",
+        "previouslyUnrecognized": true
+      }
     },
     {
       "id": "C6",
       "provisionalName": "Toxin–antitoxin / abortive-infection population switches",
+      "literatureStatus": "known",
       "role": "known_peer_low_novelty",
       "researchInterest": 0.348,
       "antiBiasPass": true,
@@ -320,11 +442,13 @@
       "evidenceMemory": "Some TA systems couple to persister states (temporary program memory).",
       "evidenceFeedback": "Abort reduces phage burst; survivors reshape next generation.",
       "evidenceHomeostasis": "Classic deviation→corrective response at colony scale.",
-      "knownExplanations": "Large TA / Abi literature."
+      "knownExplanations": "Large TA / Abi literature.",
+      "sixPointGap": null
     },
     {
       "id": "C9",
       "provisionalName": "Restriction–modification / DNA Argonaute neighborhood defense",
+      "literatureStatus": "known",
       "role": "known_peer_low_novelty",
       "researchInterest": 0.3325,
       "antiBiasPass": true,
@@ -360,11 +484,56 @@
       "evidenceMemory": "Methylation state is a standing self-signature (not event chronology like CRISPR).",
       "evidenceFeedback": "Cleavage alters phage success and selection on motifs.",
       "evidenceHomeostasis": "Keeps foreign DNA load in a viable band.",
-      "knownExplanations": "Classical R-M; growing pAgo literature."
+      "knownExplanations": "Classical R-M; growing pAgo literature.",
+      "sixPointGap": null
+    },
+    {
+      "id": "C4",
+      "provisionalName": "Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar class)",
+      "literatureStatus": "positive_control",
+      "role": "positive_control_framework_validation",
+      "researchInterest": 0.1496,
+      "antiBiasPass": true,
+      "antiBiasNotes": "Survived primary anti-bias floors (still may be fully explained by prior literature).",
+      "scores": {
+        "novelty": 0.22,
+        "recurrence": 0.88,
+        "independence": 0.8,
+        "modularity": 0.85,
+        "informationFlow": 0.92,
+        "memory": 0.48,
+        "feedback": 0.85,
+        "multiScale": 0.84,
+        "evolutionaryConstraint": 0.8,
+        "experimentalTractability": 0.78
+      },
+      "categories": [
+        "biological_homeostasis",
+        "recursive_adaptation",
+        "positive_control"
+      ],
+      "strongestCompetingExplanation": "Published CBASS literature already fully explains the causal chain — treat as framework validation, not a discovery claim.",
+      "falsificationTest": "Framework-validation experiment: if polymerase-dead vs effector-dead alleles fail to separate messenger from phenotype as published work predicts, the *search framing* of encode-step recovery is unreliable and must be revised before trusting gap leads.",
+      "predictedMolecularObservation": "Messenger accumulates after infection-relevant cues and is required for effector engagement (replicates known CBASS biochemistry).",
+      "predictedBiologicalPhenotype": "Polymerase KO: sensing without abortive phenotype; effector KO: messenger accumulates without cell-fate change.",
+      "minimumExperiment": "Separable polymerase/effector alleles + messenger LC-MS + phage fitness under controlled MOI — used to validate protocol recovery, not to claim novelty.",
+      "confidence": "high as known mechanism; high as positive-control role; zero as \"new architecture discovery\"",
+      "significanceIfTrue": "Validates that the methodology recovers distributed information-flow architectures. Then point the same machinery at genuinely unexplained gaps.",
+      "noveltyAssessment": "Low as new biology. High as *positive-control* for the protocol: can multi-scale relational search rediscover a known distributed sensor→encode→respond architecture from first principles?",
+      "observedArchitecture": "Viral-state sensor → polymerase synthesizes cyclic oligonucleotide second messenger → effector binds messenger → cell-fate response (often abortive)",
+      "whyAnnotationMisses": "Polymerases, effectors, and accessory ORFs are frequently annotated as separate hypotheticals; the messenger is invisible to gene-name pipelines — useful for testing whether relational search recovers distributed info-flow.",
+      "multiScalePattern": "Molecular (cOS / CD-NTase) · genetic (operon neighborhoods) · cellular (suicide / dormancy) · population (phage suppression) · evolutionary (convergent messenger chemistries)",
+      "possibleInformationFlow": "Transient infection state encoded into a small-molecule message that triggers a stereotyped effector program.",
+      "evidenceMemory": "Short-lived messenger memory of recent sensing; some systems couple to durable downstream states.",
+      "evidenceFeedback": "Cell fate removes infected hosts from the productive phage pool.",
+      "evidenceHomeostasis": "Population-level viability band under phage pressure via sacrificial cells.",
+      "knownExplanations": "CBASS / Thoeris / Pycsar are extensively characterized: phage detection → CD-NTase / TIR → cyclic nucleotide messenger → Cap / effector → defense or cell death. Large-scale surveys report thousands of CBASS systems. This is NOT newly discovered biology.",
+      "sixPointGap": null
     },
     {
       "id": "C1",
       "provisionalName": "CRISPR-Cas adaptive spacer memory",
+      "literatureStatus": "known",
       "role": "baseline_known_adaptive_immunity",
       "researchInterest": 0.1462,
       "antiBiasPass": true,
@@ -401,23 +570,32 @@
       "evidenceMemory": "Spacer arrays retain chronological infection history in many systems.",
       "evidenceFeedback": "Primed acquisition and autoimmunity avoidance loops.",
       "evidenceHomeostasis": "Abortive outcomes and regulated expression tune host viability under phage pressure.",
-      "knownExplanations": "Mature CRISPR literature explains spacer acquisition, interference, and regulation in detail."
+      "knownExplanations": "Mature CRISPR literature explains spacer acquisition, interference, and regulation in detail.",
+      "sixPointGap": null
     }
   ],
   "ultimate": {
-    "mostSurprisingArchitecture": {
+    "frameworkValidation": {
       "id": "C4",
       "provisionalName": "Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar class)",
-      "statement": "Second-messenger cyclic oligonucleotide immune hubs (CBASS / Thoeris / Pycsar class): infection state is encoded into a small-molecule message that triggers cell-fate effectors. Conventional annotation often lists polymerase and effector ORFs separately; the unified sensor→encode→respond architecture is still under-recognized relative to CRISPR spacer memory.",
-      "whyNotCrisprLookalike": "Lead is chosen for under-explained information-flow architecture, not resemblance to DNA cutting.",
-      "confidence": "medium–high literature; medium as \"under-recognized unified mechanism\""
+      "statement": "Positive-control rediscovery: cyclic-oligonucleotide immune signaling (CBASS / Thoeris / Pycsar) is already experimentally characterized (sensor → cyclic nucleotide messenger → effector → cell fate). The protocol’s job here is to recover that distributed information-flow architecture from first principles — demonstrating methodological reach — not to claim newly discovered biology.",
+      "role": "positive_control_framework_validation"
+    },
+    "mostSurprisingArchitecture": {
+      "id": "C11",
+      "provisionalName": "ART-class unresolved RT–partner–long-repeat architectures",
+      "literatureStatus": "genuinely_unexplained",
+      "statement": "Most surprising *gap* architecture under current fixtures: ART-class unresolved RT–partner–long-repeat cassettes. Components co-occur; the complete sense→encode→store→compare→respond loop is not adequately explained in published work. This is a discovery target, not a rediscovery trophy.",
+      "whyNotCrisprLookalike": "Lead is chosen for unexplained or under-explained information-flow architecture after anti-bias — not resemblance to DNA cutting, and not CBASS rediscovery.",
+      "whyNotPositiveControl": "CBASS/Thoeris remains the framework-validation case; discovery focus requires literatureStatus genuinely_unexplained (or strongest remaining active gap).",
+      "confidence": "low–medium as architecture claim; high as unresolved-gap priority"
     },
     "novelTestablePrediction": {
       "yes": true,
-      "prediction": "Separable polymerase-dead vs effector-dead alleles will produce opposite molecular signatures under matched MOI: polymerase-dead → no cyclic messenger accumulation and no abortive phenotype; effector-dead → messenger accumulates without cell-fate change. This double dissociation is not entailed by “find another CRISPR-like cutter” search criteria and falsifies a pure nuclease-centric model of the cassette.",
+      "prediction": "After a controlled priming exposure, ART-class cassette-intact strains will show a lagged change in infection or mobile-element outcomes versus RT-dead and partner-dead isogenics, accompanied by a partner-dependent nucleic product that does not match canonical DGR template–VR or retron msDNA fingerprints. Search criteria asked for sense→encode→store→respond architectures generally; they did not specify this lagged isogenic dissociation for unresolved RT–partner–repeat cassettes.",
       "notInSearchCriteria": true
     },
-    "higherOrderHypothesis": "Biological state can be observed, encoded, retained, compared, and used to modify future state — supported as a recurring relational pattern across several known systems, but NOT as a claim that Infinite Octave vocabulary is required to explain them.",
-    "honesty": "Answers are literature-grounded triage conclusions from fixture scores. Not wet-lab discovery. Not ENGINE_SHELF physics. Prefer falsification over confirmation."
+    "higherOrderHypothesis": "Biological state can be observed, encoded, retained, compared, and used to modify future state — supported as a recurring relational pattern across several *known* systems (CRISPR, CBASS, DGR, …). The open discovery question is whether AI multi-scale relational search can surface previously unrecognized members of that family — not whether it can rediscover CBASS.",
+    "honesty": "Answers are literature-grounded triage conclusions from fixture scores. Not wet-lab discovery. Not ENGINE_SHELF physics. Prefer falsification over confirmation. Positive-control ≠ novelty."
   }
 }

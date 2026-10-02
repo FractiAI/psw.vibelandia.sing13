@@ -28,18 +28,27 @@ describe('beyond-crispr biological discovery', () => {
     }
   });
 
-  it('keeps CRISPR as baseline, never under-unified lead', () => {
+  it('keeps CRISPR as baseline and C4 as positive control, never gap discovery', () => {
     const queue = buildResearchQueue();
     expect(queue.declaredWinner).toBeNull();
     const c1 = queue.ranked.find((r) => r.id === 'C1');
     expect(c1?.role).toBe('baseline_known_adaptive_immunity');
+    const c4 = queue.ranked.find((r) => r.id === 'C4');
+    expect(c4?.role).toBe('positive_control_framework_validation');
+    expect(c4?.literatureStatus).toBe('positive_control');
     expect(
-      queue.ranked.some((r) => r.role === 'under_unified_lead_candidate' && r.id === 'C1'),
+      queue.ranked.some((r) => r.role === 'gap_discovery_candidate' && r.id === 'C1'),
     ).toBe(false);
+    expect(
+      queue.ranked.some((r) => r.role === 'gap_discovery_candidate' && r.id === 'C4'),
+    ).toBe(false);
+    expect(queue.gapDiscoveryIds.length).toBeGreaterThanOrEqual(1);
   });
 
-  it('answers ultimate questions with a novel prediction not in search criteria', () => {
+  it('answers ultimate questions with a gap lead and novel prediction not in search criteria', () => {
     const answers = answerUltimateQuestions();
+    expect(answers.frameworkValidation?.id).toBe('C4');
+    expect(answers.mostSurprisingArchitecture.id).not.toBe('C4');
     expect(answers.mostSurprisingArchitecture.statement.length).toBeGreaterThan(40);
     expect(answers.novelTestablePrediction.yes).toBe(true);
     expect(answers.novelTestablePrediction.notInSearchCriteria).toBe(true);

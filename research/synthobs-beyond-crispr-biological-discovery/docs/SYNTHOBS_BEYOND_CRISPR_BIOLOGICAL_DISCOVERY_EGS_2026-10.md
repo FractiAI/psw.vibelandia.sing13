@@ -17,7 +17,9 @@ This paper runs a **discovery protocol**, not a slogan confirmation. Starting fr
 
 We deliberately **do not** hunt for another DNA-cutting enzyme. We do **not** require Infinite Octave, fractal, holographic, φ, or Goldilocks vocabulary as confirmatory goals. Operational “fractal” here means **recurring relational structure across biological scales** (molecular → genetic → genomic → cellular → organism → population → evolutionary).
 
-The suite scores ten candidates on independent axes, attempts **falsification / anti-bias controls first**, produces a **ranked research queue without declaring a winner**, and answers two ultimate questions: (1) what under-unified architecture is most responsibly surprising, and (2) whether a novel, experimentally testable prediction follows that was not baked into the search criteria.
+The suite scores thirteen candidates on independent axes, classifies each as **known / partially_known / genuinely_unexplained / positive_control**, attempts **falsification / anti-bias controls first**, runs **blind discovery phases** with a 3–5 shortlist that excludes rediscovery trophies, produces a **ranked research queue without declaring a winner**, and answers two ultimate questions: (1) what *gap* architecture is most responsibly surprising after positive-control validation, and (2) whether a novel, experimentally testable prediction follows that was not baked into the search criteria.
+
+**Correction lock:** CBASS / Thoeris / Pycsar (**C4**) is a **positive-control rediscovery** case — experimentally characterized sensor → cyclic nucleotide messenger → effector logic — used to show the protocol can recover distributed information-flow architectures. It is **not** claimed as newly discovered biology.
 
 ---
 
@@ -98,21 +100,36 @@ Each candidate is scored 0–1 on:
 
 ## 7. Candidate set (fixture literature triage)
 
-| ID | Provisional name | Role |
-|----|------------------|------|
-| C1 | CRISPR-Cas adaptive spacer memory | Baseline known adaptive immunity |
-| C2 | Directed Templated Diversification Engines (DGRs) | Active / under-unified peer |
-| C3 | Retron / multicopy ssDNA RT writers | Active research candidate |
-| C4 | Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar) | Under-unified lead candidate |
-| C5 | piRNA cluster / TE silencing memory | Known peer |
-| C6 | Toxin–antitoxin / abortive-infection switches | Known peer |
-| C7 | Chromatin epigenetic state recorders | Known multi-scale peer |
-| C8 | Prion / conformational protein memory | Non-nucleic memory peer |
-| C9 | Restriction–modification / DNA Argonaute | Pre-CRISPR nucleic defense peer |
-| C10 | Integron cassette capture | Genomic learning / HGT peer |
+| ID | Provisional name | Literature status | Role |
+|----|------------------|-------------------|------|
+| C1 | CRISPR-Cas adaptive spacer memory | known | Baseline known adaptive immunity |
+| C2 | Directed Templated Diversification Engines (DGRs) | partially_known | Active research (future-diversity writer) |
+| C3 | Retron / multicopy ssDNA RT writers | partially_known | Active research candidate |
+| C4 | Cyclic oligonucleotide signaling hubs (CBASS / Thoeris / Pycsar) | **positive_control** | Framework validation — **not** a novelty claim |
+| C5 | piRNA cluster / TE silencing memory | known | Known peer |
+| C6 | Toxin–antitoxin / abortive-infection switches | known | Known peer |
+| C7 | Chromatin epigenetic state recorders | known | Known multi-scale peer |
+| C8 | Prion / conformational protein memory | partially_known | Non-nucleic memory peer |
+| C9 | Restriction–modification / DNA Argonaute | known | Pre-CRISPR nucleic defense peer |
+| C10 | Integron cassette capture | partially_known | Genomic learning / HGT peer |
+| C11 | ART-class unresolved RT–partner–long-repeat architectures | **genuinely_unexplained** | Gap discovery lead class |
+| C12 | Orphan cyclic-messenger synthases without mapped effectors | **genuinely_unexplained** | Gap discovery (kill-if-fails) |
+| C13 | Cryptic VR diversifiers without canonical DGR annotation | **genuinely_unexplained** | Gap discovery (artifact risk explicit) |
 
-Full deliverable fields (architecture, miss reasons, evidence, falsification, predictions, confidence, significance) live in `src/candidates.mjs` and `data/research_queue.json`.
+Full deliverable fields (architecture, miss reasons, evidence, falsification, predictions, confidence, significance, six-point gap checklist) live in `src/candidates.mjs` and `data/research_queue.json`.
 
+### 7.1 What would count as a major discovery
+
+A gap candidate becomes scientifically major only if wet-lab work supports:
+
+1. senses an external/internal state,  
+2. converts it into an information representation,  
+3. stores that representation,  
+4. retrieves or compares it later,  
+5. changes future behavior,  
+6. through a mechanism **not previously recognized**.
+
+Rediscovering CBASS does **not** satisfy (6). That is intentional.
 ---
 
 ## 8. Methods / Reproducibility
@@ -131,12 +148,22 @@ npm run research:synthobs-beyond-crispr-biological-discovery
 | E2 | No Infinite Octave / fractal confirmation slogans |
 | E3 | Ten independent score axes complete |
 | E4 | Curated literature / data scan (≥8 pointers) |
-| E5 | Ranked research queue · `declaredWinner = null` · CRISPR not lead |
-| E6 | Ultimate architecture + novel prediction not in search criteria |
+| E5 | Ranked research queue · `declaredWinner = null` · C4 = positive control |
+| E6 | Gap architecture + novel prediction · C4 not discovery lead |
 | E7 | Monorepo paper + ship-blog pointers |
 | E8 | Multi-band scale coverage (operational fractal) |
+| E9 | Blind discovery phases + unexplained-gap shortlist (excludes positive control) |
 
 **Outputs:** `data/empirical_report.{json,md}` · `data/research_queue.json`
+
+**Blind discovery phases (computational):**
+
+1. Blind seeds (architecture-only; no preferred lead labeled)  
+2. Independent literature class: known / partially_known / genuinely_unexplained / positive_control  
+3. Shortlist 3–5 (exclude baseline + positive control)  
+4. One falsifiable prediction per shortlisted candidate  
+5. Wet-lab (documented follow-up — cheapest clean prediction first)  
+6. Kill if it fails  
 
 **Phase 2b (documented follow-up):** live multi-provider Lattice Chat discovery sessions with the same anti-bias prompt — requires separate privacy / cost protocol; not claimed by this land.
 
@@ -147,26 +174,31 @@ npm run research:synthobs-beyond-crispr-biological-discovery
 Regenerate with the pipeline. Expected shape when all gates pass:
 
 - All candidates survive primary anti-bias floors (still may be fully explained).  
-- Queue ranks under-unified / active candidates above cutter-novelty temptation.  
+- **C4** classified as `positive_control_framework_validation` — CBASS rediscovery for methodology, **not** novelty.  
+- Gap shortlist prioritizes **C11 / C12 / C13** (`genuinely_unexplained`) before partially_known actives.  
 - **Declared winner:** `null`.  
-- Lead under-unified architecture (typical): **C4 cyclic oligonucleotide signaling hubs** — sensor → second-messenger encode → effector → cell fate.  
-- Strong peer: **C2 DTDEs / DGRs** — directed rewrite for future diversity, not spacer storage of past invaders.
+- Discovery lead (typical): **C11 ART-class unresolved RT–partner–long-repeat architectures**.  
+- Strong known peers for framing contrast: **C2 DGRs** (future-diversity writing) · CRISPR baseline · CBASS positive control.
 
-### 9.1 Ultimate question 1
+### 9.1 Framework validation (not a discovery claim)
 
-**Most surprising architecture responsibly inferred:** second-messenger cyclic oligonucleotide immune hubs (CBASS / Thoeris / Pycsar class). Conventional annotation often lists polymerase and effector ORFs separately; the unified **encode-as-messenger** step is under-recognized relative to CRISPR spacer memory. This is **not** “another CRISPR.”
+**Positive control:** The search independently converges on cyclic-oligonucleotide immune signaling as a high-value example of distributed biological information processing (sensor → messenger encode → effector → cell fate). Published work already characterizes that chain. Success here means: *the methodology recovers architectures whose information flow is distributed across components annotation often files separately.*
 
-### 9.2 Ultimate question 2
+### 9.2 Ultimate question 1 (gap focus)
 
-**Novel prediction (not in search criteria):** separable polymerase-dead vs effector-dead alleles under matched MOI should yield opposite signatures — polymerase-dead: no messenger, no abortive phenotype; effector-dead: messenger accumulates without cell-fate change. That double dissociation is not entailed by “find another cutter.”
+**Most surprising architecture responsibly inferred as a discovery target:** ART-class unresolved RT–partner–long-repeat cassettes (**C11**). Conventional annotation sees an unusual RT, a partner ORF, and a long repeat array; the complete sense→encode→store→compare→respond loop is **not** adequately explained. This is **not** “another CRISPR,” and it is **not** rediscovered CBASS.
 
-If wet-lab work falsifies the dissociation, demote C4’s encode-step claim.
+### 9.3 Ultimate question 2
+
+**Novel prediction (not in search criteria):** after a controlled priming exposure, ART-class cassette-intact strains should show a lagged change in infection or mobile-element outcomes versus RT-dead and partner-dead isogenics, with a partner-dependent nucleic product that does not match canonical DGR template–VR or retron msDNA fingerprints.
+
+If wet-lab work falsifies that dissociation — or yields only debris — demote C11 and promote the next shortlisted gap (**C12** orphan messenger synthases · **C13** cryptic diversifiers) or conclude the higher-order hypothesis remains unsupported beyond known systems.
 
 ---
 
 ## 10. Literature and data scan
 
-Curated pointers in `src/literature-scan.mjs` (CRISPR baselines, DGRs, retrons, CBASS/Thoeris, piRNA, TA, epigenetics, prions, integrons, pAgo, AI co-occurrence method peer).
+Curated pointers in `src/literature-scan.mjs` (CRISPR baselines, DGRs, retrons, CBASS/Thoeris positive-control depth, piRNA, TA, epigenetics, prions, integrons, pAgo, AI co-occurrence / ART-class method peers, DGR biotech application class).
 
 **Honesty:** curated scan for protocol design — not PRISMA, not CODATA, not Infinite Octaves proof.
 
@@ -186,7 +218,8 @@ Related SING13 Soft Story peers (contrast, not proof): Self-Observing Genome · 
 |------------|--------|
 | Catalog discovery protocol + regenerable fixture queue | **Operational** |
 | Literature-grounded candidate triage | **Soft Story / curated** |
-| Wet-lab confirmation of novel biology | **Not claimed** |
+| CBASS/Thoeris as newly discovered biology | **Not claimed** — positive-control rediscovery only |
+| Wet-lab confirmation of novel gap architectures (C11–C13) | **Not claimed** — falsifiable targets |
 | CRISPR replacement therapy / clinical advice | **Not claimed** |
 | Infinite Octaves / Φ_EGS as biological law | **Not claimed** (`Φ_EGS` honesty-rail only) |
 | ENGINE_SHELF pin | **No** — application companion |

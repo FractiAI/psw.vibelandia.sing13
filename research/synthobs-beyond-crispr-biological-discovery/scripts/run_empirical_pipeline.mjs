@@ -55,14 +55,34 @@ function mdReport(report) {
   lines.push('');
   lines.push('## Ultimate answers');
   lines.push('');
-  lines.push(`**Most surprising architecture:** ${report.results.ultimate.mostSurprisingArchitecture.provisionalName}`);
+  if (report.results.ultimate.frameworkValidation) {
+    lines.push(
+      `**Framework validation (positive control):** ${report.results.ultimate.frameworkValidation.provisionalName}`,
+    );
+    lines.push('');
+    lines.push(report.results.ultimate.frameworkValidation.statement);
+    lines.push('');
+  }
+  lines.push(
+    `**Most surprising gap architecture:** ${report.results.ultimate.mostSurprisingArchitecture.provisionalName}`,
+  );
   lines.push('');
   lines.push(report.results.ultimate.mostSurprisingArchitecture.statement);
   lines.push('');
   if (report.results.ultimate.novelTestablePrediction.yes) {
-    lines.push('**Novel prediction:**');
+    lines.push('**Novel prediction (gap lead):**');
     lines.push('');
     lines.push(report.results.ultimate.novelTestablePrediction.prediction);
+  }
+  if (report.results.blindDiscovery) {
+    lines.push('');
+    lines.push('## Blind discovery shortlist');
+    lines.push('');
+    for (const row of report.results.blindDiscovery.shortlist) {
+      lines.push(
+        `- **${row.id}** · ${row.literatureStatus} · interest=${row.researchInterest}`,
+      );
+    }
   }
   lines.push('');
   lines.push('## Experiments');

@@ -1,6 +1,6 @@
 /**
  * Orchestrate Beyond CRISPR discovery protocol:
- * anti-bias first → score → literature scan → ranked queue → ultimate questions.
+ * anti-bias first → score → literature scan → blind phases → ranked queue → ultimate questions.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -20,6 +20,7 @@ import {
 } from './constants.mjs';
 import { CANDIDATES } from './candidates.mjs';
 import { runLiteratureScan } from './literature-scan.mjs';
+import { runBlindDiscoveryProtocol } from './blind-discovery.mjs';
 import {
   buildResearchQueue,
   answerUltimateQuestions,
@@ -40,18 +41,23 @@ function experimentAntiBiasFirst() {
   }));
   const allScored = CANDIDATES.every(scorecardComplete);
   const anySurvivor = results.some((r) => r.pass);
-  // Protocol lock: we must attempt falsification / controls before ranking.
   const scoringSrc = fs.readFileSync(path.join(__dirname, 'scoring.mjs'), 'utf8');
   const falsifyFirst =
     scoringSrc.includes('survivesAntiBias') && scoringSrc.includes('publishedExplanationAdequacy');
+  const allHaveLitStatus = CANDIDATES.every((c) => typeof c.literatureStatus === 'string');
   return {
     id: 'E1_anti_bias_first',
     title: 'Anti-bias / falsification controls run before queue ranking',
-    pass: allScored && anySurvivor && falsifyFirst && CANDIDATES.length >= MIN_CANDIDATES,
+    pass:
+      allScored &&
+      anySurvivor &&
+      falsifyFirst &&
+      allHaveLitStatus &&
+      CANDIDATES.length >= MIN_CANDIDATES,
     nCandidates: CANDIDATES.length,
     nAntiBiasPass: results.filter((r) => r.pass).length,
     interpretation:
-      'Candidates are demoted by confound risk and known-explanation adequacy; CRISPR resemblance is not rewarded.',
+      'Candidates are demoted by confound risk and known-explanation adequacy; CRISPR resemblance is not rewarded; literatureStatus is mandatory.',
     honesty: 'Fixture anti-bias floors ≠ wet-lab null models.',
   };
 }
@@ -79,7 +85,8 @@ function experimentIndependentAxes() {
     title: 'Ten independent discovery axes scored (no forced single crown)',
     pass: complete && axesOk,
     axes: SCORE_AXES,
-    interpretation: 'Novelty, recurrence, independence, modularity, information flow, memory, feedback, multi-scale, constraint, tractability.',
+    interpretation:
+      'Novelty, recurrence, independence, modularity, information flow, memory, feedback, multi-scale, constraint, tractability.',
     honesty: 'Axis scores are curated literature fixtures, not assay measurements.',
   };
 }
@@ -99,27 +106,37 @@ function experimentLiterature() {
 
 function experimentResearchQueue() {
   const queue = buildResearchQueue();
-  const hasLead = queue.ranked.some(
-    (r) => r.role === 'under_unified_lead_candidate' || r.role === 'active_research_candidate',
+  const hasGapOrActive = queue.ranked.some(
+    (r) =>
+      r.role === 'gap_discovery_candidate' ||
+      r.role === 'active_research_candidate' ||
+      r.role === 'under_unified_lead_candidate',
   );
   const noWinner = queue.declaredWinner === null;
-  const crisprNotFirstByNovelty =
-    queue.ranked[0]?.id !== 'C1' || queue.ranked[0]?.role === 'baseline_known_adaptive_immunity';
-  // C1 may appear in ranked list but must not be treated as beyond-CRISPR discovery lead.
+  const hasPositiveControl = queue.positiveControlIds.includes('C4');
+  const c4NotGapLead = !queue.ranked.some(
+    (r) => r.id === 'C4' && r.role === 'gap_discovery_candidate',
+  );
   const leadIsNotCrisprCutter = !queue.ranked.some(
-    (r) => r.role === 'under_unified_lead_candidate' && r.id === 'C1',
+    (r) => r.role === 'gap_discovery_candidate' && r.id === 'C1',
   );
   return {
     id: 'E5_ranked_research_queue',
     title: 'Ranked research queue without declaring a winner',
     pass:
       queue.nSurvivors >= MIN_CANDIDATES &&
-      hasLead &&
+      hasGapOrActive &&
       noWinner &&
       leadIsNotCrisprCutter &&
-      crisprNotFirstByNovelty,
+      hasPositiveControl &&
+      c4NotGapLead,
     nSurvivors: queue.nSurvivors,
-    topIds: queue.ranked.slice(0, 5).map((r) => ({ id: r.id, interest: r.researchInterest, role: r.role })),
+    topIds: queue.ranked.slice(0, 5).map((r) => ({
+      id: r.id,
+      interest: r.researchInterest,
+      role: r.role,
+      literatureStatus: r.literatureStatus,
+    })),
     declaredWinner: queue.declaredWinner,
     honesty: queue.honesty,
   };
@@ -129,6 +146,9 @@ function experimentUltimateQuestions() {
   const queue = buildResearchQueue();
   const answers = answerUltimateQuestions(queue);
   const hasArchitecture = Boolean(answers.mostSurprisingArchitecture?.statement);
+  const notC4Discovery =
+    answers.mostSurprisingArchitecture?.id !== 'C4' &&
+    answers.frameworkValidation?.id === 'C4';
   const predictionOk =
     answers.novelTestablePrediction?.yes === true &&
     answers.novelTestablePrediction?.notInSearchCriteria === true &&
@@ -136,9 +156,10 @@ function experimentUltimateQuestions() {
     answers.novelTestablePrediction.prediction.length > 40;
   return {
     id: 'E6_ultimate_questions',
-    title: 'Most surprising architecture + novel falsifiable prediction',
-    pass: hasArchitecture && predictionOk,
+    title: 'Gap architecture + novel prediction (C4 = positive control only)',
+    pass: hasArchitecture && predictionOk && notC4Discovery,
     mostSurprising: answers.mostSurprisingArchitecture,
+    frameworkValidation: answers.frameworkValidation,
     novelPrediction: answers.novelTestablePrediction,
     higherOrderHypothesis: answers.higherOrderHypothesis,
     honesty: answers.honesty,
@@ -163,7 +184,6 @@ function experimentCorpusPointers() {
 }
 
 function experimentMultiOctaveCoverage() {
-  // Operational fractal = recurring relational structure across named scale bands in candidates.
   const bands = ['Molecular', 'genetic', 'genomic', 'cellular', 'population', 'evolutionary', 'organism'];
   const blob = CANDIDATES.map((c) => c.multiScalePattern).join(' ').toLowerCase();
   const hitBands = bands.filter((b) => blob.includes(b.toLowerCase()));
@@ -178,10 +198,23 @@ function experimentMultiOctaveCoverage() {
   };
 }
 
+function experimentBlindDiscoveryPhases() {
+  const blind = runBlindDiscoveryProtocol();
+  return {
+    id: 'E9_blind_discovery_phases',
+    title: 'Blind discovery phases + unexplained-gap shortlist (excludes positive control)',
+    pass: blind.pass === true,
+    phase2: blind.phase2_literatureClass,
+    shortlistIds: blind.phase3_shortlist.shortlist.map((r) => r.id),
+    honesty: blind.phase3_shortlist.honesty,
+  };
+}
+
 export function runAllExperiments() {
   const queue = buildResearchQueue();
   const answers = answerUltimateQuestions(queue);
   const lit = runLiteratureScan();
+  const blind = runBlindDiscoveryProtocol();
   const experiments = [
     experimentAntiBiasFirst(),
     experimentNoFrameworkConfirmation(),
@@ -191,6 +224,7 @@ export function runAllExperiments() {
     experimentUltimateQuestions(),
     experimentCorpusPointers(),
     experimentMultiOctaveCoverage(),
+    experimentBlindDiscoveryPhases(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   return {
@@ -200,15 +234,27 @@ export function runAllExperiments() {
     HONESTY,
     DISCOVERY_QUESTION,
     literature: { n: lit.n, tagCounts: lit.tagCounts },
+    blindDiscovery: {
+      pass: blind.pass,
+      buckets: blind.phase2_literatureClass,
+      shortlist: blind.phase3_shortlist.shortlist.map((r) => ({
+        id: r.id,
+        literatureStatus: r.literatureStatus,
+        researchInterest: r.researchInterest,
+      })),
+    },
     queue: {
       nSurvivors: queue.nSurvivors,
-      top: queue.ranked.slice(0, 5).map((r) => ({
+      top: queue.ranked.slice(0, 6).map((r) => ({
         id: r.id,
         provisionalName: r.provisionalName,
         researchInterest: r.researchInterest,
         role: r.role,
+        literatureStatus: r.literatureStatus,
       })),
       declaredWinner: null,
+      positiveControlIds: queue.positiveControlIds,
+      gapDiscoveryIds: queue.gapDiscoveryIds,
     },
     ultimate: answers,
     experiments,

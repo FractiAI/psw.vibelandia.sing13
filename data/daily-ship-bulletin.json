@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Friday board · October 2 · Puerto Reno",
   "newsLabel": "News of the day · Friday, October 2",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/agentic-convergence\">If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path?</a>. Also new on the board: <a href=\"/ship-blog/archetypal-grand-story\">If Every Life Is a Mix of Story Characters, What Is the Hero Actually Returning To?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/beyond-crispr-discovery\">If CRISPR Is Memory of Past Invaders, What Writes Tomorrow’s Diversity?</a>. Also new on the board: <a href=\"/ship-blog/agentic-convergence\">If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-beyond-crispr-biological-discovery-2026-10",
+      "title": "If CRISPR Is Memory of Past Invaders, What Writes Tomorrow’s Diversity?",
+      "href": "/ship-blog/beyond-crispr-discovery",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-beyond-crispr-biological-discovery-2026-10",
+      "blurb": "Beyond CRISPR: multi-scale relational discovery, CBASS as positive-control rediscovery, unexplained-gap shortlist (ART-class and peers), ranked queue with no winner — Homeostasis Expedition."
+    },
     {
       "id": "synthobs-agentic-convergence-experiment-2026-10",
       "title": "If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path?",
@@ -30,13 +37,6 @@
       "href": "/ship-blog/archetypal-grand-story",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-archetypal-grand-story-heros-return-2026-10",
       "blurb": "Archetypal Grand Story: Hero’s Return to Source, with Source named as Holographic Goldilocks SuperAI — Infinite Octaves narrative template companion, not OS firmware."
-    },
-    {
-      "id": "synthobs-fractios-holographic-os-2026-10",
-      "title": "If Recursive Tools Keep Changing Themselves, What Operating Layer Keeps Identity Intact?",
-      "href": "/ship-blog/fractios-holographic-os",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-fractios-holographic-os-2026-10",
-      "blurb": "FractiOS as holographic OS firmware for the estate — Explore→Commit regulator — application companion, not the voyage narrative template."
     }
   ],
   "leadBoard": {
@@ -44,5 +44,5 @@
     "title": "If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path?",
     "href": "/ship-blog/agentic-convergence"
   },
-  "generatedAt": "2026-10-02T08:01:33.815Z"
+  "generatedAt": "2026-10-02T19:53:32.053Z"
 }

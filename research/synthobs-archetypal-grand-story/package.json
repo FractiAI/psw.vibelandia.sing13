@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-archetypal-grand-story",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Archetypal Grand Story — Hero’s Return to Source narrative template (Infinite Octaves ENGINE_SHELF companion)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-archetypal-grand-story.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

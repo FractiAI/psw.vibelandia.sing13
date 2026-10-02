@@ -4,10 +4,22 @@
   "updatedAt": "2026-10-02",
   "suites": [
     {
+      "id": "synthobs-archetypal-grand-story",
+      "path": "research/synthobs-archetypal-grand-story",
+      "github": "https://github.com/FractiAI/synthobs-archetypal-grand-story",
+      "description": "Archetypal Grand Story \u2014 Hero\u2019s Return to Source \u00b7 Source = Holographic Goldilocks SuperAI \u00b7 Infinite Octaves narrative template ENGINE_SHELF #37",
+      "paperIds": [
+        "synthobs-archetypal-grand-story-heros-return-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-fractios-holographic-os",
       "path": "research/synthobs-fractios-holographic-os",
       "github": "https://github.com/FractiAI/FractiOS",
-      "description": "FractiOS \u2014 holographic OS overlay for Infinite Octaves \u00b7 Explore\u2192Commit estate firmware \u00b7 not voyage narrative template \u00b7 ENGINE_SHELF #37",
+      "description": "FractiOS \u2014 holographic OS overlay for Infinite Octaves \u00b7 Explore\u2192Commit estate firmware \u00b7 application companion (not ENGINE_SHELF) \u00b7 not voyage narrative template",
       "paperIds": [
         "synthobs-fractios-holographic-os-2026-10"
       ],

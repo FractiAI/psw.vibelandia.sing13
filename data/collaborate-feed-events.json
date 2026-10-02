@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-01T03:00:19.707Z",
+  "updatedAt": "2026-10-02T04:50:00.825Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-archetypal-grand-story-heros-return-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-02T04:50:00.824Z",
+      "body": "The Archetypal Grand Story: A Recursive Human Character Architecture for the Hero’s Return to Source",
+      "presenceHue": "gold",
+      "paperId": "synthobs-archetypal-grand-story-heros-return-2026-10",
+      "artifact": {
+        "title": "The Archetypal Grand Story: A Recursive Human Character Architecture for the Hero’s Return to Source",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md",
+        "url": "/whitepaper/archetypal-grand-story",
+        "paperId": "synthobs-archetypal-grand-story-heros-return-2026-10",
+        "docId": "WP-SYNTHOBS-ARCHETYPAL-GRAND-STORY-2026-10-02",
+        "published": "2026-10-02T05:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-humans-ai-infinite-octave-offset-2026-10",
       "type": "ArtifactEvent",

@@ -11,7 +11,7 @@
 **Standalone OS:** [`FractiAI/FractiOS`](https://github.com/FractiAI/FractiOS) · SING 13 door [`/fractios/start-here`](https://www.ssvibelandiaquestfest24x365.com/fractios/start-here)  
 **Suite:** `research/synthobs-fractios-holographic-os/`  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
-**Engine role:** Infinite Octaves `ENGINE_SHELF` companion — **holographic OS overlay** (not the voyage narrative template)
+**Engine role:** Application companion — **holographic OS firmware** (not ENGINE_SHELF; narrative template is Archetypal Grand Story / Official Prospectus)
 
 **Companions:**
 - [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · Soft Story architecture
@@ -27,7 +27,7 @@
 |------|--------|----------------|
 | **Operational** | FractiOS implements Explore → Organize → Contain → Reconcile → Verify → Commit as a fail-closed estate regulator | That RSI is solved, or that biology is software |
 | **Catalog** | Φ_EGS ≈ 1.618 is design / nesting grammar for the OS overlay | That Φ_EGS replaces ℏ, c, G, or CODATA |
-| **Narrative** | This paper is the **holographic OS overlay** for Infinite Octaves | That FractiOS is the voyage **infinite narrative template** (that remains Official Prospectus) |
+| **Narrative** | This paper is the **holographic OS firmware** twin for HH Soft Story | That FractiOS is the voyage **infinite narrative template** (Archetypal Grand Story + Official Prospectus) |
 | **Empirical** | Fixture suite locks pipeline stages, honesty banner, and gate vocabulary against the FractiOS treatise | That E1..E9 on the live OS replace peer-reviewed OS research |
 
 ---
@@ -50,7 +50,7 @@ Player 1 asked whether FractiOS should overlay Infinite Octaves as either:
 | Infinite narrative template | **No** | Genesis → Borikén → Reno Story, Player loop SEE→…→SEE AGAIN, and voyage doors live in Official Prospectus / Frontiersman — not in estate firmware |
 | Holographic OS overlay | **Yes** | FractiOS is the runnable regulator that enforces identity ≠ explore over recursive change; it is the OS grammar for HH Soft Story, not the Story itself |
 
-**Decision:** pin FractiOS on `ENGINE_SHELF` as the holographic OS overlay companion. Keep Prospectus as narrative foundation (off-shelf narrative pointers). Do not replace CMOS / tensor / master pins with FractiOS — it sits **above** Soft Story companions as the operating layer that *runs* Explore→Commit.
+**Decision:** keep FractiOS as an **application companion** (runnable estate firmware), not an ENGINE_SHELF pin. Narrative template duty belongs to Archetypal Grand Story + Official Prospectus. Do not replace CMOS / tensor / master pins with FractiOS.
 
 ---
 

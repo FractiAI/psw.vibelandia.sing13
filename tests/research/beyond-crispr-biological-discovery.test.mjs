@@ -1,0 +1,62 @@
+import { describe, expect, it } from 'vitest';
+import {
+  DOC_ID,
+  REGISTRY_ID,
+  MIN_CANDIDATES,
+  FORBIDDEN_CONFIRMATION_TOKENS,
+} from '../../research/synthobs-beyond-crispr-biological-discovery/src/constants.mjs';
+import { CANDIDATES } from '../../research/synthobs-beyond-crispr-biological-discovery/src/candidates.mjs';
+import { runLiteratureScan } from '../../research/synthobs-beyond-crispr-biological-discovery/src/literature-scan.mjs';
+import {
+  buildResearchQueue,
+  answerUltimateQuestions,
+  researchInterest,
+} from '../../research/synthobs-beyond-crispr-biological-discovery/src/scoring.mjs';
+import { runAllExperiments } from '../../research/synthobs-beyond-crispr-biological-discovery/src/experiments.mjs';
+
+describe('beyond-crispr biological discovery', () => {
+  it('locks document and registry ids', () => {
+    expect(DOC_ID).toContain('BEYOND-CRISPR');
+    expect(REGISTRY_ID).toBe('synthobs-beyond-crispr-biological-discovery-2026-10');
+  });
+
+  it('scores at least eight candidates with complete axes', () => {
+    expect(CANDIDATES.length).toBeGreaterThanOrEqual(MIN_CANDIDATES);
+    for (const c of CANDIDATES) {
+      expect(typeof researchInterest(c)).toBe('number');
+      expect(c.antiBias.architectureAbsentCasesDocumented).toBe(true);
+    }
+  });
+
+  it('keeps CRISPR as baseline, never under-unified lead', () => {
+    const queue = buildResearchQueue();
+    expect(queue.declaredWinner).toBeNull();
+    const c1 = queue.ranked.find((r) => r.id === 'C1');
+    expect(c1?.role).toBe('baseline_known_adaptive_immunity');
+    expect(
+      queue.ranked.some((r) => r.role === 'under_unified_lead_candidate' && r.id === 'C1'),
+    ).toBe(false);
+  });
+
+  it('answers ultimate questions with a novel prediction not in search criteria', () => {
+    const answers = answerUltimateQuestions();
+    expect(answers.mostSurprisingArchitecture.statement.length).toBeGreaterThan(40);
+    expect(answers.novelTestablePrediction.yes).toBe(true);
+    expect(answers.novelTestablePrediction.notInSearchCriteria).toBe(true);
+  });
+
+  it('scans curated literature without forbidden confirmation slogans', () => {
+    const lit = runLiteratureScan();
+    expect(lit.n).toBeGreaterThanOrEqual(8);
+    const blob = JSON.stringify(CANDIDATES).toLowerCase();
+    for (const t of FORBIDDEN_CONFIRMATION_TOKENS) {
+      expect(blob.includes(t.toLowerCase())).toBe(false);
+    }
+  });
+
+  it('passes the full experiment suite', () => {
+    const report = runAllExperiments();
+    expect(report.all_pass).toBe(true);
+    expect(report.n_pass).toBe(report.n_total);
+  });
+});

@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-02** · **352** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-02** · **353** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -293,6 +293,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 — Crowded Calendar, Not Prophecy · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Awareness Gates from Zero to Eighty-One · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-vs-brute-force-2026-09.html`](/interfaces/blog-awareness-vs-brute-force-2026-09.html) | Spend Awareness Before Brute Force · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-beyond-crispr-discovery-2026-10.html`](/interfaces/blog-beyond-crispr-discovery-2026-10.html) | If CRISPR Is Memory of Past Invaders, What Writes Tomorrow’s Diversity? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | The Engine on a Silicon Shelf · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexist with AI — Which Post Are You? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | One Window on Quake and Volcano Alert · Ship blog · SS Vibelandia |

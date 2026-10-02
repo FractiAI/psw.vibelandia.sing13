@@ -15,6 +15,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-agentic-convergence-experiment',
       'synthobs-archetypal-grand-story',
       'synthobs-awareness-vs-brute-force-leverage',
+      'synthobs-beyond-crispr-biological-discovery',
       'synthobs-consciousness-moat',
       'synthobs-crystalline-unified-field',
       'synthobs-digit4-be-o-periodic-rhyme',

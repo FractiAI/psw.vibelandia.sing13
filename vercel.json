@@ -1349,6 +1349,14 @@
       "destination": "/interfaces/blog-digit4-be-o-rhyme-2026-09.html"
     },
     {
+      "source": "/ship-blog/beyond-crispr-discovery",
+      "destination": "/interfaces/blog-beyond-crispr-discovery-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/beyond-crispr-discovery/",
+      "destination": "/interfaces/blog-beyond-crispr-discovery-2026-10.html"
+    },
+    {
       "source": "/ship-blog/agentic-convergence",
       "destination": "/interfaces/blog-agentic-convergence-2026-10.html"
     },

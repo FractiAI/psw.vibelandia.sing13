@@ -30,15 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Agentic Convergence · Archetypal · FractiOS · humans↔AI · HH · e×φ×prime RH
-    expect(posts[0].id).toBe('synthobs-agentic-convergence-experiment-2026-10');
+    // Newest: Beyond CRISPR · Agentic Convergence · Archetypal · FractiOS · humans↔AI · HH
+    expect(posts[0].id).toBe('synthobs-beyond-crispr-biological-discovery-2026-10');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-beyond-crispr-biological-discovery-2026-10',
       'synthobs-agentic-convergence-experiment-2026-10',
       'synthobs-archetypal-grand-story-heros-return-2026-10',
       'synthobs-fractios-holographic-os-2026-10',
       'synthobs-humans-ai-infinite-octave-offset-2026-10',
       'synthobs-holographic-homeostasis-2026-09',
-      'synthobs-e-phi-prime-recursive-homeostasis-2026-09',
     ]);
   });
 });

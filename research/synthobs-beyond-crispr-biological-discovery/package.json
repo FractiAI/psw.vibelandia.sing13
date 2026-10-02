@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-beyond-crispr-biological-discovery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Beyond CRISPR Biological Discovery Challenge — multi-scale relational search · ranked research queue · application companion (not ENGINE_SHELF)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

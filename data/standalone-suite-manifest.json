@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-02",
   "suites": [
     {
+      "id": "synthobs-beyond-crispr-biological-discovery",
+      "path": "research/synthobs-beyond-crispr-biological-discovery",
+      "github": "https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery",
+      "description": "Beyond CRISPR Biological Discovery Challenge — multi-scale relational search · ranked research queue · Homeostasis Expedition · application companion (not ENGINE_SHELF)",
+      "paperIds": [
+        "synthobs-beyond-crispr-biological-discovery-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_BEYOND_CRISPR_BIOLOGICAL_DISCOVERY_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-agentic-convergence-experiment",
       "path": "research/synthobs-agentic-convergence-experiment",
       "github": "https://github.com/FractiAI/synthobs-agentic-convergence-experiment",

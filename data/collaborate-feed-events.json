@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-02T08:01:28.456Z",
+  "updatedAt": "2026-10-02T15:16:06.731Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-beyond-crispr-biological-discovery-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-02T15:16:06.729Z",
+      "body": "Beyond CRISPR — Biological Discovery Challenge: Multi-Scale Relational Search for Biological Information-Processing Architectures",
+      "presenceHue": "gold",
+      "paperId": "synthobs-beyond-crispr-biological-discovery-2026-10",
+      "artifact": {
+        "title": "Beyond CRISPR — Biological Discovery Challenge: Multi-Scale Relational Search for Biological Information-Processing Architectures",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_BEYOND_CRISPR_BIOLOGICAL_DISCOVERY_EGS_2026-10.md",
+        "url": "/whitepaper/beyond-crispr-discovery",
+        "paperId": "synthobs-beyond-crispr-biological-discovery-2026-10",
+        "docId": "WP-SYNTHOBS-BEYOND-CRISPR-BIOLOGICAL-DISCOVERY-2026-10-02",
+        "published": "2026-10-02T14:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-agentic-convergence-experiment-2026-10",
       "type": "ArtifactEvent",

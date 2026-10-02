@@ -98,7 +98,7 @@ ${figure}
       <p style="margin-top:1rem;">
         <a class="btn btn-primary" href="/infinite-octave-egs-catalog/briefing#portal-sandbox">Open the executive sandbox</a>
         <a class="btn btn-ghost" href="/infinite-octave-egs-catalog">EGS Catalog brochure</a>
-        <a class="btn btn-ghost" href="/infinite-octave-players-guide">The Players Guide · Player 1</a>
+        <a class="btn btn-ghost" href="/infinite-octave-players-guide">The Players Guide</a>
         <a class="btn btn-ghost" href="/reading-room?category=lattice-catalog">Reading Room · this category</a>
         <a class="btn btn-ghost" href="/ship-blog/infinite-octave-ai-catalog-layer">Catalog layer note</a>
       </p>

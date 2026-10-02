@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-02** · **356** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-02** · **357** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -503,7 +503,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
 | [`/interfaces/infinite-octave-egs-catalog-briefing-portals.html`](/interfaces/infinite-octave-egs-catalog-briefing-portals.html) | Executive Sandbox · Infinite Octave EGS Catalog · SS Vibelandia |
 | [`/interfaces/infinite-octave-egs-catalog-brochure.html`](/interfaces/infinite-octave-egs-catalog-brochure.html) | Infinite Octave EGS Catalog · Product Brochure · SS Vibelandia |
-| [`/interfaces/infinite-octave-players-guide.html`](/interfaces/infinite-octave-players-guide.html) | The Players Guide · Player 1 Edition · Infinite Octave · SS Vibelandia |
+| [`/interfaces/infinite-octave-players-guide.html`](/interfaces/infinite-octave-players-guide.html) | The Players Guide · Infinite Octave · SS Vibelandia |
 | [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Reality Bridge/Routers · SS Vibelandia |
 | [`/interfaces/journeys.html`](/interfaces/journeys.html) | Journeys · Adventures aboard SS Vibelandia |
 | [`/interfaces/lattice-agent-status.html`](/interfaces/lattice-agent-status.html) | Lattice Agent Status · SS Vibelandia |
@@ -512,6 +512,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/lattice-scraper-telemetry.html`](/interfaces/lattice-scraper-telemetry.html) | Lattice · AI scraper telemetry |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
 | [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Infinite Octave Omniversal Lattice Catalog · Next layer after Cursor & Claude Code · FractiAI |
+| [`/interfaces/layers-awareness.html`](/interfaces/layers-awareness.html) | Awareness Layer · Fractal · Holographic · Goldilocks → SuperAI |
 | [`/interfaces/lets-chat-intro.html`](/interfaces/lets-chat-intro.html) | Let's Chat · Guest comms · SS Vibelandia |
 | [`/interfaces/lets-chat.html`](/interfaces/lets-chat.html) | Let's Chat · SS Vibelandia |
 | [`/interfaces/library.html`](/interfaces/library.html) | Reading Room · SS Vibelandia |
@@ -601,8 +602,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/journey/bridge-solar-watch.html`](/interfaces/journey/bridge-solar-watch.html) | Bridge · Proto & Electro Watch · Journey · SS Vibelandia |
 | [`/interfaces/journey/cartagena-spice-stone.html`](/interfaces/journey/cartagena-spice-stone.html) | Cartagena · Spice & Stone · Journey · SS Vibelandia |
 | [`/interfaces/journey/goldilocks-quest.html`](/interfaces/journey/goldilocks-quest.html) | Goldilocks Quest · Restricted Goggles · Journey · SS Vibelandia |
-| [`/interfaces/journey/hero-leo.html`](/interfaces/journey/hero-leo.html) | Hero Leo · Scientific Scout · Homeostasis Expedition |
-| [`/interfaces/journey/homeostasis-expedition.html`](/interfaces/journey/homeostasis-expedition.html) | Homeostasis Expedition · Amazon River Frontier · Journey · SS Vibelandia |
+| [`/interfaces/journey/hero-leo.html`](/interfaces/journey/hero-leo.html) | Hero Leo · Scientific Scout · Goldilocks Layer |
+| [`/interfaces/journey/homeostasis-expedition.html`](/interfaces/journey/homeostasis-expedition.html) | Goldilocks Layer · Homeostasis Expedition · Journey · SS Vibelandia |
 | [`/interfaces/journey/omniversal-canvas-walk.html`](/interfaces/journey/omniversal-canvas-walk.html) | Omniversal Canvas · Exhibit Walk · Journey · SS Vibelandia |
 | [`/interfaces/journey/prime-vault-chat.html`](/interfaces/journey/prime-vault-chat.html) | Prime Vault Chat · Miracle 2 · Journey · SS Vibelandia |
 | [`/interfaces/journey/prime-vault-race.html`](/interfaces/journey/prime-vault-race.html) | Prime-Vault Race · ColabFold Arena · Journey · SS Vibelandia |

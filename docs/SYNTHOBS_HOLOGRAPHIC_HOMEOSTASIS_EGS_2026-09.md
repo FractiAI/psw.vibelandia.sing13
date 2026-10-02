@@ -261,6 +261,7 @@ The next scientific step is empirical: identify systems in which reciprocal cros
 | Canonical paper | `docs/SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md` → `/whitepaper/holographic-homeostasis` |
 | Suite | `research/synthobs-holographic-homeostasis/` |
 | Standalone | `https://github.com/FractiAI/synthobs-holographic-homeostasis` |
+| FractiOS firmware (estate HH regulator · not ENGINE_SHELF pin) | `https://github.com/FractiAI/FractiOS` — `npm run boot` · `npm run research` · `npm run serve` |
 | Pipeline | `npm run research:synthobs-holographic-homeostasis` |
 | Registry | `lib/whitepaper-registry.mjs` → `synthobs-holographic-homeostasis-2026-09` |
 | Engine shelf | `lib/infinite-octave-engine-shelf.mjs` (companion after Digit 4 · Be–O) |

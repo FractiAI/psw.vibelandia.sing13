@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-02** · **349** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-02** · **350** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -311,6 +311,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-erft-e-continuous-regulation-2026-09.html`](/interfaces/blog-erft-e-continuous-regulation-2026-09.html) | After Nothing to Crown, Does Continuous Regulation Clear the Bar? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-erft-recursive-fidelity-2026-09.html`](/interfaces/blog-erft-recursive-fidelity-2026-09.html) | When Information Rewrites Itself, Does φ Reduce the Drift? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | Everything Is Connected — Walk It Carefully · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-fractios-holographic-os-2026-10.html`](/interfaces/blog-fractios-holographic-os-2026-10.html) | If Recursive Tools Keep Changing Themselves, What Operating Layer Keeps Identity Intact? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html`](/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html) | Your Nested Agents Need a Carry-On, Not a Shipping Container · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — One Tribe, Many Homes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-generative-matrix-phi-egs-2026-09.html`](/interfaces/blog-generative-matrix-phi-egs-2026-09.html) | Stop Paying for Twenty Origin Stories · Ship blog · SS Vibelandia |

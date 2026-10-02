@@ -21,6 +21,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-eddy-current-mirror',
       'synthobs-egs-recursive-fidelity-test',
       'synthobs-erft-e-continuous-regulation',
+      'synthobs-fractios-holographic-os',
       'synthobs-fractiskills-portable-agent-skills',
       'synthobs-generative-matrix-phi-egs',
       'synthobs-goldilocks-net-zero-equivalence',

@@ -1,8 +1,20 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-10-01",
+  "updatedAt": "2026-10-02",
   "suites": [
+    {
+      "id": "synthobs-fractios-holographic-os",
+      "path": "research/synthobs-fractios-holographic-os",
+      "github": "https://github.com/FractiAI/FractiOS",
+      "description": "FractiOS \u2014 holographic OS overlay for Infinite Octaves \u00b7 Explore\u2192Commit estate firmware \u00b7 not voyage narrative template \u00b7 ENGINE_SHELF #37",
+      "paperIds": [
+        "synthobs-fractios-holographic-os-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_FRACTIOS_HOLOGRAPHIC_OS_OVERLAY_EGS_2026-10.md"
+      ]
+    },
     {
       "id": "synthobs-humans-ai-infinite-octave-offset",
       "path": "research/synthobs-humans-ai-infinite-octave-offset",

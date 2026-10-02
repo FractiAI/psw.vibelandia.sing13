@@ -30,15 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: humans↔AI octave offset · HH first fruit · e×φ×prime RH · ERFT-E · ERFT-V5 · RSI drift friction
-    expect(posts[0].id).toBe('synthobs-humans-ai-infinite-octave-offset-2026-10');
+    // Newest: FractiOS OS overlay · humans↔AI octave offset · HH first fruit · e×φ×prime RH · ERFT-E · ERFT-V5
+    expect(posts[0].id).toBe('synthobs-fractios-holographic-os-2026-10');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-fractios-holographic-os-2026-10',
       'synthobs-humans-ai-infinite-octave-offset-2026-10',
       'synthobs-holographic-homeostasis-2026-09',
       'synthobs-e-phi-prime-recursive-homeostasis-2026-09',
       'synthobs-erft-e-continuous-regulation-2026-09',
       'synthobs-egs-recursive-fidelity-test-erft-2026-09',
-      'synthobs-rsi-drift-friction-phi-egs-2026-09',
     ]);
   });
 });

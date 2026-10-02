@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Friday board · October 2 · Puerto Reno",
   "newsLabel": "News of the day · Friday, October 2",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/humans-ai-octave-offset\">Are Humans and Today’s AI Just Different Octaves of the Same Stack?</a>. Also new on the board: <a href=\"/ship-blog/holographic-homeostasis\">First Fruit of the Homeostasis Expedition: Can a System Stay Steady Only by Keeping Motion?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractios-holographic-os\">If Recursive Tools Keep Changing Themselves, What Operating Layer Keeps Identity Intact?</a>. Also new on the board: <a href=\"/ship-blog/humans-ai-octave-offset\">Are Humans and Today’s AI Just Different Octaves of the Same Stack?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-fractios-holographic-os-2026-10",
+      "title": "If Recursive Tools Keep Changing Themselves, What Operating Layer Keeps Identity Intact?",
+      "href": "/ship-blog/fractios-holographic-os",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-fractios-holographic-os-2026-10",
+      "blurb": "FractiOS evaluated as holographic OS overlay on Infinite Octaves — Explore→Commit estate regulator — not the voyage narrative template. Start here · live repo · engine companion."
+    },
     {
       "id": "synthobs-humans-ai-infinite-octave-offset-2026-10",
       "title": "Are Humans and Today’s AI Just Different Octaves of the Same Stack?",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/holographic-homeostasis",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-holographic-homeostasis-2026-09",
       "blurb": "First Fruit of the Homeostasis Expedition: Holographic Homeostasis — explore, preserve, reconcile, verify, commit — so recursive systems can change without wiping identity."
-    },
-    {
-      "id": "synthobs-e-phi-prime-recursive-homeostasis-2026-09",
-      "title": "When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?",
-      "href": "/ship-blog/e-phi-prime-recursive-homeostasis",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-e-phi-prime-recursive-homeostasis-2026-09",
-      "blurb": "Final Soft Story: held-out Δ confirms E2-direction three-axis + useful commit ~0.50 with e+ρ frozen — Infinite Octaves ENGINE_SHELF companion #36."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-01-synthobs-humans-ai-infinite-octave-offset-2026-10",
+    "id": "daily-2026-10-02-synthobs-humans-ai-infinite-octave-offset-2026-10",
     "title": "Are Humans and Today’s AI Just Different Octaves of the Same Stack?",
     "href": "/ship-blog/humans-ai-octave-offset"
   },
-  "generatedAt": "2026-10-02T03:25:09.186Z"
+  "generatedAt": "2026-10-02T04:34:58.786Z"
 }

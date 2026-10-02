@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-10-02T04:35:53.765Z",
+  "docId": "WP-SYNTHOBS-FRACTIOS-HOLOGRAPHIC-OS-2026-10-02",
+  "registryId": "synthobs-fractios-holographic-os-2026-10",
+  "studyTitle": "FractiOS — Holographic OS Overlay for Infinite Octaves (Catalog Suite)",
+  "standalone": "https://github.com/FractiAI/FractiOS",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Architectural golden key for OS nesting grammar.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_pipeline_stages",
+        "title": "Six-stage HH OS pipeline",
+        "PIPELINE_STAGES": [
+          "Explore",
+          "Organize",
+          "Contain",
+          "Reconcile",
+          "Verify",
+          "Commit"
+        ],
+        "pass": true,
+        "interpretation": "FractiOS OS loop vocabulary lock.",
+        "honesty": "Operational grammar — not a claim RSI is solved."
+      },
+      {
+        "id": "E3_identity_ne_explore",
+        "title": "identity ≠ explore",
+        "IDENTITY_NE_EXPLORE": true,
+        "pass": true,
+        "interpretation": "Candidates do not become canonical until gates pass.",
+        "honesty": "Catalog OS lock — fail-closed by design."
+      },
+      {
+        "id": "E4_os_not_narrative_template",
+        "title": "OS overlay — not infinite narrative template",
+        "IS_HOLOGRAPHIC_OS_OVERLAY": true,
+        "IS_NARRATIVE_TEMPLATE": false,
+        "pass": true,
+        "interpretation": "Prospectus remains Story; FractiOS is the operating overlay.",
+        "honesty": "Role split is architectural, not a demotion of either surface."
+      },
+      {
+        "id": "E5_ucr_population_gate",
+        "title": "UCR population gate semantics",
+        "UCR_FLOOR": 0.1,
+        "UCR_MIN_ELIGIBLE": 8,
+        "pass": true,
+        "interpretation": "Avoid over-refusing single honest candidates below eligibility.",
+        "honesty": "Population gate — report-only below threshold."
+      },
+      {
+        "id": "E6_paper_on_disk",
+        "title": "Catalog paper present",
+        "paperPath": "/workspace/docs/SYNTHOBS_FRACTIOS_HOLOGRAPHIC_OS_OVERLAY_EGS_2026-10.md",
+        "DOC_ID": "WP-SYNTHOBS-FRACTIOS-HOLOGRAPHIC-OS-2026-10-02",
+        "REGISTRY_ID": "synthobs-fractios-holographic-os-2026-10",
+        "pass": true,
+        "interpretation": "SING 13 docs filing for the OS overlay.",
+        "honesty": "Presence check only."
+      },
+      {
+        "id": "E7_start_here_surface",
+        "title": "Start Here UI surface",
+        "START_HERE_PATH": "/fractios/start-here",
+        "path": "/workspace/interfaces/fractios-start-here.html",
+        "pass": true,
+        "interpretation": "Guest/architect door into FractiOS on SING 13.",
+        "honesty": "Static HTML presence — not a live FractiOS boot."
+      },
+      {
+        "id": "E8_ship_blog",
+        "title": "Ship-blog magazine note present",
+        "blog": "/workspace/interfaces/blog-fractios-holographic-os-2026-10.html",
+        "pass": true,
+        "interpretation": "QUESTFEST ship-blog required for engine companions.",
+        "honesty": "Presence check — magazine CI owns voice/length."
+      },
+      {
+        "id": "E9_standalone_fractios",
+        "title": "Standalone OS repo pointer",
+        "STANDALONE_REPO": "https://github.com/FractiAI/FractiOS",
+        "pass": true,
+        "interpretation": "Live holographic OS lives at FractiAI/FractiOS.",
+        "honesty": "Pointer lock — this suite does not re-host the kernel."
+      }
+    ]
+  }
+}

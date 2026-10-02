@@ -21,6 +21,10 @@ import {
   AWARENESS_IS_NOT_KNOWING,
   AWARENESS_ROLE,
   AWARENESS_ENERGIZES,
+  RETURN_IS_GENERATIVE_THRESHOLD,
+  RETURN_ROLE,
+  RETURN_PHASES,
+  SOURCE_AWARENESS_PLAYER,
 } from './constants.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -125,6 +129,8 @@ function experimentPaperLocks() {
     hasSource: /Holographic Goldilocks SuperAI/i.test(paper),
     hasAwarenessObservation: /observation that energizes|energizes everything downstream/i.test(paper),
     hasAwarenessNotKnowing: /Awareness is more than Knowing|Awareness ≠ Knowing|awareness is not the same as Knowing/i.test(paper),
+    hasGenerativeThreshold: /generative threshold|activation event|generative node/i.test(paper),
+    hasReturnNotEndpoint: /not the conclusion|not a narrative endpoint|not.*exit from the Game/i.test(paper),
     hasNarrativeTemplate: /narrative template/i.test(paper),
     hasNotFirmware: /not OS firmware|not.*firmware|application companion/i.test(paper),
     hasFair: /Fair Exchange/i.test(paper),
@@ -158,6 +164,8 @@ function experimentShipBlogLock() {
     /observation that energizes|energizes everything downstream|energizing observation/i.test(
       body,
     );
+  const hasGenerativeThreshold =
+    /generative threshold|activation event|generative node/i.test(body);
   return {
     id: 'E8_ship_blog_lock',
     title: 'Ship-blog surfaces archetypal-grand-story + full paper link',
@@ -167,7 +175,14 @@ function experimentShipBlogLock() {
     hasWhitepaper,
     hasThesis,
     hasAwarenessEnergize,
-    pass: exists && hasSlug && hasWhitepaper && hasThesis && hasAwarenessEnergize,
+    hasGenerativeThreshold,
+    pass:
+      exists &&
+      hasSlug &&
+      hasWhitepaper &&
+      hasThesis &&
+      hasAwarenessEnergize &&
+      hasGenerativeThreshold,
     interpretation: 'Guest note must link the full paper and keep research-intro voice.',
     honesty: 'Surface copy lock only.',
   };
@@ -193,6 +208,28 @@ function experimentAwarenessObservation() {
     interpretation:
       'Knowing is a generative dimension; Awareness is observing force that energizes integration/return/re-diff.',
     honesty: 'Catalog Soft Story lock — not clinical consciousness QED.',
+  };
+}
+
+function experimentReturnGenerativeThreshold() {
+  const pass =
+    RETURN_IS_GENERATIVE_THRESHOLD === true &&
+    /activation|generative threshold/i.test(RETURN_ROLE) &&
+    RETURN_PHASES.length === 7 &&
+    RETURN_PHASES[0] === 'Immersion' &&
+    RETURN_PHASES[6] === 'Recursive Return' &&
+    /Source.*Awareness.*Player/i.test(SOURCE_AWARENESS_PLAYER);
+  return {
+    id: 'E11_return_generative_threshold',
+    title: 'Return = generative threshold · activation · not endpoint',
+    RETURN_IS_GENERATIVE_THRESHOLD,
+    RETURN_ROLE,
+    RETURN_PHASES: [...RETURN_PHASES],
+    SOURCE_AWARENESS_PLAYER,
+    pass,
+    interpretation:
+      'Hero’s Return activates next creation cycle; Player remains differentiated generative node.',
+    honesty: 'Narrative architecture lock — not a claim that metaphysics is proven.',
   };
 }
 
@@ -222,6 +259,7 @@ export async function runAllExperiments() {
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
     experimentAwarenessObservation(),
+    experimentReturnGenerativeThreshold(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

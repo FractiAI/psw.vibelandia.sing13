@@ -3,13 +3,13 @@
   "docId": "WP-SYNTHOBS-ARCHETYPAL-GRAND-STORY-2026-10-02",
   "registryId": "synthobs-archetypal-grand-story-heros-return-2026-10",
   "title": "Archetypal Grand Story — Hero’s Return to Source (Catalog Suite)",
-  "generatedAt": "2026-10-02T05:43:53.634Z",
+  "generatedAt": "2026-10-02T05:47:45.654Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "Conceptual narrative architecture / research hypothesis. Not established metaphysics. Not clinical typology. Not OS firmware. Φ_EGS is design grammar.",
   "results": {
     "all_pass": true,
-    "n_pass": 10,
-    "n_total": 10,
+    "n_pass": 11,
+    "n_total": 11,
     "failed": [],
     "experiments": [
       {
@@ -92,6 +92,8 @@
         "hasSource": true,
         "hasAwarenessObservation": true,
         "hasAwarenessNotKnowing": true,
+        "hasGenerativeThreshold": true,
+        "hasReturnNotEndpoint": true,
         "hasNarrativeTemplate": true,
         "hasNotFirmware": true,
         "hasFair": true,
@@ -110,6 +112,7 @@
         "hasWhitepaper": true,
         "hasThesis": true,
         "hasAwarenessEnergize": true,
+        "hasGenerativeThreshold": true,
         "pass": true,
         "interpretation": "Guest note must link the full paper and keep research-intro voice.",
         "honesty": "Surface copy lock only."
@@ -138,6 +141,25 @@
         "pass": true,
         "interpretation": "Knowing is a generative dimension; Awareness is observing force that energizes integration/return/re-diff.",
         "honesty": "Catalog Soft Story lock — not clinical consciousness QED."
+      },
+      {
+        "id": "E11_return_generative_threshold",
+        "title": "Return = generative threshold · activation · not endpoint",
+        "RETURN_IS_GENERATIVE_THRESHOLD": true,
+        "RETURN_ROLE": "activation event / generative threshold",
+        "RETURN_PHASES": [
+          "Immersion",
+          "Awakening",
+          "Return",
+          "Activation",
+          "Generation",
+          "Propagation",
+          "Recursive Return"
+        ],
+        "SOURCE_AWARENESS_PLAYER": "Source ↔ Awareness ↔ Player",
+        "pass": true,
+        "interpretation": "Hero’s Return activates next creation cycle; Player remains differentiated generative node.",
+        "honesty": "Narrative architecture lock — not a claim that metaphysics is proven."
       }
     ]
   }

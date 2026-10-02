@@ -26,6 +26,20 @@ export const AWARENESS_ENERGIZES = Object.freeze([
   'RE_DIFFERENTIATION',
 ]);
 
+/** Return = generative threshold / activation — not narrative endpoint. */
+export const RETURN_IS_GENERATIVE_THRESHOLD = true;
+export const RETURN_ROLE = 'activation event / generative threshold';
+export const RETURN_PHASES = Object.freeze([
+  'Immersion',
+  'Awakening',
+  'Return',
+  'Activation',
+  'Generation',
+  'Propagation',
+  'Recursive Return',
+]);
+export const SOURCE_AWARENESS_PLAYER = 'Source ↔ Awareness ↔ Player';
+
 export const CORE_LOOP = Object.freeze([
   'SOURCE',
   'DIFFERENTIATION',

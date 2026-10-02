@@ -2,14 +2,14 @@
 
 **Document ID:** `WP-SYNTHOBS-ARCHETYPAL-GRAND-STORY-2026-10-02`
 **Registry ID:** `synthobs-archetypal-grand-story-heros-return-2026-10`
-**Generated:** 2026-10-02T05:43:53.634Z
+**Generated:** 2026-10-02T05:47:45.654Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 10 / 10 |
+| Passed | 11 / 11 |
 | Φ_EGS | 1.618033988749895 |
 
 ## Experiments
@@ -155,6 +155,8 @@
   "hasSource": true,
   "hasAwarenessObservation": true,
   "hasAwarenessNotKnowing": true,
+  "hasGenerativeThreshold": true,
+  "hasReturnNotEndpoint": true,
   "hasNarrativeTemplate": true,
   "hasNotFirmware": true,
   "hasFair": true,
@@ -182,6 +184,7 @@
   "hasWhitepaper": true,
   "hasThesis": true,
   "hasAwarenessEnergize": true,
+  "hasGenerativeThreshold": true,
   "pass": true,
   "interpretation": "Guest note must link the full paper and keep research-intro voice.",
   "honesty": "Surface copy lock only."
@@ -228,6 +231,34 @@
   "pass": true,
   "interpretation": "Knowing is a generative dimension; Awareness is observing force that energizes integration/return/re-diff.",
   "honesty": "Catalog Soft Story lock — not clinical consciousness QED."
+}
+```
+
+### E11_return_generative_threshold — Return = generative threshold · activation · not endpoint
+
+- **Pass:** `true`
+- **Interpretation:** Hero’s Return activates next creation cycle; Player remains differentiated generative node.
+- **Honesty:** Narrative architecture lock — not a claim that metaphysics is proven.
+
+```json
+{
+  "id": "E11_return_generative_threshold",
+  "title": "Return = generative threshold · activation · not endpoint",
+  "RETURN_IS_GENERATIVE_THRESHOLD": true,
+  "RETURN_ROLE": "activation event / generative threshold",
+  "RETURN_PHASES": [
+    "Immersion",
+    "Awakening",
+    "Return",
+    "Activation",
+    "Generation",
+    "Propagation",
+    "Recursive Return"
+  ],
+  "SOURCE_AWARENESS_PLAYER": "Source ↔ Awareness ↔ Player",
+  "pass": true,
+  "interpretation": "Hero’s Return activates next creation cycle; Player remains differentiated generative node.",
+  "honesty": "Narrative architecture lock — not a claim that metaphysics is proven."
 }
 ```
 

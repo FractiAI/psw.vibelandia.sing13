@@ -1,51 +1,133 @@
 # Hero Leo — Scientific Scout · Homeostasis Expedition
 
+**Autonomous research memory and publication-gated expedition cockpit (Phases 1–2)**
+
 **Document ID:** `WP-SYNTHOBS-HERO-LEO-HOMEOSTASIS-SCOUT-2026-10-02`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Surfaces:** [`/journey/hero-leo`](https://www.ssvibelandiaquestfest24x365.com/journey/hero-leo) · API [`/api/hero-leo`](https://www.ssvibelandiaquestfest24x365.com/api/hero-leo) · trail [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition)  
-**Slot:** application companion · **not** ENGINE_SHELF
+**Published:** 2026-10-02  
+**Guest surfaces:** [`/journey/hero-leo`](https://www.ssvibelandiaquestfest24x365.com/journey/hero-leo) · API [`/api/hero-leo`](https://www.ssvibelandiaquestfest24x365.com/api/hero-leo) · trail [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Beyond CRISPR peer [`/whitepaper/beyond-crispr-discovery`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/beyond-crispr-discovery)  
+**Slot:** **application companion (not ENGINE_SHELF)** — research-memory cockpit attached to the Homeostasis Expedition; not a claim of continuous autonomous wet-lab discovery.
 
 ---
 
-## Mission
+## Abstract
 
-Hero Leo is the Scientific Scout of the Homeostasis Expedition:
+This note specifies **Hero Leo**, the Scientific Scout of the Homeostasis Expedition on SS Vibelandia / FractiAI. Hero Leo’s research loop is:
 
 `PROSPECT → DETECT → TRANSLATE → PRIORITIZE → INVESTIGATE → FALSIFY → CAPTURE → VALIDATE → PUBLISH WHEN MERITED → UPDATE → NEXT QUESTION`
+
+Phases **1–2** (presence + research memory) are operational: a public cockpit, durable status, investigation ledger, evidence ladder (E0–E6), configurable publication gate, achievements, timeline, and provenance links. Seeded records are **real** Beyond CRISPR expedition work — not simulated “live research” theater. Continuous autonomous prospecting (Phase 3+), automatic final publication without human approval, and wet-lab execution are **explicitly not claimed**.
 
 Discovery tools may be unconstrained internally. **Evidence and publication layers are strict** and must not require acceptance of FractiAI ontology.
 
 ---
 
-## Shipped (Phases 1–2 · real)
+## 1. Mission
+
+Hero Leo is not a chatbot narrator. He is the Scout attached to the existing Homeostasis Expedition: visitors click from the expedition page into a research cockpit that shows what was investigated, what was falsified, what evidence level applies, what was published, and what remains open.
+
+Governing rule:
+
+> Explore without constraint. Hypothesize without attachment. Falsify aggressively. Measure conventionally. Publish only what the evidence supports. Preserve everything learned. Let the next question emerge from the evidence.
+
+---
+
+## 2. Methods / Reproducibility
+
+**Code & data**
 
 | Piece | Path |
 |-------|------|
 | Config + publication gate | `data/hero-leo/config.json` |
-| Live status (honest WAITING) | `data/hero-leo/status.json` |
+| Live status | `data/hero-leo/status.json` |
 | Discovery ledger | `data/hero-leo/ledger.json` |
 | Achievements / timeline / publications | `data/hero-leo/*.json` |
 | Library | `lib/hero-leo.mjs` |
-| API | `api/hero-leo.js` |
+| API | `api/hero-leo.js` → `GET /api/hero-leo` |
 | Cockpit UI | `interfaces/journey/hero-leo.html` |
+| Tests | `tests/lib/hero-leo.test.mjs` |
 
-Seeded investigations are **real** Beyond CRISPR work (protocol suite, C4 rediscovery falsification, C11 novel prediction, Phase 2b infrastructure) — not theatrical mock activity.
+**Reproduce**
+
+```bash
+npx vitest run tests/lib/hero-leo.test.mjs
+node -e "import { buildDashboard } from './lib/hero-leo.mjs'; console.log(JSON.stringify(buildDashboard().metrics, null, 2))"
+```
+
+**Evidence ladder (ledger field `evidence_level`)**
+
+| Level | Meaning |
+|-------|---------|
+| E0 | Speculation |
+| E1 | Computational observation |
+| E2 | Independent computational validation |
+| E3 | Falsifiable prediction |
+| E4 | Experimental validation |
+| E5 | Independent replication |
+| E6 | Established mechanism |
+
+**Publication gate:** criteria and `minCriteriaPass` live in `config.publicationGate` (not hard-coded only in UI). Final external publication requires **human approval** (`humanApprovalRequiredForFinalPublish: true`).
+
+**Status honesty:** if `autonomousProcessRunning` is false, public status must be `WAITING` / `OFFLINE` / `INITIALIZING` — never simulated activity.
 
 ---
 
-## Not yet claimed (Phases 3–7)
+## 3. Results (Phases 1–2 seed)
+
+Seeded investigations (ledger IDs) are proportionate to actual SING13 work:
+
+| ID | Result class | Evidence |
+|----|--------------|----------|
+| INV-HE-2026-10-02-001 | SYNTHESIS — Beyond CRISPR protocol suite | E2 |
+| INV-HE-2026-10-02-002 | REDISCOVERY — C4/CBASS novelty claim falsified | E2 |
+| INV-HE-2026-10-02-003 | NOVEL_PREDICTION — C11 ART-class gap + lab brief | E3 |
+| INV-HE-2026-10-02-004 | OPEN_QUESTION — Phase 2b Lattice prompt infra | E1 |
+
+Metrics exposed by `/api/hero-leo` are computed from these files. Zero active investigations is valid when no daemon is running.
+
+---
+
+## 4. Not yet claimed (Phases 3–7)
 
 - Continuous autonomous prospecting daemon  
-- Automatic whitepaper/blog/repo generation without human gate  
+- Automatic whitepaper / blog / repository generation without human gate  
 - Wet-lab execution  
 - Independent external replication  
-
-Status remains `WAITING` / `autonomousProcessRunning: false` until a real process writes status.
+- That Hero Leo has “discovered new biology” beyond labeled ledger tiers  
 
 ---
 
-## Publication rule
+## Honesty boundary
 
-Configurable gate in `config.publicationGate` + evidence ladder E0–E6 + **human approval** for final external publication.
+| Tier | Claim |
+|------|--------|
+| **Operational** | Cockpit, API, ledger R/W helpers, publication-gate evaluation, regenerable vitest locks, honest WAITING status when no process runs |
+| **Empirical (seed)** | Ledger rows mirror Beyond CRISPR suite receipts, honesty correction (C4 rediscovery), C11 prediction brief, Phase 2b prompt audit — as documented in those artifacts |
+| **Soft Story / expedition** | Scout metaphor; research-homeostasis language for process balance |
+| **Not claimed** | Continuous autonomous discovery daemon; wet-lab confirmation of C11; ENGINE_SHELF pin; Infinite Octaves / Φ_EGS as biological law; clinical advice; novelty inflation (rediscovery must be labeled rediscovery) |
+
+Φ_EGS ≈ 1.618 is design grammar only if mentioned in honesty rails — never a confirmatory research goal for Hero Leo.
+
+**Document ID** and SynthOBS operator line are mandatory. Prefer falsification over confirmation. Prefer “the hypothesis is wrong; data indicate another principle” when earned.
+
+---
+
+## References
+
+1. Beyond CRISPR Biological Discovery Challenge — `docs/SYNTHOBS_BEYOND_CRISPR_BIOLOGICAL_DISCOVERY_EGS_2026-10.md` · `/whitepaper/beyond-crispr-discovery`.  
+2. Beyond CRISPR Phase 2b Lattice protocol — `docs/SYNTHOBS_BEYOND_CRISPR_PHASE_2B_LATTICE_2026-10.md`.  
+3. C11 ART-class wet-lab brief — `docs/SYNTHOBS_BEYOND_CRISPR_C11_ART_CLASS_WET_LAB_BRIEF_2026-10.md`.  
+4. Agentic Convergence Experiment (method peer) — `docs/SYNTHOBS_AGENTIC_CONVERGENCE_EXPERIMENT_EGS_2026-10.md`.  
+5. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.  
+6. Homeostasis Expedition surface — `/journey/homeostasis-expedition`.
+
+---
+
+## Document ID
+
+`WP-SYNTHOBS-HERO-LEO-HOMEOSTASIS-SCOUT-2026-10-02`
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Human editorial veto:** Player 1  
 
 → ∞^∞

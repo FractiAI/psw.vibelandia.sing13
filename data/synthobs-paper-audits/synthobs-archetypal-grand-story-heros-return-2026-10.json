@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "ac437accfcbffd04",
+  "auditId": "185092049ac785b3",
   "paperId": "synthobs-archetypal-grand-story-heros-return-2026-10",
   "sourcePath": "docs/SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-02T04:50:00.821Z"
+          "invokedAt": "2026-10-02T05:43:46.406Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-02T04:50:00.820Z",
-  "completedAt": "2026-10-02T04:50:00.822Z",
+  "startedAt": "2026-10-02T05:43:46.404Z",
+  "completedAt": "2026-10-02T05:43:46.407Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 2072,
+      "wordCount": 2436,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 5,
-        "numbered": 5,
+        "links": 7,
+        "numbered": 10,
         "citeLines": 1
       }
     }

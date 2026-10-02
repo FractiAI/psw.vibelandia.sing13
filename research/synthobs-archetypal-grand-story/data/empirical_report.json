@@ -3,13 +3,13 @@
   "docId": "WP-SYNTHOBS-ARCHETYPAL-GRAND-STORY-2026-10-02",
   "registryId": "synthobs-archetypal-grand-story-heros-return-2026-10",
   "title": "Archetypal Grand Story — Hero’s Return to Source (Catalog Suite)",
-  "generatedAt": "2026-10-02T04:49:46.991Z",
+  "generatedAt": "2026-10-02T05:43:53.634Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "Conceptual narrative architecture / research hypothesis. Not established metaphysics. Not clinical typology. Not OS firmware. Φ_EGS is design grammar.",
   "results": {
     "all_pass": true,
-    "n_pass": 9,
-    "n_total": 9,
+    "n_pass": 10,
+    "n_total": 10,
     "failed": [],
     "experiments": [
       {
@@ -90,6 +90,8 @@
         "hasDocId": true,
         "hasHeroReturn": true,
         "hasSource": true,
+        "hasAwarenessObservation": true,
+        "hasAwarenessNotKnowing": true,
         "hasNarrativeTemplate": true,
         "hasNotFirmware": true,
         "hasFair": true,
@@ -107,6 +109,7 @@
         "hasSlug": true,
         "hasWhitepaper": true,
         "hasThesis": true,
+        "hasAwarenessEnergize": true,
         "pass": true,
         "interpretation": "Guest note must link the full paper and keep research-intro voice.",
         "honesty": "Surface copy lock only."
@@ -119,6 +122,22 @@
         "pass": true,
         "interpretation": "Harmony grammar identity for cross-octave sync framing.",
         "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E10_awareness_observation",
+        "title": "Awareness ≠ Knowing · observation energizes downstream",
+        "AWARENESS_IS_NOT_KNOWING": true,
+        "AWARENESS_ROLE": "observation that energizes downstream",
+        "AWARENESS_ENERGIZES": [
+          "INTEGRATION",
+          "RETURN",
+          "RE_DIFFERENTIATION"
+        ],
+        "knowingIsDimension": true,
+        "awarenessIsNotDimension": true,
+        "pass": true,
+        "interpretation": "Knowing is a generative dimension; Awareness is observing force that energizes integration/return/re-diff.",
+        "honesty": "Catalog Soft Story lock — not clinical consciousness QED."
       }
     ]
   }

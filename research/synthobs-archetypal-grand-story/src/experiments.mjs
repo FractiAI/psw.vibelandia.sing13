@@ -18,6 +18,9 @@ import {
   GRAND_STORY,
   CORE_LOOP,
   GENERATIVE_DIMENSIONS,
+  AWARENESS_IS_NOT_KNOWING,
+  AWARENESS_ROLE,
+  AWARENESS_ENERGIZES,
 } from './constants.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -120,6 +123,8 @@ function experimentPaperLocks() {
     hasDocId: paper.includes(DOC_ID) || paper.includes(REGISTRY_ID),
     hasHeroReturn: /Hero.?s Return to Source/i.test(paper),
     hasSource: /Holographic Goldilocks SuperAI/i.test(paper),
+    hasAwarenessObservation: /observation that energizes|energizes everything downstream/i.test(paper),
+    hasAwarenessNotKnowing: /Awareness is more than Knowing|Awareness ≠ Knowing|awareness is not the same as Knowing/i.test(paper),
     hasNarrativeTemplate: /narrative template/i.test(paper),
     hasNotFirmware: /not OS firmware|not.*firmware|application companion/i.test(paper),
     hasFair: /Fair Exchange/i.test(paper),
@@ -149,6 +154,10 @@ function experimentShipBlogLock() {
     body.includes(REGISTRY_ID);
   const hasThesis =
     /hero|return|source|archetype|paycheck|rent|job|kids|story/i.test(body);
+  const hasAwarenessEnergize =
+    /observation that energizes|energizes everything downstream|energizing observation/i.test(
+      body,
+    );
   return {
     id: 'E8_ship_blog_lock',
     title: 'Ship-blog surfaces archetypal-grand-story + full paper link',
@@ -157,9 +166,33 @@ function experimentShipBlogLock() {
     hasSlug,
     hasWhitepaper,
     hasThesis,
-    pass: exists && hasSlug && hasWhitepaper && hasThesis,
+    hasAwarenessEnergize,
+    pass: exists && hasSlug && hasWhitepaper && hasThesis && hasAwarenessEnergize,
     interpretation: 'Guest note must link the full paper and keep research-intro voice.',
     honesty: 'Surface copy lock only.',
+  };
+}
+
+function experimentAwarenessObservation() {
+  const pass =
+    AWARENESS_IS_NOT_KNOWING === true &&
+    /observation that energizes/i.test(AWARENESS_ROLE) &&
+    AWARENESS_ENERGIZES.includes('INTEGRATION') &&
+    AWARENESS_ENERGIZES.includes('RETURN') &&
+    AWARENESS_ENERGIZES.includes('RE_DIFFERENTIATION') &&
+    !GENERATIVE_DIMENSIONS.includes('Awareness');
+  return {
+    id: 'E10_awareness_observation',
+    title: 'Awareness ≠ Knowing · observation energizes downstream',
+    AWARENESS_IS_NOT_KNOWING,
+    AWARENESS_ROLE,
+    AWARENESS_ENERGIZES: [...AWARENESS_ENERGIZES],
+    knowingIsDimension: GENERATIVE_DIMENSIONS.includes('Knowing'),
+    awarenessIsNotDimension: !GENERATIVE_DIMENSIONS.includes('Awareness'),
+    pass,
+    interpretation:
+      'Knowing is a generative dimension; Awareness is observing force that energizes integration/return/re-diff.',
+    honesty: 'Catalog Soft Story lock — not clinical consciousness QED.',
   };
 }
 
@@ -188,6 +221,7 @@ export async function runAllExperiments() {
     experimentPaperLocks(),
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
+    experimentAwarenessObservation(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

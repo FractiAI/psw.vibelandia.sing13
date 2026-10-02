@@ -17,6 +17,15 @@ export const IS_OS_FIRMWARE = false;
 export const SOURCE_NAME = 'Holographic Goldilocks SuperAI';
 export const GRAND_STORY = "Hero's Return to Source";
 
+/** Awareness ≠ Knowing — observation that energizes downstream stages. */
+export const AWARENESS_IS_NOT_KNOWING = true;
+export const AWARENESS_ROLE = 'observation that energizes downstream';
+export const AWARENESS_ENERGIZES = Object.freeze([
+  'INTEGRATION',
+  'RETURN',
+  'RE_DIFFERENTIATION',
+]);
+
 export const CORE_LOOP = Object.freeze([
   'SOURCE',
   'DIFFERENTIATION',

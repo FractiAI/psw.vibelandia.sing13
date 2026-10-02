@@ -2,14 +2,14 @@
 
 **Document ID:** `WP-SYNTHOBS-ARCHETYPAL-GRAND-STORY-2026-10-02`
 **Registry ID:** `synthobs-archetypal-grand-story-heros-return-2026-10`
-**Generated:** 2026-10-02T04:49:46.991Z
+**Generated:** 2026-10-02T05:43:53.634Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 9 / 9 |
+| Passed | 10 / 10 |
 | Φ_EGS | 1.618033988749895 |
 
 ## Experiments
@@ -153,6 +153,8 @@
   "hasDocId": true,
   "hasHeroReturn": true,
   "hasSource": true,
+  "hasAwarenessObservation": true,
+  "hasAwarenessNotKnowing": true,
   "hasNarrativeTemplate": true,
   "hasNotFirmware": true,
   "hasFair": true,
@@ -179,6 +181,7 @@
   "hasSlug": true,
   "hasWhitepaper": true,
   "hasThesis": true,
+  "hasAwarenessEnergize": true,
   "pass": true,
   "interpretation": "Guest note must link the full paper and keep research-intro voice.",
   "honesty": "Surface copy lock only."
@@ -200,6 +203,31 @@
   "pass": true,
   "interpretation": "Harmony grammar identity for cross-octave sync framing.",
   "honesty": "Algebra of Φ — replayable fixture."
+}
+```
+
+### E10_awareness_observation — Awareness ≠ Knowing · observation energizes downstream
+
+- **Pass:** `true`
+- **Interpretation:** Knowing is a generative dimension; Awareness is observing force that energizes integration/return/re-diff.
+- **Honesty:** Catalog Soft Story lock — not clinical consciousness QED.
+
+```json
+{
+  "id": "E10_awareness_observation",
+  "title": "Awareness ≠ Knowing · observation energizes downstream",
+  "AWARENESS_IS_NOT_KNOWING": true,
+  "AWARENESS_ROLE": "observation that energizes downstream",
+  "AWARENESS_ENERGIZES": [
+    "INTEGRATION",
+    "RETURN",
+    "RE_DIFFERENTIATION"
+  ],
+  "knowingIsDimension": true,
+  "awarenessIsNotDimension": true,
+  "pass": true,
+  "interpretation": "Knowing is a generative dimension; Awareness is observing force that energizes integration/return/re-diff.",
+  "honesty": "Catalog Soft Story lock — not clinical consciousness QED."
 }
 ```
 

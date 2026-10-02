@@ -685,6 +685,22 @@
       "destination": "/interfaces/journey/beyond-crispr-c11-lab-brief.html"
     },
     {
+      "source": "/journey/hero-leo",
+      "destination": "/interfaces/journey/hero-leo.html"
+    },
+    {
+      "source": "/journey/hero-leo/",
+      "destination": "/interfaces/journey/hero-leo.html"
+    },
+    {
+      "source": "/hero-leo",
+      "destination": "/interfaces/journey/hero-leo.html"
+    },
+    {
+      "source": "/hero-leo/",
+      "destination": "/interfaces/journey/hero-leo.html"
+    },
+    {
       "source": "/journey/truckee-sierra-forage",
       "destination": "/interfaces/journey/truckee-sierra-forage.html"
     },

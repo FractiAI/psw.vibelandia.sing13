@@ -1,0 +1,45 @@
+{
+  "schema": "hero-leo-config/v1",
+  "identity": {
+    "name": "Hero Leo",
+    "title": "Scientific Scout",
+    "expedition": "Homeostasis Expedition",
+    "vessel": "SS Vibelandia",
+    "org": "FractiAI",
+    "expeditionId": "homeostasis-expedition"
+  },
+  "initialQuestion": "How do complex systems maintain useful states while continuously changing?",
+  "evidenceLadder": ["E0", "E1", "E2", "E3", "E4", "E5", "E6"],
+  "publicationGate": {
+    "minCriteriaPass": 7,
+    "criteria": {
+      "scientificSignificance": { "weight": 1, "required": true },
+      "novelty": { "weight": 1, "required": true },
+      "evidence": { "weight": 1, "required": true, "minEvidenceLevel": "E1" },
+      "reproducibility": { "weight": 1, "required": true },
+      "falsifiability": { "weight": 1, "required": true },
+      "alternativeExplanations": { "weight": 1, "required": true },
+      "documentation": { "weight": 1, "required": true },
+      "provenance": { "weight": 1, "required": true },
+      "scientificUsefulness": { "weight": 1, "required": false },
+      "publicationReadiness": { "weight": 1, "required": true }
+    },
+    "humanApprovalRequiredForFinalPublish": true,
+    "autonomousDraftsAllowed": true
+  },
+  "statuses": [
+    "SCANNING",
+    "DETECTING",
+    "INVESTIGATING",
+    "FALSIFYING",
+    "VALIDATING",
+    "CAPTURING",
+    "WRITING",
+    "PUBLISHING",
+    "UPDATING",
+    "WAITING",
+    "OFFLINE",
+    "INITIALIZING"
+  ],
+  "honesty": "Never simulate activity. Zero metrics are valid. Publication only after gate + human approval for external claims."
+}

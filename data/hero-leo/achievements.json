@@ -1,0 +1,60 @@
+{
+  "schema": "hero-leo-achievements/v1",
+  "updatedAt": "2026-10-02T17:30:00.000Z",
+  "catalog": [
+    { "id": "first_contact", "name": "FIRST CONTACT", "description": "First completed investigation." },
+    { "id": "null_hunter", "name": "NULL HUNTER", "description": "Successfully falsified a working hypothesis." },
+    { "id": "evidence_bridge", "name": "EVIDENCE BRIDGE", "description": "Converted unconventional framing into conventional falsifiable hypothesis." },
+    { "id": "pattern_found", "name": "PATTERN FOUND", "description": "Identified a previously unconnected relationship worthy of investigation." },
+    { "id": "low_friction_discovery", "name": "LOW-FRICTION DISCOVERY", "description": "Meaningful information via unusually efficient investigation." },
+    { "id": "cross_scale", "name": "CROSS-SCALE", "description": "Meaningful relationship across multiple system levels." },
+    { "id": "recursive_return", "name": "RECURSIVE RETURN", "description": "Later investigation changed an earlier hypothesis." },
+    { "id": "first_whitepaper", "name": "FIRST WHITEPAPER", "description": "Investigation passed whitepaper threshold and published." },
+    { "id": "first_research_repository", "name": "FIRST RESEARCH REPOSITORY", "description": "Standalone reproducible research repository created." },
+    { "id": "first_independent_replication", "name": "FIRST INDEPENDENT REPLICATION", "description": "Independent replication exists." }
+  ],
+  "unlocked": [
+    {
+      "id": "first_contact",
+      "unlockedAt": "2026-10-02T14:30:00.000Z",
+      "investigation_id": "INV-HE-2026-10-02-001",
+      "evidence": "Beyond CRISPR investigation completed with regenerable suite receipt."
+    },
+    {
+      "id": "null_hunter",
+      "unlockedAt": "2026-10-02T16:10:00.000Z",
+      "investigation_id": "INV-HE-2026-10-02-002",
+      "evidence": "C4-as-new-biology claim falsified; reclassified rediscovery / positive control."
+    },
+    {
+      "id": "evidence_bridge",
+      "unlockedAt": "2026-10-02T14:45:00.000Z",
+      "investigation_id": "INV-HE-2026-10-02-001",
+      "evidence": "Multi-scale octave search translated into conventional hypothesis→null→prediction→test structure without ontology dependence."
+    },
+    {
+      "id": "cross_scale",
+      "unlockedAt": "2026-10-02T14:50:00.000Z",
+      "investigation_id": "INV-HE-2026-10-02-001",
+      "evidence": "Candidate architectures scored across molecular→evolutionary bands."
+    },
+    {
+      "id": "recursive_return",
+      "unlockedAt": "2026-10-02T16:15:00.000Z",
+      "investigation_id": "INV-HE-2026-10-02-002",
+      "evidence": "Honesty correction changed lead interpretation of INV-001 ultimate questions."
+    },
+    {
+      "id": "first_whitepaper",
+      "unlockedAt": "2026-10-02T15:00:00.000Z",
+      "investigation_id": "INV-HE-2026-10-02-001",
+      "evidence": "/whitepaper/beyond-crispr-discovery published with human approval path on SING13."
+    },
+    {
+      "id": "first_research_repository",
+      "unlockedAt": "2026-10-02T15:20:00.000Z",
+      "investigation_id": "INV-HE-2026-10-02-001",
+      "evidence": "https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery"
+    }
+  ]
+}

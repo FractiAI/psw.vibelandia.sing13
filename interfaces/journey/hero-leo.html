@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-pending">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Hero Leo · Scientific Scout · Homeostasis Expedition</title>
+  <meta name="description" content="Hero Leo — autonomous scientific scout cockpit for the Homeostasis Expedition. Real ledger, real evidence levels, no simulated activity." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/journey/hero-leo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
+  <link rel="stylesheet" href="/interfaces/journeys.css" />
+  <style>
+    html.vbi18n-pending body{visibility:hidden}html.vbi18n-ready body{visibility:visible}
+    .hl-grid{display:grid;gap:1rem;margin:1.25rem 0}
+    @media(min-width:900px){.hl-grid{grid-template-columns:1.2fr .8fr}}
+    .hl-panel{border-top:1px solid color-mix(in srgb,var(--vb-gold,#c9a227) 40%,transparent);padding:1rem 0}
+    .hl-state{display:inline-block;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.78rem;color:var(--vb-gold,#c9a227)}
+    .hl-state[data-live="false"]{opacity:.75}
+    .hl-k{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;opacity:.7;margin:0 0 .2rem}
+    .hl-v{margin:0 0 .85rem;font-size:1.02rem;line-height:1.45}
+    .hl-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem .85rem;font-size:.92rem}
+    @media(min-width:700px){.hl-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .hl-metrics div{border:1px solid color-mix(in srgb,var(--vb-gold,#c9a227) 28%,transparent);padding:.55rem .65rem}
+    .hl-metrics strong{display:block;font-size:1.25rem;font-family:Cormorant Garamond,Georgia,serif}
+    .hl-list{list-style:none;padding:0;margin:0;display:grid;gap:.65rem}
+    .hl-list li{border-top:1px solid color-mix(in srgb,var(--vb-gold,#c9a227) 28%,transparent);padding-top:.65rem}
+    .hl-list a{color:var(--vb-gold,#c9a227)}
+    .hl-badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid currentColor;padding:.1rem .35rem;margin-right:.35rem;opacity:.85}
+    .hl-err{color:#8a2a2a}
+  </style>
+</head>
+<body class="voyage-flagship vb-pub">
+  <nav class="vb-pub-topnav" aria-label="Site">
+    <a href="/journey/homeostasis-expedition">Homeostasis Expedition</a><span class="dot">·</span>
+    <a href="/lattice-chat">Lattice Chat</a><span class="dot">·</span>
+    <a href="/api/hero-leo">JSON</a><span class="dot">·</span>
+    <a href="/questfest">SS VIBELANDIA</a>
+  </nav>
+  <main class="vb-pub-main">
+    <p class="vb-pub-kicker">Homeostasis Expedition · SS Vibelandia / FractiAI</p>
+    <h1>Hero Leo</h1>
+    <p class="vb-pub-lead">Autonomous Scientific Scout — prospect → falsify → capture → publish when merited. This cockpit reads the real ledger. If no agent process is running, the status says so.</p>
+
+    <p>Status: <span class="hl-state" id="state" data-live="false">loading…</span></p>
+    <p class="hl-v" id="label"></p>
+
+    <div class="hl-grid">
+      <section class="hl-panel" aria-labelledby="now-h">
+        <h2 id="now-h">What is Hero Leo doing now?</h2>
+        <p class="hl-k">Current mission</p>
+        <p class="hl-v" id="mission">—</p>
+        <p class="hl-k">Current question</p>
+        <p class="hl-v" id="question">—</p>
+        <p class="hl-k">Current hypothesis</p>
+        <p class="hl-v" id="hypothesis">—</p>
+        <p class="hl-k">Current null</p>
+        <p class="hl-v" id="nullh">—</p>
+        <p class="hl-k">Evidence level</p>
+        <p class="hl-v" id="evidence">—</p>
+        <p class="hl-k">Current action</p>
+        <p class="hl-v" id="action">—</p>
+        <p class="hl-k">Next test / action</p>
+        <p class="hl-v" id="next">—</p>
+        <p class="hl-k">Last completed</p>
+        <p class="hl-v" id="last">—</p>
+        <p class="hl-k">Last updated</p>
+        <p class="hl-v" id="updated">—</p>
+      </section>
+      <section class="hl-panel" aria-labelledby="metrics-h">
+        <h2 id="metrics-h">Live research metrics</h2>
+        <p class="hl-k">Never fabricated — zero is valid</p>
+        <div class="hl-metrics" id="metrics"></div>
+      </section>
+    </div>
+
+    <section class="hl-panel" aria-labelledby="timeline-h">
+      <h2 id="timeline-h">Discovery timeline</h2>
+      <ul class="hl-list" id="timeline"></ul>
+    </section>
+
+    <section class="hl-panel" aria-labelledby="ledger-h">
+      <h2 id="ledger-h">Investigation ledger</h2>
+      <ul class="hl-list" id="ledger"></ul>
+    </section>
+
+    <section class="hl-panel" aria-labelledby="pub-h">
+      <h2 id="pub-h">Publications &amp; artifacts</h2>
+      <ul class="hl-list" id="pubs"></ul>
+    </section>
+
+    <section class="hl-panel" aria-labelledby="ach-h">
+      <h2 id="ach-h">Achievements</h2>
+      <ul class="hl-list" id="achievements"></ul>
+    </section>
+
+    <div class="vb-pub-cta-row">
+      <a class="vb-pub-btn vb-pub-btn--gold" href="/journey/homeostasis-expedition">Back to expedition</a>
+      <a class="vb-pub-btn vb-pub-btn--ghost" href="/journey/beyond-crispr-phase-2b">Phase 2b · Lattice blind lane</a>
+      <a class="vb-pub-btn vb-pub-btn--ghost" href="/journey/beyond-crispr-c11-lab-brief">C11 · lab brief</a>
+      <a class="vb-pub-btn vb-pub-btn--ghost" href="/api/hero-leo">Raw dashboard JSON</a>
+    </div>
+
+    <p class="honesty"><strong>Honesty:</strong> Hero Leo Phases 1–2 (presence + research memory) are live. Continuous autonomous prospecting (Phase 3+) is not claimed as a running daemon. Publication requires evidence ladder + configurable gate + human approval for external claims. Evidence levels E0–E6 are explicit. Rediscovery is labeled rediscovery. SynthOBS · Syntheverse Sandbox · not medical advice · not ENGINE_SHELF.</p>
+  </main>
+  <footer class="vj-foot">
+    <a href="/journey/homeostasis-expedition">Expedition</a>
+    <a href="/questfest">SS Vibelandia</a>
+    <span>→ ∞^∞</span>
+  </footer>
+  <script>
+    function esc(s) {
+      return String(s ?? '—')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+    function setText(id, v) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = v == null || v === '' ? '—' : String(v);
+    }
+    fetch('/api/hero-leo')
+      .then((r) => r.json())
+      .then((d) => {
+        if (!d.ok) throw new Error(d.error || 'load_failed');
+        const s = d.status || {};
+        const live = !!s.autonomousProcessRunning;
+        const stateEl = document.getElementById('state');
+        stateEl.textContent = s.state || 'OFFLINE';
+        stateEl.dataset.live = live ? 'true' : 'false';
+        setText('label', s.label || '');
+        setText('mission', s.currentMission);
+        setText('question', s.currentQuestion);
+        setText('hypothesis', s.currentHypothesis || 'None active — waiting for next investigation.');
+        setText('nullh', s.currentNull || '—');
+        setText('evidence', s.currentEvidenceLevel || '—');
+        setText('action', s.currentAction);
+        setText('next', s.nextAction);
+        setText('last', s.lastCompletedAction);
+        setText('updated', s.updatedAt);
+
+        const m = d.metrics || {};
+        const metricKeys = [
+          ['investigations_started', 'Investigations started'],
+          ['investigations_completed', 'Completed'],
+          ['hypotheses_falsified', 'Hypotheses falsified'],
+          ['hypotheses_surviving_testing', 'Surviving tests'],
+          ['predictions_generated', 'Predictions'],
+          ['discoveries_captured', 'Discoveries captured'],
+          ['publications_produced', 'Publications'],
+          ['repositories_created', 'Repositories'],
+          ['open_questions', 'Open questions'],
+          ['active_investigations', 'Active now'],
+          ['prospects_scanned', 'Prospects scanned'],
+          ['autonomous_process_running', 'Daemon running'],
+        ];
+        document.getElementById('metrics').innerHTML = metricKeys
+          .map(([k, label]) => {
+            const val = m[k];
+            const display = typeof val === 'boolean' ? (val ? 'yes' : 'no') : val ?? 0;
+            return `<div><span>${esc(label)}</span><strong>${esc(display)}</strong></div>`;
+          })
+          .join('');
+
+        document.getElementById('timeline').innerHTML = (d.timeline?.events || [])
+          .slice()
+          .reverse()
+          .map((e) => {
+            const link = e.href ? `<a href="${esc(e.href)}">open</a>` : '';
+            return `<li><span class="hl-badge">${esc(e.type)}</span> <strong>${esc(e.timestamp?.slice(0, 10))}</strong> — ${esc(e.summary)} ${link}</li>`;
+          })
+          .join('');
+
+        document.getElementById('ledger').innerHTML = (d.ledger?.investigations || [])
+          .slice()
+          .reverse()
+          .map((i) => {
+            const gate = (d.publicationGates || []).find((g) => g.investigation_id === i.investigation_id)?.gate;
+            const gateLabel = gate ? (gate.pass ? 'gate:pass' : 'gate:hold') : '';
+            return `<li>
+              <span class="hl-badge">${esc(i.evidence_level)}</span>
+              <span class="hl-badge">${esc(i.novelty_status)}</span>
+              <span class="hl-badge">${esc(i.publication_status)}</span>
+              ${gateLabel ? `<span class="hl-badge">${esc(gateLabel)}</span>` : ''}
+              <strong>${esc(i.investigation_id)}</strong>
+              <div>${esc(i.question)}</div>
+              <div style="opacity:.85;margin-top:.35rem">${esc(i.result)}</div>
+            </li>`;
+          })
+          .join('');
+
+        document.getElementById('pubs').innerHTML = (d.publications?.items || [])
+          .map((p) => `<li><span class="hl-badge">${esc(p.artifact_type)}</span><span class="hl-badge">${esc(p.publication_status)}</span>
+            <a href="${esc(p.href)}">${esc(p.title)}</a></li>`)
+          .join('');
+
+        const unlocked = new Set((d.achievements?.unlocked || []).map((u) => u.id));
+        document.getElementById('achievements').innerHTML = (d.achievements?.catalog || [])
+          .map((a) => {
+            const u = (d.achievements.unlocked || []).find((x) => x.id === a.id);
+            const on = unlocked.has(a.id);
+            return `<li style="opacity:${on ? 1 : 0.45}"><strong>${esc(a.name)}</strong> — ${esc(a.description)}
+              ${on ? `<div style="margin-top:.25rem;font-size:.9rem">${esc(u.evidence)} · ${esc(u.unlockedAt?.slice(0, 10))}</div>` : '<div style="margin-top:.25rem;font-size:.9rem">Locked — not yet earned</div>'}</li>`;
+          })
+          .join('');
+      })
+      .catch((e) => {
+        document.getElementById('state').textContent = 'OFFLINE';
+        document.getElementById('action').innerHTML = `<span class="hl-err">${esc(e.message || e)}</span>`;
+      });
+  </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+</body>
+</html>

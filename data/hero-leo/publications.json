@@ -1,0 +1,53 @@
+{
+  "schema": "hero-leo-publications/v1",
+  "items": [
+    {
+      "id": "PUB-HE-2026-10-02-001",
+      "investigation_id": "INV-HE-2026-10-02-001",
+      "artifact_type": "whitepaper",
+      "title": "Beyond CRISPR — Biological Discovery Challenge",
+      "publication_status": "PUBLISHED",
+      "human_approval": true,
+      "evidence_level": "E2",
+      "novelty_status": "SYNTHESIS",
+      "href": "/whitepaper/beyond-crispr-discovery",
+      "publishedAt": "2026-10-02T15:00:00.000Z"
+    },
+    {
+      "id": "PUB-HE-2026-10-02-002",
+      "investigation_id": "INV-HE-2026-10-02-001",
+      "artifact_type": "blog",
+      "title": "If CRISPR Is Memory of Past Invaders, What Writes Tomorrow’s Diversity?",
+      "publication_status": "PUBLISHED",
+      "human_approval": true,
+      "evidence_level": "E2",
+      "novelty_status": "SYNTHESIS",
+      "href": "/ship-blog/beyond-crispr-discovery",
+      "publishedAt": "2026-10-02T15:05:00.000Z"
+    },
+    {
+      "id": "PUB-HE-2026-10-02-003",
+      "investigation_id": "INV-HE-2026-10-02-001",
+      "artifact_type": "repository",
+      "title": "synthobs-beyond-crispr-biological-discovery",
+      "publication_status": "PUBLISHED",
+      "human_approval": true,
+      "evidence_level": "E2",
+      "novelty_status": "SYNTHESIS",
+      "href": "https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery",
+      "publishedAt": "2026-10-02T15:20:00.000Z"
+    },
+    {
+      "id": "PUB-HE-2026-10-02-004",
+      "investigation_id": "INV-HE-2026-10-02-003",
+      "artifact_type": "research_note",
+      "title": "C11 ART-class minimum wet-lab brief",
+      "publication_status": "RESEARCH_NOTE",
+      "human_approval": true,
+      "evidence_level": "E3",
+      "novelty_status": "NOVEL_PREDICTION",
+      "href": "/journey/beyond-crispr-c11-lab-brief",
+      "publishedAt": "2026-10-02T17:05:00.000Z"
+    }
+  ]
+}

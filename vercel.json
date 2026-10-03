@@ -249,6 +249,14 @@
       "destination": "/interfaces/layers-awareness.html"
     },
     {
+      "source": "/layers/awareness-layer",
+      "destination": "/interfaces/layers-awareness.html"
+    },
+    {
+      "source": "/layers/awareness-layer/",
+      "destination": "/interfaces/layers-awareness.html"
+    },
+    {
       "source": "/layers/fractal",
       "destination": "/interfaces/layers-fractal.html"
     },

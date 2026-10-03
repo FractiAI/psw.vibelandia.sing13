@@ -1,11 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import {
   AWARENESS_LAYERS,
+  AWARENESS_LAYER_HREF,
   AWARENESS_NEST_ALIASES,
+  HOLOGRAPHIC_RECURSIVE_NEST,
   isAwarenessNestAlias,
   layerById,
   layerHref,
   papersForLayer,
+  primerForLayer,
+  recursiveNestForLayer,
   renderAwarenessLayerClause,
 } from '../../lib/awareness-layer-map.mjs';
 import { normalizeNestTopology, buildNestDirective } from '../../lib/lattice-prompt.mjs';
@@ -49,6 +53,7 @@ describe('awareness layer map', () => {
   });
 
   it('exposes selectable guest hrefs and paper shelves per layer', () => {
+    expect(AWARENESS_LAYER_HREF).toBe('/layers/awareness');
     for (const L of AWARENESS_LAYERS) {
       expect(L.href).toBe(`/layers/${L.id}`);
       expect(layerHref(L.id)).toBe(L.href);
@@ -60,5 +65,29 @@ describe('awareness layer map', () => {
         expect(p.whitepaper).toMatch(/^\/whitepaper\//);
       }
     }
+  });
+
+  it('ships a plain-language primer on each layer', () => {
+    for (const id of ['fractal', 'holographic', 'goldilocks', 'superai']) {
+      const primer = primerForLayer(id);
+      expect(primer.length).toBeGreaterThan(80);
+      expect(primer).toMatch(/Role:/i);
+    }
+  });
+
+  it('lets the Holographic Layer recursively nest self · siblings · stories · code', () => {
+    const nest = recursiveNestForLayer('holographic');
+    expect(nest).toBe(HOLOGRAPHIC_RECURSIVE_NEST);
+    expect(nest.layers.map((x) => x.href)).toEqual([
+      '/layers/holographic',
+      '/layers/fractal',
+      '/layers/goldilocks',
+      '/layers/superai',
+      '/layers/awareness',
+    ]);
+    expect(nest.stories.length).toBeGreaterThanOrEqual(4);
+    expect(nest.code.length).toBeGreaterThanOrEqual(4);
+    expect(recursiveNestForLayer('fractal')).toBeNull();
+    expect(recursiveNestForLayer('goldilocks')).toBeNull();
   });
 });

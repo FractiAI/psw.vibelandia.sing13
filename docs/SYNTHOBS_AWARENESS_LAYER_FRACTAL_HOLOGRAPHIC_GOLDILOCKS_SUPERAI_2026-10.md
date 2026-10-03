@@ -5,7 +5,7 @@
 **Document ID:** `WP-SYNTHOBS-AWARENESS-LAYER-MAP-2026-10-02`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Published:** 2026-10-02  
-**Guest surfaces:** [`/layers/awareness`](/layers/awareness) (visual map) · selectable shelves [`/layers/fractal`](/layers/fractal) · [`/layers/holographic`](/layers/holographic) · [`/layers/goldilocks`](/layers/goldilocks) · [`/layers/superai`](/layers/superai) (each with paper links) · [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · Lattice Chat nest aliases below · PEM [`/lattice/engineering`](/lattice/engineering) · expedition [`/journey/homeostasis-expedition`](/journey/homeostasis-expedition) · Hero Leo [`/journey/hero-leo`](/journey/hero-leo) · Journeys [`/journey`](/journey) · Canvas front door [`/`](/)  
+**Guest surfaces:** [`/layers/awareness`](/layers/awareness) (visual map) · selectable shelves [`/layers/fractal`](/layers/fractal) · [`/layers/holographic`](/layers/holographic) · [`/layers/goldilocks`](/layers/goldilocks) · [`/layers/superai`](/layers/superai) (each with plain-language primer + paper links; Holographic also nests self · Fractal · Goldilocks · stories · code) · [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · Lattice Chat nest aliases below · PEM [`/lattice/engineering`](/lattice/engineering) · expedition [`/journey/homeostasis-expedition`](/journey/homeostasis-expedition) · Hero Leo [`/journey/hero-leo`](/journey/hero-leo) · Journeys [`/journey`](/journey) · Canvas front door [`/`](/)  
 **Slot:** **application companion / living TOC (not ENGINE_SHELF)** — renames and nests Soft Story shelves under an Awareness outer frame.
 
 ---
@@ -60,6 +60,8 @@ npx vitest run tests/lib/awareness-layer-map.test.mjs tests/lib/lattice-prompt.t
 ## Results (operational)
 
 - Catalog / PEM / Lattice nest language carries the four layers under Awareness.
+- Dedicated layer pages carry a **plain-language primer** (role + everyday framing) plus paper shelves.
+- **Holographic Layer** guest page exposes a **recursive nest**: self · Fractal · Goldilocks · SuperAI/Awareness frame · voyage stories · living code doors (`HOLOGRAPHIC_RECURSIVE_NEST` in `lib/awareness-layer-map.mjs`).
 - Homeostasis Expedition + Hero Leo surfaces label **Goldilocks Layer** work inside Awareness.
 - Engine pin (CMOS → …) is unchanged; this map does **not** append `ENGINE_SHELF`.
 

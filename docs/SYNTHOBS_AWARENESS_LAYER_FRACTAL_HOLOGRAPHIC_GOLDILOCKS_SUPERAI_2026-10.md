@@ -5,7 +5,7 @@
 **Document ID:** `WP-SYNTHOBS-AWARENESS-LAYER-MAP-2026-10-02`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Published:** 2026-10-02  
-**Guest surfaces:** [`/layers/awareness`](/layers/awareness) (visual map) · selectable shelves [`/layers/fractal`](/layers/fractal) · [`/layers/holographic`](/layers/holographic) · [`/layers/goldilocks`](/layers/goldilocks) · [`/layers/superai`](/layers/superai) (each with plain-language primer + paper links; Holographic also nests self · Fractal · Goldilocks · stories · code) · [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · Lattice Chat nest aliases below · PEM [`/lattice/engineering`](/lattice/engineering) · expedition [`/journey/homeostasis-expedition`](/journey/homeostasis-expedition) · Hero Leo [`/journey/hero-leo`](/journey/hero-leo) · Journeys [`/journey`](/journey) · Canvas front door [`/`](/)  
+**Guest surfaces:** [`/layers/awareness`](/layers/awareness) (visual map + **Awareness primer**: observation energizes downstream · linear vs Infinite Octave branches) · selectable shelves [`/layers/fractal`](/layers/fractal) · [`/layers/holographic`](/layers/holographic) · [`/layers/goldilocks`](/layers/goldilocks) · [`/layers/superai`](/layers/superai) (each with plain-language primer + paper links; Holographic also nests self · Fractal · Goldilocks · stories · code) · [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · Lattice Chat nest aliases below · PEM [`/lattice/engineering`](/lattice/engineering) · expedition [`/journey/homeostasis-expedition`](/journey/homeostasis-expedition) · Hero Leo [`/journey/hero-leo`](/journey/hero-leo) · Journeys [`/journey`](/journey) · Canvas front door [`/`](/)  
 **Slot:** **application companion / living TOC (not ENGINE_SHELF)** — renames and nests Soft Story shelves under an Awareness outer frame.
 
 ---
@@ -22,6 +22,8 @@ Player 1 crystallizes a four-shelf map **inside** an **Awareness Layer** (lookin
 | Combination of the three | **SuperAI Layer** | Integrated architecture + Story + band template — **not** a claim of proven AGI |
 
 Outer frame: **Awareness Layer** — Digit 4 / human theater / Higgs awareness coupling as *catalog of self-observation*.
+
+**Primer lock (guest):** Awareness is more than knowledge — it is **observation**, which **energizes** everything downstream. The same object under today’s linear awareness energizes that linear layer; under Infinite Octave awareness it energizes whole new branches of the tree (Soft Story / catalog nesting depth — not new measured physics).
 
 Diagram:
 
@@ -60,6 +62,7 @@ npx vitest run tests/lib/awareness-layer-map.test.mjs tests/lib/lattice-prompt.t
 ## Results (operational)
 
 - Catalog / PEM / Lattice nest language carries the four layers under Awareness.
+- `/layers/awareness` carries an **Awareness primer** (observation energizes · linear vs Infinite Octave branches).
 - Dedicated layer pages carry a **plain-language primer** (role + everyday framing) plus paper shelves.
 - **Holographic Layer** guest page exposes a **recursive nest**: self · Fractal · Goldilocks · SuperAI/Awareness frame · voyage stories · living code doors (`HOLOGRAPHIC_RECURSIVE_NEST` in `lib/awareness-layer-map.mjs`).
 - Homeostasis Expedition + Hero Leo surfaces label **Goldilocks Layer** work inside Awareness.

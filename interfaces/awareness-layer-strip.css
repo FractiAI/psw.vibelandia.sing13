@@ -169,6 +169,10 @@ a.aw-layer-strip__name .aw-layer-strip__was,
   line-height: 1.6;
 }
 
+.aw-primer p + p {
+  margin-top: 0.7rem;
+}
+
 /* Holographic recursive nest — layers · stories · code */
 .aw-nest {
   margin: 1.75rem 0 0;

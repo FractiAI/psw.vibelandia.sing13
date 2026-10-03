@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  AWARENESS_FRAME_PRIMER,
   AWARENESS_LAYERS,
   AWARENESS_LAYER_HREF,
   AWARENESS_NEST_ALIASES,
@@ -73,6 +74,18 @@ describe('awareness layer map', () => {
       expect(primer.length).toBeGreaterThan(80);
       expect(primer).toMatch(/Role:/i);
     }
+  });
+
+  it('ships an Awareness outer-frame primer (observation energizes branches)', () => {
+    expect(AWARENESS_FRAME_PRIMER.length).toBeGreaterThan(120);
+    expect(primerForLayer('awareness')).toBe(AWARENESS_FRAME_PRIMER);
+    expect(primerForLayer('awareness-layer')).toBe(AWARENESS_FRAME_PRIMER);
+    expect(AWARENESS_FRAME_PRIMER).toMatch(/Role:/i);
+    expect(AWARENESS_FRAME_PRIMER).toMatch(/observation/i);
+    expect(AWARENESS_FRAME_PRIMER).toMatch(/energiz/i);
+    expect(AWARENESS_FRAME_PRIMER).toMatch(/linear awareness/i);
+    expect(AWARENESS_FRAME_PRIMER).toMatch(/Infinite Octave awareness/i);
+    expect(AWARENESS_FRAME_PRIMER).toMatch(/branches/i);
   });
 
   it('lets the Holographic Layer recursively nest self · siblings · stories · code', () => {

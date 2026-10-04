@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "posts": [
+    {
+      "id": "daily-2026-10-04-synthobs-beyond-crispr-biological-discovery-2026-10",
+      "posted": "2026-10-04",
+      "featured": true,
+      "title": "If CRISPR Is Memory of Past Invaders, What Writes Tomorrow’s Diversity?",
+      "subtitle": "News of the day · Sunday, October 4",
+      "summary": "Beyond CRISPR: multi-scale relational discovery, CBASS as positive-control rediscovery, unexplained-gap shortlist (ART-class and peers), ranked queue with no winner — Homeostasis Expedition.",
+      "href": "/ship-blog/beyond-crispr-discovery",
+      "pill": "TODAY",
+      "docRef": "synthobs-beyond-crispr-biological-discovery-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-03-synthobs-beyond-crispr-biological-discovery-2026-10",
       "posted": "2026-10-03",

@@ -139,6 +139,7 @@
     "sync:site-focus": "node scripts/sync-site-focus.mjs",
     "sync:lattice-catalog-layer": "node scripts/sync-lattice-catalog-layer.mjs",
     "sync:catalog-layer-innovations": "node scripts/sync-catalog-layer-innovations.mjs",
+    "sync:hero-source-tree": "node scripts/sync-infinite-octave-primers-tree.mjs",
     "sync:exhibit-rooms": "node scripts/sync-exhibit-rooms.mjs",
     "sync:exhibit-canvas": "node scripts/sync-exhibit-canvas.mjs",
     "sync:experience-phases": "node scripts/sync-experience-phases.mjs",

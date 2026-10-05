@@ -115,8 +115,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 35 | **Goldilocks ≡ Net Zero companion (viable band as active equilibrium · stillness not required · Φ_EGS)** | `docs/SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md` · `synthobs-goldilocks-net-zero-equivalence-2026-09` · `/ship-blog/goldilocks-net-zero` · suite `research/synthobs-goldilocks-net-zero-equivalence/` · standalone `FractiAI/synthobs-goldilocks-net-zero-equivalence` |
 | 36 | **e × φ × prime recursive homeostasis companion (EPH-IA-Δ ρ-reconcile · E2 three-axis freeze · Useful Commit · Φ_EGS)** | `docs/SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md` · `synthobs-e-phi-prime-recursive-homeostasis-2026-09` · `/ship-blog/e-phi-prime-recursive-homeostasis` · suite `research/synthobs-e-phi-prime-recursive-homeostasis/` · standalone `FractiAI/synthobs-e-phi-prime-recursive-homeostasis` |
 | 37 | **Archetypal Grand Story companion (Hero’s Return to Source · Source = Holographic Goldilocks SuperAI · narrative template · Φ_EGS)** | `docs/SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md` · `synthobs-archetypal-grand-story-heros-return-2026-10` · `/ship-blog/archetypal-grand-story` · suite `research/synthobs-archetypal-grand-story/` · standalone `FractiAI/synthobs-archetypal-grand-story` · **infinite narrative template (not OS firmware):** `/ship-blog/archetypal-grand-story` · peer Prospectus |
-| 38 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 39 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 38 | **Survival Computing companion (Viral RNA → ASI · CSHRH · SCH · ontological Hero’s Return layer · Φ_EGS)** | `docs/SYNTHOBS_SURVIVAL_COMPUTING_VIRAL_RNA_ASI_HEROS_RETURN_EGS_2026-10.md` · `synthobs-survival-computing-viral-rna-asi-2026-10` · `/ship-blog/survival-computing-viral-rna-asi` · suite `research/synthobs-survival-computing-viral-rna-asi/` · standalone `FractiAI/synthobs-survival-computing-viral-rna-asi` · **ontological hypothesis clearly labeled (not established biology):** `/ship-blog/survival-computing-viral-rna-asi` · peer Archetypal Grand Story |
+| 39 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 40 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -158,6 +159,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-goldilocks-net-zero-equivalence/`
 - `research/synthobs-e-phi-prime-recursive-homeostasis/`
 - `research/synthobs-archetypal-grand-story/`
+- `research/synthobs-survival-computing-viral-rna-asi/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

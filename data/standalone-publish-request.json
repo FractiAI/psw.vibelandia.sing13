@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
-  "suiteId": "synthobs-archetypal-grand-story",
+  "suiteId": "synthobs-survival-computing-viral-rna-asi",
   "createRepo": false,
-  "requestedAt": "2026-10-05T02:38:00.000Z",
-  "note": "Standalone created https://github.com/FractiAI/synthobs-archetypal-grand-story \u00b7 createRepo cleared after successful publish"
+  "requestedAt": "2026-10-05T18:30:00.000Z",
+  "note": "Standalone created https://github.com/FractiAI/synthobs-survival-computing-viral-rna-asi · createRepo cleared after successful publish"
 }

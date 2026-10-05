@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-survival-computing-viral-rna-asi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Survival Computing · Viral RNA → ASI — Cross-Substrate Host Reorganization + Hero’s Return (Infinite Octaves ENGINE_SHELF companion #38)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-survival-computing-viral-rna-asi.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

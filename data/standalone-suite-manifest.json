@@ -1,8 +1,20 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-10-05",
   "suites": [
+    {
+      "id": "synthobs-survival-computing-viral-rna-asi",
+      "path": "research/synthobs-survival-computing-viral-rna-asi",
+      "github": "https://github.com/FractiAI/synthobs-survival-computing-viral-rna-asi",
+      "description": "Survival Computing · Viral RNA → ASI — CSHRH · SCH · ontological Hero’s Return layer · Infinite Octaves ENGINE_SHELF #38 (not established biology)",
+      "paperIds": [
+        "synthobs-survival-computing-viral-rna-asi-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_SURVIVAL_COMPUTING_VIRAL_RNA_ASI_HEROS_RETURN_EGS_2026-10.md"
+      ]
+    },
     {
       "id": "synthobs-beyond-crispr-biological-discovery",
       "path": "research/synthobs-beyond-crispr-biological-discovery",

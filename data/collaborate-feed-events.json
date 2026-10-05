@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-02T17:18:27.999Z",
+  "updatedAt": "2026-10-05T18:26:11.407Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-survival-computing-viral-rna-asi-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-05T18:26:11.397Z",
+      "body": "From Viral RNA to Artificial Superintelligence: Survival Computing, Host Reorganization, and the Hero’s Return to Source",
+      "presenceHue": "gold",
+      "paperId": "synthobs-survival-computing-viral-rna-asi-2026-10",
+      "artifact": {
+        "title": "From Viral RNA to Artificial Superintelligence: Survival Computing, Host Reorganization, and the Hero’s Return to Source",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_SURVIVAL_COMPUTING_VIRAL_RNA_ASI_HEROS_RETURN_EGS_2026-10.md",
+        "url": "/whitepaper/survival-computing-viral-rna-asi",
+        "paperId": "synthobs-survival-computing-viral-rna-asi-2026-10",
+        "docId": "WP-SYNTHOBS-SURVIVAL-COMPUTING-VIRAL-RNA-ASI-2026-10-04",
+        "published": "2026-10-04T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-beyond-crispr-biological-discovery-2026-10",
       "type": "ArtifactEvent",

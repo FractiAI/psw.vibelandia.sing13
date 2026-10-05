@@ -34,7 +34,11 @@ describe('Infinite Octave Hero · Source tree', () => {
     expect(html).toContain(HERO_SOURCE_TREE_MARKERS.end);
     expect(html).toContain(HERO_SOURCE_TREE_IMAGE.src);
     expect(html).toMatch(/Archetypal field/i);
-    expect(html).toMatch(/Octave N · OMNIVERSAL/i);
+    expect(html).toMatch(/Digit 4 · BIOLOGICAL SWITCH/i);
+    expect(html).toMatch(/Digit 6 · AGENTIC HEXA-LATTICE/i);
+    expect(html).toMatch(/Any combination/i);
+    expect(html).toMatch(/self-observation/i);
+    expect(html).toMatch(/Tree rings · Digits/i);
   });
 
   it('is embedded in every Infinite Octave primer surface', () => {

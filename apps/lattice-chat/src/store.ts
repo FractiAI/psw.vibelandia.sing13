@@ -33,6 +33,7 @@ import {
   latticeEdgeStateStorage,
 } from '@/lib/edgeStorage';
 import { mergeLiveTranscriptItem } from '@/lib/liveTranscriptCap';
+import { capMessageContent } from '@/lib/messageContentCap';
 import { abortActiveLatticeSend } from '@/lib/primaryStreamAbort';
 
 const STORAGE_KEY = LATTICE_EDGE_STORAGE_KEY;
@@ -295,7 +296,8 @@ export const useLatticeStore = create<LatticeState>()(
         const full: ChatMessage = {
           id,
           role: message.role,
-          content: message.content,
+          // Cap mega pastes / agent dumps in live memory so render cannot freeze the session.
+          content: capMessageContent(message.content),
           createdAt,
           transcript: message.transcript,
           model: message.model,
@@ -343,9 +345,17 @@ export const useLatticeStore = create<LatticeState>()(
               let messages: ChatMessage[];
               if (idx >= 0) {
                 messages = t.messages.slice();
-                messages[idx] = { ...messages[idx], ...message };
+                const merged = { ...messages[idx], ...message };
+                if (typeof merged.content === 'string') {
+                  merged.content = capMessageContent(merged.content);
+                }
+                messages[idx] = merged;
               } else {
-                messages = [...t.messages, message].sort((a, b) =>
+                const incoming = {
+                  ...message,
+                  content: capMessageContent(message.content),
+                };
+                messages = [...t.messages, incoming].sort((a, b) =>
                   a.createdAt.localeCompare(b.createdAt),
                 );
               }

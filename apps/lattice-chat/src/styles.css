@@ -1322,6 +1322,25 @@ body {
 }
 
 /* Rendered Markdown in assistant bubbles and transcript text blocks */
+.md-expand {
+  display: block;
+  margin-top: 0.65rem;
+  padding: 0.35rem 0;
+  border: 0;
+  background: transparent;
+  color: #c9a84c;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.md-expand:hover {
+  color: #f0d78c;
+}
+
 .md-body {
   word-break: break-word;
 }

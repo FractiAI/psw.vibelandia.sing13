@@ -2213,11 +2213,11 @@ export default async function handler(req, res) {
         estimateJsonBytes,
         LATTICE_WIRE_BUDGET_BYTES,
         LATTICE_PAYLOAD_TOO_LARGE_MESSAGE,
-        trimHistoryForWireBudget,
+        prepareLatticeWireBody,
       } = budgetMod;
-      if (estimateJsonBytes(body) > LATTICE_WIRE_BUDGET_BYTES && Array.isArray(body.history)) {
-        const { history, ...rest } = body;
-        body.history = trimHistoryForWireBudget(history, rest);
+      if (estimateJsonBytes(body) > LATTICE_WIRE_BUDGET_BYTES) {
+        const packed = prepareLatticeWireBody(body);
+        body = packed.body;
       }
       if (estimateJsonBytes(body) > LATTICE_WIRE_BUDGET_BYTES) {
         return json(res, 413, {

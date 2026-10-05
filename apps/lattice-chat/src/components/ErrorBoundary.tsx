@@ -2,15 +2,18 @@ import { Component, type ErrorInfo, type ReactNode } from 'react';
 import { LATTICE_EDGE_STORAGE_KEY, prunePersistedEdgeBlob } from '@/lib/edgeStorage';
 
 type Props = { children: ReactNode };
-type State = { error: Error | null; recoverKey: number };
+type State = { error: Error | null; recoverKey: number; autoTried: boolean };
 
 /**
  * Catch mount/rehydrate throws so Lattice Chat does not white-screen the tab.
  * Soft recover remounts in-place (composer draft lives in sessionStorage).
  * Hard refresh clears chat cache only — BYOK keys stay in provider key slots.
+ * Auto soft-recover once on crash so long paper/ship sessions do not strand Player 1.
  */
 export class ErrorBoundary extends Component<Props, State> {
-  state: State = { error: null, recoverKey: 0 };
+  state: State = { error: null, recoverKey: 0, autoTried: false };
+  private autoTimer: ReturnType<typeof setTimeout> | null = null;
+  private autoRecoverArmed = false;
 
   static getDerivedStateFromError(error: Error): Partial<State> {
     return { error };
@@ -18,6 +21,16 @@ export class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: ErrorInfo) {
     console.error('[lattice-chat] render crash', error, info?.componentStack);
+    if (this.autoRecoverArmed || this.state.autoTried) return;
+    this.autoRecoverArmed = true;
+    this.autoTimer = setTimeout(() => {
+      this.setState({ autoTried: true });
+      this.softRecover();
+    }, 400);
+  }
+
+  componentWillUnmount() {
+    if (this.autoTimer) clearTimeout(this.autoTimer);
   }
 
   private softRecover = () => {
@@ -80,8 +93,8 @@ export class ErrorBoundary extends Component<Props, State> {
         </h1>
         <p style={{ margin: 0, maxWidth: '28rem', opacity: 0.85, lineHeight: 1.5 }}>
           Usually a bloated on-device chat cache (heavy sessions share browser storage with the doodle
-          wall). Try Continue first — your typed draft is kept in this tab. Full refresh only if
-          Continue fails; API keys stay on-device either way.
+          wall) or a mega paste mid-ship. Trying Continue automatically once — your typed draft stays
+          in this tab. Full refresh only if Continue fails; API keys stay on-device either way.
         </p>
         <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <button

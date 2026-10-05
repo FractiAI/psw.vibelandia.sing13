@@ -156,6 +156,22 @@ describe('Lattice Chat edge stability', () => {
     expect(items.length).toBeLessThanOrEqual(MAX_LIVE_TRANSCRIPT_ITEMS);
   });
 
+  it('caps mega message bodies and markdown render slices', async () => {
+    const {
+      MAX_LIVE_MESSAGE_CHARS,
+      MAX_MARKDOWN_RENDER_CHARS,
+      capMessageContent,
+      markdownRenderSlice,
+    } = await import('../../apps/lattice-chat/src/lib/messageContentCap.ts');
+    const mega = 'z'.repeat(MAX_LIVE_MESSAGE_CHARS + 2_000);
+    const capped = capMessageContent(mega);
+    expect(capped.length).toBeLessThanOrEqual(MAX_LIVE_MESSAGE_CHARS + 2);
+    const slice = markdownRenderSlice(mega);
+    expect(slice.truncated).toBe(true);
+    expect(slice.visible.length).toBeLessThanOrEqual(MAX_MARKDOWN_RENDER_CHARS + 2);
+    expect(slice.totalChars).toBe(mega.length);
+  });
+
   it('round-trips composer draft in sessionStorage', () => {
     clearComposerDraft('thread_demo');
     expect(readComposerDraft('thread_demo')).toBe('');

@@ -38,4 +38,25 @@ describe('lattice-request-budget', () => {
   it('estimates JSON byte length', () => {
     expect(estimateJsonBytes({ a: 1 })).toBeGreaterThan(4);
   });
+
+  it('truncates mega message field when history trim is not enough', async () => {
+    const {
+      prepareLatticeWireBody,
+      LATTICE_WIRE_BUDGET_BYTES,
+      LATTICE_WIRE_MESSAGE_MAX_CHARS,
+    } = await import('../../lib/lattice-request-budget.mjs');
+    const packed = prepareLatticeWireBody(
+      {
+        message: 'M'.repeat(LATTICE_WIRE_MESSAGE_MAX_CHARS + 50_000),
+        history: [{ role: 'user', content: 'old' }],
+        provider: 'cursor',
+      },
+      LATTICE_WIRE_BUDGET_BYTES,
+    );
+    expect(packed.trimmed).toBe(true);
+    expect(packed.bytes).toBeLessThanOrEqual(LATTICE_WIRE_BUDGET_BYTES);
+    expect(String(packed.body.message).length).toBeLessThanOrEqual(
+      LATTICE_WIRE_MESSAGE_MAX_CHARS + 2,
+    );
+  });
 });

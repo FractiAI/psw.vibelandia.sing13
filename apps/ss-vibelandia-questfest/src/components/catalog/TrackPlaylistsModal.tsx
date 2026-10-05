@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { isMasterPlaylist } from '@/lib/catalogSeed';
+import { applyPlaylistMenuOrder, manageableMenuPlaylists } from '@/lib/playlistMenuOrder';
 import { jukeboxPlaylistEditHref } from '@/lib/jukeboxRoutes';
 import { PLAIN } from '@/lib/plainSpeak';
 
@@ -15,12 +15,13 @@ interface TrackPlaylistsModalProps {
 export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: TrackPlaylistsModalProps) {
   const navigate = useNavigate();
   const playlists = useCatalogStore((s) => s.playlists);
+  const menuOrder = useCatalogStore((s) => s.userPlaylistMenuOrder);
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const setTrackPlaylistMembership = useCatalogStore((s) => s.setTrackPlaylistMembership);
 
   const userPlaylists = useMemo(
-    () => playlists.filter((p) => !isMasterPlaylist(p.id)).sort((a, b) => a.name.localeCompare(b.name)),
-    [playlists],
+    () => manageableMenuPlaylists(applyPlaylistMenuOrder(playlists, menuOrder)),
+    [menuOrder, playlists],
   );
 
   const initialSelected = useMemo(

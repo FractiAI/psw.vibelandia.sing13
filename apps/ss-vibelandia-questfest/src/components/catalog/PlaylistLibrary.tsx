@@ -3,6 +3,7 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { PlaylistEditor } from '@/components/catalog/PlaylistEditor';
 import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { applyPlaylistMenuOrder } from '@/lib/playlistMenuOrder';
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
 import { MASTER_LIBRARY_UI_HINT, SONIC_SINGULARITY_TAGLINE } from '@/lib/sonicCatalogCopy';
@@ -13,20 +14,13 @@ interface PlaylistLibraryProps {
   onClearInitialEdit?: () => void;
 }
 
-function sortPlaylists<T extends { id: string; name: string }>(playlists: T[]): T[] {
-  return [...playlists].sort((a, b) => {
-    if (a.id === MASTER_PLAYLIST_ID) return -1;
-    if (b.id === MASTER_PLAYLIST_ID) return 1;
-    return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
-  });
-}
-
 export function PlaylistLibrary({
   onOpenPlaylist,
   initialEditId = null,
   onClearInitialEdit,
 }: PlaylistLibraryProps) {
   const playlists = useCatalogStore((s) => s.playlists);
+  const menuOrder = useCatalogStore((s) => s.userPlaylistMenuOrder);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const renamePlaylist = useCatalogStore((s) => s.renamePlaylist);
@@ -93,7 +87,7 @@ export function PlaylistLibrary({
     setEditingId(id);
   };
 
-  const sorted = useMemo(() => sortPlaylists(playlists), [playlists]);
+  const sorted = useMemo(() => applyPlaylistMenuOrder(playlists, menuOrder), [menuOrder, playlists]);
 
   if (editingId && playlists.some((p) => p.id === editingId)) {
     return (

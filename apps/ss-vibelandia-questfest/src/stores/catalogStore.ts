@@ -32,8 +32,9 @@ import {
 } from '@/lib/deletedTrackTombstones';
 import { hydrateCatalogFromDevice, instantBootSnapshot } from '@/lib/catalogBoot';
 import {
-  insertPlaylistMenuOrderAfter,
+  bumpRecentPlaylistMenuOrder,
   normalizePlaylistMenuOrder,
+  PLAYLIST_ORDER_MODE_RECENT_ALPHA,
 } from '@/lib/playlistMenuOrder';
 import {
   loadCatalogCache,
@@ -174,7 +175,7 @@ interface CatalogState {
   activePlaylistId: string;
   /** Device-local likes (newest first); drives My Likes playlist. */
   likedTrackIds: string[];
-  /** Device-local menu order for user playlists (not master / likes). */
+  /** Recently listened user playlists (most recent first); rest of menu is A–Z. */
   userPlaylistMenuOrder: string[];
   /** Last shared-playlist sync error (null when healthy). */
   playlistSyncError: string | null;
@@ -217,6 +218,8 @@ interface CatalogState {
   duplicatePlaylist: (id: string) => string;
   reorderUserPlaylistMenu: (fromIndex: number, toIndex: number) => void;
   moveUserPlaylistMenu: (playlistId: string, dir: -1 | 1) => void;
+  /** Float a playlist above A–Z after the guest listens from it. */
+  touchRecentPlaylistListen: (playlistId: string) => void;
   addTrackToPlaylist: (trackId: string, playlistId: string) => void;
   removeTrackFromPlaylist: (trackId: string, playlistId: string) => void;
   moveTrackInPlaylist: (playlistId: string, trackId: string, dir: -1 | 1) => void;
@@ -550,7 +553,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const applied = snapshotToState(snapshot);
     const prefs = loadCatalogPrefsOnly();
     const likedTrackIds = resolveLikedTrackIds(prefs, applied.playlists);
-    const userPlaylistMenuOrder = normalizePlaylistMenuOrder(prefs?.userPlaylistMenuOrder, applied.playlists);
+    // One-time migrate: older full manual menu orders → empty recent (pure A–Z).
+    const userPlaylistMenuOrder =
+      prefs?.playlistOrderMode === PLAYLIST_ORDER_MODE_RECENT_ALPHA
+        ? normalizePlaylistMenuOrder(prefs?.userPlaylistMenuOrder, applied.playlists)
+        : [];
     set({
       tracks: applied.tracks,
       playlists: applied.playlists,
@@ -622,7 +629,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           };
         });
       }
-      return { playlists, activePlaylistId: id, userPlaylistMenuOrder: [...s.userPlaylistMenuOrder.filter((pid) => pid !== id), id] };
+      return { playlists, activePlaylistId: id };
     });
     get().persist();
     scheduleSharedPlaylistSync(get().playlists, { immediate: true });
@@ -727,7 +734,6 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         },
       ],
       activePlaylistId: newId,
-      userPlaylistMenuOrder: insertPlaylistMenuOrderAfter(s.userPlaylistMenuOrder, newId, id),
     }));
     get().persist();
     scheduleSharedPlaylistSync(get().playlists, { immediate: true });
@@ -754,6 +760,16 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const to = idx + dir;
     if (to < 0 || to >= ordered.length) return;
     get().reorderUserPlaylistMenu(idx, to);
+  },
+
+  touchRecentPlaylistListen: (playlistId) => {
+    if (!playlistId) return;
+    const { userPlaylistMenuOrder, playlists } = get();
+    if (!playlists.some((p) => p.id === playlistId)) return;
+    const next = bumpRecentPlaylistMenuOrder(userPlaylistMenuOrder, playlistId);
+    if (next.join('\t') === userPlaylistMenuOrder.join('\t')) return;
+    set({ userPlaylistMenuOrder: next });
+    get().persist();
   },
 
   addPlaylistToPlaylist: (childPlaylistId, parentPlaylistId) => {
@@ -1391,6 +1407,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       activePlaylistId,
       likedTrackIds,
       userPlaylistMenuOrder: normalizedOrder,
+      playlistOrderMode: PLAYLIST_ORDER_MODE_RECENT_ALPHA,
     });
     saveCatalogCache({
       version: CATALOG_VERSION,

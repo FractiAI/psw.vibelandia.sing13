@@ -155,6 +155,7 @@ export function playTrackById(
 ): void {
   if (opts?.playbackPlaylistId) {
     usePlaybackStore.getState().setPlaybackPlaylist(opts.playbackPlaylistId);
+    useCatalogStore.getState().touchRecentPlaylistListen(opts.playbackPlaylistId);
   }
   const tr = getTrack(trackId);
   if (!tr) {

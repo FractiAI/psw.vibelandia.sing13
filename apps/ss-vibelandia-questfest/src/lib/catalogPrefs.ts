@@ -13,8 +13,13 @@ export interface CatalogPrefs {
   activePlaylistId: string;
   /** Device-local liked track ids (newest first). Drives My Likes playlist. */
   likedTrackIds?: string[];
-  /** Device-local order for playlist menu (user playlists only). */
+  /**
+   * Recently listened user playlists (most recent first).
+   * Presentation: recent → remaining A–Z (pinned catalogs stay first).
+   */
   userPlaylistMenuOrder?: string[];
+  /** `recent-alpha-v1` — migrate older full manual orders to alpha + recent. */
+  playlistOrderMode?: string;
 }
 
 const MAX_PREFS_BYTES = 800_000;

@@ -56,6 +56,7 @@ import {
   uploadPlaylistCoverBlob,
   uploadTrackToServer,
   syncUserPlaylistsToServer,
+  patchTrackPostersOnServer,
 } from '@/lib/serverCatalog';
 import { localMediaKeyFor } from '@/lib/localPlayback';
 import type { CatalogSnapshot, PlaylistDef, PlaylistKind, TrackDef } from '@/lib/catalogTypes';
@@ -717,9 +718,14 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         const tr = get().tracks[trackId];
         return tr && isUserUploadTrack(trackId, tr);
       });
-      await Promise.allSettled(
-        memberIds.map((trackId) => updateTrackOnServer(trackId, { posterSrc })),
-      );
+      // One catalog write — parallel per-track updates were losing concurrent title edits.
+      if (memberIds.length) {
+        try {
+          await patchTrackPostersOnServer(memberIds, posterSrc);
+        } catch {
+          /* local posters already applied; playlist sync still carries the cover */
+        }
+      }
     }
   },
 
@@ -1147,6 +1153,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       ...prev,
       ...(patch.title !== undefined ? { title: patch.title.trim() || prev.title } : {}),
       ...(patch.artist !== undefined ? { artist: patch.artist.trim() || prev.artist } : {}),
+      metaUpdatedAt: Date.now(),
     };
     const description =
       patch.description !== undefined ? clampDescription(patch.description) : prev.description;
@@ -1164,13 +1171,19 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
     const shouldSyncServer = isServerUploadConfigured() && isUserUploadTrack(trackId, prev);
 
+    // Optimistic local persist first — survives server races / stale sync pulls.
     report?.('Saving…');
+    set((s) => ({ tracks: { ...s.tracks, [trackId]: { ...next } } }));
+    get().persist();
 
     if (shouldSyncServer) {
       let posterSrc = next.posterSrc;
       if (opts?.coverFile) {
         posterSrc = await uploadCoverBlob(trackId, opts.coverFile, { onProgress: report });
         next.posterSrc = posterSrc;
+        next.metaUpdatedAt = Date.now();
+        set((s) => ({ tracks: { ...s.tracks, [trackId]: { ...next } } }));
+        get().persist();
       }
       report?.('Syncing metadata to server…');
       const userPlaylistIds = get()
@@ -1183,23 +1196,35 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         genre: next.genre,
         durationSec: next.durationSec,
         playlistIds: userPlaylistIds,
+        metaUpdatedAt: next.metaUpdatedAt,
       };
       if (opts?.coverFile && posterSrc) serverPatch.posterSrc = posterSrc;
       else if (patch.posterSrc === null) serverPatch.posterSrc = '';
       const { track: saved } = await updateTrackOnServer(trackId, serverPatch);
-      Object.assign(next, {
-        ...saved,
-        id: trackId,
-        serverHosted: true,
-        sourceKey: prev.sourceKey,
-        downloadedLocally: prev.downloadedLocally,
-        localMediaKey: prev.localMediaKey,
-      });
+      // Keep our metadata if the server row is older (concurrent cover/catalog write).
+      const savedMeta = Number(saved.metaUpdatedAt) || 0;
+      const localMeta = Number(next.metaUpdatedAt) || 0;
+      if (savedMeta >= localMeta) {
+        Object.assign(next, {
+          ...saved,
+          id: trackId,
+          serverHosted: true,
+          sourceKey: prev.sourceKey,
+          downloadedLocally: prev.downloadedLocally,
+          localMediaKey: prev.localMediaKey,
+          metaUpdatedAt: saved.metaUpdatedAt ?? next.metaUpdatedAt,
+        });
+      } else {
+        next.serverHosted = true;
+        if (saved.src) next.src = saved.src;
+        if (saved.videoSrc) next.videoSrc = saved.videoSrc;
+      }
       if (patch.posterSrc === null) delete next.posterSrc;
     } else {
       report?.('Saving on this device…');
       if (opts?.coverFile) {
         next.posterSrc = await coverFileToPersistableDataUrl(opts.coverFile);
+        next.metaUpdatedAt = Date.now();
       }
     }
 

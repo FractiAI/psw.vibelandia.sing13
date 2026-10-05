@@ -61,6 +61,9 @@ export function TrackMetadataEditor({
   };
 
   useEffect(() => {
+    // Never clobber in-progress edits — concurrent store updates (covers/sync) used to
+    // reset the form mid-save and make titles like "1:12" look unsaved.
+    if (busy) return;
     setTitle(track.title);
     setArtist(track.artist);
     setGenre(track.genre ?? '');
@@ -68,7 +71,7 @@ export function TrackMetadataEditor({
     setCoverFile(null);
     setCoverInputKey((k) => k + 1);
     setCoverPreviewSafe(track.posterSrc);
-  }, [track.id, track.title, track.artist, track.genre, track.description, track.posterSrc]);
+  }, [track.id, track.title, track.artist, track.genre, track.description, track.posterSrc, busy]);
 
   useEffect(() => () => revokeCoverBlob(), []);
 

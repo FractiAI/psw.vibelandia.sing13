@@ -271,6 +271,7 @@ export type TrackMetadataPatch = {
   durationSec?: number;
   playlistIds?: string[];
   posterSrc?: string;
+  metaUpdatedAt?: number;
 };
 
 export type UpdateTrackOnServerResult = {
@@ -306,6 +307,28 @@ export async function updateTrackOnServer(
   const videoSrc = String(track.videoSrc || '').trim();
   if (!src && !videoSrc) throw catalogApiError('update_failed');
   return { track: { ...track, src: src || videoSrc }, catalog: data.catalog };
+}
+
+/** One catalog write: apply the same posterSrc to many tracks (avoids lost title updates). */
+export async function patchTrackPostersOnServer(
+  trackIds: string[],
+  posterSrc: string,
+): Promise<void> {
+  const secret = catalogUploadSecret();
+  if (!secret) throw new Error('catalog_upload_unconfigured');
+  const ids = [...new Set(trackIds.map((id) => String(id || '').trim()).filter(Boolean))];
+  if (!ids.length || !posterSrc) return;
+
+  const res = await postCatalogJson(TRACK_API, secret, {
+    action: 'patch_posters',
+    trackIds: ids,
+    posterSrc,
+  });
+  const data = (await res.json().catch(() => ({}))) as { error?: string; message?: string };
+  if (!res.ok) {
+    const msg = data.message || data.error || 'update_failed';
+    throw catalogApiError(data.error || 'update_failed', msg);
+  }
 }
 
 /** Same ceiling as catalog client blob uploads (standard phone/camera photos). */

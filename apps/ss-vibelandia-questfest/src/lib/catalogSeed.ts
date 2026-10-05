@@ -63,16 +63,40 @@ export function isUserUploadTrack(id: string, tr: TrackDef): boolean {
 }
 
 /** Server catalog + user playlists + offline downloads only (no full library in browser storage). */
-/** Keep just-uploaded server tracks if live sync has not caught up yet. */
+/** Keep just-uploaded server tracks if live sync has not caught up yet.
+ *  Also keep newer local metadata (title/artist/…) so concurrent catalog
+ *  writes (e.g. playlist cover propagate) cannot silently revert Edit track. */
 export function mergePendingServerTracks(
   server: CatalogSnapshot,
   localTracks: Record<string, TrackDef>,
 ): CatalogSnapshot {
   const tracks = { ...server.tracks };
   let changed = false;
-  for (const [id, tr] of Object.entries(localTracks)) {
-    if (!tr.serverHosted || tracks[id]) continue;
-    tracks[id] = tr;
+  for (const [id, local] of Object.entries(localTracks)) {
+    const remote = tracks[id];
+    if (!remote) {
+      if (local.serverHosted) {
+        tracks[id] = local;
+        changed = true;
+      }
+      continue;
+    }
+    const localMeta = Number(local.metaUpdatedAt) || 0;
+    const remoteMeta = Number(remote.metaUpdatedAt) || 0;
+    if (localMeta <= remoteMeta) continue;
+    const merged: TrackDef = {
+      ...remote,
+      title: local.title,
+      artist: local.artist,
+      metaUpdatedAt: local.metaUpdatedAt,
+    };
+    if (local.genre) merged.genre = local.genre;
+    else delete merged.genre;
+    if (local.description) merged.description = local.description;
+    else delete merged.description;
+    if (local.posterSrc) merged.posterSrc = local.posterSrc;
+    else delete merged.posterSrc;
+    tracks[id] = merged;
     changed = true;
   }
   return changed ? { ...server, tracks } : server;

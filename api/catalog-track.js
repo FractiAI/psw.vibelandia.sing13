@@ -72,7 +72,7 @@ module.exports = async function handler(req, res) {
     .replace(/[^\w-]/g, '')
     .slice(0, 80);
 
-  if (!trackId && action !== 'delete_many') {
+  if (!trackId && action !== 'delete_many' && action !== 'patch_posters') {
     return res.status(400).json({ error: 'invalid_track_id' });
   }
 
@@ -103,6 +103,46 @@ module.exports = async function handler(req, res) {
     });
   }
 
+  if (action === 'patch_posters') {
+    const posterSrc = body.posterSrc != null ? String(body.posterSrc).trim().slice(0, 2048) : '';
+    if (!posterSrc) return res.status(400).json({ error: 'invalid_poster' });
+    const rawIds = Array.isArray(body.trackIds) ? body.trackIds : [];
+    const ids = [
+      ...new Set(
+        rawIds
+          .map((id) =>
+            String(id || '')
+              .replace(/[^\w-]/g, '')
+              .slice(0, 80),
+          )
+          .filter(Boolean),
+      ),
+    ].slice(0, 500);
+    if (!ids.length) return res.status(400).json({ error: 'invalid_track_ids' });
+
+    try {
+      let dynamic = await loadServerCatalog(req);
+      if (!dynamic) return res.status(500).json({ error: 'catalog_save_failed' });
+      let patched = 0;
+      for (const id of ids) {
+        if (!dynamic.tracks?.[id]) continue;
+        const next = patchDynamicTrack(dynamic, id, { posterSrc });
+        if (next) {
+          dynamic = next;
+          patched += 1;
+        }
+      }
+      const saved = await saveDynamicCatalog(dynamic);
+      if (!saved.ok) {
+        return res.status(500).json({ error: 'catalog_save_failed', message: saved.message });
+      }
+      return res.status(200).json({ ok: true, patched, catalog: dynamic });
+    } catch (e) {
+      console.error('[catalog-track] patch_posters', e);
+      return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
+    }
+  }
+
   const dynamic = await ensureDynamicTrack(req, trackId);
   if (!dynamic?.tracks?.[trackId]) {
     return res.status(404).json({ error: 'track_not_found' });
@@ -123,7 +163,7 @@ module.exports = async function handler(req, res) {
   }
 
   if (action === 'update') {
-    let next = patchDynamicTrack(dynamic, trackId, {
+    const patchFields = {
       title: body.title,
       artist: body.artist,
       genre: body.genre,
@@ -131,59 +171,71 @@ module.exports = async function handler(req, res) {
       durationSec: body.durationSec,
       src: body.src,
       posterSrc: body.posterSrc,
+      metaUpdatedAt: body.metaUpdatedAt,
       clearVideo: body.clearVideo === true || body.clearVideo === 'true',
-    });
-    if (!next) return res.status(404).json({ error: 'track_not_found' });
+    };
 
-    if (Array.isArray(body.playlistIds)) {
-      next = setDynamicTrackPlaylistMembership(next, trackId, body.playlistIds);
-    }
+    // Reload + patch + save with retries so concurrent writers cannot clobber titles.
+    let next = null;
+    let savedTrack = null;
+    let lastError = null;
+    for (let attempt = 0; attempt < 4; attempt++) {
+      const fresh = await ensureDynamicTrack(req, trackId);
+      if (!fresh?.tracks?.[trackId]) {
+        return res.status(404).json({ error: 'track_not_found' });
+      }
+      next = patchDynamicTrack(fresh, trackId, patchFields);
+      if (!next) return res.status(404).json({ error: 'track_not_found' });
 
-    try {
-      const saved = await saveDynamicCatalog(next);
-      if (!saved.ok) {
-        return res.status(500).json({ error: 'catalog_save_failed', message: saved.message });
+      if (Array.isArray(body.playlistIds)) {
+        next = setDynamicTrackPlaylistMembership(next, trackId, body.playlistIds);
       }
 
-      const savedTrack = next.tracks[trackId];
-      const checkTitle = body.title !== undefined;
-      const checkArtist = body.artist !== undefined;
-      const checkSrc = body.src !== undefined;
-      const checkClearVideo = body.clearVideo === true || body.clearVideo === 'true';
-
-      let verified = false;
-      for (let attempt = 0; attempt < 3; attempt++) {
-        const reloaded = await ensureDynamicTrack(req, trackId);
-        const got = reloaded?.tracks?.[trackId];
-        if (!got) {
-          await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+      try {
+        const saved = await saveDynamicCatalog(next);
+        if (!saved.ok) {
+          lastError = saved.message || 'catalog_save_failed';
+          await new Promise((r) => setTimeout(r, 200 * (attempt + 1)));
           continue;
         }
-        const titleOk = !checkTitle || got.title === savedTrack.title;
-        const artistOk = !checkArtist || got.artist === savedTrack.artist;
-        const srcOk = !checkSrc || got.src === savedTrack.src;
-        const videoOk = !checkClearVideo || !got.videoSrc;
-        if (titleOk && artistOk && srcOk && videoOk) {
-          verified = true;
-          break;
-        }
-        await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
-      }
-      if (!verified) {
-        console.warn('[catalog-track] verify soft-fail (still returning saved track)', trackId);
-      }
+        savedTrack = next.tracks[trackId];
 
-      // Prefer the in-memory saved row when reload races (Redis/Blob lag).
-      if (verified) {
-        const fresh = await ensureDynamicTrack(req, trackId);
-        const track = fresh?.tracks?.[trackId] ?? savedTrack;
-        return res.status(200).json({ track, catalog: fresh ?? next });
+        const checkTitle = body.title !== undefined;
+        const checkArtist = body.artist !== undefined;
+        const checkPoster = body.posterSrc !== undefined;
+        const reloaded = await ensureDynamicTrack(req, trackId);
+        const got = reloaded?.tracks?.[trackId];
+        const titleOk = !checkTitle || (got && got.title === savedTrack.title);
+        const artistOk = !checkArtist || (got && got.artist === savedTrack.artist);
+        const posterOk =
+          !checkPoster ||
+          (got &&
+            (body.posterSrc
+              ? got.posterSrc === savedTrack.posterSrc
+              : !got.posterSrc));
+        if (titleOk && artistOk && posterOk) {
+          return res.status(200).json({
+            track: got || savedTrack,
+            catalog: reloaded || next,
+          });
+        }
+        // Stale concurrent write won — retry with a fresh load.
+        await new Promise((r) => setTimeout(r, 250 * (attempt + 1)));
+      } catch (e) {
+        lastError = e?.message || 'catalog_save_failed';
+        console.error('[catalog-track] update save', e);
+        await new Promise((r) => setTimeout(r, 200 * (attempt + 1)));
       }
-      return res.status(200).json({ track: savedTrack, catalog: next, verifySoftFail: true });
-    } catch (e) {
-      console.error('[catalog-track] update save', e);
-      return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
     }
+
+    if (savedTrack) {
+      console.warn('[catalog-track] verify soft-fail after retries', trackId);
+      return res.status(200).json({ track: savedTrack, catalog: next, verifySoftFail: true });
+    }
+    return res.status(500).json({
+      error: 'catalog_save_failed',
+      message: lastError || 'Could not persist track update.',
+    });
   }
 
   return res.status(400).json({ error: 'invalid_action' });

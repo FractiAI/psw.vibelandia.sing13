@@ -43,6 +43,11 @@ export interface TrackDef {
   lyricsRef?: string;
   /** License line for syndication — e.g. 'stream-only', 'contact for licensing'. */
   license?: string;
+  /**
+   * Client clock when title/artist/genre/description/poster were last edited.
+   * Sync must not clobber newer local metadata with a stale server manifest.
+   */
+  metaUpdatedAt?: number;
 }
 
 export interface PlaylistDef {

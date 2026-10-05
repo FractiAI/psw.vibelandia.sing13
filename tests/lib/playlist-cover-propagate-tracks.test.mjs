@@ -15,7 +15,7 @@ describe('playlist cover propagates to member tracks', () => {
     expect(block).toMatch(/propagateCover/);
     expect(block).toMatch(/tracks\[trackId\] = \{ \.\.\.tr, posterSrc \}/);
     expect(block).toMatch(/!isMasterPlaylist\(id\)/);
-    expect(block).toMatch(/updateTrackOnServer\(trackId, \{ posterSrc \}\)/);
+    expect(block).toMatch(/patchTrackPostersOnServer/);
   });
 
   it('edit playlist track thumbs prefer playlist cover via playingCoverUrl', () => {

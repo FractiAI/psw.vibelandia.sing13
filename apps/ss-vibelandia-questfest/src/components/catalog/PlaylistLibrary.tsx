@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { PlaylistEditor } from '@/components/catalog/PlaylistEditor';
 import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
-import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { isMasterPlaylist } from '@/lib/catalogSeed';
 import { applyPlaylistMenuOrder } from '@/lib/playlistMenuOrder';
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';

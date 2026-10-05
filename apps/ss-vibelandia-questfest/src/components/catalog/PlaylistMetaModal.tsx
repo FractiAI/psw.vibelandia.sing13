@@ -57,7 +57,10 @@ export function PlaylistMetaModal({ playlistId, open, onClose }: PlaylistMetaMod
       URL.revokeObjectURL(coverBlobRef.current);
       coverBlobRef.current = null;
     }
-  }, [open, pl, isMaster]);
+    // Depend on id + posterSrc only — whole `pl` identity flips on every store write
+    // and would wipe an in-progress local blob preview after Change image.
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional pinch deps
+  }, [open, playlistId, pl?.posterSrc, isMaster]);
 
   useEffect(() => () => {
     if (coverBlobRef.current) URL.revokeObjectURL(coverBlobRef.current);

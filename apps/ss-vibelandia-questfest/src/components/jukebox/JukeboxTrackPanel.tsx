@@ -6,8 +6,9 @@ import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { useJukeboxRowGestures, JB_SWIPE_REVEAL_PX } from '@/hooks/useJukeboxRowGestures';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { PlaylistMetaModal } from '@/components/catalog/PlaylistMetaModal';
+import { TrackEditModal } from '@/components/catalog/TrackEditModal';
 import { LikeButton } from '@/components/catalog/LikeButton';
-import { isMasterPlaylist, isMyLikesPlaylist } from '@/lib/catalogSeed';
+import { isMasterPlaylist, isMyLikesPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
 import { playTrackById } from '@/lib/trackPlayback';
 import { fmtDuration } from '@/lib/formatDuration';
 import { findDuplicateTrackGroups } from '@/lib/findCatalogDuplicateGroups';
@@ -40,6 +41,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
   const [selectMode, setSelectMode] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(() => new Set());
   const [playlistModalTrackId, setPlaylistModalTrackId] = useState<string | null>(null);
+  const [editTrackId, setEditTrackId] = useState<string | null>(null);
   const [dupDismissed, setDupDismissed] = useState(false);
   const [dupBusy, setDupBusy] = useState(false);
   const [dupMessage, setDupMessage] = useState<string | null>(null);
@@ -378,6 +380,11 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
                 onToggleSelect={() => toggleSelected(row.track.id)}
                 onRemove={() => confirmRemoveFromPlaylist(row.track.id)}
                 onOpenPlaylists={() => setPlaylistModalTrackId(row.track.id)}
+                onEditTrack={
+                  isUserUploadTrack(row.track.id, row.track)
+                    ? () => setEditTrackId(row.track.id)
+                    : undefined
+                }
                 onGripPointerDown={(e) => onGripPointerDown(row.playlistIndex, e)}
                 onGripPointerMove={onGripPointerMove}
               onGripPointerUp={(e) => onGripPointerUp(row.playlistIndex, e)}
@@ -392,6 +399,14 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
           trackId={playlistModalTrack.id}
           trackTitle={playlistModalTrack.title}
           onClose={() => setPlaylistModalTrackId(null)}
+        />
+      ) : null}
+
+      {editTrackId && getTrack(editTrackId) ? (
+        <TrackEditModal
+          track={getTrack(editTrackId)!}
+          open
+          onClose={() => setEditTrackId(null)}
         />
       ) : null}
 
@@ -422,6 +437,7 @@ type RowProps = {
   onToggleSelect: () => void;
   onRemove: () => void;
   onOpenPlaylists: () => void;
+  onEditTrack?: () => void;
   onGripPointerDown: (e: React.PointerEvent) => void;
   onGripPointerMove: (e: React.PointerEvent) => void;
   onGripPointerUp: (e: React.PointerEvent) => void;
@@ -443,6 +459,7 @@ function JukeboxTrackRow({
   onToggleSelect,
   onRemove,
   onOpenPlaylists,
+  onEditTrack,
   onGripPointerDown,
   onGripPointerMove,
   onGripPointerUp,
@@ -531,6 +548,20 @@ function JukeboxTrackRow({
         </span>
       </button>
       <span className="jb-track-dur">{fmtDuration(track.durationSec)}</span>
+      {onEditTrack ? (
+        <button
+          type="button"
+          className="jb-track-edit"
+          aria-label={PLAIN.editTrack}
+          title={PLAIN.editTrack}
+          onClick={(e) => {
+            e.stopPropagation();
+            onEditTrack();
+          }}
+        >
+          ✎
+        </button>
+      ) : null}
       <LikeButton trackId={track.id} />
       </div>
     </li>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { JukeboxSiteNav } from '@/components/jukebox/JukeboxSiteNav';
 import { useJukeboxListenSetup } from '@/hooks/useJukeboxListenSetup';
@@ -14,6 +14,8 @@ import { PLAIN } from '@/lib/plainSpeak';
 import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 import { usePlaybackPlaylist } from '@/stores/catalogSelectors';
 import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlaylistProgramBanner';
+import { TrackEditModal } from '@/components/catalog/TrackEditModal';
+import { isUserUploadTrack } from '@/lib/catalogSeed';
 
 export function JukeboxNowPlayingPage() {
   useJukeboxListenSetup('qf-jukebox-now-page');
@@ -26,8 +28,10 @@ export function JukeboxNowPlayingPage() {
   const plays = useTrackPlayVisits();
   const pl = usePlaybackPlaylist();
   const playbackPlaylistId = usePlaybackStore((s) => s.playbackPlaylistId);
+  const [editOpen, setEditOpen] = useState(false);
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
+  const canEditTrack = track ? isUserUploadTrack(track.id, track) : false;
 
   useEffect(() => {
     if (!currentTrackId) return;
@@ -36,6 +40,10 @@ export function JukeboxNowPlayingPage() {
       document.title = SONIC_BRAND_NAME;
     };
   }, [currentTrackId, track]);
+
+  useEffect(() => {
+    setEditOpen(false);
+  }, [currentTrackId]);
 
   if (!currentTrackId || !track) {
     return <Navigate to={JUKEBOX_LISTEN_PATH} replace />;
@@ -79,13 +87,20 @@ export function JukeboxNowPlayingPage() {
               Visits · {plays.toLocaleString('en-US')}
             </p>
           ) : null}
-          <button
-            type="button"
-            className="jb-now__download"
-            onClick={() => openExport(track.id)}
-          >
-            {PLAIN.getPass}
-          </button>
+          <div className="jb-now__actions">
+            {canEditTrack ? (
+              <button type="button" className="jb-now__edit" onClick={() => setEditOpen(true)}>
+                {PLAIN.editTrack}
+              </button>
+            ) : null}
+            <button
+              type="button"
+              className="jb-now__download"
+              onClick={() => openExport(track.id)}
+            >
+              {PLAIN.getPass}
+            </button>
+          </div>
         </div>
 
         {playbackPlaylistId ? <JukeboxPlaylistProgramBanner playlistId={playbackPlaylistId} /> : null}
@@ -95,6 +110,10 @@ export function JukeboxNowPlayingPage() {
           (Venmo · PayPal · Cash App).
         </p>
       </main>
+
+      {editOpen && canEditTrack ? (
+        <TrackEditModal track={track} open onClose={() => setEditOpen(false)} />
+      ) : null}
     </div>
   );
 }

@@ -13,6 +13,7 @@ export function PlaylistCoverArt({ playlist, className = 'sp-pl-cover', size = 4
   const src = resolvePlaylistCoverSrc(playlist.posterSrc);
   return (
     <img
+      key={src}
       className={`${className} sp-pl-cover--img`}
       src={src}
       alt=""

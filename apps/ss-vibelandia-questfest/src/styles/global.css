@@ -7862,8 +7862,16 @@ html.qf-jukebox-page .sp-global-audio {
   color: #d6cfc4;
 }
 
-.jb-now__download {
+.jb-now__actions {
   margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.jb-now__download,
+.jb-now__edit {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7880,7 +7888,14 @@ html.qf-jukebox-page .sp-global-audio {
   cursor: pointer;
 }
 
-.jb-now__download:hover {
+.jb-now__edit {
+  border-color: rgba(214, 207, 196, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f4efe3;
+}
+
+.jb-now__download:hover,
+.jb-now__edit:hover {
   border-color: #d4af37;
   color: #fff;
 }
@@ -9325,6 +9340,27 @@ html.qf-jukebox-page .sp-now-add-pl {
   font-size: 0.58rem;
   color: #8a8070;
   font-variant-numeric: tabular-nums;
+}
+
+.jb-track-edit {
+  flex: 0 0 auto;
+  width: 1.85rem;
+  height: 1.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8dcc8;
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.jb-track-edit:hover {
+  border-color: #d4af37;
+  color: #fff;
 }
 
 .jb-pager {

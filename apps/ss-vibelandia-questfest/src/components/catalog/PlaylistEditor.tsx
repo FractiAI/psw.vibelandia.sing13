@@ -306,7 +306,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
           <label htmlFor={coverInputId} className="sp-pl-edit-hero-cover" aria-label={PLAIN.changeCover}>
             {coverPreview ? (
-              <img src={coverPreview} alt="" width={160} height={160} />
+              <img key={coverPreview} src={coverPreview} alt="" width={160} height={160} />
             ) : (
               <PlaylistCoverArt playlist={pl} className="sp-pl-edit-hero-cover-fallback" size={160} />
             )}

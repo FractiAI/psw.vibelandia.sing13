@@ -15,6 +15,7 @@ import {
   probeAudioDurationSecWithTimeout,
 } from '@/lib/mediaUploadLimits';
 import { normalizeCoverForUpload } from '@/lib/coverImageFile';
+import { withCoverCacheBust } from '@/lib/coverCacheBust';
 import { expectedCaptainPassword } from '@/lib/captainAuth';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 
@@ -347,7 +348,8 @@ export async function uploadCoverBlob(
     },
   });
 
-  return blob.url;
+  // Stable overwrite path → same blob.url; bust so Change image updates the UI.
+  return withCoverCacheBust(blob.url);
 }
 
 /** Upload playlist cover image to Blob (same pipeline as track covers). */
@@ -387,7 +389,8 @@ export async function uploadPlaylistCoverBlob(
     },
   });
 
-  return blob.url;
+  // Stable overwrite path → same blob.url; bust so Change image updates the UI.
+  return withCoverCacheBust(blob.url);
 }
 
 /** @deprecated Use uploadCoverBlob + updateTrackOnServer */

@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   HERO_SOURCE_TREE_IMAGE,
   HERO_SOURCE_TREE_MARKERS,
+  renderHeroSourceTreeCss,
   renderHeroSourceTreeFigureHtml,
 } from '../../lib/infinite-octave-hero-source-tree.mjs';
 
@@ -39,6 +40,12 @@ describe('Infinite Octave Hero · Source tree', () => {
     expect(html).toMatch(/Any combination/i);
     expect(html).toMatch(/self-observation/i);
     expect(html).toMatch(/Tree rings · Digits/i);
+  });
+
+  it('locks dark ink on the parchment caption (no white-on-light inherit)', () => {
+    const css = renderHeroSourceTreeCss();
+    expect(css).toMatch(/\.io-hero-tree__figure\s*\{[^}]*color:\s*#1a2438/s);
+    expect(css).toMatch(/\.io-hero-tree__caption\s*\{[^}]*color:\s*#1a2438/s);
   });
 
   it('is embedded in every Infinite Octave primer surface', () => {

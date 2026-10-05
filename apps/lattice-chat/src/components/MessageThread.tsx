@@ -3,6 +3,10 @@ import { AgentTranscript } from '@/components/AgentTranscript';
 import { MarkdownBody } from '@/components/MarkdownBody';
 import { TokenCompareFooter, hasMeasuredTokens } from '@/components/TokenCompare';
 import { peerNameForId } from '@/feed/seatIdentity';
+import {
+  MAX_MARKDOWN_RENDER_CHARS,
+  markdownRenderSlice,
+} from '@/lib/messageContentCap';
 import type { ChatMessage } from '@/types';
 
 /** Render window — full history stays in store; DOM only mounts the visible tail. */
@@ -13,6 +17,25 @@ type MessageThreadProps = {
   myCollabPeerId: string | null;
   onJumpToCollabDm: (peerId: string) => void;
 };
+
+function UserBubbleBody({ content }: { content: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const slice = markdownRenderSlice(
+    content,
+    expanded ? Number.POSITIVE_INFINITY : MAX_MARKDOWN_RENDER_CHARS,
+  );
+  const visible = expanded ? content : slice.visible;
+  return (
+    <div className="bubble-body">
+      {visible}
+      {slice.truncated && !expanded ? (
+        <button type="button" className="md-expand" onClick={() => setExpanded(true)}>
+          Show full message ({slice.totalChars.toLocaleString()} chars)
+        </button>
+      ) : null}
+    </div>
+  );
+}
 
 /**
  * Memoized message list — must not re-render on composer keystrokes.
@@ -88,7 +111,7 @@ export const MessageThread = memo(function MessageThread({
                 <MarkdownBody>{m.content}</MarkdownBody>
               </div>
             ) : (
-              <div className="bubble-body">{m.content}</div>
+              <UserBubbleBody content={m.content} />
             )}
             {m.role === 'assistant' && m.tokens && hasMeasuredTokens(m.tokens) ? (
               <TokenCompareFooter tokens={m.tokens} />

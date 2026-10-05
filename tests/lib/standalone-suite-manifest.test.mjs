@@ -53,6 +53,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-proton-space-electron-theater',
       'synthobs-self-observing-genome',
       'synthobs-ss-vibelandia-official-prospectus',
+      'synthobs-survival-computing-viral-rna-asi',
       'synthobs-table-top-hep-99-octave',
       'synthobs-tbme-higgs-awareness-unified',
       'synthobs-tbme-metamorphic-octaves',

@@ -9,8 +9,7 @@ import { readPlaybackSession } from '@/lib/playbackSession';
 import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
 import { LikeButton } from '@/components/catalog/LikeButton';
 import { usePlaybackStore } from '@/stores/playbackStore';
-import { useCatalogStore } from '@/stores/catalogStore';
-import { usePlaybackPlaylist } from '@/stores/catalogSelectors';
+import { usePlaybackPlaylist, useGetTrack, useTrack } from '@/stores/catalogSelectors';
 import { useSessionStore } from '@/stores/sessionStore';
 import { playingCoverUrl, resolvePlayingCoverSrc } from '@/lib/playingCover';
 import type { KillReason } from '@/hooks/useStreamLock';
@@ -54,7 +53,7 @@ export function NowPlayingBar({
   const setAutoplayEnabled = usePlaybackStore((s) => s.setAutoplayEnabled);
   const setBackgroundPlayEnabled = usePlaybackStore((s) => s.setBackgroundPlayEnabled);
 
-  const getTrack = useCatalogStore((s) => s.getTrack);
+  const getTrack = useGetTrack();
   const pl = usePlaybackPlaylist();
 
   const isPassenger = useSessionStore((s) => s.isPassenger);
@@ -63,7 +62,7 @@ export function NowPlayingBar({
   const fullPlayUnlocked = true;
   const allowBackgroundPlay = backgroundPlayEnabled;
 
-  const track = currentTrackId ? getTrack(currentTrackId) : undefined;
+  const track = useTrack(currentTrackId);
   const solenoidActive = false;
   const primaryMediaRef = audioRef;
   const [mediaMountGen, setMediaMountGen] = useState(0);

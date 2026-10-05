@@ -2,6 +2,7 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { playTrackById } from '@/lib/trackPlayback';
 import { normalizeCoverForUpload } from '@/lib/coverImageFile';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { useGetTrack } from '@/stores/catalogSelectors';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
@@ -32,7 +33,7 @@ interface PlaylistEditorProps {
 
 export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: PlaylistEditorProps) {
   const playlists = useCatalogStore((s) => s.playlists);
-  const getTrack = useCatalogStore((s) => s.getTrack);
+  const getTrack = useGetTrack();
   const updatePlaylist = useCatalogStore((s) => s.updatePlaylist);
   const deletePlaylist = useCatalogStore((s) => s.deletePlaylist);
   const addTrackToPlaylist = useCatalogStore((s) => s.addTrackToPlaylist);

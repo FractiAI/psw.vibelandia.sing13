@@ -19,7 +19,7 @@ import {
   resumeOrPlayTrack,
   startTrackPlayback,
 } from '@/lib/trackPlayback';
-import { usePlaybackPlaylist, useResolvedTrackIds, useResolvedTrackIdsKey } from '@/stores/catalogSelectors';
+import { usePlaybackPlaylist, useResolvedTrackIds, useResolvedTrackIdsKey, useGetTrack, useTrack } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { LikeButton } from '@/components/catalog/LikeButton';
 import { AddToPlaylistIcon } from '@/components/catalog/AddToPlaylistIcon';
@@ -95,7 +95,7 @@ export function BridgePlayer({
   const syncShuffleQueue = usePlaybackStore((s) => s.syncShuffleQueue);
   const clearShuffleQueue = usePlaybackStore((s) => s.clearShuffleQueue);
 
-  const getTrack = useCatalogStore((s) => s.getTrack);
+  const getTrack = useGetTrack();
   const pl = usePlaybackPlaylist();
   const resolvedTrackIds = useResolvedTrackIds(pl?.id);
   const resolvedTrackIdsKey = useResolvedTrackIdsKey(pl?.id);
@@ -128,7 +128,7 @@ export function BridgePlayer({
     if (pathname !== JUKEBOX_NOW_PLAYING_PATH) navigate(JUKEBOX_NOW_PLAYING_PATH);
   }, [navigate, pathname]);
 
-  const track = currentTrackId ? getTrack(currentTrackId) : undefined;
+  const track = useTrack(currentTrackId);
 
   useEffect(() => {
     if (!pl) {

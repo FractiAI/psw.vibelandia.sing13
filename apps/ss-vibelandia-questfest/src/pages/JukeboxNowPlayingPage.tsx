@@ -4,7 +4,6 @@ import { JukeboxSiteNav } from '@/components/jukebox/JukeboxSiteNav';
 import { useJukeboxListenSetup } from '@/hooks/useJukeboxListenSetup';
 import { useTrackPlayVisits } from '@/hooks/useTrackPlayVisits';
 import { JUKEBOX_LISTEN_PATH } from '@/lib/jukeboxRoutes';
-import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { SONIC_BRAND_NAME } from '@/lib/sonicCatalogCopy';
@@ -12,7 +11,7 @@ import { fmtDuration } from '@/lib/formatDuration';
 import { playingCoverUrl } from '@/lib/playingCover';
 import { PLAIN } from '@/lib/plainSpeak';
 import { EGS_EXPORT_USD } from '@/lib/paymentRails';
-import { usePlaybackPlaylist } from '@/stores/catalogSelectors';
+import { usePlaybackPlaylist, useTrack } from '@/stores/catalogSelectors';
 import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlaylistProgramBanner';
 import { TrackEditModal } from '@/components/catalog/TrackEditModal';
 import { isUserUploadTrack } from '@/lib/catalogSeed';
@@ -23,14 +22,13 @@ export function JukeboxNowPlayingPage() {
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
   const displayTime = usePlaybackStore((s) => s.displayTime);
-  const getTrack = useCatalogStore((s) => s.getTrack);
   const openExport = useMediaChromeStore((s) => s.openExport);
   const plays = useTrackPlayVisits();
   const pl = usePlaybackPlaylist();
   const playbackPlaylistId = usePlaybackStore((s) => s.playbackPlaylistId);
   const [editOpen, setEditOpen] = useState(false);
 
-  const track = currentTrackId ? getTrack(currentTrackId) : undefined;
+  const track = useTrack(currentTrackId);
   const canEditTrack = track ? isUserUploadTrack(track.id, track) : false;
 
   useEffect(() => {

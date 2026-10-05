@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { useGetTrack } from '@/stores/catalogSelectors';
 import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 import { MASTER_PLAYLIST_ID, isUserUploadTrack } from '@/lib/catalogSeed';
 import { fmtDuration, fmtUploadDate } from '@/lib/formatDuration';
@@ -72,7 +73,7 @@ function TrackEditRow({
 }
 
 export function MasterCatalogEditor({ onDone }: MasterCatalogEditorProps) {
-  const getTrack = useCatalogStore((s) => s.getTrack);
+  const getTrack = useGetTrack();
   const playlists = useCatalogStore((s) => s.playlists);
   const deleteTracks = useCatalogStore((s) => s.deleteTracks);
 

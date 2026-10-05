@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { useResolvedTrackIds } from '@/stores/catalogSelectors';
+import { useResolvedTrackIds, useGetTrack } from '@/stores/catalogSelectors';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { useJukeboxRowGestures, JB_SWIPE_REVEAL_PX } from '@/hooks/useJukeboxRowGestures';
@@ -29,7 +29,7 @@ interface JukeboxTrackPanelProps {
 }
 
 export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist }: JukeboxTrackPanelProps) {
-  const getTrack = useCatalogStore((s) => s.getTrack);
+  const getTrack = useGetTrack();
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
   const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);

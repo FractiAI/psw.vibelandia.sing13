@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useCatalogStore } from '@/stores/catalogStore';
-import { useActivePlaylist, useResolvedTrackIds } from '@/stores/catalogSelectors';
+import { useActivePlaylist, useResolvedTrackIds, useGetTrack } from '@/stores/catalogSelectors';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { LikeButton } from '@/components/catalog/LikeButton';
@@ -14,6 +13,7 @@ import { fmtDuration } from '@/lib/formatDuration';
 import { trackMatchesSearchQuery } from '@/lib/masterCatalogFilter';
 import { PLAIN } from '@/lib/plainSpeak';
 import { useSessionStore } from '@/stores/sessionStore';
+import { useCatalogStore } from '@/stores/catalogStore';
 import type { TrackDef } from '@/lib/catalogTypes';
 
 type SortMode = 'playlistOrder' | 'titleAsc' | 'titleDesc';
@@ -26,7 +26,7 @@ interface TrackRow {
 
 export function TrackList() {
   const pl = useActivePlaylist();
-  const getTrack = useCatalogStore((s) => s.getTrack);
+  const getTrack = useGetTrack();
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
   const moveTrackInPlaylist = useCatalogStore((s) => s.moveTrackInPlaylist);

@@ -1,4 +1,5 @@
-import type { PlaylistDef } from '@/lib/catalogTypes';
+import { useCallback } from 'react';
+import type { PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -21,6 +22,20 @@ export function usePlaybackPlaylist(): PlaylistDef | undefined {
 export function usePlaybackPlaylistId(): string | undefined {
   const playbackPlaylistId = usePlaybackStore((s) => s.playbackPlaylistId);
   return useCatalogStore((s) => playbackPlaylistId ?? s.activePlaylistId);
+}
+
+/**
+ * Live track lookup — re-renders when `tracks` is replaced (Edit track Save, sync, covers).
+ * Prefer this over `useCatalogStore(s => s.getTrack)` which never invalidates on metadata edits.
+ */
+export function useGetTrack(): (id: string) => TrackDef | undefined {
+  const tracks = useCatalogStore((s) => s.tracks);
+  return useCallback((id: string) => tracks[id], [tracks]);
+}
+
+/** Single track by id — updates immediately after Edit track Save. */
+export function useTrack(trackId: string | null | undefined): TrackDef | undefined {
+  return useCatalogStore((s) => (trackId ? s.tracks[trackId] : undefined));
 }
 
 /**

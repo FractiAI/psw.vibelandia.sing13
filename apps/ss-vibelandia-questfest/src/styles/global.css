@@ -7706,8 +7706,9 @@ html.qf-jukebox-page .sp-global-audio {
     font-size: 0.62rem;
   }
 
-  html.qf-jukebox-page .jb-app {
-    padding-bottom: calc(3.85rem + env(safe-area-inset-bottom, 0px));
+  html.qf-jukebox-page .jb-app,
+  html.qf-jukebox-page .jb-app--now {
+    padding-bottom: calc(6.25rem + env(safe-area-inset-bottom, 0px));
   }
 
   html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-bar {
@@ -7729,6 +7730,31 @@ html.qf-jukebox-page .sp-global-audio {
   html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-controls {
     grid-column: 1 / -1;
     grid-row: 2;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.28rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-controls::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Keep compact jukebox chrome — do not inflate to 44px (that wrapped / covered page buttons). */
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-btn,
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-like,
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-add-pl {
+    min-width: 2rem;
+    min-height: 2rem;
+  }
+
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-btn--play {
+    min-width: 2.15rem;
+    min-height: 2.15rem;
+    width: 2.15rem;
+    height: 2.15rem;
   }
 
   html.qf-jukebox-page .sp-global-audio-wrap--chrome-only {
@@ -7744,12 +7770,13 @@ html.qf-jukebox-page .sp-global-audio {
   overflow: hidden;
   max-width: 42rem;
   margin: 0 auto;
-  padding: calc(0.45rem + env(safe-area-inset-top)) 0.55rem calc(3.85rem + env(safe-area-inset-bottom));
+  /* Clear compact 2-row jukebox bar + home indicator (was 3.85rem — player covered buttons). */
+  padding: calc(0.45rem + env(safe-area-inset-top)) 0.55rem calc(6.25rem + env(safe-area-inset-bottom));
   color: #f5f0e8;
 }
 
 .jb-app--now {
-  padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(6.25rem + env(safe-area-inset-bottom, 0px));
 }
 
 .jb-now {

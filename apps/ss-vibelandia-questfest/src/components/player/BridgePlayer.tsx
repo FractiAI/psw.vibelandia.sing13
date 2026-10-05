@@ -43,7 +43,7 @@ import {
   sharedTrackAutoplayFromMaster,
 } from '@/lib/sharedTrackPlayback';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
-import { JUKEBOX_LISTEN_PATH, JUKEBOX_NOW_PLAYING_PATH } from '@/lib/jukeboxRoutes';
+import { JUKEBOX_LISTEN_PATH, JUKEBOX_NOW_PLAYING_PATH, isJukeboxListenPath } from '@/lib/jukeboxRoutes';
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
 import { playingCoverUrl, resolvePlayingCoverSrc } from '@/lib/playingCover';
 import type { KillReason } from '@/hooks/useStreamLock';
@@ -121,6 +121,8 @@ export function BridgePlayer({
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  /** Compact chrome on browse + now — cover art lives on the now page, not in the bar. */
+  const jukeboxChrome = isJukeboxListenPath(pathname);
   const jukeboxBrowse = pathname === JUKEBOX_LISTEN_PATH;
   const openNowPlaying = useCallback(() => {
     if (pathname !== JUKEBOX_NOW_PLAYING_PATH) navigate(JUKEBOX_NOW_PLAYING_PATH);
@@ -491,11 +493,11 @@ export function BridgePlayer({
   const coverUrl = track ? playingCoverUrl(track, pl) : undefined;
 
   return (
-    <footer className={`sp-now sp-bridge-player${jukeboxBrowse ? ' sp-bridge-player--jukebox' : ''}`}>
+    <footer className={`sp-now sp-bridge-player${jukeboxChrome ? ' sp-bridge-player--jukebox' : ''}`}>
       <div
-        className={`sp-now-bar${!jukeboxBrowse && coverSrc ? ' sp-now-bar--with-cover' : ''}`}
+        className={`sp-now-bar${!jukeboxChrome && coverSrc ? ' sp-now-bar--with-cover' : ''}`}
       >
-        {!jukeboxBrowse && coverUrl ? (
+        {!jukeboxChrome && coverUrl ? (
           <img className="sp-now-cover" src={coverUrl} alt="" width={56} height={56} />
         ) : null}
         <div
@@ -518,15 +520,17 @@ export function BridgePlayer({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
-              <span className="sp-now-badge sp-now-badge--pass" title={PLAIN.getPass}>
-                Free stream · download ${EGS_EXPORT_USD.toFixed(2)}
-              </span>
+              {!jukeboxChrome ? (
+                <span className="sp-now-badge sp-now-badge--pass" title={PLAIN.getPass}>
+                  Free stream · download ${EGS_EXPORT_USD.toFixed(2)}
+                </span>
+              ) : null}
             </>
           ) : (
             <p className="sp-now-empty">Tap ▶ {PLAIN.playAll} or pick a track</p>
           )}
           {shareNote ? <p className="sp-now-share-note">{shareNote}</p> : null}
-          {!jukeboxBrowse ? (
+          {!jukeboxChrome ? (
             <div className="sp-now-prefs" role="group" aria-label="Playback options">
               <label className="sp-now-pref" title="Autoplay playlist">
                 <input
@@ -610,7 +614,7 @@ export function BridgePlayer({
           <button type="button" className="sp-now-btn" onClick={() => stepPlaylist(1)} disabled={!track} aria-label="Next">
             ⏭
           </button>
-          {jukeboxBrowse ? (
+          {jukeboxChrome ? (
             <details className="sp-now-prefs-drawer">
               <summary className="sp-now-btn sp-now-btn--prefs" aria-label="Playback options">
                 ⋯

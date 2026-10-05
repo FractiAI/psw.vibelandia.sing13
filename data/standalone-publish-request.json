@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
   "suiteId": "synthobs-archetypal-grand-story",
-  "createRepo": true,
-  "requestedAt": "2026-10-05T02:20:00.000Z",
-  "note": "Publish Archetypal Grand Story · Hero’s Return to Source standalone · ENGINE_SHELF #37 · narrative template companion · FractiAI/synthobs-archetypal-grand-story"
+  "createRepo": false,
+  "requestedAt": "2026-10-05T02:38:00.000Z",
+  "note": "Standalone created https://github.com/FractiAI/synthobs-archetypal-grand-story \u00b7 createRepo cleared after successful publish"
 }

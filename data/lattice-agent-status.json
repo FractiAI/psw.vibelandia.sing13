@@ -1,23 +1,19 @@
 {
   "schema": "lattice-agent-status/v1",
-  "updatedAt": "2026-10-05T02:21:30.000Z",
-  "state": "blocked",
-  "task": "Archetypal Grand Story standalone publish + ship",
-  "summary": "SING13 side shipped to main c1c10293 (paper/suite/blog/ENGINE_SHELF #37). Actions Publish standalone suite failed: repo secret FRACTIAI_ORG_PAT is missing. Add classic/fine-grained PAT with FractiAI repo-create, then re-run workflow or re-touch data/standalone-publish-request.json.",
-  "branch": "main",
-  "prUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/pull/545",
-  "commit": "c1c10293",
+  "updatedAt": "2026-10-05T02:38:30.000Z",
+  "state": "done",
+  "task": "Archetypal standalone + rings tree ship",
+  "summary": "Standalone FractiAI/synthobs-archetypal-grand-story created. Hero\u00b7Source rings tree (Digits\u00d7Octaves + phone self-observation) merging to main. FRACTIAI_ORG_PAT set on Actions.",
+  "branch": "cursor/ship-rings-tree-and-standalone-fbb2",
+  "prUrl": null,
+  "commit": null,
   "done": [
-    "paper + suite + ship-blog + ENGINE_SHELF #37 already live",
-    "empirical refresh 11/11",
-    "standalone-publish-request.json armed for synthobs-archetypal-grand-story",
-    "PR #545 merged to main",
-    "Actions run 37254965355 triggered"
+    "standalone https://github.com/FractiAI/synthobs-archetypal-grand-story",
+    "ENGINE_SHELF #37 link live",
+    "rings tree chart merged from cursor/hero-octave-rings-tree-fe79",
+    "tree tests 3/3",
+    "FRACTIAI_ORG_PAT Actions secret set"
   ],
-  "next": [
-    "Add GitHub Actions secret FRACTIAI_ORG_PAT on FractiAI/psw.vibelandia.sing13",
-    "Re-run Publish standalone suite (or bump requestedAt on data/standalone-publish-request.json)",
-    "Verify https://github.com/FractiAI/synthobs-archetypal-grand-story"
-  ],
-  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox · Lattice Chat"
+  "next": [],
+  "operator": "SynthOBS Autonomous Agent \u00b7 Syntheverse Sandbox \u00b7 Lattice Chat"
 }

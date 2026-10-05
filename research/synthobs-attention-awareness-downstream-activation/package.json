@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-attention-awareness-downstream-activation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Attention · Awareness · Downstream Activation — MFA catalog suite (Infinite Octaves ENGINE_SHELF companion #39 · Homeostasis Expedition)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-attention-awareness-downstream-activation.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

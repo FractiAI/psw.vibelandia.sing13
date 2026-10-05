@@ -14,6 +14,7 @@ describe('standalone-suite-manifest', () => {
       'synthio-mri-vs-legacy-perf',
       'synthobs-agentic-convergence-experiment',
       'synthobs-archetypal-grand-story',
+      'synthobs-attention-awareness-downstream-activation',
       'synthobs-awareness-vs-brute-force-leverage',
       'synthobs-beyond-crispr-biological-discovery',
       'synthobs-consciousness-moat',

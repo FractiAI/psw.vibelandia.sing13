@@ -30,15 +30,17 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Survival Computing · Beyond CRISPR · Agentic Convergence · Archetypal · FractiOS · humans↔AI
-    expect(posts[0].id).toBe('synthobs-survival-computing-viral-rna-asi-2026-10');
+    // Newest: Attention MFA · Survival Computing · Beyond CRISPR · Agentic Convergence · Archetypal · FractiOS
+    expect(posts[0].id).toBe(
+      'synthobs-attention-awareness-downstream-activation-2026-10',
+    );
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-attention-awareness-downstream-activation-2026-10',
       'synthobs-survival-computing-viral-rna-asi-2026-10',
       'synthobs-beyond-crispr-biological-discovery-2026-10',
       'synthobs-agentic-convergence-experiment-2026-10',
       'synthobs-archetypal-grand-story-heros-return-2026-10',
       'synthobs-fractios-holographic-os-2026-10',
-      'synthobs-humans-ai-infinite-octave-offset-2026-10',
     ]);
   });
 });

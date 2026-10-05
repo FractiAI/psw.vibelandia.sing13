@@ -1,23 +1,23 @@
 {
   "schema": "lattice-agent-status/v1",
-  "updatedAt": "2026-10-05T02:20:00.000Z",
-  "state": "shipping",
+  "updatedAt": "2026-10-05T02:21:30.000Z",
+  "state": "blocked",
   "task": "Archetypal Grand Story standalone publish + ship",
-  "summary": "Paper/suite/ship-blog/ENGINE_SHELF #37 already live. Triggering FractiAI/synthobs-archetypal-grand-story via data/standalone-publish-request.json (createRepo) on main.",
-  "branch": "cursor/archetypal-standalone-publish-fbb2",
-  "prUrl": null,
-  "commit": null,
+  "summary": "SING13 side shipped to main c1c10293 (paper/suite/blog/ENGINE_SHELF #37). Actions Publish standalone suite failed: repo secret FRACTIAI_ORG_PAT is missing. Add classic/fine-grained PAT with FractiAI repo-create, then re-run workflow or re-touch data/standalone-publish-request.json.",
+  "branch": "main",
+  "prUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/pull/545",
+  "commit": "c1c10293",
   "done": [
-    "paper docs/SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md",
-    "suite research/synthobs-archetypal-grand-story/ empirical 11/11",
-    "ship-blog /ship-blog/archetypal-grand-story",
-    "ENGINE_SHELF #37 + AGENT_SYNC link",
-    "PRA pass (overallScore 0.941)",
-    "standalone-publish-request.json armed"
+    "paper + suite + ship-blog + ENGINE_SHELF #37 already live",
+    "empirical refresh 11/11",
+    "standalone-publish-request.json armed for synthobs-archetypal-grand-story",
+    "PR #545 merged to main",
+    "Actions run 37254965355 triggered"
   ],
   "next": [
-    "land request on main",
-    "Actions Publish standalone suite creates FractiAI/synthobs-archetypal-grand-story"
+    "Add GitHub Actions secret FRACTIAI_ORG_PAT on FractiAI/psw.vibelandia.sing13",
+    "Re-run Publish standalone suite (or bump requestedAt on data/standalone-publish-request.json)",
+    "Verify https://github.com/FractiAI/synthobs-archetypal-grand-story"
   ],
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox · Lattice Chat"
 }

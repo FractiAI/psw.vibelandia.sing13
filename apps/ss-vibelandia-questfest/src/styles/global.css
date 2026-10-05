@@ -2617,7 +2617,8 @@ html.ios .sp-now-video {
   background: transparent;
   color: #727272;
   cursor: grab;
-  touch-action: none;
+  /* pan-y keeps list scroll alive; long-press reorder still uses pointer capture */
+  touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;
   font-size: 0.72rem;
@@ -3230,7 +3231,9 @@ html.ios .sp-now-video {
   border: 1px solid #282828;
   border-radius: 12px;
   background: #181818;
-  overflow: hidden;
+  /* Must stay visible — overflow:hidden swallows touch/wheel scroll on iOS/Android
+     so the Edit playlist stage cannot reach tracks below the fold. */
+  overflow: visible;
 }
 
 .sp-pl-edit-tracks-bar {
@@ -8181,6 +8184,8 @@ html.qf-jukebox-page .sp-now-add-pl {
   overflow-y: auto;
   flex: 1;
   min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .jb-pl-manage-row {
@@ -8324,6 +8329,29 @@ html.qf-jukebox-page .sp-now-add-pl {
 .jb-stage--editing .jb-stage__tracks {
   flex: 1;
   min-height: 0;
+  /* Single scroll surface for Edit playlist — avoids nested overflow traps. */
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.jb-stage--editing .jb-stage__tracks .sp-pl-edit {
+  flex: none;
+  min-height: min-content;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+.jb-stage--editing .sp-pl-edit-head {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  margin: -0.15rem -0.15rem 0.85rem;
+  padding: 0.55rem 0.35rem;
+  background: rgba(12, 10, 8, 0.96);
+  backdrop-filter: blur(8px);
 }
 
 .jb-stage--editing {

@@ -672,9 +672,15 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }
     }
 
+    const coverTouched = Boolean(opts?.coverFile) || patch.posterSrc !== undefined;
+    // Apply playlist cover onto each member track so list thumbs / master catalog match.
+    // Skip master — overwriting every catalog track would erase per-track art.
+    const propagateCover =
+      coverTouched && Boolean(posterSrc) && !isMasterPlaylist(id) && prev.trackIds.length > 0;
+
     report?.('Saving playlist…');
-    set((s) => ({
-      playlists: s.playlists.map((p) => {
+    set((s) => {
+      const playlists = s.playlists.map((p) => {
         if (p.id !== id) return p;
         const next: PlaylistDef = {
           ...p,
@@ -690,10 +696,31 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         if (posterSrc) next.posterSrc = posterSrc;
         else delete next.posterSrc;
         return next;
-      }),
-    }));
+      });
+
+      if (!propagateCover || !posterSrc) return { playlists };
+
+      const tracks = { ...s.tracks };
+      for (const trackId of prev.trackIds) {
+        const tr = tracks[trackId];
+        if (!tr) continue;
+        tracks[trackId] = { ...tr, posterSrc };
+      }
+      return { playlists, tracks };
+    });
     get().persist();
     scheduleSharedPlaylistSync(get().playlists, { immediate: true });
+
+    if (propagateCover && posterSrc && isServerUploadConfigured()) {
+      report?.('Updating track covers…');
+      const memberIds = prev.trackIds.filter((trackId) => {
+        const tr = get().tracks[trackId];
+        return tr && isUserUploadTrack(trackId, tr);
+      });
+      await Promise.allSettled(
+        memberIds.map((trackId) => updateTrackOnServer(trackId, { posterSrc })),
+      );
+    }
   },
 
   deletePlaylist: (id) => {

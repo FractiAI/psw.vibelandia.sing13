@@ -16,6 +16,7 @@ import { trackMatchesSearchQuery } from '@/lib/masterCatalogFilter';
 import { nextSequentialTrackId, nextShuffledTrackId } from '@/lib/playlistShuffle';
 import { PLAIN } from '@/lib/plainSpeak';
 import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlaylistProgramBanner';
+import { playingCoverUrl } from '@/lib/playingCover';
 import type { TrackDef } from '@/lib/catalogTypes';
 
 type SortMode = 'playlistOrder' | 'titleAsc' | 'titleDesc';
@@ -33,6 +34,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
   const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);
   const deleteTracks = useCatalogStore((s) => s.deleteTracks);
+  const playlist = useCatalogStore((s) => s.playlists.find((p) => p.id === playlistId));
   const resolvedIds = useResolvedTrackIds(playlistId);
 
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
@@ -361,6 +363,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
             <JukeboxTrackRow
               key={row.track.id}
               track={row.track}
+              coverSrc={playingCoverUrl(row.track, playlist)}
               index={displayIndex + 1}
                 playlistIndex={row.playlistIndex}
                 active={currentTrackId === row.track.id}
@@ -423,6 +426,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
 
 type RowProps = {
   track: TrackDef;
+  coverSrc?: string;
   index: number;
   playlistIndex: number;
   active: boolean;
@@ -445,6 +449,7 @@ type RowProps = {
 
 function JukeboxTrackRow({
   track,
+  coverSrc,
   index,
   playlistIndex,
   active,
@@ -541,10 +546,17 @@ function JukeboxTrackRow({
       </button>
       <span className="jb-track-idx">{index}</span>
       <button type="button" className="jb-track-main" onClick={onPlay}>
-        <span className="jb-track-title">{track.title}</span>
-        <span className="jb-track-sub">
-          {track.artist}
-          {track.genre ? ` · ${track.genre}` : ''}
+        {coverSrc ? (
+          <img key={coverSrc} className="jb-track-cover" src={coverSrc} alt="" width={40} height={40} />
+        ) : (
+          <span className="jb-track-cover jb-track-cover--empty" aria-hidden />
+        )}
+        <span className="jb-track-meta">
+          <span className="jb-track-title">{track.title}</span>
+          <span className="jb-track-sub">
+            {track.artist}
+            {track.genre ? ` · ${track.genre}` : ''}
+          </span>
         </span>
       </button>
       <span className="jb-track-dur">{fmtDuration(track.durationSec)}</span>

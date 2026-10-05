@@ -20,6 +20,7 @@ import type { PlaylistKind } from '@/lib/catalogTypes';
 import { TRACK_GENRE_MAX, TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
 import { TrackEditModal } from '@/components/catalog/TrackEditModal';
+import { playingCoverUrl } from '@/lib/playingCover';
 
 interface PlaylistEditorProps {
   playlistId: string;
@@ -553,7 +554,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                 const dragging = dragIndex === row.index;
                 const dropBefore =
                   overIndex === row.index && dragIndex !== null && dragIndex !== row.index;
-                const thumb = tr.posterSrc || undefined;
+                // Prefer playlist cover so Change image updates every row (not only the hero).
+                const thumb = playingCoverUrl(tr, pl);
                 const menuOpen = menuTrackId === tr.id;
                 return (
                   <li
@@ -584,7 +586,14 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                       aria-label={`Edit ${tr.title}`}
                     >
                       {thumb ? (
-                        <img className="sp-track-cover-thumb" src={thumb} alt="" width={48} height={48} />
+                        <img
+                          key={thumb}
+                          className="sp-track-cover-thumb"
+                          src={thumb}
+                          alt=""
+                          width={48}
+                          height={48}
+                        />
                       ) : (
                         <span className="sp-track-cover-thumb sp-track-cover-thumb--empty" aria-hidden />
                       )}

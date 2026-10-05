@@ -1,24 +1,23 @@
 {
   "schema": "lattice-agent-status/v1",
-  "updatedAt": "2026-09-25T04:06:41.173Z",
-  "state": "done",
-  "task": "ERFT V1 + durable status",
-  "summary": "Shipped to main 8dc12c15. Standalone create blocked: no FRACTIAI_ORG_PAT in VM — run npm run publish:standalone:erft:create with org PAT.",
-  "branch": "main",
-  "prUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/pull/474",
-  "commit": "8dc12c15",
+  "updatedAt": "2026-10-05T02:20:00.000Z",
+  "state": "shipping",
+  "task": "Archetypal Grand Story standalone publish + ship",
+  "summary": "Paper/suite/ship-blog/ENGINE_SHELF #37 already live. Triggering FractiAI/synthobs-archetypal-grand-story via data/standalone-publish-request.json (createRepo) on main.",
+  "branch": "cursor/archetypal-standalone-publish-fbb2",
+  "prUrl": null,
+  "commit": null,
   "done": [
-    "ERFT suite",
-    "paper",
-    "blog",
-    "course 6.5b",
-    "textbook 1.7",
-    "PRA",
-    "land main",
-    "agent status receipt"
+    "paper docs/SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md",
+    "suite research/synthobs-archetypal-grand-story/ empirical 11/11",
+    "ship-blog /ship-blog/archetypal-grand-story",
+    "ENGINE_SHELF #37 + AGENT_SYNC link",
+    "PRA pass (overallScore 0.941)",
+    "standalone-publish-request.json armed"
   ],
   "next": [
-    "standalone create with FRACTIAI_ORG_PAT"
+    "land request on main",
+    "Actions Publish standalone suite creates FractiAI/synthobs-archetypal-grand-story"
   ],
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox · Lattice Chat"
 }

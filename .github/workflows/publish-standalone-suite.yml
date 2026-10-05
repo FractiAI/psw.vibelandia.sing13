@@ -22,6 +22,7 @@ on:
           - synthobs-erft-e-continuous-regulation
           - synthobs-consciousness-moat
           - synthobs-human-omniversal-reality-bridge
+          - synthobs-archetypal-grand-story
       create_repo:
         description: 'Create empty FractiAI repo if missing (needs org PAT)'
         required: false

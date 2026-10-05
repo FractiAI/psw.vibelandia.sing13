@@ -26,6 +26,7 @@ import {
   NOT_ATTENTION_EQUALS_CONSCIOUSNESS,
   ONTOLOGICAL_IS_SPECULATIVE,
 } from './constants.mjs';
+import { runDigitalDeltaDBattery } from './digital-delta-d.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -142,6 +143,8 @@ function experimentPaperLocks() {
     hasDocId: paper.includes(DOC_ID) || paper.includes(REGISTRY_ID),
     hasMfa: /Minimal Functional Awareness|MFA/i.test(paper),
     hasDownstream: /downstream causal influence|ΔD|\\\\Delta D|delta D/i.test(paper),
+    hasDigitalFindings:
+      /Digital experiments and findings|digital ΔD|ΔD_directed|plain findings/i.test(paper),
     hasNotPhenomenal:
       /phenomenal consciousness|not.*phenomenal|distinguished from phenomenal|does \*\*not\*\* establish phenomenal/i.test(
         paper,
@@ -179,6 +182,8 @@ function experimentShipBlogLock() {
     /attention|downstream|awareness|paycheck|rent|job|kids|focus/i.test(body);
   const hasCaution =
     /not.*conscious|phenomenal|hypothesis|MFA|functional awareness/i.test(body);
+  const hasDigitalFindings =
+    /digital experiment|ΔD|delta D|directed attention raised|sandbox/i.test(body);
   return {
     id: 'E7_ship_blog_lock',
     title: 'Ship-blog surfaces MFA + full paper link',
@@ -188,7 +193,14 @@ function experimentShipBlogLock() {
     hasWhitepaper,
     hasThesis,
     hasCaution,
-    pass: exists && hasSlug && hasWhitepaper && hasThesis && hasCaution,
+    hasDigitalFindings,
+    pass:
+      exists &&
+      hasSlug &&
+      hasWhitepaper &&
+      hasThesis &&
+      hasCaution &&
+      hasDigitalFindings,
     interpretation: 'Guest note must link the full paper and keep research-intro voice.',
     honesty: 'Surface copy lock only.',
   };
@@ -208,6 +220,19 @@ function experimentGoldenIdentity() {
   };
 }
 
+function experimentDigitalDeltaD() {
+  const battery = runDigitalDeltaDBattery({ seed: 20261005 });
+  return {
+    id: 'E9_digital_delta_d',
+    title: 'Digital ΔD sandbox · five conditions · resource match · adaptive re-selection',
+    ...battery,
+    pass: battery.allPlainPass === true,
+    interpretation:
+      'Directed attention raises target downstream share; counterfactual blocks path; resource-matched uniform loses; adaptive re-selection beats fixed routing.',
+    honesty: battery.honesty,
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentPhiEgs(),
@@ -218,6 +243,7 @@ export async function runAllExperiments() {
     experimentPaperLocks(),
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
+    experimentDigitalDeltaD(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

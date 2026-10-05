@@ -2,14 +2,14 @@
 
 **Document ID:** `WP-SYNTHOBS-ATTENTION-AWARENESS-DOWNSTREAM-ACTIVATION-2026-10-05`
 **Registry ID:** `synthobs-attention-awareness-downstream-activation-2026-10`
-**Generated:** 2026-10-05T20:47:55.802Z
+**Generated:** 2026-10-05T21:51:59.144Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 8 / 8 |
+| Passed | 9 / 9 |
 | Φ_EGS | 1.618033988749895 |
 
 ## Experiments
@@ -152,6 +152,7 @@
   "hasDocId": true,
   "hasMfa": true,
   "hasDownstream": true,
+  "hasDigitalFindings": true,
   "hasNotPhenomenal": true,
   "hasFalsifiers": true,
   "hasExpedition": true,
@@ -182,6 +183,7 @@
   "hasWhitepaper": true,
   "hasThesis": true,
   "hasCaution": true,
+  "hasDigitalFindings": true,
   "pass": true,
   "interpretation": "Guest note must link the full paper and keep research-intro voice.",
   "honesty": "Surface copy lock only."
@@ -206,6 +208,78 @@
 }
 ```
 
+### E9_digital_delta_d — Digital ΔD sandbox · five conditions · resource match · adaptive re-selection
+
+- **Pass:** `true`
+- **Interpretation:** Directed attention raises target downstream share; counterfactual blocks path; resource-matched uniform loses; adaptive re-selection beats fixed routing.
+- **Honesty:** Sandbox digital experiment on equal streams — not human trials, not production model internals, not phenomenal consciousness. Resource-matched control uses task MSE (share is scale-invariant under equal weights).
+
+```json
+{
+  "id": "E9_digital_delta_d",
+  "title": "Digital ΔD sandbox · five conditions · resource match · adaptive re-selection",
+  "nStreams": 6,
+  "targetIdx": 2,
+  "attentionBoost": 4,
+  "seed": 20261005,
+  "conditions": {
+    "uniform": {
+      "D_target": 0.16191058467395444,
+      "taskMse": 0.0011652174126350627
+    },
+    "random_attention": {
+      "D_target": 0.19715468199026198,
+      "taskMse": 0.00008832613259892822
+    },
+    "directed_attention": {
+      "D_target": 0.43590798738914704,
+      "taskMse": 0.0006061739890333656
+    },
+    "counterfactual_attention": {
+      "D_target": 0,
+      "representation_target": 0.43187576886680384,
+      "taskMse": 0.16585677182977626
+    },
+    "suppressed_attention": {
+      "D_target": 0.046072346599964634,
+      "taskMse": 0.001460233454359315
+    },
+    "resource_matched_uniform": {
+      "D_target": 0.16191058467395444,
+      "taskMse": 0.0011652174126350627,
+      "totalAttentionMass": 9
+    }
+  },
+  "metrics": {
+    "deltaD_directed_vs_uniform": 0.2739974027151926,
+    "deltaD_suppressed_vs_uniform": -0.11583823807398981,
+    "taskMse_directed": 0.0006061739890333656,
+    "taskMse_resource_matched": 0.0011652174126350627,
+    "taskMse_gain_directed_vs_resource": 0.0005590434236016971,
+    "adaptive_next_err": 0.000003800447447441835,
+    "fixed_next_err": 0.00008668372097085628
+  },
+  "findings": {
+    "directedRaisesDownstreamShare": true,
+    "suppressLowersDownstreamShare": true,
+    "counterfactualAttentionWithoutPath": true,
+    "directedBeatsResourceMatchedOnTask": true,
+    "adaptiveReselectionHelps": true
+  },
+  "plainFindings": [
+    "Directed attention raised the target stream’s downstream decision share by ΔD = 0.274 versus uniform processing.",
+    "Suppressing attention on the same stream lowered its share (ΔD = -0.116 versus uniform).",
+    "Counterfactual attention (attend but block the causal path) kept a high representation weight but did not raise decision share — attention without a path is not influence.",
+    "At matched total attention mass, directed focus beat even spread on a target-only prediction task (MSE 6.06e-4 < 1.17e-3).",
+    "Adaptive re-selection (change next focus from residuals) beat fixed routing on next-step error (0.0000 < 0.0001)."
+  ],
+  "allPlainPass": true,
+  "honesty": "Sandbox digital experiment on equal streams — not human trials, not production model internals, not phenomenal consciousness. Resource-matched control uses task MSE (share is scale-invariant under equal weights).",
+  "pass": true,
+  "interpretation": "Directed attention raises target downstream share; counterfactual blocks path; resource-matched uniform loses; adaptive re-selection beats fixed routing."
+}
+```
+
 ## Honesty boundary
 
-Known attention science + novel observation→downstream hypothesis + provisional MFA (not phenomenal consciousness) + clearly labeled Hero’s Return ontology. Not claiming digital systems are conscious. Φ_EGS is design grammar. Homeostasis Expedition empirical lane.
+Known attention science + novel observation→downstream hypothesis + provisional MFA (not phenomenal consciousness) + digital ΔD sandbox findings (replayable catalog, not human trials / not production LLM internals) + clearly labeled Hero’s Return ontology. Not claiming digital systems are conscious. Φ_EGS is design grammar. Homeostasis Expedition empirical lane.

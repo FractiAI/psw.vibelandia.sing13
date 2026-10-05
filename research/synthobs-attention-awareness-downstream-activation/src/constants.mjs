@@ -53,4 +53,4 @@ export const NOT_ATTENTION_EQUALS_CONSCIOUSNESS = true;
 export const ONTOLOGICAL_IS_SPECULATIVE = true;
 
 export const HONESTY =
-  'Known attention science + novel observation→downstream hypothesis + provisional MFA (not phenomenal consciousness) + clearly labeled Hero’s Return ontology. Not claiming digital systems are conscious. Φ_EGS is design grammar. Homeostasis Expedition empirical lane.';
+  'Known attention science + novel observation→downstream hypothesis + provisional MFA (not phenomenal consciousness) + digital ΔD sandbox findings (replayable catalog, not human trials / not production LLM internals) + clearly labeled Hero’s Return ontology. Not claiming digital systems are conscious. Φ_EGS is design grammar. Homeostasis Expedition empirical lane.';

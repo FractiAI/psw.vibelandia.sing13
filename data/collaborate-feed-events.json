@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-05T20:48:00.761Z",
+  "updatedAt": "2026-10-05T21:51:47.015Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-10-05T20:48:00.760Z",
+      "createdAt": "2026-10-05T21:51:47.014Z",
       "body": "Attention, Awareness, and Downstream Activation Across Biological and Digital Systems",
       "presenceHue": "gold",
       "paperId": "synthobs-attention-awareness-downstream-activation-2026-10",

@@ -769,6 +769,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists };
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   removePlaylistFromPlaylist: (childPlaylistId, parentPlaylistId) => {
@@ -785,6 +786,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   addTrackToPlaylist: (trackId, playlistId) => {
@@ -800,6 +802,10 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
+    // persist() skips shared sync when store was already mutated — push explicitly
+    // (same pattern as createPlaylist). Without this, adds never leave the device
+    // and refresh snaps back to the last server snapshot (often the seed track only).
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   removeTrackFromPlaylist: (trackId, playlistId) => {
@@ -814,6 +820,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       ),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   moveTrackInPlaylist: (playlistId, trackId, dir) => {
@@ -830,6 +837,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   reorderTrackInPlaylist: (playlistId, fromIndex, toIndex) => {
@@ -850,6 +858,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists, likedTrackIds };
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   moveTrackToPlaylist: (trackId, targetPlaylistId) => {
@@ -867,6 +876,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists: next };
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   setTrackPlaylistMembership: (trackId, playlistIds) => {
@@ -895,6 +905,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists, likedTrackIds };
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   uploadTrack: async (file, meta) => {

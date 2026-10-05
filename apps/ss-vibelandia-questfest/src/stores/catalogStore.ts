@@ -8,6 +8,7 @@ import {
   mergeServerCatalogWithPrefs,
   isMasterPlaylist,
   isMyLikesPlaylist,
+  isCatalogPinnedPlaylist,
   isConciertoPreludePlaylist,
   isReceptionPlaylist,
   isSinCityPlaylist,
@@ -149,12 +150,17 @@ async function pushSharedPlaylists(playlists: PlaylistDef[]): Promise<void> {
   }
 }
 
-function scheduleSharedPlaylistSync(playlists: PlaylistDef[], opts?: { immediate?: boolean }): void {
+function scheduleSharedPlaylistSync(
+  _playlists?: PlaylistDef[],
+  opts?: { immediate?: boolean },
+): void {
   if (!isServerUploadConfigured()) return;
   if (playlistSyncTimer) clearTimeout(playlistSyncTimer);
+  // Always read fresh store state — never push a closed-over snapshot that may
+  // predate an in-flight syncLibraryFromServer merge or a later addTrack.
   const run = () => {
     playlistSyncTimer = null;
-    void pushSharedPlaylists(playlists);
+    void pushSharedPlaylists(useCatalogStore.getState().playlists);
   };
   if (opts?.immediate) {
     run();
@@ -800,6 +806,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   removeTrackFromPlaylist: (trackId, playlistId) => {
@@ -814,6 +821,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       ),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   moveTrackInPlaylist: (playlistId, trackId, dir) => {
@@ -830,6 +838,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   reorderTrackInPlaylist: (playlistId, fromIndex, toIndex) => {
@@ -850,6 +859,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists, likedTrackIds };
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   moveTrackToPlaylist: (trackId, targetPlaylistId) => {
@@ -867,6 +877,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists: next };
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   setTrackPlaylistMembership: (trackId, playlistIds) => {
@@ -895,6 +906,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists, likedTrackIds };
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   uploadTrack: async (file, meta) => {
@@ -1264,6 +1276,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const localTracks = get().tracks;
     try {
       let applied: ReturnType<typeof applyServerCatalog> | null = null;
+      let liveServerPlaylists: PlaylistDef[] | null = null;
       const localCount = Object.keys(localTracks).length;
       for (let attempt = 0; attempt < 3; attempt++) {
         try {
@@ -1282,16 +1295,24 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           reconcileDeletedTrackTombstones(new Set(Object.keys(live.tracks)));
           const filteredLive = filterSnapshotTracks(live, tombstones);
           const server = mergePendingServerTracks(filteredLive, localTracks);
-          const prefsWithLikes: ReturnType<typeof loadCatalogPrefs> = prefs
-            ? { ...prefs, likedTrackIds: priorLikes.length ? priorLikes : prefs.likedTrackIds }
-            : priorLikes.length
+          // Prefer in-memory playlists over prefs loaded at sync start — adds during
+          // the fetch must not be discarded by a stale prefs snapshot.
+          const livePlaylists = get().playlists;
+          const prefsWithLikes: ReturnType<typeof loadCatalogPrefs> = {
+            version: CATALOG_VERSION,
+            playlists: livePlaylists.length ? livePlaylists : prefs?.playlists ?? [],
+            activePlaylistId: get().activePlaylistId || prefs?.activePlaylistId || MASTER_PLAYLIST_ID,
+            likedTrackIds: priorLikes.length ? priorLikes : prefs?.likedTrackIds ?? [],
+            ...(get().userPlaylistMenuOrder.length || prefs?.userPlaylistMenuOrder
               ? {
-                  version: CATALOG_VERSION,
-                  playlists: get().playlists,
-                  activePlaylistId: get().activePlaylistId,
-                  likedTrackIds: priorLikes,
+                  userPlaylistMenuOrder:
+                    get().userPlaylistMenuOrder.length > 0
+                      ? get().userPlaylistMenuOrder
+                      : prefs?.userPlaylistMenuOrder,
                 }
-              : null;
+              : {}),
+          };
+          liveServerPlaylists = server.playlists;
           applied = applyServerCatalog(server, prefsWithLikes, downloaded);
           break;
         } catch {
@@ -1308,9 +1329,20 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           ? currentActive
           : applied.activePlaylistId;
 
+      const playlists = applied.playlists;
+      const mergedAheadOfServer =
+        !!liveServerPlaylists &&
+        playlists.some((ap) => {
+          if (isCatalogPinnedPlaylist(ap.id)) return false;
+          const sp = liveServerPlaylists!.find((p) => p.id === ap.id);
+          if (!sp) return ap.trackIds.length > 0;
+          if (ap.trackIds.length !== sp.trackIds.length) return true;
+          return ap.trackIds.some((id, i) => id !== sp.trackIds[i]);
+        });
+
       set({
         tracks: applied.tracks,
-        playlists: applied.playlists,
+        playlists,
         activePlaylistId,
         likedTrackIds: applied.likedTrackIds,
       });
@@ -1318,10 +1350,14 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       saveCatalogCache({
         version: CATALOG_VERSION,
         tracks: serverTracksForCache(applied.tracks),
-        playlists: applied.playlists,
+        playlists,
         activePlaylistId,
       });
       get().persist();
+      // Union merge may preserve local adds the server has not seen yet — push them.
+      if (mergedAheadOfServer) {
+        scheduleSharedPlaylistSync(playlists, { immediate: true });
+      }
       if (prevTrackId && !applied.tracks[prevTrackId]) {
         usePlaybackStore.getState().setPlaying(false);
         usePlaybackStore.getState().setTrack(null);

@@ -63,6 +63,27 @@ export function isUserUploadTrack(id: string, tr: TrackDef): boolean {
 }
 
 /** Server catalog + user playlists + offline downloads only (no full library in browser storage). */
+/**
+ * Keep local pending adds when a shared playlist already exists on the server.
+ * Server order is the base; any local-only track ids are appended (deduped).
+ * Pinned / master / likes lists are not merged here — callers skip those ids.
+ */
+export function mergeUserPlaylistTrackIds(
+  serverTrackIds: string[],
+  localTrackIds: string[],
+  trackMap: Record<string, TrackDef>,
+): string[] {
+  const server = serverTrackIds.filter((id) => trackMap[id]);
+  const seen = new Set(server);
+  const out = [...server];
+  for (const id of localTrackIds) {
+    if (!trackMap[id] || seen.has(id)) continue;
+    seen.add(id);
+    out.push(id);
+  }
+  return out;
+}
+
 /** Keep just-uploaded server tracks if live sync has not caught up yet. */
 export function mergePendingServerTracks(
   server: CatalogSnapshot,
@@ -99,15 +120,21 @@ export function mergeServerCatalogWithPrefs(
     const byId = new Map(playlists.map((p) => [p.id, p]));
     const localMaster = localPrefs.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
     for (const p of localPrefs.playlists) {
-      if (p.id === MASTER_PLAYLIST_ID || p.id === MY_LIKES_PLAYLIST_ID) continue;
-      /* Server-shared playlists win — local only seeds playlists not yet on server. */
-      if (byId.has(p.id)) continue;
+      if (isCatalogPinnedPlaylist(p.id)) continue;
       /* Keep named empty playlists so they can sync to the shared catalog (not only lists with tracks). */
       const filtered = p.trackIds.filter((id) => tracks[id]);
+      const existing = byId.get(p.id);
+      if (existing) {
+        /* Shared playlists: keep server metadata, union local pending track adds. */
+        byId.set(p.id, {
+          ...existing,
+          trackIds: mergeUserPlaylistTrackIds(existing.trackIds, filtered, tracks),
+        });
+        continue;
+      }
       byId.set(p.id, { ...p, trackIds: filtered });
     }
     playlists = [...byId.values()];
-
     if (localMaster) {
       playlists = playlists.map((p) => {
         if (p.id !== MASTER_PLAYLIST_ID) return p;

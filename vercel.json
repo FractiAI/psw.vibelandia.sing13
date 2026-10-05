@@ -1453,6 +1453,14 @@
       "destination": "/interfaces/blog-agentic-convergence-2026-10.html"
     },
     {
+      "source": "/ship-blog/survival-computing-viral-rna-asi",
+      "destination": "/interfaces/blog-survival-computing-viral-rna-asi-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/survival-computing-viral-rna-asi/",
+      "destination": "/interfaces/blog-survival-computing-viral-rna-asi-2026-10.html"
+    },
+    {
       "source": "/ship-blog/archetypal-grand-story",
       "destination": "/interfaces/blog-archetypal-grand-story-2026-10.html"
     },

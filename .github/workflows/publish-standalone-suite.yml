@@ -23,6 +23,7 @@ on:
           - synthobs-consciousness-moat
           - synthobs-human-omniversal-reality-bridge
           - synthobs-archetypal-grand-story
+          - synthobs-survival-computing-viral-rna-asi
       create_repo:
         description: 'Create empty FractiAI repo if missing (needs org PAT)'
         required: false

@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-03** · **361** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-05** · **362** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -394,6 +394,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A Smaller Pack for the Golden Key · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html`](/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html) | When Old Rails Met New Roads · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-soundtrack-prelude-pages-2026-08.html`](/interfaces/blog-soundtrack-prelude-pages-2026-08.html) | Soundtrack Preludes — Step Into the Scene · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-survival-computing-viral-rna-asi-2026-10.html`](/interfaces/blog-survival-computing-viral-rna-asi-2026-10.html) | If Viruses Recruit Hosts and AI Reorganizes Ours, Is Survival Itself a Kind of Computing? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-syn-sun-wavefield-oscillator.html`](/interfaces/blog-syn-sun-wavefield-oscillator.html) | The Sun as a Wavefield Clock · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-syntheverse-sandbox-comprehensive.html`](/interfaces/blog-syntheverse-sandbox-comprehensive.html) | Sandbox Report — What We Learned Safe · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-81-orbital-singularity.html`](/interfaces/blog-synthobs-81-orbital-singularity.html) | Orbit Shapes as Singularity Stories · Ship blog · SS Vibelandia |

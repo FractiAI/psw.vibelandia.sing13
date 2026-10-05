@@ -78,11 +78,29 @@ export function mergePendingServerTracks(
   return changed ? { ...server, tracks } : server;
 }
 
+/**
+ * Keep local user-playlist membership when the DJ just edited it (dirty),
+ * or when local is a superset of server (add landed locally before shared echo).
+ * Otherwise shared catalog wins so other-device adds still appear.
+ */
+export function shouldPreferLocalPlaylistTrackIds(
+  serverTrackIds: readonly string[],
+  localTrackIds: readonly string[],
+  playlistId: string,
+  preferLocalPlaylistIds?: ReadonlySet<string> | null,
+): boolean {
+  if (preferLocalPlaylistIds?.has(playlistId)) return true;
+  if (localTrackIds.length < serverTrackIds.length) return false;
+  const localSet = new Set(localTrackIds);
+  return serverTrackIds.every((id) => localSet.has(id));
+}
+
 export function mergeServerCatalogWithPrefs(
   server: CatalogSnapshot,
   localPrefs: CatalogPrefs | null,
   downloadedTrackIds: Set<string>,
   syncMaster: (tracks: Record<string, TrackDef>, playlists: PlaylistDef[]) => PlaylistDef[],
+  preferLocalPlaylistIds?: ReadonlySet<string> | null,
 ): CatalogSnapshot {
   const tracks = { ...server.tracks };
   for (const id of downloadedTrackIds) {
@@ -100,10 +118,33 @@ export function mergeServerCatalogWithPrefs(
     const localMaster = localPrefs.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
     for (const p of localPrefs.playlists) {
       if (p.id === MASTER_PLAYLIST_ID || p.id === MY_LIKES_PLAYLIST_ID) continue;
-      /* Server-shared playlists win — local only seeds playlists not yet on server. */
-      if (byId.has(p.id)) continue;
       /* Keep named empty playlists so they can sync to the shared catalog (not only lists with tracks). */
       const filtered = p.trackIds.filter((id) => tracks[id]);
+      const serverP = byId.get(p.id);
+      if (serverP) {
+        /* Shared playlists usually win — but never wipe in-flight local adds/edits. */
+        if (
+          !shouldPreferLocalPlaylistTrackIds(
+            serverP.trackIds,
+            filtered,
+            p.id,
+            preferLocalPlaylistIds,
+          )
+        ) {
+          continue;
+        }
+        byId.set(p.id, {
+          ...serverP,
+          name: p.name?.trim() ? p.name : serverP.name,
+          ...(p.description !== undefined ? { description: p.description } : {}),
+          ...(p.kind ? { kind: p.kind } : {}),
+          ...(p.genre !== undefined ? { genre: p.genre } : {}),
+          ...(p.posterSrc ? { posterSrc: p.posterSrc } : {}),
+          ...(p.childPlaylistIds ? { childPlaylistIds: [...p.childPlaylistIds] } : {}),
+          trackIds: filtered,
+        });
+        continue;
+      }
       byId.set(p.id, { ...p, trackIds: filtered });
     }
     playlists = [...byId.values()];

@@ -89,8 +89,25 @@ type View = 'catalog' | 'dj';
 
 let playlistSyncTimer: ReturnType<typeof setTimeout> | null = null;
 const pendingPlaylistDeletes = new Set<string>();
+/** User playlists with local membership/metadata edits not yet confirmed on shared sync. */
+const dirtyPlaylistIds = new Set<string>();
 let playlistSyncInFlight = false;
 let playlistSyncQueued = false;
+
+function markPlaylistsDirty(ids: Iterable<string>): void {
+  for (const id of ids) {
+    if (!id || isMasterPlaylist(id) || isMyLikesPlaylist(id)) continue;
+    if (
+      isConciertoPreludePlaylist(id) ||
+      isReceptionPlaylist(id) ||
+      isSinCityPlaylist(id) ||
+      isReadingRoomPlaylist(id)
+    ) {
+      continue;
+    }
+    dirtyPlaylistIds.add(id);
+  }
+}
 
 function isPermanentPlaylistSyncError(err: unknown): boolean {
   const code =
@@ -115,6 +132,7 @@ async function pushSharedPlaylists(playlists: PlaylistDef[]): Promise<void> {
   playlistSyncInFlight = true;
   const deleteIds = [...pendingPlaylistDeletes];
   pendingPlaylistDeletes.clear();
+  const dirtyAtPush = [...dirtyPlaylistIds];
   try {
     let lastErr: unknown = null;
     for (let attempt = 0; attempt < 3; attempt++) {
@@ -126,6 +144,7 @@ async function pushSharedPlaylists(playlists: PlaylistDef[]): Promise<void> {
           playlistSyncError: null,
           playlistSyncAt: new Date().toISOString(),
         });
+        for (const id of dirtyAtPush) dirtyPlaylistIds.delete(id);
         lastErr = null;
         break;
       } catch (e) {
@@ -149,12 +168,16 @@ async function pushSharedPlaylists(playlists: PlaylistDef[]): Promise<void> {
   }
 }
 
-function scheduleSharedPlaylistSync(playlists: PlaylistDef[], opts?: { immediate?: boolean }): void {
+function scheduleSharedPlaylistSync(
+  _playlists?: PlaylistDef[],
+  opts?: { immediate?: boolean },
+): void {
   if (!isServerUploadConfigured()) return;
   if (playlistSyncTimer) clearTimeout(playlistSyncTimer);
   const run = () => {
     playlistSyncTimer = null;
-    void pushSharedPlaylists(playlists);
+    /* Always read live store — never push a stale snapshot from schedule time. */
+    void pushSharedPlaylists(useCatalogStore.getState().playlists);
   };
   if (opts?.immediate) {
     run();
@@ -302,13 +325,20 @@ function applyServerCatalog(
   server: CatalogSnapshot,
   prefs: ReturnType<typeof loadCatalogPrefs>,
   downloaded: Set<string>,
+  preferLocalPlaylistIds?: ReadonlySet<string> | null,
 ): {
   tracks: Record<string, TrackDef>;
   playlists: PlaylistDef[];
   activePlaylistId: string;
   likedTrackIds: string[];
 } {
-  const base = mergeServerCatalogWithPrefs(server, prefs, downloaded, syncMasterPlaylistWithTracks);
+  const base = mergeServerCatalogWithPrefs(
+    server,
+    prefs,
+    downloaded,
+    syncMasterPlaylistWithTracks,
+    preferLocalPlaylistIds,
+  );
   const likedTrackIds = resolveLikedTrackIds(prefs, base.playlists);
   return {
     tracks: base.tracks,
@@ -624,18 +654,20 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }
       return { playlists, activePlaylistId: id, userPlaylistMenuOrder: [...s.userPlaylistMenuOrder.filter((pid) => pid !== id), id] };
     });
+    markPlaylistsDirty([id]);
     get().persist();
-    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
     return id;
   },
 
   renamePlaylist: (id, name) => {
     if (isMyLikesPlaylist(id)) return;
+    markPlaylistsDirty([id]);
     set((s) => ({
       playlists: s.playlists.map((p) => (p.id === id ? { ...p, name: name.trim() || p.name } : p)),
     }));
     get().persist();
-    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
   },
 
   updatePlaylist: async (id, patch, opts) => {
@@ -666,6 +698,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     }
 
     report?.('Saving playlist…');
+    markPlaylistsDirty([id]);
     set((s) => ({
       playlists: s.playlists.map((p) => {
         if (p.id !== id) return p;
@@ -686,7 +719,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
-    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
   },
 
   deletePlaylist: (id) => {
@@ -694,6 +727,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const { playlists, activePlaylistId, userPlaylistMenuOrder } = get();
     if (playlists.length <= 1) return;
     pendingPlaylistDeletes.add(id);
+    dirtyPlaylistIds.delete(id);
     let next = stripPlaylistFromAllParents(id, playlists).filter((p) => p.id !== id);
     set({
       playlists: next,
@@ -701,7 +735,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       userPlaylistMenuOrder: userPlaylistMenuOrder.filter((pid) => pid !== id),
     });
     get().persist();
-    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
   },
 
   duplicatePlaylist: (id) => {
@@ -713,6 +747,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     if (!src) return '';
     const newId = `pl-${Date.now()}`;
     const baseName = src.name.trim() || 'Playlist';
+    markPlaylistsDirty([newId]);
     set((s) => ({
       playlists: [
         ...s.playlists,
@@ -730,7 +765,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       userPlaylistMenuOrder: insertPlaylistMenuOrderAfter(s.userPlaylistMenuOrder, newId, id),
     }));
     get().persist();
-    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
     return newId;
   },
 
@@ -792,6 +827,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       if (!get().isTrackLiked(trackId)) get().toggleTrackLike(trackId);
       return;
     }
+    markPlaylistsDirty([playlistId]);
     set((s) => ({
       playlists: s.playlists.map((p) => {
         if (p.id !== playlistId) return p;
@@ -800,6 +836,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
   },
 
   removeTrackFromPlaylist: (trackId, playlistId) => {
@@ -808,15 +845,18 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       if (get().isTrackLiked(trackId)) get().toggleTrackLike(trackId);
       return;
     }
+    markPlaylistsDirty([playlistId]);
     set((s) => ({
       playlists: s.playlists.map((p) =>
         p.id === playlistId ? { ...p, trackIds: p.trackIds.filter((t) => t !== trackId) } : p,
       ),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
   },
 
   moveTrackInPlaylist: (playlistId, trackId, dir) => {
+    markPlaylistsDirty([playlistId]);
     set((s) => ({
       playlists: s.playlists.map((p) => {
         if (p.id !== playlistId) return p;
@@ -830,10 +870,12 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
   },
 
   reorderTrackInPlaylist: (playlistId, fromIndex, toIndex) => {
     if (fromIndex === toIndex) return;
+    markPlaylistsDirty([playlistId]);
     set((s) => {
       const playlists = s.playlists.map((p) => {
         if (p.id !== playlistId) return p;
@@ -850,9 +892,14 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists, likedTrackIds };
     });
     get().persist();
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
   },
 
   moveTrackToPlaylist: (trackId, targetPlaylistId) => {
+    const touched = get()
+      .playlists.filter((pl) => pl.trackIds.includes(trackId) || pl.id === targetPlaylistId)
+      .map((pl) => pl.id);
+    markPlaylistsDirty([...touched, targetPlaylistId]);
     set((s) => {
       const next = s.playlists.map((pl) => ({
         ...pl,
@@ -867,11 +914,22 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists: next };
     });
     get().persist();
+    scheduleSharedPlaylistSync(undefined, { immediate: true });
   },
 
   setTrackPlaylistMembership: (trackId, playlistIds) => {
     const allowed = new Set(playlistIds.filter((id) => !isMyLikesPlaylist(id)));
     const wantLike = playlistIds.some((id) => isMyLikesPlaylist(id));
+    const prior = get().playlists;
+    const touched = prior
+      .filter((p) => {
+        if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id)) return false;
+        const has = p.trackIds.includes(trackId);
+        const shouldHave = allowed.has(p.id);
+        return has !== shouldHave;
+      })
+      .map((p) => p.id);
+    markPlaylistsDirty(touched);
     set((s) => {
       let likedTrackIds = s.likedTrackIds;
       const liked = likedTrackIds.includes(trackId);
@@ -895,6 +953,9 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists, likedTrackIds };
     });
     get().persist();
+    if (touched.length) {
+      scheduleSharedPlaylistSync(undefined, { immediate: true });
+    }
   },
 
   uploadTrack: async (file, meta) => {
@@ -1257,7 +1318,6 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   syncLibraryFromServer: async () => {
     if (get().catalogSyncing || bulkImportDepth > 0) return;
     set({ catalogSyncing: true });
-    const prefs = loadCatalogPrefs();
     const downloaded = loadDownloadedTrackIds();
     const prevTrackId = usePlaybackStore.getState().currentTrackId;
     const priorLikes = get().likedTrackIds;
@@ -1282,17 +1342,25 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           reconcileDeletedTrackTombstones(new Set(Object.keys(live.tracks)));
           const filteredLive = filterSnapshotTracks(live, tombstones);
           const server = mergePendingServerTracks(filteredLive, localTracks);
-          const prefsWithLikes: ReturnType<typeof loadCatalogPrefs> = prefs
-            ? { ...prefs, likedTrackIds: priorLikes.length ? priorLikes : prefs.likedTrackIds }
-            : priorLikes.length
-              ? {
-                  version: CATALOG_VERSION,
-                  playlists: get().playlists,
-                  activePlaylistId: get().activePlaylistId,
-                  likedTrackIds: priorLikes,
-                }
-              : null;
-          applied = applyServerCatalog(server, prefsWithLikes, downloaded);
+          /* Live working set — not a stale prefs snapshot from sync start. */
+          const liveState = get();
+          const diskPrefs = loadCatalogPrefs();
+          const prefsWithLikes: ReturnType<typeof loadCatalogPrefs> = {
+            version: CATALOG_VERSION,
+            playlists: liveState.playlists,
+            activePlaylistId: liveState.activePlaylistId,
+            likedTrackIds: priorLikes.length
+              ? priorLikes
+              : diskPrefs?.likedTrackIds?.length
+                ? diskPrefs.likedTrackIds
+                : liveState.likedTrackIds,
+            ...(liveState.userPlaylistMenuOrder.length
+              ? { userPlaylistMenuOrder: liveState.userPlaylistMenuOrder }
+              : diskPrefs?.userPlaylistMenuOrder
+                ? { userPlaylistMenuOrder: diskPrefs.userPlaylistMenuOrder }
+                : {}),
+          };
+          applied = applyServerCatalog(server, prefsWithLikes, downloaded, dirtyPlaylistIds);
           break;
         } catch {
           if (attempt < 2) {

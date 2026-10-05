@@ -23,5 +23,7 @@ describe('catalog playlist sync · 503 spike guards', () => {
     expect(src).toContain('isPermanentPlaylistSyncError');
     expect(src).toContain('catalog_upload_unconfigured');
     expect(src).toMatch(/if \(!playlistsUnchanged\) \{\s*scheduleSharedPlaylistSync\(playlists\);/);
+    expect(src).toContain('Always read live store');
   });
 });
+

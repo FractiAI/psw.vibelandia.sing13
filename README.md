@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-05** · **363** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-06** · **365** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -295,6 +295,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Awareness Gates from Zero to Eighty-One · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-vs-brute-force-2026-09.html`](/interfaces/blog-awareness-vs-brute-force-2026-09.html) | Spend Awareness Before Brute Force · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-beyond-crispr-discovery-2026-10.html`](/interfaces/blog-beyond-crispr-discovery-2026-10.html) | If CRISPR Is Memory of Past Invaders, What Writes Tomorrow’s Diversity? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-chart-compass-goldilocks-si-2026-10.html`](/interfaces/blog-chart-compass-goldilocks-si-2026-10.html) | Can Intelligence Be Charted Like an Expedition — With a Compass That Survives Self-Modification? · Ship blog · SS Vibela |
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | The Engine on a Silicon Shelf · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexist with AI — Which Post Are You? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | One Window on Quake and Volcano Alert · Ship blog · SS Vibelandia |
@@ -388,6 +389,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and Solar Weather on One Bulletin · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Attention That Loops Without Losing the Trail · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-reflective-portal-2026-10.html`](/interfaces/blog-reflective-portal-2026-10.html) | When a System Can Watch Itself Fail, Can It Change the Pattern Before the Next Round? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | When Tools Rewrite Themselves, Is Drift the Real Rent? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | When Tools Rewrite Themselves, Does φ Keep Meaning Intact? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-self-observing-genome-2026-09.html`](/interfaces/blog-self-observing-genome-2026-09.html) | DNA Is a Mirror You Can File — Not a Mind You Can Hire · Ship blog · SS Vibelandia |

@@ -21,6 +21,8 @@ import {
   BACKGROUND_FLUSH_POLL_MS,
   BACKGROUND_FORCE_RECOVER_MS,
   decideBackgroundResume,
+  shouldAbortPrimaryForBackgroundFlush,
+  shouldKickRecoverOnPageHide,
   shouldPollBackgroundFlush,
   shouldRecoverOnFocusWithoutHide,
 } from '@/lib/backgroundReplySurface';
@@ -135,13 +137,17 @@ export function ChatPane({
     Boolean(thread?.messages.length) &&
     thread!.messages[thread!.messages.length - 1].role === 'user';
   const awaiting = threadAwaitingAssistant(activeThreadId);
+  const threadAgentId = Boolean(thread?.agentId);
   const showWorking =
     awaiting &&
     (sending ||
       sendPhase === 'stuck' ||
       sendPhase === 'recovering' ||
       sendPhase === 'sending' ||
-      Boolean(pending));
+      Boolean(pending) ||
+      // Long background leave sometimes cleared pending while agentId remains —
+      // keep the working chrome + Check so the finished reply can flush.
+      threadAgentId);
   const showRemoteWorking =
     onSharedSession &&
     !showWorking &&
@@ -178,12 +184,12 @@ export function ChatPane({
     void verifyLatticeAccess(userEmail);
   }, [signedIn, userEmail]);
 
-  // Resume a waiting turn after refresh — only when we still have a pending soft wait.
+  // Resume a waiting turn after refresh — pending soft wait OR thread agentId
+  // after a long background leave wiped pending but left the cloud handle.
   useEffect(() => {
     if (!signedIn || !hasEdgeKey || resumedRef.current) return;
     if (!threadAwaitingAssistant(activeThreadId)) return;
     const s = useLatticeStore.getState();
-    if (!s.pending) return;
     if (
       s.error &&
       /GitHub|repository|branch|API key|access list|invalid model|agent not found/i.test(s.error)
@@ -191,11 +197,33 @@ export function ChatPane({
       resumedRef.current = true;
       return;
     }
-    // Stale agent under a new edge key — don't spin recover forever.
-    const pendingAgent = s.pending.agentId || s.threads.find((t) => t.id === activeThreadId)?.agentId;
+    const pendingAgent =
+      s.pending?.agentId || s.threads.find((t) => t.id === activeThreadId)?.agentId;
     if (!pendingAgent) {
+      // No cloud handle yet — still mark resumed so we do not spin; flush poll
+      // / visibility will retry once Agent.create emits agentId.
+      if (s.pending) {
+        resumedRef.current = true;
+        return;
+      }
       resumedRef.current = true;
       return;
+    }
+    // Rebuild pending from thread when long leave cleared it.
+    if (!s.pending) {
+      const prompt = s.threads
+        .find((t) => t.id === activeThreadId)
+        ?.messages.slice()
+        .reverse()
+        .find((m) => m.role === 'user')?.content;
+      if (prompt) {
+        s.setPending({
+          threadId: activeThreadId!,
+          prompt,
+          startedAt: Date.now(),
+          agentId: pendingAgent,
+        });
+      }
     }
     resumedRef.current = true;
     void checkPendingLatticeReply();
@@ -210,6 +238,7 @@ export function ChatPane({
   // without Player 1 typing "Update me on last request" / "response not shown".
   // Also poll while still "sending" once the pending turn is old or the tab is
   // hidden — background throttle often never flips the phase to stuck/recovering.
+  // Never abort Agent.create before agentId (create grace) — that wiped the turn.
   useEffect(() => {
     if (!showWorking || !signedIn) return;
     let cancelled = false;
@@ -217,6 +246,8 @@ export function ChatPane({
       if (cancelled) return;
       const s = useLatticeStore.getState();
       if (!threadAwaitingAssistant(s.activeThreadId)) return;
+      const thr = s.threads.find((t) => t.id === s.activeThreadId);
+      const hasAgentId = Boolean(s.pending?.agentId || thr?.agentId);
       const pendingAgeMs = s.pending?.startedAt
         ? Date.now() - s.pending.startedAt
         : 0;
@@ -230,13 +261,23 @@ export function ChatPane({
           hasPending: Boolean(s.pending),
           pendingAgeMs,
           documentHidden,
+          hasAgentId,
         })
       ) {
         return;
       }
-      if (s.primaryStreamLive) {
-        abortActiveLatticeSend();
+      if (
+        shouldAbortPrimaryForBackgroundFlush({
+          primaryStreamLive: s.primaryStreamLive,
+          hasAgentId,
+          pendingAgeMs,
+        })
+      ) {
+        abortActiveLatticeSend('background');
         s.setPrimaryStreamLive(false);
+      } else if (s.primaryStreamLive && !hasAgentId) {
+        // Still creating — do not kill the stream; wait for agentId or grace.
+        return;
       }
       void checkPendingLatticeReply();
     };
@@ -260,7 +301,7 @@ export function ChatPane({
       if (hiddenKick) window.clearTimeout(hiddenKick);
       document.removeEventListener('visibilitychange', onVisForPoll);
     };
-  }, [showWorking, sendPhase, signedIn, activeThreadId, pending?.startedAt]);
+  }, [showWorking, sendPhase, signedIn, activeThreadId, pending?.startedAt, threadAgentId]);
 
   useEffect(() => {
     // Only pin to bottom when the user is already near the end (or just sent).
@@ -337,11 +378,13 @@ export function ChatPane({
     function resumeAfterReturn(opts?: { forceWithoutHide?: boolean }) {
       const s = useLatticeStore.getState();
       const awaiting = threadAwaitingAssistant(s.activeThreadId);
+      const thr = s.threads.find((t) => t.id === s.activeThreadId);
+      const hasAgentId = Boolean(s.pending?.agentId || thr?.agentId);
       const pendingAgeMs = s.pending?.startedAt ? Date.now() - s.pending.startedAt : 0;
       const awayMs = hiddenAt ? Date.now() - hiddenAt : 0;
 
       // Embedded webviews / IDE panes sometimes never fire visibilitychange.
-      // If the pending turn is old enough, still flush on focus/pageshow.
+      // If the pending turn is old enough (or we still hold agentId), flush.
       if (
         opts?.forceWithoutHide &&
         !hiddenAt &&
@@ -349,10 +392,17 @@ export function ChatPane({
           awaitingAssistant: awaiting,
           hasPending: Boolean(s.pending),
           pendingAgeMs,
+          hasAgentId,
         })
       ) {
-        if (s.primaryStreamLive) {
-          abortActiveLatticeSend();
+        if (
+          shouldAbortPrimaryForBackgroundFlush({
+            primaryStreamLive: s.primaryStreamLive,
+            hasAgentId,
+            pendingAgeMs,
+          })
+        ) {
+          abortActiveLatticeSend('background');
           useLatticeStore.getState().setPrimaryStreamLive(false);
         }
         void checkPendingLatticeReply().then((ok) => {
@@ -369,10 +419,11 @@ export function ChatPane({
         primaryStreamLive: s.primaryStreamLive,
         awayMs,
         pendingAgeMs,
+        hasAgentId,
       });
       if (decision.action === 'noop' || decision.action === 'keep_primary') return;
       if (decision.action === 'abort_and_recover') {
-        abortActiveLatticeSend();
+        abortActiveLatticeSend('background');
         useLatticeStore.getState().setPrimaryStreamLive(false);
       }
       void checkPendingLatticeReply().then((ok) => {
@@ -410,8 +461,42 @@ export function ChatPane({
     function onResume() {
       resumeAfterReturn({ forceWithoutHide: true });
     }
+    function onPageHide() {
+      // Mobile / long background: pagehide often fires before timers. Kick
+      // abort+recover while we still can if agentId exists.
+      if (!hiddenAt) hiddenAt = Date.now();
+      const s = useLatticeStore.getState();
+      const awaiting = threadAwaitingAssistant(s.activeThreadId);
+      const thr = s.threads.find((t) => t.id === s.activeThreadId);
+      const hasAgentId = Boolean(s.pending?.agentId || thr?.agentId);
+      const pendingAgeMs = s.pending?.startedAt ? Date.now() - s.pending.startedAt : 0;
+      if (
+        !shouldKickRecoverOnPageHide({
+          awaitingAssistant: awaiting,
+          primaryStreamLive: s.primaryStreamLive,
+          hasAgentId,
+          pendingAgeMs,
+          hasPending: Boolean(s.pending),
+        })
+      ) {
+        return;
+      }
+      if (
+        shouldAbortPrimaryForBackgroundFlush({
+          primaryStreamLive: s.primaryStreamLive,
+          hasAgentId,
+          pendingAgeMs,
+        })
+      ) {
+        abortActiveLatticeSend('background');
+        useLatticeStore.getState().setPrimaryStreamLive(false);
+      }
+      // Fire-and-forget — page may freeze immediately after.
+      void checkPendingLatticeReply();
+    }
     document.addEventListener('visibilitychange', onVis);
     window.addEventListener('pageshow', onPageShow);
+    window.addEventListener('pagehide', onPageHide);
     window.addEventListener('focus', onFocus);
     // freeze/resume are experimental Page Lifecycle events — guard add.
     document.addEventListener('freeze', onFreeze);
@@ -419,6 +504,7 @@ export function ChatPane({
     return () => {
       document.removeEventListener('visibilitychange', onVis);
       window.removeEventListener('pageshow', onPageShow);
+      window.removeEventListener('pagehide', onPageHide);
       window.removeEventListener('focus', onFocus);
       document.removeEventListener('freeze', onFreeze);
       document.removeEventListener('resume', onResume);

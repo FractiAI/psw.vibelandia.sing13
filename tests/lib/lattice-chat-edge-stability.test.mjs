@@ -254,11 +254,12 @@ describe('Lattice Chat background reply surface', () => {
         hasPending: true,
         primaryStreamLive: true,
         awayMs: BACKGROUND_BLIP_MS - 100,
+        hasAgentId: true,
       }).action,
     ).toBe('keep_primary');
   });
 
-  it('aborts zombie primary after a real background leave', async () => {
+  it('aborts zombie primary after a real background leave when agentId exists', async () => {
     const { decideBackgroundResume } = await import(
       '../../apps/lattice-chat/src/lib/backgroundReplySurface.ts'
     );
@@ -270,6 +271,45 @@ describe('Lattice Chat background reply surface', () => {
         hasPending: true,
         primaryStreamLive: true,
         awayMs: 12_000,
+        hasAgentId: true,
+      }).action,
+    ).toBe('abort_and_recover');
+  });
+
+  it('keeps primary during Agent.create (no agentId) even after a long leave', async () => {
+    const {
+      decideBackgroundResume,
+      BACKGROUND_CREATE_GRACE_MS,
+    } = await import('../../apps/lattice-chat/src/lib/backgroundReplySurface.ts');
+    expect(
+      decideBackgroundResume({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'sending',
+        hasPending: true,
+        primaryStreamLive: true,
+        awayMs: 30_000,
+        pendingAgeMs: BACKGROUND_CREATE_GRACE_MS - 1_000,
+        hasAgentId: false,
+      }).action,
+    ).toBe('keep_primary');
+  });
+
+  it('aborts create-grace zombies once create grace expires', async () => {
+    const {
+      decideBackgroundResume,
+      BACKGROUND_CREATE_GRACE_MS,
+    } = await import('../../apps/lattice-chat/src/lib/backgroundReplySurface.ts');
+    expect(
+      decideBackgroundResume({
+        awaitingAssistant: true,
+        sending: true,
+        sendPhase: 'sending',
+        hasPending: true,
+        primaryStreamLive: true,
+        awayMs: 30_000,
+        pendingAgeMs: BACKGROUND_CREATE_GRACE_MS + 500,
+        hasAgentId: false,
       }).action,
     ).toBe('abort_and_recover');
   });
@@ -286,11 +326,12 @@ describe('Lattice Chat background reply surface', () => {
         hasPending: true,
         primaryStreamLive: false,
         awayMs: 30_000,
+        hasAgentId: true,
       }).action,
     ).toBe('recover');
   });
 
-  it('force-aborts long-lived sending zombies by pending age', async () => {
+  it('force-aborts long-lived sending zombies by pending age when agentId exists', async () => {
     const {
       decideBackgroundResume,
       BACKGROUND_FORCE_RECOVER_MS,
@@ -304,6 +345,7 @@ describe('Lattice Chat background reply surface', () => {
         primaryStreamLive: true,
         awayMs: 0,
         pendingAgeMs: BACKGROUND_FORCE_RECOVER_MS + 500,
+        hasAgentId: true,
       }).action,
     ).toBe('abort_and_recover');
   });
@@ -353,9 +395,48 @@ describe('Lattice Chat background reply surface', () => {
         documentHidden: false,
       }),
     ).toBe(true);
+    expect(
+      shouldPollBackgroundFlush({
+        awaitingAssistant: true,
+        sending: false,
+        sendPhase: 'idle',
+        hasPending: false,
+        pendingAgeMs: 0,
+        documentHidden: true,
+        hasAgentId: true,
+      }),
+    ).toBe(true);
   });
 
-  it('recovers on focus without a prior hide when pending is old', async () => {
+  it('does not abort primary for flush before agentId within create grace', async () => {
+    const {
+      shouldAbortPrimaryForBackgroundFlush,
+      BACKGROUND_CREATE_GRACE_MS,
+    } = await import('../../apps/lattice-chat/src/lib/backgroundReplySurface.ts');
+    expect(
+      shouldAbortPrimaryForBackgroundFlush({
+        primaryStreamLive: true,
+        hasAgentId: false,
+        pendingAgeMs: 8_000,
+      }),
+    ).toBe(false);
+    expect(
+      shouldAbortPrimaryForBackgroundFlush({
+        primaryStreamLive: true,
+        hasAgentId: true,
+        pendingAgeMs: 8_000,
+      }),
+    ).toBe(true);
+    expect(
+      shouldAbortPrimaryForBackgroundFlush({
+        primaryStreamLive: true,
+        hasAgentId: false,
+        pendingAgeMs: BACKGROUND_CREATE_GRACE_MS + 1,
+      }),
+    ).toBe(true);
+  });
+
+  it('recovers on focus without a prior hide when pending is old or agentId remains', async () => {
     const {
       shouldRecoverOnFocusWithoutHide,
       BACKGROUND_FORCE_RECOVER_MS,
@@ -374,9 +455,59 @@ describe('Lattice Chat background reply surface', () => {
         pendingAgeMs: BACKGROUND_FORCE_RECOVER_MS + 100,
       }),
     ).toBe(true);
+    expect(
+      shouldRecoverOnFocusWithoutHide({
+        awaitingAssistant: true,
+        hasPending: false,
+        pendingAgeMs: 0,
+        hasAgentId: true,
+      }),
+    ).toBe(true);
   });
 
-  it('flags zombie primary for Check-for-reply even without pending', async () => {
+  it('kicks pagehide recover when agentId exists', async () => {
+    const { shouldKickRecoverOnPageHide } = await import(
+      '../../apps/lattice-chat/src/lib/backgroundReplySurface.ts'
+    );
+    expect(
+      shouldKickRecoverOnPageHide({
+        awaitingAssistant: true,
+        primaryStreamLive: true,
+        hasAgentId: true,
+        pendingAgeMs: 10_000,
+        hasPending: true,
+      }),
+    ).toBe(true);
+    expect(
+      shouldKickRecoverOnPageHide({
+        awaitingAssistant: true,
+        primaryStreamLive: true,
+        hasAgentId: false,
+        pendingAgeMs: 10_000,
+        hasPending: true,
+      }),
+    ).toBe(false);
+  });
+
+  it('retains pending on background abort without agentId', async () => {
+    const { shouldRetainPendingOnAbort } = await import(
+      '../../apps/lattice-chat/src/lib/backgroundReplySurface.ts'
+    );
+    expect(
+      shouldRetainPendingOnAbort({ hasAgentId: false, abortReason: 'background' }),
+    ).toBe(true);
+    expect(
+      shouldRetainPendingOnAbort({ hasAgentId: false, abortReason: 'watchdog' }),
+    ).toBe(true);
+    expect(
+      shouldRetainPendingOnAbort({ hasAgentId: false, abortReason: 'user' }),
+    ).toBe(false);
+    expect(
+      shouldRetainPendingOnAbort({ hasAgentId: true, abortReason: 'user' }),
+    ).toBe(true);
+  });
+
+  it('flags zombie primary for Check-for-reply even without pending when agentId exists', async () => {
     const { shouldAbortZombiePrimaryForRecover } = await import(
       '../../apps/lattice-chat/src/lib/backgroundReplySurface.ts'
     );
@@ -385,6 +516,7 @@ describe('Lattice Chat background reply surface', () => {
         primaryStreamLive: true,
         hasPending: true,
         awaitingAssistant: true,
+        hasAgentId: true,
       }),
     ).toBe(true);
     expect(
@@ -392,8 +524,18 @@ describe('Lattice Chat background reply surface', () => {
         primaryStreamLive: true,
         hasPending: false,
         awaitingAssistant: true,
+        hasAgentId: true,
       }),
     ).toBe(true);
+    expect(
+      shouldAbortZombiePrimaryForRecover({
+        primaryStreamLive: true,
+        hasPending: true,
+        awaitingAssistant: true,
+        hasAgentId: false,
+        pendingAgeMs: 5_000,
+      }),
+    ).toBe(false);
     expect(
       shouldAbortZombiePrimaryForRecover({
         primaryStreamLive: true,

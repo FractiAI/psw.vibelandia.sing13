@@ -3,8 +3,11 @@
  * without importing api.ts from the store (circular).
  */
 
+export type PrimaryAbortReason = 'user' | 'background' | 'watchdog';
+
 let activeAbort: AbortController | null = null;
 let streamThreadId: string | null = null;
+let lastAbortReason: PrimaryAbortReason | null = null;
 
 export function registerPrimaryStreamAbort(
   controller: AbortController,
@@ -12,6 +15,7 @@ export function registerPrimaryStreamAbort(
 ): void {
   activeAbort = controller;
   streamThreadId = threadId;
+  lastAbortReason = null;
 }
 
 export function clearPrimaryStreamAbort(controller?: AbortController): void {
@@ -20,7 +24,10 @@ export function clearPrimaryStreamAbort(controller?: AbortController): void {
   streamThreadId = null;
 }
 
-export function abortActiveLatticeSend(): void {
+export function abortActiveLatticeSend(
+  reason: PrimaryAbortReason = 'user',
+): void {
+  lastAbortReason = reason;
   try {
     activeAbort?.abort();
   } catch {
@@ -28,6 +35,17 @@ export function abortActiveLatticeSend(): void {
   }
   activeAbort = null;
   streamThreadId = null;
+}
+
+/** Read + clear the reason for the most recent abort (for catch-path retain policy). */
+export function consumeLastAbortReason(): PrimaryAbortReason | null {
+  const r = lastAbortReason;
+  lastAbortReason = null;
+  return r;
+}
+
+export function peekLastAbortReason(): PrimaryAbortReason | null {
+  return lastAbortReason;
 }
 
 export function activePrimaryStreamThreadId(): string | null {

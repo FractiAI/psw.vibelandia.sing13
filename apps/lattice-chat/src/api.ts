@@ -42,9 +42,13 @@ import {
 import {
   abortActiveLatticeSend,
   clearPrimaryStreamAbort,
+  consumeLastAbortReason,
   registerPrimaryStreamAbort,
 } from '@/lib/primaryStreamAbort';
-import { shouldAbortZombiePrimaryForRecover } from '@/lib/backgroundReplySurface';
+import {
+  shouldAbortZombiePrimaryForRecover,
+  shouldRetainPendingOnAbort,
+} from '@/lib/backgroundReplySurface';
 
 type LatticePrivilege = 'creator' | 'guest' | 'none';
 
@@ -643,17 +647,22 @@ export async function checkPendingLatticeReply(): Promise<boolean> {
   // Tab blur / background: primary SSE is often a zombie (timers throttled, stream
   // detached) while primaryStreamLive stays true. Abort it so recover can flush
   // the finished cloud reply — otherwise Player 1 must nudge for status.
+  // Never abort during Agent.create (no agentId) until create grace expires.
+  const pendingAgeMs = pending?.startedAt ? Date.now() - pending.startedAt : 0;
+  const hasAgentId = Boolean(pending?.agentId || thread.agentId);
   if (
     shouldAbortZombiePrimaryForRecover({
       primaryStreamLive: store.primaryStreamLive,
       hasPending: Boolean(pending),
       awaitingAssistant: true,
+      hasAgentId,
+      pendingAgeMs,
     })
   ) {
-    abortActiveLatticeSend();
+    abortActiveLatticeSend(hasAgentId ? 'background' : 'watchdog');
     store.setPrimaryStreamLive(false);
   } else if (store.primaryStreamLive) {
-    // Genuine live primary with no awaiting turn — let watchdog finish.
+    // Genuine live primary still creating / mid-stream — let it finish.
     return false;
   }
 
@@ -939,11 +948,7 @@ export async function sendLatticeMessage(
         const idleDead = idleFor >= IDLE_ABORT_MS;
         const hardCap = elapsed >= PRIMARY_MAX_MS;
         if (idleDead || hardCap) {
-          try {
-            primaryAbort.abort();
-          } catch {
-            /* ignore */
-          }
+          abortActiveLatticeSend('watchdog');
           primaryStreamActive = false;
           store.setPrimaryStreamLive(false);
           store.setSendProgress(
@@ -1070,9 +1075,27 @@ export async function sendLatticeMessage(
       (err instanceof Error && err.name === 'AbortError') ||
       /aborted|The user aborted|AbortError/i.test(err instanceof Error ? err.message : String(err));
 
-    // Abort during Agent.create (no agentId yet) used to soft-hang forever — fail loud instead.
+    // Abort during Agent.create (no agentId yet): user cancel → fail loud.
+    // Background / watchdog abort → retain pending so Check / visibility can
+    // re-attach or the user can Send again without losing the turn silently.
     if (aborted && !agentId) {
       settled = true;
+      const abortReason = consumeLastAbortReason();
+      if (
+        shouldRetainPendingOnAbort({
+          hasAgentId: false,
+          abortReason,
+        })
+      ) {
+        store.setError(null);
+        store.setSendProgress(
+          'stuck',
+          'Cloud create interrupted while away — tap Send on the same prompt (or Check once an agent id lands).',
+        );
+        store.setSending(true);
+        // Keep pending — do not clearPending().
+        return;
+      }
       const tip =
         store.provider === 'cursor'
           ? 'Cursor cloud did not finish spinning up. Send again, or switch provider to Claude / Gemini.'
@@ -1083,6 +1106,8 @@ export async function sendLatticeMessage(
       store.clearPending();
       return;
     }
+    // Consume abort reason when we have agentId too (recover path below).
+    if (aborted) consumeLastAbortReason();
 
     const hardFail =
       err instanceof LatticeHardFail ||

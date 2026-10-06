@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-CHART-COMPASS-HOLOGRAPHIC-GOLDILOCKS-SI-2026-10-06`
 **Registry ID:** `synthobs-chart-compass-holographic-goldilocks-si-2026-10`
-**Generated:** 2026-10-06T20:43:49.247Z
+**Generated:** 2026-10-06T20:51:04.592Z
 
 ## Verdict
 

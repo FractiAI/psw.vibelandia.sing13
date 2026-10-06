@@ -23,7 +23,7 @@
 - [e × φ × prime recursive homeostasis](./SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md) · three-axis Goldilocks
 - [Beyond CRISPR Biological Discovery](./SYNTHOBS_BEYOND_CRISPR_BIOLOGICAL_DISCOVERY_EGS_2026-10.md) · Homeostasis Expedition peer
 - [Awareness Layer map](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · Fractal · Holographic · Goldilocks → SuperAI
-- Reflective Portal peer (when filed): `docs/SYNTHOBS_REFLECTIVE_PORTAL_MULTISCALE_OCTAVES_GOLDILOCKS_EGS_2026-10.md`
+- Reflective Portal peer: [The Reflective Portal — Multiscale Octaves, Self-Modification, and Goldilocks Homeostasis](./SYNTHOBS_REFLECTIVE_PORTAL_MULTISCALE_OCTAVES_GOLDILOCKS_EGS_2026-10.md)
 
 ---
 

@@ -1469,6 +1469,22 @@
       "destination": "/interfaces/blog-attention-awareness-downstream-2026-10.html"
     },
     {
+      "source": "/ship-blog/reflective-portal",
+      "destination": "/interfaces/blog-reflective-portal-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/reflective-portal/",
+      "destination": "/interfaces/blog-reflective-portal-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/chart-compass-goldilocks-si",
+      "destination": "/interfaces/blog-chart-compass-goldilocks-si-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/chart-compass-goldilocks-si/",
+      "destination": "/interfaces/blog-chart-compass-goldilocks-si-2026-10.html"
+    },
+    {
       "source": "/ship-blog/archetypal-grand-story",
       "destination": "/interfaces/blog-archetypal-grand-story-2026-10.html"
     },

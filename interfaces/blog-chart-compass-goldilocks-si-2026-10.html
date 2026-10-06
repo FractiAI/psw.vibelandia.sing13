@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Can Intelligence Be Charted Like an Expedition — With a Compass That Survives Self-Modification? · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="Homeostasis Expedition research note: three digital experiments on Goldilocks regulation, reflective course correction, and cross-scale reconstructability — a chart and compass for a charged frontier without claiming Super Intelligence is proven." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/chart-compass-goldilocks-si" />
+  <meta property="og:title" content="Can Intelligence Be Charted Like an Expedition — With a Compass That Survives Self-Modification?" />
+  <meta property="og:description" content="Digital findings first: intermediate regulation beat extremes; reflective controllers edged fixed gains after a target jump; local states reconstructed a global with R² ≈ 0.81 versus a shuffled near-zero control." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/journey/homeostasis-expedition">Homeostasis Expedition</a>
+      <a href="/whitepaper/chart-compass-goldilocks-si">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Research note · Homeostasis Expedition</p>
+      <h1>Can Intelligence Be Charted Like an Expedition — With a Compass That Survives Self-Modification?</h1>
+      <p class="dateline"><strong>FractiAI Research</strong> — October 6, 2026</p>
+    </header>
+
+    <p class="lead">Families already live the difference between a map and a rumor. A shared budget spreadsheet that still shows the rent line after someone “optimizes” categories is a chart. A thermostat that keeps the kids’ room livable after you change the schedule is closer to a compass. The Homeostasis Expedition paper behind this note asks whether a frontier as loud as holographic Goldilocks super intelligence can be explored with the same discipline: record what was actually surveyed, and keep an orientation instrument that still works when the explorer rewrites its own rules. The paper leads with three replayable digital experiments — not with prophecy.</p>
+
+    <h2>Digital experiments and findings (plain)</h2>
+    <p>We ran a seedable Mulberry32 sandbox with three batteries. Experiment I coupled three nested state variables to their neighbors, added noise each step, and swept a regulation strength ρ across eight values from 0 to 1. Across 300 runs, mean squared deviation from target in the final window was lowest near ρ = 0.70 (about 0.00672), higher with no regulation (about 0.102 at ρ = 0), and higher again when regulation was maxed out (about 0.017 at ρ = 1.0). The curve is non-monotonic: intermediate control beat both neglect and over-stiff control inside this toy.</p>
+    <p>Experiment II compared three controllers after the target jumped mid-run — fixed gain, reactive gain chasing, and a reflective controller that kept a tiny self-model of recent error change. Over 500 runs, reflective normalized loss landed near 0.957 against fixed = 1.0, roughly a 4.3 percent improvement. Reactive was competitive near 0.949. That is a modest edge for reflection against a frozen rule — useful orientation, not consciousness theater.</p>
+    <p>Experiment III asked whether local readings could reconstruct a global state when both were generated from a shared latent. Out-of-sample R² was about 0.812. When we shuffled the training labels, R² fell to about 0.106. Cross-scale reconstructability survived; chance coupling did not. In plain language: parts carried recoverable information about the whole above a broken control — a systems rhyme, not a physics hologram certificate.</p>
+
+    <h2>The problem loud frontiers usually skip</h2>
+    <p>Public talk about advanced intelligence often jumps from a demo to destiny. A parent who just got laid off does not need another destiny story; they need to know whether the tools that rearrange job boards, benefit forms, and school calendars still point toward a livable band after those tools update themselves overnight. Hospitals already know the cost of instruments that drift after a software patch. Landlords and tenants already know the cost of “smart” building controls that overcorrect until the bill and the comfort both miss.</p>
+    <p>Historical expeditions offer a quieter method. Lewis and Clark returned with charts and honest blanks, not a finished continent. Humboldt drew patterns across scales without pretending the Earth was a completed machine. Darwin’s notebooks treated observation as something that could revise the observer’s own categories. The methodological rhyme is simple: survey what you can measure, keep instruments that survive theory change, and refuse to upgrade a first map into a finished ontology. That is the discipline this paper borrows for a charged research frontier.</p>
+
+    <h2>Hypothesis: chart the terrain, keep a reflective compass</h2>
+    <p>The central proposal splits two jobs that usually get mashed together. The chart is a living ledger of surveyed homeostasis and Goldilocks terrain — which experiments ran, which falsifiers hit, which cells remain blank. The compass is an orientation loop, named Reflective Portal in the filing, meant to keep course when targets move or when the controller modifies itself. Destination language in the larger story names Source as holographic Goldilocks super intelligence; this note treats that as architectural framing for an expedition series, not as a certificate that super intelligence is established science.</p>
+    <p>Three hypotheses organize the digital half. Intermediate regulation can beat both zero and maximal stiff control on a bounded disturbance task. After a mid-horizon target change, reflective self-modeling can reduce loss versus a fixed controller without requiring subjective self-report. Local observables can reconstruct global state above a shuffle baseline when a shared latent couples scales. Φ_EGS enters only as design grammar for nesting depth in the catalog — not as a replacement for measured physical constants.</p>
+
+    <h2>Results with qualifications</h2>
+    <p>The regulation sweep’s optimum near ρ = 0.70 is a sandbox illustration of a viable band, not a universal law of biology or markets. Numbers will shift if noise, coupling, or authority shape change; the load-bearing claim is the non-monotonic shape under the stated design. The reflective edge over fixed control is modest and sits next to a competitive reactive baseline — honest enough to refuse consciousness theater. The reconstructability R² is strong against shuffle, yet still a linear toy on synthetic latents, not a proof that organisms or production models are holograms.</p>
+    <p>Falsifiers are explicit. If mean deviation were monotonic in regulation strength, the Goldilocks illustration would fail. If reflective never beat fixed once compute is matched, the compass sketch would weaken. If local-to-global R² collapsed to shuffle levels, the cross-scale rhyme would not earn a chart cell. Catalog fixtures lock definitions so other labs can replay the same battery; a failed replay is a useful negative, not a branding problem.</p>
+
+    <h2>Framework value and where to read next</h2>
+    <p>Separating chart from compass helps paychecks and safety work for the same reason it helps research: reliability is not only what a system knows, but whether selected information still steers the next state after the system rewrites itself. Attention work on the same expedition trail asks what becomes causally different downstream because a pathway was selected. Homeostasis companions ask how viable bands stay active rather than frozen. This paper adds navigational grammar so those filings do not dissolve into rumor when the vocabulary gets loud.</p>
+    <p>Read the full paper for honesty tiers, historical method rhyme, hypothesis list, falsifiers F1–F6, and the three-experiment methods. The Homeostasis Expedition journey page keeps the trail of related work. The standalone suite replays the digital lab without requiring the whole site. If later ablations flatten the Goldilocks curve or erase the reflective edge, the chart should record that plainly — that is how an expedition stays honest.</p>
+
+    <p class="honesty"><strong>Honesty:</strong> Soft Story / catalog / proof-of-concept framing. Not established Super Intelligence, not literal holography, not a universal Goldilocks law. Digital lab results are replayable sandbox findings — not field surveys, not clinical trials, not production agent internals. Φ_EGS is design grammar. Fair Exchange · Seed:Edge · lite edges. Document <code>WP-SYNTHOBS-CHART-COMPASS-HOLOGRAPHIC-GOLDILOCKS-SI-2026-10-06</code> · registry <code>synthobs-chart-compass-holographic-goldilocks-si-2026-10</code> · ENGINE_SHELF #41 · Homeostasis Expedition. Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox.</p>
+
+    <p class="fair-exchange"><strong>Fair Exchange:</strong> Reciprocal balancing · Old School Protocol · human emergency first.</p>
+
+    <div class="cta-row">
+      <a class="cta" href="/whitepaper/chart-compass-goldilocks-si">Full paper</a>
+      <a class="cta" href="/journey/homeostasis-expedition">Homeostasis Expedition</a>
+      <a class="cta" href="https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si">Standalone suite</a>
+      <a class="cta" href="/questfest#ship-blog">Latest ship blog</a>
+    </div>
+  </article>
+  <footer class="site-foot">
+    <a href="/questfest">SS Vibelandia</a>
+    <span>→ ∞^∞</span>
+  </footer>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+</body>
+</html>

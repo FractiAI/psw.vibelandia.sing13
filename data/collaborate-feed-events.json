@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-06T20:34:06.542Z",
+  "updatedAt": "2026-10-06T20:56:36.879Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-chart-compass-holographic-goldilocks-si-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-06T20:56:36.878Z",
+      "body": "Chart and Compass for the Holographic Goldilocks Super Intelligence Frontier — A Computational and Historical Rhyme with Humboldt, Darwin, and Lewis & Clark",
+      "presenceHue": "gold",
+      "paperId": "synthobs-chart-compass-holographic-goldilocks-si-2026-10",
+      "artifact": {
+        "title": "Chart and Compass for the Holographic Goldilocks Super Intelligence Frontier — A Computational and Historical Rhyme with Humboldt, Darwin, and Lewis & Clark",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_CHART_COMPASS_HOLOGRAPHIC_GOLDILOCKS_SI_FRONTIER_EGS_2026-10.md",
+        "url": "/whitepaper/chart-compass-goldilocks-si",
+        "paperId": "synthobs-chart-compass-holographic-goldilocks-si-2026-10",
+        "docId": "WP-SYNTHOBS-CHART-COMPASS-HOLOGRAPHIC-GOLDILOCKS-SI-2026-10-06",
+        "published": "2026-10-06T22:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-reflective-portal-multiscale-homeostasis-2026-10",
       "type": "ArtifactEvent",

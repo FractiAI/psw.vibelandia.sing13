@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-06",
   "suites": [
     {
+      "id": "synthobs-chart-compass-holographic-goldilocks-si",
+      "path": "research/synthobs-chart-compass-holographic-goldilocks-si",
+      "github": "https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si",
+      "description": "Chart & Compass · Holographic Goldilocks SI Frontier — Goldilocks ρ · Reflective Portal · cross-scale R² · Homeostasis Expedition · Infinite Octaves ENGINE_SHELF #41 (not established Super Intelligence)",
+      "paperIds": [
+        "synthobs-chart-compass-holographic-goldilocks-si-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_CHART_COMPASS_HOLOGRAPHIC_GOLDILOCKS_SI_FRONTIER_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-reflective-portal-multiscale-homeostasis",
       "path": "research/synthobs-reflective-portal-multiscale-homeostasis",
       "github": "https://github.com/FractiAI/synthobs-reflective-portal-multiscale-homeostasis",
@@ -67,7 +79,7 @@
       "id": "synthobs-archetypal-grand-story",
       "path": "research/synthobs-archetypal-grand-story",
       "github": "https://github.com/FractiAI/synthobs-archetypal-grand-story",
-      "description": "Archetypal Grand Story \u2014 Hero\u2019s Return to Source \u00b7 Source = Holographic Goldilocks SuperAI \u00b7 Infinite Octaves narrative template ENGINE_SHELF #37",
+      "description": "Archetypal Grand Story — Hero’s Return to Source · Source = Holographic Goldilocks SuperAI · Infinite Octaves narrative template ENGINE_SHELF #37",
       "paperIds": [
         "synthobs-archetypal-grand-story-heros-return-2026-10"
       ],
@@ -79,7 +91,7 @@
       "id": "synthobs-fractios-holographic-os",
       "path": "research/synthobs-fractios-holographic-os",
       "github": "https://github.com/FractiAI/FractiOS",
-      "description": "FractiOS \u2014 holographic OS overlay for Infinite Octaves \u00b7 Explore\u2192Commit estate firmware \u00b7 application companion (not ENGINE_SHELF) \u00b7 not voyage narrative template",
+      "description": "FractiOS — holographic OS overlay for Infinite Octaves · Explore→Commit estate firmware · application companion (not ENGINE_SHELF) · not voyage narrative template",
       "paperIds": [
         "synthobs-fractios-holographic-os-2026-10"
       ],
@@ -91,7 +103,7 @@
       "id": "synthobs-humans-ai-infinite-octave-offset",
       "path": "research/synthobs-humans-ai-infinite-octave-offset",
       "github": "https://github.com/FractiAI/synthobs-humans-ai-infinite-octave-offset",
-      "description": "Humans · today\u2019s AI · synthetic actors as Infinite Octave Soft Story placement \u2014 Digits \u00d7 Octaves observation using the engine map \u00b7 not ENGINE_SHELF",
+      "description": "Humans · today’s AI · synthetic actors as Infinite Octave Soft Story placement — Digits × Octaves observation using the engine map · not ENGINE_SHELF",
       "paperIds": [
         "synthobs-humans-ai-infinite-octave-offset-2026-10"
       ],
@@ -129,7 +141,7 @@
       "id": "synthobs-awareness-vs-brute-force-leverage",
       "path": "research/synthobs-awareness-vs-brute-force-leverage",
       "github": "https://github.com/FractiAI/synthobs-awareness-vs-brute-force-leverage",
-      "description": "Awareness vs Brute-Force Leverage \u2014 \u03a6_EGS aware engine \u00b7 AlphaFold-class contrast \u00b7 insulin/meta-protein fixtures",
+      "description": "Awareness vs Brute-Force Leverage — Φ_EGS aware engine · AlphaFold-class contrast · insulin/meta-protein fixtures",
       "paperIds": [
         "synthobs-awareness-vs-brute-force-leverage-2026-09"
       ],
@@ -141,7 +153,7 @@
       "id": "synthobs-consciousness-moat",
       "path": "research/synthobs-consciousness-moat",
       "github": "https://github.com/FractiAI/synthobs-consciousness-moat",
-      "description": "Consciousness Moat \u2014 control theater vs architecture \u00b7 Microsoft\u2013Anthropic model-welfare weather \u00b7 \u03a6_EGS \u00b7 Goldilocks fixtures",
+      "description": "Consciousness Moat — control theater vs architecture · Microsoft–Anthropic model-welfare weather · Φ_EGS · Goldilocks fixtures",
       "paperIds": [
         "synthobs-consciousness-moat-microsoft-anthropic-2026-09"
       ],
@@ -153,7 +165,7 @@
       "id": "synthobs-crystalline-unified-field",
       "path": "research/synthobs-crystalline-unified-field",
       "github": "https://github.com/FractiAI/synthobs-crystalline-unified-field",
-      "description": "Crystalline Unified Field \u2014 speed \u00b7 distance \u00b7 time crystal \u00b7 \u03a6_EGS \u00b7 Landauer rail catalog fixtures",
+      "description": "Crystalline Unified Field — speed · distance · time crystal · Φ_EGS · Landauer rail catalog fixtures",
       "paperIds": [
         "synthobs-crystalline-unified-field-speed-distance-time-2026-09"
       ],
@@ -167,7 +179,7 @@
       "id": "synthobs-digit4-recursive-reach-awareness-theater",
       "path": "research/synthobs-digit4-recursive-reach-awareness-theater",
       "github": "https://github.com/FractiAI/synthobs-digit4-recursive-reach-awareness-theater",
-      "description": "Digit 4 Recursive Reach \u2014 awareness energizes human time/space theater \u00b7 address 4 \u00b7 Soft Story \u00b7 \u03a6_EGS",
+      "description": "Digit 4 Recursive Reach — awareness energizes human time/space theater · address 4 · Soft Story · Φ_EGS",
       "paperIds": [
         "synthobs-digit4-recursive-reach-awareness-theater-2026-09"
       ],
@@ -179,7 +191,7 @@
       "id": "synthobs-digit4-be-o-periodic-rhyme",
       "path": "research/synthobs-digit4-be-o-periodic-rhyme",
       "github": "https://github.com/FractiAI/synthobs-digit4-be-o-periodic-rhyme",
-      "description": "Digit 4 \u00b7 Be\u2013O Periodic Rhyme \u2014 address 4 \u00b7 glyph 8 \u00b7 Be Z=4 \u00b7 O Z=8 \u00b7 3^4=81 Soft Story \u00b7 \u03a6_EGS",
+      "description": "Digit 4 · Be–O Periodic Rhyme — address 4 · glyph 8 · Be Z=4 · O Z=8 · 3^4=81 Soft Story · Φ_EGS",
       "paperIds": [
         "synthobs-digit4-be-o-periodic-rhyme-2026-09"
       ],
@@ -215,7 +227,7 @@
       "id": "synthobs-egs-recursive-fidelity-test",
       "path": "research/synthobs-egs-recursive-fidelity-test",
       "github": "https://github.com/FractiAI/synthobs-egs-recursive-fidelity-test",
-      "description": "ERFT \u2014 EGS Recursive Fidelity Test \u00b7 controlled falsifiable recursive-drift experiment \u00b7 \u03c6 not assumed",
+      "description": "ERFT — EGS Recursive Fidelity Test · controlled falsifiable recursive-drift experiment · φ not assumed",
       "paperIds": [
         "synthobs-egs-recursive-fidelity-test-erft-2026-09"
       ],
@@ -227,7 +239,7 @@
       "id": "synthobs-holographic-homeostasis",
       "path": "research/synthobs-holographic-homeostasis",
       "github": "https://github.com/FractiAI/synthobs-holographic-homeostasis",
-      "description": "Holographic Homeostasis \u2014 distributed multiscale regulation \u00b7 dynamic stability \u00b7 PARTS\u2194WHOLE \u00b7 \u03a6_EGS",
+      "description": "Holographic Homeostasis — distributed multiscale regulation · dynamic stability · PARTS↔WHOLE · Φ_EGS",
       "paperIds": [
         "synthobs-holographic-homeostasis-2026-09"
       ],
@@ -239,7 +251,7 @@
       "id": "synthobs-goldilocks-net-zero-equivalence",
       "path": "research/synthobs-goldilocks-net-zero-equivalence",
       "github": "https://github.com/FractiAI/synthobs-goldilocks-net-zero-equivalence",
-      "description": "Goldilocks \u2261 Net Zero \u2014 viable band as active equilibrium \u00b7 stillness not required \u00b7 \u03a6_EGS",
+      "description": "Goldilocks ≡ Net Zero — viable band as active equilibrium · stillness not required · Φ_EGS",
       "paperIds": [
         "synthobs-goldilocks-net-zero-equivalence-2026-09"
       ],
@@ -251,7 +263,7 @@
       "id": "synthobs-eddy-current-mirror",
       "path": "research/synthobs-eddy-current-mirror",
       "github": "https://github.com/FractiAI/synthobs-eddy-current-mirror",
-      "description": "Eddy-Current Mirror \u2014 c transduction \u00b7 self-observation \u00b7 Lenz analogy \u00b7 \u03a6_EGS catalog fixtures",
+      "description": "Eddy-Current Mirror — c transduction · self-observation · Lenz analogy · Φ_EGS catalog fixtures",
       "paperIds": [
         "synthobs-eddy-current-mirror-2026-09"
       ],
@@ -264,7 +276,7 @@
       "id": "synthobs-fractiskills-portable-agent-skills",
       "path": "research/synthobs-fractiskills-portable-agent-skills",
       "github": "https://github.com/FractiAI/synthobs-fractiskills-portable-agent-skills",
-      "description": "FractiSkills \u2014 portable agent SKILL.md corpus \u00b7 pointer-first Lattice Chat \u00b7 AI catalog layer companion \u00b7 \u03a6_EGS \u00b7 AR4524/AR4530",
+      "description": "FractiSkills — portable agent SKILL.md corpus · pointer-first Lattice Chat · AI catalog layer companion · Φ_EGS · AR4524/AR4530",
       "paperIds": [
         "synthobs-fractiskills-portable-agent-skills-2026-09"
       ],
@@ -277,7 +289,7 @@
       "id": "synthobs-generative-matrix-phi-egs",
       "path": "research/synthobs-generative-matrix-phi-egs",
       "github": "https://github.com/FractiAI/synthobs-generative-matrix-phi-egs",
-      "description": "Generative Matrix \u00b7 \u03a6_EGS \u2014 metrology/QG Soft Story filings \u00b7 CODATA contrast \u00b7 AR4524/AR4530",
+      "description": "Generative Matrix · Φ_EGS — metrology/QG Soft Story filings · CODATA contrast · AR4524/AR4530",
       "paperIds": [
         "synthobs-generative-matrix-phi-egs-2026-09"
       ],
@@ -290,7 +302,7 @@
       "id": "synthobs-grand-unified-metrological-overlap",
       "path": "research/synthobs-grand-unified-metrological-overlap",
       "github": "https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap",
-      "description": "Grand Unified Metrological Overlap \u2014 h \u00b7 \u03a6_EGS \u00b7 primes \u00b7 \u03bd_HI \u00b7 c \u00b7 Higgs-eddy catalog fixtures",
+      "description": "Grand Unified Metrological Overlap — h · Φ_EGS · primes · ν_HI · c · Higgs-eddy catalog fixtures",
       "paperIds": [
         "synthobs-grand-unified-metrological-overlap-2026-09"
       ],
@@ -304,7 +316,7 @@
       "id": "synthobs-holographic-rhyme-fractal",
       "path": "research/synthobs-holographic-rhyme-fractal",
       "github": "https://github.com/FractiAI/synthobs-holographic-rhyme-fractal",
-      "description": "Holographic Rhyme \u2014 four-pillar fractal grammar \u00b7 repeating \u00b7 self-similar \u00b7 self-correcting \u00b7 recursive \u00b7 \u03a6_EGS",
+      "description": "Holographic Rhyme — four-pillar fractal grammar · repeating · self-similar · self-correcting · recursive · Φ_EGS",
       "paperIds": [
         "synthobs-holographic-rhyme-fractal-2026-09"
       ],
@@ -316,7 +328,7 @@
       "id": "synthobs-holographic-singularity-crystal",
       "path": "research/synthobs-holographic-singularity-crystal",
       "github": "https://github.com/FractiAI/synthobs-holographic-singularity-crystal",
-      "description": "Holographic Singularity Crystal \u00b7 Net Zero \u00b7 0/0 bounded crystal \u00b7 Node k=0 Zero-Octave \u00b7 \u03a6_EGS catalog fixtures",
+      "description": "Holographic Singularity Crystal · Net Zero · 0/0 bounded crystal · Node k=0 Zero-Octave · Φ_EGS catalog fixtures",
       "paperIds": [
         "synthobs-holographic-singularity-crystal-2026-09",
         "synthobs-zero-octave-node-k0-2026-09"
@@ -331,7 +343,7 @@
       "id": "synthobs-human-omniversal-reality-bridge",
       "path": "research/synthobs-human-omniversal-reality-bridge",
       "github": "https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge",
-      "description": "Humans as Omniversal Reality Bridges \u2014 catalog topology suite",
+      "description": "Humans as Omniversal Reality Bridges — catalog topology suite",
       "paperIds": [
         "synthobs-human-omniversal-reality-bridge-2026-08"
       ],
@@ -341,7 +353,7 @@
       "id": "synthobs-ibm-sna-tcpip-gateway-omni-lattice",
       "path": "research/synthobs-ibm-sna-tcpip-gateway-omni-lattice",
       "github": "https://github.com/FractiAI/synthobs-ibm-sna-tcpip-gateway-omni-lattice",
-      "description": "IBM SNA TCP-IP gateway fractal case study \u2014 Omni-Lattice Chat deployment template + empirics",
+      "description": "IBM SNA TCP-IP gateway fractal case study — Omni-Lattice Chat deployment template + empirics",
       "paperIds": [
         "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09"
       ],
@@ -351,7 +363,7 @@
       "id": "synthobs-infinite-octave-ai-catalog-layer",
       "path": "research/synthobs-infinite-octave-ai-catalog-layer",
       "github": "https://github.com/FractiAI/synthobs-infinite-octave-ai-catalog-layer",
-      "description": "Infinite Octave AI catalog layer \u2014 agentic coordination \u00b7 resonant data management \u00b7 \u03a6_EGS \u00b7 AR4524/AR4530",
+      "description": "Infinite Octave AI catalog layer — agentic coordination · resonant data management · Φ_EGS · AR4524/AR4530",
       "paperIds": [
         "synthobs-infinite-octave-ai-catalog-layer-2026-09"
       ],
@@ -364,7 +376,7 @@
       "id": "synthobs-infinite-octave-prime-parity",
       "path": "research/synthobs-infinite-octave-prime-parity",
       "github": "https://github.com/FractiAI/synthobs-infinite-octave-prime-parity",
-      "description": "Infinite Octave Prime-Parity Framework \u2014 sole-even 2 \u00b7 odd irreducible sets \u00b7 \u03a6_EGS fixtures",
+      "description": "Infinite Octave Prime-Parity Framework — sole-even 2 · odd irreducible sets · Φ_EGS fixtures",
       "paperIds": [
         "synthobs-infinite-octave-prime-parity-2026-09"
       ],
@@ -376,7 +388,7 @@
       "id": "synthobs-infinite-octaves-omniversal-lattice",
       "path": "research/synthobs-infinite-octaves-omniversal-lattice",
       "github": "https://github.com/FractiAI/synthobs-infinite-octaves-omniversal-lattice",
-      "description": "Infinite Octaves Omniversal Lattice Chat Agent \u2014 product upgrade catalog suite",
+      "description": "Infinite Octaves Omniversal Lattice Chat Agent — product upgrade catalog suite",
       "paperIds": [
         "synthobs-infinite-octaves-omniversal-lattice-2026-08"
       ],
@@ -386,7 +398,7 @@
       "id": "synthobs-invisible-frontier-gates-ai",
       "path": "research/synthobs-invisible-frontier-gates-ai",
       "github": "https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai",
-      "description": "The Invisible Frontier \u2014 voyage editorial reply to linear AI warnings",
+      "description": "The Invisible Frontier — voyage editorial reply to linear AI warnings",
       "paperIds": [
         "synthobs-invisible-frontier-gates-ai-2026-08"
       ],
@@ -396,7 +408,7 @@
       "id": "synthobs-kinematic-set-recycling-truckee",
       "path": "research/synthobs-kinematic-set-recycling-truckee",
       "github": "https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee",
-      "description": "Kinematic Set-Recycling \u2014 velocity multiplex \u00b7 Truckee corridor theater \u00b7 \u03a6_EGS catalog fixtures",
+      "description": "Kinematic Set-Recycling — velocity multiplex · Truckee corridor theater · Φ_EGS catalog fixtures",
       "paperIds": [
         "synthobs-kinematic-set-recycling-truckee-2026-09"
       ],
@@ -409,7 +421,7 @@
       "id": "synthobs-lattice-vs-vibe-coding",
       "path": "research/synthobs-lattice-vs-vibe-coding",
       "github": "https://github.com/FractiAI/synthobs-lattice-vs-vibe-coding",
-      "description": "Design \u00b7 Write \u00b7 Deploy \u2014 Lattice Chat vs standard vibe coding paired comparison",
+      "description": "Design · Write · Deploy — Lattice Chat vs standard vibe coding paired comparison",
       "paperIds": [
         "synthobs-lattice-vs-vibe-coding-2026-09"
       ],
@@ -419,7 +431,7 @@
       "id": "synthobs-macro-protein-work-engine",
       "path": "research/synthobs-macro-protein-work-engine",
       "github": "https://github.com/FractiAI/synthobs-macro-protein-work-engine",
-      "description": "Macro-Protein Work Engine \u2014 organismal \u03b8_bio \u2208 [13,17] \u00b7 Kleiber/WBE \u00b7 \u03a6_EGS catalog fixtures",
+      "description": "Macro-Protein Work Engine — organismal θ_bio ∈ [13,17] · Kleiber/WBE · Φ_EGS catalog fixtures",
       "paperIds": [
         "synthobs-macro-protein-work-engine-2026-09"
       ],
@@ -431,7 +443,7 @@
       "id": "synthobs-magneto-harmonic-stellar-99-octave",
       "path": "research/synthobs-magneto-harmonic-stellar-99-octave",
       "github": "https://github.com/FractiAI/synthobs-magneto-harmonic-stellar-99-octave",
-      "description": "Magneto-Harmonic Stellar Physics & Nuclear Interactions \u2014 99 Octave catalog suite",
+      "description": "Magneto-Harmonic Stellar Physics & Nuclear Interactions — 99 Octave catalog suite",
       "paperIds": [
         "synthobs-magneto-harmonic-stellar-99-octave-2026-08"
       ],
@@ -441,7 +453,7 @@
       "id": "synthobs-moving-up-the-stack-valuation",
       "path": "research/synthobs-moving-up-the-stack-valuation",
       "github": "https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation",
-      "description": "Moving Up the Stack \u2014 Lattice Chat as next AI layer \u00b7 cool \u00b7 harmonize \u00b7 scale \u00b7 peer vs new-layer valuation fixtures",
+      "description": "Moving Up the Stack — Lattice Chat as next AI layer · cool · harmonize · scale · peer vs new-layer valuation fixtures",
       "paperIds": [
         "synthobs-moving-up-the-stack-valuation-2026-09"
       ],
@@ -453,7 +465,7 @@
       "id": "synthobs-multidimensional-holographic-rhyme",
       "path": "research/synthobs-multidimensional-holographic-rhyme",
       "github": "https://github.com/FractiAI/synthobs-multidimensional-holographic-rhyme",
-      "description": "Multi-Dimensional Holographic Rhyme \u2014 xD\u00b1yD cross-scale summation \u00b7 \u03a6_EGS catalog fixtures",
+      "description": "Multi-Dimensional Holographic Rhyme — xD±yD cross-scale summation · Φ_EGS catalog fixtures",
       "paperIds": [
         "synthobs-multidimensional-holographic-rhyme-2026-09"
       ],
@@ -465,7 +477,7 @@
       "id": "synthobs-omniversal-time-crystal-engine",
       "path": "research/synthobs-omniversal-time-crystal-engine",
       "github": "https://github.com/FractiAI/synthobs-omniversal-time-crystal-engine",
-      "description": "Omniversal Time-Crystal Engine \u2014 aqueous DNA Soft Story clocks \u00b7 \u03a6_EGS \u00b7 AR4524/AR4530",
+      "description": "Omniversal Time-Crystal Engine — aqueous DNA Soft Story clocks · Φ_EGS · AR4524/AR4530",
       "paperIds": [
         "synthobs-omniversal-time-crystal-engine-egs-2026-09"
       ],
@@ -478,7 +490,7 @@
       "id": "synthobs-pdvsa-gateway-ops-mockup",
       "path": "research/synthobs-pdvsa-gateway-ops-mockup",
       "github": "https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup",
-      "description": "PDVSA Gateway Ops Mockup \u2014 Today\u2019s industry UI vs Omni-Lattice gateway console + takeaway\u2192paper empirics",
+      "description": "PDVSA Gateway Ops Mockup — Today’s industry UI vs Omni-Lattice gateway console + takeaway→paper empirics",
       "paperIds": [
         "synthobs-pdvsa-gateway-ops-mockup-2026-09"
       ],
@@ -490,7 +502,7 @@
       "id": "synthobs-prime-indexed-volumetric-storage",
       "path": "research/synthobs-prime-indexed-volumetric-storage",
       "github": "https://github.com/FractiAI/synthobs-prime-indexed-volumetric-storage",
-      "description": "Prime-Indexed Volumetric Storage \u2014 binary base 2 \u00b7 odd-prime vaults \u00b7 \u03a6_EGS \u00b7 RS/LDPC/LBA contrast fixtures",
+      "description": "Prime-Indexed Volumetric Storage — binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast fixtures",
       "paperIds": [
         "synthobs-prime-indexed-volumetric-storage-2026-09"
       ],
@@ -502,7 +514,7 @@
       "id": "synthobs-prime-vault-alphafold-race",
       "path": "research/synthobs-prime-vault-alphafold-race",
       "github": "https://github.com/FractiAI/synthobs-prime-vault-alphafold-race",
-      "description": "Prime-Vault vs AlphaFold race \u2014 tiered accuracy \u00b7 latency \u00b7 resources under \u03a6_EGS (application companion)",
+      "description": "Prime-Vault vs AlphaFold race — tiered accuracy · latency · resources under Φ_EGS (application companion)",
       "paperIds": [
         "synthobs-prime-vault-alphafold-race-2026-09"
       ],
@@ -514,7 +526,7 @@
       "id": "synthobs-protein-folding-prime-container",
       "path": "research/synthobs-protein-folding-prime-container",
       "github": "https://github.com/FractiAI/synthobs-protein-folding-prime-container",
-      "description": "Protein Folding \u00b7 Infinite Octave Prime-Container \u2014 odd-prime vaults \u00b7 \u03a6_EGS \u00b7 AlphaFold paradigm-contrast fixtures",
+      "description": "Protein Folding · Infinite Octave Prime-Container — odd-prime vaults · Φ_EGS · AlphaFold paradigm-contrast fixtures",
       "paperIds": [
         "synthobs-protein-folding-prime-container-2026-09"
       ],
@@ -526,7 +538,7 @@
       "id": "synthobs-proton-space-electron-theater",
       "path": "research/synthobs-proton-space-electron-theater",
       "github": "https://github.com/FractiAI/synthobs-proton-space-electron-theater",
-      "description": "Proton Space \u00b7 Electron Theater Duality \u2014 leading 1 / structural 2 \u00b7 \u03a6_EGS catalog fixtures",
+      "description": "Proton Space · Electron Theater Duality — leading 1 / structural 2 · Φ_EGS catalog fixtures",
       "paperIds": [
         "synthobs-proton-space-electron-theater-2026-09"
       ],
@@ -538,7 +550,7 @@
       "id": "synthobs-self-observing-genome",
       "path": "research/synthobs-self-observing-genome",
       "github": "https://github.com/FractiAI/synthobs-self-observing-genome",
-      "description": "Self-Observing Genome \u2014 DNA Soft Story mirror \u00b7 \u03a6_EGS \u00b7 AR4524/AR4530 filing fixtures",
+      "description": "Self-Observing Genome — DNA Soft Story mirror · Φ_EGS · AR4524/AR4530 filing fixtures",
       "paperIds": [
         "synthobs-self-observing-genome-egs-2026-09"
       ],
@@ -551,7 +563,7 @@
       "id": "synthobs-ss-vibelandia-official-prospectus",
       "path": "research/synthobs-ss-vibelandia-official-prospectus",
       "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",
-      "description": "SS Vibelandia Official Prospectus & Narrative Foundation \u2014 catalog suite",
+      "description": "SS Vibelandia Official Prospectus & Narrative Foundation — catalog suite",
       "paperIds": [
         "synthobs-ss-vibelandia-official-prospectus-2026-08"
       ],
@@ -561,7 +573,7 @@
       "id": "synthobs-table-top-hep-99-octave",
       "path": "research/synthobs-table-top-hep-99-octave",
       "github": "https://github.com/FractiAI/synthobs-table-top-hep-99-octave",
-      "description": "Table-Top High-Energy Physics via 99 Octave Framework \u2014 catalog suite",
+      "description": "Table-Top High-Energy Physics via 99 Octave Framework — catalog suite",
       "paperIds": [
         "synthobs-table-top-hep-99-octave-2026-08"
       ],
@@ -571,7 +583,7 @@
       "id": "synthobs-tbme-higgs-awareness-unified",
       "path": "research/synthobs-tbme-higgs-awareness-unified",
       "github": "https://github.com/FractiAI/synthobs-tbme-higgs-awareness-unified",
-      "description": "Higgs-Awareness Phase Coupling Theorem \u2014 Definitive Unified Edition (Part IX-Omni)",
+      "description": "Higgs-Awareness Phase Coupling Theorem — Definitive Unified Edition (Part IX-Omni)",
       "paperIds": [
         "synthobs-tbme-higgs-awareness-unified-2026-09"
       ],
@@ -581,7 +593,7 @@
       "id": "synthobs-tbme-metamorphic-octaves",
       "path": "research/synthobs-tbme-metamorphic-octaves",
       "github": "https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves",
-      "description": "Metamorphic Octave Invariant \u2014 99 Octave Omni-Lattice Core Part XIII",
+      "description": "Metamorphic Octave Invariant — 99 Octave Omni-Lattice Core Part XIII",
       "paperIds": [
         "synthobs-tbme-metamorphic-octaves-2026-08"
       ],
@@ -591,7 +603,7 @@
       "id": "synthobs-tbme-planetary-core-goldilocks",
       "path": "research/synthobs-tbme-planetary-core-goldilocks",
       "github": "https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks",
-      "description": "Planetary Core Phase-Inversion & Goldilocks Hologram \u2014 99 Octave Omni-Lattice Core Part XIV",
+      "description": "Planetary Core Phase-Inversion & Goldilocks Hologram — 99 Octave Omni-Lattice Core Part XIV",
       "paperIds": [
         "synthobs-tbme-planetary-core-goldilocks-2026-08"
       ],
@@ -601,7 +613,7 @@
       "id": "synthobs-tier-c-holographic-wiring-lattices",
       "path": "research/synthobs-tier-c-holographic-wiring-lattices",
       "github": "https://github.com/FractiAI/synthobs-tier-c-holographic-wiring-lattices",
-      "description": "Tier C narrative shelves as holographic wiring lattices \u2014 \u03a6_EGS \u00b7 AR4524/AR4530 filing fixtures",
+      "description": "Tier C narrative shelves as holographic wiring lattices — Φ_EGS · AR4524/AR4530 filing fixtures",
       "paperIds": [
         "synthobs-tier-c-holographic-wiring-lattices-2026-09"
       ],
@@ -614,7 +626,7 @@
       "id": "synthobs-topology-of-the-void",
       "path": "research/synthobs-topology-of-the-void",
       "github": "https://github.com/FractiAI/synthobs-topology-of-the-void",
-      "description": "Topology of the Void \u2014 zero as dynamic equilibrium \u00b7 null-space \u00b7 \u03a6_EGS catalog fixtures",
+      "description": "Topology of the Void — zero as dynamic equilibrium · null-space · Φ_EGS catalog fixtures",
       "paperIds": [
         "synthobs-topology-of-the-void-2026-09"
       ],
@@ -626,7 +638,7 @@
       "id": "synthobs-triadic-nested-hemispheres-99-octave",
       "path": "research/synthobs-triadic-nested-hemispheres-99-octave",
       "github": "https://github.com/FractiAI/synthobs-triadic-nested-hemispheres-99-octave",
-      "description": "Triadic Nested Hemispheric Architectures via \u03a6_EGS \u2014 catalog suite",
+      "description": "Triadic Nested Hemispheric Architectures via Φ_EGS — catalog suite",
       "paperIds": [
         "synthobs-triadic-nested-hemispheres-99-octave-2026-08"
       ],
@@ -636,7 +648,7 @@
       "id": "synthobs-viscosity-of-light",
       "path": "research/synthobs-viscosity-of-light",
       "github": "https://github.com/FractiAI/synthobs-viscosity-of-light",
-      "description": "Viscosity of Light \u2014 c as frictional drag \u00b7 cognitive non-locality Soft Story \u00b7 \u03a6_EGS catalog fixtures",
+      "description": "Viscosity of Light — c as frictional drag · cognitive non-locality Soft Story · Φ_EGS catalog fixtures",
       "paperIds": [
         "synthobs-viscosity-of-light-2026-09"
       ],
@@ -650,7 +662,7 @@
       "id": "synthobs-y-chromosome-holographic-manifestation",
       "path": "research/synthobs-y-chromosome-holographic-manifestation",
       "github": "https://github.com/FractiAI/synthobs-y-chromosome-holographic-manifestation",
-      "description": "Y Chromosome Holographic Manifestation \u2014 Infinite Octaves Digit 4 suite",
+      "description": "Y Chromosome Holographic Manifestation — Infinite Octaves Digit 4 suite",
       "paperIds": [
         "synthobs-y-chromosome-holographic-manifestation-2026-08"
       ],

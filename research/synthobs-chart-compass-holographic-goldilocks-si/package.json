@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-chart-compass-holographic-goldilocks-si",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chart and Compass for the Holographic Goldilocks Super Intelligence Frontier — catalog suite (Infinite Octaves ENGINE_SHELF companion #41 · Homeostasis Expedition)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

@@ -1,8 +1,20 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-10-05",
+  "updatedAt": "2026-10-06",
   "suites": [
+    {
+      "id": "synthobs-reflective-portal-multiscale-homeostasis",
+      "path": "research/synthobs-reflective-portal-multiscale-homeostasis",
+      "github": "https://github.com/FractiAI/synthobs-reflective-portal-multiscale-homeostasis",
+      "description": "Reflective Portal · Multiscale Octaves · Goldilocks Homeostasis — self-modification portal · Homeostasis Expedition · Infinite Octaves ENGINE_SHELF #40 (not phenomenal consciousness)",
+      "paperIds": [
+        "synthobs-reflective-portal-multiscale-homeostasis-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_REFLECTIVE_PORTAL_MULTISCALE_HOMEOSTASIS_EGS_2026-10.md"
+      ]
+    },
     {
       "id": "synthobs-survival-computing-viral-rna-asi",
       "path": "research/synthobs-survival-computing-viral-rna-asi",

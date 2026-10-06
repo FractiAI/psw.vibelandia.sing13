@@ -52,6 +52,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-prime-vault-alphafold-race',
       'synthobs-protein-folding-prime-container',
       'synthobs-proton-space-electron-theater',
+      'synthobs-reflective-portal-multiscale-homeostasis',
       'synthobs-self-observing-genome',
       'synthobs-ss-vibelandia-official-prospectus',
       'synthobs-survival-computing-viral-rna-asi',

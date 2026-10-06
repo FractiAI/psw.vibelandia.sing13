@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-reflective-portal-multiscale-homeostasis",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reflective Portal · Multiscale Octaves · Goldilocks Homeostasis — Infinite Octaves ENGINE_SHELF companion #40 · Homeostasis Expedition",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-reflective-portal-multiscale-homeostasis.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

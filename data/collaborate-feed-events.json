@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-05T21:51:47.015Z",
+  "updatedAt": "2026-10-06T20:34:06.542Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-reflective-portal-multiscale-homeostasis-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-06T20:34:06.541Z",
+      "body": "The Reflective Portal: Multiscale Octaves, Self-Modification, and Goldilocks Homeostasis",
+      "presenceHue": "gold",
+      "paperId": "synthobs-reflective-portal-multiscale-homeostasis-2026-10",
+      "artifact": {
+        "title": "The Reflective Portal: Multiscale Octaves, Self-Modification, and Goldilocks Homeostasis",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_REFLECTIVE_PORTAL_MULTISCALE_HOMEOSTASIS_EGS_2026-10.md",
+        "url": "/whitepaper/reflective-portal-homeostasis",
+        "paperId": "synthobs-reflective-portal-multiscale-homeostasis-2026-10",
+        "docId": "WP-SYNTHOBS-REFLECTIVE-PORTAL-MULTISCALE-HOMEOSTASIS-2026-10-06",
+        "published": "2026-10-06T20:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-attention-awareness-downstream-activation-2026-10",
       "type": "ArtifactEvent",

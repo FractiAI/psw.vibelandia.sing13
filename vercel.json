@@ -1469,6 +1469,14 @@
       "destination": "/interfaces/blog-attention-awareness-downstream-2026-10.html"
     },
     {
+      "source": "/ship-blog/reflective-portal-homeostasis",
+      "destination": "/interfaces/blog-reflective-portal-homeostasis-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/reflective-portal-homeostasis/",
+      "destination": "/interfaces/blog-reflective-portal-homeostasis-2026-10.html"
+    },
+    {
       "source": "/ship-blog/archetypal-grand-story",
       "destination": "/interfaces/blog-archetypal-grand-story-2026-10.html"
     },

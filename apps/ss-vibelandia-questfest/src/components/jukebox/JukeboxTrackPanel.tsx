@@ -16,7 +16,9 @@ import { trackMatchesSearchQuery } from '@/lib/masterCatalogFilter';
 import { nextSequentialTrackId, nextShuffledTrackId } from '@/lib/playlistShuffle';
 import { PLAIN } from '@/lib/plainSpeak';
 import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlaylistProgramBanner';
+import { ForwardModal } from '@/components/jukebox/ForwardModal';
 import { playingCoverUrl } from '@/lib/playingCover';
+import type { ForwardTarget } from '@/lib/shareCatalog';
 import type { TrackDef } from '@/lib/catalogTypes';
 
 type SortMode = 'playlistOrder' | 'titleAsc' | 'titleDesc';
@@ -50,6 +52,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
   const [metaOpen, setMetaOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortMode, setSortMode] = useState<SortMode>('playlistOrder');
+  const [forwardTarget, setForwardTarget] = useState<ForwardTarget | null>(null);
 
   const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
   const shuffleQueue = usePlaybackStore((s) => s.shuffleQueue);
@@ -250,6 +253,15 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
               {PLAIN.editPlaylist}
             </button>
           ) : null}
+          {playlist ? (
+            <button
+              type="button"
+              className="jb-tool-btn"
+              onClick={() => setForwardTarget({ kind: 'playlist', playlist })}
+            >
+              {PLAIN.forward}
+            </button>
+          ) : null}
           <button
             type="button"
             className={`jb-tool-btn${selectMode ? ' jb-tool-btn--on' : ''}`}
@@ -383,6 +395,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
                 onToggleSelect={() => toggleSelected(row.track.id)}
                 onRemove={() => confirmRemoveFromPlaylist(row.track.id)}
                 onOpenPlaylists={() => setPlaylistModalTrackId(row.track.id)}
+                onForwardTrack={() => setForwardTarget({ kind: 'track', track: row.track })}
                 onEditTrack={
                   isUserUploadTrack(row.track.id, row.track)
                     ? () => setEditTrackId(row.track.id)
@@ -420,6 +433,12 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
           onClose={() => setMetaOpen(false)}
         />
       ) : null}
+
+      <ForwardModal
+        open={!!forwardTarget}
+        target={forwardTarget}
+        onClose={() => setForwardTarget(null)}
+      />
     </section>
   );
 }
@@ -441,6 +460,7 @@ type RowProps = {
   onToggleSelect: () => void;
   onRemove: () => void;
   onOpenPlaylists: () => void;
+  onForwardTrack: () => void;
   onEditTrack?: () => void;
   onGripPointerDown: (e: React.PointerEvent) => void;
   onGripPointerMove: (e: React.PointerEvent) => void;
@@ -464,6 +484,7 @@ function JukeboxTrackRow({
   onToggleSelect,
   onRemove,
   onOpenPlaylists,
+  onForwardTrack,
   onEditTrack,
   onGripPointerDown,
   onGripPointerMove,
@@ -560,6 +581,18 @@ function JukeboxTrackRow({
         </span>
       </button>
       <span className="jb-track-dur">{fmtDuration(track.durationSec)}</span>
+      <button
+        type="button"
+        className="jb-track-forward"
+        aria-label={PLAIN.forwardTrack}
+        title={PLAIN.forwardTrack}
+        onClick={(e) => {
+          e.stopPropagation();
+          onForwardTrack();
+        }}
+      >
+        ↗
+      </button>
       {onEditTrack ? (
         <button
           type="button"

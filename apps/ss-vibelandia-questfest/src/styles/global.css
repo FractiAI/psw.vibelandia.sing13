@@ -7898,7 +7898,8 @@ html.qf-jukebox-page .sp-global-audio {
 }
 
 .jb-now__download,
-.jb-now__edit {
+.jb-now__edit,
+.jb-now__forward {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7915,14 +7916,16 @@ html.qf-jukebox-page .sp-global-audio {
   cursor: pointer;
 }
 
-.jb-now__edit {
+.jb-now__edit,
+.jb-now__forward {
   border-color: rgba(214, 207, 196, 0.45);
   background: rgba(255, 255, 255, 0.06);
   color: #f4efe3;
 }
 
 .jb-now__download:hover,
-.jb-now__edit:hover {
+.jb-now__edit:hover,
+.jb-now__forward:hover {
   border-color: #d4af37;
   color: #fff;
 }
@@ -7948,6 +7951,7 @@ html.qf-jukebox-page .sp-now-share-note {
 }
 
 html.qf-jukebox-page .sp-now-btn--share,
+html.qf-jukebox-page .sp-now-btn--forward,
 html.qf-jukebox-page .sp-now-btn--download {
   display: inline-flex;
   align-items: center;
@@ -8633,6 +8637,168 @@ html.qf-jukebox-page .sp-now-add-pl {
   flex-shrink: 0;
   border-top: 2px solid rgba(212, 175, 55, 0.35);
   padding: 0.25rem 0;
+}
+
+.jb-forward-backdrop {
+  z-index: 450;
+  align-items: flex-start;
+}
+
+.jb-forward-panel {
+  width: min(26rem, 100%);
+  max-height: min(88vh, 40rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  border-radius: 10px;
+  background: #0a0806;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  padding: 0.75rem 0.8rem 0.65rem;
+  overflow: hidden;
+}
+
+.jb-forward-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.jb-forward-head h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #fef3c7;
+}
+
+.jb-forward-sub {
+  margin: 0.2rem 0 0;
+  font-size: 0.78rem;
+  color: #d8cbb8;
+}
+
+.jb-forward-hint {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #b9ad9a;
+}
+
+.jb-forward-url {
+  margin: 0;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  font-size: 0.65rem;
+  color: #c4b8a8;
+  word-break: break-all;
+}
+
+.jb-forward-book {
+  min-height: 0;
+  max-height: 11rem;
+  overflow-y: auto;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.jb-forward-empty {
+  margin: 0;
+  padding: 0.75rem;
+  font-size: 0.74rem;
+  color: #a89c8a;
+}
+
+.jb-forward-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem;
+}
+
+.jb-forward-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.3rem;
+  border-radius: 6px;
+}
+
+.jb-forward-row--on {
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.jb-forward-check {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  cursor: pointer;
+  color: #ebe2d4;
+  font-size: 0.78rem;
+}
+
+.jb-forward-check strong {
+  display: block;
+}
+
+.jb-forward-detail {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.68rem;
+  color: #a89c8a;
+}
+
+.jb-forward-add {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.jb-forward-add-label {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.jb-forward-input {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(0, 0, 0, 0.45);
+  color: #f4efe3;
+  padding: 0.45rem 0.55rem;
+  font: inherit;
+  font-size: 0.82rem;
+}
+
+.jb-forward-note {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #fef3c7;
+}
+
+.jb-forward-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.jb-forward-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.jb-forward-count {
+  font-size: 0.7rem;
+  color: #c4b8a8;
 }
 
 .jb-welcome__title {
@@ -9392,7 +9558,8 @@ html.qf-jukebox-page .sp-now-add-pl {
   font-variant-numeric: tabular-nums;
 }
 
-.jb-track-edit {
+.jb-track-edit,
+.jb-track-forward {
   flex: 0 0 auto;
   width: 1.85rem;
   height: 1.85rem;
@@ -9408,7 +9575,8 @@ html.qf-jukebox-page .sp-now-add-pl {
   cursor: pointer;
 }
 
-.jb-track-edit:hover {
+.jb-track-edit:hover,
+.jb-track-forward:hover {
   border-color: #d4af37;
   color: #fff;
 }

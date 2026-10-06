@@ -11,6 +11,8 @@ import {
 } from '@/lib/simplePlayback';
 import { getPlaybackMedia, pauseBackgroundPlayback } from '@/lib/playbackMediaRegistry';
 import { shareTrack } from '@/lib/shareTrack';
+import { ForwardModal } from '@/components/jukebox/ForwardModal';
+import type { ForwardTarget } from '@/lib/shareCatalog';
 import {
   consumeAppPause,
   markAppPause,
@@ -109,6 +111,7 @@ export function BridgePlayer({
 
   const [playlistModalOpen, setPlaylistModalOpen] = useState(false);
   const [shareNote, setShareNote] = useState<string | null>(null);
+  const [forwardTarget, setForwardTarget] = useState<ForwardTarget | null>(null);
   const openExport = useMediaChromeStore((s) => s.openExport);
 
   const mediaRef = useRef<HTMLAudioElement | null>(null);
@@ -585,6 +588,20 @@ export function BridgePlayer({
               </button>
               <button
                 type="button"
+                className="sp-now-btn sp-now-btn--forward"
+                onClick={() => setForwardTarget({ kind: 'track', track })}
+                aria-label={PLAIN.forwardTrack}
+                title={PLAIN.forwardTrack}
+              >
+                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M9.5 2.5 14 7l-4.5 4.5V9H7.2c-2.1 0-3.7.5-4.9 1.6C1.3 11.6 1 13 1 14.5v.5c.6-1.8 1.7-3 3.3-3.6 1-.4 2.2-.6 3.7-.6h1.5V2.5z"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
                 className="sp-now-btn sp-now-btn--download"
                 onClick={() => openExport(track.id)}
                 aria-label={PLAIN.getPass}
@@ -664,6 +681,12 @@ export function BridgePlayer({
           onClose={() => setPlaylistModalOpen(false)}
         />
       ) : null}
+
+      <ForwardModal
+        open={!!forwardTarget}
+        target={forwardTarget}
+        onClose={() => setForwardTarget(null)}
+      />
     </footer>
   );
 }

@@ -12,6 +12,9 @@ import { applyPlaylistMenuOrder, manageableMenuPlaylists } from '@/lib/playlistM
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
 import { PLAIN } from '@/lib/plainSpeak';
 import { SONIC_CATALOG_DISPLAY_NAME } from '@/lib/sonicCatalogCopy';
+import { ForwardModal } from '@/components/jukebox/ForwardModal';
+import type { ForwardTarget } from '@/lib/shareCatalog';
+import type { PlaylistDef } from '@/lib/catalogTypes';
 
 interface PlaylistManageModalProps {
   open: boolean;
@@ -33,6 +36,7 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
   const [renameDraft, setRenameDraft] = useState('');
   const renameDraftRef = useRef('');
   const renameInputRef = useRef<HTMLInputElement>(null);
+  const [forwardTarget, setForwardTarget] = useState<ForwardTarget | null>(null);
 
   const pinned = useMemo(() => {
     const master = playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
@@ -116,6 +120,10 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
     },
     [deletePlaylist],
   );
+
+  const openForward = useCallback((pl: PlaylistDef) => {
+    setForwardTarget({ kind: 'playlist', playlist: pl });
+  }, []);
 
   if (!open) return null;
 
@@ -259,6 +267,9 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
                       <button type="button" className="jb-tool-btn" onClick={() => startRename(pl.id, pl.name)}>
                         {PLAIN.renamePlaylist}
                       </button>
+                      <button type="button" className="jb-tool-btn" onClick={() => openForward(pl)}>
+                        {PLAIN.forward}
+                      </button>
                       <button type="button" className="jb-tool-btn" onClick={() => handleDuplicate(pl.id)}>
                         {PLAIN.duplicatePlaylist}
                       </button>
@@ -283,6 +294,12 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
           </button>
         </footer>
       </div>
+
+      <ForwardModal
+        open={!!forwardTarget}
+        target={forwardTarget}
+        onClose={() => setForwardTarget(null)}
+      />
     </div>
   );
 }

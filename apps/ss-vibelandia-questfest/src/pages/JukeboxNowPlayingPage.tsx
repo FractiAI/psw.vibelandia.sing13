@@ -14,7 +14,9 @@ import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 import { usePlaybackPlaylist, useTrack } from '@/stores/catalogSelectors';
 import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlaylistProgramBanner';
 import { TrackEditModal } from '@/components/catalog/TrackEditModal';
+import { ForwardModal } from '@/components/jukebox/ForwardModal';
 import { isUserUploadTrack } from '@/lib/catalogSeed';
+import type { ForwardTarget } from '@/lib/shareCatalog';
 
 export function JukeboxNowPlayingPage() {
   useJukeboxListenSetup('qf-jukebox-now-page');
@@ -27,6 +29,7 @@ export function JukeboxNowPlayingPage() {
   const pl = usePlaybackPlaylist();
   const playbackPlaylistId = usePlaybackStore((s) => s.playbackPlaylistId);
   const [editOpen, setEditOpen] = useState(false);
+  const [forwardTarget, setForwardTarget] = useState<ForwardTarget | null>(null);
 
   const track = useTrack(currentTrackId);
   const canEditTrack = track ? isUserUploadTrack(track.id, track) : false;
@@ -93,6 +96,22 @@ export function JukeboxNowPlayingPage() {
             ) : null}
             <button
               type="button"
+              className="jb-now__forward"
+              onClick={() => setForwardTarget({ kind: 'track', track })}
+            >
+              {PLAIN.forward}
+            </button>
+            {pl ? (
+              <button
+                type="button"
+                className="jb-now__forward"
+                onClick={() => setForwardTarget({ kind: 'playlist', playlist: pl })}
+              >
+                {PLAIN.forwardPlaylist}
+              </button>
+            ) : null}
+            <button
+              type="button"
               className="jb-now__download"
               onClick={() => openExport(track.id)}
             >
@@ -112,6 +131,12 @@ export function JukeboxNowPlayingPage() {
       {editOpen && canEditTrack ? (
         <TrackEditModal track={track} open onClose={() => setEditOpen(false)} />
       ) : null}
+
+      <ForwardModal
+        open={!!forwardTarget}
+        target={forwardTarget}
+        onClose={() => setForwardTarget(null)}
+      />
     </div>
   );
 }

@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "posts": [
+    {
+      "id": "daily-2026-10-06-synthobs-attention-awareness-downstream-activation-2026-10",
+      "posted": "2026-10-06",
+      "featured": true,
+      "title": "When a System Pays Attention, What Changes Downstream Because It Did?",
+      "subtitle": "News of the day · Tuesday, October 6",
+      "summary": "Homeostasis Expedition: treat selective attention as a causal intervention, measure downstream influence, and define Minimal Functional Awareness without claiming phenomenal consciousness.",
+      "href": "/ship-blog/attention-awareness-downstream",
+      "pill": "TODAY",
+      "docRef": "synthobs-attention-awareness-downstream-activation-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-05-synthobs-attention-awareness-downstream-activation-2026-10",
       "posted": "2026-10-05",

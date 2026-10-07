@@ -16,7 +16,7 @@ import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlayli
 import { TrackEditModal } from '@/components/catalog/TrackEditModal';
 import { ForwardModal } from '@/components/jukebox/ForwardModal';
 import { isUserUploadTrack } from '@/lib/catalogSeed';
-import type { ForwardTarget } from '@/lib/shareCatalog';
+import { sharePlaylist, type ForwardTarget } from '@/lib/shareCatalog';
 
 export function JukeboxNowPlayingPage() {
   useJukeboxListenSetup('qf-jukebox-now-page');
@@ -30,6 +30,7 @@ export function JukeboxNowPlayingPage() {
   const playbackPlaylistId = usePlaybackStore((s) => s.playbackPlaylistId);
   const [editOpen, setEditOpen] = useState(false);
   const [forwardTarget, setForwardTarget] = useState<ForwardTarget | null>(null);
+  const [shareNote, setShareNote] = useState<string | null>(null);
 
   const track = useTrack(currentTrackId);
   const canEditTrack = track ? isUserUploadTrack(track.id, track) : false;
@@ -104,11 +105,28 @@ export function JukeboxNowPlayingPage() {
             {pl ? (
               <button
                 type="button"
-                className="jb-now__forward"
-                onClick={() => setForwardTarget({ kind: 'playlist', playlist: pl })}
+                className="jb-now__share"
+                onClick={() => {
+                  void (async () => {
+                    setShareNote(null);
+                    const result = await sharePlaylist(pl);
+                    if (result === 'copied') setShareNote(PLAIN.shareCopied);
+                    else if (result === 'failed') setShareNote(PLAIN.shareFailed);
+                    if (result === 'copied' || result === 'failed') {
+                      window.setTimeout(() => setShareNote(null), 4000);
+                    }
+                  })();
+                }}
+                aria-label={PLAIN.sharePlaylist}
+                title={PLAIN.sharePlaylist}
               >
-                {PLAIN.forwardPlaylist}
+                {PLAIN.sharePlaylist}
               </button>
+            ) : null}
+            {shareNote ? (
+              <p className="jb-now__share-note" role="status">
+                {shareNote}
+              </p>
             ) : null}
             <button
               type="button"

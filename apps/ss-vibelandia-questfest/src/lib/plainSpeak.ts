@@ -61,6 +61,8 @@ export const PLAIN = {
   freeFullPlay: '1 free full play',
   fullPlay: 'free stream',
   shareTrack: 'Share track',
+  sharePlaylist: 'Share playlist',
+  share: 'Share',
   shareCopied: 'Link copied — paste in WhatsApp, Messages, or your feed.',
   shareFailed: 'Could not share — try again.',
   forward: 'Forward',

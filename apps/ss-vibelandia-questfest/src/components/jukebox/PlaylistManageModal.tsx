@@ -12,8 +12,7 @@ import { applyPlaylistMenuOrder, manageableMenuPlaylists } from '@/lib/playlistM
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
 import { PLAIN } from '@/lib/plainSpeak';
 import { SONIC_CATALOG_DISPLAY_NAME } from '@/lib/sonicCatalogCopy';
-import { ForwardModal } from '@/components/jukebox/ForwardModal';
-import type { ForwardTarget } from '@/lib/shareCatalog';
+import { sharePlaylist } from '@/lib/shareCatalog';
 import type { PlaylistDef } from '@/lib/catalogTypes';
 
 interface PlaylistManageModalProps {
@@ -36,7 +35,7 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
   const [renameDraft, setRenameDraft] = useState('');
   const renameDraftRef = useRef('');
   const renameInputRef = useRef<HTMLInputElement>(null);
-  const [forwardTarget, setForwardTarget] = useState<ForwardTarget | null>(null);
+  const [shareNote, setShareNote] = useState<string | null>(null);
 
   const pinned = useMemo(() => {
     const master = playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
@@ -121,8 +120,14 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
     [deletePlaylist],
   );
 
-  const openForward = useCallback((pl: PlaylistDef) => {
-    setForwardTarget({ kind: 'playlist', playlist: pl });
+  const handleShare = useCallback(async (pl: PlaylistDef) => {
+    setShareNote(null);
+    const result = await sharePlaylist(pl);
+    if (result === 'copied') setShareNote(PLAIN.shareCopied);
+    else if (result === 'failed') setShareNote(PLAIN.shareFailed);
+    if (result === 'copied' || result === 'failed') {
+      window.setTimeout(() => setShareNote(null), 4000);
+    }
   }, []);
 
   if (!open) return null;
@@ -140,6 +145,11 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
           <div>
             <h2 id="jb-pl-manage-title">{PLAIN.managePlaylists}</h2>
             <p className="jb-pl-manage-hint">{PLAIN.managePlaylistsHint}</p>
+            {shareNote ? (
+              <p className="jb-pl-manage-share-note" role="status">
+                {shareNote}
+              </p>
+            ) : null}
           </div>
           <button type="button" className="jb-pl-manage-close" onClick={onClose} aria-label="Close">
             ×
@@ -267,8 +277,14 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
                       <button type="button" className="jb-tool-btn" onClick={() => startRename(pl.id, pl.name)}>
                         {PLAIN.renamePlaylist}
                       </button>
-                      <button type="button" className="jb-tool-btn" onClick={() => openForward(pl)}>
-                        {PLAIN.forward}
+                      <button
+                        type="button"
+                        className="jb-tool-btn"
+                        onClick={() => void handleShare(pl)}
+                        aria-label={`${PLAIN.sharePlaylist} ${pl.name}`}
+                        title={PLAIN.sharePlaylist}
+                      >
+                        {PLAIN.share}
                       </button>
                       <button type="button" className="jb-tool-btn" onClick={() => handleDuplicate(pl.id)}>
                         {PLAIN.duplicatePlaylist}
@@ -295,11 +311,6 @@ export function PlaylistManageModal({ open, onClose, onEditPlaylist }: PlaylistM
         </footer>
       </div>
 
-      <ForwardModal
-        open={!!forwardTarget}
-        target={forwardTarget}
-        onClose={() => setForwardTarget(null)}
-      />
     </div>
   );
 }

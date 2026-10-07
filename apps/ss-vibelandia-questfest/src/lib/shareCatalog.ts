@@ -24,6 +24,34 @@ export function buildPlaylistShareText(playlist: PlaylistDef): string {
   return `${playlist.name} · ${songs} — SS Vibelandia QUESTFEST`;
 }
 
+export type SharePlaylistResult = 'shared' | 'copied' | 'cancelled' | 'failed';
+
+/** Native share sheet when available; otherwise copy link to clipboard — same path as shareTrack. */
+export async function sharePlaylist(playlist: PlaylistDef): Promise<SharePlaylistResult> {
+  const url = buildPlaylistListenUrl(playlist.id);
+  const text = buildPlaylistShareText(playlist);
+
+  if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+    try {
+      await navigator.share({
+        title: playlist.name,
+        text,
+        url,
+      });
+      return 'shared';
+    } catch (e) {
+      if (e instanceof DOMException && e.name === 'AbortError') return 'cancelled';
+    }
+  }
+
+  try {
+    await navigator.clipboard.writeText(`${text}\n${url}`);
+    return 'copied';
+  } catch {
+    return 'failed';
+  }
+}
+
 export function buildForwardUrl(target: ForwardTarget): string {
   return target.kind === 'track'
     ? buildTrackListenUrl(target.track.id)

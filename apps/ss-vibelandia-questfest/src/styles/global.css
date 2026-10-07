@@ -7899,7 +7899,8 @@ html.qf-jukebox-page .sp-global-audio {
 
 .jb-now__download,
 .jb-now__edit,
-.jb-now__forward {
+.jb-now__forward,
+.jb-now__share {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7917,7 +7918,8 @@ html.qf-jukebox-page .sp-global-audio {
 }
 
 .jb-now__edit,
-.jb-now__forward {
+.jb-now__forward,
+.jb-now__share {
   border-color: rgba(214, 207, 196, 0.45);
   background: rgba(255, 255, 255, 0.06);
   color: #f4efe3;
@@ -7925,9 +7927,19 @@ html.qf-jukebox-page .sp-global-audio {
 
 .jb-now__download:hover,
 .jb-now__edit:hover,
-.jb-now__forward:hover {
+.jb-now__forward:hover,
+.jb-now__share:hover {
   border-color: #d4af37;
   color: #fff;
+}
+
+.jb-now__share-note,
+.jb-track-panel__share-note,
+.jb-pl-manage-share-note {
+  margin: 0.35rem 0 0;
+  font-size: 0.62rem;
+  line-height: 1.35;
+  color: #a5f3fc;
 }
 
 .jb-now__hint {

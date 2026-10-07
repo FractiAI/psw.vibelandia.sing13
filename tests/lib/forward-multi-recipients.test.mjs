@@ -40,17 +40,16 @@ describe('forward playlists + tracks with multi recipients', () => {
     expect(src).toMatch(/forwardTextSend/);
   });
 
-  it('wires Forward on playlist panel, manage modal, player, and now playing', () => {
+  it('wires Forward on track panel rows, player, and now playing (playlists use Share)', () => {
     const panel = readFileSync(PANEL, 'utf8');
     expect(panel).toMatch(/ForwardModal/);
-    expect(panel).toMatch(/kind: 'playlist'/);
     expect(panel).toMatch(/kind: 'track'/);
     expect(panel).toMatch(/onForwardTrack/);
+    expect(panel).not.toMatch(/kind: 'playlist'/);
 
     const manage = readFileSync(MANAGE, 'utf8');
-    expect(manage).toMatch(/ForwardModal/);
-    expect(manage).toMatch(/openForward/);
-    expect(manage).toMatch(/PLAIN\.forward/);
+    expect(manage).not.toMatch(/ForwardModal/);
+    expect(manage).toMatch(/sharePlaylist/);
 
     const bridge = readFileSync(BRIDGE, 'utf8');
     expect(bridge).toMatch(/ForwardModal/);
@@ -60,7 +59,7 @@ describe('forward playlists + tracks with multi recipients', () => {
     const now = readFileSync(NOW, 'utf8');
     expect(now).toMatch(/ForwardModal/);
     expect(now).toMatch(/kind: 'track'/);
-    expect(now).toMatch(/kind: 'playlist'/);
+    expect(now).not.toMatch(/kind: 'playlist'/);
   });
 
   it('exposes plain-speak Forward labels', () => {

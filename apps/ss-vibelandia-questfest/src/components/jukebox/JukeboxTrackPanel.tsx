@@ -18,7 +18,7 @@ import { PLAIN } from '@/lib/plainSpeak';
 import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlaylistProgramBanner';
 import { ForwardModal } from '@/components/jukebox/ForwardModal';
 import { playingCoverUrl } from '@/lib/playingCover';
-import type { ForwardTarget } from '@/lib/shareCatalog';
+import { sharePlaylist, type ForwardTarget } from '@/lib/shareCatalog';
 import type { TrackDef } from '@/lib/catalogTypes';
 
 type SortMode = 'playlistOrder' | 'titleAsc' | 'titleDesc';
@@ -53,6 +53,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
   const [searchQuery, setSearchQuery] = useState('');
   const [sortMode, setSortMode] = useState<SortMode>('playlistOrder');
   const [forwardTarget, setForwardTarget] = useState<ForwardTarget | null>(null);
+  const [shareNote, setShareNote] = useState<string | null>(null);
 
   const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
   const shuffleQueue = usePlaybackStore((s) => s.shuffleQueue);
@@ -225,6 +226,17 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
 
   const playlistModalTrack = playlistModalTrackId ? getTrack(playlistModalTrackId) : undefined;
 
+  const handleSharePlaylist = useCallback(async () => {
+    if (!playlist) return;
+    setShareNote(null);
+    const result = await sharePlaylist(playlist);
+    if (result === 'copied') setShareNote(PLAIN.shareCopied);
+    else if (result === 'failed') setShareNote(PLAIN.shareFailed);
+    if (result === 'copied' || result === 'failed') {
+      window.setTimeout(() => setShareNote(null), 4000);
+    }
+  }, [playlist]);
+
   return (
     <section className="jb-track-panel" aria-label="Playlist tracks">
       <header className="jb-track-panel__head">
@@ -234,6 +246,11 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
               ? `${rows.length} of ${totalBeforeSearch} ${PLAIN.tracks}`
               : `${rows.length} track${rows.length === 1 ? '' : 's'}`}
           </p>
+          {shareNote ? (
+            <p className="jb-track-panel__share-note" role="status">
+              {shareNote}
+            </p>
+          ) : null}
         </div>
         <div className="jb-track-panel__tools">
           <button
@@ -257,9 +274,11 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
             <button
               type="button"
               className="jb-tool-btn"
-              onClick={() => setForwardTarget({ kind: 'playlist', playlist })}
+              onClick={() => void handleSharePlaylist()}
+              aria-label={PLAIN.sharePlaylist}
+              title={PLAIN.sharePlaylist}
             >
-              {PLAIN.forward}
+              {PLAIN.share}
             </button>
           ) : null}
           <button

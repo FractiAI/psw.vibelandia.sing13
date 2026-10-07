@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-06",
   "suites": [
     {
+      "id": "synthobs-galactosphere-hypothesis",
+      "path": "research/synthobs-galactosphere-hypothesis",
+      "github": "https://github.com/FractiAI/synthobs-galactosphere-hypothesis",
+      "description": "Galactosphere Hypothesis — distributed galactic boundary · heliosphere rhyme · GH-1/GH-2 digital lab · Homeostasis Expedition · Infinite Octaves ENGINE_SHELF #42 (not Milky Way proof)",
+      "paperIds": [
+        "synthobs-galactosphere-hypothesis-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_GALACTOSPHERE_HYPOTHESIS_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-chart-compass-holographic-goldilocks-si",
       "path": "research/synthobs-chart-compass-holographic-goldilocks-si",
       "github": "https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si",

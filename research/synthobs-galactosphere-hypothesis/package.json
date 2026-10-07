@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-galactosphere-hypothesis",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Galactosphere Hypothesis — distributed galactic analogue to the heliosphere · catalog suite (Infinite Octaves ENGINE_SHELF companion #42 · Homeostasis Expedition)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-galactosphere-hypothesis.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

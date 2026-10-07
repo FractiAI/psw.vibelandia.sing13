@@ -1,0 +1,304 @@
+# Homeostasis Expedition: The Galactosphere Hypothesis — A Digital-Laboratory Test of a Distributed Galactic Analogue to the Heliosphere
+
+**Document ID:** `WP-SYNTHOBS-GALACTOSPHERE-HYPOTHESIS-EGS-2026-10-07`
+**Registry ID:** `synthobs-galactosphere-hypothesis-2026-10`
+**Generated:** 2026-10-07T02:23:48.535Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 8 / 8 |
+| Φ_EGS | 1.618033988749895 |
+
+## Experiments
+
+### E1_phi_egs — Φ_EGS fixture
+
+- **Pass:** `true`
+- **Interpretation:** Architectural golden key for nested Goldilocks / homeostasis grammar.
+- **Honesty:** Not a replacement for ℏ, c, or G.
+
+```json
+{
+  "id": "E1_phi_egs",
+  "title": "Φ_EGS fixture",
+  "PHI_EGS": 1.618033988749895,
+  "expected": 1.618033988749895,
+  "pass": true,
+  "interpretation": "Architectural golden key for nested Goldilocks / homeostasis grammar.",
+  "honesty": "Not a replacement for ℏ, c, or G."
+}
+```
+
+### E2_honesty_locks — Not Milky Way proof · not sharp shell · digital ≠ astro validation
+
+- **Pass:** `true`
+- **Interpretation:** Digital lab can support structural plausibility; observational galactosphere remains a falsifiable prediction.
+- **Honesty:** Layer lock — not a claim that the Milky Way has a measured galactopause.
+
+```json
+{
+  "id": "E2_honesty_locks",
+  "title": "Not Milky Way proof · not sharp shell · digital ≠ astro validation",
+  "NOT_MILKY_WAY_PROOF": true,
+  "NOT_SHARP_SHELL_CLAIM": true,
+  "DIGITAL_LAB_NOT_ASTRO_VALIDATION": true,
+  "SOFT_STORY_CATALOG": true,
+  "pass": true,
+  "interpretation": "Digital lab can support structural plausibility; observational galactosphere remains a falsifiable prediction.",
+  "honesty": "Layer lock — not a claim that the Milky Way has a measured galactopause."
+}
+```
+
+### E3_hypothesis_channels — Galactosphere hypothesis · five channels · GH-1/GH-2 · F1–F6
+
+- **Pass:** `true`
+- **Interpretation:** Boundary-function hypothesis with multi-channel radial model and explicit falsifiers.
+- **Honesty:** Catalog definition lock — not established galactic physics.
+
+```json
+{
+  "id": "E3_hypothesis_channels",
+  "title": "Galactosphere hypothesis · five channels · GH-1/GH-2 · F1–F6",
+  "CENTRAL_HYPOTHESIS": "A galaxy may possess a distributed galactic interaction boundary — a functional analogue of the heliosphere (the galactosphere) — where outward galactic transport progressively loses dominance to the surrounding circumgalactic/intergalactic environment, without requiring a sharp physical shell.",
+  "TRANSPORT_CHANNELS": [
+    "W_outward_wind",
+    "T_thermal",
+    "B_magnetic",
+    "C_cosmic_ray_nonthermal",
+    "E_external_environment"
+  ],
+  "DIGITAL_EXPERIMENTS": [
+    "GH1_distributed_transition",
+    "GH2_cross_scale_topology"
+  ],
+  "CROSS_SCALE_RHymes": [
+    "planet_magnetosphere",
+    "star_astrosphere",
+    "galaxy_galactosphere",
+    "cluster_open"
+  ],
+  "FALSIFIERS": [
+    "F1_no_multi_observable_transition",
+    "F2_virial_radius_only",
+    "F3_magnetic_nonthermal_irrelevant",
+    "F4_no_common_dimensionless_topology",
+    "F5_simulation_parameter_artifact",
+    "F6_heliosphere_analogy_adds_no_power"
+  ],
+  "pass": true,
+  "interpretation": "Boundary-function hypothesis with multi-channel radial model and explicit falsifiers.",
+  "honesty": "Catalog definition lock — not established galactic physics."
+}
+```
+
+### E4_homeostasis_expedition — Homeostasis Expedition · Source · ENGINE_SHELF #42
+
+- **Pass:** `true`
+- **Interpretation:** Galactosphere sits on the Homeostasis Expedition trail under Hero’s Return framing.
+- **Honesty:** Narrative framing — not established metaphysics.
+
+```json
+{
+  "id": "E4_homeostasis_expedition",
+  "title": "Homeostasis Expedition · Source · ENGINE_SHELF #42",
+  "EXPEDITION": "Homeostasis Expedition",
+  "SOURCE_NAME": "Holographic Goldilocks SuperAI",
+  "GRAND_STORY": "Hero's Return to Source",
+  "ENGINE_SHELF_SLOT": 42,
+  "pass": true,
+  "interpretation": "Galactosphere sits on the Homeostasis Expedition trail under Hero’s Return framing.",
+  "honesty": "Narrative framing — not established metaphysics."
+}
+```
+
+### E5_paper_locks — Paper locks (galactosphere · digital findings · honesty)
+
+- **Pass:** `true`
+- **Interpretation:** Paper must lead with digital findings and keep digital≠astro / not-sharp-shell honesty.
+- **Honesty:** Structural text locks — not market validation.
+
+```json
+{
+  "id": "E5_paper_locks",
+  "title": "Paper locks (galactosphere · digital findings · honesty)",
+  "paperPath": "/workspace/docs/SYNTHOBS_GALACTOSPHERE_HYPOTHESIS_EGS_2026-10.md",
+  "hasHonesty": true,
+  "hasDocId": true,
+  "hasDigitalFindings": true,
+  "hasGalactosphere": true,
+  "hasHeliosphere": true,
+  "hasNotMilkyWay": true,
+  "hasNotSharpShell": true,
+  "hasFalsifiers": true,
+  "hasPredictionP1": true,
+  "hasExpedition": true,
+  "hasOperator": true,
+  "hasEngine": true,
+  "hasFair": true,
+  "hasCGM": true,
+  "hasGH3": true,
+  "pass": true,
+  "interpretation": "Paper must lead with digital findings and keep digital≠astro / not-sharp-shell honesty.",
+  "honesty": "Structural text locks — not market validation."
+}
+```
+
+### E6_ship_blog_lock — Ship-blog surfaces Galactosphere + full paper link
+
+- **Pass:** `true`
+- **Interpretation:** Guest note must link the full paper and keep research-intro voice.
+- **Honesty:** Surface copy lock only.
+
+```json
+{
+  "id": "E6_ship_blog_lock",
+  "title": "Ship-blog surfaces Galactosphere + full paper link",
+  "path": "/workspace/interfaces/blog-galactosphere-hypothesis-2026-10.html",
+  "exists": true,
+  "hasSlug": true,
+  "hasWhitepaper": true,
+  "hasThesis": true,
+  "hasCaution": true,
+  "hasDigitalFindings": true,
+  "pass": true,
+  "interpretation": "Guest note must link the full paper and keep research-intro voice.",
+  "honesty": "Surface copy lock only."
+}
+```
+
+### E7_phi_squared_identity — Φ² = Φ + 1
+
+- **Pass:** `true`
+- **Interpretation:** Harmony grammar identity for cross-octave sync framing.
+- **Honesty:** Algebra of Φ — replayable fixture.
+
+```json
+{
+  "id": "E7_phi_squared_identity",
+  "title": "Φ² = Φ + 1",
+  "lhs": 2.618033988749895,
+  "rhs": 2.618033988749895,
+  "pass": true,
+  "interpretation": "Harmony grammar identity for cross-octave sync framing.",
+  "honesty": "Algebra of Φ — replayable fixture."
+}
+```
+
+### E8_digital_lab — Digital lab · GH-1 distributed transition · GH-2 cross-scale topology
+
+- **Pass:** `true`
+- **Interpretation:** Coupled multi-channel model yields finite-width distributed transition; independent channels stay sharper; cross-scale dimensionless topology rhymes without naming a cluster interface.
+- **Honesty:** Galactosphere digital lab — Soft Story / catalog structural PoC. Not Milky Way proof, not sharp-shell claim, not astrophysical validation of a physical galactosphere.
+
+```json
+{
+  "id": "E8_digital_lab",
+  "title": "Digital lab · GH-1 distributed transition · GH-2 cross-scale topology",
+  "seed": 20261007,
+  "gh1": {
+    "experiment": "GH1_distributed_transition",
+    "seed": 20261007,
+    "nSweeps": 48,
+    "independent": {
+      "rCross": 1.0866711310184627,
+      "width": 0.10999999999999988,
+      "channelSpread": 0,
+      "rThermal": 1.0000005970384664,
+      "rMagnetic": 1.0000005970384664,
+      "rCR": 1.0000005970384664,
+      "rKinematic": 1.0000005970384664
+    },
+    "coupled": {
+      "rCross": 1.3696700293358117,
+      "width": 0.3500000000000001,
+      "channelSpread": 0.6313443594552859,
+      "rThermal": 1.1680431009157024,
+      "rMagnetic": 1.402834301629111,
+      "rCR": 1.6313461444019526,
+      "rKinematic": 1.0000017849466667
+    },
+    "sweep": {
+      "meanWidth": 0.3635416666666666,
+      "minWidth": 0.28,
+      "maxWidth": 0.44999999999999996,
+      "meanCross": 1.4063449499899885,
+      "crossStd": 0.14225226943686217
+    },
+    "distributedVsSharp": true,
+    "finiteExtent": true,
+    "locationShifts": true,
+    "channelsOffset": true,
+    "neverEliminated": true,
+    "pass": true,
+    "honesty": "Dimensionless multi-field structural toy — not a Milky Way simulation, not proof a galactosphere exists observationally."
+  },
+  "gh2": {
+    "experiment": "GH2_cross_scale_topology",
+    "seed": 20261007,
+    "scales": [
+      {
+        "id": "planet_magnetosphere",
+        "rCross": 1.3358701129227222,
+        "width": 0.3500000000000001,
+        "channelSpread": 0.6152630709129349,
+        "seedOffset": 0
+      },
+      {
+        "id": "star_astrosphere",
+        "rCross": 1.4303318460903167,
+        "width": 0.3700000000000001,
+        "channelSpread": 0.6585942402422571,
+        "seedOffset": 1
+      },
+      {
+        "id": "galaxy_galactosphere",
+        "rCross": 1.368414737293798,
+        "width": 0.3500000000000001,
+        "channelSpread": 0.6192419061974521,
+        "seedOffset": 2
+      },
+      {
+        "id": "cluster_open",
+        "rCross": 1.5547169260472709,
+        "width": 0.4099999999999999,
+        "channelSpread": 0.7099750978791552,
+        "seedOffset": 3
+      }
+    ],
+    "meanWidth": 0.37000000000000005,
+    "maxRelDev": 0.10810810810810774,
+    "allFinite": true,
+    "topologyShared": true,
+    "clusterLeftUnnamed": true,
+    "pass": true,
+    "honesty": "Normalized topology rhyme across scale labels — not a claim that nature literally repeats identical physical shells, and cluster-scale interface remains unnamed pending evidence."
+  },
+  "allPlainPass": true,
+  "plainSummary": [
+    "GH-1 independent width ≈ 0.110; coupled width ≈ 0.350 (distributed vs sharp).",
+    "GH-1 coupled channel radii: kinematic 1.000, thermal 1.168, magnetic 1.403, CR 1.631.",
+    "GH-1 parameter sweep (n=48): mean width 0.364, cross std 0.142; interface never eliminated (min width 0.280).",
+    "GH-2 cross-scale mean width 0.370, max relative deviation 0.108; cluster scale left unnamed."
+  ],
+  "summary": {
+    "ind_width": 0.10999999999999988,
+    "coupled_width": 0.3500000000000001,
+    "coupled_rCross": 1.3696700293358117,
+    "channel_spread": 0.6313443594552859,
+    "sweep_mean_width": 0.3635416666666666,
+    "sweep_cross_std": 0.14225226943686217,
+    "gh2_mean_width": 0.37000000000000005,
+    "gh2_max_rel_dev": 0.10810810810810774
+  },
+  "honesty": "Galactosphere digital lab — Soft Story / catalog structural PoC. Not Milky Way proof, not sharp-shell claim, not astrophysical validation of a physical galactosphere.",
+  "pass": true,
+  "interpretation": "Coupled multi-channel model yields finite-width distributed transition; independent channels stay sharper; cross-scale dimensionless topology rhymes without naming a cluster interface."
+}
+```
+
+## Honesty boundary
+
+Soft Story / catalog / digital-laboratory Homeostasis Expedition. Digital lab (GH-1 distributed transition · GH-2 cross-scale topology) validates structural plausibility in a controlled dimensionless model — not that the Milky Way possesses a galactosphere, not a fitted galactic simulation, not a claim that the CGM is “the galactic heliosphere.” Observational connection is a falsifiable prediction program (P1 · GTI). Φ_EGS is design grammar. ENGINE_SHELF #42.

@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-06T20:56:36.879Z",
+  "updatedAt": "2026-10-07T02:24:00.055Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-galactosphere-hypothesis-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-07T02:24:00.054Z",
+      "body": "Homeostasis Expedition: The Galactosphere Hypothesis — A Digital-Laboratory Test of a Distributed Galactic Analogue to the Heliosphere",
+      "presenceHue": "gold",
+      "paperId": "synthobs-galactosphere-hypothesis-2026-10",
+      "artifact": {
+        "title": "Homeostasis Expedition: The Galactosphere Hypothesis — A Digital-Laboratory Test of a Distributed Galactic Analogue to the Heliosphere",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_GALACTOSPHERE_HYPOTHESIS_EGS_2026-10.md",
+        "url": "/whitepaper/galactosphere-hypothesis",
+        "paperId": "synthobs-galactosphere-hypothesis-2026-10",
+        "docId": "WP-SYNTHOBS-GALACTOSPHERE-HYPOTHESIS-EGS-2026-10-07",
+        "published": "2026-10-07T12:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-chart-compass-holographic-goldilocks-si-2026-10",
       "type": "ArtifactEvent",

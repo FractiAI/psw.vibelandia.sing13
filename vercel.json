@@ -1485,6 +1485,14 @@
       "destination": "/interfaces/blog-chart-compass-goldilocks-si-2026-10.html"
     },
     {
+      "source": "/ship-blog/galactosphere-hypothesis",
+      "destination": "/interfaces/blog-galactosphere-hypothesis-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/galactosphere-hypothesis/",
+      "destination": "/interfaces/blog-galactosphere-hypothesis-2026-10.html"
+    },
+    {
       "source": "/ship-blog/archetypal-grand-story",
       "destination": "/interfaces/blog-archetypal-grand-story-2026-10.html"
     },

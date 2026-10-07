@@ -28,6 +28,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-erft-e-continuous-regulation',
       'synthobs-fractios-holographic-os',
       'synthobs-fractiskills-portable-agent-skills',
+      'synthobs-galactosphere-hypothesis',
       'synthobs-generative-matrix-phi-egs',
       'synthobs-goldilocks-net-zero-equivalence',
       'synthobs-grand-unified-metrological-overlap',

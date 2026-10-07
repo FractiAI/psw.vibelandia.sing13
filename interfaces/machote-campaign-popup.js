@@ -1,5 +1,5 @@
 /**
- * Machote members campaign modal — QUESTFEST top deck only (not Bulletin Board or Sovereign Player).
+ * Machote members campaign modal — QUESTFEST top deck only (not Bulletin Board or Sovereignty Player).
  */
 (function () {
   'use strict';

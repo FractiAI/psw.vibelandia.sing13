@@ -18,7 +18,7 @@ SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 - **SS Vibelandia QUESTFEST 24×365** nest (interfaces, catalogs, music, interactive worlds)
 - **Infinite Octave Omniversal Lattice Catalog** — AI-stack catalog layer; **Lattice Chat** = Syntheverse Sandbox live demo (BYOK nested-agent chat with token-economics measurement)
 - **NSPFRNP catalog** — Seed:Edge protocol spine
-- **Sovereign Player** (QUESTFEST Bridge) — audio catalog React SPA
+- **Sovereignty Player** (QUESTFEST Bridge) — audio catalog React SPA
 - **SynthOBS research pipeline** — 20+ empirical experiment suites with constants/experiments modules
 - **Lite edges only** — no Supabase; center = pipes only
 
@@ -50,7 +50,7 @@ SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 │   └── *.js              # CRON rails, telemetry, exports, etc.
 ├── apps/                 # React/Vite SPAs (built → interfaces/)
 │   ├── lattice-chat/     # Lattice Chat · Syntheverse Sandbox live demo UI
-│   ├── ss-vibelandia-questfest/  # Sovereign Player
+│   ├── ss-vibelandia-questfest/  # Sovereignty Player
 │   ├── executive-ai-onboard/
 │   └── goldilocks-deliveries/
 ├── lib/                  # Shared modules (47 files — pure ESM)
@@ -61,7 +61,7 @@ SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 │   └── turner-*.mjs          # Turner bison/satellite modules
 ├── interfaces/           # Static HTML + built SPA bundles (served by Vercel)
 │   ├── lattice-chat/     # Built lattice-chat SPA
-│   ├── questfest-bridge/ # Built Sovereign Player
+│   ├── questfest-bridge/ # Built Sovereignty Player
 │   └── *.html            # Plain HTML pages
 ├── research/             # SynthOBS empirical experiment suites
 │   └── synthobs-*/       # Each: src/{constants,experiments}.mjs, scripts/run_empirical_pipeline.mjs, data/
@@ -96,7 +96,7 @@ npm run test:lattice-floors  # legacy structural comparison floor assertions
 ### Build apps
 
 ```bash
-npm run build:questfest-bridge    # Sovereign Player
+npm run build:questfest-bridge    # Sovereignty Player
 npm run build:lattice-chat        # Lattice Chat live demo UI
 npm run build:executive-onboard   # Executive AI onboarding
 ```

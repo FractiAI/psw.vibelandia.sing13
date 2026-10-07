@@ -55,7 +55,7 @@ export const UPLOAD_MEMBER_INVITE =
   'Upload audio that meets the Holographic Goldilocks AI OS minimum (whole-in-every-part, balanced band, coordinated layers)—including AI music you have rights to—then curate it in your own playlists. The master catalog streams free; downloads are Fair Exchange per track.';
 
 /** Playlist editor — visibility labels (maps to playlist kind). */
-export const PLAYLIST_KIND_SOVEREIGN_LABEL = 'Sovereign · curated set';
+export const PLAYLIST_KIND_SOVEREIGN_LABEL = 'Sovereignty · curated set';
 
 export const PLAYLIST_KIND_OPEN_LABEL = 'Open deck · open listen-through';
 

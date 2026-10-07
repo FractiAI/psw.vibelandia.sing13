@@ -1,6 +1,6 @@
 # Server catalog (`/media/catalog`)
 
-Tracks for the Sovereign Player are **hosted on the server**, not in browser storage.
+Tracks for the Sovereignty Player are **hosted on the server**, not in browser storage.
 
 ## Add your library (recommended)
 

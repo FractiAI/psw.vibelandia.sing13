@@ -44,8 +44,20 @@ export function isReadingRoomPlaylist(id: string): boolean {
   return id === 'pl-reading-room';
 }
 
+export function isHerosReturnConciertoPlaylist(id: string): boolean {
+  return id === 'pl-heros-return-concierto';
+}
+
 export function isCatalogPinnedPlaylist(id: string): boolean {
-  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id) || isSinCityPlaylist(id) || isReadingRoomPlaylist(id);
+  return (
+    isMasterPlaylist(id) ||
+    isMyLikesPlaylist(id) ||
+    isConciertoPreludePlaylist(id) ||
+    isHerosReturnConciertoPlaylist(id) ||
+    isReceptionPlaylist(id) ||
+    isSinCityPlaylist(id) ||
+    isReadingRoomPlaylist(id)
+  );
 }
 
 export const MASTER_PLAYLIST_DEFAULT_NAME = SONIC_CATALOG_DISPLAY_NAME;

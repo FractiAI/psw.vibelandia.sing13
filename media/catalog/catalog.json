@@ -31,6 +31,26 @@
       ]
     },
     {
+      "id": "pl-heros-return-concierto",
+      "name": "The Hero's Return Concierto",
+      "kind": "sovereign",
+      "description": "Twelve-movement Source Concierto — Hero’s Return to Source · Holographic Goldilocks Super Intelligence awareness. Homeostasis Expedition · Chart & Compass trail. Play on Sovereignty Player.",
+      "trackIds": [
+        "trk-srv-cee5ce49-3e95-4de9-9edb-a6eebc7a597c",
+        "trk-srv-470ddfdc-b8eb-4dde-b43b-788ce6068eb7",
+        "trk-srv-1b3d4399-904d-4244-bad4-04e3fc5db99b",
+        "trk-srv-24f29003-7e87-4d53-a241-b3db37086bb7",
+        "trk-srv-e96c1dcf-4e1b-4671-b3e2-188d69053ebc",
+        "trk-srv-b28550b5-7b3c-4882-a7f9-fd8137cb22da",
+        "trk-srv-1c76146b-520b-46c8-a1af-419554497313",
+        "trk-srv-0eee22a0-c033-488d-a302-cce970e25328",
+        "trk-srv-85ec124b-9d95-4281-ada1-78fe313c21d2",
+        "trk-srv-e715de1c-d6a5-4b8e-8cf3-96c5f16c4fad",
+        "trk-srv-195e640f-c0fc-402f-9f42-e8b43d0adde3",
+        "trk-srv-645868fe-b6ab-4181-93b4-27430bddd4a6"
+      ]
+    },
+    {
       "id": "pl-reception",
       "name": "SS Vibelandia Check-In",
       "kind": "sovereign",

@@ -31,7 +31,7 @@ Hardware / PPA / BEOL / CFET evaluators: start with the **CMOS 2.0 + protonic** 
 
 Honesty: silicon **vocabulary** for the engine — not a foundry tape-out. Full sync order: [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md).
 
-This README is the **current map** of the monorepo, its **sibling empirical suites**, a **99 Octave Omni-Lattice primer**, the **latest major updates**, and **developer** steps to fork / reproduce / validate. Product deep-dives (Lattice Chat UI, Sovereign Player playlists, Beehive residency) live in linked surfaces — they are not the top of this file.
+This README is the **current map** of the monorepo, its **sibling empirical suites**, a **99 Octave Omni-Lattice primer**, the **latest major updates**, and **developer** steps to fork / reproduce / validate. Product deep-dives (Lattice Chat UI, Sovereignty Player playlists, Beehive residency) live in linked surfaces — they are not the top of this file.
 
 ---
 
@@ -47,11 +47,11 @@ This README is the **current map** of the monorepo, its **sibling empirical suit
 | **Whitepaper catalog** | Registered papers + honesty rails + PRA Snap audits | `docs/`, `lib/whitepaper-registry.mjs`, `/papers` |
 | **QUESTFEST 24×365** | SS Vibelandia ship reception primer, bulletin, plain-language ship blog | [/questfest](https://www.ssvibelandiaquestfest24x365.com/questfest) · Reality Bridge/Router network · [/join-the-crew](https://www.ssvibelandiaquestfest24x365.com/join-the-crew) |
 | **Infinite Octaves Omniversal Lattice Chat Agent V1.618** | Nested-agent BYOK chat · **your key is your password** (stays with you) · token-economics measurement | `/lattice`, `/lattice-chat`, `apps/lattice-chat/`, `api/lattice-chat.js` |
-| **Sovereign Player** | Audio catalog React SPA · Fair Exchange honor downloads | `/listen`, `apps/ss-vibelandia-questfest/` → `interfaces/questfest-bridge/` |
+| **Sovereignty Player** | Audio catalog React SPA · Fair Exchange honor downloads | `/listen`, `apps/ss-vibelandia-questfest/` → `interfaces/questfest-bridge/` |
 | **NSPFRNP / BBHE** | Protocol spine · Seed:Edge · repository standard | `protocols/MCA_NSPFRNP_CATALOG.md`, `BBHE_REPOSITORY_STANDARD.md` |
 | **Lite edges** | No Supabase; wallets/keys/verifications on-device; center = pipes only | `AGENTS.md` invariants |
 
-**Three Doors:** **Listen** (Sovereign Player) · **Read** (`/papers`) · **Build · Lattice** (`/lattice`). Voice tiers on claims: 🜛 mythic · ⚙ operational · 📐 verified.
+**Three Doors:** **Listen** (Sovereignty Player) · **Read** (`/papers`) · **Build · Lattice** (`/lattice`). Voice tiers on claims: 🜛 mythic · ⚙ operational · 📐 verified.
 
 **Parent edge (non-QUESTFEST lab surfaces):** [FractiAI/psw.vibelandia.sing9](https://github.com/FractiAI/psw.vibelandia.sing9) · [psw-vibelandia-sing9.vercel.app](https://psw-vibelandia-sing9.vercel.app)
 
@@ -262,7 +262,7 @@ Vercel project for this edge → **www.ssvibelandiaquestfest24x365.com**. `verce
 | Agent sync | [/agent-sync](https://www.ssvibelandiaquestfest24x365.com/agent-sync) |
 | Interfaces index | [/interfaces/](https://www.ssvibelandiaquestfest24x365.com/interfaces/) |
 
-**Sovereign Player Fair Exchange:** catalog stream free · track download **$1.61** (Venmo / PayPal / Cash App honor) · contact `info@fractiai.com`.
+**Sovereignty Player Fair Exchange:** catalog stream free · track download **$1.61** (Venmo / PayPal / Cash App honor) · contact `info@fractiai.com`.
 
 **Lattice token claim (current):** ~35–70% less Cursor usage vs fat corpus paste, **depending on the work** (published matrix). Nested + pointers vs dump-everything; roaming can erase savings.
 
@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-07** · **366** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-07** · **367** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -503,6 +503,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/harmonopoly-guide.html`](/interfaces/harmonopoly-guide.html) | Harmonopoly · Game, tech & math guide |
 | [`/interfaces/harmonopoly.html`](/interfaces/harmonopoly.html) | Harmonopoly · Goldilocks Rush |
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
+| [`/interfaces/heros-return-concierto.html`](/interfaces/heros-return-concierto.html) | The Hero’s Return Concierto · Source Concierto 2025 · SS Vibelandia |
 | [`/interfaces/holographic-homeostasis-architects.html`](/interfaces/holographic-homeostasis-architects.html) | Holographic Homeostasis for Frontier AI Architects · FractiAI |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |

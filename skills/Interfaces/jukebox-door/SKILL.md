@@ -1,6 +1,6 @@
 ---
 id: jukebox-door
-name: "Jukebox · Sovereign Player"
+name: "Jukebox · Sovereignty Player"
 description: "Music / jukebox cruise door."
 tags: ["jukebox", "music", "doors"]
 routes: ["/jukebox", "/questfest-bridge"]

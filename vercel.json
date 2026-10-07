@@ -2037,6 +2037,22 @@
       "destination": "/interfaces/concierto-el-gran-sol-program.html"
     },
     {
+      "source": "/heros-return-concierto",
+      "destination": "/interfaces/heros-return-concierto.html"
+    },
+    {
+      "source": "/heros-return-concierto/",
+      "destination": "/interfaces/heros-return-concierto.html"
+    },
+    {
+      "source": "/heros-return",
+      "destination": "/interfaces/heros-return-concierto.html"
+    },
+    {
+      "source": "/heros-return/",
+      "destination": "/interfaces/heros-return-concierto.html"
+    },
+    {
       "source": "/prelude-session",
       "destination": "/interfaces/canvas-prelude-session.html"
     },

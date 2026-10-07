@@ -7,6 +7,7 @@ import {
   reconcilePinnedSovereignPlaylists,
 } from '../../lib/pinned-sovereign-playlists.mjs';
 import { CONCIERTO_PRELUDE_PLAYLIST_ID } from '../../lib/concierto-prelude-playlist.mjs';
+import { HEROS_RETURN_CONCIERTO_PLAYLIST_ID } from '../../lib/heros-return-concierto-playlist.mjs';
 import { READING_ROOM_PLAYLIST_ID } from '../../lib/reading-room-playlist.mjs';
 import { RECEPTION_PLAYLIST_ID } from '../../lib/reception-playlist.mjs';
 import { SIN_CITY_PLAYLIST_ID } from '../../lib/sin-city-playlist.mjs';
@@ -18,19 +19,21 @@ function read(rel) {
 }
 
 describe('Pinned sovereign jukebox playlists', () => {
-  it('registers all four SS Vibelandia sovereign sets with canonical names', () => {
+  it('registers all five SS Vibelandia sovereign sets with canonical names', () => {
     const byId = Object.fromEntries(PINNED_SOVEREIGN_PLAYLISTS.map((p) => [p.id, p]));
     expect(byId[CONCIERTO_PRELUDE_PLAYLIST_ID]?.name).toBe(
       'Holographic Magnetic Goldilocks Art SS Canvas Landing',
     );
+    expect(byId[HEROS_RETURN_CONCIERTO_PLAYLIST_ID]?.name).toBe("The Hero's Return Concierto");
     expect(byId[RECEPTION_PLAYLIST_ID]?.name).toBe('SS Vibelandia Check-In');
     expect(byId[SIN_CITY_PLAYLIST_ID]?.name).toBe('SS Vibelandia Wrong Side of Town');
     expect(byId[READING_ROOM_PLAYLIST_ID]?.name).toBe('SS Vibelandia Reading Room');
   });
 
-  it('jukebox menu pins all four sovereign playlists after master and likes', () => {
+  it('jukebox menu pins all five sovereign playlists after master and likes', () => {
     const menu = read('apps/ss-vibelandia-questfest/src/lib/playlistMenuOrder.ts');
     expect(menu).toContain('CONCIERTO_PRELUDE_PLAYLIST_ID');
+    expect(menu).toContain('HEROS_RETURN_CONCIERTO_PLAYLIST_ID');
     expect(menu).toContain('RECEPTION_PLAYLIST_ID');
     expect(menu).toContain('SIN_CITY_PLAYLIST_ID');
     expect(menu).toContain('READING_ROOM_PLAYLIST_ID');

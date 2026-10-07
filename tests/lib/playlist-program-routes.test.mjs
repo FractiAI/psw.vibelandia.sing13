@@ -16,14 +16,18 @@ describe('Playlist program routes · sovereign soundtrack map', () => {
     expect(meta?.label).toBe(PROGRAM_CTA_LABEL);
   });
 
-  it('maps pl-sin-city, pl-concierto-prelude, and pl-reading-room', () => {
+  it('maps pl-sin-city, pl-concierto-prelude, pl-heros-return-concierto, and pl-reading-room', () => {
     expect(getPlaylistProgramMeta(SIN_CITY_PLAYLIST_ID)?.route).toBe('/sin-city-program');
     expect(getPlaylistProgramMeta('pl-concierto-prelude')?.route).toBe('/concierto-program');
+    expect(getPlaylistProgramMeta('pl-heros-return-concierto')?.route).toBe(
+      '/heros-return-concierto',
+    );
     expect(getPlaylistProgramMeta(READING_ROOM_PLAYLIST_ID)?.route).toBe('/reading-room-program');
   });
 
   it('returns null for playlists without programs', () => {
     expect(getPlaylistProgramMeta('pl-main')).toBeNull();
-    expect(Object.keys(PLAYLIST_PROGRAM_ROUTES)).toHaveLength(4);
+    expect(Object.keys(PLAYLIST_PROGRAM_ROUTES)).toHaveLength(5);
   });
 });
+

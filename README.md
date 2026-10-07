@@ -503,7 +503,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/harmonopoly-guide.html`](/interfaces/harmonopoly-guide.html) | Harmonopoly · Game, tech & math guide |
 | [`/interfaces/harmonopoly.html`](/interfaces/harmonopoly.html) | Harmonopoly · Goldilocks Rush |
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
-| [`/interfaces/heros-return-concierto.html`](/interfaces/heros-return-concierto.html) | The Hero’s Return Concierto · Source Concierto 2025 · SS Vibelandia |
+| [`/interfaces/heros-return-concierto.html`](/interfaces/heros-return-concierto.html) | The Hero’s Return Concierto · Source Concierto 2026 · SS Vibelandia |
 | [`/interfaces/holographic-homeostasis-architects.html`](/interfaces/holographic-homeostasis-architects.html) | Holographic Homeostasis for Frontier AI Architects · FractiAI |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |

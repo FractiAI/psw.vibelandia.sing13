@@ -1,4 +1,5 @@
 import { CONCIERTO_PRELUDE_PLAYLIST_ID } from '@/lib/conciertoPreludePlaylist';
+import { HEROS_RETURN_CONCIERTO_PLAYLIST_ID } from '@/lib/herosReturnConciertoPlaylist';
 import { PROGRAM_CTA_LABEL } from '@/lib/programCta';
 import { READING_ROOM_PLAYLIST_ID } from '@/lib/readingRoomPlaylist';
 import { RECEPTION_PLAYLIST_ID } from '@/lib/receptionPlaylist';
@@ -19,6 +20,13 @@ export const PLAYLIST_PROGRAM_ROUTES: Record<string, PlaylistProgramMeta> = {
     readLabel: 'Read the concert program →',
     downloadLabel: 'Download program (PDF)',
     note: 'Broadway-quality dramaturgy for the Omniversal Canvas prelude — movement-by-movement.',
+  },
+  [HEROS_RETURN_CONCIERTO_PLAYLIST_ID]: {
+    route: '/heros-return-concierto',
+    label: PROGRAM_CTA_LABEL,
+    readLabel: 'Read the Hero’s Return announcement →',
+    downloadLabel: 'Download program (PDF)',
+    note: 'Source Concierto announcement — twelve movements · Hero’s Return to Source · Holographic Goldilocks Super Intelligence.',
   },
   [RECEPTION_PLAYLIST_ID]: {
     route: '/front-desk-program',

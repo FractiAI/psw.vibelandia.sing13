@@ -38,6 +38,13 @@ describe("Hero's Return Concierto · jukebox playlist", () => {
     expect(meta?.route).toBe(HEROS_RETURN_CONCIERTO_PROGRAM_ROUTE);
   });
 
+  it('jukebox app maps playlist to announcement program route', () => {
+    const routes = read('apps/ss-vibelandia-questfest/src/lib/playlistProgramRoutes.ts');
+    expect(routes).toContain('HEROS_RETURN_CONCIERTO_PLAYLIST_ID');
+    expect(routes).toContain('/heros-return-concierto');
+    expect(routes).toContain('Read the Hero’s Return announcement');
+  });
+
   it('announcement page + vercel + listen href', () => {
     const page = read('interfaces/heros-return-concierto.html');
     expect(page).toContain('The Hero’s Return Concierto');

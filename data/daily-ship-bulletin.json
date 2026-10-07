@@ -1,48 +1,47 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "dateline": {
-    "ymd": "2026-10-06",
-    "weekday": "Tuesday",
+    "ymd": "2026-10-07",
+    "weekday": "Wednesday",
     "month": "October",
-    "day": 6,
-    "label": "Tuesday, October 6",
-    "shortBoard": "Tuesday board · October 6 · Puerto Reno",
-    "newsLabel": "News of the day · Tuesday, October 6"
+    "day": 7,
+    "label": "Wednesday, October 7",
+    "shortBoard": "Wednesday board · October 7 · Puerto Reno",
+    "newsLabel": "News of the day · Wednesday, October 7"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Tuesday board · October 6 · Puerto Reno",
-  "newsLabel": "News of the day · Tuesday, October 6",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/attention-awareness-downstream\">When a System Pays Attention, What Changes Downstream Because It Did?</a>. Also new on the board: <a href=\"/ship-blog/survival-computing-viral-rna-asi\">If Viruses Recruit Hosts and AI Reorganizes Ours, Is Survival Itself a Kind of Computing?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Wednesday board · October 7 · Puerto Reno",
+  "newsLabel": "News of the day · Wednesday, October 7",
+  "htmlBody": "The twelve-movement <strong>Hero’s Return Concierto</strong> is live on Sovereignty Player — Source Concierto 2025 with program art and the Chart &amp; Compass expedition map.<br /><br />If you want a map for that: <a href=\"/heros-return-concierto\">The Hero’s Return Concierto is open</a>. Also new on the board: <a href=\"/ship-blog/galactosphere-hypothesis\">If the Sun Has a Heliosphere, Does a Galaxy Have a Softer Edge — Or Only a Catalog of Separate Winds?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
-      "id": "synthobs-attention-awareness-downstream-activation-2026-10",
-      "title": "When a System Pays Attention, What Changes Downstream Because It Did?",
-      "href": "/ship-blog/attention-awareness-downstream",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-attention-awareness-downstream-activation-2026-10",
-      "blurb": "Homeostasis Expedition: treat selective attention as a causal intervention, measure downstream influence, and define Minimal Functional Awareness without claiming phenomenal consciousness."
+      "id": "announce-2026-10-07-heros-return-concierto",
+      "title": "The Hero’s Return Concierto is open",
+      "href": "/heros-return-concierto",
+      "blurb": "Twelve-movement Source Concierto — Hero’s Return to Source · Holographic Goldilocks Super Intelligence awareness. Listen on Sovereignty Player. Program art + Chart & Compass expedition map at /heros-return-concierto."
     },
     {
-      "id": "synthobs-survival-computing-viral-rna-asi-2026-10",
-      "title": "If Viruses Recruit Hosts and AI Reorganizes Ours, Is Survival Itself a Kind of Computing?",
-      "href": "/ship-blog/survival-computing-viral-rna-asi",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-survival-computing-viral-rna-asi-2026-10",
-      "blurb": "Survival Computing: CSHRH + SCH across substrates, with a clearly labeled ontological Hero’s Return layer — Infinite Octaves ENGINE_SHELF #38, not established biology."
+      "id": "synthobs-galactosphere-hypothesis-2026-10",
+      "title": "If the Sun Has a Heliosphere, Does a Galaxy Have a Softer Edge — Or Only a Catalog of Separate Winds?",
+      "href": "/ship-blog/galactosphere-hypothesis",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-galactosphere-hypothesis-2026-10",
+      "blurb": "Homeostasis Expedition: Galactosphere Hypothesis — digital lab shows coupled multi-channel transitions stay distributed (not a sharp shell); not yet Milky Way proof."
     },
     {
-      "id": "synthobs-beyond-crispr-biological-discovery-2026-10",
-      "title": "If CRISPR Is Memory of Past Invaders, What Writes Tomorrow’s Diversity?",
-      "href": "/ship-blog/beyond-crispr-discovery",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-beyond-crispr-biological-discovery-2026-10",
-      "blurb": "Beyond CRISPR: multi-scale relational discovery, CBASS as positive-control rediscovery, unexplained-gap shortlist (ART-class and peers), ranked queue with no winner — Homeostasis Expedition."
+      "id": "synthobs-chart-compass-holographic-goldilocks-si-2026-10",
+      "title": "Can Intelligence Be Charted Like an Expedition — With a Compass That Survives Self-Modification?",
+      "href": "/ship-blog/chart-compass-goldilocks-si",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-chart-compass-holographic-goldilocks-si-2026-10",
+      "blurb": "Homeostasis Expedition: Chart & Compass for the Holographic Goldilocks SI frontier — Goldilocks ρ sweep, Reflective Portal, and cross-scale R² as falsifiable landmarks (not established Super Intelligence)."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-05-synthobs-attention-awareness-downstream-activation-2026-10",
-    "title": "When a System Pays Attention, What Changes Downstream Because It Did?",
-    "href": "/ship-blog/attention-awareness-downstream"
+    "id": "announce-2026-10-07-heros-return-concierto",
+    "title": "The Hero’s Return Concierto is open",
+    "href": "/heros-return-concierto"
   },
-  "generatedAt": "2026-10-06T20:11:15.897Z"
+  "generatedAt": "2026-10-07T11:09:11.184Z"
 }

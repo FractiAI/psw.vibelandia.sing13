@@ -109,4 +109,12 @@ describe('daily-ship-bulletin steward', () => {
   it('todayYmd is YYYY-MM-DD', () => {
     expect(todayYmd(new Date('2026-08-16T12:00:00Z'))).toBe('2026-08-16');
   });
+
+  it('leads 2026-10-07 canvas news with Hero’s Return Concierto hospitality post', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-10-07' });
+    expect(payload.highlights[0].href).toBe('/heros-return-concierto');
+    expect(payload.highlights[0].title).toMatch(/Hero’s Return Concierto/i);
+    expect(payload.htmlBody).toContain('/heros-return-concierto');
+    expect(payload.leadBoard?.href).toBe('/heros-return-concierto');
+  });
 });

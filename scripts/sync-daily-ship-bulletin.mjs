@@ -127,7 +127,8 @@ async function main() {
   // Upsert board post for today’s lead highlight
   const board = JSON.parse(fs.readFileSync(BOARD, 'utf8'));
   const lead = payload.highlights?.[0];
-  if (lead) {
+  // Hospitality announcements (concierto, programs) stay as player-1 posts — do not duplicate as daily-* rows.
+  if (lead && !String(lead.id || '').startsWith('announce-')) {
     const id = `daily-${payload.date}-${lead.id}`;
     board.updated = payload.date;
     board.posts = (board.posts || []).filter((p) => p.id !== id && !String(p.id).startsWith(`daily-${payload.date}-`));

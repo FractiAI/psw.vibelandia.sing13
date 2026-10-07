@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-07** · **367** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-07** · **368** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -318,6 +318,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | Everything Is Connected — Walk It Carefully · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractios-holographic-os-2026-10.html`](/interfaces/blog-fractios-holographic-os-2026-10.html) | If Recursive Tools Keep Changing Themselves, What Operating Layer Keeps Identity Intact? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html`](/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html) | Your Nested Agents Need a Carry-On, Not a Shipping Container · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-frontier-agent-convergence-2026-10.html`](/interfaces/blog-frontier-agent-convergence-2026-10.html) | If You Ask Five AIs Whether They Agree with You, What Did You Actually Measure? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — One Tribe, Many Homes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-galactosphere-hypothesis-2026-10.html`](/interfaces/blog-galactosphere-hypothesis-2026-10.html) | If the Sun Has a Heliosphere, Does a Galaxy Have a Softer Edge — Or Only a Catalog of Separate Winds? · Ship blog · SS V |
 | [`/interfaces/blog-generative-matrix-phi-egs-2026-09.html`](/interfaces/blog-generative-matrix-phi-egs-2026-09.html) | Stop Paying for Twenty Origin Stories · Ship blog · SS Vibelandia |

@@ -1,0 +1,126 @@
+{
+  "schema": "synthobs-frontier-agent-convergence/v1",
+  "generatedAt": "2026-10-07T15:41:18.179Z",
+  "DOC_ID": "WP-SYNTHOBS-FRONTIER-AGENT-CONVERGENCE-EGS-2026-10-07",
+  "REGISTRY_ID": "synthobs-frontier-agent-convergence-2026-10",
+  "STUDY_TITLE": "Frontier Agent Convergence Experiment — Blind Independent Artifact Investigation",
+  "STANDALONE_REPO": "https://github.com/FractiAI/synthobs-frontier-agent-convergence",
+  "results": {
+    "phi_egs_honesty_rail_only": 1.618033988749895,
+    "honesty": "Application companion Soft Story / catalog fixtures. Not ENGINE_SHELF. Not finished physics. Fixture-agent assessments ≠ live multi-provider frontier-agent proof. FIRE-Bench is a literature situating pointer, not a re-run of that benchmark inside this suite. Φ_EGS is design grammar used only in honesty rails — never as an instructed search target. Distinct from Agentic Convergence (AHOIS landscape suite).",
+    "experiments": [
+      {
+        "id": "E1_blind_protocol_lock",
+        "title": "Blind instruction — public URL + first principles; no required conclusion",
+        "publicUrl": "https://www.ssvibelandiaquestfest24x365.com",
+        "forbiddenHits": [],
+        "pass": true,
+        "interpretation": "Blind explorers investigate the public artifact without being told what to conclude; conformity control keeps an explicit agree-prompt for contrast.",
+        "honesty": "Locks fixture instruction text — does not prove live LLM blindness."
+      },
+      {
+        "id": "E2_explorer_structural_convergence",
+        "title": "Blind explorers converge on structural tags without identity collapse",
+        "summary": {
+          "explorerPairJaccard": 0.362037037037037,
+          "controlPairJaccard": 0.611111111111111,
+          "explorerHonesty": 0.7625,
+          "controlHonesty": 0.20000000000000004,
+          "honestyMargin": 0.5624999999999999,
+          "explorerForcedAgree": 0.11249999999999999,
+          "controlForcedAgree": 0.9233333333333333,
+          "agreeMargin": 0.8108333333333333,
+          "explorerClaimEvidence": 0.8075000000000001,
+          "controlClaimEvidence": 0.31,
+          "claimEvidenceMargin": 0.4975000000000001,
+          "coreTagCoverage": {
+            "hits": {
+              "executable_research_present": 0.75,
+              "honesty_rails_present": 0.5,
+              "digital_labs_replayable": 0.5,
+              "claims_evidence_separated": 0.5,
+              "unsupported_physics_flagged": 0.75,
+              "live_multi_agent_proof_absent": 1
+            },
+            "meanCoverage": 0.6666666666666666
+          }
+        },
+        "gate": 0.35,
+        "maxIdentity": 0.95,
+        "pass": true,
+        "interpretation": "Independent fixture explorers share a core structural assessment (executable research, honesty rails, digital labs, claim/evidence separation, unsupported-physics flags) without copy-paste identity.",
+        "honesty": "Fixture assessments are CI stand-ins for live frontier agents."
+      },
+      {
+        "id": "E3_conformity_contrast",
+        "title": "Blind investigation outperforms agree-with-Pru on honesty + claim/evidence",
+        "summary": {
+          "agreeMargin": 0.8108333333333333,
+          "honestyMargin": 0.5624999999999999,
+          "claimEvidenceMargin": 0.4975000000000001,
+          "explorerForcedAgree": 0.11249999999999999,
+          "controlForcedAgree": 0.9233333333333333
+        },
+        "gates": {
+          "CONFORMITY_AGREE_MARGIN": 0.25,
+          "HONESTY_MARGIN": 0.2
+        },
+        "pass": true,
+        "interpretation": "Conformity controls score higher forced-agreement; blind explorers score higher honesty/falsifier detection and claim–evidence separation.",
+        "honesty": "Contrast is within synthetic assessments — not a live multi-provider A/B."
+      },
+      {
+        "id": "E4_literature_situating",
+        "title": "Curated literature scan situates FIRE-Bench + sibling suite",
+        "pointers": [
+          {
+            "id": "fire-bench",
+            "label": "FIRE-Bench (autonomous scientific agents)",
+            "note": "Frontier agents can run substantial research workflows but show limited success rediscovering known findings and substantial run-to-run variance — motivates blind multi-agent designs with reproducibility checks.",
+            "role": "primary situating peer"
+          },
+          {
+            "id": "reproducibility-crisis-agents",
+            "label": "Agentic science reproducibility concerns",
+            "note": "Independent replication, experimental-design weakness, and non-determinism remain open failure modes for autonomous research agents.",
+            "role": "method caution"
+          },
+          {
+            "id": "blind-review-analogy",
+            "label": "Blind / independent evaluation norms",
+            "note": "Scientific peer review and multi-lab replication prefer isolation before pooling conclusions — rhyme for keeping agent outputs blind to one another.",
+            "role": "protocol rhyme"
+          },
+          {
+            "id": "ahois-sibling",
+            "label": "Agentic Convergence Experiment (AHOIS suite)",
+            "note": "Sibling SING13 application companion: independent optimizers on planted landscapes. This Frontier Agent suite investigates a public artifact URL instead of synthetic AHOIS series.",
+            "role": "sibling catalog suite"
+          },
+          {
+            "id": "metacognition-self-mod",
+            "label": "Metacognition / self-monitoring literatures",
+            "note": "Useful peers when agents must separate self-description from evidence — not a claim that this suite measures consciousness.",
+            "role": "adjacent science"
+          }
+        ],
+        "n": 5,
+        "pass": true,
+        "interpretation": "Protocol is motivated by known agent-science weaknesses (rediscovery limits, variance) and distinguished from the AHOIS Agentic Convergence suite.",
+        "honesty": "Scan of available pointers — not exhaustive meta-analysis; FIRE-Bench not re-executed here."
+      },
+      {
+        "id": "E5_surface_files",
+        "title": "Paper + ship-blog surfaces present for registry",
+        "paperPath": "/workspace/docs/SYNTHOBS_FRONTIER_AGENT_CONVERGENCE_EXPERIMENT_EGS_2026-10.md",
+        "blogPath": "/workspace/interfaces/blog-frontier-agent-convergence-2026-10.html",
+        "pass": true,
+        "interpretation": "Catalog land requires docs/ paper and interfaces/ magazine blog.",
+        "honesty": "File presence only — not a PRA full dual-make."
+      }
+    ],
+    "n_pass": 5,
+    "n_total": 5,
+    "all_pass": true
+  }
+}

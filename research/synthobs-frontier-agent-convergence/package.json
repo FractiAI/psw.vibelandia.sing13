@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-frontier-agent-convergence",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontier Agent Convergence Experiment — blind independent artifact investigation · FIRE-Bench situating · application companion (not ENGINE_SHELF)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-frontier-agent-convergence.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

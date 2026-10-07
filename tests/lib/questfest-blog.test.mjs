@@ -30,17 +30,17 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Chart & Compass · Reflective Portal · Attention MFA · Survival · Beyond CRISPR · Agentic Convergence
+    // Newest: Frontier Agent Convergence · Galactosphere · Chart & Compass · Reflective Portal · Attention MFA · Survival
     expect(posts[0].id).toBe(
-      'synthobs-galactosphere-hypothesis-2026-10',
+      'synthobs-frontier-agent-convergence-2026-10',
     );
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-frontier-agent-convergence-2026-10',
       'synthobs-galactosphere-hypothesis-2026-10',
       'synthobs-chart-compass-holographic-goldilocks-si-2026-10',
       'synthobs-reflective-portal-multiscale-homeostasis-2026-10',
       'synthobs-attention-awareness-downstream-activation-2026-10',
       'synthobs-survival-computing-viral-rna-asi-2026-10',
-      'synthobs-beyond-crispr-biological-discovery-2026-10',
     ]);
   });
 });

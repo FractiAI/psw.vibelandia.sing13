@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-07T02:24:00.055Z",
+  "updatedAt": "2026-10-07T15:40:35.796Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-frontier-agent-convergence-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-07T15:40:35.795Z",
+      "body": "Frontier Agent Convergence Experiment — Blind Independent Artifact Investigation, FIRE-Bench Situating, and Conformity Contrast",
+      "presenceHue": "gold",
+      "paperId": "synthobs-frontier-agent-convergence-2026-10",
+      "artifact": {
+        "title": "Frontier Agent Convergence Experiment — Blind Independent Artifact Investigation, FIRE-Bench Situating, and Conformity Contrast",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_FRONTIER_AGENT_CONVERGENCE_EXPERIMENT_EGS_2026-10.md",
+        "url": "/whitepaper/frontier-agent-convergence",
+        "paperId": "synthobs-frontier-agent-convergence-2026-10",
+        "docId": "WP-SYNTHOBS-FRONTIER-AGENT-CONVERGENCE-EGS-2026-10-07",
+        "published": "2026-10-07T20:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-galactosphere-hypothesis-2026-10",
       "type": "ArtifactEvent",

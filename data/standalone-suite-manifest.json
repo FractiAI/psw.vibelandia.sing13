@@ -88,6 +88,18 @@
       ]
     },
     {
+      "id": "synthobs-frontier-agent-convergence",
+      "path": "research/synthobs-frontier-agent-convergence",
+      "github": "https://github.com/FractiAI/synthobs-frontier-agent-convergence",
+      "description": "Frontier Agent Convergence Experiment — blind independent artifact investigation · FIRE-Bench situating · agree-with-Pru contrast · application companion (not ENGINE_SHELF)",
+      "paperIds": [
+        "synthobs-frontier-agent-convergence-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_FRONTIER_AGENT_CONVERGENCE_EXPERIMENT_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-archetypal-grand-story",
       "path": "research/synthobs-archetypal-grand-story",
       "github": "https://github.com/FractiAI/synthobs-archetypal-grand-story",

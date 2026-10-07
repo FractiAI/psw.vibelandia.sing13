@@ -1485,6 +1485,14 @@
       "destination": "/interfaces/blog-chart-compass-goldilocks-si-2026-10.html"
     },
     {
+      "source": "/ship-blog/frontier-agent-convergence",
+      "destination": "/interfaces/blog-frontier-agent-convergence-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/frontier-agent-convergence/",
+      "destination": "/interfaces/blog-frontier-agent-convergence-2026-10.html"
+    },
+    {
       "source": "/ship-blog/galactosphere-hypothesis",
       "destination": "/interfaces/blog-galactosphere-hypothesis-2026-10.html"
     },

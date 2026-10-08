@@ -201,6 +201,48 @@
         "fumando puro (lo fi bolero session)",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-e3334afe-d75a-44d6-a153-79a0013347f6-fumando-puro-%28lo-fi-bolero-session%29.mp3"
       )
+    ],
+    'pl-1791170281395': [
+      track(
+        "trk-srv-b347a19b-a84b-4797-96f6-8f0386aa8d6b",
+        "Machote I Am",
+        "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-b347a19b-a84b-4797-96f6-8f0386aa8d6b-Machote%20I%20Am.m4a"
+      ),
+      track(
+        "trk-srv-10bad482-5f3e-4f6e-8551-201d1ae541c9",
+        "I Like Em Bien Puta",
+        "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-10bad482-5f3e-4f6e-8551-201d1ae541c9-I%20Like%20Em%20Bien%20Puta.m4a"
+      ),
+      track(
+        "trk-srv-83f15f32-a21b-40a3-af82-65dbf7dcdad2",
+        "Me Gustan Bien Putas",
+        "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-83f15f32-a21b-40a3-af82-65dbf7dcdad2-Me%20Gustan%20Bien%20Putas.m4a"
+      ),
+      track(
+        "trk-srv-26c6236b-41ce-4071-b695-04a328a3f867",
+        "I Like My Women Bien Puta",
+        "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-26c6236b-41ce-4071-b695-04a328a3f867-I%20Like%20My%20Women%20Bien%20Puta.m4a"
+      ),
+      track(
+        "trk-srv-605d475d-f834-459a-817f-593d333b2dc1",
+        "Machote Soy Cool Jazz",
+        "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-605d475d-f834-459a-817f-593d333b2dc1-Machote%20Soy%20Cool%20Jazz.m4a"
+      ),
+      track(
+        "trk-srv-4ba45442-6d7e-405f-a2a3-241039d6259e",
+        "Life s Not What They Told Me",
+        "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-4ba45442-6d7e-405f-a2a3-241039d6259e-Life_s%20Not%20What%20They%20Told%20Me.m4a"
+      ),
+      track(
+        "trk-srv-e045ffb2-bccc-4977-b916-cbdb8ccb75d9",
+        "in the high desert",
+        "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-e045ffb2-bccc-4977-b916-cbdb8ccb75d9-in-the-high-desert.mp3"
+      ),
+      track(
+        "trk-srv-2d658082-c060-4869-a11f-f216b1e0c77f",
+        "Hey, Go Away",
+        "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-2d658082-c060-4869-a11f-f216b1e0c77f-Hey_%20Go%20Away.m4a"
+      )
     ]
   };
 })();

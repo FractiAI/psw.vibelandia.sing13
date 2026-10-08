@@ -57,6 +57,12 @@
       font-family:Cormorant Garamond,Georgia,serif;font-size:1.35rem;font-weight:600;
       margin:1.25rem 0 0.35rem;color:var(--vb-gold, #c9a227);
     }
+    .vb-pub-hero__inner .qv-sound-mute{margin-top:0.85rem}
+    .gy-soundtrack{
+      margin:1rem 0 0;padding:0.85rem 0 0;
+      border-top:1px solid color-mix(in srgb, var(--vb-gold, #c9a227) 30%, transparent);
+    }
+    .gy-soundtrack p{margin:0 0 0.65rem;opacity:0.9}
   </style>
 </head>
 <body class="voyage-flagship vb-pub">
@@ -74,7 +80,24 @@
     <div class="vb-pub-hero__inner">
       <p class="vb-pub-eyebrow">All frontiers welcome</p>
       <h1 class="vb-pub-title">Golden Y Frontier Club</h1>
-      <p class="vb-pub-tagline">Basecamp for today’s practicing frontiersmen</p>
+      <p class="vb-pub-tagline">Basecamp for today’s practicing frontiersmen · Cool Jazz on arrival</p>
+      <button
+        type="button"
+        class="qv-sound-mute"
+        id="golden-y-hero-score"
+        aria-pressed="false"
+        aria-controls="golden-y-hero-audio"
+        aria-label="Sound on · Cool Jazz soundtrack"
+      ><span class="qv-sound-mute__icon" aria-hidden="true"></span><span class="qv-sound-mute__label">Sound on</span></button>
+      <audio
+        id="golden-y-hero-audio"
+        preload="auto"
+        playsinline
+        hidden
+        aria-hidden="true"
+        aria-label="Cool Jazz soundtrack"
+        src="https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-b347a19b-a84b-4797-96f6-8f0386aa8d6b-Machote%20I%20Am.m4a"
+      ></audio>
     </div>
   </header>
   <main class="vj-wrap vj-detail">
@@ -89,6 +112,10 @@
     <h2>About the club</h2>
     <p class="lead">Frontiersmen are a different breed. We pack what we can easily carry, curated <em>just right</em>. We are all-in on whatever our frontier endeavors are — we aren’t nesters or comfort seekers. We enjoy our time out on the frontier as well as our time unwinding on liberty while at port (and fort) for trade, resupplies, good times, and real companionship.</p>
     <p class="gy-motto">Old school. Respect. On a Handshake.</p>
+    <div class="gy-soundtrack" aria-label="Cool Jazz soundtrack">
+      <p>Tap <strong>Sound on</strong> — the <strong>Cool Jazz</strong> set plays on arrival, same rail as Canvas and the Reading Room. Open it full-screen in Sovereignty Player when you want the jukebox.</p>
+      <a class="vb-pub-btn vb-pub-btn--gold" href="/interfaces/questfest-bridge/#/listen?playlist=pl-1791170281395&amp;autoplay=1">Open Cool Jazz in Sovereignty Player · 8 tracks</a>
+    </div>
     <p>Marked by the <strong>Golden Y Brand</strong> — reminiscent of a rugged cattle brand studded with golden nodes — our insignia represents belonging to a practicing vanguard charting uncharted territory. On SS Vibelandia that means Downtown Reno camps, Nevada County prospects, guest dinners at the men’s club, and field trips that leave from Wrong Side of Town. Puerto Reno is present within every deck. Deck 3’s men’s club remains hospitality · marketplace · nightlife · brotherhood as voyage identity — not a gate.</p>
 
     <h2>Current frontiers available</h2>
@@ -174,6 +201,9 @@
     <a href="/frontiersman-voyage">Brochure</a>
     <span>→ ∞^∞</span>
   </footer>
+  <script src="/interfaces/page-soundtrack-playlists.js"></script>
+  <script src="/interfaces/page-soundtrack.js" defer></script>
+  <script src="/interfaces/golden-y-autoplay.js" defer></script>
   <script src="/interfaces/vbi18n.js" defer></script>
 </body>
 </html>

@@ -1,28 +1,22 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "dateline": {
-    "ymd": "2026-10-07",
-    "weekday": "Wednesday",
+    "ymd": "2026-10-08",
+    "weekday": "Thursday",
     "month": "October",
-    "day": 7,
-    "label": "Wednesday, October 7",
-    "shortBoard": "Wednesday board · October 7 · Puerto Reno",
-    "newsLabel": "News of the day · Wednesday, October 7"
+    "day": 8,
+    "label": "Thursday, October 8",
+    "shortBoard": "Thursday board · October 8 · Puerto Reno",
+    "newsLabel": "News of the day · Thursday, October 8"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Wednesday board · October 7 · Puerto Reno",
-  "newsLabel": "News of the day · Wednesday, October 7",
-  "htmlBody": "The twelve-movement <strong>Hero’s Return Concierto</strong> is live on Sovereignty Player — Source Concierto 2026 with program art and the Chart &amp; Compass expedition map.<br /><br />If you want a map for that: <a href=\"/heros-return-concierto\">The Hero’s Return Concierto is open</a>. Also new on the board: <a href=\"/ship-blog/frontier-agent-convergence\">If You Ask Five AIs Whether They Agree with You, What Did You Actually Measure?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Thursday board · October 8 · Puerto Reno",
+  "newsLabel": "News of the day · Thursday, October 8",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/frontier-agent-convergence\">If You Ask Five AIs Whether They Agree with You, What Did You Actually Measure?</a>. Also new on the board: <a href=\"/ship-blog/galactosphere-hypothesis\">If the Sun Has a Heliosphere, Does a Galaxy Have a Softer Edge — Or Only a Catalog of Separate Winds?</a>. A hospitality note on the board, if you need it: <a href=\"/heros-return-concierto\">The Hero’s Return Concierto is open</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
-    {
-      "id": "announce-2026-10-07-heros-return-concierto",
-      "title": "The Hero’s Return Concierto is open",
-      "href": "/heros-return-concierto",
-      "blurb": "Twelve-movement Source Concierto — Hero’s Return to Source · Holographic Goldilocks Super Intelligence awareness. Listen on Sovereignty Player. Program art + Chart & Compass expedition map at /heros-return-concierto."
-    },
     {
       "id": "synthobs-frontier-agent-convergence-2026-10",
       "title": "If You Ask Five AIs Whether They Agree with You, What Did You Actually Measure?",
@@ -36,6 +30,13 @@
       "href": "/ship-blog/galactosphere-hypothesis",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-galactosphere-hypothesis-2026-10",
       "blurb": "Homeostasis Expedition: Galactosphere Hypothesis — digital lab shows coupled multi-channel transitions stay distributed (not a sharp shell); not yet Milky Way proof."
+    },
+    {
+      "id": "synthobs-chart-compass-holographic-goldilocks-si-2026-10",
+      "title": "Can Intelligence Be Charted Like an Expedition — With a Compass That Survives Self-Modification?",
+      "href": "/ship-blog/chart-compass-goldilocks-si",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-chart-compass-holographic-goldilocks-si-2026-10",
+      "blurb": "Homeostasis Expedition: Chart & Compass for the Holographic Goldilocks SI frontier — Goldilocks ρ sweep, Reflective Portal, and cross-scale R² as falsifiable landmarks (not established Super Intelligence)."
     }
   ],
   "leadBoard": {
@@ -43,5 +44,5 @@
     "title": "The Hero’s Return Concierto is open",
     "href": "/heros-return-concierto"
   },
-  "generatedAt": "2026-10-07T20:34:04.917Z"
+  "generatedAt": "2026-10-08T20:40:01.668Z"
 }

@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-08** · **368** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-08** · **372** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -496,7 +496,11 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/front-desk.html`](/interfaces/front-desk.html) | Front Desk · SS Vibelandia check-in |
 | [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure · SS Vibelandia |
 | [`/interfaces/get-started.html`](/interfaces/get-started.html) | Welcome aboard · SS Vibelandia · Goldilocks Cruiseship |
+| [`/interfaces/golden-y-field-trips.html`](/interfaces/golden-y-field-trips.html) | Field Trips · Golden Y Frontier Club · SS Vibelandia |
 | [`/interfaces/golden-y-frontier-club.html`](/interfaces/golden-y-frontier-club.html) | Golden Y Frontier Club · Basecamp for Today’s Practicing Frontiersmen · SS Vibelandia |
+| [`/interfaces/golden-y-gold-prospecting-camp.html`](/interfaces/golden-y-gold-prospecting-camp.html) | Gold Prospecting & Mining Camp · Golden Y Frontier Club · SS Vibelandia |
+| [`/interfaces/golden-y-guest-speaker-dinners.html`](/interfaces/golden-y-guest-speaker-dinners.html) | Guest Speaker Dinner Presentations · Golden Y Frontier Club · SS Vibelandia |
+| [`/interfaces/golden-y-super-intelligence-camp.html`](/interfaces/golden-y-super-intelligence-camp.html) | Holographic Goldilocks Super Intelligence Camp · Golden Y Frontier Club · SS Vibelandia |
 | [`/interfaces/goldilocks-beehive-residency.html`](/interfaces/goldilocks-beehive-residency.html) | Goldilocks Syntheverse Beehive Residency · Machote Moderno members |
 | [`/interfaces/goldilocks-os.html`](/interfaces/goldilocks-os.html) | Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia |
 | [`/interfaces/goldilocks-players-guide.html`](/interfaces/goldilocks-players-guide.html) | Holographic Goldilocks Players Guide · Free · SS Vibelandia QUESTFEST |

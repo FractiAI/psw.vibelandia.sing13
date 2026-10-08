@@ -45,7 +45,7 @@ export const BODIES = {
  <p>Player 1 retains editorial veto. SynthOBS remains the attributed operator line in the Syntheverse Sandbox. Civic readers should hear that human emergency outranks algorithms whenever genomics automation anxiety enters the room — the same way a real ambulance outranks a clever demo at a town meeting. Jobs, school science, and family trust all sit closer to that ambulance than to the tweet.</p>
 
  <h2>Closing pier</h2>
- <p>Stubborn repeats deserve stubborn method and quiet honesty. Keep the assembly public, the ledger lit, and the clinic out of the press release. Open the whitepaper when you want the filing. Walk the ship when you want the floor under your feet. Ignore the note if you only needed a miracle — those live elsewhere, and they usually evaporate under audit light. Hospitality before prophecy is how SuperAI stays Goldilocks on a ship that still believes people can model hard biology without pretending the wet lab already shipped into every living room.</p>
+ <p>Stubborn repeats deserve stubborn method and quiet honesty. Keep the assembly public, the ledger lit, and the clinic out of the press release. Open the whitepaper when you want the filing. Walk the ship when you want the floor under your feet. Ignore the note if you only needed a miracle — those live elsewhere, and they usually evaporate under audit light. Hospitality before prophecy is how Super Intelligence stays Goldilocks on a ship that still believes people can model hard biology without pretending the wet lab already shipped into every living room.</p>
 `,
 
   'blog-august-12-catalog-window-2026-08.html': ` <header>
@@ -88,6 +88,6 @@ export const BODIES = {
  <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with metaphors dressed as finished proof. The export from this corridor is simpler. Name the altitude. Keep consent and human emergency above every clever map. August 12 stays crowded. The catalog stays honest. Nevada’s holographic AI valley keeps shipping windows with seatbelts painted in guest English — which is how Infinite Octaves remains discussable when the sky is loud and the rent is still due.</p>
 
  <h2>Closing pier</h2>
- <p>Watch doors and dinner-table questions, not just eclipse posters. Open the whitepaper after this human article if you want the filing cabinet. Walk Journey, Canvas, Jukebox, Library, and Creator Studio if you want the floor under your feet. Keep hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.</p>
+ <p>Watch doors and dinner-table questions, not just eclipse posters. Open the whitepaper after this human article if you want the filing cabinet. Walk Journey, Canvas, Jukebox, Library, and Creator Studio if you want the floor under your feet. Keep hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.</p>
 `,
 };

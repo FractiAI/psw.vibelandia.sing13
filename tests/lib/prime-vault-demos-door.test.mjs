@@ -23,7 +23,7 @@ describe('Prime Vault Demonstrations · hub door', () => {
     expect(html).toContain('id="demo-quest"');
     expect(html).toContain('Ability 1');
     expect(html).toContain('Ability 2');
-    expect(html).toMatch(/Goldilocks SuperAI|holographic · magnetic/i);
+    expect(html).toMatch(/Goldilocks Super Intelligence|holographic · magnetic/i);
     expect(html).toContain('protein fold');
     expect(html).toContain('LLM alternative');
     expect(html).toContain('href="/prime-vault-race"');

@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-07** · **368** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-08** · **368** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -477,7 +477,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/bulk-track-upload.html`](/interfaces/bulk-track-upload.html) | Bulk track upload · QUESTFEST |
 | [`/interfaces/bulletin-board.html`](/interfaces/bulletin-board.html) | SS Vibelandia Bulletin Board · QUESTFEST 24×365 |
 | [`/interfaces/canvas-prelude-session.html`](/interfaces/canvas-prelude-session.html) | Concierto Prelude · SS Vibelandia |
-| [`/interfaces/coexist-ai-asi.html`](/interfaces/coexist-ai-asi.html) | Coexisting with AI and Super AI · Which Quadrant Are You? · SS Vibelandia |
+| [`/interfaces/coexist-ai-asi.html`](/interfaces/coexist-ai-asi.html) | Coexisting with AI and Super Intelligence · Which Quadrant Are You? · SS Vibelandia |
 | [`/interfaces/concierto-el-gran-sol-program.html`](/interfaces/concierto-el-gran-sol-program.html) | Concierto de El Gran Sol: “The Shift” · Concert Program · SS Vibelandia |
 | [`/interfaces/creator-studio.html`](/interfaces/creator-studio.html) | Creator Studio · Deck 2 Core · SS Vibelandia |
 | [`/interfaces/digital-pru-awareness-whitepaper.html`](/interfaces/digital-pru-awareness-whitepaper.html) | Redirect · Deep reads · Look under the hood |
@@ -486,7 +486,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/executive-onboarding.html`](/interfaces/executive-onboarding.html) | Executive Onboarding · FractiAI |
 | [`/interfaces/exhibit-amphitheater.html`](/interfaces/exhibit-amphitheater.html) | Dome 2 · I am my Environment · Valet Pru |
 | [`/interfaces/exhibit-core.html`](/interfaces/exhibit-core.html) | Dome 1 · I am my Awareness · Valet Pru |
-| [`/interfaces/exhibit-horizon.html`](/interfaces/exhibit-horizon.html) | Dome 3 · I am Holographic Magnetic Goldilocks SuperAI · Valet Pru |
+| [`/interfaces/exhibit-horizon.html`](/interfaces/exhibit-horizon.html) | Dome 3 · I am Holographic Magnetic Goldilocks Super Intelligence · Valet Pru |
 | [`/interfaces/exhibit-science-fiction.html`](/interfaces/exhibit-science-fiction.html) | As science fiction · Valet Pru |
 | [`/interfaces/exhibit-step-in.html`](/interfaces/exhibit-step-in.html) | As a reality I can step into · Valet Pru |
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
@@ -519,11 +519,11 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/lattice-scraper-telemetry.html`](/interfaces/lattice-scraper-telemetry.html) | Lattice · AI scraper telemetry |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
 | [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Infinite Octave Omniversal Lattice Catalog · Next layer after Cursor & Claude Code · FractiAI |
-| [`/interfaces/layers-awareness.html`](/interfaces/layers-awareness.html) | Awareness Layer · Fractal · Holographic · Goldilocks → SuperAI |
+| [`/interfaces/layers-awareness.html`](/interfaces/layers-awareness.html) | Awareness Layer · Fractal · Holographic · Goldilocks → Super Intelligence |
 | [`/interfaces/layers-fractal.html`](/interfaces/layers-fractal.html) | Fractal Layer · Awareness Layer · SS Vibelandia |
 | [`/interfaces/layers-goldilocks.html`](/interfaces/layers-goldilocks.html) | Goldilocks Layer · Awareness Layer · SS Vibelandia |
 | [`/interfaces/layers-holographic.html`](/interfaces/layers-holographic.html) | Holographic Layer · Awareness Layer · SS Vibelandia |
-| [`/interfaces/layers-superai.html`](/interfaces/layers-superai.html) | SuperAI Layer · Awareness Layer · SS Vibelandia |
+| [`/interfaces/layers-superai.html`](/interfaces/layers-superai.html) | Super Intelligence Layer · Awareness Layer · SS Vibelandia |
 | [`/interfaces/lets-chat-intro.html`](/interfaces/lets-chat-intro.html) | Let's Chat · Guest comms · SS Vibelandia |
 | [`/interfaces/lets-chat.html`](/interfaces/lets-chat.html) | Let's Chat · SS Vibelandia |
 | [`/interfaces/library.html`](/interfaces/library.html) | Reading Room · SS Vibelandia |
@@ -537,7 +537,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/octave99-pricing.html`](/interfaces/octave99-pricing.html) | Bridge & Chart Pricing · Infinite Octaves · SING13 |
 | [`/interfaces/omni-lattice-course.html`](/interfaces/omni-lattice-course.html) | Infinite Octaves Omni-Lattice · Online Course · SS Vibelandia |
 | [`/interfaces/omni-lattice-textbook.html`](/interfaces/omni-lattice-textbook.html) | Infinite Octaves Omni-Lattice · Companion Textbook · SS Vibelandia |
-| [`/interfaces/omniverse-canvas.html`](/interfaces/omniverse-canvas.html) | Holographic Goldilocks SuperAI Basecamp · Valet Pru |
+| [`/interfaces/omniverse-canvas.html`](/interfaces/omniverse-canvas.html) | Holographic Goldilocks Super Intelligence Basecamp · Valet Pru |
 | [`/interfaces/pacing-paradox-briefing-portals.html`](/interfaces/pacing-paradox-briefing-portals.html) | Pacing Paradox · Executive Briefing Portals · SS Vibelandia |
 | [`/interfaces/pacing-paradox-brochure.html`](/interfaces/pacing-paradox-brochure.html) | The Pacing Paradox · Product Brochure · SS Vibelandia |
 | [`/interfaces/plain-machote-moderno-reno-swamp.html`](/interfaces/plain-machote-moderno-reno-swamp.html) | About · Sonic Singularity · SS Vibelandia |
@@ -552,7 +552,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html`](/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html) | FOR IMMEDIATE RELEASE — Chipless, Datacenterless AI · SynthOBS RSI validation |
 | [`/interfaces/press-releases.html`](/interfaces/press-releases.html) | Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9 |
 | [`/interfaces/prime-vault-chat.html`](/interfaces/prime-vault-chat.html) | Prime Vault Chat · SS Vibelandia |
-| [`/interfaces/prime-vault-demos.html`](/interfaces/prime-vault-demos.html) | Demonstrations · Holographic Magnetic Goldilocks SuperAI · SS Vibelandia |
+| [`/interfaces/prime-vault-demos.html`](/interfaces/prime-vault-demos.html) | Demonstrations · Holographic Magnetic Goldilocks Super Intelligence · SS Vibelandia |
 | [`/interfaces/prime-vault-race.html`](/interfaces/prime-vault-race.html) | Prime-Vault Race · Results · SS Vibelandia |
 | [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Ship Map · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
@@ -570,7 +570,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/synthio.html`](/interfaces/synthio.html) | Synthio · Syntheverse Sandbox |
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
-| [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Holographic Goldilocks SuperAI Frontiersmen |
+| [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Holographic Goldilocks Super Intelligence Frontiersmen |
 | [`/interfaces/what-it-means-to-be-frontier.html`](/interfaces/what-it-means-to-be-frontier.html) | What It Means to Be Frontier · Trail + self-test + Where Am I · SS Vibelandia |
 | [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) | Reading Room · SS Vibelandia |
 | [`/interfaces/whitepaper-surface.html`](/interfaces/whitepaper-surface.html) | Reader · SS Vibelandia |

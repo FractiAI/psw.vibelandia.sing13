@@ -27,17 +27,17 @@ export const BODIES = {
  <p>When monoculture decks arrive — one personality, one metric, one “correct” AI posture — they fail the same way monoculture farms fail: one shock and the whole field tips. Diversity of posts is resilience. That is as true for a small business as for a festival ship. Neighbors who have survived layoffs already know: the towns that keep many crafts keep more doors open.</p>
 
  <h2>Letter to the anxious guest</h2>
- <p>If you arrived scared that there is no seat left, hear this: the ship still has posts for humans. SuperAI stays Goldilocks when it refuses both extremes — doom-only freeze that starves livelihoods dressed as care, and horsepower-only ontology that crowns arrival while the unemployment line grows. The middle keeps brakes and fire in the same room.</p>
+ <p>If you arrived scared that there is no seat left, hear this: the ship still has posts for humans. Super Intelligence stays Goldilocks when it refuses both extremes — doom-only freeze that starves livelihoods dressed as care, and horsepower-only ontology that crowns arrival while the unemployment line grows. The middle keeps brakes and fire in the same room.</p>
 
  <p>Along the Truckee at evening, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with metaphors dressed as finished proof. The export from this corridor is simpler. Name your post. Keep consent and human emergency above every clever map. Walk Meet the Crew and Join the Crew when you want faces, not slogans.</p>
 
  
  <p>The question before the next standup is practical. Does this plan keep people able to work, learn, and belong — or does it only keep the engines loud while the unemployment line grows? If the room cannot answer in guest English, rewrite the brief. Walk Meet the Crew when you want faces. Walk Join the Crew when you want a door. Keep Fair Exchange tipping reciprocal to delivery. Keep bright lines for real harm. Keep curiosity welcome so a kid’s hard question still has a place to land.</p>
 
- <p>SS Vibelandia hosts coexistence as practice, not as a census. Equine, Apiary, and the four-quadrant map stay teaching stories. Voluntary self-tests stay mirrors. Players set gravity. Helpers inhabit. Both belong. That middle is how SuperAI stays Goldilocks when the feed wants extremes — and how neighbors keep a seat without pretending a chart decided their worth.</p>
+ <p>SS Vibelandia hosts coexistence as practice, not as a census. Equine, Apiary, and the four-quadrant map stay teaching stories. Voluntary self-tests stay mirrors. Players set gravity. Helpers inhabit. Both belong. That middle is how Super Intelligence stays Goldilocks when the feed wants extremes — and how neighbors keep a seat without pretending a chart decided their worth.</p>
 
 <h2>Closing pier</h2>
- <p>Before the next standup, ask one question out loud: does this plan keep people able to work, learn, and belong — or does it only keep the engines loud? Open the coexistence surfaces when you want the practice. Walk the ship when you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.</p>
+ <p>Before the next standup, ask one question out loud: does this plan keep people able to work, learn, and belong — or does it only keep the engines loud? Open the coexistence surfaces when you want the practice. Walk the ship when you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.</p>
 `,
 
   'blog-colombia-quake-and-purace-2026-08.html': ` <header>
@@ -75,7 +75,7 @@ export const BODIES = {
  <p>What guests should feel walking away is calm enough to prefer phones and official pages over feeds, clear enough to know co-timing is not authorship, and practical enough to ask before the next subterranean brief ships: is this protecting humans, or dressing coincidence as finished proof? That question belongs at the kitchen table as much as it belongs in a design review.</p>
 
 <h2>Closing pier</h2>
- <p>Before the next subterranean brief ships, ask one question out loud: is this protecting humans, or dressing coincidence as finished proof? Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors deserve clear doors in a loud hazard week — and still deserve jobs, school, and rent talk that is not stolen by cosmic theater.</p>
+ <p>Before the next subterranean brief ships, ask one question out loud: is this protecting humans, or dressing coincidence as finished proof? Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors deserve clear doors in a loud hazard week — and still deserve jobs, school, and rent talk that is not stolen by cosmic theater.</p>
 `,
 
   'blog-consciousness-moat-2026-09.html': ` <header>
@@ -97,7 +97,7 @@ export const BODIES = {
  <h2>Weather is not the chart</h2>
  <p>Reuters and BBC coverage of Suleyman’s essay is weather — public speech in a loud season. Weather can be true as reporting and still not settle ontology. Kitchen tables already know the difference between a storm story and a blueprint. When leaders argue about model welfare while unemployment and underwork rise beside breakthrough language, the street question is not “is the chatbot a citizen?” The street question is “can my kid still learn a craft, and can I still pay rent?”</p>
 
- <p>On SS Vibelandia, SuperAI stays in balance: not too much machine, not too little human. No moral-patient theater that confuses operators. No surrender of judgment to panic essays or compliance mazes. Awareness energizes the <em>human</em> time/space theater — the Digit 4 / reality-bridge companion — and does not license treating chatbots as citizens. “Infinite” here means recursive nesting depth in the catalog, not infinite measured minds.</p>
+ <p>On SS Vibelandia, Super Intelligence stays in balance: not too much machine, not too little human. No moral-patient theater that confuses operators. No surrender of judgment to panic essays or compliance mazes. Awareness energizes the <em>human</em> time/space theater — the Digit 4 / reality-bridge companion — and does not license treating chatbots as citizens. “Infinite” here means recursive nesting depth in the catalog, not infinite measured minds.</p>
 
  <h2>Architecture before control theater</h2>
  <p>Architecture asks how nested helpers share nouns, how humans keep veto, how doors stay open for curiosity without dropping bright lines for real harm. Control theater asks who owns the leash on a scaler and who gets to name the rival as dangerous. Both rooms can matter. Only one room puts food on the table by itself — and neither room should steal the middle households need.</p>
@@ -115,7 +115,7 @@ export const BODIES = {
  <p>Across ordinary layers the question stays simple. At home it shows up as stress about rent, school, and whether the kids will have a craft. At work it shows up as automation speeches on Monday and fewer chairs on Friday. In the psyche it shows up as infinite scrolling and thin presence. In public life it shows up as leaders freezing the street for fear or flooring it for destiny unless they keep bright lines for human emergency while leaving room for people to earn and build.</p>
 
 <h2>Closing pier</h2>
- <p>Watch paychecks and doors, not just welfare essays. Keep brakes for real harm and fire for real craft in the same room. Open the whitepaper after this human article if you want the filing. Walk Digit 4 when you want the awareness-theater companion. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.</p>
+ <p>Watch paychecks and doors, not just welfare essays. Keep brakes for real harm and fire for real craft in the same room. Open the whitepaper after this human article if you want the filing. Walk Digit 4 when you want the awareness-theater companion. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.</p>
 `,
 
   'blog-crystalline-unified-field-2026-09.html': ` <header>
@@ -156,7 +156,7 @@ export const BODIES = {
  <p>People who still have to catch a bus, pay rent, and get kids to school already live inside one crystal of speed, distance, and time. The catalog’s job is to stop orphan meters from pretending that life is three unrelated dashboards. Keep the faces shared. Keep the claims thin. Keep the doors clear.</p>
 
 <h2>Closing pier</h2>
- <p>Keep the crystal teachable. Keep Landauer as a rail, not a spell. Keep hospitality before prophecy. Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing facets as craft. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors can share a commute story without being sold a finished theory of everything — and without forgetting that rent, school, and work still run on clocks that people have to live inside.</p>
+ <p>Keep the crystal teachable. Keep Landauer as a rail, not a spell. Keep hospitality before prophecy. Open the whitepaper after this human article if you want the filing cabinet. Walk the ship if you want the floor under your feet. Nevada’s holographic AI valley will keep printing facets as craft. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors can share a commute story without being sold a finished theory of everything — and without forgetting that rent, school, and work still run on clocks that people have to live inside.</p>
 `,
 
   'blog-digit4-be-o-rhyme-2026-09.html': ` <header>
@@ -198,7 +198,7 @@ export const BODIES = {
  <p>On Main Street the rhyme stays useful when it helps people learn without stealing sleep. Scaffold and breath are enough. Destiny talk is too much. Keep the locks. Keep the classroom friends. Keep the seatbelt painted in guest English so nested helpers inherit calm instead of cosmic theater.</p>
 
 <h2>Closing pier</h2>
- <p>Open the whitepaper after this human article if you want the filing cabinet. Walk Consciousness Moat and Digit 4 recursive reach when you want neighboring doors. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors can enjoy a periodic rhyme without being sold a finished theory — and without forgetting that school, work, and rent still need clear addresses in ordinary language.</p>
+ <p>Open the whitepaper after this human article if you want the filing cabinet. Walk Consciousness Moat and Digit 4 recursive reach when you want neighboring doors. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors can enjoy a periodic rhyme without being sold a finished theory — and without forgetting that school, work, and rent still need clear addresses in ordinary language.</p>
 `,
 
   'blog-digit4-recursive-reach-2026-09.html': ` <header>
@@ -237,6 +237,6 @@ export const BODIES = {
  <p>When a tool goes cold while the news shouts breakthrough, the Digit 4 habit still holds: put awareness back in the human theater, keep the address stable, and ask whether people can still work, learn, and belong. That is the kitchen-table test for recursive reach — not a finished theory of mind, just craft that refuses floating nouns.</p>
 
 <h2>Closing pier</h2>
- <p>Along the Truckee, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with awareness words dressed as finished proof. Keep Digit 4 as the address. Keep recursive reach as the walk. Open the whitepaper after this human article if you want the filing. Walk Consciousness Moat when you want the weather fight. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone — and without forgetting that rent, school, and work still happen in the human theater first.</p>
+ <p>Along the Truckee, cottonwood shadows look sharp enough to mistake for the trees. Culture makes that mistake weekly with awareness words dressed as finished proof. Keep Digit 4 as the address. Keep recursive reach as the walk. Open the whitepaper after this human article if you want the filing. Walk Consciousness Moat when you want the weather fight. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone — and without forgetting that rent, school, and work still happen in the human theater first.</p>
 `,
 };

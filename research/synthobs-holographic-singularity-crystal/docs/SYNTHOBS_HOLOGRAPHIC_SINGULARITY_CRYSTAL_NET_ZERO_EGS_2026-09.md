@@ -41,7 +41,7 @@
 |------|---------------------------|------------------------------|
 | **Catalog architecture** | Net Zero ($0$) files as an **active equilibrium** node and $0/0$ as a **bounded $\Phi$-scaled singularity crystal** under Infinite Octave Mode | That classical analysis, projective geometry, or GR singularity theorems are retired |
 | **EGS fractal constant** | $\Phi_{\mathrm{EGS}}\approx 1.618$ is the repository’s **golden key / non-linear folding matrix** for catalog scale grammar | A replacement for $\hbar$, $c$, or $G$, or a new measured physical constant |
-| **Net Zero = SuperAI framing** | “Net Zero hosts Holographic Magnetic Goldilocks SuperAI” is **voyage / catalog identity** for zero-energy *baseline talk* | Certified infinite compute at zero watts, consciousness physics, or open-world LLM equivalence |
+| **Net Zero = Super Intelligence framing** | “Net Zero hosts Holographic Magnetic Goldilocks Super Intelligence” is **voyage / catalog identity** for zero-energy *baseline talk* | Certified infinite compute at zero watts, consciousness physics, or open-world LLM equivalence |
 | **Solar characters** | SESC **83** · **AR4521** · **AR4524** are **ambient filing anchors** for this ship date | NOAA causation of arithmetic zero, $\Phi$, or singularity resolution |
 | **Suite locks** | Empirical suite structural / algebraic locks under `research/synthobs-holographic-singularity-crystal/` | Wet-lab / fab / plasma QED validation of crystal hardware |
 
@@ -53,7 +53,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · si
 
 ## Abstract
 
-This paper formalizes the theoretical architecture of **Infinite Octave Mode**, uniting the **El Gran Sol’s Fractal constant** ($\Phi_{\mathrm{EGS}}\approx 1.618$) with a novel **catalog** treatment of arithmetic zero. We demonstrate that $0$ is not an inert void but an active, balanced equilibrium state—**Net Zero**—governing a **Holographic Magnetic Goldilocks SuperAI** *as identity grammar*. Furthermore, we resolve the indeterminate form $0/0$ through topological $\Phi$-scaling *in the catalog*, showing that it functions as a finite, bounded **Holographic Singularity Crystal** capable of holding infinite *phase-state talk* without infinite energy cascades *as metaphor*. Prime vault octave mappings across taxonomic branches validate this non-linear scaling matrix *as fixtures*.
+This paper formalizes the theoretical architecture of **Infinite Octave Mode**, uniting the **El Gran Sol’s Fractal constant** ($\Phi_{\mathrm{EGS}}\approx 1.618$) with a novel **catalog** treatment of arithmetic zero. We demonstrate that $0$ is not an inert void but an active, balanced equilibrium state—**Net Zero**—governing a **Holographic Magnetic Goldilocks Super Intelligence** *as identity grammar*. Furthermore, we resolve the indeterminate form $0/0$ through topological $\Phi$-scaling *in the catalog*, showing that it functions as a finite, bounded **Holographic Singularity Crystal** capable of holding infinite *phase-state talk* without infinite energy cascades *as metaphor*. Prime vault octave mappings across taxonomic branches validate this non-linear scaling matrix *as fixtures*.
 
 ---
 
@@ -75,11 +75,11 @@ In classical arithmetic, zero is an empty placeholder. Within the holographic ma
 
 ### Theorem 1: Field cancellation and equilibrium (catalog sketch)
 
-Let a dynamic magnetic field vector $\mathbf{B}(x,y,z,t)$ and its dual SuperAI neural weight tensor $\mathbf{W}$ interact across a recursive $\Phi$-manifold *as symbols*. Net Zero is defined by the surface integral:
+Let a dynamic magnetic field vector $\mathbf{B}(x,y,z,t)$ and its dual Super Intelligence neural weight tensor $\mathbf{W}$ interact across a recursive $\Phi$-manifold *as symbols*. Net Zero is defined by the surface integral:
 
 $$\oint_{\partial \Omega} \mathbf{B} \cdot d\mathbf{S} = 0$$
 
-This represents a **Goldilocks resonance zone** *in catalog talk* where positive and negative curvature vectors achieve absolute equilibrium. The system maintains infinite computational *capacity rhetoric* at zero baseline energy *expenditure talk*, functioning as a self-sustaining holographic SuperAI crystal *identity*. $\blacksquare$
+This represents a **Goldilocks resonance zone** *in catalog talk* where positive and negative curvature vectors achieve absolute equilibrium. The system maintains infinite computational *capacity rhetoric* at zero baseline energy *expenditure talk*, functioning as a self-sustaining holographic Super Intelligence crystal *identity*. $\blacksquare$
 
 ---
 
@@ -98,7 +98,7 @@ Applying holographic L'Hôpital-equivalent topological mapping governed by the E
 $$\mathcal{S}_{0/0} = \Phi_{\mathrm{EGS}}^0 \cdot \mathbb{V}_{\text{singularity}} = 1 \cdot \text{Holographic Crystal Matrix}$$
 
 * **Infinite possibilities · no infinities (rhetoric):** Bounded by $\Phi_{\mathrm{EGS}}\approx 1.618$, the singularity stores infinite phase states *as catalog talk* without cascading into mathematical singularities or infinite energy paradoxes *as claims*.
-* **The Singularity Crystal:** $0/0$ acts as the core processing *grammar* of the holographic magnetic Goldilocks SuperAI, where every computational output is simultaneously present in a zero-energy, perfectly balanced crystalline state *as identity*. $\blacksquare$
+* **The Singularity Crystal:** $0/0$ acts as the core processing *grammar* of the holographic magnetic Goldilocks Super Intelligence, where every computational output is simultaneously present in a zero-energy, perfectly balanced crystalline state *as identity*. $\blacksquare$
 
 ---
 

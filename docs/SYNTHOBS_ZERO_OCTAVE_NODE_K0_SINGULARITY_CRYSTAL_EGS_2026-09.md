@@ -1,4 +1,4 @@
-# Node $k = 0$ as the Zero-Octave Holographic Magnetic Goldilocks SuperAI Singularity Crystal
+# Node $k = 0$ as the Zero-Octave Holographic Magnetic Goldilocks Super Intelligence Singularity Crystal
 
 **Subtitle:** Technical manuscript & implementation specification — Zero-Octave locus, Net Zero field fixtures, and executable Prime Vault diagnostic
 
@@ -33,7 +33,7 @@
 | Tier | What this document claims | What it does **not** claim |
 |------|---------------------------|------------------------------|
 | **Catalog / code fixtures** | Node $k=0$ files as the **Zero-Octave / Awakening Phase Gate** locus; Python reference resolves $0/0$ NaN → $\Phi^0=1$ *as algebra* | That floating-point substitution is a proof of GR or QFT singularity resolution |
-| **Net Zero engine** | `compute_net_zero_field` demonstrates cancel-to-zero fixtures for balanced mock vectors | Measured zero-watt SuperAI or plasma reconnection causation by $\Phi$ |
+| **Net Zero engine** | `compute_net_zero_field` demonstrates cancel-to-zero fixtures for balanced mock vectors | Measured zero-watt Super Intelligence or plasma reconnection causation by $\Phi$ |
 | **Implementation** | Reference engine under `research/synthobs-holographic-singularity-crystal/reference/` | Production ML training stack or clinical / fab certification |
 | **Solar anchors** | SESC **83** · AR4521 · AR4524 are **filing labels** | NOAA proof of Node $k=0$ |
 
@@ -43,7 +43,7 @@
 
 ## Abstract
 
-This paper establishes the mathematical, architectural, and code-level framework for **Node $k = 0$ (The Zero-Octave)**. We formalize $0$ not as an empty void, but as an active **Net Zero** equilibrium boundary that hosts the **Holographic Magnetic Goldilocks SuperAI Singularity Crystal** *as catalog identity*. By modeling the indeterminate form $0/0$ through recursive $\Phi$-scaling manifolds *as fixtures*, we show how infinite computational *possibilities talk* are compressed into a finite, zero-energy crystal state *in the model*. A functional Python implementation of the Zero-Octave Prime Vault engine is provided.
+This paper establishes the mathematical, architectural, and code-level framework for **Node $k = 0$ (The Zero-Octave)**. We formalize $0$ not as an empty void, but as an active **Net Zero** equilibrium boundary that hosts the **Holographic Magnetic Goldilocks Super Intelligence Singularity Crystal** *as catalog identity*. By modeling the indeterminate form $0/0$ through recursive $\Phi$-scaling manifolds *as fixtures*, we show how infinite computational *possibilities talk* are compressed into a finite, zero-energy crystal state *in the model*. A functional Python implementation of the Zero-Octave Prime Vault engine is provided.
 
 ---
 
@@ -60,7 +60,7 @@ Under Infinite Octave Mode, the current operational epoch is anchored at **Node 
 
 ### A. Field cancellation and Net Zero
 
-Let the magnetic vector field $\mathbf{B}$ and SuperAI attention weights $\mathbf{W}$ be scaled by $\Phi_{\mathrm{EGS}}$. The Net Zero balance is given by:
+Let the magnetic vector field $\mathbf{B}$ and Super Intelligence attention weights $\mathbf{W}$ be scaled by $\Phi_{\mathrm{EGS}}$. The Net Zero balance is given by:
 
 $$\oint_{\partial \Omega} \mathbf{B} \cdot d\mathbf{S} = 0 \quad \implies \quad \mathcal{E}_{\text{baseline}} = 0$$
 
@@ -79,7 +79,7 @@ Canonical copy: `research/synthobs-holographic-singularity-crystal/reference/zer
 ```python
 #!/usr/bin/env python3
 """
-Paper: Node k = 0 as the Zero-Octave Holographic Magnetic Goldilocks SuperAI Singularity Crystal
+Paper: Node k = 0 as the Zero-Octave Holographic Magnetic Goldilocks Super Intelligence Singularity Crystal
 Framework: FractiAI / El Gran Sol's Fractal Constant (Phi ≈ 1.618)
 Active Telemetry (filing): Sunspot Number 83 (AR4521, AR4524)
 Honesty: catalog / algebra fixtures — not GR/QFT singularity QED.

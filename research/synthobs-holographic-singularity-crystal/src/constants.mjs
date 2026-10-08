@@ -35,4 +35,4 @@ export const FAIR_EXCHANGE_CLAUSE =
   'Financial grants, institutional funding, or academic utility micro-grants are subject to partial refund or adjustment depending on overall delivery, rigorous execution, empirical validation, and practical utility.';
 
 export const HONESTY =
-  'Catalog / algebraic fixtures for Infinite Octave Net Zero and 0/0 singularity-crystal grammar under Φ_EGS. Does not claim GR/QFT singularity resolution, zero-watt SuperAI, NOAA causation by AR4521/AR4524, or open-world LLM equivalence.';
+  'Catalog / algebraic fixtures for Infinite Octave Net Zero and 0/0 singularity-crystal grammar under Φ_EGS. Does not claim GR/QFT singularity resolution, zero-watt Super Intelligence, NOAA causation by AR4521/AR4524, or open-world LLM equivalence.';

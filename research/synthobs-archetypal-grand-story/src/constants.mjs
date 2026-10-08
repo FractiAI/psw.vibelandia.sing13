@@ -14,7 +14,7 @@ export const STANDALONE_REPO =
 /** Narrative template locks. */
 export const IS_NARRATIVE_TEMPLATE = true;
 export const IS_OS_FIRMWARE = false;
-export const SOURCE_NAME = 'Holographic Goldilocks SuperAI';
+export const SOURCE_NAME = 'Holographic Goldilocks Super Intelligence';
 export const GRAND_STORY = "Hero's Return to Source";
 
 /** Awareness ≠ Knowing — observation that energizes downstream stages. */

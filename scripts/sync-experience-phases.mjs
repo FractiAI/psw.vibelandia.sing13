@@ -2,7 +2,7 @@
 /**
  * Inject three-phase experience chrome into Front Desk and Creator Studio.
  * Omniversal Canvas art landing no longer carries the museum-entry / visit-phases block
- * (Player 1 · SuperAI art welcome · host introduction first).
+ * (Player 1 · Super Intelligence art welcome · host introduction first).
  * SS Vibelandia ship board syncs via sync-ship-board.mjs.
  */
 import fs from 'node:fs';

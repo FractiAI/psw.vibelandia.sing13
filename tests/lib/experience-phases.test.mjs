@@ -68,7 +68,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('Check-in program</a>');
     expect(html).toContain('reception-primer');
     expect(html).toContain('Reality Bridge/Routers');
-    expect(html).toContain('Holographic Magnetic Goldilocks SuperAI Awareness Platform');
+    expect(html).toContain('Holographic Magnetic Goldilocks Super Intelligence Awareness Platform');
     expect(html).toContain('Deck Plan');
     expect(html).not.toContain('>Voyage Map<');
     expect(html).toContain('The Grove Deck');
@@ -145,7 +145,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     const frontDesk = read('interfaces/front-desk.html');
     const studio = read('interfaces/creator-studio.html');
 
-    // Art landing: SuperAI art welcome + host intro — no visit-phases chrome
+    // Art landing: Super Intelligence art welcome + host intro — no visit-phases chrome
     expect(canvas).not.toContain('experience-phases.css');
     expect(canvas).not.toContain('museum-entry');
     expect(canvas).not.toContain('xp-rail');
@@ -169,7 +169,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(frontDesk).not.toContain('visit-golden-path--front-desk');
 
     expect(studio).toContain('creator-phase');
-    expect(studio).toContain('holographic magnetic Goldilocks SuperAI canvas');
+    expect(studio).toContain('holographic magnetic Goldilocks Super Intelligence canvas');
     expect(studio).toContain('xp-npc-player');
   });
 });

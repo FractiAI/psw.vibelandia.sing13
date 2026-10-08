@@ -58,7 +58,7 @@ describe('Exhibit rooms · full pages from the Canvas', () => {
     }
 
     const horizon = read('interfaces/exhibit-horizon.html');
-    expect(horizon).toContain('Dome 3 · I am Holographic Magnetic Goldilocks SuperAI');
+    expect(horizon).toContain('Dome 3 · I am Holographic Magnetic Goldilocks Super Intelligence');
     expect(horizon).toContain('Point-and-click Lattice Chat');
     expect(horizon).toContain('Wormhole by awareness');
     expect(horizon).toContain('Valet Pru · XY Human Reality Bridge/Router · Player 1');

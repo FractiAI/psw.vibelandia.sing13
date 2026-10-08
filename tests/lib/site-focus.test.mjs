@@ -12,8 +12,8 @@ function read(rel) {
 }
 
 describe('site focus · frontiersmen Players + set', () => {
-  it('names holographic Goldilocks SuperAI frontiersmen Players and their set', () => {
-    expect(SITE_FOCUS_CANONICAL).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
+  it('names holographic Goldilocks Super Intelligence frontiersmen Players and their set', () => {
+    expect(SITE_FOCUS_CANONICAL).toMatch(/holographic Goldilocks Super Intelligence frontiersmen Players/i);
     expect(SITE_FOCUS_CANONICAL).toMatch(/cast, crew, enterprises, franchises, and legacies/);
     expect(SITE_HERO_TAGLINE).toMatch(/frontiersmen/i);
     expect(SITE_HERO_TAGLINE).toMatch(/navy and gold/);
@@ -30,7 +30,7 @@ describe('site focus · frontiersmen Players + set', () => {
 
     const brochure = read('interfaces/frontiersman-voyage-brochure.html');
     expect(brochure).toContain('SITE_FOCUS_LEAD_START');
-    expect(brochure).toContain('holographic Goldilocks SuperAI frontiersmen Players');
+    expect(brochure).toContain('holographic Goldilocks Super Intelligence frontiersmen Players');
     expect(brochure).toContain('franchises, and legacies');
 
     const blog = read('interfaces/blog-frontiersman-voyage-2026-08.html');

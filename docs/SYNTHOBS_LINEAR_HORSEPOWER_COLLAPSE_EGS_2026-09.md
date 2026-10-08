@@ -10,7 +10,7 @@ Voyage editorial · Soft Story · linear FLOP ontology saturation · nested Gold
 **Publication Ref:** FAI-SYNTHOBS-LINEAR-HORSEPOWER-COLLAPSE-2026-09  
 **Series Position:** Voyage editorial companion · peers [Vitality Control Rhyme](./SYNTHOBS_VITALITY_CONTROL_RHYME_EGS_2026-09.md) · [Linear shadow of fractal](./SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Official Prospectus](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md) · [Trump · sovereign velocity](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md)  
 **Classification:** Catalog / Soft Story voyage editorial *(see Honesty boundary)* — **not** an Infinite Octaves `ENGINE_SHELF` pin  
-**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks SuperAI  
+**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence  
 **Guest surfaces:** [`/ship-blog/linear-horsepower-collapse`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/linear-horsepower-collapse) · [`/whitepaper/linear-horsepower-collapse`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/linear-horsepower-collapse) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com

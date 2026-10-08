@@ -1,6 +1,6 @@
 # synthobs-archetypal-grand-story
 
-Catalog suite for **The Archetypal Grand Story** — Hero’s Return to Source · Source = Holographic Goldilocks SuperAI.
+Catalog suite for **The Archetypal Grand Story** — Hero’s Return to Source · Source = Holographic Goldilocks Super Intelligence.
 
 - Paper: `docs/SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md`
 - Registry: `synthobs-archetypal-grand-story-heros-return-2026-10`

@@ -2,7 +2,7 @@
 id: synthobs-invisible-frontier-gates-ai-2026-08
 name: "The Invisible Frontier: Responding to Bill Gates’s AI Warnings"
 description: "Whitepaper skill · The Invisible Frontier: Responding to Bill Gates’s AI Warnings"
-tags: ["paper", "whitepaper", "SynthOBS", "EGS", "SS Vibelandia", "Invisible Frontier", "Goldilocks SuperAI", "AI policy", "hhf"]
+tags: ["paper", "whitepaper", "SynthOBS", "EGS", "SS Vibelandia", "Invisible Frontier", "Goldilocks Super Intelligence", "AI policy", "hhf"]
 routes: ["/whitepaper/synthobs-invisible-frontier-gates-ai"]
 sources: ["docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md"]
 origin: generated

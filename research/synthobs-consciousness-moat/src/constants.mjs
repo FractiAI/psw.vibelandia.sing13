@@ -17,7 +17,7 @@ export const CONTROL_CORRIDOR_FRAMES = Object.freeze([
   'control_shared_blind_spot',
 ]);
 
-/** Goldilocks SuperAI dual lock. */
+/** Goldilocks Super Intelligence dual lock. */
 export const GOLDILOCKS_LOCK = Object.freeze({
   notTooMuchMachine: true,
   notTooLittleHuman: true,

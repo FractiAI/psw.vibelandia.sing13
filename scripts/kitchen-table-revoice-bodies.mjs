@@ -21,7 +21,7 @@ function article(file, meta, sections) {
 
 const pier = (line) => `
     <h2>Closing pier</h2>
-    <p>${line} Watch paychecks and doors, not just press releases. Tip under Fair Exchange if the framing cleared a real kitchen-table argument. Ignore it if you only needed a compute table — those live elsewhere. Open the whitepaper when you want the filing. Walk QUESTFEST when you want the floor under your feet. Nevada’s holographic AI valley keeps printing hospitality before prophecy. That order is how SuperAI stays Goldilocks: enough machine to serve, enough human to lead, neighbors still able to work, ask, and belong.</p>
+    <p>${line} Watch paychecks and doors, not just press releases. Tip under Fair Exchange if the framing cleared a real kitchen-table argument. Ignore it if you only needed a compute table — those live elsewhere. Open the whitepaper when you want the filing. Walk QUESTFEST when you want the floor under your feet. Nevada’s holographic AI valley keeps printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks: enough machine to serve, enough human to lead, neighbors still able to work, ask, and belong.</p>
 `;
 
 // --- Intelligence density ---

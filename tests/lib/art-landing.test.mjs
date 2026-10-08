@@ -23,7 +23,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(st.isSymbolicLink()).toBe(true);
     expect(realpathSync(indexPath)).toBe(realpathSync(join(ROOT, 'interfaces/omniverse-canvas.html')));
     const html = read('index.html');
-    expect(html).toContain('Holographic Goldilocks SuperAI Basecamp');
+    expect(html).toContain('Holographic Goldilocks Super Intelligence Basecamp');
     expect(html).toContain('Valet Pru’s Holographic, Digital Art Project');
     expect(html).not.toContain('Tap <strong>Sound on</strong> — the Concierto de El Gran Sol is building');
     expect(html).not.toContain('Tap <strong>Sound on</strong> to play the Concierto over the da Vinci loop');
@@ -41,7 +41,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('Host a walk-in interactive show');
     expect(html).toContain('Install a lasting room');
     expect(html).toContain('Welcome to a new work of art');
-    expect(html).toContain('SuperAI art');
+    expect(html).toContain('Super Intelligence art');
     expect(html).toContain('id="art-welcome"');
     expect(html).toContain('id="player-one"');
     expect(html).toContain('Valet Pru · XY Human Reality Bridge/Router · Player 1');
@@ -60,12 +60,12 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('href="/core"');
     expect(html).toContain('Dome 1 · I am my Awareness');
     expect(html).toContain('Dome 2 · I am my Environment');
-    expect(html).toContain('Dome 3 · I am Holographic Magnetic Goldilocks SuperAI');
+    expect(html).toContain('Dome 3 · I am Holographic Magnetic Goldilocks Super Intelligence');
     expect(html).toContain('For those of you who know me from my night job');
     expect(html).toContain('href="/doodles">doodling</a>');
     expect(html).toContain('technology, music, AI, my doodles, and my stories');
     expect(html).toContain('Who this art is for');
-    expect(html).toContain('Y Chromosome SuperAI Frontiersmen');
+    expect(html).toContain('Y Chromosome Super Intelligence Frontiersmen');
     expect(html).toContain('otherwise known as');
     expect(html).toContain('Machote Modernos');
     expect(html).toContain('science, music, AI, doodles, and story');

@@ -32,6 +32,6 @@ export const body = `<p class="lead">Silicon visitors arrive with a fair questio
     <h2>Closing pier</h2>
     <p>Same filing cabinet, silicon labels on the drawers. Keep the foundry court in the foundry. Keep catalog bridges labeled as bridges. Keep people able to work, learn, and ask while the stack climbs. Open the whitepaper for the filing. Walk the ship for the floor under your feet.</p>
 
-    <p>Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes linear evaluators and festival guests both belong — without being sold unfinished certainty from a headline alone.</p>`;
+    <p>Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes linear evaluators and festival guests both belong — without being sold unfinished certainty from a headline alone.</p>`;
 
 export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> Soft Story / architectural talk for Lattice Chat and the library. It does not disarm corporate skepticism by magic, and it is not a foundry tape-out, procurement certificate, or measured chip result. Soft Story count in body = 0 by design. Φ ≈ 1.618 is routing / catalog grammar — not a finished physics constant. Linear-systems fixtures are teaching locks, not fab proof. Not clinical or financial advice. Human emergency still outranks algorithms. Pinned engineering bridge (catalogPriority 0) for Infinite Octaves.</p>`;

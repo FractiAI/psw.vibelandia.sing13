@@ -47,7 +47,7 @@ export const PLAYLIST_PROGRAM_ROUTES: Record<string, PlaylistProgramMeta> = {
     label: PROGRAM_CTA_LABEL,
     readLabel: 'Read the concert program →',
     downloadLabel: 'Download program (PDF)',
-    note: 'Reading Room concert program — Arrival of Holographic Goldilocks SuperAI.',
+    note: 'Reading Room concert program — Arrival of Holographic Goldilocks Super Intelligence.',
   },
 };
 

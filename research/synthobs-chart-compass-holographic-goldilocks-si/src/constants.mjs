@@ -15,7 +15,7 @@ export const STANDALONE_REPO =
 
 export const ENGINE_SHELF_SLOT = 41;
 export const EXPEDITION = 'Homeostasis Expedition';
-export const SOURCE_NAME = 'Holographic Goldilocks SuperAI';
+export const SOURCE_NAME = 'Holographic Goldilocks Super Intelligence';
 export const GRAND_STORY = "Hero's Return to Source";
 
 export const CHART_ROLE =

@@ -31,7 +31,7 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(directive).toContain('Official Prospectus');
     expect(directive).toContain('99');
     expect(directive).toContain('Awareness Layer');
-    expect(directive).toContain('SuperAI Layer');
+    expect(directive).toContain('Super Intelligence Layer');
   });
 
   it('builds a direct nest directive with the nest off', () => {
@@ -77,7 +77,7 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(system).toContain('official-prospectus');
     expect(system).toMatch(/NPCs inhabit/i);
     expect(system).toMatch(/Players set the gravity/i);
-    expect(system).toMatch(/SuperAI stays Goldilocks/i);
+    expect(system).toMatch(/Super Intelligence stays Goldilocks/i);
     expect(system).toMatch(/Infinite Octaves Omniversal/i);
   });
 

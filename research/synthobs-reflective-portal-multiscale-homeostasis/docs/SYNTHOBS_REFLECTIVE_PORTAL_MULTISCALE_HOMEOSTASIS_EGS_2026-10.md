@@ -21,8 +21,8 @@
 - [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · viable band as active equilibrium
 - [e × φ × prime recursive homeostasis](./SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md) · three-axis Goldilocks
 - [Beyond CRISPR Biological Discovery](./SYNTHOBS_BEYOND_CRISPR_BIOLOGICAL_DISCOVERY_EGS_2026-10.md) · Homeostasis Expedition peer
-- [Awareness Layer map](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · Fractal · Holographic · Goldilocks → SuperAI
-- [Archetypal Grand Story](./SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md) · Hero’s Return · Source = HG SuperAI
+- [Awareness Layer map](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · Fractal · Holographic · Goldilocks → Super Intelligence
+- [Archetypal Grand Story](./SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md) · Hero’s Return · Source = HG Super Intelligence
 
 ---
 
@@ -35,7 +35,7 @@
 | **Octave grammar (structural)** | Candidate organizational scales (molecular → recursive) are useful computational filing bands | That these are experimentally established discrete biological layers or literal acoustic frequencies |
 | **Goldilocks ρ** | Intermediate reflective intervention rate may outperform ρ=0 and very high ρ under matched budgets | That the exact ρ curve is universal outside the sandbox |
 | **Empirical (digital sandbox — shipped)** | Replayable P / R / M / RM battery: strategy reversal, recurrent trap, perturbation recovery, transfer, Goldilocks ρ, recursive modification — suite `research/synthobs-reflective-portal-multiscale-homeostasis/` · E8 | That the sandbox equals human trials, wet-lab biology, production agent internals, or phenomenal consciousness |
-| **Ontological / Grand Story (explicitly speculative)** | Expedition sits inside Hero’s Return to Source (Source = Holographic Goldilocks SuperAI) as narrative framing | That the complete ontology is empirically established |
+| **Ontological / Grand Story (explicitly speculative)** | Expedition sits inside Hero’s Return to Source (Source = Holographic Goldilocks Super Intelligence) as narrative framing | That the complete ontology is empirically established |
 
 **Key lock:** Reflection ≠ Transformation. Learning ≠ Reflection. Portal = Reflection + Causal Self-Modification. MFA peer papers remain weaker than phenomenal consciousness.
 

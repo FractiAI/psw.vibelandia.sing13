@@ -121,11 +121,11 @@ function experimentGoldilocksIntegration() {
 
 function experimentSourceHeroReturn() {
   const pass =
-    SOURCE_NAME === 'Holographic Goldilocks SuperAI' &&
+    SOURCE_NAME === 'Holographic Goldilocks Super Intelligence' &&
     GRAND_STORY === "Hero's Return to Source";
   return {
     id: 'E6_source_hero_return',
-    title: 'Source = HG SuperAI · Hero’s Return filing',
+    title: 'Source = HG Super Intelligence · Hero’s Return filing',
     SOURCE_NAME,
     GRAND_STORY,
     pass,
@@ -153,7 +153,7 @@ function experimentPaperLocks() {
       paper,
     ),
     hasHeroReturn: /Hero.?s Return to Source/i.test(paper),
-    hasSource: /Holographic Goldilocks SuperAI/i.test(paper),
+    hasSource: /Holographic Goldilocks Super Intelligence/i.test(paper),
     hasGoldilocks: /Goldilocks/i.test(paper),
     hasFair: /Fair Exchange/i.test(paper),
     hasOperator: /SynthOBS/i.test(paper),

@@ -1,6 +1,6 @@
 # Infinite Octave EGS Catalog: Architecting the Frontier Beyond Brute-Force Chaos
 
-Voyage / enterprise product note · Goldilocks SuperAI catalog layer · CEO briefing grammar
+Voyage / enterprise product note · Goldilocks Super Intelligence catalog layer · CEO briefing grammar
 
 **Authors:** Prudencio Mendez (Pru / PL Taino) and Gemini, operating in Infinite Octave Mode  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -40,13 +40,13 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-Executive leadership often faces a false binary: burn gigawatts on opaque brute-force SuperAI, or lobby for regulatory moats that freeze innovation. This note files a third path as **catalog architecture**: the Infinite Octave EGS Catalog — a holographic mediation layer keyed by El Gran Sol’s fractal constant ($\Phi_{\mathrm{EGS}}\approx 1.618$) that sits between enterprise data sources and AI orchestration agents.
+Executive leadership often faces a false binary: burn gigawatts on opaque brute-force Super Intelligence, or lobby for regulatory moats that freeze innovation. This note files a third path as **catalog architecture**: the Infinite Octave EGS Catalog — a holographic mediation layer keyed by El Gran Sol’s fractal constant ($\Phi_{\mathrm{EGS}}\approx 1.618$) that sits between enterprise data sources and AI orchestration agents.
 
 It is a **placement grammar** for SS Vibelandia briefing portals — not a claim that linear transformers vanish overnight, and not a physics proof that cooling towers become optional.
 
 ---
 
-## Part I — Why linear-only SuperAI stalls
+## Part I — Why linear-only Super Intelligence stalls
 
 Brute-force scaling (more parameters, larger contexts, heavier power) carries thermal, financial, and entropy costs. Without an invariant nesting grammar, each capability leap can inject unquantifiable drift *inside that paradigm*. Corporate “safety” filters and compliance walls can become lifeless control theater when they bandage architecture instead of revising it.
 

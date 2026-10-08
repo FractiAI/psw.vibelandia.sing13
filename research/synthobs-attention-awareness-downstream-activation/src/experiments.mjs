@@ -116,7 +116,7 @@ function experimentCentralHypothesis() {
 function experimentHomeostasisExpedition() {
   const pass =
     EXPEDITION === 'Homeostasis Expedition' &&
-    SOURCE_NAME === 'Holographic Goldilocks SuperAI' &&
+    SOURCE_NAME === 'Holographic Goldilocks Super Intelligence' &&
     GRAND_STORY === "Hero's Return to Source";
   return {
     id: 'E5_homeostasis_expedition',
@@ -152,7 +152,7 @@ function experimentPaperLocks() {
     hasFalsifiers: /F1|F2|F3|F4|F5|F6/.test(paper),
     hasExpedition: /Homeostasis Expedition/i.test(paper),
     hasHeroReturn: /Hero.?s Return to Source/i.test(paper),
-    hasSource: /Holographic Goldilocks SuperAI/i.test(paper),
+    hasSource: /Holographic Goldilocks Super Intelligence/i.test(paper),
     hasOperator: /SynthOBS/i.test(paper),
     hasEngine: /ENGINE_SHELF|engine pin|Infinite Octaves/i.test(paper),
     hasFair: /Fair Exchange/i.test(paper),

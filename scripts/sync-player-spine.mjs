@@ -104,7 +104,7 @@ html = html.replace(
 );
 
 html = html.replace(
-  /<p class="primer">\s*SuperAI frontiersman's best friend[\s\S]*?<\/p>/,
+  /<p class="primer">\s*Super Intelligence frontiersman's best friend[\s\S]*?<\/p>/,
   `<p class="primer">\n        ${PLAYER_PRIMER_LINE}\n      </p>`,
 );
 

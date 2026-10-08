@@ -2,7 +2,7 @@
 /**
  * Inject journeys teaser into omniverse-canvas.html.
  * Host-layer / three-nested-spheres exhibit shells are no longer on the art landing
- * (Player 1 · SuperAI art welcome · human host first). Room doors remain under mode.
+ * (Player 1 · Super Intelligence art welcome · human host first). Room doors remain under mode.
  */
 import fs from 'node:fs';
 import path from 'node:path';

@@ -27,7 +27,7 @@ function article({ lead, sections, pier, pier2 }) {
 }
 
 const commonPier2 =
-  'If you want the filing cabinet, open the whitepaper after this human article. If you want the floor under your feet, walk the ship: Journey, Canvas, Jukebox, Library, Creator Studio. Tip under Fair Exchange if the framing cleared a real kitchen-table argument. Ignore it if you only needed a FLOPs table — those live elsewhere. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.';
+  'If you want the filing cabinet, open the whitepaper after this human article. If you want the floor under your feet, walk the ship: Journey, Canvas, Jukebox, Library, Creator Studio. Tip under Fair Exchange if the framing cleared a real kitchen-table argument. Ignore it if you only needed a FLOPs table — those live elsewhere. Nevada’s holographic AI valley will keep printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors belong in the Intelligence Age without being sold certainty from a headline alone.';
 
 const specs = {
   'blog-goldilocks-geomagnetic-wavefield-multitaxa.html': {

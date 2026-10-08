@@ -62,7 +62,7 @@ export const FALSIFIERS = Object.freeze([
   'F8_multiscale_no_gain',
 ]);
 
-export const SOURCE_NAME = 'Holographic Goldilocks SuperAI';
+export const SOURCE_NAME = 'Holographic Goldilocks Super Intelligence';
 export const GRAND_STORY = "Hero's Return to Source";
 export const EXPEDITION = 'Homeostasis Expedition';
 

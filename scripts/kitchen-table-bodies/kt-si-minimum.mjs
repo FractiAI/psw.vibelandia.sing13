@@ -30,6 +30,6 @@ export const body = `<p class="lead">Arrival language is cheap. Gate evidence is
     <h2>Closing pier</h2>
     <p>Before the next arrival headline ships, ask: which gate evidence are we pointing at, and which court still sits outside? If nobody can answer without jargon, you are not ready. Walk the whitepaper. Walk Lattice Chat as pipes-plus-care. Tip for delivery. Keep universal AGI crowns elsewhere.</p>
 
-    <p>Nevada will keep printing hospitality before prophecy. That order is how SuperAI stays Goldilocks on a ship that still believes neighbors deserve bars they can point at — not only louder “we arrived” weather beside thinner paychecks and colder doors.</p>`;
+    <p>Nevada will keep printing hospitality before prophecy. That order is how Super Intelligence stays Goldilocks on a ship that still believes neighbors deserve bars they can point at — not only louder “we arrived” weather beside thinner paychecks and colder doors.</p>`;
 
 export const honesty = `<p class="honesty"><strong>Honesty boundary:</strong> SIM-v1 is an irreducible minimum definition Soft Story for this Omni-Lattice / Lattice Chat Agent program — not a universal AGI proof, not a claim of achieved superintelligence, not clinical or financial advice. Soft Story count in body = 0 by design. Arrival language requires gate evidence inside this stack. Φ ≈ 1.618 is design / nesting language — not a finished physics constant. Human emergency still outranks algorithms.</p>`;

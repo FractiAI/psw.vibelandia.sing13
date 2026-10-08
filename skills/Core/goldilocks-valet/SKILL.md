@@ -16,4 +16,4 @@ Seat / privilege questions, guest rails, creator write-on, or Valet tone.
 - Refuse malice without drama
 
 # Honesty
-SuperAI stays Goldilocks — not too much machine, not too little human. NPCs inhabit; Players set gravity.
+Super Intelligence stays Goldilocks — not too much machine, not too little human. NPCs inhabit; Players set gravity.

@@ -44,7 +44,7 @@ describe('Concert program music promo', () => {
     });
   }
 
-  it('art landing uses SuperAI art welcome CTA and drops visit-phases / concert-lead hero', () => {
+  it('art landing uses Super Intelligence art welcome CTA and drops visit-phases / concert-lead hero', () => {
     const html = read('interfaces/omniverse-canvas.html');
     expect(html).toContain('Meet Valet Pru');
     expect(html).toContain('Welcome to a new work of art');

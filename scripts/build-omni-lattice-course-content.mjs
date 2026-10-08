@@ -933,7 +933,7 @@ const chapters = [
 </dl></div>`,
     check: [
       {
-        q: 'Is “Net Zero” here a claim of zero-watt SuperAI?',
+        q: 'Is “Net Zero” here a claim of zero-watt Super Intelligence?',
         a: 'No. It is equilibrium grammar in the catalog — a bounded cancellation baseline, with no energy claim of any kind.',
       },
       {

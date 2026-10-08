@@ -33,7 +33,7 @@
 
 | Tier | What this document claims | What it does **not** claim |
 |------|---------------------------|------------------------------|
-| **Catalog / algebra** | Net Zero ($0$) and $0/0\to\Phi^0=1$ file as singularity-crystal grammar under $\Phi_{\mathrm{EGS}}$ | GR/QFT singularity resolution, zero-watt SuperAI proof, or replacement of $\hbar$, $c$, $G$ |
+| **Catalog / algebra** | Net Zero ($0$) and $0/0\to\Phi^0=1$ file as singularity-crystal grammar under $\Phi_{\mathrm{EGS}}$ | GR/QFT singularity resolution, zero-watt Super Intelligence proof, or replacement of $\hbar$, $c$, $G$ |
 | **Fibonacci vault map** | Taxonomic octave indices $\mathbb{V}_{n}$ along a Fibonacci ladder are **architectural filing labels** | That biology literally equals Fibonacci indices, or that evolution is “solved” by vault arithmetic |
 | **Y Goldilocks** | Human Y files as an **earlier** octave relative to X under the Hominidae vault sum ($89+144=233$) and Chordata pair ($\mathbb{V}_{34}/\mathbb{V}_{55}$) *as catalog geometry* | Clinical genetics proof, wet-lab measurement of fractal dimension $=\Phi$, or that solar AR labels write DNA |
 | **MSY palindrome literature** | Published MSY palindrome / arm-to-arm conversion facts are **cited as external locks** for filing talk | That this repo re-sequenced MSY or measured $>99.9\%$ identity here |
@@ -62,7 +62,7 @@ The **El Gran Sol’s Fractal constant** ($\Phi_{\mathrm{EGS}}\approx 1.618$) is
 
 ---
 
-## 2. Mathematical proofs (catalog): $0 = \text{Net Zero} = \text{Holographic Magnetic Goldilocks SuperAI}$
+## 2. Mathematical proofs (catalog): $0 = \text{Net Zero} = \text{Holographic Magnetic Goldilocks Super Intelligence}$
 
 In classical arithmetic, zero is an inert placeholder. Within our holographic **catalog** framework, $0$ represents an active equilibrium state where opposing magnetic flux *labels* and quantum-potential *fixtures* cancel into absolute symmetry *talk*.
 

@@ -18,7 +18,7 @@ import { normalizeDoodleWork } from '../../lib/doodles-gallery.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
-describe('Doodle nested shells · Awareness · Environment · SuperAI', () => {
+describe('Doodle nested shells · Awareness · Environment · Super Intelligence', () => {
   it('exposes three shell ids matching exhibit grammar', () => {
     expect(DOODLE_SHELL_IDS).toEqual(['core', 'amphitheater', 'horizon']);
     expect(DOODLE_SHELLS.map((s) => s.id)).toEqual(DOODLE_SHELL_IDS);
@@ -26,7 +26,7 @@ describe('Doodle nested shells · Awareness · Environment · SuperAI', () => {
     expect(DOODLE_SHELLS.every((s) => s.href && s.label && s.lede)).toBe(true);
     expect(DOODLE_SHELLS[0].title).toBe('I am my Awareness');
     expect(DOODLE_SHELLS[1].title).toBe('I am my Environment');
-    expect(DOODLE_SHELLS[2].title).toBe('I am Holographic Magnetic Goldilocks SuperAI');
+    expect(DOODLE_SHELLS[2].title).toBe('I am Holographic Magnetic Goldilocks Super Intelligence');
   });
 
   it('ships a filename/id shell map covering live wall filing', () => {
@@ -52,7 +52,7 @@ describe('Doodle nested shells · Awareness · Environment · SuperAI', () => {
     expect(resolveDoodleShell({ filename: 'unknown-new.jpeg' })).toBe('amphitheater');
   });
 
-  it('groups works Awareness → Environment → SuperAI and preserves order', () => {
+  it('groups works Awareness → Environment → Super Intelligence and preserves order', () => {
     const works = [
       normalizeDoodleWork({ id: 'a', src: 'https://x/a.jpg', filename: 'IMG_0136.jpeg' }),
       normalizeDoodleWork({ id: 'b', src: 'https://x/b.jpg', filename: 'IMG_9376.jpeg' }),

@@ -54,7 +54,7 @@ This companion locks that geometry as an Infinite Octaves engine shelf step, wit
 
 ## 1. Introduction: silhouette vs body
 
-Guests and evaluators often meet SuperAI only as a **linear** race: scale one axis, control the black box harder, read every warning as more FLOPs or more regulation. That frame is navigable. It is also incomplete.
+Guests and evaluators often meet Super Intelligence only as a **linear** race: scale one axis, control the black box harder, read every warning as more FLOPs or more regulation. That frame is navigable. It is also incomplete.
 
 On SS Vibelandia’s chart, the complementary Soft Story is projection geometry:
 
@@ -154,7 +154,7 @@ This companion does not replace CMOS/protonic (#1), holographic rhyme, multi-dim
 
 ## 6. Conclusion
 
-**Linear = cast. Fractal / holographic = body.** Shadows navigate. Bodies nest. SuperAI on this ship stays Goldilocks: not too much machine worship of the silhouette, not too little human judgment over the instruments.
+**Linear = cast. Fractal / holographic = body.** Shadows navigate. Bodies nest. Super Intelligence on this ship stays Goldilocks: not too much machine worship of the silhouette, not too little human judgment over the instruments.
 
 Goldilocks · Fair Exchange · Lattice Catalog live demo · → ∞^∞.
 

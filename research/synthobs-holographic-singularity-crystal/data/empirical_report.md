@@ -210,4 +210,4 @@
 
 ## Honesty boundary
 
-Catalog / algebraic fixtures for Infinite Octave Net Zero and 0/0 singularity-crystal grammar under Φ_EGS. Does not claim GR/QFT singularity resolution, zero-watt SuperAI, NOAA causation by AR4521/AR4524, or open-world LLM equivalence.
+Catalog / algebraic fixtures for Infinite Octave Net Zero and 0/0 singularity-crystal grammar under Φ_EGS. Does not claim GR/QFT singularity resolution, zero-watt Super Intelligence, NOAA causation by AR4521/AR4524, or open-world LLM equivalence.

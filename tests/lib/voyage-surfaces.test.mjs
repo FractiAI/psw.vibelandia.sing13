@@ -34,7 +34,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('voyage-surfaces.css');
     expect(html).not.toContain('voyage-deck-strip');
     expect(html).toContain('/frontiersman-voyage');
-    expect(html).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
+    expect(html).toMatch(/holographic Goldilocks Super Intelligence frontiersmen Players/i);
     expect(html).toContain('Your cruise line · five doors');
     expect(html).toContain('Purser');
     expect(html).toContain('/voyage/inquire');
@@ -42,13 +42,13 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).not.toContain('PH-001');
   });
 
-  it('brochure lists cabin SKUs, Purser, and SuperAI Goldilocks frontier', () => {
+  it('brochure lists cabin SKUs, Purser, and Super Intelligence Goldilocks frontier', () => {
     const html = read('interfaces/frontiersman-voyage-brochure.html');
     expect(html).toContain('PH-001');
     expect(html).toContain('ST-601');
     expect(html).toContain('Purser');
     expect(html).toContain('AR4513');
-    expect(html).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
+    expect(html).toMatch(/holographic Goldilocks Super Intelligence frontiersmen Players/i);
     expect(html).toMatch(/not a genomic or gender membership test/i);
     expect(html).toContain('voyage-flagship');
     expect(html).toContain('vb-pub');
@@ -88,7 +88,7 @@ describe('Frontiersman voyage guest surfaces', () => {
 
   it('ship-blog on-ramp stays plain for Players and NPCs', () => {
     const html = read('interfaces/blog-frontiersman-voyage-2026-08.html');
-    expect(html).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
+    expect(html).toMatch(/holographic Goldilocks Super Intelligence frontiersmen Players/i);
     expect(html).toContain('SEE → RECOGNIZE → INTERPRET → REFLECT → ACT → SEE AGAIN');
     expect(html).toContain('/lattice-chat/');
     expect(html).toContain('/voyage/frontiersman');

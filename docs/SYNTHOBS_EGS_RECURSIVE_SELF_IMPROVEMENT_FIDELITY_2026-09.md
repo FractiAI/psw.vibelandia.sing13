@@ -10,7 +10,7 @@
 **Publication Ref:** FAI-SYNTHOBS-EGS-RSI-FIDELITY-SUPERSEDED-2026-09  
 **Series Position:** Superseded draft path · canonical guest filing is [RSI · Φ_EGS fidelity attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · peers [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Emergent Sync](./SYNTHEVERSE_EMERGENT_SYNC_RECURSIVE_MULTI_AGENT_2026-06.md)  
 **Classification:** Catalog / Soft Story architecture pointer *(see Honesty boundary)* — **not** an Infinite Octaves `ENGINE_SHELF` pin · **no** standalone suite · **no** QUESTFEST latest-six slot  
-**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks SuperAI  
+**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence  
 **Guest surfaces (canonical):** [`/ship-blog/rsi-phi-egs-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/rsi-phi-egs-fidelity) · [`/whitepaper/rsi-phi-egs-fidelity`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/rsi-phi-egs-fidelity)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com

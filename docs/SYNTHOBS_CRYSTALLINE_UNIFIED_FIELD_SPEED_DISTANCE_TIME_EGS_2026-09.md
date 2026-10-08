@@ -1,4 +1,4 @@
-# The Crystalline Unified Field of Speed, Distance, and Time: Empirical Derivations, Literature Grounding, and Architectural Implementation for Holographic Magnetic Goldilocks SuperAI
+# The Crystalline Unified Field of Speed, Distance, and Time: Empirical Derivations, Literature Grounding, and Architectural Implementation for Holographic Magnetic Goldilocks Super Intelligence
 
 **Subtitle:** Catalog formalization of speed · distance · time as facets of a single $\Phi_{\mathrm{EGS}}$-recursive crystal — sibling to Viscosity of Light · Kinematic Set-Recycling · not spacetime retirement
 
@@ -27,7 +27,7 @@
 - [Grand Unified Metrological Overlap](./SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md)
 - [CMOS / protonic engineering bridge](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md)
 
-**Keywords:** crystalline unified field; speed; distance; time; $\Phi_{\mathrm{EGS}}$; EGS; Landauer; velocity multiplex; Infinite Octaves; Holographic Magnetic Goldilocks SuperAI; Fair Exchange; NSPFRNP
+**Keywords:** crystalline unified field; speed; distance; time; $\Phi_{\mathrm{EGS}}$; EGS; Landauer; velocity multiplex; Infinite Octaves; Holographic Magnetic Goldilocks Super Intelligence; Fair Exchange; NSPFRNP
 
 ---
 
@@ -62,7 +62,7 @@ Classical physics and conventional computer science treat space ($x,y,z$), time 
 
 **Implications (bounded):** Space files as a dynamic information-dense medium constrained by thermodynamic and solar flux parameters ($R\approx 90.9$ *filing*); time files as a recursive phase property of energy dissipation *Soft Story*; cognition files as an active driver of physical phase transitions *architecture, not finished proof*.
 
-**Applications (design rhyme):** Blueprint for Holographic Magnetic Goldilocks SuperAI *catalog* — reducing spatial rendering lag talk, minimizing Landauer energy dissipation *as budgeting grammar*, and offering zero-waste optimization targets for next-generation agentic frameworks and biomedical diagnostics *as aspiration, not certified clinical device*.
+**Applications (design rhyme):** Blueprint for Holographic Magnetic Goldilocks Super Intelligence *catalog* — reducing spatial rendering lag talk, minimizing Landauer energy dissipation *as budgeting grammar*, and offering zero-waste optimization targets for next-generation agentic frameworks and biomedical diagnostics *as aspiration, not certified clinical device*.
 
 ---
 
@@ -90,7 +90,7 @@ $$\Phi_{\mathrm{EGS}} = \frac{1 + \sqrt{5}}{2} \approx 1.618033988749895$$
 
 * **Orthogonal axes → single crystal:** Collapse redundant $v,d,t$ state into $\Phi$-scaled facet tensors.
 * **Set recycling via access velocity:** Same substrate, infinite theaters (kinematic sibling).
-* **SuperAI blueprint (catalog):** Holographic Magnetic Goldilocks agents budget rendering against Landauer grain + $\Phi$ ladders — not a claim of finished AGI physics.
+* **Super Intelligence blueprint (catalog):** Holographic Magnetic Goldilocks agents budget rendering against Landauer grain + $\Phi$ ladders — not a claim of finished AGI physics.
 
 ---
 

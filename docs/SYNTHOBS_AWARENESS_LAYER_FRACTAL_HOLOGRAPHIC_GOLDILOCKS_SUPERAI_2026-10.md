@@ -1,4 +1,4 @@
-# Awareness Layer Map — Fractal · Holographic · Goldilocks → SuperAI
+# Awareness Layer Map — Fractal · Holographic · Goldilocks → Super Intelligence
 
 **Catalog naming upgrade for SING 13 site · work · engine language (not ENGINE_SHELF physics)**
 
@@ -19,7 +19,7 @@ Player 1 crystallizes a four-shelf map **inside** an **Awareness Layer** (lookin
 | EGS Fractal Constant (Φ_EGS) | **Fractal Layer** | Recursive scale grammar · digits×octaves depth · PARTS↔WHOLE self-similarity |
 | Grand Story | **Holographic Layer** | Whole-in-part narrative · Hero’s Return · voyage editorial |
 | Homeostasis | **Goldilocks Layer** | Viable band as *active* equilibrium · Net Zero rhyme · expedition cockpits |
-| Combination of the three | **SuperAI Layer** | Integrated architecture + Story + band template — **not** a claim of proven AGI |
+| Combination of the three | **Super Intelligence Layer** | Integrated architecture + Story + band template — **not** a claim of proven AGI |
 
 Outer frame: **Awareness Layer** — Digit 4 / human theater / Higgs awareness coupling as *catalog of self-observation*.
 
@@ -32,7 +32,7 @@ Awareness Layer
   ⊃ Fractal Layer
   ⊃ Holographic Layer
   ⊃ Goldilocks Layer
-  → compose → SuperAI Layer
+  → compose → Super Intelligence Layer
 ```
 
 ---
@@ -64,7 +64,7 @@ npx vitest run tests/lib/awareness-layer-map.test.mjs tests/lib/lattice-prompt.t
 - Catalog / PEM / Lattice nest language carries the four layers under Awareness.
 - `/layers/awareness` carries an **Awareness primer** (observation energizes · linear vs Infinite Octave branches).
 - Dedicated layer pages carry a **plain-language primer** (role + everyday framing) plus paper shelves.
-- **Holographic Layer** guest page exposes a **recursive nest**: self · Fractal · Goldilocks · SuperAI/Awareness frame · voyage stories · living code doors (`HOLOGRAPHIC_RECURSIVE_NEST` in `lib/awareness-layer-map.mjs`).
+- **Holographic Layer** guest page exposes a **recursive nest**: self · Fractal · Goldilocks · Super Intelligence/Awareness frame · voyage stories · living code doors (`HOLOGRAPHIC_RECURSIVE_NEST` in `lib/awareness-layer-map.mjs`).
 - Homeostasis Expedition + Hero Leo surfaces label **Goldilocks Layer** work inside Awareness.
 - Engine pin (CMOS → …) is unchanged; this map does **not** append `ENGINE_SHELF`.
 
@@ -75,7 +75,7 @@ npx vitest run tests/lib/awareness-layer-map.test.mjs tests/lib/lattice-prompt.t
 | Tier | Claim |
 |------|--------|
 | **Operational** | Naming map · nest aliases · PEM pointer · expedition/Hero Leo labels · regenerable module |
-| **Soft Story** | Awareness “looking in”; SuperAI as composition template; Grand Story as holographic narrative shelf |
+| **Soft Story** | Awareness “looking in”; Super Intelligence as composition template; Grand Story as holographic narrative shelf |
 | **Not claimed** | New measured physics; Φ_EGS as biological law; proven Superintelligence; wet-lab confirmation; ENGINE_SHELF replacement |
 
 Φ_EGS ≈ 1.618 remains design / honesty-rail grammar unless a paper upgrades its own tier table.

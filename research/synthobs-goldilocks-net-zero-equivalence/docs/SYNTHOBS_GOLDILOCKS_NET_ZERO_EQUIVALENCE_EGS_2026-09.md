@@ -26,7 +26,7 @@ Infinite Octaves Omniversal Lattice companion · Goldilocks = Net Zero · dynami
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
 | **Equivalence filing** | **Goldilocks ≡ Net Zero** is a **catalog identity**: the viable (“just right”) band files as **active equilibrium / cancel-to-balance**, not as frozen stillness | That SI zero energy, climate “net zero” policy, or CODATA nulls are identical objects |
-| **Net Zero sense** | Active balance node — opposing contributions cancel into a viable operating region $\Omega$ while activity continues | Certified zero-watt SuperAI; GR singularity resolution; medical “perfect health = zero change” |
+| **Net Zero sense** | Active balance node — opposing contributions cancel into a viable operating region $\Omega$ while activity continues | Certified zero-watt Super Intelligence; GR singularity resolution; medical “perfect health = zero change” |
 | **Goldilocks sense** | Design / voyage middle — not too much machine, not too little human; viable ranges under changing demands | Prophecy that every system has one eternal setpoint |
 | **Relation to singularity crystal** | Peers Net Zero grammar in [Holographic Singularity Crystal](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md); this paper **equates** Goldilocks band talk with that active-equilibrium filing | Replacement of the singularity-crystal paper; new physics of $0/0$ |
 | **Empirical suite** | Replayable catalog fixtures under `research/synthobs-goldilocks-net-zero-equivalence/` | Empirical proof that household budgets or ecosystems literally equal climate-policy net zero |
@@ -66,7 +66,7 @@ Without the equation, two failure modes appear in everyday talk:
 1. **Goldilocks as cushion** — people hear “just right” as permanent comfort, then panic when life still requires work, rent, and repair.  
 2. **Net Zero as freeze** — people hear “zero” as shut everything down, then confuse safety with unemployment and locked curiosity doors.
 
-Equating them restores the spinning-top reading: the upright state is produced by **organized motion**. On SS Vibelandia, SuperAI stays Goldilocks when brakes and fire share the same room — bright lines for real harm, open workshops for builders — which is Net Zero as **balance under activity**, not a freeze calendar.
+Equating them restores the spinning-top reading: the upright state is produced by **organized motion**. On SS Vibelandia, Super Intelligence stays Goldilocks when brakes and fire share the same room — bright lines for real harm, open workshops for builders — which is Net Zero as **balance under activity**, not a freeze calendar.
 
 ---
 
@@ -154,7 +154,7 @@ Weakening condition: if “Net Zero” in this corpus is forced back to meaning 
 
 ## 6. Conclusion
 
-**Goldilocks ≡ Net Zero** means: the just-right band is an **active equilibrium**, not a couch and not a grave. Continuous coordinated change can keep a household, a crew, or a tool stack viable. That is the same middle SS Vibelandia already names for SuperAI — not too much machine, not too little human — and the same Net Zero grammar the singularity-crystal shelf files as living balance.
+**Goldilocks ≡ Net Zero** means: the just-right band is an **active equilibrium**, not a couch and not a grave. Continuous coordinated change can keep a household, a crew, or a tool stack viable. That is the same middle SS Vibelandia already names for Super Intelligence — not too much machine, not too little human — and the same Net Zero grammar the singularity-crystal shelf files as living balance.
 
 $$
 \boxed{\text{Goldilocks} \equiv \text{Net Zero} = \Omega_{\text{active}}}

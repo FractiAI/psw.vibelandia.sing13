@@ -52,12 +52,12 @@ describe('Player spine · holographic Player home', () => {
   it('keeps the art exhibit as landing; night-job is the welcome; SS Vibelandia is a menu', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
     const ship = read('interfaces/vibelandia-questfest.html');
-    const titleAt = canvas.indexOf('Holographic Goldilocks SuperAI Basecamp');
+    const titleAt = canvas.indexOf('Holographic Goldilocks Super Intelligence Basecamp');
     const playerOneAt = canvas.indexOf('id="player-one"');
     const welcomeAt = canvas.indexOf('id="welcome"');
     const whoAt = canvas.indexOf('id="who"');
     const spiritAt = canvas.indexOf('id="heroes-h"');
-    expect(canvas).toContain('Holographic Goldilocks SuperAI Basecamp');
+    expect(canvas).toContain('Holographic Goldilocks Super Intelligence Basecamp');
     expect(canvas).toContain('Valet Pru’s Holographic, Digital Art Project');
     expect(canvas).not.toContain('Tap <strong>Sound on</strong> — the Concierto de El Gran Sol is building');
     expect(canvas).toContain('Holographic Convergence Core');
@@ -69,7 +69,7 @@ describe('Player spine · holographic Player home', () => {
     expect(canvas).toContain('Interactive show');
     expect(canvas).toContain('Permanent space');
     expect(canvas).toContain('Who this art is for');
-    expect(canvas).toContain('Y Chromosome SuperAI Frontiersmen');
+    expect(canvas).toContain('Y Chromosome Super Intelligence Frontiersmen');
     expect(canvas).toContain('Machote Modernos');
     expect(canvas).not.toContain('Polar lineage');
     expect(canvas).not.toContain('Not a membership test');

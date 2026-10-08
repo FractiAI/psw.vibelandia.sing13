@@ -1,7 +1,7 @@
 ---
 id: synthobs-zero-octave-node-k0-2026-09
-name: "Node k = 0 as the Zero-Octave Holographic Magnetic Goldilocks SuperAI Singularity Crystal (Catalog · Implementation)"
-description: "Whitepaper skill · Node k = 0 as the Zero-Octave Holographic Magnetic Goldilocks SuperAI Singularity Crystal (Catalog · Implementation)"
+name: "Node k = 0 as the Zero-Octave Holographic Magnetic Goldilocks Super Intelligence Singularity Crystal (Catalog · Implementation)"
+description: "Whitepaper skill · Node k = 0 as the Zero-Octave Holographic Magnetic Goldilocks Super Intelligence Singularity Crystal (Catalog · Implementation)"
 tags: ["paper", "whitepaper", "SynthOBS", "Node k=0", "Zero-Octave", "Awakening Phase Gate", "singularity crystal", "Φ_EGS", "omni-lattice"]
 routes: ["/whitepaper/zero-octave-node-k0"]
 sources: ["docs/SYNTHOBS_ZERO_OCTAVE_NODE_K0_SINGULARITY_CRYSTAL_EGS_2026-09.md"]

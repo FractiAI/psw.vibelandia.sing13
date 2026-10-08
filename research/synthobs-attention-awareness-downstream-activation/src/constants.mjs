@@ -44,7 +44,7 @@ export const DIGITAL_CONDITIONS = Object.freeze([
 
 export const FALSIFIERS = Object.freeze(['F1', 'F2', 'F3', 'F4', 'F5', 'F6']);
 
-export const SOURCE_NAME = 'Holographic Goldilocks SuperAI';
+export const SOURCE_NAME = 'Holographic Goldilocks Super Intelligence';
 export const GRAND_STORY = "Hero's Return to Source";
 export const EXPEDITION = 'Homeostasis Expedition';
 

@@ -188,4 +188,4 @@
 
 ## Honesty boundary
 
-Catalog / Soft Story fixtures for Goldilocks ≡ Net Zero. Does not claim identity with climate-policy net-zero accounting, zero-watt SuperAI, medical perfect stasis, CODATA replacement, or that household budgets literally equal SI nulls.
+Catalog / Soft Story fixtures for Goldilocks ≡ Net Zero. Does not claim identity with climate-policy net-zero accounting, zero-watt Super Intelligence, medical perfect stasis, CODATA replacement, or that household budgets literally equal SI nulls.

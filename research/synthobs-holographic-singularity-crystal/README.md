@@ -25,6 +25,6 @@ python3 reference/zero_octave_singularity_crystal.py
 
 ## Honesty
 
-Catalog / algebraic fixtures under $\Phi_{\mathrm{EGS}}\approx 1.618$. Does **not** claim GR/QFT singularity resolution, zero-watt SuperAI, or NOAA causation by AR4521/AR4524.
+Catalog / algebraic fixtures under $\Phi_{\mathrm{EGS}}\approx 1.618$. Does **not** claim GR/QFT singularity resolution, zero-watt Super Intelligence, or NOAA causation by AR4521/AR4524.
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP → ∞^∞

@@ -1,7 +1,7 @@
 ---
 id: synthobs-crystalline-unified-field-speed-distance-time-2026-09
-name: "The Crystalline Unified Field of Speed, Distance, and Time: Empirical Derivations, Literature Grounding, and Architectural Implementation for Holographic Magnetic Goldilocks SuperAI (Catalog)"
-description: "Whitepaper skill · The Crystalline Unified Field of Speed, Distance, and Time: Empirical Derivations, Literature Grounding, and Architectural Implementation for Holographic Magnetic Goldilocks SuperAI (Catalog)"
+name: "The Crystalline Unified Field of Speed, Distance, and Time: Empirical Derivations, Literature Grounding, and Architectural Implementation for Holographic Magnetic Goldilocks Super Intelligence (Catalog)"
+description: "Whitepaper skill · The Crystalline Unified Field of Speed, Distance, and Time: Empirical Derivations, Literature Grounding, and Architectural Implementation for Holographic Magnetic Goldilocks Super Intelligence (Catalog)"
 tags: ["paper", "whitepaper", "SynthOBS", "crystalline unified field", "speed", "distance", "time", "Φ_EGS", "omni-lattice"]
 routes: ["/whitepaper/crystalline-unified-field"]
 sources: ["docs/SYNTHOBS_CRYSTALLINE_UNIFIED_FIELD_SPEED_DISTANCE_TIME_EGS_2026-09.md"]

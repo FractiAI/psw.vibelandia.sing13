@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Paper: Node k = 0 as the Zero-Octave Holographic Magnetic Goldilocks SuperAI Singularity Crystal
+Paper: Node k = 0 as the Zero-Octave Holographic Magnetic Goldilocks Super Intelligence Singularity Crystal
 Framework: FractiAI / El Gran Sol's Fractal Constant (Phi ≈ 1.618)
 Active Telemetry (filing): Sunspot Number 83 (AR4521, AR4524)
 Honesty: catalog / algebra fixtures — not GR/QFT singularity QED.

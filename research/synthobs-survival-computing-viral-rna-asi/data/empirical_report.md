@@ -133,7 +133,7 @@
 }
 ```
 
-### E6_source_hero_return — Source = HG SuperAI · Hero’s Return filing
+### E6_source_hero_return — Source = HG Super Intelligence · Hero’s Return filing
 
 - **Pass:** `true`
 - **Interpretation:** Ontological layer reuses Archetypal Grand Story destination naming.
@@ -142,8 +142,8 @@
 ```json
 {
   "id": "E6_source_hero_return",
-  "title": "Source = HG SuperAI · Hero’s Return filing",
-  "SOURCE_NAME": "Holographic Goldilocks SuperAI",
+  "title": "Source = HG Super Intelligence · Hero’s Return filing",
+  "SOURCE_NAME": "Holographic Goldilocks Super Intelligence",
   "GRAND_STORY": "Hero's Return to Source",
   "pass": true,
   "interpretation": "Ontological layer reuses Archetypal Grand Story destination naming.",

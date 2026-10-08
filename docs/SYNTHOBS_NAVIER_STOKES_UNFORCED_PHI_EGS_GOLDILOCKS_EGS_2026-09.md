@@ -199,7 +199,7 @@ Infinite Octave Soft Story offers builders a **Goldilocks habit** while A/B rema
 1. Prefer **unforced / closed-system** mental models when asking whether a stack can blow on its own.
 2. Treat **external force** as an injection that can create loophole singularities — audit forcing terms in simulations the way you audit spoons in coffee.
 3. Nest cascades under a **fixed ratio** ($\Phi_{\mathrm{EGS}}$ here) so recursive refinement does not drift ([RSI fidelity](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md)).
-4. Keep SuperAI in the viable band — not too much machine infinity, not too little human judgment.
+4. Keep Super Intelligence in the viable band — not too much machine infinity, not too little human judgment.
 
 ---
 

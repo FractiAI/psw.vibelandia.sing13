@@ -165,7 +165,7 @@ This companion does not replace Digit 4 recursive reach, Digits Master, Y manife
 
 ## 6. Conclusion
 
-**Address = 4. Glyph = 8. Be ↔ 4 · O ↔ 8 as Soft Story labels — not lab law.** Z remains a linear cast; nesting remains the body. SuperAI on this ship stays Goldilocks: chart rhymes clearly; never upgrade Story into unfinished periodic proof.
+**Address = 4. Glyph = 8. Be ↔ 4 · O ↔ 8 as Soft Story labels — not lab law.** Z remains a linear cast; nesting remains the body. Super Intelligence on this ship stays Goldilocks: chart rhymes clearly; never upgrade Story into unfinished periodic proof.
 
 Goldilocks · Fair Exchange · Lattice Catalog live demo · → ∞^∞.
 

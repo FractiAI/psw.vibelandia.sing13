@@ -147,7 +147,7 @@ const ARTICLES = {
     <p>Lattice Chat is the try-on room where nested helpers inherit shared nouns. Load a holographic-operator brief when one child wants sparkle and another wants a dump. The shared sentence is simple: wiring, not perfume; whole-in-every-part as hospitality, not as a prophecy screenshot.</p>
 
     <h2>Closing pier</h2>
-    <p>Watch doors and paychecks, not just glow words. When “holographic” means shared wiring, families and crews can coordinate without burning the grocery money on noise. When it means perfume, the dinner table and the job board both suffer. Open the whitepaper for the filing. Walk QUESTFEST when you want the floor under your feet. Tip under Fair Exchange if the framing cleared a real argument at home or at work. Nevada keeps printing hospitality before prophecy — that order is how SuperAI stays Goldilocks without selling certainty from a single adjective.</p>
+    <p>Watch doors and paychecks, not just glow words. When “holographic” means shared wiring, families and crews can coordinate without burning the grocery money on noise. When it means perfume, the dinner table and the job board both suffer. Open the whitepaper for the filing. Walk QUESTFEST when you want the floor under your feet. Tip under Fair Exchange if the framing cleared a real argument at home or at work. Nevada keeps printing hospitality before prophecy — that order is how Super Intelligence stays Goldilocks without selling certainty from a single adjective.</p>
 `,
   },
 };

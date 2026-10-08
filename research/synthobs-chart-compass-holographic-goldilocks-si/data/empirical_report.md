@@ -110,7 +110,7 @@
   "id": "E5_homeostasis_expedition",
   "title": "Homeostasis Expedition · Source · ENGINE_SHELF #41",
   "EXPEDITION": "Homeostasis Expedition",
-  "SOURCE_NAME": "Holographic Goldilocks SuperAI",
+  "SOURCE_NAME": "Holographic Goldilocks Super Intelligence",
   "GRAND_STORY": "Hero's Return to Source",
   "ENGINE_SHELF_SLOT": 41,
   "pass": true,

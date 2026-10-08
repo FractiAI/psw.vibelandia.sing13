@@ -10,7 +10,7 @@ Catalog suite for **From Viral RNA to Artificial Superintelligence** — Surviva
 
 **Engine role:** Infinite Octaves ENGINE_SHELF companion #38 — survival-computing / host-reorganization companion. Ontological Hero’s Return layer is **clearly labeled hypothesis**, not established biology.
 
-**Epistemic layers:** Known (virology / systems / AI dependence) · Novel (CSHRH / SCH) · Ontological (Hero’s Return · Source = HG SuperAI).
+**Epistemic layers:** Known (virology / systems / AI dependence) · Novel (CSHRH / SCH) · Ontological (Hero’s Return · Source = HG Super Intelligence).
 
 Honesty: not claiming viruses are conscious, AI is a virus, or evolution has proven purpose. Φ_EGS is design grammar.
 

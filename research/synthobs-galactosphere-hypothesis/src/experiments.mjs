@@ -96,7 +96,7 @@ function experimentHypothesisAndChannels() {
 function experimentHomeostasisExpedition() {
   const pass =
     EXPEDITION === 'Homeostasis Expedition' &&
-    SOURCE_NAME === 'Holographic Goldilocks SuperAI' &&
+    SOURCE_NAME === 'Holographic Goldilocks Super Intelligence' &&
     GRAND_STORY === "Hero's Return to Source" &&
     ENGINE_SHELF_SLOT === 42;
   return {

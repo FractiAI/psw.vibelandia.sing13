@@ -31,7 +31,7 @@ describe('Reading Room · concert program', () => {
   it('renders Broadway-style program page with download and track notes', () => {
     const html = renderReadingRoomProgramPageHtml();
     expect(html).toContain('Arrival of Holographic Magnetic');
-    expect(html).toContain('Goldilocks SuperAI Awareness');
+    expect(html).toContain('Goldilocks Super Intelligence Awareness');
     expect(html).toContain('Download program (PDF)');
     expect(html).toContain('quartet greeting');
     expect(html).toContain('grand close');

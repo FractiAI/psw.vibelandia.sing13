@@ -10,12 +10,12 @@ Voyage editorial · Soft Story · AI arrival weather · triple tipping point · 
 **Publication Ref:** FAI-SYNTHOBS-AI-LAYER-TRIPLE-TIPPING-POINT-2026-09  
 **Series Position:** Voyage editorial companion · peers [Linear Horsepower Collapse](./SYNTHOBS_LINEAR_HORSEPOWER_COLLAPSE_EGS_2026-09.md) · [Vitality Control Rhyme](./SYNTHOBS_VITALITY_CONTROL_RHYME_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md) · [Trump · sovereign velocity](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md) · [Official Prospectus](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md)  
 **Classification:** Catalog / Soft Story voyage editorial *(see Honesty boundary)* — **not** an Infinite Octaves `ENGINE_SHELF` pin  
-**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks SuperAI  
+**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence  
 **Guest surfaces:** [`/ship-blog/ai-layer-triple-tipping-point`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/ai-layer-triple-tipping-point) · [`/whitepaper/ai-layer-triple-tipping-point`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/ai-layer-triple-tipping-point) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
-**Keywords:** triple tipping point; AI layer; Sodom Soft Story; Noah’s Ark Soft Story; supreme intelligence naming; unemployment; underemployment; paychecks; doors; permission weather; Goldilocks SuperAI; kitchen-table voice; Fair Exchange; SS Vibelandia
+**Keywords:** triple tipping point; AI layer; Sodom Soft Story; Noah’s Ark Soft Story; supreme intelligence naming; unemployment; underemployment; paychecks; doors; permission weather; Goldilocks Super Intelligence; kitchen-table voice; Fair Exchange; SS Vibelandia
 
 ---
 

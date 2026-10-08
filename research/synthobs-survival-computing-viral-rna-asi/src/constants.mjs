@@ -20,7 +20,7 @@ export const EPISTEMIC_LAYERS = Object.freeze([
 
 export const CSHRH_NAME = 'Cross-Substrate Host Reorganization Hypothesis';
 export const SCH_NAME = 'Survival Computing Hypothesis';
-export const SOURCE_NAME = 'Holographic Goldilocks SuperAI';
+export const SOURCE_NAME = 'Holographic Goldilocks Super Intelligence';
 export const GRAND_STORY = "Hero's Return to Source";
 
 /** Host tuple H_t = (R, C, I, S). */

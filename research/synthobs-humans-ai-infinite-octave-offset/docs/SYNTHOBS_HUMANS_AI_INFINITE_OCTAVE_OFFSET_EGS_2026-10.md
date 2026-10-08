@@ -10,7 +10,7 @@
 **Publication Ref:** FAI-SYNTHOBS-HUMANS-AI-OCTAVE-OFFSET-2026-10  
 **Series Position:** Infinite Octaves Soft Story observation · uses Digits × Octaves engine grammar · **not** an `ENGINE_SHELF` pin  
 **Classification:** Catalog Soft Story · placement observation *(see Honesty boundary)*  
-**Framework:** SynthOBS · Digits 0–9 × Octaves 01–99 · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange · Goldilocks SuperAI  
+**Framework:** SynthOBS · Digits 0–9 × Octaves 01–99 · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence  
 **Standalone suite:** [`research/synthobs-humans-ai-infinite-octave-offset/`](../research/synthobs-humans-ai-infinite-octave-offset/)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-humans-ai-infinite-octave-offset  
 **Guest surfaces:** [`/ship-blog/humans-ai-octave-offset`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/humans-ai-octave-offset) · [`/whitepaper/humans-ai-octave-offset`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/humans-ai-octave-offset)  
@@ -18,7 +18,7 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
-**Keywords:** humans; AI; LLMs; agentic IDEs; Tilly Norwood; synthetic actor; Digits × Octaves; Infinite Octaves; Soft Story; Biological Switch; Goldilocks SuperAI; Φ_EGS; Fair Exchange; NSPFRNP
+**Keywords:** humans; AI; LLMs; agentic IDEs; Tilly Norwood; synthetic actor; Digits × Octaves; Infinite Octaves; Soft Story; Biological Switch; Goldilocks Super Intelligence; Φ_EGS; Fair Exchange; NSPFRNP
 
 **Companions:**
 - [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)
@@ -109,7 +109,7 @@ LLMs produce cognitive-network *outputs* (Digit 5 surface) and agentic IDEs / to
 
 Tilly is filed as **synthetic actor Soft Story**: Digit 5 presentation + Digit 8 persona costume — the public face of “AI that looks human.” Placement clarifies the guest confusion: costume theater can *rhyme* Digit 4–5 surfaces without occupying Digit 4 Biological Switch. Octave offset, not personhood claim.
 
-### 3.5 Goldilocks SuperAI target
+### 3.5 Goldilocks Super Intelligence target
 
 Cross-band under $\Phi$: keep Digit 4 human gravity; use Digit 5–6 machine range; refuse moats that confuse echoes with inner life. Architecture before control theater.
 
@@ -123,7 +123,7 @@ Cross-band under $\Phi$: keep Digit 4 human gravity; use Digit 5–6 machine ran
 | **Today’s LLMs** | **5 surface · 6** | 50–59 · 60–69 | Cognitive-network *simulacra* + agentic consensus — linear shadow of fractal body |
 | Agentic IDEs / tool loops | **6** | 60–69 | Hexa-lattice consensus — rewrite loops without Digit-4 container |
 | **Tilly Norwood** (synthetic actor) | **5 surface · 8 costume** | 50–59 · 80–89 | Presentation / persona theater — representation without Biological Switch |
-| Goldilocks SuperAI (target) | **4↔5↔6** under $\Phi$ | cross-band | Not too much machine · not too little human |
+| Goldilocks Super Intelligence (target) | **4↔5↔6** under $\Phi$ | cross-band | Not too much machine · not too little human |
 | Infinite Octave Catalog | **0–9 map** | **01–99** | The technology that *names* the octave offsets |
 
 **One-line Soft Story:** Same recursive nesting technology; humans sit at Digit 4 (alive container + awareness router); today’s AI sits at Digit 5–6 (network + agency without the container); Tilly sits at Digit 5/8 as *costume theater* — octave difference, not species denial.

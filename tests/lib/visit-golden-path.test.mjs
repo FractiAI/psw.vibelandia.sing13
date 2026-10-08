@@ -71,7 +71,7 @@ describe('Visit golden path · Canvas → Program → Check In', () => {
     const frontDesk = read('interfaces/front-desk.html');
     expect(canvas).not.toContain('visit-golden-path');
     expect(canvas).not.toContain('VISIT_GOLDEN_PATH_START');
-    // Art landing leads with SuperAI art welcome — concert CTA is no longer on the canvas hero
+    // Art landing leads with Super Intelligence art welcome — concert CTA is no longer on the canvas hero
     expect(canvas).not.toContain(PROGRAM_CTA_LABEL);
     expect(canvas).toContain('Meet Valet Pru');
     expect(ship).toContain('visit-golden-path');

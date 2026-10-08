@@ -19,62 +19,62 @@
     'pl-reading-room': [
       track(
         "trk-srv-8803278e-1d65-4172-b503-0bf33266b61d",
-        "Arrival of Holographic Goldilocks SuperAI Opening",
+        "Arrival of Holographic Goldilocks Super Intelligence Opening",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-8803278e-1d65-4172-b503-0bf33266b61d-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Opening.mp3"
       ),
       track(
         "trk-srv-cd8981fe-ff66-4e04-bd06-b6c831c393d5",
-        "Arrival of Holographic Goldilocks SuperAI Opening II",
+        "Arrival of Holographic Goldilocks Super Intelligence Opening II",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-cd8981fe-ff66-4e04-bd06-b6c831c393d5-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Opening%20II.mp3"
       ),
       track(
         "trk-srv-5fec2bdf-5b85-46ca-94a1-314a9971e677",
-        "Arrival of Holographic Goldilocks SuperAI Guitar",
+        "Arrival of Holographic Goldilocks Super Intelligence Guitar",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-5fec2bdf-5b85-46ca-94a1-314a9971e677-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Guitar.mp3"
       ),
       track(
         "trk-srv-f66cd32f-eed5-4f32-bf04-b30ea2d4d89e",
-        "Arrival of Holographic Goldilocks SuperAI Oboe",
+        "Arrival of Holographic Goldilocks Super Intelligence Oboe",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-f66cd32f-eed5-4f32-bf04-b30ea2d4d89e-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Oboe.mp3"
       ),
       track(
         "trk-srv-6c94b386-290f-490d-ae35-e36c1402e80e",
-        "Arrival of Holographic Goldilocks SuperAI Cello I",
+        "Arrival of Holographic Goldilocks Super Intelligence Cello I",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-6c94b386-290f-490d-ae35-e36c1402e80e-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Cello%20I.mp3"
       ),
       track(
         "trk-srv-03693ab2-81a5-4663-b160-d1287e20057a",
-        "Arrival of Holographic Goldilocks SuperAI Viola",
+        "Arrival of Holographic Goldilocks Super Intelligence Viola",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-03693ab2-81a5-4663-b160-d1287e20057a-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Viola.mp3"
       ),
       track(
         "trk-srv-8acd39c5-1cf7-407e-9f40-590de96b0cda",
-        "Arrival of Holographic Goldilocks SuperAI Piccolo II",
+        "Arrival of Holographic Goldilocks Super Intelligence Piccolo II",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-8acd39c5-1cf7-407e-9f40-590de96b0cda-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Piccolo%20II.mp3"
       ),
       track(
         "trk-srv-dff8cd18-59af-40a1-baf8-cc0c04fbbd48",
-        "Arrival of Holographic Goldilocks SuperAI Horn",
+        "Arrival of Holographic Goldilocks Super Intelligence Horn",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-dff8cd18-59af-40a1-baf8-cc0c04fbbd48-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Horn.mp3"
       ),
       track(
         "trk-srv-1871b78c-fd4d-4d76-aa99-4afa0a0323f6",
-        "Arrival of Holographic Goldilocks SuperAI Harp",
+        "Arrival of Holographic Goldilocks Super Intelligence Harp",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-1871b78c-fd4d-4d76-aa99-4afa0a0323f6-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Harp.mp3"
       ),
       track(
         "trk-srv-84a284ab-1425-4b5d-b243-0f74ee89ba7e",
-        "Arrival of Holographic Goldilocks SuperAI Organ I",
+        "Arrival of Holographic Goldilocks Super Intelligence Organ I",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-84a284ab-1425-4b5d-b243-0f74ee89ba7e-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Organ%20I.mp3"
       ),
       track(
         "trk-srv-818f3a56-5df6-4a88-9745-63f35bae1cb4",
-        "Arrival of Holographic Goldilocks SuperAI Organ II",
+        "Arrival of Holographic Goldilocks Super Intelligence Organ II",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-818f3a56-5df6-4a88-9745-63f35bae1cb4-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Organ%20II.mp3"
       ),
       track(
         "trk-srv-09d32078-96d5-41ff-afe4-f85b8ead8a84",
-        "Arrival of Holographic Goldilocks SuperAI Cinematic Finale",
+        "Arrival of Holographic Goldilocks Super Intelligence Cinematic Finale",
         "https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-09d32078-96d5-41ff-afe4-f85b8ead8a84-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Cinematic%20Finale.mp3"
       )
     ],

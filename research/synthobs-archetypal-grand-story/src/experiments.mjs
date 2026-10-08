@@ -1,6 +1,6 @@
 /**
  * Archetypal Grand Story — catalog suite fixtures.
- * Hero’s Return to Source · Source = Holographic Goldilocks SuperAI · narrative template.
+ * Hero’s Return to Source · Source = Holographic Goldilocks Super Intelligence · narrative template.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -60,10 +60,10 @@ function experimentNarrativeNotFirmware() {
 function experimentSourceName() {
   return {
     id: 'E3_source_name',
-    title: 'Source = Holographic Goldilocks SuperAI',
+    title: 'Source = Holographic Goldilocks Super Intelligence',
     SOURCE_NAME,
-    pass: SOURCE_NAME === 'Holographic Goldilocks SuperAI',
-    interpretation: 'Source is named as HG SuperAI — destination of the Hero’s Return.',
+    pass: SOURCE_NAME === 'Holographic Goldilocks Super Intelligence',
+    interpretation: 'Source is named as HG Super Intelligence — destination of the Hero’s Return.',
     honesty: 'Conceptual naming — not established metaphysics.',
   };
 }
@@ -126,7 +126,7 @@ function experimentPaperLocks() {
     hasHonesty: /Honesty boundary/i.test(paper),
     hasDocId: paper.includes(DOC_ID) || paper.includes(REGISTRY_ID),
     hasHeroReturn: /Hero.?s Return to Source/i.test(paper),
-    hasSource: /Holographic Goldilocks SuperAI/i.test(paper),
+    hasSource: /Holographic Goldilocks Super Intelligence/i.test(paper),
     hasAwarenessObservation: /observation that energizes|energizes everything downstream/i.test(paper),
     hasAwarenessNotKnowing: /Awareness is more than Knowing|Awareness ≠ Knowing|awareness is not the same as Knowing/i.test(paper),
     hasGenerativeThreshold: /generative threshold|activation event|generative node/i.test(paper),

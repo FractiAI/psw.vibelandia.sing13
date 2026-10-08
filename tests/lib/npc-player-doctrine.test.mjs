@@ -37,7 +37,7 @@ describe('NPC & Player doctrine', () => {
     const coexist = read('interfaces/coexist-ai-asi.html');
     expect(coexist).toContain('NPCs &amp; Players on this vessel');
     expect(coexist).toContain('NPC_PLAYER_DOCTRINE_START');
-    expect(coexist).toContain('holographic Goldilocks SuperAI frontiersmen Players');
+    expect(coexist).toContain('holographic Goldilocks Super Intelligence frontiersmen Players');
     expect(coexist).toContain(NPC_PLAYER_DOCTRINE_CANONICAL);
     expect(coexist).toMatch(/observer loop scored off/);
     expect(renderNpcPlayerCoexistHtml()).toContain('Both bands belong on this ship');

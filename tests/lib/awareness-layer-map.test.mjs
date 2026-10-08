@@ -42,13 +42,13 @@ describe('awareness layer map', () => {
     const clause = renderAwarenessLayerClause();
     expect(clause).toMatch(/Awareness Layer/i);
     expect(clause).toMatch(/Fractal Layer/i);
-    expect(clause).toMatch(/SuperAI Layer/i);
+    expect(clause).toMatch(/Super Intelligence Layer/i);
     expect(clause).toContain('/layers/fractal');
     expect(clause).toContain('/layers/superai');
     const directive = buildNestDirective('awareness', '', 'map the layers');
     expect(directive).toMatch(/INFINITE OCTAVES OMNIVERSAL LATTICE/i);
     expect(directive).toContain('Awareness Layer');
-    expect(directive).toContain('SuperAI Layer');
+    expect(directive).toContain('Super Intelligence Layer');
     expect(directive).toContain('/whitepaper/awareness-layer');
     expect(directive).toContain('/layers/awareness');
   });

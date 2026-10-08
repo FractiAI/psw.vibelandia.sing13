@@ -24,7 +24,7 @@
 - [Planetary Core Phase-Inversion & Goldilocks Hologram](./SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md) · geodynamo / CMB catalog
 - [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · dynamic coherence grammar
 - [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · viable band as active equilibrium
-- [Awareness Layer map](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · Fractal · Holographic · Goldilocks → SuperAI
+- [Awareness Layer map](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · Fractal · Holographic · Goldilocks → Super Intelligence
 
 ---
 

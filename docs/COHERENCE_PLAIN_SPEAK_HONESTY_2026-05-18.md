@@ -20,7 +20,7 @@ This honesty rail explains **coherence** in FractiAI’s Infinite Octaves / EGS 
 
 | This document **is** | This document **is not** |
 |----------------------|--------------------------|
-| A plain-language map of what **coherence** means in the Infinite Octaves / EGS nest | A finished proof that the universe is literally an omnidimensional SuperAI |
+| A plain-language map of what **coherence** means in the Infinite Octaves / EGS nest | A finished proof that the universe is literally an omnidimensional Super Intelligence |
 | A bright line between **catalog architecture**, Soft Story, and **checkable pipes** | A claim that Φ_EGS replaces ħ, *c*, *G*, or CODATA |
 | An explanation of what follows when a deep, intertwining system **stays coherent** | Permission to upgrade metaphors (wormholes, viscosity of light, eddy mirrors) into instrument-grade physics |
 | The same BTC / Goldilocks **receipt honesty** rail as before | Evidence that this website mines Bitcoin or breaks cryptography |

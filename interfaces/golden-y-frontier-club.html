@@ -34,8 +34,19 @@
       border-top:1px solid color-mix(in srgb, var(--vb-gold, #c9a227) 35%, transparent);
       padding-top:0.75rem;
     }
+    .gy-frontiers a{
+      display:block;text-decoration:none;color:inherit;
+      transition:color 0.2s ease, transform 0.2s ease;
+    }
+    .gy-frontiers a:hover, .gy-frontiers a:focus-visible{
+      color:var(--vb-gold, #c9a227);outline:none;
+    }
+    .gy-frontiers a:hover strong, .gy-frontiers a:focus-visible strong{
+      text-decoration:underline;text-underline-offset:0.2em;
+    }
     .gy-frontiers strong{display:block;font-family:Cormorant Garamond,Georgia,serif;font-size:1.15rem}
     .gy-frontiers span{display:block;opacity:0.85;margin-top:0.15rem;font-size:0.95rem}
+    .gy-frontiers .gy-open{display:block;margin-top:0.35rem;font-size:0.85rem;opacity:0.75;letter-spacing:0.04em;text-transform:uppercase}
     .gy-roster{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:0.85rem}
     .gy-roster li{
       border-top:1px solid color-mix(in srgb, var(--vb-gold, #c9a227) 30%, transparent);
@@ -71,7 +82,7 @@
       <img src="/interfaces/assets/golden-y/golden-y-cattle-brand-logo.png" width="1024" height="1024" alt="Golden Y cattle brand logo — rugged Y studded with gold nodes" />
       <div>
         <p class="gy-brand__mark">Golden Y Brand</p>
-        <p class="gy-brand__sub">Rugged cattle-brand insignia — belonging without a membership test. Charted across physical landscapes and cosmic oceans of Story.</p>
+        <p class="gy-brand__sub">Rugged cattle-brand insignia — belonging without a membership test. Charted across physical landscapes and holographic oceans of Story.</p>
       </div>
     </div>
 
@@ -81,23 +92,35 @@
     <p>Marked by the <strong>Golden Y Brand</strong> — reminiscent of a rugged cattle brand studded with golden nodes — our insignia represents belonging to a practicing vanguard charting uncharted territory. On SS Vibelandia that means Downtown Reno camps, Nevada County prospects, guest dinners at the men’s club, and field trips that leave from Wrong Side of Town. Puerto Reno is present within every deck. Deck 3’s men’s club remains hospitality · marketplace · nightlife · brotherhood as voyage identity — not a gate.</p>
 
     <h2>Current frontiers available</h2>
-    <p><em>Check back often — we’re constantly expanding.</em></p>
+    <p><em>Check back for updates to the calendar</em> — we’re constantly expanding. Tap a frontier for its dedicated page.</p>
     <ul class="gy-frontiers">
       <li>
-        <strong>Holographic Goldilocks Super Intelligence Camp</strong>
-        <span>Downtown Reno</span>
+        <a href="/golden-y/super-intelligence-camp">
+          <strong>Holographic Goldilocks Super Intelligence Camp</strong>
+          <span>Downtown Reno</span>
+          <span class="gy-open">Open frontier →</span>
+        </a>
       </li>
       <li>
-        <strong>Gold Prospecting &amp; Mining Camp</strong>
-        <span>Nevada County</span>
+        <a href="/golden-y/gold-prospecting-camp">
+          <strong>Gold Prospecting &amp; Mining Camp</strong>
+          <span>Nevada County</span>
+          <span class="gy-open">Open frontier →</span>
+        </a>
       </li>
       <li>
-        <strong>Guest Speaker Dinner Presentations</strong>
-        <span>At Men’s Club Reno · Wrong Side of Town</span>
+        <a href="/golden-y/guest-speaker-dinners">
+          <strong>Guest Speaker Dinner Presentations</strong>
+          <span>At Men’s Club Reno · Wrong Side of Town</span>
+          <span class="gy-open">Open frontier →</span>
+        </a>
       </li>
       <li>
-        <strong>Field Trips</strong>
-        <span>Leaving from Men’s Club Reno</span>
+        <a href="/golden-y/field-trips">
+          <strong>Field Trips</strong>
+          <span>Leaving from Men’s Club Reno</span>
+          <span class="gy-open">Open frontier →</span>
+        </a>
       </li>
     </ul>
 
@@ -131,11 +154,12 @@
     <p><strong>Fair Exchange Clause in effect.</strong> Club dues, transactions, and exchanges operate under a dynamic Fair Exchange Clause. Depending on overall delivery, mutual value generated, and experience, transacted money may be refunded in part — functioning much like a fair-exchange tipping system. We stand by the work and the handshake. Human emergency outranks algorithms. Belonging remains voluntary.</p>
 
     <h2>Get involved</h2>
-    <p>For membership inquiries, current calendar events, and access to the member directory:</p>
-    <p>📧 <strong>Contact:</strong> <a href="mailto:Valetpru@gmail.com?subject=Golden%20Y%20Frontier%20Club">Valetpru@gmail.com</a></p>
+    <p><em>Check back for updates to the calendar.</em> For membership inquiries, current calendar events, the member directory, and to <strong>get on the email list</strong>, write Valet Pru:</p>
+    <p><strong>Email list &amp; contact:</strong> <a href="mailto:valetpru@gmail.com?subject=Golden%20Y%20Frontier%20Club%20email%20list">valetpru@gmail.com</a></p>
 
     <div class="vb-pub-cta-row">
-      <a class="vb-pub-btn vb-pub-btn--gold" href="mailto:Valetpru@gmail.com?subject=Golden%20Y%20Frontier%20Club%20membership">Request membership</a>
+      <a class="vb-pub-btn vb-pub-btn--gold" href="mailto:valetpru@gmail.com?subject=Golden%20Y%20Frontier%20Club%20email%20list">Email Valet Pru · join the list</a>
+      <a class="vb-pub-btn vb-pub-btn--ghost" href="mailto:valetpru@gmail.com?subject=Golden%20Y%20Frontier%20Club%20membership">Request membership</a>
       <a class="vb-pub-btn vb-pub-btn--ghost" href="/ship-blog/golden-y-frontier-club">Read the announce note</a>
       <a class="vb-pub-btn vb-pub-btn--ghost" href="/questfest">SS Vibelandia board</a>
       <a class="vb-pub-btn vb-pub-btn--ghost" href="/frontiersman-voyage">Frontiersman brochure</a>

@@ -1733,6 +1733,38 @@
       "destination": "/interfaces/golden-y-frontier-club.html"
     },
     {
+      "source": "/golden-y/super-intelligence-camp",
+      "destination": "/interfaces/golden-y-super-intelligence-camp.html"
+    },
+    {
+      "source": "/golden-y/super-intelligence-camp/",
+      "destination": "/interfaces/golden-y-super-intelligence-camp.html"
+    },
+    {
+      "source": "/golden-y/gold-prospecting-camp",
+      "destination": "/interfaces/golden-y-gold-prospecting-camp.html"
+    },
+    {
+      "source": "/golden-y/gold-prospecting-camp/",
+      "destination": "/interfaces/golden-y-gold-prospecting-camp.html"
+    },
+    {
+      "source": "/golden-y/guest-speaker-dinners",
+      "destination": "/interfaces/golden-y-guest-speaker-dinners.html"
+    },
+    {
+      "source": "/golden-y/guest-speaker-dinners/",
+      "destination": "/interfaces/golden-y-guest-speaker-dinners.html"
+    },
+    {
+      "source": "/golden-y/field-trips",
+      "destination": "/interfaces/golden-y-field-trips.html"
+    },
+    {
+      "source": "/golden-y/field-trips/",
+      "destination": "/interfaces/golden-y-field-trips.html"
+    },
+    {
       "source": "/ship-blog/golden-y-frontier-club",
       "destination": "/interfaces/blog-golden-y-frontier-club-2026-09.html"
     },

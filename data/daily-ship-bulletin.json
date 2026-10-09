@@ -1,21 +1,21 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "dateline": {
-    "ymd": "2026-10-08",
-    "weekday": "Thursday",
+    "ymd": "2026-10-09",
+    "weekday": "Friday",
     "month": "October",
-    "day": 8,
-    "label": "Thursday, October 8",
-    "shortBoard": "Thursday board · October 8 · Puerto Reno",
-    "newsLabel": "News of the day · Thursday, October 8"
+    "day": 9,
+    "label": "Friday, October 9",
+    "shortBoard": "Friday board · October 9 · Puerto Reno",
+    "newsLabel": "News of the day · Friday, October 9"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Thursday board · October 8 · Puerto Reno",
-  "newsLabel": "News of the day · Thursday, October 8",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/frontier-agent-convergence\">If You Ask Five AIs Whether They Agree with You, What Did You Actually Measure?</a>. Also new on the board: <a href=\"/ship-blog/galactosphere-hypothesis\">If the Sun Has a Heliosphere, Does a Galaxy Have a Softer Edge — Or Only a Catalog of Separate Winds?</a>. A hospitality note on the board, if you need it: <a href=\"/heros-return-concierto\">The Hero’s Return Concierto is open</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Friday board · October 9 · Puerto Reno",
+  "newsLabel": "News of the day · Friday, October 9",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/frontier-agent-convergence\">If You Ask Five AIs Whether They Agree with You, What Did You Actually Measure?</a>. Also new on the board: <a href=\"/ship-blog/galactosphere-hypothesis\">If the Sun Has a Heliosphere, Does a Galaxy Have a Softer Edge — Or Only a Catalog of Separate Winds?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-frontier-agent-convergence-2026-10",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "announce-2026-10-07-heros-return-concierto",
-    "title": "The Hero’s Return Concierto is open",
-    "href": "/heros-return-concierto"
+    "id": "daily-2026-10-08-synthobs-frontier-agent-convergence-2026-10",
+    "title": "If You Ask Five AIs Whether They Agree with You, What Did You Actually Measure?",
+    "href": "/ship-blog/frontier-agent-convergence"
   },
-  "generatedAt": "2026-10-08T20:40:01.668Z"
+  "generatedAt": "2026-10-09T20:04:31.115Z"
 }

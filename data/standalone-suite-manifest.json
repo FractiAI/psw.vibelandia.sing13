@@ -17,6 +17,30 @@
       ]
     },
     {
+      "id": "synthobs-living-architect-protective-lattice",
+      "path": "research/synthobs-living-architect-protective-lattice",
+      "github": "https://github.com/FractiAI/synthobs-living-architect-protective-lattice",
+      "description": "Living Architect Protective Lattice — coral · mollusk · agent cross-domain audit · boot-up carry-forward · harmonization schema · ENGINE_SHELF #44 (not harmonized empirical validation)",
+      "paperIds": [
+        "synthobs-living-architect-protective-lattice-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_LIVING_ARCHITECT_PROTECTIVE_LATTICE_EGS_2026-10.md"
+      ]
+    },
+    {
+      "id": "synthobs-organizational-discovery-homeostasis",
+      "path": "research/synthobs-organizational-discovery-homeostasis",
+      "github": "https://github.com/FractiAI/synthobs-organizational-discovery-homeostasis",
+      "description": "Organizational Discovery Homeostasis — ODH-1 12-node latent-factor lab · adaptive coordination · ENGINE_SHELF #45 (not SI awareness proof)",
+      "paperIds": [
+        "synthobs-organizational-discovery-homeostasis-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_ORGANIZATIONAL_DISCOVERY_HOMEOSTASIS_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-galactosphere-hypothesis",
       "path": "research/synthobs-galactosphere-hypothesis",
       "github": "https://github.com/FractiAI/synthobs-galactosphere-hypothesis",

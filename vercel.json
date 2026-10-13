@@ -1501,6 +1501,22 @@
       "destination": "/interfaces/blog-homeostasis-expedition-boot-up-2026-10.html"
     },
     {
+      "source": "/ship-blog/living-architect-protective-lattice",
+      "destination": "/interfaces/blog-living-architect-protective-lattice-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/living-architect-protective-lattice/",
+      "destination": "/interfaces/blog-living-architect-protective-lattice-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/organizational-discovery-homeostasis",
+      "destination": "/interfaces/blog-organizational-discovery-homeostasis-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/organizational-discovery-homeostasis/",
+      "destination": "/interfaces/blog-organizational-discovery-homeostasis-2026-10.html"
+    },
+    {
       "source": "/ship-blog/galactosphere-hypothesis",
       "destination": "/interfaces/blog-galactosphere-hypothesis-2026-10.html"
     },

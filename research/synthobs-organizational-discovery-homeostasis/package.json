@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-organizational-discovery-homeostasis",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Homeostasis Expedition SI organizational discovery — 12-node latent-factor digital lab · ridge arms A–E · Infinite Octaves ENGINE_SHELF companion #45",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-organizational-discovery-homeostasis.git"
+  },
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

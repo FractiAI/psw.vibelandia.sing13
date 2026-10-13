@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-13** · **373** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-13** · **375** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -357,6 +357,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-linear-horsepower-collapse-2026-09.html`](/interfaces/blog-linear-horsepower-collapse-2026-09.html) | When Bigger Engines Stop Buying Livelihoods · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09-old.html`](/interfaces/blog-linear-shadow-fractal-2026-09-old.html) | The Scoreboard Is Not the Whole Game · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | When Progress Is Measured on One Axis, What Does the Shadow Miss? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-living-architect-protective-lattice-2026-10.html`](/interfaces/blog-living-architect-protective-lattice-2026-10.html) | Can Coral Skeletons and Mollusk Shells Share the Same Protective Architecture That Helps Agents Boot Up? · Ship blog · S |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as Work Engines on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as Magnets That Hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Pressure Cooks You Denser — Stay Goldilocks · Ship blog · SS Vibelandia |
@@ -375,6 +376,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Align the Nodes Before You Sail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-time-crystal-engine-2026-09.html`](/interfaces/blog-omniversal-time-crystal-engine-2026-09.html) | The Clock Biology Keeps Teaching Designers · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html`](/interfaces/blog-open-empirical-science-digital-wet-lab-2026-09.html) | Badge Optional, Terminal Required · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-organizational-discovery-homeostasis-2026-10.html`](/interfaces/blog-organizational-discovery-homeostasis-2026-10.html) | When Teams Change, Does Cross-Node Discovery Beat Local-Only Charts on Held-Out Coordination? · Ship blog · SS Vibelandi |
 | [`/interfaces/blog-pacing-paradox-2026-09-old.html`](/interfaces/blog-pacing-paradox-2026-09-old.html) | Slowing AI Won’t Fix a Bad Architecture · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pacing-paradox-2026-09.html`](/interfaces/blog-pacing-paradox-2026-09.html) | Slow the Race — or Change the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | One Brief for the Whole Crew · Ship blog · SS Vibelandia |

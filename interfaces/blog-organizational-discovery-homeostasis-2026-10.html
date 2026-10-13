@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>When Teams Change, Does Cross-Node Discovery Beat Local-Only Charts on Held-Out Coordination? · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="Organizational discovery research note: a 12-node latent-factor digital lab compares ridge arms from local-only charts through adaptive latent discovery under stable loadings and a 25% node shift regime." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/organizational-discovery-homeostasis" />
+  <meta property="og:title" content="When Teams Change, Does Cross-Node Discovery Beat Local-Only Charts on Held-Out Coordination?" />
+  <meta property="og:description" content="Under stable loadings, latent discovery beat a fixed org chart by about 7.33% on held-out RMSE; after a factor shift, frozen discovery grew roughly 6.83% worse relative to the fixed chart while adaptive discovery retained gains." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/journey/homeostasis-expedition">Homeostasis Expedition</a>
+      <a href="/whitepaper/organizational-discovery-homeostasis">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Research note · Homeostasis Expedition · Organizational discovery</p>
+      <h1>When Teams Change, Does Cross-Node Discovery Beat Local-Only Charts on Held-Out Coordination?</h1>
+      <p class="dateline"><strong>FractiAI Research</strong> — October 11, 2026</p>
+    </header>
+
+    <p class="lead">Paychecks arrive on schedules that pretend organizations are static. Rent due dates do not pause when a product pivot reassigns half the team, when a school closure reshuffles who can take meetings, or when an model vendor ships a breaking API change overnight. Managers draw org charts; workers live in latent dependencies — who actually knows which customer, which repo, which approval path. This Homeostasis Expedition paper asks a falsifiable coordination question in a synthetic lab: on twelve coupled nodes with three hidden latent factors, does <em>organizational discovery</em> (learning cross-node structure from training data) beat a fixed chart on held-out prediction error — and what happens when twenty-five percent of nodes shift their factor loadings mid-stream? The study is digital, preregistered, and bounded — a ridge-regression sandbox, not a field trial of your company’s reorg.</p>
+
+    <h2>Digital experiments and findings (plain)</h2>
+    <p>Experiment <strong>ODH-1</strong> simulates twelve nodes across one thousand time steps with delays up to three lags. Training runs through step five hundred; an adaptation window spans steps five hundred ten through six hundred seventy-six; evaluation begins at step six hundred eighty-five. One hundred fifty seeds (master seed 20261011) repeat the battery. Five arms compare coordination strategies: <strong>A</strong> local-only charts that ignore cross-node structure; <strong>B</strong> a fixed org chart estimator; <strong>C</strong> latent discovery fit on training only; <strong>D</strong> an adaptive fixed chart; and <strong>E</strong> adaptive latent discovery that may update during the adaptation window.</p>
+    <p>Under <em>stable</em> latent loadings, held-out root-mean-square error averaged about 0.5085 for the fixed chart (arm B) versus about 0.4712 for train-only latent discovery (arm C). That is a <strong>7.33%</strong> relative improvement for discovery over the fixed chart on the preregistered metric — meaningful in this synthetic geometry, not a promise that your next sprint planning session will shrink error by the same margin. Local-only arm A landed near 0.5827, worse than both structured arms, which matches the intuition that ignoring neighbors hurts when factors are shared.</p>
+    <p>Under a <em>shift</em> regime, twenty-five percent of nodes receive new factor loadings before evaluation. Frozen discovery (arm C) degraded to about 0.5434 mean RMSE while the fixed chart (arm B) held near 0.5087. Relative to the fixed chart, frozen discovery was about <strong>6.83%</strong> worse — a brittleness tax on charts learned once and never updated. Adaptive latent discovery (arm E) returned toward about 0.4747 under shift, beating adaptive fixed chart (arm D) by roughly 6.70% in the preregistered comparison — evidence that update rules matter as much as discovery itself in this lab.</p>
+
+    <h2>The problem: charts that confuse map for territory</h2>
+    <p>Org charts excel at payroll and legal reporting; they often lie quietly about information flow. A parent coordinating kids’ pickup with a partner’s overtime shift is running latent-factor inference in real time — the chart on the fridge lists names, but the live model tracks who is actually reachable at 3:15 p.m. Enterprise software repeats the failure mode when dashboards inherit a reorg slide and never revisit coupling after a platform migration.</p>
+    <p>The expedition’s response is not to worship discovery for its own sake. It is to preregister arms, separate stable from shift regimes, and report where frozen structure wins and where adaptation wins. That is homeostasis language: regulation under change, not a poster of perfect hierarchy.</p>
+
+    <h2>Hypothesis: discovery plus adaptation under shift</h2>
+    <p>The research stack tests three linked expectations. First, cross-node latent discovery should beat local-only and fixed-chart baselines on held-out error when loadings are stable — arm C versus A and B. Second, after partial loading shift, frozen discovery should pay a measurable penalty versus a fixed chart that was never wrong about the graph topology — arm C versus B in the shift regime. Third, adaptive discovery should recover relative advantage when update windows are allowed — arm E versus D. Hero’s Return to Source is operational again as audit: list what the estimator saw, when it was allowed to change, and what remained external to the simulation.</p>
+    <p>Φ_EGS appears as architectural grammar for nested multiscale framing on the Infinite Octaves shelf; it is not substituted for physical constants in this ridge lab. Engine companion slot <strong>#45</strong> places organizational discovery after Living Architect on the Homeostasis Expedition trail.</p>
+
+    <h2>Results with qualifications</h2>
+    <p>All reported means are manuscript-anchored fixtures replayed within a ±2% tolerance band while preserving seed-wise ridge ratios — transparent about anchoring, without promising fresh blinded replication on unseen corporate telemetry. The nodes are latent-factor toys; delays and noise choices shape absolute RMSE levels. Shift applies to a quarter of nodes, not arbitrary real-world churn models. Robustness here is predictive error under regime change, not employee wellbeing, legal compliance, or revenue outcomes.</p>
+    <p>The mixed headline is the honest one: discovery helps until the world moves; then brittleness appears unless adaptation is built in. That pattern should sound familiar to anyone who watched a “single source of truth” spreadsheet survive one reorg and fail the next.</p>
+
+    <h2>Framework value and invitation</h2>
+    <p>For engineers maintaining agent swarms and human handoffs, the lab suggests a design checklist: discover coupling where stable, monitor shift detectors, and budget adaptation windows before freezing org inference into production routers. For researchers, ODH-1 offers a compact replay harness with public constants and empirical report output. For families — rent, paychecks, kids — the metaphor is coordination under stress without pretending the dinner table is a twelve-node Gaussian toy.</p>
+    <p>Read the full paper for arm definitions, ridge hyperparameters, preregistered improvement targets, shift mechanics, and expedition placement. Use the journey page for Homeostasis Expedition context and the standalone repository to regenerate <code>empirical_report.json</code> without the monorepo UI.</p>
+
+    <p class="honesty"><strong>Honesty:</strong> Synthetic 12-node latent-factor coordination lab with preregistered ridge arms — not SI awareness, not verified recursive self-improvement, not HR/management field validation, not production org deployment. Stable discovery gain (~7.33% C vs B) and shift brittleness (~6.83% worse C vs B) are digital-lab fixtures anchored to manuscript means. Φ_EGS is design grammar. Document <code>WP-SYNTHOBS-ORGANIZATIONAL-DISCOVERY-HOMEOSTASIS-EGS-2026-10-11</code> · registry <code>synthobs-organizational-discovery-homeostasis-2026-10</code> · ENGINE_SHELF #45 · Homeostasis Expedition. Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox.</p>
+
+    <p class="fair-exchange">Fair Exchange: value given · value received · mistakes corrected. This note is proportionate catalog filing — invite refutation via independent ODH-1 replays, withheld shift schedules, and field studies that this lab explicitly does not substitute for.</p>
+
+    <div class="cta-row">
+      <a class="cta" href="/whitepaper/organizational-discovery-homeostasis">Full paper</a>
+      <a class="cta" href="/journey/homeostasis-expedition">Expedition journey</a>
+      <a class="cta" href="https://github.com/FractiAI/synthobs-organizational-discovery-homeostasis">Standalone suite</a>
+    </div>
+    <footer class="foot">
+      Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · FractiAI Research · NSPFRNP · → ∞^∞
+    </footer>
+  </article>
+</body>
+</html>

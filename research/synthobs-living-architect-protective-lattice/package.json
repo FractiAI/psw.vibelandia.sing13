@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-living-architect-protective-lattice",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Living Architect Protective Lattice — Bracket 7 org-discovery · boot-up carry-forward · external dataset inventory · harmonization schema stub · Infinite Octaves ENGINE_SHELF companion #44",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-living-architect-protective-lattice.git"
+  },
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

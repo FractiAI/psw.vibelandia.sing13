@@ -30,17 +30,17 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Observable Boot-Up · Frontier Agent Convergence · Galactosphere · Chart & Compass · Reflective Portal · Attention MFA
+    // Newest: Organizational Discovery · Living Architect · Observable Boot-Up · Frontier Agent · Galactosphere · Chart & Compass
     expect(posts[0].id).toBe(
-      'synthobs-homeostasis-expedition-boot-up-2026-10',
+      'synthobs-organizational-discovery-homeostasis-2026-10',
     );
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-organizational-discovery-homeostasis-2026-10',
+      'synthobs-living-architect-protective-lattice-2026-10',
       'synthobs-homeostasis-expedition-boot-up-2026-10',
       'synthobs-frontier-agent-convergence-2026-10',
       'synthobs-galactosphere-hypothesis-2026-10',
       'synthobs-chart-compass-holographic-goldilocks-si-2026-10',
-      'synthobs-reflective-portal-multiscale-homeostasis-2026-10',
-      'synthobs-attention-awareness-downstream-activation-2026-10',
     ]);
   });
 });

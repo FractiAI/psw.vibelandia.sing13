@@ -1,17 +1,61 @@
 {
   "schema": "hero-leo-prospect-board/v1",
-  "scoutId": "SCOUT-2026-10-13T1705",
-  "generatedAt": "2026-10-13T17:05:29.478Z",
+  "scoutId": "SCOUT-2026-10-02T1754",
+  "generatedAt": "2026-10-02T17:54:36.782Z",
   "expedition_id": "homeostasis-expedition",
   "nCatalog": 15,
-  "nAvailable": 12,
-  "nAlreadyCompleted": 3,
   "nReturned": 11,
-  "nSelectable": 11,
-  "honesty": "Top prospects are ranked from an authorized SING13 catalog using a sequencing score (information×relevance×novelty×falsifiability×proximity ÷ friction). Already-ledgered prospects are deferred so Select all can tick the full board. Not a claim of new wet-lab discovery. Player 1 selects what to complete.",
+  "honesty": "Top prospects are ranked from an authorized SING13 catalog using a sequencing score (information×relevance×novelty×falsifiability×proximity ÷ friction). Not a claim of new wet-lab discovery. Player 1 selects what to complete.",
   "prospects": [
     {
       "rank": 1,
+      "prospect_id": "P-C11-WETLAB-PILOT",
+      "title": "C11 ART-class lagged cassette pilot design stress-test",
+      "domain": "biology / information architecture",
+      "question": "Which kill-if-fails branch of the C11 lab brief yields the cheapest high-information computational preflight?",
+      "motivation": "Gap lead already at E3; need least-friction path before wet-lab spend.",
+      "known_explanations": "Debris / DGR / retron reclassification",
+      "null_hypothesis": "No computational preflight separates product fingerprints from known writer classes.",
+      "predicted_test": "Compare exclusion panels (DGR VR flatness, retron msDNA fingerprints) against public motif catalogs.",
+      "priority_score": 1.169,
+      "friction": 0.45,
+      "information_gain": 0.9,
+      "novelty_potential": 0.85,
+      "falsifiability": 0.95,
+      "evidence_proximity": 0.8,
+      "relevance": 0.95,
+      "links": [
+        "/journey/beyond-crispr-c11-lab-brief",
+        "/whitepaper/beyond-crispr-discovery"
+      ],
+      "already_completed": false,
+      "selection_status": "completed"
+    },
+    {
+      "rank": 2,
+      "prospect_id": "P-PHASE2B-RECEIPT",
+      "title": "Phase 2b Lattice blind session receipt comparison",
+      "domain": "research infrastructure / AI discovery",
+      "question": "Do live BYOK Lattice sessions rediscover only known systems or surface new gap candidates?",
+      "motivation": "Blind prompt exported; operator lane ready.",
+      "known_explanations": "Rediscovery of CBASS-class messaging",
+      "null_hypothesis": "Live queues never diverge from fixture shortlist.",
+      "predicted_test": "Score a filled receipt against literatureStatus taxonomy.",
+      "priority_score": 0.7916,
+      "friction": 0.25,
+      "information_gain": 0.75,
+      "novelty_potential": 0.6,
+      "falsifiability": 0.85,
+      "evidence_proximity": 0.7,
+      "relevance": 0.85,
+      "links": [
+        "/journey/beyond-crispr-phase-2b"
+      ],
+      "already_completed": false,
+      "selection_status": "available"
+    },
+    {
+      "rank": 3,
       "prospect_id": "P-AGENTIC-CONVERGENCE-PORT",
       "title": "Agentic Convergence held-out landscape portability re-run",
       "domain": "AI / representation learning",
@@ -31,10 +75,10 @@
         "/whitepaper/agentic-convergence"
       ],
       "already_completed": false,
-      "selection_status": "completed"
+      "selection_status": "available"
     },
     {
-      "rank": 2,
+      "rank": 4,
       "prospect_id": "P-ORPHAN-MESSENGER",
       "title": "Orphan cyclic-messenger synthase remote-wiring map",
       "domain": "biology / second messengers",
@@ -57,7 +101,7 @@
       "selection_status": "available"
     },
     {
-      "rank": 3,
+      "rank": 5,
       "prospect_id": "P-DGR-LAG-SIGNATURE",
       "title": "DGR bloom-lag diversity signature (computational)",
       "domain": "biology / templated diversification",
@@ -80,7 +124,7 @@
       "selection_status": "available"
     },
     {
-      "rank": 4,
+      "rank": 6,
       "prospect_id": "P-E-PHI-PRIME",
       "title": "e×φ×prime recursive homeostasis held-out Δ check",
       "domain": "computational homeostasis",
@@ -103,7 +147,7 @@
       "selection_status": "available"
     },
     {
-      "rank": 5,
+      "rank": 7,
       "prospect_id": "P-RETRON-ENCODE",
       "title": "Retron msDNA encode-step allele separation checklist",
       "domain": "biology / retrons",
@@ -126,7 +170,7 @@
       "selection_status": "available"
     },
     {
-      "rank": 6,
+      "rank": 8,
       "prospect_id": "P-CRYPTIC-DIVERSIFIERS",
       "title": "Cryptic VR diversifiers vs assembly artifact filter",
       "domain": "biology / genomics",
@@ -149,7 +193,7 @@
       "selection_status": "available"
     },
     {
-      "rank": 7,
+      "rank": 9,
       "prospect_id": "P-HH-DYNAMIC-STABILITY",
       "title": "Holographic Homeostasis dynamic-stability claim audit",
       "domain": "complex systems / homeostasis",
@@ -173,7 +217,7 @@
       "selection_status": "available"
     },
     {
-      "rank": 8,
+      "rank": 10,
       "prospect_id": "P-GOLDILOCKS-NETZERO",
       "title": "Goldilocks ≡ Net Zero active-equilibrium contrast table",
       "domain": "complex systems",
@@ -196,7 +240,7 @@
       "selection_status": "available"
     },
     {
-      "rank": 9,
+      "rank": 11,
       "prospect_id": "P-SELF-OBSERVING-GENOME",
       "title": "Self-Observing Genome Soft Story vs mechanism boundary",
       "domain": "biology Soft Story / catalog",
@@ -214,53 +258,6 @@
       "relevance": 0.65,
       "links": [
         "/ship-blog/self-observing-genome"
-      ],
-      "already_completed": false,
-      "selection_status": "available"
-    },
-    {
-      "rank": 10,
-      "prospect_id": "P-MACRO-PROTEIN",
-      "title": "Macro-protein work engine θ_bio band portability",
-      "domain": "physiology / scaling",
-      "question": "Is θ_bio ∈ [13,17] an operational fixture band or Soft Story label only?",
-      "motivation": "Application companion — keep Scout away from clinical overclaim.",
-      "known_explanations": "Kleiber/WBE classical scaling",
-      "null_hypothesis": "Band adds no falsifiable surplus over classical scaling.",
-      "predicted_test": "Compare suite honesty tiers vs classical references.",
-      "priority_score": 0.126,
-      "friction": 0.35,
-      "information_gain": 0.5,
-      "novelty_potential": 0.35,
-      "falsifiability": 0.75,
-      "evidence_proximity": 0.7,
-      "relevance": 0.6,
-      "links": [
-        "/ship-blog/macro-protein-work-engine"
-      ],
-      "already_completed": false,
-      "selection_status": "available"
-    },
-    {
-      "rank": 11,
-      "prospect_id": "P-FRACTIOS-FIRMWARE",
-      "title": "FractiOS Explore→Commit firmware loop as research homeostasis peer",
-      "domain": "systems / OS overlay",
-      "question": "Does Explore→Commit map cleanly onto Hero Leo’s investigate→falsify→capture loop without voyage narrative leakage?",
-      "motivation": "Application companion; process rhyme for Scout UI.",
-      "known_explanations": "Product metaphor only",
-      "null_hypothesis": "No shared falsifiable loop variables.",
-      "predicted_test": "Align state machines; list shared observables.",
-      "priority_score": 0.0834,
-      "friction": 0.3,
-      "information_gain": 0.45,
-      "novelty_potential": 0.3,
-      "falsifiability": 0.65,
-      "evidence_proximity": 0.7,
-      "relevance": 0.55,
-      "links": [
-        "/fractios/start-here",
-        "/ship-blog/fractios-holographic-os"
       ],
       "already_completed": false,
       "selection_status": "available"

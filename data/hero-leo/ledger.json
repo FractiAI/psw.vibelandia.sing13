@@ -3,9 +3,9 @@
   "expedition_id": "homeostasis-expedition",
   "updatedAt": "2026-10-02T17:52:48.562Z",
   "stats": {
-    "prospects_scanned": 183,
+    "prospects_scanned": 123,
     "note": "prospects_scanned counts curated literature pointers + Beyond CRISPR corpus rows actually processed in suite runs — not fabricated web crawls.",
-    "last_scout_id": "SCOUT-2026-10-13T1705"
+    "last_scout_id": "SCOUT-2026-10-02T1754"
   },
   "investigations": [
     {
@@ -295,102 +295,6 @@
       "publicationCriteria": {
         "scientificSignificance": true,
         "novelty": true,
-        "evidence": true,
-        "reproducibility": true,
-        "falsifiability": true,
-        "alternativeExplanations": true,
-        "documentation": true,
-        "provenance": true,
-        "scientificUsefulness": true,
-        "publicationReadiness": false
-      }
-    },
-    {
-      "expedition_id": "homeostasis-expedition",
-      "investigation_id": "INV-HE-2026-10-13-007",
-      "prospect_id": "P-PHASE2B-RECEIPT",
-      "timestamp": "2026-10-13T17:05:29.475Z",
-      "lab": "digital",
-      "research_domain": "research infrastructure / AI discovery",
-      "question": "Do live BYOK Lattice sessions rediscover only known systems or surface new gap candidates?",
-      "motivation": "Blind prompt exported; operator lane ready.",
-      "observation": "Scout board SCOUT-2026-10-13T1705 rank #1; priority_score=0.7916",
-      "known_explanations": "Rediscovery of CBASS-class messaging",
-      "novel_hypothesis": "Do live BYOK Lattice sessions rediscover only known systems or surface new gap candidates?",
-      "prediction": "Score a filled receipt against literatureStatus taxonomy.",
-      "null_hypothesis": "Live queues never diverge from fixture shortlist.",
-      "test_method": "Hero Leo Digital Lab computational completion (catalog + local receipts); not wet-lab.",
-      "controls": "Null-first; rediscovery labeling; human gate for external publish.",
-      "evidence_sources": [
-        "/journey/beyond-crispr-phase-2b"
-      ],
-      "analysis": "Null-first card written. Predicted test: Score a filled receipt against literatureStatus taxonomy.. Competing explanation: Rediscovery of CBASS-class messaging.",
-      "result": "Computational research note completed for “Phase 2b Lattice blind session receipt comparison”. Evidence remains below wet-lab (E1). Next escalate only if Player 1 authorizes higher-friction work.",
-      "alternative_explanations": "Rediscovery of CBASS-class messaging",
-      "falsification_status": "open",
-      "evidence_level": "E1",
-      "novelty_status": "OPEN_QUESTION",
-      "replication_status": "computational_only",
-      "confidence": "low–medium (computational note)",
-      "friction_estimate": "0.25",
-      "information_gain": "0.75",
-      "next_action": "Player 1 review; escalate only with authorization.",
-      "publication_status": "RESEARCH_NOTE",
-      "artifact_links": [
-        "/journey/beyond-crispr-phase-2b"
-      ],
-      "human_review_status": "pending",
-      "publicationCriteria": {
-        "scientificSignificance": true,
-        "novelty": false,
-        "evidence": true,
-        "reproducibility": true,
-        "falsifiability": true,
-        "alternativeExplanations": true,
-        "documentation": true,
-        "provenance": true,
-        "scientificUsefulness": true,
-        "publicationReadiness": false
-      }
-    },
-    {
-      "expedition_id": "homeostasis-expedition",
-      "investigation_id": "INV-HE-2026-10-13-008",
-      "prospect_id": "P-AGENTIC-CONVERGENCE-PORT",
-      "timestamp": "2026-10-13T17:05:29.480Z",
-      "lab": "digital",
-      "research_domain": "AI / representation learning",
-      "question": "Does explorer vs control structural margin remain above the portability gate on a noisier held-out landscape?",
-      "motivation": "Homeostasis of research process — verify computational peer still regenerates.",
-      "observation": "Scout board SCOUT-2026-10-13T1705 rank #1; priority_score=0.6484",
-      "known_explanations": "Train-set artifact",
-      "novel_hypothesis": null,
-      "prediction": "npm run research:synthobs-agentic-convergence-experiment",
-      "null_hypothesis": "Margin collapses below gate.",
-      "test_method": "Hero Leo Digital Lab computational completion (catalog + local receipts); not wet-lab.",
-      "controls": "Null-first; rediscovery labeling; human gate for external publish.",
-      "evidence_sources": [
-        "/whitepaper/agentic-convergence"
-      ],
-      "analysis": "empirical_report all_pass=true",
-      "result": "Suite receipt present with all_pass=true — regenerable computational peer still green (rediscovery of fixture success, not new biology).",
-      "alternative_explanations": "Train-set artifact",
-      "falsification_status": "surviving",
-      "evidence_level": "E2",
-      "novelty_status": "REDISCOVERY",
-      "replication_status": "computational_only",
-      "confidence": "low–medium (computational note)",
-      "friction_estimate": "0.2",
-      "information_gain": "0.65",
-      "next_action": "Player 1 review; escalate only with authorization.",
-      "publication_status": "RESEARCH_NOTE",
-      "artifact_links": [
-        "/whitepaper/agentic-convergence"
-      ],
-      "human_review_status": "pending",
-      "publicationCriteria": {
-        "scientificSignificance": true,
-        "novelty": false,
         "evidence": true,
         "reproducibility": true,
         "falsifiability": true,

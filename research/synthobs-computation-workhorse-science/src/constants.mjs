@@ -27,8 +27,10 @@ export const NOT_COMPLETED_SIMULATION = false;
 export const AWAITING_EXECUTION = false;
 export const SOFT_STORY_CATALOG = true;
 
+export const CW2_MODEL = 'cw2-throughput-v2';
+
 export const HONESTY =
-  'CW-2 four-condition synthetic event simulation executed (seed 20261013, 200 matched repetitions, Appendix B populated). Declared cost/time parameters — not calibrated to real grant portfolios; synthetic factorial contrasts illustrate prespecified endpoints under model assumptions and do not alone establish real-world superiority.';
+  'CW-2 throughput synthetic simulation (computation daily screening vs wet-lab sequential bench; seed 20261013, 200 reps). Declared marginal costs — not calibrated to real grant portfolios; does not alone establish real-world superiority.';
 
 export const CONDITIONS = Object.freeze([
   { id: 'A', env: 'computation-first', pipeline: false },

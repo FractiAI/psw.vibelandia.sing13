@@ -38,11 +38,11 @@
 
 **Objective.** Determine whether computation-first vs wet-lab-first produces more **substantive, independently validated** discoveries and **implemented progress** per dollar and calendar year; whether a **Discovery-to-Implementation Pipeline** increases conversion enough to justify cost.
 
-**Methods.** Four conditions over **365 days**: (A) computation-first, no pipeline; (B) computation-first + pipeline; (C) wet-lab-first, no pipeline; (D) wet-lab-first + pipeline. Unit = one fully costed researcher-year (base **1,760** productive hours). Matched portfolios (**24** projects), **200** repetitions, event-level funding and milestone records (**CW-2**, seed **20261013**).
+**Methods.** Four conditions over **365 days**: (A) computation-first, no pipeline; (B) computation-first + pipeline; (C) wet-lab-first, no pipeline; (D) wet-lab-first + pipeline. Unit = one fully costed researcher-year (base **1,760** productive hours). **CW-2 throughput model:** computation arms run a **daily high-volume screening stream** (declared marginal compute/data costs); wet-lab arms walk a **24-project sequential bench portfolio** per repetition. **200** repetitions, seed **20261013**.
 
-**Findings (synthetic CW-2).** Under model assumptions, mean **validated discoveries** per researcher-year were **2.98 (A)**, **3.55 (B)**, **2.31 (C)**, **2.83 (D)**; mean **measurable outcomes** **1.44**, **2.51**, **1.04**, **1.80**. Mean **total expenditure** was lowest in **A** (~**$145k**) and highest in **D** (~**$375k**). Pipeline arms increased measurable outcomes vs matched no-pipeline arms (+**1.07** computation; +**0.76** wet-lab) with higher spend. **Real-world superiority is not established** — parameters are declared, not empirically calibrated.
+**Findings (synthetic CW-2).** Computation-first arms produced **~3.2 validated discoveries per calendar day** versus **~0.006 per day** in wet-lab arms (~**1,179** vs **~2** validated per researcher-year). Mean **direct (non-salary) spend per validated discovery** was **~$187 (A)** and **~$289 (B)** versus **~$108,516 (C)** and **~$110,197 (D)**. Mean **measurable outcomes** **166 (A)**, **246 (B)**, **0.91 (C)**, **1.75 (D)**. Fully loaded totals were **~$714k (A)**, **~$849k (B)**, **~$380k (C)**, **~$491k (D)** — computation spends more on screening volume but buys orders-of-magnitude lower marginal cost per validated claim. **Real-world superiority is not established** — parameters are declared, not empirically calibrated.
 
-**Implications.** Computation becomes primary only where **calibrated** evidence shows lower full cost or elapsed time for equivalent validated results without unacceptable reliability losses. Pipeline value = incremental outcomes vs incremental cost — in CW-2 the pipeline improved measurable conversion in both environments at added cost.
+**Implications.** Under this screening-scale parameterization, computation-first behaves like a **low marginal-cost discovery factory** with higher integrity false-accept counts unless validation keeps pace. Pipeline **B** increased measurable outcomes vs **A** (+**~80**/year) at higher direct spend. Policy transfer still requires calibration and domain stratification.
 
 ---
 
@@ -62,7 +62,7 @@ Suite: `research/synthobs-computation-workhorse-science/` · **CW-1** + **CW-2**
 
 Infrastructure pilot (10 reps): placeholder unfinished-at-365 counts only — **non-decisive**.
 
-**Factorial contrasts (CW-2 means):** validated discoveries **A−C = +0.67**; **B−D = +0.72**; pipeline measurable gain **B−A = +1.07**, **D−C = +0.76**.
+**Factorial contrasts (CW-2 means):** daily validated **A ≈ 3.23/day** vs **C ≈ 0.006/day**; marginal direct cost per validated **A ≈ $187** vs **C ≈ $108,516**; pipeline measurable gain **B−A ≈ +80/year**, **D−C ≈ +0.84/year**.
 
 ---
 
@@ -99,7 +99,7 @@ Scientific integrity: independent validation, provenance, conflicts disclosed; s
 
 ## 9–10. Simulation specification · statistical analysis
 
-Prespecified: matched portfolios, resource constraints, validation and funding models, day-365 cutoff. Primary endpoints listed in §0. Factorial main effects + interaction; **CW-2** reports condition means over 200 repetitions. Extensive sensitivity analysis required before policy conclusions.
+Prespecified: wet-lab **24-project** portfolios per repetition; computation **daily screening throughput** with shared RNG seeds per rep; resource constraints, validation queues, funding and implementation caps, day-365 cutoff. Primary endpoints listed in §0. **CW-2** reports condition means over 200 repetitions. Extensive sensitivity analysis required before policy conclusions.
 
 ---
 
@@ -107,7 +107,7 @@ Prespecified: matched portfolios, resource constraints, validation and funding m
 
 **Established (design + CW-2 synthetic execution):** definitions, economic model structure, event distinction (candidate ≠ validated ≠ implemented), Appendix B mean tables.
 
-**Qualified synthetic results:** In CW-2, computation-first conditions **A** and **B** exceed wet-lab **C** and **D** on mean validated and measurable counts at **lower** mean total spend; pipeline **B** and **D** increase measurable outcomes vs **A** and **C** respectively with **higher** spend and pipeline overhead.
+**Qualified synthetic results:** Computation-first **A/B** deliver **~500×** higher daily validated throughput than wet-lab **C/D** in this model, with **~500× lower direct cost per validated discovery**; wet-lab arms show lower false-accept counts but near-bench productivity. Pipeline **B** materially increases measurable outcomes vs **A**; wet-lab pipeline effects remain small at bench cadence.
 
 **Not established:** transfer of these ratios to real labs, grants, or domains; pipeline ICER acceptable without calibration; acceptable false-positive rates in field data.
 
@@ -129,32 +129,41 @@ End-of-year ledger separates scientific vs funding states. Limitations: domain d
 
 | Outcome | Comp, no pipeline (A) | Comp, pipeline (B) | Wet lab, no pipeline (C) | Wet lab, pipeline (D) |
 |---------|----------------------:|---------------------:|-------------------------:|----------------------:|
-| Candidates generated | 19.71 | 23.13 | 14.24 | 17.63 |
-| Substantive discoveries | 4.46 | 5.33 | 2.98 | 3.66 |
-| Independently validated discoveries | 2.98 | 3.55 | 2.31 | 2.83 |
-| Implemented discoveries | 2.58 | 3.43 | 1.91 | 2.58 |
-| Measurable outcomes | 1.44 | 2.51 | 1.04 | 1.80 |
-| False claims accepted (mean) | 0.22 | 0.26 | 0.04 | 0.02 |
-| Unfinished projects at day 365 | 4.93 | 1.10 | 10.71 | 7.29 |
+| Candidates generated | 23,360.00 | 23,360.00 | 13.63 | 16.89 |
+| Substantive discoveries | 1,557.39 | 1,555.68 | 2.76 | 3.60 |
+| Independently validated discoveries | 1,179.46 | 1,174.74 | 2.17 | 2.77 |
+| Implemented discoveries | 319.94 | 341.97 | 1.77 | 2.51 |
+| Measurable outcomes | 166.44 | 246.17 | 0.91 | 1.75 |
+| False claims accepted (mean) | 35.88 | 35.38 | 0.03 | 0.01 |
+| Unfinished at day 365 (queue + bench) | 863.80 | 836.89 | 11.05 | 7.69 |
+
+### Table B1b. Daily rates (means)
+
+| Rate | A | B | C | D |
+|------|--:|--:|--:|--:|
+| Substantive discoveries / day | 4.27 | 4.26 | 0.01 | 0.01 |
+| Validated discoveries / day | 3.23 | 3.22 | 0.01 | 0.01 |
+| Direct spend / day (USD, excl. salary burn in row) | 602.44 | 930.29 | 545.13 | 719.88 |
+| Direct spend / validated discovery (USD) | 186.58 | 289.26 | 108,515.75 | 110,197.30 |
 
 ### Table B2. Fully allocated economics (USD means)
 
 | Metric | A | B | C | D |
 |--------|--:|--:|--:|--:|
-| Total expenditure | 144,976.83 | 194,391.12 | 290,043.66 | 374,895.30 |
-| Cost per validated discovery | 48,731.71 | 54,758.06 | 125,560.02 | 132,706.30 |
-| Cost per measurable outcome | 100,678.36 | 77,446.66 | 277,553.74 | 207,698.23 |
+| Total expenditure | 713,775.37 | 848,920.79 | 380,103.33 | 490,586.48 |
+| Cost per validated discovery (fully loaded) | 605.17 | 722.65 | 175,162.82 | 176,787.92 |
+| Cost per measurable outcome | 4,288.61 | 3,448.51 | 420,003.68 | 279,536.46 |
 
-Pipeline expenditure is embedded in **B** and **D** totals (non-pipeline columns exclude pipeline line items by design).
+Pipeline expenditure is embedded in **B** and **D** totals.
 
 ### Table B3. Time to progress (median days, means over reps)
 
 | Metric | A | B | C | D |
 |--------|--:|--:|--:|--:|
-| Median time to substantive discovery | 162.84 | 129.81 | 175.81 | 176.59 |
-| Median time to validated discovery | 188.03 | 152.95 | 183.35 | 188.59 |
-| Median time to implementation | 234.33 | 182.24 | 220.98 | 208.41 |
-| Median time to measurable outcome | 304.29 | 228.87 | 436.91 | 278.14 |
+| Median time to substantive discovery | 181.63 | 182.31 | 175.78 | 180.37 |
+| Median time to validated discovery | 182.26 | 182.90 | 187.49 | 192.32 |
+| Median time to implementation | 204.53 | 193.51 | 232.43 | 211.82 |
+| Median time to measurable outcome | 207.96 | 195.57 | 475.66 | 286.06 |
 
 ---
 

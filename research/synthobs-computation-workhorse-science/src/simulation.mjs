@@ -1,5 +1,8 @@
 /**
  * CW-2 · Four-condition researcher-year event simulation (365-day cutoff)
+ *
+ * Computation-first: high-throughput daily candidate stream (screening-scale).
+ * Wet-lab-first: sequential bench projects (matched 24-project portfolio).
  * Declared synthetic parameters — not calibrated to real grant portfolios.
  */
 import { mulberry32 } from './digital-lab.mjs';
@@ -13,9 +16,31 @@ import {
 
 export const N_PROJECTS_PER_PORTFOLIO = 24;
 
-/** Fully loaded researcher-year ($) — design assumption. */
+/** Fully loaded researcher-year ($) — design assumption (salary + benefits). */
 export const RESEARCHER_YEAR_COST_USD = 220_000;
 export const HOUR_COST = RESEARCHER_YEAR_COST_USD / PRODUCTIVE_HOURS_BASE;
+export const RESEARCHER_DAILY_BURN_USD = RESEARCHER_YEAR_COST_USD / CALENDAR_HORIZON_DAYS;
+
+/** Computation-first throughput (declared screening-scale model). */
+export const COMP_CANDIDATES_PER_DAY = 64;
+export const COMP_CANDIDATE_COMPUTE_USD = 1.4;
+export const COMP_CANDIDATE_DATA_USD = 0.35;
+export const COMP_CANDIDATE_RESEARCHER_HOURS = 0.035;
+export const COMP_GROUND_TRUTH_POSITIVE_RATE = 0.09;
+export const COMP_SUBSTANTIVE_IF_TRUE = 0.62;
+export const COMP_SUBSTANTIVE_IF_FALSE = 0.012;
+export const COMP_VALIDATION_SLOTS_PER_DAY = 28;
+export const COMP_VALIDATION_DAYS_PER_ITEM = 0.2;
+export const COMP_VALIDATION_COST_USD = 22;
+export const COMP_VALIDATION_SENSITIVITY = 0.88;
+export const COMP_VALIDATION_SPECIFICITY = 0.86;
+
+/** Wet-lab sequential bench (declared). */
+export const WET_CANDIDATE_DAYS = 12;
+export const WET_VALIDATION_DAYS = 24;
+export const WET_CANDIDATE_HOURS = 48;
+export const WET_MATERIALS_USD = 3200;
+export const WET_FACILITIES_USD = 4800;
 
 function emptyCosts() {
   return {
@@ -37,54 +62,151 @@ function totalCost(c) {
   return Object.values(c).reduce((a, b) => a + b, 0);
 }
 
-/** Generate matched portfolio (same across A–D for repetition rep). */
 function generatePortfolio(rng) {
   const projects = [];
   for (let i = 0; i < N_PROJECTS_PER_PORTFOLIO; i++) {
-    const trulyValid = rng() < 0.22;
     projects.push({
       id: i,
-      trulyValid,
+      trulyValid: rng() < 0.22,
       complexity: 0.3 + rng() * 0.7,
-      implValue: 0.4 + rng() * 0.6,
-      validationDifficulty: 0.2 + rng() * 0.5,
     });
   }
   return projects;
 }
 
-function envParams(condition) {
-  const comp = condition.env === 'computation-first';
-  const pipe = condition.pipeline;
+function pipelineParams(pipe, { computation } = {}) {
+  if (computation) {
+    return {
+      fundingDelayDays: pipe ? 4 : 12,
+      implDays: pipe ? 18 : 32,
+      implCostUsd: pipe ? 520 : 310,
+      implStartsPerDay: 1,
+      pipelineOverheadPerProject: pipe ? 120 : 0,
+      measurableProb: pipe ? 0.72 : 0.52,
+      overheadRate: 0.08,
+    };
+  }
   return {
-    comp,
-    pipe,
-    candidateHours: comp ? 18 : 42,
-    candidateCalendar: comp ? 4 : 11,
-    candidateCostCompute: comp ? 850 : 120,
-    candidateCostMaterials: comp ? 40 : 2800,
-    candidateCostFacilities: comp ? 80 : 4200,
-    substantivePassIfValid: comp ? 0.78 : 0.88,
-    substantivePassIfInvalid: comp ? 0.08 : 0.03,
-    validationDays: comp ? 14 : 22,
-    validationCost: comp ? 4200 : 6800,
-    validationSensitivity: comp ? 0.86 : 0.91,
-    validationSpecificity: comp ? 0.84 : 0.9,
     fundingDelayDays: pipe ? 6 : 18,
-    implDays: pipe ? 28 : 52,
-    implCost: 12000 + (pipe ? 2000 : 0),
+    implDays: pipe ? 26 : 52,
+    implCostUsd: pipe ? 14_200 : 12_800,
+    implStartsPerDay: 1,
     pipelineOverheadPerProject: pipe ? 2400 : 0,
-    measurableProb: pipe ? 0.72 : 0.58,
+    measurableProb: pipe ? 0.68 : 0.54,
     overheadRate: 0.12,
   };
 }
 
-function simulateCondition(portfolio, condition, rng) {
-  const p = envParams(condition);
+/** High-volume computation-first year (daily screening + validation queue). */
+function simulateComputationFirst(condition, rng) {
+  const pipe = pipelineParams(condition.pipeline, { computation: true });
   const costs = emptyCosts();
+  const counts = {
+    candidates: 0,
+    substantive: 0,
+    validated: 0,
+    implemented: 0,
+    measurable: 0,
+    falseAccepted: 0,
+    unfinished: 0,
+  };
+  const times = { toSubstantive: [], toValidated: [], toImplemented: [], toMeasurable: [] };
+  const validationQueue = [];
+  const implementationQueue = [];
+  let implStartsToday = 0;
+
   let hoursLeft = PRODUCTIVE_HOURS_BASE;
   let day = 0;
 
+  while (day < CALENDAR_HORIZON_DAYS) {
+    costs.researcher += RESEARCHER_DAILY_BURN_USD;
+    implStartsToday = 0;
+
+    let slotsToday = COMP_CANDIDATES_PER_DAY;
+    while (slotsToday > 0 && hoursLeft >= COMP_CANDIDATE_RESEARCHER_HOURS) {
+      hoursLeft -= COMP_CANDIDATE_RESEARCHER_HOURS;
+      slotsToday -= 1;
+      counts.candidates += 1;
+      costs.compute += COMP_CANDIDATE_COMPUTE_USD;
+      costs.data += COMP_CANDIDATE_DATA_USD;
+      costs.researcher += COMP_CANDIDATE_RESEARCHER_HOURS * HOUR_COST;
+
+      const trulyValid = rng() < COMP_GROUND_TRUTH_POSITIVE_RATE;
+      const passSubstantive = trulyValid
+        ? rng() < COMP_SUBSTANTIVE_IF_TRUE
+        : rng() < COMP_SUBSTANTIVE_IF_FALSE;
+      if (!passSubstantive) {
+        costs.failed_work += 2;
+        continue;
+      }
+      counts.substantive += 1;
+      times.toSubstantive.push(day);
+      validationQueue.push({ dayQueued: day, trulyValid });
+    }
+
+    let valSlots = COMP_VALIDATION_SLOTS_PER_DAY;
+    while (valSlots > 0 && validationQueue.length > 0) {
+      const item = validationQueue.shift();
+      if (day - item.dayQueued < COMP_VALIDATION_DAYS_PER_ITEM) {
+        validationQueue.unshift(item);
+        break;
+      }
+      valSlots -= 1;
+      costs.validation += COMP_VALIDATION_COST_USD;
+      costs.researcher += 0.2 * HOUR_COST;
+      const valid = item.trulyValid
+        ? rng() < COMP_VALIDATION_SENSITIVITY
+        : rng() > COMP_VALIDATION_SPECIFICITY;
+      if (!valid) {
+        costs.failed_work += COMP_VALIDATION_COST_USD * 0.25;
+        continue;
+      }
+      counts.validated += 1;
+      if (!item.trulyValid) counts.falseAccepted += 1;
+      times.toValidated.push(day);
+      implementationQueue.push({ validatedDay: day, started: false });
+    }
+
+    for (let i = 0; i < implementationQueue.length; i++) {
+      const item = implementationQueue[i];
+      if (item.started) {
+        if (day >= item.doneDay) {
+          implementationQueue.splice(i, 1);
+          i -= 1;
+          costs.implementation += pipe.implCostUsd;
+          costs.researcher += 2 * HOUR_COST;
+          if (condition.pipeline) costs.pipeline += pipe.pipelineOverheadPerProject;
+          counts.implemented += 1;
+          times.toImplemented.push(day);
+          if (rng() < pipe.measurableProb) {
+            counts.measurable += 1;
+            times.toMeasurable.push(day + 3);
+          }
+        }
+        continue;
+      }
+      const readyDay = item.validatedDay + pipe.fundingDelayDays;
+      if (day < readyDay || implStartsToday >= pipe.implStartsPerDay) continue;
+      item.started = true;
+      item.doneDay = day + pipe.implDays;
+      implStartsToday += 1;
+    }
+
+    day += 1;
+  }
+
+  counts.unfinished += validationQueue.length + implementationQueue.length;
+  costs.overhead = totalCost(costs) * pipe.overheadRate;
+
+  return finalizeRun(condition.id, counts, costs, times, day);
+}
+
+/** Sequential wet-lab-first year (matched portfolio). */
+function simulateWetLabFirst(portfolio, condition, rng) {
+  const pipe = pipelineParams(condition.pipeline, { computation: false });
+  const costs = emptyCosts();
+  let hoursLeft = PRODUCTIVE_HOURS_BASE;
+  let day = 0;
   const counts = {
     candidates: 0,
     substantive: 0,
@@ -97,91 +219,102 @@ function simulateCondition(portfolio, condition, rng) {
   const times = { toSubstantive: [], toValidated: [], toImplemented: [], toMeasurable: [] };
 
   for (const project of portfolio) {
-    if (day >= CALENDAR_HORIZON_DAYS || hoursLeft <= 0) {
+    if (day >= CALENDAR_HORIZON_DAYS) {
       counts.unfinished += 1;
       continue;
     }
+    costs.researcher += (WET_CANDIDATE_DAYS / 2) * RESEARCHER_DAILY_BURN_USD;
 
-    // Candidate generation
-    if (hoursLeft < p.candidateHours) {
+    if (hoursLeft < WET_CANDIDATE_HOURS) {
       counts.unfinished += 1;
       continue;
     }
-    hoursLeft -= p.candidateHours;
-    day += p.candidateCalendar;
+    hoursLeft -= WET_CANDIDATE_HOURS;
+    day += WET_CANDIDATE_DAYS;
     counts.candidates += 1;
-    costs.researcher += p.candidateHours * HOUR_COST;
-    if (p.comp) costs.compute += p.candidateCostCompute;
-    else {
-      costs.materials += p.candidateCostMaterials;
-      costs.facilities += p.candidateCostFacilities;
-    }
+    costs.researcher += WET_CANDIDATE_HOURS * HOUR_COST;
+    costs.materials += WET_MATERIALS_USD;
+    costs.facilities += WET_FACILITIES_USD;
 
-    const passSubstantive = project.trulyValid
-      ? rng() < p.substantivePassIfValid
-      : rng() < p.substantivePassIfInvalid;
+    const passSubstantive = project.trulyValid ? rng() < 0.86 : rng() < 0.025;
     if (!passSubstantive) {
-      costs.failed_work += p.comp ? 600 : 3200;
-      if (day >= CALENDAR_HORIZON_DAYS) counts.unfinished += 1;
+      costs.failed_work += 3800;
       continue;
     }
     counts.substantive += 1;
-    const daySubstantive = day;
-    times.toSubstantive.push(daySubstantive);
+    times.toSubstantive.push(day);
 
-    day += p.validationDays;
+    day += WET_VALIDATION_DAYS;
     if (day > CALENDAR_HORIZON_DAYS) {
       counts.unfinished += 1;
       continue;
     }
-    costs.validation += p.validationCost;
-    costs.researcher += 8 * HOUR_COST;
-
-    const valid =
-      project.trulyValid
-        ? rng() < p.validationSensitivity
-        : rng() > p.validationSpecificity;
+    costs.validation += 7200;
+    costs.researcher += 16 * HOUR_COST;
+    const valid = project.trulyValid ? rng() < 0.92 : rng() > 0.91;
     if (!valid) {
-      costs.failed_work += p.validationCost * 0.35;
-      if (day >= CALENDAR_HORIZON_DAYS) counts.unfinished += 1;
+      costs.failed_work += 2500;
       continue;
     }
     counts.validated += 1;
     if (!project.trulyValid) counts.falseAccepted += 1;
     times.toValidated.push(day);
 
-    day += p.fundingDelayDays;
+    day += pipe.fundingDelayDays;
     if (day > CALENDAR_HORIZON_DAYS) {
       counts.unfinished += 1;
       continue;
     }
-
-    day += p.implDays;
+    day += pipe.implDays;
     if (day > CALENDAR_HORIZON_DAYS) {
       counts.unfinished += 1;
       continue;
     }
-    costs.implementation += p.implCost;
-    costs.researcher += 12 * HOUR_COST;
-    if (p.pipe) costs.pipeline += p.pipelineOverheadPerProject;
+    costs.implementation += pipe.implCostUsd + 4200;
+    costs.researcher += 20 * HOUR_COST;
+    if (condition.pipeline) costs.pipeline += pipe.pipelineOverheadPerProject;
     counts.implemented += 1;
     times.toImplemented.push(day);
-
-    if (rng() < p.measurableProb) {
+    if (rng() < pipe.measurableProb) {
       counts.measurable += 1;
-      times.toMeasurable.push(day + 8);
+      times.toMeasurable.push(day + 12);
     }
   }
 
-  costs.overhead = totalCost(costs) * p.overheadRate;
+  costs.overhead = totalCost(costs) * pipe.overheadRate;
+  return finalizeRun(condition.id, counts, costs, times, day);
+}
+
+function finalizeRun(conditionId, counts, costs, times, horizonDays) {
   const total = totalCost(costs);
+  const dailyValidated = counts.validated / CALENDAR_HORIZON_DAYS;
+  const dailySubstantive = counts.substantive / CALENDAR_HORIZON_DAYS;
+  const dailyTotalSpend = total / CALENDAR_HORIZON_DAYS;
+  const direct =
+    costs.compute +
+    costs.data +
+    costs.materials +
+    costs.facilities +
+    costs.validation +
+    costs.failed_work +
+    costs.implementation +
+    costs.pipeline;
+  const marginalPerValidated = counts.validated > 0 ? direct / counts.validated : null;
+  const dailyDirectSpend = direct / CALENDAR_HORIZON_DAYS;
 
   return {
-    condition: condition.id,
+    condition: conditionId,
     counts,
     costs,
     totalCostUsd: total,
-    hoursUsed: PRODUCTIVE_HOURS_BASE - hoursLeft,
+    directSpendUsd: direct,
+    daily: {
+      substantive: dailySubstantive,
+      validated: dailyValidated,
+      total_spend_usd: dailyTotalSpend,
+      direct_spend_usd: dailyDirectSpend,
+      marginal_spend_per_validated_usd: marginalPerValidated,
+    },
     medians: {
       toSubstantive: median(times.toSubstantive),
       toValidated: median(times.toValidated),
@@ -198,9 +331,11 @@ function median(arr) {
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
 }
 
-function meanField(runs, condId, pathFn) {
-  const vals = runs.filter((r) => r.condition === condId).map(pathFn);
-  return vals.reduce((a, b) => a + b, 0) / vals.length;
+function simulateCondition(portfolio, condition, rng) {
+  if (condition.env === 'computation-first') {
+    return simulateComputationFirst(condition, rng);
+  }
+  return simulateWetLabFirst(portfolio, condition, rng);
 }
 
 export function runFourConditionSimulation({
@@ -231,6 +366,13 @@ export function runFourConditionSimulation({
       false_claims_accepted: mean((r) => r.counts.falseAccepted),
       unfinished_projects: mean((r) => r.counts.unfinished),
       total_expenditure_usd: mean((r) => r.totalCostUsd),
+      daily_substantive: mean((r) => r.daily.substantive),
+      daily_validated: mean((r) => r.daily.validated),
+      daily_total_spend_usd: mean((r) => r.daily.total_spend_usd),
+      daily_direct_spend_usd: mean((r) => r.daily.direct_spend_usd),
+      daily_marginal_cost_per_validated_usd: mean(
+        (r) => r.daily.marginal_spend_per_validated_usd ?? 0,
+      ),
       cost_per_validated:
         mean((r) => r.counts.validated) > 0
           ? mean((r) => r.totalCostUsd) / mean((r) => r.counts.validated)
@@ -246,7 +388,6 @@ export function runFourConditionSimulation({
     };
   }
 
-  // Pipeline incremental (B vs A, D vs C)
   const pipelineDelta = (envPair) => {
     const [noPipe, pipe] = envPair;
     return {
@@ -272,11 +413,11 @@ export function runFourConditionSimulation({
         summary.A.validated_discoveries - summary.C.validated_discoveries,
       validated_comp_pipe_minus_wet_pipe:
         summary.B.validated_discoveries - summary.D.validated_discoveries,
-      measurable_comp_no_pipe_minus_wet:
-        summary.A.measurable_outcomes - summary.C.measurable_outcomes,
+      daily_validated_comp_minus_wet_no_pipe:
+        summary.A.daily_validated - summary.C.daily_validated,
     },
     honesty:
-      'CW-2 synthetic event simulation with declared cost/time parameters (seed 20261013, 200 reps). Illustrates factorial contrasts under model assumptions — not calibration to real labs or grants.',
+      'CW-2 synthetic simulation: computation-first uses declared high-throughput daily screening; wet-lab uses sequential bench portfolios. Seed 20261013, 200 reps — not calibration to real labs or grants.',
     findingsEstablished: true,
     syntheticOnly: true,
   };

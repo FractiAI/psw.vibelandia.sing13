@@ -24,7 +24,7 @@
 | **CW-2 simulation (operational)** | Auditable 200-rep run populates Appendix B means; seed and suite replayable | Calibration to NIH, EU, or industry expenditure records |
 | **Computational discovery** | Defines productivity, validation, and pipeline endpoints | Measured discoveries per real human researcher-year outside the model |
 | **Research economics** | Defines \(C_{\text{total}}\) across researcher, compute, data, facilities, equipment, materials, validation, failed work, implementation, pipeline, overhead | That simulated cost ratios transfer without sensitivity analysis |
-| **Scientific integrity** | Specifies funding, conflicts, false-positive accounting in the event model | Completed funding incentive analysis on real award data |
+| **Scientific integrity** | Specifies funding, conflicts, false-positive accounting; **short-horizon AI/QC specificity ramp** within the researcher-year | Completed funding incentive analysis on real award data or vendor-specific learning guarantees |
 | **Pipeline** | Quantifies incremental synthetic outcomes vs incremental synthetic cost in factorial contrasts | Production deployment proof for any institution |
 | **CW-1 suite** | Design-lock verification + non-decisive infrastructure pilot | Substitute for CW-2 full battery |
 
@@ -40,9 +40,9 @@
 
 **Methods.** Four conditions over **365 days**: (A) computation-first, no pipeline; (B) computation-first + pipeline; (C) wet-lab-first, no pipeline; (D) wet-lab-first + pipeline. Unit = one fully costed researcher-year (base **1,760** productive hours). **CW-2 throughput model:** computation arms run a **daily high-volume screening stream** (declared marginal compute/data costs); wet-lab arms walk a **24-project sequential bench portfolio** per repetition. **200** repetitions, seed **20261013**.
 
-**Findings (synthetic CW-2).** Computation-first arms produced **~2.0 validated discoveries per calendar day** (target cadence for screening-scale work) versus **~0.006 per day** in wet-lab arms (~**712** vs **~2** validated per researcher-year). Mean **direct (non-salary) spend per validated discovery** was **~$245 (A)** and **~$415 (B)** versus **~$108,516 (C)** and **~$110,197 (D)**. Mean **measurable outcomes** **168 (A)**, **247 (B)**, **0.91 (C)**, **1.75 (D)**. Fully loaded totals were **~$606k (A)**, **~$741k (B)**, **~$380k (C)**, **~$491k (D)**. **Real-world superiority is not established** — parameters are declared, not empirically calibrated.
+**Findings (synthetic CW-2).** Computation-first arms produced **~2.0 validated discoveries per calendar day** versus **~0.006 per day** in wet-lab arms (~**725** vs **~2** validated per researcher-year). Mean **direct spend per validated discovery** was **~$237 (A)** and **~$392 (B)** versus **~$108,516 (C)** and **~$110,197 (D)**. **False accepts decline within the year** (AI/QC ramp): **A** ~**14** full-year, ~**6** in days 1–90, ~**2** in days 276–365; **B** ~**7**, ~**5**, ~**1** respectively. Mean **measurable outcomes** **168 (A)**, **247 (B)**, **0.91 (C)**, **1.75 (D)**. Fully loaded totals **~$604k (A)**, **~$739k (B)**, **~$380k (C)**, **~$491k (D)**. **Real-world superiority is not established** — parameters are declared, not empirically calibrated.
 
-**Implications.** Under this screening-scale parameterization, computation-first behaves like a **low marginal-cost discovery factory** with higher integrity false-accept counts unless validation keeps pace. Pipeline **B** increased measurable outcomes vs **A** (+**~80**/year) at higher direct spend. Policy transfer still requires calibration and domain stratification.
+**Implications.** Under this screening-scale parameterization, computation-first behaves like a **low marginal-cost discovery factory** whose **false-accept burden declines within the same year** as validation specificity ramps (faster under pipeline **B**). Pipeline **B** increased measurable outcomes vs **A** (+**~79**/year) while ending the year with **fewer** late-quarter false accepts than **A**. Policy transfer still requires calibration and domain stratification.
 
 ---
 
@@ -62,7 +62,7 @@ Suite: `research/synthobs-computation-workhorse-science/` · **CW-1** + **CW-2**
 
 Infrastructure pilot (10 reps): placeholder unfinished-at-365 counts only — **non-decisive**.
 
-**Factorial contrasts (CW-2 means):** daily validated **A ≈ 1.95/day** vs **C ≈ 0.006/day**; marginal direct cost per validated **A ≈ $245** vs **C ≈ $108,516**; pipeline measurable gain **B−A ≈ +79/year**, **D−C ≈ +0.84/year**.
+**Factorial contrasts (CW-2 means):** daily validated **A ≈ 1.99/day** vs **C ≈ 0.006/day**; marginal direct cost per validated **A ≈ $237** vs **C ≈ $108,516**; false accepts in the **last 90 days** lower in **B** than **A** (pipeline-led QC ramp); pipeline measurable gain **B−A ≈ +79/year**.
 
 ---
 
@@ -93,7 +93,7 @@ Fully allocated cost includes **researcher**, **compute**, **data**, **facilitie
 
 Pipeline stages: capture → prioritization → milestone funding → validation routing → partner matching → deployment → outcome measurement → feedback.
 
-Scientific integrity: independent validation, provenance, conflicts disclosed; synthetic funding rules ≠ real institutional prevalence without records.
+Scientific integrity: independent validation, provenance, conflicts disclosed; synthetic funding rules ≠ real institutional prevalence without records. **Computation arms:** validation **sensitivity/specificity improve with calendar day** (declared short-horizon AI/QC learning — ~100-day ramp with pipeline, ~200-day without); false accepts are tracked in **first 90** vs **last 90** days of the researcher-year.
 
 ---
 
@@ -107,7 +107,7 @@ Prespecified: wet-lab **24-project** portfolios per repetition; computation **da
 
 **Established (design + CW-2 synthetic execution):** definitions, economic model structure, event distinction (candidate ≠ validated ≠ implemented), Appendix B mean tables.
 
-**Qualified synthetic results:** Computation-first **A/B** deliver **~500×** higher daily validated throughput than wet-lab **C/D** in this model, with **~500× lower direct cost per validated discovery**; wet-lab arms show lower false-accept counts but near-bench productivity. Pipeline **B** materially increases measurable outcomes vs **A**; wet-lab pipeline effects remain small at bench cadence.
+**Qualified synthetic results:** Computation-first **A/B** deliver **~300×** higher daily validated throughput than wet-lab **C/D**, with **~400× lower direct cost per validated discovery**. False accepts are **front-loaded** in computation arms (~**6** vs **~2** in the last 90 days for **A**; pipeline **B** ~**5** early vs **~1** late) as the model’s QC ramp tightens. Pipeline **B** materially increases measurable outcomes vs **A**; wet-lab pipeline effects remain small at bench cadence.
 
 **Not established:** transfer of these ratios to real labs, grants, or domains; pipeline ICER acceptable without calibration; acceptable false-positive rates in field data.
 
@@ -131,28 +131,30 @@ End-of-year ledger separates scientific vs funding states. Limitations: domain d
 |---------|----------------------:|---------------------:|-------------------------:|----------------------:|
 | Candidates generated | 14,600.00 | 14,600.00 | 13.63 | 16.89 |
 | Substantive discoveries | 943.98 | 939.23 | 2.76 | 3.60 |
-| Independently validated discoveries | 711.73 | 707.31 | 2.17 | 2.77 |
-| Implemented discoveries | 319.73 | 341.75 | 1.76 | 2.51 |
-| Measurable outcomes | 167.56 | 246.78 | 0.91 | 1.75 |
-| False claims accepted (mean) | 22.13 | 22.05 | 0.03 | 0.01 |
-| Unfinished at day 365 (queue + bench) | 394.50 | 368.06 | 11.05 | 7.69 |
+| Independently validated discoveries | 725.35 | 744.59 | 2.17 | 2.77 |
+| Implemented discoveries | 319.71 | 341.75 | 1.76 | 2.51 |
+| Measurable outcomes | 167.62 | 246.81 | 0.91 | 1.75 |
+| False claims accepted (full year) | 13.88 | 7.42 | 0.03 | 0.01 |
+| False claims accepted (days 1–90) | 6.29 | 4.78 | 0.00 | 0.00 |
+| False claims accepted (days 276–365) | 1.93 | 0.91 | 0.00 | 0.00 |
+| Unfinished at day 365 (queue + bench) | 408.11 | 405.35 | 11.05 | 7.69 |
 
 ### Table B1b. Daily rates (means)
 
 | Rate | A | B | C | D |
 |------|--:|--:|--:|--:|
 | Substantive discoveries / day | 2.59 | 2.57 | 0.01 | 0.01 |
-| Validated discoveries / day | 1.95 | 1.94 | 0.01 | 0.01 |
-| Direct spend / day (USD, excl. salary burn in row) | 476.59 | 804.01 | 545.13 | 719.88 |
-| Direct spend / validated discovery (USD) | 244.74 | 415.47 | 108,515.75 | 110,197.30 |
+| Validated discoveries / day | 1.99 | 2.04 | 0.01 | 0.01 |
+| Direct spend / day (USD, excl. salary burn in row) | 470.92 | 798.07 | 545.13 | 719.88 |
+| Direct spend / validated discovery (USD) | 237.27 | 391.76 | 108,515.75 | 110,197.30 |
 
 ### Table B2. Fully allocated economics (USD means)
 
 | Metric | A | B | C | D |
 |--------|--:|--:|--:|--:|
-| Total expenditure | 606,202.67 | 741,092.06 | 380,103.33 | 490,586.48 |
-| Cost per validated discovery (fully loaded) | 851.73 | 1,047.76 | 175,162.82 | 176,787.92 |
-| Cost per measurable outcome | 3,617.93 | 3,003.05 | 420,003.68 | 279,536.46 |
+| Total expenditure | 603,955.24 | 738,749.64 | 380,103.33 | 490,586.48 |
+| Cost per validated discovery (fully loaded) | 832.65 | 992.16 | 175,162.82 | 176,787.92 |
+| Cost per measurable outcome | 3,603.12 | 2,993.25 | 420,003.68 | 279,536.46 |
 
 Pipeline expenditure is embedded in **B** and **D** totals.
 

@@ -27,7 +27,7 @@ export const NOT_COMPLETED_SIMULATION = false;
 export const AWAITING_EXECUTION = false;
 export const SOFT_STORY_CATALOG = true;
 
-export const CW2_MODEL = 'cw2-throughput-v3-2-validated-per-day';
+export const CW2_MODEL = 'cw2-throughput-v4-integrity-ramp';
 
 export const HONESTY =
   'CW-2 throughput synthetic simulation (computation daily screening vs wet-lab sequential bench; seed 20261013, 200 reps). Declared marginal costs — not calibrated to real grant portfolios; does not alone establish real-world superiority.';

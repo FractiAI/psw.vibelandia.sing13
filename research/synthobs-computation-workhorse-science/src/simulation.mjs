@@ -33,8 +33,23 @@ export const COMP_SUBSTANTIVE_IF_FALSE = 0.012;
 export const COMP_VALIDATION_SLOTS_PER_DAY = 15;
 export const COMP_VALIDATION_DAYS_PER_ITEM = 0.2;
 export const COMP_VALIDATION_COST_USD = 22;
-export const COMP_VALIDATION_SENSITIVITY = 0.88;
-export const COMP_VALIDATION_SPECIFICITY = 0.86;
+
+/** Short-horizon AI/QC improvement within the researcher-year (declared, not vendor-specific). */
+export function compValidationParams(day, pipeline) {
+  const t = Math.min(1, Math.max(0, day / CALENDAR_HORIZON_DAYS));
+  if (pipeline) {
+    const ramp = Math.min(1, day / 100);
+    return {
+      sensitivity: 0.86 + ramp * 0.1,
+      specificity: 0.79 + ramp * 0.19,
+    };
+  }
+  const ramp = Math.min(1, day / 200);
+  return {
+    sensitivity: 0.85 + ramp * 0.08,
+    specificity: 0.81 + ramp * 0.14,
+  };
+}
 
 /** Wet-lab sequential bench (declared). */
 export const WET_CANDIDATE_DAYS = 12;
@@ -109,6 +124,8 @@ function simulateComputationFirst(condition, rng) {
     implemented: 0,
     measurable: 0,
     falseAccepted: 0,
+    falseAcceptedFirst90: 0,
+    falseAcceptedLast90: 0,
     unfinished: 0,
   };
   const times = { toSubstantive: [], toValidated: [], toImplemented: [], toMeasurable: [] };
@@ -153,17 +170,23 @@ function simulateComputationFirst(condition, rng) {
         break;
       }
       valSlots -= 1;
-      costs.validation += COMP_VALIDATION_COST_USD;
+      const valParams = compValidationParams(day, condition.pipeline);
+      const validationCost = COMP_VALIDATION_COST_USD * (1 - 0.12 * Math.min(1, day / 180));
+      costs.validation += validationCost;
       costs.researcher += 0.2 * HOUR_COST;
       const valid = item.trulyValid
-        ? rng() < COMP_VALIDATION_SENSITIVITY
-        : rng() > COMP_VALIDATION_SPECIFICITY;
+        ? rng() < valParams.sensitivity
+        : rng() > valParams.specificity;
       if (!valid) {
-        costs.failed_work += COMP_VALIDATION_COST_USD * 0.25;
+        costs.failed_work += validationCost * 0.25;
         continue;
       }
       counts.validated += 1;
-      if (!item.trulyValid) counts.falseAccepted += 1;
+      if (!item.trulyValid) {
+        counts.falseAccepted += 1;
+        if (day < 90) counts.falseAcceptedFirst90 += 1;
+        if (day >= CALENDAR_HORIZON_DAYS - 90) counts.falseAcceptedLast90 += 1;
+      }
       times.toValidated.push(day);
       implementationQueue.push({ validatedDay: day, started: false });
     }
@@ -365,6 +388,8 @@ export function runFourConditionSimulation({
       implemented_discoveries: mean((r) => r.counts.implemented),
       measurable_outcomes: mean((r) => r.counts.measurable),
       false_claims_accepted: mean((r) => r.counts.falseAccepted),
+      false_claims_first_90_days: mean((r) => r.counts.falseAcceptedFirst90 ?? 0),
+      false_claims_last_90_days: mean((r) => r.counts.falseAcceptedLast90 ?? 0),
       unfinished_projects: mean((r) => r.counts.unfinished),
       total_expenditure_usd: mean((r) => r.totalCostUsd),
       daily_substantive: mean((r) => r.daily.substantive),

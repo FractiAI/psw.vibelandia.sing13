@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "posts": [
+    {
+      "id": "daily-2026-10-13-synthobs-computation-workhorse-science-2026-10",
+      "posted": "2026-10-13",
+      "featured": true,
+      "title": "Should Computation Become the Primary Workhorse of Science?",
+      "subtitle": "News of the day · Tuesday, October 13",
+      "summary": "CW-2 synthetic lab (200 reps, seed 20261013): four-condition researcher-year factorial with full-cost Appendix B means — model illustration, not real-world superiority proof.",
+      "href": "/ship-blog/computation-workhorse-science",
+      "pill": "TODAY",
+      "docRef": "synthobs-computation-workhorse-science-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-12-synthobs-frontier-agent-convergence-2026-10",
       "posted": "2026-10-12",

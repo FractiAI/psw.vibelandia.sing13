@@ -25,7 +25,7 @@ import {
   N_NODES,
   N_BRACKETS,
 } from './constants.mjs';
-import { runDigitalLabBattery } from './digital-lab.mjs';
+import { runComputationalLabBattery } from './computational-lab.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -109,7 +109,7 @@ function experimentPaperLocks() {
   const checks = {
     hasHonesty: /Honesty boundary/i.test(paper),
     hasDocId: paper.includes(DOC_ID) || paper.includes(REGISTRY_ID),
-    hasDigitalFindings: /Digital experiments and findings|BU-1|dependency closure/i.test(paper),
+    hasDigitalFindings: /Computational lab experiments and findings|BU-1|dependency closure/i.test(paper),
     hasNetZero: /net.?zero|∅|pre-temporal|pre-spatial/i.test(paper),
     hasNotPhysical:
       /not.*physical emergence|does not demonstrate|cannot establish H3|unverified/i.test(paper),
@@ -199,11 +199,11 @@ function experimentGoldenIdentity() {
   };
 }
 
-function experimentDigitalLab() {
-  const battery = runDigitalLabBattery({ seed: DIGITAL_SEED });
+function experimentComputationalLab() {
+  const battery = runComputationalLabBattery({ seed: DIGITAL_SEED });
   return {
-    id: 'E8_digital_lab',
-    title: 'Digital lab · BU-1 dependency coverage · perturbation robustness',
+    id: 'E8_computational_lab',
+    title: 'Computational lab · BU-1 dependency coverage · perturbation robustness',
     ...battery,
     pass: battery.allPlainPass === true,
     interpretation:
@@ -221,7 +221,7 @@ export async function runAllExperiments() {
     experimentPaperLocks(),
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
-    experimentDigitalLab(),
+    experimentComputationalLab(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

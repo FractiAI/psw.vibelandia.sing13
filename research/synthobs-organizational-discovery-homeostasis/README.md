@@ -1,6 +1,6 @@
 # synthobs-organizational-discovery-homeostasis
 
-**Homeostasis Expedition · SI organizational discovery** — 12-node latent-factor digital lab with preregistered ridge arms **A–E**, stable vs shift regimes, and held-out RMSE evaluation.
+**Homeostasis Expedition · SI organizational discovery** — 12-node latent-factor computational lab with preregistered ridge arms **A–E**, stable vs shift regimes, and held-out RMSE evaluation.
 
 - **Document ID:** `WP-SYNTHOBS-ORGANIZATIONAL-DISCOVERY-HOMEOSTASIS-EGS-2026-10-11`
 - **Registry ID:** `synthobs-organizational-discovery-homeostasis-2026-10` (not yet registered in monorepo registry)
@@ -8,7 +8,7 @@
 - **Monorepo paper (planned):** `docs/SYNTHOBS_ORGANIZATIONAL_DISCOVERY_HOMEOSTASIS_EGS_2026-10.md`
 - **Ship blog (planned):** `/ship-blog/organizational-discovery-homeostasis`
 
-## Digital lab (ODH-1)
+## Computational lab (ODH-1)
 
 | Parameter | Value |
 |-----------|--------|

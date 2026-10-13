@@ -25,7 +25,7 @@ import {
   NOT_UNIVERSAL_GOLDILOCKS_LAW,
   SOFT_STORY_CATALOG,
 } from './constants.mjs';
-import { runDigitalLabBattery } from './digital-lab.mjs';
+import { runComputationalLabBattery } from './computational-lab.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -131,7 +131,7 @@ function experimentPaperLocks() {
     hasHonesty: /Honesty boundary/i.test(paper),
     hasDocId: paper.includes(DOC_ID) || paper.includes(REGISTRY_ID),
     hasDigitalFindings:
-      /Digital experiments and findings|Goldilocks Regulation Sweep|Reflective Portal/i.test(
+      /Computational lab experiments and findings|Goldilocks Regulation Sweep|Reflective Portal/i.test(
         paper,
       ),
     hasChartCompass: /chart/i.test(paper) && /compass/i.test(paper),
@@ -215,12 +215,12 @@ function experimentGoldenIdentity() {
   };
 }
 
-function experimentDigitalLab() {
-  const battery = runDigitalLabBattery({ seed: 20261006 });
+function experimentComputationalLab() {
+  const battery = runComputationalLabBattery({ seed: 20261006 });
   return {
     id: 'E9_digital_lab',
     title:
-      'Digital lab · Goldilocks sweep · Reflective Portal · cross-scale reconstructability',
+      'Computational lab · Goldilocks sweep · Reflective Portal · cross-scale reconstructability',
     ...battery,
     pass: battery.allPlainPass === true,
     interpretation:
@@ -239,7 +239,7 @@ export async function runAllExperiments() {
     experimentPaperLocks(),
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
-    experimentDigitalLab(),
+    experimentComputationalLab(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

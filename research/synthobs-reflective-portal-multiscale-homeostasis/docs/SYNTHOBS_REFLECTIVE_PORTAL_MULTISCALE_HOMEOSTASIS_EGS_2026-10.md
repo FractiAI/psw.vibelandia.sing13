@@ -192,7 +192,7 @@ Let \(B_t\) represent behavior at time \(t\). A reflective system generates a re
 \boxed{Behavior \rightarrow Observation \rightarrow Evaluation \rightarrow Modification \rightarrow New\ Behavior}
 \]
 
-In the digital lab, this is operationalized as: diagnose a failing sticky habit → flip the habit → measure improved reward / recovery / transfer.
+In the computational lab, this is operationalized as: diagnose a failing sticky habit → flip the habit → measure improved reward / recovery / transfer.
 
 ---
 
@@ -240,7 +240,7 @@ The expedition asks whether this can become maintenance + learning + self-observ
 
 ---
 
-## 10–14. Digital Laboratory Agents
+## 10–14. Computational Laboratory Agents
 
 All agents receive the same environment, objective, sensory information, computational budget, and memory capacity. The experimental variable is architecture for self-observation and self-modification.
 
@@ -348,11 +348,11 @@ The central portal:
 \boxed{Observe\ own\ operation \rightarrow Recognize\ pattern \rightarrow Modify\ mechanism \rightarrow Observe\ result}
 \]
 
-The Goldilocks hypothesis asks whether the optimum is maximum reflection or selective coordination. The shipped digital laboratory shows Agent RM outperforming sticky and reflection-only baselines on reversal, trap escape, recovery, and transfer, with an interior ρ optimum — under catalog sandbox conditions.
+The Goldilocks hypothesis asks whether the optimum is maximum reflection or selective coordination. The shipped computational laboratory shows Agent RM outperforming sticky and reflection-only baselines on reversal, trap escape, recovery, and transfer, with an interior ρ optimum — under catalog sandbox conditions.
 
 **Central research question:** Can a multiscale adaptive system become capable of regulating not only its state, but the mechanisms through which it regulates itself — and does this recursive capability produce a measurable new regime of homeostasis?
 
-That is the question this Homeostasis Expedition puts into the digital laboratory — and now files with replayable findings up front.
+That is the question this Homeostasis Expedition puts into the computational laboratory — and now files with replayable findings up front.
 
 ---
 

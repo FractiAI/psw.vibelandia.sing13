@@ -27,7 +27,7 @@
 ### E2_explorer_structural_convergence — Blind explorers converge on structural tags without identity collapse
 
 - **pass:** `true`
-- **interpretation:** Independent fixture explorers share a core structural assessment (executable research, honesty rails, digital labs, claim/evidence separation, unsupported-physics flags) without copy-paste identity.
+- **interpretation:** Independent fixture explorers share a core structural assessment (executable research, honesty rails, computational labs, claim/evidence separation, unsupported-physics flags) without copy-paste identity.
 - **honesty:** Fixture assessments are CI stand-ins for live frontier agents.
 
 ### E3_conformity_contrast — Blind investigation outperforms agree-with-Pru on honesty + claim/evidence

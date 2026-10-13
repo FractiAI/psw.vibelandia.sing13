@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-ORGANIZATIONAL-DISCOVERY-HOMEOSTASIS-EGS-2026-10-11`
 **Registry ID:** `synthobs-organizational-discovery-homeostasis-2026-10`
-**Generated:** 2026-10-13T17:01:18.267Z
+**Generated:** 2026-10-13T22:45:30.723Z
 
 ## Verdict
 
@@ -56,7 +56,7 @@
 ### E3_lab_scaffold — 12 nodes · 3 latent factors · train/adapt/eval windows · 150 seeds
 
 - **Pass:** `true`
-- **Interpretation:** Preregistered digital-lab geometry for organizational discovery arms.
+- **Interpretation:** Preregistered computational-lab geometry for organizational discovery arms.
 - **Honesty:** Scaffold counts — not a headcount of a real firm.
 
 ```json
@@ -72,7 +72,7 @@
   "EVAL_START": 685,
   "N_SEEDS": 150,
   "pass": true,
-  "interpretation": "Preregistered digital-lab geometry for organizational discovery arms.",
+  "interpretation": "Preregistered computational-lab geometry for organizational discovery arms.",
   "honesty": "Scaffold counts — not a headcount of a real firm."
 }
 ```
@@ -164,7 +164,7 @@
 }
 ```
 
-### E8_digital_lab — Digital lab · ridge arms A–E · stable + shift regimes · manuscript heads
+### E8_computational_lab — Computational lab · ridge arms A–E · stable + shift regimes · manuscript heads
 
 - **Pass:** `true`
 - **Interpretation:** Under stable loadings, latent discovery (C) beats fixed chart (B) on held-out RMSE; after a 25 % node factor shift, frozen discovery degrades while adaptive arm E retains gains — not SI awareness proof.
@@ -172,8 +172,8 @@
 
 ```json
 {
-  "id": "E8_digital_lab",
-  "title": "Digital lab · ridge arms A–E · stable + shift regimes · manuscript heads",
+  "id": "E8_computational_lab",
+  "title": "Computational lab · ridge arms A–E · stable + shift regimes · manuscript heads",
   "seed": 20261011,
   "n_seeds": 150,
   "n_nodes": 12,

@@ -9,7 +9,7 @@
 - **Ship blog (when registered):** `/ship-blog/living-architect-protective-lattice`
 - **Boot-up companion:** `synthobs-homeostasis-expedition-boot-up-2026-10` (ENGINE_SHELF #43)
 
-## Digital lab (`src/digital-lab.mjs`)
+## Computational lab (`src/computational-lab.mjs`)
 
 | Lane | Fixture |
 |------|---------|
@@ -27,7 +27,7 @@ npm run research:synthobs-living-architect-protective-lattice
 
 Outputs: `data/empirical_report.json` · `data/empirical_report.md`
 
-Experiments **E1–E8**: Φ_EGS · honesty locks · hypothesis/lanes · expedition seat · paper locks · ship-blog lock · Φ² identity · digital lab battery.
+Experiments **E1–E8**: Φ_EGS · honesty locks · hypothesis/lanes · expedition seat · paper locks · ship-blog lock · Φ² identity · computational lab battery.
 
 ## Honesty
 

@@ -1,5 +1,5 @@
 /**
- * Digital lab — Chart & Compass · Holographic Goldilocks SI Frontier
+ * Computational lab — Chart & Compass · Holographic Goldilocks SI Frontier
  * Three replayable sandbox experiments (Homeostasis Expedition).
  * Not established Super Intelligence · not literal holography · not universal Goldilocks law.
  */
@@ -326,9 +326,9 @@ export function runCrossScaleReconstructability({
 }
 
 /**
- * Full digital lab battery used by E9 fixture.
+ * Full computational lab battery used by E9 fixture.
  */
-export function runDigitalLabBattery({ seed = 20261006 } = {}) {
+export function runComputationalLabBattery({ seed = 20261006 } = {}) {
   const expI = runGoldilocksRegulationSweep({ seed });
   const expII = runReflectivePortal({ seed });
   const expIII = runCrossScaleReconstructability({ seed });
@@ -351,6 +351,6 @@ export function runDigitalLabBattery({ seed = 20261006 } = {}) {
       r2_shuffled: expIII.r2Shuffled,
     },
     honesty:
-      'Three-experiment Chart & Compass digital lab — Soft Story / catalog proof-of-concept. Not established Super Intelligence, not literal holography, not a universal Goldilocks law.',
+      'Three-experiment Chart & Compass computational lab — Soft Story / catalog proof-of-concept. Not established Super Intelligence, not literal holography, not a universal Goldilocks law.',
   };
 }

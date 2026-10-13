@@ -46,7 +46,7 @@
 
 ---
 
-## 0. Digital experiments and findings (up front)
+## 0. Computational lab experiments and findings (up front)
 
 Suite: `research/synthobs-computation-workhorse-science/` · **CW-1** + **CW-2**.
 

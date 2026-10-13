@@ -84,7 +84,7 @@
     <p class="hl-v" id="label"></p>
 
     <section class="hl-panel" id="digital-lab" aria-labelledby="dl-h">
-      <h2 id="dl-h">Digital Lab</h2>
+      <h2 id="dl-h">Computational Lab</h2>
       <p class="hl-k">Computational evidence lane · suite run · score receipt · complete prospects</p>
       <div class="hl-dl-grid">
         <div class="hl-dl-col">
@@ -183,7 +183,7 @@
       <a class="vb-pub-btn vb-pub-btn--ghost" href="/api/hero-leo">Raw dashboard JSON</a>
     </div>
 
-    <p class="honesty"><strong>Honesty:</strong> Scout ranks an authorized SING13 prospect catalog (not paywall scraping, not wet-lab). Digital Lab tags (<code>lab: digital</code>) mark computational suite runs, score receipts, and prospect completions only — wet lab stays out. Completing a prospect writes a computational research note (typically E1) with null-first cards — not automatic journal publication. Rediscovery is labeled rediscovery. On read-only hosts use <code>npm run hero-leo:scout</code> / <code>hero-leo:complete</code> / <code>hero-leo:digital-lab</code>. Human approval still required for final external publish. SynthOBS · Syntheverse Sandbox · not medical advice · not ENGINE_SHELF.</p>
+    <p class="honesty"><strong>Honesty:</strong> Scout ranks an authorized SING13 prospect catalog (not paywall scraping, not wet-lab). Computational Lab tags (<code>lab: digital</code>) mark computational suite runs, score receipts, and prospect completions only — wet lab stays out. Completing a prospect writes a computational research note (typically E1) with null-first cards — not automatic journal publication. Rediscovery is labeled rediscovery. On read-only hosts use <code>npm run hero-leo:scout</code> / <code>hero-leo:complete</code> / <code>hero-leo:digital-lab</code>. Human approval still required for final external publish. SynthOBS · Syntheverse Sandbox · not medical advice · not ENGINE_SHELF.</p>
   </main>
   <footer class="vj-foot">
     <a href="/journey/homeostasis-expedition">Expedition</a>
@@ -213,7 +213,7 @@
     }
     function renderDigitalLab(dl) {
       if (!dl) {
-        document.getElementById('dl-suite').textContent = 'Digital Lab unavailable.';
+        document.getElementById('dl-suite').textContent = 'Computational Lab unavailable.';
         return;
       }
       const sr = dl.suiteRun || {};

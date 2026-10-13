@@ -26,11 +26,11 @@ import {
   SOFT_STORY_CATALOG,
 } from './constants.mjs';
 import {
-  runDigitalLabBattery,
+  runComputationalLabBattery,
   BOOT_UP_GRAPH_CARRY_FORWARD_FIXTURE,
   DATASET_INVENTORY_FIXTURE,
   HARMONIZATION_SCHEMA_FIELDS,
-} from './digital-lab.mjs';
+} from './computational-lab.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -208,11 +208,11 @@ function experimentGoldenIdentity() {
   };
 }
 
-function experimentDigitalLab() {
-  const battery = runDigitalLabBattery();
+function experimentComputationalLab() {
+  const battery = runComputationalLabBattery();
   return {
-    id: 'E8_digital_lab',
-    title: 'Digital lab · boot-up carry-forward · dataset inventory · §10.2 schema',
+    id: 'E8_computational_lab',
+    title: 'Computational lab · boot-up carry-forward · dataset inventory · §10.2 schema',
     boot_up_highlights: BOOT_UP_GRAPH_CARRY_FORWARD_FIXTURE,
     dataset_inventory_count: DATASET_INVENTORY_FIXTURE.length,
     harmonization_field_count: HARMONIZATION_SCHEMA_FIELDS.length,
@@ -233,7 +233,7 @@ export async function runAllExperiments() {
     experimentPaperLocks(),
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
-    experimentDigitalLab(),
+    experimentComputationalLab(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

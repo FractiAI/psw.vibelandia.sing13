@@ -1,6 +1,6 @@
 # Homeostasis Expedition: The Galactosphere Hypothesis
 
-## A digital-laboratory test of a distributed galactic analogue to the heliosphere
+## A computational-laboratory test of a distributed galactic analogue to the heliosphere
 
 **Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -15,7 +15,7 @@
 **Ship blog:** `/ship-blog/galactosphere-hypothesis`  
 **Journey:** `/journey/homeostasis-expedition`  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
-**Engine role:** Infinite Octaves `ENGINE_SHELF` companion #42 — **Galactosphere Hypothesis / distributed galactic boundary companion** (Homeostasis Expedition empirical lane · Soft Story / catalog / digital-lab PoC · not Milky Way proof)
+**Engine role:** Infinite Octaves `ENGINE_SHELF` companion #42 — **Galactosphere Hypothesis / distributed galactic boundary companion** (Homeostasis Expedition empirical lane · Soft Story / catalog / computational-lab PoC · not Milky Way proof)
 
 **Companions:**
 - [Chart & Compass · Holographic Goldilocks SI Frontier](./SYNTHOBS_CHART_COMPASS_HOLOGRAPHIC_GOLDILOCKS_SI_FRONTIER_EGS_2026-10.md) · expeditionary navigation
@@ -33,14 +33,14 @@
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
 | **Soft Story / catalog** | Galactosphere is a **provisional functional name** for a distributed galactic interaction boundary analogous (not identical) to the heliosphere | That the Milky Way has been shown to possess a galactosphere, or that CGM ≡ galactic heliosphere |
-| **Digital laboratory** | Replayable dimensionless multi-field model (GH-1 · GH-2) shows distributed finite-width transitions under channel coupling | That the toy is a fitted Milky Way simulation or high-fidelity CGM hydrodynamics |
+| **Computational laboratory** | Replayable dimensionless multi-field model (GH-1 · GH-2) shows distributed finite-width transitions under channel coupling | That the toy is a fitted Milky Way simulation or high-fidelity CGM hydrodynamics |
 | **Known astrophysics (cited as background)** | Galactic winds, multiphase CGM exchange, magnetic fields, and cosmic rays are independently established research domains | That this paper discovers those phenomena |
 | **Novelty (narrow)** | Cross-scale organization as a single **boundary-function** hypothesis + structural digital test + falsifiable observational program (P1 · GTI) | A new CGM component is required; a sharp galactopause is required |
 | **Prediction program** | Coordinated multi-observable radial transitions with non-coincident channel radii are a testable signature | That current public catalogs already prove P1 |
 | **Φ_EGS** | Design / nesting grammar for Infinite Octaves catalog depth | Replacement for ℏ, c, or G |
 | **Next octave** | Cluster/group-scale interface left **unnamed** pending evidence | That a higher-scale named sphere already exists |
 
-**Key lock:** Digital laboratory status is **PROMISING — NOT YET ASTROPHYSICALLY VALIDATED**. The lab can validate structural hypothesis behavior in a controlled model; it **cannot by itself** establish that the Milky Way possesses the proposed boundary. The observational connection is a falsifiable prediction.
+**Key lock:** Computational laboratory status is **PROMISING — NOT YET ASTROPHYSICALLY VALIDATED**. The lab can validate structural hypothesis behavior in a controlled model; it **cannot by itself** establish that the Milky Way possesses the proposed boundary. The observational connection is a falsifiable prediction.
 
 ---
 
@@ -56,7 +56,7 @@
 
 **Hypothesis.** We investigate whether these apparently separate galactic phenomena can be treated as components of a higher-order distributed galactic interaction boundary—a functional analogue of the heliosphere—which we provisionally call the **galactosphere**. The hypothesis does not require a sharp physical shell. Instead, it predicts a scale-dependent transition zone in which outward galactic transport progressively loses dominance to the surrounding circumgalactic/intergalactic environment.
 
-**Digital laboratory.** We constructed a dimensionless radial multi-field experiment representing competing outward transport and environmental confinement, with coupled thermal, magnetic/nonthermal and ambient-medium terms. Parameter sweeps tested whether the transition remains localized to a single radius or becomes spatially distributed when multiple physical channels are coupled. The experiment was deliberately formulated as a structural model rather than a fitted Milky Way simulation.
+**Computational laboratory.** We constructed a dimensionless radial multi-field experiment representing competing outward transport and environmental confinement, with coupled thermal, magnetic/nonthermal and ambient-medium terms. Parameter sweeps tested whether the transition remains localized to a single radius or becomes spatially distributed when multiple physical channels are coupled. The experiment was deliberately formulated as a structural model rather than a fitted Milky Way simulation.
 
 **Plain findings (digital sandbox · seed `20261007` · suite E8):**
 
@@ -73,9 +73,9 @@
 
 ---
 
-## 0. Digital experiments and findings (up front)
+## 0. Computational lab experiments and findings (up front)
 
-This section is the load-bearing empirical filing for the digital lane. Suite module: `research/synthobs-galactosphere-hypothesis/src/digital-lab.mjs` (experiment **E8**). PRNG: Mulberry32 · seed `20261007`.
+This section is the load-bearing empirical filing for the digital lane. Suite module: `research/synthobs-galactosphere-hypothesis/src/computational-lab.mjs` (experiment **E8**). PRNG: Mulberry32 · seed `20261007`.
 
 ### 0.1 Setup — dominance ratio
 
@@ -130,7 +130,7 @@ Mean width ≈ 0.370 · max relative deviation ≈ 0.108.
 
 **Finding:** The same mathematical topology (finite-width multi-channel transition) appears across normalized scale labels. Infinite Octave framing here is a search for scale-invariant **relational** organization — not a claim that nature repeats identical physical shells. The cluster interface remains **unnamed** on purpose.
 
-### 0.4 What the digital lab does not establish
+### 0.4 What the computational lab does not establish
 
 - Not that the Milky Way has a galactosphere.
 - Not a fitted IllustrisTNG / FIRE / EAGLE run.
@@ -167,7 +167,7 @@ The CGM literature already describes multiphase fuel supply, feedback, recycling
 
 ---
 
-## 2. Digital Laboratory — Experiment GH-1 (detail)
+## 2. Computational Laboratory — Experiment GH-1 (detail)
 
 **Question.** Does a multi-channel outward-flow system naturally produce (A) a single boundary, or (B) a finite distributed transition zone?
 
@@ -254,7 +254,7 @@ It becomes stronger if independent observations and simulations repeatedly revea
 
 ## 8. Present conclusion and GH-3 path
 
-**Digital laboratory status: PROMISING — NOT YET ASTROPHYSICALLY VALIDATED**
+**Computational laboratory status: PROMISING — NOT YET ASTROPHYSICALLY VALIDATED**
 
 The first computational experiment does not establish a physical galactosphere. It demonstrates that the proposed distributed-boundary architecture is dynamically plausible and produces behavior qualitatively compatible with known CGM phenomenology **inside a structural toy**.
 
@@ -278,7 +278,7 @@ This filing continues the Homeostasis Expedition trail:
 
 The heliosphere taught observers to look for a dynamically maintained interface, not a painted sphere. The galactosphere hypothesis asks whether galactic winds, CGM multiphase exchange, magnetic structure and cosmic-ray transport can be read as one distributed boundary function — then insists the answer be earned by digital structure tests, falsifiers, and eventually public simulation/observation pipelines.
 
-Digital lab: promising.  
+Computational lab: promising.  
 Astrophysical validation: open.  
 Cluster octave: unnamed.
 

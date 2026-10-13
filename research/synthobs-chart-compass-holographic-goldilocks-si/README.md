@@ -11,7 +11,7 @@ Catalog suite for **Chart and Compass for the Holographic Goldilocks Super Intel
 
 **Engine role:** Infinite Octaves ENGINE_SHELF companion #41 — Chart & Compass / Reflective Portal / Goldilocks frontier companion on the Homeostasis Expedition trail.
 
-**Digital lab:** (I) Goldilocks regulation sweep · (II) Reflective Portal controllers · (III) cross-scale reconstructability.
+**Computational lab:** (I) Goldilocks regulation sweep · (II) Reflective Portal controllers · (III) cross-scale reconstructability.
 
 Honesty: Soft Story / catalog / proof-of-concept — not established Super Intelligence, not literal holography, not a universal Goldilocks law. Φ_EGS is design grammar.
 

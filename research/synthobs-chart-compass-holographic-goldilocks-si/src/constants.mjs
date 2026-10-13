@@ -37,4 +37,4 @@ export const NOT_UNIVERSAL_GOLDILOCKS_LAW = true;
 export const SOFT_STORY_CATALOG = true;
 
 export const HONESTY =
-  'Soft Story / catalog / proof-of-concept Chart & Compass for the Holographic Goldilocks Super Intelligence frontier. Digital lab (regulation sweep · Reflective Portal · cross-scale reconstructability) is replayable sandbox evidence — not established Super Intelligence, not literal holography, not a universal Goldilocks law. Φ_EGS is design grammar. Homeostasis Expedition empirical lane · ENGINE_SHELF #41.';
+  'Soft Story / catalog / proof-of-concept Chart & Compass for the Holographic Goldilocks Super Intelligence frontier. Computational lab (regulation sweep · Reflective Portal · cross-scale reconstructability) is replayable sandbox evidence — not established Super Intelligence, not literal holography, not a universal Goldilocks law. Φ_EGS is design grammar. Homeostasis Expedition empirical lane · ENGINE_SHELF #41.';

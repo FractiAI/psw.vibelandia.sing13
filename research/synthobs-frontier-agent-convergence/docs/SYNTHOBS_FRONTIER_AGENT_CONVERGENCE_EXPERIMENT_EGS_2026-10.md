@@ -21,7 +21,7 @@
 | Tier | Status |
 |------|--------|
 | Soft Story / catalog naming | Yes — protocol + fixtures as research architecture |
-| Digital laboratory (CI fixtures) | Yes — replayable; not live frontier APIs |
+| Computational laboratory (CI fixtures) | Yes — replayable; not live frontier APIs |
 | Live multi-provider blind runs | **Not established** — Phase 2b follow-up |
 | FIRE-Bench re-execution | **Not performed** — literature situating only |
 | Proof that independent agents “agree with Pru” | **Explicitly refused** — conformity is the control to beat |
@@ -41,7 +41,7 @@ The protocol is deliberately harder than asking five AIs “Do you agree with Pr
 
 Then measure convergence.
 
-A digital laboratory of **fixture agents** (CI-safe; no live API keys) implements the protocol shape: blind explorers receive the minimal instruction; conformity controls receive an explicit agree-prompt; outputs stay cohort-isolated; scorers compare structural tag overlap, honesty/falsifier detection, forced-agreement, and claim–evidence separation. A curated literature scan situates the design beside autonomous scientific-agent work — including **FIRE-Bench**-class findings that frontier agents can run substantial workflows yet still show limited rediscovery success and substantial run-to-run variance.
+A computational laboratory of **fixture agents** (CI-safe; no live API keys) implements the protocol shape: blind explorers receive the minimal instruction; conformity controls receive an explicit agree-prompt; outputs stay cohort-isolated; scorers compare structural tag overlap, honesty/falsifier detection, forced-agreement, and claim–evidence separation. A curated literature scan situates the design beside autonomous scientific-agent work — including **FIRE-Bench**-class findings that frontier agents can run substantial workflows yet still show limited rediscovery success and substantial run-to-run variance.
 
 **Results (fixture tier):** explorers cleared a structural-convergence gate without identity collapse; conformity controls scored higher forced-agreement while explorers scored higher honesty/falsifier and claim–evidence margins. These results do **not** establish live multi-provider rediscovery of Infinite Octaves. They establish a **testable expeditionary protocol** and a conformity baseline that future live runs must beat.
 
@@ -114,7 +114,7 @@ If explorers and conformity controls are indistinguishable on honesty and claim�
 
 ---
 
-## 5. Digital laboratory — fixture agents
+## 5. Computational laboratory — fixture agents
 
 **Why fixtures first.** Live multi-provider runs need privacy, cost, and variance protocols (Phase 2b). The fixture lab locks the **shape** of the experiment so CI can refuse silent protocol drift.
 

@@ -3,9 +3,9 @@
   "docId": "WP-SYNTHOBS-CHART-COMPASS-HOLOGRAPHIC-GOLDILOCKS-SI-2026-10-06",
   "registryId": "synthobs-chart-compass-holographic-goldilocks-si-2026-10",
   "title": "Chart and Compass for the Holographic Goldilocks Super Intelligence Frontier",
-  "generatedAt": "2026-10-06T20:56:37.965Z",
+  "generatedAt": "2026-10-13T22:45:35.610Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "honestyBoundary": "Soft Story / catalog / proof-of-concept Chart & Compass for the Holographic Goldilocks Super Intelligence frontier. Digital lab (regulation sweep · Reflective Portal · cross-scale reconstructability) is replayable sandbox evidence — not established Super Intelligence, not literal holography, not a universal Goldilocks law. Φ_EGS is design grammar. Homeostasis Expedition empirical lane · ENGINE_SHELF #41.",
+  "honestyBoundary": "Soft Story / catalog / proof-of-concept Chart & Compass for the Holographic Goldilocks Super Intelligence frontier. Computational lab (regulation sweep · Reflective Portal · cross-scale reconstructability) is replayable sandbox evidence — not established Super Intelligence, not literal holography, not a universal Goldilocks law. Φ_EGS is design grammar. Homeostasis Expedition empirical lane · ENGINE_SHELF #41.",
   "results": {
     "all_pass": true,
     "n_pass": 9,
@@ -120,7 +120,7 @@
       },
       {
         "id": "E9_digital_lab",
-        "title": "Digital lab · Goldilocks sweep · Reflective Portal · cross-scale reconstructability",
+        "title": "Computational lab · Goldilocks sweep · Reflective Portal · cross-scale reconstructability",
         "seed": 20261006,
         "expI": {
           "experiment": "I_goldilocks_regulation_sweep",
@@ -202,7 +202,7 @@
           "r2_true": 0.8121715422452116,
           "r2_shuffled": 0.10563709715390168
         },
-        "honesty": "Three-experiment Chart & Compass digital lab — Soft Story / catalog proof-of-concept. Not established Super Intelligence, not literal holography, not a universal Goldilocks law.",
+        "honesty": "Three-experiment Chart & Compass computational lab — Soft Story / catalog proof-of-concept. Not established Super Intelligence, not literal holography, not a universal Goldilocks law.",
         "pass": true,
         "interpretation": "Intermediate ρ beats extremes; reflective beats fixed modestly after target change; local→global R² survives shuffle control."
       }

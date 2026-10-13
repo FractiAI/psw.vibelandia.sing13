@@ -1,6 +1,6 @@
 # synthobs-homeostasis-expedition-boot-up
 
-**Homeostasis Expedition: Observable Boot-Up** — 99-position serial audit from a declared net-zero boundary to a conversation target, plus **BU-1** dependency-graph digital lab.
+**Homeostasis Expedition: Observable Boot-Up** — 99-position serial audit from a declared net-zero boundary to a conversation target, plus **BU-1** dependency-graph computational lab.
 
 - **Document ID:** `WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11`
 - **Registry ID:** `synthobs-homeostasis-expedition-boot-up-2026-10`

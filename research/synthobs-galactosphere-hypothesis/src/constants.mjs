@@ -54,4 +54,4 @@ export const DIGITAL_LAB_NOT_ASTRO_VALIDATION = true;
 export const SOFT_STORY_CATALOG = true;
 
 export const HONESTY =
-  'Soft Story / catalog / digital-laboratory Homeostasis Expedition. Digital lab (GH-1 distributed transition · GH-2 cross-scale topology) validates structural plausibility in a controlled dimensionless model — not that the Milky Way possesses a galactosphere, not a fitted galactic simulation, not a claim that the CGM is “the galactic heliosphere.” Observational connection is a falsifiable prediction program (P1 · GTI). Φ_EGS is design grammar. ENGINE_SHELF #42.';
+  'Soft Story / catalog / computational-laboratory Homeostasis Expedition. Computational lab (GH-1 distributed transition · GH-2 cross-scale topology) validates structural plausibility in a controlled dimensionless model — not that the Milky Way possesses a galactosphere, not a fitted galactic simulation, not a claim that the CGM is “the galactic heliosphere.” Observational connection is a falsifiable prediction program (P1 · GTI). Φ_EGS is design grammar. ENGINE_SHELF #42.';

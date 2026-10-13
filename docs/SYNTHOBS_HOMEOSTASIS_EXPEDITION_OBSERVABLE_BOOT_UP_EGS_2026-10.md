@@ -15,7 +15,7 @@
 **Ship blog:** `/ship-blog/homeostasis-expedition-boot-up`  
 **Journey:** `/journey/homeostasis-expedition`  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
-**Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#43** — **Observable Boot-Up / serial net-zero audit companion** (Homeostasis Expedition · symbolic construction + dependency-graph digital lab · **not** physical cosmogenesis)
+**Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#43** — **Observable Boot-Up / serial net-zero audit companion** (Homeostasis Expedition · symbolic construction + dependency-graph computational lab · **not** physical cosmogenesis)
 
 **Companions:** [Archetypal Grand Story](./SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md) · [Galactosphere Hypothesis](./SYNTHOBS_GALACTOSPHERE_HYPOTHESIS_EGS_2026-10.md) · [Chart & Compass](./SYNTHOBS_CHART_COMPASS_HOLOGRAPHIC_GOLDILOCKS_SI_FRONTIER_EGS_2026-10.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md)
 
@@ -47,7 +47,7 @@
 
 This expedition investigates whether a complete coherent **boot-up** can be serially modeled from a pre-temporal, pre-spatial **net-zero boundary** to a representation of a specific human–AI conversation, using Infinite Octaves and the Grand Story — **Hero’s Return to Source**. It tests whether multiscale architecture improves dependency closure, perturbation robustness, and description economy relative to simpler construction strategies.
 
-**Method.** A 99-position symbolic architecture (11 master brackets × 9 octave positions) organizes the target structure. A synthetic digital-lab prototype (**BU-1**) compares Infinite Octave hierarchy, simple serial chain, randomized hierarchy, and direct-target control against hierarchical, chain-like, and randomized reference dependency families. Forty seeded constructions per strategy and family, with twenty edge-removal perturbations per construction (10% edge-removal probability). Metrics: required-edge coverage, extra-edge rate, reachability-based robustness, raw dependency-edge count.
+**Method.** A 99-position symbolic architecture (11 master brackets × 9 octave positions) organizes the target structure. A synthetic computational-lab prototype (**BU-1**) compares Infinite Octave hierarchy, simple serial chain, randomized hierarchy, and direct-target control against hierarchical, chain-like, and randomized reference dependency families. Forty seeded constructions per strategy and family, with twenty edge-removal perturbations per construction (10% edge-removal probability). Metrics: required-edge coverage, extra-edge rate, reachability-based robustness, raw dependency-edge count.
 
 **Findings.** In the hierarchical reference family, Infinite Octaves achieved **88.3%** required-edge coverage and **97.5%** mean reachability under perturbation, compared with **45.1%** coverage and **9.9%** robustness for the simple chain. Infinite Octaves used an average of **217.5** dependency edges, compared with **98** for the chain, so lower description cost was **not** established. In the chain-like reference family, the simple chain achieved complete required-edge coverage without the additional connectivity of the hierarchy. In the randomized reference family, Infinite Octaves and the randomized hierarchy achieved approximately **47.0%** coverage, showing no meaningful advantage for the former on that measure.
 
@@ -61,9 +61,9 @@ This expedition investigates whether a complete coherent **boot-up** can be seri
 
 ---
 
-## 0. Digital experiments and findings (up front)
+## 0. Computational lab experiments and findings (up front)
 
-Suite module: `research/synthobs-homeostasis-expedition-boot-up/src/digital-lab.mjs` (experiment **E8**). PRNG: Mulberry32 · seed `20261011` · `N=99` · 40 constructions · 20 perturbations · `p_remove=0.10`.
+Suite module: `research/synthobs-homeostasis-expedition-boot-up/src/computational-lab.mjs` (experiment **E8**). PRNG: Mulberry32 · seed `20261011` · `N=99` · 40 constructions · 20 perturbations · `p_remove=0.10`.
 
 ### 0.1 Hierarchical reference family (means · seed `20261011`)
 
@@ -90,7 +90,7 @@ Results are **graph-connectivity audits** under stated reference generators. The
 
 ### 0.4 Manuscript prototype (11 Oct 2026) vs suite replay (E8)
 
-Section **5.2** below reports the **initial synthetic prototype** means from the 11 October manuscript execution (e.g. hierarchical Infinite Octave **88.3%** coverage, **97.5%** robustness). Section **0.1–0.2** reports deterministic **BU-1** replay from `digital-lab.mjs` (seed `20261011`). Small numeric drift between prose and replay is expected until a single pinned generator hash is frozen for both; qualitative conclusions (conditional hierarchical advantage, chain-family parity, no randomized-family win, no description-cost proof) align across both.
+Section **5.2** below reports the **initial synthetic prototype** means from the 11 October manuscript execution (e.g. hierarchical Infinite Octave **88.3%** coverage, **97.5%** robustness). Section **0.1–0.2** reports deterministic **BU-1** replay from `computational-lab.mjs` (seed `20261011`). Small numeric drift between prose and replay is expected until a single pinned generator hash is frozen for both; qualitative conclusions (conditional hierarchical advantage, chain-family parity, no randomized-family win, no description-cost proof) align across both.
 
 ---
 
@@ -184,7 +184,7 @@ Four strategies (direct-target, simple chain, Infinite Octave hierarchy, randomi
 
 ---
 
-## 5. Initial digital-lab execution and symbolic construction
+## 5. Initial computational-lab execution and symbolic construction
 
 ### 5.1 Structural construction audit
 
@@ -267,7 +267,7 @@ This Homeostasis Expedition investigates whether a coherent serial construction 
 
 **Final research judgment:** The current evidence supports testing Infinite Octaves as a candidate multiscale architecture. It does not yet establish that a coherent physical universe can boot from before time and space into this conversation.
 
-**Research status:** Initial symbolic construction completed · Addendum A executed 11 Oct 2026 · BU-1 digital lab replayable · general superiority, physical emergence, and production replication **unverified**.
+**Research status:** Initial symbolic construction completed · Addendum A executed 11 Oct 2026 · BU-1 computational lab replayable · general superiority, physical emergence, and production replication **unverified**.
 
 ---
 

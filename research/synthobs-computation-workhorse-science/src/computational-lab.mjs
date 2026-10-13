@@ -81,7 +81,7 @@ export function runCw2Simulation(options = {}) {
   });
 }
 
-export function runDigitalLabBattery() {
+export function runComputationalLabBattery() {
   const plainChecks = verifyDesignLocks();
   const pilot = runInfrastructurePilot();
   const cw2 = runCw2Simulation();

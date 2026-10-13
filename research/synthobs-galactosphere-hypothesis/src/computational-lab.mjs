@@ -1,5 +1,5 @@
 /**
- * Digital lab — Galactosphere Hypothesis (Homeostasis Expedition)
+ * Computational lab — Galactosphere Hypothesis (Homeostasis Expedition)
  * GH-1: distributed vs sharp multi-channel transition
  * GH-2: cross-scale dimensionless topology rhyme
  *
@@ -342,9 +342,9 @@ export function runGH2CrossScaleTopology({ seed = 20261007 } = {}) {
 }
 
 /**
- * Full digital lab battery used by E9 fixture.
+ * Full computational lab battery used by E9 fixture.
  */
-export function runDigitalLabBattery({ seed = 20261007 } = {}) {
+export function runComputationalLabBattery({ seed = 20261007 } = {}) {
   const gh1 = runGH1DistributedTransition({ seed });
   const gh2 = runGH2CrossScaleTopology({ seed });
   const allPlainPass = gh1.pass && gh2.pass;
@@ -370,6 +370,6 @@ export function runDigitalLabBattery({ seed = 20261007 } = {}) {
       gh2_max_rel_dev: gh2.maxRelDev,
     },
     honesty:
-      'Galactosphere digital lab — Soft Story / catalog structural PoC. Not Milky Way proof, not sharp-shell claim, not astrophysical validation of a physical galactosphere.',
+      'Galactosphere computational lab — Soft Story / catalog structural PoC. Not Milky Way proof, not sharp-shell claim, not astrophysical validation of a physical galactosphere.',
   };
 }

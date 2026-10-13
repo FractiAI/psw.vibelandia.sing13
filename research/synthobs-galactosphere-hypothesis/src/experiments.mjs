@@ -26,7 +26,7 @@ import {
   DIGITAL_LAB_NOT_ASTRO_VALIDATION,
   SOFT_STORY_CATALOG,
 } from './constants.mjs';
-import { runDigitalLabBattery } from './digital-lab.mjs';
+import { runComputationalLabBattery } from './computational-lab.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -61,7 +61,7 @@ function experimentHonestyLocks() {
     SOFT_STORY_CATALOG,
     pass,
     interpretation:
-      'Digital lab can support structural plausibility; observational galactosphere remains a falsifiable prediction.',
+      'Computational lab can support structural plausibility; observational galactosphere remains a falsifiable prediction.',
     honesty: 'Layer lock — not a claim that the Milky Way has a measured galactopause.',
   };
 }
@@ -124,7 +124,7 @@ function experimentPaperLocks() {
     hasHonesty: /Honesty boundary/i.test(paper),
     hasDocId: paper.includes(DOC_ID) || paper.includes(REGISTRY_ID),
     hasDigitalFindings:
-      /Digital experiments and findings|GH-1|distributed transition/i.test(paper),
+      /Computational lab experiments and findings|GH-1|distributed transition/i.test(paper),
     hasGalactosphere: /galactosphere/i.test(paper),
     hasHeliosphere: /heliosphere/i.test(paper),
     hasNotMilkyWay:
@@ -170,7 +170,7 @@ function experimentShipBlogLock() {
       body,
     );
   const hasCaution =
-    /not.*Milky Way|Soft Story|catalog|digital lab|not.*astrophysical|not a sharp/i.test(
+    /not.*Milky Way|Soft Story|catalog|computational lab|not.*astrophysical|not a sharp/i.test(
       body,
     );
   const hasDigitalFindings =
@@ -211,11 +211,11 @@ function experimentGoldenIdentity() {
   };
 }
 
-function experimentDigitalLab() {
-  const battery = runDigitalLabBattery({ seed: 20261007 });
+function experimentComputationalLab() {
+  const battery = runComputationalLabBattery({ seed: 20261007 });
   return {
-    id: 'E8_digital_lab',
-    title: 'Digital lab · GH-1 distributed transition · GH-2 cross-scale topology',
+    id: 'E8_computational_lab',
+    title: 'Computational lab · GH-1 distributed transition · GH-2 cross-scale topology',
     ...battery,
     pass: battery.allPlainPass === true,
     interpretation:
@@ -233,7 +233,7 @@ export async function runAllExperiments() {
     experimentPaperLocks(),
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
-    experimentDigitalLab(),
+    experimentComputationalLab(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

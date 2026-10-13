@@ -1,5 +1,5 @@
 /**
- * Digital lab — Observable Boot-Up (Homeostasis Expedition)
+ * Computational lab — Observable Boot-Up (Homeostasis Expedition)
  * BU-1: dependency coverage · extra-edge rate · perturbation robustness · edge count
  *
  * Structural graph audit only — not full 99-transition semantic boot, not cosmogenesis proof.
@@ -205,7 +205,7 @@ export function runStrategyOnFamily(strategy, family, seed) {
   };
 }
 
-export function runDigitalLabBattery({ seed = DIGITAL_SEED } = {}) {
+export function runComputationalLabBattery({ seed = DIGITAL_SEED } = {}) {
   const strategies = [
     'infinite_octave',
     'simple_chain',

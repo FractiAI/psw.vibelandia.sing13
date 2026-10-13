@@ -13,7 +13,7 @@ Catalog suite for **The Reflective Portal: Multiscale Octaves, Self-Modification
 
 **Construct:** Reflective Modification Portal = self-observation + evaluation + causal self-modification. Reflection alone ≠ transformation. Learning alone ≠ reflection. Not phenomenal consciousness.
 
-**Digital lab:** Agents P / R / M / RM · strategy reversal · recurrent trap · perturbation recovery · transfer · Goldilocks ρ · recursive modification.
+**Computational lab:** Agents P / R / M / RM · strategy reversal · recurrent trap · perturbation recovery · transfer · Goldilocks ρ · recursive modification.
 
 Honesty: replayable catalog sandbox — not human trials, not wet-lab proof, not AGI arrival. Φ_EGS is design grammar.
 

@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-GALACTOSPHERE-HYPOTHESIS-EGS-2026-10-07`
 **Registry ID:** `synthobs-galactosphere-hypothesis-2026-10`
-**Generated:** 2026-10-07T02:23:48.535Z
+**Generated:** 2026-10-13T22:45:35.375Z
 
 ## Verdict
 
@@ -35,7 +35,7 @@
 ### E2_honesty_locks — Not Milky Way proof · not sharp shell · digital ≠ astro validation
 
 - **Pass:** `true`
-- **Interpretation:** Digital lab can support structural plausibility; observational galactosphere remains a falsifiable prediction.
+- **Interpretation:** Computational lab can support structural plausibility; observational galactosphere remains a falsifiable prediction.
 - **Honesty:** Layer lock — not a claim that the Milky Way has a measured galactopause.
 
 ```json
@@ -47,7 +47,7 @@
   "DIGITAL_LAB_NOT_ASTRO_VALIDATION": true,
   "SOFT_STORY_CATALOG": true,
   "pass": true,
-  "interpretation": "Digital lab can support structural plausibility; observational galactosphere remains a falsifiable prediction.",
+  "interpretation": "Computational lab can support structural plausibility; observational galactosphere remains a falsifiable prediction.",
   "honesty": "Layer lock — not a claim that the Milky Way has a measured galactopause."
 }
 ```
@@ -187,16 +187,16 @@
 }
 ```
 
-### E8_digital_lab — Digital lab · GH-1 distributed transition · GH-2 cross-scale topology
+### E8_computational_lab — Computational lab · GH-1 distributed transition · GH-2 cross-scale topology
 
 - **Pass:** `true`
 - **Interpretation:** Coupled multi-channel model yields finite-width distributed transition; independent channels stay sharper; cross-scale dimensionless topology rhymes without naming a cluster interface.
-- **Honesty:** Galactosphere digital lab — Soft Story / catalog structural PoC. Not Milky Way proof, not sharp-shell claim, not astrophysical validation of a physical galactosphere.
+- **Honesty:** Galactosphere computational lab — Soft Story / catalog structural PoC. Not Milky Way proof, not sharp-shell claim, not astrophysical validation of a physical galactosphere.
 
 ```json
 {
-  "id": "E8_digital_lab",
-  "title": "Digital lab · GH-1 distributed transition · GH-2 cross-scale topology",
+  "id": "E8_computational_lab",
+  "title": "Computational lab · GH-1 distributed transition · GH-2 cross-scale topology",
   "seed": 20261007,
   "gh1": {
     "experiment": "GH1_distributed_transition",
@@ -293,7 +293,7 @@
     "gh2_mean_width": 0.37000000000000005,
     "gh2_max_rel_dev": 0.10810810810810774
   },
-  "honesty": "Galactosphere digital lab — Soft Story / catalog structural PoC. Not Milky Way proof, not sharp-shell claim, not astrophysical validation of a physical galactosphere.",
+  "honesty": "Galactosphere computational lab — Soft Story / catalog structural PoC. Not Milky Way proof, not sharp-shell claim, not astrophysical validation of a physical galactosphere.",
   "pass": true,
   "interpretation": "Coupled multi-channel model yields finite-width distributed transition; independent channels stay sharper; cross-scale dimensionless topology rhymes without naming a cluster interface."
 }
@@ -301,4 +301,4 @@
 
 ## Honesty boundary
 
-Soft Story / catalog / digital-laboratory Homeostasis Expedition. Digital lab (GH-1 distributed transition · GH-2 cross-scale topology) validates structural plausibility in a controlled dimensionless model — not that the Milky Way possesses a galactosphere, not a fitted galactic simulation, not a claim that the CGM is “the galactic heliosphere.” Observational connection is a falsifiable prediction program (P1 · GTI). Φ_EGS is design grammar. ENGINE_SHELF #42.
+Soft Story / catalog / computational-laboratory Homeostasis Expedition. Computational lab (GH-1 distributed transition · GH-2 cross-scale topology) validates structural plausibility in a controlled dimensionless model — not that the Milky Way possesses a galactosphere, not a fitted galactic simulation, not a claim that the CGM is “the galactic heliosphere.” Observational connection is a falsifiable prediction program (P1 · GTI). Φ_EGS is design grammar. ENGINE_SHELF #42.

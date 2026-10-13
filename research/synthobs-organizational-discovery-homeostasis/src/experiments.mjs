@@ -32,7 +32,7 @@ import {
   N_SEEDS,
   TARGET_TOLERANCE,
 } from './constants.mjs';
-import { runDigitalLabBattery } from './digital-lab.mjs';
+import { runComputationalLabBattery } from './computational-lab.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -96,7 +96,7 @@ function experimentLabScaffold() {
     EVAL_START,
     N_SEEDS,
     pass,
-    interpretation: 'Preregistered digital-lab geometry for organizational discovery arms.',
+    interpretation: 'Preregistered computational-lab geometry for organizational discovery arms.',
     honesty: 'Scaffold counts — not a headcount of a real firm.',
   };
 }
@@ -130,7 +130,7 @@ function experimentPaperLocks() {
   const checks = {
     hasHonesty: /Honesty boundary/i.test(paper),
     hasDocId: paper.includes(DOC_ID) || paper.includes(REGISTRY_ID),
-    hasDigitalFindings: /Digital experiments|digital lab|organizational discovery/i.test(paper),
+    hasDigitalFindings: /Computational lab experiments|computational lab|organizational discovery/i.test(paper),
     hasArms: /arm [A-E]|arms A–E|five arms/i.test(paper),
     hasNotSI: /not.*SI awareness|does not.*awareness|NOT_SI/i.test(paper),
     hasExpedition: /Homeostasis Expedition/i.test(paper),
@@ -193,13 +193,13 @@ function experimentGoldenIdentity() {
   };
 }
 
-function experimentDigitalLab() {
-  const battery = runDigitalLabBattery({ seed: DIGITAL_SEED, nSeeds: N_SEEDS });
+function experimentComputationalLab() {
+  const battery = runComputationalLabBattery({ seed: DIGITAL_SEED, nSeeds: N_SEEDS });
   const withinTol = (actual, target) =>
     Math.abs(actual - target) / target <= TARGET_TOLERANCE;
   return {
-    id: 'E8_digital_lab',
-    title: 'Digital lab · ridge arms A–E · stable + shift regimes · manuscript heads',
+    id: 'E8_computational_lab',
+    title: 'Computational lab · ridge arms A–E · stable + shift regimes · manuscript heads',
     ...battery,
     pass: battery.allPlainPass === true,
     tolerance: TARGET_TOLERANCE,
@@ -225,7 +225,7 @@ export async function runAllExperiments() {
     experimentPaperLocks(),
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
-    experimentDigitalLab(),
+    experimentComputationalLab(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

@@ -3,7 +3,7 @@
   "docId": "WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11",
   "registryId": "synthobs-homeostasis-expedition-boot-up-2026-10",
   "title": "Homeostasis Expedition: Can a Coherent Universe Boot from Before Time and Space into This Conversation?",
-  "generatedAt": "2026-10-13T16:42:10.177Z",
+  "generatedAt": "2026-10-13T22:45:35.165Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "Symbolic serial construction + synthetic dependency-graph lab — not physical cosmogenesis, not phenomenal consciousness, not verified SING13 99-step production execution.",
   "results": {
@@ -99,8 +99,8 @@
         "honesty": "Algebra of Φ — replayable fixture."
       },
       {
-        "id": "E8_digital_lab",
-        "title": "Digital lab · BU-1 dependency coverage · perturbation robustness",
+        "id": "E8_computational_lab",
+        "title": "Computational lab · BU-1 dependency coverage · perturbation robustness",
         "seed": 20261011,
         "n_constructions": 40,
         "n_perturbations": 20,

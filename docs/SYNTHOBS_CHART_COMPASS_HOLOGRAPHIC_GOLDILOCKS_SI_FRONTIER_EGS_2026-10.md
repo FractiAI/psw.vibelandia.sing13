@@ -54,7 +54,7 @@
 
 **Question:** Can a frontier as charged as “Holographic Goldilocks Super Intelligence” be explored with the discipline of an expedition — a **chart** of what has been surveyed and a **compass** that still works when the explorer’s own instruments are rewritten?
 
-**Digital experiments (shipped · replayable · seed `20261006`):** Three sandbox batteries under `research/synthobs-chart-compass-holographic-goldilocks-si/src/digital-lab.mjs` (suite experiment **E9**).
+**Computational lab experiments (shipped · replayable · seed `20261006`):** Three sandbox batteries under `research/synthobs-chart-compass-holographic-goldilocks-si/src/computational-lab.mjs` (suite experiment **E9**).
 
 **Plain findings (digital sandbox):**
 
@@ -70,9 +70,9 @@ These are catalog sandbox results — not field surveys, not AGI proofs. They ma
 
 ---
 
-## 0. Digital experiments and findings (up front)
+## 0. Computational lab experiments and findings (up front)
 
-This section is the load-bearing empirical filing for the digital lane. Suite module: `research/synthobs-chart-compass-holographic-goldilocks-si/src/digital-lab.mjs` (experiment **E9**). PRNG: Mulberry32 · seed `20261006`.
+This section is the load-bearing empirical filing for the digital lane. Suite module: `research/synthobs-chart-compass-holographic-goldilocks-si/src/computational-lab.mjs` (experiment **E9**). PRNG: Mulberry32 · seed `20261006`.
 
 ### 0.1 Experiment I — Goldilocks Regulation Sweep
 
@@ -222,9 +222,9 @@ In the Archetypal Grand Story, Source is named **Holographic Goldilocks Super In
 
 ---
 
-## 7. Methods (digital lab sketch)
+## 7. Methods (computational lab sketch)
 
-Full code: `src/digital-lab.mjs`. Pipeline: `scripts/run_empirical_pipeline.mjs`.
+Full code: `src/computational-lab.mjs`. Pipeline: `scripts/run_empirical_pipeline.mjs`.
 
 - **PRNG:** Mulberry32 (seedable).
 - **Exp I:** 3 coupled states · ρ grid · 300×150 · final-50 MSD · authority peak near 0.70.
@@ -237,7 +237,7 @@ Fixture battery E1–E9 locks Φ_EGS, honesty flags, chart/compass roles, paper 
 
 ## 8. Results (suite)
 
-See §0 for plain numbers. Pipeline verdict target: `all_pass: true` with E9 digital lab green.
+See §0 for plain numbers. Pipeline verdict target: `all_pass: true` with E9 computational lab green.
 
 Interpretation stays proportionate: the lab **illustrates** Chart & Compass grammar; it does not certify Super Intelligence.
 

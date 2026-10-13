@@ -12,7 +12,7 @@ import {
   SIMULATION_EXECUTED,
 } from '../src/constants.mjs';
 import { runAllExperiments } from '../src/experiments.mjs';
-import { runCw2Simulation } from '../src/digital-lab.mjs';
+import { runCw2Simulation } from '../src/computational-lab.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');

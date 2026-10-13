@@ -9,7 +9,7 @@
 **Standalone:** [`FractiAI/synthobs-organizational-discovery-homeostasis`](https://github.com/FractiAI/synthobs-organizational-discovery-homeostasis)  
 **Ship blog:** `/ship-blog/organizational-discovery-homeostasis`  
 **Journey:** `/journey/homeostasis-expedition`  
-**Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#45** — **Organizational discovery digital lab (ODH-1)** · **not** SI awareness · **not** recursive self-improvement proof
+**Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#45** — **Organizational discovery computational lab (ODH-1)** · **not** SI awareness · **not** recursive self-improvement proof
 
 ---
 
@@ -35,7 +35,7 @@
 
 ## Abstract
 
-This expedition executes a synthetic digital laboratory with **12** distributed nodes, **three** latent shared-demand factors, observation delays **0–3** steps, and a fixed system-wide resource budget. Five strategies are compared over **150** independent seeds in stable and structurally shifted environments.
+This expedition executes a synthetic computational laboratory with **12** distributed nodes, **three** latent shared-demand factors, observation delays **0–3** steps, and a fixed system-wide resource budget. Five strategies are compared over **150** independent seeds in stable and structurally shifted environments.
 
 **Findings.** Stable: organizational discovery (arm C) reduces allocation RMSE by **7.33%** vs locally trained (B) and **19.13%** vs fixed baseline (A). After **25%** of nodes change dominant factors, outdated organizational model (C) is **6.83%** worse than B; adaptive organizational discovery (E) beats locally adaptive (D) by **6.68%** and outdated C by **12.65%**. Principal conclusion: **relational discovery helps when structure stays valid; adaptation is required when it does not.**
 
@@ -43,9 +43,9 @@ This expedition executes a synthetic digital laboratory with **12** distributed 
 
 ---
 
-## 0. Digital experiments and findings (up front)
+## 0. Computational lab experiments and findings (up front)
 
-Module: `research/synthobs-organizational-discovery-homeostasis/src/digital-lab.mjs` · seed `20261011` · **N_SEEDS=150** · **N_STEPS=1000** · train ≤500 · adapt 510–676 · eval ≥685.
+Module: `research/synthobs-organizational-discovery-homeostasis/src/computational-lab.mjs` · seed `20261011` · **N_SEEDS=150** · **N_STEPS=1000** · train ≤500 · adapt 510–676 · eval ≥685.
 
 ### 0.1 Primary outcome — allocation RMSE (means)
 

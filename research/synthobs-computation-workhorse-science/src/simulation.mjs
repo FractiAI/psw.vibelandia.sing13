@@ -5,7 +5,7 @@
  * Wet-lab-first: sequential bench projects (matched 24-project portfolio).
  * Declared synthetic parameters — not calibrated to real grant portfolios.
  */
-import { mulberry32 } from './digital-lab.mjs';
+import { mulberry32 } from './computational-lab.mjs';
 import {
   CALENDAR_HORIZON_DAYS,
   PRESPECIFIED_REPETITIONS,

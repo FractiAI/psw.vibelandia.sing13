@@ -26,7 +26,7 @@ import {
   PRESPECIFIED_REPETITIONS,
   DIGITAL_SEED,
 } from './constants.mjs';
-import { runDigitalLabBattery } from './digital-lab.mjs';
+import { runComputationalLabBattery } from './computational-lab.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -174,12 +174,12 @@ function experimentGoldenIdentity() {
   };
 }
 
-function experimentDigitalLab() {
-  const battery = runDigitalLabBattery();
+function experimentComputationalLab() {
+  const battery = runComputationalLabBattery();
   const cw2SeedOk = battery.cw2?.seed === DIGITAL_SEED;
   return {
-    id: 'E8_digital_lab',
-    title: 'CW-1 design locks · CW-2 200-rep simulation (synthetic Appendix B)',
+    id: 'E8_computational_lab',
+    title: 'Computational lab · CW-1 locks · CW-2 200-rep simulation (synthetic Appendix B)',
     ...battery,
     cw2SeedOk,
     pass: battery.allPlainPass === true && cw2SeedOk === true,
@@ -197,7 +197,7 @@ export async function runAllExperiments() {
     experimentPaperLocks(),
     experimentShipBlogLock(),
     experimentGoldenIdentity(),
-    experimentDigitalLab(),
+    experimentComputationalLab(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

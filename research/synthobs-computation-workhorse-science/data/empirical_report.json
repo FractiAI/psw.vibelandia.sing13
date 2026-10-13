@@ -1,6 +1,6 @@
 {
   "schema": "synthobs-empirical-report/v1",
-  "generatedAt": "2026-10-13T22:41:03.098Z",
+  "generatedAt": "2026-10-13T22:45:21.442Z",
   "docId": "WP-SYNTHOBS-COMPUTATION-WORKHORSE-SCIENCE-EGS-2026-10-13",
   "registryId": "synthobs-computation-workhorse-science-2026-10",
   "studyTitle": "Should Computation Become the Primary Workhorse of Science? — Computational Discovery, Research Economics, Scientific Integrity, and the Discovery-to-Implementation Pipeline",
@@ -239,8 +239,8 @@
         "honesty": "Algebra of Φ — replayable fixture."
       },
       {
-        "id": "E8_digital_lab",
-        "title": "CW-1 design locks · CW-2 200-rep simulation (synthetic Appendix B)",
+        "id": "E8_computational_lab",
+        "title": "Computational lab · CW-1 locks · CW-2 200-rep simulation (synthetic Appendix B)",
         "designLocks": {
           "four_condition_factorial": true,
           "calendar_horizon_365": true,

@@ -11,8 +11,8 @@ Catalog suite for **Homeostasis Expedition: The Galactosphere Hypothesis**.
 
 **Engine role:** Infinite Octaves ENGINE_SHELF companion #42 — Galactosphere / distributed galactic boundary companion on the Homeostasis Expedition trail.
 
-**Digital lab:** (GH-1) distributed vs sharp multi-channel transition · (GH-2) cross-scale dimensionless topology rhyme.
+**Computational lab:** (GH-1) distributed vs sharp multi-channel transition · (GH-2) cross-scale dimensionless topology rhyme.
 
-Honesty: Soft Story / catalog / digital-lab PoC — not Milky Way proof, not a sharp-shell claim, not astrophysical validation of a physical galactosphere. Φ_EGS is design grammar.
+Honesty: Soft Story / catalog / computational-lab PoC — not Milky Way proof, not a sharp-shell claim, not astrophysical validation of a physical galactosphere. Φ_EGS is design grammar.
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · → ∞^∞

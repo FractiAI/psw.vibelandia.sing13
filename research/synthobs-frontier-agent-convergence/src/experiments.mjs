@@ -1,5 +1,5 @@
 /**
- * Frontier Agent Convergence — digital laboratory experiments (fixture tier).
+ * Frontier Agent Convergence — computational laboratory experiments (fixture tier).
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -69,7 +69,7 @@ function experimentExplorerConvergence() {
     maxIdentity: MAX_IDENTITY_JACCARD,
     pass,
     interpretation: pass
-      ? 'Independent fixture explorers share a core structural assessment (executable research, honesty rails, digital labs, claim/evidence separation, unsupported-physics flags) without copy-paste identity.'
+      ? 'Independent fixture explorers share a core structural assessment (executable research, honesty rails, computational labs, claim/evidence separation, unsupported-physics flags) without copy-paste identity.'
       : 'Explorer convergence gate not cleared — refuse strong attractor claim at fixture tier.',
     honesty: 'Fixture assessments are CI stand-ins for live frontier agents.',
   };

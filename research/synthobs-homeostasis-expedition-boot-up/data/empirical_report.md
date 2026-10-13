@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11`
 **Registry ID:** `synthobs-homeostasis-expedition-boot-up-2026-10`
-**Generated:** 2026-10-13T16:42:10.177Z
+**Generated:** 2026-10-13T22:45:35.165Z
 
 ## Verdict
 
@@ -163,7 +163,7 @@
 }
 ```
 
-### E8_digital_lab — Digital lab · BU-1 dependency coverage · perturbation robustness
+### E8_computational_lab — Computational lab · BU-1 dependency coverage · perturbation robustness
 
 - **Pass:** `true`
 - **Interpretation:** Under hierarchical reference, Infinite Octave scaffold beats simple chain on coverage and reachability; no universal win on randomized reference; not description-length proof.
@@ -171,8 +171,8 @@
 
 ```json
 {
-  "id": "E8_digital_lab",
-  "title": "Digital lab · BU-1 dependency coverage · perturbation robustness",
+  "id": "E8_computational_lab",
+  "title": "Computational lab · BU-1 dependency coverage · perturbation robustness",
   "seed": 20261011,
   "n_constructions": 40,
   "n_perturbations": 20,

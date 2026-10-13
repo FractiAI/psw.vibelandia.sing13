@@ -1,5 +1,5 @@
 /**
- * Digital lab — Living Architect Protective Lattice (Homeostasis Expedition)
+ * Computational lab — Living Architect Protective Lattice (Homeostasis Expedition)
  * LA-1: Observable Boot-Up hierarchical graph results (manuscript carry-forward)
  * LA-2: External protective-structure dataset inventory
  * LA-3: Cross-dataset harmonization schema (paper §10.2 field list)
@@ -158,7 +158,7 @@ function harmonizationSchemaChecks() {
   };
 }
 
-export function runDigitalLabBattery() {
+export function runComputationalLabBattery() {
   const bootUp = bootUpFixtureChecks();
   const inventory = inventoryChecks();
   const schema = harmonizationSchemaChecks();

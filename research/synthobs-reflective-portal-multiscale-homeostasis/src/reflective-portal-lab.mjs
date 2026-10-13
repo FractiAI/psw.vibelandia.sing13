@@ -1,5 +1,5 @@
 /**
- * Digital laboratory — Reflective Modification Portal.
+ * Computational laboratory — Reflective Modification Portal.
  * Agents: P (primal), R (reflect only), M (modify without reflect), RM (portal).
  *
  * Core mechanism: each agent has a sticky **habit** action that dominates choice.

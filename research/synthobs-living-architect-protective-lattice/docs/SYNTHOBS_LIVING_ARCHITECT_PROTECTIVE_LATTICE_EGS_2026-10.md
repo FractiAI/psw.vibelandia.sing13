@@ -48,7 +48,7 @@ The biological investigation compares coral skeleton formation and mollusk shell
 
 ---
 
-## 0. Digital experiments and findings (up front)
+## 0. Computational lab experiments and findings (up front)
 
 Suite: `research/synthobs-living-architect-protective-lattice/` · lanes **LA-1** (boot-up carry-forward) · **LA-2** (dataset inventory) · **LA-3** (harmonization schema stub).
 
@@ -128,7 +128,7 @@ Preserve originals; verify units; prevent leakage; report MAE/RMSE and domain-sp
 
 ---
 
-## 11. Initial digital-lab findings carried forward
+## 11. Initial computational-lab findings carried forward
 
 Section **0.1** and Observable Boot-Up §5.2 report hierarchical-family **88.3% / 97.5%** vs chain **45.1% / 9.9%**; cross-family qualifications unchanged. These motivate separate biological, agent, and boot-up tests — **not** cross-domain proof from one graph alone.
 

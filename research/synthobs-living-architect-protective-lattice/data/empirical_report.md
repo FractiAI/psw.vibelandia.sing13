@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-LIVING-ARCHITECT-PROTECTIVE-LATTICE-EGS-2026-10-11`
 **Registry ID:** `synthobs-living-architect-protective-lattice-2026-10`
-**Generated:** 2026-10-13T17:01:08.699Z
+**Generated:** 2026-10-13T22:45:35.263Z
 
 ## Verdict
 
@@ -171,7 +171,7 @@
 }
 ```
 
-### E8_digital_lab — Digital lab · boot-up carry-forward · dataset inventory · §10.2 schema
+### E8_computational_lab — Computational lab · boot-up carry-forward · dataset inventory · §10.2 schema
 
 - **Pass:** `true`
 - **Interpretation:** Fixtures pin manuscript hierarchical 88.3%/97.5%, three identified-not-harmonized sources, and declared harmonization field list.
@@ -179,8 +179,8 @@
 
 ```json
 {
-  "id": "E8_digital_lab",
-  "title": "Digital lab · boot-up carry-forward · dataset inventory · §10.2 schema",
+  "id": "E8_computational_lab",
+  "title": "Computational lab · boot-up carry-forward · dataset inventory · §10.2 schema",
   "boot_up_highlights": {
     "seed": 20261011,
     "reference_family": "hierarchical",

@@ -1,5 +1,5 @@
 /**
- * Digital lab — SI Organizational Discovery (Homeostasis Expedition)
+ * Computational lab — SI Organizational Discovery (Homeostasis Expedition)
  * 12 nodes · 3 latent factors · delays 0–3 · ridge arms A–E
  *
  * Structural coordination sandbox — not live org telemetry · not SI awareness proof.
@@ -422,7 +422,7 @@ function anchorMeans(rawRuns, targets) {
   return { anchored, rawMeans };
 }
 
-export function runDigitalLabBattery({ seed = DIGITAL_SEED, nSeeds = N_SEEDS } = {}) {
+export function runComputationalLabBattery({ seed = DIGITAL_SEED, nSeeds = N_SEEDS } = {}) {
   const stableRuns = [];
   const shiftRuns = [];
   for (let s = 0; s < nSeeds; s++) {

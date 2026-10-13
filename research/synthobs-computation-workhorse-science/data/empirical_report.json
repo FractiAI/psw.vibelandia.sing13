@@ -1,12 +1,101 @@
 {
   "schema": "synthobs-empirical-report/v1",
-  "generatedAt": "2026-10-13T17:04:46.472Z",
+  "generatedAt": "2026-10-13T17:55:50.101Z",
   "docId": "WP-SYNTHOBS-COMPUTATION-WORKHORSE-SCIENCE-EGS-2026-10-13",
   "registryId": "synthobs-computation-workhorse-science-2026-10",
   "studyTitle": "Should Computation Become the Primary Workhorse of Science? — Computational Discovery, Research Economics, Scientific Integrity, and the Discovery-to-Implementation Pipeline",
   "phiEgs": 1.618033988749895,
-  "honesty": "Four-condition factorial design and full-cost accounting are specified; numerical comparative findings are not established until an auditable simulation run populates prespecified tables. Synthetic pilots (if any) are infrastructure-only — not real-world superiority proof.",
+  "honesty": "CW-2 four-condition synthetic event simulation executed (seed 20261013, 200 matched repetitions, Appendix B populated). Declared cost/time parameters — not calibrated to real grant portfolios; synthetic factorial contrasts illustrate prespecified endpoints under model assumptions and do not alone establish real-world superiority.",
   "standaloneRepo": "https://github.com/FractiAI/synthobs-computation-workhorse-science",
+  "simulationExecuted": true,
+  "cw2": {
+    "seed": 20261013,
+    "repetitions": 200,
+    "summary": {
+      "A": {
+        "candidates_generated": 19.715,
+        "substantive_discoveries": 4.455,
+        "validated_discoveries": 2.975,
+        "implemented_discoveries": 2.58,
+        "measurable_outcomes": 1.44,
+        "false_claims_accepted": 0.215,
+        "unfinished_projects": 4.93,
+        "total_expenditure_usd": 144976.83199999994,
+        "cost_per_validated": 48731.70823529409,
+        "cost_per_measurable": 100678.35555555552,
+        "median_time_substantive": 162.84,
+        "median_time_validated": 188.025,
+        "median_time_implemented": 234.325,
+        "median_time_measurable": 304.29
+      },
+      "B": {
+        "candidates_generated": 23.125,
+        "substantive_discoveries": 5.325,
+        "validated_discoveries": 3.55,
+        "implemented_discoveries": 3.43,
+        "measurable_outcomes": 2.51,
+        "false_claims_accepted": 0.255,
+        "unfinished_projects": 1.1,
+        "total_expenditure_usd": 194391.11999999985,
+        "cost_per_validated": 54758.061971830946,
+        "cost_per_measurable": 77446.66135458162,
+        "median_time_substantive": 129.805,
+        "median_time_validated": 152.95,
+        "median_time_implemented": 182.24,
+        "median_time_measurable": 228.865
+      },
+      "C": {
+        "candidates_generated": 14.245,
+        "substantive_discoveries": 2.98,
+        "validated_discoveries": 2.31,
+        "implemented_discoveries": 1.905,
+        "measurable_outcomes": 1.045,
+        "false_claims_accepted": 0.035,
+        "unfinished_projects": 10.71,
+        "total_expenditure_usd": 290043.65600000037,
+        "cost_per_validated": 125560.02424242439,
+        "cost_per_measurable": 277553.7377990434,
+        "median_time_substantive": 175.8125,
+        "median_time_validated": 183.35,
+        "median_time_implemented": 220.9775,
+        "median_time_measurable": 436.9075
+      },
+      "D": {
+        "candidates_generated": 17.625,
+        "substantive_discoveries": 3.66,
+        "validated_discoveries": 2.825,
+        "implemented_discoveries": 2.575,
+        "measurable_outcomes": 1.805,
+        "false_claims_accepted": 0.02,
+        "unfinished_projects": 7.29,
+        "total_expenditure_usd": 374895.30400000024,
+        "cost_per_validated": 132706.30230088503,
+        "cost_per_measurable": 207698.22936288101,
+        "median_time_substantive": 176.59,
+        "median_time_validated": 188.5925,
+        "median_time_implemented": 208.41,
+        "median_time_measurable": 278.1375
+      }
+    },
+    "pipelineEffect": {
+      "computation": {
+        "validated_delta": 0.5749999999999997,
+        "measurable_delta": 1.0699999999999998,
+        "cost_delta_usd": 49414.28799999991
+      },
+      "wetLab": {
+        "validated_delta": 0.5150000000000001,
+        "measurable_delta": 0.76,
+        "cost_delta_usd": 84851.64799999987
+      }
+    },
+    "environmentEffect": {
+      "validated_comp_minus_wet_no_pipe": 0.665,
+      "validated_comp_pipe_minus_wet_pipe": 0.7249999999999996,
+      "measurable_comp_no_pipe_minus_wet": 0.395
+    },
+    "honesty": "CW-2 synthetic event simulation with declared cost/time parameters (seed 20261013, 200 reps). Illustrates factorial contrasts under model assumptions — not calibration to real labs or grants."
+  },
   "results": {
     "all_pass": true,
     "n_pass": 8,
@@ -24,14 +113,14 @@
       },
       {
         "id": "E2_honesty_locks",
-        "title": "Findings not established · simulation not completed · awaiting execution",
-        "FINDINGS_NOT_ESTABLISHED": true,
-        "NOT_COMPLETED_SIMULATION": true,
-        "AWAITING_EXECUTION": true,
+        "title": "CW-2 executed · synthetic only · real-world superiority not established",
+        "SIMULATION_EXECUTED": true,
+        "SYNTHETIC_ONLY": true,
+        "REAL_WORLD_SUPERIORITY_NOT_ESTABLISHED": true,
         "SOFT_STORY_CATALOG": true,
         "pass": true,
-        "interpretation": "Manuscript is prespecified design — not completed quantitative investigation.",
-        "honesty": "No invented simulation outputs as evidence."
+        "interpretation": "Appendix B populated under declared model — not grant-calibrated field proof.",
+        "honesty": "Soft Story tier for factorial contrasts; policy conclusions require sensitivity + calibration."
       },
       {
         "id": "E3_four_condition_design",
@@ -62,7 +151,7 @@
         "PRESPECIFIED_REPETITIONS": 200,
         "pass": true,
         "interpretation": "Separates computation vs wet-lab and pipeline vs no pipeline.",
-        "honesty": "Design lock — not executed comparative results."
+        "honesty": "Design lock — CW-2 executes under same prespec."
       },
       {
         "id": "E4_homeostasis_expedition",
@@ -76,38 +165,40 @@
       },
       {
         "id": "E5_paper_locks",
-        "title": "Paper locks (four-condition design · findings status · Appendix B placeholders)",
+        "title": "Paper locks (CW-2 results · synthetic honesty · Appendix B numerics)",
         "paperPath": "/workspace/docs/SYNTHOBS_COMPUTATION_WORKHORSE_SCIENCE_EGS_2026-10.md",
         "hasHonesty": true,
         "hasDocId": true,
         "hasWorkhorseTitle": true,
         "hasFourConditions": true,
         "hasPipeline": true,
-        "hasNotEstablished": true,
+        "hasCw2": true,
+        "hasSyntheticHonesty": true,
         "hasResearchEconomics": true,
         "hasScientificIntegrity": true,
         "hasCostCategories": true,
         "hasEndpoints": true,
-        "hasAppendixB": true,
+        "hasAppendixBNumbers": true,
         "hasExpedition": true,
         "hasOperator": true,
         "hasEngine": true,
         "hasFair": true,
         "pass": true,
-        "interpretation": "Paper must not claim completed comparative numerical findings.",
+        "interpretation": "Paper reports executed synthetic simulation with calibration limits stated.",
         "honesty": "Structural text locks only."
       },
       {
         "id": "E6_ship_blog_lock",
-        "title": "Ship-blog surfaces design status + full paper link",
+        "title": "Ship-blog surfaces CW-2 synthetic results + calibration limits",
         "path": "/workspace/interfaces/blog-computation-workhorse-science-2026-10.html",
         "exists": true,
         "hasSlug": true,
         "hasWhitepaper": true,
         "hasThesis": true,
         "hasCaution": true,
+        "hasCw2": true,
         "pass": true,
-        "interpretation": "Guest note must not imply completed superiority results.",
+        "interpretation": "Guest note must not imply real-world superiority without calibration.",
         "honesty": "Surface copy lock only."
       },
       {
@@ -121,7 +212,7 @@
       },
       {
         "id": "E8_digital_lab",
-        "title": "CW-1 design locks · infrastructure pilot (non-decisive)",
+        "title": "CW-1 design locks · CW-2 200-rep simulation (synthetic Appendix B)",
         "designLocks": {
           "four_condition_factorial": true,
           "calendar_horizon_365": true,
@@ -129,9 +220,10 @@
           "productive_hours_declared": true,
           "cost_categories_complete": true,
           "primary_endpoints_declared": true,
+          "simulation_executed_flag": true,
+          "synthetic_only_flag": true,
           "findings_not_established_flag": true,
-          "not_completed_simulation_flag": true,
-          "appendix_tables_placeholder": true
+          "not_completed_simulation_flag": true
         },
         "pilot": {
           "seed": 20261013,
@@ -158,6 +250,99 @@
           },
           "honesty": "Pilot counts unfinished-at-365 placeholders only — not calibrated science productivity; do not use for superiority claims."
         },
+        "cw2": {
+          "seed": 20261013,
+          "repetitions": 200,
+          "nProjects": 24,
+          "horizonDays": 365,
+          "runs": 800,
+          "summary": {
+            "A": {
+              "candidates_generated": 19.715,
+              "substantive_discoveries": 4.455,
+              "validated_discoveries": 2.975,
+              "implemented_discoveries": 2.58,
+              "measurable_outcomes": 1.44,
+              "false_claims_accepted": 0.215,
+              "unfinished_projects": 4.93,
+              "total_expenditure_usd": 144976.83199999994,
+              "cost_per_validated": 48731.70823529409,
+              "cost_per_measurable": 100678.35555555552,
+              "median_time_substantive": 162.84,
+              "median_time_validated": 188.025,
+              "median_time_implemented": 234.325,
+              "median_time_measurable": 304.29
+            },
+            "B": {
+              "candidates_generated": 23.125,
+              "substantive_discoveries": 5.325,
+              "validated_discoveries": 3.55,
+              "implemented_discoveries": 3.43,
+              "measurable_outcomes": 2.51,
+              "false_claims_accepted": 0.255,
+              "unfinished_projects": 1.1,
+              "total_expenditure_usd": 194391.11999999985,
+              "cost_per_validated": 54758.061971830946,
+              "cost_per_measurable": 77446.66135458162,
+              "median_time_substantive": 129.805,
+              "median_time_validated": 152.95,
+              "median_time_implemented": 182.24,
+              "median_time_measurable": 228.865
+            },
+            "C": {
+              "candidates_generated": 14.245,
+              "substantive_discoveries": 2.98,
+              "validated_discoveries": 2.31,
+              "implemented_discoveries": 1.905,
+              "measurable_outcomes": 1.045,
+              "false_claims_accepted": 0.035,
+              "unfinished_projects": 10.71,
+              "total_expenditure_usd": 290043.65600000037,
+              "cost_per_validated": 125560.02424242439,
+              "cost_per_measurable": 277553.7377990434,
+              "median_time_substantive": 175.8125,
+              "median_time_validated": 183.35,
+              "median_time_implemented": 220.9775,
+              "median_time_measurable": 436.9075
+            },
+            "D": {
+              "candidates_generated": 17.625,
+              "substantive_discoveries": 3.66,
+              "validated_discoveries": 2.825,
+              "implemented_discoveries": 2.575,
+              "measurable_outcomes": 1.805,
+              "false_claims_accepted": 0.02,
+              "unfinished_projects": 7.29,
+              "total_expenditure_usd": 374895.30400000024,
+              "cost_per_validated": 132706.30230088503,
+              "cost_per_measurable": 207698.22936288101,
+              "median_time_substantive": 176.59,
+              "median_time_validated": 188.5925,
+              "median_time_implemented": 208.41,
+              "median_time_measurable": 278.1375
+            }
+          },
+          "pipelineEffect": {
+            "computation": {
+              "validated_delta": 0.5749999999999997,
+              "measurable_delta": 1.0699999999999998,
+              "cost_delta_usd": 49414.28799999991
+            },
+            "wetLab": {
+              "validated_delta": 0.5150000000000001,
+              "measurable_delta": 0.76,
+              "cost_delta_usd": 84851.64799999987
+            }
+          },
+          "environmentEffect": {
+            "validated_comp_minus_wet_no_pipe": 0.665,
+            "validated_comp_pipe_minus_wet_pipe": 0.7249999999999996,
+            "measurable_comp_no_pipe_minus_wet": 0.395
+          },
+          "honesty": "CW-2 synthetic event simulation with declared cost/time parameters (seed 20261013, 200 reps). Illustrates factorial contrasts under model assumptions — not calibration to real labs or grants.",
+          "findingsEstablished": true,
+          "syntheticOnly": true
+        },
         "plainChecks": {
           "four_condition_factorial": true,
           "calendar_horizon_365": true,
@@ -165,15 +350,18 @@
           "productive_hours_declared": true,
           "cost_categories_complete": true,
           "primary_endpoints_declared": true,
+          "simulation_executed_flag": true,
+          "synthetic_only_flag": true,
           "findings_not_established_flag": true,
           "not_completed_simulation_flag": true,
-          "appendix_tables_placeholder": true,
-          "pilot_non_decisive": true
+          "pilot_non_decisive": true,
+          "cw2_appendix_populated": true
         },
         "allPlainPass": true,
-        "honesty": "CW-1 verifies prespecified four-condition design and cost endpoints; comparative numerical findings await full execution per Appendix B.",
+        "honesty": "CW-1 verifies prespecified design; CW-2 populates Appendix B under declared synthetic parameters — not real-world calibration.",
+        "cw2SeedOk": true,
         "pass": true,
-        "interpretation": "Design verified; Appendix B tables remain to be calculated from full execution."
+        "interpretation": "Design verified; Appendix B populated from auditable CW-2 run."
       }
     ]
   }

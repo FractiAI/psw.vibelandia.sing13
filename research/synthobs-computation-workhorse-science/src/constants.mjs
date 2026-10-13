@@ -18,13 +18,17 @@ export const GRAND_STORY = "Hero's Return to Source";
 export const STUDY_TITLE =
   'Should Computation Become the Primary Workhorse of Science? — Computational Discovery, Research Economics, Scientific Integrity, and the Discovery-to-Implementation Pipeline';
 
-export const FINDINGS_NOT_ESTABLISHED = true;
-export const NOT_COMPLETED_SIMULATION = true;
-export const AWAITING_EXECUTION = true;
+/** Synthetic CW-2 executed; real-world superiority not claimed. */
+export const SIMULATION_EXECUTED = true;
+export const SYNTHETIC_ONLY = true;
+export const REAL_WORLD_SUPERIORITY_NOT_ESTABLISHED = true;
+export const FINDINGS_NOT_ESTABLISHED = false;
+export const NOT_COMPLETED_SIMULATION = false;
+export const AWAITING_EXECUTION = false;
 export const SOFT_STORY_CATALOG = true;
 
 export const HONESTY =
-  'Four-condition factorial design and full-cost accounting are specified; numerical comparative findings are not established until an auditable simulation run populates prespecified tables. Synthetic pilots (if any) are infrastructure-only — not real-world superiority proof.';
+  'CW-2 four-condition synthetic event simulation executed (seed 20261013, 200 matched repetitions, Appendix B populated). Declared cost/time parameters — not calibrated to real grant portfolios; synthetic factorial contrasts illustrate prespecified endpoints under model assumptions and do not alone establish real-world superiority.';
 
 export const CONDITIONS = Object.freeze([
   { id: 'A', env: 'computation-first', pipeline: false },

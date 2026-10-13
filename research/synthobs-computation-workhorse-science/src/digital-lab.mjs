@@ -1,5 +1,6 @@
 /**
- * CW-1 — Design locks + optional infrastructure pilot (no established comparative findings)
+ * CW-1 — Design locks + infrastructure pilot
+ * CW-2 — Four-condition 200-rep synthetic simulation (Appendix B)
  */
 import {
   CONDITIONS,
@@ -12,9 +13,23 @@ import {
   DIGITAL_SEED,
   FINDINGS_NOT_ESTABLISHED,
   NOT_COMPLETED_SIMULATION,
+  SIMULATION_EXECUTED,
+  SYNTHETIC_ONLY,
 } from './constants.mjs';
+import { runFourConditionSimulation } from './simulation.mjs';
 
 export const APPENDIX_B_PLACEHOLDER = 'To be calculated';
+
+/** Deterministic PRNG (Mulberry32). */
+export function mulberry32(seed) {
+  let t = seed >>> 0;
+  return () => {
+    t += 0x6d2b79f5;
+    let r = Math.imul(t ^ (t >>> 15), 1 | t);
+    r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
+    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+  };
+}
 
 export function verifyDesignLocks() {
   const factorial =
@@ -30,21 +45,16 @@ export function verifyDesignLocks() {
     productive_hours_declared: PRODUCTIVE_HOURS_BASE === 1760,
     cost_categories_complete: COST_CATEGORIES.length >= 10,
     primary_endpoints_declared: PRIMARY_ENDPOINTS.length >= 5,
-    findings_not_established_flag: FINDINGS_NOT_ESTABLISHED === true,
-    not_completed_simulation_flag: NOT_COMPLETED_SIMULATION === true,
-    appendix_tables_placeholder: APPENDIX_B_PLACEHOLDER === 'To be calculated',
+    simulation_executed_flag: SIMULATION_EXECUTED === true,
+    synthetic_only_flag: SYNTHETIC_ONLY === true,
+    findings_not_established_flag: FINDINGS_NOT_ESTABLISHED === false,
+    not_completed_simulation_flag: NOT_COMPLETED_SIMULATION === false,
   };
 }
 
 /** Infrastructure pilot — event skeleton only; outputs explicitly non-decisive. */
 export function runInfrastructurePilot({ seed = DIGITAL_SEED, reps = PILOT_REPETITIONS } = {}) {
-  let t = seed >>> 0;
-  const rnd = () => {
-    t += 0x6d2b79f5;
-    let r = Math.imul(t ^ (t >>> 15), 1 | t);
-    r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
-    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
-  };
+  const rnd = mulberry32(seed);
   const byCondition = Object.fromEntries(CONDITIONS.map((c) => [c.id, { reps: 0, unfinished_at_365: 0 }]));
   for (let r = 0; r < reps; r++) {
     for (const c of CONDITIONS) {
@@ -63,19 +73,39 @@ export function runInfrastructurePilot({ seed = DIGITAL_SEED, reps = PILOT_REPET
   };
 }
 
+export function runCw2Simulation(options = {}) {
+  return runFourConditionSimulation({
+    seed: DIGITAL_SEED,
+    repetitions: PRESPECIFIED_REPETITIONS,
+    ...options,
+  });
+}
+
 export function runDigitalLabBattery() {
   const plainChecks = verifyDesignLocks();
   const pilot = runInfrastructurePilot();
+  const cw2 = runCw2Simulation();
+  const appendixPopulated =
+    cw2.findingsEstablished === true &&
+    cw2.repetitions >= 200 &&
+    cw2.summary?.A?.validated_discoveries > 0;
   const allPlainPass =
     Object.values(plainChecks).every(Boolean) &&
     pilot.findingsEstablished === false &&
-    pilot.infrastructureOnly === true;
+    pilot.infrastructureOnly === true &&
+    appendixPopulated === true &&
+    cw2.syntheticOnly === true;
   return {
     designLocks: plainChecks,
     pilot,
-    plainChecks: { ...plainChecks, pilot_non_decisive: pilot.findingsEstablished === false },
+    cw2,
+    plainChecks: {
+      ...plainChecks,
+      pilot_non_decisive: pilot.findingsEstablished === false,
+      cw2_appendix_populated: appendixPopulated,
+    },
     allPlainPass,
     honesty:
-      'CW-1 verifies prespecified four-condition design and cost endpoints; comparative numerical findings await full execution per Appendix B.',
+      'CW-1 verifies prespecified design; CW-2 populates Appendix B under declared synthetic parameters — not real-world calibration.',
   };
 }

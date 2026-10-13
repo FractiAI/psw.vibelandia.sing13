@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "1bf1a663b80333ff",
+  "auditId": "dc67d565b41eda71",
   "paperId": "synthobs-computation-workhorse-science-2026-10",
   "sourcePath": "docs/SYNTHOBS_COMPUTATION_WORKHORSE_SCIENCE_EGS_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-13T17:04:46.627Z"
+          "invokedAt": "2026-10-13T17:56:54.298Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-13T17:04:46.626Z",
-  "completedAt": "2026-10-13T17:04:46.627Z",
+  "startedAt": "2026-10-13T17:56:54.297Z",
+  "completedAt": "2026-10-13T17:56:54.298Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,
@@ -127,7 +127,7 @@
       "Expand References with ≥3 citable sources or repo cross-links."
     ],
     "meta": {
-      "wordCount": 1177,
+      "wordCount": 1523,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

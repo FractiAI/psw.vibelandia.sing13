@@ -15,17 +15,18 @@ import {
   ENGINE_SHELF_SLOT,
   EXPEDITION,
   GRAND_STORY,
-  FINDINGS_NOT_ESTABLISHED,
-  NOT_COMPLETED_SIMULATION,
-  AWAITING_EXECUTION,
+  SIMULATION_EXECUTED,
+  SYNTHETIC_ONLY,
+  REAL_WORLD_SUPERIORITY_NOT_ESTABLISHED,
   SOFT_STORY_CATALOG,
   CONDITIONS,
   COST_CATEGORIES,
   PRIMARY_ENDPOINTS,
   CALENDAR_HORIZON_DAYS,
   PRESPECIFIED_REPETITIONS,
+  DIGITAL_SEED,
 } from './constants.mjs';
-import { runDigitalLabBattery, APPENDIX_B_PLACEHOLDER } from './digital-lab.mjs';
+import { runDigitalLabBattery } from './digital-lab.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -47,20 +48,20 @@ function experimentPhiEgs() {
 
 function experimentHonestyLocks() {
   const pass =
-    FINDINGS_NOT_ESTABLISHED === true &&
-    NOT_COMPLETED_SIMULATION === true &&
-    AWAITING_EXECUTION === true &&
+    SIMULATION_EXECUTED === true &&
+    SYNTHETIC_ONLY === true &&
+    REAL_WORLD_SUPERIORITY_NOT_ESTABLISHED === true &&
     SOFT_STORY_CATALOG === true;
   return {
     id: 'E2_honesty_locks',
-    title: 'Findings not established · simulation not completed · awaiting execution',
-    FINDINGS_NOT_ESTABLISHED,
-    NOT_COMPLETED_SIMULATION,
-    AWAITING_EXECUTION,
+    title: 'CW-2 executed · synthetic only · real-world superiority not established',
+    SIMULATION_EXECUTED,
+    SYNTHETIC_ONLY,
+    REAL_WORLD_SUPERIORITY_NOT_ESTABLISHED,
     SOFT_STORY_CATALOG,
     pass,
-    interpretation: 'Manuscript is prespecified design — not completed quantitative investigation.',
-    honesty: 'No invented simulation outputs as evidence.',
+    interpretation: 'Appendix B populated under declared model — not grant-calibrated field proof.',
+    honesty: 'Soft Story tier for factorial contrasts; policy conclusions require sensitivity + calibration.',
   };
 }
 
@@ -78,7 +79,7 @@ function experimentFourConditionDesign() {
     PRESPECIFIED_REPETITIONS,
     pass,
     interpretation: 'Separates computation vs wet-lab and pipeline vs no pipeline.',
-    honesty: 'Design lock — not executed comparative results.',
+    honesty: 'Design lock — CW-2 executes under same prespec.',
   };
 }
 
@@ -109,14 +110,13 @@ function experimentPaperLocks() {
     hasWorkhorseTitle: /Primary Workhorse of Science|workhorse/i.test(paper),
     hasFourConditions: /Condition A|computation-first.*pipeline|four-condition/i.test(paper),
     hasPipeline: /Discovery-to-Implementation Pipeline/i.test(paper),
-    hasNotEstablished: /not yet established|not reported as established|awaiting execution|To be calculated/i.test(
-      paper,
-    ),
+    hasCw2: /CW-2|seed 20261013|200 repetitions/i.test(paper),
+    hasSyntheticHonesty: /synthetic|not calibrated|real-world superiority|Soft Story/i.test(paper),
     hasResearchEconomics: /research economics|fully allocated|researcher-year/i.test(paper),
     hasScientificIntegrity: /scientific integrity|independent validation|false positive/i.test(paper),
     hasCostCategories: COST_CATEGORIES.slice(0, 5).every((c) => paper.includes(c.replace('_', ' ')) || paper.includes(c)),
     hasEndpoints: PRIMARY_ENDPOINTS.some((e) => paper.includes(e.replace(/_/g, ' ')) || /primary endpoints/i.test(paper)),
-    hasAppendixB: /Table B1|Appendix B/i.test(paper) && paper.includes(APPENDIX_B_PLACEHOLDER),
+    hasAppendixBNumbers: /Appendix B/i.test(paper) && /\| [0-9]+\.[0-9]+ \|/.test(paper),
     hasExpedition: /Homeostasis Expedition/i.test(paper),
     hasOperator: /SynthOBS/i.test(paper),
     hasEngine: /ENGINE_SHELF|#46|Infinite Octaves/i.test(paper),
@@ -125,11 +125,11 @@ function experimentPaperLocks() {
   const pass = Boolean(paper) && Object.values(checks).every(Boolean);
   return {
     id: 'E5_paper_locks',
-    title: 'Paper locks (four-condition design · findings status · Appendix B placeholders)',
+    title: 'Paper locks (CW-2 results · synthetic honesty · Appendix B numerics)',
     paperPath: fs.existsSync(paperPath) ? paperPath : localPaper,
     ...checks,
     pass,
-    interpretation: 'Paper must not claim completed comparative numerical findings.',
+    interpretation: 'Paper reports executed synthetic simulation with calibration limits stated.',
     honesty: 'Structural text locks only.',
   };
 }
@@ -142,18 +142,20 @@ function experimentShipBlogLock() {
     body.includes('/whitepaper/computation-workhorse-science') || body.includes(REGISTRY_ID);
   const hasThesis = /computation|wet.?lab|researcher|paycheck|discovery|pipeline/i.test(body);
   const hasCaution =
-    /not yet|awaiting|To be calculated|design|not established|unmeasured/i.test(body);
+    /synthetic|not calibrated|Soft Story|real-world|model assumption/i.test(body);
+  const hasCw2 = /CW-2|200 repetition|Appendix B/i.test(body);
   return {
     id: 'E6_ship_blog_lock',
-    title: 'Ship-blog surfaces design status + full paper link',
+    title: 'Ship-blog surfaces CW-2 synthetic results + calibration limits',
     path: MONOREPO_BLOG,
     exists,
     hasSlug,
     hasWhitepaper,
     hasThesis,
     hasCaution,
-    pass: exists && hasSlug && hasWhitepaper && hasThesis && hasCaution,
-    interpretation: 'Guest note must not imply completed superiority results.',
+    hasCw2,
+    pass: exists && hasSlug && hasWhitepaper && hasThesis && hasCaution && hasCw2,
+    interpretation: 'Guest note must not imply real-world superiority without calibration.',
     honesty: 'Surface copy lock only.',
   };
 }
@@ -174,13 +176,14 @@ function experimentGoldenIdentity() {
 
 function experimentDigitalLab() {
   const battery = runDigitalLabBattery();
+  const cw2SeedOk = battery.cw2?.seed === DIGITAL_SEED;
   return {
     id: 'E8_digital_lab',
-    title: 'CW-1 design locks · infrastructure pilot (non-decisive)',
+    title: 'CW-1 design locks · CW-2 200-rep simulation (synthetic Appendix B)',
     ...battery,
-    pass: battery.allPlainPass === true,
-    interpretation:
-      'Design verified; Appendix B tables remain to be calculated from full execution.',
+    cw2SeedOk,
+    pass: battery.allPlainPass === true && cw2SeedOk === true,
+    interpretation: 'Design verified; Appendix B populated from auditable CW-2 run.',
     honesty: battery.honesty,
   };
 }

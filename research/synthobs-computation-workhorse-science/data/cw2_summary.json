@@ -1,0 +1,93 @@
+{
+  "seed": 20261013,
+  "repetitions": 200,
+  "nProjects": 24,
+  "horizonDays": 365,
+  "runs": 800,
+  "summary": {
+    "A": {
+      "candidates_generated": 19.715,
+      "substantive_discoveries": 4.455,
+      "validated_discoveries": 2.975,
+      "implemented_discoveries": 2.58,
+      "measurable_outcomes": 1.44,
+      "false_claims_accepted": 0.215,
+      "unfinished_projects": 4.93,
+      "total_expenditure_usd": 144976.83199999994,
+      "cost_per_validated": 48731.70823529409,
+      "cost_per_measurable": 100678.35555555552,
+      "median_time_substantive": 162.84,
+      "median_time_validated": 188.025,
+      "median_time_implemented": 234.325,
+      "median_time_measurable": 304.29
+    },
+    "B": {
+      "candidates_generated": 23.125,
+      "substantive_discoveries": 5.325,
+      "validated_discoveries": 3.55,
+      "implemented_discoveries": 3.43,
+      "measurable_outcomes": 2.51,
+      "false_claims_accepted": 0.255,
+      "unfinished_projects": 1.1,
+      "total_expenditure_usd": 194391.11999999985,
+      "cost_per_validated": 54758.061971830946,
+      "cost_per_measurable": 77446.66135458162,
+      "median_time_substantive": 129.805,
+      "median_time_validated": 152.95,
+      "median_time_implemented": 182.24,
+      "median_time_measurable": 228.865
+    },
+    "C": {
+      "candidates_generated": 14.245,
+      "substantive_discoveries": 2.98,
+      "validated_discoveries": 2.31,
+      "implemented_discoveries": 1.905,
+      "measurable_outcomes": 1.045,
+      "false_claims_accepted": 0.035,
+      "unfinished_projects": 10.71,
+      "total_expenditure_usd": 290043.65600000037,
+      "cost_per_validated": 125560.02424242439,
+      "cost_per_measurable": 277553.7377990434,
+      "median_time_substantive": 175.8125,
+      "median_time_validated": 183.35,
+      "median_time_implemented": 220.9775,
+      "median_time_measurable": 436.9075
+    },
+    "D": {
+      "candidates_generated": 17.625,
+      "substantive_discoveries": 3.66,
+      "validated_discoveries": 2.825,
+      "implemented_discoveries": 2.575,
+      "measurable_outcomes": 1.805,
+      "false_claims_accepted": 0.02,
+      "unfinished_projects": 7.29,
+      "total_expenditure_usd": 374895.30400000024,
+      "cost_per_validated": 132706.30230088503,
+      "cost_per_measurable": 207698.22936288101,
+      "median_time_substantive": 176.59,
+      "median_time_validated": 188.5925,
+      "median_time_implemented": 208.41,
+      "median_time_measurable": 278.1375
+    }
+  },
+  "pipelineEffect": {
+    "computation": {
+      "validated_delta": 0.5749999999999997,
+      "measurable_delta": 1.0699999999999998,
+      "cost_delta_usd": 49414.28799999991
+    },
+    "wetLab": {
+      "validated_delta": 0.5150000000000001,
+      "measurable_delta": 0.76,
+      "cost_delta_usd": 84851.64799999987
+    }
+  },
+  "environmentEffect": {
+    "validated_comp_minus_wet_no_pipe": 0.665,
+    "validated_comp_pipe_minus_wet_pipe": 0.7249999999999996,
+    "measurable_comp_no_pipe_minus_wet": 0.395
+  },
+  "honesty": "CW-2 synthetic event simulation with declared cost/time parameters (seed 20261013, 200 reps). Illustrates factorial contrasts under model assumptions — not calibration to real labs or grants.",
+  "findingsEstablished": true,
+  "syntheticOnly": true
+}

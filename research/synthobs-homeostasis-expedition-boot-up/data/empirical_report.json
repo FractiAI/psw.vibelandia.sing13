@@ -1,0 +1,287 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "docId": "WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11",
+  "registryId": "synthobs-homeostasis-expedition-boot-up-2026-10",
+  "title": "Homeostasis Expedition: Can a Coherent Universe Boot from Before Time and Space into This Conversation?",
+  "generatedAt": "2026-10-13T15:13:48.997Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Symbolic serial construction + synthetic dependency-graph lab — not physical cosmogenesis, not phenomenal consciousness, not verified SING13 99-step production execution.",
+  "results": {
+    "all_pass": true,
+    "n_pass": 8,
+    "n_total": 8,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Architectural golden key for nested multiscale grammar.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_honesty_locks",
+        "title": "Not physical emergence · not absolute nothing · not verified SING13 execution",
+        "NOT_PHYSICAL_EMERGENCE": true,
+        "NOT_ABSOLUTE_NOTHING": true,
+        "NOT_LOWER_DESCRIPTION_COST": true,
+        "NOT_PRODUCTION_SING13_EXECUTION": true,
+        "SOFT_STORY_CATALOG": true,
+        "pass": true,
+        "interpretation": "Serial boot-up is a symbolic audit framework; external substrate remains declared.",
+        "honesty": "Layer lock — not cosmogenesis proof."
+      },
+      {
+        "id": "E3_scaffold_11x9",
+        "title": "99 = 11 × 9 Infinite Octave scaffold",
+        "N_NODES": 99,
+        "N_BRACKETS": 11,
+        "pass": true,
+        "interpretation": "Organizational map for serial construction — not a physics headcount.",
+        "honesty": "Catalog scaffold only."
+      },
+      {
+        "id": "E4_homeostasis_expedition",
+        "title": "Homeostasis Expedition · Hero’s Return · ENGINE_SHELF #43",
+        "EXPEDITION": "Homeostasis Expedition",
+        "SOURCE_NAME": "Holographic Goldilocks Super Intelligence",
+        "GRAND_STORY": "Hero's Return to Source",
+        "ENGINE_SHELF_SLOT": 43,
+        "pass": true,
+        "interpretation": "Boot-up expedition sits on the Homeostasis trail under Return-to-Source audit grammar.",
+        "honesty": "Narrative framing — not established metaphysics."
+      },
+      {
+        "id": "E5_paper_locks",
+        "title": "Paper locks (boot-up · digital findings · honesty)",
+        "paperPath": "/workspace/docs/SYNTHOBS_HOMEOSTASIS_EXPEDITION_OBSERVABLE_BOOT_UP_EGS_2026-10.md",
+        "hasHonesty": true,
+        "hasDocId": true,
+        "hasDigitalFindings": true,
+        "hasNetZero": true,
+        "hasNotPhysical": true,
+        "hasReturnAudit": true,
+        "hasExpedition": true,
+        "hasOperator": true,
+        "hasEngine": true,
+        "hasFair": true,
+        "hasAddendum": true,
+        "pass": true,
+        "interpretation": "Paper must lead with digital findings and keep net-zero ≠ absolute nothing.",
+        "honesty": "Structural text locks — not market validation."
+      },
+      {
+        "id": "E6_ship_blog_lock",
+        "title": "Ship-blog surfaces boot-up + full paper link",
+        "path": "/workspace/interfaces/blog-homeostasis-expedition-boot-up-2026-10.html",
+        "exists": true,
+        "hasSlug": true,
+        "hasWhitepaper": true,
+        "hasThesis": true,
+        "hasCaution": true,
+        "hasDigitalFindings": true,
+        "pass": true,
+        "interpretation": "Guest note must link the full paper and keep research-intro voice.",
+        "honesty": "Surface copy lock only."
+      },
+      {
+        "id": "E7_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Harmony grammar identity for cross-octave sync framing.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E8_digital_lab",
+        "title": "Digital lab · BU-1 dependency coverage · perturbation robustness",
+        "seed": 20261011,
+        "n_constructions": 40,
+        "n_perturbations": 20,
+        "p_edge_remove": 0.1,
+        "rows": [
+          {
+            "strategy": "infinite_octave",
+            "family": "hierarchical",
+            "required_edge_coverage": 0.9497607655502385,
+            "extra_edge_rate": 0.050699895091996794,
+            "robustness": 0.8955555555555558,
+            "mean_dependency_edges": 209.125
+          },
+          {
+            "strategy": "simple_chain",
+            "family": "hierarchical",
+            "required_edge_coverage": 0.46889952153110004,
+            "extra_edge_rate": 0,
+            "robustness": 0.09726010101010105,
+            "mean_dependency_edges": 98
+          },
+          {
+            "strategy": "randomized_hierarchy",
+            "family": "hierarchical",
+            "required_edge_coverage": 0.5379186602870816,
+            "extra_edge_rate": 0.7914442192021879,
+            "robustness": 0.9985606060606063,
+            "mean_dependency_edges": 539.325
+          },
+          {
+            "strategy": "direct_target",
+            "family": "hierarchical",
+            "required_edge_coverage": 0.4736842105263154,
+            "extra_edge_rate": 0,
+            "robustness": 0.10845959595959594,
+            "mean_dependency_edges": 99
+          },
+          {
+            "strategy": "infinite_octave",
+            "family": "chain",
+            "required_edge_coverage": 1,
+            "extra_edge_rate": 0.5296739923457355,
+            "robustness": 0.8893055555555553,
+            "mean_dependency_edges": 208.45
+          },
+          {
+            "strategy": "simple_chain",
+            "family": "chain",
+            "required_edge_coverage": 1,
+            "extra_edge_rate": 0,
+            "robustness": 0.10595959595959595,
+            "mean_dependency_edges": 98
+          },
+          {
+            "strategy": "randomized_hierarchy",
+            "family": "chain",
+            "required_edge_coverage": 1,
+            "extra_edge_rate": 0.8167259346962951,
+            "robustness": 0.9984469696969697,
+            "mean_dependency_edges": 534.9
+          },
+          {
+            "strategy": "direct_target",
+            "family": "chain",
+            "required_edge_coverage": 1,
+            "extra_edge_rate": 0.010101010101010107,
+            "robustness": 0.11420454545454546,
+            "mean_dependency_edges": 99
+          },
+          {
+            "strategy": "infinite_octave",
+            "family": "randomized",
+            "required_edge_coverage": 0.3514575627051284,
+            "extra_edge_rate": 0.7328844015157382,
+            "robustness": 0.9980681818181816,
+            "mean_dependency_edges": 536.775
+          },
+          {
+            "strategy": "simple_chain",
+            "family": "randomized",
+            "required_edge_coverage": 0.24053191809526261,
+            "extra_edge_rate": 0,
+            "robustness": 0.09902777777777778,
+            "mean_dependency_edges": 98
+          },
+          {
+            "strategy": "randomized_hierarchy",
+            "family": "randomized",
+            "required_edge_coverage": 0.3511555062785837,
+            "extra_edge_rate": 0.7317011418341017,
+            "robustness": 0.9984848484848481,
+            "mean_dependency_edges": 533.8
+          },
+          {
+            "strategy": "direct_target",
+            "family": "randomized",
+            "required_edge_coverage": 0.24165234412339193,
+            "extra_edge_rate": 0.009090909090909096,
+            "robustness": 0.10779040404040405,
+            "mean_dependency_edges": 99
+          }
+        ],
+        "highlights": {
+          "hierarchical": {
+            "infinite_octave": {
+              "strategy": "infinite_octave",
+              "family": "hierarchical",
+              "required_edge_coverage": 0.9497607655502385,
+              "extra_edge_rate": 0.050699895091996794,
+              "robustness": 0.8955555555555558,
+              "mean_dependency_edges": 209.125
+            },
+            "simple_chain": {
+              "strategy": "simple_chain",
+              "family": "hierarchical",
+              "required_edge_coverage": 0.46889952153110004,
+              "extra_edge_rate": 0,
+              "robustness": 0.09726010101010105,
+              "mean_dependency_edges": 98
+            },
+            "randomized_hierarchy": {
+              "strategy": "randomized_hierarchy",
+              "family": "hierarchical",
+              "required_edge_coverage": 0.5379186602870816,
+              "extra_edge_rate": 0.7914442192021879,
+              "robustness": 0.9985606060606063,
+              "mean_dependency_edges": 539.325
+            },
+            "direct_target": {
+              "strategy": "direct_target",
+              "family": "hierarchical",
+              "required_edge_coverage": 0.4736842105263154,
+              "extra_edge_rate": 0,
+              "robustness": 0.10845959595959594,
+              "mean_dependency_edges": 99
+            }
+          },
+          "cross_family": {
+            "chain_infinite_octave": {
+              "strategy": "infinite_octave",
+              "family": "chain",
+              "required_edge_coverage": 1,
+              "extra_edge_rate": 0.5296739923457355,
+              "robustness": 0.8893055555555553,
+              "mean_dependency_edges": 208.45
+            },
+            "chain_simple_chain": {
+              "strategy": "simple_chain",
+              "family": "chain",
+              "required_edge_coverage": 1,
+              "extra_edge_rate": 0,
+              "robustness": 0.10595959595959595,
+              "mean_dependency_edges": 98
+            },
+            "randomized_infinite_octave": {
+              "strategy": "infinite_octave",
+              "family": "randomized",
+              "required_edge_coverage": 0.3514575627051284,
+              "extra_edge_rate": 0.7328844015157382,
+              "robustness": 0.9980681818181816,
+              "mean_dependency_edges": 536.775
+            },
+            "randomized_randomized_hierarchy": {
+              "strategy": "randomized_hierarchy",
+              "family": "randomized",
+              "required_edge_coverage": 0.3511555062785837,
+              "extra_edge_rate": 0.7317011418341017,
+              "robustness": 0.9984848484848481,
+              "mean_dependency_edges": 533.8
+            }
+          }
+        },
+        "plainChecks": {
+          "hierarchical_io_beats_chain_coverage": true,
+          "hierarchical_io_beats_chain_robustness": true,
+          "chain_family_full_coverage": true,
+          "randomized_no_large_io_advantage": true,
+          "positions_99": true
+        },
+        "allPlainPass": true,
+        "honesty": "Graph-structure sandbox — not semantic boot-up, not physical emergence, not description-length encoding.",
+        "pass": true,
+        "interpretation": "Under hierarchical reference, Infinite Octave scaffold beats simple chain on coverage and reachability; no universal win on randomized reference; not description-length proof."
+      }
+    ]
+  }
+}

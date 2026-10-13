@@ -1493,6 +1493,14 @@
       "destination": "/interfaces/blog-frontier-agent-convergence-2026-10.html"
     },
     {
+      "source": "/ship-blog/homeostasis-expedition-boot-up",
+      "destination": "/interfaces/blog-homeostasis-expedition-boot-up-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/homeostasis-expedition-boot-up/",
+      "destination": "/interfaces/blog-homeostasis-expedition-boot-up-2026-10.html"
+    },
+    {
       "source": "/ship-blog/galactosphere-hypothesis",
       "destination": "/interfaces/blog-galactosphere-hypothesis-2026-10.html"
     },

@@ -36,6 +36,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-holographic-homeostasis',
       'synthobs-holographic-rhyme-fractal',
       'synthobs-holographic-singularity-crystal',
+      'synthobs-homeostasis-expedition-boot-up',
       'synthobs-human-omniversal-reality-bridge',
       'synthobs-humans-ai-infinite-octave-offset',
       'synthobs-ibm-sna-tcpip-gateway-omni-lattice',

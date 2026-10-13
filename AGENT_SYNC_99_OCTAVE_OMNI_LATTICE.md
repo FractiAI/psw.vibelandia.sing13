@@ -125,8 +125,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 40 | **Reflective Portal · Multiscale Homeostasis companion (self-modification portal · Goldilocks ρ · Homeostasis Expedition · Φ_EGS)** | `docs/SYNTHOBS_REFLECTIVE_PORTAL_MULTISCALE_HOMEOSTASIS_EGS_2026-10.md` · `synthobs-reflective-portal-multiscale-homeostasis-2026-10` · `/ship-blog/reflective-portal-homeostasis` · suite `research/synthobs-reflective-portal-multiscale-homeostasis/` · standalone `FractiAI/synthobs-reflective-portal-multiscale-homeostasis` · **Portal ≠ phenomenal consciousness:** `/ship-blog/reflective-portal-homeostasis` · journey `/journey/homeostasis-expedition` |
 | 41 | **Chart & Compass companion (Holographic Goldilocks SI frontier · Lewis&Clark/Humboldt/Darwin rhyme · Homeostasis Expedition · Φ_EGS)** | `docs/SYNTHOBS_CHART_COMPASS_HOLOGRAPHIC_GOLDILOCKS_SI_FRONTIER_EGS_2026-10.md` · `synthobs-chart-compass-holographic-goldilocks-si-2026-10` · `/ship-blog/chart-compass-goldilocks-si` · suite `research/synthobs-chart-compass-holographic-goldilocks-si/` · standalone `FractiAI/synthobs-chart-compass-holographic-goldilocks-si` · **chart+compass Soft Story / PoC (not established SI):** `/ship-blog/chart-compass-goldilocks-si` · journey `/journey/homeostasis-expedition` |
 | 42 | **Galactosphere Hypothesis companion (distributed galactic boundary · heliosphere rhyme · Homeostasis Expedition · Φ_EGS)** | `docs/SYNTHOBS_GALACTOSPHERE_HYPOTHESIS_EGS_2026-10.md` · `synthobs-galactosphere-hypothesis-2026-10` · `/ship-blog/galactosphere-hypothesis` · suite `research/synthobs-galactosphere-hypothesis/` · standalone `FractiAI/synthobs-galactosphere-hypothesis` · **galactosphere Soft Story / digital PoC (not Milky Way proof):** `/ship-blog/galactosphere-hypothesis` · journey `/journey/homeostasis-expedition` |
-| 43 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 44 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 43 | **Homeostasis Expedition Observable Boot-Up companion (99-position serial audit · net-zero boundary · BU-1 dependency lab · Hero’s Return · Φ_EGS)** | `docs/SYNTHOBS_HOMEOSTASIS_EXPEDITION_OBSERVABLE_BOOT_UP_EGS_2026-10.md` · `synthobs-homeostasis-expedition-boot-up-2026-10` · `/ship-blog/homeostasis-expedition-boot-up` · suite `research/synthobs-homeostasis-expedition-boot-up/` · standalone `FractiAI/synthobs-homeostasis-expedition-boot-up` · **not physical cosmogenesis / not absolute nothing:** `/ship-blog/homeostasis-expedition-boot-up` · journey `/journey/homeostasis-expedition` |
+| 44 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 45 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -173,6 +174,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-reflective-portal-multiscale-homeostasis/`
 - `research/synthobs-chart-compass-holographic-goldilocks-si/`
 - `research/synthobs-galactosphere-hypothesis/`
+- `research/synthobs-homeostasis-expedition-boot-up/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

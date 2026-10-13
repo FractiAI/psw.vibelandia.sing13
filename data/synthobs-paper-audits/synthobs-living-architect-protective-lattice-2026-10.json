@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "f55a944548925052",
+  "auditId": "3ffac1f5b591a7b4",
   "paperId": "synthobs-living-architect-protective-lattice-2026-10",
   "sourcePath": "docs/SYNTHOBS_LIVING_ARCHITECT_PROTECTIVE_LATTICE_EGS_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-13T17:01:18.386Z"
+          "invokedAt": "2026-10-13T17:02:45.796Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-13T17:01:18.385Z",
-  "completedAt": "2026-10-13T17:01:18.387Z",
+  "startedAt": "2026-10-13T17:02:45.796Z",
+  "completedAt": "2026-10-13T17:02:45.796Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,

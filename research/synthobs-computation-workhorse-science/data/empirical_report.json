@@ -1,0 +1,180 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "generatedAt": "2026-10-13T17:04:46.472Z",
+  "docId": "WP-SYNTHOBS-COMPUTATION-WORKHORSE-SCIENCE-EGS-2026-10-13",
+  "registryId": "synthobs-computation-workhorse-science-2026-10",
+  "studyTitle": "Should Computation Become the Primary Workhorse of Science? — Computational Discovery, Research Economics, Scientific Integrity, and the Discovery-to-Implementation Pipeline",
+  "phiEgs": 1.618033988749895,
+  "honesty": "Four-condition factorial design and full-cost accounting are specified; numerical comparative findings are not established until an auditable simulation run populates prespecified tables. Synthetic pilots (if any) are infrastructure-only — not real-world superiority proof.",
+  "standaloneRepo": "https://github.com/FractiAI/synthobs-computation-workhorse-science",
+  "results": {
+    "all_pass": true,
+    "n_pass": 8,
+    "n_total": 8,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Catalog nesting grammar only.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_honesty_locks",
+        "title": "Findings not established · simulation not completed · awaiting execution",
+        "FINDINGS_NOT_ESTABLISHED": true,
+        "NOT_COMPLETED_SIMULATION": true,
+        "AWAITING_EXECUTION": true,
+        "SOFT_STORY_CATALOG": true,
+        "pass": true,
+        "interpretation": "Manuscript is prespecified design — not completed quantitative investigation.",
+        "honesty": "No invented simulation outputs as evidence."
+      },
+      {
+        "id": "E3_four_condition_design",
+        "title": "Factorial A–D · 365-day horizon · ≥200 matched repetitions prespecified",
+        "CONDITIONS": [
+          {
+            "id": "A",
+            "env": "computation-first",
+            "pipeline": false
+          },
+          {
+            "id": "B",
+            "env": "computation-first",
+            "pipeline": true
+          },
+          {
+            "id": "C",
+            "env": "wet-lab-first",
+            "pipeline": false
+          },
+          {
+            "id": "D",
+            "env": "wet-lab-first",
+            "pipeline": true
+          }
+        ],
+        "CALENDAR_HORIZON_DAYS": 365,
+        "PRESPECIFIED_REPETITIONS": 200,
+        "pass": true,
+        "interpretation": "Separates computation vs wet-lab and pipeline vs no pipeline.",
+        "honesty": "Design lock — not executed comparative results."
+      },
+      {
+        "id": "E4_homeostasis_expedition",
+        "title": "Homeostasis Expedition · ENGINE_SHELF #46",
+        "EXPEDITION": "Homeostasis Expedition",
+        "GRAND_STORY": "Hero's Return to Source",
+        "ENGINE_SHELF_SLOT": 46,
+        "pass": true,
+        "interpretation": "Research economics + discovery-to-implementation audit on expedition trail.",
+        "honesty": "Application companion — not engine CMOS pin."
+      },
+      {
+        "id": "E5_paper_locks",
+        "title": "Paper locks (four-condition design · findings status · Appendix B placeholders)",
+        "paperPath": "/workspace/docs/SYNTHOBS_COMPUTATION_WORKHORSE_SCIENCE_EGS_2026-10.md",
+        "hasHonesty": true,
+        "hasDocId": true,
+        "hasWorkhorseTitle": true,
+        "hasFourConditions": true,
+        "hasPipeline": true,
+        "hasNotEstablished": true,
+        "hasResearchEconomics": true,
+        "hasScientificIntegrity": true,
+        "hasCostCategories": true,
+        "hasEndpoints": true,
+        "hasAppendixB": true,
+        "hasExpedition": true,
+        "hasOperator": true,
+        "hasEngine": true,
+        "hasFair": true,
+        "pass": true,
+        "interpretation": "Paper must not claim completed comparative numerical findings.",
+        "honesty": "Structural text locks only."
+      },
+      {
+        "id": "E6_ship_blog_lock",
+        "title": "Ship-blog surfaces design status + full paper link",
+        "path": "/workspace/interfaces/blog-computation-workhorse-science-2026-10.html",
+        "exists": true,
+        "hasSlug": true,
+        "hasWhitepaper": true,
+        "hasThesis": true,
+        "hasCaution": true,
+        "pass": true,
+        "interpretation": "Guest note must not imply completed superiority results.",
+        "honesty": "Surface copy lock only."
+      },
+      {
+        "id": "E7_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Harmony grammar identity.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E8_digital_lab",
+        "title": "CW-1 design locks · infrastructure pilot (non-decisive)",
+        "designLocks": {
+          "four_condition_factorial": true,
+          "calendar_horizon_365": true,
+          "prespecified_reps_200": true,
+          "productive_hours_declared": true,
+          "cost_categories_complete": true,
+          "primary_endpoints_declared": true,
+          "findings_not_established_flag": true,
+          "not_completed_simulation_flag": true,
+          "appendix_tables_placeholder": true
+        },
+        "pilot": {
+          "seed": 20261013,
+          "reps": 10,
+          "infrastructureOnly": true,
+          "findingsEstablished": false,
+          "byCondition": {
+            "A": {
+              "reps": 10,
+              "unfinished_at_365": 6
+            },
+            "B": {
+              "reps": 10,
+              "unfinished_at_365": 7
+            },
+            "C": {
+              "reps": 10,
+              "unfinished_at_365": 8
+            },
+            "D": {
+              "reps": 10,
+              "unfinished_at_365": 6
+            }
+          },
+          "honesty": "Pilot counts unfinished-at-365 placeholders only — not calibrated science productivity; do not use for superiority claims."
+        },
+        "plainChecks": {
+          "four_condition_factorial": true,
+          "calendar_horizon_365": true,
+          "prespecified_reps_200": true,
+          "productive_hours_declared": true,
+          "cost_categories_complete": true,
+          "primary_endpoints_declared": true,
+          "findings_not_established_flag": true,
+          "not_completed_simulation_flag": true,
+          "appendix_tables_placeholder": true,
+          "pilot_non_decisive": true
+        },
+        "allPlainPass": true,
+        "honesty": "CW-1 verifies prespecified four-condition design and cost endpoints; comparative numerical findings await full execution per Appendix B.",
+        "pass": true,
+        "interpretation": "Design verified; Appendix B tables remain to be calculated from full execution."
+      }
+    ]
+  }
+}

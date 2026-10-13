@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "36b7e4c3211d496a",
+  "auditId": "0f5589b96c1cb6b3",
   "paperId": "synthobs-organizational-discovery-homeostasis-2026-10",
   "sourcePath": "docs/SYNTHOBS_ORGANIZATIONAL_DISCOVERY_HOMEOSTASIS_EGS_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-13T17:01:18.494Z"
+          "invokedAt": "2026-10-13T17:02:45.792Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-13T17:01:18.493Z",
-  "completedAt": "2026-10-13T17:01:18.494Z",
+  "startedAt": "2026-10-13T17:02:45.791Z",
+  "completedAt": "2026-10-13T17:02:45.792Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,

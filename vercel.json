@@ -1517,6 +1517,14 @@
       "destination": "/interfaces/blog-organizational-discovery-homeostasis-2026-10.html"
     },
     {
+      "source": "/ship-blog/computation-workhorse-science",
+      "destination": "/interfaces/blog-computation-workhorse-science-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/computation-workhorse-science/",
+      "destination": "/interfaces/blog-computation-workhorse-science-2026-10.html"
+    },
+    {
       "source": "/ship-blog/galactosphere-hypothesis",
       "destination": "/interfaces/blog-galactosphere-hypothesis-2026-10.html"
     },

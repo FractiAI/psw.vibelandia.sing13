@@ -18,6 +18,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-awareness-vs-brute-force-leverage',
       'synthobs-beyond-crispr-biological-discovery',
       'synthobs-chart-compass-holographic-goldilocks-si',
+      'synthobs-computation-workhorse-science',
       'synthobs-consciousness-moat',
       'synthobs-crystalline-unified-field',
       'synthobs-digit4-be-o-periodic-rhyme',

@@ -30,17 +30,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Organizational Discovery · Living Architect · Observable Boot-Up · Frontier Agent · Galactosphere · Chart & Compass
-    expect(posts[0].id).toBe(
-      'synthobs-organizational-discovery-homeostasis-2026-10',
-    );
+    // Newest: Computation Workhorse · Organizational Discovery · Living Architect · Boot-Up · Frontier · Galactosphere
+    expect(posts[0].id).toBe('synthobs-computation-workhorse-science-2026-10');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-computation-workhorse-science-2026-10',
       'synthobs-organizational-discovery-homeostasis-2026-10',
       'synthobs-living-architect-protective-lattice-2026-10',
       'synthobs-homeostasis-expedition-boot-up-2026-10',
       'synthobs-frontier-agent-convergence-2026-10',
       'synthobs-galactosphere-hypothesis-2026-10',
-      'synthobs-chart-compass-holographic-goldilocks-si-2026-10',
     ]);
   });
 });

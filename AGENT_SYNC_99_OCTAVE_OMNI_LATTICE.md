@@ -128,8 +128,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 43 | **Homeostasis Expedition Observable Boot-Up companion (99-position serial audit · net-zero boundary · BU-1 dependency lab · Hero’s Return · Φ_EGS)** | `docs/SYNTHOBS_HOMEOSTASIS_EXPEDITION_OBSERVABLE_BOOT_UP_EGS_2026-10.md` · `synthobs-homeostasis-expedition-boot-up-2026-10` · `/ship-blog/homeostasis-expedition-boot-up` · suite `research/synthobs-homeostasis-expedition-boot-up/` · standalone `FractiAI/synthobs-homeostasis-expedition-boot-up` · **not physical cosmogenesis / not absolute nothing:** `/ship-blog/homeostasis-expedition-boot-up` · journey `/journey/homeostasis-expedition` |
 | 44 | **Living Architect Protective Lattice companion (coral · mollusk · agent · boot-up carry-forward · harmonization schema · Hero’s Return · Φ_EGS)** | `docs/SYNTHOBS_LIVING_ARCHITECT_PROTECTIVE_LATTICE_EGS_2026-10.md` · `synthobs-living-architect-protective-lattice-2026-10` · `/ship-blog/living-architect-protective-lattice` · suite `research/synthobs-living-architect-protective-lattice/` · standalone `FractiAI/synthobs-living-architect-protective-lattice` · **not harmonized empirical validation / not universal blueprint:** `/ship-blog/living-architect-protective-lattice` · journey `/journey/homeostasis-expedition` |
 | 45 | **Organizational Discovery Homeostasis companion (ODH-1 · 12-node latent lab · adaptive coordination · Φ_EGS)** | `docs/SYNTHOBS_ORGANIZATIONAL_DISCOVERY_HOMEOSTASIS_EGS_2026-10.md` · `synthobs-organizational-discovery-homeostasis-2026-10` · `/ship-blog/organizational-discovery-homeostasis` · suite `research/synthobs-organizational-discovery-homeostasis/` · standalone `FractiAI/synthobs-organizational-discovery-homeostasis` · **not SI awareness / not recursive self-improvement proof:** `/ship-blog/organizational-discovery-homeostasis` · journey `/journey/homeostasis-expedition` |
-| 46 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 47 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 46 | **Computation Workhorse Science companion (researcher-year economics · four-condition design · discovery-to-implementation pipeline · awaiting execution · Φ_EGS)** | `docs/SYNTHOBS_COMPUTATION_WORKHORSE_SCIENCE_EGS_2026-10.md` · `synthobs-computation-workhorse-science-2026-10` · `/ship-blog/computation-workhorse-science` · suite `research/synthobs-computation-workhorse-science/` · standalone `FractiAI/synthobs-computation-workhorse-science` · **findings awaiting execution / Appendix B To be calculated:** `/ship-blog/computation-workhorse-science` · journey `/journey/homeostasis-expedition` |
+| 47 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 48 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -179,6 +180,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-homeostasis-expedition-boot-up/`
 - `research/synthobs-living-architect-protective-lattice/`
 - `research/synthobs-organizational-discovery-homeostasis/`
+- `research/synthobs-computation-workhorse-science/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

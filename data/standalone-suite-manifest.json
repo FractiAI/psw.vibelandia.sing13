@@ -53,6 +53,18 @@
       ]
     },
     {
+      "id": "synthobs-computation-workhorse-science",
+      "path": "research/synthobs-computation-workhorse-science",
+      "github": "https://github.com/FractiAI/synthobs-computation-workhorse-science",
+      "description": "Computation Workhorse Science — four-condition researcher-year design · full-cost accounting · awaiting execution · ENGINE_SHELF #46",
+      "paperIds": [
+        "synthobs-computation-workhorse-science-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_COMPUTATION_WORKHORSE_SCIENCE_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-chart-compass-holographic-goldilocks-si",
       "path": "research/synthobs-chart-compass-holographic-goldilocks-si",
       "github": "https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si",

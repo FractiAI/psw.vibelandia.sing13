@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-computation-workhorse-science",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Computation Workhorse Science — four-condition researcher-year design · CW-1 locks · ENGINE_SHELF #46",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-computation-workhorse-science.git"
+  },
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

@@ -1,21 +1,21 @@
 {
   "schema": "hero-leo-status/v1",
-  "updatedAt": "2026-10-02T17:54:36.783Z",
+  "updatedAt": "2026-10-13T17:05:29.480Z",
   "state": "WAITING",
   "label": "Hero Leo — Selection batch complete",
   "currentMission": "Homeostasis Expedition · Scientific Scout",
-  "currentInvestigationId": "INV-HE-2026-10-02-006",
+  "currentInvestigationId": "INV-HE-2026-10-13-008",
   "currentQuestion": "How do complex systems maintain useful states while continuously changing?",
   "currentHypothesis": null,
   "currentNull": null,
   "currentEvidenceLevel": null,
   "currentAction": "Completed 1 prospect(s). No daemon running.",
   "nextAction": "Review new ledger rows; scout again or escalate authorized higher-friction work.",
-  "lastCompletedAction": "Completed prospects: P-C11-WETLAB-PILOT",
+  "lastCompletedAction": "Completed prospects: P-AGENTIC-CONVERGENCE-PORT",
   "latestAchievementId": "first_contact",
-  "latestDiscoveryId": "INV-HE-2026-10-02-006",
+  "latestDiscoveryId": "INV-HE-2026-10-13-008",
   "latestPublicationId": "PUB-HE-2026-10-02-001",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "autonomousProcessRunning": false,
-  "latestScoutId": "SCOUT-2026-10-02T1754"
+  "latestScoutId": "SCOUT-2026-10-13T1705"
 }

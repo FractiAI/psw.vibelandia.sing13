@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "7568315d9a9fd571",
+  "auditId": "79a0cc5760914f8a",
   "paperId": "synthobs-homeostasis-expedition-boot-up-2026-10",
   "sourcePath": "docs/SYNTHOBS_HOMEOSTASIS_EXPEDITION_OBSERVABLE_BOOT_UP_EGS_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-13T15:13:49.130Z"
+          "invokedAt": "2026-10-13T16:42:14.712Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-13T15:13:49.129Z",
-  "completedAt": "2026-10-13T15:13:49.131Z",
+  "startedAt": "2026-10-13T16:42:14.710Z",
+  "completedAt": "2026-10-13T16:42:14.713Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1822,
+      "wordCount": 3054,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 5,
+        "links": 7,
         "numbered": 5,
-        "citeLines": 8
+        "citeLines": 7
       }
     }
   },

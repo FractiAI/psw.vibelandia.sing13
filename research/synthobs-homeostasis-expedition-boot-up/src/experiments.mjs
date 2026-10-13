@@ -120,7 +120,23 @@ function experimentPaperLocks() {
     hasFair: /Fair Exchange/i.test(paper),
     hasAddendum: /Addendum|99-position|Observable Boot-Up/i.test(paper),
   };
-  const pass = Boolean(paper) && Object.values(checks).every(Boolean);
+  const addendumName = 'ADDENDUM_A_HOMEOSTASIS_EXPEDITION_OBSERVABLE_BOOT_UP_2026-10-11.md';
+  const addendumPath = path.join(MONOREPO_DOCS, addendumName);
+  const localAddendum = path.join(PKG_ROOT, 'docs', addendumName);
+  const addendumBody =
+    (fs.existsSync(addendumPath) && fs.readFileSync(addendumPath, 'utf8')) ||
+    (fs.existsSync(localAddendum) && fs.readFileSync(localAddendum, 'utf8')) ||
+    '';
+  const addendumPositionCount = (addendumBody.match(/### Position/g) || []).length;
+  checks.addendumFileExists = Boolean(addendumBody);
+  checks.addendum99Positions = addendumPositionCount === 99;
+  checks.addendumGrokWeights = /Grok weights/i.test(addendumBody);
+  const pass =
+    Boolean(paper) &&
+    Object.values(checks).every(Boolean) &&
+    checks.addendumFileExists &&
+    checks.addendum99Positions &&
+    checks.addendumGrokWeights;
   return {
     id: 'E5_paper_locks',
     title: 'Paper locks (boot-up · digital findings · honesty)',

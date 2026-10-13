@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11`
 **Registry ID:** `synthobs-homeostasis-expedition-boot-up-2026-10`
-**Generated:** 2026-10-13T15:13:48.997Z
+**Generated:** 2026-10-13T16:42:10.177Z
 
 ## Verdict
 
@@ -113,6 +113,9 @@
   "hasEngine": true,
   "hasFair": true,
   "hasAddendum": true,
+  "addendumFileExists": true,
+  "addendum99Positions": true,
+  "addendumGrokWeights": true,
   "pass": true,
   "interpretation": "Paper must lead with digital findings and keep net-zero ≠ absolute nothing.",
   "honesty": "Structural text locks — not market validation."

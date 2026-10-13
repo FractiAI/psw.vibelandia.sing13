@@ -40,7 +40,7 @@
 
 **Methods.** Four conditions over **365 days**: (A) computation-first, no pipeline; (B) computation-first + pipeline; (C) wet-lab-first, no pipeline; (D) wet-lab-first + pipeline. Unit = one fully costed researcher-year (base **1,760** productive hours). **CW-2 throughput model:** computation arms run a **daily high-volume screening stream** (declared marginal compute/data costs); wet-lab arms walk a **24-project sequential bench portfolio** per repetition. **200** repetitions, seed **20261013**.
 
-**Findings (synthetic CW-2).** Computation-first arms produced **~3.2 validated discoveries per calendar day** versus **~0.006 per day** in wet-lab arms (~**1,179** vs **~2** validated per researcher-year). Mean **direct (non-salary) spend per validated discovery** was **~$187 (A)** and **~$289 (B)** versus **~$108,516 (C)** and **~$110,197 (D)**. Mean **measurable outcomes** **166 (A)**, **246 (B)**, **0.91 (C)**, **1.75 (D)**. Fully loaded totals were **~$714k (A)**, **~$849k (B)**, **~$380k (C)**, **~$491k (D)** — computation spends more on screening volume but buys orders-of-magnitude lower marginal cost per validated claim. **Real-world superiority is not established** — parameters are declared, not empirically calibrated.
+**Findings (synthetic CW-2).** Computation-first arms produced **~2.0 validated discoveries per calendar day** (target cadence for screening-scale work) versus **~0.006 per day** in wet-lab arms (~**712** vs **~2** validated per researcher-year). Mean **direct (non-salary) spend per validated discovery** was **~$245 (A)** and **~$415 (B)** versus **~$108,516 (C)** and **~$110,197 (D)**. Mean **measurable outcomes** **168 (A)**, **247 (B)**, **0.91 (C)**, **1.75 (D)**. Fully loaded totals were **~$606k (A)**, **~$741k (B)**, **~$380k (C)**, **~$491k (D)**. **Real-world superiority is not established** — parameters are declared, not empirically calibrated.
 
 **Implications.** Under this screening-scale parameterization, computation-first behaves like a **low marginal-cost discovery factory** with higher integrity false-accept counts unless validation keeps pace. Pipeline **B** increased measurable outcomes vs **A** (+**~80**/year) at higher direct spend. Policy transfer still requires calibration and domain stratification.
 
@@ -62,7 +62,7 @@ Suite: `research/synthobs-computation-workhorse-science/` · **CW-1** + **CW-2**
 
 Infrastructure pilot (10 reps): placeholder unfinished-at-365 counts only — **non-decisive**.
 
-**Factorial contrasts (CW-2 means):** daily validated **A ≈ 3.23/day** vs **C ≈ 0.006/day**; marginal direct cost per validated **A ≈ $187** vs **C ≈ $108,516**; pipeline measurable gain **B−A ≈ +80/year**, **D−C ≈ +0.84/year**.
+**Factorial contrasts (CW-2 means):** daily validated **A ≈ 1.95/day** vs **C ≈ 0.006/day**; marginal direct cost per validated **A ≈ $245** vs **C ≈ $108,516**; pipeline measurable gain **B−A ≈ +79/year**, **D−C ≈ +0.84/year**.
 
 ---
 
@@ -129,30 +129,30 @@ End-of-year ledger separates scientific vs funding states. Limitations: domain d
 
 | Outcome | Comp, no pipeline (A) | Comp, pipeline (B) | Wet lab, no pipeline (C) | Wet lab, pipeline (D) |
 |---------|----------------------:|---------------------:|-------------------------:|----------------------:|
-| Candidates generated | 23,360.00 | 23,360.00 | 13.63 | 16.89 |
-| Substantive discoveries | 1,557.39 | 1,555.68 | 2.76 | 3.60 |
-| Independently validated discoveries | 1,179.46 | 1,174.74 | 2.17 | 2.77 |
-| Implemented discoveries | 319.94 | 341.97 | 1.77 | 2.51 |
-| Measurable outcomes | 166.44 | 246.17 | 0.91 | 1.75 |
-| False claims accepted (mean) | 35.88 | 35.38 | 0.03 | 0.01 |
-| Unfinished at day 365 (queue + bench) | 863.80 | 836.89 | 11.05 | 7.69 |
+| Candidates generated | 14,600.00 | 14,600.00 | 13.63 | 16.89 |
+| Substantive discoveries | 943.98 | 939.23 | 2.76 | 3.60 |
+| Independently validated discoveries | 711.73 | 707.31 | 2.17 | 2.77 |
+| Implemented discoveries | 319.73 | 341.75 | 1.76 | 2.51 |
+| Measurable outcomes | 167.56 | 246.78 | 0.91 | 1.75 |
+| False claims accepted (mean) | 22.13 | 22.05 | 0.03 | 0.01 |
+| Unfinished at day 365 (queue + bench) | 394.50 | 368.06 | 11.05 | 7.69 |
 
 ### Table B1b. Daily rates (means)
 
 | Rate | A | B | C | D |
 |------|--:|--:|--:|--:|
-| Substantive discoveries / day | 4.27 | 4.26 | 0.01 | 0.01 |
-| Validated discoveries / day | 3.23 | 3.22 | 0.01 | 0.01 |
-| Direct spend / day (USD, excl. salary burn in row) | 602.44 | 930.29 | 545.13 | 719.88 |
-| Direct spend / validated discovery (USD) | 186.58 | 289.26 | 108,515.75 | 110,197.30 |
+| Substantive discoveries / day | 2.59 | 2.57 | 0.01 | 0.01 |
+| Validated discoveries / day | 1.95 | 1.94 | 0.01 | 0.01 |
+| Direct spend / day (USD, excl. salary burn in row) | 476.59 | 804.01 | 545.13 | 719.88 |
+| Direct spend / validated discovery (USD) | 244.74 | 415.47 | 108,515.75 | 110,197.30 |
 
 ### Table B2. Fully allocated economics (USD means)
 
 | Metric | A | B | C | D |
 |--------|--:|--:|--:|--:|
-| Total expenditure | 713,775.37 | 848,920.79 | 380,103.33 | 490,586.48 |
-| Cost per validated discovery (fully loaded) | 605.17 | 722.65 | 175,162.82 | 176,787.92 |
-| Cost per measurable outcome | 4,288.61 | 3,448.51 | 420,003.68 | 279,536.46 |
+| Total expenditure | 606,202.67 | 741,092.06 | 380,103.33 | 490,586.48 |
+| Cost per validated discovery (fully loaded) | 851.73 | 1,047.76 | 175,162.82 | 176,787.92 |
+| Cost per measurable outcome | 3,617.93 | 3,003.05 | 420,003.68 | 279,536.46 |
 
 Pipeline expenditure is embedded in **B** and **D** totals.
 
@@ -160,10 +160,10 @@ Pipeline expenditure is embedded in **B** and **D** totals.
 
 | Metric | A | B | C | D |
 |--------|--:|--:|--:|--:|
-| Median time to substantive discovery | 181.63 | 182.31 | 175.78 | 180.37 |
-| Median time to validated discovery | 182.26 | 182.90 | 187.49 | 192.32 |
-| Median time to implementation | 204.53 | 193.51 | 232.43 | 211.82 |
-| Median time to measurable outcome | 207.96 | 195.57 | 475.66 | 286.06 |
+| Median time to substantive discovery | 181.61 | 182.30 | 175.78 | 180.37 |
+| Median time to validated discovery | 182.34 | 182.96 | 187.49 | 192.32 |
+| Median time to implementation | 204.63 | 193.62 | 232.43 | 211.82 |
+| Median time to measurable outcome | 207.53 | 196.79 | 475.66 | 286.06 |
 
 ---
 

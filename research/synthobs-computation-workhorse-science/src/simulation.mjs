@@ -22,14 +22,15 @@ export const HOUR_COST = RESEARCHER_YEAR_COST_USD / PRODUCTIVE_HOURS_BASE;
 export const RESEARCHER_DAILY_BURN_USD = RESEARCHER_YEAR_COST_USD / CALENDAR_HORIZON_DAYS;
 
 /** Computation-first throughput (declared screening-scale model). */
-export const COMP_CANDIDATES_PER_DAY = 64;
+/** Tuned so computation-only arms average ~2 validated discoveries / calendar day (CW-2). */
+export const COMP_CANDIDATES_PER_DAY = 40;
 export const COMP_CANDIDATE_COMPUTE_USD = 1.4;
 export const COMP_CANDIDATE_DATA_USD = 0.35;
 export const COMP_CANDIDATE_RESEARCHER_HOURS = 0.035;
 export const COMP_GROUND_TRUTH_POSITIVE_RATE = 0.09;
-export const COMP_SUBSTANTIVE_IF_TRUE = 0.62;
+export const COMP_SUBSTANTIVE_IF_TRUE = 0.596;
 export const COMP_SUBSTANTIVE_IF_FALSE = 0.012;
-export const COMP_VALIDATION_SLOTS_PER_DAY = 28;
+export const COMP_VALIDATION_SLOTS_PER_DAY = 15;
 export const COMP_VALIDATION_DAYS_PER_ITEM = 0.2;
 export const COMP_VALIDATION_COST_USD = 22;
 export const COMP_VALIDATION_SENSITIVITY = 0.88;

@@ -22,6 +22,7 @@ fs.mkdirSync(JOURNEY_DIR, { recursive: true });
 fs.writeFileSync(path.join(OUT, 'journeys.html'), renderJourneyHubHtml());
 
 for (const j of VOYAGE_JOURNEYS) {
+  if (j.customDetailPage) continue;
   fs.writeFileSync(path.join(JOURNEY_DIR, `${j.slug}.html`), renderJourneyDetailHtml(j));
 }
 

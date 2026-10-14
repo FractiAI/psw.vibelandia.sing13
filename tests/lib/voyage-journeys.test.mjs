@@ -18,8 +18,9 @@ function read(rel) {
 }
 
 describe('Voyage journeys · adventures hub', () => {
-  it('defines twelve curated adventures distinct from exhibit shells', () => {
-    expect(VOYAGE_JOURNEYS.length).toBe(12);
+  it('defines curated adventures distinct from exhibit shells', () => {
+    expect(VOYAGE_JOURNEYS.length).toBe(13);
+    expect(findJourney('homeostasis-expedition')?.customDetailPage).toBe(true);
     expect(VOYAGE_JOURNEY_INTRO).toContain('adventures we offer');
     expect(VOYAGE_JOURNEY_INTRO).not.toContain('deck SKUs');
     for (const j of VOYAGE_JOURNEYS) {
@@ -57,6 +58,8 @@ describe('Voyage journeys · adventures hub', () => {
     const html = renderJourneyHubHtml();
     expect(html).toContain('Journeys we offer');
     expect(html).toContain('/interfaces/journeys.css');
+    expect(html).toContain('/journey/homeostasis-expedition');
+    expect(html).toContain('Homeostasis Expedition');
     for (const j of VOYAGE_JOURNEYS) {
       expect(html).toContain(journeyHref(j.slug));
       expect(html).toContain(j.heroImage);
@@ -75,8 +78,13 @@ describe('Voyage journeys · adventures hub', () => {
       expect(existsSync(file)).toBe(true);
       expect(vercel).toContain(`"source": "${journeyHref(j.slug)}"`);
       const html = read(`interfaces/journey/${j.slug}.html`);
-      expect(html).toMatch(new RegExp(j.title.replace(/&/g, '&amp;').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
-      expect(html).toContain('Honesty');
+      if (j.customDetailPage) {
+        expect(html).toContain('he-mission');
+        expect(html).toContain('Mission of the Homeostasis Expedition');
+      } else {
+        expect(html).toMatch(new RegExp(j.title.replace(/&/g, '&amp;').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+        expect(html).toContain('Honesty');
+      }
     }
   });
 
@@ -90,5 +98,7 @@ describe('Voyage journeys · adventures hub', () => {
     expect(canvas).toContain('href="/journey"');
     expect(canvas).toContain('Browse adventures');
     expect(canvas).toContain('CANVAS_JOURNEYS_TEASER_BEGIN');
+    expect(canvas).toContain('/journey/homeostasis-expedition');
+    expect(canvas).toContain('Homeostasis Expedition');
   });
 });

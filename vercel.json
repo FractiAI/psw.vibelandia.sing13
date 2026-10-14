@@ -741,12 +741,28 @@
       "destination": "/interfaces/omni-lattice-course.html"
     },
     {
+      "source": "/hero-leo",
+      "destination": "/interfaces/journey/hero-leo.html"
+    },
+    {
+      "source": "/hero-leo/",
+      "destination": "/interfaces/journey/hero-leo.html"
+    },
+    {
       "source": "/journey",
       "destination": "/interfaces/journeys.html"
     },
     {
       "source": "/journey/",
       "destination": "/interfaces/journeys.html"
+    },
+    {
+      "source": "/journey/homeostasis-expedition",
+      "destination": "/interfaces/journey/homeostasis-expedition.html"
+    },
+    {
+      "source": "/journey/homeostasis-expedition/",
+      "destination": "/interfaces/journey/homeostasis-expedition.html"
     },
     {
       "source": "/journey/boriken-convergence",
@@ -763,46 +779,6 @@
     {
       "source": "/journey/cartagena-spice-stone/",
       "destination": "/interfaces/journey/cartagena-spice-stone.html"
-    },
-    {
-      "source": "/journey/homeostasis-expedition",
-      "destination": "/interfaces/journey/homeostasis-expedition.html"
-    },
-    {
-      "source": "/journey/homeostasis-expedition/",
-      "destination": "/interfaces/journey/homeostasis-expedition.html"
-    },
-    {
-      "source": "/journey/beyond-crispr-phase-2b",
-      "destination": "/interfaces/journey/beyond-crispr-phase-2b.html"
-    },
-    {
-      "source": "/journey/beyond-crispr-phase-2b/",
-      "destination": "/interfaces/journey/beyond-crispr-phase-2b.html"
-    },
-    {
-      "source": "/journey/beyond-crispr-c11-lab-brief",
-      "destination": "/interfaces/journey/beyond-crispr-c11-lab-brief.html"
-    },
-    {
-      "source": "/journey/beyond-crispr-c11-lab-brief/",
-      "destination": "/interfaces/journey/beyond-crispr-c11-lab-brief.html"
-    },
-    {
-      "source": "/journey/hero-leo",
-      "destination": "/interfaces/journey/hero-leo.html"
-    },
-    {
-      "source": "/journey/hero-leo/",
-      "destination": "/interfaces/journey/hero-leo.html"
-    },
-    {
-      "source": "/hero-leo",
-      "destination": "/interfaces/journey/hero-leo.html"
-    },
-    {
-      "source": "/hero-leo/",
-      "destination": "/interfaces/journey/hero-leo.html"
     },
     {
       "source": "/journey/truckee-sierra-forage",

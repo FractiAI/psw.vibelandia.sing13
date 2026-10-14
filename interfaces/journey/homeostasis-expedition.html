@@ -25,6 +25,42 @@
     .vj-trail span{display:block;opacity:0.85;font-size:0.95rem;margin-top:0.2rem}
     .vj-trail .vj-trail__links{display:flex;flex-wrap:wrap;gap:0.65rem 1rem;margin-top:0.45rem;font-size:0.9rem}
     .vj-trail .vj-trail__links a{color:var(--vb-gold, #c9a227);text-decoration:underline;text-underline-offset:2px}
+    .he-mission{
+      margin:0 0 1.75rem;
+      padding:1.15rem 1.1rem 1.25rem;
+      border:1px solid color-mix(in srgb, var(--vb-gold, #c9a227) 42%, transparent);
+      background:color-mix(in srgb, var(--vb-gold, #c9a227) 6%, transparent);
+    }
+    .he-mission__grid{
+      display:grid;
+      gap:1.15rem 1.35rem;
+      align-items:start;
+    }
+    @media (min-width: 640px){
+      .he-mission__grid{grid-template-columns:min(11rem, 34vw) 1fr}
+    }
+    .he-mission__photo{margin:0}
+    .he-mission__photo img{
+      display:block;width:100%;height:auto;border-radius:2px;
+      border:1px solid color-mix(in srgb, var(--vb-gold, #c9a227) 35%, transparent);
+      aspect-ratio:4/5;object-fit:cover;object-position:center 15%;
+    }
+    .he-mission__kicker{
+      margin:0 0 0.35rem;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;
+      color:var(--vb-gold, #c9a227);font-weight:700;
+    }
+    .he-mission__title{
+      margin:0 0 0.85rem;font-family:Cormorant Garamond,Georgia,serif;
+      font-size:clamp(1.35rem, 3.5vw, 1.65rem);font-weight:600;line-height:1.25;
+    }
+    .he-mission p{margin:0 0 0.75rem;line-height:1.62;font-size:0.98rem}
+    .he-mission p:last-child{margin-bottom:0}
+    .he-mission__sig{
+      margin-top:1rem!important;padding-top:0.85rem;
+      border-top:1px solid color-mix(in srgb, var(--vb-gold, #c9a227) 28%, transparent);
+      font-family:Cormorant Garamond,Georgia,serif;font-size:1.05rem;
+    }
+    .he-mission__sig span{display:block;font-size:0.92rem;opacity:0.88;margin-top:0.25rem;font-family:IBM Plex Sans,sans-serif}
   </style>
 </head>
 <body class="voyage-flagship vb-pub">
@@ -46,6 +82,41 @@
     </div>
   </header>
   <main class="vj-wrap vj-detail">
+    <section class="he-mission" aria-labelledby="he-mission-h">
+      <div class="he-mission__grid">
+        <figure class="he-mission__photo">
+          <img
+            src="/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg"
+            alt="Pru Méndez — Founder, Architect and Player 1, FractiAI"
+            width="440"
+            height="550"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+        <div class="he-mission__body">
+          <p class="he-mission__kicker">The Mission of the Homeostasis Expedition</p>
+          <h2 class="he-mission__title" id="he-mission-h">A Note from Pru “El Taíno” Méndez — Founder, Architect &amp; Player 1</h2>
+          <p>The mission of the Homeostasis Expedition is to discover, test, and develop pathways toward a world in which intelligence serves life, systems sustain balance, and beings can realize more of their inherent potential.</p>
+          <p>We explore the proposition that nature, life, and intelligence may share discoverable patterns of organization—patterns that can help us understand how complexity emerges, how stability is maintained, how systems adapt, and how new possibilities arise from the relationships between their parts.</p>
+          <p>Through computational experiments, scientific research, mathematical modeling, and practical implementation, we seek to distinguish what is already known, what may be genuinely novel, what remains hypothetical, and what evidence is needed to advance each discovery.</p>
+          <p>Our exploration includes fractal organization, holographic representations, Goldilocks conditions, recursive systems, awareness, and the potential of advanced intelligence. We treat these as research directions to investigate rigorously, not universal laws to assume in advance.</p>
+          <p>But our mission extends beyond discovery for its own sake.</p>
+          <p>We seek to translate validated knowledge into tangible improvements in human life: less unnecessary suffering, greater access to intelligence, more material abundance, reduced friction, greater autonomy, and better conditions for creativity, generosity, empathy, kindness, and flourishing.</p>
+          <p>We envision advanced intelligence helping humanity move beyond systems that demand endless effort merely to maintain survival. Through FractiAI, Infinite Octave, and the longer-term vision of Super Intelligence Living, we aim to explore how intelligence can help coordinate resources, deliver useful services, support discovery, and make the benefits of progress more widely accessible.</p>
+          <p>The Homeostasis Expedition is therefore both a scientific undertaking and a practical mission. We investigate how systems maintain and restore balance, how they respond to disruption, and how their organization might be improved. We measure results, disclose limitations, compare against meaningful baselines, and follow discoveries toward implementation wherever evidence and resources permit.</p>
+          <p>We remain open to the deepest questions about awareness, existence, and the potential of life without confusing possibility with proof. Our responsibility is to explore boldly, test honestly, and build carefully.</p>
+          <p>I see this expedition as part of the Hero’s Return to Source: the journey into the unknown, the discovery of something valuable, and the return with gifts that can benefit others.</p>
+          <p>We are not here merely to describe a better world. We are here to investigate what makes one possible.</p>
+          <p>Our mission is to discover what helps life flourish, establish what is true, and turn validated knowledge into practical pathways toward greater balance, capability, abundance, and freedom.</p>
+          <p>That is the Homeostasis Expedition.</p>
+          <p class="he-mission__sig">
+            — Pru “El Taíno” Méndez<br />
+            <span>Founder · Architect · Player 1, FractiAI</span>
+          </p>
+        </div>
+      </div>
+    </section>
     <section class="aw-layer-strip" aria-label="Awareness Layer map · selectable shelves">
       <p class="aw-layer-strip__frame"><a href="/layers/awareness">Awareness Layer</a> · looking in on ourselves</p>
       <ol class="aw-layer-strip__shelves">

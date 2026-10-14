@@ -289,6 +289,22 @@
       "destination": "/interfaces/layers-superai.html"
     },
     {
+      "source": "/layers/fruit",
+      "destination": "/interfaces/layers-fruit.html"
+    },
+    {
+      "source": "/layers/fruit/",
+      "destination": "/interfaces/layers-fruit.html"
+    },
+    {
+      "source": "/whitepaper/fruit-layer-gift-taxonomy",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-fruit-layer-gift-taxonomy-2026-10"
+    },
+    {
+      "source": "/whitepaper/fruit-layer-gift-taxonomy/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-fruit-layer-gift-taxonomy-2026-10"
+    },
+    {
       "source": "/whitepaper/awareness-layer",
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-awareness-layer-map-2026-10"
     },

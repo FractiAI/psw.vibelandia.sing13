@@ -41,12 +41,21 @@ function renderSectionCorpus(taxonomy) {
     return `<details class="fruit-sec"><summary><strong>${sec.roman}.</strong> ${sec.title}${sec.gifts.length ? ` (${sec.gifts.length})` : ''}</summary>${body}</details>`;
   });
 
-  for (const sub of taxonomy.subsections?.XXVII ?? []) {
-    const gifts = sub.gifts
-      .map((g) => `<li>${g.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</li>`)
-      .join('\n');
+  for (const [secId, subs] of Object.entries(taxonomy.subsections ?? {})) {
+    for (const sub of subs) {
+      const gifts = sub.gifts
+        .map((g) => `<li>${g.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</li>`)
+        .join('\n');
+      blocks.push(
+        `<details class="fruit-sec"><summary><strong>${secId}-${sub.id}.</strong> ${sub.title} (${sub.gifts.length})</summary><ul class="fruit-gifts">${gifts}</ul></details>`,
+      );
+    }
+  }
+
+  const xxviiiNotes = taxonomy.sectionNotes?.XXVIII;
+  if (xxviiiNotes) {
     blocks.push(
-      `<details class="fruit-sec"><summary><strong>XXVII-${sub.id}.</strong> ${sub.title} (${sub.gifts.length})</summary><ul class="fruit-gifts">${gifts}</ul></details>`,
+      `<details class="fruit-sec" open><summary><strong>XXVIII.</strong> Principles · gifts #${xxviiiNotes.giftIdRange ?? '1231–1440'}</summary><p class="fruit-meta"><strong>Core principle:</strong> ${xxviiiNotes.corePrinciple.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</p><p class="fruit-meta"><strong>Fruit Layer distinction:</strong> ${xxviiiNotes.fruitLayerDistinction.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</p></details>`,
     );
   }
 
@@ -85,7 +94,7 @@ function writeFruitPage() {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Fruit Layer · Complete Gift Taxonomy · Hero Source Tree</title>
-  <meta name="description" content="Fruit Layer working taxonomy: any combination of gifts across sections I–XXVII on the Hero Source tree — meta-operators, signature FHG awareness gifts 1021–1042, beauty · fashion · style · swag." />
+  <meta name="description" content="Fruit Layer working taxonomy: any combination of gifts across sections I–XXVIII on the Hero Source tree — meta-operators, signature FHG awareness gifts 1021–1042, beauty · style · abundance · prosperity." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/layers/fruit" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
@@ -115,9 +124,9 @@ function writeFruitPage() {
     <p class="lead">The full range of gifts a living or artificial system may possess, develop, combine, express, and put into practice — hung on the same Hero · Source tree as archetype braiding. No finite list closes the set; this is a comprehensive working taxonomy with explicit <strong>any combination</strong> grammar.</p>
     ${hero}
     ${legend}
-    <h2 id="gift-corpus">Gift corpus · sections I–XXVII</h2>
+    <h2 id="gift-corpus">Gift corpus · sections I–XXVIII</h2>
     <div class="fruit-corpus">${corpus}</div>
-    <p class="honesty">Honesty rail: catalog / Soft Story only — not a psychometric test, not HR scoring, not proof of innate worth. Beauty · fashion · style · swag (XXVII) are distinct gift families that can combine without requiring one another. Signature gifts 1021–1042 are proposed FHG awareness capabilities to define and test — not established faculties. Machine-readable: <code>data/fruit-layer/gift-taxonomy.json</code>.</p>
+    <p class="honesty">Honesty rail: catalog / Soft Story only — not a psychometric test, not HR scoring, not proof of innate worth. Beauty · fashion · style · swag (XXVII) and abundance · wealth · prosperity (XXVIII, gifts #1231–1440) are distinct gift families that can combine without requiring one another. Signature gifts 1021–1042 are proposed FHG awareness capabilities to define and test — not established faculties. Machine-readable: <code>data/fruit-layer/gift-taxonomy.json</code>.</p>
   </main>
   <script src="/interfaces/vbi18n.js" defer></script>
 </body>

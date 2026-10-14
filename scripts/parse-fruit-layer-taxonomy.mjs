@@ -40,7 +40,11 @@ const ROMAN = [
   'XXV',
   'XXVI',
   'XXVII',
+  'XXVIII',
 ];
+
+/** Sections whose gifts live in lettered subsections (A–J). */
+const SUBSECTION_SECTION_IDS = ['XXVII', 'XXVIII'];
 
 function slugify(s) {
   return String(s)
@@ -58,12 +62,14 @@ function parseRaw(text) {
   const signatureGifts = [];
   let current = null;
   let currentSub = null;
-  let mode = 'body'; // body | meta | signature | xxvii_sub
+  let mode = 'body'; // body | meta | signature | subsection
+  let subsectionKey = null;
 
   const sectionRe = /^([IVXLCDM]+)\.\s+(.+)$/;
-  const subRe = /^([A-F])\.\s+(.+)$/;
+  const subRe = /^([A-J])\.\s+(.+)$/;
   const sigRe = /^(\d{4})\.\s+(.+)$/;
   const metaBulletRe = /^Gift\s+(.+?)\s*[—–-]\s*(.+)$/i;
+  const subsectionHeaderRe = /^(XXVII|XXVIII)\.\s+(.+)$/i;
 
   for (const line of lines) {
     const t = line.trim();
@@ -72,16 +78,25 @@ function parseRaw(text) {
       mode = 'footer';
       current = null;
       currentSub = null;
+      subsectionKey = null;
       continue;
     }
     if (mode === 'footer') continue;
 
-    if (/^XXVII\.\s+Beauty/i.test(t)) {
-      mode = 'xxvii_sub';
-      const sec = { id: 'XXVII', roman: 'XXVII', title: t.replace(/^XXVII\.\s+/, ''), gifts: [] };
+    const subSecMatch = t.match(subsectionHeaderRe);
+    if (subSecMatch) {
+      subsectionKey = subSecMatch[1].toUpperCase();
+      mode = 'subsection';
+      const sec = {
+        id: subsectionKey,
+        roman: subsectionKey,
+        title: subSecMatch[2].trim(),
+        gifts: [],
+      };
       sections.push(sec);
       current = sec;
-      subsections.XXVII = [];
+      subsections[subsectionKey] = subsections[subsectionKey] ?? [];
+      currentSub = null;
       continue;
     }
 
@@ -89,31 +104,38 @@ function parseRaw(text) {
       mode = 'meta';
       sections.push({ id: 'XXV', roman: 'XXV', title: t.replace(/^XXV\.\s+/, ''), gifts: [] });
       current = null;
+      subsectionKey = null;
       continue;
     }
     if (/^XXVI\.\s+/i.test(t)) {
       mode = 'signature';
       sections.push({ id: 'XXVI', roman: 'XXVI', title: t.replace(/^XXVI\.\s+/, ''), gifts: [] });
       current = null;
+      subsectionKey = null;
       continue;
     }
 
     const secMatch = t.match(sectionRe);
-    if (secMatch && ROMAN.includes(secMatch[1]) && mode !== 'xxvii_sub') {
+    if (secMatch && ROMAN.includes(secMatch[1]) && mode !== 'subsection') {
       const id = secMatch[1];
-      if (id === 'XXVII') {
-        mode = 'xxvii_sub';
+      if (SUBSECTION_SECTION_IDS.includes(id)) {
+        mode = 'subsection';
+        subsectionKey = id;
       } else {
         mode = 'body';
+        subsectionKey = null;
       }
       const sec = { id, roman: id, title: secMatch[2].trim(), gifts: [] };
       sections.push(sec);
       current = sec;
       currentSub = null;
+      if (SUBSECTION_SECTION_IDS.includes(id)) {
+        subsections[id] = subsections[id] ?? [];
+      }
       continue;
     }
 
-    if (mode === 'xxvii_sub') {
+    if (mode === 'subsection' && subsectionKey) {
       const subMatch = t.match(subRe);
       if (subMatch) {
         currentSub = {
@@ -121,7 +143,7 @@ function parseRaw(text) {
           title: subMatch[2].trim(),
           gifts: [],
         };
-        subsections.XXVII.push(currentSub);
+        subsections[subsectionKey].push(currentSub);
         continue;
       }
     }
@@ -162,7 +184,7 @@ function parseRaw(text) {
 
     // gift line: not a header, not explanatory paragraph starters
     if (
-      /^These gifts|^A gift may|^The Fruit Layer|^You're right|^In the Fruit Layer|^They can reinforce|^Beauty is|^Fashion is|^Style is|^Swag is|^Charisma is|^The important insight/i.test(
+      /^These gifts|^A gift may|^The Fruit Layer|^You're right|^In the Fruit Layer|^They can reinforce|^Beauty is|^Fashion is|^Style is|^Swag is|^Charisma is|^The important insight|^Core principle:|^Fruit Layer distinction:/i.test(
         t,
       )
     ) {
@@ -173,7 +195,7 @@ function parseRaw(text) {
     const gift = t.replace(/\.$/, '').trim();
     if (!gift || /^[\d]+\./.test(gift)) continue;
 
-    if (mode === 'xxvii_sub' && currentSub) {
+    if (mode === 'subsection' && currentSub) {
       currentSub.gifts.push(gift);
     } else if (current && mode === 'body') {
       current.gifts.push(gift);
@@ -185,6 +207,15 @@ function parseRaw(text) {
     documentId: 'WP-SYNTHOBS-FRUIT-LAYER-GIFT-TAXONOMY-2026-10-14',
     sections,
     subsections,
+    sectionNotes: {
+      XXVIII: {
+        corePrinciple:
+          'Wealth is one expression of abundance, not its entirety. Abundance includes material resources, time, opportunity, knowledge, relationships, autonomy, beauty, generosity, and the capacity to regenerate what sustains life.',
+        fruitLayerDistinction:
+          'A gift is a capacity; its fruit is what that capacity produces in practice. These entries are a working taxonomy of capabilities and outcomes, not a claim that every item is scientifically established as a distinct or independent human trait.',
+        giftIdRange: '1231–1440',
+      },
+    },
     metaOperators,
     signatureGifts,
   };
@@ -206,6 +237,7 @@ function main() {
       metaOperators: data.metaOperators.length,
       signatureGifts: data.signatureGifts.length,
       giftCount,
+      xxviiiSubsections: data.subsections.XXVIII?.length ?? 0,
       outPath,
     }),
   );

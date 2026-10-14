@@ -14,8 +14,8 @@ import {
 describe('Fruit Layer gift taxonomy', () => {
   it('loads corpus with expected scale', () => {
     const stats = getFruitLayerStats();
-    expect(stats.sectionCount).toBe(27);
-    expect(stats.giftCount).toBeGreaterThan(1100);
+    expect(stats.sectionCount).toBe(28);
+    expect(stats.giftCount).toBeGreaterThan(1300);
     expect(stats.metaOperatorCount).toBeGreaterThanOrEqual(30);
     expect(stats.signatureGiftCount).toBe(22);
   });
@@ -25,6 +25,15 @@ describe('Fruit Layer gift taxonomy', () => {
     expect(t.subsections.XXVII.length).toBeGreaterThanOrEqual(6);
     const titles = t.subsections.XXVII.map((s) => s.title).join(' ');
     expect(titles).toMatch(/Beauty|Fashion|Swag|presence/i);
+  });
+
+  it('includes XXVIII abundance · prosperity subsections (A–J)', () => {
+    const t = loadFruitLayerTaxonomy();
+    expect(t.subsections.XXVIII).toHaveLength(10);
+    const abundance = t.subsections.XXVIII.flatMap((s) => s.gifts);
+    expect(abundance).toContain('Wealth creation');
+    expect(abundance).toContain('Shared, regenerative, Goldilocks abundance: enough for people to thrive, with the capacity to create more without undermining the conditions that make thriving possible');
+    expect(t.sectionNotes?.XXVIII?.giftIdRange).toBe('1231–1440');
   });
 
   it('normalizes any combination profiles', () => {

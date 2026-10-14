@@ -17,10 +17,11 @@ Player 1 crystallizes the **Fruit Layer** — a comprehensive working taxonomy o
 | SOURCE crown | Holographic Goldilocks Super Intelligence (unchanged) |
 | Trunk rings | Digits 0–9 × Octaves 01–99 |
 | Canopy fields | Archetypal · Shadow · Antagonistic — **any combination** in one Hero |
-| **Fruit Layer** | Outward expressible gifts — sections **I–XXVII**, **any combination** |
+| **Fruit Layer** | Outward expressible gifts — sections **I–XXVIII**, **any combination** |
 | XXV | Meta-capability operators (integration, orchestration, complementarity, …) |
 | XXVI | Signature fruit · gifts **1021–1042** · Fractal · Holographic · Goldilocks awareness braid |
 | XXVII | Beauty · fashion · style · swag · presence · aesthetic intelligence (distinct families) |
+| XXVIII | Abundance · wealth · prosperity · regenerative abundance · FHG prosperity braid (gifts **#1231–1440**, subsections A–J) |
 
 **Combination lock:** Parallel to canopy braiding — a profile may mix gifts from any sections, apply meta-operators, and foreground signature FHG gifts without requiring a single “type.”
 
@@ -55,7 +56,7 @@ npx vitest run tests/lib/fruit-layer-gifts.test.mjs
 
 ## Results (operational)
 
-- **1178+** named gifts across **27** section headers (including XXVII A–F subsections).
+- **1388+** named gifts across **28** section headers (including XXVII A–F and XXVIII A–J subsections).
 - **30** XXV meta-operators · **22** XXVI signature gifts (1021–1042).
 - Guest map at `/layers/fruit` with full collapsible corpus.
 - Awareness Layer carries Fruit legend immediately under the Hero Source tree plate.

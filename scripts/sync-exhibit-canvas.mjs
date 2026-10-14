@@ -10,7 +10,10 @@ import { fileURLToPath } from 'node:url';
 import { renderCanvasJourneysTeaserHtml } from '../lib/voyage-journeys.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const CANVAS = path.join(ROOT, 'interfaces', 'omniverse-canvas.html');
+const CANVAS_PATHS = [
+  path.join(ROOT, 'interfaces', 'omniverse-canvas.html'),
+  path.join(ROOT, 'index.html'),
+];
 
 const MARKERS = {
   journeys: ['<!-- CANVAS_JOURNEYS_TEASER_BEGIN -->', '<!-- CANVAS_JOURNEYS_TEASER_END -->'],
@@ -26,8 +29,14 @@ function patchBlock(html, [start, end], block) {
   return html.replace(re, `${start}\n    ${block}\n    ${end}`);
 }
 
-let html = fs.readFileSync(CANVAS, 'utf8');
-html = patchBlock(html, MARKERS.journeys, renderCanvasJourneysTeaserHtml());
-fs.writeFileSync(CANVAS, html);
+const block = renderCanvasJourneysTeaserHtml();
+const updated = [];
+for (const file of CANVAS_PATHS) {
+  if (!fs.existsSync(file)) continue;
+  let html = fs.readFileSync(file, 'utf8');
+  html = patchBlock(html, MARKERS.journeys, block);
+  fs.writeFileSync(file, html);
+  updated.push(path.relative(ROOT, file));
+}
 
-console.log(JSON.stringify({ ok: true, canvas: 'interfaces/omniverse-canvas.html', shells: false }, null, 2));
+console.log(JSON.stringify({ ok: true, canvas: updated, shells: false }, null, 2));

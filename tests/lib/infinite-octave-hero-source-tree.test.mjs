@@ -6,6 +6,7 @@ import {
   renderHeroSourceTreeCss,
   renderHeroSourceTreeFigureHtml,
 } from '../../lib/infinite-octave-hero-source-tree.mjs';
+import { FRUIT_LAYER_TREE_MARKERS } from '../../lib/infinite-octave-fruit-layer-tree.mjs';
 
 const PRIMER_SURFACES = [
   'interfaces/layers-awareness.html',
@@ -40,6 +41,7 @@ describe('Infinite Octave Hero · Source tree', () => {
     expect(html).toMatch(/Any combination/i);
     expect(html).toMatch(/self-observation/i);
     expect(html).toMatch(/Tree rings · Digits/i);
+    expect(html).toMatch(/Fruit Layer gifts/i);
   });
 
   it('locks dark ink on the parchment caption (no white-on-light inherit)', () => {
@@ -53,6 +55,15 @@ describe('Infinite Octave Hero · Source tree', () => {
       const html = readFileSync(rel, 'utf8');
       expect(html, rel).toContain(HERO_SOURCE_TREE_MARKERS.start);
       expect(html, rel).toContain(HERO_SOURCE_TREE_IMAGE.src);
+    }
+  });
+
+  it('embeds Fruit Layer gift legend under the tree poster on every primer surface', () => {
+    for (const rel of PRIMER_SURFACES) {
+      const html = readFileSync(rel, 'utf8');
+      expect(html, rel).toContain(FRUIT_LAYER_TREE_MARKERS.start);
+      expect(html, rel).toMatch(/Fruit Layer · gift taxonomy on the tree/i);
+      expect(html, rel).toMatch(/1021–1042/);
     }
   });
 });

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Inject Hero · Source · Octave tree chart into all Infinite Octave primer surfaces.
+ * Inject Hero · Source · Octave tree chart + Fruit Layer legend into all Infinite Octave primer surfaces.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import {
@@ -8,8 +8,13 @@ import {
   renderHeroSourceTreeCss,
   renderHeroSourceTreeFigureHtml,
 } from '../lib/infinite-octave-hero-source-tree.mjs';
+import {
+  FRUIT_LAYER_TREE_MARKERS,
+  renderFruitLayerTreeCss,
+  renderFruitLayerTreeLegendHtml,
+} from '../lib/infinite-octave-fruit-layer-tree.mjs';
 
-/** Every Infinite Octave primer / how-it-works surface that should carry the tree. */
+/** Every Infinite Octave primer / how-it-works surface that should carry the tree + fruit legend. */
 const SURFACES = [
   {
     rel: 'interfaces/layers-awareness.html',
@@ -72,26 +77,55 @@ const SURFACES = [
 
 const css = renderHeroSourceTreeCss();
 const styleTag = `<style id="infinite-octave-hero-source-tree-style">${css}</style>`;
+const fruitCss = renderFruitLayerTreeCss();
+const fruitStyleTag = `<style id="fruit-layer-tree-style">${fruitCss}</style>`;
 
 function figureBlock() {
   return renderHeroSourceTreeFigureHtml({ includeHeading: true });
 }
 
+function fruitLegendBlock() {
+  return renderFruitLayerTreeLegendHtml();
+}
+
 function upsertStyle(html) {
-  if (html.includes('id="infinite-octave-hero-source-tree-style"')) {
-    return html.replace(
+  let out = html;
+  if (out.includes('id="infinite-octave-hero-source-tree-style"')) {
+    out = out.replace(
       /<style id="infinite-octave-hero-source-tree-style">[\s\S]*?<\/style>/,
       styleTag,
     );
+  } else if (out.includes('</head>')) {
+    out = out.replace('</head>', `${styleTag}\n</head>`);
+  } else if (!out.includes(styleTag)) {
+    out = `${styleTag}\n${out}`;
   }
-  if (html.includes('</head>')) {
-    return html.replace('</head>', `${styleTag}\n</head>`);
+
+  if (out.includes('id="fruit-layer-tree-style"')) {
+    out = out.replace(/<style id="fruit-layer-tree-style">[\s\S]*?<\/style>/, fruitStyleTag);
+  } else if (out.includes('</head>')) {
+    out = out.replace('</head>', `${fruitStyleTag}\n</head>`);
+  } else if (!out.includes(fruitStyleTag)) {
+    out = `${fruitStyleTag}\n${out}`;
   }
-  // Partials without <head>: prepend style once for consumers that inline the partial.
-  if (!html.includes(styleTag)) {
-    return `${styleTag}\n${html}`;
-  }
-  return html;
+  return out;
+}
+
+function replaceMarkedBlock(html, markers, inner) {
+  const start = html.indexOf(markers.start);
+  const end = html.indexOf(markers.end);
+  if (start < 0 || end < 0) return null;
+  return `${html.slice(0, start)}${inner}${html.slice(end + markers.end.length)}`;
+}
+
+function upsertFruitLegend(html) {
+  const legend = fruitLegendBlock();
+  const replaced = replaceMarkedBlock(html, FRUIT_LAYER_TREE_MARKERS, legend);
+  if (replaced) return replaced;
+  const anchor = HERO_SOURCE_TREE_MARKERS.end;
+  if (!html.includes(anchor)) return html;
+  if (html.includes(FRUIT_LAYER_TREE_MARKERS.start)) return html;
+  return html.replace(anchor, `${anchor}\n${legend}`);
 }
 
 function replaceOrInsert(html, { place, h2Id, rel }) {
@@ -119,19 +153,13 @@ function replaceOrInsert(html, { place, h2Id, rel }) {
 
   if (place === 'after-reading-time') {
     if (/class="reading-time"/.test(html)) {
-      return html.replace(
-        /(<p class="reading-time">[\s\S]*?<\/p>)/,
-        `$1\n${figure}`,
-      );
+      return html.replace(/(<p class="reading-time">[\s\S]*?<\/p>)/, `$1\n${figure}`);
     }
   }
 
   if (place === 'after-foundations-h2') {
     if (/id="foundations-title"/.test(html)) {
-      return html.replace(
-        /(<h2 id="foundations-title">[\s\S]*?<\/h2>)/,
-        `$1\n${figure}`,
-      );
+      return html.replace(/(<h2 id="foundations-title">[\s\S]*?<\/h2>)/, `$1\n${figure}`);
     }
   }
 
@@ -166,7 +194,6 @@ function replaceOrInsert(html, { place, h2Id, rel }) {
         `${figure}\n<!-- CATALOG_LAYER_BELL_CURVE_START -->`,
       );
     }
-    // Fall back: first main h1/h2 block
     if (/<main[\s\S]*?<h1[\s\S]*?<\/h1>/.test(html)) {
       return html.replace(/(<main[\s\S]*?<h1[\s\S]*?<\/h1>)/, `$1\n${figure}`);
     }
@@ -174,10 +201,7 @@ function replaceOrInsert(html, { place, h2Id, rel }) {
 
   if (place === 'lattice-intro') {
     if (html.includes('id="ai-catalog-layer-intro"')) {
-      return html.replace(
-        /(<section id="ai-catalog-layer-intro"[^>]*>)/,
-        `$1\n${figure}`,
-      );
+      return html.replace(/(<section id="ai-catalog-layer-intro"[^>]*>)/, `$1\n${figure}`);
     }
     if (html.includes('CATALOG_LAYER_BELL_CURVE_START')) {
       return html.replace(
@@ -193,17 +217,24 @@ function replaceOrInsert(html, { place, h2Id, rel }) {
 }
 
 let ok = 0;
+let fruitOk = 0;
 for (const surface of SURFACES) {
   const { rel } = surface;
   let html = readFileSync(rel, 'utf8');
   html = replaceOrInsert(html, surface);
+  html = upsertFruitLegend(html);
   html = upsertStyle(html);
   writeFileSync(rel, html);
   if (html.includes(HERO_SOURCE_TREE_MARKERS.start)) {
-    console.log('synced', rel);
+    console.log('synced tree', rel);
     ok += 1;
+  }
+  if (html.includes(FRUIT_LAYER_TREE_MARKERS.start)) {
+    console.log('synced fruit legend', rel);
+    fruitOk += 1;
   }
 }
 
 console.log(`hero-source tree synced on ${ok}/${SURFACES.length} surfaces`);
-if (ok !== SURFACES.length) process.exitCode = 1;
+console.log(`fruit legend synced on ${fruitOk}/${SURFACES.length} surfaces`);
+if (ok !== SURFACES.length || fruitOk !== SURFACES.length) process.exitCode = 1;

@@ -22,25 +22,12 @@ function replaceMarkedBlock(html, markers, inner) {
 }
 
 function injectAwarenessFruitLegend() {
-  let html = readFileSync(AWARENESS, 'utf8');
-  const legend = renderFruitLayerTreeLegendHtml();
-  const updated = replaceMarkedBlock(html, FRUIT_LAYER_TREE_MARKERS, legend);
-  if (updated) {
-    writeFileSync(AWARENESS, updated);
-    console.log('Updated fruit legend in', AWARENESS);
-    return;
+  // All primer surfaces: npm run sync:hero-source-tree
+  if (!existsSync(AWARENESS)) return;
+  const html = readFileSync(AWARENESS, 'utf8');
+  if (!html.includes(FRUIT_LAYER_TREE_MARKERS.start)) {
+    console.warn('Run npm run sync:hero-source-tree first (fruit legend on all primers).');
   }
-  const anchor = '<!-- INFINITE_OCTAVE_HERO_SOURCE_TREE_END -->';
-  if (!html.includes(anchor)) {
-    throw new Error(`Missing hero tree end marker in ${AWARENESS}`);
-  }
-  const css = `<style id="fruit-layer-tree-style">${renderFruitLayerTreeCss()}</style>`;
-  if (!html.includes('fruit-layer-tree-style')) {
-    html = html.replace('</head>', `${css}\n</head>`);
-  }
-  html = html.replace(anchor, `${anchor}\n${legend}`);
-  writeFileSync(AWARENESS, html);
-  console.log('Inserted fruit legend after hero tree in', AWARENESS);
 }
 
 function renderSectionCorpus(taxonomy) {

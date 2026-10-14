@@ -9,6 +9,10 @@ import {
   recordEvent,
   buildStatusPack,
   KNOWN_AI_UA_FRAGMENTS,
+  enrichVisitFields,
+  detectDualRouteSweeps,
+  buildQaSnapshot,
+  normalizeEvent,
 } from '../../lib/lattice-scraper-telemetry.mjs';
 
 describe('classifyUserAgent', () => {
@@ -106,6 +110,51 @@ describe('recordEvent + status pack', () => {
     }
   });
 
+  it('enriches visit nature on canary routes', () => {
+    const v = enrichVisitFields({
+      route: '/api/lattice-canary',
+      method: 'GET',
+      source: 'canary',
+      userAgent: 'GPTBot/1.0',
+    });
+    expect(v.visitSurface).toBe('canary_api');
+    expect(v.contentProfile).toBe('compression_canary_json');
+    expect(v.botFamily).toBe('openai');
+    expect(v.visitKind).toBe('automated_crawler');
+  });
+
+  it('detects dual decoy sweeps within 2 minutes', () => {
+    const sweeps = detectDualRouteSweeps([
+      normalizeEvent({
+        id: 'a',
+        at: '2026-09-24T07:11:18.731Z',
+        subnetHash: 'abc',
+        uaLabel: 'ClaudeBot',
+        route: '/api/lattice-canary',
+        uaClass: 'known_ai_bot',
+        botFamily: 'anthropic',
+      }),
+      normalizeEvent({
+        id: 'b',
+        at: '2026-09-24T07:11:53.779Z',
+        subnetHash: 'abc',
+        uaLabel: 'ClaudeBot',
+        route: '/.well-known/lattice-agent.json',
+        uaClass: 'known_ai_bot',
+        botFamily: 'anthropic',
+      }),
+    ]);
+    expect(sweeps).toHaveLength(1);
+    expect(sweeps[0].nature).toBe('dual_decoy_sweep');
+  });
+
+  it('buildQaSnapshot answers coverage and KQ-on-canary flag', () => {
+    const qa = buildQaSnapshot([], { drainConfigured: false });
+    expect(qa.coverage).toBe('canary_decoys_only');
+    expect(qa.kqSecretOnCanaryRoutes).toBe(false);
+    expect(qa.ingestionInterpretation.fetchDoesNotProve).toMatch(/Training/i);
+  });
+
   it('records a canary hit and surfaces it in status', async () => {
     const { event, backend } = await recordEvent({
       source: 'canary',
@@ -125,5 +174,8 @@ describe('recordEvent + status pack', () => {
     expect(pack.routes.statusPage).toBe('/lattice/scraper-telemetry');
     expect(pack.layers.some((l) => l.id === 'canary' && l.status === 'live')).toBe(true);
     expect(pack.recent[0].id).toBe(event.id);
+    expect(pack.visitIntel).toBeTruthy();
+    expect(pack.visitIntel.botRollups.length).toBeGreaterThan(0);
+    expect(pack.summary.coverage).toBeTruthy();
   });
 });

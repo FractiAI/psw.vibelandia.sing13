@@ -81,6 +81,9 @@ export default async function handler(req, res) {
         flags: body.flags || ['manual'],
         note: body.note,
         watermarkNonce: body.watermarkNonce,
+        headers: req.headers,
+        referer: body.referer || req.headers?.referer || req.headers?.referrer,
+        responseBytes: body.responseBytes,
       });
       res.statusCode = 200;
       return res.end(JSON.stringify({ ok: true, event, backend }));

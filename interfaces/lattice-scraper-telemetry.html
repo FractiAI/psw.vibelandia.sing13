@@ -210,6 +210,14 @@
     </section>
 
     <section class="panel">
+      <h2>Visit intelligence</h2>
+      <p class="asof" id="coverage-note"></p>
+      <div id="qa-quick"></div>
+      <div id="bot-rollups" style="margin-top:0.75rem"></div>
+      <div id="dual-sweeps" style="margin-top:0.75rem"></div>
+    </section>
+
+    <section class="panel">
       <h2>Layers</h2>
       <div id="layers"></div>
     </section>
@@ -260,9 +268,65 @@
         document.getElementById('metrics').innerHTML = [
           ['Events', s.eventCount ?? 0],
           ['Known AI (recent)', s.knownAiInRecent ?? 0],
+          ['Last event', (s.lastEventAt || '—').replace('T', ' ').slice(0, 19)],
+          ['Days since', s.daysSinceLastEvent ?? '—'],
+          ['Dual decoy sweeps', s.dualDecoySweepCount ?? 0],
+          ['Coverage', s.coverage || '—'],
           ['Backend', s.backend || '—'],
-          ['Layers ready', (s.layersLive ?? 0) + '/' + (s.layersTotal ?? 0)],
         ].map(([k, v]) => `<div class="metric"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join('');
+
+        const vi = pack.visitIntel || {};
+        document.getElementById('coverage-note').textContent = vi.coverageNote || '';
+        const qa = vi.quickAnswers || {};
+        document.getElementById('qa-quick').innerHTML = `
+          <ul class="honesty" style="margin:0;padding-left:1.1rem">
+            <li><strong>Fetch proves:</strong> ${esc(vi.ingestionInterpretation?.fetchProves || '—')}</li>
+            <li><strong>Fetch does not prove:</strong> ${esc(vi.ingestionInterpretation?.fetchDoesNotProve || '—')}</li>
+            <li><strong>KQ secret on canary routes:</strong> ${vi.kqSecretOnCanaryRoutes ? 'yes' : 'no'} — ${esc(vi.kqSecretNote || '')}</li>
+            <li><strong>Any frontier dual-sweep:</strong> ${qa.anyFrontierBotDualSweep ? 'yes' : 'no'}</li>
+            <li><strong>Last known-AI hit:</strong> ${esc((qa.lastKnownAiAt || '—').replace('T', ' ').slice(0, 19))}</li>
+          </ul>`;
+
+        const rollups = vi.botRollups || [];
+        if (rollups.length) {
+          document.getElementById('bot-rollups').innerHTML = `
+            <table>
+              <thead><tr><th>Bot</th><th>Family</th><th>Hits</th><th>Last</th><th>Nature</th><th>Content</th></tr></thead>
+              <tbody>
+                ${rollups.slice(0, 15).map((r) => `
+                  <tr>
+                    <td>${esc(r.uaLabel)}</td>
+                    <td>${esc(r.botFamily)}</td>
+                    <td>${esc(r.hits)}</td>
+                    <td>${esc((r.lastAt || '').replace('T', ' ').slice(0, 19))}</td>
+                    <td>${esc(r.visitKind)}</td>
+                    <td>${esc(Object.keys(r.contentProfiles || {}).join(', '))}</td>
+                  </tr>`).join('')}
+              </tbody>
+            </table>`;
+        } else {
+          document.getElementById('bot-rollups').innerHTML = '<p class="asof">No bot rollups yet.</p>';
+        }
+
+        const sweeps = vi.dualDecoySweeps || [];
+        if (sweeps.length) {
+          document.getElementById('dual-sweeps').innerHTML = `
+            <p class="asof"><strong>Dual decoy sweeps</strong> (canary + well-known, same subnet/day, ≤2m)</p>
+            <table>
+              <thead><tr><th>When</th><th>Bot</th><th>Family</th><th>Routes</th></tr></thead>
+              <tbody>
+                ${sweeps.map((sw) => `
+                  <tr>
+                    <td>${esc((sw.atFirst || '').replace('T', ' ').slice(0, 19))}</td>
+                    <td>${esc(sw.uaLabel)}</td>
+                    <td>${esc(sw.botFamily)}</td>
+                    <td>${esc((sw.routes || []).join(' · '))}</td>
+                  </tr>`).join('')}
+              </tbody>
+            </table>`;
+        } else {
+          document.getElementById('dual-sweeps').innerHTML = '<p class="asof">No dual decoy sweeps detected in ledger.</p>';
+        }
 
         document.getElementById('layers').innerHTML = (pack.layers || []).map((l) => `
           <div class="layer">
@@ -277,12 +341,15 @@
         if (recent.length) {
           document.getElementById('events').innerHTML = `
             <table>
-              <thead><tr><th>When</th><th>Class</th><th>Route</th><th>Nonce</th></tr></thead>
+              <thead><tr><th>When</th><th>Bot</th><th>Family</th><th>Surface</th><th>Content</th><th>Route</th><th>Nonce</th></tr></thead>
               <tbody>
                 ${recent.slice(0, 25).map((e) => `
                   <tr>
                     <td>${esc((e.at || '').replace('T', ' ').slice(0, 19))}</td>
-                    <td>${esc(e.uaClass)}</td>
+                    <td>${esc(e.uaLabel || e.uaClass)}</td>
+                    <td>${esc(e.botFamily || '—')}</td>
+                    <td>${esc(e.visitSurface || '—')}</td>
+                    <td>${esc(e.contentProfile || '—')}</td>
                     <td>${esc(e.route)}</td>
                     <td>${esc(e.watermarkNonce || '—')}</td>
                   </tr>`).join('')}

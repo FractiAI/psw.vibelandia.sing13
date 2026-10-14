@@ -70,6 +70,8 @@ export default async function handler(req, res) {
       subnetHash,
       watermarkNonce: watermark.nonce,
       flags: ['canary_hit'],
+      headers: req.headers,
+      referer: req.headers?.referer || req.headers?.referrer,
     });
 
     res.statusCode = 200;

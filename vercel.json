@@ -1485,6 +1485,22 @@
       "destination": "/interfaces/blog-chart-compass-goldilocks-si-2026-10.html"
     },
     {
+      "source": "/ship-blog/all-roads-independent-research-convergence",
+      "destination": "/interfaces/blog-independent-research-convergence-fhg-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/all-roads-independent-research-convergence/",
+      "destination": "/interfaces/blog-independent-research-convergence-fhg-2026-10.html"
+    },
+    {
+      "source": "/whitepaper/all-roads-independent-research-convergence",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-independent-research-convergence-fhg-2026-10"
+    },
+    {
+      "source": "/whitepaper/all-roads-independent-research-convergence/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-independent-research-convergence-fhg-2026-10"
+    },
+    {
       "source": "/ship-blog/frontier-agent-convergence",
       "destination": "/interfaces/blog-frontier-agent-convergence-2026-10.html"
     },

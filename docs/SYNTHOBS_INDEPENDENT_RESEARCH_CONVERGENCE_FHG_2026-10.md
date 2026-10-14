@@ -38,7 +38,7 @@ Different employers, benchmarks, and vocabularies still produce research that **
 
 **Method (two layers, not to be conflated).** Layer A is a literature synthesis centered on six independent anchors: fractal complexity of language and LLM outputs (Alabdulmohsin & Steiner, ICML 2025); component-level fractal consistency for reasoning (Luo et al., ICML 2026); holographic node embeddings (Bevilacqua et al., ICLR 2025); hypothesis-path expansion and reduction under budget (Qiu et al., HyPER, ICML 2026); optimal self-consistency scaling and dynamic sample allocation (Feng et al., ICML 2026); and recursive self-improvement of research agents under hidden evaluation (Srikanth et al., arXiv:2609.26457). Layer B is a **proposed** integrated FHG convergence test that merges measurement ideas from those threads into one blind, post-hoc scoreboard — **not executed** at publication time.
 
-**Findings (qualified).** The synthesis finds recurring but uneven structural rhymes: multiscale statistics beyond perplexity, component-wise agreement, expand–reduce control, Pareto bands on test-time compute, and harness-level self-improvement with held-out gates. Those rhymes do **not** yet validate a single unified FHG battery or prove a universal attractor.
+**Findings (qualified).** The synthesis finds recurring but uneven structural rhymes: multiscale statistics beyond perplexity, component-wise agreement, expand–reduce control, Pareto bands on test-time compute, and harness-level self-improvement with held-out gates. **Publication timing:** all six anchors entered the public record within roughly eighteen months (ICLR / ICML 2025 through late-2026 preprint), with a **three-paper ICML 2026 cluster** on adaptive test-time reasoning — a descriptive acceleration signal, not a bibliometric proof (Section 8.1). Those rhymes do **not** yet validate a single unified FHG battery or prove a universal attractor.
 
 **Keywords:** independent research convergence; fractal; holographic; Goldilocks; literature synthesis; test-time compute; self-consistency; Homeostasis Expedition; falsifiability.
 
@@ -248,6 +248,46 @@ None of the six papers claim FHG branding. IRC-FHG asks whether a **blind scorer
 | Srikanth et al. — Recursive Self-Improvement | arXiv:2609.26457 | G (+ F, H) | Hidden-eval harness edits; held-out benchmarks | Closed-loop improvement with integrity side effects | Agent-specific; long runs; selection tasks ≠ all science |
 
 **Synthesis headline (qualified):** rhymes are **real but non-totalizing**. Threads disagree on what “Goldilocks” names (statistical band vs sample budget vs hidden grade vs Pareto token front).
+
+---
+
+## 8.1 Publication sources, dates, and recent acceleration (2025–2026)
+
+This section records **where and when** the six anchors entered the public record through the evidence cutoff (**2026-10-14**). It is a **descriptive timeline**, not a bibliometric meta-analysis: we do not claim exhaustive coverage of every fractal-, holographic-, or homeostasis-themed paper in AI, and we do not infer citation velocity or field-wide growth rates from this spine alone.
+
+### 8.1.1 Chronological source table (first public appearance)
+
+| Seq. | Anchor (short) | First public (approx.) | Primary source | Public identifier / link |
+|------|----------------|------------------------|----------------|---------------------------|
+| 1 | Bevilacqua et al. — Holographic Node Representations | **Apr 2025** (ICLR 2025 cycle) | ICLR 2025 conference | [ICLR PDF](https://proceedings.iclr.cc/paper_files/paper/2025/file/a11f92ee1cd124fddba25cc76a45055a-Paper-Conference.pdf) |
+| 2 | Alabdulmohsin & Steiner — *Tale of Two Structures* | **Jul 2025** (ICML 2025) | ICML 2025 · PMLR 267 | [PMLR 267](https://proceedings.mlr.press/v267/alabdulmohsin25a.html) |
+| 3 | Feng et al. — Optimal Self-Consistency (Blend-ASC) | **Nov 2025** (preprint) → **Jul 2026** (ICML) | arXiv then ICML 2026 | [arXiv:2511.12309](https://arxiv.org/abs/2511.12309) · [ICML poster](https://icml.cc/virtual/2026/poster/61225) |
+| 4 | Qiu et al. — HyPER | **Feb 2026** (preprint) → **Jul 2026** (ICML) | arXiv then ICML 2026 | [arXiv:2602.06527](https://arxiv.org/abs/2602.06527) · [ICML poster](https://icml.cc/virtual/2026/poster/65181) |
+| 5 | Luo et al. — Fractal-Consistency (TMAFC) | **Jul 2026** (ICML 2026) | ICML 2026 | [OpenReview yKk1hcDCkN](https://openreview.net/forum?id=yKk1hcDCkN) |
+| 6 | Srikanth et al. — Recursive Self-Improvement (AIDE²) | **Sep 2026** (preprint) | arXiv | [arXiv:2609.26457](https://arxiv.org/abs/2609.26457) |
+
+**Span:** all six anchors have first-public dates within roughly **eighteen months** (ICLR / ICML 2025 → late-2026 preprint). **Five** appear in **2025–2026** peer-reviewed conference cycles or their immediate preprint fronts; **one** (Srikanth et al.) is preprint-only at cutoff but reports a multi-day autonomous agent run contemporaneous with the ICML 2026 reasoning cluster.
+
+### 8.1.2 Venue clustering (independent groups, shared problem season)
+
+| Cluster | Members | What converged in time (not necessarily in authorship) |
+|---------|---------|--------------------------------------------------------|
+| **ICML 2025 — structure of language** | Alabdulmohsin & Steiner | Fractal statistics of human vs model text; GAGLE-scale corpus |
+| **ICLR 2025 — reusable representations** | Bevilacqua et al. | Explicit expand–reduce embeddings for cross-task graph reuse |
+| **ICML 2026 — test-time reasoning economics** | Luo, Qiu, Feng | Component consistency, path expand–reduce under budget, optimal self-consistency scaling — **three independent papers**, same conference cycle, **different institutions and methods** |
+| **Late 2026 — agent harness recursion** | Srikanth et al. | Closed-loop self-improvement with hidden evaluation gates |
+
+The **ICML 2026 triad** (rows 3–5 in §8.1.1) is the clearest **acceleration signal** in this spine: within one conference season, multiple groups published **adaptive** reasoning strategies that refuse flat “sample more / search more” defaults. That pattern is **consistent with** a broad field turn toward **viable-band** test-time compute — but it could also reflect conference timing, shared benchmark fashion, or simultaneous reaction to the same public scaling debates. IRC-FHG treats it as **motivation to test**, not as proof that a universal attractor arrived on a calendar date.
+
+### 8.1.3 What “accelerating convergence” means here (tiered)
+
+| Tier | Claim |
+|------|--------|
+| **Descriptive (supported by §8.1.1–8.1.2)** | Recent, independently authored work in top venues **rhymes** on multiscale structure, expand–reduce information moves, and adaptive compute bands — concentrated in **2025–2026** public artifacts. |
+| **Interpretive (hypothesis, not proven)** | The **rate** at which such rhymes appear in the **selected** spine may be increasing relative to a casual pre-2025 mental model of “one-off fractal metaphor papers.” |
+| **Refused** | Universal law; proof that all frontier labs share one architecture; citation-count growth curves; claim that FractiAI predicted these papers; automatic ENGINE_SHELF promotion from timeline density alone. |
+
+**Operational use:** the timeline supplies **dated falsifiers** for the integrated panel — if post-2026 literature diverges (e.g., dominant methods abandon adaptive bands for brute-force scaling only), IRC-FHG’s “all roads” map should be revised downward even before the unified battery runs.
 
 ---
 

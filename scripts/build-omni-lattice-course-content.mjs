@@ -1701,6 +1701,48 @@ const chapters = [
         'RSI · Φ_EGS fidelity attractor',
       ),
     ],
+    next: 'all-roads-fhg-convergence',
+  }),
+  lesson({
+    id: 'all-roads-fhg-convergence',
+    moduleId: 'week6',
+    week: 6,
+    part: 'Homework: Week 6',
+    partId: 'week6',
+    number: '6.6',
+    title: 'All Roads Lead to FHG · Independent convergence',
+    minutes: 18,
+    tagline: 'Dated 2025–2026 literature spine · rhyme without universal law',
+    goals: [
+      'Read the six-anchor timeline (ICLR 2025 → ICML 2026 triad → late-2026 preprint) as descriptive acceleration, not bibliometric proof.',
+      'Separate fractal, holographic, and Goldilocks rhymes from merged metrics.',
+      'State what the proposed integrated FHG panel would falsify — and that it has not run yet.',
+    ],
+    body: `<p>When rent is due, you do not need a philosophy lecture — you need to know whether the budgeting assistant is still reading the same lease line it saw yesterday, or whether its “helpful” rewrites quietly moved the number. The same anxiety now shows up in research headlines: different labs, different benchmarks, different jargon — yet a cluster of serious papers in 2025 and 2026 keeps returning to three families of structure. Multiscale organization (fractal lane). Expand–reduce moves that preserve part–whole information (holographic lane). Adaptive bands that refuse both “always sample more” and “freeze after the first answer” (Goldilocks lane).</p>
+<p>This lesson files the <strong>Independent Research Convergence</strong> application companion: a literature synthesis with a dated spine — ICLR 2025 holographic graph embeddings, ICML 2025 fractal language statistics, then an ICML 2026 <em>triad</em> on adaptive test-time reasoning (component consistency, hypothesis-path control, optimal self-consistency), plus a late-2026 recursive research-agent preprint. That is roughly eighteen months of public artifacts, independent authorship, and accelerating rhyme density in the <em>selected</em> anchor set. It is <strong>not</strong> proof that every road ends at a branded triad, and it is <strong>not</strong> ENGINE_SHELF engine pin material.</p>
+<div class="worked-example">
+<p><strong>Timeline drill.</strong> Open the whitepaper Section 8.1 table. For each row, note venue, first-public month, and which FHG lane the paper actually measured — not which word appeared in the title. Ask: if you removed the adjectives “fractal,” “holographic,” and “Goldilocks,” would the <em>methods</em> still rhyme? If yes, you have descriptive convergence. If the rhyme exists only after you rename adaptive compute “Goldilocks,” you have branding convergence — the failure mode the paper refuses.</p>
+</div>
+<div class="misconception">
+<p><strong>The mix-up:</strong> “Six papers in eighteen months proves AI is converging on FractiAI’s architecture.”</p>
+<p><strong>The correction:</strong> The paper claims a <em>qualified</em> rhyme pattern in cited independent work and proposes a blind panel to test unification. External labs are not claimed to adopt SING13 catalog grammar; synthesis ≠ systematic review; the unified benchmark is specified but not executed at publication time.</p>
+</div>`,
+    check: [
+      {
+        q: 'What is the strongest honest claim about “acceleration” in this paper?',
+        a: 'Descriptive: a dense 2025–2026 public spine, including an ICML 2026 triad on adaptive reasoning — not a bibliometric growth proof or universal law.',
+      },
+      {
+        q: 'Has the integrated FHG convergence test been run?',
+        a: 'No — it is specified with falsifiers; publication ships synthesis and protocol only.',
+      },
+    ],
+    papers: [
+      wp(
+        'synthobs-independent-research-convergence-fhg-2026-10',
+        'All Roads · Independent Research Convergence',
+      ),
+    ],
     next: 'invisible-frontier',
   }),
   lesson({
@@ -1709,7 +1751,7 @@ const chapters = [
     week: 6,
     part: 'Homework: Week 6',
     partId: 'week6',
-    number: '6.6',
+    number: '6.7',
     title: 'Invisible Frontier · Second chart',
     minutes: 15,
     tagline: 'Goldilocks beside linear AI scale anxiety',
@@ -1763,7 +1805,7 @@ const chapters = [
     week: 6,
     part: 'Homework: Week 6',
     partId: 'week6',
-    number: '6.7',
+    number: '6.8',
     title: 'How to keep learning',
     minutes: 12,
     tagline: 'Doors · papers · Lattice · Fair Exchange',

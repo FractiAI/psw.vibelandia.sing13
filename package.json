@@ -120,6 +120,7 @@
     "research:synthobs-omni-lattice-genomic-determinism": "node research/synthobs-omni-lattice-genomic-determinism/scripts/run_empirical_pipeline.mjs",
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
+    "score:lattice-kq-probe": "node scripts/score-lattice-kq-probe.mjs",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",
     "sync:lattice-guide": "node scripts/sync-lattice-omni-layer-guide.mjs",
     "sync:lattice-pem": "node scripts/sync-lattice-chat-pem.mjs",

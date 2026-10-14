@@ -1,5 +1,13 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { listAllShipBlogPosts, listRecentPaperBlogPosts } from '../../lib/questfest-blog.mjs';
+
+const VOYAGE_SURFACES_CSS = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '../../interfaces/voyage-surfaces.css',
+);
 import { blogPostForPaper } from '../../lib/questfest-blog-posts.mjs';
 import { WHITEPAPER_REGISTRY } from '../../lib/whitepaper-registry.mjs';
 
@@ -25,6 +33,11 @@ describe('QUESTFEST latest-six ship blog', () => {
       expect(note?.slug).toBeTruthy();
       expect(p.href).toBe(`/ship-blog/${note.slug}`);
     }
+  });
+
+  it('does not hide latest-six cards in voyage-surfaces.css (show all six on QUESTFEST)', () => {
+    const css = fs.readFileSync(VOYAGE_SURFACES_CSS, 'utf8');
+    expect(css).not.toMatch(/#ship-blog[\s\S]*qf-blog-card:nth-child\(n \+ 4\)[\s\S]*display:\s*none/);
   });
 
   it('does not let older notes outrank newer papers', () => {

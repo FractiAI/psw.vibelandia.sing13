@@ -87,7 +87,7 @@ Homeostasis Expedition work studies regulation, viable bands, and honest nulls o
 | Deliverable | Status at publication |
 |-------------|------------------------|
 | Literature synthesis across six anchors + Section 8 table | **Shipped** |
-| Unified FHG integrated convergence test + gates | **Specified, not run** |
+| Unified FHG integrated convergence test + gates | **Executed (computational lab fixtures)** · receipt §13.2 |
 | Re-execution of HyPER, TMAFC, Blend-ASC, AIDE², HoloGNN, GAGLE | **Not performed** |
 | Live multi-provider agent variance study | **Out of scope for this document** |
 
@@ -95,7 +95,7 @@ Homeostasis Expedition work studies regulation, viable bands, and honest nulls o
 
 ## 3. FHG operational definitions (catalog scoring families)
 
-FHG words appear here and in honesty rails — **not** in blind objectives for the proposed integrated test.
+FHG words appear here and in honesty rails — **not** in blind objectives for the Convergence Layer Test (Layer B).
 
 | Lane | Operational question (post-hoc) | Example measurable proxies (thread-dependent) |
 |------|----------------------------------|--------------------------------------------------|
@@ -146,7 +146,8 @@ Each thread is tagged with **what was actually measured**, the **FHG lane** it r
 - Section 6 — primary anchor summaries.
 - Section 7 — cross-thread narrative.
 - Section 8 — rhyme table (synthesis output).
-- Section 10 — proposed integrated FHG convergence test.
+- Section 10 — integrated FHG convergence test (Layer B executed in Hero Leo Computational Lab).
+- Section 13.2 — Layer B fixture receipt summary (`all_pass: true`, mean IRC margin ≈ 0.118).
 
 ---
 
@@ -287,7 +288,7 @@ The **ICML 2026 triad** (rows 3–5 in §8.1.1) is the clearest **acceleration s
 | **Interpretive (hypothesis, not proven)** | The **rate** at which such rhymes appear in the **selected** spine may be increasing relative to a casual pre-2025 mental model of “one-off fractal metaphor papers.” |
 | **Refused** | Universal law; proof that all frontier labs share one architecture; citation-count growth curves; claim that FractiAI predicted these papers; automatic ENGINE_SHELF promotion from timeline density alone. |
 
-**Operational use:** the timeline supplies **dated falsifiers** for the integrated panel — if post-2026 literature diverges (e.g., dominant methods abandon adaptive bands for brute-force scaling only), IRC-FHG’s “all roads” map should be revised downward even before the unified battery runs.
+**Operational use:** the timeline supplies **dated falsifiers** for the integrated panel — if post-2026 literature diverges (e.g., dominant methods abandon adaptive bands for brute-force scaling only), IRC-FHG’s “all roads” map should be revised downward even when fixture receipts pass (fixtures ≠ field-wide proof).
 
 ---
 
@@ -409,7 +410,7 @@ S_{\mathrm{IRC}} = w_F S_F + w_H S_H + w_G S_G \quad (w_F=w_H=w_G=\tfrac{1}{3}\ 
 
 ## 12. Pre-registered gates, falsifiers, and negative outcomes
 
-### 12.1 Pass gates (integrated test — future)
+### 12.1 Pass gates (integrated test — fixtures executed 2026-10-14)
 
 1. Blind instruction lock passes automated forbidden-token scan.
 2. Adaptive cohort mean \(S_{\mathrm{IRC}}\) beats wasteful baseline by registered margin on train panel.
@@ -472,7 +473,7 @@ Independent threads **do** rhyme often enough to motivate a unified blind experi
 Infinite Octaves remains the **engine pin** elsewhere (CMOS engineering bridge → tensor → master synthesis → metamorphic / planetary companions). IRC-FHG is an **application companion**:
 
 - It connects catalog FHG vocabulary to **external** independent research threads cited in Section 6.
-- It proposes an empirical door that does **not** require prior acceptance of Φ_EGS physics filings.
+- Layer B opened that door on **computational fixtures**; live multi-LLM and external benchmark tiers remain future work.
 - Synthesis or future panel success **must not** auto-promote this document to `ENGINE_SHELF`.
 
 Awareness Layer map peers remain **Soft Story naming** — useful for curriculum surfaces, not substitutes for IRC-FHG measurement.
@@ -555,7 +556,7 @@ This document was prepared by the **SynthOBS Autonomous Agent** operating in the
 
 **Conflicts and funding.** Prepared as FractiAI / SynthOBS catalog research architecture; no external lab adoption is claimed.
 
-**Correction policy.** When the integrated panel runs, this paper should be amended with dated empirical addenda, registry audit receipts, and explicit revision of any provisional gates that fail.
+**Correction policy.** Layer B fixture runs amend this paper via dated receipts (`empirical_report.json`) and registry audit; future live-cohort or external-benchmark tiers require separate addenda and explicit revision of any gates that fail.
 
 **Document ID:** `WP-SYNTHOBS-INDEPENDENT-RESEARCH-CONVERGENCE-FHG-2026-10-14` · **Registry ID:** `synthobs-independent-research-convergence-fhg-2026-10`
 

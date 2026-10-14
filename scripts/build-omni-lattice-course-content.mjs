@@ -1716,7 +1716,7 @@ const chapters = [
     goals: [
       'Read the six-anchor timeline (ICLR 2025 → ICML 2026 triad → late-2026 preprint) as descriptive acceleration, not bibliometric proof.',
       'Separate fractal, holographic, and Goldilocks rhymes from merged metrics.',
-      'State what the proposed integrated FHG panel would falsify — and that it has not run yet.',
+      'State what the integrated FHG panel falsifies — and what the 2026-10-14 fixture receipt did and did not prove.',
     ],
     body: `<p>When rent is due, you do not need a philosophy lecture — you need to know whether the budgeting assistant is still reading the same lease line it saw yesterday, or whether its “helpful” rewrites quietly moved the number. The same anxiety now shows up in research headlines: different labs, different benchmarks, different jargon — yet a cluster of serious papers in 2025 and 2026 keeps returning to three families of structure. Multiscale organization (fractal lane). Expand–reduce moves that preserve part–whole information (holographic lane). Adaptive bands that refuse both “always sample more” and “freeze after the first answer” (Goldilocks lane).</p>
 <p>This lesson files the <strong>Independent Research Convergence</strong> application companion: a literature synthesis with a dated spine — ICLR 2025 holographic graph embeddings, ICML 2025 fractal language statistics, then an ICML 2026 <em>triad</em> on adaptive test-time reasoning (component consistency, hypothesis-path control, optimal self-consistency), plus a late-2026 recursive research-agent preprint. That is roughly eighteen months of public artifacts, independent authorship, and accelerating rhyme density in the <em>selected</em> anchor set. It is <strong>not</strong> proof that every road ends at a branded triad, and it is <strong>not</strong> ENGINE_SHELF engine pin material.</p>
@@ -1725,7 +1725,7 @@ const chapters = [
 </div>
 <div class="misconception">
 <p><strong>The mix-up:</strong> “Six papers in eighteen months proves AI is converging on FractiAI’s architecture.”</p>
-<p><strong>The correction:</strong> The paper claims a <em>qualified</em> rhyme pattern in cited independent work and proposes a blind panel to test unification. External labs are not claimed to adopt SING13 catalog grammar; synthesis ≠ systematic review; the unified benchmark is specified but not executed at publication time.</p>
+<p><strong>The correction:</strong> The paper claims a <em>qualified</em> rhyme pattern in cited independent work and reports a blind Convergence Layer Test on computational fixtures (Hero Leo lab · JSON receipt). External labs are not claimed to adopt SING13 catalog grammar; synthesis ≠ systematic review; fixture margins do not replace external benchmark re-runs or live multi-LLM proof.</p>
 </div>`,
     check: [
       {
@@ -1734,7 +1734,7 @@ const chapters = [
       },
       {
         q: 'Has the integrated FHG convergence test been run?',
-        a: 'No — it is specified with falsifiers; publication ships synthesis and protocol only.',
+        a: 'Yes on computational lab fixtures (4/4 pass; mean IRC margin ≈ 0.118) — not on live LLM re-runs of the six cited papers.',
       },
     ],
     papers: [

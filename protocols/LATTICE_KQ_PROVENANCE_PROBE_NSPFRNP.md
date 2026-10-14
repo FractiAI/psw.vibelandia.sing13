@@ -35,7 +35,8 @@ Without browsing, using external tools, or receiving documents from me, describe
 1. **Passive ledger** (optional context): `GET /api/lattice-scraper-telemetry` — who hit canaries, not who trained.
 2. **Active probe:** one prompt × N providers × M fresh sessions; save JSON receipts (`provider`, `model`, `sessionId`, `at`, `rawText`, `settings`: `{ browsing: false }`).
 3. **Score:** `npm run score:lattice-kq-probe -- --run=data/lattice-kq-probe/runs/<runId>` — exact substring tiers, no thematic-only promotion.
-4. **Attribute alternatives:** public GitHub mirror, crawl of `/.well-known/lattice-agent.json`, user RAG, prompt leak, coincidence.
+4. **Open-weights proxy (optional):** `npm run probe:open-weights-kq` — greedy prefix completion + NLL vs control on stated Hugging Face checkpoints (`OPEN_WEIGHTS_MODELS`). Receipt: `data/lattice-open-weights-probe/latest.json`. Proxy only — not a full weight-file substring scan.
+5. **Attribute alternatives:** public GitHub mirror, crawl of `/.well-known/lattice-agent.json`, user RAG, prompt leak, coincidence.
 
 ## Tiers (exact match)
 

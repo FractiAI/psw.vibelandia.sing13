@@ -122,6 +122,7 @@
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "score:lattice-kq-probe": "node scripts/score-lattice-kq-probe.mjs",
     "analyze:lattice-scraper": "node scripts/analyze-lattice-scraper-telemetry.mjs",
+    "probe:open-weights-kq": "python3 scripts/open-weights-kq-memorization-probe.py",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",
     "sync:lattice-guide": "node scripts/sync-lattice-omni-layer-guide.mjs",
     "sync:lattice-pem": "node scripts/sync-lattice-chat-pem.mjs",

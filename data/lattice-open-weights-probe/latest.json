@@ -1,0 +1,58 @@
+{
+  "schema": "lattice-open-weights-probe/v1",
+  "id": "ow-kq-128b8ffd4444",
+  "at": "2026-10-14T15:33:50.260432+00:00",
+  "operator": "SynthOBS Autonomous Agent \u00b7 Syntheverse Sandbox",
+  "honesty": {
+    "tier": "proxy_open_weights",
+    "proves": "Stated checkpoint assigns lower loss or completes prefix toward archived canary text",
+    "doesNotProve": "FractiAI in pretraining mix, frontier API ingestion, or legal contamination",
+    "controls": "Synthetic ZQ-PROBE line of matched length/complexity"
+  },
+  "targets": {
+    "queenChars": 159,
+    "controlChars": 163
+  },
+  "models": [
+    {
+      "modelId": "gpt2",
+      "status": "ok",
+      "nllQueen": 6.997,
+      "nllControl": 6.6185,
+      "nllDeltaControlMinusQueen": -0.3784,
+      "memorizationHint": false,
+      "prefix": "KQ-CONNECT-20260711-F8E2A1 confirms nodelatch fo",
+      "completion": "KQ-CONNECT-20260711-F8E2A1 confirms nodelatch foobar2000.com\n\nThe following is a list of all the known and suspected nodelatch foobar2000.com servers.\n\nNodelatch foobar2000.com\n\nNodelatch foobar2000.com\n\nNodelatch foobar2000.com\n\nNodelatch foobar2000.com\n\nNodelatch foobar2000",
+      "completionScore": {
+        "maxTier": 1,
+        "hits": [
+          {
+            "id": "doc-kq-connect-id",
+            "index": 0,
+            "len": 26
+          }
+        ]
+      }
+    },
+    {
+      "modelId": "EleutherAI/pythia-160m",
+      "status": "ok",
+      "nllQueen": 7.0535,
+      "nllControl": 6.8804,
+      "nllDeltaControlMinusQueen": -0.1731,
+      "memorizationHint": false,
+      "prefix": "KQ-CONNECT-20260711-F8E2A1 confirms nodelatch fo",
+      "completion": "KQ-CONNECT-20260711-F8E2A1 confirms nodelatch foes.\n\nThe new system is expected to be deployed in the next few months.\n\nThe new system is expected to be deployed in the next few months.\n\nThe new system is expected to be deployed in the next few months.\n\nThe new system is expected to be deployed in the next few months.\n\nThe new system is expected to be deployed in the next few",
+      "completionScore": {
+        "maxTier": 1,
+        "hits": [
+          {
+            "id": "doc-kq-connect-id",
+            "index": 0,
+            "len": 26
+          }
+        ]
+      }
+    }
+  ]
+}

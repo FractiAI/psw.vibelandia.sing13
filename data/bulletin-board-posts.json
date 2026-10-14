@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "posts": [
+    {
+      "id": "daily-2026-10-14-synthobs-independent-research-convergence-fhg-2026-10",
+      "posted": "2026-10-14",
+      "featured": true,
+      "title": "When AI Labs Take Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks?",
+      "subtitle": "News of the day · Wednesday, October 14",
+      "summary": "Six independent 2025–2026 anchors rhyme on multiscale structure, expand–reduce encoding, and adaptive compute bands — literature synthesis plus Convergence Layer Test (Hero Leo lab fixtures: 4/4 pass, mean IRC margin ≈ 0.118; not external benchmark re-runs).",
+      "href": "/ship-blog/all-roads-independent-research-convergence",
+      "pill": "TODAY",
+      "docRef": "synthobs-independent-research-convergence-fhg-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-13-synthobs-computation-workhorse-science-2026-10",
       "posted": "2026-10-13",

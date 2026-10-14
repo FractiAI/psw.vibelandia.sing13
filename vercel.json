@@ -653,6 +653,38 @@
       "destination": "/interfaces/exhibit-step-in.html"
     },
     {
+      "source": "/valet-pru",
+      "destination": "/interfaces/exhibit-valet-pru.html"
+    },
+    {
+      "source": "/valet-pru/",
+      "destination": "/interfaces/exhibit-valet-pru.html"
+    },
+    {
+      "source": "/how-to-watch",
+      "destination": "/interfaces/exhibit-how-to-watch.html"
+    },
+    {
+      "source": "/how-to-watch/",
+      "destination": "/interfaces/exhibit-how-to-watch.html"
+    },
+    {
+      "source": "/studio-address",
+      "destination": "/interfaces/exhibit-chapter-address.html"
+    },
+    {
+      "source": "/studio-address/",
+      "destination": "/interfaces/exhibit-chapter-address.html"
+    },
+    {
+      "source": "/base-mainnet-genesis",
+      "destination": "/interfaces/exhibit-chapter-address.html"
+    },
+    {
+      "source": "/base-mainnet-genesis/",
+      "destination": "/interfaces/exhibit-chapter-address.html"
+    },
+    {
       "source": "/jukebox",
       "destination": "/interfaces/questfest-bridge/#/listen"
     },

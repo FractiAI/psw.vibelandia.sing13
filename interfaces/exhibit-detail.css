@@ -146,6 +146,27 @@ a:hover { color: #fef3c7; }
   color: var(--gold-hi);
 }
 .xd-card p { margin: 0; }
+a.xd-card--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+a.xd-card--link:hover,
+a.xd-card--link:focus-visible {
+  border-color: rgba(212, 175, 55, 0.52);
+  background: rgba(12, 20, 36, 0.82);
+  outline: none;
+}
+.xd-card__go {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0.65rem 0 0;
+  color: var(--gold-hi);
+}
 .xd-stills {
   display: grid;
   gap: 0.75rem;

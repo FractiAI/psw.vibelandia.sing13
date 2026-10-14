@@ -70,5 +70,17 @@ describe('Exhibit rooms · full pages from the Canvas', () => {
     expect(fiction).toContain('New-World fiction');
     expect(step).toContain('Treat the camp as walk-in');
     expect(fiction).not.toEqual(step);
+
+    expect(fiction).toContain('href="/questfest"');
+    expect(fiction).toContain('href="/valet-pru"');
+    expect(fiction).toContain('href="/how-to-watch"');
+    expect(step).toContain('href="/doodles#shell-core"');
+    expect(step).toContain('href="/studio-address"');
+    expect(vercel).toContain('"/valet-pru"');
+    expect(vercel).toContain('"/how-to-watch"');
+    expect(vercel).toContain('"/studio-address"');
+    expect(existsSync(join(ROOT, 'interfaces/exhibit-valet-pru.html'))).toBe(true);
+    expect(existsSync(join(ROOT, 'interfaces/exhibit-how-to-watch.html'))).toBe(true);
+    expect(existsSync(join(ROOT, 'interfaces/exhibit-chapter-address.html'))).toBe(true);
   });
 });

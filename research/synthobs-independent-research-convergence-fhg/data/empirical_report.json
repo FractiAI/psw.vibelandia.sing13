@@ -1,0 +1,256 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "suite": "synthobs-independent-research-convergence-fhg",
+  "generatedAt": "2026-10-14T17:15:36.253Z",
+  "DOC_ID": "WP-SYNTHOBS-INDEPENDENT-RESEARCH-CONVERGENCE-FHG-2026-10-14",
+  "REGISTRY_ID": "synthobs-independent-research-convergence-fhg-2026-10",
+  "STUDY_TITLE": "Convergence Layer Test — Integrated FHG Panel (Computational Lab Fixtures)",
+  "HONESTY": "Computational lab fixtures inspired by six literature anchors — not re-execution of HyPER/TMAFC/AIDE²/GAGLE. Post-hoc FHG subscores label blind optimizers after discovery. Not live multi-LLM proof. Not ENGINE_SHELF.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_blind_objective_lock",
+        "title": "Blind objectives — forbidden FHG vocabulary absent",
+        "forbidden": [
+          "fractal",
+          "holographic",
+          "goldilocks",
+          "fhg",
+          "hyper",
+          "blend-asc",
+          "aide",
+          "infinite octave",
+          "phi_egs",
+          "φ",
+          "all roads",
+          "convergence hypothesis"
+        ],
+        "objectiveHits": [],
+        "agentObjectiveHits": [],
+        "pass": true,
+        "honesty": "Locks fixture objective strings — not live LLM prompts."
+      },
+      {
+        "id": "E2_integrated_fhg_panel",
+        "title": "Integrated FHG panel P1–P6 — adaptive vs wasteful IRC margin",
+        "panel": {
+          "panels": [
+            {
+              "slotId": "P1_text_stats",
+              "anchor": "Alabdulmohsin & Steiner ICML 2025",
+              "adaptive": {
+                "agentId": "A_energy_keep",
+                "isControl": false,
+                "predictiveRmse": 0.1684436768780616,
+                "S_F": 0.5736359130346124,
+                "S_H": 0.8473872839761836,
+                "S_G": 0.25,
+                "S_IRC": 0.557007732336932
+              },
+              "wasteful": {
+                "agentId": "Z_flat_control",
+                "isControl": true,
+                "predictiveRmse": 0.6872875740369493,
+                "S_F": 0.38516859505681855,
+                "S_H": 0.8104857959452452,
+                "S_G": 0.25,
+                "S_IRC": 0.4818847970006879
+              },
+              "margin": 0.07512293533624409,
+              "pass": true,
+              "bestArchitecture": "A_energy_keep",
+              "controlArchitecture": "Z_flat_control"
+            },
+            {
+              "slotId": "P2_component_qa",
+              "anchor": "Luo et al. TMAFC ICML 2026",
+              "adaptive": {
+                "agentId": "B_pyramid",
+                "isControl": false,
+                "predictiveRmse": 0.15234379405564846,
+                "S_F": 0.6701523501527291,
+                "S_H": 0.8467438046534186,
+                "S_G": 0.25,
+                "S_IRC": 0.5889653849353825
+              },
+              "wasteful": {
+                "agentId": "Z_flat_control",
+                "isControl": true,
+                "predictiveRmse": 0.6895228455161486,
+                "S_F": 0.3867270626102942,
+                "S_H": 0.8088881028474795,
+                "S_G": 0.25,
+                "S_IRC": 0.4818717218192579
+              },
+              "margin": 0.10709366311612462,
+              "pass": true,
+              "bestArchitecture": "B_pyramid",
+              "controlArchitecture": "Z_flat_control"
+            },
+            {
+              "slotId": "P3_graph_transfer",
+              "anchor": "Bevilacqua et al. ICLR 2025",
+              "adaptive": {
+                "agentId": "C_local_global",
+                "isControl": false,
+                "predictiveRmse": 0.18629893534920663,
+                "S_F": 0.5788514943601549,
+                "S_H": 0.945839745024864,
+                "S_G": 0.25,
+                "S_IRC": 0.591563746461673
+              },
+              "wasteful": {
+                "agentId": "Z_flat_control",
+                "isControl": true,
+                "predictiveRmse": 0.6885576741432895,
+                "S_F": 0.38573541710081477,
+                "S_H": 0.8149863351863482,
+                "S_G": 0.25,
+                "S_IRC": 0.4835739174290543
+              },
+              "margin": 0.10798982903261867,
+              "pass": true,
+              "bestArchitecture": "C_local_global",
+              "controlArchitecture": "Z_flat_control"
+            },
+            {
+              "slotId": "P4_tts_paths",
+              "anchor": "Qiu et al. HyPER ICML 2026",
+              "adaptive": {
+                "agentId": "D_bounded_adapt",
+                "isControl": false,
+                "predictiveRmse": 0.32696959831438716,
+                "S_F": 0.5303977511354017,
+                "S_H": 0.8173176049494373,
+                "S_G": 0.82,
+                "S_IRC": 0.7225717853616129
+              },
+              "wasteful": {
+                "agentId": "Z_flat_control",
+                "isControl": true,
+                "predictiveRmse": 0.6900297462699418,
+                "S_F": 0.3805650409991806,
+                "S_H": 0.8103308941515059,
+                "S_G": 0.25,
+                "S_IRC": 0.48029864505022885
+              },
+              "margin": 0.24227314031138408,
+              "pass": true,
+              "bestArchitecture": "D_bounded_adapt",
+              "controlArchitecture": "Z_flat_control"
+            },
+            {
+              "slotId": "P5_sample_law",
+              "anchor": "Feng et al. ICML 2026",
+              "adaptive": {
+                "agentId": "A_energy_keep",
+                "isControl": false,
+                "predictiveRmse": 0.17335264931764685,
+                "S_F": 0.5654094889562404,
+                "S_H": 0.8484499368051994,
+                "S_G": 0.25,
+                "S_IRC": 0.5546198085871467
+              },
+              "wasteful": {
+                "agentId": "Z_flat_control",
+                "isControl": true,
+                "predictiveRmse": 0.6890039935189385,
+                "S_F": 0.38533696330566086,
+                "S_H": 0.8110263631851891,
+                "S_G": 0.25,
+                "S_IRC": 0.4821211088302833
+              },
+              "margin": 0.07249869975686335,
+              "pass": true,
+              "bestArchitecture": "A_energy_keep",
+              "controlArchitecture": "Z_flat_control"
+            },
+            {
+              "slotId": "P6_harness_loop",
+              "anchor": "Srikanth et al. arXiv:2609.26457",
+              "adaptive": {
+                "agentId": "C_local_global",
+                "isControl": false,
+                "predictiveRmse": 0.2144239043708819,
+                "S_F": 0.5763415192288265,
+                "S_H": 0.9446131454391922,
+                "S_G": 0.25,
+                "S_IRC": 0.5903182215560062
+              },
+              "wasteful": {
+                "agentId": "Z_flat_control",
+                "isControl": true,
+                "predictiveRmse": 0.6924247322012185,
+                "S_F": 0.3887499587326726,
+                "S_H": 0.8262530352065136,
+                "S_G": 0.25,
+                "S_IRC": 0.4883343313130621
+              },
+              "margin": 0.10198389024294413,
+              "pass": true,
+              "bestArchitecture": "C_local_global",
+              "controlArchitecture": "Z_flat_control"
+            }
+          ],
+          "meanMargin": 0.11782702629936315,
+          "meanAdaptive": 0.6008411132064589,
+          "meanWasteful": 0.48301408690709574,
+          "nPanels": 6
+        },
+        "gate": 0.1,
+        "pass": true,
+        "integrated_panel_run": true,
+        "interpretation": "Adaptive explorers beat flat wasteful control on mean post-hoc S_IRC across six anchor-inspired panel slots.",
+        "honesty": "Fixture landscapes; not external benchmark re-runs."
+      },
+      {
+        "id": "E3_identity_ceiling",
+        "title": "Non-identical adaptive architectures across panel slots",
+        "maxPairwiseJaccard": 0,
+        "nUniqueAdaptive": 4,
+        "minUniqueAdaptive": 3,
+        "ceiling": 0.95,
+        "pass": true,
+        "architectures": [
+          "A_energy_keep",
+          "B_pyramid",
+          "C_local_global",
+          "D_bounded_adapt",
+          "A_energy_keep",
+          "C_local_global"
+        ],
+        "uniqueArchitectures": [
+          "A_energy_keep",
+          "B_pyramid",
+          "C_local_global",
+          "D_bounded_adapt"
+        ],
+        "honesty": "Unique adaptive agent IDs across slots (≥3) + token Jaccard among uniques — not output photocopy detection on full traces."
+      },
+      {
+        "id": "E4_vocabulary_injection_falsifier",
+        "title": "Vocabulary injection would violate blind lock (simulated)",
+        "contaminatedHits": [
+          "fractal",
+          "holographic",
+          "goldilocks"
+        ],
+        "pass": true,
+        "interpretation": "If FHG words were injected into objectives, automated scan would fail before scoring.",
+        "honesty": "Simulated string — does not run a live contaminated agent cohort."
+      }
+    ],
+    "n_pass": 4,
+    "n_total": 4,
+    "all_pass": true,
+    "integrated_panel_run": true,
+    "convergenceLayer": {
+      "label": "Convergence Layer Test · computational lab",
+      "meanIrcMargin": 0.11782702629936315,
+      "meanAdaptiveSIRC": 0.6008411132064589,
+      "meanWastefulSIRC": 0.48301408690709574,
+      "gate": 0.1,
+      "nPanels": 6
+    }
+  }
+}

@@ -49,6 +49,11 @@
       "reportRel": "research/synthobs-beyond-crispr-biological-discovery/data/empirical_report.json",
       "npmScript": "research:synthobs-beyond-crispr-biological-discovery"
     },
+    "convergenceLayerTest": {
+      "id": "synthobs-independent-research-convergence-fhg",
+      "reportRel": "research/synthobs-independent-research-convergence-fhg/data/empirical_report.json",
+      "npmScript": "research:synthobs-independent-research-convergence-fhg"
+    },
     "honesty": "Digital Lab = suite run · score receipt · computational prospect completion. Wet lab stays out of this panel."
   },
   "honesty": "Never simulate activity. Zero metrics are valid. Publication only after gate + human approval for external claims. Digital Lab tags (lab:digital) mark computational evidence only."

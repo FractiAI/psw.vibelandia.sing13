@@ -12,6 +12,7 @@ import {
   buildDashboardWithDigitalLab,
   buildDigitalLab,
   LAB_DIGITAL,
+  loadConvergenceLayerReceipt,
   loadScoreReceipt,
 } from '../../lib/hero-leo-digital-lab.mjs';
 
@@ -120,5 +121,16 @@ describe('hero-leo homeostasis scout', () => {
     const dash = buildDashboardWithDigitalLab();
     expect(dash.digitalLab.suiteRun.suiteId).toContain('beyond-crispr');
     expect(buildDashboard().schema).toBe('hero-leo-dashboard/v1');
+  });
+
+  it('Digital Lab loads IRC-FHG Convergence Layer receipt', () => {
+    const receipt = loadConvergenceLayerReceipt();
+    expect(receipt.available).toBe(true);
+    expect(receipt.reportKind).toBe('convergence-layer');
+    expect(typeof receipt.all_pass).toBe('boolean');
+    expect(receipt.meanIrcMargin).toBeGreaterThan(0);
+    const cl = buildDigitalLab().convergenceLayerTest;
+    expect(cl.scoreReceipt.reportKind).toBe('convergence-layer');
+    expect(cl.suiteRun.suiteId).toContain('independent-research-convergence');
   });
 });

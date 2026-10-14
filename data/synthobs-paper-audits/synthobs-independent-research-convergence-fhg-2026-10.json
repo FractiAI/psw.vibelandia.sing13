@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "f94df580ee0d6e28",
+  "auditId": "201df0935967d94c",
   "paperId": "synthobs-independent-research-convergence-fhg-2026-10",
   "sourcePath": "docs/SYNTHOBS_INDEPENDENT_RESEARCH_CONVERGENCE_FHG_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-14T16:34:03.386Z"
+          "invokedAt": "2026-10-14T17:16:38.211Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-14T16:34:03.384Z",
-  "completedAt": "2026-10-14T16:34:03.387Z",
+  "startedAt": "2026-10-14T17:16:38.208Z",
+  "completedAt": "2026-10-14T17:16:38.211Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 5713,
+      "wordCount": 5973,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 24,
+        "links": 25,
         "numbered": 19,
-        "citeLines": 80
+        "citeLines": 81
       }
     }
   },

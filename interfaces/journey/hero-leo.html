@@ -113,6 +113,27 @@
       <ul class="hl-list" id="dl-ledger"></ul>
     </section>
 
+    <section class="hl-panel" id="convergence-layer" aria-labelledby="cl-h">
+      <h2 id="cl-h">Convergence Layer Test · IRC-FHG</h2>
+      <p class="hl-k">Integrated FHG panel P1–P6 · computational fixtures · Hero Leo Digital Lab</p>
+      <div class="hl-dl-grid">
+        <div class="hl-dl-col">
+          <h3>Panel run</h3>
+          <p id="cl-suite">—</p>
+          <div class="hl-scout-actions">
+            <button type="button" class="primary" id="btn-convergence">Run Convergence Layer Test</button>
+          </div>
+        </div>
+        <div class="hl-dl-col">
+          <h3>IRC receipt</h3>
+          <p id="cl-receipt">—</p>
+          <ul class="hl-list" id="cl-panels"></ul>
+        </div>
+      </div>
+      <p class="hl-msg" id="cl-msg"></p>
+      <p class="hl-k" style="font-size:.92rem;opacity:.85">Not HyPER/TMAFC/AIDE² re-runs · not live multi-LLM proof · not ENGINE_SHELF.</p>
+    </section>
+
     <section class="hl-panel" id="scout" aria-labelledby="scout-h">
       <h2 id="scout-h">Player 1 · Scout command</h2>
       <p class="hl-k">Full scout → top 11 → your selection → complete</p>
@@ -211,6 +232,43 @@
       el.className = 'hl-msg ' + (ok === true ? 'hl-ok' : ok === false ? 'hl-err' : '');
       el.textContent = text || '';
     }
+    function setClMsg(text, ok) {
+      const el = document.getElementById('cl-msg');
+      if (!el) return;
+      el.className = 'hl-msg ' + (ok === true ? 'hl-ok' : ok === false ? 'hl-err' : '');
+      el.textContent = text || '';
+    }
+    function renderConvergenceLayer(cl) {
+      if (!cl) return;
+      const sr = cl.suiteRun || {};
+      const pass =
+        sr.all_pass === true ? 'GREEN' : sr.all_pass === false ? 'NEEDS ATTENTION' : 'NO RECEIPT';
+      const suiteEl = document.getElementById('cl-suite');
+      if (suiteEl) {
+        suiteEl.innerHTML =
+          `<span class="hl-badge">lab: digital</span> ` +
+          `<strong>${esc(pass)}</strong><br/>` +
+          `${esc(sr.suiteId || '—')}<br/>` +
+          `${esc(sr.n_pass ?? '—')} / ${esc(sr.n_total ?? '—')} experiments · ${esc(sr.generatedAt || 'not run')}`;
+      }
+      const rec = cl.scoreReceipt || {};
+      const receiptEl = document.getElementById('cl-receipt');
+      if (receiptEl) {
+        receiptEl.innerHTML =
+          `Mean IRC margin <strong>${esc(rec.meanIrcMargin != null ? Number(rec.meanIrcMargin).toFixed(3) : '—')}</strong> · gate ${esc(rec.ircMarginGate ?? '—')}<br/>` +
+          `Adaptive S<sub>IRC</sub> ${esc(rec.meanAdaptiveSIRC != null ? Number(rec.meanAdaptiveSIRC).toFixed(3) : '—')} · wasteful ${esc(rec.meanWastefulSIRC != null ? Number(rec.meanWastefulSIRC).toFixed(3) : '—')}<br/>` +
+          `integrated_panel_run <code>${esc(String(rec.integrated_panel_run))}</code> · ${esc(rec.path || '—')}`;
+      }
+      const panelsEl = document.getElementById('cl-panels');
+      if (panelsEl) {
+        panelsEl.innerHTML = (rec.panelSlots || [])
+          .map(
+            (p) =>
+              `<li><span class="hl-badge">${esc(p.slotId)}</span> margin ${esc(p.margin != null ? Number(p.margin).toFixed(3) : '—')} · ${esc(p.adaptive)}</li>`,
+          )
+          .join('') || '<li>No panel receipt loaded.</li>';
+      }
+    }
     function renderDigitalLab(dl) {
       if (!dl) {
         document.getElementById('dl-suite').textContent = 'Computational Lab unavailable.';
@@ -253,6 +311,7 @@
             `<li><span class="hl-badge">lab: digital</span><span class="hl-badge">${esc(i.evidence_level)}</span><span class="hl-badge">${esc(i.novelty_status)}</span> <strong>${esc(i.investigation_id)}</strong><div>${esc(i.question)}</div></li>`,
         )
         .join('') || '<li>No lab:digital rows yet.</li>';
+      renderConvergenceLayer(dl.convergenceLayerTest);
     }
     function selectedIds() {
       return [...document.querySelectorAll('input[name="prospect"]:checked')].map((el) => el.value);
@@ -525,6 +584,32 @@
           btn.disabled = false;
         });
     });
+    const btnConvergence = document.getElementById('btn-convergence');
+    if (btnConvergence) {
+      btnConvergence.addEventListener('click', () => {
+        btnConvergence.disabled = true;
+        setClMsg('Running Convergence Layer Test (IRC-FHG fixtures)…', null);
+        fetch('/api/hero-leo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'convergence-layer-run' }),
+        })
+          .then(parseJsonResponse)
+          .then((j) => {
+            const m = j.scoreReceipt?.meanIrcMargin;
+            setClMsg(
+              `Convergence Layer green — ${j.scoreReceipt?.n_pass}/${j.scoreReceipt?.n_total}; mean IRC margin=${m != null ? Number(m).toFixed(3) : '—'}`,
+              j.ok,
+            );
+            if (j.dashboard) renderDashboard(j.dashboard);
+            else return refresh();
+          })
+          .catch((e) => setClMsg(String(e.message || e), false))
+          .finally(() => {
+            btnConvergence.disabled = false;
+          });
+      });
+    }
     refresh().catch((e) => {
       document.getElementById('state').textContent = 'OFFLINE';
       document.getElementById('action').innerHTML = `<span class="hl-err">${esc(e.message || e)}</span>`;

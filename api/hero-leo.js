@@ -42,9 +42,8 @@ module.exports = async function handler(req, res) {
 
   try {
     const { HERO_LEO_SCHEMA, hydrateHeroLeoFromBlob } = await import('../lib/hero-leo.mjs');
-    const { buildDashboardWithDigitalLab, buildDigitalLab, runDigitalLabSuite } = await import(
-      '../lib/hero-leo-digital-lab.mjs'
-    );
+    const { buildDashboardWithDigitalLab, buildDigitalLab, runDigitalLabSuite, runConvergenceLayerSuite } =
+      await import('../lib/hero-leo-digital-lab.mjs');
 
     // Always hydrate overlays before reads so production Blob state is visible.
     await hydrateHeroLeoFromBlob();
@@ -153,10 +152,31 @@ module.exports = async function handler(req, res) {
         }
       }
 
+      if (action === 'convergence-layer-run' || action === 'convergence-layer') {
+        try {
+          const out = await withHeroLeoPersist(async () => {
+            const result = runConvergenceLayerSuite();
+            return {
+              ...result,
+              dashboard: buildDashboardWithDigitalLab(),
+              digitalLab: buildDigitalLab(),
+            };
+          });
+          return res.status(out.ok ? 200 : 502).json(out);
+        } catch (err) {
+          return res.status(503).json({
+            ok: false,
+            error: 'convergence_layer_run_failed',
+            message: err?.message || String(err),
+            hint: 'Filesystem may be read-only. Run: npm run hero-leo:convergence-layer',
+          });
+        }
+      }
+
       return res.status(400).json({
         ok: false,
         error: 'unknown_action',
-        hint: "Use action: 'scout' | 'complete' | 'suite-run'",
+        hint: "Use action: 'scout' | 'complete' | 'suite-run' | 'convergence-layer-run'",
       });
     }
 

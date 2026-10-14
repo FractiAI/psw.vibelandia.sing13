@@ -2,7 +2,7 @@
 
 **Independent Research Convergence in AI**
 
-**Literature synthesis + pre-registered integrated FHG convergence test (not yet executed)**
+**Literature synthesis + integrated FHG convergence test (Layer B executed in Hero Leo Computational Lab · fixtures)**
 
 **Research lead:** Pru “El Taíno” Méndez · **Research program:** FractiAI  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -22,13 +22,13 @@
 |------|--------|
 | **Soft Story / catalog naming** | Yes — FHG triad as **post-hoc scoring families** and expedition vocabulary, not as training objectives |
 | **Literature synthesis (this shipment)** | Yes — structured scan of six independent 2025–2026 anchors through evidence cutoff; **not** PRISMA / exhaustive systematic review |
-| **Original unified FHG benchmark** | **Not run** — integrated battery is specified; no merged CI receipt at publication time |
+| **Original unified FHG benchmark** | **Computational lab fixtures run** — `research/synthobs-independent-research-convergence-fhg/data/empirical_report.json` · not external HyPER/TMAFC/AIDE² re-runs |
 | **Proof FractiAI adopted by external labs** | **Explicitly refused** — rhymes in papers ≠ endorsement of SING13 catalog |
 | **Universal law / finished physics** | **No** — not ENGINE_SHELF; not a claim that nature prefers a brand triad |
 | **Φ_EGS** | Design / nesting grammar in honesty rails only — never an instructed search target |
 | **Re-execution of cited benchmarks** | **No** — summaries reflect public claims; HyPER, TMAFC, Blend-ASC, GAGLE, etc. were not re-run inside this repo for this paper |
 
-**Key lock:** “All roads lead to FHG” is a **falsifiable hypothesis**, not a slogan. Today’s shipment is a map plus a protocol waiting on execution.
+**Key lock:** “All roads lead to FHG” is a **falsifiable hypothesis**, not a slogan. Layer B now has a **computational lab receipt** (blind fixture agents + post-hoc FHG subscores); it does **not** upgrade into external benchmark replication or ENGINE_SHELF.
 
 ---
 
@@ -36,7 +36,7 @@
 
 Different employers, benchmarks, and vocabularies still produce research that **rhymes** on three structural families: **multiscale / self-similar organization** (Fractal lane), **part–whole / local–global encoding with deliberate expansion and reduction** (Holographic lane), and **bounded adaptation inside a viable compute or reliability band** (Goldilocks lane). This Homeostasis Expedition application companion asks whether those rhymes are coincidence, shared priors, or something testable when systems are scored **after** discovery without FHG words in their objectives.
 
-**Method (two layers, not to be conflated).** Layer A is a literature synthesis centered on six independent anchors: fractal complexity of language and LLM outputs (Alabdulmohsin & Steiner, ICML 2025); component-level fractal consistency for reasoning (Luo et al., ICML 2026); holographic node embeddings (Bevilacqua et al., ICLR 2025); hypothesis-path expansion and reduction under budget (Qiu et al., HyPER, ICML 2026); optimal self-consistency scaling and dynamic sample allocation (Feng et al., ICML 2026); and recursive self-improvement of research agents under hidden evaluation (Srikanth et al., arXiv:2609.26457). Layer B is a **proposed** integrated FHG convergence test that merges measurement ideas from those threads into one blind, post-hoc scoreboard — **not executed** at publication time.
+**Method (two layers, not to be conflated).** Layer A is a literature synthesis centered on six independent anchors: fractal complexity of language and LLM outputs (Alabdulmohsin & Steiner, ICML 2025); component-level fractal consistency for reasoning (Luo et al., ICML 2026); holographic node embeddings (Bevilacqua et al., ICLR 2025); hypothesis-path expansion and reduction under budget (Qiu et al., HyPER, ICML 2026); optimal self-consistency scaling and dynamic sample allocation (Feng et al., ICML 2026); and recursive self-improvement of research agents under hidden evaluation (Srikanth et al., arXiv:2609.26457). Layer B is the **Convergence Layer Test**: an integrated FHG panel (P1–P6) executed in the **Hero Leo Computational Lab** as deterministic fixtures reusing blind agentic optimizers — post-hoc \(S_F, S_H, S_G\) subscores only; **not** a re-host of external benchmark code.
 
 **Findings (qualified).** The synthesis finds recurring but uneven structural rhymes: multiscale statistics beyond perplexity, component-wise agreement, expand–reduce control, Pareto bands on test-time compute, and harness-level self-improvement with held-out gates. **Publication timing:** all six anchors entered the public record within roughly eighteen months (ICLR / ICML 2025 through late-2026 preprint), with a **three-paper ICML 2026 cluster** on adaptive test-time reasoning — a descriptive acceleration signal, not a bibliometric proof (Section 8.1). Those rhymes do **not** yet validate a single unified FHG battery or prove a universal attractor.
 
@@ -326,7 +326,7 @@ Convergence requires elevated **overlap of property scores**, not identical outp
 
 ---
 
-## 10. Proposed integrated FHG convergence test (Layer B — not executed)
+## 10. Integrated FHG convergence test (Layer B — computational lab executed)
 
 ### 10.1 Design intent
 
@@ -345,7 +345,7 @@ Controls are **wasteful baselines**, not sycophancy prompts: fixed-sample self-c
 | P5 — Sample law | Feng et al. | Maximize accuracy under **fixed** total samples across dataset | \(S_F\): fitted SC scaling exponent; \(S_G\): waste vs Blend-ASC-style oracle |
 | P6 — Harness loop | Srikanth et al. | Maximize public benchmark score under edit budget | \(S_G\): hidden-holdout gate pass rate; \(S_H\): transfer to OOD panel slot |
 
-**Status:** protocol sketch only · **no** unified `npm run research:synthobs-independent-research-convergence-fhg` receipt at publication · **no** re-hosting of HyPER/TMAFC/AIDE² code inside this shipment.
+**Status (2026-10-14):** Convergence Layer Test executed in Hero Leo Computational Lab · `npm run research:synthobs-independent-research-convergence-fhg` · receipt `research/synthobs-independent-research-convergence-fhg/data/empirical_report.json` · cockpit [`/journey/hero-leo#convergence-layer`](https://www.ssvibelandiaquestfest24x365.com/journey/hero-leo#convergence-layer) · **no** re-hosting of HyPER/TMAFC/AIDE² code inside this shipment.
 
 ### 10.3 Pipeline shape (target)
 
@@ -432,7 +432,7 @@ Negative results should be published on the Homeostasis Expedition map **without
 
 ---
 
-## 13. Results at publication time (Layer A only)
+## 13. Results (Layer A synthesis + Layer B computational lab)
 
 ### 13.1 What was completed
 
@@ -440,17 +440,30 @@ Negative results should be published on the Homeostasis Expedition map **without
 - Explicit disagreement taxonomy (Section 9).
 - Integrated convergence test specification (Sections 10–12).
 - Magazine ship-blog feature prose aligned with this paper’s tier table.
+- **Layer B — Convergence Layer Test:** four-experiment suite (`E1` blind lock · `E2` integrated P1–P6 panel · `E3` adaptive-architecture diversity · `E4` vocabulary falsifier) with `integrated_panel_run: true` on fixtures.
+- JSON receipt: `research/synthobs-independent-research-convergence-fhg/data/empirical_report.json` (generated 2026-10-14; `all_pass: true` on committed receipt at amendment time).
+- Hero Leo Digital Lab wiring: `npm run hero-leo:convergence-layer` · POST `action: convergence-layer-run` on `/api/hero-leo`.
 
-### 13.2 What was not completed
+### 13.2 Layer B receipt summary (fixtures — qualified)
 
-- Single integrated FHG npm pipeline run.
-- JSON receipt under `research/synthobs-independent-research-convergence-fhg/` (suite **not yet scaffolded** at publication).
+| Metric | Value | Gate / note |
+|--------|-------|-------------|
+| Experiments passed | 4 / 4 | E1–E4 |
+| Mean post-hoc \(S_{\mathrm{IRC}}\) margin (adaptive − wasteful) | ≈ 0.118 | Pre-registered gate ≥ 0.10 (Section 11.2) |
+| Panel slots | 6 | P1–P6 anchor-inspired landscapes |
+| Unique adaptive agents across slots | 4 | E3 diversity among uniques |
+
+**Interpretation lock:** margins reflect **synthetic landscapes + blind agentic optimizers**, not LLM re-runs of cited papers. Mean margin above gate supports **continuing** the IRC-FHG program; it does **not** prove external labs converge on FHG or that φ-scoring replaces peer review.
+
+### 13.3 What was not completed
+
 - Re-execution of external benchmarks (HyPER, TMAFC, Blend-ASC, AIDE², HoloGNN, GAGLE analysis pipelines).
 - Multi-lab human replication of IRC-FHG claims.
+- Live multi-LLM cohort under the same blind protocol.
 
-### 13.3 Qualified synthesis conclusion
+### 13.4 Qualified synthesis conclusion
 
-Independent threads **do** rhyme often enough to motivate a unified blind experiment, but the rhyme is **neither universal nor metric-unified**. Until the integrated panel runs, the honest headline is **qualified convergence in the literature**, not proof that **all roads** terminate at FHG.
+Independent threads **do** rhyme often enough to motivate a unified blind experiment. Layer B fixtures **passed pre-registered computational gates** on 2026-10-14, but the rhyme remains **neither universal nor metric-unified** outside this lab. The honest headline stays **qualified convergence** — literature rhymes plus a **first integrated panel receipt**, not proof that **all roads** terminate at FHG in the wild.
 
 ---
 
@@ -482,20 +495,22 @@ IRC-FHG sits beside Chart & Compass, Reflective Portal, and Galactosphere papers
 
 ---
 
-## 16. Reproducibility and planned suite layout
+## 16. Reproducibility and suite layout
 
-| Item | Planned path / command | Status |
-|------|------------------------|--------|
+| Item | Path / command | Status |
+|------|----------------|--------|
 | Monorepo paper | `docs/SYNTHOBS_INDEPENDENT_RESEARCH_CONVERGENCE_FHG_2026-10.md` | **This file** |
-| Research suite | `research/synthobs-independent-research-convergence-fhg/` | **Not scaffolded** at publication |
-| Integrated run | `npm run research:synthobs-independent-research-convergence-fhg` | **Future** |
-| PRA Snap | `npm run audit:paper -- --id=synthobs-independent-research-convergence-fhg-2026-10` | Run after registry wiring |
+| Research suite | `research/synthobs-independent-research-convergence-fhg/` | **Scaffolded + run** |
+| Integrated run | `npm run research:synthobs-independent-research-convergence-fhg` | **Executed** (fixtures) |
+| Hero Leo lab run | `npm run hero-leo:convergence-layer` | **Available** |
+| Empirical receipt | `research/synthobs-independent-research-convergence-fhg/data/empirical_report.json` | **Committed** |
+| PRA Snap | `npm run audit:paper -- --id=synthobs-independent-research-convergence-fhg-2026-10` | Re-run after amendments |
 
-When the suite exists, it should:
+Suite obligations (met on fixtures):
 
-1. Encode forbidden-token scans for blind objectives.
-2. Emit `data/empirical_report.json` with panel-isolated FHG subscores.
-3. Write explicit `integrated_panel_run: false` until Phase 1 executes.
+1. Forbidden-token scans for blind objectives (`E1`, `E4`).
+2. `data/empirical_report.json` with panel-isolated FHG subscores and `integrated_panel_run: true`.
+3. Honesty string in receipt: not external benchmark replication · not ENGINE_SHELF.
 
 ---
 
@@ -505,7 +520,7 @@ The title question — **do different roads still meet at Fractal, Holographic, 
 
 **Today:** the honest answer is **qualified maybe**. The literature synthesis shows recurring structural rhymes across Alabdulmohsin & Steiner, Luo et al., Bevilacqua et al., Qiu et al., Feng et al., and Srikanth et al. — each measuring different objects, often with incompatible Goldilocks definitions.
 
-**Next:** execute the integrated FHG convergence test under pre-registered gates, report variance across panel slots, and treat wasteful baselines and vocabulary-injection cohorts as first-class falsifiers. Until that receipt exists, IRC-FHG remains a **falsifiable map and protocol**, not proof of a universal attractor and not evidence that external labs have adopted FractiAI catalog grammar.
+**Next:** extend Layer B from fixtures to panel tasks closer to anchor problem classes (still blind objectives), report variance across slots on harder landscapes, and treat wasteful baselines and vocabulary-injection cohorts as first-class falsifiers in live cohorts when resourced. The 2026-10-14 computational receipt is a **first integrated panel pass**, not proof of a universal attractor and not evidence that external labs have adopted FractiAI catalog grammar.
 
 → ∞^∞
 
@@ -530,7 +545,7 @@ This document was prepared by the **SynthOBS Autonomous Agent** operating in the
 
 **Literature integrity.** Anchor citations (items 1–6) are real, independently published or preprinted works linked by public URLs. Summaries reflect their stated claims at the evidence cutoff. This synthesis **does not** imply those authors endorse FHG catalog grammar, Infinite Octaves, or Homeostasis Expedition narrative framing.
 
-**Empirical integrity.** Layer B integrated results are **not reported** because the unified FHG panel has not been executed. No fabricated metrics, CI pass marks, or merged receipts appear in this paper.
+**Empirical integrity.** Layer B reports the **computational lab** Convergence Layer Test receipt (`research/synthobs-independent-research-convergence-fhg/data/empirical_report.json`) — fixture agents and post-hoc FHG subscores only. No fabricated external benchmark metrics, no implied CI pass marks on HyPER/TMAFC/AIDE², and no upgrade to ENGINE_SHELF.
 
 **Independence and blindness.** The proposed protocol forbids FHG vocabulary in blind objectives and treats wasteful baselines and vocabulary injection as **controls**, not success criteria.
 

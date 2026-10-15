@@ -1,48 +1,48 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "dateline": {
-    "ymd": "2026-10-14",
-    "weekday": "Wednesday",
+    "ymd": "2026-10-15",
+    "weekday": "Thursday",
     "month": "October",
-    "day": 14,
-    "label": "Wednesday, October 14",
-    "shortBoard": "Wednesday board · October 14 · Puerto Reno",
-    "newsLabel": "News of the day · Wednesday, October 14"
+    "day": 15,
+    "label": "Thursday, October 15",
+    "shortBoard": "Thursday board · October 15 · Puerto Reno",
+    "newsLabel": "News of the day · Thursday, October 15"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Wednesday board · October 14 · Puerto Reno",
-  "newsLabel": "News of the day · Wednesday, October 14",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/all-roads-independent-research-convergence\">When AI Labs Take Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks?</a>. Also new on the board: <a href=\"/ship-blog/computation-workhorse-science\">Should Computation Become the Primary Workhorse of Science?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Thursday board · October 15 · Puerto Reno",
+  "newsLabel": "News of the day · Thursday, October 15",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/geometry-host-dependent-relationship\">Does the Same Rule Draw Different Shapes When the Terrain Changes?</a>. Also new on the board: <a href=\"/ship-blog/phase-aware-consensus-calculus\">When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/all-roads-independent-research-convergence\">When AI Labs Take Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-geometry-host-dependent-relationship-2026-10",
+      "title": "Does the Same Rule Draw Different Shapes When the Terrain Changes?",
+      "href": "/ship-blog/geometry-host-dependent-relationship",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-geometry-host-dependent-relationship-2026-10",
+      "blurb": "GHDR-1 grid lab: fixed shortest-path objective, Host A route 28 vs Host B ~34.63 with barrier — host-dependent geometry demo; forest/ant recurrence and fractality not tested."
+    },
+    {
+      "id": "synthobs-phase-aware-consensus-calculus-2026-10",
+      "title": "When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak?",
+      "href": "/ship-blog/phase-aware-consensus-calculus",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-phase-aware-consensus-calculus-2026-10",
+      "blurb": "PAC-1 synthetic lab: 90° phase quadrature on preference trajectories, parabolic peak windows, and Monte Carlo fixtures — manuscript anchors report 61–91% median-error gains vs coarse counting (not live governance proof)."
+    },
     {
       "id": "synthobs-independent-research-convergence-fhg-2026-10",
       "title": "When AI Labs Take Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks?",
       "href": "/ship-blog/all-roads-independent-research-convergence",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-independent-research-convergence-fhg-2026-10",
       "blurb": "Six independent 2025–2026 anchors rhyme on multiscale structure, expand–reduce encoding, and adaptive compute bands — literature synthesis plus Convergence Layer Test (Hero Leo lab fixtures: 4/4 pass, mean IRC margin ≈ 0.118; not external benchmark re-runs)."
-    },
-    {
-      "id": "synthobs-computation-workhorse-science-2026-10",
-      "title": "Should Computation Become the Primary Workhorse of Science?",
-      "href": "/ship-blog/computation-workhorse-science",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-computation-workhorse-science-2026-10",
-      "blurb": "CW-2 synthetic lab (200 reps, seed 20261013): four-condition researcher-year factorial with full-cost Appendix B means — model illustration, not real-world superiority proof."
-    },
-    {
-      "id": "synthobs-organizational-discovery-homeostasis-2026-10",
-      "title": "When Teams Change, Does Cross-Node Discovery Beat Local-Only Charts on Held-Out Coordination?",
-      "href": "/ship-blog/organizational-discovery-homeostasis",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-organizational-discovery-homeostasis-2026-10",
-      "blurb": "Homeostasis Expedition ODH-1: 12-node synthetic lab — cross-node organizational discovery cut allocation error ~7.33% in a stable environment, but a fixed org chart turned brittle (~6.83% worse) after structural shift until retrained."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-13-synthobs-computation-workhorse-science-2026-10",
-    "title": "Should Computation Become the Primary Workhorse of Science?",
-    "href": "/ship-blog/computation-workhorse-science"
+    "id": "daily-2026-10-14-synthobs-independent-research-convergence-fhg-2026-10",
+    "title": "When AI Labs Take Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks?",
+    "href": "/ship-blog/all-roads-independent-research-convergence"
   },
-  "generatedAt": "2026-10-14T19:18:00.465Z"
+  "generatedAt": "2026-10-15T19:03:47.996Z"
 }

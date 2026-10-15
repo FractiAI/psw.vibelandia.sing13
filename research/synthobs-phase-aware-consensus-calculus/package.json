@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-phase-aware-consensus-calculus",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Phase-Aware Consensus Calculus — PAC-1 phase quadrature & parabolic viability lab · ENGINE_SHELF #47",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-phase-aware-consensus-calculus.git"
+  },
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

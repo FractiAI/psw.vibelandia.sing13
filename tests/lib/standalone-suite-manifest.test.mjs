@@ -55,6 +55,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-omniversal-time-crystal-engine',
       'synthobs-organizational-discovery-homeostasis',
       'synthobs-pdvsa-gateway-ops-mockup',
+      'synthobs-phase-aware-consensus-calculus',
       'synthobs-prime-indexed-volumetric-storage',
       'synthobs-prime-vault-alphafold-race',
       'synthobs-protein-folding-prime-container',

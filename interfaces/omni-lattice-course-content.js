@@ -342,13 +342,14 @@ window.OMNI_LATTICE_COURSE = {
           "rsi-drift",
           "erft",
           "all-roads-fhg-convergence",
+          "phase-aware-consensus-calculus",
           "invisible-frontier",
           "how-to-continue"
         ],
         "homework": {
           "heading": "Homework: Week 6",
           "course": {
-            "label": "Online course · lessons 6.1–6.8 (Building, belonging & next doors)",
+            "label": "Online course · lessons 6.1–6.9 (Building, belonging & next doors)",
             "href": "#ch/protein-storage"
           },
           "textbook": {
@@ -407,6 +408,10 @@ window.OMNI_LATTICE_COURSE = {
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-independent-research-convergence-fhg-2026-10",
               "label": "All Roads · Independent Research Convergence"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-phase-aware-consensus-calculus-2026-10",
+              "label": "Phase-Aware Consensus Calculus"
             },
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
@@ -1572,6 +1577,40 @@ window.OMNI_LATTICE_COURSE = {
           "label": "All Roads · Independent Research Convergence"
         }
       ],
+      "next": "phase-aware-consensus-calculus"
+    },
+    {
+      "id": "phase-aware-consensus-calculus",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Homework: Week 6",
+      "partId": "week6",
+      "number": "6.7",
+      "title": "Phase-Aware Consensus · PAC-1",
+      "minutes": 16,
+      "tagline": "90° phase lead · parabolic windows · not live governance proof",
+      "goals": [
+        "Separate harmonic phase quadrature (calculus identity) from Monte Carlo claims on synthetic peaks.",
+        "Explain why parabolic vertex fits can beat coarse counting under noise — and when asymmetry breaks wide windows.",
+        "Place ENGINE_SHELF #47 on the Homeostasis Expedition trail without upgrading catalog grammar into voting law."
+      ],
+      "body": "<p>Committee votes, merge queues, and family logistics all hit the same wall: the formal count updates slower than the room’s momentum. <strong>Phase-Aware Consensus Calculus</strong> files a homeostatic alternative in synthetic form — treat preference strength as a continuous signal, read its derivative for phase-lead cues, and fit a local parabola near suspected peaks instead of trusting the noisiest bin on a coarse grid.</p>\n<p>Lesson drill: open PAC-1’s honesty table first. The paper executes Taylor windows, a 90° quadrature identity check, and Monte Carlo trials (N=1000 per noise level). It does <em>not</em> validate live DAOs, school boards, or blockchain BFT. Φ_EGS scales parabolic window radii across tiers as <strong>catalog grammar</strong> — the same tier discipline you practiced since Week 1.</p>\n<div class=\"worked-example\">\n<p><strong>Window test.</strong> When a preference curve is nearly symmetric near its peak, a small parabolic window tracks the maximum tightly. When the curve skews (Lab 3’s tanh-modulated Gaussian), widening the window smears the vertex — the paper’s mixed result. Your filing sentence: “Method helps under smooth local geometry; asymmetry demands narrower windows — not louder marketing.”</p>\n</div>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “90° lead proves we should auto-lock corporate votes when velocity crosses zero.”</p>\n<p><strong>The correction:</strong> Quadrature is an identity for harmonic models; Monte Carlo gains are synthetic; governance law and adversarial voting sit outside PAC-1’s executed tier.</p>\n</div>",
+      "check": [
+        {
+          "q": "What is the strongest honest claim in PAC-1?",
+          "a": "On synthetic smooth peaks, parabolic vertex estimation beats coarse peak counting on structural replay gates; manuscript medians are anchors, not universal field measurements."
+        },
+        {
+          "q": "What does Φ_EGS do in this paper?",
+          "a": "Proposes multi-tier parabolic window scaling in catalog grammar — not a measured org-chart constant."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-phase-aware-consensus-calculus-2026-10",
+          "label": "Phase-Aware Consensus Calculus"
+        }
+      ],
       "next": "invisible-frontier"
     },
     {
@@ -1580,7 +1619,7 @@ window.OMNI_LATTICE_COURSE = {
       "week": 6,
       "part": "Homework: Week 6",
       "partId": "week6",
-      "number": "6.7",
+      "number": "6.8",
       "title": "Invisible Frontier · Second chart",
       "minutes": 15,
       "tagline": "Goldilocks beside linear AI scale anxiety",
@@ -1618,7 +1657,7 @@ window.OMNI_LATTICE_COURSE = {
       "week": 6,
       "part": "Homework: Week 6",
       "partId": "week6",
-      "number": "6.8",
+      "number": "6.9",
       "title": "How to keep learning",
       "minutes": 12,
       "tagline": "Doors · papers · Lattice · Fair Exchange",

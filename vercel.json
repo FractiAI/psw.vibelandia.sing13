@@ -1565,6 +1565,14 @@
       "destination": "/interfaces/blog-computation-workhorse-science-2026-10.html"
     },
     {
+      "source": "/ship-blog/phase-aware-consensus-calculus",
+      "destination": "/interfaces/blog-phase-aware-consensus-calculus-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/phase-aware-consensus-calculus/",
+      "destination": "/interfaces/blog-phase-aware-consensus-calculus-2026-10.html"
+    },
+    {
       "source": "/ship-blog/galactosphere-hypothesis",
       "destination": "/interfaces/blog-galactosphere-hypothesis-2026-10.html"
     },

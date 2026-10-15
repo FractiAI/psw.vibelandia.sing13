@@ -65,6 +65,18 @@
       ]
     },
     {
+      "id": "synthobs-phase-aware-consensus-calculus",
+      "path": "research/synthobs-phase-aware-consensus-calculus",
+      "github": "https://github.com/FractiAI/synthobs-phase-aware-consensus-calculus",
+      "description": "Phase-Aware Consensus Calculus — PAC-1 phase quadrature · parabolic viability · Monte Carlo lab · ENGINE_SHELF #47 (not live governance proof)",
+      "paperIds": [
+        "synthobs-phase-aware-consensus-calculus-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_PHASE_AWARE_CONSENSUS_CALCULUS_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-chart-compass-holographic-goldilocks-si",
       "path": "research/synthobs-chart-compass-holographic-goldilocks-si",
       "github": "https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si",

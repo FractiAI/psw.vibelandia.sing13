@@ -1,0 +1,226 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "docId": "WP-SYNTHOBS-PHASE-AWARE-CONSENSUS-CALCULUS-EGS-2026-10-15",
+  "registryId": "synthobs-phase-aware-consensus-calculus-2026-10",
+  "title": "Phase-Aware Consensus Calculus — PAC-1 Monte Carlo & Parabolic Viability Lab (Computational Fixtures)",
+  "generatedAt": "2026-10-15T16:40:32.216Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "PAC-1 Monte Carlo and Taylor-window fixtures on synthetic preference trajectories — not live DAO/blockchain consensus validation, not HR or board governance field proof, not universal physical law. Φ_EGS is catalog nesting grammar only.",
+  "results": {
+    "all_pass": true,
+    "n_pass": 7,
+    "n_total": 7,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Scale-invariant nesting grammar for multi-tier parabolic windows.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_honesty_locks",
+        "title": "Not blockchain proof · not live governance · not universal law",
+        "NOT_BLOCKCHAIN_CONSENSUS_PROOF": true,
+        "NOT_LIVE_GOVERNANCE_VALIDATION": true,
+        "NOT_UNIVERSAL_LAW": true,
+        "SOFT_STORY_EGS_GRAMMAR": true,
+        "pass": true,
+        "interpretation": "PAC-1 operates on synthetic preference trajectories only.",
+        "honesty": "Layer lock — not DAO or board field validation."
+      },
+      {
+        "id": "E3_lab_scaffold",
+        "title": "PAC-1 Monte Carlo scaffold",
+        "N_MONTE_CARLO": 1000,
+        "DIGITAL_SEED": 20261015,
+        "pass": true,
+        "interpretation": "1000 trials per noise level · deterministic seed.",
+        "honesty": "Simulation parameters — not preregistered external governance data."
+      },
+      {
+        "id": "E4_homeostasis_expedition",
+        "title": "Homeostasis Expedition · ENGINE_SHELF #47",
+        "EXPEDITION": "Homeostasis Expedition",
+        "ENGINE_SHELF_SLOT": 47,
+        "pass": true,
+        "interpretation": "Phase-space homeostasis for multi-agent preference alignment.",
+        "honesty": "Engine companion — not CMOS silicon pin."
+      },
+      {
+        "id": "E5_paper_locks",
+        "title": "Monorepo paper · Document ID · operator line",
+        "docPath": "/workspace/docs/SYNTHOBS_PHASE_AWARE_CONSENSUS_CALCULUS_EGS_2026-10.md",
+        "DOC_ID": "WP-SYNTHOBS-PHASE-AWARE-CONSENSUS-CALCULUS-EGS-2026-10-15",
+        "REGISTRY_ID": "synthobs-phase-aware-consensus-calculus-2026-10",
+        "pass": true,
+        "interpretation": "Whitepaper registered with PRA structural gates.",
+        "honesty": "File presence in monorepo — standalone copy may lag until publish."
+      },
+      {
+        "id": "E6_ship_blog_locks",
+        "title": "Ship blog · slug · honesty rail",
+        "SHIP_BLOG_FILE": "blog-phase-aware-consensus-calculus-2026-10.html",
+        "SHIP_BLOG_SLUG": "phase-aware-consensus-calculus",
+        "pass": true,
+        "interpretation": "QUESTFEST magazine feature with end honesty rail.",
+        "honesty": "HTML corpus — journalism CI enforces voice."
+      },
+      {
+        "id": "E7_computational_battery",
+        "title": "PAC-1 computational lab battery",
+        "battery": {
+          "quadrature": {
+            "x": 0.314373220272909,
+            "xDot": -1.234089307325105,
+            "xDotFromLead": -1.2340893073251051,
+            "absError": 2.220446049250313e-16,
+            "pass": true
+          },
+          "lab1": {
+            "rows": [
+              {
+                "radius": 0.1,
+                "targetError": 0.0000042,
+                "measuredError": 0.000004165278025713981,
+                "pass": true
+              },
+              {
+                "radius": 0.2,
+                "targetError": 0.0000666,
+                "measuredError": 0.00006657784124164401,
+                "pass": true
+              },
+              {
+                "radius": 0.5,
+                "targetError": 0.00258,
+                "measuredError": 0.0025825618903727587,
+                "pass": true
+              },
+              {
+                "radius": 1,
+                "targetError": 0.0403,
+                "measuredError": 0.040302305868139765,
+                "pass": true
+              }
+            ],
+            "pass": true
+          },
+          "lab2": {
+            "rows": [
+              {
+                "sigma": 0.02,
+                "manuscriptAnchors": {
+                  "raw": 0.053,
+                  "fit": 0.0047,
+                  "improvementPct": 91.1
+                },
+                "medianRawError": 0.009999386750161557,
+                "medianFitError": 0.00009756481890205171,
+                "measuredImprovementPct": 99.02429197570065,
+                "pass": true,
+                "honesty": "Manuscript medians are publication anchors; live medians depend on grid step and noise draw — structural gate is fit beats raw with large margin."
+              },
+              {
+                "sigma": 0.05,
+                "manuscriptAnchors": {
+                  "raw": 0.077,
+                  "fit": 0.0127,
+                  "improvementPct": 83.5
+                },
+                "medianRawError": 0.018739774707704812,
+                "medianFitError": 0.0004435958205464968,
+                "measuredImprovementPct": 97.63286470907191,
+                "pass": true,
+                "honesty": "Manuscript medians are publication anchors; live medians depend on grid step and noise draw — structural gate is fit beats raw with large margin."
+              },
+              {
+                "sigma": 0.1,
+                "manuscriptAnchors": {
+                  "raw": 0.123,
+                  "fit": 0.0288,
+                  "improvementPct": 76.6
+                },
+                "medianRawError": 0.027556367002427605,
+                "medianFitError": 0.0017466269710090798,
+                "measuredImprovementPct": 93.66162102988682,
+                "pass": true,
+                "honesty": "Manuscript medians are publication anchors; live medians depend on grid step and noise draw — structural gate is fit beats raw with large margin."
+              },
+              {
+                "sigma": 0.2,
+                "manuscriptAnchors": {
+                  "raw": 0.163,
+                  "fit": 0.0634,
+                  "improvementPct": 61.1
+                },
+                "medianRawError": 0.05562238267064101,
+                "medianFitError": 0.008369504345397004,
+                "measuredImprovementPct": 84.95299204466721,
+                "pass": true,
+                "honesty": "Manuscript medians are publication anchors; live medians depend on grid step and noise draw — structural gate is fit beats raw with large margin."
+              }
+            ],
+            "nTrials": 1000,
+            "pass": true
+          },
+          "lab3": {
+            "rows": [
+              {
+                "windowRadius": 0.1,
+                "estimatedOptimum": 0.2415479549651897,
+                "absoluteError": 0.00004795496518969489,
+                "targetOptimum": 0.2415,
+                "pass": true
+              },
+              {
+                "windowRadius": 0.2,
+                "estimatedOptimum": 0.24137495705557244,
+                "absoluteError": 0.0001250429444275558,
+                "targetOptimum": 0.2414,
+                "pass": true
+              },
+              {
+                "windowRadius": 0.4,
+                "estimatedOptimum": 0.2395417960981563,
+                "absoluteError": 0.0019582039018437025,
+                "targetOptimum": 0.2396,
+                "pass": true
+              },
+              {
+                "windowRadius": 0.7,
+                "estimatedOptimum": 0.23045338446069147,
+                "absoluteError": 0.011046615539308524,
+                "targetOptimum": 0.2307,
+                "pass": true
+              },
+              {
+                "windowRadius": 1,
+                "estimatedOptimum": 0.21704185885467533,
+                "absoluteError": 0.024458141145324658,
+                "targetOptimum": 0.2174,
+                "pass": true
+              }
+            ],
+            "trueMaximum": 0.2415,
+            "pass": true
+          },
+          "egsTier": {
+            "PHI_EGS": 1.618033988749895,
+            "microWindow": 0.5,
+            "macroWindow": 0.8090169943749475,
+            "ratio": 1.618033988749895,
+            "pass": true,
+            "honesty": "Catalog scale grammar — not measured org chart data."
+          }
+        },
+        "pass": true,
+        "interpretation": "90° quadrature identity · Taylor table · Monte Carlo structural gates · asymmetric windows · Φ tier demo.",
+        "honesty": "Lab 2 manuscript medians are anchors; live medians are simulation-parameter dependent."
+      }
+    ]
+  }
+}

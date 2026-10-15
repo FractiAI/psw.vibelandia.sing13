@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak? · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="Phase-Aware Consensus Calculus PAC-1: harmonic phase quadrature, parabolic peak windows, and Monte Carlo fixtures for noisy preference localization — synthetic lab, not live governance proof." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/phase-aware-consensus-calculus" />
+  <meta property="og:title" content="When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak?" />
+  <meta property="og:description" content="PAC-1 compares coarse peak counting to local parabolic fits under noise; manuscript anchors report 61–91% median-error improvement on structural replay gates." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/journey/homeostasis-expedition">Homeostasis Expedition</a>
+      <a href="/whitepaper/phase-aware-consensus-calculus">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Research note · Homeostasis Expedition · Phase-aware consensus</p>
+      <h1>When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak?</h1>
+      <p class="dateline"><strong>FractiAI Research</strong> — October 15, 2026</p>
+    </header>
+
+    <p class="lead">Parent-teacher association meetings, union contract votes, and open-source merge queues share an awkward rhythm: everyone watches the headcount creep toward a threshold while the room’s mood has already turned. Kids’ pickup schedules and rent due dates do not wait for the formal roll call to finish. Traditional consensus tooling—quorum rules, static percentages, discrete alignment rounds—counts where the coalition <em>was</em> at the last snapshot. This paper asks a narrower, falsifiable question in a synthetic lab: if preference strength moves like a smooth signal over time, can the <em>velocity</em> of that signal—its phase-lead relationship to the level—flag peak viability before coarse counting locks a decision? Phase-Aware Consensus Calculus (PAC-1) is the Homeostasis Expedition’s computational answer: differential phase quadrature plus local parabolic windows, replayed under noise with honest bounds on what was and was not measured in the wild.</p>
+
+    <h2>Computational lab experiments and findings (plain)</h2>
+    <p>Experiment <strong>PAC-1</strong> bundles four fixtures. First, a numeric identity check: for a harmonic preference trajectory, the first derivative leads the level by exactly ninety degrees—the same quadrature fact control engineers use when separating position from momentum. Second, a Taylor table on a smooth cosine viability curve shows parabolic approximations holding sub-mill error within small windows (for example about 0.0000042 absolute error at radius 0.1 in the manuscript record). Third, a Monte Carlo battery with one thousand trials per noise level compares <strong>coarse peak counting</strong> on a wide grid to <strong>local parabolic vertex estimation</strong> on a finer grid with a tight fit window. Manuscript anchors report median localization errors dropping from about 0.053 to about 0.0047 at σ=0.02—a quoted ninety-one percent improvement—while the live pipeline enforces structural gates (fit beats raw with a large margin) because absolute medians move with grid step and draw parameters. Fourth, an asymmetric preference curve tests window size: narrow windows track a skewed peak faithfully; wide windows smear the estimate, which is why the paper pairs parabolic calculus with Φ_EGS-scaled window grammar as catalog guidance, not as measured corporate policy.</p>
+    <p>None of these runs touched a live DAO, a school board ballot, or a blockchain validator set. They are preference trajectories drawn in code, seeded at 20261015, documented in <code>empirical_report.json</code>, and pinned as Infinite Octaves engine companion <strong>#47</strong> on the Homeostasis Expedition trail after organizational discovery and computation workhorse companions.</p>
+
+    <h2>The problem: thresholds that ignore momentum</h2>
+    <p>Static thresholds treat each sample as if history stopped. In high-variance environments—a slack channel poll during a product launch, a neighborhood association vote during a storm evacuation—raw counts jitter near the viability line. Small noise can flip allocation weight, invite tactical delays, or trigger premature “we have quorum” announcements that age badly an hour later. The calculus move in this paper is not to abolish counting; it is to add a homeostatic layer that reads trajectory and curvature where counting alone sees only points.</p>
+    <p>Homeostasis here means operational regulation: predict where a coalition stabilizes, bound error near peaks, and avoid overshoot when alliances realign. That is the same expedition vocabulary used in organizational discovery (cross-node coupling) and computation workhorse economics (pipeline design), but PAC-1 focuses on the micro-dynamics of preference signals rather than RMSE on twelve-node factories or researcher-year spreadsheets.</p>
+
+    <h2>Hypothesis: phase lead plus parabolic windows</h2>
+    <p>The research stack tests linked expectations on synthetic data. When preferences follow smooth harmonic structure, velocity should lead level by ninety degrees, giving monitors a zero-crossing cue near peak viability before the peak appears in discrete samples. When viability is smooth near a local maximum, a parabolic fit inside a constrained window should beat naive max-bin counting under additive noise. When curves skew—asymmetric tanh-modulated Gaussians in Lab 3—window radius must shrink; Φ_EGS multiplies micro windows to propose macro tiers in architectural documents only. Hero’s Return to Source appears again as audit discipline: state the signal model, the window, the seed, and what remained outside the simulation.</p>
+
+    <h2>Results with qualifications</h2>
+    <p>The headline is intentionally split. On structure, PAC-1 consistently finds parabolic vertex estimates beating coarse peaks across σ levels in replay, with improvement percentages often in the sixty-to-ninety band quoted in the manuscript table. On absolute numbers, medians depend on how coarsely you sample the same underlying peak; the repository reports both live medians and manuscript anchors so readers can see the difference between <em>directional replication</em> and <em>digit-for-digit reproduction</em>. The harmonic proofs are identities, not empirical discoveries; the Monte Carlo portion is empirical only within the synthetic generative class chosen in code.</p>
+    <p>What PAC-1 does not show: Byzantine fault tolerance, legal enforceability of automated locks, or immunity to strategic voting. Adversaries who feed discontinuous jumps can break smooth-phase assumptions quickly—that limitation is feature, not footnote, for anyone tempted to wire this into production governance without field study.</p>
+
+    <h2>Framework value and invitation</h2>
+    <p>For engineers building agent swarms and human-in-the-loop routers, PAC-1 suggests a checklist: track derivatives where signals are smooth, fit parabolic windows locally, scale windows across tiers with explicit catalog grammar, and keep raw counts as a sanity cross-check rather than the only sensor. For researchers, the suite offers a compact replay harness with public constants and a standalone repository mirror. For anyone coordinating real people—paychecks, leases, school boards—the useful export is conceptual: watch momentum near thresholds, not only the threshold line itself.</p>
+    <p>Read the full paper for proofs, tier tables, multi-tier diagrams, and expedition placement. Regenerate fixtures from the suite folder or standalone repo. Refute or extend by changing generative models, adversarial noise, or live telemetry—with ethics review if humans are involved.</p>
+
+    <p class="honesty"><strong>Honesty:</strong> PAC-1 synthetic preference trajectories with Monte Carlo and Taylor fixtures — not blockchain BFT proof, not live DAO or board governance validation, not universal physical law. Manuscript Lab 2 medians are publication anchors; live medians are simulation-parameter dependent. Φ_EGS is catalog nesting grammar only. Document <code>WP-SYNTHOBS-PHASE-AWARE-CONSENSUS-CALCULUS-EGS-2026-10-15</code> · registry <code>synthobs-phase-aware-consensus-calculus-2026-10</code> · ENGINE_SHELF #47 · Homeostasis Expedition. Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox.</p>
+
+    <p class="fair-exchange">Fair Exchange: value given · value received · mistakes corrected. This note invites independent PAC-1 replays and field studies it does not substitute for.</p>
+
+    <div class="cta-row">
+      <a class="cta" href="/whitepaper/phase-aware-consensus-calculus">Full paper</a>
+      <a class="cta" href="/journey/homeostasis-expedition">Expedition journey</a>
+      <a class="cta" href="https://github.com/FractiAI/synthobs-phase-aware-consensus-calculus">Standalone suite</a>
+    </div>
+    <footer class="foot">
+      Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · FractiAI Research · NSPFRNP · → ∞^∞
+    </footer>
+  </article>
+</body>
+</html>

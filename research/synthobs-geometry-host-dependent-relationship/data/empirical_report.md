@@ -1,0 +1,220 @@
+# Geometry as Host-Dependent Relationship — GHDR-1 Shortest-Path Host Demonstration (Computational Fixtures)
+
+**Document ID:** `WP-SYNTHOBS-GEOMETRY-HOST-DEPENDENT-RELATIONSHIP-EGS-2026-10-15`
+**Registry ID:** `synthobs-geometry-host-dependent-relationship-2026-10`
+**Generated:** 2026-10-15T18:17:58.995Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 8 / 8 |
+| Φ_EGS | 1.618033988749895 |
+
+## Experiments
+
+### E1_phi_egs — Φ_EGS fixture
+
+- **Pass:** `true`
+- **Interpretation:** Catalog nesting grammar for multiscale mapping proposals.
+- **Honesty:** Not a replacement for ℏ, c, or G.
+
+```json
+{
+  "id": "E1_phi_egs",
+  "title": "Φ_EGS fixture",
+  "PHI_EGS": 1.618033988749895,
+  "expected": 1.618033988749895,
+  "pass": true,
+  "interpretation": "Catalog nesting grammar for multiscale mapping proposals.",
+  "honesty": "Not a replacement for ℏ, c, or G."
+}
+```
+
+### E2_honesty_locks — Not natural data · not fractality proof · not cross-domain recurrence proof
+
+- **Pass:** `true`
+- **Interpretation:** GHDR-1 is synthetic path geometry only.
+- **Honesty:** Forest/ant colony comparison remains Stage C — not executed here.
+
+```json
+{
+  "id": "E2_honesty_locks",
+  "title": "Not natural data · not fractality proof · not cross-domain recurrence proof",
+  "NOT_NATURAL_SYSTEM_DATA": true,
+  "NOT_FRACTALITY_PROOF": true,
+  "NOT_CROSS_DOMAIN_RECURRENCE_PROOF": true,
+  "NOT_UNIVERSAL_LAW": true,
+  "SOFT_STORY_EGS_GRAMMAR": true,
+  "pass": true,
+  "interpretation": "GHDR-1 is synthetic path geometry only.",
+  "honesty": "Forest/ant colony comparison remains Stage C — not executed here."
+}
+```
+
+### E3_lab_scaffold — GHDR-1 grid scaffold · seed lock
+
+- **Pass:** `true`
+- **Interpretation:** Deterministic host A/B replay.
+- **Honesty:** Not preregistered ecological field study.
+
+```json
+{
+  "id": "E3_lab_scaffold",
+  "title": "GHDR-1 grid scaffold · seed lock",
+  "DIGITAL_SEED": 20261015,
+  "pass": true,
+  "interpretation": "Deterministic host A/B replay.",
+  "honesty": "Not preregistered ecological field study."
+}
+```
+
+### E4_homeostasis_expedition — Homeostasis Expedition · ENGINE_SHELF #48
+
+- **Pass:** `true`
+- **Interpretation:** Host-dependent relational geometry research program.
+- **Honesty:** Engine companion — not CMOS silicon pin.
+
+```json
+{
+  "id": "E4_homeostasis_expedition",
+  "title": "Homeostasis Expedition · ENGINE_SHELF #48",
+  "EXPEDITION": "Homeostasis Expedition",
+  "ENGINE_SHELF_SLOT": 48,
+  "pass": true,
+  "interpretation": "Host-dependent relational geometry research program.",
+  "honesty": "Engine companion — not CMOS silicon pin."
+}
+```
+
+### E5_paper_locks — Monorepo paper · Document ID · operator line
+
+- **Pass:** `true`
+- **Interpretation:** Whitepaper registered with PRA structural gates.
+- **Honesty:** Standalone copy syncs via publish script.
+
+```json
+{
+  "id": "E5_paper_locks",
+  "title": "Monorepo paper · Document ID · operator line",
+  "docPath": "/workspace/docs/SYNTHOBS_GEOMETRY_HOST_DEPENDENT_RELATIONSHIP_EGS_2026-10.md",
+  "DOC_ID": "WP-SYNTHOBS-GEOMETRY-HOST-DEPENDENT-RELATIONSHIP-EGS-2026-10-15",
+  "REGISTRY_ID": "synthobs-geometry-host-dependent-relationship-2026-10",
+  "pass": true,
+  "interpretation": "Whitepaper registered with PRA structural gates.",
+  "honesty": "Standalone copy syncs via publish script."
+}
+```
+
+### E6_ship_blog_locks — Ship blog · slug · honesty rail
+
+- **Pass:** `true`
+- **Interpretation:** QUESTFEST magazine feature with end honesty rail.
+- **Honesty:** Journalism CI enforces voice on HTML corpus.
+
+```json
+{
+  "id": "E6_ship_blog_locks",
+  "title": "Ship blog · slug · honesty rail",
+  "SHIP_BLOG_FILE": "blog-geometry-host-dependent-relationship-2026-10.html",
+  "SHIP_BLOG_SLUG": "geometry-host-dependent-relationship",
+  "pass": true,
+  "interpretation": "QUESTFEST magazine feature with end honesty rail.",
+  "honesty": "Journalism CI enforces voice on HTML corpus."
+}
+```
+
+### E7_computational_battery — GHDR-1 computational lab battery
+
+- **Pass:** `true`
+- **Interpretation:** §9.2 host A/B table replay · H1 host dependence · objective invariance · Φ tier demo.
+- **Honesty:** H2–H4 require Stage B–F datasets — not claimed as executed.
+
+```json
+{
+  "id": "E7_computational_battery",
+  "title": "GHDR-1 computational lab battery",
+  "battery": {
+    "hostComparison": {
+      "hostA": {
+        "straightLine": 28,
+        "routeLength": 28,
+        "ratio": 1,
+        "directionChanges": 0
+      },
+      "hostB": {
+        "straightLine": 28,
+        "routeLength": 34.627416997969526,
+        "ratio": 1.2366934642131973,
+        "directionChanges": 5
+      },
+      "targets": {
+        "straightLine": 28,
+        "routeA": 28,
+        "routeB": 34.63,
+        "ratioA": 1,
+        "ratioB": 1.237,
+        "turnsA": 0,
+        "turnsB": 5
+      },
+      "pass": true
+    },
+    "hostDependence": {
+      "hypothesis": "H1_host_dependence",
+      "deltaRouteLengthPct": 23.669346421319734,
+      "pass": true,
+      "honesty": "Synthetic grid only — not ecological field manipulation."
+    },
+    "objectiveInvariance": {
+      "moveSet": "8-neighbor unit/diagonal with corner-cut block",
+      "pass": true,
+      "interpretation": "Same optimization objective; host alters feasible set only."
+    },
+    "hostGradient": {
+      "routeLengths": [
+        28,
+        34.627416997969526
+      ],
+      "pass": true
+    },
+    "egsTier": {
+      "microRouteBaseline": 28,
+      "macroScaledByPhi": 45.30495168499706,
+      "pass": true,
+      "honesty": "Catalog scale grammar — not measured landscape data."
+    }
+  },
+  "pass": true,
+  "interpretation": "§9.2 host A/B table replay · H1 host dependence · objective invariance · Φ tier demo.",
+  "honesty": "H2–H4 require Stage B–F datasets — not claimed as executed."
+}
+```
+
+### E8_relational_fractality_criteria — Relational fractality criteria (framework lock · not validated here)
+
+- **Pass:** `true`
+- **Interpretation:** Paper §6 criteria exported as checklist for future confirmatory work.
+- **Honesty:** Checklist presence ≠ empirical validation.
+
+```json
+{
+  "id": "E8_relational_fractality_criteria",
+  "title": "Relational fractality criteria (framework lock · not validated here)",
+  "criteria": [
+    "defined_relationships",
+    "recurrence",
+    "explicit_mapping",
+    "measurable_preservation",
+    "nontrivial_null_models",
+    "host_dependence_characterized"
+  ],
+  "pass": true,
+  "interpretation": "Paper §6 criteria exported as checklist for future confirmatory work.",
+  "honesty": "Checklist presence ≠ empirical validation."
+}
+```
+
+## Honesty boundary
+
+GHDR-1 synthetic grid shortest-path demonstration — not forest/ant colony field data, not relational fractality proof, not universal geometry law. Φ_EGS is catalog nesting grammar only.

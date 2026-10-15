@@ -1573,6 +1573,14 @@
       "destination": "/interfaces/blog-phase-aware-consensus-calculus-2026-10.html"
     },
     {
+      "source": "/ship-blog/geometry-host-dependent-relationship",
+      "destination": "/interfaces/blog-geometry-host-dependent-relationship-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/geometry-host-dependent-relationship/",
+      "destination": "/interfaces/blog-geometry-host-dependent-relationship-2026-10.html"
+    },
+    {
       "source": "/ship-blog/galactosphere-hypothesis",
       "destination": "/interfaces/blog-galactosphere-hypothesis-2026-10.html"
     },

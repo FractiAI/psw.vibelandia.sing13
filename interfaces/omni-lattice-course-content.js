@@ -343,13 +343,14 @@ window.OMNI_LATTICE_COURSE = {
           "erft",
           "all-roads-fhg-convergence",
           "phase-aware-consensus-calculus",
+          "geometry-host-dependent-relationship",
           "invisible-frontier",
           "how-to-continue"
         ],
         "homework": {
           "heading": "Homework: Week 6",
           "course": {
-            "label": "Online course · lessons 6.1–6.9 (Building, belonging & next doors)",
+            "label": "Online course · lessons 6.1–6.10 (Building, belonging & next doors)",
             "href": "#ch/protein-storage"
           },
           "textbook": {
@@ -412,6 +413,10 @@ window.OMNI_LATTICE_COURSE = {
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-phase-aware-consensus-calculus-2026-10",
               "label": "Phase-Aware Consensus Calculus"
+            },
+            {
+              "href": "/interfaces/whitepaper-surface.html?id=synthobs-geometry-host-dependent-relationship-2026-10",
+              "label": "Geometry as Host-Dependent Relationship"
             },
             {
               "href": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
@@ -1611,6 +1616,36 @@ window.OMNI_LATTICE_COURSE = {
           "label": "Phase-Aware Consensus Calculus"
         }
       ],
+      "next": "geometry-host-dependent-relationship"
+    },
+    {
+      "id": "geometry-host-dependent-relationship",
+      "moduleId": "week6",
+      "week": 6,
+      "part": "Homework: Week 6",
+      "partId": "week6",
+      "number": "6.8",
+      "title": "Host-dependent geometry · GHDR-1",
+      "minutes": 16,
+      "tagline": "Same rule · different host · rhyme not yet proven",
+      "goals": [
+        "Read GHDR-1 as executed host-dependence (H1) without upgrading it to fractal law.",
+        "Separate host shaping from cross-host recurrence (H2–H4 still open).",
+        "Apply relational fractality criteria as a checklist, not a pass/fail on nature data."
+      ],
+      "body": "<p>Maps show straight lines; construction, snow, and closed gates show otherwise. The <strong>Geometry as Host-Dependent Relationship</strong> expedition files geometry as something systems manifest inside environments—constraints, resources, history—while keeping cross-host “rhyme” as a hypothesis that must survive prespecified maps and null models.</p>\n<p>GHDR-1 executes one narrow demo: identical shortest-path objective on a grid, open host vs barrier host. Route length moves from <strong>28</strong> to about <strong>34.63</strong> with five turns—host dependence without changing the optimizer. Forest vs ant colony comparisons, fractal dimension estimates, and predictive beats over baselines remain future stages.</p>\n<div class=\"misconception\">\n<p><strong>The mix-up:</strong> “A detour on a grid proves forests and ant colonies share a fractal equation.”</p>\n<p><strong>The correction:</strong> GHDR-1 supports only host-sensitive geometry under a fixed rule; cross-domain recurrence is H2 with null models—not illustrated here.</p>\n</div>",
+      "check": [
+        {
+          "q": "What did GHDR-1 actually execute?",
+          "a": "Synthetic grid shortest-path host comparison (H1-style), not natural-system fractality or forest–colony datasets."
+        }
+      ],
+      "papers": [
+        {
+          "href": "/interfaces/whitepaper-surface.html?id=synthobs-geometry-host-dependent-relationship-2026-10",
+          "label": "Geometry as Host-Dependent Relationship"
+        }
+      ],
       "next": "invisible-frontier"
     },
     {
@@ -1619,7 +1654,7 @@ window.OMNI_LATTICE_COURSE = {
       "week": 6,
       "part": "Homework: Week 6",
       "partId": "week6",
-      "number": "6.8",
+      "number": "6.9",
       "title": "Invisible Frontier · Second chart",
       "minutes": 15,
       "tagline": "Goldilocks beside linear AI scale anxiety",
@@ -1657,7 +1692,7 @@ window.OMNI_LATTICE_COURSE = {
       "week": 6,
       "part": "Homework: Week 6",
       "partId": "week6",
-      "number": "6.9",
+      "number": "6.10",
       "title": "How to keep learning",
       "minutes": 12,
       "tagline": "Doors · papers · Lattice · Fair Exchange",

@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-geometry-host-dependent-relationship",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Geometry as Host-Dependent Relationship — GHDR-1 grid path lab · ENGINE_SHELF #48",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-geometry-host-dependent-relationship.git"
+  },
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

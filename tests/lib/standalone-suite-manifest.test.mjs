@@ -32,6 +32,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-frontier-agent-convergence',
       'synthobs-galactosphere-hypothesis',
       'synthobs-generative-matrix-phi-egs',
+      'synthobs-geometry-host-dependent-relationship',
       'synthobs-goldilocks-net-zero-equivalence',
       'synthobs-grand-unified-metrological-overlap',
       'synthobs-holographic-homeostasis',

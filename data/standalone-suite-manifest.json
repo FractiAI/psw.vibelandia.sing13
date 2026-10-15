@@ -77,6 +77,18 @@
       ]
     },
     {
+      "id": "synthobs-geometry-host-dependent-relationship",
+      "path": "research/synthobs-geometry-host-dependent-relationship",
+      "github": "https://github.com/FractiAI/synthobs-geometry-host-dependent-relationship",
+      "description": "Geometry as Host-Dependent Relationship — GHDR-1 grid path lab · relational fractality framework · ENGINE_SHELF #48 (not natural fractality proof)",
+      "paperIds": [
+        "synthobs-geometry-host-dependent-relationship-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_GEOMETRY_HOST_DEPENDENT_RELATIONSHIP_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-chart-compass-holographic-goldilocks-si",
       "path": "research/synthobs-chart-compass-holographic-goldilocks-si",
       "github": "https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si",

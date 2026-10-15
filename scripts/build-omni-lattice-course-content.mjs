@@ -1785,6 +1785,41 @@ const chapters = [
         'Phase-Aware Consensus Calculus',
       ),
     ],
+    next: 'geometry-host-dependent-relationship',
+  }),
+  lesson({
+    id: 'geometry-host-dependent-relationship',
+    moduleId: 'week6',
+    week: 6,
+    part: 'Homework: Week 6',
+    partId: 'week6',
+    number: '6.8',
+    title: 'Host-dependent geometry · GHDR-1',
+    minutes: 16,
+    tagline: 'Same rule · different host · rhyme not yet proven',
+    goals: [
+      'Read GHDR-1 as executed host-dependence (H1) without upgrading it to fractal law.',
+      'Separate host shaping from cross-host recurrence (H2–H4 still open).',
+      'Apply relational fractality criteria as a checklist, not a pass/fail on nature data.',
+    ],
+    body: `<p>Maps show straight lines; construction, snow, and closed gates show otherwise. The <strong>Geometry as Host-Dependent Relationship</strong> expedition files geometry as something systems manifest inside environments—constraints, resources, history—while keeping cross-host “rhyme” as a hypothesis that must survive prespecified maps and null models.</p>
+<p>GHDR-1 executes one narrow demo: identical shortest-path objective on a grid, open host vs barrier host. Route length moves from <strong>28</strong> to about <strong>34.63</strong> with five turns—host dependence without changing the optimizer. Forest vs ant colony comparisons, fractal dimension estimates, and predictive beats over baselines remain future stages.</p>
+<div class="misconception">
+<p><strong>The mix-up:</strong> “A detour on a grid proves forests and ant colonies share a fractal equation.”</p>
+<p><strong>The correction:</strong> GHDR-1 supports only host-sensitive geometry under a fixed rule; cross-domain recurrence is H2 with null models—not illustrated here.</p>
+</div>`,
+    check: [
+      {
+        q: 'What did GHDR-1 actually execute?',
+        a: 'Synthetic grid shortest-path host comparison (H1-style), not natural-system fractality or forest–colony datasets.',
+      },
+    ],
+    papers: [
+      wp(
+        'synthobs-geometry-host-dependent-relationship-2026-10',
+        'Geometry as Host-Dependent Relationship',
+      ),
+    ],
     next: 'invisible-frontier',
   }),
   lesson({
@@ -1793,7 +1828,7 @@ const chapters = [
     week: 6,
     part: 'Homework: Week 6',
     partId: 'week6',
-    number: '6.8',
+    number: '6.9',
     title: 'Invisible Frontier · Second chart',
     minutes: 15,
     tagline: 'Goldilocks beside linear AI scale anxiety',
@@ -1847,7 +1882,7 @@ const chapters = [
     week: 6,
     part: 'Homework: Week 6',
     partId: 'week6',
-    number: '6.9',
+    number: '6.10',
     title: 'How to keep learning',
     minutes: 12,
     tagline: 'Doors · papers · Lattice · Fair Exchange',

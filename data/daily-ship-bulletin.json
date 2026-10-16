@@ -1,21 +1,21 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "dateline": {
-    "ymd": "2026-10-15",
-    "weekday": "Thursday",
+    "ymd": "2026-10-16",
+    "weekday": "Friday",
     "month": "October",
-    "day": 15,
-    "label": "Thursday, October 15",
-    "shortBoard": "Thursday board · October 15 · Puerto Reno",
-    "newsLabel": "News of the day · Thursday, October 15"
+    "day": 16,
+    "label": "Friday, October 16",
+    "shortBoard": "Friday board · October 16 · Puerto Reno",
+    "newsLabel": "News of the day · Friday, October 16"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Thursday board · October 15 · Puerto Reno",
-  "newsLabel": "News of the day · Thursday, October 15",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/geometry-host-dependent-relationship\">Does the Same Rule Draw Different Shapes When the Terrain Changes?</a>. Also new on the board: <a href=\"/ship-blog/phase-aware-consensus-calculus\">When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/all-roads-independent-research-convergence\">When AI Labs Take Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Friday board · October 16 · Puerto Reno",
+  "newsLabel": "News of the day · Friday, October 16",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/geometry-host-dependent-relationship\">Does the Same Rule Draw Different Shapes When the Terrain Changes?</a>. Also new on the board: <a href=\"/ship-blog/phase-aware-consensus-calculus\">When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-geometry-host-dependent-relationship-2026-10",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-14-synthobs-independent-research-convergence-fhg-2026-10",
-    "title": "When AI Labs Take Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks?",
-    "href": "/ship-blog/all-roads-independent-research-convergence"
+    "id": "daily-2026-10-15-synthobs-geometry-host-dependent-relationship-2026-10",
+    "title": "Does the Same Rule Draw Different Shapes When the Terrain Changes?",
+    "href": "/ship-blog/geometry-host-dependent-relationship"
   },
-  "generatedAt": "2026-10-15T19:03:47.996Z"
+  "generatedAt": "2026-10-16T18:45:42.275Z"
 }

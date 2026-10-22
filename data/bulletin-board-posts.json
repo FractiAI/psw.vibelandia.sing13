@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "posts": [
+    {
+      "id": "daily-2026-10-22-synthobs-geometry-host-dependent-relationship-2026-10",
+      "posted": "2026-10-22",
+      "featured": true,
+      "title": "Does the Same Rule Draw Different Shapes When the Terrain Changes?",
+      "subtitle": "News of the day · Thursday, October 22",
+      "summary": "GHDR-1 grid lab: fixed shortest-path objective, Host A route 28 vs Host B ~34.63 with barrier — host-dependent geometry demo; forest/ant recurrence and fractality not tested.",
+      "href": "/ship-blog/geometry-host-dependent-relationship",
+      "pill": "TODAY",
+      "docRef": "synthobs-geometry-host-dependent-relationship-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-21-synthobs-geometry-host-dependent-relationship-2026-10",
       "posted": "2026-10-21",

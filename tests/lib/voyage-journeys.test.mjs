@@ -19,8 +19,9 @@ function read(rel) {
 
 describe('Voyage journeys · adventures hub', () => {
   it('defines curated adventures distinct from exhibit shells', () => {
-    expect(VOYAGE_JOURNEYS.length).toBe(13);
+    expect(VOYAGE_JOURNEYS.length).toBe(14);
     expect(findJourney('homeostasis-expedition')?.customDetailPage).toBe(true);
+    expect(findJourney('sex-expedition')?.customDetailPage).toBe(true);
     expect(VOYAGE_JOURNEY_INTRO).toContain('adventures we offer');
     expect(VOYAGE_JOURNEY_INTRO).not.toContain('deck SKUs');
     for (const j of VOYAGE_JOURNEYS) {
@@ -80,7 +81,13 @@ describe('Voyage journeys · adventures hub', () => {
       const html = read(`interfaces/journey/${j.slug}.html`);
       if (j.customDetailPage) {
         expect(html).toContain('he-mission');
-        expect(html).toContain('Mission of the Homeostasis Expedition');
+        if (j.slug === 'homeostasis-expedition') {
+          expect(html).toContain('Mission of the Homeostasis Expedition');
+        } else if (j.slug === 'sex-expedition') {
+          expect(html).toContain('The Mission of the Sex Expeditions');
+        } else {
+          throw new Error(`untested customDetailPage journey: ${j.slug}`);
+        }
       } else {
         expect(html).toMatch(new RegExp(j.title.replace(/&/g, '&amp;').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
         expect(html).toContain('Honesty');

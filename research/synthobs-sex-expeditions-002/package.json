@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-sex-expeditions-002",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SEX EXPEDITIONS Expedition 002 — sensory-to-behavioral tuning architecture · 500-step continuity pilot · application companion (not ENGINE_SHELF)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-sex-expeditions-002.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

@@ -43,15 +43,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Sex Expeditions 001 · GHDR · PAC · IRC-FHG · Computation Workhorse · Organizational Discovery
-    expect(posts[0].id).toBe('synthobs-sex-expeditions-001-2026-10');
+    // Newest: Sex Expeditions 002 · 001 · GHDR · PAC · IRC-FHG · Computation Workhorse
+    expect(posts[0].id).toBe('synthobs-sex-expeditions-002-2026-10');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-sex-expeditions-002-2026-10',
       'synthobs-sex-expeditions-001-2026-10',
       'synthobs-geometry-host-dependent-relationship-2026-10',
       'synthobs-phase-aware-consensus-calculus-2026-10',
       'synthobs-independent-research-convergence-fhg-2026-10',
       'synthobs-computation-workhorse-science-2026-10',
-      'synthobs-organizational-discovery-homeostasis-2026-10',
     ]);
   });
 });

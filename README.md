@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-23** · **385** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-23** · **386** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -403,6 +403,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | When Tools Rewrite Themselves, Does φ Keep Meaning Intact? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-self-observing-genome-2026-09.html`](/interfaces/blog-self-observing-genome-2026-09.html) | DNA Is a Mirror You Can File — Not a Mind You Can Hire · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sex-expeditions-001-2026-10.html`](/interfaces/blog-sex-expeditions-001-2026-10.html) | When Biology and Experience Both Matter, Can a Combined Model Predict Better Than Either Alone? · Ship blog · SS Vibelan |
+| [`/interfaces/blog-sex-expeditions-002-2026-10.html`](/interfaces/blog-sex-expeditions-002-2026-10.html) | If Sensation, Intuition, and Imagination Interact, Can One Architecture Keep Them From Collapsing Into Each Other? · Shi |
 | [`/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html`](/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html) | Sing, Muse — Chart the Voyage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A Smaller Pack for the Golden Key · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html`](/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html) | When Old Rails Met New Roads · Ship blog · SS Vibelandia |

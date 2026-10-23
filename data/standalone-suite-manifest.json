@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-23",
   "suites": [
     {
+      "id": "synthobs-sex-expeditions-002",
+      "path": "research/synthobs-sex-expeditions-002",
+      "github": "https://github.com/FractiAI/synthobs-sex-expeditions-002",
+      "description": "SEX EXPEDITIONS Expedition 002 — sensory-to-behavioral tuning architecture · 500-step continuity pilot (seed 20261023) · systematic review pending · application companion (not ENGINE_SHELF)",
+      "paperIds": [
+        "synthobs-sex-expeditions-002-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_SEX_EXPEDITIONS_002_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-sex-expeditions-001",
       "path": "research/synthobs-sex-expeditions-001",
       "github": "https://github.com/FractiAI/synthobs-sex-expeditions-001",

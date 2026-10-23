@@ -1469,6 +1469,14 @@
       "destination": "/interfaces/blog-digit4-be-o-rhyme-2026-09.html"
     },
     {
+      "source": "/ship-blog/sex-expeditions-002",
+      "destination": "/interfaces/blog-sex-expeditions-002-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/sex-expeditions-002/",
+      "destination": "/interfaces/blog-sex-expeditions-002-2026-10.html"
+    },
+    {
       "source": "/ship-blog/sex-expeditions-001",
       "destination": "/interfaces/blog-sex-expeditions-001-2026-10.html"
     },

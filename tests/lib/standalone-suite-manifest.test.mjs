@@ -64,6 +64,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-reflective-portal-multiscale-homeostasis',
       'synthobs-self-observing-genome',
       'synthobs-sex-expeditions-001',
+      'synthobs-sex-expeditions-002',
       'synthobs-ss-vibelandia-official-prospectus',
       'synthobs-survival-computing-viral-rna-asi',
       'synthobs-table-top-hep-99-octave',

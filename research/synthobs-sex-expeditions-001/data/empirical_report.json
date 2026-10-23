@@ -1,0 +1,279 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "docId": "WP-SYNTHOBS-SEX-EXPEDITIONS-001-EGS-2026-10-23",
+  "registryId": "synthobs-sex-expeditions-001-2026-10",
+  "title": "SEX EXPEDITIONS — Expedition 001 · Paper 001: Sex as a Major Recursive Branch of Perpetual Recursive Self-Improvement",
+  "generatedAt": "2026-10-23T18:26:51.976Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Sex Expeditions Expedition 001 · Paper 001 — synthetic computational laboratory (28,000 observations · seven constructed scenarios · seed 20261023) demonstrates biology/experience/combined/interaction model comparison under known data-generating mechanisms. Scores are methodological fixtures, not estimates of human sex differences. Real-data experiments (WVS/EVS · HARP · Add Health) are specified; raw-data analyses remain pending. Application companion (not ENGINE_SHELF). Φ_EGS is design grammar. Autonomy, consent, dignity, and safety remain non-negotiable.",
+  "results": {
+    "all_pass": true,
+    "n_pass": 4,
+    "n_total": 4,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1",
+        "title": "Document locks · Sex Expeditions 001",
+        "pass": true,
+        "docId": "WP-SYNTHOBS-SEX-EXPEDITIONS-001-EGS-2026-10-23",
+        "registryId": "synthobs-sex-expeditions-001-2026-10",
+        "studyTitle": "SEX EXPEDITIONS — Expedition 001 · Paper 001: Sex as a Major Recursive Branch of Perpetual Recursive Self-Improvement",
+        "seed": 20261023,
+        "n_total": 28000,
+        "interpretation": "Paper identity, seed, and synthetic sample sizes match Expedition 001 · Paper 001 locks."
+      },
+      {
+        "id": "E2",
+        "title": "Synthetic biology↔experience laboratory (28k · 7 scenarios)",
+        "pass": true,
+        "lab": {
+          "seed": 20261023,
+          "n_total": 28000,
+          "n_scenarios": 7,
+          "n_per_scenario": 4000,
+          "train_frac": 0.7,
+          "scenarios": [
+            {
+              "id": "biology_dominant",
+              "label": "Biology-dominant",
+              "n": 4000,
+              "n_train": 2800,
+              "n_test": 1200,
+              "r2": {
+                "biology_only": 0.914,
+                "experience_only": 0.041,
+                "combined_additive": 0.952,
+                "combined_interaction": 0.951
+              },
+              "r2_raw": {
+                "biology_only": 0.9139781746250082,
+                "experience_only": 0.04068646613620541,
+                "combined_additive": 0.9515449589789906,
+                "combined_interaction": 0.9514374185662893
+              },
+              "target": {
+                "bio": 0.914,
+                "exp": 0.041,
+                "add": 0.952,
+                "ix": 0.951
+              },
+              "pass": true
+            },
+            {
+              "id": "experience_dominant",
+              "label": "Experience-dominant",
+              "n": 4000,
+              "n_train": 2800,
+              "n_test": 1200,
+              "r2": {
+                "biology_only": 0.055,
+                "experience_only": 0.913,
+                "combined_additive": 0.952,
+                "combined_interaction": 0.952
+              },
+              "r2_raw": {
+                "biology_only": 0.05510403512965667,
+                "experience_only": 0.912707228712446,
+                "combined_additive": 0.952418749150071,
+                "combined_interaction": 0.9522860834866247
+              },
+              "target": {
+                "bio": 0.055,
+                "exp": 0.913,
+                "add": 0.952,
+                "ix": 0.952
+              },
+              "pass": true
+            },
+            {
+              "id": "co_tuned",
+              "label": "Co-tuned",
+              "n": 4000,
+              "n_train": 2800,
+              "n_test": 1200,
+              "r2": {
+                "biology_only": 0.515,
+                "experience_only": 0.536,
+                "combined_additive": 0.944,
+                "combined_interaction": 0.944
+              },
+              "r2_raw": {
+                "biology_only": 0.5148224581133776,
+                "experience_only": 0.535618947576624,
+                "combined_additive": 0.9444351161010265,
+                "combined_interaction": 0.9443256284616094
+              },
+              "target": {
+                "bio": 0.515,
+                "exp": 0.536,
+                "add": 0.944,
+                "ix": 0.944
+              },
+              "pass": true
+            },
+            {
+              "id": "weak_high_noise",
+              "label": "Weak signals, high noise",
+              "n": 4000,
+              "n_train": 2800,
+              "n_test": 1200,
+              "r2": {
+                "biology_only": 0.103,
+                "experience_only": 0.051,
+                "combined_additive": 0.157,
+                "combined_interaction": 0.156
+              },
+              "r2_raw": {
+                "biology_only": 0.10309871604185328,
+                "experience_only": 0.05110558214810046,
+                "combined_additive": 0.15718794889265253,
+                "combined_interaction": 0.15642096178765674
+              },
+              "target": {
+                "bio": 0.103,
+                "exp": 0.051,
+                "add": 0.157,
+                "ix": 0.156
+              },
+              "pass": true
+            },
+            {
+              "id": "balanced_interaction",
+              "label": "Balanced with interaction",
+              "n": 4000,
+              "n_train": 2800,
+              "n_test": 1200,
+              "r2": {
+                "biology_only": 0.447,
+                "experience_only": 0.347,
+                "combined_additive": 0.8,
+                "combined_interaction": 0.926
+              },
+              "r2_raw": {
+                "biology_only": 0.4465793093157887,
+                "experience_only": 0.3473094449096198,
+                "combined_additive": 0.8002446945290156,
+                "combined_interaction": 0.9258728664320134
+              },
+              "target": {
+                "bio": 0.447,
+                "exp": 0.347,
+                "add": 0.8,
+                "ix": 0.926
+              },
+              "pass": true
+            },
+            {
+              "id": "biology_only_generator",
+              "label": "Biology-only generator",
+              "n": 4000,
+              "n_train": 2800,
+              "n_test": 1200,
+              "r2": {
+                "biology_only": 0.776,
+                "experience_only": -0.003,
+                "combined_additive": 0.776,
+                "combined_interaction": 0.776
+              },
+              "r2_raw": {
+                "biology_only": 0.7756220968358681,
+                "experience_only": -0.0030536826308820153,
+                "combined_additive": 0.775637332542034,
+                "combined_interaction": 0.7755246045800496
+              },
+              "target": {
+                "bio": 0.776,
+                "exp": -0.003,
+                "add": 0.776,
+                "ix": 0.776
+              },
+              "pass": true
+            },
+            {
+              "id": "experience_only_generator",
+              "label": "Experience-only generator",
+              "n": 4000,
+              "n_train": 2800,
+              "n_test": 1200,
+              "r2": {
+                "biology_only": -0.009,
+                "experience_only": 0.793,
+                "combined_additive": 0.793,
+                "combined_interaction": 0.792
+              },
+              "r2_raw": {
+                "biology_only": -0.009252532208049447,
+                "experience_only": 0.793035460993948,
+                "combined_additive": 0.792654735197165,
+                "combined_interaction": 0.7924248080575071
+              },
+              "target": {
+                "bio": -0.009,
+                "exp": 0.793,
+                "add": 0.793,
+                "ix": 0.792
+              },
+              "pass": true
+            }
+          ],
+          "means": {
+            "biology_only": 0.4,
+            "experience_only": 0.382,
+            "combined_additive": 0.768,
+            "combined_interaction": 0.785
+          },
+          "means_raw": {
+            "biology_only": 0.3999931796933576,
+            "experience_only": 0.38248706397800886,
+            "combined_additive": 0.7677319336272792,
+            "combined_interaction": 0.7854703387673929
+          },
+          "findings": {
+            "F1_combined_improves": true,
+            "F2_dominant_varies_by_trait": true,
+            "F3_interactions_can_matter": true,
+            "F4_noise_limits_prediction": true,
+            "F5_complexity_not_always_better": true
+          },
+          "all_pass": true,
+          "means_pass": true,
+          "honesty": "Synthetic scores only — not estimates of actual human sex-associated traits."
+        },
+        "target_means": {
+          "bio": 0.4,
+          "exp": 0.382,
+          "add": 0.768,
+          "ix": 0.785
+        },
+        "interpretation": "Combined predictors improve mean held-out R² vs single predictors; interaction term helps when DGP includes interaction; noise and irrelevant predictors behave as designed.",
+        "honesty": "Sex Expeditions Expedition 001 · Paper 001 — synthetic computational laboratory (28,000 observations · seven constructed scenarios · seed 20261023) demonstrates biology/experience/combined/interaction model comparison under known data-generating mechanisms. Scores are methodological fixtures, not estimates of human sex differences. Real-data experiments (WVS/EVS · HARP · Add Health) are specified; raw-data analyses remain pending. Application companion (not ENGINE_SHELF). Φ_EGS is design grammar. Autonomy, consent, dignity, and safety remain non-negotiable."
+      },
+      {
+        "id": "E3",
+        "title": "Finding locks F1–F5 (synthetic only)",
+        "pass": true,
+        "findings": {
+          "F1_combined_improves": true,
+          "F2_dominant_varies_by_trait": true,
+          "F3_interactions_can_matter": true,
+          "F4_noise_limits_prediction": true,
+          "F5_complexity_not_always_better": true
+        },
+        "interpretation": "Five methodological findings hold under constructed DGPs. They do not establish human trait biology/experience proportions."
+      },
+      {
+        "id": "E4",
+        "title": "Real-data program status (WVS/EVS · HARP · Add Health)",
+        "pass": true,
+        "experiments": {
+          "A_wvs_evs": "specified · raw analysis pending",
+          "B_harp": "specified · raw analysis pending",
+          "C_add_health": "specified · raw analysis pending",
+          "D_cross_dataset": "specified · pending A–C"
+        },
+        "interpretation": "Dataset documentation existence is not completion. No coefficients from raw WVS/EVS, HARP, or Add Health are claimed in this paper."
+      }
+    ]
+  }
+}

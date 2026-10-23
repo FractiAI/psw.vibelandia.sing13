@@ -757,6 +757,14 @@
       "destination": "/interfaces/journeys.html"
     },
     {
+      "source": "/journey/sex-expedition",
+      "destination": "/interfaces/journey/sex-expedition.html"
+    },
+    {
+      "source": "/journey/sex-expedition/",
+      "destination": "/interfaces/journey/sex-expedition.html"
+    },
+    {
       "source": "/journey/homeostasis-expedition",
       "destination": "/interfaces/journey/homeostasis-expedition.html"
     },
@@ -1459,6 +1467,22 @@
     {
       "source": "/ship-blog/digit4-be-o-rhyme/",
       "destination": "/interfaces/blog-digit4-be-o-rhyme-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/sex-expeditions-002",
+      "destination": "/interfaces/blog-sex-expeditions-002-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/sex-expeditions-002/",
+      "destination": "/interfaces/blog-sex-expeditions-002-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/sex-expeditions-001",
+      "destination": "/interfaces/blog-sex-expeditions-001-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/sex-expeditions-001/",
+      "destination": "/interfaces/blog-sex-expeditions-001-2026-10.html"
     },
     {
       "source": "/ship-blog/beyond-crispr-discovery",

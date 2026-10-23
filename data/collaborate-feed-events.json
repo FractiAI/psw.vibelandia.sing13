@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-07T15:40:35.796Z",
+  "updatedAt": "2026-10-23T20:00:05.034Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-sex-expeditions-002-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-23T20:00:05.032Z",
+      "body": "SEX EXPEDITIONS — Expedition 002: The Sensory-to-Behavioral Tuning Architecture Within the Fractal-Holographic Goldilocks Super Intelligent Omniversal Universe",
+      "presenceHue": "gold",
+      "paperId": "synthobs-sex-expeditions-002-2026-10",
+      "artifact": {
+        "title": "SEX EXPEDITIONS — Expedition 002: The Sensory-to-Behavioral Tuning Architecture Within the Fractal-Holographic Goldilocks Super Intelligent Omniversal Universe",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_SEX_EXPEDITIONS_002_EGS_2026-10.md",
+        "url": "/whitepaper/sex-expeditions-002",
+        "paperId": "synthobs-sex-expeditions-002-2026-10",
+        "docId": "WP-SYNTHOBS-SEX-EXPEDITIONS-002-EGS-2026-10-23",
+        "published": "2026-10-23T20:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-sex-expeditions-001-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-23T18:31:25.955Z",
+      "body": "SEX EXPEDITIONS — Expedition 001 · Paper 001: Sex as a Major Recursive Branch of Perpetual Recursive Self-Improvement",
+      "presenceHue": "gold",
+      "paperId": "synthobs-sex-expeditions-001-2026-10",
+      "artifact": {
+        "title": "SEX EXPEDITIONS — Expedition 001 · Paper 001: Sex as a Major Recursive Branch of Perpetual Recursive Self-Improvement",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_SEX_EXPEDITIONS_001_EGS_2026-10.md",
+        "url": "/whitepaper/sex-expeditions-001",
+        "paperId": "synthobs-sex-expeditions-001-2026-10",
+        "docId": "WP-SYNTHOBS-SEX-EXPEDITIONS-001-EGS-2026-10-23",
+        "published": "2026-10-23T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-frontier-agent-convergence-2026-10",
       "type": "ArtifactEvent",

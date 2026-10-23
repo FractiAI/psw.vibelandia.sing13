@@ -63,6 +63,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-proton-space-electron-theater',
       'synthobs-reflective-portal-multiscale-homeostasis',
       'synthobs-self-observing-genome',
+      'synthobs-sex-expeditions-001',
       'synthobs-ss-vibelandia-official-prospectus',
       'synthobs-survival-computing-viral-rna-asi',
       'synthobs-table-top-hep-99-octave',

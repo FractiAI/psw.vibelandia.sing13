@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "posts": [
+    {
+      "id": "daily-2026-10-24-synthobs-wave-node-mathematics-2026-10",
+      "posted": "2026-10-24",
+      "featured": true,
+      "title": "When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?",
+      "subtitle": "News of the day · Saturday, October 24",
+      "summary": "Wave–Node A–E lab (seed 20261024): FDTD order ≈2.001; Kuramoto syncs when connected; held-out 2D planning 100% success — A* mean path ≈52.84 vs WaveNode ≈55.71; engine #49, not robot hardware.",
+      "href": "/ship-blog/wave-node-mathematics",
+      "pill": "TODAY",
+      "docRef": "synthobs-wave-node-mathematics-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-23-synthobs-geometry-host-dependent-relationship-2026-10",
       "posted": "2026-10-23",

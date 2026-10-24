@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-wave-node-mathematics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Wave–Node Mathematics — A–E validation lab · ENGINE_SHELF #49 (not physical robot hardware)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-wave-node-mathematics.git"
+  },
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

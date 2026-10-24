@@ -73,6 +73,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-topology-of-the-void',
       'synthobs-triadic-nested-hemispheres-99-octave',
       'synthobs-viscosity-of-light',
+      'synthobs-wave-node-mathematics',
       'synthobs-y-chromosome-holographic-manifestation',
     ]);
   });

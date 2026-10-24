@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-06",
   "suites": [
     {
+      "id": "synthobs-wave-node-mathematics",
+      "path": "research/synthobs-wave-node-mathematics",
+      "github": "https://github.com/FractiAI/synthobs-wave-node-mathematics",
+      "description": "Wave–Node Mathematics — A–E validation lab (FDTD · Kuramoto · 2D planning vs A*) · Infinite Octaves ENGINE_SHELF #49 (not physical robot hardware)",
+      "paperIds": [
+        "synthobs-wave-node-mathematics-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_WAVE_NODE_MATHEMATICS_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-homeostasis-expedition-boot-up",
       "path": "research/synthobs-homeostasis-expedition-boot-up",
       "github": "https://github.com/FractiAI/synthobs-homeostasis-expedition-boot-up",

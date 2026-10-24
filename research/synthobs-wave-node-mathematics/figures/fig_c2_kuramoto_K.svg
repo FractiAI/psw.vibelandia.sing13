@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280">
+  <rect width="100%" height="100%" fill="#faf8f5"/>
+  <text x="240" y="18" text-anchor="middle" font-family="Georgia,serif" font-size="14">Fig. C2 — Order param vs K</text>
+  <polyline fill="none" stroke="#1a5f7a" stroke-width="2" points="40,211.90933855424566 125.71428571428574,55.40757278607609 225.71428571428575,50.784544513782436 440,49.52380952380955"/>
+  <text x="240" y="272" text-anchor="middle" font-size="11" font-family="sans-serif">K</text>
+  <text x="12" y="140" font-size="11" font-family="sans-serif" transform="rotate(-90 12 140)">r_final</text>
+</svg>

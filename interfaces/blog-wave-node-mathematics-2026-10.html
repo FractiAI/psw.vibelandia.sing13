@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check? · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="Wave–Node Mathematics: lattice and FDTD checks pass with order ≈2; Kuramoto syncs when connected; on 24 held-out maps A* still wins path length—validation for ENGINE_SHELF #49, not robot hardware." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/wave-node-mathematics" />
+  <meta property="og:title" content="When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?" />
+  <meta property="og:description" content="A reproducible Wave–Node lab: geometry, wave PDE, Kuramoto, and 2D planning—with an honest scoreboard against A*." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/whitepaper/wave-node-mathematics">Whitepaper</a>
+      <a href="/lattice/engineering">Lattice engineering</a>
+    </nav>
+    <header>
+      <p class="kicker">Research note · Wave–Node Mathematics · Infinite Octaves companion</p>
+      <h1>When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?</h1>
+      <p class="dateline"><strong>FractiAI Research</strong> — October 24, 2026</p>
+    </header>
+
+    <p class="lead">A warehouse robot that clips a pallet does not care whether its planner was branded “wave,” “field,” or “neural.” A parent teaching a teenager to parallel park cares whether the path clears the curb. Wave–Node Mathematics asks a narrower, earlier question: before anyone promises a robotics product, can a node-and-wave formulation pass ordinary mathematical and algorithmic checks—and where does it lose to methods already on the shelf?</p>
+
+    <h2>The problem of renaming without measuring</h2>
+    <p>Research programs love new names. Graph placement becomes “nodes.” Potential fields become “waves.” Coupled oscillators become “phase intelligence.” Sometimes the rename hides useful integration. Sometimes it only hides that the work is standard numerical analysis dressed for a pitch deck. Rent still comes due for teams that ship on slogans, and kids waiting on a delayed delivery do not grade fancy labels. This expedition’s job was to run the checks with fixed seeds, pre-registered sync thresholds, held-out maps, and a scoreboard that is allowed to favor A*.</p>
+
+    <h2>What the lab actually ran</h2>
+    <p>Five families shipped in a Node.js suite under seed 20261024. Placement tests rebuilt lattices and regular polygons against analytical coordinates. A one-dimensional finite-difference scheme marched the wave equation against a traveling sinusoid, then refined the grid to estimate convergence order, then deliberately broke the Courant condition. Kuramoto oscillators were integrated with ring, complete, and disconnected graphs, plus a zero-coupling baseline. Planning compared grid A* to a harmonic Wave–Node ascent with and without a small phase rotation of the gradient, on four fixed maps and twenty-four held-out obstacle layouts. Timing curves recorded wall-clock cost as sizes grew.</p>
+
+    <h2>Hypothesis under test</h2>
+    <p>The hypothesis was not that Wave–Node must win. The hypothesis was that the comparison can be made with explicit equations and that mixed results stay mixed. Pass means the mathematical components behave as their textbooks predict, and that planning metrics are reported without crowning complexity. That habit matters as much for school robotics clubs scraping together spare parts as it does for funded labs writing the next grant.</p>
+
+    <h2>What the numbers said</h2>
+    <p>Placement errors sat at numerical zero on the lattice and circle cases. The wave solver produced an L2 error near 0.0019 on a 128-point mesh at Courant number 0.4, and the refinement study returned a mean observed order of about 2.001—exactly the neighborhood expected for a second-order scheme. Over-aggressive time steps blew up to astronomical errors, which is what stability theory says should happen. Identical-frequency Kuramoto rings reached an order parameter of one within a few time units; disconnected graphs did not sync; turning coupling off left oscillators wandering. Those are numerically verified results, not marketing.</p>
+    <p>On held-out planning, every method reached the goal without collisions. Mean path length favored A* at about 52.84 against about 55.71 for Wave–Node with phase. Ablating phase barely changed length. Wave–Node did use far fewer planner iterations—about 41 versus about 186—so the story is not “useless,” it is “different trade-off.” Shorter paths still went to the classical baseline.</p>
+
+    <h2>What the literature already owns</h2>
+    <p>Finite-difference wave schemes, Kuramoto synchronization, harmonic navigation functions, and A* are established. Expedition value is a FractiAI catalog that wires them into one reproducible package with honesty rails—without pretending that sine waves on a grid are newly invented. Anyone hiring for a robotics stack should hear that clearly before budget season.</p>
+
+    <h2>Framework value without a victory lap</h2>
+    <p>Because the math families passed, the paper is pinned as Infinite Octaves engine companion #49—a foundation shelf entry for a future Wave–Node Robotics layer. Because planning did not beat A* on path length, that pin still leaves collision checks and emergency stops mandatory. A factory floor still needs human authority when a trajectory looks clever and unsafe. Commuters stuck behind a stalled autonomous shuttle already know what happens when software confidence outruns clearance. The useful next work is manipulator simulation, better cost encodings, and a systematic prior-art matrix—not a louder abstract. Keep the catalog nesting notes for the honesty rail at the end of this note, not in the middle of the story.</p>
+
+    <h2>Invitation</h2>
+    <p>Read the full manuscript tables, replay the suite from the standalone repository, and compare the saved figures to the JSON they were plotted from. If Wave–Node earns a place in a shipping robot, it will be because later stages beat honest baselines—not because this validation paper flattered itself.</p>
+
+    <p class="honesty">Honesty rail: Wave–Node Mathematics ENGINE_SHELF #49 is a mathematical/algorithmic validation companion—not physical robot hardware, not manipulator benchmarks, not a finished Wave–Node Robotics product. Held-out 2D point navigation: A* mean path length ≈52.84 vs WaveNode+phase ≈55.71 (seed 20261024); FDTD mean observed order ≈2.001. Φ_EGS is design grammar. Document WP-SYNTHOBS-WAVE-NODE-MATHEMATICS-EGS-2026-10-24 · registry synthobs-wave-node-mathematics-2026-10.</p>
+
+    <p class="fair-exchange">Fair Exchange: If this note earns utility, tip or inquire via the Purser on SS Vibelandia; reciprocal balancing remains dynamic.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/whitepaper/wave-node-mathematics">Read the full paper</a>
+      <a class="btn btn-ghost" href="https://github.com/FractiAI/synthobs-wave-node-mathematics">Standalone repository</a>
+      <a class="btn btn-ghost" href="/lattice/engineering">Lattice engineering PEM</a>
+      <a class="btn btn-ghost" href="/questfest#ship-blog">Ship blog</a>
+    </div>
+    <footer>Wave–Node Mathematics · ENGINE_SHELF #49 · → ∞^∞</footer>
+  </article>
+  <script type="module" src="/interfaces/ship-blog-i18n.js"></script>
+</body>
+</html>

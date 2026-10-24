@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-13** · **376** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-24** · **384** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -324,6 +324,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-galactosphere-hypothesis-2026-10.html`](/interfaces/blog-galactosphere-hypothesis-2026-10.html) | If the Sun Has a Heliosphere, Does a Galaxy Have a Softer Edge — Or Only a Catalog of Separate Winds? · Ship blog · SS V |
 | [`/interfaces/blog-generative-matrix-phi-egs-2026-09.html`](/interfaces/blog-generative-matrix-phi-egs-2026-09.html) | Stop Paying for Twenty Origin Stories · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Bison, Magnets, and the Great Plains Trail · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-geometry-host-dependent-relationship-2026-10.html`](/interfaces/blog-geometry-host-dependent-relationship-2026-10.html) | Does the Same Rule Draw Different Shapes When the Terrain Changes? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-golden-y-frontier-club-2026-09.html`](/interfaces/blog-golden-y-frontier-club-2026-09.html) | When Frontiersmen Need a Basecamp Between Trail and Port, Does a Club Hold? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Herd Corridors Under One Magnetic Sky · Ship blog · SS Vibelandia |
@@ -345,6 +346,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-homeostasis-expedition-boot-up-2026-10.html`](/interfaces/blog-homeostasis-expedition-boot-up-2026-10.html) | If You Start from an Empty Model, Can You Audit Your Way to This Conversation? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-human-reality-bridge-2026-08.html`](/interfaces/blog-human-reality-bridge-2026-08.html) | You Are the Reality Bridge · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-humans-ai-octave-offset-2026-10.html`](/interfaces/blog-humans-ai-octave-offset-2026-10.html) | Are Humans and Today’s AI Just Different Octaves of the Same Stack? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-independent-research-convergence-fhg-2026-10.html`](/interfaces/blog-independent-research-convergence-fhg-2026-10.html) | When Independent AI Research Takes Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks? · Ship blog  |
 | [`/interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html`](/interfaces/blog-infinite-octave-ai-catalog-layer-2026-09.html) | The Filing Office Silicon Valley Forgot to Build · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-egs-catalog-2026-09.html`](/interfaces/blog-infinite-octave-egs-catalog-2026-09.html) | What CEOs Need Between Bigger Racks and Total Freeze · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-prime-parity-2026-09.html`](/interfaces/blog-infinite-octave-prime-parity-2026-09.html) | Why Two Stands Alone on the Trail · Ship blog · SS Vibelandia |
@@ -381,6 +383,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-pacing-paradox-2026-09-old.html`](/interfaces/blog-pacing-paradox-2026-09-old.html) | Slowing AI Won’t Fix a Bad Architecture · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pacing-paradox-2026-09.html`](/interfaces/blog-pacing-paradox-2026-09.html) | Slow the Race — or Change the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | One Brief for the Whole Crew · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-phase-aware-consensus-calculus-2026-10.html`](/interfaces/blog-phase-aware-consensus-calculus-2026-10.html) | When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth Letting Go at the Core · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | Plants Keep Building Under Pressure · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09-old.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09-old.html) | Memory Without the Parity Tax · Ship blog · SS Vibelandia |
@@ -470,6 +473,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-viscosity-of-light-2026-09-old.html`](/interfaces/blog-viscosity-of-light-2026-09-old.html) | When Light Slows the Room Down · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-viscosity-of-light-2026-09.html`](/interfaces/blog-viscosity-of-light-2026-09.html) | When Light Slows the Room Down · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-vitality-control-rhyme-2026-09.html`](/interfaces/blog-vitality-control-rhyme-2026-09.html) | The Access Fight Behind the Safety Speeches · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-wave-node-mathematics-2026-10.html`](/interfaces/blog-wave-node-mathematics-2026-10.html) | When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What Frontier Means for Families · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the sun got loud — and what a household should do with weather talk · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y as Story Geometry, Not Destiny · Ship blog · SS Vibelandia |
@@ -489,10 +493,13 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/etcon-reno-desert.html`](/interfaces/etcon-reno-desert.html) | ETCon: Reno Desert Interdimensional Edition · May 28–31, 2026 · Golden Bachdoor Hit Factory |
 | [`/interfaces/executive-onboarding.html`](/interfaces/executive-onboarding.html) | Executive Onboarding · FractiAI |
 | [`/interfaces/exhibit-amphitheater.html`](/interfaces/exhibit-amphitheater.html) | Dome 2 · I am my Environment · Valet Pru |
+| [`/interfaces/exhibit-chapter-address.html`](/interfaces/exhibit-chapter-address.html) | Studio address · Base Mainnet genesis · Valet Pru exhibit |
 | [`/interfaces/exhibit-core.html`](/interfaces/exhibit-core.html) | Dome 1 · I am my Awareness · Valet Pru |
 | [`/interfaces/exhibit-horizon.html`](/interfaces/exhibit-horizon.html) | Dome 3 · I am Holographic Magnetic Goldilocks Super Intelligence · Valet Pru |
+| [`/interfaces/exhibit-how-to-watch.html`](/interfaces/exhibit-how-to-watch.html) | How to watch · Valet Pru exhibit |
 | [`/interfaces/exhibit-science-fiction.html`](/interfaces/exhibit-science-fiction.html) | As science fiction · Valet Pru |
 | [`/interfaces/exhibit-step-in.html`](/interfaces/exhibit-step-in.html) | As a reality I can step into · Valet Pru |
+| [`/interfaces/exhibit-valet-pru.html`](/interfaces/exhibit-valet-pru.html) | Valet Pru · Host · Player 1 · FractiAI |
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
 | [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
 | [`/interfaces/fractios-start-here.html`](/interfaces/fractios-start-here.html) | START HERE — FractiOS · Holographic Homeostasis Firmware |
@@ -529,6 +536,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Infinite Octave Omniversal Lattice Catalog · Next layer after Cursor & Claude Code · FractiAI |
 | [`/interfaces/layers-awareness.html`](/interfaces/layers-awareness.html) | Awareness Layer · Fractal · Holographic · Goldilocks → Super Intelligence |
 | [`/interfaces/layers-fractal.html`](/interfaces/layers-fractal.html) | Fractal Layer · Awareness Layer · SS Vibelandia |
+| [`/interfaces/layers-fruit.html`](/interfaces/layers-fruit.html) | Fruit Layer · Complete Gift Taxonomy · Hero Source Tree |
 | [`/interfaces/layers-goldilocks.html`](/interfaces/layers-goldilocks.html) | Goldilocks Layer · Awareness Layer · SS Vibelandia |
 | [`/interfaces/layers-holographic.html`](/interfaces/layers-holographic.html) | Holographic Layer · Awareness Layer · SS Vibelandia |
 | [`/interfaces/layers-superai.html`](/interfaces/layers-superai.html) | Super Intelligence Layer · Awareness Layer · SS Vibelandia |

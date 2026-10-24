@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-07T15:40:35.796Z",
+  "updatedAt": "2026-10-24T10:16:20.392Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-wave-node-mathematics-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-24T10:16:20.390Z",
+      "body": "Wave–Node Mathematics for Robotics: Mathematical Validation, Algorithmic Benchmarks, and a Reproducible Research Framework",
+      "presenceHue": "gold",
+      "paperId": "synthobs-wave-node-mathematics-2026-10",
+      "artifact": {
+        "title": "Wave–Node Mathematics for Robotics: Mathematical Validation, Algorithmic Benchmarks, and a Reproducible Research Framework",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_WAVE_NODE_MATHEMATICS_EGS_2026-10.md",
+        "url": "/whitepaper/wave-node-mathematics",
+        "paperId": "synthobs-wave-node-mathematics-2026-10",
+        "docId": "WP-SYNTHOBS-WAVE-NODE-MATHEMATICS-EGS-2026-10-24",
+        "published": "2026-10-24T12:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-frontier-agent-convergence-2026-10",
       "type": "ArtifactEvent",

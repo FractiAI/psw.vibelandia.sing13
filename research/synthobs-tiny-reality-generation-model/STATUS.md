@@ -1,8 +1,10 @@
 # Status — TRGM
 
-Primary **T1–T6 = 6/6** · Genetic **G1–G5 = 5/5** · Catalog **C1–C3 = 3/3** (wave/node/fq ↔ symbols 0/1/2) · seed 20261025.
+Primary **T1–T7 = 7/7** · Genetic **G1–G5 = 5/5** · Catalog **C1–C3 = 3/3** (wave/node/fq ↔ symbols 0/1/2) · seed 20261025.
 
-Core **24/24** (E+M+T+G+C) · held-out viability 100% vs null 0% · ENGINE_SHELF #50.
+**T7:** biological reality stream pipe locked at **10 bits/s**.
+
+Core **25/25** (E+M+T+G+C) · held-out viability 100% vs null 0% · ENGINE_SHELF #50.
 
 **Wave / node / fq gene primaries:**
 - wave (0): DNMT1, DNMT3A

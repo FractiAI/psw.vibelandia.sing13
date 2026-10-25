@@ -15,7 +15,7 @@ import { runGeneticNodesLaboratory } from './genetic-nodes-lab.mjs';
 import { runWaveNodeFqCatalogLaboratory } from './wave-node-fq-catalog.mjs';
 
 /**
- * Core synthetic E1–E5 · Molecular M1–M5 · Primary T1–T6 · Genetic G1–G5
+ * Core synthetic E1–E5 · Molecular M1–M5 · Primary T1–T7 · Genetic G1–G5
  * · Catalog C1–C3 (genetic nodes ↔ wave / node / fq triad inputs)
  * · Historical H1–H3 (Movebank; reported separately — mixed outcomes).
  */

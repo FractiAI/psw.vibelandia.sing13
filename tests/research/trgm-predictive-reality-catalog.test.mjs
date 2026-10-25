@@ -31,7 +31,8 @@ describe('synthobs-trgm-predictive-reality-catalog', () => {
       expect(r.enginePinRecommended).toBe(true);
 
       expect(r.repro.ok).toBe(true);
-      expect(r.repro.metrics.n_pass).toBe(24);
+      expect(r.repro.metrics.n_pass).toBe(25);
+      expect(r.repro.metrics.n_total).toBe(25);
       expect(r.repro.metrics.catalogEntries).toBe(199);
       expect(r.repro.metrics.heldViability).toBe(1);
       expect(r.repro.metrics.nullViability).toBe(0);

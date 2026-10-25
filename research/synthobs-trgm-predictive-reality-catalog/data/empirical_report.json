@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T20:35:15.874Z",
+  "generatedAt": "2026-10-25T20:50:48.130Z",
   "docId": "WP-SYNTHOBS-TRGM-PREDICTIVE-REALITY-CATALOG-EGS-2026-10-25",
   "registryId": "synthobs-trgm-predictive-reality-catalog-2026-10",
   "seed": 20261025,
@@ -94,7 +94,7 @@
       },
       "locked": {
         "seed": 20261025,
-        "n_total": 24,
+        "n_total": 25,
         "heldViability": 1,
         "nullViability": 0,
         "catalogEntries": 199
@@ -102,8 +102,8 @@
       "metrics": {
         "seed": 20261025,
         "all_pass": true,
-        "n_pass": 24,
-        "n_total": 24,
+        "n_pass": 25,
+        "n_total": 25,
         "heldViability": 1,
         "nullViability": 0,
         "triadic_all_pass": true,
@@ -295,8 +295,8 @@
           "metrics": {
             "seed": 20261025,
             "all_pass": true,
-            "n_pass": 24,
-            "n_total": 24,
+            "n_pass": 25,
+            "n_total": 25,
             "heldViability": 1,
             "nullViability": 0,
             "triadic_all_pass": true,
@@ -324,7 +324,7 @@
           },
           "locked": {
             "seed": 20261025,
-            "n_total": 24,
+            "n_total": 25,
             "heldViability": 1,
             "nullViability": 0,
             "catalogEntries": 199
@@ -340,7 +340,7 @@
             "../hs1.chrom.sizes": "63d8c36049b8"
           }
         },
-        "interpretation": "Clean reproduce #50: 24/24 · catalog 199 entries · fixtures hashed.",
+        "interpretation": "Clean reproduce #50: 25/25 · catalog 199 entries · fixtures hashed.",
         "evidence": "numerically_verified",
         "data": "trgm50_fixtures_and_runner"
       },

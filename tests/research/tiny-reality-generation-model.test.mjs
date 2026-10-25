@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  BIO_REALITY_PIPE_BIT_RATE_BPS,
   DIGITAL_SEED,
   ENGINE_SHELF_SLOT,
   PRIMARY_HYPOTHESIS,
@@ -8,10 +9,12 @@ import {
 import { runAllExperiments } from '../../research/synthobs-tiny-reality-generation-model/src/experiments.mjs';
 
 describe('synthobs-tiny-reality-generation-model', () => {
-  it('locks registry, shelf slot, and primary hypothesis', () => {
+  it('locks registry, shelf slot, bio pipe, and primary hypothesis', () => {
     expect(REGISTRY_ID).toBe('synthobs-tiny-reality-generation-model-2026-10');
     expect(ENGINE_SHELF_SLOT).toBe(50);
     expect(DIGITAL_SEED).toBe(20261025);
+    expect(BIO_REALITY_PIPE_BIT_RATE_BPS).toBe(10);
+    expect(PRIMARY_HYPOTHESIS).toMatch(/10 bits\/s biological reality stream pipe/);
     expect(PRIMARY_HYPOTHESIS).toMatch(/three-symbol/);
     expect(PRIMARY_HYPOTHESIS).toMatch(/polygon spin/);
     expect(PRIMARY_HYPOTHESIS).toMatch(/Infinite Octave/);
@@ -23,8 +26,8 @@ describe('synthobs-tiny-reality-generation-model', () => {
     async () => {
       const r = await runAllExperiments();
       expect(r.all_pass).toBe(true);
-      expect(r.n_total).toBe(24); // E1–E5 + M1–M5 + T1–T6 + G1–G5 + C1–C3
-      expect(r.n_pass).toBe(24);
+      expect(r.n_total).toBe(25); // E1–E5 + M1–M5 + T1–T7 + G1–G5 + C1–C3
+      expect(r.n_pass).toBe(25);
       expect(r.enginePinRecommended).toBe(true);
       expect(r.lab.held.summary.viabilityRate).toBe(1);
       expect(r.lab.nullBaseline.viabilityRate).toBe(0);
@@ -44,7 +47,18 @@ describe('synthobs-tiny-reality-generation-model', () => {
 
       expect(r.triadic_ran).toBe(true);
       expect(r.triadic_all_pass).toBe(true);
-      expect(r.triadicExperiments.map((e) => e.id)).toEqual(['T1', 'T2', 'T3', 'T4', 'T5', 'T6']);
+      expect(r.triadicExperiments.map((e) => e.id)).toEqual([
+        'T1',
+        'T2',
+        'T3',
+        'T4',
+        'T5',
+        'T6',
+        'T7',
+      ]);
+      expect(r.triadic.bioPipe.bitRateBps).toBe(10);
+      expect(r.triadic.conditions.full.hasBioPipe).toBe(true);
+      expect(r.triadic.conditions.full.bioPipeBitRateBps).toBe(10);
       expect(r.triadic.conditions.full.meanCoherence).toBeGreaterThan(
         r.triadic.conditions.unstructured.meanCoherence,
       );

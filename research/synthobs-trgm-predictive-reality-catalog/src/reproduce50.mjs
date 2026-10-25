@@ -70,7 +70,7 @@ export async function reproduceTrgm50() {
   // Locked expectations from #50 executed battery (not retuned here)
   const locked = {
     seed: DIGITAL_SEED,
-    n_total: 24,
+    n_total: 25, // E1–E5 + M1–M5 + T1–T7 + G1–G5 + C1–C3 (T7 = 10 bit/s bio pipe)
     heldViability: 1,
     nullViability: 0,
     catalogEntries: EXPECTED_CATALOG_ENTRIES_50,

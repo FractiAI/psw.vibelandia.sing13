@@ -11,7 +11,7 @@
 | **Standalone** | [`FractiAI/synthobs-tiny-reality-generation-model`](https://github.com/FractiAI/synthobs-tiny-reality-generation-model) |
 | **Ship blog** | `/ship-blog/tiny-reality-generation-model` |
 | **Journey** | `/journey/homeostasis-expedition` |
-| **Engine role** | Infinite Octaves `ENGINE_SHELF` companion **#50** — triadic–polygon–octave tree on folded DNA **plus** detailed genetic nodes (genes/exons/chrM/CpG) validated on pinned public data · **not** wet-lab genetics · **not** genomic consciousness · **not** universe sim |
+| **Engine role** | Infinite Octaves `ENGINE_SHELF` companion **#50** — **10 bits/s biological reality stream pipe** → triadic–polygon–octave tree on folded DNA **plus** detailed genetic nodes (genes/exons/chrM/CpG) validated on pinned public data · **not** wet-lab genetics · **not** genomic consciousness · **not** universe sim · **not** measured neural bitrate |
 | **Depends on** | Wave–Node Mathematics · ENGINE_SHELF **#49** · chromosomal electrodynamics · DNA lattice · histone phase-operator wrap grammar · GTEx / MyGene / UCSC public fixtures |
 | **Seed** | `20261025` |
 
@@ -21,13 +21,13 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Primary (T1–T6)** | Structured 3-symbol cyclic stream, polygon-spin clocked, Φ octave rhyme tree on folded DNA is coherent and beneficial vs ablations | Wet-lab chromatin proof · genomic consciousness |
+| **Primary (T1–T7)** | **10 bits/s biological reality stream pipe** feeds structured 3-symbol cyclic stream, polygon-spin clocked, Φ octave rhyme tree on folded DNA — coherent and beneficial vs ablations | Wet-lab chromatin proof · genomic consciousness · measured neural bitrate |
 | **Genetic nodes (G1–G5)** | Real GTEx genes, MyGene exons, hs1 chrM FASTA, hg38 CpG islands project onto theater and pass nesting/composition/enrichment/fold gates | Clinical genetics · diagnostic sequencing · fabricated sequences |
 | **Wave/node/fq catalog (C1–C3)** | Every genetic feature assigned to triad input wave=0 · node=1 · fq=2; each channel has gene primaries + feature kinds; motif visits all three | Gene→physics causation · clinical genotype–phenotype |
 | **Foundation** | Imported Wave–Node A–E battery still passes | New PDE theory beyond #49 |
 | **Empirically observed** | Held-out TRGM viability **100%** (n=16) vs null **0%** | Physical world generation |
 | **Empirically observed** | Phase = soft steering delta; hard viability = geo+wave+nav | Universal Goldilocks law |
-| **Empirically observed** | M1–M5 **5/5**; T1–T6 **6/6**; G1–G5 **5/5** | Wet-lab epigenetics |
+| **Empirically observed** | M1–M5 **5/5**; T1–T7 **7/7**; G1–G5 **5/5** | Wet-lab epigenetics |
 | **Empirically observed** | Historical Movebank+Kp **1/3** (H3 only) | Magnetoreception / wildlife navigation law |
 | **Φ_EGS** | Catalog nesting grammar | Physical constant replacement |
 
@@ -41,15 +41,15 @@
 
 ## Abstract
 
-**Primary question.** Does an intelligently structured **three-symbol** input stream, input in **cycles**, **clocked by rotating polygon spin**, fed into an **Infinite Octave recursive tree of holographic rhymes**, and implemented across **folded compact DNA** with **detailed genetic nodes** (genes, exons/CDS, real sequence composition, CpG islands), form a **coherent** structure and produce **beneficial** outcomes versus ablations — when validated on **pinned public genetic data**?
+**Primary question.** Does a **10 bits/s biological reality stream pipe** feeding an intelligently structured **three-symbol** input stream, input in **cycles**, **clocked by rotating polygon spin**, into an **Infinite Octave recursive tree of holographic rhymes**, implemented across **folded compact DNA** with **detailed genetic nodes** (genes, exons/CDS, real sequence composition, CpG islands), form a **coherent** structure and produce **beneficial** outcomes versus ablations — when validated on **pinned public genetic data**?
 
-**Methods.** Node.js suite · `triadic-octave-dna-lab.mjs` + `genetic-nodes-lab.mjs` · Σ={0,1,2} · 9-gon spin · Φ octave stack · nucleosome wrap 147 bp / 1.65 turns · offline fixtures: GTEx gene panel (10 loci), MyGene exons (125), UCSC hs1 chrM FASTA (16 569 bp), UCSC hg38 CpG islands (48 in gene±50 kb windows). Seed `20261025`.
+**Methods.** Node.js suite · `biological-reality-pipe.mjs` (10 bit/s) + `triadic-octave-dna-lab.mjs` + `genetic-nodes-lab.mjs` · Σ={0,1,2} · 9-gon spin · Φ octave stack · nucleosome wrap 147 bp / 1.65 turns · offline fixtures: GTEx gene panel (10 loci), MyGene exons (125), UCSC hs1 chrM FASTA (16 569 bp), UCSC hg38 CpG islands (48 in gene±50 kb windows). Seed `20261025`.
 
-**Findings (executed).** **T1–T6 = 6/6.** **G1–G5 = 5/5.** **C1–C3 = 3/3** — 199 genetic features catalogued to wave/node/fq (54/130/15); gene primaries wave={DNMT1,DNMT3A} · node={APP,SOD1,DYRK1A,TMPRSS2} · fq={INS,PDX1,POMC,NPY}. E+M pass. Historical H1–H3 remains **1/3**.
+**Findings (executed).** **T1–T7 = 7/7** (T7 locks the 10 bit/s bio pipe). **G1–G5 = 5/5.** **C1–C3 = 3/3** — 199 genetic features catalogued to wave/node/fq (54/130/15); gene primaries wave={DNMT1,DNMT3A} · node={APP,SOD1,DYRK1A,TMPRSS2} · fq={INS,PDX1,POMC,NPY}. Core **25/25**. E+M pass. Historical H1–H3 remains **1/3**.
 
-**Limitation.** Computational Soft Story overlay of public annotations — not wet biology, not genomic consciousness, not clinical genetics, not gene→physics causation, not hardware robotics. Gene/exon/CpG assemblies are GRCh38; chrM sequence is hs1 T2T (documented in `PROVENANCE.json`).
+**Limitation.** Computational Soft Story overlay of public annotations — 10 bit/s is architectural Soft Story bandwidth, not a measured neural bitrate; not wet biology, not genomic consciousness, not clinical genetics, not gene→physics causation, not hardware robotics. Gene/exon/CpG assemblies are GRCh38; chrM sequence is hs1 T2T (documented in `PROVENANCE.json`).
 
-**Keywords:** Tiny Reality Generation Model; wave; node; fq; genetic catalog; GTEx; MyGene; chrM; CpG; triadic stream; Infinite Octave; folded DNA; Homeostasis Expedition.
+**Keywords:** Tiny Reality Generation Model; biological reality stream; 10 bits/s; wave; node; fq; genetic catalog; GTEx; MyGene; chrM; CpG; triadic stream; Infinite Octave; folded DNA; Homeostasis Expedition.
 
 ---
 
@@ -57,10 +57,11 @@
 
 Homeostasis Expedition asks how nested systems stay viable. TRGM’s primary lock is no longer “generate any miniature and score it,” but a specific stack:
 
-1. **Intelligent three-symbol cyclic input** (Σ = {0,1,2}),  
-2. **Clocked by rotating polygon spin** (regular \(N\)-gon phase),  
-3. **Fed into an Infinite Octave recursive holographic-rhyme tree** (Φ_EGS scale ladder),  
-4. **Implemented on folded compact DNA** (nucleosome wrap grammar on hs1),  
+1. **10 bits/s biological reality stream pipe** (rate-limited Soft Story input bandwidth),  
+2. **Intelligent three-symbol cyclic input** (Σ = {0,1,2} ↔ wave / node / fq),  
+3. **Clocked by rotating polygon spin** (regular \(N\)-gon phase),  
+4. **Fed into an Infinite Octave recursive holographic-rhyme tree** (Φ_EGS scale ladder),  
+5. **Implemented on folded compact DNA** (nucleosome wrap grammar on hs1),  
 
 and whether that stack is **coherent** and **beneficial** relative to ablations that drop structure, clock, tree, or fold.
 
@@ -68,12 +69,12 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 
 ## 2. Contributions
 
-1. Primary-hypothesis laboratory **T1–T6** (executed, not fabricated).  
+1. Primary-hypothesis laboratory **T1–T7** (executed, not fabricated) — includes **T7** locking the **10 bits/s biological reality stream pipe**.  
 2. **Genetic-node laboratory G1–G5** on pinned public data (GTEx · MyGene · UCSC hs1 chrM · hg38 CpG).  
 3. **Wave / node / fq catalog C1–C3** — every identified genetic feature associated with one triad input (symbols 0/1/2).  
 4. Ablation battery: unstructured · unclocked · flat · unfolded DNA.  
 5. Supporting TRGM E1–E5 + molecular theater M1–M5 + historical H1–H3.  
-6. ENGINE_SHELF #50 DNA layer drilled to gene/exon/sequence/CpG detail with triad catalog.
+6. ENGINE_SHELF #50 DNA layer drilled to gene/exon/sequence/CpG detail with triad catalog + bio pipe.
 
 ---
 
@@ -81,7 +82,8 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 
 | Layer | Role |
 |-------|------|
-| **Triadic stream** | Structured cyclic symbols in Σ={0,1,2} |
+| **Biological reality stream pipe** | **10 bits/s** Soft Story bandwidth — rate-limits the biological reality input into the triad |
+| **Triadic stream** | Structured cyclic symbols in Σ={0,1,2} fed by the bio pipe |
 | **Polygon spin clock** | Rotating \(N\)-gon vertices emit / lock symbols |
 | **Infinite Octave rhyme tree** | Recursive Φ_EGS holographic encode across ±octaves |
 | **Folded compact DNA** | Nucleosome spool theater (147 bp · 1.65 turns) on hs1 |
@@ -95,6 +97,7 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 
 ## 4. Methods
 
+- **Bio pipe:** `src/biological-reality-pipe.mjs` · `BIO_REALITY_PIPE_BIT_RATE_BPS = 10` · symbols/s = \(10 / \log_2 3\) · duration = \(N_{\mathrm{ticks}} \cdot \log_2 3 / 10\). Full stack always attaches the pipe (T7).  
 - **T-lab:** `research/synthobs-tiny-reality-generation-model/src/triadic-octave-dna-lab.mjs`  
 - **Motif:** symbol \(k \mapsto (\lfloor k\Phi\rfloor + k)\bmod 3\); period 9; 3 cycles.  
 - **Clock:** `placeCircle(9,…)` spin; sync = vertex–motif lock rate.  
@@ -109,7 +112,7 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 
 ## 5. Results (executed)
 
-### 5.0 Primary battery T1–T6 (executed)
+### 5.0 Primary battery T1–T7 (executed)
 
 | ID | Result |
 |----|--------|
@@ -119,6 +122,7 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 | **T4** | chr1 folded · 147 bp / 1.65 turns · compaction ≈18.8 — **pass** |
 | **T5** | Full stack beats unstructured / unclocked / flat / unfolded — **pass** |
 | **T6** | Full stack benefitRate **100%** · viability **100%** · meanCoherence **1.000** — **pass** |
+| **T7** | **10 bits/s biological reality stream pipe** locked on full stack · 27 ticks · duration ≈4.28 s — **pass** |
 
 Ablation coherence (executed): full **1.000** · unstructured ≈0.911 · unclocked ≈0.850 · flat ≈0.650 · unfolded ≈0.850.
 
@@ -221,7 +225,7 @@ Numbers match `data/empirical_report.json` for seed `20261025`.
 
 ## 9. Conclusions
 
-Primary hypothesis **T1–T6 = 6/6**. Genetic-node drill-down **G1–G5 = 5/5**. Wave/node/fq catalog **C1–C3 = 3/3**. Supporting E+M pass; historical **1/3**. ENGINE_SHELF **#50** = triadic–polygon–octave tree on folded DNA with genetic nodes catalogued to wave · node · fq — computational Soft Story, not wet-lab genetics.
+Primary hypothesis **T1–T7 = 7/7** (includes **10 bits/s biological reality stream pipe**). Genetic-node drill-down **G1–G5 = 5/5**. Wave/node/fq catalog **C1–C3 = 3/3**. Core **25/25**. Supporting E+M pass; historical **1/3**. ENGINE_SHELF **#50** = bio pipe → triadic–polygon–octave tree on folded DNA with genetic nodes catalogued to wave · node · fq — computational Soft Story, not wet-lab genetics, not a measured neural bitrate.
 
 ---
 
@@ -259,13 +263,14 @@ Shipped as ENGINE_SHELF **#51**: [`docs/SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG
 
 | Item | Status |
 |------|--------|
-| Primary T1–T6 | **6/6** pass · seed 20261025 |
+| Primary T1–T7 | **7/7** pass · seed 20261025 · T7 = 10 bit/s bio pipe |
 | Genetic G1–G5 | **5/5** · GTEx/MyGene/UCSC fixtures |
 | Catalog C1–C3 | **3/3** · wave/node/fq ↔ symbols 0/1/2 |
 | Synthetic E1–E5 | pass |
 | Molecular M1–M5 | **5/5** |
 | Historical H1–H3 | **1/3** (H3 only) |
+| Core E+M+T+G+C | **25/25** |
 | Engine pin | #50 |
-| Not run | Wet-lab chromosomes · genomic consciousness · hardware robotics |
+| Not run | Wet-lab chromosomes · genomic consciousness · hardware robotics · measured neural bitrate |
 
 → ∞^∞

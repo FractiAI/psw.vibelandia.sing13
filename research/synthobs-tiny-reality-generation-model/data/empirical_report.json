@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T20:13:50.411Z",
+  "generatedAt": "2026-10-25T20:50:47.977Z",
   "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
   "registryId": "synthobs-tiny-reality-generation-model-2026-10",
   "seed": 20261025,
@@ -10,11 +10,11 @@
     "seed": 20261025,
     "engineShelfSlot": 50,
     "expedition": "Homeostasis Expedition",
-    "primaryHypothesis": "An intelligently structured three-symbol cyclic input stream, clocked by rotating polygon spin, fed into an Infinite Octave recursive tree of holographic rhymes, implemented across folded compact DNA molecular structures, forms a coherent structure and produces beneficial outcomes vs unstructured/unclocked/flat/unfolded ablations.",
-    "honesty": "TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA is coherent and beneficial — with genetic nodes catalogued to the Wave–Node triad inputs wave/node/fq (symbols 0/1/2) on pinned public data (GTEx, MyGene, UCSC). Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Catalog is Soft Story association grammar — not gene→physics causation, not clinical genetics. Batteries: E1–E5, H1–H3 (mixed), M1–M5, T1–T6, G1–G5, C1–C3 — executed, not fabricated.",
+    "primaryHypothesis": "A 10 bits/s biological reality stream pipe feeds an intelligently structured three-symbol cyclic input stream, clocked by rotating polygon spin, into an Infinite Octave recursive tree of holographic rhymes, implemented across folded compact DNA molecular structures — forming a coherent structure with beneficial outcomes vs unstructured/unclocked/flat/unfolded ablations.",
+    "honesty": "TRGM architecture includes a 10 bits/s biological reality stream pipe that feeds a structured three-symbol cyclic stream (wave/node/fq), clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA. Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Catalog is Soft Story association grammar — not gene→physics causation, not clinical genetics, not a measured neural bitrate. Batteries: E1–E5, H1–H3 (mixed), M1–M5, T1–T7, G1–G5, C1–C3 — executed, not fabricated.",
     "lab": {
       "seed": 20261025,
-      "runtimeMs": 1160.257935,
+      "runtimeMs": 1437.379068,
       "foundation": {
         "A_pass": true,
         "B_pass": true,
@@ -590,7 +590,7 @@
     },
     "triadic": {
       "ok": true,
-      "hypothesis": "Intelligently structured three-symbol cyclic input, clocked by rotating polygon spin, into an Infinite Octave recursive holographic-rhyme tree, implemented on folded compact DNA — coherent structure with beneficial outcomes.",
+      "hypothesis": "A 10 bits/s biological reality stream pipe feeds intelligently structured three-symbol cyclic input, clocked by rotating polygon spin, into an Infinite Octave recursive holographic-rhyme tree on folded compact DNA — coherent structure with beneficial outcomes.",
       "host": {
         "chrom": "chr1",
         "bp": 248387328
@@ -600,6 +600,29 @@
       "nucleosome": {
         "wrapBp": 147,
         "turns": 1.65
+      },
+      "bioPipe": {
+        "schema": "trgm-biological-reality-pipe/v1",
+        "kind": "biological_reality_stream",
+        "role": "Rate-limited biological reality stream pipe (10 bit/s) feeding the triad clock",
+        "bitRateBps": 10,
+        "alphabet": [
+          0,
+          1,
+          2
+        ],
+        "alphabetBits": 1.584962500721156,
+        "symbolsPerSecond": 6.309297535714575,
+        "streamLength": 27,
+        "durationSec": 4.279398751947121,
+        "informationBits": 42.793987519471216,
+        "effectiveBitRateBps": 10.000000000000002,
+        "channelMap": {
+          "0": "wave",
+          "1": "node",
+          "2": "fq"
+        },
+        "honesty": "Architectural Soft Story bandwidth (10 bit/s biological reality stream) — not measured neural bitrate, not wet-lab genetics, not gene→physics."
       },
       "conditions": {
         "full": {
@@ -616,7 +639,9 @@
           "hostKind": "folded_compact_dna",
           "clockSyncRate": 1,
           "treeCoherent": true,
-          "compactionRatio": 18.80891466825322
+          "compactionRatio": 18.80891466825322,
+          "bioPipeBitRateBps": 10,
+          "hasBioPipe": true
         },
         "unstructured": {
           "n": 12,
@@ -632,7 +657,9 @@
           "hostKind": "folded_compact_dna",
           "clockSyncRate": 0.4074074074074074,
           "treeCoherent": true,
-          "compactionRatio": 18.80891466825322
+          "compactionRatio": 18.80891466825322,
+          "bioPipeBitRateBps": null,
+          "hasBioPipe": false
         },
         "unclocked": {
           "n": 12,
@@ -648,7 +675,9 @@
           "hostKind": "folded_compact_dna",
           "clockSyncRate": 0,
           "treeCoherent": true,
-          "compactionRatio": 18.80891466825322
+          "compactionRatio": 18.80891466825322,
+          "bioPipeBitRateBps": null,
+          "hasBioPipe": false
         },
         "flat": {
           "n": 12,
@@ -664,7 +693,9 @@
           "hostKind": "folded_compact_dna",
           "clockSyncRate": 1,
           "treeCoherent": false,
-          "compactionRatio": 18.80891466825322
+          "compactionRatio": 18.80891466825322,
+          "bioPipeBitRateBps": null,
+          "hasBioPipe": false
         },
         "unfolded": {
           "n": 12,
@@ -680,7 +711,9 @@
           "hostKind": "linear_unfolded_dna",
           "clockSyncRate": 1,
           "treeCoherent": true,
-          "compactionRatio": 1
+          "compactionRatio": 1,
+          "bioPipeBitRateBps": null,
+          "hasBioPipe": false
         }
       },
       "hypotheses": [
@@ -790,7 +823,9 @@
                 "hostKind": "folded_compact_dna",
                 "clockSyncRate": 1,
                 "treeCoherent": true,
-                "compactionRatio": 18.80891466825322
+                "compactionRatio": 18.80891466825322,
+                "bioPipeBitRateBps": 10,
+                "hasBioPipe": true
               },
               "unstructured": {
                 "n": 12,
@@ -806,7 +841,9 @@
                 "hostKind": "folded_compact_dna",
                 "clockSyncRate": 0.4074074074074074,
                 "treeCoherent": true,
-                "compactionRatio": 18.80891466825322
+                "compactionRatio": 18.80891466825322,
+                "bioPipeBitRateBps": null,
+                "hasBioPipe": false
               },
               "unclocked": {
                 "n": 12,
@@ -822,7 +859,9 @@
                 "hostKind": "folded_compact_dna",
                 "clockSyncRate": 0,
                 "treeCoherent": true,
-                "compactionRatio": 18.80891466825322
+                "compactionRatio": 18.80891466825322,
+                "bioPipeBitRateBps": null,
+                "hasBioPipe": false
               },
               "flat": {
                 "n": 12,
@@ -838,7 +877,9 @@
                 "hostKind": "folded_compact_dna",
                 "clockSyncRate": 1,
                 "treeCoherent": false,
-                "compactionRatio": 18.80891466825322
+                "compactionRatio": 18.80891466825322,
+                "bioPipeBitRateBps": null,
+                "hasBioPipe": false
               },
               "unfolded": {
                 "n": 12,
@@ -854,7 +895,9 @@
                 "hostKind": "linear_unfolded_dna",
                 "clockSyncRate": 1,
                 "treeCoherent": true,
-                "compactionRatio": 1
+                "compactionRatio": 1,
+                "bioPipeBitRateBps": null,
+                "hasBioPipe": false
               }
             }
           },
@@ -881,7 +924,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 1,
               "treeCoherent": true,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": 10,
+              "hasBioPipe": true
             },
             "gateWaveL2Max": 0.05,
             "gateSyncRMin": 0.95
@@ -889,10 +934,34 @@
           "interpretation": "Full stack benefitRate=100.0%, viability=100.0%, meanCoherence=1.000.",
           "evidence": "empirically_observed",
           "data": "trgm_on_triadic_octave_dna_stack"
+        },
+        {
+          "id": "T7",
+          "title": "10 bits/s biological reality stream pipe feeds the triad architecture",
+          "pass": true,
+          "detail": {
+            "bitRateBps": 10,
+            "alphabetBits": 1.584962500721156,
+            "symbolsPerSecond": 6.309297535714575,
+            "streamLength": 27,
+            "durationSec": 4.279398751947121,
+            "informationBits": 42.793987519471216,
+            "effectiveBitRateBps": 10.000000000000002,
+            "channelMap": {
+              "0": "wave",
+              "1": "node",
+              "2": "fq"
+            },
+            "fullStackHasPipe": true,
+            "scheduleTicks": 27
+          },
+          "interpretation": "Biological reality pipe locked at 10 bit/s · 27 triad ticks · duration≈4.279 s · H/symbol≈1.585.",
+          "evidence": "numerically_verified",
+          "data": "biological_reality_pipe_10bps"
         }
       ],
-      "n_pass": 6,
-      "n_total": 6,
+      "n_pass": 7,
+      "n_total": 7,
       "all_pass": true
     },
     "genetic": {
@@ -1635,7 +1704,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 1,
               "treeCoherent": true,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": 10,
+              "hasBioPipe": true
             },
             "unstructured": {
               "n": 12,
@@ -1651,7 +1722,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 0.4074074074074074,
               "treeCoherent": true,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": null,
+              "hasBioPipe": false
             },
             "unclocked": {
               "n": 12,
@@ -1667,7 +1740,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 0,
               "treeCoherent": true,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": null,
+              "hasBioPipe": false
             },
             "flat": {
               "n": 12,
@@ -1683,7 +1758,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 1,
               "treeCoherent": false,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": null,
+              "hasBioPipe": false
             },
             "unfolded": {
               "n": 12,
@@ -1699,7 +1776,9 @@
               "hostKind": "linear_unfolded_dna",
               "clockSyncRate": 1,
               "treeCoherent": true,
-              "compactionRatio": 1
+              "compactionRatio": 1,
+              "bioPipeBitRateBps": null,
+              "hasBioPipe": false
             }
           }
         },
@@ -1726,13 +1805,39 @@
             "hostKind": "folded_compact_dna",
             "clockSyncRate": 1,
             "treeCoherent": true,
-            "compactionRatio": 18.80891466825322
+            "compactionRatio": 18.80891466825322,
+            "bioPipeBitRateBps": 10,
+            "hasBioPipe": true
           },
           "gateWaveL2Max": 0.05,
           "gateSyncRMin": 0.95
         },
         "evidence": "empirically_observed",
         "data": "trgm_on_triadic_octave_dna_stack"
+      },
+      {
+        "id": "T7",
+        "title": "10 bits/s biological reality stream pipe feeds the triad architecture",
+        "pass": true,
+        "interpretation": "Biological reality pipe locked at 10 bit/s · 27 triad ticks · duration≈4.279 s · H/symbol≈1.585.",
+        "detail": {
+          "bitRateBps": 10,
+          "alphabetBits": 1.584962500721156,
+          "symbolsPerSecond": 6.309297535714575,
+          "streamLength": 27,
+          "durationSec": 4.279398751947121,
+          "informationBits": 42.793987519471216,
+          "effectiveBitRateBps": 10.000000000000002,
+          "channelMap": {
+            "0": "wave",
+            "1": "node",
+            "2": "fq"
+          },
+          "fullStackHasPipe": true,
+          "scheduleTicks": 27
+        },
+        "evidence": "numerically_verified",
+        "data": "biological_reality_pipe_10bps"
       },
       {
         "id": "G1",
@@ -2382,7 +2487,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 1,
               "treeCoherent": true,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": 10,
+              "hasBioPipe": true
             },
             "unstructured": {
               "n": 12,
@@ -2398,7 +2505,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 0.4074074074074074,
               "treeCoherent": true,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": null,
+              "hasBioPipe": false
             },
             "unclocked": {
               "n": 12,
@@ -2414,7 +2523,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 0,
               "treeCoherent": true,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": null,
+              "hasBioPipe": false
             },
             "flat": {
               "n": 12,
@@ -2430,7 +2541,9 @@
               "hostKind": "folded_compact_dna",
               "clockSyncRate": 1,
               "treeCoherent": false,
-              "compactionRatio": 18.80891466825322
+              "compactionRatio": 18.80891466825322,
+              "bioPipeBitRateBps": null,
+              "hasBioPipe": false
             },
             "unfolded": {
               "n": 12,
@@ -2446,7 +2559,9 @@
               "hostKind": "linear_unfolded_dna",
               "clockSyncRate": 1,
               "treeCoherent": true,
-              "compactionRatio": 1
+              "compactionRatio": 1,
+              "bioPipeBitRateBps": null,
+              "hasBioPipe": false
             }
           }
         },
@@ -2473,13 +2588,39 @@
             "hostKind": "folded_compact_dna",
             "clockSyncRate": 1,
             "treeCoherent": true,
-            "compactionRatio": 18.80891466825322
+            "compactionRatio": 18.80891466825322,
+            "bioPipeBitRateBps": 10,
+            "hasBioPipe": true
           },
           "gateWaveL2Max": 0.05,
           "gateSyncRMin": 0.95
         },
         "evidence": "empirically_observed",
         "data": "trgm_on_triadic_octave_dna_stack"
+      },
+      {
+        "id": "T7",
+        "title": "10 bits/s biological reality stream pipe feeds the triad architecture",
+        "pass": true,
+        "interpretation": "Biological reality pipe locked at 10 bit/s · 27 triad ticks · duration≈4.279 s · H/symbol≈1.585.",
+        "detail": {
+          "bitRateBps": 10,
+          "alphabetBits": 1.584962500721156,
+          "symbolsPerSecond": 6.309297535714575,
+          "streamLength": 27,
+          "durationSec": 4.279398751947121,
+          "informationBits": 42.793987519471216,
+          "effectiveBitRateBps": 10.000000000000002,
+          "channelMap": {
+            "0": "wave",
+            "1": "node",
+            "2": "fq"
+          },
+          "fullStackHasPipe": true,
+          "scheduleTicks": 27
+        },
+        "evidence": "numerically_verified",
+        "data": "biological_reality_pipe_10bps"
       }
     ],
     "geneticExperiments": [
@@ -2752,8 +2893,8 @@
         "data": "triadic_symbol_wave_node_fq_lock"
       }
     ],
-    "n_pass": 24,
-    "n_total": 24,
+    "n_pass": 25,
+    "n_total": 25,
     "all_pass": true,
     "historical_n_pass": 1,
     "historical_n_total": 3,
@@ -2764,8 +2905,8 @@
     "molecular_n_total": 5,
     "molecular_all_pass": true,
     "triadic_ran": true,
-    "triadic_n_pass": 6,
-    "triadic_n_total": 6,
+    "triadic_n_pass": 7,
+    "triadic_n_total": 7,
     "triadic_all_pass": true,
     "genetic_ran": true,
     "genetic_n_pass": 5,

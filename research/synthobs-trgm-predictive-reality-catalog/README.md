@@ -7,7 +7,7 @@ Homeostasis Expedition · ENGINE_SHELF **#51** · builds on Tiny Reality Generat
 | Seed | `20261025` · validation `202610251` |
 |------|--------------------------------------|
 | V1–V8 | **8/8** |
-| Reproduce #50 | **24/24** · catalog 199 |
+| Reproduce #50 | **25/25** · catalog 199 |
 | Held-out grammar BA | **1.000** vs shuffle **0.341** |
 | Reality catalog | `trgm-51/v1` |
 

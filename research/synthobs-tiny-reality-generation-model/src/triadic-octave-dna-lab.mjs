@@ -2,16 +2,19 @@
  * TRGM · Triadic Octave DNA Lab
  *
  * Primary hypothesis under test:
- *   An intelligently structured three-symbol input stream, input in cycles,
- *   clocked by rotating polygon spin, fed into an Infinite Octave recursive
- *   tree of holographic rhymes, and implemented across folded compact DNA
- *   molecular structures — is a coherent structure and produces beneficial
- *   outcomes (vs unstructured / unclocked / flat / unfolded ablations).
+ *   A 10 bits/s biological reality stream pipe feeds an intelligently
+ *   structured three-symbol input stream, input in cycles, clocked by
+ *   rotating polygon spin, fed into an Infinite Octave recursive tree of
+ *   holographic rhymes, and implemented across folded compact DNA molecular
+ *   structures — coherent structure with beneficial outcomes (vs unstructured
+ *   / unclocked / flat / unfolded ablations).
  *
  * Honesty: computational Soft Story grammar on public hs1 sizes + B-DNA/LC
- * + nucleosome wrap figures — not genomic consciousness, not wet-lab proof.
+ * + nucleosome wrap figures — 10 bit/s is architectural Soft Story bandwidth,
+ * not a measured neural bitrate, not genomic consciousness, not wet-lab proof.
  */
 import {
+  BIO_REALITY_PIPE_BIT_RATE_BPS,
   DIGITAL_SEED,
   GATE_SYNC_R_MIN,
   GATE_WAVE_L2_MAX,
@@ -30,6 +33,11 @@ import {
   loadHs1ChromSizes,
 } from './molecular-theater.mjs';
 import { evaluateReality, generateTinyReality } from './computational-lab.mjs';
+import {
+  attachBioPipeToStack,
+  bioPipeRateLocked,
+  buildBiologicalRealityPipe,
+} from './biological-reality-pipe.mjs';
 
 const TWO_PI = 2 * Math.PI;
 const SYMBOLS = Object.freeze([0, 1, 2]);
@@ -333,18 +341,22 @@ function summarizeTrials(trials) {
 
 function buildStackCondition(kind, seed, linearTheater) {
   const structured = generateStructuredStream();
+  let stack;
   if (kind === 'full') {
     const clock = polygonSpinClock(structured.stream);
     const tree = buildHolographicRhymeTree(structured.stream);
     const folded = foldCompactDnaTheater(linearTheater);
-    return { kind, stream: structured, clock, tree, host: folded };
+    stack = { kind, stream: structured, clock, tree, host: folded };
+    // Full architecture always carries the 10 bit/s biological reality pipe.
+    return attachBioPipeToStack(stack);
   }
   if (kind === 'unstructured') {
     const stream = generateUnstructuredStream(seed, structured.stream.length);
     const clock = polygonSpinClock(stream.stream); // same clock geometry, noisy symbols
     const tree = buildHolographicRhymeTree(stream.stream);
     const folded = foldCompactDnaTheater(linearTheater);
-    return { kind, stream, clock, tree, host: folded };
+    stack = { kind, stream, clock, tree, host: folded };
+    return stack;
   }
   if (kind === 'unclocked') {
     const raw = unclockedEmit(structured.stream, seed);
@@ -370,7 +382,7 @@ function buildStackCondition(kind, seed, linearTheater) {
 }
 
 /**
- * Run the primary-hypothesis laboratory (T1–T6).
+ * Run the primary-hypothesis laboratory (T1–T7).
  */
 export function runTriadicOctaveDnaLaboratory() {
   const hs1 = loadHs1ChromSizes();
@@ -430,8 +442,24 @@ export function runTriadicOctaveDnaLaboratory() {
       clockSyncRate: stack.clock.clockSyncRate ?? 0,
       treeCoherent: Boolean(stack.tree.coherent),
       compactionRatio: stack.host.compactionRatio,
+      bioPipeBitRateBps: stack.bioPipe?.bitRateBps ?? null,
+      hasBioPipe: Boolean(stack.bioPipe),
     };
   }
+
+  // --- T7: 10 bit/s biological reality stream pipe is locked into full stack ---
+  const bioPipe = buildBiologicalRealityPipe({
+    bitRateBps: BIO_REALITY_PIPE_BIT_RATE_BPS,
+    streamLength: structured.stream.length,
+  });
+  const fullStack = buildStackCondition('full', DIGITAL_SEED, linearTheater);
+  const t7Pass =
+    bioPipeRateLocked(bioPipe) &&
+    fullStack.bioPipe != null &&
+    bioPipeRateLocked(fullStack.bioPipe) &&
+    fullStack.bioSchedule?.length === structured.stream.length &&
+    conditionSummaries.full.hasBioPipe === true &&
+    conditionSummaries.full.bioPipeBitRateBps === BIO_REALITY_PIPE_BIT_RATE_BPS;
 
   const full = conditionSummaries.full;
   const beatsUnstructured =
@@ -560,16 +588,39 @@ export function runTriadicOctaveDnaLaboratory() {
       evidence: 'empirically_observed',
       data: 'trgm_on_triadic_octave_dna_stack',
     },
+    {
+      id: 'T7',
+      title: '10 bits/s biological reality stream pipe feeds the triad architecture',
+      pass: t7Pass,
+      detail: {
+        bitRateBps: bioPipe.bitRateBps,
+        alphabetBits: bioPipe.alphabetBits,
+        symbolsPerSecond: bioPipe.symbolsPerSecond,
+        streamLength: bioPipe.streamLength,
+        durationSec: bioPipe.durationSec,
+        informationBits: bioPipe.informationBits,
+        effectiveBitRateBps: bioPipe.effectiveBitRateBps,
+        channelMap: bioPipe.channelMap,
+        fullStackHasPipe: Boolean(fullStack.bioPipe),
+        scheduleTicks: fullStack.bioSchedule?.length ?? 0,
+      },
+      interpretation: t7Pass
+        ? `Biological reality pipe locked at ${bioPipe.bitRateBps} bit/s · ${bioPipe.streamLength} triad ticks · duration≈${bioPipe.durationSec.toFixed(3)} s · H/symbol≈${bioPipe.alphabetBits.toFixed(3)}.`
+        : 'Biological reality stream pipe missing or rate-unlocked from full stack.',
+      evidence: 'numerically_verified',
+      data: 'biological_reality_pipe_10bps',
+    },
   ];
 
   return {
     ok: true,
     hypothesis:
-      'Intelligently structured three-symbol cyclic input, clocked by rotating polygon spin, into an Infinite Octave recursive holographic-rhyme tree, implemented on folded compact DNA — coherent structure with beneficial outcomes.',
+      'A 10 bits/s biological reality stream pipe feeds intelligently structured three-symbol cyclic input, clocked by rotating polygon spin, into an Infinite Octave recursive holographic-rhyme tree on folded compact DNA — coherent structure with beneficial outcomes.',
     host: { chrom: hostChrom, bp: hostBp },
     polygonSides: POLYGON_SIDES,
     octaveDepth: OCTAVE_DEPTH,
     nucleosome: { wrapBp: WRAP_BP, turns: NUCLEOSOME_TURNS },
+    bioPipe,
     conditions: conditionSummaries,
     hypotheses,
     n_pass: hypotheses.filter((h) => h.pass).length,

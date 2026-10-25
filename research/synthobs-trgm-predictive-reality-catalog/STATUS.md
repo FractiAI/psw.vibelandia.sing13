@@ -4,7 +4,7 @@
 
 | Gate | Result |
 |------|--------|
-| V1 Reproduce #50 | 24/24 · catalog 199 · fixtures hashed |
+| V1 Reproduce #50 | 25/25 · catalog 199 · fixtures hashed |
 | V2 Held-out split | train chr21 · held INS/PDX1/POMC/NPY/DNMT* · nHeld=134 |
 | V3 Predictive value | grammar BA 1.000 > shuffle 0.341 |
 | V4 Matched baselines | conventional 0.799 · sequenceProxy 1.000 · shuffle 0.341 |

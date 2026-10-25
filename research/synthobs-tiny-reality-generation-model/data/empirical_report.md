@@ -5,14 +5,14 @@
 **Expedition:** Homeostasis Expedition
 **ENGINE_SHELF candidate:** #50
 **Seed:** 20261025
-**Generated:** 2026-10-25T20:13:50.411Z
+**Generated:** 2026-10-25T20:50:47.977Z
 
 ## Verdict
 
 | Metric | Value |
 |---|---|
 | Core all pass (E+M+T+G+C) | `true` |
-| Core passed | 24/24 |
+| Core passed | 25/25 |
 | Foundation Wave–Node | `true` |
 | Held-out viability | 100.0% |
 | Null viability | 0.0% |
@@ -22,17 +22,17 @@
 | Molecular theater ran | `true` |
 | Molecular passed | 5/5 |
 | Triadic–octave–DNA ran | `true` |
-| Triadic–octave–DNA passed | 6/6 |
+| Triadic–octave–DNA passed | 7/7 |
 | Genetic nodes ran | `true` |
 | Genetic nodes passed | 5/5 |
 | Wave/node/fq catalog ran | `true` |
 | Wave/node/fq catalog passed | 3/3 |
 | Φ_EGS | 1.618033988749895 |
-| Runtime ms | 1160.3 |
+| Runtime ms | 1437.4 |
 
 ## Primary hypothesis
 
-An intelligently structured three-symbol cyclic input stream, clocked by rotating polygon spin, fed into an Infinite Octave recursive tree of holographic rhymes, implemented across folded compact DNA molecular structures, forms a coherent structure and produces beneficial outcomes vs unstructured/unclocked/flat/unfolded ablations.
+A 10 bits/s biological reality stream pipe feeds an intelligently structured three-symbol cyclic input stream, clocked by rotating polygon spin, into an Infinite Octave recursive tree of holographic rhymes, implemented across folded compact DNA molecular structures — forming a coherent structure with beneficial outcomes vs unstructured/unclocked/flat/unfolded ablations.
 
 ## Experiments (synthetic E1–E5)
 
@@ -192,6 +192,13 @@ An intelligently structured three-symbol cyclic input stream, clocked by rotatin
 - Evidence: empirically_observed
 - Data: trgm_on_triadic_octave_dna_stack
 
+### T7 — 10 bits/s biological reality stream pipe feeds the triad architecture
+
+- **Pass:** `true`
+- Biological reality pipe locked at 10 bit/s · 27 triad ticks · duration≈4.279 s · H/symbol≈1.585.
+- Evidence: numerically_verified
+- Data: biological_reality_pipe_10bps
+
 ## Genetic nodes G1–G5 (real public gene/exon/chrM/CpG data)
 
 - Genes: 10 (GTEx GRCh38 panel)
@@ -267,7 +274,7 @@ An intelligently structured three-symbol cyclic input stream, clocked by rotatin
 
 ## Honesty
 
-TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA is coherent and beneficial — with genetic nodes catalogued to the Wave–Node triad inputs wave/node/fq (symbols 0/1/2) on pinned public data (GTEx, MyGene, UCSC). Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Catalog is Soft Story association grammar — not gene→physics causation, not clinical genetics. Batteries: E1–E5, H1–H3 (mixed), M1–M5, T1–T6, G1–G5, C1–C3 — executed, not fabricated.
+TRGM architecture includes a 10 bits/s biological reality stream pipe that feeds a structured three-symbol cyclic stream (wave/node/fq), clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA. Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Catalog is Soft Story association grammar — not gene→physics causation, not clinical genetics, not a measured neural bitrate. Batteries: E1–E5, H1–H3 (mixed), M1–M5, T1–T7, G1–G5, C1–C3 — executed, not fabricated.
 
 Standalone: FractiAI/synthobs-tiny-reality-generation-model
 

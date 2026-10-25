@@ -111,7 +111,7 @@ function mdReport(report) {
   }
   const tri = report.results.triadic;
   lines.push(
-    '## Primary battery T1–T6 (triadic stream × polygon spin × octave tree × folded DNA)',
+    '## Primary battery T1–T7 (10 bit/s bio pipe × triadic stream × polygon spin × octave tree × folded DNA)',
     '',
   );
   if (tri?.ok) {

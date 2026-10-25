@@ -21,7 +21,7 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Reproduce #50 (V1)** | Clean import reproduces fixture hashes, provenance, runner, and locked metrics (24/24 · catalog 199 · held 100% / null 0%) | Retuning #50 grammar on the same examples |
+| **Reproduce #50 (V1)** | Clean import reproduces fixture hashes, provenance, runner, and locked metrics (25/25 · catalog 199 · held 100% / null 0% · includes T7 10 bit/s bio pipe) | Retuning #50 grammar on the same examples |
 | **Held-out biology (V2–V4)** | Feature-kind channel grammar recovers triad labels on held-out non-chr21 / chrM features better than shuffle; matched baselines reported | Wet-lab chromatin proof · clinical genetics |
 | **Architecture baselines (V5)** | Φ octave tree beats flat encode; folded DNA theater beats null layout on viability | New PDE theory · robot hardware |
 | **Channel predictive value (V6)** | wave/node/fq assignment adds clock lock vs shuffled symbol→channel map; 199-feature catalog preserved | Gene→physics causation |
@@ -43,7 +43,7 @@
 
 **Methods.** Node.js suite · reproduce #50 fixtures + runner · held-out split (chr21 train genes vs non-chr21 + chrM held) · matched baselines (shuffle · conventional · sequence-proxy · flat encode · null layout) · channel-assignment contrast · reality catalog schema `trgm-reality-catalog-record/v1`. Seeds `20261025` / `202610251`.
 
-**Findings (executed).** **V1–V8 = 8/8.** Clean reproduce #50 **24/24** · catalog **199**. Held-out feature-kind grammar BA **1.000** vs shuffle **0.341** · conventional **0.799** · sequence-proxy **1.000**. Correct triad clock sync **100%** vs shuffled motif hit **33.3%**. Reality catalog `trgm-51/v1`: **9** records with compare + recombine.
+**Findings (executed).** **V1–V8 = 8/8.** Clean reproduce #50 **25/25** (includes T7 10 bit/s bio pipe) · catalog **199**. Held-out feature-kind grammar BA **1.000** vs shuffle **0.341** · conventional **0.799** · sequence-proxy **1.000**. Correct triad clock sync **100%** vs shuffled motif hit **33.3%**. Reality catalog `trgm-51/v1`: **9** records with compare + recombine.
 
 **Limitation.** Computational Soft Story architecture validation — not a claim about molecular mechanisms inside living chromosomes. Biology claims stay on a separate wet-lab validation track.
 
@@ -107,7 +107,7 @@ TRGM #50 shipped a structured three-symbol cyclic stream × polygon spin × Infi
 
 | ID | Result |
 |----|--------|
-| **V1** | Clean reproduce #50: **24/24** · catalog **199** · fixtures hashed — **pass** |
+| **V1** | Clean reproduce #50: **25/25** · catalog **199** · fixtures hashed (T7 bio pipe included) — **pass** |
 | **V2** | Train chr21 genes [APP, SOD1, DYRK1A, TMPRSS2] · held-out [INS, PDX1, POMC, NPY, DNMT1, DNMT3A] · nHeld=134 — **pass** |
 | **V3** | Held-out BA: catalog-grammar **1.000** > shuffle **0.341** — **pass** |
 | **V4** | Baselines BA — conventional **0.799** · sequenceProxy **1.000** · shuffle **0.341** · grammar **1.000** — **pass** |
@@ -176,7 +176,7 @@ Numbers match `research/synthobs-trgm-predictive-reality-catalog/data/empirical_
 | Item | Status |
 |------|--------|
 | V1–V8 | **8/8** pass · seeds 20261025 / 202610251 |
-| Reproduce #50 | **24/24** · catalog 199 |
+| Reproduce #50 | **25/25** · catalog 199 · T7 bio pipe |
 | Held-out grammar BA | **1.000** vs shuffle **0.341** |
 | Reality catalog | `trgm-51/v1` · 9 records |
 | Engine pin | #51 |

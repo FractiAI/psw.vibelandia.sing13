@@ -5,7 +5,7 @@
 **Expedition:** Homeostasis Expedition
 **ENGINE_SHELF:** #51 (parent TRGM #50)
 **Seed:** 20261025 · validation 202610251
-**Generated:** 2026-10-25T20:35:15.874Z
+**Generated:** 2026-10-25T20:50:48.130Z
 
 ## Verdict
 
@@ -14,7 +14,7 @@
 | All pass (V1–V8) | `true` |
 | Passed | 8/8 |
 | Engine pin recommended | `true` |
-| Reproduce #50 | `true` · 24/24 |
+| Reproduce #50 | `true` · 25/25 |
 | Catalog entries | 199 |
 | Held-out grammar BA | 1.000 |
 | Shuffle BA | 0.341 |
@@ -30,7 +30,7 @@ TRGM #51 independently reproduces #50 fixture hashes/metrics, tests held-out bio
 ### V1 — Reproduce TRGM #50 fixtures (hashes) + locked metrics from clean import
 
 - **Pass:** `true`
-- Clean reproduce #50: 24/24 · catalog 199 entries · fixtures hashed.
+- Clean reproduce #50: 25/25 · catalog 199 entries · fixtures hashed.
 - Evidence: numerically_verified
 - Data: trgm50_fixtures_and_runner
 

@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "posts": [
+    {
+      "id": "daily-2026-10-25-synthobs-tiny-reality-generation-model-2026-10",
+      "posted": "2026-10-25",
+      "featured": true,
+      "title": "If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable?",
+      "subtitle": "News of the day · Sunday, October 25",
+      "summary": "TRGM held-out n=16: Goldilocks viability 100% vs null scatter 0% (seed 20261025); nested L0→L1; builds on Wave–Node #49 — Homeostasis Expedition engine #50, not a universe simulator.",
+      "href": "/ship-blog/tiny-reality-generation-model",
+      "pill": "TODAY",
+      "docRef": "synthobs-tiny-reality-generation-model-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-24-synthobs-wave-node-mathematics-2026-10",
       "posted": "2026-10-24",

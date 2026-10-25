@@ -1,22 +1,29 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "dateline": {
-    "ymd": "2026-10-24",
-    "weekday": "Saturday",
+    "ymd": "2026-10-25",
+    "weekday": "Sunday",
     "month": "October",
-    "day": 24,
-    "label": "Saturday, October 24",
-    "shortBoard": "Saturday board · October 24 · Puerto Reno",
-    "newsLabel": "News of the day · Saturday, October 24"
+    "day": 25,
+    "label": "Sunday, October 25",
+    "shortBoard": "Sunday board · October 25 · Puerto Reno",
+    "newsLabel": "News of the day · Sunday, October 25"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Saturday board · October 24 · Puerto Reno",
-  "newsLabel": "News of the day · Saturday, October 24",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/wave-node-mathematics\">When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?</a>. Also new on the board: <a href=\"/ship-blog/geometry-host-dependent-relationship\">Does the Same Rule Draw Different Shapes When the Terrain Changes?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Sunday board · October 25 · Puerto Reno",
+  "newsLabel": "News of the day · Sunday, October 25",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/tiny-reality-generation-model\">If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable?</a>. Also new on the board: <a href=\"/ship-blog/wave-node-mathematics\">When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-tiny-reality-generation-model-2026-10",
+      "title": "If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable?",
+      "href": "/ship-blog/tiny-reality-generation-model",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-reality-generation-model-2026-10",
+      "blurb": "TRGM held-out n=16: Goldilocks viability 100% vs null scatter 0% (seed 20261025); nested L0→L1; builds on Wave–Node #49 — Homeostasis Expedition engine #50, not a universe simulator."
+    },
     {
       "id": "synthobs-wave-node-mathematics-2026-10",
       "title": "When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/geometry-host-dependent-relationship",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-geometry-host-dependent-relationship-2026-10",
       "blurb": "GHDR-1 grid lab: fixed shortest-path objective, Host A route 28 vs Host B ~34.63 with barrier — host-dependent geometry demo; forest/ant recurrence and fractality not tested."
-    },
-    {
-      "id": "synthobs-phase-aware-consensus-calculus-2026-10",
-      "title": "When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak?",
-      "href": "/ship-blog/phase-aware-consensus-calculus",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-phase-aware-consensus-calculus-2026-10",
-      "blurb": "PAC-1 synthetic lab: 90° phase quadrature on preference trajectories, parabolic peak windows, and Monte Carlo fixtures — manuscript anchors report 61–91% median-error gains vs coarse counting (not live governance proof)."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-23-synthobs-geometry-host-dependent-relationship-2026-10",
-    "title": "Does the Same Rule Draw Different Shapes When the Terrain Changes?",
-    "href": "/ship-blog/geometry-host-dependent-relationship"
+    "id": "daily-2026-10-24-synthobs-wave-node-mathematics-2026-10",
+    "title": "When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?",
+    "href": "/ship-blog/wave-node-mathematics"
   },
-  "generatedAt": "2026-10-24T18:03:54.908Z"
+  "generatedAt": "2026-10-25T18:21:21.340Z"
 }

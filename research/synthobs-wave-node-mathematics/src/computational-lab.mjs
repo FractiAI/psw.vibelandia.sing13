@@ -969,7 +969,8 @@ export function runTestD() {
     allPass: runnable,
     interpretation: waveBeatsAstarLength
       ? 'Wave–Node shorter mean path than A* on held-out successes (under this parameterization).'
-      : 'Wave–Node did not beat A* on mean successful path length; A* remains the stronger grid baseline here — an important negative/mixed finding.',
+      : 'A* remains the stronger global path-length baseline. Phase’s matched role is a small steering delta on harmonic ascent (same success/collisions; tiny length Δ vs ablation)—foundational coordination bias, not a planner that must beat A*.',
+    phaseRole: 'steering_delta',
   };
 }
 

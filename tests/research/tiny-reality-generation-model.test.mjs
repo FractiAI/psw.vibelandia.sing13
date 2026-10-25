@@ -22,6 +22,8 @@ describe('synthobs-tiny-reality-generation-model', () => {
       expect(r.enginePinRecommended).toBe(true);
       expect(r.lab.held.summary.viabilityRate).toBe(1);
       expect(r.lab.nullBaseline.viabilityRate).toBe(0);
+      expect(r.lab.phaseSteering.hardGate).toBe(false);
+      expect(r.lab.phaseSteering.role).toBe('steering_delta');
 
       // Historical prediction battery must actually run on real collar/Kp data (or fixture).
       expect(r.historical_ran).toBe(true);

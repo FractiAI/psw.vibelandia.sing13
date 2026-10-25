@@ -59,7 +59,7 @@ export function runAllExperiments() {
       interpretation: lab.D.interpretation,
       evidence: 'empirically_observed',
       honesty:
-        '2D point navigation only — not manipulator, multi-robot hardware, or physical Wave–Node Robotics product proof.',
+        '2D point navigation only — not manipulator, multi-robot hardware, or physical Wave–Node Robotics product proof. Phase = steering/coordination delta.',
     },
     {
       id: 'E5',

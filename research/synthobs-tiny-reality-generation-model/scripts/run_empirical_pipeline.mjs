@@ -135,12 +135,12 @@ async function main() {
   const bars = [
     { x: 'TRGM', y: results.lab.held.summary.viabilityRate },
     { x: 'Null', y: results.lab.nullBaseline.viabilityRate },
-    { x: 'Ablateφ', y: results.lab.ablationNoPhaseGate.viabilityRate },
+    { x: 'φ soft', y: results.lab.phaseSteering?.softPhaseOkRate ?? 0 },
   ];
   await fs.writeFile(path.join(FIGURES, 'fig_viability.json'), JSON.stringify(bars, null, 2));
   await fs.writeFile(
     path.join(FIGURES, 'fig_viability.svg'),
-    svgBars(bars, { title: 'Fig. TRGM — Held-out viability rates' }),
+    svgBars(bars, { title: 'Fig. TRGM — Viability + soft phase sync rate' }),
   );
   if (results.historical?.scored) {
     const h = results.historical.scored;

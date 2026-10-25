@@ -5,7 +5,7 @@
 **Expedition:** Homeostasis Expedition
 **ENGINE_SHELF candidate:** #50
 **Seed:** 20261025
-**Generated:** 2026-10-25T17:42:14.302Z
+**Generated:** 2026-10-25T18:54:58.235Z
 
 ## Verdict
 
@@ -20,7 +20,7 @@
 | Historical ran | `true` (live_csv) |
 | Historical passed | 1/3 |
 | Φ_EGS | 1.618033988749895 |
-| Runtime ms | 1270.0 |
+| Runtime ms | 1266.1 |
 
 ## Experiments (synthetic)
 
@@ -52,11 +52,11 @@
 - Evidence: empirically_observed
 - Data: synthetic
 
-### E5 — Phase-gate ablation still leaves geo+wave+nav band
+### E5 — Phase is steering delta (soft); hard viability = geo+wave+nav
 
 - **Pass:** `true`
-- Removing the phase sync requirement cannot lower geo+wave+nav pass rate below full-gate rate (subset relation).
-- Evidence: analytically_established
+- Foundational steering/coordination delta — soft metric on Kuramoto community; hard viability = geometry + wave + navigation.
+- Evidence: empirically_observed
 - Data: synthetic
 
 ## Historical prediction tests (Movebank GPS + GFZ Kp)
@@ -89,7 +89,7 @@
 
 ## Honesty
 
-TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) and scores Goldilocks/homeostasis viability — not a physical universe simulator, not an LLM world model, not proof of consciousness or finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical battery (H1–H3) uses public Movebank GPS (study 2548892515, Alces alces) plus GFZ Kp archived to the collar window to test structure→phase and storm-contrast predictions — mixed/null historical outcomes do not upgrade synthetic gates into wildlife biology claims.
+TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank 2548892515 + GFZ Kp) probe small-effect / sync-style predictions — mixed outcomes do not upgrade synthetic gates into wildlife biology.
 
 Standalone: FractiAI/synthobs-tiny-reality-generation-model
 

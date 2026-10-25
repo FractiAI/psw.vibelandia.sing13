@@ -21,7 +21,7 @@ export const NOT_UNIVERSAL_ROBOTICS_ARCHITECTURE = true;
 export const SOFT_STORY_EGS_GRAMMAR = true;
 
 export const HONESTY =
-  'Wave–Node Mathematics lab: analytical/numerical fixtures for node placement, 1D FDTD wave PDE, Kuramoto phase sync, and 2D point-navigation planning — not physical robot hardware, not manipulator benchmarks, not proof of a finished Wave–Node Robotics product. Φ_EGS is catalog nesting grammar only.';
+  'Wave–Node Mathematics lab: analytical/numerical fixtures for node placement, 1D FDTD wave PDE, Kuramoto phase sync, and 2D point-navigation planning. Phase is a foundational steering/coordination delta on local ascent (matched ablation), not expected to beat A* on global path length. Not physical robot hardware, not manipulator benchmarks, not a finished Wave–Node Robotics product. Φ_EGS is catalog nesting grammar only.';
 
 /** Acceptance thresholds (fixed before final evaluation). */
 export const A_MAX_COORD_ERR = 1e-12;

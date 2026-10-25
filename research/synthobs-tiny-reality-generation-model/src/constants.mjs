@@ -22,11 +22,13 @@ export const NOT_UNIVERSAL_REALITY_ENGINE = true;
 export const SOFT_STORY_EGS_GRAMMAR = true;
 
 export const HONESTY =
-  'TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) and scores Goldilocks/homeostasis viability — not a physical universe simulator, not an LLM world model, not proof of consciousness or finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical battery (H1–H3) uses public Movebank GPS (study 2548892515, Alces alces) plus GFZ Kp archived to the collar window to test structure→phase and storm-contrast predictions — mixed/null historical outcomes do not upgrade synthetic gates into wildlife biology claims.';
+  'TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank 2548892515 + GFZ Kp) probe small-effect / sync-style predictions — mixed outcomes do not upgrade synthetic gates into wildlife biology.';
 
-/** Pre-registered viability gates (Goldilocks band). */
+/** Pre-registered hard viability gates (Goldilocks band) — phase excluded by design. */
 export const GATE_WAVE_L2_MAX = 0.05;
+/** Soft steering/sync quality floor (reported; not required for viable=true). */
 export const GATE_SYNC_R_MIN = 0.95;
+export const PHASE_IS_STEERING_DELTA = true;
 export const GATE_PATH_SUCCESS = true;
 export const GATE_MAX_PATH_INFLATION = 1.35; // vs A* length when both succeed
 

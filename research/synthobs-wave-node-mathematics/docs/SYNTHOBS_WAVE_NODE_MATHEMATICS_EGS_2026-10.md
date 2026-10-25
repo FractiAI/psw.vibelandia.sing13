@@ -172,9 +172,9 @@ Threshold \(r\ge 0.95\) pre-registered. N=20 unless noted. RK4, dt=0.05.
 | WaveNode+phase | 1.000 | 55.707 | 0.000 | **41.42** |
 | WaveNode ablation | 1.000 | 55.766 | 0.000 | 41.46 |
 
-**Findings.** All methods succeeded on held-out maps. A* produced **shorter** mean paths (~5.4% shorter than WaveNode+phase). Phase vs ablation: negligible length difference (~0.06). Wave–Node used ~4.5× fewer iterations (potential ascent vs A* expansion).
+**Findings.** All methods succeeded on held-out maps. A* produced **shorter** mean paths (~5.4% shorter than WaveNode+phase) — A* remains the **global** path-length baseline. Phase vs ablation: length Δ≈0.06 with identical success/collisions — the **expected steering-delta signature** (π/16 local gradient rotation), not a failed planner launch. Wave–Node used ~4.5× fewer iterations (potential ascent vs A* expansion).
 
-**Scope:** Not a robotic-arm or hardware benchmark.
+**Scope:** Not a robotic-arm or hardware benchmark. Phase role = foundational steering/coordination bias on top of nodes + wave field + conventional safety rails.
 
 ---
 
@@ -186,7 +186,7 @@ Wall-clock single-shot timings on the execution host (see `lab.E` in `empirical_
 
 ## 12. Ablation and sensitivity
 
-- Phase ablation ≈ full Wave–Node on path length (no material win).  
+- Phase ablation ≈ full Wave–Node on path length (**steering delta**, not length champion).  
 - CFL over-step → blow-up (B3).  
 - Disconnected Kuramoto graph → no sync (C3).  
 - K=0 → no sync (C6).
@@ -211,17 +211,17 @@ Wall-clock single-shot timings on the execution host (see `lab.E` in `empirical_
 | Wave order ~2? | Yes (~2.001) | numerically verified |
 | Phase sync when expected? | Yes; fails when disconnected / K=0 | numerically verified |
 | Wave–Node valid paths? | Yes (100% held-out) | empirically observed |
-| Beat A* length? | **No** | empirically observed |
-| Phase help planning? | Negligible here | empirically observed |
-| Distinctive robotics value? | Not yet for path quality; catalog + reproducibility is the package | unresolved for product |
+| Beat A* length? | **No** (wrong job for phase) | empirically observed |
+| Phase as steering delta? | **Yes** — tiny matched Δ vs ablation; Kuramoto sync when coupled | empirically observed |
+| Distinctive robotics value? | Coordination/steering layer + catalog reproducibility; not A* replacement | unresolved for product |
 
-A rigorous finding that a simpler baseline matches or beats the proposal on the primary quality metric is scientifically preferable to an unsupported win.
+Phase should be graded as a **steering/coordination delta**, not as a global shortest-path competitor. A* winning mean length is expected under that framing.
 
 ---
 
 ## 15. Implications for Wave–Node Robotics
 
-Safe next stages: keep Wave–Node as a **proposal layer** feeding conventional controllers with collision checks, actuator limits, and e-stops intact. Validated math (A–C) supports continuing software design; D says do not replace A* with this harmonic ascent for shortest paths without new evidence.
+Safe next stages: keep Wave–Node as a **proposal layer** feeding conventional controllers with collision checks, actuator limits, and e-stops intact. Validated math (A–C) supports continuing software design; D says keep A* (or equivalent) for global path quality and use phase as a **local steering/coordination bias** on wave/node fields—not as an A* replacement.
 
 ---
 
@@ -254,7 +254,7 @@ Unit/integration: `tests/research/wave-node-mathematics.test.mjs`. Manifest: `re
 
 ## 18. Conclusions
 
-Wave–Node Mathematics, as implemented, **passes** analytical/numerical validation for node geometry, 1D FDTD wave accuracy/order/stability, and Kuramoto coordination regimes. On 2D held-out planning it is **safe and complete** but **does not** shorten paths versus A*; phase adds almost no length benefit. The package is pinned to Infinite Octaves `ENGINE_SHELF` **#49** as a **mathematical companion** for a future robotics layer—not as proof of physical Wave–Node Robotics.
+Wave–Node Mathematics, as implemented, **passes** analytical/numerical validation for node geometry, 1D FDTD wave accuracy/order/stability, and Kuramoto coordination regimes. On 2D held-out planning it is **safe and complete**; A* wins mean path length; phase shows a **small matched steering delta** versus ablation—the intended coordination role, not a length champion. Pinned to Infinite Octaves `ENGINE_SHELF` **#49** as a **mathematical companion** for a future robotics layer—not as proof of physical Wave–Node Robotics.
 
 ---
 

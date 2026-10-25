@@ -23,6 +23,7 @@ const FIGURES = path.join(ROOT, 'figures');
 
 function mdReport(report) {
   const lab = report.results.lab;
+  const hist = report.results.historical;
   const lines = [
     `# ${STUDY_TITLE}`,
     '',
@@ -37,16 +38,18 @@ function mdReport(report) {
     '',
     `| Metric | Value |`,
     `|---|---|`,
-    `| All pass | \`${report.results.all_pass}\` |`,
-    `| Passed | ${report.results.n_pass}/${report.results.n_total} |`,
+    `| Synthetic all pass (E1–E5) | \`${report.results.all_pass}\` |`,
+    `| Synthetic passed | ${report.results.n_pass}/${report.results.n_total} |`,
     `| Foundation Wave–Node | \`${lab.foundation.allPass}\` |`,
     `| Held-out viability | ${(lab.held.summary.viabilityRate * 100).toFixed(1)}% |`,
     `| Null viability | ${(lab.nullBaseline.viabilityRate * 100).toFixed(1)}% |`,
     `| Engine pin recommended | \`${lab.summary.enginePinRecommended}\` |`,
+    `| Historical ran | \`${report.results.historical_ran}\` (${hist?.sourceMode || 'n/a'}) |`,
+    `| Historical passed | ${report.results.historical_n_pass}/${report.results.historical_n_total} |`,
     `| Φ_EGS | ${PHI_EGS} |`,
     `| Runtime ms | ${lab.runtimeMs.toFixed(1)} |`,
     '',
-    '## Experiments',
+    '## Experiments (synthetic)',
     '',
   ];
   for (const e of report.results.experiments) {
@@ -54,6 +57,25 @@ function mdReport(report) {
     lines.push(`- **Pass:** \`${e.pass}\``);
     if (e.interpretation) lines.push(`- ${e.interpretation}`);
     if (e.evidence) lines.push(`- Evidence: ${e.evidence}`);
+    if (e.data) lines.push(`- Data: ${e.data}`);
+    lines.push('');
+  }
+  lines.push('## Historical prediction tests (Movebank GPS + GFZ Kp)', '');
+  if (hist?.scored?.dateRange) {
+    lines.push(
+      `- Source mode: \`${hist.sourceMode}\``,
+      `- Collar window days scored: ${hist.scored.nDays} (train ${hist.scored.nTrain} / held-out ${hist.scored.nHeld})`,
+      `- Date range: ${hist.scored.dateRange.start} → ${hist.scored.dateRange.end}`,
+      `- Trajectory rows: ${hist.nTrajectoryRows ?? 'fixture'}`,
+      '',
+    );
+  }
+  for (const e of report.results.historicalExperiments || []) {
+    lines.push(`### ${e.id} — ${e.title}`, '');
+    lines.push(`- **Pass:** \`${e.pass}\``);
+    if (e.interpretation) lines.push(`- ${e.interpretation}`);
+    if (e.evidence) lines.push(`- Evidence: ${e.evidence}`);
+    if (e.data) lines.push(`- Data: ${e.data}`);
     lines.push('');
   }
   lines.push('## Honesty', '', HONESTY, '', `Standalone: ${STANDALONE_REPO}`, '', '→ ∞^∞', '');
@@ -79,7 +101,8 @@ async function main() {
   await fs.mkdir(OUT, { recursive: true });
   await fs.mkdir(RESULTS, { recursive: true });
   await fs.mkdir(FIGURES, { recursive: true });
-  const results = runAllExperiments();
+  await fs.mkdir(path.join(OUT, 'historical'), { recursive: true });
+  const results = await runAllExperiments();
   const generatedAt = new Date().toISOString();
   const report = {
     generatedAt,
@@ -100,6 +123,9 @@ async function main() {
         seed: DIGITAL_SEED,
         docId: DOC_ID,
         enginePinRecommended: results.enginePinRecommended,
+        historical_ran: results.historical_ran,
+        historical_n_pass: results.historical_n_pass,
+        historical_n_total: results.historical_n_total,
         node: process.version,
       },
       null,
@@ -116,6 +142,19 @@ async function main() {
     path.join(FIGURES, 'fig_viability.svg'),
     svgBars(bars, { title: 'Fig. TRGM — Held-out viability rates' }),
   );
+  if (results.historical?.scored) {
+    const h = results.historical.scored;
+    const histBars = [
+      { x: 'H1', y: h.H1_structureBandPhase.pass ? 1 : 0 },
+      { x: 'H2', y: h.H2_phaseBeatsShuffle.beatShuffleRate },
+      { x: 'H3', y: Math.abs(h.H3_stormVsQuietPhase.delta || 0) },
+    ];
+    await fs.writeFile(path.join(FIGURES, 'fig_historical.json'), JSON.stringify(histBars, null, 2));
+    await fs.writeFile(
+      path.join(FIGURES, 'fig_historical.svg'),
+      svgBars(histBars, { title: 'Fig. TRGM — Historical prediction metrics' }),
+    );
+  }
   console.log(
     JSON.stringify(
       {
@@ -124,6 +163,14 @@ async function main() {
         heldViability: results.lab.held.summary.viabilityRate,
         nullViability: results.lab.nullBaseline.viabilityRate,
         enginePinRecommended: results.enginePinRecommended,
+        historical: {
+          ran: results.historical_ran,
+          sourceMode: results.historical?.sourceMode,
+          passed: `${results.historical_n_pass}/${results.historical_n_total}`,
+          H1: results.historical?.scored?.H1_structureBandPhase?.pass,
+          H2: results.historical?.scored?.H2_phaseBeatsShuffle?.pass,
+          H3: results.historical?.scored?.H3_stormVsQuietPhase?.pass,
+        },
       },
       null,
       2,

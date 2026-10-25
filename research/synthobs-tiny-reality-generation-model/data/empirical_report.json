@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T17:06:00.417Z",
+  "generatedAt": "2026-10-25T17:42:14.302Z",
   "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
   "registryId": "synthobs-tiny-reality-generation-model-2026-10",
   "seed": 20261025,
@@ -10,10 +10,10 @@
     "seed": 20261025,
     "engineShelfSlot": 50,
     "expedition": "Homeostasis Expedition",
-    "honesty": "TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) and scores Goldilocks/homeostasis viability — not a physical universe simulator, not an LLM world model, not proof of consciousness or finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only.",
+    "honesty": "TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) and scores Goldilocks/homeostasis viability — not a physical universe simulator, not an LLM world model, not proof of consciousness or finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical battery (H1–H3) uses public Movebank GPS (study 2548892515, Alces alces) plus GFZ Kp archived to the collar window to test structure→phase and storm-contrast predictions — mixed/null historical outcomes do not upgrade synthetic gates into wildlife biology claims.",
     "lab": {
       "seed": 20261025,
-      "runtimeMs": 1026.839886,
+      "runtimeMs": 1269.959415,
       "foundation": {
         "A_pass": true,
         "B_pass": true,
@@ -243,6 +243,115 @@
         "pathInflationNote": "Path inflation gate reserved for Wave–Node vs A* comparisons; TRGM viability uses A* reachability as navigation homeostatis check."
       }
     },
+    "historical": {
+      "ok": true,
+      "sourceMode": "live_csv",
+      "sources": {
+        "trajectories": "research/geomagnetic-herbivore/data/trajectories.csv",
+        "kpArchive": "research/geomagnetic-herbivore/data/archive/kp_3hourly_2020-05-15.csv",
+        "study": "Movebank 2548892515 · Snowy Range Moose (Alces alces) 2019-01-01→2020-05-15",
+        "kpLicense": "GFZ Kp · archived 3-hourly aligned to collar window"
+      },
+      "nTrajectoryRows": 123399,
+      "gates": {
+        "trainFraction": 0.6,
+        "structurePctLo": 0.25,
+        "structurePctHi": 0.75,
+        "phaseBeatShuffleMin": 0.55,
+        "minIndividuals": 5
+      },
+      "scored": {
+        "nDays": 268,
+        "nTrain": 160,
+        "nHeld": 108,
+        "dateRange": {
+          "start": "2019-01-01",
+          "end": "2020-05-15"
+        },
+        "structureBand": {
+          "lo": 0.6168774010677307,
+          "hi": 0.9049556549411897
+        },
+        "H1_structureBandPhase": {
+          "pass": false,
+          "inBandN": 87,
+          "outBandN": 21,
+          "inBandMeanPhaseR": 0.04993643215156016,
+          "outBandMeanPhaseR": 0.057987569515559244,
+          "rhoStructureVsPhaseHeld": -0.027199024455305,
+          "interpretation": "Held-out structure Goldilocks band did not raise mean phase order vs out-of-band (mixed/null)."
+        },
+        "H2_phaseBeatsShuffle": {
+          "pass": false,
+          "beatShuffleRate": 0.46296296296296297,
+          "threshold": 0.55,
+          "meanPhaseR": 0.05150193108344887,
+          "meanShuffleR": 0.05150193108344887,
+          "interpretation": "Real headings beat shuffle on only 46.3% of held-out days (threshold 55%) — weak/null coordination signal."
+        },
+        "H3_stormVsQuietPhase": {
+          "pass": true,
+          "stormN": 6,
+          "quietN": 102,
+          "stormMeanPhaseR": 0.05720705322913977,
+          "quietMeanPhaseR": 0.05116633566311411,
+          "delta": 0.006040717566025658,
+          "interpretation": "Storm vs quiet mean phase Δ=0.00604 on held-out days (n_storm=6)."
+        }
+      },
+      "hypotheses": [
+        {
+          "id": "H1",
+          "title": "Historical structure Goldilocks → higher held-out heading order (Movebank)",
+          "pass": false,
+          "detail": {
+            "pass": false,
+            "inBandN": 87,
+            "outBandN": 21,
+            "inBandMeanPhaseR": 0.04993643215156016,
+            "outBandMeanPhaseR": 0.057987569515559244,
+            "rhoStructureVsPhaseHeld": -0.027199024455305,
+            "interpretation": "Held-out structure Goldilocks band did not raise mean phase order vs out-of-band (mixed/null)."
+          },
+          "evidence": "empirically_observed",
+          "data": "historical_movebank_gps"
+        },
+        {
+          "id": "H2",
+          "title": "Historical heading order beats day-matched shuffle null",
+          "pass": false,
+          "detail": {
+            "pass": false,
+            "beatShuffleRate": 0.46296296296296297,
+            "threshold": 0.55,
+            "meanPhaseR": 0.05150193108344887,
+            "meanShuffleR": 0.05150193108344887,
+            "interpretation": "Real headings beat shuffle on only 46.3% of held-out days (threshold 55%) — weak/null coordination signal."
+          },
+          "evidence": "empirically_observed",
+          "data": "historical_movebank_gps"
+        },
+        {
+          "id": "H3",
+          "title": "Historical storm vs quiet heading-order contrast (GFZ Kp ∩ collar window)",
+          "pass": true,
+          "detail": {
+            "pass": true,
+            "stormN": 6,
+            "quietN": 102,
+            "stormMeanPhaseR": 0.05720705322913977,
+            "quietMeanPhaseR": 0.05116633566311411,
+            "delta": 0.006040717566025658,
+            "interpretation": "Storm vs quiet mean phase Δ=0.00604 on held-out days (n_storm=6)."
+          },
+          "evidence": "empirically_observed",
+          "data": "historical_gfz_kp_archive"
+        }
+      ],
+      "n_pass": 1,
+      "n_total": 3,
+      "all_pass": false
+    },
     "experiments": [
       {
         "id": "E1",
@@ -284,7 +393,8 @@
           }
         },
         "interpretation": "Foundation intact · FDTD order ≈ 2.001",
-        "evidence": "numerically_verified"
+        "evidence": "numerically_verified",
+        "data": "synthetic"
       },
       {
         "id": "E2",
@@ -299,7 +409,8 @@
           "meanPathLength": 42.8257710552387
         },
         "interpretation": "Held-out viability 100.0% (n=16).",
-        "evidence": "empirically_observed"
+        "evidence": "empirically_observed",
+        "data": "synthetic"
       },
       {
         "id": "E3",
@@ -308,7 +419,8 @@
         "trgm": 1,
         "nullRate": 0,
         "interpretation": "Structured Wave–Node scaffolds out-viable random scatters under pre-registered gates.",
-        "evidence": "empirically_observed"
+        "evidence": "empirically_observed",
+        "data": "synthetic"
       },
       {
         "id": "E4",
@@ -319,7 +431,8 @@
           "allHaveChild": true
         },
         "interpretation": "Every held-out L0 reality carries an L1 nested child recipe.",
-        "evidence": "empirically_observed"
+        "evidence": "empirically_observed",
+        "data": "synthetic"
       },
       {
         "id": "E5",
@@ -328,12 +441,69 @@
         "ablationRate": 1,
         "fullRate": 1,
         "interpretation": "Removing the phase sync requirement cannot lower geo+wave+nav pass rate below full-gate rate (subset relation).",
-        "evidence": "analytically_established"
+        "evidence": "analytically_established",
+        "data": "synthetic"
+      }
+    ],
+    "historicalExperiments": [
+      {
+        "id": "H1",
+        "title": "Historical structure Goldilocks → higher held-out heading order (Movebank)",
+        "pass": false,
+        "interpretation": "Held-out structure Goldilocks band did not raise mean phase order vs out-of-band (mixed/null).",
+        "detail": {
+          "pass": false,
+          "inBandN": 87,
+          "outBandN": 21,
+          "inBandMeanPhaseR": 0.04993643215156016,
+          "outBandMeanPhaseR": 0.057987569515559244,
+          "rhoStructureVsPhaseHeld": -0.027199024455305,
+          "interpretation": "Held-out structure Goldilocks band did not raise mean phase order vs out-of-band (mixed/null)."
+        },
+        "evidence": "empirically_observed",
+        "data": "historical_movebank_gps"
+      },
+      {
+        "id": "H2",
+        "title": "Historical heading order beats day-matched shuffle null",
+        "pass": false,
+        "interpretation": "Real headings beat shuffle on only 46.3% of held-out days (threshold 55%) — weak/null coordination signal.",
+        "detail": {
+          "pass": false,
+          "beatShuffleRate": 0.46296296296296297,
+          "threshold": 0.55,
+          "meanPhaseR": 0.05150193108344887,
+          "meanShuffleR": 0.05150193108344887,
+          "interpretation": "Real headings beat shuffle on only 46.3% of held-out days (threshold 55%) — weak/null coordination signal."
+        },
+        "evidence": "empirically_observed",
+        "data": "historical_movebank_gps"
+      },
+      {
+        "id": "H3",
+        "title": "Historical storm vs quiet heading-order contrast (GFZ Kp ∩ collar window)",
+        "pass": true,
+        "interpretation": "Storm vs quiet mean phase Δ=0.00604 on held-out days (n_storm=6).",
+        "detail": {
+          "pass": true,
+          "stormN": 6,
+          "quietN": 102,
+          "stormMeanPhaseR": 0.05720705322913977,
+          "quietMeanPhaseR": 0.05116633566311411,
+          "delta": 0.006040717566025658,
+          "interpretation": "Storm vs quiet mean phase Δ=0.00604 on held-out days (n_storm=6)."
+        },
+        "evidence": "empirically_observed",
+        "data": "historical_gfz_kp_archive"
       }
     ],
     "n_pass": 5,
     "n_total": 5,
     "all_pass": true,
+    "historical_n_pass": 1,
+    "historical_n_total": 3,
+    "historical_all_pass": false,
+    "historical_ran": true,
     "enginePinRecommended": true
   },
   "dependencyVersions": {

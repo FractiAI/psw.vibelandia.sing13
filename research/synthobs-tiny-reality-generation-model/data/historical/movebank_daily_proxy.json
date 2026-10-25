@@ -1,0 +1,2693 @@
+{
+  "schema": "trgm-historical-daily-proxy/v1",
+  "generatedAt": "2026-10-25T17:42:51.920Z",
+  "sources": {
+    "trajectories": "research/geomagnetic-herbivore/data/trajectories.csv",
+    "kpArchive": "research/geomagnetic-herbivore/data/archive/kp_3hourly_2020-05-15.csv",
+    "study": "Movebank 2548892515 · Snowy Range Moose (Alces alces) 2019-01-01→2020-05-15",
+    "kpLicense": "GFZ Kp · archived 3-hourly aligned to collar window"
+  },
+  "nTrajectoryRows": 123399,
+  "days": [
+    {
+      "date": "2019-01-01",
+      "nIndividuals": 25,
+      "nHeadings": 398,
+      "structureCv": 0.49614499983345306,
+      "phaseR": 0.03436185448871848,
+      "shuffleR": 0.03436185448871848,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-02",
+      "nIndividuals": 25,
+      "nHeadings": 598,
+      "structureCv": 0.46877697241882454,
+      "phaseR": 0.020876313928098324,
+      "shuffleR": 0.020876313928098317,
+      "kpMax": 0.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-03",
+      "nIndividuals": 25,
+      "nHeadings": 600,
+      "structureCv": 0.5173372861184367,
+      "phaseR": 0.05715356794941171,
+      "shuffleR": 0.05715356794941169,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-04",
+      "nIndividuals": 25,
+      "nHeadings": 600,
+      "structureCv": 0.5471882389933733,
+      "phaseR": 0.04171265412658376,
+      "shuffleR": 0.041712654126583766,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-05",
+      "nIndividuals": 25,
+      "nHeadings": 599,
+      "structureCv": 0.5240658048935914,
+      "phaseR": 0.09976735398315524,
+      "shuffleR": 0.09976735398315524,
+      "kpMax": 5,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-01-06",
+      "nIndividuals": 25,
+      "nHeadings": 596,
+      "structureCv": 0.5687978431583725,
+      "phaseR": 0.06033161080724733,
+      "shuffleR": 0.06033161080724736,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-07",
+      "nIndividuals": 25,
+      "nHeadings": 598,
+      "structureCv": 0.5415295242462267,
+      "phaseR": 0.052717230015822354,
+      "shuffleR": 0.05271723001582231,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-08",
+      "nIndividuals": 25,
+      "nHeadings": 597,
+      "structureCv": 0.5152403821819216,
+      "phaseR": 0.0396104374003999,
+      "shuffleR": 0.039610437400399934,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-09",
+      "nIndividuals": 25,
+      "nHeadings": 598,
+      "structureCv": 0.4657137895894525,
+      "phaseR": 0.053138459950836575,
+      "shuffleR": 0.0531384599508366,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-10",
+      "nIndividuals": 25,
+      "nHeadings": 575,
+      "structureCv": 0.49036971866037926,
+      "phaseR": 0.0433312863507712,
+      "shuffleR": 0.04333128635077121,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-11",
+      "nIndividuals": 24,
+      "nHeadings": 575,
+      "structureCv": 0.5421704496227905,
+      "phaseR": 0.07937273949327797,
+      "shuffleR": 0.07937273949327796,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-12",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5453115784275817,
+      "phaseR": 0.056956089879398854,
+      "shuffleR": 0.05695608987939885,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-13",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5674420599181934,
+      "phaseR": 0.05226035220350781,
+      "shuffleR": 0.05226035220350781,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-14",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5837027583317606,
+      "phaseR": 0.08181383723202953,
+      "shuffleR": 0.08181383723202956,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-15",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5932598594003602,
+      "phaseR": 0.11259381049287873,
+      "shuffleR": 0.11259381049287873,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-16",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5985715443581308,
+      "phaseR": 0.10355936822761849,
+      "shuffleR": 0.10355936822761853,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-17",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.6057379247171177,
+      "phaseR": 0.05962316627757753,
+      "shuffleR": 0.05962316627757758,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-18",
+      "nIndividuals": 24,
+      "nHeadings": 575,
+      "structureCv": 0.621088751183764,
+      "phaseR": 0.051921562628682236,
+      "shuffleR": 0.05192156262868216,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-19",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.6509602241224262,
+      "phaseR": 0.023695248431929786,
+      "shuffleR": 0.023695248431929758,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-20",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.6584220672938544,
+      "phaseR": 0.007562306173288811,
+      "shuffleR": 0.007562306173288803,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-21",
+      "nIndividuals": 24,
+      "nHeadings": 575,
+      "structureCv": 0.6493225588210138,
+      "phaseR": 0.043634114529640104,
+      "shuffleR": 0.043634114529640146,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-22",
+      "nIndividuals": 24,
+      "nHeadings": 575,
+      "structureCv": 0.6585685737137228,
+      "phaseR": 0.07619165248611555,
+      "shuffleR": 0.07619165248611547,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-23",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.6093252435767476,
+      "phaseR": 0.029256550024248096,
+      "shuffleR": 0.02925655002424811,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-01-24",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5785932351960512,
+      "phaseR": 0.02033706202128143,
+      "shuffleR": 0.02033706202128143,
+      "kpMax": 4.333,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-01-25",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5823134107841017,
+      "phaseR": 0.051255810480829334,
+      "shuffleR": 0.05125581048082932,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-26",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5277019544144,
+      "phaseR": 0.08808365510387942,
+      "shuffleR": 0.0880836551038795,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-27",
+      "nIndividuals": 24,
+      "nHeadings": 574,
+      "structureCv": 0.501823031892206,
+      "phaseR": 0.04862483300559049,
+      "shuffleR": 0.0486248330055904,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-28",
+      "nIndividuals": 24,
+      "nHeadings": 573,
+      "structureCv": 0.5223728920226515,
+      "phaseR": 0.03736470987220729,
+      "shuffleR": 0.03736470987220728,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-29",
+      "nIndividuals": 24,
+      "nHeadings": 574,
+      "structureCv": 0.5810043544618388,
+      "phaseR": 0.06246468921043245,
+      "shuffleR": 0.06246468921043253,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-30",
+      "nIndividuals": 24,
+      "nHeadings": 572,
+      "structureCv": 0.6083904374400566,
+      "phaseR": 0.03808691770411604,
+      "shuffleR": 0.03808691770411599,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-01-31",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.6113281467450433,
+      "phaseR": 0.01611226664409335,
+      "shuffleR": 0.016112266644093362,
+      "kpMax": 5.333,
+      "storm": "elevated"
+    },
+    {
+      "date": "2019-02-01",
+      "nIndividuals": 24,
+      "nHeadings": 574,
+      "structureCv": 0.600139571224002,
+      "phaseR": 0.09872540714880775,
+      "shuffleR": 0.09872540714880765,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-02",
+      "nIndividuals": 24,
+      "nHeadings": 552,
+      "structureCv": 0.5967795118660513,
+      "phaseR": 0.05397494009888748,
+      "shuffleR": 0.05397494009888746,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-02-03",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5649213558317134,
+      "phaseR": 0.008655070965542095,
+      "shuffleR": 0.008655070965542097,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-04",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5552531005635436,
+      "phaseR": 0.014172134262083365,
+      "shuffleR": 0.01417213426208337,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-05",
+      "nIndividuals": 24,
+      "nHeadings": 572,
+      "structureCv": 0.5804200639368106,
+      "phaseR": 0.048316867352545596,
+      "shuffleR": 0.04831686735254554,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-06",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.5966397913062734,
+      "phaseR": 0.04286519719888448,
+      "shuffleR": 0.04286519719888446,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-07",
+      "nIndividuals": 24,
+      "nHeadings": 574,
+      "structureCv": 0.5964554835620648,
+      "phaseR": 0.06469575487604061,
+      "shuffleR": 0.06469575487604055,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-08",
+      "nIndividuals": 24,
+      "nHeadings": 572,
+      "structureCv": 0.5986944352518925,
+      "phaseR": 0.015063575106917535,
+      "shuffleR": 0.01506357510691752,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-09",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.6287423410201718,
+      "phaseR": 0.012379489110447952,
+      "shuffleR": 0.012379489110447941,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-10",
+      "nIndividuals": 24,
+      "nHeadings": 574,
+      "structureCv": 0.6637851778477282,
+      "phaseR": 0.05835342734358965,
+      "shuffleR": 0.05835342734358963,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-11",
+      "nIndividuals": 24,
+      "nHeadings": 575,
+      "structureCv": 0.6168774010677307,
+      "phaseR": 0.017077786903007663,
+      "shuffleR": 0.017077786903007635,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-12",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.6606397168219978,
+      "phaseR": 0.12019833202975234,
+      "shuffleR": 0.12019833202975233,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-13",
+      "nIndividuals": 23,
+      "nHeadings": 548,
+      "structureCv": 0.6575142529093384,
+      "phaseR": 0.031874282248756935,
+      "shuffleR": 0.031874282248756956,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-14",
+      "nIndividuals": 23,
+      "nHeadings": 548,
+      "structureCv": 0.652434730147392,
+      "phaseR": 0.05886794963900411,
+      "shuffleR": 0.05886794963900407,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-15",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.6583548097894326,
+      "phaseR": 0.07107928718667553,
+      "shuffleR": 0.07107928718667557,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-16",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.6662127704775961,
+      "phaseR": 0.029390782894201817,
+      "shuffleR": 0.029390782894201824,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-17",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.6489562777786323,
+      "phaseR": 0.04159955570651384,
+      "shuffleR": 0.04159955570651384,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-18",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.6421278028076483,
+      "phaseR": 0.045607008747604726,
+      "shuffleR": 0.04560700874760477,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-19",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.6853691553972089,
+      "phaseR": 0.040672003362308966,
+      "shuffleR": 0.04067200336230896,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-20",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.6807624881301061,
+      "phaseR": 0.06009578934939742,
+      "shuffleR": 0.060095789349397404,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-21",
+      "nIndividuals": 23,
+      "nHeadings": 547,
+      "structureCv": 0.62488406790937,
+      "phaseR": 0.07516317759044097,
+      "shuffleR": 0.07516317759044101,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-22",
+      "nIndividuals": 23,
+      "nHeadings": 546,
+      "structureCv": 0.6752768999095594,
+      "phaseR": 0.04490296200950997,
+      "shuffleR": 0.044902962009509974,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-23",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.6635822272501819,
+      "phaseR": 0.05351298918860914,
+      "shuffleR": 0.05351298918860913,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-24",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.6297325723438609,
+      "phaseR": 0.030784246566938466,
+      "shuffleR": 0.030784246566938477,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-25",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.6084490132068208,
+      "phaseR": 0.04093805836791272,
+      "shuffleR": 0.04093805836791275,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-26",
+      "nIndividuals": 23,
+      "nHeadings": 551,
+      "structureCv": 0.5992148276806716,
+      "phaseR": 0.021989226094916072,
+      "shuffleR": 0.021989226094916055,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-02-27",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.5804407205740629,
+      "phaseR": 0.05824664542566747,
+      "shuffleR": 0.058246645425667466,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-02-28",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.5644853068815864,
+      "phaseR": 0.06096738754334451,
+      "shuffleR": 0.06096738754334443,
+      "kpMax": 4.667,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-03-01",
+      "nIndividuals": 23,
+      "nHeadings": 161,
+      "structureCv": 0.5669857994726993,
+      "phaseR": 0.026188519520979954,
+      "shuffleR": 0.026188519520979944,
+      "kpMax": 4.333,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-03-05",
+      "nIndividuals": 23,
+      "nHeadings": 391,
+      "structureCv": 0.5755230226449137,
+      "phaseR": 0.029833909576065604,
+      "shuffleR": 0.029833909576065614,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-06",
+      "nIndividuals": 24,
+      "nHeadings": 574,
+      "structureCv": 0.8098943008600376,
+      "phaseR": 0.06926709153109825,
+      "shuffleR": 0.06926709153109828,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-07",
+      "nIndividuals": 24,
+      "nHeadings": 575,
+      "structureCv": 0.7988692467132131,
+      "phaseR": 0.013779461748574886,
+      "shuffleR": 0.013779461748574875,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-08",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.8118020610656519,
+      "phaseR": 0.041754860177206636,
+      "shuffleR": 0.04175486017720662,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-09",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.84072837069406,
+      "phaseR": 0.02116843731158771,
+      "shuffleR": 0.02116843731158771,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-10",
+      "nIndividuals": 24,
+      "nHeadings": 552,
+      "structureCv": 0.8193959923097774,
+      "phaseR": 0.04463048460835284,
+      "shuffleR": 0.044630484608352894,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-11",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.8258535378922001,
+      "phaseR": 0.0571851698963745,
+      "shuffleR": 0.057185169896374455,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-12",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.8044978967676489,
+      "phaseR": 0.019544298025306064,
+      "shuffleR": 0.019544298025306064,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-13",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.813770042778694,
+      "phaseR": 0.021591918827128534,
+      "shuffleR": 0.021591918827128534,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-14",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.8314861118464081,
+      "phaseR": 0.05008760106112,
+      "shuffleR": 0.05008760106112002,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-15",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.804368400068912,
+      "phaseR": 0.06534378149263956,
+      "shuffleR": 0.06534378149263949,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-16",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.7991293962292353,
+      "phaseR": 0.0559864946928047,
+      "shuffleR": 0.055986494692804714,
+      "kpMax": 4.667,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-03-17",
+      "nIndividuals": 24,
+      "nHeadings": 576,
+      "structureCv": 0.8071285809716718,
+      "phaseR": 0.038760998697628404,
+      "shuffleR": 0.038760998697628384,
+      "kpMax": 4.667,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-03-18",
+      "nIndividuals": 24,
+      "nHeadings": 573,
+      "structureCv": 0.7885892222865656,
+      "phaseR": 0.05313185358357142,
+      "shuffleR": 0.05313185358357135,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-19",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.8035978764086359,
+      "phaseR": 0.025192968477345964,
+      "shuffleR": 0.025192968477346048,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-20",
+      "nIndividuals": 23,
+      "nHeadings": 548,
+      "structureCv": 0.7999421195777199,
+      "phaseR": 0.02158274389616471,
+      "shuffleR": 0.021582743896164682,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-21",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.8070420672977064,
+      "phaseR": 0.03994962135499549,
+      "shuffleR": 0.03994962135499548,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-22",
+      "nIndividuals": 23,
+      "nHeadings": 549,
+      "structureCv": 0.7896125516625406,
+      "phaseR": 0.04184249623795765,
+      "shuffleR": 0.04184249623795763,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-23",
+      "nIndividuals": 23,
+      "nHeadings": 549,
+      "structureCv": 0.7766294444484597,
+      "phaseR": 0.021031923752158368,
+      "shuffleR": 0.021031923752158385,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-24",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.7562896595235453,
+      "phaseR": 0.05167708096314405,
+      "shuffleR": 0.05167708096314406,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-25",
+      "nIndividuals": 23,
+      "nHeadings": 547,
+      "structureCv": 0.7782192284978394,
+      "phaseR": 0.037798627133187504,
+      "shuffleR": 0.03779862713318748,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-26",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.8107599238262395,
+      "phaseR": 0.10659177786826957,
+      "shuffleR": 0.10659177786826968,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-27",
+      "nIndividuals": 23,
+      "nHeadings": 549,
+      "structureCv": 0.8460343316373199,
+      "phaseR": 0.02603217195046199,
+      "shuffleR": 0.026032171950462004,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-28",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.8576716578272461,
+      "phaseR": 0.027289628842985147,
+      "shuffleR": 0.02728962884298518,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-29",
+      "nIndividuals": 23,
+      "nHeadings": 548,
+      "structureCv": 0.8425742259973947,
+      "phaseR": 0.027805630856299116,
+      "shuffleR": 0.027805630856299078,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-30",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.850017202290044,
+      "phaseR": 0.0439931330418394,
+      "shuffleR": 0.04399313304183938,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-03-31",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.8313855634781636,
+      "phaseR": 0.027964357424101062,
+      "shuffleR": 0.027964357424101045,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-01",
+      "nIndividuals": 23,
+      "nHeadings": 551,
+      "structureCv": 0.8331114808155458,
+      "phaseR": 0.0300936426290474,
+      "shuffleR": 0.03009364262904743,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-02",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.8266979278629576,
+      "phaseR": 0.026926923885382235,
+      "shuffleR": 0.026926923885382273,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-03",
+      "nIndividuals": 23,
+      "nHeadings": 551,
+      "structureCv": 0.8191179086619503,
+      "phaseR": 0.052336835138122054,
+      "shuffleR": 0.05233683513812203,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-04",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.815384800094747,
+      "phaseR": 0.03137282524173887,
+      "shuffleR": 0.03137282524173882,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-05",
+      "nIndividuals": 23,
+      "nHeadings": 551,
+      "structureCv": 0.8086401380884934,
+      "phaseR": 0.04753850926783912,
+      "shuffleR": 0.047538509267839105,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-06",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.8065742905570051,
+      "phaseR": 0.03316044336660645,
+      "shuffleR": 0.0331604433666064,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-07",
+      "nIndividuals": 23,
+      "nHeadings": 549,
+      "structureCv": 0.8273265282621367,
+      "phaseR": 0.01791513575509276,
+      "shuffleR": 0.017915135755092754,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-08",
+      "nIndividuals": 23,
+      "nHeadings": 549,
+      "structureCv": 0.833350662928901,
+      "phaseR": 0.03524996485823744,
+      "shuffleR": 0.03524996485823744,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-09",
+      "nIndividuals": 23,
+      "nHeadings": 551,
+      "structureCv": 0.8136002501172401,
+      "phaseR": 0.017506140690099255,
+      "shuffleR": 0.01750614069009925,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-10",
+      "nIndividuals": 23,
+      "nHeadings": 551,
+      "structureCv": 0.8082262508691067,
+      "phaseR": 0.027957620166584103,
+      "shuffleR": 0.027957620166584055,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-04-11",
+      "nIndividuals": 23,
+      "nHeadings": 551,
+      "structureCv": 0.7977723781569303,
+      "phaseR": 0.02148734499047405,
+      "shuffleR": 0.021487344990474066,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-12",
+      "nIndividuals": 23,
+      "nHeadings": 550,
+      "structureCv": 0.7739403452244736,
+      "phaseR": 0.011144680437562414,
+      "shuffleR": 0.011144680437562412,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-13",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.7724879703640736,
+      "phaseR": 0.01922455266248416,
+      "shuffleR": 0.019224552662484167,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-14",
+      "nIndividuals": 23,
+      "nHeadings": 547,
+      "structureCv": 0.7451820816105679,
+      "phaseR": 0.04684297637488038,
+      "shuffleR": 0.046842976374880316,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-15",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.7446727917597489,
+      "phaseR": 0.06442856877986315,
+      "shuffleR": 0.0644285687798632,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-16",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.7756819538911456,
+      "phaseR": 0.0638479060823028,
+      "shuffleR": 0.06384790608230285,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-17",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.7995670101781004,
+      "phaseR": 0.0385951724728958,
+      "shuffleR": 0.03859517247289577,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-18",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.820294488360119,
+      "phaseR": 0.03382428370050785,
+      "shuffleR": 0.03382428370050782,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-19",
+      "nIndividuals": 23,
+      "nHeadings": 551,
+      "structureCv": 0.8480881341953576,
+      "phaseR": 0.035451757702937535,
+      "shuffleR": 0.03545175770293752,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-20",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.9049556549411897,
+      "phaseR": 0.07934318473353953,
+      "shuffleR": 0.07934318473353957,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-21",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.9083225885200331,
+      "phaseR": 0.04171991147679694,
+      "shuffleR": 0.041719911476796954,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-22",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.9902218367446152,
+      "phaseR": 0.02205000691022925,
+      "shuffleR": 0.02205000691022925,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-23",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 1.0090020646255133,
+      "phaseR": 0.053017035555871866,
+      "shuffleR": 0.05301703555587192,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-24",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 1.0493268459607878,
+      "phaseR": 0.0159779005061641,
+      "shuffleR": 0.015977900506164076,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-25",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 1.0633334445110394,
+      "phaseR": 0.03519595781783134,
+      "shuffleR": 0.035195957817831344,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-26",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 1.008770084066797,
+      "phaseR": 0.00922326306562416,
+      "shuffleR": 0.009223263065624144,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-27",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.9872895237427002,
+      "phaseR": 0.10038879826961143,
+      "shuffleR": 0.1003887982696115,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-28",
+      "nIndividuals": 23,
+      "nHeadings": 552,
+      "structureCv": 0.954425579038256,
+      "phaseR": 0.03582107790524769,
+      "shuffleR": 0.03582107790524769,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-29",
+      "nIndividuals": 23,
+      "nHeadings": 553,
+      "structureCv": 0.9102487237270279,
+      "phaseR": 0.053823001813979164,
+      "shuffleR": 0.05382300181397918,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-04-30",
+      "nIndividuals": 23,
+      "nHeadings": 531,
+      "structureCv": 0.9295972669754141,
+      "phaseR": 0.04267965755175468,
+      "shuffleR": 0.04267965755175468,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-01",
+      "nIndividuals": 22,
+      "nHeadings": 527,
+      "structureCv": 0.8983773742012009,
+      "phaseR": 0.03240310109407331,
+      "shuffleR": 0.03240310109407331,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-05-02",
+      "nIndividuals": 22,
+      "nHeadings": 527,
+      "structureCv": 0.9382031319138474,
+      "phaseR": 0.014181126544204602,
+      "shuffleR": 0.014181126544204605,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-03",
+      "nIndividuals": 22,
+      "nHeadings": 527,
+      "structureCv": 0.9599595389195148,
+      "phaseR": 0.03617971892513528,
+      "shuffleR": 0.03617971892513528,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-04",
+      "nIndividuals": 22,
+      "nHeadings": 528,
+      "structureCv": 0.9385670065652724,
+      "phaseR": 0.08181283542974108,
+      "shuffleR": 0.08181283542974097,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-05",
+      "nIndividuals": 22,
+      "nHeadings": 528,
+      "structureCv": 0.887985138078482,
+      "phaseR": 0.04134625115023643,
+      "shuffleR": 0.04134625115023645,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-06",
+      "nIndividuals": 22,
+      "nHeadings": 527,
+      "structureCv": 0.898818621496087,
+      "phaseR": 0.043695304946790144,
+      "shuffleR": 0.04369530494679019,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-07",
+      "nIndividuals": 22,
+      "nHeadings": 526,
+      "structureCv": 0.8832868329538692,
+      "phaseR": 0.04552220630655685,
+      "shuffleR": 0.045522206306556845,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-08",
+      "nIndividuals": 22,
+      "nHeadings": 513,
+      "structureCv": 0.8415830384136206,
+      "phaseR": 0.04069414233490232,
+      "shuffleR": 0.040694142334902324,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-09",
+      "nIndividuals": 20,
+      "nHeadings": 480,
+      "structureCv": 0.9630093138213215,
+      "phaseR": 0.02902059241114087,
+      "shuffleR": 0.029020592411140845,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-10",
+      "nIndividuals": 20,
+      "nHeadings": 479,
+      "structureCv": 0.96718510394863,
+      "phaseR": 0.03865239050250065,
+      "shuffleR": 0.038652390502500654,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-11",
+      "nIndividuals": 20,
+      "nHeadings": 479,
+      "structureCv": 0.9314164976415188,
+      "phaseR": 0.03047309744911424,
+      "shuffleR": 0.030473097449114247,
+      "kpMax": 5,
+      "storm": "moderate"
+    },
+    {
+      "date": "2019-05-12",
+      "nIndividuals": 20,
+      "nHeadings": 478,
+      "structureCv": 0.9821157033473017,
+      "phaseR": 0.07797023137700822,
+      "shuffleR": 0.07797023137700815,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-13",
+      "nIndividuals": 20,
+      "nHeadings": 476,
+      "structureCv": 1.0122300517874554,
+      "phaseR": 0.04636701210315693,
+      "shuffleR": 0.04636701210315694,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2019-05-14",
+      "nIndividuals": 20,
+      "nHeadings": 477,
+      "structureCv": 1.0158006992393742,
+      "phaseR": 0.04770556363630803,
+      "shuffleR": 0.04770556363630804,
+      "kpMax": 6.333,
+      "storm": "strong"
+    },
+    {
+      "date": "2019-05-15",
+      "nIndividuals": 20,
+      "nHeadings": 160,
+      "structureCv": 0.9709543693328574,
+      "phaseR": 0.23860066856623124,
+      "shuffleR": 0.23860066856623113,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-01",
+      "nIndividuals": 16,
+      "nHeadings": 271,
+      "structureCv": 1.0198400825925111,
+      "phaseR": 0.04402774689849243,
+      "shuffleR": 0.044027746898492405,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-02",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 1.0100537969958663,
+      "phaseR": 0.05268706366127122,
+      "shuffleR": 0.05268706366127121,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-03",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 1.0089403141132665,
+      "phaseR": 0.0022087163299964537,
+      "shuffleR": 0.0022087163299964485,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-04",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 1.0043144121011987,
+      "phaseR": 0.11267028044488854,
+      "shuffleR": 0.11267028044488851,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-05",
+      "nIndividuals": 17,
+      "nHeadings": 385,
+      "structureCv": 0.9171910833221245,
+      "phaseR": 0.14011234123968014,
+      "shuffleR": 0.14011234123968022,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-06",
+      "nIndividuals": 16,
+      "nHeadings": 364,
+      "structureCv": 0.9704462141042267,
+      "phaseR": 0.09338726148374012,
+      "shuffleR": 0.0933872614837401,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-07",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.983669901629977,
+      "phaseR": 0.08481334502721675,
+      "shuffleR": 0.08481334502721675,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-08",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 1.0179253796670928,
+      "phaseR": 0.03581666678516364,
+      "shuffleR": 0.03581666678516367,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-09",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 1.0107665852144472,
+      "phaseR": 0.08459712862888259,
+      "shuffleR": 0.08459712862888265,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-10",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 1.0136813302677032,
+      "phaseR": 0.09353564162781802,
+      "shuffleR": 0.09353564162781802,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-11",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 1.0030241777995463,
+      "phaseR": 0.054752096317768825,
+      "shuffleR": 0.054752096317768804,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-12",
+      "nIndividuals": 16,
+      "nHeadings": 377,
+      "structureCv": 1.0178344319996864,
+      "phaseR": 0.062148802518462797,
+      "shuffleR": 0.06214880251846282,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-13",
+      "nIndividuals": 15,
+      "nHeadings": 360,
+      "structureCv": 1.090962558805251,
+      "phaseR": 0.08597929786909214,
+      "shuffleR": 0.08597929786909207,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-14",
+      "nIndividuals": 15,
+      "nHeadings": 361,
+      "structureCv": 1.0922922847353713,
+      "phaseR": 0.025184174502167554,
+      "shuffleR": 0.025184174502167516,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-15",
+      "nIndividuals": 17,
+      "nHeadings": 368,
+      "structureCv": 0.9963528764195669,
+      "phaseR": 0.04532547506787623,
+      "shuffleR": 0.045325475067876236,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-16",
+      "nIndividuals": 17,
+      "nHeadings": 408,
+      "structureCv": 1.006561707751082,
+      "phaseR": 0.04891901880421543,
+      "shuffleR": 0.048919018804215425,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-17",
+      "nIndividuals": 17,
+      "nHeadings": 408,
+      "structureCv": 0.9995977861214177,
+      "phaseR": 0.06429395345344587,
+      "shuffleR": 0.06429395345344589,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-18",
+      "nIndividuals": 17,
+      "nHeadings": 400,
+      "structureCv": 0.9983386232264707,
+      "phaseR": 0.057158302207094225,
+      "shuffleR": 0.0571583022070942,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-19",
+      "nIndividuals": 16,
+      "nHeadings": 359,
+      "structureCv": 1.028732309215767,
+      "phaseR": 0.061066658784321735,
+      "shuffleR": 0.061066658784321756,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-20",
+      "nIndividuals": 16,
+      "nHeadings": 366,
+      "structureCv": 0.8789572196716664,
+      "phaseR": 0.002864649988094943,
+      "shuffleR": 0.0028646499880949456,
+      "kpMax": 0.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-21",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8663755449496309,
+      "phaseR": 0.04430661621869094,
+      "shuffleR": 0.04430661621869097,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-22",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8570029018166871,
+      "phaseR": 0.08989681388049842,
+      "shuffleR": 0.08989681388049843,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-23",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8570376515827575,
+      "phaseR": 0.026737737392283203,
+      "shuffleR": 0.026737737392283207,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-24",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8179983745116592,
+      "phaseR": 0.10153654540127303,
+      "shuffleR": 0.10153654540127295,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-25",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.7975587970000291,
+      "phaseR": 0.016076830065319556,
+      "shuffleR": 0.01607683006531953,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-26",
+      "nIndividuals": 16,
+      "nHeadings": 378,
+      "structureCv": 0.7873602088591712,
+      "phaseR": 0.056611713899339056,
+      "shuffleR": 0.05661171389933909,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-27",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8051288650637168,
+      "phaseR": 0.054602050539529,
+      "shuffleR": 0.054602050539529,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-28",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8013492209478164,
+      "phaseR": 0.04782115978104164,
+      "shuffleR": 0.047821159781041636,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-29",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8100722229410411,
+      "phaseR": 0.10018597103402171,
+      "shuffleR": 0.10018597103402169,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-30",
+      "nIndividuals": 16,
+      "nHeadings": 379,
+      "structureCv": 0.798677825197889,
+      "phaseR": 0.06743453675034076,
+      "shuffleR": 0.06743453675034075,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-01-31",
+      "nIndividuals": 15,
+      "nHeadings": 339,
+      "structureCv": 0.8519130585097873,
+      "phaseR": 0.05091774075488697,
+      "shuffleR": 0.05091774075488697,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-01",
+      "nIndividuals": 15,
+      "nHeadings": 340,
+      "structureCv": 0.872845074137201,
+      "phaseR": 0.06256858548410149,
+      "shuffleR": 0.0625685854841015,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-02",
+      "nIndividuals": 16,
+      "nHeadings": 364,
+      "structureCv": 0.8462711318667088,
+      "phaseR": 0.09457711450921862,
+      "shuffleR": 0.09457711450921859,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-03",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8518807308518538,
+      "phaseR": 0.01737771547096205,
+      "shuffleR": 0.01737771547096204,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-04",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8690059726071714,
+      "phaseR": 0.018149991002413064,
+      "shuffleR": 0.01814999100241302,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-05",
+      "nIndividuals": 16,
+      "nHeadings": 377,
+      "structureCv": 0.8648198371372329,
+      "phaseR": 0.08382829057497572,
+      "shuffleR": 0.08382829057497572,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-06",
+      "nIndividuals": 15,
+      "nHeadings": 271,
+      "structureCv": 0.8911740920602675,
+      "phaseR": 0.015836100942996974,
+      "shuffleR": 0.015836100942996995,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2020-02-07",
+      "nIndividuals": 15,
+      "nHeadings": 359,
+      "structureCv": 0.886720663357866,
+      "phaseR": 0.06585725804132482,
+      "shuffleR": 0.0658572580413249,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-08",
+      "nIndividuals": 16,
+      "nHeadings": 352,
+      "structureCv": 0.8293362788912731,
+      "phaseR": 0.021278330614283136,
+      "shuffleR": 0.021278330614283105,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-09",
+      "nIndividuals": 15,
+      "nHeadings": 354,
+      "structureCv": 0.8423892687634494,
+      "phaseR": 0.048332046480177165,
+      "shuffleR": 0.048332046480177186,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-10",
+      "nIndividuals": 16,
+      "nHeadings": 354,
+      "structureCv": 0.834844625122756,
+      "phaseR": 0.027449883291084665,
+      "shuffleR": 0.027449883291084658,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-11",
+      "nIndividuals": 15,
+      "nHeadings": 356,
+      "structureCv": 0.8900143218695044,
+      "phaseR": 0.021051101840116285,
+      "shuffleR": 0.021051101840116285,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-12",
+      "nIndividuals": 15,
+      "nHeadings": 354,
+      "structureCv": 0.8933317286888947,
+      "phaseR": 0.022040046242540103,
+      "shuffleR": 0.022040046242540075,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-13",
+      "nIndividuals": 15,
+      "nHeadings": 360,
+      "structureCv": 0.9070596599333116,
+      "phaseR": 0.014233493913452095,
+      "shuffleR": 0.014233493913452107,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-14",
+      "nIndividuals": 16,
+      "nHeadings": 362,
+      "structureCv": 0.8834994970628789,
+      "phaseR": 0.04243348395263326,
+      "shuffleR": 0.04243348395263328,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-15",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.880323537324318,
+      "phaseR": 0.03995417105251663,
+      "shuffleR": 0.03995417105251661,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-16",
+      "nIndividuals": 16,
+      "nHeadings": 377,
+      "structureCv": 0.8667604858437954,
+      "phaseR": 0.02331115311128175,
+      "shuffleR": 0.023311153111281735,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-17",
+      "nIndividuals": 15,
+      "nHeadings": 354,
+      "structureCv": 0.8876581772315036,
+      "phaseR": 0.08123483856913916,
+      "shuffleR": 0.08123483856913911,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-18",
+      "nIndividuals": 14,
+      "nHeadings": 335,
+      "structureCv": 0.9280789812524366,
+      "phaseR": 0.0642332371940697,
+      "shuffleR": 0.06423323719406968,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-19",
+      "nIndividuals": 16,
+      "nHeadings": 346,
+      "structureCv": 0.7968310831109714,
+      "phaseR": 0.07373147288561414,
+      "shuffleR": 0.07373147288561414,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2020-02-20",
+      "nIndividuals": 16,
+      "nHeadings": 380,
+      "structureCv": 0.7971681643975957,
+      "phaseR": 0.014282217339346861,
+      "shuffleR": 0.014282217339346842,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-21",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8321667378724574,
+      "phaseR": 0.04468094803385361,
+      "shuffleR": 0.04468094803385359,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-22",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8287495003663367,
+      "phaseR": 0.021079957853428335,
+      "shuffleR": 0.021079957853428328,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-23",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8329254719479184,
+      "phaseR": 0.018258836817601445,
+      "shuffleR": 0.018258836817601452,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-24",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8693771808167303,
+      "phaseR": 0.058569587037471456,
+      "shuffleR": 0.058569587037471484,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-25",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 0.8811056979529615,
+      "phaseR": 0.10237073578781936,
+      "shuffleR": 0.10237073578781922,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-26",
+      "nIndividuals": 16,
+      "nHeadings": 362,
+      "structureCv": 0.8867450694362025,
+      "phaseR": 0.022067115365313535,
+      "shuffleR": 0.02206711536531354,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-27",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 0.8895231646044728,
+      "phaseR": 0.04048085888670645,
+      "shuffleR": 0.04048085888670648,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-28",
+      "nIndividuals": 16,
+      "nHeadings": 379,
+      "structureCv": 0.892693538819347,
+      "phaseR": 0.024608162380851305,
+      "shuffleR": 0.02460816238085131,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-02-29",
+      "nIndividuals": 16,
+      "nHeadings": 380,
+      "structureCv": 0.8995851353918655,
+      "phaseR": 0.008439645236025162,
+      "shuffleR": 0.008439645236025172,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-01",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8556995142674751,
+      "phaseR": 0.04370235472400618,
+      "shuffleR": 0.043702354724006194,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-02",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8220289048266363,
+      "phaseR": 0.011771923287013328,
+      "shuffleR": 0.011771923287013337,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-03",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8234797011971,
+      "phaseR": 0.046210460151500744,
+      "shuffleR": 0.04621046015150072,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-04",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 0.8177748337180051,
+      "phaseR": 0.0365221910307385,
+      "shuffleR": 0.036522191030738484,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-05",
+      "nIndividuals": 16,
+      "nHeadings": 379,
+      "structureCv": 0.8115702687798492,
+      "phaseR": 0.04774011089967133,
+      "shuffleR": 0.047740110899671374,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-06",
+      "nIndividuals": 16,
+      "nHeadings": 379,
+      "structureCv": 0.8183141736235978,
+      "phaseR": 0.024631767873634088,
+      "shuffleR": 0.0246317678736341,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-07",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8246026209374862,
+      "phaseR": 0.040753120333524996,
+      "shuffleR": 0.04075312033352501,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-08",
+      "nIndividuals": 16,
+      "nHeadings": 361,
+      "structureCv": 0.8284288694552892,
+      "phaseR": 0.06311265705874892,
+      "shuffleR": 0.06311265705874897,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-09",
+      "nIndividuals": 16,
+      "nHeadings": 380,
+      "structureCv": 0.8338217258626158,
+      "phaseR": 0.024566864815362133,
+      "shuffleR": 0.02456686481536213,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-10",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8401888538940895,
+      "phaseR": 0.026193393789276414,
+      "shuffleR": 0.026193393789276397,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-11",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8396463684908451,
+      "phaseR": 0.09280684294940804,
+      "shuffleR": 0.09280684294940805,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-12",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8387941368969449,
+      "phaseR": 0.05149232516970019,
+      "shuffleR": 0.051492325169700204,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-13",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8361596480839002,
+      "phaseR": 0.008454113775727442,
+      "shuffleR": 0.008454113775727445,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-14",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8385856368287297,
+      "phaseR": 0.08096179778112758,
+      "shuffleR": 0.08096179778112755,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-15",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8265922368447975,
+      "phaseR": 0.09398080495119443,
+      "shuffleR": 0.09398080495119437,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-16",
+      "nIndividuals": 16,
+      "nHeadings": 379,
+      "structureCv": 0.8206526252738681,
+      "phaseR": 0.04351969956579781,
+      "shuffleR": 0.043519699565797834,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-17",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8147074444003244,
+      "phaseR": 0.050040000394451896,
+      "shuffleR": 0.050040000394451896,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-18",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.823009117704385,
+      "phaseR": 0.07349502471550037,
+      "shuffleR": 0.07349502471550039,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-19",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8243653260240118,
+      "phaseR": 0.06737128915545729,
+      "shuffleR": 0.06737128915545731,
+      "kpMax": 4.333,
+      "storm": "moderate"
+    },
+    {
+      "date": "2020-03-20",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8268925478198464,
+      "phaseR": 0.009049238028921934,
+      "shuffleR": 0.009049238028921922,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-21",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8280089408549721,
+      "phaseR": 0.05747392583793519,
+      "shuffleR": 0.05747392583793518,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-22",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8262975725794172,
+      "phaseR": 0.09500792485449984,
+      "shuffleR": 0.09500792485449981,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-23",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8176527680285407,
+      "phaseR": 0.041429826263186996,
+      "shuffleR": 0.04142982626318697,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-24",
+      "nIndividuals": 16,
+      "nHeadings": 380,
+      "structureCv": 0.8147341113264776,
+      "phaseR": 0.06066142963563869,
+      "shuffleR": 0.06066142963563865,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-25",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8338110999688946,
+      "phaseR": 0.03691254366580302,
+      "shuffleR": 0.03691254366580302,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-26",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8255431012441418,
+      "phaseR": 0.034036231920497886,
+      "shuffleR": 0.034036231920497796,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-27",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8197050194533076,
+      "phaseR": 0.05718775121370831,
+      "shuffleR": 0.057187751213708324,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-28",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8172357588082015,
+      "phaseR": 0.0725702826171202,
+      "shuffleR": 0.07257028261712013,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-29",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 0.8367238163114664,
+      "phaseR": 0.023073679215108174,
+      "shuffleR": 0.023073679215108174,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-03-30",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 0.8322415645816598,
+      "phaseR": 0.10396506097052148,
+      "shuffleR": 0.10396506097052158,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2020-03-31",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 0.8507052879607289,
+      "phaseR": 0.03705459205522036,
+      "shuffleR": 0.037054592055220374,
+      "kpMax": 4,
+      "storm": "moderate"
+    },
+    {
+      "date": "2020-04-01",
+      "nIndividuals": 16,
+      "nHeadings": 380,
+      "structureCv": 0.8558580983051065,
+      "phaseR": 0.00933870374623724,
+      "shuffleR": 0.009338703746237265,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-02",
+      "nIndividuals": 16,
+      "nHeadings": 380,
+      "structureCv": 0.9172259063991504,
+      "phaseR": 0.04638986363107265,
+      "shuffleR": 0.04638986363107262,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-03",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.9208920893673311,
+      "phaseR": 0.08999384012482582,
+      "shuffleR": 0.08999384012482586,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-04",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.9045799966687019,
+      "phaseR": 0.045704695500760395,
+      "shuffleR": 0.04570469550076037,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-05",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8963667556750775,
+      "phaseR": 0.03296652182865954,
+      "shuffleR": 0.032966521828659556,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-06",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8954513754840356,
+      "phaseR": 0.015950568392690507,
+      "shuffleR": 0.01595056839269051,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-07",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.9145901990015322,
+      "phaseR": 0.04445113206322398,
+      "shuffleR": 0.04445113206322392,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-08",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.903076728529868,
+      "phaseR": 0.02740800131384072,
+      "shuffleR": 0.0274080013138407,
+      "kpMax": 3.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-09",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8925981833467949,
+      "phaseR": 0.052296928783281856,
+      "shuffleR": 0.05229692878328185,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-10",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 0.8838785406584527,
+      "phaseR": 0.010738069707444587,
+      "shuffleR": 0.010738069707444587,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-11",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8923576402210921,
+      "phaseR": 0.09467838245612033,
+      "shuffleR": 0.09467838245612038,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-12",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.9005529577127213,
+      "phaseR": 0.08645837758237278,
+      "shuffleR": 0.08645837758237279,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-13",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.896117378712438,
+      "phaseR": 0.05410810722528583,
+      "shuffleR": 0.05410810722528583,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-14",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.9004418747088735,
+      "phaseR": 0.05305359348444333,
+      "shuffleR": 0.05305359348444338,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-15",
+      "nIndividuals": 16,
+      "nHeadings": 379,
+      "structureCv": 0.8781454167996569,
+      "phaseR": 0.014510542892257219,
+      "shuffleR": 0.01451054289225723,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-16",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8770696874171061,
+      "phaseR": 0.06045980036810917,
+      "shuffleR": 0.060459800368109155,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-17",
+      "nIndividuals": 16,
+      "nHeadings": 374,
+      "structureCv": 0.8806884575791526,
+      "phaseR": 0.034011725717854054,
+      "shuffleR": 0.03401172571785403,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-18",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8755942604634356,
+      "phaseR": 0.04840219854472152,
+      "shuffleR": 0.04840219854472145,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-19",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8991593775523933,
+      "phaseR": 0.078702186292828,
+      "shuffleR": 0.07870218629282803,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-20",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.919015244626845,
+      "phaseR": 0.04528380336502836,
+      "shuffleR": 0.04528380336502835,
+      "kpMax": 4.667,
+      "storm": "moderate"
+    },
+    {
+      "date": "2020-04-21",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8936926577423981,
+      "phaseR": 0.05660373733337576,
+      "shuffleR": 0.05660373733337574,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-22",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8678767183198756,
+      "phaseR": 0.14293693319178807,
+      "shuffleR": 0.14293693319178805,
+      "kpMax": 3,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-23",
+      "nIndividuals": 16,
+      "nHeadings": 384,
+      "structureCv": 0.8784314793580807,
+      "phaseR": 0.0580867026804176,
+      "shuffleR": 0.05808670268041755,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-24",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8555139626196554,
+      "phaseR": 0.023618918190560396,
+      "shuffleR": 0.023618918190560403,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-25",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8630477447788858,
+      "phaseR": 0.0750924653476754,
+      "shuffleR": 0.07509246534767541,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-26",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8316971007256518,
+      "phaseR": 0.048176047051490506,
+      "shuffleR": 0.048176047051490534,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-27",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8621370857456575,
+      "phaseR": 0.09489803401079581,
+      "shuffleR": 0.09489803401079581,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-28",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.820150689819105,
+      "phaseR": 0.04136721622587203,
+      "shuffleR": 0.04136721622587202,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-29",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8152804358366591,
+      "phaseR": 0.0898498741006602,
+      "shuffleR": 0.08984987410066024,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-04-30",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.8739266681028709,
+      "phaseR": 0.10691413917314004,
+      "shuffleR": 0.10691413917313998,
+      "kpMax": 1,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-01",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.9520799505115021,
+      "phaseR": 0.15822170809487932,
+      "shuffleR": 0.15822170809487945,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-02",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 0.9918717778673343,
+      "phaseR": 0.0906633197141414,
+      "shuffleR": 0.09066331971414124,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-03",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 1.0677528479699832,
+      "phaseR": 0.10863874460472507,
+      "shuffleR": 0.10863874460472511,
+      "kpMax": 2.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-04",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 1.1077697211605309,
+      "phaseR": 0.008639296684251414,
+      "shuffleR": 0.008639296684251424,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-05",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 1.111856570917121,
+      "phaseR": 0.04721806921576286,
+      "shuffleR": 0.04721806921576286,
+      "kpMax": 2,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-06",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 1.0890056891920192,
+      "phaseR": 0.023135466863729724,
+      "shuffleR": 0.023135466863729758,
+      "kpMax": 3.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-07",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 1.0813225559651876,
+      "phaseR": 0.03914977377753515,
+      "shuffleR": 0.03914977377753519,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-08",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 1.1180560556205879,
+      "phaseR": 0.009338266657493658,
+      "shuffleR": 0.009338266657493679,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-09",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 1.115774432147014,
+      "phaseR": 0.06655611828408681,
+      "shuffleR": 0.06655611828408685,
+      "kpMax": 0.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-10",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 1.0411964545808987,
+      "phaseR": 0.02311774514424519,
+      "shuffleR": 0.023117745144245177,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-11",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 1.0830605189625317,
+      "phaseR": 0.09358432925777609,
+      "shuffleR": 0.09358432925777603,
+      "kpMax": 1.667,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-12",
+      "nIndividuals": 16,
+      "nHeadings": 383,
+      "structureCv": 1.1427781501626295,
+      "phaseR": 0.05256136723249446,
+      "shuffleR": 0.052561367232494445,
+      "kpMax": 2.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-13",
+      "nIndividuals": 16,
+      "nHeadings": 382,
+      "structureCv": 1.1026459245838456,
+      "phaseR": 0.01025886506530953,
+      "shuffleR": 0.010258865065309528,
+      "kpMax": 1.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-14",
+      "nIndividuals": 16,
+      "nHeadings": 381,
+      "structureCv": 1.0669470333082556,
+      "phaseR": 0.0706811379655036,
+      "shuffleR": 0.07068113796550356,
+      "kpMax": 0.333,
+      "storm": "quiet"
+    },
+    {
+      "date": "2020-05-15",
+      "nIndividuals": 16,
+      "nHeadings": 128,
+      "structureCv": 1.0365429019294972,
+      "phaseR": 0.11138938097313714,
+      "shuffleR": 0.11138938097313703,
+      "kpMax": 1,
+      "storm": "quiet"
+    }
+  ]
+}

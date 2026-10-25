@@ -22,7 +22,7 @@ export const NOT_UNIVERSAL_REALITY_ENGINE = true;
 export const SOFT_STORY_EGS_GRAMMAR = true;
 
 export const HONESTY =
-  'TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) and scores Goldilocks/homeostasis viability — not a physical universe simulator, not an LLM world model, not proof of consciousness or finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only.';
+  'TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) and scores Goldilocks/homeostasis viability — not a physical universe simulator, not an LLM world model, not proof of consciousness or finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical battery (H1–H3) uses public Movebank GPS (study 2548892515, Alces alces) plus GFZ Kp archived to the collar window to test structure→phase and storm-contrast predictions — mixed/null historical outcomes do not upgrade synthetic gates into wildlife biology claims.';
 
 /** Pre-registered viability gates (Goldilocks band). */
 export const GATE_WAVE_L2_MAX = 0.05;

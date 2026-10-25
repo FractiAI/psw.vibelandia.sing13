@@ -7,9 +7,12 @@ import {
   EXPEDITION,
 } from './constants.mjs';
 import { runTrgmLaboratory } from './computational-lab.mjs';
+import { runHistoricalLaboratory } from './historical-lab.mjs';
 
-export function runAllExperiments() {
+/** Core synthetic battery (E1–E5). Historical H1–H3 is additional and may fail honestly. */
+export async function runAllExperiments() {
   const lab = runTrgmLaboratory();
+  const historical = await runHistoricalLaboratory();
   const experiments = [
     {
       id: 'E1',
@@ -20,6 +23,7 @@ export function runAllExperiments() {
         ? `Foundation intact · FDTD order ≈ ${Number(lab.foundation.waveOrder).toFixed(3)}`
         : 'Foundation Wave–Node battery failed — TRGM cannot claim scaffold validity.',
       evidence: 'numerically_verified',
+      data: 'synthetic',
     },
     {
       id: 'E2',
@@ -28,6 +32,7 @@ export function runAllExperiments() {
       held: lab.held.summary,
       interpretation: `Held-out viability ${(lab.held.summary.viabilityRate * 100).toFixed(1)}% (n=${lab.held.n}).`,
       evidence: 'empirically_observed',
+      data: 'synthetic',
     },
     {
       id: 'E3',
@@ -39,6 +44,7 @@ export function runAllExperiments() {
         ? 'Structured Wave–Node scaffolds out-viable random scatters under pre-registered gates.'
         : 'TRGM did not beat null — do not pin.',
       evidence: 'empirically_observed',
+      data: 'synthetic',
     },
     {
       id: 'E4',
@@ -49,6 +55,7 @@ export function runAllExperiments() {
         ? 'Every held-out L0 reality carries an L1 nested child recipe.'
         : 'Nesting incomplete.',
       evidence: 'empirically_observed',
+      data: 'synthetic',
     },
     {
       id: 'E5',
@@ -59,8 +66,20 @@ export function runAllExperiments() {
       interpretation:
         'Removing the phase sync requirement cannot lower geo+wave+nav pass rate below full-gate rate (subset relation).',
       evidence: 'analytically_established',
+      data: 'synthetic',
     },
   ];
+
+  const historicalExperiments = (historical.hypotheses || []).map((h) => ({
+    id: h.id,
+    title: h.title,
+    pass: h.pass,
+    interpretation: h.detail?.interpretation || h.title,
+    detail: h.detail,
+    evidence: h.evidence,
+    data: h.data,
+  }));
+
   const n_pass = experiments.filter((e) => e.pass).length;
   return {
     docId: DOC_ID,
@@ -70,10 +89,16 @@ export function runAllExperiments() {
     expedition: EXPEDITION,
     honesty: HONESTY,
     lab,
+    historical,
     experiments,
+    historicalExperiments,
     n_pass,
     n_total: experiments.length,
     all_pass: n_pass === experiments.length,
+    historical_n_pass: historicalExperiments.filter((e) => e.pass).length,
+    historical_n_total: historicalExperiments.length,
+    historical_all_pass: Boolean(historical.ok) && historicalExperiments.every((e) => e.pass),
+    historical_ran: Boolean(historical.ok),
     enginePinRecommended: lab.summary.enginePinRecommended,
   };
 }

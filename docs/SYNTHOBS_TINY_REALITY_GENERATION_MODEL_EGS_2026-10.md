@@ -118,11 +118,27 @@ Dropping the phase gate cannot reduce geo+wave+nav pass rate below the full-gate
 
 Figure: `figures/fig_viability.svg` (TRGM vs Null vs Ablate-φ).
 
+### 5.6 Historical prediction battery (Movebank GPS + GFZ Kp)
+
+**Data (executed, not fabricated):** public Movebank study `2548892515` (*Alces alces*, Snowy Range Moose) · **123 399** GPS fixes · **268** collar days (2019-01-01 → 2020-05-15) · GFZ Kp 3-hourly archive aligned to the same window. Chronological train/held-out split (60%/40%; train locks structure percentiles before held-out scoring). Fixture mirror: `data/historical/movebank_daily_proxy.json`.
+
+| ID | Pre-registered prediction | Result | Evidence |
+|----|---------------------------|--------|----------|
+| **H1** | Train-locked structure Goldilocks band (NN CV P25–P75) → higher held-out mean heading Rayleigh \(r\) than out-of-band | **Fail** (mixed/null; out-of-band mean \(r\) not lower) | empirically_observed |
+| **H2** | Real daily headings beat day-matched shuffle on ≥55% of held-out days | **Fail** (46.3% beat shuffle) | empirically_observed |
+| **H3** | Storm vs quiet days show nonzero mean heading-order contrast on held-out window | **Pass** (Δ≈0.006; \(n_{\mathrm{storm}}=6\)) | empirically_observed |
+
+Historical battery **1/3** pass. Mixed/null wildlife outcomes **do not** overturn the synthetic E1–E5 pin and **do not** claim magnetoreception or species-general navigation biology.
+
+Figure: `figures/fig_historical.svg`.
+
 ---
 
 ## 6. Discussion
 
 TRGM recipes are **empirically more viable** than null scatters under pre-registered homeostasis gates. This is expected if structure matters — and that expectation is now measured. Distinctiveness is the **generator + Goldilocks multi-gate package** on the Homeostasis Expedition trail, not a claim of new PDE physics.
+
+The historical Movebank/Kp battery was run to test whether structure→phase and storm-contrast predictions survive on **real collar series**. They mostly do not under the pre-registered gates (H1/H2 fail; H3 records a small storm–quiet Δ). That is a useful negative/qualified result: synthetic viability ≠ historical wildlife coordination.
 
 Practical robotics / physical simulation value still requires manipulator, multi-agent, and hardware stages (not executed).
 
@@ -146,7 +162,7 @@ Numbers in this manuscript match `data/empirical_report.json` for seed `20261025
 
 ## 9. Conclusions
 
-TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ablation logic checks. Pinned as ENGINE_SHELF **#50** on the Homeostasis Expedition — a miniature-world generator validated computationally, not a universe engine.
+TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ablation logic checks. Pinned as ENGINE_SHELF **#50** on the Homeostasis Expedition — a miniature-world generator validated computationally, not a universe engine. Historical Movebank+Kp prediction tests were executed (**1/3** pass); mixed wildlife results are reported without upgrading the synthetic pin into biology.
 
 ---
 
@@ -156,7 +172,9 @@ TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ab
 2. Taflove, A., & Hagness, S. C. (2005). *Computational Electrodynamics* (FDTD). Artech House.  
 3. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A* minimum-cost paths. *IEEE Trans. SSC*.  
 4. FractiAI Wave–Node Mathematics (2026). `docs/SYNTHOBS_WAVE_NODE_MATHEMATICS_EGS_2026-10.md` · ENGINE_SHELF #49.  
-5. Connolly, C. I., & Grupen, R. A. (1993). Harmonic functions in robotics. *J. Robotic Systems*.
+5. Connolly, C. I., & Grupen, R. A. (1993). Harmonic functions in robotics. *J. Robotic Systems*.  
+6. Movebank study 2548892515 — Snowy Range Moose in Wyoming (2019–2020). Public GPS collar fixes.  
+7. GFZ German Research Centre for Geosciences — Kp index (archived 3-hourly, collar window).
 
 ---
 
@@ -165,9 +183,10 @@ TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ab
 | Item | Status |
 |------|--------|
 | Implemented | Yes |
-| Executed | 5/5 pass · seed 20261025 |
+| Synthetic executed | 5/5 pass · seed 20261025 |
+| Historical executed | H1–H3 on Movebank+Kp · **1/3** pass (H3 only) |
 | Held-out viability | 100% vs null 0% |
-| Engine pin | #50 |
-| Not run | Physical sims · LLM world models · hardware |
+| Engine pin | #50 (synthetic gates; historical mixed) |
+| Not run | Physical sims · LLM world models · hardware · bison-specific collars |
 
 → ∞^∞

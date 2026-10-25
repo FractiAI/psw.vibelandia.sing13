@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-tiny-reality-generation-model",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiny Reality Generation Model — Homeostasis Expedition · ENGINE_SHELF #50 (not physical universe sim)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-tiny-reality-generation-model.git"
+  },
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

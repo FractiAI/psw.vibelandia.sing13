@@ -1,0 +1,342 @@
+{
+  "generatedAt": "2026-10-25T17:06:00.417Z",
+  "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
+  "registryId": "synthobs-tiny-reality-generation-model-2026-10",
+  "seed": 20261025,
+  "engineShelfSlot": 50,
+  "results": {
+    "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
+    "registryId": "synthobs-tiny-reality-generation-model-2026-10",
+    "seed": 20261025,
+    "engineShelfSlot": 50,
+    "expedition": "Homeostasis Expedition",
+    "honesty": "TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) and scores Goldilocks/homeostasis viability — not a physical universe simulator, not an LLM world model, not proof of consciousness or finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only.",
+    "lab": {
+      "seed": 20261025,
+      "runtimeMs": 1026.839886,
+      "foundation": {
+        "A_pass": true,
+        "B_pass": true,
+        "C_pass": true,
+        "D_pass": true,
+        "E_pass": true,
+        "allPass": true,
+        "waveOrder": 2.0007377150948127,
+        "planning": {
+          "astar": {
+            "method": "A*",
+            "n": 24,
+            "successRate": 1,
+            "meanLength": 52.83918343834066,
+            "collisionRate": 0,
+            "meanIterations": 185.91666666666666
+          },
+          "wavePhase": {
+            "method": "WaveNode+phase",
+            "n": 24,
+            "successRate": 1,
+            "meanLength": 55.707034568538404,
+            "collisionRate": 0,
+            "meanIterations": 41.416666666666664
+          },
+          "waveAblation": {
+            "method": "WaveNode-ablation",
+            "n": 24,
+            "successRate": 1,
+            "meanLength": 55.765960133637286,
+            "collisionRate": 0,
+            "meanIterations": 41.458333333333336
+          }
+        }
+      },
+      "train": {
+        "summary": {
+          "n": 8,
+          "viabilityRate": 1,
+          "meanWaveL2": 0.0007360357550425898,
+          "meanPhaseR": 0.9592102941871042,
+          "navSuccessRate": 1,
+          "meanPathLength": 42.35533905932736
+        },
+        "n": 8
+      },
+      "held": {
+        "summary": {
+          "n": 16,
+          "viabilityRate": 1,
+          "meanWaveL2": 0.0009351717296449112,
+          "meanPhaseR": 0.9572499034665924,
+          "navSuccessRate": 1,
+          "meanPathLength": 42.8257710552387
+        },
+        "n": 16,
+        "evals": [
+          {
+            "id": "trgm-20261025-1000-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0015939068534284269,
+            "phaseR": 0.9637841155664995,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1001-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0016553170299411708,
+            "phaseR": 0.9537857253340024,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1002-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0005460251280542408,
+            "phaseR": 0.9513484470848714,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1003-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0006624704906803098,
+            "phaseR": 0.9626321716901953,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1004-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0007090538399123386,
+            "phaseR": 0.9536621536366707,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1005-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0008685537871182251,
+            "phaseR": 0.9623563815929751,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1006-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0008906096693043861,
+            "phaseR": 0.9501656387574771,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1007-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0018603999074291618,
+            "phaseR": 0.9571478207300063,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1008-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0008161951978550511,
+            "phaseR": 0.9527205828690963,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1009-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0007060639673931616,
+            "phaseR": 0.9501401938408583,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1010-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0005839014692932434,
+            "phaseR": 0.9583425128495844,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1011-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0009530062574131659,
+            "phaseR": 0.9623419239260386,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1012-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0008351721231077772,
+            "phaseR": 0.9587277008144793,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1013-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0007704137224719638,
+            "phaseR": 0.9648270050678425,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1014-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0007722538306105349,
+            "phaseR": 0.9507533269853796,
+            "navOk": true,
+            "geoPass": true
+          },
+          {
+            "id": "trgm-20261025-1015-L0",
+            "nestLevel": 0,
+            "viable": true,
+            "waveL2": 0.0007394044003054204,
+            "phaseR": 0.9632627547195004,
+            "navOk": true,
+            "geoPass": true
+          }
+        ]
+      },
+      "nullBaseline": {
+        "viabilityRate": 0,
+        "n": 16
+      },
+      "nesting": {
+        "levels": 2,
+        "allHaveChild": true
+      },
+      "ablationNoPhaseGate": {
+        "viabilityRate": 1
+      },
+      "gates": {
+        "waveL2Max": 0.05,
+        "syncRMin": 0.95,
+        "maxPathInflation": 1.35
+      },
+      "summary": {
+        "foundationPass": true,
+        "heldViability": 1,
+        "nullViability": 0,
+        "trgmBeatsNull": true,
+        "nestOk": true,
+        "enginePinRecommended": true,
+        "pathInflationNote": "Path inflation gate reserved for Wave–Node vs A* comparisons; TRGM viability uses A* reachability as navigation homeostatis check."
+      }
+    },
+    "experiments": [
+      {
+        "id": "E1",
+        "title": "Wave–Node foundation A–E still pass (imported battery)",
+        "pass": true,
+        "foundation": {
+          "A_pass": true,
+          "B_pass": true,
+          "C_pass": true,
+          "D_pass": true,
+          "E_pass": true,
+          "allPass": true,
+          "waveOrder": 2.0007377150948127,
+          "planning": {
+            "astar": {
+              "method": "A*",
+              "n": 24,
+              "successRate": 1,
+              "meanLength": 52.83918343834066,
+              "collisionRate": 0,
+              "meanIterations": 185.91666666666666
+            },
+            "wavePhase": {
+              "method": "WaveNode+phase",
+              "n": 24,
+              "successRate": 1,
+              "meanLength": 55.707034568538404,
+              "collisionRate": 0,
+              "meanIterations": 41.416666666666664
+            },
+            "waveAblation": {
+              "method": "WaveNode-ablation",
+              "n": 24,
+              "successRate": 1,
+              "meanLength": 55.765960133637286,
+              "collisionRate": 0,
+              "meanIterations": 41.458333333333336
+            }
+          }
+        },
+        "interpretation": "Foundation intact · FDTD order ≈ 2.001",
+        "evidence": "numerically_verified"
+      },
+      {
+        "id": "E2",
+        "title": "Held-out tiny-reality Goldilocks viability",
+        "pass": true,
+        "held": {
+          "n": 16,
+          "viabilityRate": 1,
+          "meanWaveL2": 0.0009351717296449112,
+          "meanPhaseR": 0.9572499034665924,
+          "navSuccessRate": 1,
+          "meanPathLength": 42.8257710552387
+        },
+        "interpretation": "Held-out viability 100.0% (n=16).",
+        "evidence": "empirically_observed"
+      },
+      {
+        "id": "E3",
+        "title": "TRGM beats null unstructured scatter on viability",
+        "pass": true,
+        "trgm": 1,
+        "nullRate": 0,
+        "interpretation": "Structured Wave–Node scaffolds out-viable random scatters under pre-registered gates.",
+        "evidence": "empirically_observed"
+      },
+      {
+        "id": "E4",
+        "title": "Nested L0→L1 child descriptors present",
+        "pass": true,
+        "nesting": {
+          "levels": 2,
+          "allHaveChild": true
+        },
+        "interpretation": "Every held-out L0 reality carries an L1 nested child recipe.",
+        "evidence": "empirically_observed"
+      },
+      {
+        "id": "E5",
+        "title": "Phase-gate ablation still leaves geo+wave+nav band",
+        "pass": true,
+        "ablationRate": 1,
+        "fullRate": 1,
+        "interpretation": "Removing the phase sync requirement cannot lower geo+wave+nav pass rate below full-gate rate (subset relation).",
+        "evidence": "analytically_established"
+      }
+    ],
+    "n_pass": 5,
+    "n_total": 5,
+    "all_pass": true,
+    "enginePinRecommended": true
+  },
+  "dependencyVersions": {
+    "node": "v22.23.4"
+  }
+}

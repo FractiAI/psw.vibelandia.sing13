@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable? · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="Tiny Reality Generation Model: held-out Wave–Node miniatures hit 100% Goldilocks viability vs 0% for null scatters (seed 20261025)—Homeostasis Expedition companion, not a universe simulator." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/tiny-reality-generation-model" />
+  <meta property="og:title" content="If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable?" />
+  <meta property="og:description" content="TRGM scores nested Wave–Node miniatures against pre-registered homeostasis gates—and beats unstructured scatter." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/journey/homeostasis-expedition">Homeostasis Expedition</a>
+      <a href="/whitepaper/tiny-reality-generation-model">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Research note · Tiny Reality Generation Model · Homeostasis Expedition</p>
+      <h1>If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable?</h1>
+      <p class="dateline"><strong>FractiAI Research</strong> — October 25, 2026</p>
+    </header>
+
+    <p class="lead">Children build pillow forts and then test whether the roof holds. Game designers spawn levels and ask whether a player can still reach the exit. Parents juggling rent and school schedules already know that “more generation” is worthless if the result falls apart under ordinary pressure. The Tiny Reality Generation Model asks the same question in miniature mathematics: can a seeded recipe of nodes, waves, phases, and maps pass a pre-registered viability band more often than a pile of unstructured points?</p>
+
+    <h2>The problem of generation without a gate</h2>
+    <p>It is easy to emit graphs, fields, and paths. It is harder to say which of those emissions remain coherent under joint constraints—geometry that matches its construction, a wave probe that stays near an analytical sinusoid, a community of oscillators that actually synchronizes, and a workspace a planner can cross. Without gates, “tiny reality” is just a mood. With gates fixed before scoring, mixed outcomes are allowed to stay mixed, and rent-paying research budgets get a ledger instead of a slogan.</p>
+
+    <h2>What TRGM generates</h2>
+    <p>Each tiny reality is a Wave–Node bundle: a lattice scaffold, a circle of oscillators, a one-dimensional wave check with a stated Courant number, and a two-dimensional map of circular obstacles. A nested child recipe rides along at the next level, the way a neighborhood map sits inside a city chart without pretending to be the whole planet. The model reuses the Wave–Node Mathematics battery already validated as Infinite Octaves companion #49, then scores new held-out recipes against Goldilocks-style thresholds written down in advance. That reuse is deliberate: TRGM is a generator and gate package on the Homeostasis Expedition trail, not a second invention of the wave equation.</p>
+
+    <h2>Hypothesis under test</h2>
+    <p>Structured TRGM recipes should show higher held-out viability than a null scatter of the same rough size that lacks lattice and community structure. Nesting should be present by construction. Dropping the phase requirement cannot make the remaining geo–wave–nav band worse than the full gate—because the full gate is a stricter subset. The hypothesis is comparative and falsifiable, not a promise that computers invent universes.</p>
+
+    <h2>What the held-out run found</h2>
+    <p>Under seed 20261025, sixteen held-out realities all passed: viability 100 percent, mean wave L2 about 0.00094, mean phase order parameter about 0.957, and navigation success 100 percent under A* reachability. Sixteen null scatters scored 0 percent viability—they never clear the geometry gate. Every L0 reality carried an L1 child descriptor. The foundation Wave–Node A–E suite still passed when imported. Those numbers come from the executed pipeline, not from a polished abstract written first.</p>
+    <p>One design note matters for honesty: random initial phases on a ring graph can settle into splay states with near-zero order parameter even at strong coupling. TRGM’s community check therefore uses complete-graph Kuramoto coupling, documented in the paper, rather than silently renaming a failure into a win. Ablating the phase gate left geo–wave–nav viability intact on the same held-out set, which matches the subset logic of the hypothesis rather than inventing a surprise win for phase alone.</p>
+    <p>Runtime stayed in the seconds-per-batch range on the lab machine for these recipe sizes. That is enough to iterate gates during an afternoon research session; it says nothing yet about warehouse fleets or GPU world models. Kids debugging a maze level after school already know the difference between “the level loads” and “the level is fair”—TRGM’s scoreboard is closer to the second question than the first.</p>
+
+    <h2>What this is for on the expedition trail</h2>
+    <p>Homeostasis Expedition needs miniature test worlds that stay inside a viable band while nesting. TRGM is that generator with a scoreboard. Factory floors and school robotics clubs still need collision checks and human authority; this lab does not replace them. It does give the expedition a reproducible way to ask whether a generated miniature remains navigable and synchronized before anyone dresses it up as cosmology. Paychecks and grant cycles both punish generators that look impressive in a screenshot and then fail the first held-out batch.</p>
+
+    <h2>Framework value without a victory lap</h2>
+    <p>Beating a null scatter is a low bar in one sense and an essential bar in another: if structure cannot outperform noise under fixed gates, the generator is not ready for a shelf pin. Here structure won, so the paper lands as engine companion #50 on the Homeostasis Expedition—with the explicit limit that synthetic miniatures are not physical worlds and not finished robotics products. Commuters stuck behind a stalled shuttle already understand what happens when software confidence outruns clearance; the same caution applies to generated “realities.” Next useful work is richer generators, manipulator stages, and independent replication—not louder metaphors.</p>
+
+    <h2>Invitation</h2>
+    <p>Read the whitepaper tables, replay the suite with <code>npm run research:synthobs-tiny-reality-generation-model</code>, walk the Homeostasis Expedition journey page, and compare TRGM’s viability bars to the Wave–Node foundation they stand on. If tiny realities earn a place in larger charts, it will be because later stages keep clearing honest gates.</p>
+
+    <p class="honesty">Honesty rail: Tiny Reality Generation Model is Homeostasis Expedition ENGINE_SHELF #50 — synthetic Wave–Node miniatures with Goldilocks gates (seed 20261025: held-out viability 100% vs null 0%). Not a physical universe simulator, not an LLM world model, not robot hardware. Builds on Wave–Node Mathematics #49. Φ_EGS is design grammar. Document WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25 · registry synthobs-tiny-reality-generation-model-2026-10.</p>
+
+    <p class="fair-exchange">Fair Exchange: If this note earns utility, tip or inquire via the Purser on SS Vibelandia; reciprocal balancing remains dynamic.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/whitepaper/tiny-reality-generation-model">Read the full paper</a>
+      <a class="btn btn-ghost" href="/journey/homeostasis-expedition">Homeostasis Expedition</a>
+      <a class="btn btn-ghost" href="https://github.com/FractiAI/synthobs-tiny-reality-generation-model">Standalone repository</a>
+      <a class="btn btn-ghost" href="/ship-blog/wave-node-mathematics">Wave–Node foundation</a>
+    </div>
+    <footer>Tiny Reality Generation Model · Homeostasis Expedition · → ∞^∞</footer>
+  </article>
+  <script type="module" src="/interfaces/ship-blog-i18n.js"></script>
+</body>
+</html>

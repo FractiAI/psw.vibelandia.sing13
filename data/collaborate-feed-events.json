@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-24T10:16:20.392Z",
+  "updatedAt": "2026-10-25T17:08:38.156Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-tiny-reality-generation-model-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-25T17:08:38.155Z",
+      "body": "Tiny Reality Generation Model: Wave–Node Homeostasis Validation for Nested Miniature Worlds",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tiny-reality-generation-model-2026-10",
+      "artifact": {
+        "title": "Tiny Reality Generation Model: Wave–Node Homeostasis Validation for Nested Miniature Worlds",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TINY_REALITY_GENERATION_MODEL_EGS_2026-10.md",
+        "url": "/whitepaper/tiny-reality-generation-model",
+        "paperId": "synthobs-tiny-reality-generation-model-2026-10",
+        "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
+        "published": "2026-10-25T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-wave-node-mathematics-2026-10",
       "type": "ArtifactEvent",

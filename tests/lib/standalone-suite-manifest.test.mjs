@@ -70,6 +70,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-tbme-metamorphic-octaves',
       'synthobs-tbme-planetary-core-goldilocks',
       'synthobs-tier-c-holographic-wiring-lattices',
+      'synthobs-tiny-reality-generation-model',
       'synthobs-topology-of-the-void',
       'synthobs-triadic-nested-hemispheres-99-octave',
       'synthobs-viscosity-of-light',

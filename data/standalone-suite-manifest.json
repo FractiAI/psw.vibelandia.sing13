@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-06",
   "suites": [
     {
+      "id": "synthobs-tiny-reality-generation-model",
+      "path": "research/synthobs-tiny-reality-generation-model",
+      "github": "https://github.com/FractiAI/synthobs-tiny-reality-generation-model",
+      "description": "Tiny Reality Generation Model — nested Wave–Node miniatures · Goldilocks viability vs null · Homeostasis Expedition ENGINE_SHELF #50 (not physical universe sim)",
+      "paperIds": [
+        "synthobs-tiny-reality-generation-model-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_TINY_REALITY_GENERATION_MODEL_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-wave-node-mathematics",
       "path": "research/synthobs-wave-node-mathematics",
       "github": "https://github.com/FractiAI/synthobs-wave-node-mathematics",

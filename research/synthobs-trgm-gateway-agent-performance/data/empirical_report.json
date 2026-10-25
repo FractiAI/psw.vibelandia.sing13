@@ -1,0 +1,251 @@
+{
+  "generatedAt": "2026-10-25T21:07:22.082Z",
+  "docId": "WP-SYNTHOBS-TRGM-GATEWAY-AGENT-PERFORMANCE-EGS-2026-10-25",
+  "registryId": "synthobs-trgm-gateway-agent-performance-2026-10",
+  "seed": 20261025,
+  "validationSeed": 202610252,
+  "engineShelfPinned": false,
+  "bioPipeBps": 10,
+  "results": {
+    "docId": "WP-SYNTHOBS-TRGM-GATEWAY-AGENT-PERFORMANCE-EGS-2026-10-25",
+    "registryId": "synthobs-trgm-gateway-agent-performance-2026-10",
+    "researchQuestion": "Do agents perform better on a fixed task battery when scaffolded by the Tiny Reality Generation Model gateway (10 bits/s biological reality stream pipe feeding triad × polygon spin × octave tree × folded DNA) than without that gateway?",
+    "seed": 20261025,
+    "validationSeed": 202610252,
+    "expedition": "Homeostasis Expedition",
+    "expeditionFollowOn": "Tiny Reality Gateway Agent Performance Expedition",
+    "engineShelfPinned": false,
+    "honesty": "Application companion Soft Story / digital agent fixtures on the Homeostasis Expedition trail — not ENGINE_SHELF. Measures computational agents scaffolded by the TRGM gateway vs without; not a live multi-provider LLM bake-off, not wet-lab genetics, not measured neural bitrate proof, not gene→physics causation. Builds on TRGM #50 (10 bit/s bio pipe · triad · DNA) and #51 predictive catalog. Φ_EGS is design grammar in honesty rails only.",
+    "lab": {
+      "withGateway": {
+        "treatment": "with_trgm_gateway",
+        "n": 12,
+        "navSuccessRate": 1,
+        "viabilityRate": 1,
+        "meanCoherence": 1,
+        "benefitRate": 1,
+        "hasBioPipe": true,
+        "bioPipeBitRateBps": 10,
+        "treeCoherent": true,
+        "hostFolded": true,
+        "channel": {
+          "balancedAccuracy": 1,
+          "accuracy": 1
+        },
+        "rate": {
+          "bitRateBps": 10,
+          "effectiveBitRateBps": 10.000000000000002,
+          "durationSec": 4.279398751947121,
+          "rateLocked": true,
+          "informationBits": 42.793987519471216
+        }
+      },
+      "withoutGateway": {
+        "treatment": "without_trgm_gateway",
+        "n": 12,
+        "navSuccessRate": 0.6666666666666666,
+        "viabilityRate": 0.6666666666666666,
+        "meanCoherence": 0.26296296296296295,
+        "benefitRate": 0,
+        "hasBioPipe": false,
+        "bioPipeBitRateBps": null,
+        "treeCoherent": false,
+        "hostFolded": false,
+        "channel": {
+          "balancedAccuracy": 0.3750601250601251,
+          "accuracy": 0.37566137566137564
+        },
+        "rate": {
+          "bitRateBps": null,
+          "effectiveBitRateBps": null,
+          "rateLocked": false,
+          "kind": "uncapped_dump"
+        }
+      },
+      "deltas": {
+        "navSuccessRate": 0.33333333333333337,
+        "viabilityRate": 0.33333333333333337,
+        "meanCoherence": 0.737037037037037,
+        "benefitRate": 1,
+        "channelBA": 0.6249398749398749
+      },
+      "treatments": {
+        "withGateway": {
+          "id": "with_trgm_gateway",
+          "label": "With TRGM gateway",
+          "description": "Agent scaffolded by 10 bit/s bio reality pipe + structured triad stream + polygon spin + Φ octave tree + folded DNA"
+        },
+        "withoutGateway": {
+          "id": "without_trgm_gateway",
+          "label": "Without TRGM gateway",
+          "description": "Agent on unstructured / null / flat baseline — no bio pipe, no triad lock, no octave tree, no DNA theater"
+        }
+      }
+    },
+    "experiments": [
+      {
+        "id": "E1",
+        "title": "Treatments locked: with_trgm_gateway vs without_trgm_gateway",
+        "pass": true,
+        "detail": {
+          "treatments": {
+            "withGateway": {
+              "id": "with_trgm_gateway",
+              "label": "With TRGM gateway",
+              "description": "Agent scaffolded by 10 bit/s bio reality pipe + structured triad stream + polygon spin + Φ octave tree + folded DNA"
+            },
+            "withoutGateway": {
+              "id": "without_trgm_gateway",
+              "label": "Without TRGM gateway",
+              "description": "Agent on unstructured / null / flat baseline — no bio pipe, no triad lock, no octave tree, no DNA theater"
+            }
+          },
+          "tasks": [
+            "navigate",
+            "viability",
+            "coherence",
+            "channel_recovery",
+            "rate_intake"
+          ]
+        },
+        "interpretation": "Paired arms and five-task battery locked before scoring.",
+        "evidence": "protocol_lock",
+        "data": "treatment_taxonomy"
+      },
+      {
+        "id": "E2",
+        "title": "With-gateway arm attaches 10 bit/s biological reality stream pipe",
+        "pass": true,
+        "detail": {
+          "withPipeBps": 10,
+          "withRateLocked": true,
+          "withoutPipe": false
+        },
+        "interpretation": "Gateway arm locks bio pipe at 10 bit/s; without-gateway has no pipe.",
+        "evidence": "numerically_verified",
+        "data": "bio_pipe_attachment"
+      },
+      {
+        "id": "E3",
+        "title": "With-gateway navigation success beats without-gateway",
+        "pass": true,
+        "detail": {
+          "withNav": 1,
+          "withoutNav": 0.6666666666666666,
+          "delta": 0.33333333333333337,
+          "gate": 0.25
+        },
+        "interpretation": "Nav success with=100.0% · without=66.7% · Δ=33.3 pp.",
+        "evidence": "empirically_observed",
+        "data": "agent_nav_task"
+      },
+      {
+        "id": "E4",
+        "title": "With-gateway Goldilocks viability beats without-gateway",
+        "pass": true,
+        "detail": {
+          "withViability": 1,
+          "withoutViability": 0.6666666666666666,
+          "delta": 0.33333333333333337,
+          "gate": 0.25
+        },
+        "interpretation": "Viability with=100.0% · without=66.7% · Δ=33.3 pp.",
+        "evidence": "empirically_observed",
+        "data": "agent_viability_task"
+      },
+      {
+        "id": "E5",
+        "title": "With-gateway stack coherence beats without-gateway flat/unstructured",
+        "pass": true,
+        "detail": {
+          "withCoherence": 1,
+          "withoutCoherence": 0.26296296296296295,
+          "delta": 0.737037037037037,
+          "withTreeCoherent": true,
+          "withoutTreeCoherent": false
+        },
+        "interpretation": "Coherence with=1.000 · without=0.263 · Δ=0.737.",
+        "evidence": "empirically_observed",
+        "data": "agent_coherence_task"
+      },
+      {
+        "id": "E6",
+        "title": "With-gateway channel recovery beats without-gateway random labels",
+        "pass": true,
+        "detail": {
+          "withBA": 1,
+          "withoutBA": 0.3750601250601251,
+          "delta": 0.6249398749398749,
+          "gate": 0.2
+        },
+        "interpretation": "Channel BA with=1.000 · without=0.375 · Δ=0.625.",
+        "evidence": "empirically_observed",
+        "data": "agent_channel_recovery"
+      },
+      {
+        "id": "E7",
+        "title": "Paired findings summary — gateway advantage across task battery",
+        "pass": true,
+        "detail": {
+          "deltas": {
+            "navSuccessRate": 0.33333333333333337,
+            "viabilityRate": 0.33333333333333337,
+            "meanCoherence": 0.737037037037037,
+            "benefitRate": 1,
+            "channelBA": 0.6249398749398749
+          },
+          "withRate": {
+            "bitRateBps": 10,
+            "effectiveBitRateBps": 10.000000000000002,
+            "durationSec": 4.279398751947121,
+            "rateLocked": true,
+            "informationBits": 42.793987519471216
+          },
+          "withoutRate": {
+            "bitRateBps": null,
+            "effectiveBitRateBps": null,
+            "rateLocked": false,
+            "kind": "uncapped_dump"
+          }
+        },
+        "interpretation": "Across navigate · viability · coherence · channel recovery · rate-intake, with-gateway agents outperform without-gateway fixtures under pre-registered margins.",
+        "evidence": "empirically_observed",
+        "data": "paired_findings_summary"
+      },
+      {
+        "id": "E8",
+        "title": "Application companion honesty — not ENGINE_SHELF · not live LLM bake-off",
+        "pass": true,
+        "detail": {
+          "engineShelfPinned": false,
+          "expedition": "Homeostasis Expedition",
+          "followOn": "Tiny Reality Gateway Agent Performance Expedition",
+          "parentTrgmShelf": 50,
+          "notLiveLlmBakeOff": true,
+          "notMeasuredNeuralBitrate": true
+        },
+        "interpretation": "Findings are digital Soft Story agent fixtures on the Homeostasis Expedition trail; biology/neural claims stay off this track.",
+        "evidence": "protocol_lock",
+        "data": "honesty_boundary"
+      }
+    ],
+    "n_pass": 8,
+    "n_total": 8,
+    "all_pass": true,
+    "findingsAbstract": {
+      "withGatewayNav": 1,
+      "withoutGatewayNav": 0.6666666666666666,
+      "withGatewayViability": 1,
+      "withoutGatewayViability": 0.6666666666666666,
+      "withGatewayCoherence": 1,
+      "withoutGatewayCoherence": 0.26296296296296295,
+      "withChannelBA": 1,
+      "withoutChannelBA": 0.3750601250601251,
+      "bioPipeBps": 10,
+      "gatewayAdvantage": true
+    }
+  },
+  "dependencyVersions": {
+    "node": "v22.23.4"
+  }
+}

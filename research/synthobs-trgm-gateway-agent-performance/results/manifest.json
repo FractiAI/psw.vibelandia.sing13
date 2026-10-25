@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-10-25T21:07:22.082Z",
+  "docId": "WP-SYNTHOBS-TRGM-GATEWAY-AGENT-PERFORMANCE-EGS-2026-10-25",
+  "all_pass": true,
+  "n_pass": 8,
+  "n_total": 8,
+  "findings": {
+    "withGatewayNav": 1,
+    "withoutGatewayNav": 0.6666666666666666,
+    "withGatewayViability": 1,
+    "withoutGatewayViability": 0.6666666666666666,
+    "withGatewayCoherence": 1,
+    "withoutGatewayCoherence": 0.26296296296296295,
+    "withChannelBA": 1,
+    "withoutChannelBA": 0.3750601250601251,
+    "bioPipeBps": 10,
+    "gatewayAdvantage": true
+  },
+  "engineShelfPinned": false
+}

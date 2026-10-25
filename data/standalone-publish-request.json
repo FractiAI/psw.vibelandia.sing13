@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
-  "suiteId": "synthobs-tiny-reality-generation-model",
-  "createRepo": false,
-  "requestedAt": "2026-10-25T20:51:00.000Z",
-  "note": "Republish TRGM #50 after 10 bits/s biological reality stream pipe (T7) architecture lock"
+  "suiteId": "synthobs-trgm-gateway-agent-performance",
+  "createRepo": true,
+  "requestedAt": "2026-10-25T21:08:00.000Z",
+  "note": "Create + publish TRGM gateway agent performance expedition standalone (application companion, not ENGINE_SHELF)"
 }

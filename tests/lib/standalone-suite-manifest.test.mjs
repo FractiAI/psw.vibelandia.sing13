@@ -72,6 +72,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-tier-c-holographic-wiring-lattices',
       'synthobs-tiny-reality-generation-model',
       'synthobs-topology-of-the-void',
+      'synthobs-trgm-gateway-agent-performance',
       'synthobs-trgm-predictive-reality-catalog',
       'synthobs-triadic-nested-hemispheres-99-octave',
       'synthobs-viscosity-of-light',

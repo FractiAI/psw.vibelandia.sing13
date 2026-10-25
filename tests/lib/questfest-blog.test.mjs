@@ -43,15 +43,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: TRGM #51 predictive · TRGM #50 · Wave–Node · GHDR · PAC · IRC-FHG
-    expect(posts[0].id).toBe('synthobs-trgm-predictive-reality-catalog-2026-10');
+    // Newest: TRGM gateway agents · TRGM #51 · TRGM #50 · Wave–Node · GHDR · PAC
+    expect(posts[0].id).toBe('synthobs-trgm-gateway-agent-performance-2026-10');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-trgm-gateway-agent-performance-2026-10',
       'synthobs-trgm-predictive-reality-catalog-2026-10',
       'synthobs-tiny-reality-generation-model-2026-10',
       'synthobs-wave-node-mathematics-2026-10',
       'synthobs-geometry-host-dependent-relationship-2026-10',
       'synthobs-phase-aware-consensus-calculus-2026-10',
-      'synthobs-independent-research-convergence-fhg-2026-10',
     ]);
   });
 });

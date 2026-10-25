@@ -1,10 +1,10 @@
 # Status — TRGM
 
-Primary hypothesis **T1–T6 = 6/6** · structured 3-symbol cyclic × polygon spin × Infinite Octave holographic-rhyme tree × folded compact DNA · full-stack meanCoherence 1.000 · benefitRate 100% · seed 20261025.
+Primary **T1–T6 = 6/6** · Genetic nodes **G1–G5 = 5/5** on pinned public data (GTEx · MyGene · UCSC hs1 chrM · hg38 CpG) · seed 20261025.
 
-Core **16/16** (E1–E5 + M1–M5 + T1–T6) · held-out viability 100% vs null 0% · ENGINE_SHELF #50.
+Core **21/21** (E1–E5 + M1–M5 + T1–T6 + G1–G5) · held-out viability 100% vs null 0% · ENGINE_SHELF #50.
 
-**Molecular theater:** DNA/chromosome physical stage (UCSC hs1 T2T + B-DNA rise + LC + nucleosome wrap 147 bp / 1.65 turns). Host chr1 · M1–M5 **5/5**.
+**Genetic fixtures:** `data/molecular/genetic/` — 10 genes · 125 exons · chrM 16569 bp (GC≈44.37%) · 48 CpG islands · chr21 fold host viability 100%.
 
 Phase = soft steering/coordination delta (not hard gate; not A* replacement).
 

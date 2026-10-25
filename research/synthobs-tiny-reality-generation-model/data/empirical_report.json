@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T19:11:00.193Z",
+  "generatedAt": "2026-10-25T19:33:15.131Z",
   "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
   "registryId": "synthobs-tiny-reality-generation-model-2026-10",
   "seed": 20261025,
@@ -11,10 +11,10 @@
     "engineShelfSlot": 50,
     "expedition": "Homeostasis Expedition",
     "primaryHypothesis": "An intelligently structured three-symbol cyclic input stream, clocked by rotating polygon spin, fed into an Infinite Octave recursive tree of holographic rhymes, implemented across folded compact DNA molecular structures, forms a coherent structure and produces beneficial outcomes vs unstructured/unclocked/flat/unfolded ablations.",
-    "honesty": "TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA (hs1 + nucleosome wrap 147 bp / 1.65 turns) is coherent and beneficial. Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Φ_EGS is catalog nesting grammar only. Batteries: E1–E5 synthetic, H1–H3 Movebank (mixed), M1–M5 molecular theater, T1–T6 triadic–octave–DNA primary hypothesis — executed, not fabricated.",
+    "honesty": "TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA is coherent and beneficial — with a detailed genetic-node layer validated on pinned public data (GTEx genes, MyGene exons, UCSC hs1 chrM FASTA, UCSC hg38 CpG islands). Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Φ_EGS is catalog nesting grammar only. Batteries: E1–E5, H1–H3 (mixed), M1–M5, T1–T6, G1–G5 — executed, not fabricated.",
     "lab": {
       "seed": 20261025,
-      "runtimeMs": 1108.344656,
+      "runtimeMs": 1252.7125139999998,
       "foundation": {
         "A_pass": true,
         "B_pass": true,
@@ -895,6 +895,231 @@
       "n_total": 6,
       "all_pass": true
     },
+    "genetic": {
+      "ok": true,
+      "provenance": {
+        "fetchedAt": "2026-10-25T19:29:40Z",
+        "files": {
+          "chrM.hs1.fa": {
+            "genome": "hs1",
+            "chrom": "chrM",
+            "length": 16569,
+            "api": "UCSC getData/sequence"
+          },
+          "genes.panel.json": {
+            "assembly": "GRCh38/hg38",
+            "n": 10,
+            "api": "GTEx v2 reference/gene"
+          },
+          "exons.panel.json": {
+            "assembly": "GRCh38/hg38",
+            "n": 125,
+            "api": "MyGene.info v3"
+          },
+          "cpg.panel.json": {
+            "assembly": "GRCh38/hg38",
+            "n": 48,
+            "api": "UCSC cpgIslandExt"
+          },
+          "hg38.chrom.sizes": {
+            "genome": "hg38",
+            "api": "UCSC goldenPath"
+          }
+        },
+        "honesty": "Pinned public subsets for offline CI. Gene/exon/CpG = GRCh38; chrM sequence = hs1 T2T. Not clinical genetics."
+      },
+      "fixtureDir": "/workspace/research/synthobs-tiny-reality-generation-model/data/molecular/genetic",
+      "summary": {
+        "nGenes": 10,
+        "nExons": 125,
+        "nCds": 9,
+        "nCpg": 48,
+        "chrM": {
+          "length": 16569,
+          "gcPercent": 44.37202003741928,
+          "cpgObsExp": 0.6411667702748322
+        },
+        "host": {
+          "chrom": "chr21",
+          "bp": 45090682,
+          "viability": 1
+        },
+        "cpgEnrichment": 195.91836734693877
+      },
+      "geneticNodes": {
+        "n": 194,
+        "byKind": {
+          "gene": 10,
+          "exon": 125,
+          "cds": 9,
+          "cpg_island": 50
+        }
+      },
+      "hypotheses": [
+        {
+          "id": "G1",
+          "title": "Real gene panel nodes load within GRCh38 chrom bounds",
+          "pass": true,
+          "detail": {
+            "nGenes": 10,
+            "symbols": [
+              "INS",
+              "PDX1",
+              "POMC",
+              "NPY",
+              "DNMT1",
+              "DNMT3A",
+              "APP",
+              "SOD1",
+              "DYRK1A",
+              "TMPRSS2"
+            ],
+            "assembly": "GRCh38/hg38",
+            "source": "GTEx Portal API v2 reference/gene",
+            "allWithinChrom": true
+          },
+          "interpretation": "Loaded 10 GTEx gene nodes; all within hg38 chrom sizes.",
+          "evidence": "empirically_observed",
+          "data": "gtex_gene_panel_grch38"
+        },
+        {
+          "id": "G2",
+          "title": "Exon nodes nest under genes; CDS lengths are codon-compatible (mod 3 = 0)",
+          "pass": true,
+          "detail": {
+            "nExons": 125,
+            "exonNestRate": 1,
+            "nCds": 9,
+            "cdsCompatibleRate": 1,
+            "cdsOk": true,
+            "cds": [
+              {
+                "symbol": "INS",
+                "lengthBp": 333,
+                "mod3": 0,
+                "codonCompatible": true
+              },
+              {
+                "symbol": "PDX1",
+                "lengthBp": 852,
+                "mod3": 0,
+                "codonCompatible": true
+              },
+              {
+                "symbol": "POMC",
+                "lengthBp": 804,
+                "mod3": 0,
+                "codonCompatible": true
+              },
+              {
+                "symbol": "NPY",
+                "lengthBp": 294,
+                "mod3": 0,
+                "codonCompatible": true
+              },
+              {
+                "symbol": "DNMT1",
+                "lengthBp": 4899,
+                "mod3": 0,
+                "codonCompatible": true
+              },
+              {
+                "symbol": "APP",
+                "lengthBp": 1983,
+                "mod3": 0,
+                "codonCompatible": true
+              },
+              {
+                "symbol": "SOD1",
+                "lengthBp": 465,
+                "mod3": 0,
+                "codonCompatible": true
+              },
+              {
+                "symbol": "DYRK1A",
+                "lengthBp": 2265,
+                "mod3": 0,
+                "codonCompatible": true
+              },
+              {
+                "symbol": "TMPRSS2",
+                "lengthBp": 1479,
+                "mod3": 0,
+                "codonCompatible": true
+              }
+            ],
+            "source": "MyGene.info v3"
+          },
+          "interpretation": "MyGene exons 125 nest (rate=100.0%); CDS codon-compatible rate=100.0%.",
+          "evidence": "empirically_observed",
+          "data": "mygene_exon_panel_grch38"
+        },
+        {
+          "id": "G3",
+          "title": "Real hs1 chrM FASTA composition is well-formed (GC + CpG obs/exp)",
+          "pass": true,
+          "detail": {
+            "id": "chrM",
+            "length": 16569,
+            "counts": {
+              "A": 5124,
+              "C": 5183,
+              "G": 2169,
+              "T": 4093,
+              "N": 0,
+              "other": 0
+            },
+            "gcFraction": 0.4437202003741928,
+            "gcPercent": 44.37202003741928,
+            "cpgCount": 435,
+            "cpgObsExp": 0.6411667702748322,
+            "alphabetOk": true,
+            "expectedLength": 16569,
+            "source": "UCSC hs1 getData/sequence"
+          },
+          "interpretation": "chrM hs1 length=16569 · GC=44.37% · CpG obs/exp=0.641.",
+          "evidence": "numerically_verified",
+          "data": "ucsc_hs1_chrM_fasta"
+        },
+        {
+          "id": "G4",
+          "title": "Public CpG islands in gene±50kb windows enrich vs chrom-shuffled null",
+          "pass": true,
+          "detail": {
+            "nIslands": 48,
+            "nullMeanHits": 0.245,
+            "enrichment": 195.91836734693877,
+            "nullTrials": 200,
+            "source": "UCSC API getData/track cpgIslandExt"
+          },
+          "interpretation": "CpG panel n=48 enriches 195.92× vs shuffled null (mean=0.24).",
+          "evidence": "empirically_observed",
+          "data": "ucsc_hg38_cpgIslandExt_gene_windows"
+        },
+        {
+          "id": "G5",
+          "title": "Gene nodes project onto DNA theater, survive nucleosome fold, TRGM stays viable",
+          "pass": true,
+          "detail": {
+            "hostChrom": "chr21",
+            "hostBp": 45090682,
+            "nProjectedGenes": 4,
+            "orderPreserved": true,
+            "compactionRatio": 18.80891466825322,
+            "wrapBp": 147,
+            "turns": 1.65,
+            "viabilityRate": 1,
+            "nHeld": 8
+          },
+          "interpretation": "Host chr21: gene order preserved under fold (compaction=18.81); TRGM viability 100.0%.",
+          "evidence": "empirically_observed",
+          "data": "genetic_nodes_on_hs1_theater"
+        }
+      ],
+      "n_pass": 5,
+      "n_total": 5,
+      "all_pass": true
+    },
     "experiments": [
       {
         "id": "E1",
@@ -1318,6 +1543,165 @@
         },
         "evidence": "empirically_observed",
         "data": "trgm_on_triadic_octave_dna_stack"
+      },
+      {
+        "id": "G1",
+        "title": "Real gene panel nodes load within GRCh38 chrom bounds",
+        "pass": true,
+        "interpretation": "Loaded 10 GTEx gene nodes; all within hg38 chrom sizes.",
+        "detail": {
+          "nGenes": 10,
+          "symbols": [
+            "INS",
+            "PDX1",
+            "POMC",
+            "NPY",
+            "DNMT1",
+            "DNMT3A",
+            "APP",
+            "SOD1",
+            "DYRK1A",
+            "TMPRSS2"
+          ],
+          "assembly": "GRCh38/hg38",
+          "source": "GTEx Portal API v2 reference/gene",
+          "allWithinChrom": true
+        },
+        "evidence": "empirically_observed",
+        "data": "gtex_gene_panel_grch38"
+      },
+      {
+        "id": "G2",
+        "title": "Exon nodes nest under genes; CDS lengths are codon-compatible (mod 3 = 0)",
+        "pass": true,
+        "interpretation": "MyGene exons 125 nest (rate=100.0%); CDS codon-compatible rate=100.0%.",
+        "detail": {
+          "nExons": 125,
+          "exonNestRate": 1,
+          "nCds": 9,
+          "cdsCompatibleRate": 1,
+          "cdsOk": true,
+          "cds": [
+            {
+              "symbol": "INS",
+              "lengthBp": 333,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "PDX1",
+              "lengthBp": 852,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "POMC",
+              "lengthBp": 804,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "NPY",
+              "lengthBp": 294,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "DNMT1",
+              "lengthBp": 4899,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "APP",
+              "lengthBp": 1983,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "SOD1",
+              "lengthBp": 465,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "DYRK1A",
+              "lengthBp": 2265,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "TMPRSS2",
+              "lengthBp": 1479,
+              "mod3": 0,
+              "codonCompatible": true
+            }
+          ],
+          "source": "MyGene.info v3"
+        },
+        "evidence": "empirically_observed",
+        "data": "mygene_exon_panel_grch38"
+      },
+      {
+        "id": "G3",
+        "title": "Real hs1 chrM FASTA composition is well-formed (GC + CpG obs/exp)",
+        "pass": true,
+        "interpretation": "chrM hs1 length=16569 · GC=44.37% · CpG obs/exp=0.641.",
+        "detail": {
+          "id": "chrM",
+          "length": 16569,
+          "counts": {
+            "A": 5124,
+            "C": 5183,
+            "G": 2169,
+            "T": 4093,
+            "N": 0,
+            "other": 0
+          },
+          "gcFraction": 0.4437202003741928,
+          "gcPercent": 44.37202003741928,
+          "cpgCount": 435,
+          "cpgObsExp": 0.6411667702748322,
+          "alphabetOk": true,
+          "expectedLength": 16569,
+          "source": "UCSC hs1 getData/sequence"
+        },
+        "evidence": "numerically_verified",
+        "data": "ucsc_hs1_chrM_fasta"
+      },
+      {
+        "id": "G4",
+        "title": "Public CpG islands in gene±50kb windows enrich vs chrom-shuffled null",
+        "pass": true,
+        "interpretation": "CpG panel n=48 enriches 195.92× vs shuffled null (mean=0.24).",
+        "detail": {
+          "nIslands": 48,
+          "nullMeanHits": 0.245,
+          "enrichment": 195.91836734693877,
+          "nullTrials": 200,
+          "source": "UCSC API getData/track cpgIslandExt"
+        },
+        "evidence": "empirically_observed",
+        "data": "ucsc_hg38_cpgIslandExt_gene_windows"
+      },
+      {
+        "id": "G5",
+        "title": "Gene nodes project onto DNA theater, survive nucleosome fold, TRGM stays viable",
+        "pass": true,
+        "interpretation": "Host chr21: gene order preserved under fold (compaction=18.81); TRGM viability 100.0%.",
+        "detail": {
+          "hostChrom": "chr21",
+          "hostBp": 45090682,
+          "nProjectedGenes": 4,
+          "orderPreserved": true,
+          "compactionRatio": 18.80891466825322,
+          "wrapBp": 147,
+          "turns": 1.65,
+          "viabilityRate": 1,
+          "nHeld": 8
+        },
+        "evidence": "empirically_observed",
+        "data": "genetic_nodes_on_hs1_theater"
       }
     ],
     "syntheticExperiments": [
@@ -1801,8 +2185,169 @@
         "data": "trgm_on_triadic_octave_dna_stack"
       }
     ],
-    "n_pass": 16,
-    "n_total": 16,
+    "geneticExperiments": [
+      {
+        "id": "G1",
+        "title": "Real gene panel nodes load within GRCh38 chrom bounds",
+        "pass": true,
+        "interpretation": "Loaded 10 GTEx gene nodes; all within hg38 chrom sizes.",
+        "detail": {
+          "nGenes": 10,
+          "symbols": [
+            "INS",
+            "PDX1",
+            "POMC",
+            "NPY",
+            "DNMT1",
+            "DNMT3A",
+            "APP",
+            "SOD1",
+            "DYRK1A",
+            "TMPRSS2"
+          ],
+          "assembly": "GRCh38/hg38",
+          "source": "GTEx Portal API v2 reference/gene",
+          "allWithinChrom": true
+        },
+        "evidence": "empirically_observed",
+        "data": "gtex_gene_panel_grch38"
+      },
+      {
+        "id": "G2",
+        "title": "Exon nodes nest under genes; CDS lengths are codon-compatible (mod 3 = 0)",
+        "pass": true,
+        "interpretation": "MyGene exons 125 nest (rate=100.0%); CDS codon-compatible rate=100.0%.",
+        "detail": {
+          "nExons": 125,
+          "exonNestRate": 1,
+          "nCds": 9,
+          "cdsCompatibleRate": 1,
+          "cdsOk": true,
+          "cds": [
+            {
+              "symbol": "INS",
+              "lengthBp": 333,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "PDX1",
+              "lengthBp": 852,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "POMC",
+              "lengthBp": 804,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "NPY",
+              "lengthBp": 294,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "DNMT1",
+              "lengthBp": 4899,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "APP",
+              "lengthBp": 1983,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "SOD1",
+              "lengthBp": 465,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "DYRK1A",
+              "lengthBp": 2265,
+              "mod3": 0,
+              "codonCompatible": true
+            },
+            {
+              "symbol": "TMPRSS2",
+              "lengthBp": 1479,
+              "mod3": 0,
+              "codonCompatible": true
+            }
+          ],
+          "source": "MyGene.info v3"
+        },
+        "evidence": "empirically_observed",
+        "data": "mygene_exon_panel_grch38"
+      },
+      {
+        "id": "G3",
+        "title": "Real hs1 chrM FASTA composition is well-formed (GC + CpG obs/exp)",
+        "pass": true,
+        "interpretation": "chrM hs1 length=16569 · GC=44.37% · CpG obs/exp=0.641.",
+        "detail": {
+          "id": "chrM",
+          "length": 16569,
+          "counts": {
+            "A": 5124,
+            "C": 5183,
+            "G": 2169,
+            "T": 4093,
+            "N": 0,
+            "other": 0
+          },
+          "gcFraction": 0.4437202003741928,
+          "gcPercent": 44.37202003741928,
+          "cpgCount": 435,
+          "cpgObsExp": 0.6411667702748322,
+          "alphabetOk": true,
+          "expectedLength": 16569,
+          "source": "UCSC hs1 getData/sequence"
+        },
+        "evidence": "numerically_verified",
+        "data": "ucsc_hs1_chrM_fasta"
+      },
+      {
+        "id": "G4",
+        "title": "Public CpG islands in gene±50kb windows enrich vs chrom-shuffled null",
+        "pass": true,
+        "interpretation": "CpG panel n=48 enriches 195.92× vs shuffled null (mean=0.24).",
+        "detail": {
+          "nIslands": 48,
+          "nullMeanHits": 0.245,
+          "enrichment": 195.91836734693877,
+          "nullTrials": 200,
+          "source": "UCSC API getData/track cpgIslandExt"
+        },
+        "evidence": "empirically_observed",
+        "data": "ucsc_hg38_cpgIslandExt_gene_windows"
+      },
+      {
+        "id": "G5",
+        "title": "Gene nodes project onto DNA theater, survive nucleosome fold, TRGM stays viable",
+        "pass": true,
+        "interpretation": "Host chr21: gene order preserved under fold (compaction=18.81); TRGM viability 100.0%.",
+        "detail": {
+          "hostChrom": "chr21",
+          "hostBp": 45090682,
+          "nProjectedGenes": 4,
+          "orderPreserved": true,
+          "compactionRatio": 18.80891466825322,
+          "wrapBp": 147,
+          "turns": 1.65,
+          "viabilityRate": 1,
+          "nHeld": 8
+        },
+        "evidence": "empirically_observed",
+        "data": "genetic_nodes_on_hs1_theater"
+      }
+    ],
+    "n_pass": 21,
+    "n_total": 21,
     "all_pass": true,
     "historical_n_pass": 1,
     "historical_n_total": 3,
@@ -1816,6 +2361,10 @@
     "triadic_n_pass": 6,
     "triadic_n_total": 6,
     "triadic_all_pass": true,
+    "genetic_ran": true,
+    "genetic_n_pass": 5,
+    "genetic_n_total": 5,
+    "genetic_all_pass": true,
     "enginePinRecommended": true
   },
   "dependencyVersions": {

@@ -11,10 +11,11 @@ import { runTrgmLaboratory } from './computational-lab.mjs';
 import { runHistoricalLaboratory } from './historical-lab.mjs';
 import { runMolecularTheaterLaboratory } from './molecular-theater.mjs';
 import { runTriadicOctaveDnaLaboratory } from './triadic-octave-dna-lab.mjs';
+import { runGeneticNodesLaboratory } from './genetic-nodes-lab.mjs';
 
 /**
- * Core synthetic E1–E5 · Molecular M1–M5 · Primary T1–T6
- * (triadic cyclic stream × polygon spin × Infinite Octave rhyme tree × folded DNA)
+ * Core synthetic E1–E5 · Molecular M1–M5 · Primary T1–T6 · Genetic G1–G5
+ * (detailed gene/exon/chrM/CpG nodes on real public data)
  * · Historical H1–H3 (Movebank; reported separately — mixed outcomes).
  */
 export async function runAllExperiments() {
@@ -22,6 +23,7 @@ export async function runAllExperiments() {
   const historical = await runHistoricalLaboratory();
   const molecular = runMolecularTheaterLaboratory();
   const triadic = runTriadicOctaveDnaLaboratory();
+  const genetic = runGeneticNodesLaboratory();
 
   const experiments = [
     {
@@ -112,8 +114,23 @@ export async function runAllExperiments() {
     data: h.data,
   }));
 
-  // Core all_pass = E* + M* + T* (primary hypothesis stack is now the model lock).
-  const core = [...experiments, ...molecularExperiments, ...triadicExperiments];
+  const geneticExperiments = (genetic.hypotheses || []).map((h) => ({
+    id: h.id,
+    title: h.title,
+    pass: h.pass,
+    interpretation: h.interpretation || h.title,
+    detail: h.detail,
+    evidence: h.evidence,
+    data: h.data,
+  }));
+
+  // Core all_pass = E* + M* + T* + G* (genetic nodes are part of the DNA layer lock).
+  const core = [
+    ...experiments,
+    ...molecularExperiments,
+    ...triadicExperiments,
+    ...geneticExperiments,
+  ];
   const n_pass = core.filter((e) => e.pass).length;
   return {
     docId: DOC_ID,
@@ -127,11 +144,13 @@ export async function runAllExperiments() {
     historical,
     molecular,
     triadic,
+    genetic,
     experiments: core,
     syntheticExperiments: experiments,
     historicalExperiments,
     molecularExperiments,
     triadicExperiments,
+    geneticExperiments,
     n_pass,
     n_total: core.length,
     all_pass: n_pass === core.length,
@@ -147,11 +166,17 @@ export async function runAllExperiments() {
     triadic_n_pass: triadicExperiments.filter((e) => e.pass).length,
     triadic_n_total: triadicExperiments.length,
     triadic_all_pass: Boolean(triadic.ok) && triadicExperiments.every((e) => e.pass),
+    genetic_ran: Boolean(genetic.ok),
+    genetic_n_pass: geneticExperiments.filter((e) => e.pass).length,
+    genetic_n_total: geneticExperiments.length,
+    genetic_all_pass: Boolean(genetic.ok) && geneticExperiments.every((e) => e.pass),
     enginePinRecommended:
       lab.summary.enginePinRecommended &&
       Boolean(molecular.ok) &&
       molecular.all_pass &&
       Boolean(triadic.ok) &&
-      triadic.all_pass,
+      triadic.all_pass &&
+      Boolean(genetic.ok) &&
+      genetic.all_pass,
   };
 }

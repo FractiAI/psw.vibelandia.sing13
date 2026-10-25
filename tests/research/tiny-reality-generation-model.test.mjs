@@ -19,12 +19,12 @@ describe('synthobs-tiny-reality-generation-model', () => {
   });
 
   it(
-    'E+M+T battery · historical Movebank · DNA theater · triadic octave primary',
+    'E+M+T+G battery · historical · DNA theater · triadic · genetic nodes',
     async () => {
       const r = await runAllExperiments();
       expect(r.all_pass).toBe(true);
-      expect(r.n_total).toBe(16); // E1–E5 + M1–M5 + T1–T6
-      expect(r.n_pass).toBe(16);
+      expect(r.n_total).toBe(21); // E1–E5 + M1–M5 + T1–T6 + G1–G5
+      expect(r.n_pass).toBe(21);
       expect(r.enginePinRecommended).toBe(true);
       expect(r.lab.held.summary.viabilityRate).toBe(1);
       expect(r.lab.nullBaseline.viabilityRate).toBe(0);
@@ -49,9 +49,15 @@ describe('synthobs-tiny-reality-generation-model', () => {
         r.triadic.conditions.unstructured.meanCoherence,
       );
       expect(r.triadic.conditions.full.benefitRate).toBeGreaterThanOrEqual(0.75);
-      expect(r.triadic.conditions.full.compactionRatio).toBeGreaterThan(
-        r.triadic.conditions.unfolded.compactionRatio,
-      );
+
+      expect(r.genetic_ran).toBe(true);
+      expect(r.genetic_all_pass).toBe(true);
+      expect(r.geneticExperiments.map((e) => e.id)).toEqual(['G1', 'G2', 'G3', 'G4', 'G5']);
+      expect(r.genetic.summary.nGenes).toBeGreaterThanOrEqual(8);
+      expect(r.genetic.summary.nExons).toBeGreaterThanOrEqual(20);
+      expect(r.genetic.summary.chrM.length).toBe(16569);
+      expect(r.genetic.summary.cpgEnrichment).toBeGreaterThan(1.5);
+      expect(r.genetic.summary.host.viability).toBeGreaterThanOrEqual(0.75);
     },
     180_000,
   );

@@ -5,14 +5,14 @@
 **Expedition:** Homeostasis Expedition
 **ENGINE_SHELF candidate:** #50
 **Seed:** 20261025
-**Generated:** 2026-10-25T19:11:00.193Z
+**Generated:** 2026-10-25T19:33:15.131Z
 
 ## Verdict
 
 | Metric | Value |
 |---|---|
-| Core all pass (E1–E5 + M1–M5 + T1–T6) | `true` |
-| Core passed | 16/16 |
+| Core all pass (E1–E5 + M1–M5 + T1–T6 + G1–G5) | `true` |
+| Core passed | 21/21 |
 | Foundation Wave–Node | `true` |
 | Held-out viability | 100.0% |
 | Null viability | 0.0% |
@@ -23,8 +23,10 @@
 | Molecular passed | 5/5 |
 | Triadic–octave–DNA ran | `true` |
 | Triadic–octave–DNA passed | 6/6 |
+| Genetic nodes ran | `true` |
+| Genetic nodes passed | 5/5 |
 | Φ_EGS | 1.618033988749895 |
-| Runtime ms | 1108.3 |
+| Runtime ms | 1252.7 |
 
 ## Primary hypothesis
 
@@ -188,9 +190,52 @@ An intelligently structured three-symbol cyclic input stream, clocked by rotatin
 - Evidence: empirically_observed
 - Data: trgm_on_triadic_octave_dna_stack
 
+## Genetic nodes G1–G5 (real public gene/exon/chrM/CpG data)
+
+- Genes: 10 (GTEx GRCh38 panel)
+- Exons: 125 · CDS: 9
+- chrM hs1: len=16569 GC=44.37%
+- CpG islands: 48 · enrichment 195.92×
+- Host theater: chr21 viability 100.0%
+
+### G1 — Real gene panel nodes load within GRCh38 chrom bounds
+
+- **Pass:** `true`
+- Loaded 10 GTEx gene nodes; all within hg38 chrom sizes.
+- Evidence: empirically_observed
+- Data: gtex_gene_panel_grch38
+
+### G2 — Exon nodes nest under genes; CDS lengths are codon-compatible (mod 3 = 0)
+
+- **Pass:** `true`
+- MyGene exons 125 nest (rate=100.0%); CDS codon-compatible rate=100.0%.
+- Evidence: empirically_observed
+- Data: mygene_exon_panel_grch38
+
+### G3 — Real hs1 chrM FASTA composition is well-formed (GC + CpG obs/exp)
+
+- **Pass:** `true`
+- chrM hs1 length=16569 · GC=44.37% · CpG obs/exp=0.641.
+- Evidence: numerically_verified
+- Data: ucsc_hs1_chrM_fasta
+
+### G4 — Public CpG islands in gene±50kb windows enrich vs chrom-shuffled null
+
+- **Pass:** `true`
+- CpG panel n=48 enriches 195.92× vs shuffled null (mean=0.24).
+- Evidence: empirically_observed
+- Data: ucsc_hg38_cpgIslandExt_gene_windows
+
+### G5 — Gene nodes project onto DNA theater, survive nucleosome fold, TRGM stays viable
+
+- **Pass:** `true`
+- Host chr21: gene order preserved under fold (compaction=18.81); TRGM viability 100.0%.
+- Evidence: empirically_observed
+- Data: genetic_nodes_on_hs1_theater
+
 ## Honesty
 
-TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA (hs1 + nucleosome wrap 147 bp / 1.65 turns) is coherent and beneficial. Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Φ_EGS is catalog nesting grammar only. Batteries: E1–E5 synthetic, H1–H3 Movebank (mixed), M1–M5 molecular theater, T1–T6 triadic–octave–DNA primary hypothesis — executed, not fabricated.
+TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA is coherent and beneficial — with a detailed genetic-node layer validated on pinned public data (GTEx genes, MyGene exons, UCSC hs1 chrM FASTA, UCSC hg38 CpG islands). Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Φ_EGS is catalog nesting grammar only. Batteries: E1–E5, H1–H3 (mixed), M1–M5, T1–T6, G1–G5 — executed, not fabricated.
 
 Standalone: FractiAI/synthobs-tiny-reality-generation-model
 

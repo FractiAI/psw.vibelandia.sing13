@@ -38,7 +38,7 @@ function mdReport(report) {
     '',
     `| Metric | Value |`,
     `|---|---|`,
-    `| Core all pass (E1–E5 + M1–M5 + T1–T6) | \`${report.results.all_pass}\` |`,
+    `| Core all pass (E1–E5 + M1–M5 + T1–T6 + G1–G5) | \`${report.results.all_pass}\` |`,
     `| Core passed | ${report.results.n_pass}/${report.results.n_total} |`,
     `| Foundation Wave–Node | \`${lab.foundation.allPass}\` |`,
     `| Held-out viability | ${(lab.held.summary.viabilityRate * 100).toFixed(1)}% |`,
@@ -50,6 +50,8 @@ function mdReport(report) {
     `| Molecular passed | ${report.results.molecular_n_pass}/${report.results.molecular_n_total} |`,
     `| Triadic–octave–DNA ran | \`${report.results.triadic_ran}\` |`,
     `| Triadic–octave–DNA passed | ${report.results.triadic_n_pass}/${report.results.triadic_n_total} |`,
+    `| Genetic nodes ran | \`${report.results.genetic_ran}\` |`,
+    `| Genetic nodes passed | ${report.results.genetic_n_pass}/${report.results.genetic_n_total} |`,
     `| Φ_EGS | ${PHI_EGS} |`,
     `| Runtime ms | ${lab.runtimeMs.toFixed(1)} |`,
     '',
@@ -122,6 +124,26 @@ function mdReport(report) {
     );
   }
   for (const e of report.results.triadicExperiments || []) {
+    lines.push(`### ${e.id} — ${e.title}`, '');
+    lines.push(`- **Pass:** \`${e.pass}\``);
+    if (e.interpretation) lines.push(`- ${e.interpretation}`);
+    if (e.evidence) lines.push(`- Evidence: ${e.evidence}`);
+    if (e.data) lines.push(`- Data: ${e.data}`);
+    lines.push('');
+  }
+  const gen = report.results.genetic;
+  lines.push('## Genetic nodes G1–G5 (real public gene/exon/chrM/CpG data)', '');
+  if (gen?.ok) {
+    lines.push(
+      `- Genes: ${gen.summary?.nGenes} (GTEx GRCh38 panel)`,
+      `- Exons: ${gen.summary?.nExons} · CDS: ${gen.summary?.nCds}`,
+      `- chrM hs1: len=${gen.summary?.chrM?.length} GC=${Number(gen.summary?.chrM?.gcPercent || 0).toFixed(2)}%`,
+      `- CpG islands: ${gen.summary?.nCpg} · enrichment ${Number(gen.summary?.cpgEnrichment || 0).toFixed(2)}×`,
+      `- Host theater: ${gen.summary?.host?.chrom} viability ${((gen.summary?.host?.viability || 0) * 100).toFixed(1)}%`,
+      '',
+    );
+  }
+  for (const e of report.results.geneticExperiments || []) {
     lines.push(`### ${e.id} — ${e.title}`, '');
     lines.push(`- **Pass:** \`${e.pass}\``);
     if (e.interpretation) lines.push(`- ${e.interpretation}`);
@@ -233,6 +255,11 @@ async function main() {
           passed: `${results.triadic_n_pass}/${results.triadic_n_total}`,
           fullBenefit: results.triadic?.conditions?.full?.benefitRate,
           fullCoherence: results.triadic?.conditions?.full?.meanCoherence,
+        },
+        genetic: {
+          ran: results.genetic_ran,
+          passed: `${results.genetic_n_pass}/${results.genetic_n_total}`,
+          summary: results.genetic?.summary,
         },
       },
       null,

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "efac4a7611c4dee0",
+  "auditId": "031d1629ddf97dd2",
   "paperId": "synthobs-tiny-reality-generation-model-2026-10",
   "sourcePath": "docs/SYNTHOBS_TINY_REALITY_GENERATION_MODEL_EGS_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-25T19:11:18.926Z"
+          "invokedAt": "2026-10-25T19:33:22.762Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-25T19:11:18.925Z",
-  "completedAt": "2026-10-25T19:11:18.926Z",
+  "startedAt": "2026-10-25T19:33:22.761Z",
+  "completedAt": "2026-10-25T19:33:22.763Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1322,
+      "wordCount": 1682,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 1,
-        "numbered": 15,
+        "numbered": 19,
         "citeLines": 6
       }
     }

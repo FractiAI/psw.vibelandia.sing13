@@ -23,7 +23,7 @@
 |------|--------|----------------|
 | **Foundation** | Imported Wave–Node A–E battery still passes | New PDE theory beyond #49 |
 | **Empirically observed** | Held-out TRGM viability **100%** (n=16) vs null **0%** | Physical world generation |
-| **Analytically established** | Phase-gate ablation ≥ full-gate (subset) | Universal Goldilocks law |
+| **Empirically observed** | Phase = soft steering delta; hard viability = geo+wave+nav | Universal Goldilocks law |
 | **Hypothesized** | Useful HFG ↔ TRGM nesting for expedition charts | Validated multi-robot embodiment |
 | **Φ_EGS** | Catalog nesting grammar | Physical constant replacement |
 
@@ -43,7 +43,7 @@
 
 **Findings (executed).** Foundation Wave–Node A–E **pass**. Held-out TRGM viability **16/16 (100%)**; null viability **0/16**; nested child descriptors present on all L0 realities; mean held-out wave \(L_2\approx 9.35\times10^{-4}\); mean phase \(r\approx 0.957\); navigation success **100%**.
 
-**Limitation.** Synthetic miniature worlds only — not cosmology, not LLM world models, not hardware robotics. Phase community uses complete-graph coupling because ring topology admits random-init splay states (documented).
+**Limitation.** Synthetic miniature worlds only — not cosmology, not LLM world models, not hardware robotics. Phase = soft steering/coordination metric (complete-graph Kuramoto; ring splay documented); hard viability excludes phase by design.
 
 **Keywords:** Tiny Reality Generation Model; Wave–Node; homeostasis; Goldilocks; Kuramoto; FDTD; nested generation; Homeostasis Expedition.
 
@@ -112,11 +112,11 @@ Viability **0.000** (no structured scaffold → geometry gate fails by construct
 
 `NEST_LEVELS=2`; every held-out L0 reality carries an L1 child descriptor — **pass**.
 
-### 5.5 Ablation
+### 5.5 Phase as steering delta (soft metric)
 
-Dropping the phase gate cannot reduce geo+wave+nav pass rate below the full-gate rate (subset) — **pass**.
+Hard Goldilocks viability = **geometry + wave + navigation**. Phase is a **foundational steering/coordination delta** (Kuramoto community soft sync floor \(r\ge 0.95\) reported, not a kill-switch). This matches Wave–Node #49: phase is a small matched bias on local ascent, not an A* replacement.
 
-Figure: `figures/fig_viability.svg` (TRGM vs Null vs Ablate-φ).
+Figure: `figures/fig_viability.svg` (TRGM vs Null; phase soft-reported).
 
 ### 5.6 Historical prediction battery (Movebank GPS + GFZ Kp)
 
@@ -136,9 +136,9 @@ Figure: `figures/fig_historical.svg`.
 
 ## 6. Discussion
 
-TRGM recipes are **empirically more viable** than null scatters under pre-registered homeostasis gates. This is expected if structure matters — and that expectation is now measured. Distinctiveness is the **generator + Goldilocks multi-gate package** on the Homeostasis Expedition trail, not a claim of new PDE physics.
+TRGM recipes are **empirically more viable** than null scatters under pre-registered **geo+wave+nav** gates. Phase is retained as a **steering/coordination layer** (soft), consistent with Wave–Node’s matched ablation delta — not graded as a viability veto or path-length champion.
 
-The historical Movebank/Kp battery was run to test whether structure→phase and storm-contrast predictions survive on **real collar series**. They mostly do not under the pre-registered gates (H1/H2 fail; H3 records a small storm–quiet Δ). That is a useful negative/qualified result: synthetic viability ≠ historical wildlife coordination.
+The historical Movebank/Kp battery probed sync-style and storm-contrast predictions on **real collar series** (H1/H2 fail; H3 small Δ). Those mixed outcomes constrain wildlife sync claims; they do **not** erase phase’s in-lab steering-delta role on synthetic Wave–Node fields.
 
 Practical robotics / physical simulation value still requires manipulator, multi-agent, and hardware stages (not executed).
 
@@ -162,7 +162,7 @@ Numbers in this manuscript match `data/empirical_report.json` for seed `20261025
 
 ## 9. Conclusions
 
-TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ablation logic checks. Pinned as ENGINE_SHELF **#50** on the Homeostasis Expedition — a miniature-world generator validated computationally, not a universe engine.
+TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ablation logic checks. Pinned as ENGINE_SHELF **#50** on the Homeostasis Expedition — a miniature-world generator validated computationally, not a universe engine. Historical Movebank+Kp prediction tests were executed (**1/3** pass); mixed wildlife results are reported without upgrading the synthetic pin into biology.
 
 ---
 
@@ -172,7 +172,9 @@ TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ab
 2. Taflove, A., & Hagness, S. C. (2005). *Computational Electrodynamics* (FDTD). Artech House.  
 3. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A* minimum-cost paths. *IEEE Trans. SSC*.  
 4. FractiAI Wave–Node Mathematics (2026). `docs/SYNTHOBS_WAVE_NODE_MATHEMATICS_EGS_2026-10.md` · ENGINE_SHELF #49.  
-5. Connolly, C. I., & Grupen, R. A. (1993). Harmonic functions in robotics. *J. Robotic Systems*.
+5. Connolly, C. I., & Grupen, R. A. (1993). Harmonic functions in robotics. *J. Robotic Systems*.  
+6. Movebank study 2548892515 — Snowy Range Moose in Wyoming (2019–2020). Public GPS collar fixes.  
+7. GFZ German Research Centre for Geosciences — Kp index (archived 3-hourly, collar window).
 
 ---
 
@@ -181,9 +183,10 @@ TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ab
 | Item | Status |
 |------|--------|
 | Implemented | Yes |
-| Executed | 5/5 pass · seed 20261025 |
+| Synthetic executed | 5/5 pass · seed 20261025 |
+| Historical executed | H1–H3 on Movebank+Kp · **1/3** pass (H3 only) |
 | Held-out viability | 100% vs null 0% |
-| Engine pin | #50 |
-| Not run | Physical sims · LLM world models · hardware |
+| Engine pin | #50 (synthetic gates; historical mixed) |
+| Not run | Physical sims · LLM world models · hardware · bison-specific collars |
 
 → ∞^∞

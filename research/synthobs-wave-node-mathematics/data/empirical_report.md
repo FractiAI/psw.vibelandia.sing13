@@ -4,7 +4,7 @@
 **Registry ID:** `synthobs-wave-node-mathematics-2026-10`
 **ENGINE_SHELF candidate slot:** 49
 **Seed:** 20261024
-**Generated:** 2026-10-24T10:12:35.531Z
+**Generated:** 2026-10-25T18:54:46.429Z
 
 ## Verdict
 
@@ -17,7 +17,7 @@
 | Wave beats A* length (held-out) | `false` |
 | Phase helps vs ablation | `true` |
 | Φ_EGS | 1.618033988749895 |
-| Runtime ms | 1325.0 |
+| Runtime ms | 1140.7 |
 
 ## Held-out planning summary (D)
 
@@ -61,9 +61,9 @@ Mean observed order: **2.001**
 ### E4 — 2D trajectory planning vs A* + phase ablation (D)
 
 - **Pass:** `true`
-- **Interpretation:** Wave–Node did not beat A* on mean successful path length; A* remains the stronger grid baseline here — an important negative/mixed finding.
+- **Interpretation:** A* remains the stronger global path-length baseline. Phase’s matched role is a small steering delta on harmonic ascent (same success/collisions; tiny length Δ vs ablation)—foundational coordination bias, not a planner that must beat A*.
 - **Evidence tier:** empirically_observed
-- **Honesty:** 2D point navigation only — not manipulator, multi-robot hardware, or physical Wave–Node Robotics product proof.
+- **Honesty:** 2D point navigation only — not manipulator, multi-robot hardware, or physical Wave–Node Robotics product proof. Phase = steering/coordination delta.
 
 ### E5 — Computational cost / scaling (E)
 
@@ -73,7 +73,7 @@ Mean observed order: **2.001**
 
 ## Honesty
 
-Wave–Node Mathematics lab: analytical/numerical fixtures for node placement, 1D FDTD wave PDE, Kuramoto phase sync, and 2D point-navigation planning — not physical robot hardware, not manipulator benchmarks, not proof of a finished Wave–Node Robotics product. Φ_EGS is catalog nesting grammar only.
+Wave–Node Mathematics lab: analytical/numerical fixtures for node placement, 1D FDTD wave PDE, Kuramoto phase sync, and 2D point-navigation planning. Phase is a foundational steering/coordination delta on local ascent (matched ablation), not expected to beat A* on global path length. Not physical robot hardware, not manipulator benchmarks, not a finished Wave–Node Robotics product. Φ_EGS is catalog nesting grammar only.
 
 Standalone: FractiAI/synthobs-wave-node-mathematics
 

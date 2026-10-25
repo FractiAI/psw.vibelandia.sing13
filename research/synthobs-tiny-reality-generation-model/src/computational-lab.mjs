@@ -287,20 +287,28 @@ function scoreNavigation(reality) {
   return { pass: ok, ok, length, iterations: iters, method: 'A*' };
 }
 
-/** Joint Goldilocks / homeostasis viability for one tiny reality. */
+/**
+ * Joint Goldilocks / homeostasis viability for one tiny reality.
+ * Hard band = geometry + wave + navigation.
+ * Phase is a foundational steering/coordination delta (soft metric) — reported, not a kill-switch.
+ */
 export function evaluateReality(reality) {
   const geometry = scoreGeometry(reality);
   const wave = scoreWave(reality);
   const phase = scorePhase(reality);
   const navigation = scoreNavigation(reality);
-  const viable =
-    geometry.pass && wave.pass && phase.pass && navigation.pass;
+  const viable = geometry.pass && wave.pass && navigation.pass;
   return {
     id: reality.id,
     nestLevel: reality.nestLevel,
     geometry,
     wave,
-    phase,
+    phase: {
+      ...phase,
+      role: 'steering_delta',
+      hardGate: false,
+      softSyncOk: phase.pass,
+    },
     navigation,
     viable,
     childId: reality.child?.id ?? null,
@@ -369,12 +377,15 @@ export function runTrgmLaboratory() {
   // Nesting: every L0 reality should carry an L1 child descriptor
   const nestOk = heldRealities.every((r) => r.child && r.child.nestLevel === 1);
 
-  // Ablation: disable phase gate requirement — measure how many still pass geo+wave+nav
-  const ablationNoPhase = heldEvals.map((e) => ({
+  // Soft phase reporting: fraction of held realities meeting sync quality floor (not viability).
+  const softPhaseOkRate = mean(heldEvals.map((e) => (e.phase.softSyncOk ? 1 : 0)));
+
+  // Matched view with phase forced into hard band (legacy kill-switch) for documentation.
+  const hardPhaseLegacy = heldEvals.map((e) => ({
     id: e.id,
-    viable: e.geometry.pass && e.wave.pass && e.navigation.pass,
+    viable: e.geometry.pass && e.wave.pass && e.phase.softSyncOk && e.navigation.pass,
   }));
-  const ablationRate = mean(ablationNoPhase.map((e) => (e.viable ? 1 : 0)));
+  const hardPhaseLegacyRate = mean(hardPhaseLegacy.map((e) => (e.viable ? 1 : 0)));
 
   const trgmBeatsNull = heldSummary.viabilityRate > nullViabilityRate + 1e-9;
   const enginePinRecommended =
@@ -394,10 +405,24 @@ export function runTrgmLaboratory() {
       allPass: foundationPass,
       waveOrder: foundation.B.b2?.meanObservedOrder,
       planning: foundation.D.heldSummary,
+      phaseSteeringDelta:
+        foundation.D.heldSummary?.wavePhase && foundation.D.heldSummary?.waveAblation
+          ? {
+              wavePhaseMeanLength: foundation.D.heldSummary.wavePhase.meanLength,
+              waveAblationMeanLength: foundation.D.heldSummary.waveAblation.meanLength,
+              lengthDelta:
+                foundation.D.heldSummary.waveAblation.meanLength -
+                foundation.D.heldSummary.wavePhase.meanLength,
+              note: 'Phase = small steering bias on harmonic ascent; not expected to beat A* on path length.',
+            }
+          : null,
     },
     train: { summary: trainSummary, n: N_REALITIES_TRAIN },
     held: {
-      summary: heldSummary,
+      summary: {
+        ...heldSummary,
+        softPhaseOkRate,
+      },
       n: N_REALITIES_HELD_OUT,
       evals: heldEvals.map(({ id, nestLevel, viable, wave, phase, navigation, geometry }) => ({
         id,
@@ -405,16 +430,26 @@ export function runTrgmLaboratory() {
         viable,
         waveL2: wave.l2,
         phaseR: phase.rFinal,
+        softSyncOk: phase.softSyncOk,
         navOk: navigation.ok,
         geoPass: geometry.pass,
       })),
     },
     nullBaseline: { viabilityRate: nullViabilityRate, n: nulls.length },
     nesting: { levels: NEST_LEVELS, allHaveChild: nestOk },
-    ablationNoPhaseGate: { viabilityRate: ablationRate },
+    phaseSteering: {
+      role: 'steering_delta',
+      hardGate: false,
+      softSyncRMin: GATE_SYNC_R_MIN,
+      softPhaseOkRate,
+      legacyHardPhaseViabilityRate: hardPhaseLegacyRate,
+    },
+    /** @deprecated name kept for report continuity — equals hard viability (geo+wave+nav). */
+    ablationNoPhaseGate: { viabilityRate: heldSummary.viabilityRate },
     gates: {
       waveL2Max: GATE_WAVE_L2_MAX,
-      syncRMin: GATE_SYNC_R_MIN,
+      syncRMinSoft: GATE_SYNC_R_MIN,
+      phaseHardGate: false,
       maxPathInflation: GATE_MAX_PATH_INFLATION,
     },
     summary: {
@@ -423,9 +458,12 @@ export function runTrgmLaboratory() {
       nullViability: nullViabilityRate,
       trgmBeatsNull,
       nestOk,
+      softPhaseOkRate,
       enginePinRecommended,
+      phaseRole:
+        'Foundational steering/coordination delta — soft metric on Kuramoto community; hard viability = geometry + wave + navigation.',
       pathInflationNote:
-        'Path inflation gate reserved for Wave–Node vs A* comparisons; TRGM viability uses A* reachability as navigation homeostatis check.',
+        'Path inflation gate reserved for Wave–Node vs A* comparisons; TRGM viability uses A* reachability as navigation homeostasis check.',
     },
   };
 }

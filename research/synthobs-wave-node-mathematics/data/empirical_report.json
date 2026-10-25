@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T10:12:35.531Z",
+  "generatedAt": "2026-10-25T18:54:46.429Z",
   "docId": "WP-SYNTHOBS-WAVE-NODE-MATHEMATICS-EGS-2026-10-24",
   "registryId": "synthobs-wave-node-mathematics-2026-10",
   "seed": 20261024,
@@ -9,10 +9,10 @@
     "registryId": "synthobs-wave-node-mathematics-2026-10",
     "seed": 20261024,
     "engineShelfSlot": 49,
-    "honesty": "Wave–Node Mathematics lab: analytical/numerical fixtures for node placement, 1D FDTD wave PDE, Kuramoto phase sync, and 2D point-navigation planning — not physical robot hardware, not manipulator benchmarks, not proof of a finished Wave–Node Robotics product. Φ_EGS is catalog nesting grammar only.",
+    "honesty": "Wave–Node Mathematics lab: analytical/numerical fixtures for node placement, 1D FDTD wave PDE, Kuramoto phase sync, and 2D point-navigation planning. Phase is a foundational steering/coordination delta on local ascent (matched ablation), not expected to beat A* on global path length. Not physical robot hardware, not manipulator benchmarks, not a finished Wave–Node Robotics product. Φ_EGS is catalog nesting grammar only.",
     "lab": {
       "seed": 20261024,
-      "runtimeMs": 1325.000156,
+      "runtimeMs": 1140.666875,
       "A": {
         "family": "A",
         "title": "Node placement and geometric reconstruction",
@@ -848,7 +848,8 @@
           }
         ],
         "allPass": true,
-        "interpretation": "Wave–Node did not beat A* on mean successful path length; A* remains the stronger grid baseline here — an important negative/mixed finding."
+        "interpretation": "A* remains the stronger global path-length baseline. Phase’s matched role is a small steering delta on harmonic ascent (same success/collisions; tiny length Δ vs ablation)—foundational coordination bias, not a planner that must beat A*.",
+        "phaseRole": "steering_delta"
       },
       "E": {
         "family": "E",
@@ -856,77 +857,77 @@
         "nodePlace": [
           {
             "n": 256,
-            "ms": 0.049749000000019805
+            "ms": 0.048437000000149055
           },
           {
             "n": 1024,
-            "ms": 0.21137900000007903
+            "ms": 0.3284559999999601
           },
           {
             "n": 4096,
-            "ms": 1.1193919999998343
+            "ms": 0.5659350000000813
           },
           {
             "n": 16384,
-            "ms": 4.94405699999993
+            "ms": 5.473169999999982
           },
           {
             "n": 65536,
-            "ms": 27.26112400000011
+            "ms": 29.310195999999905
           }
         ],
         "wave": [
           {
             "n": 16,
-            "ms": 0.07243800000014744
+            "ms": 0.11531200000013087
           },
           {
             "n": 32,
-            "ms": 0.054491999999982
+            "ms": 0.05365000000006148
           },
           {
             "n": 64,
-            "ms": 0.16659999999978936
+            "ms": 0.0744760000000042
           },
           {
             "n": 128,
-            "ms": 0.1463219999998273
+            "ms": 0.15240799999992305
           }
         ],
         "kuramoto": [
           {
             "n": 16,
-            "ms": 2.213749000000007
+            "ms": 2.130527999999913
           },
           {
             "n": 32,
-            "ms": 6.376882000000023
+            "ms": 7.151992999999948
           },
           {
             "n": 40,
-            "ms": 9.089113999999881
+            "ms": 8.774988000000121
           }
         ],
         "plan": [
           {
             "nObs": 2,
-            "astarMs": 0.1871929999999793,
-            "waveMs": 2.104328000000123
+            "astarMs": 0.20527799999990748,
+            "waveMs": 1.8269860000000335
           },
           {
             "nObs": 4,
-            "astarMs": 0.7936910000000807,
-            "waveMs": 1.8886660000000575
+            "astarMs": 0.8122280000000046,
+            "waveMs": 1.686640000000125
           },
           {
             "nObs": 6,
-            "astarMs": 1.1270520000000488,
-            "waveMs": 5.013727000000017
+            "astarMs": 0.6466270000000804,
+            "waveMs": 1.6847540000001118
           },
           {
             "nObs": 8,
-            "astarMs": 3.1069240000001628,
-            "waveMs": 7.112370000000055
+            "astarMs": 0.46746399999983623,
+            "waveMs": 2.2437130000000707
           }
         ],
         "note": "Wall-clock on this host; not an asymptotic proof. Warm single-shot timings.",
@@ -1185,9 +1186,9 @@
         },
         "waveBeatsAstarLength": false,
         "phaseHelpsVsAblation": true,
-        "interpretation": "Wave–Node did not beat A* on mean successful path length; A* remains the stronger grid baseline here — an important negative/mixed finding.",
+        "interpretation": "A* remains the stronger global path-length baseline. Phase’s matched role is a small steering delta on harmonic ascent (same success/collisions; tiny length Δ vs ablation)—foundational coordination bias, not a planner that must beat A*.",
         "evidence": "empirically_observed",
-        "honesty": "2D point navigation only — not manipulator, multi-robot hardware, or physical Wave–Node Robotics product proof."
+        "honesty": "2D point navigation only — not manipulator, multi-robot hardware, or physical Wave–Node Robotics product proof. Phase = steering/coordination delta."
       },
       {
         "id": "E5",
@@ -1196,77 +1197,77 @@
         "nodePlace": [
           {
             "n": 256,
-            "ms": 0.049749000000019805
+            "ms": 0.048437000000149055
           },
           {
             "n": 1024,
-            "ms": 0.21137900000007903
+            "ms": 0.3284559999999601
           },
           {
             "n": 4096,
-            "ms": 1.1193919999998343
+            "ms": 0.5659350000000813
           },
           {
             "n": 16384,
-            "ms": 4.94405699999993
+            "ms": 5.473169999999982
           },
           {
             "n": 65536,
-            "ms": 27.26112400000011
+            "ms": 29.310195999999905
           }
         ],
         "wave": [
           {
             "n": 16,
-            "ms": 0.07243800000014744
+            "ms": 0.11531200000013087
           },
           {
             "n": 32,
-            "ms": 0.054491999999982
+            "ms": 0.05365000000006148
           },
           {
             "n": 64,
-            "ms": 0.16659999999978936
+            "ms": 0.0744760000000042
           },
           {
             "n": 128,
-            "ms": 0.1463219999998273
+            "ms": 0.15240799999992305
           }
         ],
         "kuramoto": [
           {
             "n": 16,
-            "ms": 2.213749000000007
+            "ms": 2.130527999999913
           },
           {
             "n": 32,
-            "ms": 6.376882000000023
+            "ms": 7.151992999999948
           },
           {
             "n": 40,
-            "ms": 9.089113999999881
+            "ms": 8.774988000000121
           }
         ],
         "plan": [
           {
             "nObs": 2,
-            "astarMs": 0.1871929999999793,
-            "waveMs": 2.104328000000123
+            "astarMs": 0.20527799999990748,
+            "waveMs": 1.8269860000000335
           },
           {
             "nObs": 4,
-            "astarMs": 0.7936910000000807,
-            "waveMs": 1.8886660000000575
+            "astarMs": 0.8122280000000046,
+            "waveMs": 1.686640000000125
           },
           {
             "nObs": 6,
-            "astarMs": 1.1270520000000488,
-            "waveMs": 5.013727000000017
+            "astarMs": 0.6466270000000804,
+            "waveMs": 1.6847540000001118
           },
           {
             "nObs": 8,
-            "astarMs": 3.1069240000001628,
-            "waveMs": 7.112370000000055
+            "astarMs": 0.46746399999983623,
+            "waveMs": 2.2437130000000707
           }
         ],
         "interpretation": "Wall-clock scaling recorded; not an asymptotic complexity proof.",

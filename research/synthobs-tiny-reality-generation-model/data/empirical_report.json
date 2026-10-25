@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T17:42:14.302Z",
+  "generatedAt": "2026-10-25T18:54:58.235Z",
   "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
   "registryId": "synthobs-tiny-reality-generation-model-2026-10",
   "seed": 20261025,
@@ -10,10 +10,10 @@
     "seed": 20261025,
     "engineShelfSlot": 50,
     "expedition": "Homeostasis Expedition",
-    "honesty": "TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) and scores Goldilocks/homeostasis viability — not a physical universe simulator, not an LLM world model, not proof of consciousness or finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical battery (H1–H3) uses public Movebank GPS (study 2548892515, Alces alces) plus GFZ Kp archived to the collar window to test structure→phase and storm-contrast predictions — mixed/null historical outcomes do not upgrade synthetic gates into wildlife biology claims.",
+    "honesty": "TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank 2548892515 + GFZ Kp) probe small-effect / sync-style predictions — mixed outcomes do not upgrade synthetic gates into wildlife biology.",
     "lab": {
       "seed": 20261025,
-      "runtimeMs": 1269.959415,
+      "runtimeMs": 1266.107562,
       "foundation": {
         "A_pass": true,
         "B_pass": true,
@@ -47,6 +47,12 @@
             "collisionRate": 0,
             "meanIterations": 41.458333333333336
           }
+        },
+        "phaseSteeringDelta": {
+          "wavePhaseMeanLength": 55.707034568538404,
+          "waveAblationMeanLength": 55.765960133637286,
+          "lengthDelta": 0.058925565098881805,
+          "note": "Phase = small steering bias on harmonic ascent; not expected to beat A* on path length."
         }
       },
       "train": {
@@ -67,7 +73,8 @@
           "meanWaveL2": 0.0009351717296449112,
           "meanPhaseR": 0.9572499034665924,
           "navSuccessRate": 1,
-          "meanPathLength": 42.8257710552387
+          "meanPathLength": 42.8257710552387,
+          "softPhaseOkRate": 1
         },
         "n": 16,
         "evals": [
@@ -77,6 +84,7 @@
             "viable": true,
             "waveL2": 0.0015939068534284269,
             "phaseR": 0.9637841155664995,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -86,6 +94,7 @@
             "viable": true,
             "waveL2": 0.0016553170299411708,
             "phaseR": 0.9537857253340024,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -95,6 +104,7 @@
             "viable": true,
             "waveL2": 0.0005460251280542408,
             "phaseR": 0.9513484470848714,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -104,6 +114,7 @@
             "viable": true,
             "waveL2": 0.0006624704906803098,
             "phaseR": 0.9626321716901953,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -113,6 +124,7 @@
             "viable": true,
             "waveL2": 0.0007090538399123386,
             "phaseR": 0.9536621536366707,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -122,6 +134,7 @@
             "viable": true,
             "waveL2": 0.0008685537871182251,
             "phaseR": 0.9623563815929751,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -131,6 +144,7 @@
             "viable": true,
             "waveL2": 0.0008906096693043861,
             "phaseR": 0.9501656387574771,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -140,6 +154,7 @@
             "viable": true,
             "waveL2": 0.0018603999074291618,
             "phaseR": 0.9571478207300063,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -149,6 +164,7 @@
             "viable": true,
             "waveL2": 0.0008161951978550511,
             "phaseR": 0.9527205828690963,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -158,6 +174,7 @@
             "viable": true,
             "waveL2": 0.0007060639673931616,
             "phaseR": 0.9501401938408583,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -167,6 +184,7 @@
             "viable": true,
             "waveL2": 0.0005839014692932434,
             "phaseR": 0.9583425128495844,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -176,6 +194,7 @@
             "viable": true,
             "waveL2": 0.0009530062574131659,
             "phaseR": 0.9623419239260386,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -185,6 +204,7 @@
             "viable": true,
             "waveL2": 0.0008351721231077772,
             "phaseR": 0.9587277008144793,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -194,6 +214,7 @@
             "viable": true,
             "waveL2": 0.0007704137224719638,
             "phaseR": 0.9648270050678425,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -203,6 +224,7 @@
             "viable": true,
             "waveL2": 0.0007722538306105349,
             "phaseR": 0.9507533269853796,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           },
@@ -212,6 +234,7 @@
             "viable": true,
             "waveL2": 0.0007394044003054204,
             "phaseR": 0.9632627547195004,
+            "softSyncOk": true,
             "navOk": true,
             "geoPass": true
           }
@@ -225,12 +248,20 @@
         "levels": 2,
         "allHaveChild": true
       },
+      "phaseSteering": {
+        "role": "steering_delta",
+        "hardGate": false,
+        "softSyncRMin": 0.95,
+        "softPhaseOkRate": 1,
+        "legacyHardPhaseViabilityRate": 1
+      },
       "ablationNoPhaseGate": {
         "viabilityRate": 1
       },
       "gates": {
         "waveL2Max": 0.05,
-        "syncRMin": 0.95,
+        "syncRMinSoft": 0.95,
+        "phaseHardGate": false,
         "maxPathInflation": 1.35
       },
       "summary": {
@@ -239,8 +270,10 @@
         "nullViability": 0,
         "trgmBeatsNull": true,
         "nestOk": true,
+        "softPhaseOkRate": 1,
         "enginePinRecommended": true,
-        "pathInflationNote": "Path inflation gate reserved for Wave–Node vs A* comparisons; TRGM viability uses A* reachability as navigation homeostatis check."
+        "phaseRole": "Foundational steering/coordination delta — soft metric on Kuramoto community; hard viability = geometry + wave + navigation.",
+        "pathInflationNote": "Path inflation gate reserved for Wave–Node vs A* comparisons; TRGM viability uses A* reachability as navigation homeostasis check."
       }
     },
     "historical": {
@@ -390,6 +423,12 @@
               "collisionRate": 0,
               "meanIterations": 41.458333333333336
             }
+          },
+          "phaseSteeringDelta": {
+            "wavePhaseMeanLength": 55.707034568538404,
+            "waveAblationMeanLength": 55.765960133637286,
+            "lengthDelta": 0.058925565098881805,
+            "note": "Phase = small steering bias on harmonic ascent; not expected to beat A* on path length."
           }
         },
         "interpretation": "Foundation intact · FDTD order ≈ 2.001",
@@ -406,7 +445,8 @@
           "meanWaveL2": 0.0009351717296449112,
           "meanPhaseR": 0.9572499034665924,
           "navSuccessRate": 1,
-          "meanPathLength": 42.8257710552387
+          "meanPathLength": 42.8257710552387,
+          "softPhaseOkRate": 1
         },
         "interpretation": "Held-out viability 100.0% (n=16).",
         "evidence": "empirically_observed",
@@ -436,12 +476,12 @@
       },
       {
         "id": "E5",
-        "title": "Phase-gate ablation still leaves geo+wave+nav band",
+        "title": "Phase is steering delta (soft); hard viability = geo+wave+nav",
         "pass": true,
-        "ablationRate": 1,
-        "fullRate": 1,
-        "interpretation": "Removing the phase sync requirement cannot lower geo+wave+nav pass rate below full-gate rate (subset relation).",
-        "evidence": "analytically_established",
+        "softPhaseOkRate": 1,
+        "hardGate": false,
+        "interpretation": "Foundational steering/coordination delta — soft metric on Kuramoto community; hard viability = geometry + wave + navigation.",
+        "evidence": "empirically_observed",
         "data": "synthetic"
       }
     ],

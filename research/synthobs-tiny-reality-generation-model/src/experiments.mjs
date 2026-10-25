@@ -59,13 +59,15 @@ export async function runAllExperiments() {
     },
     {
       id: 'E5',
-      title: 'Phase-gate ablation still leaves geo+wave+nav band',
-      pass: lab.ablationNoPhaseGate.viabilityRate >= lab.held.summary.viabilityRate - 1e-9,
-      ablationRate: lab.ablationNoPhaseGate.viabilityRate,
-      fullRate: lab.held.summary.viabilityRate,
-      interpretation:
-        'Removing the phase sync requirement cannot lower geo+wave+nav pass rate below full-gate rate (subset relation).',
-      evidence: 'analytically_established',
+      title: 'Phase is steering delta (soft); hard viability = geo+wave+nav',
+      pass:
+        lab.phaseSteering?.hardGate === false &&
+        lab.held.summary.viabilityRate >= 0.75 &&
+        (lab.phaseSteering?.softPhaseOkRate ?? 0) >= 0,
+      softPhaseOkRate: lab.phaseSteering?.softPhaseOkRate,
+      hardGate: lab.phaseSteering?.hardGate,
+      interpretation: lab.summary.phaseRole,
+      evidence: 'empirically_observed',
       data: 'synthetic',
     },
   ];

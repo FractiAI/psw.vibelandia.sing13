@@ -1,0 +1,118 @@
+{
+  "schema": "trgm-reality-catalog-record/v1",
+  "version": "trgm-51/v1",
+  "realityId": "reality-47f0c139a216ec56",
+  "createdAt": "2026-10-25T20:35:36.939Z",
+  "seed": 202610251,
+  "index": 5,
+  "channelBias": null,
+  "recipe": {
+    "id": "trgm-202610251-5-L0",
+    "nestLevel": 0,
+    "lattice": {
+      "nx": 4,
+      "ny": 4,
+      "h": 0.7152896416373551,
+      "nodeCount": 16,
+      "edgeCount": 24
+    },
+    "oscillators": {
+      "n": 12,
+      "K": 4.4481107871979475,
+      "nodeCount": 12
+    },
+    "wave": {
+      "nx": 40,
+      "courant": 0.46529876450076696,
+      "c": 1
+    },
+    "map": {
+      "W": 28,
+      "H": 28,
+      "nObs": 4,
+      "start": {
+        "x": 1.5,
+        "y": 1.5
+      },
+      "goal": {
+        "x": 26,
+        "y": 26
+      }
+    },
+    "child": {
+      "id": "trgm-202610251-5-L1",
+      "nestLevel": 1,
+      "nodeCount": 20
+    },
+    "phiEgs": 1.618033988749895
+  },
+  "parameters": {
+    "digitalSeed": 20261025,
+    "validationSeed": 202610251,
+    "gateNote": "hard viability = geo+wave+nav; phase soft"
+  },
+  "multiscaleTree": {
+    "depth": 3,
+    "nLayers": 7,
+    "coherent": true,
+    "layerIds": [
+      "Octave_Tier_-3",
+      "Octave_Tier_-2",
+      "Octave_Tier_-1",
+      "Octave_Tier_Base",
+      "Octave_Tier_+1",
+      "Octave_Tier_+2",
+      "Octave_Tier_+3"
+    ]
+  },
+  "spatial": {
+    "latticeNodes": 16,
+    "oscillatorNodes": 12,
+    "mapW": 28,
+    "mapH": 28,
+    "obstacleCount": 4
+  },
+  "geneticCatalogRef": {
+    "schema": "trgm-wave-node-fq-genetic-catalog/v1",
+    "nEntries": 199,
+    "genesByChannel": {
+      "wave": [
+        "DNMT1",
+        "DNMT3A"
+      ],
+      "node": [
+        "APP",
+        "SOD1",
+        "DYRK1A",
+        "TMPRSS2"
+      ],
+      "fq": [
+        "INS",
+        "PDX1",
+        "POMC",
+        "NPY"
+      ]
+    }
+  },
+  "validation": {
+    "viable": true,
+    "geometry": {
+      "pass": true,
+      "maxErr": 0,
+      "nodeCount": 16,
+      "edgeCount": 24
+    },
+    "wave": {
+      "pass": true,
+      "l2": 0.0010613111345982992
+    },
+    "phase": {
+      "hardGate": false,
+      "softSyncOk": true,
+      "rFinal": 0.95315313249572
+    },
+    "navigation": {
+      "ok": true
+    }
+  }
+}

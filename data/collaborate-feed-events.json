@@ -1,23 +1,67 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-25T17:08:38.156Z",
+  "updatedAt": "2026-10-25T20:35:25.109Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
     {
+      "id": "wp_synthobs-trgm-predictive-reality-catalog-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-25T20:35:25.108Z",
+      "body": "TRGM #51: Independent Predictive Validation and Functional Reality Catalog",
+      "presenceHue": "gold",
+      "paperId": "synthobs-trgm-predictive-reality-catalog-2026-10",
+      "artifact": {
+        "title": "TRGM #51: Independent Predictive Validation and Functional Reality Catalog",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG_EGS_2026-10.md",
+        "url": "/whitepaper/trgm-predictive-reality-catalog",
+        "paperId": "synthobs-trgm-predictive-reality-catalog-2026-10",
+        "docId": "WP-SYNTHOBS-TRGM-PREDICTIVE-REALITY-CATALOG-EGS-2026-10-25",
+        "published": "2026-10-25T21:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_lattice-chat-product-engineering-manual-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-25T20:14:25.272Z",
+      "body": "Product Engineering Manual · Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
+      "presenceHue": "gold",
+      "paperId": "lattice-chat-product-engineering-manual-2026-09",
+      "artifact": {
+        "title": "Product Engineering Manual · Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
+        "kind": "whitepaper",
+        "path": "docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md",
+        "url": "/whitepaper/lattice-chat-product-engineering-manual",
+        "paperId": "lattice-chat-product-engineering-manual-2026-09",
+        "docId": "WP-LATTICE-CHAT-PEM-2026-09",
+        "published": "2026-10-25",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
       "id": "wp_synthobs-tiny-reality-generation-model-2026-10",
       "type": "ArtifactEvent",
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-10-25T17:08:38.155Z",
-      "body": "Tiny Reality Generation Model: Wave–Node Homeostasis Validation for Nested Miniature Worlds",
+      "createdAt": "2026-10-25T20:14:25.268Z",
+      "body": "Tiny Reality Generation Model: Triadic–Polygon–Octave Tree on Folded DNA",
       "presenceHue": "gold",
       "paperId": "synthobs-tiny-reality-generation-model-2026-10",
       "artifact": {
-        "title": "Tiny Reality Generation Model: Wave–Node Homeostasis Validation for Nested Miniature Worlds",
+        "title": "Tiny Reality Generation Model: Triadic–Polygon–Octave Tree on Folded DNA",
         "kind": "whitepaper",
         "path": "docs/SYNTHOBS_TINY_REALITY_GENERATION_MODEL_EGS_2026-10.md",
         "url": "/whitepaper/tiny-reality-generation-model",

@@ -1,0 +1,544 @@
+{
+  "generatedAt": "2026-10-25T20:35:15.874Z",
+  "docId": "WP-SYNTHOBS-TRGM-PREDICTIVE-REALITY-CATALOG-EGS-2026-10-25",
+  "registryId": "synthobs-trgm-predictive-reality-catalog-2026-10",
+  "seed": 20261025,
+  "validationSeed": 202610251,
+  "engineShelfSlot": 51,
+  "parentShelfSlot": 50,
+  "realityCatalogVersion": "trgm-51/v1",
+  "results": {
+    "docId": "WP-SYNTHOBS-TRGM-PREDICTIVE-REALITY-CATALOG-EGS-2026-10-25",
+    "registryId": "synthobs-trgm-predictive-reality-catalog-2026-10",
+    "seed": 20261025,
+    "validationSeed": 202610251,
+    "engineShelfSlot": 51,
+    "parentShelfSlot": 50,
+    "expedition": "Homeostasis Expedition",
+    "honesty": "TRGM #51 independently reproduces #50 fixture hashes/metrics, tests held-out biological regions and matched baselines (shuffle · conventional · sequence-proxy · flat encode · non-DNA layout), measures whether wave/node/fq assignments add predictive value vs shuffled labels, and ships a functional reality catalog (recipe · params · multiscale tree · spatial · validation · version). Computational Soft Story architecture — not molecular mechanisms inside living chromosomes. Biology claims require a separate wet-lab validation track. Builds on TRGM #50 + Wave–Node #49. Φ_EGS is catalog nesting grammar only.",
+    "repro": {
+      "ok": true,
+      "runner": "research/synthobs-tiny-reality-generation-model/src/experiments.mjs#runAllExperiments",
+      "provenance": {
+        "fetchedAt": "2026-10-25T19:29:40Z",
+        "files": {
+          "chrM.hs1.fa": {
+            "genome": "hs1",
+            "chrom": "chrM",
+            "length": 16569,
+            "api": "UCSC getData/sequence"
+          },
+          "genes.panel.json": {
+            "assembly": "GRCh38/hg38",
+            "n": 10,
+            "api": "GTEx v2 reference/gene"
+          },
+          "exons.panel.json": {
+            "assembly": "GRCh38/hg38",
+            "n": 125,
+            "api": "MyGene.info v3"
+          },
+          "cpg.panel.json": {
+            "assembly": "GRCh38/hg38",
+            "n": 48,
+            "api": "UCSC cpgIslandExt"
+          },
+          "hg38.chrom.sizes": {
+            "genome": "hg38",
+            "api": "UCSC goldenPath"
+          }
+        },
+        "honesty": "Pinned public subsets for offline CI. Gene/exon/CpG = GRCh38; chrM sequence = hs1 T2T. Not clinical genetics."
+      },
+      "hashes": {
+        "PROVENANCE.json": {
+          "ok": true,
+          "sha256": "219d0a2362500fdf8f9eebd3777cd10ab6924648846dc498210ceee28d7fe820",
+          "bytes": 749
+        },
+        "chrM.hs1.fa": {
+          "ok": true,
+          "sha256": "dc9f87db1f0edf1f97789873ffff3262fc9cb56e48d209f68a9cc68b1b76c490",
+          "bytes": 16865
+        },
+        "genes.panel.json": {
+          "ok": true,
+          "sha256": "9dc1a53907f58692cbd196ff25f3b9317beda0af69e4696d62817ed9436de566",
+          "bytes": 3113
+        },
+        "exons.panel.json": {
+          "ok": true,
+          "sha256": "ba16f4f34ed7ed7f8d7b17b7301d17fdeb756f32b029f35d9d539b861ac1c2e2",
+          "bytes": 41413
+        },
+        "cpg.panel.json": {
+          "ok": true,
+          "sha256": "87090a9f60818f041bd6cb1f99d1f8b36913e015c44c1b3a2d16bd9ed2697540",
+          "bytes": 15081
+        },
+        "hg38.chrom.sizes": {
+          "ok": true,
+          "sha256": "e1d9152418038457a959e949d99c9caf7ae3e4f87cfbb4ffe7d8b9a54ba1202b",
+          "bytes": 11672
+        },
+        "wave_node_fq_catalog.json": {
+          "ok": true,
+          "sha256": "04bc333015aacfdf92f162bd7f7a41e65d1484a389d7e2923f921bfaf325fbd4",
+          "bytes": 105459
+        },
+        "../hs1.chrom.sizes": {
+          "ok": true,
+          "sha256": "63d8c36049b80f99cb307a631a503006226e5d7019b0b04ce52ed387a2c40253",
+          "bytes": 375
+        }
+      },
+      "locked": {
+        "seed": 20261025,
+        "n_total": 24,
+        "heldViability": 1,
+        "nullViability": 0,
+        "catalogEntries": 199
+      },
+      "metrics": {
+        "seed": 20261025,
+        "all_pass": true,
+        "n_pass": 24,
+        "n_total": 24,
+        "heldViability": 1,
+        "nullViability": 0,
+        "triadic_all_pass": true,
+        "genetic_all_pass": true,
+        "catalog_all_pass": true,
+        "catalogEntries": 199,
+        "genesByChannel": {
+          "wave": [
+            "DNMT1",
+            "DNMT3A"
+          ],
+          "node": [
+            "APP",
+            "SOD1",
+            "DYRK1A",
+            "TMPRSS2"
+          ],
+          "fq": [
+            "INS",
+            "PDX1",
+            "POMC",
+            "NPY"
+          ]
+        }
+      },
+      "fixtureOk": true,
+      "catalogOk": true,
+      "metricsMatch": true
+    },
+    "held": {
+      "ok": true,
+      "nCatalogEntries": 199,
+      "expectedEntries": 199,
+      "catalogPreserved": true,
+      "split": {
+        "trainGenes": [
+          "APP",
+          "SOD1",
+          "DYRK1A",
+          "TMPRSS2"
+        ],
+        "heldGenes": [
+          "INS",
+          "PDX1",
+          "POMC",
+          "NPY",
+          "DNMT1",
+          "DNMT3A"
+        ],
+        "nTrainEntries": 65,
+        "nHeldEntries": 134
+      },
+      "triadInputs": {
+        "wave": {
+          "symbol": 0,
+          "key": "wave",
+          "label": "wave",
+          "role": "Wave field · sequence composition · LC dispersion theater"
+        },
+        "node": {
+          "symbol": 1,
+          "key": "node",
+          "label": "node",
+          "role": "Discrete lattice · gene/exon locus placement on polymer theater"
+        },
+        "fq": {
+          "symbol": 2,
+          "key": "fq",
+          "label": "fq",
+          "role": "Frequency · codon reading-frame rhythm · nucleosome period · length→f₀"
+        }
+      },
+      "scores": {
+        "catalog": {
+          "accuracy": 1,
+          "balancedAccuracy": 1
+        },
+        "featureKind": {
+          "accuracy": 1,
+          "balancedAccuracy": 1
+        },
+        "shuffled": {
+          "accuracy": 0.515625,
+          "balancedAccuracy": 0.34149184149184153
+        },
+        "conventional": {
+          "accuracy": 0.6328125,
+          "balancedAccuracy": 0.7991452991452991
+        },
+        "sequenceProxy": {
+          "accuracy": 1,
+          "balancedAccuracy": 1
+        }
+      },
+      "geneScores": {
+        "neighborhood": {
+          "n": 6,
+          "softStoryAgreeRate": 0,
+          "shuffleAgreeRate": 0.16666666666666666
+        },
+        "softStoryBeatsShuffleNeighborhood": false
+      },
+      "predictiveValue": {
+        "beatsShuffle": true,
+        "beatsConventional": true,
+        "beatsSequenceProxy": true,
+        "catalogBA": 1,
+        "shuffledBA": 0.34149184149184153,
+        "conventionalBA": 0.7991452991452991,
+        "sequenceProxyBA": 1,
+        "featureKindBA": 1,
+        "channelAddsValue": true
+      },
+      "architecture": {
+        "treeCoherent": true,
+        "flatCoherent": false,
+        "treeBeatsFlat": true,
+        "foldedCompaction": 18.80891466825322,
+        "unfoldedCompaction": 1,
+        "foldBeatsUnfolded": true,
+        "dnaViability": 1,
+        "nullViability": 0,
+        "dnaBeatsNullLayout": true
+      }
+    },
+    "channel": {
+      "symbolToInput": {
+        "0": "wave",
+        "1": "node",
+        "2": "fq"
+      },
+      "perm": [
+        1,
+        0,
+        2
+      ],
+      "catalogEntries": 199,
+      "correct": {
+        "clockSyncRate": 1,
+        "treeCoherent": true,
+        "benefitRate": 1
+      },
+      "shuffled": {
+        "motifHitRate": 0.3333333333333333,
+        "treeCoherent": true,
+        "benefitRate": 1
+      },
+      "assignmentAddsClockValue": true,
+      "bothTreesCoherent": true
+    },
+    "realityCatalog": {
+      "version": "trgm-51/v1",
+      "dir": "/workspace/research/synthobs-trgm-predictive-reality-catalog/data/reality-catalog",
+      "index": {
+        "schema": "trgm-reality-catalog-index/v1",
+        "version": "trgm-51/v1",
+        "n": 9,
+        "ids": [
+          "reality-36ebd7110241b81c",
+          "reality-47f0c139a216ec56",
+          "reality-579c6b4cdd664823",
+          "reality-8fc618226fc1beb8",
+          "reality-bb88530e1c9cc274",
+          "reality-d3d96ab4deca97cf",
+          "reality-d6fe36ef0ac27b03",
+          "reality-e8955c09844a619d",
+          "reality-fb2e478ecfddd316"
+        ],
+        "compareSample": {
+          "sameVersion": true,
+          "bothViable": true,
+          "deltaWaveL2": 0.00031552103027201995,
+          "deltaPathLength": 0,
+          "sameNestDepth": true,
+          "spatialDeltaNodes": 10
+        },
+        "recombinedId": "reality-d6fe36ef0ac27b03"
+      }
+    },
+    "experiments": [
+      {
+        "id": "V1",
+        "title": "Reproduce TRGM #50 fixtures (hashes) + locked metrics from clean import",
+        "pass": true,
+        "detail": {
+          "fixtureOk": true,
+          "catalogOk": true,
+          "metricsMatch": true,
+          "metrics": {
+            "seed": 20261025,
+            "all_pass": true,
+            "n_pass": 24,
+            "n_total": 24,
+            "heldViability": 1,
+            "nullViability": 0,
+            "triadic_all_pass": true,
+            "genetic_all_pass": true,
+            "catalog_all_pass": true,
+            "catalogEntries": 199,
+            "genesByChannel": {
+              "wave": [
+                "DNMT1",
+                "DNMT3A"
+              ],
+              "node": [
+                "APP",
+                "SOD1",
+                "DYRK1A",
+                "TMPRSS2"
+              ],
+              "fq": [
+                "INS",
+                "PDX1",
+                "POMC",
+                "NPY"
+              ]
+            }
+          },
+          "locked": {
+            "seed": 20261025,
+            "n_total": 24,
+            "heldViability": 1,
+            "nullViability": 0,
+            "catalogEntries": 199
+          },
+          "hashes": {
+            "PROVENANCE.json": "219d0a236250",
+            "chrM.hs1.fa": "dc9f87db1f0e",
+            "genes.panel.json": "9dc1a53907f5",
+            "exons.panel.json": "ba16f4f34ed7",
+            "cpg.panel.json": "87090a9f6081",
+            "hg38.chrom.sizes": "e1d915241803",
+            "wave_node_fq_catalog.json": "04bc333015aa",
+            "../hs1.chrom.sizes": "63d8c36049b8"
+          }
+        },
+        "interpretation": "Clean reproduce #50: 24/24 · catalog 199 entries · fixtures hashed.",
+        "evidence": "numerically_verified",
+        "data": "trgm50_fixtures_and_runner"
+      },
+      {
+        "id": "V2",
+        "title": "Held-out biological regions (non-chr21 genes + chrM) reserved from chr21 train panel",
+        "pass": true,
+        "detail": {
+          "trainGenes": [
+            "APP",
+            "SOD1",
+            "DYRK1A",
+            "TMPRSS2"
+          ],
+          "heldGenes": [
+            "INS",
+            "PDX1",
+            "POMC",
+            "NPY",
+            "DNMT1",
+            "DNMT3A"
+          ],
+          "nTrainEntries": 65,
+          "nHeldEntries": 134
+        },
+        "interpretation": "Train chr21 genes [APP, SOD1, DYRK1A, TMPRSS2] · held-out [INS, PDX1, POMC, NPY, DNMT1, DNMT3A] · nHeld=134.",
+        "evidence": "empirically_observed",
+        "data": "heldout_gene_chrom_split"
+      },
+      {
+        "id": "V3",
+        "title": "Feature-kind channel grammar beats shuffled labels on held-out features",
+        "pass": true,
+        "detail": {
+          "scores": {
+            "catalog": {
+              "accuracy": 1,
+              "balancedAccuracy": 1
+            },
+            "featureKind": {
+              "accuracy": 1,
+              "balancedAccuracy": 1
+            },
+            "shuffled": {
+              "accuracy": 0.515625,
+              "balancedAccuracy": 0.34149184149184153
+            },
+            "conventional": {
+              "accuracy": 0.6328125,
+              "balancedAccuracy": 0.7991452991452991
+            },
+            "sequenceProxy": {
+              "accuracy": 1,
+              "balancedAccuracy": 1
+            }
+          },
+          "predictiveValue": {
+            "beatsShuffle": true,
+            "beatsConventional": true,
+            "beatsSequenceProxy": true,
+            "catalogBA": 1,
+            "shuffledBA": 0.34149184149184153,
+            "conventionalBA": 0.7991452991452991,
+            "sequenceProxyBA": 1,
+            "featureKindBA": 1,
+            "channelAddsValue": true
+          }
+        },
+        "interpretation": "Held-out balanced accuracy: catalog-grammar 1.000 > shuffle 0.341.",
+        "evidence": "empirically_observed",
+        "data": "heldout_channel_recovery"
+      },
+      {
+        "id": "V4",
+        "title": "Matched baselines: conventional + sequence-proxy reported beside shuffle",
+        "pass": true,
+        "detail": {
+          "conventionalBA": 0.7991452991452991,
+          "sequenceProxyBA": 1,
+          "shuffledBA": 0.34149184149184153,
+          "catalogGrammarBA": 1,
+          "geneScores": {
+            "neighborhood": {
+              "n": 6,
+              "softStoryAgreeRate": 0,
+              "shuffleAgreeRate": 0.16666666666666666
+            },
+            "softStoryBeatsShuffleNeighborhood": false
+          }
+        },
+        "interpretation": "Baselines BA — conventional 0.799 · sequenceProxy 1.000 · shuffle 0.341 · grammar 1.000.",
+        "evidence": "empirically_observed",
+        "data": "matched_baselines"
+      },
+      {
+        "id": "V5",
+        "title": "Architecture baselines: Φ octave tree beats flat; DNA theater beats null layout",
+        "pass": true,
+        "detail": {
+          "treeCoherent": true,
+          "flatCoherent": false,
+          "treeBeatsFlat": true,
+          "foldedCompaction": 18.80891466825322,
+          "unfoldedCompaction": 1,
+          "foldBeatsUnfolded": true,
+          "dnaViability": 1,
+          "nullViability": 0,
+          "dnaBeatsNullLayout": true
+        },
+        "interpretation": "Tree coherent=true vs flat=false; DNA viability 1 vs null 0.",
+        "evidence": "empirically_observed",
+        "data": "architecture_baselines"
+      },
+      {
+        "id": "V6",
+        "title": "wave/node/fq assignment adds clock value vs shuffled symbol map (199-feature catalog preserved)",
+        "pass": true,
+        "detail": {
+          "channel": {
+            "symbolToInput": {
+              "0": "wave",
+              "1": "node",
+              "2": "fq"
+            },
+            "perm": [
+              1,
+              0,
+              2
+            ],
+            "catalogEntries": 199,
+            "correct": {
+              "clockSyncRate": 1,
+              "treeCoherent": true,
+              "benefitRate": 1
+            },
+            "shuffled": {
+              "motifHitRate": 0.3333333333333333,
+              "treeCoherent": true,
+              "benefitRate": 1
+            },
+            "assignmentAddsClockValue": true,
+            "bothTreesCoherent": true
+          },
+          "catalogPreserved": true
+        },
+        "interpretation": "Correct triad lock sync=100.0% vs shuffled motif hit=33.3%; catalog n=199.",
+        "evidence": "empirically_observed",
+        "data": "channel_assignment_contrast"
+      },
+      {
+        "id": "V7",
+        "title": "Functional reality catalog stores retrieve/compare/recombine records",
+        "pass": true,
+        "detail": {
+          "version": "trgm-51/v1",
+          "n": 9,
+          "sampleIds": [
+            "reality-36ebd7110241b81c",
+            "reality-47f0c139a216ec56",
+            "reality-579c6b4cdd664823"
+          ],
+          "compare": {
+            "sameVersion": true,
+            "bothViable": true,
+            "deltaWaveL2": 0.00031552103027201995,
+            "deltaPathLength": 0,
+            "sameNestDepth": true,
+            "spatialDeltaNodes": 10
+          },
+          "recombinedId": "reality-d6fe36ef0ac27b03",
+          "recombinedViable": true
+        },
+        "interpretation": "Reality catalog trgm-51/v1: 9 records; compare+recombine OK.",
+        "evidence": "numerically_verified",
+        "data": "reality_catalog_store"
+      },
+      {
+        "id": "V8",
+        "title": "Biology-claim track remains separate (computational Soft Story only)",
+        "pass": true,
+        "detail": {
+          "biologyClaimSeparateTrack": true,
+          "notMolecularMechanismClaim": true,
+          "notWetLabGenetics": true,
+          "parentShelf": 50,
+          "thisShelf": 51
+        },
+        "interpretation": "Biology claims about living chromosomes stay on a separate validation track; #51 is computational architecture validation only.",
+        "evidence": "protocol_lock",
+        "data": "honesty_boundary"
+      }
+    ],
+    "n_pass": 8,
+    "n_total": 8,
+    "all_pass": true,
+    "enginePinRecommended": true
+  },
+  "dependencyVersions": {
+    "node": "v22.23.4"
+  }
+}

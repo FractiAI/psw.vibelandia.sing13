@@ -1573,6 +1573,14 @@
       "destination": "/interfaces/blog-phase-aware-consensus-calculus-2026-10.html"
     },
     {
+      "source": "/ship-blog/trgm-predictive-reality-catalog",
+      "destination": "/interfaces/blog-trgm-predictive-reality-catalog-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/trgm-predictive-reality-catalog/",
+      "destination": "/interfaces/blog-trgm-predictive-reality-catalog-2026-10.html"
+    },
+    {
       "source": "/ship-blog/tiny-reality-generation-model",
       "destination": "/interfaces/blog-tiny-reality-generation-model-2026-10.html"
     },

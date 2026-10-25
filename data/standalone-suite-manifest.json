@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-06",
   "suites": [
     {
+      "id": "synthobs-trgm-predictive-reality-catalog",
+      "path": "research/synthobs-trgm-predictive-reality-catalog",
+      "github": "https://github.com/FractiAI/synthobs-trgm-predictive-reality-catalog",
+      "description": "TRGM #51 — independent predictive validation + functional reality catalog · Homeostasis Expedition ENGINE_SHELF #51 (not molecular mechanism claim)",
+      "paperIds": [
+        "synthobs-trgm-predictive-reality-catalog-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-tiny-reality-generation-model",
       "path": "research/synthobs-tiny-reality-generation-model",
       "github": "https://github.com/FractiAI/synthobs-tiny-reality-generation-model",

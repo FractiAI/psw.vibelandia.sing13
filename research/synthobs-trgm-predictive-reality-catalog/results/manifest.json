@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-10-25T20:35:15.874Z",
+  "seed": 20261025,
+  "validationSeed": 202610251,
+  "docId": "WP-SYNTHOBS-TRGM-PREDICTIVE-REALITY-CATALOG-EGS-2026-10-25",
+  "registryId": "synthobs-trgm-predictive-reality-catalog-2026-10",
+  "engineShelfSlot": 51,
+  "all_pass": true,
+  "n_pass": 8,
+  "n_total": 8,
+  "enginePinRecommended": true,
+  "realityCatalogN": 9,
+  "node": "v22.23.4"
+}

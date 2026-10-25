@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-10-25** · **385** HTML pages under `interfaces/`.
+> Auto-generated **2026-10-25** · **386** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -468,6 +468,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tiny-reality-generation-model-2026-10.html`](/interfaces/blog-tiny-reality-generation-model-2026-10.html) | Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09-old.html`](/interfaces/blog-topology-of-the-void-2026-09-old.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-trgm-predictive-reality-catalog-2026-10.html`](/interfaces/blog-trgm-predictive-reality-catalog-2026-10.html) | After a Generator Passes Once, Does It Still Predict on Held-Out Biology? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three Nested Domes Families Can Walk · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-old.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09-old.html) | Slowdown Talk and Floor-It Talk Both Miss Home · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html`](/interfaces/blog-trump-pacing-trap-sovereign-velocity-2026-09.html) | Keep the Frontier Open · Ship blog · SS Vibelandia |

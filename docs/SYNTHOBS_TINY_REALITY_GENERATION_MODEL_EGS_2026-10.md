@@ -225,6 +225,21 @@ Primary hypothesis **T1–T6 = 6/6**. Genetic-node drill-down **G1–G5 = 5/5**.
 
 ---
 
+## 10. Next milestone — TRGM #51 (priority)
+
+What to prioritize in the next version:
+
+1. **Independent predictive validation** — reproduce #50 from a clean checkout; verify fixture hashes, provenance, exact runner, and all reported metrics.  
+2. **Held-out biological regions** — test on independent loci / datasets; avoid tuning the grammar and evaluating it on the same examples.  
+3. **Strong matched baselines** — simpler sequence models, randomized mappings, alternative recursive encodings, equivalent non-DNA spatial layouts.  
+4. **wave/node/fq predictive value** — preserve the 199-feature catalog; compare against shuffled and biologically conventional classifications.  
+5. **Functional reality catalog** — store each generated structure’s recipe, parameters, multiscale tree, spatial representation, validation metrics, and version so it can be retrieved, regenerated, compared, and recombined.  
+6. **Separate biology track** — a computational DNA-inspired representation is a legitimate research architecture; claims about molecular mechanisms inside living chromosomes require independent biological evidence.
+
+Shipped as ENGINE_SHELF **#51**: [`docs/SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG_EGS_2026-10.md`](SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG_EGS_2026-10.md) · `/ship-blog/trgm-predictive-reality-catalog` · suite `research/synthobs-trgm-predictive-reality-catalog/`.
+
+---
+
 ## References
 
 1. Kuramoto, Y. (1984). *Chemical Oscillations, Waves, and Turbulence*. Springer.  

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "34b58dbe7cd3bffa",
+  "auditId": "a0d7003e8aaad6fd",
   "paperId": "lattice-chat-product-engineering-manual-2026-09",
   "sourcePath": "docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-10-02T04:03:28.430Z"
+          "invokedAt": "2026-10-25T20:14:25.272Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-10-02T04:03:28.429Z",
-  "completedAt": "2026-10-02T04:03:28.430Z",
+  "startedAt": "2026-10-25T20:14:25.271Z",
+  "completedAt": "2026-10-25T20:14:25.272Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,
@@ -125,11 +125,11 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 3491,
+      "wordCount": 4305,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 65,
+        "links": 82,
         "numbered": 25,
         "citeLines": 6
       }

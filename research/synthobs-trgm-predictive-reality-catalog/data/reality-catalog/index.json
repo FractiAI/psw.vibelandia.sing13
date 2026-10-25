@@ -1,0 +1,25 @@
+{
+  "schema": "trgm-reality-catalog-index/v1",
+  "version": "trgm-51/v1",
+  "n": 9,
+  "ids": [
+    "reality-36ebd7110241b81c",
+    "reality-47f0c139a216ec56",
+    "reality-579c6b4cdd664823",
+    "reality-8fc618226fc1beb8",
+    "reality-bb88530e1c9cc274",
+    "reality-d3d96ab4deca97cf",
+    "reality-d6fe36ef0ac27b03",
+    "reality-e8955c09844a619d",
+    "reality-fb2e478ecfddd316"
+  ],
+  "compareSample": {
+    "sameVersion": true,
+    "bothViable": true,
+    "deltaWaveL2": 0.00031552103027201995,
+    "deltaPathLength": 0,
+    "sameNestDepth": true,
+    "spatialDeltaNodes": 10
+  },
+  "recombinedId": "reality-d6fe36ef0ac27b03"
+}

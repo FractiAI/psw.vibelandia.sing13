@@ -2,6 +2,6 @@
   "schema": "standalone-publish-request/v1",
   "suiteId": "synthobs-tiny-reality-generation-model",
   "createRepo": false,
-  "requestedAt": "2026-10-25T19:33:29.000Z",
-  "note": "Republish TRGM after genetic-nodes G1\u2013G5 real-data drill-down (GTEx/MyGene/UCSC)"
+  "requestedAt": "2026-10-25T20:14:04.000Z",
+  "note": "Republish TRGM after wave/node/fq genetic catalog C1\u2013C3"
 }

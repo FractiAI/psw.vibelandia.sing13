@@ -1,0 +1,4269 @@
+{
+  "schema": "trgm-wave-node-fq-genetic-catalog/v1",
+  "seed": 20261025,
+  "phiEgs": 1.618033988749895,
+  "honesty": "Catalog associates public genetic features with Wave–Node triad inputs (wave/node/fq ↔ symbols 0/1/2). Soft Story grammar — not gene→physics causation, not clinical genetics.",
+  "triadInputs": {
+    "wave": {
+      "symbol": 0,
+      "key": "wave",
+      "label": "wave",
+      "role": "Wave field · sequence composition · LC dispersion theater"
+    },
+    "node": {
+      "symbol": 1,
+      "key": "node",
+      "label": "node",
+      "role": "Discrete lattice · gene/exon locus placement on polymer theater"
+    },
+    "fq": {
+      "symbol": 2,
+      "key": "fq",
+      "label": "fq",
+      "role": "Frequency · codon reading-frame rhythm · nucleosome period · length→f₀"
+    }
+  },
+  "symbolToInput": {
+    "0": "wave",
+    "1": "node",
+    "2": "fq"
+  },
+  "featureKindChannel": {
+    "gene": "node",
+    "exon": "node",
+    "cds": "fq",
+    "cpg_island": "wave",
+    "sequence_composition": "wave",
+    "lc_dispersion": "wave",
+    "nucleosome_period": "fq",
+    "fundamental_frequency": "fq",
+    "theater_scaffold": "node"
+  },
+  "genePrimaryChannel": {
+    "DNMT1": "wave",
+    "DNMT3A": "wave",
+    "APP": "node",
+    "SOD1": "node",
+    "DYRK1A": "node",
+    "TMPRSS2": "node",
+    "INS": "fq",
+    "PDX1": "fq",
+    "POMC": "fq",
+    "NPY": "fq"
+  },
+  "structuredMotif": [
+    0,
+    2,
+    2,
+    1,
+    1,
+    1,
+    0,
+    0,
+    2
+  ],
+  "motifChannelSequence": [
+    "wave",
+    "fq",
+    "fq",
+    "node",
+    "node",
+    "node",
+    "wave",
+    "wave",
+    "fq"
+  ],
+  "provenance": {
+    "fetchedAt": "2026-10-25T19:29:40Z",
+    "files": [
+      "chrM.hs1.fa",
+      "genes.panel.json",
+      "exons.panel.json",
+      "cpg.panel.json",
+      "hg38.chrom.sizes"
+    ]
+  },
+  "summary": {
+    "nEntries": 199,
+    "nGenes": 10,
+    "byChannel": {
+      "wave": 54,
+      "node": 130,
+      "fq": 15
+    },
+    "genesByChannel": {
+      "wave": [
+        "DNMT1",
+        "DNMT3A"
+      ],
+      "node": [
+        "APP",
+        "SOD1",
+        "DYRK1A",
+        "TMPRSS2"
+      ],
+      "fq": [
+        "INS",
+        "PDX1",
+        "POMC",
+        "NPY"
+      ]
+    },
+    "chrM": {
+      "length": 16569,
+      "gcPercent": 44.37202003741928,
+      "f0Hz": 1775108015322.7324
+    },
+    "nucleosome": {
+      "wrapBp": 147,
+      "turns": 1.65
+    }
+  },
+  "genes": [
+    {
+      "symbol": "INS",
+      "gencodeId": "ENSG00000254647.6",
+      "chrom": "chr11",
+      "start": 2159779,
+      "end": 2161341,
+      "strand": "-",
+      "primaryChannel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 2132803,
+            "end": 2133110,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 2137721,
+            "end": 2141254,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 2143905,
+            "end": 2144442,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 2155609,
+            "end": 2155813,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 2166258,
+            "end": 2167015,
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 2159779,
+            "end": 2161341,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 2159778,
+            "end": 2159997,
+            "transcript": "NM_000207",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 2160784,
+            "end": 2160988,
+            "transcript": "NM_000207",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 2161167,
+            "end": 2161209,
+            "transcript": "NM_000207",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 2159851,
+            "cdsEnd": 2160971,
+            "triadSymbol": 2
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 3,
+      "nCpgNearby": 5
+    },
+    {
+      "symbol": "PDX1",
+      "gencodeId": "ENSG00000139515.5",
+      "chrom": "chr13",
+      "start": 27920020,
+      "end": 27926231,
+      "strand": "+",
+      "primaryChannel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 27917351,
+            "end": 27918381,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27919864,
+            "end": 27921962,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27924089,
+            "end": 27924909,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27927722,
+            "end": 27927953,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27928225,
+            "end": 27928607,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27928920,
+            "end": 27929237,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27953618,
+            "end": 27954859,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27960295,
+            "end": 27961423,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27966219,
+            "end": 27967142,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27968084,
+            "end": 27969407,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27970387,
+            "end": 27970753,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 27975702,
+            "end": 27976109,
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 27920020,
+            "end": 27926231,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 27919999,
+            "end": 27920544,
+            "transcript": "NM_000209",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 27924255,
+            "end": 27926313,
+            "transcript": "NM_000209",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 27920138,
+            "cdsEnd": 27924701,
+            "triadSymbol": 2
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 2,
+      "nCpgNearby": 12
+    },
+    {
+      "symbol": "POMC",
+      "gencodeId": "ENSG00000115138.10",
+      "chrom": "chr2",
+      "start": 25160853,
+      "end": 25168903,
+      "strand": "-",
+      "primaryChannel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 25131414,
+            "end": 25131908,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25161070,
+            "end": 25161894,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25168203,
+            "end": 25169006,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25204232,
+            "end": 25204708,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25215856,
+            "end": 25216224,
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 25160853,
+            "end": 25168903,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25160852,
+            "end": 25161752,
+            "transcript": "NM_001035256",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25164640,
+            "end": 25164792,
+            "transcript": "NM_001035256",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25165635,
+            "end": 25165685,
+            "transcript": "NM_001035256",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25168497,
+            "end": 25168851,
+            "transcript": "NM_001035256",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 25161080,
+            "cdsEnd": 25164772,
+            "triadSymbol": 2
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 4,
+      "nCpgNearby": 5
+    },
+    {
+      "symbol": "NPY",
+      "gencodeId": "ENSG00000122585.7",
+      "chrom": "chr7",
+      "start": 24284163,
+      "end": 24291865,
+      "strand": "+",
+      "primaryChannel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 24283939,
+            "end": 24285461,
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 24284163,
+            "end": 24291865,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 24284189,
+            "end": 24284275,
+            "transcript": "NM_000905",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 24285240,
+            "end": 24285428,
+            "transcript": "NM_000905",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 24289498,
+            "end": 24289579,
+            "transcript": "NM_000905",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 24291662,
+            "end": 24291860,
+            "transcript": "NM_000905",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 24285240,
+            "cdsEnd": 24291687,
+            "triadSymbol": 2
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 4,
+      "nCpgNearby": 1
+    },
+    {
+      "symbol": "DNMT1",
+      "gencodeId": "ENSG00000130816.14",
+      "chrom": "chr19",
+      "start": 10133345,
+      "end": 10231286,
+      "strand": "-",
+      "primaryChannel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 10086020,
+            "end": 10087181,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10095948,
+            "end": 10096675,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10106136,
+            "end": 10106664,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10109936,
+            "end": 10110471,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10113766,
+            "end": 10114462,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10115488,
+            "end": 10116026,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10119486,
+            "end": 10120006,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10142029,
+            "end": 10142241,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10194290,
+            "end": 10195188,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10223942,
+            "end": 10224835,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10230100,
+            "end": 10231578,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10252095,
+            "end": 10252708,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 10269611,
+            "end": 10271289,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 10133345,
+            "end": 10231286,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10133345,
+            "end": 10133701,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10134216,
+            "end": 10134307,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10135735,
+            "end": 10135852,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10136120,
+            "end": 10136287,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10137084,
+            "end": 10137280,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10137831,
+            "end": 10138009,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10138438,
+            "end": 10138605,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10139675,
+            "end": 10139817,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10140045,
+            "end": 10140328,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10140780,
+            "end": 10140909,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10141104,
+            "end": 10141189,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10142027,
+            "end": 10142220,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10143765,
+            "end": 10143987,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10146350,
+            "end": 10146524,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10148883,
+            "end": 10149017,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10149452,
+            "end": 10149657,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10149852,
+            "end": 10149968,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10151397,
+            "end": 10151545,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10151749,
+            "end": 10151847,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10154292,
+            "end": 10154479,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10154585,
+            "end": 10154773,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10154904,
+            "end": 10155056,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10155852,
+            "end": 10155945,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10156390,
+            "end": 10156509,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10159657,
+            "end": 10159767,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10159841,
+            "end": 10159922,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10160017,
+            "end": 10160063,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10160383,
+            "end": 10160418,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10162666,
+            "end": 10162748,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10163325,
+            "end": 10163360,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10166597,
+            "end": 10166685,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10168329,
+            "end": 10168364,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10173089,
+            "end": 10173174,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10173870,
+            "end": 10173905,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10175539,
+            "end": 10175618,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10177291,
+            "end": 10177367,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10180186,
+            "end": 10180234,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10180349,
+            "end": 10180569,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10180777,
+            "end": 10180885,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10182040,
+            "end": 10182077,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 10194819,
+            "end": 10194953,
+            "transcript": "NM_001130823",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 10133666,
+            "cdsEnd": 10194899,
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 41,
+      "nCpgNearby": 13
+    },
+    {
+      "symbol": "DNMT3A",
+      "gencodeId": "ENSG00000119772.16",
+      "chrom": "chr2",
+      "start": 25227855,
+      "end": 25342590,
+      "strand": "-",
+      "primaryChannel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 25204232,
+            "end": 25204708,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25215856,
+            "end": 25216224,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25251888,
+            "end": 25252729,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25252837,
+            "end": 25253059,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25276894,
+            "end": 25277560,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25340440,
+            "end": 25342735,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 25376807,
+            "end": 25377026,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 25227855,
+            "end": 25342590,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25227876,
+            "end": 25234420,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25235706,
+            "end": 25235825,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25236935,
+            "end": 25237005,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25239129,
+            "end": 25239215,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25239314,
+            "end": 25239513,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25240301,
+            "end": 25240450,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25240639,
+            "end": 25240730,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25241561,
+            "end": 25241707,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25243897,
+            "end": 25243982,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25244154,
+            "end": 25244338,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25244539,
+            "end": 25244652,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25245252,
+            "end": 25245332,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25246019,
+            "end": 25246064,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25246159,
+            "end": 25246309,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25246619,
+            "end": 25246776,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25247050,
+            "end": 25247158,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25247590,
+            "end": 25247749,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25248036,
+            "end": 25248252,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25274940,
+            "end": 25275087,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25275499,
+            "end": 25275543,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25282440,
+            "end": 25282711,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25300138,
+            "end": 25300243,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25313912,
+            "end": 25314161,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25342429,
+            "end": 25342483,
+            "transcript": "NR_135490",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 25342483,
+            "cdsEnd": 25342483,
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 24,
+      "nCpgNearby": 7
+    },
+    {
+      "symbol": "APP",
+      "gencodeId": "ENSG00000142192.20",
+      "chrom": "chr21",
+      "start": 25880550,
+      "end": 26171128,
+      "strand": "-",
+      "primaryChannel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 26169575,
+            "end": 26170890,
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 25880550,
+            "end": 26171128,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25880549,
+            "end": 25881771,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25891721,
+            "end": 25891868,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25897572,
+            "end": 25897673,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25905023,
+            "end": 25905077,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25911740,
+            "end": 25911962,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25954589,
+            "end": 25954689,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25955626,
+            "end": 25955755,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25975069,
+            "end": 25975228,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25975953,
+            "end": 25976028,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 25982343,
+            "end": 25982477,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 26021839,
+            "end": 26022042,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 26050999,
+            "end": 26051193,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 26053235,
+            "end": 26053348,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 26089942,
+            "end": 26090072,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 26111978,
+            "end": 26112146,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 26170984,
+            "end": 26171128,
+            "transcript": "NM_001136131",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 25881669,
+            "cdsEnd": 26112098,
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 16,
+      "nCpgNearby": 1
+    },
+    {
+      "symbol": "SOD1",
+      "gencodeId": "ENSG00000142168.14",
+      "chrom": "chr21",
+      "start": 31659622,
+      "end": 31668931,
+      "strand": "+",
+      "primaryChannel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 31659421,
+            "end": 31660344,
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 31659622,
+            "end": 31668931,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 31659692,
+            "end": 31659841,
+            "transcript": "NM_000454",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 31663789,
+            "end": 31663886,
+            "transcript": "NM_000454",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 31666448,
+            "end": 31666518,
+            "transcript": "NM_000454",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 31667257,
+            "end": 31667375,
+            "transcript": "NM_000454",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 31668470,
+            "end": 31668930,
+            "transcript": "NM_000454",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 31659769,
+            "cdsEnd": 31668578,
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 5,
+      "nCpgNearby": 1
+    },
+    {
+      "symbol": "DYRK1A",
+      "gencodeId": "ENSG00000157540.19",
+      "chrom": "chr21",
+      "start": 37365790,
+      "end": 37517450,
+      "strand": "+",
+      "primaryChannel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 37365924,
+            "end": 37367925,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 37563552,
+            "end": 37564244,
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 37365790,
+            "end": 37517450,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37366072,
+            "end": 37366185,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37420298,
+            "end": 37420384,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37472683,
+            "end": 37472880,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37478207,
+            "end": 37478300,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37480637,
+            "end": 37480826,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37486466,
+            "end": 37486614,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37490174,
+            "end": 37490461,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37493016,
+            "end": 37493163,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37496117,
+            "end": 37496258,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37505282,
+            "end": 37505589,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37506098,
+            "end": 37506223,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 37511910,
+            "end": 37526357,
+            "transcript": "NM_001347722",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 37420374,
+            "cdsEnd": 37512531,
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 12,
+      "nCpgNearby": 2
+    },
+    {
+      "symbol": "TMPRSS2",
+      "gencodeId": "ENSG00000184012.11",
+      "chrom": "chr21",
+      "start": 41464551,
+      "end": 41531116,
+      "strand": "-",
+      "primaryChannel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "associated": {
+        "wave": [
+          {
+            "kind": "cpg_island",
+            "start": 41420366,
+            "end": 41420777,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 41426219,
+            "end": 41426957,
+            "triadSymbol": 0
+          },
+          {
+            "kind": "cpg_island",
+            "start": 41506824,
+            "end": 41508747,
+            "triadSymbol": 0
+          }
+        ],
+        "node": [
+          {
+            "kind": "gene_locus",
+            "start": 41464551,
+            "end": 41531116,
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41464304,
+            "end": 41466153,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41467733,
+            "end": 41467886,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41468395,
+            "end": 41468538,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41470647,
+            "end": 41470743,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41471805,
+            "end": 41471981,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41473324,
+            "end": 41473496,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41476576,
+            "end": 41476620,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41479171,
+            "end": 41479282,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41480475,
+            "end": 41480602,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41488393,
+            "end": 41488513,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41489506,
+            "end": 41489593,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41494355,
+            "end": 41494578,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41498118,
+            "end": 41498189,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "exon",
+            "start": 41508080,
+            "end": 41508158,
+            "transcript": "NM_005656",
+            "triadSymbol": 1
+          },
+          {
+            "kind": "gene_primary",
+            "triadSymbol": 1
+          }
+        ],
+        "fq": [
+          {
+            "kind": "cds_codon_rhythm",
+            "cdsStart": 41466141,
+            "cdsEnd": 41498133,
+            "triadSymbol": 2
+          }
+        ]
+      },
+      "nExons": 14,
+      "nCpgNearby": 3
+    }
+  ],
+  "entries": [
+    {
+      "id": "gene:INS:2159779-2161341",
+      "kind": "gene",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2159779,
+      "end": 2161341,
+      "lengthBp": 1562,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "Gene primary Soft Story channel=fq"
+    },
+    {
+      "id": "exon:INS:2159778-2159997",
+      "kind": "exon",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2159778,
+      "end": 2159997,
+      "lengthBp": 219,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under INS"
+    },
+    {
+      "id": "exon:INS:2160784-2160988",
+      "kind": "exon",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2160784,
+      "end": 2160988,
+      "lengthBp": 204,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under INS"
+    },
+    {
+      "id": "exon:INS:2161167-2161209",
+      "kind": "exon",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2161167,
+      "end": 2161209,
+      "lengthBp": 42,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under INS"
+    },
+    {
+      "id": "cds:INS:2159851-2160971",
+      "kind": "cds",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2159851,
+      "end": 2160971,
+      "lengthBp": 333,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 333 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:INS:2132803-2133110",
+      "kind": "cpg_island",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2132803,
+      "end": 2133110,
+      "lengthBp": 307,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=65.8 · obsExp=0.75"
+    },
+    {
+      "id": "cpg_island:INS:2137721-2141254",
+      "kind": "cpg_island",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2137721,
+      "end": 2141254,
+      "lengthBp": 3533,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=63.2 · obsExp=0.94"
+    },
+    {
+      "id": "cpg_island:INS:2143905-2144442",
+      "kind": "cpg_island",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2143905,
+      "end": 2144442,
+      "lengthBp": 537,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=69.3 · obsExp=1.02"
+    },
+    {
+      "id": "cpg_island:INS:2155609-2155813",
+      "kind": "cpg_island",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2155609,
+      "end": 2155813,
+      "lengthBp": 204,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=71.1 · obsExp=0.88"
+    },
+    {
+      "id": "cpg_island:INS:2166258-2167015",
+      "kind": "cpg_island",
+      "symbol": "INS",
+      "chrom": "chr11",
+      "start": 2166258,
+      "end": 2167015,
+      "lengthBp": 757,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=73.6 · obsExp=0.75"
+    },
+    {
+      "id": "gene:PDX1:27920020-27926231",
+      "kind": "gene",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27920020,
+      "end": 27926231,
+      "lengthBp": 6211,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "Gene primary Soft Story channel=fq"
+    },
+    {
+      "id": "exon:PDX1:27919999-27920544",
+      "kind": "exon",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27919999,
+      "end": 27920544,
+      "lengthBp": 545,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under PDX1"
+    },
+    {
+      "id": "exon:PDX1:27924255-27926313",
+      "kind": "exon",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27924255,
+      "end": 27926313,
+      "lengthBp": 2058,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under PDX1"
+    },
+    {
+      "id": "cds:PDX1:27920138-27924701",
+      "kind": "cds",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27920138,
+      "end": 27924701,
+      "lengthBp": 852,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 852 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:PDX1:27917351-27918381",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27917351,
+      "end": 27918381,
+      "lengthBp": 1030,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=51.2 · obsExp=1.02"
+    },
+    {
+      "id": "cpg_island:PDX1:27919864-27921962",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27919864,
+      "end": 27921962,
+      "lengthBp": 2098,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=63.4 · obsExp=0.72"
+    },
+    {
+      "id": "cpg_island:PDX1:27924089-27924909",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27924089,
+      "end": 27924909,
+      "lengthBp": 820,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=69.5 · obsExp=0.81"
+    },
+    {
+      "id": "cpg_island:PDX1:27927722-27927953",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27927722,
+      "end": 27927953,
+      "lengthBp": 231,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=67.5 · obsExp=0.87"
+    },
+    {
+      "id": "cpg_island:PDX1:27928225-27928607",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27928225,
+      "end": 27928607,
+      "lengthBp": 382,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=64.9 · obsExp=0.73"
+    },
+    {
+      "id": "cpg_island:PDX1:27928920-27929237",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27928920,
+      "end": 27929237,
+      "lengthBp": 317,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=65.6 · obsExp=0.93"
+    },
+    {
+      "id": "cpg_island:PDX1:27953618-27954859",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27953618,
+      "end": 27954859,
+      "lengthBp": 1241,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=69.5 · obsExp=0.91"
+    },
+    {
+      "id": "cpg_island:PDX1:27960295-27961423",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27960295,
+      "end": 27961423,
+      "lengthBp": 1128,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=61 · obsExp=0.86"
+    },
+    {
+      "id": "cpg_island:PDX1:27966219-27967142",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27966219,
+      "end": 27967142,
+      "lengthBp": 923,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=60.6 · obsExp=0.84"
+    },
+    {
+      "id": "cpg_island:PDX1:27968084-27969407",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27968084,
+      "end": 27969407,
+      "lengthBp": 1323,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=63.9 · obsExp=0.96"
+    },
+    {
+      "id": "cpg_island:PDX1:27970387-27970753",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27970387,
+      "end": 27970753,
+      "lengthBp": 366,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=67.5 · obsExp=1.01"
+    },
+    {
+      "id": "cpg_island:PDX1:27975702-27976109",
+      "kind": "cpg_island",
+      "symbol": "PDX1",
+      "chrom": "chr13",
+      "start": 27975702,
+      "end": 27976109,
+      "lengthBp": 407,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=69.3 · obsExp=0.86"
+    },
+    {
+      "id": "gene:POMC:25160853-25168903",
+      "kind": "gene",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25160853,
+      "end": 25168903,
+      "lengthBp": 8050,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "Gene primary Soft Story channel=fq"
+    },
+    {
+      "id": "exon:POMC:25160852-25161752",
+      "kind": "exon",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25160852,
+      "end": 25161752,
+      "lengthBp": 900,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under POMC"
+    },
+    {
+      "id": "exon:POMC:25164640-25164792",
+      "kind": "exon",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25164640,
+      "end": 25164792,
+      "lengthBp": 152,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under POMC"
+    },
+    {
+      "id": "exon:POMC:25165635-25165685",
+      "kind": "exon",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25165635,
+      "end": 25165685,
+      "lengthBp": 50,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under POMC"
+    },
+    {
+      "id": "exon:POMC:25168497-25168851",
+      "kind": "exon",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25168497,
+      "end": 25168851,
+      "lengthBp": 354,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under POMC"
+    },
+    {
+      "id": "cds:POMC:25161080-25164772",
+      "kind": "cds",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25161080,
+      "end": 25164772,
+      "lengthBp": 804,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 804 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:POMC:25131414-25131908",
+      "kind": "cpg_island",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25131414,
+      "end": 25131908,
+      "lengthBp": 494,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=67.2 · obsExp=0.8"
+    },
+    {
+      "id": "cpg_island:POMC:25161070-25161894",
+      "kind": "cpg_island",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25161070,
+      "end": 25161894,
+      "lengthBp": 824,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=65.4 · obsExp=0.9"
+    },
+    {
+      "id": "cpg_island:POMC:25168203-25169006",
+      "kind": "cpg_island",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25168203,
+      "end": 25169006,
+      "lengthBp": 803,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=69.4 · obsExp=0.84"
+    },
+    {
+      "id": "cpg_island:POMC:25204232-25204708",
+      "kind": "cpg_island",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25204232,
+      "end": 25204708,
+      "lengthBp": 476,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=74.8 · obsExp=0.86"
+    },
+    {
+      "id": "cpg_island:POMC:25215856-25216224",
+      "kind": "cpg_island",
+      "symbol": "POMC",
+      "chrom": "chr2",
+      "start": 25215856,
+      "end": 25216224,
+      "lengthBp": 368,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=72.3 · obsExp=0.98"
+    },
+    {
+      "id": "gene:NPY:24284163-24291865",
+      "kind": "gene",
+      "symbol": "NPY",
+      "chrom": "chr7",
+      "start": 24284163,
+      "end": 24291865,
+      "lengthBp": 7702,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "Gene primary Soft Story channel=fq"
+    },
+    {
+      "id": "exon:NPY:24284189-24284275",
+      "kind": "exon",
+      "symbol": "NPY",
+      "chrom": "chr7",
+      "start": 24284189,
+      "end": 24284275,
+      "lengthBp": 86,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under NPY"
+    },
+    {
+      "id": "exon:NPY:24285240-24285428",
+      "kind": "exon",
+      "symbol": "NPY",
+      "chrom": "chr7",
+      "start": 24285240,
+      "end": 24285428,
+      "lengthBp": 188,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under NPY"
+    },
+    {
+      "id": "exon:NPY:24289498-24289579",
+      "kind": "exon",
+      "symbol": "NPY",
+      "chrom": "chr7",
+      "start": 24289498,
+      "end": 24289579,
+      "lengthBp": 81,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under NPY"
+    },
+    {
+      "id": "exon:NPY:24291662-24291860",
+      "kind": "exon",
+      "symbol": "NPY",
+      "chrom": "chr7",
+      "start": 24291662,
+      "end": 24291860,
+      "lengthBp": 198,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under NPY"
+    },
+    {
+      "id": "cds:NPY:24285240-24291687",
+      "kind": "cds",
+      "symbol": "NPY",
+      "chrom": "chr7",
+      "start": 24285240,
+      "end": 24291687,
+      "lengthBp": 294,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 294 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:NPY:24283939-24285461",
+      "kind": "cpg_island",
+      "symbol": "NPY",
+      "chrom": "chr7",
+      "start": 24283939,
+      "end": 24285461,
+      "lengthBp": 1522,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=65.4 · obsExp=0.76"
+    },
+    {
+      "id": "gene:DNMT1:10133345-10231286",
+      "kind": "gene",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10133345,
+      "end": 10231286,
+      "lengthBp": 97941,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "Gene primary Soft Story channel=wave"
+    },
+    {
+      "id": "exon:DNMT1:10133345-10133701",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10133345,
+      "end": 10133701,
+      "lengthBp": 356,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10134216-10134307",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10134216,
+      "end": 10134307,
+      "lengthBp": 91,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10135735-10135852",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10135735,
+      "end": 10135852,
+      "lengthBp": 117,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10136120-10136287",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10136120,
+      "end": 10136287,
+      "lengthBp": 167,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10137084-10137280",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10137084,
+      "end": 10137280,
+      "lengthBp": 196,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10137831-10138009",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10137831,
+      "end": 10138009,
+      "lengthBp": 178,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10138438-10138605",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10138438,
+      "end": 10138605,
+      "lengthBp": 167,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10139675-10139817",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10139675,
+      "end": 10139817,
+      "lengthBp": 142,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10140045-10140328",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10140045,
+      "end": 10140328,
+      "lengthBp": 283,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10140780-10140909",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10140780,
+      "end": 10140909,
+      "lengthBp": 129,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10141104-10141189",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10141104,
+      "end": 10141189,
+      "lengthBp": 85,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10142027-10142220",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10142027,
+      "end": 10142220,
+      "lengthBp": 193,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10143765-10143987",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10143765,
+      "end": 10143987,
+      "lengthBp": 222,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10146350-10146524",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10146350,
+      "end": 10146524,
+      "lengthBp": 174,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10148883-10149017",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10148883,
+      "end": 10149017,
+      "lengthBp": 134,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10149452-10149657",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10149452,
+      "end": 10149657,
+      "lengthBp": 205,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10149852-10149968",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10149852,
+      "end": 10149968,
+      "lengthBp": 116,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10151397-10151545",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10151397,
+      "end": 10151545,
+      "lengthBp": 148,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10151749-10151847",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10151749,
+      "end": 10151847,
+      "lengthBp": 98,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10154292-10154479",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10154292,
+      "end": 10154479,
+      "lengthBp": 187,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10154585-10154773",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10154585,
+      "end": 10154773,
+      "lengthBp": 188,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10154904-10155056",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10154904,
+      "end": 10155056,
+      "lengthBp": 152,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10155852-10155945",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10155852,
+      "end": 10155945,
+      "lengthBp": 93,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10156390-10156509",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10156390,
+      "end": 10156509,
+      "lengthBp": 119,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10159657-10159767",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10159657,
+      "end": 10159767,
+      "lengthBp": 110,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10159841-10159922",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10159841,
+      "end": 10159922,
+      "lengthBp": 81,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10160017-10160063",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10160017,
+      "end": 10160063,
+      "lengthBp": 46,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10160383-10160418",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10160383,
+      "end": 10160418,
+      "lengthBp": 35,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10162666-10162748",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10162666,
+      "end": 10162748,
+      "lengthBp": 82,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10163325-10163360",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10163325,
+      "end": 10163360,
+      "lengthBp": 35,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10166597-10166685",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10166597,
+      "end": 10166685,
+      "lengthBp": 88,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10168329-10168364",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10168329,
+      "end": 10168364,
+      "lengthBp": 35,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10173089-10173174",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10173089,
+      "end": 10173174,
+      "lengthBp": 85,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10173870-10173905",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10173870,
+      "end": 10173905,
+      "lengthBp": 35,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10175539-10175618",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10175539,
+      "end": 10175618,
+      "lengthBp": 79,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10177291-10177367",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10177291,
+      "end": 10177367,
+      "lengthBp": 76,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10180186-10180234",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10180186,
+      "end": 10180234,
+      "lengthBp": 48,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10180349-10180569",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10180349,
+      "end": 10180569,
+      "lengthBp": 220,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10180777-10180885",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10180777,
+      "end": 10180885,
+      "lengthBp": 108,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10182040-10182077",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10182040,
+      "end": 10182077,
+      "lengthBp": 37,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "exon:DNMT1:10194819-10194953",
+      "kind": "exon",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10194819,
+      "end": 10194953,
+      "lengthBp": 134,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT1"
+    },
+    {
+      "id": "cds:DNMT1:10133666-10194899",
+      "kind": "cds",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10133666,
+      "end": 10194899,
+      "lengthBp": 4899,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 4899 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:DNMT1:10086020-10087181",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10086020,
+      "end": 10087181,
+      "lengthBp": 1161,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=70.6 · obsExp=0.79"
+    },
+    {
+      "id": "cpg_island:DNMT1:10095948-10096675",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10095948,
+      "end": 10096675,
+      "lengthBp": 727,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=72.9 · obsExp=1.09"
+    },
+    {
+      "id": "cpg_island:DNMT1:10106136-10106664",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10106136,
+      "end": 10106664,
+      "lengthBp": 528,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=70.1 · obsExp=0.96"
+    },
+    {
+      "id": "cpg_island:DNMT1:10109936-10110471",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10109936,
+      "end": 10110471,
+      "lengthBp": 535,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=67.7 · obsExp=0.61"
+    },
+    {
+      "id": "cpg_island:DNMT1:10113766-10114462",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10113766,
+      "end": 10114462,
+      "lengthBp": 696,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=69 · obsExp=0.66"
+    },
+    {
+      "id": "cpg_island:DNMT1:10115488-10116026",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10115488,
+      "end": 10116026,
+      "lengthBp": 538,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=66.9 · obsExp=0.71"
+    },
+    {
+      "id": "cpg_island:DNMT1:10119486-10120006",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10119486,
+      "end": 10120006,
+      "lengthBp": 520,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=63.5 · obsExp=0.96"
+    },
+    {
+      "id": "cpg_island:DNMT1:10142029-10142241",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10142029,
+      "end": 10142241,
+      "lengthBp": 212,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=64.6 · obsExp=0.68"
+    },
+    {
+      "id": "cpg_island:DNMT1:10194290-10195188",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10194290,
+      "end": 10195188,
+      "lengthBp": 898,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=69.7 · obsExp=0.82"
+    },
+    {
+      "id": "cpg_island:DNMT1:10223942-10224835",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10223942,
+      "end": 10224835,
+      "lengthBp": 893,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=62.9 · obsExp=0.71"
+    },
+    {
+      "id": "cpg_island:DNMT1:10230100-10231578",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10230100,
+      "end": 10231578,
+      "lengthBp": 1478,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=71 · obsExp=0.8"
+    },
+    {
+      "id": "cpg_island:DNMT1:10252095-10252708",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10252095,
+      "end": 10252708,
+      "lengthBp": 613,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=70 · obsExp=0.91"
+    },
+    {
+      "id": "cpg_island:DNMT1:10269611-10271289",
+      "kind": "cpg_island",
+      "symbol": "DNMT1",
+      "chrom": "chr19",
+      "start": 10269611,
+      "end": 10271289,
+      "lengthBp": 1678,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=62 · obsExp=0.82"
+    },
+    {
+      "id": "gene:DNMT3A:25227855-25342590",
+      "kind": "gene",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25227855,
+      "end": 25342590,
+      "lengthBp": 114735,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "Gene primary Soft Story channel=wave"
+    },
+    {
+      "id": "exon:DNMT3A:25227876-25234420",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25227876,
+      "end": 25234420,
+      "lengthBp": 6544,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25235706-25235825",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25235706,
+      "end": 25235825,
+      "lengthBp": 119,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25236935-25237005",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25236935,
+      "end": 25237005,
+      "lengthBp": 70,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25239129-25239215",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25239129,
+      "end": 25239215,
+      "lengthBp": 86,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25239314-25239513",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25239314,
+      "end": 25239513,
+      "lengthBp": 199,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25240301-25240450",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25240301,
+      "end": 25240450,
+      "lengthBp": 149,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25240639-25240730",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25240639,
+      "end": 25240730,
+      "lengthBp": 91,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25241561-25241707",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25241561,
+      "end": 25241707,
+      "lengthBp": 146,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25243897-25243982",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25243897,
+      "end": 25243982,
+      "lengthBp": 85,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25244154-25244338",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25244154,
+      "end": 25244338,
+      "lengthBp": 184,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25244539-25244652",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25244539,
+      "end": 25244652,
+      "lengthBp": 113,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25245252-25245332",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25245252,
+      "end": 25245332,
+      "lengthBp": 80,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25246019-25246064",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25246019,
+      "end": 25246064,
+      "lengthBp": 45,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25246159-25246309",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25246159,
+      "end": 25246309,
+      "lengthBp": 150,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25246619-25246776",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25246619,
+      "end": 25246776,
+      "lengthBp": 157,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25247050-25247158",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25247050,
+      "end": 25247158,
+      "lengthBp": 108,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25247590-25247749",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25247590,
+      "end": 25247749,
+      "lengthBp": 159,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25248036-25248252",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25248036,
+      "end": 25248252,
+      "lengthBp": 216,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25274940-25275087",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25274940,
+      "end": 25275087,
+      "lengthBp": 147,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25275499-25275543",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25275499,
+      "end": 25275543,
+      "lengthBp": 44,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25282440-25282711",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25282440,
+      "end": 25282711,
+      "lengthBp": 271,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25300138-25300243",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25300138,
+      "end": 25300243,
+      "lengthBp": 105,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25313912-25314161",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25313912,
+      "end": 25314161,
+      "lengthBp": 249,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "exon:DNMT3A:25342429-25342483",
+      "kind": "exon",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25342429,
+      "end": 25342483,
+      "lengthBp": 54,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DNMT3A"
+    },
+    {
+      "id": "cpg_island:DNMT3A:25204232-25204708",
+      "kind": "cpg_island",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25204232,
+      "end": 25204708,
+      "lengthBp": 476,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=74.8 · obsExp=0.86"
+    },
+    {
+      "id": "cpg_island:DNMT3A:25215856-25216224",
+      "kind": "cpg_island",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25215856,
+      "end": 25216224,
+      "lengthBp": 368,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=72.3 · obsExp=0.98"
+    },
+    {
+      "id": "cpg_island:DNMT3A:25251888-25252729",
+      "kind": "cpg_island",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25251888,
+      "end": 25252729,
+      "lengthBp": 841,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=74.4 · obsExp=0.64"
+    },
+    {
+      "id": "cpg_island:DNMT3A:25252837-25253059",
+      "kind": "cpg_island",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25252837,
+      "end": 25253059,
+      "lengthBp": 222,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=63.5 · obsExp=0.78"
+    },
+    {
+      "id": "cpg_island:DNMT3A:25276894-25277560",
+      "kind": "cpg_island",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25276894,
+      "end": 25277560,
+      "lengthBp": 666,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=73.6 · obsExp=0.68"
+    },
+    {
+      "id": "cpg_island:DNMT3A:25340440-25342735",
+      "kind": "cpg_island",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25340440,
+      "end": 25342735,
+      "lengthBp": 2295,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=62.5 · obsExp=1.08"
+    },
+    {
+      "id": "cpg_island:DNMT3A:25376807-25377026",
+      "kind": "cpg_island",
+      "symbol": "DNMT3A",
+      "chrom": "chr2",
+      "start": 25376807,
+      "end": 25377026,
+      "lengthBp": 219,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=77.6 · obsExp=0.94"
+    },
+    {
+      "id": "gene:APP:25880550-26171128",
+      "kind": "gene",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25880550,
+      "end": 26171128,
+      "lengthBp": 290578,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Gene primary Soft Story channel=node"
+    },
+    {
+      "id": "exon:APP:25880549-25881771",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25880549,
+      "end": 25881771,
+      "lengthBp": 1222,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25891721-25891868",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25891721,
+      "end": 25891868,
+      "lengthBp": 147,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25897572-25897673",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25897572,
+      "end": 25897673,
+      "lengthBp": 101,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25905023-25905077",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25905023,
+      "end": 25905077,
+      "lengthBp": 54,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25911740-25911962",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25911740,
+      "end": 25911962,
+      "lengthBp": 222,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25954589-25954689",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25954589,
+      "end": 25954689,
+      "lengthBp": 100,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25955626-25955755",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25955626,
+      "end": 25955755,
+      "lengthBp": 129,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25975069-25975228",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25975069,
+      "end": 25975228,
+      "lengthBp": 159,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25975953-25976028",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25975953,
+      "end": 25976028,
+      "lengthBp": 75,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:25982343-25982477",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25982343,
+      "end": 25982477,
+      "lengthBp": 134,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:26021839-26022042",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 26021839,
+      "end": 26022042,
+      "lengthBp": 203,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:26050999-26051193",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 26050999,
+      "end": 26051193,
+      "lengthBp": 194,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:26053235-26053348",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 26053235,
+      "end": 26053348,
+      "lengthBp": 113,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:26089942-26090072",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 26089942,
+      "end": 26090072,
+      "lengthBp": 130,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:26111978-26112146",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 26111978,
+      "end": 26112146,
+      "lengthBp": 168,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "exon:APP:26170984-26171128",
+      "kind": "exon",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 26170984,
+      "end": 26171128,
+      "lengthBp": 144,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under APP"
+    },
+    {
+      "id": "cds:APP:25881669-26112098",
+      "kind": "cds",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 25881669,
+      "end": 26112098,
+      "lengthBp": 1983,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 1983 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:APP:26169575-26170890",
+      "kind": "cpg_island",
+      "symbol": "APP",
+      "chrom": "chr21",
+      "start": 26169575,
+      "end": 26170890,
+      "lengthBp": 1315,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=66.7 · obsExp=0.87"
+    },
+    {
+      "id": "gene:SOD1:31659622-31668931",
+      "kind": "gene",
+      "symbol": "SOD1",
+      "chrom": "chr21",
+      "start": 31659622,
+      "end": 31668931,
+      "lengthBp": 9309,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Gene primary Soft Story channel=node"
+    },
+    {
+      "id": "exon:SOD1:31659692-31659841",
+      "kind": "exon",
+      "symbol": "SOD1",
+      "chrom": "chr21",
+      "start": 31659692,
+      "end": 31659841,
+      "lengthBp": 149,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under SOD1"
+    },
+    {
+      "id": "exon:SOD1:31663789-31663886",
+      "kind": "exon",
+      "symbol": "SOD1",
+      "chrom": "chr21",
+      "start": 31663789,
+      "end": 31663886,
+      "lengthBp": 97,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under SOD1"
+    },
+    {
+      "id": "exon:SOD1:31666448-31666518",
+      "kind": "exon",
+      "symbol": "SOD1",
+      "chrom": "chr21",
+      "start": 31666448,
+      "end": 31666518,
+      "lengthBp": 70,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under SOD1"
+    },
+    {
+      "id": "exon:SOD1:31667257-31667375",
+      "kind": "exon",
+      "symbol": "SOD1",
+      "chrom": "chr21",
+      "start": 31667257,
+      "end": 31667375,
+      "lengthBp": 118,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under SOD1"
+    },
+    {
+      "id": "exon:SOD1:31668470-31668930",
+      "kind": "exon",
+      "symbol": "SOD1",
+      "chrom": "chr21",
+      "start": 31668470,
+      "end": 31668930,
+      "lengthBp": 460,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under SOD1"
+    },
+    {
+      "id": "cds:SOD1:31659769-31668578",
+      "kind": "cds",
+      "symbol": "SOD1",
+      "chrom": "chr21",
+      "start": 31659769,
+      "end": 31668578,
+      "lengthBp": 465,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 465 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:SOD1:31659421-31660344",
+      "kind": "cpg_island",
+      "symbol": "SOD1",
+      "chrom": "chr21",
+      "start": 31659421,
+      "end": 31660344,
+      "lengthBp": 923,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=56.2 · obsExp=1.11"
+    },
+    {
+      "id": "gene:DYRK1A:37365790-37517450",
+      "kind": "gene",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37365790,
+      "end": 37517450,
+      "lengthBp": 151660,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Gene primary Soft Story channel=node"
+    },
+    {
+      "id": "exon:DYRK1A:37366072-37366185",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37366072,
+      "end": 37366185,
+      "lengthBp": 113,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37420298-37420384",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37420298,
+      "end": 37420384,
+      "lengthBp": 86,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37472683-37472880",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37472683,
+      "end": 37472880,
+      "lengthBp": 197,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37478207-37478300",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37478207,
+      "end": 37478300,
+      "lengthBp": 93,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37480637-37480826",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37480637,
+      "end": 37480826,
+      "lengthBp": 189,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37486466-37486614",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37486466,
+      "end": 37486614,
+      "lengthBp": 148,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37490174-37490461",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37490174,
+      "end": 37490461,
+      "lengthBp": 287,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37493016-37493163",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37493016,
+      "end": 37493163,
+      "lengthBp": 147,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37496117-37496258",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37496117,
+      "end": 37496258,
+      "lengthBp": 141,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37505282-37505589",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37505282,
+      "end": 37505589,
+      "lengthBp": 307,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37506098-37506223",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37506098,
+      "end": 37506223,
+      "lengthBp": 125,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "exon:DYRK1A:37511910-37526357",
+      "kind": "exon",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37511910,
+      "end": 37526357,
+      "lengthBp": 14447,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under DYRK1A"
+    },
+    {
+      "id": "cds:DYRK1A:37420374-37512531",
+      "kind": "cds",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37420374,
+      "end": 37512531,
+      "lengthBp": 2265,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 2265 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:DYRK1A:37365924-37367925",
+      "kind": "cpg_island",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37365924,
+      "end": 37367925,
+      "lengthBp": 2001,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=52.1 · obsExp=1.32"
+    },
+    {
+      "id": "cpg_island:DYRK1A:37563552-37564244",
+      "kind": "cpg_island",
+      "symbol": "DYRK1A",
+      "chrom": "chr21",
+      "start": 37563552,
+      "end": 37564244,
+      "lengthBp": 692,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=66.3 · obsExp=0.95"
+    },
+    {
+      "id": "gene:TMPRSS2:41464551-41531116",
+      "kind": "gene",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41464551,
+      "end": 41531116,
+      "lengthBp": 66565,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Gene primary Soft Story channel=node"
+    },
+    {
+      "id": "exon:TMPRSS2:41464304-41466153",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41464304,
+      "end": 41466153,
+      "lengthBp": 1849,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41467733-41467886",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41467733,
+      "end": 41467886,
+      "lengthBp": 153,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41468395-41468538",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41468395,
+      "end": 41468538,
+      "lengthBp": 143,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41470647-41470743",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41470647,
+      "end": 41470743,
+      "lengthBp": 96,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41471805-41471981",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41471805,
+      "end": 41471981,
+      "lengthBp": 176,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41473324-41473496",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41473324,
+      "end": 41473496,
+      "lengthBp": 172,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41476576-41476620",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41476576,
+      "end": 41476620,
+      "lengthBp": 44,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41479171-41479282",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41479171,
+      "end": 41479282,
+      "lengthBp": 111,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41480475-41480602",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41480475,
+      "end": 41480602,
+      "lengthBp": 127,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41488393-41488513",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41488393,
+      "end": 41488513,
+      "lengthBp": 120,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41489506-41489593",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41489506,
+      "end": 41489593,
+      "lengthBp": 87,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41494355-41494578",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41494355,
+      "end": 41494578,
+      "lengthBp": 223,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41498118-41498189",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41498118,
+      "end": 41498189,
+      "lengthBp": 71,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "exon:TMPRSS2:41508080-41508158",
+      "kind": "exon",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41508080,
+      "end": 41508158,
+      "lengthBp": 78,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Exon nest under TMPRSS2"
+    },
+    {
+      "id": "cds:TMPRSS2:41466141-41498133",
+      "kind": "cds",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41466141,
+      "end": 41498133,
+      "lengthBp": 1479,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "notes": "CDS coding length 1479 bp · mod3=0"
+    },
+    {
+      "id": "cpg_island:TMPRSS2:41420366-41420777",
+      "kind": "cpg_island",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41420366,
+      "end": 41420777,
+      "lengthBp": 411,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=63 · obsExp=0.71"
+    },
+    {
+      "id": "cpg_island:TMPRSS2:41426219-41426957",
+      "kind": "cpg_island",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41426219,
+      "end": 41426957,
+      "lengthBp": 738,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=64.6 · obsExp=0.88"
+    },
+    {
+      "id": "cpg_island:TMPRSS2:41506824-41508747",
+      "kind": "cpg_island",
+      "symbol": "TMPRSS2",
+      "chrom": "chr21",
+      "start": 41506824,
+      "end": 41508747,
+      "lengthBp": 1923,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "notes": "CpG island · perGc=67 · obsExp=0.72"
+    },
+    {
+      "id": "sequence_composition:chrM:0-16569",
+      "kind": "sequence_composition",
+      "symbol": null,
+      "chrom": "chrM",
+      "start": 0,
+      "end": 16569,
+      "lengthBp": 16569,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "gcPercent": 44.37202003741928,
+      "cpgObsExp": 0.6411667702748322,
+      "notes": "UCSC hs1 chrM FASTA composition → wave channel"
+    },
+    {
+      "id": "nucleosome_period:WRAP_BP:147",
+      "kind": "nucleosome_period",
+      "symbol": null,
+      "chrom": null,
+      "start": null,
+      "end": null,
+      "lengthBp": 147,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "turns": 1.65,
+      "notes": "Nucleosome wrap 147 bp / 1.65 turns → fq period"
+    },
+    {
+      "id": "fundamental_frequency:chrM:f0",
+      "kind": "fundamental_frequency",
+      "symbol": null,
+      "chrom": "chrM",
+      "start": 0,
+      "end": 16569,
+      "lengthBp": 16569,
+      "channel": "fq",
+      "triadSymbol": 2,
+      "triadInput": "fq",
+      "lengthM": 0.00000563346,
+      "f0Hz": 1775108015322.7324,
+      "vpM_s": 20000000,
+      "notes": "f₀ = vp/(2L) on hs1 chrM stretched length → fq channel"
+    },
+    {
+      "id": "theater_scaffold:polymer_nodes",
+      "kind": "theater_scaffold",
+      "symbol": null,
+      "chrom": null,
+      "start": null,
+      "end": null,
+      "lengthBp": null,
+      "channel": "node",
+      "triadSymbol": 1,
+      "triadInput": "node",
+      "notes": "Coarse polymer theater nodes (Wave–Node lattice host) → node channel"
+    },
+    {
+      "id": "lc_dispersion:chromosomal_electrodynamics",
+      "kind": "lc_dispersion",
+      "symbol": null,
+      "chrom": null,
+      "start": null,
+      "end": null,
+      "lengthBp": null,
+      "channel": "wave",
+      "triadSymbol": 0,
+      "triadInput": "wave",
+      "vpBand": {
+        "low": 16000000,
+        "mid": 20000000,
+        "high": 24000000
+      },
+      "notes": "Chromosomal LC dispersion / group-velocity theater → wave channel"
+    }
+  ]
+}

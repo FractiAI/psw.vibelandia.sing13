@@ -23,8 +23,8 @@ describe('synthobs-tiny-reality-generation-model', () => {
     async () => {
       const r = await runAllExperiments();
       expect(r.all_pass).toBe(true);
-      expect(r.n_total).toBe(21); // E1–E5 + M1–M5 + T1–T6 + G1–G5
-      expect(r.n_pass).toBe(21);
+      expect(r.n_total).toBe(24); // E1–E5 + M1–M5 + T1–T6 + G1–G5 + C1–C3
+      expect(r.n_pass).toBe(24);
       expect(r.enginePinRecommended).toBe(true);
       expect(r.lab.held.summary.viabilityRate).toBe(1);
       expect(r.lab.nullBaseline.viabilityRate).toBe(0);
@@ -58,6 +58,20 @@ describe('synthobs-tiny-reality-generation-model', () => {
       expect(r.genetic.summary.chrM.length).toBe(16569);
       expect(r.genetic.summary.cpgEnrichment).toBeGreaterThan(1.5);
       expect(r.genetic.summary.host.viability).toBeGreaterThanOrEqual(0.75);
+
+      expect(r.catalog_ran).toBe(true);
+      expect(r.catalog_all_pass).toBe(true);
+      expect(r.catalogExperiments.map((e) => e.id)).toEqual(['C1', 'C2', 'C3']);
+      expect(r.catalog.genesByChannel.wave).toEqual(expect.arrayContaining(['DNMT1', 'DNMT3A']));
+      expect(r.catalog.genesByChannel.node).toEqual(
+        expect.arrayContaining(['APP', 'SOD1', 'DYRK1A', 'TMPRSS2']),
+      );
+      expect(r.catalog.genesByChannel.fq).toEqual(
+        expect.arrayContaining(['INS', 'PDX1', 'POMC', 'NPY']),
+      );
+      expect(r.catalog.summary.byChannel.wave).toBeGreaterThan(0);
+      expect(r.catalog.summary.byChannel.node).toBeGreaterThan(0);
+      expect(r.catalog.summary.byChannel.fq).toBeGreaterThan(0);
     },
     180_000,
   );

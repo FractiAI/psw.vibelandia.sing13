@@ -12,10 +12,11 @@ import { runHistoricalLaboratory } from './historical-lab.mjs';
 import { runMolecularTheaterLaboratory } from './molecular-theater.mjs';
 import { runTriadicOctaveDnaLaboratory } from './triadic-octave-dna-lab.mjs';
 import { runGeneticNodesLaboratory } from './genetic-nodes-lab.mjs';
+import { runWaveNodeFqCatalogLaboratory } from './wave-node-fq-catalog.mjs';
 
 /**
  * Core synthetic E1–E5 · Molecular M1–M5 · Primary T1–T6 · Genetic G1–G5
- * (detailed gene/exon/chrM/CpG nodes on real public data)
+ * · Catalog C1–C3 (genetic nodes ↔ wave / node / fq triad inputs)
  * · Historical H1–H3 (Movebank; reported separately — mixed outcomes).
  */
 export async function runAllExperiments() {
@@ -24,6 +25,7 @@ export async function runAllExperiments() {
   const molecular = runMolecularTheaterLaboratory();
   const triadic = runTriadicOctaveDnaLaboratory();
   const genetic = runGeneticNodesLaboratory();
+  const catalog = runWaveNodeFqCatalogLaboratory();
 
   const experiments = [
     {
@@ -124,12 +126,23 @@ export async function runAllExperiments() {
     data: h.data,
   }));
 
-  // Core all_pass = E* + M* + T* + G* (genetic nodes are part of the DNA layer lock).
+  const catalogExperiments = (catalog.hypotheses || []).map((h) => ({
+    id: h.id,
+    title: h.title,
+    pass: h.pass,
+    interpretation: h.interpretation || h.title,
+    detail: h.detail,
+    evidence: h.evidence,
+    data: h.data,
+  }));
+
+  // Core all_pass = E* + M* + T* + G* + C* (wave/node/fq catalog lock).
   const core = [
     ...experiments,
     ...molecularExperiments,
     ...triadicExperiments,
     ...geneticExperiments,
+    ...catalogExperiments,
   ];
   const n_pass = core.filter((e) => e.pass).length;
   return {
@@ -145,12 +158,14 @@ export async function runAllExperiments() {
     molecular,
     triadic,
     genetic,
+    catalog,
     experiments: core,
     syntheticExperiments: experiments,
     historicalExperiments,
     molecularExperiments,
     triadicExperiments,
     geneticExperiments,
+    catalogExperiments,
     n_pass,
     n_total: core.length,
     all_pass: n_pass === core.length,
@@ -170,6 +185,10 @@ export async function runAllExperiments() {
     genetic_n_pass: geneticExperiments.filter((e) => e.pass).length,
     genetic_n_total: geneticExperiments.length,
     genetic_all_pass: Boolean(genetic.ok) && geneticExperiments.every((e) => e.pass),
+    catalog_ran: Boolean(catalog.ok),
+    catalog_n_pass: catalogExperiments.filter((e) => e.pass).length,
+    catalog_n_total: catalogExperiments.length,
+    catalog_all_pass: Boolean(catalog.ok) && catalogExperiments.every((e) => e.pass),
     enginePinRecommended:
       lab.summary.enginePinRecommended &&
       Boolean(molecular.ok) &&
@@ -177,6 +196,8 @@ export async function runAllExperiments() {
       Boolean(triadic.ok) &&
       triadic.all_pass &&
       Boolean(genetic.ok) &&
-      genetic.all_pass,
+      genetic.all_pass &&
+      Boolean(catalog.ok) &&
+      catalog.all_pass,
   };
 }

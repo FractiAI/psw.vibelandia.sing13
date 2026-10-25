@@ -5,14 +5,14 @@
 **Expedition:** Homeostasis Expedition
 **ENGINE_SHELF candidate:** #50
 **Seed:** 20261025
-**Generated:** 2026-10-25T19:33:15.131Z
+**Generated:** 2026-10-25T20:13:50.411Z
 
 ## Verdict
 
 | Metric | Value |
 |---|---|
-| Core all pass (E1–E5 + M1–M5 + T1–T6 + G1–G5) | `true` |
-| Core passed | 21/21 |
+| Core all pass (E+M+T+G+C) | `true` |
+| Core passed | 24/24 |
 | Foundation Wave–Node | `true` |
 | Held-out viability | 100.0% |
 | Null viability | 0.0% |
@@ -25,8 +25,10 @@
 | Triadic–octave–DNA passed | 6/6 |
 | Genetic nodes ran | `true` |
 | Genetic nodes passed | 5/5 |
+| Wave/node/fq catalog ran | `true` |
+| Wave/node/fq catalog passed | 3/3 |
 | Φ_EGS | 1.618033988749895 |
-| Runtime ms | 1252.7 |
+| Runtime ms | 1160.3 |
 
 ## Primary hypothesis
 
@@ -233,9 +235,39 @@ An intelligently structured three-symbol cyclic input stream, clocked by rotatin
 - Evidence: empirically_observed
 - Data: genetic_nodes_on_hs1_theater
 
+## Wave / node / fq catalog C1–C3 (genetic nodes ↔ triad inputs)
+
+- Triad lock: symbol 0=wave · 1=node · 2=fq
+- Catalog entries: 199 (wave 54 / node 130 / fq 15)
+- wave genes: DNMT1, DNMT3A
+- node genes: APP, SOD1, DYRK1A, TMPRSS2
+- fq genes: INS, PDX1, POMC, NPY
+- Fixture: `data/molecular/genetic/wave_node_fq_catalog.json`
+
+### C1 — Genetic-node catalog assigns every feature to wave / node / fq
+
+- **Pass:** `true`
+- Catalogued 199 genetic features across wave/node/fq (54/130/15).
+- Evidence: numerically_verified
+- Data: wave_node_fq_catalog
+
+### C2 — Each triad input has ≥1 gene primary and ≥2 feature kinds
+
+- **Pass:** `true`
+- wave←DNMT1,DNMT3A · node←APP,SOD1,DYRK1A,TMPRSS2 · fq←INS,PDX1,POMC,NPY.
+- Evidence: empirically_observed
+- Data: wave_node_fq_catalog
+
+### C3 — Three-symbol stream locks to wave=0 · node=1 · fq=2 and visits all channels
+
+- **Pass:** `true`
+- Σ={0,1,2} ↔ {wave,node,fq}; structured motif visits all three channels each polygon period.
+- Evidence: numerically_verified
+- Data: triadic_symbol_wave_node_fq_lock
+
 ## Honesty
 
-TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA is coherent and beneficial — with a detailed genetic-node layer validated on pinned public data (GTEx genes, MyGene exons, UCSC hs1 chrM FASTA, UCSC hg38 CpG islands). Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Φ_EGS is catalog nesting grammar only. Batteries: E1–E5, H1–H3 (mixed), M1–M5, T1–T6, G1–G5 — executed, not fabricated.
+TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA is coherent and beneficial — with genetic nodes catalogued to the Wave–Node triad inputs wave/node/fq (symbols 0/1/2) on pinned public data (GTEx, MyGene, UCSC). Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Catalog is Soft Story association grammar — not gene→physics causation, not clinical genetics. Batteries: E1–E5, H1–H3 (mixed), M1–M5, T1–T6, G1–G5, C1–C3 — executed, not fabricated.
 
 Standalone: FractiAI/synthobs-tiny-reality-generation-model
 

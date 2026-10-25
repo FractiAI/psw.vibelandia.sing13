@@ -38,7 +38,7 @@ function mdReport(report) {
     '',
     `| Metric | Value |`,
     `|---|---|`,
-    `| Core all pass (E1–E5 + M1–M5 + T1–T6 + G1–G5) | \`${report.results.all_pass}\` |`,
+    `| Core all pass (E+M+T+G+C) | \`${report.results.all_pass}\` |`,
     `| Core passed | ${report.results.n_pass}/${report.results.n_total} |`,
     `| Foundation Wave–Node | \`${lab.foundation.allPass}\` |`,
     `| Held-out viability | ${(lab.held.summary.viabilityRate * 100).toFixed(1)}% |`,
@@ -52,6 +52,8 @@ function mdReport(report) {
     `| Triadic–octave–DNA passed | ${report.results.triadic_n_pass}/${report.results.triadic_n_total} |`,
     `| Genetic nodes ran | \`${report.results.genetic_ran}\` |`,
     `| Genetic nodes passed | ${report.results.genetic_n_pass}/${report.results.genetic_n_total} |`,
+    `| Wave/node/fq catalog ran | \`${report.results.catalog_ran}\` |`,
+    `| Wave/node/fq catalog passed | ${report.results.catalog_n_pass}/${report.results.catalog_n_total} |`,
     `| Φ_EGS | ${PHI_EGS} |`,
     `| Runtime ms | ${lab.runtimeMs.toFixed(1)} |`,
     '',
@@ -144,6 +146,28 @@ function mdReport(report) {
     );
   }
   for (const e of report.results.geneticExperiments || []) {
+    lines.push(`### ${e.id} — ${e.title}`, '');
+    lines.push(`- **Pass:** \`${e.pass}\``);
+    if (e.interpretation) lines.push(`- ${e.interpretation}`);
+    if (e.evidence) lines.push(`- Evidence: ${e.evidence}`);
+    if (e.data) lines.push(`- Data: ${e.data}`);
+    lines.push('');
+  }
+  const cat = report.results.catalog;
+  lines.push('## Wave / node / fq catalog C1–C3 (genetic nodes ↔ triad inputs)', '');
+  if (cat?.ok) {
+    const gbc = cat.genesByChannel || {};
+    lines.push(
+      `- Triad lock: symbol 0=wave · 1=node · 2=fq`,
+      `- Catalog entries: ${cat.summary?.nEntries} (wave ${cat.summary?.byChannel?.wave} / node ${cat.summary?.byChannel?.node} / fq ${cat.summary?.byChannel?.fq})`,
+      `- wave genes: ${(gbc.wave || []).join(', ')}`,
+      `- node genes: ${(gbc.node || []).join(', ')}`,
+      `- fq genes: ${(gbc.fq || []).join(', ')}`,
+      `- Fixture: \`data/molecular/genetic/wave_node_fq_catalog.json\``,
+      '',
+    );
+  }
+  for (const e of report.results.catalogExperiments || []) {
     lines.push(`### ${e.id} — ${e.title}`, '');
     lines.push(`- **Pass:** \`${e.pass}\``);
     if (e.interpretation) lines.push(`- ${e.interpretation}`);
@@ -260,6 +284,12 @@ async function main() {
           ran: results.genetic_ran,
           passed: `${results.genetic_n_pass}/${results.genetic_n_total}`,
           summary: results.genetic?.summary,
+        },
+        catalog: {
+          ran: results.catalog_ran,
+          passed: `${results.catalog_n_pass}/${results.catalog_n_total}`,
+          genesByChannel: results.catalog?.genesByChannel,
+          byChannel: results.catalog?.summary?.byChannel,
         },
       },
       null,

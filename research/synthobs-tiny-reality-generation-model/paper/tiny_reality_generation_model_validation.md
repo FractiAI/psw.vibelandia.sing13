@@ -23,6 +23,7 @@
 |------|--------|----------------|
 | **Primary (T1–T6)** | Structured 3-symbol cyclic stream, polygon-spin clocked, Φ octave rhyme tree on folded DNA is coherent and beneficial vs ablations | Wet-lab chromatin proof · genomic consciousness |
 | **Genetic nodes (G1–G5)** | Real GTEx genes, MyGene exons, hs1 chrM FASTA, hg38 CpG islands project onto theater and pass nesting/composition/enrichment/fold gates | Clinical genetics · diagnostic sequencing · fabricated sequences |
+| **Wave/node/fq catalog (C1–C3)** | Every genetic feature assigned to triad input wave=0 · node=1 · fq=2; each channel has gene primaries + feature kinds; motif visits all three | Gene→physics causation · clinical genotype–phenotype |
 | **Foundation** | Imported Wave–Node A–E battery still passes | New PDE theory beyond #49 |
 | **Empirically observed** | Held-out TRGM viability **100%** (n=16) vs null **0%** | Physical world generation |
 | **Empirically observed** | Phase = soft steering delta; hard viability = geo+wave+nav | Universal Goldilocks law |
@@ -44,11 +45,11 @@
 
 **Methods.** Node.js suite · `triadic-octave-dna-lab.mjs` + `genetic-nodes-lab.mjs` · Σ={0,1,2} · 9-gon spin · Φ octave stack · nucleosome wrap 147 bp / 1.65 turns · offline fixtures: GTEx gene panel (10 loci), MyGene exons (125), UCSC hs1 chrM FASTA (16 569 bp), UCSC hg38 CpG islands (48 in gene±50 kb windows). Seed `20261025`.
 
-**Findings (executed).** **T1–T6 = 6/6.** **G1–G5 = 5/5** (gene bounds · exon nest + CDS mod 3 · chrM GC/CpG · CpG enrichment ≫ shuffle · gene order survives fold with TRGM viability 100% on chr21). E+M pass. Historical H1–H3 remains **1/3**.
+**Findings (executed).** **T1–T6 = 6/6.** **G1–G5 = 5/5.** **C1–C3 = 3/3** — 199 genetic features catalogued to wave/node/fq (54/130/15); gene primaries wave={DNMT1,DNMT3A} · node={APP,SOD1,DYRK1A,TMPRSS2} · fq={INS,PDX1,POMC,NPY}. E+M pass. Historical H1–H3 remains **1/3**.
 
-**Limitation.** Computational Soft Story overlay of public annotations — not wet biology, not genomic consciousness, not clinical genetics, not hardware robotics. Gene/exon/CpG assemblies are GRCh38; chrM sequence is hs1 T2T (documented in `PROVENANCE.json`).
+**Limitation.** Computational Soft Story overlay of public annotations — not wet biology, not genomic consciousness, not clinical genetics, not gene→physics causation, not hardware robotics. Gene/exon/CpG assemblies are GRCh38; chrM sequence is hs1 T2T (documented in `PROVENANCE.json`).
 
-**Keywords:** Tiny Reality Generation Model; genetic nodes; GTEx; MyGene; chrM; CpG; triadic stream; polygon spin; Infinite Octave; folded DNA; Homeostasis Expedition.
+**Keywords:** Tiny Reality Generation Model; wave; node; fq; genetic catalog; GTEx; MyGene; chrM; CpG; triadic stream; Infinite Octave; folded DNA; Homeostasis Expedition.
 
 ---
 
@@ -69,9 +70,10 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 
 1. Primary-hypothesis laboratory **T1–T6** (executed, not fabricated).  
 2. **Genetic-node laboratory G1–G5** on pinned public data (GTEx · MyGene · UCSC hs1 chrM · hg38 CpG).  
-3. Ablation battery: unstructured · unclocked · flat · unfolded DNA.  
-4. Supporting TRGM E1–E5 + molecular theater M1–M5 + historical H1–H3.  
-5. ENGINE_SHELF #50 DNA layer drilled to gene/exon/sequence/CpG detail.
+3. **Wave / node / fq catalog C1–C3** — every identified genetic feature associated with one triad input (symbols 0/1/2).  
+4. Ablation battery: unstructured · unclocked · flat · unfolded DNA.  
+5. Supporting TRGM E1–E5 + molecular theater M1–M5 + historical H1–H3.  
+6. ENGINE_SHELF #50 DNA layer drilled to gene/exon/sequence/CpG detail with triad catalog.
 
 ---
 
@@ -84,6 +86,7 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 | **Infinite Octave rhyme tree** | Recursive Φ_EGS holographic encode across ±octaves |
 | **Folded compact DNA** | Nucleosome spool theater (147 bp · 1.65 turns) on hs1 |
 | **Genetic nodes** | Gene · exon · CDS · nucleotide composition · CpG island features on public coords |
+| **Triad catalog** | Genetic features → **wave** (0) · **node** (1) · **fq** (2) |
 | **Hard gates** | Geometry · wave \(L_2\) · navigability |
 | **Soft phase** | Steering/coordination delta (not kill-switch) |
 | **Ablations** | Noise stream · shuffle clock · flat encode · linear DNA |
@@ -98,6 +101,7 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 - **Tree:** layers at Φ^{offset} for offset ∈ [−3,+3]; shrink check on finer octaves = 1/Φ.  
 - **Fold:** WRAP_BP=147 · NUCLEOSOME_TURNS=1.65 · theater Archimedean pack; compaction = linear span / folded extent.  
 - **Genetic fixtures:** `data/molecular/genetic/` — `genes.panel.json` (GTEx), `exons.panel.json` (MyGene), `chrM.hs1.fa` (UCSC hs1), `cpg.panel.json` (UCSC hg38 cpgIslandExt), `hg38.chrom.sizes`, `PROVENANCE.json`.  
+- **Wave/node/fq catalog:** `wave_node_fq_catalog.json` · builder `src/wave-node-fq-catalog.mjs` · feature-kind map + gene Soft Story primaries.  
 - **Benefit:** viable under hard gates **and** coherenceScore ≥ 0.7.  
 - **Runner:** `npm run research:synthobs-tiny-reality-generation-model`.
 
@@ -133,6 +137,24 @@ Pinned fixtures under `data/molecular/genetic/` (offline CI; provenance recorded
 | **G5** | chr21 gene order preserved under nucleosome fold; TRGM viability **100%** — **pass** |
 
 **Genetic battery 5/5.** Assembly note: gene/exon/CpG = GRCh38; chrM sequence = hs1 T2T.
+
+### 5.0c Wave / node / fq catalog C1–C3 (executed)
+
+Triad lock: **symbol 0 = wave** · **symbol 1 = node** · **symbol 2 = fq**.
+
+| Channel | Symbol | Gene primaries (Soft Story roles) | Feature kinds (examples) | n entries |
+|---------|-------:|-----------------------------------|--------------------------|----------:|
+| **wave** | 0 | DNMT1, DNMT3A (epigenetic / field-marking) | cpg_island · sequence_composition · lc_dispersion | 54 |
+| **node** | 1 | APP, SOD1, DYRK1A, TMPRSS2 (locus / structural panel) | gene · exon · theater_scaffold | 130 |
+| **fq** | 2 | INS, PDX1, POMC, NPY (pulse / endocrine Soft Story) | cds · nucleosome_period · fundamental_frequency | 15 |
+
+| ID | Result |
+|----|--------|
+| **C1** | 199 features each carry wave/node/fq + matching triad symbol — **pass** |
+| **C2** | Every channel has ≥1 gene primary and ≥2 feature kinds — **pass** |
+| **C3** | Σ={0,1,2}↔{wave,node,fq}; structured motif visits all three — **pass** |
+
+Fixture: `data/molecular/genetic/wave_node_fq_catalog.json`. **Catalog battery 3/3.**
 
 ### 5.1 Foundation (Wave–Node #49)
 
@@ -175,6 +197,8 @@ The primary stack — structured ternary cycles, polygon-spin clocking, Infinite
 
 The **genetic-node drill-down** shows the DNA theater is not only a polymer length: real gene and exon coordinates nest, real mitochondrial sequence yields well-formed GC/CpG statistics, public CpG islands enrich near the gene panel versus shuffle, and gene order survives nucleosome-style fold while TRGM hard viability stays at 100% on chr21. That is an annotation-overlay result, not a wet-lab chromatin proof.
 
+The **wave / node / fq catalog** then assigns every identified feature to one of the three triad inputs that drive the structured symbol stream. CpG islands and sequence composition sit with **wave**; gene/exon loci with **node**; CDS codon-length rhythm, nucleosome wrap period, and length→\(f_0\) with **fq**. Gene Soft Story primaries partition the panel across the three channels so each input has named public loci. This is association grammar for the generator — not a claim that those genes cause waves, nodes, or frequencies in tissue.
+
 TRGM recipes remain viable under hard gates across conditions; the **stack architecture** is what T5/T6 discriminate. Phase stays a soft steering delta. Historical Movebank/Kp remains a separate mixed ledger.
 
 ---
@@ -197,7 +221,7 @@ Numbers match `data/empirical_report.json` for seed `20261025`.
 
 ## 9. Conclusions
 
-Primary hypothesis **T1–T6 = 6/6**. Genetic-node drill-down **G1–G5 = 5/5** on pinned public data. Supporting E+M pass; historical **1/3**. ENGINE_SHELF **#50** = triadic–polygon–octave tree on folded DNA with detailed genetic nodes — computational Soft Story, not wet-lab genetics.
+Primary hypothesis **T1–T6 = 6/6**. Genetic-node drill-down **G1–G5 = 5/5**. Wave/node/fq catalog **C1–C3 = 3/3**. Supporting E+M pass; historical **1/3**. ENGINE_SHELF **#50** = triadic–polygon–octave tree on folded DNA with genetic nodes catalogued to wave · node · fq — computational Soft Story, not wet-lab genetics.
 
 ---
 
@@ -222,6 +246,7 @@ Primary hypothesis **T1–T6 = 6/6**. Genetic-node drill-down **G1–G5 = 5/5** 
 |------|--------|
 | Primary T1–T6 | **6/6** pass · seed 20261025 |
 | Genetic G1–G5 | **5/5** · GTEx/MyGene/UCSC fixtures |
+| Catalog C1–C3 | **3/3** · wave/node/fq ↔ symbols 0/1/2 |
 | Synthetic E1–E5 | pass |
 | Molecular M1–M5 | **5/5** |
 | Historical H1–H3 | **1/3** (H3 only) |

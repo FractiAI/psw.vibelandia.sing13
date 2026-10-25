@@ -38,7 +38,7 @@ function mdReport(report) {
     '',
     `| Metric | Value |`,
     `|---|---|`,
-    `| Core all pass (E1–E5 + M1–M5) | \`${report.results.all_pass}\` |`,
+    `| Core all pass (E1–E5 + M1–M5 + T1–T6) | \`${report.results.all_pass}\` |`,
     `| Core passed | ${report.results.n_pass}/${report.results.n_total} |`,
     `| Foundation Wave–Node | \`${lab.foundation.allPass}\` |`,
     `| Held-out viability | ${(lab.held.summary.viabilityRate * 100).toFixed(1)}% |`,
@@ -48,8 +48,14 @@ function mdReport(report) {
     `| Historical passed | ${report.results.historical_n_pass}/${report.results.historical_n_total} |`,
     `| Molecular theater ran | \`${report.results.molecular_ran}\` |`,
     `| Molecular passed | ${report.results.molecular_n_pass}/${report.results.molecular_n_total} |`,
+    `| Triadic–octave–DNA ran | \`${report.results.triadic_ran}\` |`,
+    `| Triadic–octave–DNA passed | ${report.results.triadic_n_pass}/${report.results.triadic_n_total} |`,
     `| Φ_EGS | ${PHI_EGS} |`,
     `| Runtime ms | ${lab.runtimeMs.toFixed(1)} |`,
+    '',
+    '## Primary hypothesis',
+    '',
+    report.results.primaryHypothesis || '',
     '',
     '## Experiments (synthetic E1–E5)',
     '',
@@ -92,6 +98,30 @@ function mdReport(report) {
     );
   }
   for (const e of report.results.molecularExperiments || []) {
+    lines.push(`### ${e.id} — ${e.title}`, '');
+    lines.push(`- **Pass:** \`${e.pass}\``);
+    if (e.interpretation) lines.push(`- ${e.interpretation}`);
+    if (e.evidence) lines.push(`- Evidence: ${e.evidence}`);
+    if (e.data) lines.push(`- Data: ${e.data}`);
+    lines.push('');
+  }
+  const tri = report.results.triadic;
+  lines.push(
+    '## Primary battery T1–T6 (triadic stream × polygon spin × octave tree × folded DNA)',
+    '',
+  );
+  if (tri?.ok) {
+    lines.push(
+      `- Host: ${tri.host?.chrom} (${tri.host?.bp} bp)`,
+      `- Polygon sides: ${tri.polygonSides}`,
+      `- Octave depth: ±${tri.octaveDepth}`,
+      `- Nucleosome: ${tri.nucleosome?.wrapBp} bp / ${tri.nucleosome?.turns} turns`,
+      `- Full-stack benefitRate: ${((tri.conditions?.full?.benefitRate || 0) * 100).toFixed(1)}%`,
+      `- Full-stack meanCoherence: ${(tri.conditions?.full?.meanCoherence || 0).toFixed(3)}`,
+      '',
+    );
+  }
+  for (const e of report.results.triadicExperiments || []) {
     lines.push(`### ${e.id} — ${e.title}`, '');
     lines.push(`- **Pass:** \`${e.pass}\``);
     if (e.interpretation) lines.push(`- ${e.interpretation}`);
@@ -198,11 +228,29 @@ async function main() {
           host: results.molecular?.host,
           viability: results.molecular?.held?.viabilityRate,
         },
+        triadic: {
+          ran: results.triadic_ran,
+          passed: `${results.triadic_n_pass}/${results.triadic_n_total}`,
+          fullBenefit: results.triadic?.conditions?.full?.benefitRate,
+          fullCoherence: results.triadic?.conditions?.full?.meanCoherence,
+        },
       },
       null,
       2,
     ),
   );
+
+  if (results.triadic?.conditions) {
+    const tBars = Object.entries(results.triadic.conditions).map(([k, v]) => ({
+      x: k.slice(0, 6),
+      y: v.meanCoherence,
+    }));
+    await fs.writeFile(path.join(FIGURES, 'fig_triadic_coherence.json'), JSON.stringify(tBars, null, 2));
+    await fs.writeFile(
+      path.join(FIGURES, 'fig_triadic_coherence.svg'),
+      svgBars(tBars, { title: 'Fig. TRGM — Stack coherence (full vs ablations)' }),
+    );
+  }
 }
 
 main().catch((e) => {

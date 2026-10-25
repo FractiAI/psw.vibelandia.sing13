@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T19:03:29.971Z",
+  "generatedAt": "2026-10-25T19:11:00.193Z",
   "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
   "registryId": "synthobs-tiny-reality-generation-model-2026-10",
   "seed": 20261025,
@@ -10,10 +10,11 @@
     "seed": 20261025,
     "engineShelfSlot": 50,
     "expedition": "Homeostasis Expedition",
-    "honesty": "TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) that execute on a DNA/chromosome molecular theater (B-DNA rise + LC scaffold from public T2T hs1 chrom sizes). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node #49 + chromosomal electrodynamics / DNA lattice grammar. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank) and molecular M1–M5 (hs1+LC) are executed batteries with honest mixed/pass outcomes.",
+    "primaryHypothesis": "An intelligently structured three-symbol cyclic input stream, clocked by rotating polygon spin, fed into an Infinite Octave recursive tree of holographic rhymes, implemented across folded compact DNA molecular structures, forms a coherent structure and produces beneficial outcomes vs unstructured/unclocked/flat/unfolded ablations.",
+    "honesty": "TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA (hs1 + nucleosome wrap 147 bp / 1.65 turns) is coherent and beneficial. Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Φ_EGS is catalog nesting grammar only. Batteries: E1–E5 synthetic, H1–H3 Movebank (mixed), M1–M5 molecular theater, T1–T6 triadic–octave–DNA primary hypothesis — executed, not fabricated.",
     "lab": {
       "seed": 20261025,
-      "runtimeMs": 1109.8647799999999,
+      "runtimeMs": 1108.344656,
       "foundation": {
         "A_pass": true,
         "B_pass": true,
@@ -587,6 +588,313 @@
       "n_total": 5,
       "all_pass": true
     },
+    "triadic": {
+      "ok": true,
+      "hypothesis": "Intelligently structured three-symbol cyclic input, clocked by rotating polygon spin, into an Infinite Octave recursive holographic-rhyme tree, implemented on folded compact DNA — coherent structure with beneficial outcomes.",
+      "host": {
+        "chrom": "chr1",
+        "bp": 248387328
+      },
+      "polygonSides": 9,
+      "octaveDepth": 3,
+      "nucleosome": {
+        "wrapBp": 147,
+        "turns": 1.65
+      },
+      "conditions": {
+        "full": {
+          "n": 12,
+          "viabilityRate": 1,
+          "meanCoherence": 1,
+          "benefitRate": 1,
+          "meanWaveL2": 0.0008939940542806352,
+          "meanPhaseR": 0.958414986753143,
+          "navSuccessRate": 1,
+          "softPhaseOkRate": 1,
+          "streamKind": "structured_cyclic",
+          "treeKind": "infinite_octave_holographic_rhyme_tree",
+          "hostKind": "folded_compact_dna",
+          "clockSyncRate": 1,
+          "treeCoherent": true,
+          "compactionRatio": 18.80891466825322
+        },
+        "unstructured": {
+          "n": 12,
+          "viabilityRate": 1,
+          "meanCoherence": 0.9111111111111113,
+          "benefitRate": 1,
+          "meanWaveL2": 0.0007428322653389129,
+          "meanPhaseR": 0.9561773701082777,
+          "navSuccessRate": 1,
+          "softPhaseOkRate": 1,
+          "streamKind": "unstructured_noise",
+          "treeKind": "infinite_octave_holographic_rhyme_tree",
+          "hostKind": "folded_compact_dna",
+          "clockSyncRate": 0.4074074074074074,
+          "treeCoherent": true,
+          "compactionRatio": 18.80891466825322
+        },
+        "unclocked": {
+          "n": 12,
+          "viabilityRate": 1,
+          "meanCoherence": 0.8499999999999998,
+          "benefitRate": 1,
+          "meanWaveL2": 0.0009942904667939922,
+          "meanPhaseR": 0.9594481505415668,
+          "navSuccessRate": 1,
+          "softPhaseOkRate": 1,
+          "streamKind": "structured_but_unclocked",
+          "treeKind": "infinite_octave_holographic_rhyme_tree",
+          "hostKind": "folded_compact_dna",
+          "clockSyncRate": 0,
+          "treeCoherent": true,
+          "compactionRatio": 18.80891466825322
+        },
+        "flat": {
+          "n": 12,
+          "viabilityRate": 1,
+          "meanCoherence": 0.6500000000000001,
+          "benefitRate": 0,
+          "meanWaveL2": 0.000770301258131911,
+          "meanPhaseR": 0.9559518409383277,
+          "navSuccessRate": 1,
+          "softPhaseOkRate": 1,
+          "streamKind": "structured_cyclic",
+          "treeKind": "flat_no_octave_tree",
+          "hostKind": "folded_compact_dna",
+          "clockSyncRate": 1,
+          "treeCoherent": false,
+          "compactionRatio": 18.80891466825322
+        },
+        "unfolded": {
+          "n": 12,
+          "viabilityRate": 1,
+          "meanCoherence": 0.8499999999999998,
+          "benefitRate": 1,
+          "meanWaveL2": 0.0008939940542806352,
+          "meanPhaseR": 0.958414986753143,
+          "navSuccessRate": 1,
+          "softPhaseOkRate": 1,
+          "streamKind": "structured_cyclic",
+          "treeKind": "infinite_octave_holographic_rhyme_tree",
+          "hostKind": "linear_unfolded_dna",
+          "clockSyncRate": 1,
+          "treeCoherent": true,
+          "compactionRatio": 1
+        }
+      },
+      "hypotheses": [
+        {
+          "id": "T1",
+          "title": "Intelligently structured three-symbol cyclic input stream is well-formed",
+          "pass": true,
+          "detail": {
+            "alphabet": [
+              0,
+              1,
+              2
+            ],
+            "period": 9,
+            "cycles": 3,
+            "length": 27,
+            "counts": [
+              9,
+              9,
+              9
+            ],
+            "entropy": 1.584962500721156,
+            "maxEntropy": 1.584962500721156,
+            "motif": [
+              0,
+              2,
+              2,
+              1,
+              1,
+              1,
+              0,
+              0,
+              2
+            ]
+          },
+          "interpretation": "Structured Σ={0,1,2} stream covers all symbols over 3× period-9 cycles (H=1.585).",
+          "evidence": "numerically_verified",
+          "data": "synthetic_triadic_stream"
+        },
+        {
+          "id": "T2",
+          "title": "Rotating polygon spin clocks the three-symbol stream",
+          "pass": true,
+          "detail": {
+            "sides": 9,
+            "clockSyncRate": 1,
+            "nTicks": 27
+          },
+          "interpretation": "9-gon spin locks stream symbols to vertices (sync=100.0%).",
+          "evidence": "numerically_verified",
+          "data": "synthetic_polygon_spin"
+        },
+        {
+          "id": "T3",
+          "title": "Infinite Octave recursive holographic-rhyme tree encodes the stream coherently",
+          "pass": true,
+          "detail": {
+            "depth": 3,
+            "nLayers": 7,
+            "phiIdentity": true,
+            "shrinkOk": true,
+            "reconstructible": true
+          },
+          "interpretation": "Φ_EGS octave tree (7 layers, depth ±3) is coherent under holographic rhyme grammar.",
+          "evidence": "numerically_verified",
+          "data": "synthetic_octave_tree"
+        },
+        {
+          "id": "T4",
+          "title": "Folded compact DNA (nucleosome wrap) hosts the tree with compaction > 1",
+          "pass": true,
+          "detail": {
+            "hostChrom": "chr1",
+            "hostBp": 248387328,
+            "wrapBp": 147,
+            "turns": 1.65,
+            "phiEgs": 1.618033988749895,
+            "windingNearPhi": true,
+            "nSpools": 1689709,
+            "compactionRatio": 18.80891466825322
+          },
+          "interpretation": "chr1 folded into 1689709× 147-bp spools (1.65 turns); compaction=18.81.",
+          "evidence": "numerically_verified",
+          "data": "hs1_folded_compact_dna"
+        },
+        {
+          "id": "T5",
+          "title": "Full stack (structured+clocked+tree+folded) beats ablations on coherence architecture",
+          "pass": true,
+          "detail": {
+            "beatsUnstructured": true,
+            "beatsUnclocked": true,
+            "beatsFlat": true,
+            "beatsUnfolded": true,
+            "conditions": {
+              "full": {
+                "n": 12,
+                "viabilityRate": 1,
+                "meanCoherence": 1,
+                "benefitRate": 1,
+                "meanWaveL2": 0.0008939940542806352,
+                "meanPhaseR": 0.958414986753143,
+                "navSuccessRate": 1,
+                "softPhaseOkRate": 1,
+                "streamKind": "structured_cyclic",
+                "treeKind": "infinite_octave_holographic_rhyme_tree",
+                "hostKind": "folded_compact_dna",
+                "clockSyncRate": 1,
+                "treeCoherent": true,
+                "compactionRatio": 18.80891466825322
+              },
+              "unstructured": {
+                "n": 12,
+                "viabilityRate": 1,
+                "meanCoherence": 0.9111111111111113,
+                "benefitRate": 1,
+                "meanWaveL2": 0.0007428322653389129,
+                "meanPhaseR": 0.9561773701082777,
+                "navSuccessRate": 1,
+                "softPhaseOkRate": 1,
+                "streamKind": "unstructured_noise",
+                "treeKind": "infinite_octave_holographic_rhyme_tree",
+                "hostKind": "folded_compact_dna",
+                "clockSyncRate": 0.4074074074074074,
+                "treeCoherent": true,
+                "compactionRatio": 18.80891466825322
+              },
+              "unclocked": {
+                "n": 12,
+                "viabilityRate": 1,
+                "meanCoherence": 0.8499999999999998,
+                "benefitRate": 1,
+                "meanWaveL2": 0.0009942904667939922,
+                "meanPhaseR": 0.9594481505415668,
+                "navSuccessRate": 1,
+                "softPhaseOkRate": 1,
+                "streamKind": "structured_but_unclocked",
+                "treeKind": "infinite_octave_holographic_rhyme_tree",
+                "hostKind": "folded_compact_dna",
+                "clockSyncRate": 0,
+                "treeCoherent": true,
+                "compactionRatio": 18.80891466825322
+              },
+              "flat": {
+                "n": 12,
+                "viabilityRate": 1,
+                "meanCoherence": 0.6500000000000001,
+                "benefitRate": 0,
+                "meanWaveL2": 0.000770301258131911,
+                "meanPhaseR": 0.9559518409383277,
+                "navSuccessRate": 1,
+                "softPhaseOkRate": 1,
+                "streamKind": "structured_cyclic",
+                "treeKind": "flat_no_octave_tree",
+                "hostKind": "folded_compact_dna",
+                "clockSyncRate": 1,
+                "treeCoherent": false,
+                "compactionRatio": 18.80891466825322
+              },
+              "unfolded": {
+                "n": 12,
+                "viabilityRate": 1,
+                "meanCoherence": 0.8499999999999998,
+                "benefitRate": 1,
+                "meanWaveL2": 0.0008939940542806352,
+                "meanPhaseR": 0.958414986753143,
+                "navSuccessRate": 1,
+                "softPhaseOkRate": 1,
+                "streamKind": "structured_cyclic",
+                "treeKind": "infinite_octave_holographic_rhyme_tree",
+                "hostKind": "linear_unfolded_dna",
+                "clockSyncRate": 1,
+                "treeCoherent": true,
+                "compactionRatio": 1
+              }
+            }
+          },
+          "interpretation": "Full triadic–polygon–octave–folded-DNA stack outranks unstructured/unclocked/flat/unfolded ablations.",
+          "evidence": "empirically_observed",
+          "data": "ablation_battery"
+        },
+        {
+          "id": "T6",
+          "title": "Full stack produces beneficial outcomes (viability + coherence benefit band)",
+          "pass": true,
+          "detail": {
+            "full": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 1,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0008939940542806352,
+              "meanPhaseR": 0.958414986753143,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_cyclic",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 1,
+              "treeCoherent": true,
+              "compactionRatio": 18.80891466825322
+            },
+            "gateWaveL2Max": 0.05,
+            "gateSyncRMin": 0.95
+          },
+          "interpretation": "Full stack benefitRate=100.0%, viability=100.0%, meanCoherence=1.000.",
+          "evidence": "empirically_observed",
+          "data": "trgm_on_triadic_octave_dna_stack"
+        }
+      ],
+      "n_pass": 6,
+      "n_total": 6,
+      "all_pass": true
+    },
     "experiments": [
       {
         "id": "E1",
@@ -804,6 +1112,212 @@
         },
         "evidence": "empirically_observed",
         "data": "molecular_theater_synthetic_on_hs1"
+      },
+      {
+        "id": "T1",
+        "title": "Intelligently structured three-symbol cyclic input stream is well-formed",
+        "pass": true,
+        "interpretation": "Structured Σ={0,1,2} stream covers all symbols over 3× period-9 cycles (H=1.585).",
+        "detail": {
+          "alphabet": [
+            0,
+            1,
+            2
+          ],
+          "period": 9,
+          "cycles": 3,
+          "length": 27,
+          "counts": [
+            9,
+            9,
+            9
+          ],
+          "entropy": 1.584962500721156,
+          "maxEntropy": 1.584962500721156,
+          "motif": [
+            0,
+            2,
+            2,
+            1,
+            1,
+            1,
+            0,
+            0,
+            2
+          ]
+        },
+        "evidence": "numerically_verified",
+        "data": "synthetic_triadic_stream"
+      },
+      {
+        "id": "T2",
+        "title": "Rotating polygon spin clocks the three-symbol stream",
+        "pass": true,
+        "interpretation": "9-gon spin locks stream symbols to vertices (sync=100.0%).",
+        "detail": {
+          "sides": 9,
+          "clockSyncRate": 1,
+          "nTicks": 27
+        },
+        "evidence": "numerically_verified",
+        "data": "synthetic_polygon_spin"
+      },
+      {
+        "id": "T3",
+        "title": "Infinite Octave recursive holographic-rhyme tree encodes the stream coherently",
+        "pass": true,
+        "interpretation": "Φ_EGS octave tree (7 layers, depth ±3) is coherent under holographic rhyme grammar.",
+        "detail": {
+          "depth": 3,
+          "nLayers": 7,
+          "phiIdentity": true,
+          "shrinkOk": true,
+          "reconstructible": true
+        },
+        "evidence": "numerically_verified",
+        "data": "synthetic_octave_tree"
+      },
+      {
+        "id": "T4",
+        "title": "Folded compact DNA (nucleosome wrap) hosts the tree with compaction > 1",
+        "pass": true,
+        "interpretation": "chr1 folded into 1689709× 147-bp spools (1.65 turns); compaction=18.81.",
+        "detail": {
+          "hostChrom": "chr1",
+          "hostBp": 248387328,
+          "wrapBp": 147,
+          "turns": 1.65,
+          "phiEgs": 1.618033988749895,
+          "windingNearPhi": true,
+          "nSpools": 1689709,
+          "compactionRatio": 18.80891466825322
+        },
+        "evidence": "numerically_verified",
+        "data": "hs1_folded_compact_dna"
+      },
+      {
+        "id": "T5",
+        "title": "Full stack (structured+clocked+tree+folded) beats ablations on coherence architecture",
+        "pass": true,
+        "interpretation": "Full triadic–polygon–octave–folded-DNA stack outranks unstructured/unclocked/flat/unfolded ablations.",
+        "detail": {
+          "beatsUnstructured": true,
+          "beatsUnclocked": true,
+          "beatsFlat": true,
+          "beatsUnfolded": true,
+          "conditions": {
+            "full": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 1,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0008939940542806352,
+              "meanPhaseR": 0.958414986753143,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_cyclic",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 1,
+              "treeCoherent": true,
+              "compactionRatio": 18.80891466825322
+            },
+            "unstructured": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 0.9111111111111113,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0007428322653389129,
+              "meanPhaseR": 0.9561773701082777,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "unstructured_noise",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 0.4074074074074074,
+              "treeCoherent": true,
+              "compactionRatio": 18.80891466825322
+            },
+            "unclocked": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 0.8499999999999998,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0009942904667939922,
+              "meanPhaseR": 0.9594481505415668,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_but_unclocked",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 0,
+              "treeCoherent": true,
+              "compactionRatio": 18.80891466825322
+            },
+            "flat": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 0.6500000000000001,
+              "benefitRate": 0,
+              "meanWaveL2": 0.000770301258131911,
+              "meanPhaseR": 0.9559518409383277,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_cyclic",
+              "treeKind": "flat_no_octave_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 1,
+              "treeCoherent": false,
+              "compactionRatio": 18.80891466825322
+            },
+            "unfolded": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 0.8499999999999998,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0008939940542806352,
+              "meanPhaseR": 0.958414986753143,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_cyclic",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "linear_unfolded_dna",
+              "clockSyncRate": 1,
+              "treeCoherent": true,
+              "compactionRatio": 1
+            }
+          }
+        },
+        "evidence": "empirically_observed",
+        "data": "ablation_battery"
+      },
+      {
+        "id": "T6",
+        "title": "Full stack produces beneficial outcomes (viability + coherence benefit band)",
+        "pass": true,
+        "interpretation": "Full stack benefitRate=100.0%, viability=100.0%, meanCoherence=1.000.",
+        "detail": {
+          "full": {
+            "n": 12,
+            "viabilityRate": 1,
+            "meanCoherence": 1,
+            "benefitRate": 1,
+            "meanWaveL2": 0.0008939940542806352,
+            "meanPhaseR": 0.958414986753143,
+            "navSuccessRate": 1,
+            "softPhaseOkRate": 1,
+            "streamKind": "structured_cyclic",
+            "treeKind": "infinite_octave_holographic_rhyme_tree",
+            "hostKind": "folded_compact_dna",
+            "clockSyncRate": 1,
+            "treeCoherent": true,
+            "compactionRatio": 18.80891466825322
+          },
+          "gateWaveL2Max": 0.05,
+          "gateSyncRMin": 0.95
+        },
+        "evidence": "empirically_observed",
+        "data": "trgm_on_triadic_octave_dna_stack"
       }
     ],
     "syntheticExperiments": [
@@ -1079,8 +1593,216 @@
         "data": "molecular_theater_synthetic_on_hs1"
       }
     ],
-    "n_pass": 10,
-    "n_total": 10,
+    "triadicExperiments": [
+      {
+        "id": "T1",
+        "title": "Intelligently structured three-symbol cyclic input stream is well-formed",
+        "pass": true,
+        "interpretation": "Structured Σ={0,1,2} stream covers all symbols over 3× period-9 cycles (H=1.585).",
+        "detail": {
+          "alphabet": [
+            0,
+            1,
+            2
+          ],
+          "period": 9,
+          "cycles": 3,
+          "length": 27,
+          "counts": [
+            9,
+            9,
+            9
+          ],
+          "entropy": 1.584962500721156,
+          "maxEntropy": 1.584962500721156,
+          "motif": [
+            0,
+            2,
+            2,
+            1,
+            1,
+            1,
+            0,
+            0,
+            2
+          ]
+        },
+        "evidence": "numerically_verified",
+        "data": "synthetic_triadic_stream"
+      },
+      {
+        "id": "T2",
+        "title": "Rotating polygon spin clocks the three-symbol stream",
+        "pass": true,
+        "interpretation": "9-gon spin locks stream symbols to vertices (sync=100.0%).",
+        "detail": {
+          "sides": 9,
+          "clockSyncRate": 1,
+          "nTicks": 27
+        },
+        "evidence": "numerically_verified",
+        "data": "synthetic_polygon_spin"
+      },
+      {
+        "id": "T3",
+        "title": "Infinite Octave recursive holographic-rhyme tree encodes the stream coherently",
+        "pass": true,
+        "interpretation": "Φ_EGS octave tree (7 layers, depth ±3) is coherent under holographic rhyme grammar.",
+        "detail": {
+          "depth": 3,
+          "nLayers": 7,
+          "phiIdentity": true,
+          "shrinkOk": true,
+          "reconstructible": true
+        },
+        "evidence": "numerically_verified",
+        "data": "synthetic_octave_tree"
+      },
+      {
+        "id": "T4",
+        "title": "Folded compact DNA (nucleosome wrap) hosts the tree with compaction > 1",
+        "pass": true,
+        "interpretation": "chr1 folded into 1689709× 147-bp spools (1.65 turns); compaction=18.81.",
+        "detail": {
+          "hostChrom": "chr1",
+          "hostBp": 248387328,
+          "wrapBp": 147,
+          "turns": 1.65,
+          "phiEgs": 1.618033988749895,
+          "windingNearPhi": true,
+          "nSpools": 1689709,
+          "compactionRatio": 18.80891466825322
+        },
+        "evidence": "numerically_verified",
+        "data": "hs1_folded_compact_dna"
+      },
+      {
+        "id": "T5",
+        "title": "Full stack (structured+clocked+tree+folded) beats ablations on coherence architecture",
+        "pass": true,
+        "interpretation": "Full triadic–polygon–octave–folded-DNA stack outranks unstructured/unclocked/flat/unfolded ablations.",
+        "detail": {
+          "beatsUnstructured": true,
+          "beatsUnclocked": true,
+          "beatsFlat": true,
+          "beatsUnfolded": true,
+          "conditions": {
+            "full": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 1,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0008939940542806352,
+              "meanPhaseR": 0.958414986753143,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_cyclic",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 1,
+              "treeCoherent": true,
+              "compactionRatio": 18.80891466825322
+            },
+            "unstructured": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 0.9111111111111113,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0007428322653389129,
+              "meanPhaseR": 0.9561773701082777,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "unstructured_noise",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 0.4074074074074074,
+              "treeCoherent": true,
+              "compactionRatio": 18.80891466825322
+            },
+            "unclocked": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 0.8499999999999998,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0009942904667939922,
+              "meanPhaseR": 0.9594481505415668,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_but_unclocked",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 0,
+              "treeCoherent": true,
+              "compactionRatio": 18.80891466825322
+            },
+            "flat": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 0.6500000000000001,
+              "benefitRate": 0,
+              "meanWaveL2": 0.000770301258131911,
+              "meanPhaseR": 0.9559518409383277,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_cyclic",
+              "treeKind": "flat_no_octave_tree",
+              "hostKind": "folded_compact_dna",
+              "clockSyncRate": 1,
+              "treeCoherent": false,
+              "compactionRatio": 18.80891466825322
+            },
+            "unfolded": {
+              "n": 12,
+              "viabilityRate": 1,
+              "meanCoherence": 0.8499999999999998,
+              "benefitRate": 1,
+              "meanWaveL2": 0.0008939940542806352,
+              "meanPhaseR": 0.958414986753143,
+              "navSuccessRate": 1,
+              "softPhaseOkRate": 1,
+              "streamKind": "structured_cyclic",
+              "treeKind": "infinite_octave_holographic_rhyme_tree",
+              "hostKind": "linear_unfolded_dna",
+              "clockSyncRate": 1,
+              "treeCoherent": true,
+              "compactionRatio": 1
+            }
+          }
+        },
+        "evidence": "empirically_observed",
+        "data": "ablation_battery"
+      },
+      {
+        "id": "T6",
+        "title": "Full stack produces beneficial outcomes (viability + coherence benefit band)",
+        "pass": true,
+        "interpretation": "Full stack benefitRate=100.0%, viability=100.0%, meanCoherence=1.000.",
+        "detail": {
+          "full": {
+            "n": 12,
+            "viabilityRate": 1,
+            "meanCoherence": 1,
+            "benefitRate": 1,
+            "meanWaveL2": 0.0008939940542806352,
+            "meanPhaseR": 0.958414986753143,
+            "navSuccessRate": 1,
+            "softPhaseOkRate": 1,
+            "streamKind": "structured_cyclic",
+            "treeKind": "infinite_octave_holographic_rhyme_tree",
+            "hostKind": "folded_compact_dna",
+            "clockSyncRate": 1,
+            "treeCoherent": true,
+            "compactionRatio": 18.80891466825322
+          },
+          "gateWaveL2Max": 0.05,
+          "gateSyncRMin": 0.95
+        },
+        "evidence": "empirically_observed",
+        "data": "trgm_on_triadic_octave_dna_stack"
+      }
+    ],
+    "n_pass": 16,
+    "n_total": 16,
     "all_pass": true,
     "historical_n_pass": 1,
     "historical_n_total": 3,
@@ -1090,6 +1812,10 @@
     "molecular_n_pass": 5,
     "molecular_n_total": 5,
     "molecular_all_pass": true,
+    "triadic_ran": true,
+    "triadic_n_pass": 6,
+    "triadic_n_total": 6,
+    "triadic_all_pass": true,
     "enginePinRecommended": true
   },
   "dependencyVersions": {

@@ -12,7 +12,7 @@ export const ENGINE_SHELF_SLOT = 50;
 export const EXPEDITION = 'Homeostasis Expedition';
 export const STANDALONE_REPO = 'FractiAI/synthobs-tiny-reality-generation-model';
 export const STUDY_TITLE =
-  'Tiny Reality Generation Model: Wave–Node Homeostasis Validation for Nested Miniature Worlds';
+  'Tiny Reality Generation Model: Triadic–Polygon–Octave Tree on Folded DNA';
 
 export const DIGITAL_SEED = 20261025;
 
@@ -21,8 +21,12 @@ export const NOT_LLM_WORLD_MODEL = true;
 export const NOT_UNIVERSAL_REALITY_ENGINE = true;
 export const SOFT_STORY_EGS_GRAMMAR = true;
 
+/** Primary hypothesis lock (T1–T6 battery). */
+export const PRIMARY_HYPOTHESIS =
+  'An intelligently structured three-symbol cyclic input stream, clocked by rotating polygon spin, fed into an Infinite Octave recursive tree of holographic rhymes, implemented across folded compact DNA molecular structures, forms a coherent structure and produces beneficial outcomes vs unstructured/unclocked/flat/unfolded ablations.';
+
 export const HONESTY =
-  'TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) that execute on a DNA/chromosome molecular theater (B-DNA rise + LC scaffold from public T2T hs1 chrom sizes). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node #49 + chromosomal electrodynamics / DNA lattice grammar. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank) and molecular M1–M5 (hs1+LC) are executed batteries with honest mixed/pass outcomes.';
+  'TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA (hs1 + nucleosome wrap 147 bp / 1.65 turns) is coherent and beneficial. Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Φ_EGS is catalog nesting grammar only. Batteries: E1–E5 synthetic, H1–H3 Movebank (mixed), M1–M5 molecular theater, T1–T6 triadic–octave–DNA primary hypothesis — executed, not fabricated.';
 
 /** Pre-registered hard viability gates (Goldilocks band) — phase excluded by design. */
 export const GATE_WAVE_L2_MAX = 0.05;

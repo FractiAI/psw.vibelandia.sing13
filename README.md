@@ -465,7 +465,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | When Stress Pushes the Field Outside · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | Drawers That Don’t Spill Into Each Other · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Your Basement Stories Still Carry Current · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-tiny-reality-generation-model-2026-10.html`](/interfaces/blog-tiny-reality-generation-model-2026-10.html) | If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tiny-reality-generation-model-2026-10.html`](/interfaces/blog-tiny-reality-generation-model-2026-10.html) | Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09-old.html`](/interfaces/blog-topology-of-the-void-2026-09-old.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three Nested Domes Families Can Walk · Ship blog · SS Vibelandia |

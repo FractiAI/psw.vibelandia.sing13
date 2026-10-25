@@ -1,18 +1,18 @@
-# Tiny Reality Generation Model: Wave–Node Homeostasis Validation for Nested Miniature Worlds
+# Tiny Reality Generation Model: Triadic–Polygon–Octave Tree on Folded DNA
 
 **Document ID:** `WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25`
 **Registry:** `synthobs-tiny-reality-generation-model-2026-10`
 **Expedition:** Homeostasis Expedition
 **ENGINE_SHELF candidate:** #50
 **Seed:** 20261025
-**Generated:** 2026-10-25T19:03:29.971Z
+**Generated:** 2026-10-25T19:11:00.193Z
 
 ## Verdict
 
 | Metric | Value |
 |---|---|
-| Core all pass (E1–E5 + M1–M5) | `true` |
-| Core passed | 10/10 |
+| Core all pass (E1–E5 + M1–M5 + T1–T6) | `true` |
+| Core passed | 16/16 |
 | Foundation Wave–Node | `true` |
 | Held-out viability | 100.0% |
 | Null viability | 0.0% |
@@ -21,8 +21,14 @@
 | Historical passed | 1/3 |
 | Molecular theater ran | `true` |
 | Molecular passed | 5/5 |
+| Triadic–octave–DNA ran | `true` |
+| Triadic–octave–DNA passed | 6/6 |
 | Φ_EGS | 1.618033988749895 |
-| Runtime ms | 1109.9 |
+| Runtime ms | 1108.3 |
+
+## Primary hypothesis
+
+An intelligently structured three-symbol cyclic input stream, clocked by rotating polygon spin, fed into an Infinite Octave recursive tree of holographic rhymes, implemented across folded compact DNA molecular structures, forms a coherent structure and produces beneficial outcomes vs unstructured/unclocked/flat/unfolded ablations.
 
 ## Experiments (synthetic E1–E5)
 
@@ -131,9 +137,60 @@
 - Evidence: empirically_observed
 - Data: molecular_theater_synthetic_on_hs1
 
+## Primary battery T1–T6 (triadic stream × polygon spin × octave tree × folded DNA)
+
+- Host: chr1 (248387328 bp)
+- Polygon sides: 9
+- Octave depth: ±3
+- Nucleosome: 147 bp / 1.65 turns
+- Full-stack benefitRate: 100.0%
+- Full-stack meanCoherence: 1.000
+
+### T1 — Intelligently structured three-symbol cyclic input stream is well-formed
+
+- **Pass:** `true`
+- Structured Σ={0,1,2} stream covers all symbols over 3× period-9 cycles (H=1.585).
+- Evidence: numerically_verified
+- Data: synthetic_triadic_stream
+
+### T2 — Rotating polygon spin clocks the three-symbol stream
+
+- **Pass:** `true`
+- 9-gon spin locks stream symbols to vertices (sync=100.0%).
+- Evidence: numerically_verified
+- Data: synthetic_polygon_spin
+
+### T3 — Infinite Octave recursive holographic-rhyme tree encodes the stream coherently
+
+- **Pass:** `true`
+- Φ_EGS octave tree (7 layers, depth ±3) is coherent under holographic rhyme grammar.
+- Evidence: numerically_verified
+- Data: synthetic_octave_tree
+
+### T4 — Folded compact DNA (nucleosome wrap) hosts the tree with compaction > 1
+
+- **Pass:** `true`
+- chr1 folded into 1689709× 147-bp spools (1.65 turns); compaction=18.81.
+- Evidence: numerically_verified
+- Data: hs1_folded_compact_dna
+
+### T5 — Full stack (structured+clocked+tree+folded) beats ablations on coherence architecture
+
+- **Pass:** `true`
+- Full triadic–polygon–octave–folded-DNA stack outranks unstructured/unclocked/flat/unfolded ablations.
+- Evidence: empirically_observed
+- Data: ablation_battery
+
+### T6 — Full stack produces beneficial outcomes (viability + coherence benefit band)
+
+- **Pass:** `true`
+- Full stack benefitRate=100.0%, viability=100.0%, meanCoherence=1.000.
+- Evidence: empirically_observed
+- Data: trgm_on_triadic_octave_dna_stack
+
 ## Honesty
 
-TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) that execute on a DNA/chromosome molecular theater (B-DNA rise + LC scaffold from public T2T hs1 chrom sizes). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node #49 + chromosomal electrodynamics / DNA lattice grammar. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank) and molecular M1–M5 (hs1+LC) are executed batteries with honest mixed/pass outcomes.
+TRGM tests whether a structured three-symbol cyclic stream, clocked by rotating polygon spin, into an Infinite Octave holographic-rhyme tree on folded compact DNA (hs1 + nucleosome wrap 147 bp / 1.65 turns) is coherent and beneficial. Hard Goldilocks viability = geometry + wave + navigation; phase is a soft steering delta. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Φ_EGS is catalog nesting grammar only. Batteries: E1–E5 synthetic, H1–H3 Movebank (mixed), M1–M5 molecular theater, T1–T6 triadic–octave–DNA primary hypothesis — executed, not fabricated.
 
 Standalone: FractiAI/synthobs-tiny-reality-generation-model
 

@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
-  "suiteId": "synthobs-survival-computing-viral-rna-asi",
+  "suiteId": "synthobs-tiny-reality-generation-model",
   "createRepo": false,
-  "requestedAt": "2026-10-05T18:30:00.000Z",
-  "note": "Standalone created https://github.com/FractiAI/synthobs-survival-computing-viral-rna-asi · createRepo cleared after successful publish"
+  "requestedAt": "2026-10-25T19:20:29.000Z",
+  "note": "Republish TRGM after triadic–polygon–octave–folded-DNA primary realignment (T1–T6) so standalone docs/paper match monorepo main"
 }

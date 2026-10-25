@@ -24,6 +24,8 @@ on:
           - synthobs-human-omniversal-reality-bridge
           - synthobs-archetypal-grand-story
           - synthobs-survival-computing-viral-rna-asi
+          - synthobs-tiny-reality-generation-model
+          - synthobs-wave-node-mathematics
       create_repo:
         description: 'Create empty FractiAI repo if missing (needs org PAT)'
         required: false

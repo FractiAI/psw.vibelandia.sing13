@@ -13,6 +13,7 @@ describe('lattice-collaborate-dms', () => {
   });
 
   it('maps creator and Daniel emails to seats', () => {
+    // Guest seat requires a non-expired grant in data/lattice-access.json.
     expect(resolveCollabPeerId('valetpru@gmail.com')).toBe('peer_valet_pru');
     expect(resolveCollabPeerId('espressolico@gmail.com')).toBe('peer_valet_pru');
     expect(

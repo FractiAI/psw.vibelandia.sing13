@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
-  "suiteId": "synthobs-tiny-reality-generation-model",
-  "createRepo": false,
-  "requestedAt": "2026-10-25T20:14:04.000Z",
-  "note": "Republish TRGM after wave/node/fq genetic catalog C1\u2013C3"
+  "suiteId": "synthobs-trgm-predictive-reality-catalog",
+  "createRepo": true,
+  "requestedAt": "2026-10-25T20:36:00.000Z",
+  "note": "Create + publish TRGM #51 predictive reality catalog standalone mirror"
 }

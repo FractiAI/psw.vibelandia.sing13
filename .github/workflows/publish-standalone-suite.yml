@@ -24,6 +24,7 @@ on:
           - synthobs-human-omniversal-reality-bridge
           - synthobs-archetypal-grand-story
           - synthobs-survival-computing-viral-rna-asi
+          - synthobs-trgm-predictive-reality-catalog
           - synthobs-tiny-reality-generation-model
           - synthobs-wave-node-mathematics
       create_repo:

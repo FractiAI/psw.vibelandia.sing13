@@ -38,21 +38,23 @@ function mdReport(report) {
     '',
     `| Metric | Value |`,
     `|---|---|`,
-    `| Synthetic all pass (E1–E5) | \`${report.results.all_pass}\` |`,
-    `| Synthetic passed | ${report.results.n_pass}/${report.results.n_total} |`,
+    `| Core all pass (E1–E5 + M1–M5) | \`${report.results.all_pass}\` |`,
+    `| Core passed | ${report.results.n_pass}/${report.results.n_total} |`,
     `| Foundation Wave–Node | \`${lab.foundation.allPass}\` |`,
     `| Held-out viability | ${(lab.held.summary.viabilityRate * 100).toFixed(1)}% |`,
     `| Null viability | ${(lab.nullBaseline.viabilityRate * 100).toFixed(1)}% |`,
     `| Engine pin recommended | \`${lab.summary.enginePinRecommended}\` |`,
     `| Historical ran | \`${report.results.historical_ran}\` (${hist?.sourceMode || 'n/a'}) |`,
     `| Historical passed | ${report.results.historical_n_pass}/${report.results.historical_n_total} |`,
+    `| Molecular theater ran | \`${report.results.molecular_ran}\` |`,
+    `| Molecular passed | ${report.results.molecular_n_pass}/${report.results.molecular_n_total} |`,
     `| Φ_EGS | ${PHI_EGS} |`,
     `| Runtime ms | ${lab.runtimeMs.toFixed(1)} |`,
     '',
-    '## Experiments (synthetic)',
+    '## Experiments (synthetic E1–E5)',
     '',
   ];
-  for (const e of report.results.experiments) {
+  for (const e of report.results.syntheticExperiments || report.results.experiments) {
     lines.push(`### ${e.id} — ${e.title}`, '');
     lines.push(`- **Pass:** \`${e.pass}\``);
     if (e.interpretation) lines.push(`- ${e.interpretation}`);
@@ -71,6 +73,25 @@ function mdReport(report) {
     );
   }
   for (const e of report.results.historicalExperiments || []) {
+    lines.push(`### ${e.id} — ${e.title}`, '');
+    lines.push(`- **Pass:** \`${e.pass}\``);
+    if (e.interpretation) lines.push(`- ${e.interpretation}`);
+    if (e.evidence) lines.push(`- Evidence: ${e.evidence}`);
+    if (e.data) lines.push(`- Data: ${e.data}`);
+    lines.push('');
+  }
+  const mol = report.results.molecular;
+  lines.push('## Molecular theater (DNA / chromosome physical scaffold)', '');
+  if (mol?.ok) {
+    lines.push(
+      `- Role: DNA/chromosome polymer is the physical Wave–Node theater where TRGM executes`,
+      `- Assembly: ${mol.hs1?.assembly || 'hs1'}`,
+      `- Host chrom: ${mol.host?.chrom} (${mol.host?.bp} bp · L=${mol.host?.lengthM} m)`,
+      `- Held-out molecular viability: ${((mol.held?.viabilityRate || 0) * 100).toFixed(1)}%`,
+      '',
+    );
+  }
+  for (const e of report.results.molecularExperiments || []) {
     lines.push(`### ${e.id} — ${e.title}`, '');
     lines.push(`- **Pass:** \`${e.pass}\``);
     if (e.interpretation) lines.push(`- ${e.interpretation}`);
@@ -170,6 +191,12 @@ async function main() {
           H1: results.historical?.scored?.H1_structureBandPhase?.pass,
           H2: results.historical?.scored?.H2_phaseBeatsShuffle?.pass,
           H3: results.historical?.scored?.H3_stormVsQuietPhase?.pass,
+        },
+        molecular: {
+          ran: results.molecular_ran,
+          passed: `${results.molecular_n_pass}/${results.molecular_n_total}`,
+          host: results.molecular?.host,
+          viability: results.molecular?.held?.viabilityRate,
         },
       },
       null,

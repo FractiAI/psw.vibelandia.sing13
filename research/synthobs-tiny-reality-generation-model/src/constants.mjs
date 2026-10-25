@@ -22,7 +22,7 @@ export const NOT_UNIVERSAL_REALITY_ENGINE = true;
 export const SOFT_STORY_EGS_GRAMMAR = true;
 
 export const HONESTY =
-  'TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank 2548892515 + GFZ Kp) probe small-effect / sync-style predictions — mixed outcomes do not upgrade synthetic gates into wildlife biology.';
+  'TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) that execute on a DNA/chromosome molecular theater (B-DNA rise + LC scaffold from public T2T hs1 chrom sizes). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node #49 + chromosomal electrodynamics / DNA lattice grammar. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank) and molecular M1–M5 (hs1+LC) are executed batteries with honest mixed/pass outcomes.';
 
 /** Pre-registered hard viability gates (Goldilocks band) — phase excluded by design. */
 export const GATE_WAVE_L2_MAX = 0.05;

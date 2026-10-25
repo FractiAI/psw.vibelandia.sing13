@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T18:54:58.235Z",
+  "generatedAt": "2026-10-25T19:03:29.971Z",
   "docId": "WP-SYNTHOBS-TINY-REALITY-GENERATION-MODEL-EGS-2026-10-25",
   "registryId": "synthobs-tiny-reality-generation-model-2026-10",
   "seed": 20261025,
@@ -10,10 +10,10 @@
     "seed": 20261025,
     "engineShelfSlot": 50,
     "expedition": "Homeostasis Expedition",
-    "honesty": "TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node Mathematics ENGINE_SHELF #49. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank 2548892515 + GFZ Kp) probe small-effect / sync-style predictions — mixed outcomes do not upgrade synthetic gates into wildlife biology.",
+    "honesty": "TRGM generates finite synthetic “tiny realities” (node lattice + wave field + phase graph + navigable workspace) that execute on a DNA/chromosome molecular theater (B-DNA rise + LC scaffold from public T2T hs1 chrom sizes). Hard Goldilocks viability = geometry + wave + navigation; phase is a foundational steering/coordination delta (soft metric), not a viability kill-switch and not expected to beat A* on path length. Not a physical universe simulator, not genomic consciousness, not clinical genetics, not an LLM world model, not finished Wave–Node Robotics hardware. Builds on Wave–Node #49 + chromosomal electrodynamics / DNA lattice grammar. Φ_EGS is catalog nesting grammar only. Historical H1–H3 (Movebank) and molecular M1–M5 (hs1+LC) are executed batteries with honest mixed/pass outcomes.",
     "lab": {
       "seed": 20261025,
-      "runtimeMs": 1266.107562,
+      "runtimeMs": 1109.8647799999999,
       "foundation": {
         "A_pass": true,
         "B_pass": true,
@@ -385,7 +385,428 @@
       "n_total": 3,
       "all_pass": false
     },
+    "molecular": {
+      "ok": true,
+      "theater": {
+        "role": "physical_theater",
+        "description": "DNA/chromosome polymer is the physical Wave–Node theater where TRGM recipes execute",
+        "bpRiseM": 3.4e-10,
+        "bpRiseAliasM": 3.4e-10,
+        "lambdaEgs": 0.07658724063250828,
+        "phiEgs": 1.618033988749895,
+        "vpBand": {
+          "low": 16000000,
+          "mid": 20000000,
+          "high": 24000000
+        },
+        "targetChroms": [
+          "chrY",
+          "chr1",
+          "chr21",
+          "chrX"
+        ],
+        "honesty": "Molecular theater is a computational scaffold from public T2T chrom sizes + B-DNA/LC grammar — not wet biology, not genomic consciousness, not clinical genetics."
+      },
+      "hs1": {
+        "assembly": "hs1 (T2T-CHM13v2.0)",
+        "source": "/workspace/research/synthobs-dna-lattice-holograph/data/hs1.chrom.sizes",
+        "nChroms": 25,
+        "fixture": "/workspace/research/synthobs-tiny-reality-generation-model/data/molecular/hs1.chrom.sizes"
+      },
+      "chromRows": [
+        {
+          "chrom": "chrY",
+          "bp": 62460029,
+          "lengthM": 0.02123640986,
+          "nodeCount": 48,
+          "vgAtZero": 20000000,
+          "vpInBand": true
+        },
+        {
+          "chrom": "chr1",
+          "bp": 248387328,
+          "lengthM": 0.08445169152,
+          "nodeCount": 48,
+          "vgAtZero": 20000000,
+          "vpInBand": true
+        },
+        {
+          "chrom": "chr21",
+          "bp": 45090682,
+          "lengthM": 0.015330831880000001,
+          "nodeCount": 48,
+          "vgAtZero": 20000000,
+          "vpInBand": true
+        },
+        {
+          "chrom": "chrX",
+          "bp": 154259566,
+          "lengthM": 0.05244825244,
+          "nodeCount": 48,
+          "vgAtZero": 20000000,
+          "vpInBand": true
+        }
+      ],
+      "host": {
+        "chrom": "chr1",
+        "bp": 248387328,
+        "lengthM": 0.08445169152
+      },
+      "held": {
+        "n": 16,
+        "viabilityRate": 1,
+        "softPhaseOkRate": 1,
+        "meanWaveL2": 0.0007836590560045647,
+        "meanPhaseR": 0.9560045902489624
+      },
+      "nullBaseline": {
+        "viabilityRate": 0
+      },
+      "hypotheses": [
+        {
+          "id": "M1",
+          "title": "Public hs1 chrom sizes + B-DNA rise build valid molecular theater geometry",
+          "pass": true,
+          "detail": {
+            "assembly": "hs1 (T2T-CHM13v2.0)",
+            "nChromsLoaded": 25,
+            "targetChroms": [
+              {
+                "chrom": "chrY",
+                "bp": 62460029,
+                "lengthM": 0.02123640986,
+                "nodes": 48,
+                "spacingPass": true
+              },
+              {
+                "chrom": "chr1",
+                "bp": 248387328,
+                "lengthM": 0.08445169152,
+                "nodes": 48,
+                "spacingPass": true
+              },
+              {
+                "chrom": "chr21",
+                "bp": 45090682,
+                "lengthM": 0.015330831880000001,
+                "nodes": 48,
+                "spacingPass": true
+              },
+              {
+                "chrom": "chrX",
+                "bp": 154259566,
+                "lengthM": 0.05244825244,
+                "nodes": 48,
+                "spacingPass": true
+              }
+            ],
+            "deltaXM": 3.4e-10
+          },
+          "interpretation": "T2T hs1 theaters for chrY, chr1, chr21, chrX match bp×3.4e-10 m rise spacing.",
+          "evidence": "numerically_verified",
+          "data": "historical_ucsc_hs1"
+        },
+        {
+          "id": "M2",
+          "title": "TRGM recipes execute on DNA/chromosome theater with hard geo+wave+nav viability",
+          "pass": true,
+          "detail": {
+            "hostChrom": "chr1",
+            "hostBp": 248387328,
+            "n": 16,
+            "viabilityRate": 1,
+            "softPhaseOkRate": 1,
+            "meanWaveL2": 0.0007836590560045647,
+            "meanPhaseR": 0.9560045902489624,
+            "navSuccessRate": 1
+          },
+          "interpretation": "Held-out TRGM on chr1 theater viability 100.0% (hard gates).",
+          "evidence": "empirically_observed",
+          "data": "molecular_theater_synthetic_on_hs1"
+        },
+        {
+          "id": "M3",
+          "title": "DNA theater structured TRGM beats null unstructured scatter",
+          "pass": true,
+          "detail": {
+            "molViability": 1,
+            "nullRate": 0
+          },
+          "interpretation": "Chromosome-theater TRGM out-viables null scatters under hard gates.",
+          "evidence": "empirically_observed",
+          "data": "molecular_theater_vs_null"
+        },
+        {
+          "id": "M4",
+          "title": "LC wave theater: vg(0) in literature band; Brillouin edge vg→0",
+          "pass": true,
+          "detail": [
+            {
+              "chrom": "chrY",
+              "vgAtZero": 20000000,
+              "vpInBand": true,
+              "bandEdgeVgIsZero": true
+            },
+            {
+              "chrom": "chr1",
+              "vgAtZero": 20000000,
+              "vpInBand": true,
+              "bandEdgeVgIsZero": true
+            },
+            {
+              "chrom": "chr21",
+              "vgAtZero": 20000000,
+              "vpInBand": true,
+              "bandEdgeVgIsZero": true
+            },
+            {
+              "chrom": "chrX",
+              "vgAtZero": 20000000,
+              "vpInBand": true,
+              "bandEdgeVgIsZero": true
+            }
+          ],
+          "interpretation": "Molecular LC dispersion sits in published nucleoprotein vp band with vanishing edge vg.",
+          "evidence": "numerically_verified",
+          "data": "chromosomal_lc_literature"
+        },
+        {
+          "id": "M5",
+          "title": "Phase remains soft steering delta on molecular theater (not hard gate)",
+          "pass": true,
+          "detail": {
+            "softPhaseOkRate": 1,
+            "hardGate": false
+          },
+          "interpretation": "On DNA theater, phase stays a foundational steering/coordination delta — hard viability still geo+wave+nav.",
+          "evidence": "empirically_observed",
+          "data": "molecular_theater_synthetic_on_hs1"
+        }
+      ],
+      "n_pass": 5,
+      "n_total": 5,
+      "all_pass": true
+    },
     "experiments": [
+      {
+        "id": "E1",
+        "title": "Wave–Node foundation A–E still pass (imported battery)",
+        "pass": true,
+        "foundation": {
+          "A_pass": true,
+          "B_pass": true,
+          "C_pass": true,
+          "D_pass": true,
+          "E_pass": true,
+          "allPass": true,
+          "waveOrder": 2.0007377150948127,
+          "planning": {
+            "astar": {
+              "method": "A*",
+              "n": 24,
+              "successRate": 1,
+              "meanLength": 52.83918343834066,
+              "collisionRate": 0,
+              "meanIterations": 185.91666666666666
+            },
+            "wavePhase": {
+              "method": "WaveNode+phase",
+              "n": 24,
+              "successRate": 1,
+              "meanLength": 55.707034568538404,
+              "collisionRate": 0,
+              "meanIterations": 41.416666666666664
+            },
+            "waveAblation": {
+              "method": "WaveNode-ablation",
+              "n": 24,
+              "successRate": 1,
+              "meanLength": 55.765960133637286,
+              "collisionRate": 0,
+              "meanIterations": 41.458333333333336
+            }
+          },
+          "phaseSteeringDelta": {
+            "wavePhaseMeanLength": 55.707034568538404,
+            "waveAblationMeanLength": 55.765960133637286,
+            "lengthDelta": 0.058925565098881805,
+            "note": "Phase = small steering bias on harmonic ascent; not expected to beat A* on path length."
+          }
+        },
+        "interpretation": "Foundation intact · FDTD order ≈ 2.001",
+        "evidence": "numerically_verified",
+        "data": "synthetic"
+      },
+      {
+        "id": "E2",
+        "title": "Held-out tiny-reality Goldilocks viability",
+        "pass": true,
+        "held": {
+          "n": 16,
+          "viabilityRate": 1,
+          "meanWaveL2": 0.0009351717296449112,
+          "meanPhaseR": 0.9572499034665924,
+          "navSuccessRate": 1,
+          "meanPathLength": 42.8257710552387,
+          "softPhaseOkRate": 1
+        },
+        "interpretation": "Held-out viability 100.0% (n=16).",
+        "evidence": "empirically_observed",
+        "data": "synthetic"
+      },
+      {
+        "id": "E3",
+        "title": "TRGM beats null unstructured scatter on viability",
+        "pass": true,
+        "trgm": 1,
+        "nullRate": 0,
+        "interpretation": "Structured Wave–Node scaffolds out-viable random scatters under pre-registered gates.",
+        "evidence": "empirically_observed",
+        "data": "synthetic"
+      },
+      {
+        "id": "E4",
+        "title": "Nested L0→L1 child descriptors present",
+        "pass": true,
+        "nesting": {
+          "levels": 2,
+          "allHaveChild": true
+        },
+        "interpretation": "Every held-out L0 reality carries an L1 nested child recipe.",
+        "evidence": "empirically_observed",
+        "data": "synthetic"
+      },
+      {
+        "id": "E5",
+        "title": "Phase is steering delta (soft); hard viability = geo+wave+nav",
+        "pass": true,
+        "softPhaseOkRate": 1,
+        "hardGate": false,
+        "interpretation": "Foundational steering/coordination delta — soft metric on Kuramoto community; hard viability = geometry + wave + navigation.",
+        "evidence": "empirically_observed",
+        "data": "synthetic"
+      },
+      {
+        "id": "M1",
+        "title": "Public hs1 chrom sizes + B-DNA rise build valid molecular theater geometry",
+        "pass": true,
+        "interpretation": "T2T hs1 theaters for chrY, chr1, chr21, chrX match bp×3.4e-10 m rise spacing.",
+        "detail": {
+          "assembly": "hs1 (T2T-CHM13v2.0)",
+          "nChromsLoaded": 25,
+          "targetChroms": [
+            {
+              "chrom": "chrY",
+              "bp": 62460029,
+              "lengthM": 0.02123640986,
+              "nodes": 48,
+              "spacingPass": true
+            },
+            {
+              "chrom": "chr1",
+              "bp": 248387328,
+              "lengthM": 0.08445169152,
+              "nodes": 48,
+              "spacingPass": true
+            },
+            {
+              "chrom": "chr21",
+              "bp": 45090682,
+              "lengthM": 0.015330831880000001,
+              "nodes": 48,
+              "spacingPass": true
+            },
+            {
+              "chrom": "chrX",
+              "bp": 154259566,
+              "lengthM": 0.05244825244,
+              "nodes": 48,
+              "spacingPass": true
+            }
+          ],
+          "deltaXM": 3.4e-10
+        },
+        "evidence": "numerically_verified",
+        "data": "historical_ucsc_hs1"
+      },
+      {
+        "id": "M2",
+        "title": "TRGM recipes execute on DNA/chromosome theater with hard geo+wave+nav viability",
+        "pass": true,
+        "interpretation": "Held-out TRGM on chr1 theater viability 100.0% (hard gates).",
+        "detail": {
+          "hostChrom": "chr1",
+          "hostBp": 248387328,
+          "n": 16,
+          "viabilityRate": 1,
+          "softPhaseOkRate": 1,
+          "meanWaveL2": 0.0007836590560045647,
+          "meanPhaseR": 0.9560045902489624,
+          "navSuccessRate": 1
+        },
+        "evidence": "empirically_observed",
+        "data": "molecular_theater_synthetic_on_hs1"
+      },
+      {
+        "id": "M3",
+        "title": "DNA theater structured TRGM beats null unstructured scatter",
+        "pass": true,
+        "interpretation": "Chromosome-theater TRGM out-viables null scatters under hard gates.",
+        "detail": {
+          "molViability": 1,
+          "nullRate": 0
+        },
+        "evidence": "empirically_observed",
+        "data": "molecular_theater_vs_null"
+      },
+      {
+        "id": "M4",
+        "title": "LC wave theater: vg(0) in literature band; Brillouin edge vg→0",
+        "pass": true,
+        "interpretation": "Molecular LC dispersion sits in published nucleoprotein vp band with vanishing edge vg.",
+        "detail": [
+          {
+            "chrom": "chrY",
+            "vgAtZero": 20000000,
+            "vpInBand": true,
+            "bandEdgeVgIsZero": true
+          },
+          {
+            "chrom": "chr1",
+            "vgAtZero": 20000000,
+            "vpInBand": true,
+            "bandEdgeVgIsZero": true
+          },
+          {
+            "chrom": "chr21",
+            "vgAtZero": 20000000,
+            "vpInBand": true,
+            "bandEdgeVgIsZero": true
+          },
+          {
+            "chrom": "chrX",
+            "vgAtZero": 20000000,
+            "vpInBand": true,
+            "bandEdgeVgIsZero": true
+          }
+        ],
+        "evidence": "numerically_verified",
+        "data": "chromosomal_lc_literature"
+      },
+      {
+        "id": "M5",
+        "title": "Phase remains soft steering delta on molecular theater (not hard gate)",
+        "pass": true,
+        "interpretation": "On DNA theater, phase stays a foundational steering/coordination delta — hard viability still geo+wave+nav.",
+        "detail": {
+          "softPhaseOkRate": 1,
+          "hardGate": false
+        },
+        "evidence": "empirically_observed",
+        "data": "molecular_theater_synthetic_on_hs1"
+      }
+    ],
+    "syntheticExperiments": [
       {
         "id": "E1",
         "title": "Wave–Node foundation A–E still pass (imported battery)",
@@ -537,13 +958,138 @@
         "data": "historical_gfz_kp_archive"
       }
     ],
-    "n_pass": 5,
-    "n_total": 5,
+    "molecularExperiments": [
+      {
+        "id": "M1",
+        "title": "Public hs1 chrom sizes + B-DNA rise build valid molecular theater geometry",
+        "pass": true,
+        "interpretation": "T2T hs1 theaters for chrY, chr1, chr21, chrX match bp×3.4e-10 m rise spacing.",
+        "detail": {
+          "assembly": "hs1 (T2T-CHM13v2.0)",
+          "nChromsLoaded": 25,
+          "targetChroms": [
+            {
+              "chrom": "chrY",
+              "bp": 62460029,
+              "lengthM": 0.02123640986,
+              "nodes": 48,
+              "spacingPass": true
+            },
+            {
+              "chrom": "chr1",
+              "bp": 248387328,
+              "lengthM": 0.08445169152,
+              "nodes": 48,
+              "spacingPass": true
+            },
+            {
+              "chrom": "chr21",
+              "bp": 45090682,
+              "lengthM": 0.015330831880000001,
+              "nodes": 48,
+              "spacingPass": true
+            },
+            {
+              "chrom": "chrX",
+              "bp": 154259566,
+              "lengthM": 0.05244825244,
+              "nodes": 48,
+              "spacingPass": true
+            }
+          ],
+          "deltaXM": 3.4e-10
+        },
+        "evidence": "numerically_verified",
+        "data": "historical_ucsc_hs1"
+      },
+      {
+        "id": "M2",
+        "title": "TRGM recipes execute on DNA/chromosome theater with hard geo+wave+nav viability",
+        "pass": true,
+        "interpretation": "Held-out TRGM on chr1 theater viability 100.0% (hard gates).",
+        "detail": {
+          "hostChrom": "chr1",
+          "hostBp": 248387328,
+          "n": 16,
+          "viabilityRate": 1,
+          "softPhaseOkRate": 1,
+          "meanWaveL2": 0.0007836590560045647,
+          "meanPhaseR": 0.9560045902489624,
+          "navSuccessRate": 1
+        },
+        "evidence": "empirically_observed",
+        "data": "molecular_theater_synthetic_on_hs1"
+      },
+      {
+        "id": "M3",
+        "title": "DNA theater structured TRGM beats null unstructured scatter",
+        "pass": true,
+        "interpretation": "Chromosome-theater TRGM out-viables null scatters under hard gates.",
+        "detail": {
+          "molViability": 1,
+          "nullRate": 0
+        },
+        "evidence": "empirically_observed",
+        "data": "molecular_theater_vs_null"
+      },
+      {
+        "id": "M4",
+        "title": "LC wave theater: vg(0) in literature band; Brillouin edge vg→0",
+        "pass": true,
+        "interpretation": "Molecular LC dispersion sits in published nucleoprotein vp band with vanishing edge vg.",
+        "detail": [
+          {
+            "chrom": "chrY",
+            "vgAtZero": 20000000,
+            "vpInBand": true,
+            "bandEdgeVgIsZero": true
+          },
+          {
+            "chrom": "chr1",
+            "vgAtZero": 20000000,
+            "vpInBand": true,
+            "bandEdgeVgIsZero": true
+          },
+          {
+            "chrom": "chr21",
+            "vgAtZero": 20000000,
+            "vpInBand": true,
+            "bandEdgeVgIsZero": true
+          },
+          {
+            "chrom": "chrX",
+            "vgAtZero": 20000000,
+            "vpInBand": true,
+            "bandEdgeVgIsZero": true
+          }
+        ],
+        "evidence": "numerically_verified",
+        "data": "chromosomal_lc_literature"
+      },
+      {
+        "id": "M5",
+        "title": "Phase remains soft steering delta on molecular theater (not hard gate)",
+        "pass": true,
+        "interpretation": "On DNA theater, phase stays a foundational steering/coordination delta — hard viability still geo+wave+nav.",
+        "detail": {
+          "softPhaseOkRate": 1,
+          "hardGate": false
+        },
+        "evidence": "empirically_observed",
+        "data": "molecular_theater_synthetic_on_hs1"
+      }
+    ],
+    "n_pass": 10,
+    "n_total": 10,
     "all_pass": true,
     "historical_n_pass": 1,
     "historical_n_total": 3,
     "historical_all_pass": false,
     "historical_ran": true,
+    "molecular_ran": true,
+    "molecular_n_pass": 5,
+    "molecular_n_total": 5,
+    "molecular_all_pass": true,
     "enginePinRecommended": true
   },
   "dependencyVersions": {

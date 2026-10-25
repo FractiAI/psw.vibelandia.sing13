@@ -11,8 +11,8 @@
 | **Standalone** | [`FractiAI/synthobs-tiny-reality-generation-model`](https://github.com/FractiAI/synthobs-tiny-reality-generation-model) |
 | **Ship blog** | `/ship-blog/tiny-reality-generation-model` |
 | **Journey** | `/journey/homeostasis-expedition` |
-| **Engine role** | Infinite Octaves `ENGINE_SHELF` companion **#50** — TRGM viability lab on Wave–Node scaffolds · **not** physical universe sim · **not** LLM world model · **not** robot hardware |
-| **Depends on** | Wave–Node Mathematics · ENGINE_SHELF **#49** |
+| **Engine role** | Infinite Octaves `ENGINE_SHELF` companion **#50** — TRGM viability lab on Wave–Node scaffolds executing in a DNA/chromosome molecular theater · **not** physical universe sim · **not** genomic consciousness · **not** LLM world model · **not** robot hardware |
+| **Depends on** | Wave–Node Mathematics · ENGINE_SHELF **#49** · chromosomal electrodynamics / DNA lattice grammar |
 | **Seed** | `20261025` |
 
 ---
@@ -24,6 +24,7 @@
 | **Foundation** | Imported Wave–Node A–E battery still passes | New PDE theory beyond #49 |
 | **Empirically observed** | Held-out TRGM viability **100%** (n=16) vs null **0%** | Physical world generation |
 | **Empirically observed** | Phase = soft steering delta; hard viability = geo+wave+nav | Universal Goldilocks law |
+| **Empirically observed** | TRGM executes on DNA/chr theater (hs1 + B-DNA/LC); M1–M5 **5/5** | Wet-lab chromosome proof · clinical genetics |
 | **Hypothesized** | Useful HFG ↔ TRGM nesting for expedition charts | Validated multi-robot embodiment |
 | **Φ_EGS** | Catalog nesting grammar | Physical constant replacement |
 
@@ -37,23 +38,23 @@
 
 ## Abstract
 
-**Question.** Can a Tiny Reality Generation Model (TRGM) — finite Wave–Node scaffolds with lattice geometry, 1D wave probes, phase communities, and navigable maps — pass pre-registered Goldilocks/homeostasis gates more often than an unstructured null generator, while preserving nested L0→L1 recipes?
+**Question.** Can a Tiny Reality Generation Model (TRGM) — finite Wave–Node scaffolds with lattice geometry, 1D wave probes, soft phase steering, and navigable maps — pass pre-registered Goldilocks/homeostasis gates more often than an unstructured null generator, while executing on a DNA/chromosome **molecular theater** (public T2T hs1 lengths + B-DNA/LC scaffold) and preserving nested L0→L1 recipes?
 
-**Methods.** Node.js suite reusing Wave–Node Mathematics (#49). Pre-registered gates: wave \(L_2\le 0.05\), Kuramoto \(r\ge 0.95\) on complete coupling, A* reachability. Train n=8 (exploratory); held-out n=16; null scatter n=16; nesting depth 2. Seed `20261025`.
+**Methods.** Node.js suite reusing Wave–Node Mathematics (#49), chromosomal electrodynamics LC grammar, and offline UCSC hs1 chrom.sizes. Hard gates: geometry + wave \(L_2\le 0.05\) + A* reachability. Phase = soft steering delta. Molecular theater M1–M5 on chrY/chr1/chr21/chrX; host execution on chr1. Historical H1–H3 Movebank+Kp retained. Seed `20261025`.
 
-**Findings (executed).** Foundation Wave–Node A–E **pass**. Held-out TRGM viability **16/16 (100%)**; null viability **0/16**; nested child descriptors present on all L0 realities; mean held-out wave \(L_2\approx 9.35\times10^{-4}\); mean phase \(r\approx 0.957\); navigation success **100%**.
+**Findings (executed).** Foundation Wave–Node A–E **pass**. Held-out TRGM viability **16/16 (100%)**; null **0/16**; molecular theater **M1–M5 5/5** (chr1 viability 100%); historical **1/3** (H3 only). Phase soft; hard viability excludes phase by design.
 
-**Limitation.** Synthetic miniature worlds only — not cosmology, not LLM world models, not hardware robotics. Phase = soft steering/coordination metric (complete-graph Kuramoto; ring splay documented); hard viability excludes phase by design.
+**Limitation.** Computational molecular theater from public chrom sizes — not wet biology, not genomic consciousness, not clinical genetics, not cosmology, not hardware robotics.
 
-**Keywords:** Tiny Reality Generation Model; Wave–Node; homeostasis; Goldilocks; Kuramoto; FDTD; nested generation; Homeostasis Expedition.
+**Keywords:** Tiny Reality Generation Model; molecular theater; DNA; chromosome; Wave–Node; homeostasis; Goldilocks; Homeostasis Expedition.
 
 ---
 
 ## 1. Introduction
 
-Homeostasis Expedition asks how systems stay viable under nested constraints. TRGM proposes a **generator** of miniature computational “realities”: each instance is a Wave–Node bundle (nodes, edges, wave probe, phase community, obstacle map). Viability is a multi-objective Goldilocks band — not a single loss.
+Homeostasis Expedition asks how systems stay viable under nested constraints. TRGM proposes a **generator** of miniature computational “realities”: each instance is a Wave–Node bundle (nodes, edges, wave probe, soft phase steering, obstacle map) that **executes on a DNA/chromosome molecular theater** — the polymer scaffold is the physical stage; the generator is the play.
 
-Central question: do structured TRGM recipes beat null scatters under gates fixed **before** held-out scoring?
+Central questions: (1) do structured TRGM recipes beat null scatters under gates fixed **before** held-out scoring? (2) does that generator remain viable when embedded on a public hs1 chromosome + B-DNA/LC theater?
 
 ---
 
@@ -62,8 +63,9 @@ Central question: do structured TRGM recipes beat null scatters under gates fixe
 1. Executable TRGM generator + evaluator on seed `20261025`.  
 2. Empirical held-out viability vs null.  
 3. Nesting L0→L1 recipe check.  
-4. Explicit dependence on Wave–Node #49 foundation battery.  
-5. ENGINE_SHELF #50 pin after validation.
+4. **Molecular theater:** DNA/chromosome as physical Wave–Node stage (hs1 + B-DNA rise + LC); M1–M5 executed.  
+5. Explicit dependence on Wave–Node #49 + chromosomal/DNA lattice grammar.  
+6. ENGINE_SHELF #50 pin after validation.
 
 ---
 
@@ -71,19 +73,22 @@ Central question: do structured TRGM recipes beat null scatters under gates fixe
 
 | Layer | Role |
 |-------|------|
-| Recipe | Seeded parameters (lattice, oscillators, wave, map) |
-| Instantiation | Nodes / edges / fields / obstacles |
-| Gates | Wave accuracy · phase sync · navigability · geometry |
+| **Molecular theater** | DNA/chromosome polymer (bp × 0.34 nm) + LC wave params — physical stage |
+| Recipe | Seeded TRGM parameters (lattice, oscillators, wave, map) |
+| Instantiation | Nodes / edges / fields / obstacles **embedded on theater** |
+| Hard gates | Geometry · wave accuracy · navigability |
+| Soft phase | Steering/coordination delta (not kill-switch) |
 | Nesting | Child recipe at L1 |
-| Null | Unstructured point scatter (no lattice/ring scaffold) |
+| Null | Unstructured point scatter (no DNA theater / lattice scaffold) |
 
 ---
 
 ## 4. Methods
 
-- **Reuse:** `research/synthobs-wave-node-mathematics/src/computational-lab.mjs` for foundation A–E and lattice/circle helpers.  
-- **Phase community:** complete-graph Kuramoto RK4 (ring splay documented as failure mode for random init).  
-- **Gates:** fixed in `constants.mjs` before held-out scoring.  
+- **Reuse:** Wave–Node #49 lab; chromosomal electrodynamics (`DELTA_X_M`, LC, dispersion); DNA lattice (`BP_RISE_M`, offline `hs1.chrom.sizes`).  
+- **Molecular theater:** coarse polymer nodes along stretched chromosome; TRGM recipes embedded on chr1 for held-out M2.  
+- **Phase community:** complete-graph Kuramoto RK4 as soft steering metric.  
+- **Gates:** hard geo+wave+nav fixed before scoring; phase soft.  
 - **Runner:** `npm run research:synthobs-tiny-reality-generation-model`.
 
 ---
@@ -118,6 +123,20 @@ Hard Goldilocks viability = **geometry + wave + navigation**. Phase is a **found
 
 Figure: `figures/fig_viability.svg` (TRGM vs Null; phase soft-reported).
 
+### 5.6 Molecular theater (DNA / chromosome) — M1–M5
+
+**Physical stage:** public UCSC hs1 (T2T-CHM13v2.0) chrom sizes · B-DNA rise \(0.34\,\mathrm{nm/bp}\) · LC dispersion with \(v_g(0)\) in published nucleoprotein band.
+
+| ID | Result |
+|----|--------|
+| **M1** | hs1 theaters for chrY/chr1/chr21/chrX — **pass** (analytical rise spacing) |
+| **M2** | TRGM held-out on **chr1** theater viability **100%** — **pass** |
+| **M3** | DNA-theater TRGM beats null scatter — **pass** |
+| **M4** | LC \(v_g(0)\) in literature band; Brillouin edge \(v_g\to 0\) — **pass** |
+| **M5** | Phase remains soft steering on molecular theater — **pass** |
+
+Host: chr1 · 248 387 328 bp · stretched length ≈ 0.0845 m. **Molecular battery 5/5.**
+
 ### 5.6 Historical prediction battery (Movebank GPS + GFZ Kp)
 
 **Data (executed, not fabricated):** public Movebank study `2548892515` (*Alces alces*, Snowy Range Moose) · **123 399** GPS fixes · **268** collar days (2019-01-01 → 2020-05-15) · GFZ Kp 3-hourly archive aligned to the same window. Chronological train/held-out split (60%/40%; train locks structure percentiles before held-out scoring). Fixture mirror: `data/historical/movebank_daily_proxy.json`.
@@ -136,9 +155,11 @@ Figure: `figures/fig_historical.svg`.
 
 ## 6. Discussion
 
-TRGM recipes are **empirically more viable** than null scatters under pre-registered **geo+wave+nav** gates. Phase is retained as a **steering/coordination layer** (soft), consistent with Wave–Node’s matched ablation delta — not graded as a viability veto or path-length champion.
+TRGM recipes are **empirically more viable** than null scatters under pre-registered **geo+wave+nav** gates. Phase is retained as a **steering/coordination layer** (soft), consistent with Wave–Node’s matched ablation delta.
 
-The historical Movebank/Kp battery probed sync-style and storm-contrast predictions on **real collar series** (H1/H2 fail; H3 small Δ). Those mixed outcomes constrain wildlife sync claims; they do **not** erase phase’s in-lab steering-delta role on synthetic Wave–Node fields.
+The **molecular theater** supplies the missing genetic/physical stage: DNA/chromosome polymers host the generator. M1–M5 show public hs1 scaffolds + LC wave grammar support viable TRGM execution without upgrading Soft Story into wet biology.
+
+Historical Movebank/Kp (H1/H2 fail; H3 small Δ) still constrains wildlife sync claims separately from the molecular theater.
 
 Practical robotics / physical simulation value still requires manipulator, multi-agent, and hardware stages (not executed).
 
@@ -162,7 +183,7 @@ Numbers in this manuscript match `data/empirical_report.json` for seed `20261025
 
 ## 9. Conclusions
 
-TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ablation logic checks. Pinned as ENGINE_SHELF **#50** on the Homeostasis Expedition — a miniature-world generator validated computationally, not a universe engine. Historical Movebank+Kp prediction tests were executed (**1/3** pass); mixed wildlife results are reported without upgrading the synthetic pin into biology.
+TRGM passes foundation reuse, held-out viability, null contrast, nesting, phase-as-steering, and **molecular theater M1–M5** (DNA/chromosome stage). Pinned as ENGINE_SHELF **#50** — a miniature-world generator that executes on a computational genetic theater, not a universe engine and not wet-lab genetics. Historical Movebank+Kp remains **1/3** (honest mixed).
 
 ---
 
@@ -183,10 +204,11 @@ TRGM passes foundation reuse, held-out viability, null contrast, nesting, and ab
 | Item | Status |
 |------|--------|
 | Implemented | Yes |
-| Synthetic executed | 5/5 pass · seed 20261025 |
-| Historical executed | H1–H3 on Movebank+Kp · **1/3** pass (H3 only) |
-| Held-out viability | 100% vs null 0% |
-| Engine pin | #50 (synthetic gates; historical mixed) |
-| Not run | Physical sims · LLM world models · hardware · bison-specific collars |
+| Synthetic executed | E1–E5 pass · seed 20261025 |
+| Molecular theater | M1–M5 **5/5** · hs1 chr1 host |
+| Historical executed | H1–H3 Movebank+Kp · **1/3** (H3 only) |
+| Held-out viability | 100% vs null 0% (abstract + molecular) |
+| Engine pin | #50 |
+| Not run | Wet-lab chromosomes · genomic consciousness · hardware robotics |
 
 → ∞^∞

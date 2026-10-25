@@ -8,11 +8,16 @@ import {
 } from './constants.mjs';
 import { runTrgmLaboratory } from './computational-lab.mjs';
 import { runHistoricalLaboratory } from './historical-lab.mjs';
+import { runMolecularTheaterLaboratory } from './molecular-theater.mjs';
 
-/** Core synthetic battery (E1–E5). Historical H1–H3 is additional and may fail honestly. */
+/**
+ * Core synthetic E1–E5 · Historical H1–H3 · Molecular theater M1–M5
+ * (DNA/chromosome as physical theater where TRGM executes).
+ */
 export async function runAllExperiments() {
   const lab = runTrgmLaboratory();
   const historical = await runHistoricalLaboratory();
+  const molecular = runMolecularTheaterLaboratory();
   const experiments = [
     {
       id: 'E1',
@@ -76,13 +81,25 @@ export async function runAllExperiments() {
     id: h.id,
     title: h.title,
     pass: h.pass,
-    interpretation: h.detail?.interpretation || h.title,
+    interpretation: h.detail?.interpretation || h.interpretation || h.title,
     detail: h.detail,
     evidence: h.evidence,
     data: h.data,
   }));
 
-  const n_pass = experiments.filter((e) => e.pass).length;
+  const molecularExperiments = (molecular.hypotheses || []).map((h) => ({
+    id: h.id,
+    title: h.title,
+    pass: h.pass,
+    interpretation: h.interpretation || h.title,
+    detail: h.detail,
+    evidence: h.evidence,
+    data: h.data,
+  }));
+
+  // Core all_pass includes E* + M* (molecular theater is part of the model now).
+  const core = [...experiments, ...molecularExperiments];
+  const n_pass = core.filter((e) => e.pass).length;
   return {
     docId: DOC_ID,
     registryId: REGISTRY_ID,
@@ -92,15 +109,22 @@ export async function runAllExperiments() {
     honesty: HONESTY,
     lab,
     historical,
-    experiments,
+    molecular,
+    experiments: core,
+    syntheticExperiments: experiments,
     historicalExperiments,
+    molecularExperiments,
     n_pass,
-    n_total: experiments.length,
-    all_pass: n_pass === experiments.length,
+    n_total: core.length,
+    all_pass: n_pass === core.length,
     historical_n_pass: historicalExperiments.filter((e) => e.pass).length,
     historical_n_total: historicalExperiments.length,
     historical_all_pass: Boolean(historical.ok) && historicalExperiments.every((e) => e.pass),
     historical_ran: Boolean(historical.ok),
-    enginePinRecommended: lab.summary.enginePinRecommended,
+    molecular_ran: Boolean(molecular.ok),
+    molecular_n_pass: molecularExperiments.filter((e) => e.pass).length,
+    molecular_n_total: molecularExperiments.length,
+    molecular_all_pass: Boolean(molecular.ok) && molecularExperiments.every((e) => e.pass),
+    enginePinRecommended: lab.summary.enginePinRecommended && Boolean(molecular.ok) && molecular.all_pass,
   };
 }

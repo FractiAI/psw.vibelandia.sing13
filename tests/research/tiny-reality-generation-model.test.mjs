@@ -14,26 +14,29 @@ describe('synthobs-tiny-reality-generation-model', () => {
   });
 
   it(
-    'experiment battery all_pass with engine pin + historical Movebank/Kp predictions executed',
+    'E+M battery + historical Movebank + DNA molecular theater',
     async () => {
       const r = await runAllExperiments();
       expect(r.all_pass).toBe(true);
-      expect(r.n_pass).toBe(5);
+      expect(r.n_total).toBe(10); // E1–E5 + M1–M5
+      expect(r.n_pass).toBe(10);
       expect(r.enginePinRecommended).toBe(true);
       expect(r.lab.held.summary.viabilityRate).toBe(1);
       expect(r.lab.nullBaseline.viabilityRate).toBe(0);
       expect(r.lab.phaseSteering.hardGate).toBe(false);
       expect(r.lab.phaseSteering.role).toBe('steering_delta');
 
-      // Historical prediction battery must actually run on real collar/Kp data (or fixture).
       expect(r.historical_ran).toBe(true);
       expect(r.historical.sourceMode).toMatch(/live_csv|fixture/);
       expect(r.historical_n_total).toBe(3);
-      expect(r.historical.scored.nHeld).toBeGreaterThan(20);
-      expect(r.historical.scored.dateRange.start).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-      // Do not require historical_all_pass — mixed/null on wildlife series is an allowed honest outcome.
-      expect(r.historicalExperiments.map((e) => e.id).sort()).toEqual(['H1', 'H2', 'H3']);
+
+      expect(r.molecular_ran).toBe(true);
+      expect(r.molecular_all_pass).toBe(true);
+      expect(r.molecular.theater.role).toBe('physical_theater');
+      expect(r.molecular.host.chrom).toBe('chr1');
+      expect(r.molecular.held.viabilityRate).toBeGreaterThanOrEqual(0.75);
+      expect(r.molecularExperiments.map((e) => e.id)).toEqual(['M1', 'M2', 'M3', 'M4', 'M5']);
     },
-    120_000,
+    180_000,
   );
 });

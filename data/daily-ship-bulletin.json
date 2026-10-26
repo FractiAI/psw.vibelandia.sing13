@@ -1,48 +1,48 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "dateline": {
-    "ymd": "2026-10-25",
-    "weekday": "Sunday",
+    "ymd": "2026-10-26",
+    "weekday": "Monday",
     "month": "October",
-    "day": 25,
-    "label": "Sunday, October 25",
-    "shortBoard": "Sunday board · October 25 · Puerto Reno",
-    "newsLabel": "News of the day · Sunday, October 25"
+    "day": 26,
+    "label": "Monday, October 26",
+    "shortBoard": "Monday board · October 26 · Puerto Reno",
+    "newsLabel": "News of the day · Monday, October 26"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Sunday board · October 25 · Puerto Reno",
-  "newsLabel": "News of the day · Sunday, October 25",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/tiny-reality-generation-model\">If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable?</a>. Also new on the board: <a href=\"/ship-blog/wave-node-mathematics\">When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Monday board · October 26 · Puerto Reno",
+  "newsLabel": "News of the day · Monday, October 26",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/trgm-gateway-agent-performance\">Do Agents Do Better With a Tiny Reality Gateway Than Without One?</a>. Also new on the board: <a href=\"/ship-blog/trgm-predictive-reality-catalog\">After a Generator Passes Once, Does It Still Predict on Held-Out Biology?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/tiny-reality-generation-model\">Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
+      "id": "synthobs-trgm-gateway-agent-performance-2026-10",
+      "title": "Do Agents Do Better With a Tiny Reality Gateway Than Without One?",
+      "href": "/ship-blog/trgm-gateway-agent-performance",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-trgm-gateway-agent-performance-2026-10",
+      "blurb": "Homeostasis Expedition follow-on: agents with TRGM gateway (10 bit/s bio pipe) beat without — nav 100% vs 66.7%, coherence 1.000 vs 0.263; E1–E8 8/8; application companion, not engine pin."
+    },
+    {
+      "id": "synthobs-trgm-predictive-reality-catalog-2026-10",
+      "title": "After a Generator Passes Once, Does It Still Predict on Held-Out Biology?",
+      "href": "/ship-blog/trgm-predictive-reality-catalog",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-trgm-predictive-reality-catalog-2026-10",
+      "blurb": "TRGM #51: independent predictive validation + reality catalog — V1–V8 8/8; held-out grammar BA 1.000 vs shuffle 0.341; reproduce #50 25/25 (10 bit/s bio pipe); Homeostasis Expedition #51, not molecular mechanism claim."
+    },
+    {
       "id": "synthobs-tiny-reality-generation-model-2026-10",
-      "title": "If You Can Generate a Tiny World, Can You Tell Whether It Stays Viable?",
+      "title": "Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent?",
       "href": "/ship-blog/tiny-reality-generation-model",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-reality-generation-model-2026-10",
-      "blurb": "TRGM held-out n=16: Goldilocks viability 100% vs null scatter 0% (seed 20261025); nested L0→L1; builds on Wave–Node #49 — Homeostasis Expedition engine #50, not a universe simulator."
-    },
-    {
-      "id": "synthobs-wave-node-mathematics-2026-10",
-      "title": "When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?",
-      "href": "/ship-blog/wave-node-mathematics",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-wave-node-mathematics-2026-10",
-      "blurb": "Wave–Node A–E lab (seed 20261024): FDTD order ≈2.001; Kuramoto syncs when connected; held-out 2D planning 100% success — A* mean path ≈52.84 vs WaveNode ≈55.71; engine #49, not robot hardware."
-    },
-    {
-      "id": "synthobs-geometry-host-dependent-relationship-2026-10",
-      "title": "Does the Same Rule Draw Different Shapes When the Terrain Changes?",
-      "href": "/ship-blog/geometry-host-dependent-relationship",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-geometry-host-dependent-relationship-2026-10",
-      "blurb": "GHDR-1 grid lab: fixed shortest-path objective, Host A route 28 vs Host B ~34.63 with barrier — host-dependent geometry demo; forest/ant recurrence and fractality not tested."
+      "blurb": "TRGM: 10 bits/s biological reality stream pipe → wave/node/fq triad; T1–T7 7/7 · G1–G5 5/5 · C1–C3 3/3 · core 25/25 (seed 20261025); Homeostasis Expedition #50, not measured neural bitrate."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-24-synthobs-wave-node-mathematics-2026-10",
-    "title": "When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check?",
-    "href": "/ship-blog/wave-node-mathematics"
+    "id": "daily-2026-10-25-synthobs-tiny-reality-generation-model-2026-10",
+    "title": "Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent?",
+    "href": "/ship-blog/tiny-reality-generation-model"
   },
-  "generatedAt": "2026-10-25T18:21:21.340Z"
+  "generatedAt": "2026-10-26T20:26:15.172Z"
 }

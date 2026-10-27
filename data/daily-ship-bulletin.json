@@ -1,21 +1,21 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-26",
+  "date": "2026-10-27",
   "dateline": {
-    "ymd": "2026-10-26",
-    "weekday": "Monday",
+    "ymd": "2026-10-27",
+    "weekday": "Tuesday",
     "month": "October",
-    "day": 26,
-    "label": "Monday, October 26",
-    "shortBoard": "Monday board · October 26 · Puerto Reno",
-    "newsLabel": "News of the day · Monday, October 26"
+    "day": 27,
+    "label": "Tuesday, October 27",
+    "shortBoard": "Tuesday board · October 27 · Puerto Reno",
+    "newsLabel": "News of the day · Tuesday, October 27"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Monday board · October 26 · Puerto Reno",
-  "newsLabel": "News of the day · Monday, October 26",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/trgm-gateway-agent-performance\">Do Agents Do Better With a Tiny Reality Gateway Than Without One?</a>. Also new on the board: <a href=\"/ship-blog/trgm-predictive-reality-catalog\">After a Generator Passes Once, Does It Still Predict on Held-Out Biology?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/tiny-reality-generation-model\">Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Tuesday board · October 27 · Puerto Reno",
+  "newsLabel": "News of the day · Tuesday, October 27",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/trgm-gateway-agent-performance\">Do Agents Do Better With a Tiny Reality Gateway Than Without One?</a>. Also new on the board: <a href=\"/ship-blog/trgm-predictive-reality-catalog\">After a Generator Passes Once, Does It Still Predict on Held-Out Biology?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-trgm-gateway-agent-performance-2026-10",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-25-synthobs-tiny-reality-generation-model-2026-10",
-    "title": "Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent?",
-    "href": "/ship-blog/tiny-reality-generation-model"
+    "id": "daily-2026-10-26-synthobs-trgm-gateway-agent-performance-2026-10",
+    "title": "Do Agents Do Better With a Tiny Reality Gateway Than Without One?",
+    "href": "/ship-blog/trgm-gateway-agent-performance"
   },
-  "generatedAt": "2026-10-26T20:26:15.172Z"
+  "generatedAt": "2026-10-27T20:01:22.315Z"
 }

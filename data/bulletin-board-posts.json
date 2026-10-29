@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "posts": [
+    {
+      "id": "daily-2026-10-29-synthobs-trgm-gateway-agent-performance-2026-10",
+      "posted": "2026-10-29",
+      "featured": true,
+      "title": "Do Agents Do Better With a Tiny Reality Gateway Than Without One?",
+      "subtitle": "News of the day · Thursday, October 29",
+      "summary": "Homeostasis Expedition follow-on: agents with TRGM gateway (10 bit/s bio pipe) beat without — nav 100% vs 66.7%, coherence 1.000 vs 0.263; E1–E8 8/8; application companion, not engine pin.",
+      "href": "/ship-blog/trgm-gateway-agent-performance",
+      "pill": "TODAY",
+      "docRef": "synthobs-trgm-gateway-agent-performance-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-28-synthobs-trgm-gateway-agent-performance-2026-10",
       "posted": "2026-10-28",

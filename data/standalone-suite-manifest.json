@@ -1,8 +1,20 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-10-06",
+  "updatedAt": "2026-10-30",
   "suites": [
+    {
+      "id": "synthobs-tiny-gateway-language-radar",
+      "path": "research/synthobs-tiny-gateway-language-radar",
+      "github": "https://github.com/FractiAI/synthobs-tiny-gateway-language-radar",
+      "description": "Tiny Gateway — language + high-rate fusion · Leo Computational Lab real-data priority (Movebank+Kp / prime-vault+ledger) · ENGINE_SHELF candidate #54 data-gated",
+      "paperIds": [
+        "synthobs-tiny-gateway-language-radar-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_TINY_GATEWAY_LANGUAGE_RADAR_EGS_2026-10.md"
+      ]
+    },
     {
       "id": "synthobs-trgm-gateway-agent-performance",
       "path": "research/synthobs-trgm-gateway-agent-performance",

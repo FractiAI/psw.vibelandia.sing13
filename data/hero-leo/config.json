@@ -54,7 +54,16 @@
       "reportRel": "research/synthobs-independent-research-convergence-fhg/data/empirical_report.json",
       "npmScript": "research:synthobs-independent-research-convergence-fhg"
     },
-    "honesty": "Digital Lab = suite run · score receipt · computational prospect completion. Wet lab stays out of this panel."
+    "tinyGateway": {
+      "id": "synthobs-tiny-gateway-language-radar",
+      "reportRel": "research/synthobs-tiny-gateway-language-radar/data/empirical_report.json",
+      "npmScript": "research:synthobs-tiny-gateway-language-radar",
+      "dataPriority": "live_or_historical_public_first",
+      "fusionPrimary": "Movebank GPS + GFZ Kp",
+      "languagePrimary": "prime-vault-corpus + hero-leo ledger",
+      "synthetic": "fallback_only_when_TINY_GATEWAY_ALLOW_SYNTHETIC=1"
+    },
+    "honesty": "Digital Lab = suite run · score receipt · computational prospect completion. Prefer live/historical public data; synthetic only when unavailable. Wet lab stays out of this panel."
   },
   "honesty": "Never simulate activity. Zero metrics are valid. Publication only after gate + human approval for external claims. Digital Lab tags (lab:digital) mark computational evidence only."
 }

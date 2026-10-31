@@ -1573,6 +1573,22 @@
       "destination": "/interfaces/blog-phase-aware-consensus-calculus-2026-10.html"
     },
     {
+      "source": "/ship-blog/tiny-gateway-language-radar",
+      "destination": "/interfaces/blog-tiny-gateway-language-radar-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/tiny-gateway-language-radar/",
+      "destination": "/interfaces/blog-tiny-gateway-language-radar-2026-10.html"
+    },
+    {
+      "source": "/whitepaper/tiny-gateway-language-radar",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-gateway-language-radar-2026-10"
+    },
+    {
+      "source": "/whitepaper/tiny-gateway-language-radar/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-gateway-language-radar-2026-10"
+    },
+    {
       "source": "/ship-blog/trgm-gateway-agent-performance",
       "destination": "/interfaces/blog-trgm-gateway-agent-performance-2026-10.html"
     },

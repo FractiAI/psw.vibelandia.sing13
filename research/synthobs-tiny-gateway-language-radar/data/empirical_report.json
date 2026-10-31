@@ -1,0 +1,986 @@
+{
+  "schema": "synthobs-tiny-gateway-language-radar/v1",
+  "DOC_ID": "WP-SYNTHOBS-TINY-GATEWAY-LANGUAGE-RADAR-EGS-2026-10-30",
+  "REGISTRY_ID": "synthobs-tiny-gateway-language-radar-2026-10",
+  "STUDY_TITLE": "Tiny Gateway: A Reusable Fractal-Holographic Computational Architecture for Language Processing, High-Rate Data Fusion, and Agentic Intelligence",
+  "generatedAt": "2026-10-31T02:14:40.875Z",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_architecture_implemented",
+        "title": "Architecture components implemented vs provisional",
+        "pass": true,
+        "status": {
+          "boundaryNode": "implemented",
+          "recursiveTree": "implemented",
+          "goldenSpiral": "implemented_as_phi_scale_bridge",
+          "honeycombLattice": "implemented_as_hex_pathway_graph",
+          "waveNodeFq": "implemented_as_activation_phase_selector",
+          "templateBinding": "implemented",
+          "execution": "implemented",
+          "trainedLlmParity": "not_claimed",
+          "gpuEnergyMetering": "not_available_on_this_harness",
+          "priorRadarScriptRecovery": "not_found_in_repo_recreated_from_stated_params",
+          "fusionPrimaryData": "movebank_gps_plus_gfz_kp_historical",
+          "languagePrimaryData": "prime_vault_corpus_plus_hero_leo_ledger",
+          "syntheticPolicy": "fallback_only_when_real_unavailable_and_env_allows"
+        },
+        "stack": [
+          "Boundary Node",
+          "Recursive Tree",
+          "Golden Spiral scale bridge",
+          "Honeycomb Lattice",
+          "Wave–Node–Fq execution",
+          "Template binding",
+          "Bound-data execution"
+        ]
+      },
+      {
+        "id": "E2_language_three_way",
+        "title": "Language three-way accuracy on shared fixtures (real corpus preferred)",
+        "pass": true,
+        "primary": {
+          "id": "A_language",
+          "title": "Small language model · three-way comparison",
+          "seed": 20261030,
+          "sourceMode": "historical_real_corpus_plus_capability_fillers",
+          "sourcesUsed": [
+            "prime-vault-corpus-v0",
+            "hero-leo-ledger",
+            "synthetic_capability_filler"
+          ],
+          "datasetStats": {
+            "nTrain": 115,
+            "nTest": 49,
+            "nHeldOut": 4
+          },
+          "trainMs": {
+            "lightweight": 25.63900000000001,
+            "microTransformer": 37.0206,
+            "tinyGateway": 2.641999999999996
+          },
+          "accuracy": {
+            "lightweight": {
+              "accuracy": 0.37735849056603776,
+              "n": 53,
+              "correct": 20,
+              "perTask": {
+                "bounded_qa": 1,
+                "structured_retrieval": 0,
+                "intent_recognition": 0,
+                "context_retention": 1,
+                "entity_relation_extraction": 0,
+                "unseen_generalization": 0.6666666666666666,
+                "new_knowledge_incorporation": 1
+              }
+            },
+            "microTransformer": {
+              "accuracy": 0.37735849056603776,
+              "n": 53,
+              "correct": 20,
+              "perTask": {
+                "bounded_qa": 1,
+                "structured_retrieval": 0,
+                "intent_recognition": 0,
+                "context_retention": 1,
+                "entity_relation_extraction": 0,
+                "unseen_generalization": 0.6666666666666666,
+                "new_knowledge_incorporation": 1
+              }
+            },
+            "tinyGateway": {
+              "accuracy": 0.5849056603773585,
+              "n": 53,
+              "correct": 31,
+              "perTask": {
+                "bounded_qa": 1,
+                "structured_retrieval": 1,
+                "intent_recognition": 0,
+                "context_retention": 1,
+                "entity_relation_extraction": 0,
+                "unseen_generalization": 1,
+                "new_knowledge_incorporation": 1
+              }
+            }
+          },
+          "latency": {
+            "lightweight": {
+              "n": 53,
+              "medianMs": 0.03849999999999909,
+              "p95Ms": 4.0721999999999525,
+              "meanMs": 0.7114547169811336,
+              "minMs": 0.004900000000020555,
+              "maxMs": 13.444399999999973
+            },
+            "microTransformer": {
+              "n": 53,
+              "medianMs": 0.008200000000044838,
+              "p95Ms": 7.886799999999994,
+              "meanMs": 1.2370433962264156,
+              "minMs": 0.001699999999971169,
+              "maxMs": 12.671099999999967
+            },
+            "tinyGateway": {
+              "n": 53,
+              "medianMs": 0.06060000000002219,
+              "p95Ms": 0.7266999999999939,
+              "meanMs": 0.6664490566037843,
+              "minMs": 0.022799999999961074,
+              "maxMs": 27.584299999999985
+            }
+          },
+          "modelSizeBytes": {
+            "lightweight": 12298,
+            "microTransformer": 147968,
+            "tinyGateway": 12590
+          },
+          "architecturalRoles": {
+            "languageProcessingArchitecture": {
+              "ok": true,
+              "pred": "query"
+            },
+            "executionLayerSurroundingLlm": {
+              "ok": true,
+              "result": "LLM_STUB:explain leases for families"
+            },
+            "replacementForPortionsOfNeuralInference": {
+              "ok": true,
+              "note": "intent path has no neural weights"
+            },
+            "reusableSubstrateMultiAgent": {
+              "ok": true,
+              "result": "scheduled"
+            }
+          },
+          "intentAgreementGatewayVsLightweight": 0.4,
+          "env": {
+            "rssBytes": 44531712,
+            "heapUsedBytes": 7103776,
+            "externalBytes": 2002420,
+            "gpuUtilization": null,
+            "energyJoules": null
+          },
+          "honesty": "Primary language rows from prime-vault corpus + Hero Leo ledger (real repo/expedition text). Capability fillers only where structured labels are otherwise absent. Micro-Transformer is a pure-JS 2-layer stand-in — not HuggingFace/GPT. Tiny Gateway is template+Wave–Node–Fq, not a trained LLM."
+        },
+        "validation": {
+          "seed": 202610302,
+          "tinyGatewayAcc": 0.5849056603773585,
+          "lightweightAcc": 0.37735849056603776,
+          "microTransformerAcc": 0.41509433962264153
+        }
+      },
+      {
+        "id": "E3_architectural_roles",
+        "title": "Language roles probed separately",
+        "pass": true,
+        "roles": {
+          "languageProcessingArchitecture": {
+            "ok": true,
+            "pred": "query"
+          },
+          "executionLayerSurroundingLlm": {
+            "ok": true,
+            "result": "LLM_STUB:explain leases for families"
+          },
+          "replacementForPortionsOfNeuralInference": {
+            "ok": true,
+            "note": "intent path has no neural weights"
+          },
+          "reusableSubstrateMultiAgent": {
+            "ok": true,
+            "result": "scheduled"
+          }
+        }
+      },
+      {
+        "id": "E4_fusion_real_fixture",
+        "title": "Fusion fixture executes on real historical data (or documented fallback)",
+        "pass": true,
+        "sourceMode": "historical_movebank_kp",
+        "fixture": {
+          "nSensors": 6,
+          "nTracks": 23,
+          "nSteps": 80,
+          "nObservations": 11040,
+          "nAnomalies": 3,
+          "expectedObservations": 11040
+        },
+        "B": {
+          "id": "B_radar",
+          "title": "Multisensor track fusion · Leo Computational Lab (real historical preferred)",
+          "seed": 20261030,
+          "sourceMode": "historical_movebank_kp",
+          "priorScriptRecovery": "not_found_in_repo_recreated_from_stated_params",
+          "fixture": {
+            "nSensors": 6,
+            "nTracks": 23,
+            "nSteps": 80,
+            "nObservations": 11040,
+            "nAnomalies": 3,
+            "expectedObservations": 11040
+          },
+          "params": {
+            "sensors": 6,
+            "tracks": 23,
+            "timeSteps": 80,
+            "observations": 11040,
+            "anomalyTracks": 3,
+            "areaKm": 73.26748440081214
+          },
+          "provenance": {
+            "trajectories": "research/geomagnetic-herbivore/data/trajectories.csv",
+            "kp": "research/geomagnetic-herbivore/data/archive/kp_3hourly_2020-05-15.csv",
+            "study": "Movebank 2548892515 · Snowy Range Moose (Alces alces)",
+            "startHour": "2019-03-01T00",
+            "origin": {
+              "lat": 41.0726700010388,
+              "lon": -106.053920000009
+            },
+            "nRowsScanned": 123399,
+            "honesty": "Real Movebank GPS + GFZ Kp historical window. Virtual beacons are geometric observers over real tracks — not ADS-B receivers. Anomaly labels = high-speed / elevated-Kp heuristic on real fixes, not injected fiction."
+          },
+          "legacySyntheticParamsNote": "RADAR_PARAMS 6×180×80 retained as historical assignment shape only; primary run uses Movebank+Kp when available.",
+          "conventional": {
+            "runtimeMs": 25.40599999999995,
+            "metrics": {
+              "precision": 0.15,
+              "recall": 1,
+              "f1": 0.2608695652173913,
+              "falsePositives": 17,
+              "missedDetections": 0,
+              "truePositives": 3
+            },
+            "nEstTracks": 20
+          },
+          "tinyGateway": {
+            "runtimeMs": 119.54860000000008,
+            "metrics": {
+              "precision": 0.15,
+              "recall": 1,
+              "f1": 0.2608695652173913,
+              "falsePositives": 17,
+              "missedDetections": 0,
+              "truePositives": 3
+            },
+            "nEstTracks": 20,
+            "templateHits": {
+              "new": 20,
+              "update": 1580
+            },
+            "gateway": {
+              "boundary": {
+                "domain": "civilian_airspace",
+                "task": "multisensor_fusion"
+              },
+              "treeNodes": 19,
+              "honeycombSize": 37,
+              "templates": 2,
+              "ablation": {
+                "useTree": true,
+                "useSpiral": true,
+                "useHoneycomb": true,
+                "useWave": true
+              },
+              "spiralSample": {
+                "level": 2,
+                "r": 2.618033988749895,
+                "theta": 4.799926459457306,
+                "x": 0.22888351880009275,
+                "y": -2.6080096435924798,
+                "phi": 1.618033988749895
+              }
+            }
+          },
+          "f1Delta": 0,
+          "runtimeRatioGatewayOverConventional": 4.705526253640885,
+          "scaling": {
+            "byTracksReal": [
+              {
+                "tracks": 8,
+                "nObs": 1920,
+                "conventionalMs": 1.3066999999998643,
+                "gatewayMs": 5.162599999999884,
+                "conventionalF1": 0.2222222222222222,
+                "gatewayF1": 0.2222222222222222,
+                "sourceMode": "historical_movebank_kp"
+              },
+              {
+                "tracks": 16,
+                "nObs": 3840,
+                "conventionalMs": 4.452499999999873,
+                "gatewayMs": 16.522399999999834,
+                "conventionalF1": 0.23529411764705882,
+                "gatewayF1": 0.23529411764705882,
+                "sourceMode": "historical_movebank_kp"
+              },
+              {
+                "tracks": 23,
+                "nObs": 5520,
+                "conventionalMs": 7.656500000000051,
+                "gatewayMs": 16.276400000000194,
+                "conventionalF1": 0.2608695652173913,
+                "gatewayF1": 0.2608695652173913,
+                "sourceMode": "historical_movebank_kp"
+              }
+            ],
+            "bySensorsSyntheticContrast": []
+          },
+          "honesty": "Leo Computational Lab priority: live/historical public data first (Movebank GPS + GFZ Kp, prime-vault corpus, Hero Leo ledger). Synthetic airspace / synthetic NLP rows only when real sources are unavailable and TINY_GATEWAY_ALLOW_SYNTHETIC=1. Absence of ADS-B/OpenSky in-repo is documented — multi-target GPS+Kp fusion is the real historical substitute, not a claim of ATC radar. Primary fusion = historical_movebank_kp. Not ATC/ADS-B. Timings measured on this host."
+        }
+      },
+      {
+        "id": "E5_fusion_f1_reported",
+        "title": "Fusion precision/recall/F1 measured for both pipelines",
+        "pass": true,
+        "conventionalF1": 0.2608695652173913,
+        "gatewayF1": 0.2608695652173913,
+        "f1Delta": 0
+      },
+      {
+        "id": "E6_template_reuse_stages",
+        "title": "Template stages timed independently",
+        "pass": true,
+        "C": {
+          "id": "C_template_binding",
+          "title": "Template construction · selection · bind · execute · reuse",
+          "seed": 20261030,
+          "stages": {
+            "construct": {
+              "n": 40,
+              "medianMs": 0.0015000000000782165,
+              "p95Ms": 0.006300000000010186,
+              "meanMs": 0.0024675000000058843,
+              "minMs": 0.001399999999875945,
+              "maxMs": 0.011799999999993815
+            },
+            "selectStub": {
+              "n": 200,
+              "medianMs": 0.00029999999992469384,
+              "p95Ms": 0.00040000000012696546,
+              "meanMs": 0.0004184999999858974,
+              "minMs": 0.0001999999999497959,
+              "maxMs": 0.023300000000062937
+            },
+            "bind": {
+              "n": 200,
+              "medianMs": 0.0008000000000265572,
+              "p95Ms": 0.0029999999999290594,
+              "meanMs": 0.0017509999999981575,
+              "minMs": 0.0006999999998242856,
+              "maxMs": 0.1090999999998985
+            },
+            "execute": {
+              "n": 200,
+              "medianMs": 0.0003000000001520675,
+              "p95Ms": 0.0006000000000767614,
+              "meanMs": 0.000492499999992333,
+              "minMs": 0.00029999999992469384,
+              "maxMs": 0.018399999999928696
+            },
+            "endToEndReuse": {
+              "n": 200,
+              "medianMs": 0.010600000000067666,
+              "p95Ms": 0.01960000000008222,
+              "meanMs": 0.013013500000000703,
+              "minMs": 0.009700000000066211,
+              "maxMs": 0.07699999999999818
+            }
+          },
+          "coldStartConstructTotalMs": 0.21810000000004948,
+          "warmStart": {
+            "n": 200,
+            "medianMs": 0.010600000000067666,
+            "p95Ms": 0.01960000000008222,
+            "meanMs": 0.013013500000000703,
+            "minMs": 0.009700000000066211,
+            "maxMs": 0.07699999999999818
+          },
+          "conventional": {
+            "rebuildEachCall": {
+              "n": 240,
+              "medianMs": 0.0003999999998995918,
+              "p95Ms": 0.0007999999997991836,
+              "meanMs": 0.0008145833333259133,
+              "minMs": 0.0001999999999497959,
+              "maxMs": 0.07290000000011787
+            },
+            "reuseFn": {
+              "n": 200,
+              "medianMs": 0.00040000000012696546,
+              "p95Ms": 0.0007999999997991836,
+              "meanMs": 0.0007864999999947031,
+              "minMs": 0.00029999999992469384,
+              "maxMs": 0.05770000000006803
+            }
+          },
+          "notes": [
+            "End-to-end reuse includes Wave–Node–Fq selection + honeycomb pathway — not select-only.",
+            "Advantage vs conventional rebuild is measured; do not equate select latency with full compute."
+          ],
+          "reuseVsRebuildMedianRatio": 0.03773584904689041
+        }
+      },
+      {
+        "id": "E7_ablation_runs",
+        "title": "Ablation suite completes on preferred data mode",
+        "pass": true,
+        "D": {
+          "id": "D_efficiency",
+          "title": "Computational efficiency · scaling · ablation",
+          "seed": 20261030,
+          "sourceMode": "historical_movebank_kp",
+          "ablations": [
+            {
+              "name": "full",
+              "runtimeMs": 22.920100000000048,
+              "f1": 0.1904761904761905
+            },
+            {
+              "name": "disableSpiral",
+              "runtimeMs": 14.124300000000176,
+              "f1": 0.1904761904761905
+            },
+            {
+              "name": "disableHoneycomb",
+              "runtimeMs": 8.260299999999916,
+              "f1": 0.1904761904761905
+            },
+            {
+              "name": "disableWave",
+              "runtimeMs": 11.466100000000097,
+              "f1": 0.1904761904761905
+            },
+            {
+              "name": "disableTree",
+              "runtimeMs": 11.247199999999793,
+              "f1": 0.1904761904761905
+            },
+            {
+              "name": "conventional",
+              "runtimeMs": 3.480399999999918,
+              "f1": 0.1904761904761905
+            }
+          ],
+          "volumes": [
+            {
+              "tracks": 8,
+              "nObs": 1920,
+              "conventionalMs": 0.5860000000002401,
+              "gatewayMs": 4.994900000000143,
+              "conventionalF1": 0.2222222222222222,
+              "gatewayF1": 0.2222222222222222,
+              "throughputObsPerSecConv": 3276450.51194405,
+              "throughputObsPerSecGw": 384392.0799215089,
+              "sourceMode": "historical_movebank_kp"
+            },
+            {
+              "tracks": 12,
+              "nObs": 2880,
+              "conventionalMs": 1.2057999999997264,
+              "gatewayMs": 6.090400000000045,
+              "conventionalF1": 0.15384615384615385,
+              "gatewayF1": 0.15384615384615385,
+              "throughputObsPerSecConv": 2388455.796981799,
+              "throughputObsPerSecGw": 472875.3448049354,
+              "sourceMode": "historical_movebank_kp"
+            },
+            {
+              "tracks": 16,
+              "nObs": 3840,
+              "conventionalMs": 2.2490999999999985,
+              "gatewayMs": 9.133000000000266,
+              "conventionalF1": 0.23529411764705882,
+              "gatewayF1": 0.23529411764705882,
+              "throughputObsPerSecConv": 1707349.6065092713,
+              "throughputObsPerSecGw": 420453.3012153606,
+              "sourceMode": "historical_movebank_kp"
+            },
+            {
+              "tracks": 20,
+              "nObs": 4800,
+              "conventionalMs": 3.4326999999998407,
+              "gatewayMs": 12.838200000000143,
+              "conventionalF1": 0.1904761904761905,
+              "gatewayF1": 0.1904761904761905,
+              "throughputObsPerSecConv": 1398316.1942494896,
+              "throughputObsPerSecGw": 373884.1893723378,
+              "sourceMode": "historical_movebank_kp"
+            }
+          ],
+          "memory": {
+            "rssBytes": 89698304,
+            "heapUsedBytes": 27174392,
+            "externalBytes": 2274763,
+            "gpuUtilization": null,
+            "energyJoules": null
+          },
+          "gpuUtilization": null,
+          "energyJoules": null,
+          "honesty": "Leo Computational Lab priority: live/historical public data first (Movebank GPS + GFZ Kp, prime-vault corpus, Hero Leo ledger). Synthetic airspace / synthetic NLP rows only when real sources are unavailable and TINY_GATEWAY_ALLOW_SYNTHETIC=1. Absence of ADS-B/OpenSky in-repo is documented — multi-target GPS+Kp fusion is the real historical substitute, not a claim of ATC radar. Ablations/volumes on real historical subsample when available. GPU/energy null on this Node harness."
+        }
+      },
+      {
+        "id": "E8_engine_pin_gate",
+        "title": "Data-gated engine pin recommendation",
+        "pass": true,
+        "enginePinRecommended": false,
+        "candidateSlot": 54,
+        "gates": {
+          "langOk": true,
+          "radarOk": true,
+          "reuseOk": false,
+          "ablationAlive": true,
+          "realDataOk": true
+        },
+        "sourceModes": {
+          "language": "historical_real_corpus_plus_capability_fillers",
+          "fusion": "historical_movebank_kp",
+          "efficiency": "historical_movebank_kp"
+        },
+        "reasons": [
+          "template_reuse_not_competitive_with_rebuild"
+        ],
+        "interpretation": "Gates failed (template_reuse_not_competitive_with_rebuild) — ship as application companion, not engine pin"
+      }
+    ],
+    "n_pass": 8,
+    "n_total": 8,
+    "all_pass": true,
+    "A": {
+      "id": "A_language",
+      "title": "Small language model · three-way comparison",
+      "seed": 20261030,
+      "sourceMode": "historical_real_corpus_plus_capability_fillers",
+      "sourcesUsed": [
+        "prime-vault-corpus-v0",
+        "hero-leo-ledger",
+        "synthetic_capability_filler"
+      ],
+      "datasetStats": {
+        "nTrain": 115,
+        "nTest": 49,
+        "nHeldOut": 4
+      },
+      "trainMs": {
+        "lightweight": 25.63900000000001,
+        "microTransformer": 37.0206,
+        "tinyGateway": 2.641999999999996
+      },
+      "accuracy": {
+        "lightweight": {
+          "accuracy": 0.37735849056603776,
+          "n": 53,
+          "correct": 20,
+          "perTask": {
+            "bounded_qa": 1,
+            "structured_retrieval": 0,
+            "intent_recognition": 0,
+            "context_retention": 1,
+            "entity_relation_extraction": 0,
+            "unseen_generalization": 0.6666666666666666,
+            "new_knowledge_incorporation": 1
+          }
+        },
+        "microTransformer": {
+          "accuracy": 0.37735849056603776,
+          "n": 53,
+          "correct": 20,
+          "perTask": {
+            "bounded_qa": 1,
+            "structured_retrieval": 0,
+            "intent_recognition": 0,
+            "context_retention": 1,
+            "entity_relation_extraction": 0,
+            "unseen_generalization": 0.6666666666666666,
+            "new_knowledge_incorporation": 1
+          }
+        },
+        "tinyGateway": {
+          "accuracy": 0.5849056603773585,
+          "n": 53,
+          "correct": 31,
+          "perTask": {
+            "bounded_qa": 1,
+            "structured_retrieval": 1,
+            "intent_recognition": 0,
+            "context_retention": 1,
+            "entity_relation_extraction": 0,
+            "unseen_generalization": 1,
+            "new_knowledge_incorporation": 1
+          }
+        }
+      },
+      "latency": {
+        "lightweight": {
+          "n": 53,
+          "medianMs": 0.03849999999999909,
+          "p95Ms": 4.0721999999999525,
+          "meanMs": 0.7114547169811336,
+          "minMs": 0.004900000000020555,
+          "maxMs": 13.444399999999973
+        },
+        "microTransformer": {
+          "n": 53,
+          "medianMs": 0.008200000000044838,
+          "p95Ms": 7.886799999999994,
+          "meanMs": 1.2370433962264156,
+          "minMs": 0.001699999999971169,
+          "maxMs": 12.671099999999967
+        },
+        "tinyGateway": {
+          "n": 53,
+          "medianMs": 0.06060000000002219,
+          "p95Ms": 0.7266999999999939,
+          "meanMs": 0.6664490566037843,
+          "minMs": 0.022799999999961074,
+          "maxMs": 27.584299999999985
+        }
+      },
+      "modelSizeBytes": {
+        "lightweight": 12298,
+        "microTransformer": 147968,
+        "tinyGateway": 12590
+      },
+      "architecturalRoles": {
+        "languageProcessingArchitecture": {
+          "ok": true,
+          "pred": "query"
+        },
+        "executionLayerSurroundingLlm": {
+          "ok": true,
+          "result": "LLM_STUB:explain leases for families"
+        },
+        "replacementForPortionsOfNeuralInference": {
+          "ok": true,
+          "note": "intent path has no neural weights"
+        },
+        "reusableSubstrateMultiAgent": {
+          "ok": true,
+          "result": "scheduled"
+        }
+      },
+      "intentAgreementGatewayVsLightweight": 0.4,
+      "env": {
+        "rssBytes": 44531712,
+        "heapUsedBytes": 7103776,
+        "externalBytes": 2002420,
+        "gpuUtilization": null,
+        "energyJoules": null
+      },
+      "honesty": "Primary language rows from prime-vault corpus + Hero Leo ledger (real repo/expedition text). Capability fillers only where structured labels are otherwise absent. Micro-Transformer is a pure-JS 2-layer stand-in — not HuggingFace/GPT. Tiny Gateway is template+Wave–Node–Fq, not a trained LLM."
+    },
+    "B": {
+      "id": "B_radar",
+      "title": "Multisensor track fusion · Leo Computational Lab (real historical preferred)",
+      "seed": 20261030,
+      "sourceMode": "historical_movebank_kp",
+      "priorScriptRecovery": "not_found_in_repo_recreated_from_stated_params",
+      "fixture": {
+        "nSensors": 6,
+        "nTracks": 23,
+        "nSteps": 80,
+        "nObservations": 11040,
+        "nAnomalies": 3,
+        "expectedObservations": 11040
+      },
+      "params": {
+        "sensors": 6,
+        "tracks": 23,
+        "timeSteps": 80,
+        "observations": 11040,
+        "anomalyTracks": 3,
+        "areaKm": 73.26748440081214
+      },
+      "provenance": {
+        "trajectories": "research/geomagnetic-herbivore/data/trajectories.csv",
+        "kp": "research/geomagnetic-herbivore/data/archive/kp_3hourly_2020-05-15.csv",
+        "study": "Movebank 2548892515 · Snowy Range Moose (Alces alces)",
+        "startHour": "2019-03-01T00",
+        "origin": {
+          "lat": 41.0726700010388,
+          "lon": -106.053920000009
+        },
+        "nRowsScanned": 123399,
+        "honesty": "Real Movebank GPS + GFZ Kp historical window. Virtual beacons are geometric observers over real tracks — not ADS-B receivers. Anomaly labels = high-speed / elevated-Kp heuristic on real fixes, not injected fiction."
+      },
+      "legacySyntheticParamsNote": "RADAR_PARAMS 6×180×80 retained as historical assignment shape only; primary run uses Movebank+Kp when available.",
+      "conventional": {
+        "runtimeMs": 25.40599999999995,
+        "metrics": {
+          "precision": 0.15,
+          "recall": 1,
+          "f1": 0.2608695652173913,
+          "falsePositives": 17,
+          "missedDetections": 0,
+          "truePositives": 3
+        },
+        "nEstTracks": 20
+      },
+      "tinyGateway": {
+        "runtimeMs": 119.54860000000008,
+        "metrics": {
+          "precision": 0.15,
+          "recall": 1,
+          "f1": 0.2608695652173913,
+          "falsePositives": 17,
+          "missedDetections": 0,
+          "truePositives": 3
+        },
+        "nEstTracks": 20,
+        "templateHits": {
+          "new": 20,
+          "update": 1580
+        },
+        "gateway": {
+          "boundary": {
+            "domain": "civilian_airspace",
+            "task": "multisensor_fusion"
+          },
+          "treeNodes": 19,
+          "honeycombSize": 37,
+          "templates": 2,
+          "ablation": {
+            "useTree": true,
+            "useSpiral": true,
+            "useHoneycomb": true,
+            "useWave": true
+          },
+          "spiralSample": {
+            "level": 2,
+            "r": 2.618033988749895,
+            "theta": 4.799926459457306,
+            "x": 0.22888351880009275,
+            "y": -2.6080096435924798,
+            "phi": 1.618033988749895
+          }
+        }
+      },
+      "f1Delta": 0,
+      "runtimeRatioGatewayOverConventional": 4.705526253640885,
+      "scaling": {
+        "byTracksReal": [
+          {
+            "tracks": 8,
+            "nObs": 1920,
+            "conventionalMs": 1.3066999999998643,
+            "gatewayMs": 5.162599999999884,
+            "conventionalF1": 0.2222222222222222,
+            "gatewayF1": 0.2222222222222222,
+            "sourceMode": "historical_movebank_kp"
+          },
+          {
+            "tracks": 16,
+            "nObs": 3840,
+            "conventionalMs": 4.452499999999873,
+            "gatewayMs": 16.522399999999834,
+            "conventionalF1": 0.23529411764705882,
+            "gatewayF1": 0.23529411764705882,
+            "sourceMode": "historical_movebank_kp"
+          },
+          {
+            "tracks": 23,
+            "nObs": 5520,
+            "conventionalMs": 7.656500000000051,
+            "gatewayMs": 16.276400000000194,
+            "conventionalF1": 0.2608695652173913,
+            "gatewayF1": 0.2608695652173913,
+            "sourceMode": "historical_movebank_kp"
+          }
+        ],
+        "bySensorsSyntheticContrast": []
+      },
+      "honesty": "Leo Computational Lab priority: live/historical public data first (Movebank GPS + GFZ Kp, prime-vault corpus, Hero Leo ledger). Synthetic airspace / synthetic NLP rows only when real sources are unavailable and TINY_GATEWAY_ALLOW_SYNTHETIC=1. Absence of ADS-B/OpenSky in-repo is documented — multi-target GPS+Kp fusion is the real historical substitute, not a claim of ATC radar. Primary fusion = historical_movebank_kp. Not ATC/ADS-B. Timings measured on this host."
+    },
+    "C": {
+      "id": "C_template_binding",
+      "title": "Template construction · selection · bind · execute · reuse",
+      "seed": 20261030,
+      "stages": {
+        "construct": {
+          "n": 40,
+          "medianMs": 0.0015000000000782165,
+          "p95Ms": 0.006300000000010186,
+          "meanMs": 0.0024675000000058843,
+          "minMs": 0.001399999999875945,
+          "maxMs": 0.011799999999993815
+        },
+        "selectStub": {
+          "n": 200,
+          "medianMs": 0.00029999999992469384,
+          "p95Ms": 0.00040000000012696546,
+          "meanMs": 0.0004184999999858974,
+          "minMs": 0.0001999999999497959,
+          "maxMs": 0.023300000000062937
+        },
+        "bind": {
+          "n": 200,
+          "medianMs": 0.0008000000000265572,
+          "p95Ms": 0.0029999999999290594,
+          "meanMs": 0.0017509999999981575,
+          "minMs": 0.0006999999998242856,
+          "maxMs": 0.1090999999998985
+        },
+        "execute": {
+          "n": 200,
+          "medianMs": 0.0003000000001520675,
+          "p95Ms": 0.0006000000000767614,
+          "meanMs": 0.000492499999992333,
+          "minMs": 0.00029999999992469384,
+          "maxMs": 0.018399999999928696
+        },
+        "endToEndReuse": {
+          "n": 200,
+          "medianMs": 0.010600000000067666,
+          "p95Ms": 0.01960000000008222,
+          "meanMs": 0.013013500000000703,
+          "minMs": 0.009700000000066211,
+          "maxMs": 0.07699999999999818
+        }
+      },
+      "coldStartConstructTotalMs": 0.21810000000004948,
+      "warmStart": {
+        "n": 200,
+        "medianMs": 0.010600000000067666,
+        "p95Ms": 0.01960000000008222,
+        "meanMs": 0.013013500000000703,
+        "minMs": 0.009700000000066211,
+        "maxMs": 0.07699999999999818
+      },
+      "conventional": {
+        "rebuildEachCall": {
+          "n": 240,
+          "medianMs": 0.0003999999998995918,
+          "p95Ms": 0.0007999999997991836,
+          "meanMs": 0.0008145833333259133,
+          "minMs": 0.0001999999999497959,
+          "maxMs": 0.07290000000011787
+        },
+        "reuseFn": {
+          "n": 200,
+          "medianMs": 0.00040000000012696546,
+          "p95Ms": 0.0007999999997991836,
+          "meanMs": 0.0007864999999947031,
+          "minMs": 0.00029999999992469384,
+          "maxMs": 0.05770000000006803
+        }
+      },
+      "notes": [
+        "End-to-end reuse includes Wave–Node–Fq selection + honeycomb pathway — not select-only.",
+        "Advantage vs conventional rebuild is measured; do not equate select latency with full compute."
+      ],
+      "reuseVsRebuildMedianRatio": 0.03773584904689041
+    },
+    "D": {
+      "id": "D_efficiency",
+      "title": "Computational efficiency · scaling · ablation",
+      "seed": 20261030,
+      "sourceMode": "historical_movebank_kp",
+      "ablations": [
+        {
+          "name": "full",
+          "runtimeMs": 22.920100000000048,
+          "f1": 0.1904761904761905
+        },
+        {
+          "name": "disableSpiral",
+          "runtimeMs": 14.124300000000176,
+          "f1": 0.1904761904761905
+        },
+        {
+          "name": "disableHoneycomb",
+          "runtimeMs": 8.260299999999916,
+          "f1": 0.1904761904761905
+        },
+        {
+          "name": "disableWave",
+          "runtimeMs": 11.466100000000097,
+          "f1": 0.1904761904761905
+        },
+        {
+          "name": "disableTree",
+          "runtimeMs": 11.247199999999793,
+          "f1": 0.1904761904761905
+        },
+        {
+          "name": "conventional",
+          "runtimeMs": 3.480399999999918,
+          "f1": 0.1904761904761905
+        }
+      ],
+      "volumes": [
+        {
+          "tracks": 8,
+          "nObs": 1920,
+          "conventionalMs": 0.5860000000002401,
+          "gatewayMs": 4.994900000000143,
+          "conventionalF1": 0.2222222222222222,
+          "gatewayF1": 0.2222222222222222,
+          "throughputObsPerSecConv": 3276450.51194405,
+          "throughputObsPerSecGw": 384392.0799215089,
+          "sourceMode": "historical_movebank_kp"
+        },
+        {
+          "tracks": 12,
+          "nObs": 2880,
+          "conventionalMs": 1.2057999999997264,
+          "gatewayMs": 6.090400000000045,
+          "conventionalF1": 0.15384615384615385,
+          "gatewayF1": 0.15384615384615385,
+          "throughputObsPerSecConv": 2388455.796981799,
+          "throughputObsPerSecGw": 472875.3448049354,
+          "sourceMode": "historical_movebank_kp"
+        },
+        {
+          "tracks": 16,
+          "nObs": 3840,
+          "conventionalMs": 2.2490999999999985,
+          "gatewayMs": 9.133000000000266,
+          "conventionalF1": 0.23529411764705882,
+          "gatewayF1": 0.23529411764705882,
+          "throughputObsPerSecConv": 1707349.6065092713,
+          "throughputObsPerSecGw": 420453.3012153606,
+          "sourceMode": "historical_movebank_kp"
+        },
+        {
+          "tracks": 20,
+          "nObs": 4800,
+          "conventionalMs": 3.4326999999998407,
+          "gatewayMs": 12.838200000000143,
+          "conventionalF1": 0.1904761904761905,
+          "gatewayF1": 0.1904761904761905,
+          "throughputObsPerSecConv": 1398316.1942494896,
+          "throughputObsPerSecGw": 373884.1893723378,
+          "sourceMode": "historical_movebank_kp"
+        }
+      ],
+      "memory": {
+        "rssBytes": 89698304,
+        "heapUsedBytes": 27174392,
+        "externalBytes": 2274763,
+        "gpuUtilization": null,
+        "energyJoules": null
+      },
+      "gpuUtilization": null,
+      "energyJoules": null,
+      "honesty": "Leo Computational Lab priority: live/historical public data first (Movebank GPS + GFZ Kp, prime-vault corpus, Hero Leo ledger). Synthetic airspace / synthetic NLP rows only when real sources are unavailable and TINY_GATEWAY_ALLOW_SYNTHETIC=1. Absence of ADS-B/OpenSky in-repo is documented — multi-target GPS+Kp fusion is the real historical substitute, not a claim of ATC radar. Ablations/volumes on real historical subsample when available. GPU/energy null on this Node harness."
+    },
+    "dataPolicy": "Leo Computational Lab priority: live/historical public data first (Movebank GPS + GFZ Kp, prime-vault corpus, Hero Leo ledger). Synthetic airspace / synthetic NLP rows only when real sources are unavailable and TINY_GATEWAY_ALLOW_SYNTHETIC=1. Absence of ADS-B/OpenSky in-repo is documented — multi-target GPS+Kp fusion is the real historical substitute, not a claim of ATC radar.",
+    "implementationStatus": {
+      "boundaryNode": "implemented",
+      "recursiveTree": "implemented",
+      "goldenSpiral": "implemented_as_phi_scale_bridge",
+      "honeycombLattice": "implemented_as_hex_pathway_graph",
+      "waveNodeFq": "implemented_as_activation_phase_selector",
+      "templateBinding": "implemented",
+      "execution": "implemented",
+      "trainedLlmParity": "not_claimed",
+      "gpuEnergyMetering": "not_available_on_this_harness",
+      "priorRadarScriptRecovery": "not_found_in_repo_recreated_from_stated_params",
+      "fusionPrimaryData": "movebank_gps_plus_gfz_kp_historical",
+      "languagePrimaryData": "prime_vault_corpus_plus_hero_leo_ledger",
+      "syntheticPolicy": "fallback_only_when_real_unavailable_and_env_allows"
+    },
+    "honesty": "Tiny Gateway · Leo Computational Lab: real/historical public data first (Movebank GPS + GFZ Kp fusion; prime-vault corpus + Hero Leo ledger NLP). Synthetic airspace/NLP only if real sources missing and TINY_GATEWAY_ALLOW_SYNTHETIC=1. Compares Boundary→Tree→φ-spiral→Honeycomb→Wave–Node–Fq vs conventional lightweight NLP and a pure-JS micro-Transformer. Not AGI, not frontier LLM replacement, not military/ATC radar (no ADS-B in-repo — wildlife GPS+Kp is the real substitute), not GPU energy proof. Φ_EGS is design grammar. Engine pin is data-gated.",
+    "engineShelfCandidate": 54
+  }
+}

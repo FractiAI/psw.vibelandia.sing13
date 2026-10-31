@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-25T20:35:25.109Z",
+  "updatedAt": "2026-10-31T02:18:39.298Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-tiny-gateway-language-radar-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-10-31T02:18:38.401Z",
+      "body": "Tiny Gateway: A Reusable Fractal-Holographic Computational Architecture for Language Processing, High-Rate Data Fusion, and Agentic Intelligence",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tiny-gateway-language-radar-2026-10",
+      "artifact": {
+        "title": "Tiny Gateway: A Reusable Fractal-Holographic Computational Architecture for Language Processing, High-Rate Data Fusion, and Agentic Intelligence",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TINY_GATEWAY_LANGUAGE_RADAR_EGS_2026-10.md",
+        "url": "/whitepaper/tiny-gateway-language-radar",
+        "paperId": "synthobs-tiny-gateway-language-radar-2026-10",
+        "docId": "WP-SYNTHOBS-TINY-GATEWAY-LANGUAGE-RADAR-EGS-2026-10-30",
+        "published": "2026-10-30T22:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-trgm-predictive-reality-catalog-2026-10",
       "type": "ArtifactEvent",

@@ -1,0 +1,13 @@
+{
+  "name": "synthobs-tiny-gateway-language-radar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiny Gateway — language + high-rate fusion lab · Leo Computational Lab real-data priority · FractiAI / SynthOBS",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

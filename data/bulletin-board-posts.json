@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "posts": [
+    {
+      "id": "daily-2026-10-31-synthobs-tiny-gateway-language-radar-2026-10",
+      "posted": "2026-10-31",
+      "featured": true,
+      "title": "Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data?",
+      "subtitle": "News of the day · Saturday, October 31",
+      "summary": "Leo Computational Lab: Tiny Gateway language acc 0.585 vs ~0.377 baselines; Movebank+Kp fusion F1 0.261 tied; template reuse gate fails; E1–E8 8/8; application companion, not engine pin.",
+      "href": "/ship-blog/tiny-gateway-language-radar",
+      "pill": "TODAY",
+      "docRef": "synthobs-tiny-gateway-language-radar-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-30-synthobs-trgm-gateway-agent-performance-2026-10",
       "posted": "2026-10-30",

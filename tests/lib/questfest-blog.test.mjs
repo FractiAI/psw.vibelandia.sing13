@@ -43,15 +43,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Net Zero 001 · Tiny Gateway · TRGM gateway · TRGM #51 · TRGM #50 · Wave–Node
-    expect(posts[0].id).toBe('synthobs-net-zero-missing-half-2026-10');
+    // Newest: Net Zero 002 · Net Zero 001 · Tiny Gateway · TRGM gateway · TRGM #51 · TRGM #50
+    expect(posts[0].id).toBe('synthobs-net-zero-periodic-table-2026-10');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-net-zero-periodic-table-2026-10',
       'synthobs-net-zero-missing-half-2026-10',
       'synthobs-tiny-gateway-language-radar-2026-10',
       'synthobs-trgm-gateway-agent-performance-2026-10',
       'synthobs-trgm-predictive-reality-catalog-2026-10',
       'synthobs-tiny-reality-generation-model-2026-10',
-      'synthobs-wave-node-mathematics-2026-10',
     ]);
   });
 });

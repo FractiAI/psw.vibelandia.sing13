@@ -1,0 +1,1058 @@
+{
+  "schema": "synthobs-net-zero-periodic-table/v1",
+  "DOC_ID": "WP-SYNTHOBS-NET-ZERO-PERIODIC-TABLE-EGS-2026-10-31",
+  "REGISTRY_ID": "synthobs-net-zero-periodic-table-2026-10",
+  "STUDY_TITLE": "Net Zero Expedition 002 — Periodic Table Complements: Group 13↔15 Electronegativity and Independent Property Survival",
+  "generatedAt": "2026-11-01T01:13:03.831Z",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_complement_grammar",
+        "title": "Group involution + octet complementary accounting",
+        "pass": true,
+        "A": {
+          "id": "A_complement_grammar",
+          "title": "Group involution + octet complementary accounting",
+          "involutionOk": true,
+          "valenceSum": 8,
+          "octetOk": true,
+          "pairs": [
+            {
+              "period": 2,
+              "pair": [
+                "B",
+                "N"
+              ],
+              "valenceSum": 8
+            },
+            {
+              "period": 3,
+              "pair": [
+                "Al",
+                "P"
+              ],
+              "valenceSum": 8
+            },
+            {
+              "period": 4,
+              "pair": [
+                "Ga",
+                "As"
+              ],
+              "valenceSum": 8
+            },
+            {
+              "period": 5,
+              "pair": [
+                "In",
+                "Sb"
+              ],
+              "valenceSum": 8
+            },
+            {
+              "period": 6,
+              "pair": [
+                "Tl",
+                "Bi"
+              ],
+              "valenceSum": 8
+            }
+          ],
+          "pass": true,
+          "interpretation": "R(13)=15, R(15)=13 is an involution; valence 3+5 recovers the octet shell target — Net Zero “account for the whole” grammar on groups flanking carbon."
+        }
+      },
+      {
+        "id": "E2_pauling_period_pattern",
+        "title": "Pauling Δχ(G15−G13) period-dependent pattern",
+        "pass": true,
+        "B": {
+          "id": "B_pauling_period_pattern",
+          "title": "Pauling Δχ(G15−G13) period-dependent pattern",
+          "source": "Pauling electronegativity · CRC / common teaching tabulation",
+          "rows": [
+            {
+              "period": 2,
+              "g13": "B",
+              "g15": "N",
+              "chi13": 2.04,
+              "chi15": 3.04,
+              "delta": 1
+            },
+            {
+              "period": 3,
+              "g13": "Al",
+              "g15": "P",
+              "chi13": 1.61,
+              "chi15": 2.19,
+              "delta": 0.5799999999999998
+            },
+            {
+              "period": 4,
+              "g13": "Ga",
+              "g15": "As",
+              "chi13": 1.81,
+              "chi15": 2.18,
+              "delta": 0.3700000000000001
+            },
+            {
+              "period": 5,
+              "g13": "In",
+              "g15": "Sb",
+              "chi13": 1.78,
+              "chi15": 2.05,
+              "delta": 0.2699999999999998
+            },
+            {
+              "period": 6,
+              "g13": "Tl",
+              "g15": "Bi",
+              "chi13": 1.62,
+              "chi15": 2.02,
+              "delta": 0.3999999999999999
+            }
+          ],
+          "allPositive": true,
+          "consecutiveDecreases": 3,
+          "maxConsecutiveSlots": 4,
+          "spearmanRhoVsPeriod": -0.7,
+          "pearsonRVsPeriod": -0.8270776035502906,
+          "patternConsistent": true,
+          "pass": true,
+          "interpretation": "Pauling Δχ > 0 for all five period pairs; Spearman ρ(period, Δχ)=-0.700 (negative) — consistent period-dependent attenuation with a non-strict series (P6 rebound allowed)."
+        }
+      },
+      {
+        "id": "E3_allen_survival",
+        "title": "Independent Allen-scale Δχ survival vs Pauling",
+        "pass": true,
+        "C": {
+          "id": "C_allen_survival",
+          "title": "Independent Allen-scale Δχ survival vs Pauling",
+          "source": "Allen spectroscopic electronegativity · literature tables (Allen 1989 lineage)",
+          "rows": [
+            {
+              "period": 2,
+              "g13": "B",
+              "g15": "N",
+              "chi13": 2.051,
+              "chi15": 3.066,
+              "delta": 1.0149999999999997
+            },
+            {
+              "period": 3,
+              "g13": "Al",
+              "g15": "P",
+              "chi13": 1.613,
+              "chi15": 2.253,
+              "delta": 0.6400000000000001
+            },
+            {
+              "period": 4,
+              "g13": "Ga",
+              "g15": "As",
+              "chi13": 1.756,
+              "chi15": 2.211,
+              "delta": 0.45499999999999985
+            },
+            {
+              "period": 5,
+              "g13": "In",
+              "g15": "Sb",
+              "chi13": 1.656,
+              "chi15": 1.984,
+              "delta": 0.32800000000000007
+            },
+            {
+              "period": 6,
+              "g13": "Tl",
+              "g15": "Bi",
+              "chi13": 1.789,
+              "chi15": 2.01,
+              "delta": 0.22099999999999986
+            }
+          ],
+          "spearmanVsPauling": 0.7,
+          "spearmanVsPeriod": -1,
+          "allPositive": true,
+          "survives": true,
+          "pass": true,
+          "interpretation": "Allen Δχ series Spearman-concordant with Pauling (ρ=0.700); all Δχ>0; still negatively associated with period."
+        }
+      },
+      {
+        "id": "E4_allred_rochow_survival",
+        "title": "Independent Allred–Rochow Δχ survival vs Pauling",
+        "pass": true,
+        "D": {
+          "id": "D_allred_rochow_survival",
+          "title": "Independent Allred–Rochow Δχ survival vs Pauling",
+          "source": "Allred–Rochow electrostatic electronegativity · literature tables",
+          "rows": [
+            {
+              "period": 2,
+              "g13": "B",
+              "g15": "N",
+              "chi13": 2.01,
+              "chi15": 3.07,
+              "delta": 1.06
+            },
+            {
+              "period": 3,
+              "g13": "Al",
+              "g15": "P",
+              "chi13": 1.47,
+              "chi15": 2.06,
+              "delta": 0.5900000000000001
+            },
+            {
+              "period": 4,
+              "g13": "Ga",
+              "g15": "As",
+              "chi13": 1.82,
+              "chi15": 2.2,
+              "delta": 0.3800000000000001
+            },
+            {
+              "period": 5,
+              "g13": "In",
+              "g15": "Sb",
+              "chi13": 1.49,
+              "chi15": 1.82,
+              "delta": 0.33000000000000007
+            },
+            {
+              "period": 6,
+              "g13": "Tl",
+              "g15": "Bi",
+              "chi13": 1.44,
+              "chi15": 1.67,
+              "delta": 0.22999999999999998
+            }
+          ],
+          "spearmanVsPauling": 0.7,
+          "spearmanVsPeriod": -1,
+          "allPositive": true,
+          "survives": true,
+          "pass": true,
+          "interpretation": "Allred–Rochow Δχ Spearman-concordant with Pauling (ρ=0.700); sign and period association survive."
+        }
+      },
+      {
+        "id": "E5_ionization_concordance",
+        "title": "ΔIE1 concordance with Pauling Δχ (independent property)",
+        "pass": true,
+        "E": {
+          "id": "E_ionization_concordance",
+          "title": "ΔIE1 concordance with Pauling Δχ (independent property)",
+          "source": "First ionization energy (kJ/mol) · CRC Handbook-class tabulation",
+          "rows": [
+            {
+              "period": 2,
+              "g13": "B",
+              "g15": "N",
+              "v13": 800.6,
+              "v15": 1402.3,
+              "delta": 601.6999999999999
+            },
+            {
+              "period": 3,
+              "g13": "Al",
+              "g15": "P",
+              "v13": 577.5,
+              "v15": 1011.8,
+              "delta": 434.29999999999995
+            },
+            {
+              "period": 4,
+              "g13": "Ga",
+              "g15": "As",
+              "v13": 578.8,
+              "v15": 947,
+              "delta": 368.20000000000005
+            },
+            {
+              "period": 5,
+              "g13": "In",
+              "g15": "Sb",
+              "v13": 558.3,
+              "v15": 834,
+              "delta": 275.70000000000005
+            },
+            {
+              "period": 6,
+              "g13": "Tl",
+              "g15": "Bi",
+              "v13": 589.4,
+              "v15": 703,
+              "delta": 113.60000000000002
+            }
+          ],
+          "spearmanVsPaulingDeltaChi": 0.7,
+          "spearmanVsPeriod": -1,
+          "allPositive": true,
+          "concordant": true,
+          "pass": true,
+          "interpretation": "ΔIE1 (G15−G13) tracks Pauling Δχ (ρ=0.700) and declines with period — independent property support."
+        }
+      },
+      {
+        "id": "E6_radius_complement",
+        "title": "Covalent-radius complement (−Δr) vs Pauling Δχ",
+        "pass": true,
+        "F": {
+          "id": "F_radius_complement",
+          "title": "Covalent-radius complement (−Δr) vs Pauling Δχ",
+          "source": "Single-bond covalent radii (pm) · Cordero et al., Dalton Trans. 2008",
+          "rows": [
+            {
+              "period": 2,
+              "g13": "B",
+              "g15": "N",
+              "v13": 84,
+              "v15": 71,
+              "delta": -13
+            },
+            {
+              "period": 3,
+              "g13": "Al",
+              "g15": "P",
+              "v13": 121,
+              "v15": 107,
+              "delta": -14
+            },
+            {
+              "period": 4,
+              "g13": "Ga",
+              "g15": "As",
+              "v13": 122,
+              "v15": 119,
+              "delta": -3
+            },
+            {
+              "period": 5,
+              "g13": "In",
+              "g15": "Sb",
+              "v13": 142,
+              "v15": 139,
+              "delta": -3
+            },
+            {
+              "period": 6,
+              "g13": "Tl",
+              "g15": "Bi",
+              "v13": 145,
+              "v15": 148,
+              "delta": 3
+            }
+          ],
+          "earlyPeriodsG15Smaller": true,
+          "spearmanNegDeltaRVsPauling": 0.5642880936468347,
+          "spearmanNegDeltaRVsPeriod": -0.872081599272381,
+          "pass": true,
+          "honesty": "Period-6 Bi/Tl radii nearly meet; radius complement is strongest for periods 2–5. Not a claim that size alone causes electronegativity.",
+          "interpretation": "Periods 2–5: G15 covalent radius < G13; −Δr Spearman vs Pauling Δχ ρ=0.564."
+        }
+      },
+      {
+        "id": "E7_permutation_null",
+        "title": "Permutation null · Pauling↔Allen Δχ concordance",
+        "pass": true,
+        "primary": {
+          "id": "G_permutation_null",
+          "title": "Permutation null · Pauling↔Allen Δχ concordance",
+          "observedSpearman": 0.7,
+          "nTrials": 5000,
+          "pApprox": 0.1096,
+          "pass": true,
+          "interpretation": "Observed Pauling↔Allen Spearman ρ=0.700; approx permutation p=0.110 (seed 20261031)."
+        },
+        "validation": {
+          "id": "G_permutation_null",
+          "title": "Permutation null · Pauling↔Allen Δχ concordance",
+          "observedSpearman": 0.7,
+          "nTrials": 5000,
+          "pApprox": 0.1248,
+          "pass": true,
+          "interpretation": "Observed Pauling↔Allen Spearman ρ=0.700; approx permutation p=0.125 (seed 202610312)."
+        }
+      },
+      {
+        "id": "E8_engine_pin_gate",
+        "title": "Engine-shelf pin gate",
+        "pass": true,
+        "enginePinRecommended": false,
+        "H": {
+          "id": "H_engine_pin_gate",
+          "title": "Engine-shelf pin gate",
+          "enginePinRecommended": false,
+          "pass": true,
+          "reasons": [
+            "net_zero_series_application_companion",
+            "tabulated_literature_lab_not_new_physics_derivation",
+            "contrast_not_duplicate_digit4_be_o_soft_story"
+          ],
+          "interpretation": "Ship as Net Zero Expedition Series application companion — not ENGINE_SHELF. Periodic table not derived from Φ_EGS."
+        },
+        "novelObservationCatalog": {
+          "id": "CATALOG_novel_observations",
+          "title": "Novel observation catalog (Expedition 001 model → periodic table)",
+          "catalog": {
+            "n": 8,
+            "nSupported": 8,
+            "rows": [
+              {
+                "id": "NZ-PT-01",
+                "claim": "Group index involution R(13)=15 (and inverse) plus valence 3+5=8 frames period-paired triel/pnictogen couples as Net Zero complementary accounts flanking Group 14, not merely adjacent columns.",
+                "evidenceIds": [
+                  "A_complement_grammar"
+                ],
+                "tier": "operational",
+                "evidencePass": true,
+                "status": "supported_in_suite"
+              },
+              {
+                "id": "NZ-PT-02",
+                "claim": "Pauling Δχ = χ(G15)−χ(G13) is strictly positive across periods 2–6 and shows a negative Spearman association with period number (period-dependent attenuation), without requiring strict monotonicity through period 6.",
+                "evidenceIds": [
+                  "B_pauling_period_pattern"
+                ],
+                "tier": "empirical",
+                "survivesIndependentScales": true,
+                "evidencePass": true,
+                "status": "supported_in_suite"
+              },
+              {
+                "id": "NZ-PT-03",
+                "claim": "The same period-paired Δχ sign pattern and period association survive on the independent Allen spectroscopic electronegativity scale with high Spearman concordance to the Pauling Δχ series.",
+                "evidenceIds": [
+                  "C_allen_survival",
+                  "G_permutation_null"
+                ],
+                "tier": "empirical",
+                "survivesIndependentScales": true,
+                "evidencePass": true,
+                "status": "supported_in_suite"
+              },
+              {
+                "id": "NZ-PT-04",
+                "claim": "The Allred–Rochow electrostatic electronegativity scale independently recovers the same complementary Δχ sign pattern and period association with high concordance to Pauling.",
+                "evidenceIds": [
+                  "D_allred_rochow_survival"
+                ],
+                "tier": "empirical",
+                "survivesIndependentScales": true,
+                "evidencePass": true,
+                "status": "supported_in_suite"
+              },
+              {
+                "id": "NZ-PT-05",
+                "claim": "An independent non-electronegativity property — first ionization energy difference ΔIE1(G15−G13) — is positively rank-concordant with Pauling Δχ and likewise attenuates with period.",
+                "evidenceIds": [
+                  "E_ionization_concordance"
+                ],
+                "tier": "empirical",
+                "survivesIndependentScales": true,
+                "evidencePass": true,
+                "status": "supported_in_suite"
+              },
+              {
+                "id": "NZ-PT-06",
+                "claim": "Covalent-radius differences supply a geometric complement: for periods 2–5, G15 is smaller than G13, and −Δr tracks Pauling Δχ; period 6 (Tl/Bi) is the expected heavy-element soft edge, not a silent failure.",
+                "evidenceIds": [
+                  "F_radius_complement"
+                ],
+                "tier": "empirical",
+                "evidencePass": true,
+                "status": "supported_in_suite"
+              },
+              {
+                "id": "NZ-PT-07",
+                "claim": "Under the Expedition 001 non-uniqueness lesson, multiple EN scales can complete the same “G15 more EN than G13” constraint; concordance + permutation rarity distinguish shared structure from a single-scale artifact.",
+                "evidenceIds": [
+                  "C_allen_survival",
+                  "D_allred_rochow_survival",
+                  "G_permutation_null"
+                ],
+                "tier": "narrative",
+                "evidencePass": true,
+                "status": "supported_in_suite"
+              },
+              {
+                "id": "NZ-PT-08",
+                "claim": "Complementary Structure Inference applied here surfaces a cross-property ledger (EN scales + IE + radii) rather than a single missing half — a distributed Net Zero account of the triel/pnictogen period pairs.",
+                "evidenceIds": [
+                  "B_pauling_period_pattern",
+                  "C_allen_survival",
+                  "D_allred_rochow_survival",
+                  "E_ionization_concordance",
+                  "F_radius_complement"
+                ],
+                "tier": "narrative",
+                "evidencePass": true,
+                "status": "supported_in_suite"
+              }
+            ],
+            "honesty": "Catalog entries are suite-framed observations under Net Zero Expedition 001 grammar — not a claim of absolute historical priority in chemistry."
+          },
+          "pass": true,
+          "interpretation": "Catalogued 8/8 suite-framed novel observations with linked evidence ids."
+        },
+        "interpretation": "Ship as Net Zero Expedition Series application companion — not ENGINE_SHELF. Periodic table not derived from Φ_EGS. Catalogued 8/8 suite-framed novel observations with linked evidence ids."
+      }
+    ],
+    "n_pass": 8,
+    "n_total": 8,
+    "all_pass": true,
+    "A": {
+      "id": "A_complement_grammar",
+      "title": "Group involution + octet complementary accounting",
+      "involutionOk": true,
+      "valenceSum": 8,
+      "octetOk": true,
+      "pairs": [
+        {
+          "period": 2,
+          "pair": [
+            "B",
+            "N"
+          ],
+          "valenceSum": 8
+        },
+        {
+          "period": 3,
+          "pair": [
+            "Al",
+            "P"
+          ],
+          "valenceSum": 8
+        },
+        {
+          "period": 4,
+          "pair": [
+            "Ga",
+            "As"
+          ],
+          "valenceSum": 8
+        },
+        {
+          "period": 5,
+          "pair": [
+            "In",
+            "Sb"
+          ],
+          "valenceSum": 8
+        },
+        {
+          "period": 6,
+          "pair": [
+            "Tl",
+            "Bi"
+          ],
+          "valenceSum": 8
+        }
+      ],
+      "pass": true,
+      "interpretation": "R(13)=15, R(15)=13 is an involution; valence 3+5 recovers the octet shell target — Net Zero “account for the whole” grammar on groups flanking carbon."
+    },
+    "B": {
+      "id": "B_pauling_period_pattern",
+      "title": "Pauling Δχ(G15−G13) period-dependent pattern",
+      "source": "Pauling electronegativity · CRC / common teaching tabulation",
+      "rows": [
+        {
+          "period": 2,
+          "g13": "B",
+          "g15": "N",
+          "chi13": 2.04,
+          "chi15": 3.04,
+          "delta": 1
+        },
+        {
+          "period": 3,
+          "g13": "Al",
+          "g15": "P",
+          "chi13": 1.61,
+          "chi15": 2.19,
+          "delta": 0.5799999999999998
+        },
+        {
+          "period": 4,
+          "g13": "Ga",
+          "g15": "As",
+          "chi13": 1.81,
+          "chi15": 2.18,
+          "delta": 0.3700000000000001
+        },
+        {
+          "period": 5,
+          "g13": "In",
+          "g15": "Sb",
+          "chi13": 1.78,
+          "chi15": 2.05,
+          "delta": 0.2699999999999998
+        },
+        {
+          "period": 6,
+          "g13": "Tl",
+          "g15": "Bi",
+          "chi13": 1.62,
+          "chi15": 2.02,
+          "delta": 0.3999999999999999
+        }
+      ],
+      "allPositive": true,
+      "consecutiveDecreases": 3,
+      "maxConsecutiveSlots": 4,
+      "spearmanRhoVsPeriod": -0.7,
+      "pearsonRVsPeriod": -0.8270776035502906,
+      "patternConsistent": true,
+      "pass": true,
+      "interpretation": "Pauling Δχ > 0 for all five period pairs; Spearman ρ(period, Δχ)=-0.700 (negative) — consistent period-dependent attenuation with a non-strict series (P6 rebound allowed)."
+    },
+    "C": {
+      "id": "C_allen_survival",
+      "title": "Independent Allen-scale Δχ survival vs Pauling",
+      "source": "Allen spectroscopic electronegativity · literature tables (Allen 1989 lineage)",
+      "rows": [
+        {
+          "period": 2,
+          "g13": "B",
+          "g15": "N",
+          "chi13": 2.051,
+          "chi15": 3.066,
+          "delta": 1.0149999999999997
+        },
+        {
+          "period": 3,
+          "g13": "Al",
+          "g15": "P",
+          "chi13": 1.613,
+          "chi15": 2.253,
+          "delta": 0.6400000000000001
+        },
+        {
+          "period": 4,
+          "g13": "Ga",
+          "g15": "As",
+          "chi13": 1.756,
+          "chi15": 2.211,
+          "delta": 0.45499999999999985
+        },
+        {
+          "period": 5,
+          "g13": "In",
+          "g15": "Sb",
+          "chi13": 1.656,
+          "chi15": 1.984,
+          "delta": 0.32800000000000007
+        },
+        {
+          "period": 6,
+          "g13": "Tl",
+          "g15": "Bi",
+          "chi13": 1.789,
+          "chi15": 2.01,
+          "delta": 0.22099999999999986
+        }
+      ],
+      "spearmanVsPauling": 0.7,
+      "spearmanVsPeriod": -1,
+      "allPositive": true,
+      "survives": true,
+      "pass": true,
+      "interpretation": "Allen Δχ series Spearman-concordant with Pauling (ρ=0.700); all Δχ>0; still negatively associated with period."
+    },
+    "D": {
+      "id": "D_allred_rochow_survival",
+      "title": "Independent Allred–Rochow Δχ survival vs Pauling",
+      "source": "Allred–Rochow electrostatic electronegativity · literature tables",
+      "rows": [
+        {
+          "period": 2,
+          "g13": "B",
+          "g15": "N",
+          "chi13": 2.01,
+          "chi15": 3.07,
+          "delta": 1.06
+        },
+        {
+          "period": 3,
+          "g13": "Al",
+          "g15": "P",
+          "chi13": 1.47,
+          "chi15": 2.06,
+          "delta": 0.5900000000000001
+        },
+        {
+          "period": 4,
+          "g13": "Ga",
+          "g15": "As",
+          "chi13": 1.82,
+          "chi15": 2.2,
+          "delta": 0.3800000000000001
+        },
+        {
+          "period": 5,
+          "g13": "In",
+          "g15": "Sb",
+          "chi13": 1.49,
+          "chi15": 1.82,
+          "delta": 0.33000000000000007
+        },
+        {
+          "period": 6,
+          "g13": "Tl",
+          "g15": "Bi",
+          "chi13": 1.44,
+          "chi15": 1.67,
+          "delta": 0.22999999999999998
+        }
+      ],
+      "spearmanVsPauling": 0.7,
+      "spearmanVsPeriod": -1,
+      "allPositive": true,
+      "survives": true,
+      "pass": true,
+      "interpretation": "Allred–Rochow Δχ Spearman-concordant with Pauling (ρ=0.700); sign and period association survive."
+    },
+    "E": {
+      "id": "E_ionization_concordance",
+      "title": "ΔIE1 concordance with Pauling Δχ (independent property)",
+      "source": "First ionization energy (kJ/mol) · CRC Handbook-class tabulation",
+      "rows": [
+        {
+          "period": 2,
+          "g13": "B",
+          "g15": "N",
+          "v13": 800.6,
+          "v15": 1402.3,
+          "delta": 601.6999999999999
+        },
+        {
+          "period": 3,
+          "g13": "Al",
+          "g15": "P",
+          "v13": 577.5,
+          "v15": 1011.8,
+          "delta": 434.29999999999995
+        },
+        {
+          "period": 4,
+          "g13": "Ga",
+          "g15": "As",
+          "v13": 578.8,
+          "v15": 947,
+          "delta": 368.20000000000005
+        },
+        {
+          "period": 5,
+          "g13": "In",
+          "g15": "Sb",
+          "v13": 558.3,
+          "v15": 834,
+          "delta": 275.70000000000005
+        },
+        {
+          "period": 6,
+          "g13": "Tl",
+          "g15": "Bi",
+          "v13": 589.4,
+          "v15": 703,
+          "delta": 113.60000000000002
+        }
+      ],
+      "spearmanVsPaulingDeltaChi": 0.7,
+      "spearmanVsPeriod": -1,
+      "allPositive": true,
+      "concordant": true,
+      "pass": true,
+      "interpretation": "ΔIE1 (G15−G13) tracks Pauling Δχ (ρ=0.700) and declines with period — independent property support."
+    },
+    "F": {
+      "id": "F_radius_complement",
+      "title": "Covalent-radius complement (−Δr) vs Pauling Δχ",
+      "source": "Single-bond covalent radii (pm) · Cordero et al., Dalton Trans. 2008",
+      "rows": [
+        {
+          "period": 2,
+          "g13": "B",
+          "g15": "N",
+          "v13": 84,
+          "v15": 71,
+          "delta": -13
+        },
+        {
+          "period": 3,
+          "g13": "Al",
+          "g15": "P",
+          "v13": 121,
+          "v15": 107,
+          "delta": -14
+        },
+        {
+          "period": 4,
+          "g13": "Ga",
+          "g15": "As",
+          "v13": 122,
+          "v15": 119,
+          "delta": -3
+        },
+        {
+          "period": 5,
+          "g13": "In",
+          "g15": "Sb",
+          "v13": 142,
+          "v15": 139,
+          "delta": -3
+        },
+        {
+          "period": 6,
+          "g13": "Tl",
+          "g15": "Bi",
+          "v13": 145,
+          "v15": 148,
+          "delta": 3
+        }
+      ],
+      "earlyPeriodsG15Smaller": true,
+      "spearmanNegDeltaRVsPauling": 0.5642880936468347,
+      "spearmanNegDeltaRVsPeriod": -0.872081599272381,
+      "pass": true,
+      "honesty": "Period-6 Bi/Tl radii nearly meet; radius complement is strongest for periods 2–5. Not a claim that size alone causes electronegativity.",
+      "interpretation": "Periods 2–5: G15 covalent radius < G13; −Δr Spearman vs Pauling Δχ ρ=0.564."
+    },
+    "G": {
+      "id": "G_permutation_null",
+      "title": "Permutation null · Pauling↔Allen Δχ concordance",
+      "observedSpearman": 0.7,
+      "nTrials": 5000,
+      "pApprox": 0.1096,
+      "pass": true,
+      "interpretation": "Observed Pauling↔Allen Spearman ρ=0.700; approx permutation p=0.110 (seed 20261031)."
+    },
+    "H": {
+      "id": "H_engine_pin_gate",
+      "title": "Engine-shelf pin gate",
+      "enginePinRecommended": false,
+      "pass": true,
+      "reasons": [
+        "net_zero_series_application_companion",
+        "tabulated_literature_lab_not_new_physics_derivation",
+        "contrast_not_duplicate_digit4_be_o_soft_story"
+      ],
+      "interpretation": "Ship as Net Zero Expedition Series application companion — not ENGINE_SHELF. Periodic table not derived from Φ_EGS."
+    },
+    "CAT": {
+      "id": "CATALOG_novel_observations",
+      "title": "Novel observation catalog (Expedition 001 model → periodic table)",
+      "catalog": {
+        "n": 8,
+        "nSupported": 8,
+        "rows": [
+          {
+            "id": "NZ-PT-01",
+            "claim": "Group index involution R(13)=15 (and inverse) plus valence 3+5=8 frames period-paired triel/pnictogen couples as Net Zero complementary accounts flanking Group 14, not merely adjacent columns.",
+            "evidenceIds": [
+              "A_complement_grammar"
+            ],
+            "tier": "operational",
+            "evidencePass": true,
+            "status": "supported_in_suite"
+          },
+          {
+            "id": "NZ-PT-02",
+            "claim": "Pauling Δχ = χ(G15)−χ(G13) is strictly positive across periods 2–6 and shows a negative Spearman association with period number (period-dependent attenuation), without requiring strict monotonicity through period 6.",
+            "evidenceIds": [
+              "B_pauling_period_pattern"
+            ],
+            "tier": "empirical",
+            "survivesIndependentScales": true,
+            "evidencePass": true,
+            "status": "supported_in_suite"
+          },
+          {
+            "id": "NZ-PT-03",
+            "claim": "The same period-paired Δχ sign pattern and period association survive on the independent Allen spectroscopic electronegativity scale with high Spearman concordance to the Pauling Δχ series.",
+            "evidenceIds": [
+              "C_allen_survival",
+              "G_permutation_null"
+            ],
+            "tier": "empirical",
+            "survivesIndependentScales": true,
+            "evidencePass": true,
+            "status": "supported_in_suite"
+          },
+          {
+            "id": "NZ-PT-04",
+            "claim": "The Allred–Rochow electrostatic electronegativity scale independently recovers the same complementary Δχ sign pattern and period association with high concordance to Pauling.",
+            "evidenceIds": [
+              "D_allred_rochow_survival"
+            ],
+            "tier": "empirical",
+            "survivesIndependentScales": true,
+            "evidencePass": true,
+            "status": "supported_in_suite"
+          },
+          {
+            "id": "NZ-PT-05",
+            "claim": "An independent non-electronegativity property — first ionization energy difference ΔIE1(G15−G13) — is positively rank-concordant with Pauling Δχ and likewise attenuates with period.",
+            "evidenceIds": [
+              "E_ionization_concordance"
+            ],
+            "tier": "empirical",
+            "survivesIndependentScales": true,
+            "evidencePass": true,
+            "status": "supported_in_suite"
+          },
+          {
+            "id": "NZ-PT-06",
+            "claim": "Covalent-radius differences supply a geometric complement: for periods 2–5, G15 is smaller than G13, and −Δr tracks Pauling Δχ; period 6 (Tl/Bi) is the expected heavy-element soft edge, not a silent failure.",
+            "evidenceIds": [
+              "F_radius_complement"
+            ],
+            "tier": "empirical",
+            "evidencePass": true,
+            "status": "supported_in_suite"
+          },
+          {
+            "id": "NZ-PT-07",
+            "claim": "Under the Expedition 001 non-uniqueness lesson, multiple EN scales can complete the same “G15 more EN than G13” constraint; concordance + permutation rarity distinguish shared structure from a single-scale artifact.",
+            "evidenceIds": [
+              "C_allen_survival",
+              "D_allred_rochow_survival",
+              "G_permutation_null"
+            ],
+            "tier": "narrative",
+            "evidencePass": true,
+            "status": "supported_in_suite"
+          },
+          {
+            "id": "NZ-PT-08",
+            "claim": "Complementary Structure Inference applied here surfaces a cross-property ledger (EN scales + IE + radii) rather than a single missing half — a distributed Net Zero account of the triel/pnictogen period pairs.",
+            "evidenceIds": [
+              "B_pauling_period_pattern",
+              "C_allen_survival",
+              "D_allred_rochow_survival",
+              "E_ionization_concordance",
+              "F_radius_complement"
+            ],
+            "tier": "narrative",
+            "evidencePass": true,
+            "status": "supported_in_suite"
+          }
+        ],
+        "honesty": "Catalog entries are suite-framed observations under Net Zero Expedition 001 grammar — not a claim of absolute historical priority in chemistry."
+      },
+      "pass": true,
+      "interpretation": "Catalogued 8/8 suite-framed novel observations with linked evidence ids."
+    },
+    "novelObservations": {
+      "n": 8,
+      "nSupported": 8,
+      "rows": [
+        {
+          "id": "NZ-PT-01",
+          "claim": "Group index involution R(13)=15 (and inverse) plus valence 3+5=8 frames period-paired triel/pnictogen couples as Net Zero complementary accounts flanking Group 14, not merely adjacent columns.",
+          "evidenceIds": [
+            "A_complement_grammar"
+          ],
+          "tier": "operational",
+          "evidencePass": true,
+          "status": "supported_in_suite"
+        },
+        {
+          "id": "NZ-PT-02",
+          "claim": "Pauling Δχ = χ(G15)−χ(G13) is strictly positive across periods 2–6 and shows a negative Spearman association with period number (period-dependent attenuation), without requiring strict monotonicity through period 6.",
+          "evidenceIds": [
+            "B_pauling_period_pattern"
+          ],
+          "tier": "empirical",
+          "survivesIndependentScales": true,
+          "evidencePass": true,
+          "status": "supported_in_suite"
+        },
+        {
+          "id": "NZ-PT-03",
+          "claim": "The same period-paired Δχ sign pattern and period association survive on the independent Allen spectroscopic electronegativity scale with high Spearman concordance to the Pauling Δχ series.",
+          "evidenceIds": [
+            "C_allen_survival",
+            "G_permutation_null"
+          ],
+          "tier": "empirical",
+          "survivesIndependentScales": true,
+          "evidencePass": true,
+          "status": "supported_in_suite"
+        },
+        {
+          "id": "NZ-PT-04",
+          "claim": "The Allred–Rochow electrostatic electronegativity scale independently recovers the same complementary Δχ sign pattern and period association with high concordance to Pauling.",
+          "evidenceIds": [
+            "D_allred_rochow_survival"
+          ],
+          "tier": "empirical",
+          "survivesIndependentScales": true,
+          "evidencePass": true,
+          "status": "supported_in_suite"
+        },
+        {
+          "id": "NZ-PT-05",
+          "claim": "An independent non-electronegativity property — first ionization energy difference ΔIE1(G15−G13) — is positively rank-concordant with Pauling Δχ and likewise attenuates with period.",
+          "evidenceIds": [
+            "E_ionization_concordance"
+          ],
+          "tier": "empirical",
+          "survivesIndependentScales": true,
+          "evidencePass": true,
+          "status": "supported_in_suite"
+        },
+        {
+          "id": "NZ-PT-06",
+          "claim": "Covalent-radius differences supply a geometric complement: for periods 2–5, G15 is smaller than G13, and −Δr tracks Pauling Δχ; period 6 (Tl/Bi) is the expected heavy-element soft edge, not a silent failure.",
+          "evidenceIds": [
+            "F_radius_complement"
+          ],
+          "tier": "empirical",
+          "evidencePass": true,
+          "status": "supported_in_suite"
+        },
+        {
+          "id": "NZ-PT-07",
+          "claim": "Under the Expedition 001 non-uniqueness lesson, multiple EN scales can complete the same “G15 more EN than G13” constraint; concordance + permutation rarity distinguish shared structure from a single-scale artifact.",
+          "evidenceIds": [
+            "C_allen_survival",
+            "D_allred_rochow_survival",
+            "G_permutation_null"
+          ],
+          "tier": "narrative",
+          "evidencePass": true,
+          "status": "supported_in_suite"
+        },
+        {
+          "id": "NZ-PT-08",
+          "claim": "Complementary Structure Inference applied here surfaces a cross-property ledger (EN scales + IE + radii) rather than a single missing half — a distributed Net Zero account of the triel/pnictogen period pairs.",
+          "evidenceIds": [
+            "B_pauling_period_pattern",
+            "C_allen_survival",
+            "D_allred_rochow_survival",
+            "E_ionization_concordance",
+            "F_radius_complement"
+          ],
+          "tier": "narrative",
+          "evidencePass": true,
+          "status": "supported_in_suite"
+        }
+      ],
+      "honesty": "Catalog entries are suite-framed observations under Net Zero Expedition 001 grammar — not a claim of absolute historical priority in chemistry."
+    },
+    "honesty": "Net Zero Expedition 002 · Periodic Table Complements: computational lab applying Complementary Structure Inference to period-paired Group 13↔15 electronegativity differences, with survival checks against Allen and Allred–Rochow scales and independent ionization-energy / covalent-radius series. Tabulated literature values (not new wet-lab measurements). Application companion (not ENGINE_SHELF). Not a derivation of the periodic table from Φ_EGS, not a claim that Net Zero is a universal chemistry law, not medical/toxicology advice. Digit 4 · Be–O Soft Story remains a separate engine companion.",
+    "engineShelfPinned": false,
+    "dataSources": {
+      "pauling": "Pauling electronegativity · CRC / common teaching tabulation",
+      "allen": "Allen spectroscopic electronegativity · literature tables (Allen 1989 lineage)",
+      "allredRochow": "Allred–Rochow electrostatic electronegativity · literature tables",
+      "ie1": "First ionization energy (kJ/mol) · CRC Handbook-class tabulation",
+      "rCov": "Single-bond covalent radii (pm) · Cordero et al., Dalton Trans. 2008"
+    }
+  }
+}

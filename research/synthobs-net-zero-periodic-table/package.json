@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-net-zero-periodic-table",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Net Zero Expedition 002 — Periodic Table Complements · Group 13↔15",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

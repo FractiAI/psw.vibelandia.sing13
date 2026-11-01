@@ -1581,6 +1581,22 @@
       "destination": "/interfaces/blog-phase-aware-consensus-calculus-2026-10.html"
     },
     {
+      "source": "/ship-blog/net-zero-periodic-table",
+      "destination": "/interfaces/blog-net-zero-periodic-table-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/net-zero-periodic-table/",
+      "destination": "/interfaces/blog-net-zero-periodic-table-2026-10.html"
+    },
+    {
+      "source": "/whitepaper/net-zero-periodic-table",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-net-zero-periodic-table-2026-10"
+    },
+    {
+      "source": "/whitepaper/net-zero-periodic-table/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-net-zero-periodic-table-2026-10"
+    },
+    {
       "source": "/ship-blog/net-zero-missing-half",
       "destination": "/interfaces/blog-net-zero-missing-half-2026-10.html"
     },

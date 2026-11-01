@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-01T01:00:58.765Z",
+  "updatedAt": "2026-11-01T01:16:52.075Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-net-zero-periodic-table-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-01T01:16:52.073Z",
+      "body": "Net Zero Expedition 002 — Periodic Table Complements: Group 13↔15 Electronegativity and Independent Property Survival",
+      "presenceHue": "gold",
+      "paperId": "synthobs-net-zero-periodic-table-2026-10",
+      "artifact": {
+        "title": "Net Zero Expedition 002 — Periodic Table Complements: Group 13↔15 Electronegativity and Independent Property Survival",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_NET_ZERO_PERIODIC_TABLE_EGS_2026-10.md",
+        "url": "/whitepaper/net-zero-periodic-table",
+        "paperId": "synthobs-net-zero-periodic-table-2026-10",
+        "docId": "WP-SYNTHOBS-NET-ZERO-PERIODIC-TABLE-EGS-2026-10-31",
+        "published": "2026-10-31T23:30:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-net-zero-missing-half-2026-10",
       "type": "ArtifactEvent",

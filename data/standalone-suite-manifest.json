@@ -4,6 +4,18 @@
   "updatedAt": "2026-10-31",
   "suites": [
     {
+      "id": "synthobs-net-zero-periodic-table",
+      "path": "research/synthobs-net-zero-periodic-table",
+      "github": "https://github.com/FractiAI/synthobs-net-zero-periodic-table",
+      "description": "Net Zero Expedition 002 — Periodic Table Complements · G13↔G15 Δχ + novel observation catalog · application companion (not ENGINE_SHELF)",
+      "paperIds": [
+        "synthobs-net-zero-periodic-table-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_NET_ZERO_PERIODIC_TABLE_EGS_2026-10.md"
+      ]
+    },
+    {
       "id": "synthobs-net-zero-missing-half",
       "path": "research/synthobs-net-zero-missing-half",
       "github": "https://github.com/FractiAI/synthobs-net-zero-missing-half",

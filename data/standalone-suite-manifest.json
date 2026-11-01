@@ -1,8 +1,20 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-10-30",
+  "updatedAt": "2026-10-31",
   "suites": [
+    {
+      "id": "synthobs-net-zero-missing-half",
+      "path": "research/synthobs-net-zero-missing-half",
+      "github": "https://github.com/FractiAI/synthobs-net-zero-missing-half",
+      "description": "Net Zero Expedition 001 — The Missing Half · complementary structure math+lab · application companion (not ENGINE_SHELF)",
+      "paperIds": [
+        "synthobs-net-zero-missing-half-2026-10"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_NET_ZERO_MISSING_HALF_EGS_2026-10.md"
+      ]
+    },
     {
       "id": "synthobs-tiny-gateway-language-radar",
       "path": "research/synthobs-tiny-gateway-language-radar",

@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-10-31T02:18:39.298Z",
+  "updatedAt": "2026-11-01T01:00:58.765Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-net-zero-missing-half-2026-10",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-01T01:00:58.739Z",
+      "body": "Net Zero Expedition 001 — The Missing Half: The Complementary Structure of Reality",
+      "presenceHue": "gold",
+      "paperId": "synthobs-net-zero-missing-half-2026-10",
+      "artifact": {
+        "title": "Net Zero Expedition 001 — The Missing Half: The Complementary Structure of Reality",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_NET_ZERO_MISSING_HALF_EGS_2026-10.md",
+        "url": "/whitepaper/net-zero-missing-half",
+        "paperId": "synthobs-net-zero-missing-half-2026-10",
+        "docId": "WP-SYNTHOBS-NET-ZERO-MISSING-HALF-EGS-2026-10-31",
+        "published": "2026-10-31T22:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-tiny-gateway-language-radar-2026-10",
       "type": "ArtifactEvent",

@@ -1,0 +1,506 @@
+{
+  "schema": "synthobs-net-zero-missing-half/v1",
+  "DOC_ID": "WP-SYNTHOBS-NET-ZERO-MISSING-HALF-EGS-2026-10-31",
+  "REGISTRY_ID": "synthobs-net-zero-missing-half-2026-10",
+  "STUDY_TITLE": "Net Zero Expedition 001 — The Missing Half: The Complementary Structure of Reality",
+  "generatedAt": "2026-11-01T00:57:31.030Z",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_circle",
+        "title": "Circle decomposition",
+        "pass": true,
+        "A": {
+          "id": "A_circle",
+          "title": "Circle decomposition",
+          "exactHalf": 157.07963267948966,
+          "numericalUpper": 157.0796325131835,
+          "relativeError": 1.0587379308608072e-9,
+          "pass": true
+        }
+      },
+      {
+        "id": "E2_sphere",
+        "title": "Sphere decomposition",
+        "pass": true,
+        "B": {
+          "id": "B_sphere",
+          "title": "Sphere decomposition",
+          "exactVolume": 4188.790204786391,
+          "numericalVolume": 4188.790204785271,
+          "numericalHemisphere": 2094.3951023926356,
+          "exactHemisphere": 2094.3951023931954,
+          "relativeError": 2.6728194135938316e-13,
+          "pass": true
+        }
+      },
+      {
+        "id": "E3_function_decomp",
+        "title": "General even/odd function decomposition",
+        "pass": true,
+        "primary": {
+          "id": "C_function",
+          "title": "General even/odd function decomposition",
+          "n": 100000,
+          "maxReconstructionError": 4.440892098500626e-16,
+          "maxEvenInvarianceError": 0,
+          "maxOddAntisymmetryError": 0,
+          "pass": true
+        },
+        "validation": {
+          "id": "C_function",
+          "title": "General even/odd function decomposition",
+          "n": 100000,
+          "maxReconstructionError": 4.440892098500626e-16,
+          "maxEvenInvarianceError": 0,
+          "maxOddAntisymmetryError": 0,
+          "pass": true
+        }
+      },
+      {
+        "id": "E4_asymmetric_forces",
+        "title": "Asymmetric force equilibrium",
+        "pass": true,
+        "D": {
+          "id": "D_asymmetric_forces",
+          "title": "Asymmetric force equilibrium",
+          "forces": {
+            "F1": [
+              3,
+              0
+            ],
+            "F2": [
+              0,
+              4
+            ],
+            "F3": [
+              -3,
+              -4
+            ]
+          },
+          "magnitudes": [
+            3,
+            4,
+            5
+          ],
+          "resultant": [
+            0,
+            0
+          ],
+          "pass": true,
+          "honesty": "Force-resultant balance only — not full rigid-body torque equilibrium."
+        }
+      },
+      {
+        "id": "E5_material_accounting",
+        "title": "Distributed material accounting",
+        "pass": true,
+        "E": {
+          "id": "E_material_accounting",
+          "title": "Distributed material accounting",
+          "input": 10,
+          "outA": 6,
+          "outB": 3,
+          "inferredAccumulation": 1,
+          "residual": 0,
+          "pass": true,
+          "honesty": "Illustrative kg/h values — not a measured plant balance."
+        }
+      },
+      {
+        "id": "E6_nonunique_hidden",
+        "title": "Non-unique hidden-component inference",
+        "pass": true,
+        "F": {
+          "id": "F_nonunique_hidden",
+          "title": "Non-unique hidden-component inference",
+          "constraint": "z1 + z2 = 1",
+          "pairs": [
+            [
+              -2,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0.25,
+              0.75
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              3,
+              -2
+            ]
+          ],
+          "residuals": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "pass": true,
+          "honesty": "Multiple valid completions — constraint does not uniquely identify the complement."
+        }
+      },
+      {
+        "id": "E7_fourier_wave",
+        "title": "Fourier symmetry + wave interference",
+        "pass": true,
+        "G": {
+          "id": "G_fourier",
+          "title": "Fourier conjugate symmetry (real signal)",
+          "n": 4096,
+          "maxDiscrepancy": 1.4126655401014432e-10,
+          "pass": true
+        },
+        "H": {
+          "id": "H_wave",
+          "title": "Wave interference · phase-dependent cancellation",
+          "rows": [
+            {
+              "phaseDeg": 0,
+              "resultantAmplitude": 2
+            },
+            {
+              "phaseDeg": 90,
+              "resultantAmplitude": 1.4142135623730951
+            },
+            {
+              "phaseDeg": 180,
+              "resultantAmplitude": 1.2246467991473532e-16
+            },
+            {
+              "phaseDeg": 270,
+              "resultantAmplitude": 1.414213562373095
+            },
+            {
+              "phaseDeg": 360,
+              "resultantAmplitude": 2
+            }
+          ],
+          "pass": true,
+          "honesty": "Idealized equal-amplitude superposition — not all complementarity is cancellation."
+        }
+      },
+      {
+        "id": "E8_engine_pin_gate",
+        "title": "Data-gated engine pin recommendation",
+        "pass": true,
+        "enginePinRecommended": false,
+        "templateGate": {
+          "id": "T_template_reuse_gate",
+          "title": "Template reuse vs bare rebuild (engine-pin gate)",
+          "warmMedianMs": 0.015300000000024738,
+          "rebuildMedianMs": 0.0005000000001018634,
+          "constructMedianMs": 0.0014999999998508429,
+          "enginePinRecommended": false,
+          "pass": true,
+          "pin": false
+        },
+        "reasons": [
+          "template_reuse_not_competitive_with_rebuild"
+        ],
+        "interpretation": "Template reuse gate failed — ship as application companion, not ENGINE_SHELF."
+      }
+    ],
+    "n_pass": 8,
+    "n_total": 8,
+    "all_pass": true,
+    "core": [
+      {
+        "id": "A_circle",
+        "title": "Circle decomposition",
+        "exactHalf": 157.07963267948966,
+        "numericalUpper": 157.0796325131835,
+        "relativeError": 1.0587379308608072e-9,
+        "pass": true
+      },
+      {
+        "id": "B_sphere",
+        "title": "Sphere decomposition",
+        "exactVolume": 4188.790204786391,
+        "numericalVolume": 4188.790204785271,
+        "numericalHemisphere": 2094.3951023926356,
+        "exactHemisphere": 2094.3951023931954,
+        "relativeError": 2.6728194135938316e-13,
+        "pass": true
+      },
+      {
+        "id": "C_function",
+        "title": "General even/odd function decomposition",
+        "n": 100000,
+        "maxReconstructionError": 4.440892098500626e-16,
+        "maxEvenInvarianceError": 0,
+        "maxOddAntisymmetryError": 0,
+        "pass": true
+      },
+      {
+        "id": "D_asymmetric_forces",
+        "title": "Asymmetric force equilibrium",
+        "forces": {
+          "F1": [
+            3,
+            0
+          ],
+          "F2": [
+            0,
+            4
+          ],
+          "F3": [
+            -3,
+            -4
+          ]
+        },
+        "magnitudes": [
+          3,
+          4,
+          5
+        ],
+        "resultant": [
+          0,
+          0
+        ],
+        "pass": true,
+        "honesty": "Force-resultant balance only — not full rigid-body torque equilibrium."
+      },
+      {
+        "id": "E_material_accounting",
+        "title": "Distributed material accounting",
+        "input": 10,
+        "outA": 6,
+        "outB": 3,
+        "inferredAccumulation": 1,
+        "residual": 0,
+        "pass": true,
+        "honesty": "Illustrative kg/h values — not a measured plant balance."
+      },
+      {
+        "id": "F_nonunique_hidden",
+        "title": "Non-unique hidden-component inference",
+        "constraint": "z1 + z2 = 1",
+        "pairs": [
+          [
+            -2,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0.25,
+            0.75
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "residuals": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pass": true,
+        "honesty": "Multiple valid completions — constraint does not uniquely identify the complement."
+      },
+      {
+        "id": "G_fourier",
+        "title": "Fourier conjugate symmetry (real signal)",
+        "n": 4096,
+        "maxDiscrepancy": 1.4126655401014432e-10,
+        "pass": true
+      },
+      {
+        "id": "H_wave",
+        "title": "Wave interference · phase-dependent cancellation",
+        "rows": [
+          {
+            "phaseDeg": 0,
+            "resultantAmplitude": 2
+          },
+          {
+            "phaseDeg": 90,
+            "resultantAmplitude": 1.4142135623730951
+          },
+          {
+            "phaseDeg": 180,
+            "resultantAmplitude": 1.2246467991473532e-16
+          },
+          {
+            "phaseDeg": 270,
+            "resultantAmplitude": 1.414213562373095
+          },
+          {
+            "phaseDeg": 360,
+            "resultantAmplitude": 2
+          }
+        ],
+        "pass": true,
+        "honesty": "Idealized equal-amplitude superposition — not all complementarity is cancellation."
+      }
+    ],
+    "A": {
+      "id": "A_circle",
+      "title": "Circle decomposition",
+      "exactHalf": 157.07963267948966,
+      "numericalUpper": 157.0796325131835,
+      "relativeError": 1.0587379308608072e-9,
+      "pass": true
+    },
+    "B": {
+      "id": "B_sphere",
+      "title": "Sphere decomposition",
+      "exactVolume": 4188.790204786391,
+      "numericalVolume": 4188.790204785271,
+      "numericalHemisphere": 2094.3951023926356,
+      "exactHemisphere": 2094.3951023931954,
+      "relativeError": 2.6728194135938316e-13,
+      "pass": true
+    },
+    "C": {
+      "id": "C_function",
+      "title": "General even/odd function decomposition",
+      "n": 100000,
+      "maxReconstructionError": 4.440892098500626e-16,
+      "maxEvenInvarianceError": 0,
+      "maxOddAntisymmetryError": 0,
+      "pass": true
+    },
+    "D": {
+      "id": "D_asymmetric_forces",
+      "title": "Asymmetric force equilibrium",
+      "forces": {
+        "F1": [
+          3,
+          0
+        ],
+        "F2": [
+          0,
+          4
+        ],
+        "F3": [
+          -3,
+          -4
+        ]
+      },
+      "magnitudes": [
+        3,
+        4,
+        5
+      ],
+      "resultant": [
+        0,
+        0
+      ],
+      "pass": true,
+      "honesty": "Force-resultant balance only — not full rigid-body torque equilibrium."
+    },
+    "E": {
+      "id": "E_material_accounting",
+      "title": "Distributed material accounting",
+      "input": 10,
+      "outA": 6,
+      "outB": 3,
+      "inferredAccumulation": 1,
+      "residual": 0,
+      "pass": true,
+      "honesty": "Illustrative kg/h values — not a measured plant balance."
+    },
+    "F": {
+      "id": "F_nonunique_hidden",
+      "title": "Non-unique hidden-component inference",
+      "constraint": "z1 + z2 = 1",
+      "pairs": [
+        [
+          -2,
+          3
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.25,
+          0.75
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          -2
+        ]
+      ],
+      "residuals": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "pass": true,
+      "honesty": "Multiple valid completions — constraint does not uniquely identify the complement."
+    },
+    "G": {
+      "id": "G_fourier",
+      "title": "Fourier conjugate symmetry (real signal)",
+      "n": 4096,
+      "maxDiscrepancy": 1.4126655401014432e-10,
+      "pass": true
+    },
+    "H": {
+      "id": "H_wave",
+      "title": "Wave interference · phase-dependent cancellation",
+      "rows": [
+        {
+          "phaseDeg": 0,
+          "resultantAmplitude": 2
+        },
+        {
+          "phaseDeg": 90,
+          "resultantAmplitude": 1.4142135623730951
+        },
+        {
+          "phaseDeg": 180,
+          "resultantAmplitude": 1.2246467991473532e-16
+        },
+        {
+          "phaseDeg": 270,
+          "resultantAmplitude": 1.414213562373095
+        },
+        {
+          "phaseDeg": 360,
+          "resultantAmplitude": 2
+        }
+      ],
+      "pass": true,
+      "honesty": "Idealized equal-amplitude superposition — not all complementarity is cancellation."
+    },
+    "T": {
+      "id": "T_template_reuse_gate",
+      "title": "Template reuse vs bare rebuild (engine-pin gate)",
+      "warmMedianMs": 0.015300000000024738,
+      "rebuildMedianMs": 0.0005000000001018634,
+      "constructMedianMs": 0.0014999999998508429,
+      "enginePinRecommended": false,
+      "pass": true,
+      "pin": false
+    },
+    "honesty": "Net Zero Expedition 001 · The Missing Half: foundational mathematical proofs + computational demonstrations of complementary decomposition, asymmetric equilibrium, material accounting, and non-unique hidden-variable inference. Application companion (not ENGINE_SHELF). Not a claim that all natural systems are Net Zero, not a finished physics law, not an AGI breakthrough. Complementary Structure Inference is a proposed research capability. Φ_EGS is design grammar only when referenced.",
+    "engineShelfPinned": false
+  }
+}

@@ -765,6 +765,14 @@
       "destination": "/interfaces/journey/homeostasis-expedition.html"
     },
     {
+      "source": "/journey/net-zero-expedition",
+      "destination": "/interfaces/journey/net-zero-expedition.html"
+    },
+    {
+      "source": "/journey/net-zero-expedition/",
+      "destination": "/interfaces/journey/net-zero-expedition.html"
+    },
+    {
       "source": "/journey/boriken-convergence",
       "destination": "/interfaces/journey/boriken-convergence.html"
     },
@@ -1571,6 +1579,22 @@
     {
       "source": "/ship-blog/phase-aware-consensus-calculus/",
       "destination": "/interfaces/blog-phase-aware-consensus-calculus-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/net-zero-missing-half",
+      "destination": "/interfaces/blog-net-zero-missing-half-2026-10.html"
+    },
+    {
+      "source": "/ship-blog/net-zero-missing-half/",
+      "destination": "/interfaces/blog-net-zero-missing-half-2026-10.html"
+    },
+    {
+      "source": "/whitepaper/net-zero-missing-half",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-net-zero-missing-half-2026-10"
+    },
+    {
+      "source": "/whitepaper/net-zero-missing-half/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-net-zero-missing-half-2026-10"
     },
     {
       "source": "/ship-blog/tiny-gateway-language-radar",

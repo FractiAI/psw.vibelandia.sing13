@@ -1,48 +1,48 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "dateline": {
-    "ymd": "2026-10-31",
-    "weekday": "Saturday",
-    "month": "October",
-    "day": 31,
-    "label": "Saturday, October 31",
-    "shortBoard": "Saturday board · October 31 · Puerto Reno",
-    "newsLabel": "News of the day · Saturday, October 31"
+    "ymd": "2026-11-01",
+    "weekday": "Sunday",
+    "month": "November",
+    "day": 1,
+    "label": "Sunday, November 1",
+    "shortBoard": "Sunday board · November 1 · Puerto Reno",
+    "newsLabel": "News of the day · Sunday, November 1"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Saturday board · October 31 · Puerto Reno",
-  "newsLabel": "News of the day · Saturday, October 31",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/tiny-gateway-language-radar\">Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data?</a>. Also new on the board: <a href=\"/ship-blog/trgm-gateway-agent-performance\">Do Agents Do Better With a Tiny Reality Gateway Than Without One?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Sunday board · November 1 · Puerto Reno",
+  "newsLabel": "News of the day · Sunday, November 1",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/net-zero-periodic-table\">Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?</a>. Also new on the board: <a href=\"/ship-blog/net-zero-missing-half\">When You See Only Half the Circle, What Completes the Whole?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/tiny-gateway-language-radar\">Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-net-zero-periodic-table-2026-10",
+      "title": "Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?",
+      "href": "/ship-blog/net-zero-periodic-table",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-net-zero-periodic-table-2026-10",
+      "blurb": "Net Zero Expedition 002: G13↔G15 Δχ period pattern survives Allen, Allred–Rochow, IE, radii; novel catalog 8/8; E1–E8 8/8; application companion, not engine pin."
+    },
+    {
+      "id": "synthobs-net-zero-missing-half-2026-10",
+      "title": "When You See Only Half the Circle, What Completes the Whole?",
+      "href": "/ship-blog/net-zero-missing-half",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-net-zero-missing-half-2026-10",
+      "blurb": "Net Zero Expedition 001: complementary geometry, even/odd decomposition, asymmetric forces, hidden accounting; E1–E8 8/8; application companion, not engine pin."
+    },
     {
       "id": "synthobs-tiny-gateway-language-radar-2026-10",
       "title": "Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data?",
       "href": "/ship-blog/tiny-gateway-language-radar",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-gateway-language-radar-2026-10",
       "blurb": "Leo Computational Lab: Tiny Gateway language acc 0.585 vs ~0.377 baselines; Movebank+Kp fusion F1 0.261 tied; template reuse gate fails; E1–E8 8/8; application companion, not engine pin."
-    },
-    {
-      "id": "synthobs-trgm-gateway-agent-performance-2026-10",
-      "title": "Do Agents Do Better With a Tiny Reality Gateway Than Without One?",
-      "href": "/ship-blog/trgm-gateway-agent-performance",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-trgm-gateway-agent-performance-2026-10",
-      "blurb": "Homeostasis Expedition follow-on: agents with TRGM gateway (10 bit/s bio pipe) beat without — nav 100% vs 66.7%, coherence 1.000 vs 0.263; E1–E8 8/8; application companion, not engine pin."
-    },
-    {
-      "id": "synthobs-trgm-predictive-reality-catalog-2026-10",
-      "title": "After a Generator Passes Once, Does It Still Predict on Held-Out Biology?",
-      "href": "/ship-blog/trgm-predictive-reality-catalog",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-trgm-predictive-reality-catalog-2026-10",
-      "blurb": "TRGM #51: independent predictive validation + reality catalog — V1–V8 8/8; held-out grammar BA 1.000 vs shuffle 0.341; reproduce #50 25/25 (10 bit/s bio pipe); Homeostasis Expedition #51, not molecular mechanism claim."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-30-synthobs-trgm-gateway-agent-performance-2026-10",
-    "title": "Do Agents Do Better With a Tiny Reality Gateway Than Without One?",
-    "href": "/ship-blog/trgm-gateway-agent-performance"
+    "id": "daily-2026-10-31-synthobs-tiny-gateway-language-radar-2026-10",
+    "title": "Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data?",
+    "href": "/ship-blog/tiny-gateway-language-radar"
   },
-  "generatedAt": "2026-10-31T19:14:25.410Z"
+  "generatedAt": "2026-11-01T19:33:14.277Z"
 }

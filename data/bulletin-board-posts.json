@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "posts": [
+    {
+      "id": "daily-2026-11-01-synthobs-net-zero-periodic-table-2026-10",
+      "posted": "2026-11-01",
+      "featured": true,
+      "title": "Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?",
+      "subtitle": "News of the day · Sunday, November 1",
+      "summary": "Net Zero Expedition 002: G13↔G15 Δχ period pattern survives Allen, Allred–Rochow, IE, radii; novel catalog 8/8; E1–E8 8/8; application companion, not engine pin.",
+      "href": "/ship-blog/net-zero-periodic-table",
+      "pill": "TODAY",
+      "docRef": "synthobs-net-zero-periodic-table-2026-10",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-10-31-synthobs-tiny-gateway-language-radar-2026-10",
       "posted": "2026-10-31",

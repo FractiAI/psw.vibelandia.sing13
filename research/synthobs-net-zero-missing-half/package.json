@@ -1,0 +1,13 @@
+{
+  "name": "synthobs-net-zero-missing-half",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Net Zero Expedition 001 — The Missing Half · complementary structure lab · FractiAI / SynthOBS",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

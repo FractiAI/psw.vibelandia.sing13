@@ -1,21 +1,21 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "dateline": {
-    "ymd": "2026-11-01",
-    "weekday": "Sunday",
+    "ymd": "2026-11-02",
+    "weekday": "Monday",
     "month": "November",
-    "day": 1,
-    "label": "Sunday, November 1",
-    "shortBoard": "Sunday board · November 1 · Puerto Reno",
-    "newsLabel": "News of the day · Sunday, November 1"
+    "day": 2,
+    "label": "Monday, November 2",
+    "shortBoard": "Monday board · November 2 · Puerto Reno",
+    "newsLabel": "News of the day · Monday, November 2"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Sunday board · November 1 · Puerto Reno",
-  "newsLabel": "News of the day · Sunday, November 1",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/net-zero-periodic-table\">Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?</a>. Also new on the board: <a href=\"/ship-blog/net-zero-missing-half\">When You See Only Half the Circle, What Completes the Whole?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/tiny-gateway-language-radar\">Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Monday board · November 2 · Puerto Reno",
+  "newsLabel": "News of the day · Monday, November 2",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/net-zero-periodic-table\">Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?</a>. Also new on the board: <a href=\"/ship-blog/net-zero-missing-half\">When You See Only Half the Circle, What Completes the Whole?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-net-zero-periodic-table-2026-10",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-10-31-synthobs-tiny-gateway-language-radar-2026-10",
-    "title": "Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data?",
-    "href": "/ship-blog/tiny-gateway-language-radar"
+    "id": "daily-2026-11-01-synthobs-net-zero-periodic-table-2026-10",
+    "title": "Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?",
+    "href": "/ship-blog/net-zero-periodic-table"
   },
-  "generatedAt": "2026-11-01T19:33:14.277Z"
+  "generatedAt": "2026-11-02T23:04:42.949Z"
 }

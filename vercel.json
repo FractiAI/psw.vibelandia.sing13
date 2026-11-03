@@ -1589,6 +1589,14 @@
       "destination": "/interfaces/tiny-footprint-product.html"
     },
     {
+      "source": "/tiny-footprint/simple",
+      "destination": "/interfaces/tiny-footprint-simple.html"
+    },
+    {
+      "source": "/tiny-footprint/simple/",
+      "destination": "/interfaces/tiny-footprint-simple.html"
+    },
+    {
       "source": "/tiny-footprint/local",
       "destination": "/interfaces/tiny-footprint-local.html"
     },

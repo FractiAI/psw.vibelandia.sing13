@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-03** · **401** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-03** · **402** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -599,6 +599,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/tiny-footprint-local.html`](/interfaces/tiny-footprint-local.html) | Tiny Footprint Local · Community & Developer Pro |
 | [`/interfaces/tiny-footprint-product.html`](/interfaces/tiny-footprint-product.html) | Tiny Footprint™ · Less Memory. Lower Latency. More AI Performance. |
 | [`/interfaces/tiny-footprint-server.html`](/interfaces/tiny-footprint-server.html) | Tiny Footprint Server · Team & Enterprise |
+| [`/interfaces/tiny-footprint-simple.html`](/interfaces/tiny-footprint-simple.html) | Tiny Footprint · Simple breakdown |
 | [`/interfaces/tiny-footprint-validation.html`](/interfaces/tiny-footprint-validation.html) | Tiny Footprint Validation Initiative · Sign up |
 | [`/interfaces/tiny-footprint-workstation.html`](/interfaces/tiny-footprint-workstation.html) | Tiny Footprint Workstation 0.1 · IDE kit |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |

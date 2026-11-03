@@ -16,6 +16,7 @@ export function runGpuLiveChatLab(opts = {}) {
   const kv = opts.kvMib ?? 4;
   const sys = opts.sysMib ?? 12;
   const weight = opts.weightMib ?? 32;
+  const latencyTrials = opts.latencyTrials ?? 24;
   const py = process.env.TINY_FOOTPRINT_PYTHON || 'py';
   const args = [
     '-3',
@@ -28,6 +29,8 @@ export function runGpuLiveChatLab(opts = {}) {
     String(sys),
     '--weight-mib',
     String(weight),
+    '--latency-trials',
+    String(latencyTrials),
     '--out',
     OUT,
   ];

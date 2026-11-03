@@ -10,6 +10,8 @@ describe('Tiny Gateway · Rhyming Templates · Tiny Footprint', () => {
     expect(r.H.aggregateRatio).toBeGreaterThanOrEqual(DRAM_REDUCTION_TARGET);
     expect(r.I.pass).toBe(true);
     expect(r.I.allocReduction).toBeGreaterThanOrEqual(0.8);
+    expect(r.I.turnP50MsWith).toBeLessThan(r.I.turnP50MsWithout);
+    expect(r.I.turnSpeedup).toBeGreaterThan(1);
     expect(r.enginePinRecommended).toBe(true);
     const pin = ENGINE_SHELF.find((e) => e.order === 52);
     expect(pin?.registryId).toBe('synthobs-tiny-gateway-rhyming-templates-2026-11');

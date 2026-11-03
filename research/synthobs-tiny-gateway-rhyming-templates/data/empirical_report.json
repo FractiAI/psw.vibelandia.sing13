@@ -3,7 +3,7 @@
   "DOC_ID": "WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03",
   "REGISTRY_ID": "synthobs-tiny-gateway-rhyming-templates-2026-11",
   "STUDY_TITLE": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
-  "generatedAt": "2026-11-03T16:58:31.023Z",
+  "generatedAt": "2026-11-03T17:19:37.296Z",
   "results": {
     "experiments": [
       {
@@ -124,17 +124,24 @@
       },
       {
         "id": "E8_gpu_live_tiny_footprint",
-        "title": "Tiny Footprint · live GPU chat-stack device memory (nvidia-smi)",
+        "title": "Tiny Footprint · live GPU chat-stack memory + latency (nvidia-smi)",
         "pass": true,
         "I": {
           "id": "I_gpu_live_chat_stack",
-          "title": "Tiny Footprint · live GPU chat-stack device memory (nvidia-smi)",
+          "title": "Tiny Footprint · live GPU chat-stack memory + latency (nvidia-smi)",
           "product": "Tiny Footprint",
           "report": {
             "ok": true,
             "product": "Tiny Footprint",
-            "device": "NVIDIA via nvcuda.dll + nvidia-smi",
-            "memoryClassNote": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
+            "device": "NVIDIA GeForce GTX 860M",
+            "deviceDetail": {
+              "name": "NVIDIA GeForce GTX 860M",
+              "totalMib": 2048,
+              "driverVersion": "512.77",
+              "api": "nvcuda.dll cuMemAlloc + cuMemcpyHtoD + nvidia-smi",
+              "host": "live laptop GeForce (this machine)"
+            },
+            "memoryClassNote": "Measured on NVIDIA GeForce GTX 860M via nvidia-smi / cuMemAlloc / cuMemcpyHtoD. This GeForce uses GDDR device memory; datacenter HBM is the operator analogue for the same duplicated-resident-state problem — not identical silicon. Latency is materialization path, not frontier LLM decode.",
             "liveStack": {
               "sessions": 16,
               "kvMibPerSession": 4,
@@ -155,6 +162,63 @@
               "tinyMib": 53.59999084472656,
               "reductionRatio": 0.8138889206780328
             },
+            "latency": {
+              "metric": "chat_stack_materialization_latency",
+              "honesty": "Wall-clock cuMemcpyHtoD + cuCtxSynchronize on this GPU for with/without Tiny Footprint materialization. Not frontier LLM decode TTFT/TPS.",
+              "trials": 24,
+              "payloadBytesPerTurn": {
+                "conventional": 134217728,
+                "tinyFootprint": 14260624,
+                "trafficReductionRatio": 0.8937500715255737
+              },
+              "withoutTinyFootprint": {
+                "label": "conventional_duplicated_resident_state",
+                "turnMaterializeMs": {
+                  "n": 24,
+                  "meanMs": 42.14034999798363,
+                  "p50Ms": 41.819849982857704,
+                  "p95Ms": 44.693300034850836,
+                  "minMs": 40.51609989255667,
+                  "maxMs": 45.71449989452958
+                },
+                "sessionBringupMs": {
+                  "n": 8,
+                  "meanMs": 6.031037715729326,
+                  "p50Ms": 5.791600095108151,
+                  "p95Ms": 6.508100312203169,
+                  "minMs": 5.601400043815374,
+                  "maxMs": 7.145800162106752
+                }
+              },
+              "withTinyFootprint": {
+                "label": "shared_pattern_plus_deltas",
+                "turnMaterializeMs": {
+                  "n": 24,
+                  "meanMs": 3.849525024027874,
+                  "p50Ms": 3.7366999313235283,
+                  "p95Ms": 4.311800003051758,
+                  "minMs": 3.5748002119362354,
+                  "maxMs": 4.5910002663731575
+                },
+                "sessionBringupMs": {
+                  "n": 8,
+                  "meanMs": 3.188725095242262,
+                  "p50Ms": 3.198249964043498,
+                  "p95Ms": 3.2824999652802944,
+                  "minMs": 2.9203002341091633,
+                  "maxMs": 3.3832001499831676
+                }
+              },
+              "comparison": {
+                "turnP50RatioTinyOverConventional": 0.08935230357964535,
+                "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+                "turnFasterWithTinyFootprint": true,
+                "bringupFasterWithTinyFootprint": true,
+                "turnSpeedup": 11.19165326396579,
+                "bringupSpeedup": 1.810865367066532
+              },
+              "passLatencyGate": true
+            },
             "strategy": {
               "proposition": "A lot of cost is paying rent on duplicated resident state so the same organizational pattern can be served many times.",
               "sessionsPerNonWeightMibConventional": 0.0625,
@@ -166,14 +230,76 @@
                 "stretch limited accelerator supply further"
               ]
             },
-            "pass80": true
+            "pass80": true,
+            "passLatency": true
           },
           "allocReduction": 0.8138889206780328,
           "smiReduction": 0.7284345047923323,
           "concurrencyDensityGain": 11.851856875323632,
+          "latency": {
+            "metric": "chat_stack_materialization_latency",
+            "honesty": "Wall-clock cuMemcpyHtoD + cuCtxSynchronize on this GPU for with/without Tiny Footprint materialization. Not frontier LLM decode TTFT/TPS.",
+            "trials": 24,
+            "payloadBytesPerTurn": {
+              "conventional": 134217728,
+              "tinyFootprint": 14260624,
+              "trafficReductionRatio": 0.8937500715255737
+            },
+            "withoutTinyFootprint": {
+              "label": "conventional_duplicated_resident_state",
+              "turnMaterializeMs": {
+                "n": 24,
+                "meanMs": 42.14034999798363,
+                "p50Ms": 41.819849982857704,
+                "p95Ms": 44.693300034850836,
+                "minMs": 40.51609989255667,
+                "maxMs": 45.71449989452958
+              },
+              "sessionBringupMs": {
+                "n": 8,
+                "meanMs": 6.031037715729326,
+                "p50Ms": 5.791600095108151,
+                "p95Ms": 6.508100312203169,
+                "minMs": 5.601400043815374,
+                "maxMs": 7.145800162106752
+              }
+            },
+            "withTinyFootprint": {
+              "label": "shared_pattern_plus_deltas",
+              "turnMaterializeMs": {
+                "n": 24,
+                "meanMs": 3.849525024027874,
+                "p50Ms": 3.7366999313235283,
+                "p95Ms": 4.311800003051758,
+                "minMs": 3.5748002119362354,
+                "maxMs": 4.5910002663731575
+              },
+              "sessionBringupMs": {
+                "n": 8,
+                "meanMs": 3.188725095242262,
+                "p50Ms": 3.198249964043498,
+                "p95Ms": 3.2824999652802944,
+                "minMs": 2.9203002341091633,
+                "maxMs": 3.3832001499831676
+              }
+            },
+            "comparison": {
+              "turnP50RatioTinyOverConventional": 0.08935230357964535,
+              "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+              "turnFasterWithTinyFootprint": true,
+              "bringupFasterWithTinyFootprint": true,
+              "turnSpeedup": 11.19165326396579,
+              "bringupSpeedup": 1.810865367066532
+            },
+            "passLatencyGate": true
+          },
+          "turnP50MsWithout": 41.819849982857704,
+          "turnP50MsWith": 3.7366999313235283,
+          "turnP50RatioTinyOverConventional": 0.08935230357964535,
+          "turnSpeedup": 11.19165326396579,
           "pass": true,
-          "honesty": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
-          "interpretation": "Live GPU stack: cuMemAlloc reduction 81.4%; nvidia-smi reduction 72.8%; concurrency density gain 11.85×."
+          "honesty": "Measured on NVIDIA GeForce GTX 860M via nvidia-smi / cuMemAlloc / cuMemcpyHtoD. This GeForce uses GDDR device memory; datacenter HBM is the operator analogue for the same duplicated-resident-state problem — not identical silicon. Latency is materialization path, not frontier LLM decode.",
+          "interpretation": "Live on NVIDIA GeForce GTX 860M: cuMemAlloc 81.4%; nvidia-smi 72.8%; density 11.85×; turn p50 without 41.82 ms → with Tiny Footprint 3.74 ms (11.19× speedup)."
         }
       },
       {
@@ -287,13 +413,20 @@
     },
     "I": {
       "id": "I_gpu_live_chat_stack",
-      "title": "Tiny Footprint · live GPU chat-stack device memory (nvidia-smi)",
+      "title": "Tiny Footprint · live GPU chat-stack memory + latency (nvidia-smi)",
       "product": "Tiny Footprint",
       "report": {
         "ok": true,
         "product": "Tiny Footprint",
-        "device": "NVIDIA via nvcuda.dll + nvidia-smi",
-        "memoryClassNote": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
+        "device": "NVIDIA GeForce GTX 860M",
+        "deviceDetail": {
+          "name": "NVIDIA GeForce GTX 860M",
+          "totalMib": 2048,
+          "driverVersion": "512.77",
+          "api": "nvcuda.dll cuMemAlloc + cuMemcpyHtoD + nvidia-smi",
+          "host": "live laptop GeForce (this machine)"
+        },
+        "memoryClassNote": "Measured on NVIDIA GeForce GTX 860M via nvidia-smi / cuMemAlloc / cuMemcpyHtoD. This GeForce uses GDDR device memory; datacenter HBM is the operator analogue for the same duplicated-resident-state problem — not identical silicon. Latency is materialization path, not frontier LLM decode.",
         "liveStack": {
           "sessions": 16,
           "kvMibPerSession": 4,
@@ -314,6 +447,63 @@
           "tinyMib": 53.59999084472656,
           "reductionRatio": 0.8138889206780328
         },
+        "latency": {
+          "metric": "chat_stack_materialization_latency",
+          "honesty": "Wall-clock cuMemcpyHtoD + cuCtxSynchronize on this GPU for with/without Tiny Footprint materialization. Not frontier LLM decode TTFT/TPS.",
+          "trials": 24,
+          "payloadBytesPerTurn": {
+            "conventional": 134217728,
+            "tinyFootprint": 14260624,
+            "trafficReductionRatio": 0.8937500715255737
+          },
+          "withoutTinyFootprint": {
+            "label": "conventional_duplicated_resident_state",
+            "turnMaterializeMs": {
+              "n": 24,
+              "meanMs": 42.14034999798363,
+              "p50Ms": 41.819849982857704,
+              "p95Ms": 44.693300034850836,
+              "minMs": 40.51609989255667,
+              "maxMs": 45.71449989452958
+            },
+            "sessionBringupMs": {
+              "n": 8,
+              "meanMs": 6.031037715729326,
+              "p50Ms": 5.791600095108151,
+              "p95Ms": 6.508100312203169,
+              "minMs": 5.601400043815374,
+              "maxMs": 7.145800162106752
+            }
+          },
+          "withTinyFootprint": {
+            "label": "shared_pattern_plus_deltas",
+            "turnMaterializeMs": {
+              "n": 24,
+              "meanMs": 3.849525024027874,
+              "p50Ms": 3.7366999313235283,
+              "p95Ms": 4.311800003051758,
+              "minMs": 3.5748002119362354,
+              "maxMs": 4.5910002663731575
+            },
+            "sessionBringupMs": {
+              "n": 8,
+              "meanMs": 3.188725095242262,
+              "p50Ms": 3.198249964043498,
+              "p95Ms": 3.2824999652802944,
+              "minMs": 2.9203002341091633,
+              "maxMs": 3.3832001499831676
+            }
+          },
+          "comparison": {
+            "turnP50RatioTinyOverConventional": 0.08935230357964535,
+            "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+            "turnFasterWithTinyFootprint": true,
+            "bringupFasterWithTinyFootprint": true,
+            "turnSpeedup": 11.19165326396579,
+            "bringupSpeedup": 1.810865367066532
+          },
+          "passLatencyGate": true
+        },
         "strategy": {
           "proposition": "A lot of cost is paying rent on duplicated resident state so the same organizational pattern can be served many times.",
           "sessionsPerNonWeightMibConventional": 0.0625,
@@ -325,14 +515,76 @@
             "stretch limited accelerator supply further"
           ]
         },
-        "pass80": true
+        "pass80": true,
+        "passLatency": true
       },
       "allocReduction": 0.8138889206780328,
       "smiReduction": 0.7284345047923323,
       "concurrencyDensityGain": 11.851856875323632,
+      "latency": {
+        "metric": "chat_stack_materialization_latency",
+        "honesty": "Wall-clock cuMemcpyHtoD + cuCtxSynchronize on this GPU for with/without Tiny Footprint materialization. Not frontier LLM decode TTFT/TPS.",
+        "trials": 24,
+        "payloadBytesPerTurn": {
+          "conventional": 134217728,
+          "tinyFootprint": 14260624,
+          "trafficReductionRatio": 0.8937500715255737
+        },
+        "withoutTinyFootprint": {
+          "label": "conventional_duplicated_resident_state",
+          "turnMaterializeMs": {
+            "n": 24,
+            "meanMs": 42.14034999798363,
+            "p50Ms": 41.819849982857704,
+            "p95Ms": 44.693300034850836,
+            "minMs": 40.51609989255667,
+            "maxMs": 45.71449989452958
+          },
+          "sessionBringupMs": {
+            "n": 8,
+            "meanMs": 6.031037715729326,
+            "p50Ms": 5.791600095108151,
+            "p95Ms": 6.508100312203169,
+            "minMs": 5.601400043815374,
+            "maxMs": 7.145800162106752
+          }
+        },
+        "withTinyFootprint": {
+          "label": "shared_pattern_plus_deltas",
+          "turnMaterializeMs": {
+            "n": 24,
+            "meanMs": 3.849525024027874,
+            "p50Ms": 3.7366999313235283,
+            "p95Ms": 4.311800003051758,
+            "minMs": 3.5748002119362354,
+            "maxMs": 4.5910002663731575
+          },
+          "sessionBringupMs": {
+            "n": 8,
+            "meanMs": 3.188725095242262,
+            "p50Ms": 3.198249964043498,
+            "p95Ms": 3.2824999652802944,
+            "minMs": 2.9203002341091633,
+            "maxMs": 3.3832001499831676
+          }
+        },
+        "comparison": {
+          "turnP50RatioTinyOverConventional": 0.08935230357964535,
+          "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+          "turnFasterWithTinyFootprint": true,
+          "bringupFasterWithTinyFootprint": true,
+          "turnSpeedup": 11.19165326396579,
+          "bringupSpeedup": 1.810865367066532
+        },
+        "passLatencyGate": true
+      },
+      "turnP50MsWithout": 41.819849982857704,
+      "turnP50MsWith": 3.7366999313235283,
+      "turnP50RatioTinyOverConventional": 0.08935230357964535,
+      "turnSpeedup": 11.19165326396579,
       "pass": true,
-      "honesty": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
-      "interpretation": "Live GPU stack: cuMemAlloc reduction 81.4%; nvidia-smi reduction 72.8%; concurrency density gain 11.85×."
+      "honesty": "Measured on NVIDIA GeForce GTX 860M via nvidia-smi / cuMemAlloc / cuMemcpyHtoD. This GeForce uses GDDR device memory; datacenter HBM is the operator analogue for the same duplicated-resident-state problem — not identical silicon. Latency is materialization path, not frontier LLM decode.",
+      "interpretation": "Live on NVIDIA GeForce GTX 860M: cuMemAlloc 81.4%; nvidia-smi 72.8%; density 11.85×; turn p50 without 41.82 ms → with Tiny Footprint 3.74 ms (11.19× speedup)."
     },
     "H": {
       "id": "H_engine_pin_gate",
@@ -354,6 +606,6 @@
     "enginePinRecommended": true,
     "engineShelfSlot": 52,
     "product": "Tiny Footprint",
-    "honesty": "Tiny Gateway · Rhyming Templates / Tiny Footprint product: in-process representation lab + live local GPU chat-stack device-memory lab (nvcuda cuMemAlloc + nvidia-smi). Consumer GeForce device memory is typically GDDR; datacenter HBM is the operator analogue for the same duplicated-resident-state problem. Not a hosted frontier-vendor API bake-off. Φ_EGS is design grammar only. Engine pin is data-gated."
+    "honesty": "Tiny Gateway · Rhyming Templates / Tiny Footprint product: in-process representation lab + live laptop NVIDIA GeForce GTX 860M chat-stack device-memory and materialization-latency lab (nvcuda cuMemAlloc + cuMemcpyHtoD + nvidia-smi). Latency is HtoD materialization with vs without Tiny Footprint — not frontier LLM decode TTFT/TPS. This GeForce uses GDDR; datacenter HBM is the operator analogue — not identical silicon. Not a hosted frontier-vendor API bake-off. Φ_EGS is design grammar only. Engine pin is data-gated."
   }
 }

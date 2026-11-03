@@ -19,18 +19,18 @@
     <h1 class="tf-brand" style="font-size:clamp(2.2rem,7vw,3.4rem)">Download</h1>
     <p class="tf-tagline">Get Workstation 0.1 into your IDE in minutes.</p>
 
-    <h2>Option A · Clone from SING 13</h2>
+    <h2>Option A · Standalone kit (recommended)</h2>
+    <pre style="background:rgba(5,11,20,.85);padding:1rem;overflow:auto;border:1px solid rgba(201,162,39,.35)"><code>git clone https://github.com/FractiAI/tiny-footprint-workstation.git
+cd tiny-footprint-workstation
+code .
+node scripts/tiny.mjs doctor</code></pre>
+    <p><a href="https://github.com/FractiAI/tiny-footprint-workstation">github.com/FractiAI/tiny-footprint-workstation</a></p>
+
+    <h2>Option B · From SING 13 monorepo</h2>
     <pre style="background:rgba(5,11,20,.85);padding:1rem;overflow:auto;border:1px solid rgba(201,162,39,.35)"><code>git clone https://github.com/FractiAI/psw.vibelandia.sing13.git
 cd psw.vibelandia.sing13/products/tiny-footprint-workstation
 code .
 node scripts/tiny.mjs doctor</code></pre>
-
-    <h2>Option B · Sparse checkout (kit only)</h2>
-    <pre style="background:rgba(5,11,20,.85);padding:1rem;overflow:auto;border:1px solid rgba(201,162,39,.35)"><code>git clone --filter=blob:none --sparse https://github.com/FractiAI/psw.vibelandia.sing13.git tf-ws
-cd tf-ws
-git sparse-checkout set products/tiny-footprint-workstation research/synthobs-tiny-gateway-rhyming-templates
-cd products/tiny-footprint-workstation
-code .</code></pre>
 
     <h2>First run</h2>
     <ol>

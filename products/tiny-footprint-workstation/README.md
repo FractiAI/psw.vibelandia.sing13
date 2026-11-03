@@ -5,6 +5,9 @@ Powered by Tiny Gateway™ · FractiAI
 
 Installable **AI Memory Efficiency Developer Kit** — open in VS Code, configure, run, compare, integrate.
 
+**Standalone customer repo:** [FractiAI/tiny-footprint-workstation](https://github.com/FractiAI/tiny-footprint-workstation)  
+(This folder is the SING 13 mirror.)
+
 **Simple idea:** Tiny Footprint installs *alongside* your existing AI. You do not buy new GPUs or move to FractiAI. One Tiny Gateway engine; Local / Server / Cloud are deployment editions. Plain-language story: `/tiny-footprint/simple`.
 
 ## Quick path

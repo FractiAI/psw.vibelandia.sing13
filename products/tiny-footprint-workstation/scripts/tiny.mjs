@@ -10,8 +10,12 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const REPO = path.resolve(ROOT, '../..');
-const SUITE = path.join(REPO, 'research', 'synthobs-tiny-gateway-rhyming-templates');
+const SUITE_CANDIDATES = [
+  path.join(ROOT, 'research', 'synthobs-tiny-gateway-rhyming-templates'), // standalone repo layout
+  path.join(ROOT, '..', '..', 'research', 'synthobs-tiny-gateway-rhyming-templates'), // SING 13 monorepo
+];
+const SUITE = SUITE_CANDIDATES.find((p) => fs.existsSync(p)) || SUITE_CANDIDATES[0];
+const REPO = path.resolve(SUITE, '../..');
 const REPORTS = path.join(ROOT, 'benchmarks', 'reports');
 
 function log(msg) {

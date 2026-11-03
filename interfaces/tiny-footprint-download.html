@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download Tiny Footprint Workstation 0.1</title>
+  <meta name="description" content="Download or clone Tiny Footprint Workstation 0.1. Freemium Community Edition." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/tiny-footprint/download" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/tiny-footprint-product.css" />
+</head>
+<body class="tf-product">
+  <nav class="tf-nav"><a href="/tiny-footprint">Tiny Footprint</a><a href="/tiny-footprint/workstation">Workstation</a><a href="/tiny-footprint/local">Local freemium</a></nav>
+  <main class="tf-wrap">
+    <p class="tf-kicker">Community Edition · FREE</p>
+    <h1 class="tf-brand" style="font-size:clamp(2.2rem,7vw,3.4rem)">Download</h1>
+    <p class="tf-tagline">Get Workstation 0.1 into your IDE in minutes.</p>
+
+    <h2>Option A · Clone from SING 13</h2>
+    <pre style="background:rgba(5,11,20,.85);padding:1rem;overflow:auto;border:1px solid rgba(201,162,39,.35)"><code>git clone https://github.com/FractiAI/psw.vibelandia.sing13.git
+cd psw.vibelandia.sing13/products/tiny-footprint-workstation
+code .
+node scripts/tiny.mjs doctor</code></pre>
+
+    <h2>Option B · Sparse checkout (kit only)</h2>
+    <pre style="background:rgba(5,11,20,.85);padding:1rem;overflow:auto;border:1px solid rgba(201,162,39,.35)"><code>git clone --filter=blob:none --sparse https://github.com/FractiAI/psw.vibelandia.sing13.git tf-ws
+cd tf-ws
+git sparse-checkout set products/tiny-footprint-workstation research/synthobs-tiny-gateway-rhyming-templates
+cd products/tiny-footprint-workstation
+code .</code></pre>
+
+    <h2>First run</h2>
+    <ol>
+      <li><code>node scripts/tiny.mjs doctor</code></li>
+      <li><code>node scripts/tiny.mjs install</code></li>
+      <li><code>node scripts/tiny.mjs demo</code></li>
+      <li><code>node scripts/tiny.mjs benchmark</code></li>
+      <li><code>node scripts/tiny.mjs report</code></li>
+    </ol>
+
+    <h2>Downloads</h2>
+    <div class="tf-cta">
+      <a class="tf-cta__gold" href="https://github.com/FractiAI/psw.vibelandia.sing13/archive/refs/heads/main.zip">Repo ZIP (GitHub)</a>
+      <a class="tf-cta__ghost" href="/tiny-footprint/brochure-print">Commercial brochure (print HTML)</a>
+      <a class="tf-cta__ghost" href="/brochure/tiny-footprint">Technical brochure</a>
+    </div>
+
+    <h2 id="freemium">Freemium signup (optional)</h2>
+    <p>Community is free without an account. Leave an email if you want update notes and Pro early access.</p>
+    <form class="tf-form" id="tf-free-form">
+      <label for="tf-free-email">Email</label>
+      <input id="tf-free-email" type="email" required placeholder="you@company.com" />
+      <button type="submit" class="tf-btn tf-btn--gold">Join freemium list</button>
+      <p id="tf-free-status" style="font-size:0.85rem;color:rgba(232,238,246,0.7)"></p>
+    </form>
+
+    <p class="honesty">No proprietary weights leave your machine for the local demo. GPU benches need NVIDIA drivers where applicable. <a href="/tiny-footprint">Hub</a>.</p>
+  </main>
+  <script>
+    document.getElementById('tf-free-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('tf-free-email').value.trim();
+      try {
+        var key = 'tinyFootprintFreemium';
+        var list = JSON.parse(localStorage.getItem(key) || '[]');
+        list.push({ email: email, at: new Date().toISOString() });
+        localStorage.setItem(key, JSON.stringify(list));
+      } catch (err) {}
+      document.getElementById('tf-free-status').textContent = 'Saved. Opening mail…';
+      window.location.href =
+        'mailto:purser@ssvibelandiaquestfest24x365.com?subject=' +
+        encodeURIComponent('Tiny Footprint Freemium · ' + email) +
+        '&body=' +
+        encodeURIComponent('Please add me to Tiny Footprint Community / Pro updates.\nEmail: ' + email);
+    });
+  </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

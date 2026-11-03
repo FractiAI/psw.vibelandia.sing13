@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tiny Footprint Validation Initiative · Sign up</title>
+  <meta name="description" content="Join the Tiny Footprint validation initiative: HBM accelerators, real workloads, memory and latency measurement." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/tiny-footprint/validation" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/tiny-footprint-product.css" />
+</head>
+<body class="tf-product">
+  <nav class="tf-nav"><a href="/tiny-footprint">Tiny Footprint</a><a href="/tiny-footprint/download">Download</a><a href="/tiny-footprint/cloud">Cloud</a></nav>
+  <main class="tf-wrap">
+    <p class="tf-kicker">Joint research program</p>
+    <h1 class="tf-brand" style="font-size:clamp(2.2rem,7vw,3.4rem)">Validation initiative</h1>
+    <p class="tf-tagline">Advance memory efficiency and AI responsiveness together.</p>
+    <p>FractiAI invites infrastructure organizations, cloud operators, accelerator developers, and AI-serving teams to validate Tiny Footprint on real production-class hardware—with <strong>memory and latency</strong> as co-equal objectives.</p>
+
+    <h2>Program</h2>
+    <ul>
+      <li>Test on HBM-equipped accelerators where available</li>
+      <li>Integrate representative inference workloads</li>
+      <li>Compare conventional vs Tiny Footprint</li>
+      <li>Measure resident memory, reconstruction overhead, TTFT, token latency, p50/p95/p99</li>
+      <li>Concurrency, throughput, output quality</li>
+      <li>Identify deployment and commercial paths</li>
+    </ul>
+
+    <h2>FractiAI contributes</h2>
+    <p>Tiny Gateway · Rhyming Templates · Workstation · local GPU receipts · benchmark methodology.</p>
+    <h2>Partners contribute</h2>
+    <p>Accelerator access · workloads · serving expertise · validation feedback. Proprietary weights can stay inside your environment.</p>
+
+    <h2 id="signup">Sign up</h2>
+    <form class="tf-form" id="tf-validation-form">
+      <label for="tf-name">Name</label>
+      <input id="tf-name" name="name" required autocomplete="name" />
+      <label for="tf-email">Work email</label>
+      <input id="tf-email" name="email" type="email" required autocomplete="email" />
+      <label for="tf-org">Organization</label>
+      <input id="tf-org" name="org" required />
+      <label for="tf-role">Role</label>
+      <select id="tf-role" name="role">
+        <option>Infrastructure / MLOps</option>
+        <option>Cloud platform</option>
+        <option>Accelerator vendor</option>
+        <option>AI serving / inference</option>
+        <option>Research</option>
+        <option>Other</option>
+      </select>
+      <label for="tf-hw">Hardware interest</label>
+      <input id="tf-hw" name="hardware" placeholder="e.g. A100 / H100 / local GeForce eval" />
+      <label for="tf-notes">Notes</label>
+      <textarea id="tf-notes" name="notes" rows="3" placeholder="Workload class, timeline, constraints"></textarea>
+      <button type="submit" class="tf-btn tf-btn--gold">Submit interest</button>
+      <p id="tf-form-status" style="font-size:0.85rem;color:rgba(232,238,246,0.7)"></p>
+    </form>
+
+    <p class="honesty">Signup opens a mail draft to the Purser and stores a local receipt in your browser—no cloud CRM in this edge. <a href="/tiny-footprint">Hub</a>.</p>
+  </main>
+  <script>
+    (function () {
+      var form = document.getElementById('tf-validation-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = {
+          name: document.getElementById('tf-name').value.trim(),
+          email: document.getElementById('tf-email').value.trim(),
+          org: document.getElementById('tf-org').value.trim(),
+          role: document.getElementById('tf-role').value,
+          hardware: document.getElementById('tf-hw').value.trim(),
+          notes: document.getElementById('tf-notes').value.trim(),
+          at: new Date().toISOString(),
+          product: 'Tiny Footprint Validation Initiative',
+        };
+        try {
+          var key = 'tinyFootprintValidationSignups';
+          var list = JSON.parse(localStorage.getItem(key) || '[]');
+          list.push(data);
+          localStorage.setItem(key, JSON.stringify(list));
+        } catch (err) {}
+        var body = [
+          'Tiny Footprint Validation Initiative signup',
+          'Name: ' + data.name,
+          'Email: ' + data.email,
+          'Org: ' + data.org,
+          'Role: ' + data.role,
+          'Hardware: ' + data.hardware,
+          'Notes: ' + data.notes,
+          'At: ' + data.at,
+        ].join('\n');
+        var mailto =
+          'mailto:purser@ssvibelandiaquestfest24x365.com?subject=' +
+          encodeURIComponent('Tiny Footprint Validation · ' + data.org) +
+          '&body=' +
+          encodeURIComponent(body);
+        document.getElementById('tf-form-status').textContent =
+          'Saved locally. Opening mail to the Purser…';
+        window.location.href = mailto;
+      });
+    })();
+  </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

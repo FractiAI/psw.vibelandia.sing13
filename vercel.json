@@ -1582,11 +1582,67 @@
     },
     {
       "source": "/tiny-footprint",
-      "destination": "/interfaces/tiny-footprint-brochure.html"
+      "destination": "/interfaces/tiny-footprint-product.html"
     },
     {
       "source": "/tiny-footprint/",
-      "destination": "/interfaces/tiny-footprint-brochure.html"
+      "destination": "/interfaces/tiny-footprint-product.html"
+    },
+    {
+      "source": "/tiny-footprint/local",
+      "destination": "/interfaces/tiny-footprint-local.html"
+    },
+    {
+      "source": "/tiny-footprint/local/",
+      "destination": "/interfaces/tiny-footprint-local.html"
+    },
+    {
+      "source": "/tiny-footprint/server",
+      "destination": "/interfaces/tiny-footprint-server.html"
+    },
+    {
+      "source": "/tiny-footprint/server/",
+      "destination": "/interfaces/tiny-footprint-server.html"
+    },
+    {
+      "source": "/tiny-footprint/cloud",
+      "destination": "/interfaces/tiny-footprint-cloud.html"
+    },
+    {
+      "source": "/tiny-footprint/cloud/",
+      "destination": "/interfaces/tiny-footprint-cloud.html"
+    },
+    {
+      "source": "/tiny-footprint/workstation",
+      "destination": "/interfaces/tiny-footprint-workstation.html"
+    },
+    {
+      "source": "/tiny-footprint/workstation/",
+      "destination": "/interfaces/tiny-footprint-workstation.html"
+    },
+    {
+      "source": "/tiny-footprint/validation",
+      "destination": "/interfaces/tiny-footprint-validation.html"
+    },
+    {
+      "source": "/tiny-footprint/validation/",
+      "destination": "/interfaces/tiny-footprint-validation.html"
+    },
+    {
+      "source": "/tiny-footprint/download",
+      "destination": "/interfaces/tiny-footprint-download.html"
+    },
+    {
+      "source": "/tiny-footprint/download/",
+      "destination": "/interfaces/tiny-footprint-download.html"
+    },
+    {
+      "source": "/tiny-footprint/brochure-print",
+      "destination": "/interfaces/tiny-footprint-brochure-print.html"
+    },
+    {
+      "source": "/tiny-footprint/brochure-print/",
+      "destination": "/interfaces/tiny-footprint-brochure-print.html"
     },
     {
       "source": "/brochure/tiny-footprint",
@@ -1594,6 +1650,14 @@
     },
     {
       "source": "/brochure/tiny-footprint/",
+      "destination": "/interfaces/tiny-footprint-brochure.html"
+    },
+    {
+      "source": "/tiny-footprint/tech",
+      "destination": "/interfaces/tiny-footprint-brochure.html"
+    },
+    {
+      "source": "/tiny-footprint/tech/",
       "destination": "/interfaces/tiny-footprint-brochure.html"
     },
     {

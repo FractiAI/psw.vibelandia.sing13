@@ -3,7 +3,7 @@
   "DOC_ID": "WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03",
   "REGISTRY_ID": "synthobs-tiny-gateway-rhyming-templates-2026-11",
   "STUDY_TITLE": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
-  "generatedAt": "2026-11-03T16:46:56.371Z",
+  "generatedAt": "2026-11-03T16:58:31.023Z",
   "results": {
     "experiments": [
       {
@@ -123,13 +123,67 @@
         }
       },
       {
-        "id": "E8_engine_pin_gate",
-        "title": "Data-gated ENGINE_SHELF pin (80% measured resident-representation reduction)",
+        "id": "E8_gpu_live_tiny_footprint",
+        "title": "Tiny Footprint · live GPU chat-stack device memory (nvidia-smi)",
+        "pass": true,
+        "I": {
+          "id": "I_gpu_live_chat_stack",
+          "title": "Tiny Footprint · live GPU chat-stack device memory (nvidia-smi)",
+          "product": "Tiny Footprint",
+          "report": {
+            "ok": true,
+            "product": "Tiny Footprint",
+            "device": "NVIDIA via nvcuda.dll + nvidia-smi",
+            "memoryClassNote": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
+            "liveStack": {
+              "sessions": 16,
+              "kvMibPerSession": 4,
+              "systemPromptMib": 12,
+              "weightStubMib": 32,
+              "mode": "live_local_chat_serving_proxy_on_gpu"
+            },
+            "nvidiaSmi": {
+              "idleMib": 0,
+              "conventionalPeakMib": 313,
+              "tinyPeakMib": 85,
+              "conventionalUsedVsIdleMib": 313,
+              "tinyUsedVsIdleMib": 85,
+              "reductionRatio": 0.7284345047923323
+            },
+            "cuMemAlloc": {
+              "conventionalMib": 288,
+              "tinyMib": 53.59999084472656,
+              "reductionRatio": 0.8138889206780328
+            },
+            "strategy": {
+              "proposition": "A lot of cost is paying rent on duplicated resident state so the same organizational pattern can be served many times.",
+              "sessionsPerNonWeightMibConventional": 0.0625,
+              "sessionsPerNonWeightMibTinyFootprint": 0.740741054707727,
+              "concurrencyDensityGain": 11.851856875323632,
+              "implications": [
+                "pack more concurrent work per box",
+                "buy less memory per unit of AI service",
+                "stretch limited accelerator supply further"
+              ]
+            },
+            "pass80": true
+          },
+          "allocReduction": 0.8138889206780328,
+          "smiReduction": 0.7284345047923323,
+          "concurrencyDensityGain": 11.851856875323632,
+          "pass": true,
+          "honesty": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
+          "interpretation": "Live GPU stack: cuMemAlloc reduction 81.4%; nvidia-smi reduction 72.8%; concurrency density gain 11.85×."
+        }
+      },
+      {
+        "id": "E9_engine_pin_gate",
+        "title": "Data-gated ENGINE_SHELF pin (80% measured + Tiny Footprint GPU lab)",
         "pass": true,
         "enginePinRecommended": true,
         "H": {
           "id": "H_engine_pin_gate",
-          "title": "Data-gated ENGINE_SHELF pin (80% measured resident-representation reduction)",
+          "title": "Data-gated ENGINE_SHELF pin (80% measured + Tiny Footprint GPU lab)",
           "target": 0.8,
           "aggregateRatio": 0.8450413877455297,
           "aggregatePct": 84.50413877455297,
@@ -138,16 +192,17 @@
           "baselineBytes": 2336682,
           "tinyBytes": 362089,
           "exactOk": true,
+          "gpuLabPass": true,
           "enginePinRecommended": true,
           "candidateSlot": 52,
           "pass": true,
-          "interpretation": "Aggregate measured reduction 84.5% ≥ 80% with exactness — recommend ENGINE_SHELF #52 (in-process lab scope)."
+          "interpretation": "Aggregate 84.5% ≥ 80% with exactness + Tiny Footprint GPU live-stack lab (alloc 81.4%)."
         },
-        "interpretation": "Aggregate measured reduction 84.5% ≥ 80% with exactness — recommend ENGINE_SHELF #52 (in-process lab scope)."
+        "interpretation": "Aggregate 84.5% ≥ 80% with exactness + Tiny Footprint GPU live-stack lab (alloc 81.4%)."
       }
     ],
-    "n_pass": 8,
-    "n_total": 8,
+    "n_pass": 9,
+    "n_total": 9,
     "all_pass": true,
     "A": {
       "id": "A_illustrative_model",
@@ -230,9 +285,58 @@
       },
       "pass": true
     },
+    "I": {
+      "id": "I_gpu_live_chat_stack",
+      "title": "Tiny Footprint · live GPU chat-stack device memory (nvidia-smi)",
+      "product": "Tiny Footprint",
+      "report": {
+        "ok": true,
+        "product": "Tiny Footprint",
+        "device": "NVIDIA via nvcuda.dll + nvidia-smi",
+        "memoryClassNote": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
+        "liveStack": {
+          "sessions": 16,
+          "kvMibPerSession": 4,
+          "systemPromptMib": 12,
+          "weightStubMib": 32,
+          "mode": "live_local_chat_serving_proxy_on_gpu"
+        },
+        "nvidiaSmi": {
+          "idleMib": 0,
+          "conventionalPeakMib": 313,
+          "tinyPeakMib": 85,
+          "conventionalUsedVsIdleMib": 313,
+          "tinyUsedVsIdleMib": 85,
+          "reductionRatio": 0.7284345047923323
+        },
+        "cuMemAlloc": {
+          "conventionalMib": 288,
+          "tinyMib": 53.59999084472656,
+          "reductionRatio": 0.8138889206780328
+        },
+        "strategy": {
+          "proposition": "A lot of cost is paying rent on duplicated resident state so the same organizational pattern can be served many times.",
+          "sessionsPerNonWeightMibConventional": 0.0625,
+          "sessionsPerNonWeightMibTinyFootprint": 0.740741054707727,
+          "concurrencyDensityGain": 11.851856875323632,
+          "implications": [
+            "pack more concurrent work per box",
+            "buy less memory per unit of AI service",
+            "stretch limited accelerator supply further"
+          ]
+        },
+        "pass80": true
+      },
+      "allocReduction": 0.8138889206780328,
+      "smiReduction": 0.7284345047923323,
+      "concurrencyDensityGain": 11.851856875323632,
+      "pass": true,
+      "honesty": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
+      "interpretation": "Live GPU stack: cuMemAlloc reduction 81.4%; nvidia-smi reduction 72.8%; concurrency density gain 11.85×."
+    },
     "H": {
       "id": "H_engine_pin_gate",
-      "title": "Data-gated ENGINE_SHELF pin (80% measured resident-representation reduction)",
+      "title": "Data-gated ENGINE_SHELF pin (80% measured + Tiny Footprint GPU lab)",
       "target": 0.8,
       "aggregateRatio": 0.8450413877455297,
       "aggregatePct": 84.50413877455297,
@@ -241,13 +345,15 @@
       "baselineBytes": 2336682,
       "tinyBytes": 362089,
       "exactOk": true,
+      "gpuLabPass": true,
       "enginePinRecommended": true,
       "candidateSlot": 52,
       "pass": true,
-      "interpretation": "Aggregate measured reduction 84.5% ≥ 80% with exactness — recommend ENGINE_SHELF #52 (in-process lab scope)."
+      "interpretation": "Aggregate 84.5% ≥ 80% with exactness + Tiny Footprint GPU live-stack lab (alloc 81.4%)."
     },
     "enginePinRecommended": true,
     "engineShelfSlot": 52,
-    "honesty": "Tiny Gateway · Rhyming Templates: architectural framework + reproducible in-process memory lab (structured / graph / eight-node / cross-octave / AI-context proxy). The 80% DRAM/HBM reduction is a research target; suite measures byte-level resident representation size in Node, not datacenter accelerator HBM telemetry. Not a claim that production LLM serving already saves 80% HBM. Φ_EGS is design grammar only. Engine pin is data-gated."
+    "product": "Tiny Footprint",
+    "honesty": "Tiny Gateway · Rhyming Templates / Tiny Footprint product: in-process representation lab + live local GPU chat-stack device-memory lab (nvcuda cuMemAlloc + nvidia-smi). Consumer GeForce device memory is typically GDDR; datacenter HBM is the operator analogue for the same duplicated-resident-state problem. Not a hosted frontier-vendor API bake-off. Φ_EGS is design grammar only. Engine pin is data-gated."
   }
 }

@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-03** · **392** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-03** · **393** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -468,7 +468,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | Drawers That Don’t Spill Into Each Other · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Your Basement Stories Still Carry Current · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tiny-gateway-language-radar-2026-10.html`](/interfaces/blog-tiny-gateway-language-radar-2026-10.html) | Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data? · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html`](/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html) | Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html`](/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html) | Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer? � Ship blog � SS Vibelandia |
 | [`/interfaces/blog-tiny-reality-generation-model-2026-10.html`](/interfaces/blog-tiny-reality-generation-model-2026-10.html) | Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09-old.html`](/interfaces/blog-topology-of-the-void-2026-09-old.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
@@ -592,6 +592,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/synthio-one-pager.html`](/interfaces/synthio-one-pager.html) | Synthio · MRI cloud-antenna one-pager · Syntheverse Sandbox |
 | [`/interfaces/synthio.html`](/interfaces/synthio.html) | Synthio · Syntheverse Sandbox |
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
+| [`/interfaces/tiny-footprint-brochure.html`](/interfaces/tiny-footprint-brochure.html) | Tiny Footprint · Memory product brochure · FractiAI |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
 | [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Holographic Goldilocks Super Intelligence Frontiersmen |
 | [`/interfaces/what-it-means-to-be-frontier.html`](/interfaces/what-it-means-to-be-frontier.html) | What It Means to Be Frontier · Trail + self-test + Where Am I · SS Vibelandia |
@@ -637,7 +638,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/journey/cartagena-spice-stone.html`](/interfaces/journey/cartagena-spice-stone.html) | Cartagena · Spice & Stone · Journey · SS Vibelandia |
 | [`/interfaces/journey/goldilocks-quest.html`](/interfaces/journey/goldilocks-quest.html) | Goldilocks Quest · Restricted Goggles · Journey · SS Vibelandia |
 | [`/interfaces/journey/hero-leo.html`](/interfaces/journey/hero-leo.html) | Hero Leo · Scientific Scout · Goldilocks Layer |
-| [`/interfaces/journey/homeostasis-expedition.html`](/interfaces/journey/homeostasis-expedition.html) | Goldilocks Layer · Homeostasis Expedition · Journey · SS Vibelandia |
+| [`/interfaces/journey/homeostasis-expedition.html`](/interfaces/journey/homeostasis-expedition.html) | Goldilocks Layer � Homeostasis Expedition � Journey � SS Vibelandia |
 | [`/interfaces/journey/net-zero-expedition.html`](/interfaces/journey/net-zero-expedition.html) | Net Zero Expedition Series · Journey · SS Vibelandia |
 | [`/interfaces/journey/omniversal-canvas-walk.html`](/interfaces/journey/omniversal-canvas-walk.html) | Omniversal Canvas · Exhibit Walk · Journey · SS Vibelandia |
 | [`/interfaces/journey/prime-vault-chat.html`](/interfaces/journey/prime-vault-chat.html) | Prime Vault Chat · Miracle 2 · Journey · SS Vibelandia |

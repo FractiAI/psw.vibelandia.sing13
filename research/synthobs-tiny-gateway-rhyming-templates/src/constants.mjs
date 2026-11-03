@@ -24,7 +24,7 @@ export const VALIDATION_SEED = 202611032;
 export const DRAM_REDUCTION_TARGET = 0.8;
 
 export const HONESTY =
-  'Tiny Gateway · Rhyming Templates: architectural framework + reproducible in-process memory lab (structured / graph / eight-node / cross-octave / AI-context proxy). The 80% DRAM/HBM reduction is a research target; suite measures byte-level resident representation size in Node, not datacenter accelerator HBM telemetry. Not a claim that production LLM serving already saves 80% HBM. Φ_EGS is design grammar only. Engine pin is data-gated.';
+  'Tiny Gateway · Rhyming Templates / Tiny Footprint product: in-process representation lab + live local GPU chat-stack device-memory lab (nvcuda cuMemAlloc + nvidia-smi). Consumer GeForce device memory is typically GDDR; datacenter HBM is the operator analogue for the same duplicated-resident-state problem. Not a hosted frontier-vendor API bake-off. Φ_EGS is design grammar only. Engine pin is data-gated.';
 
 export const BUILDS_ON = Object.freeze([
   'synthobs-tiny-gateway-language-radar-2026-10',

@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-03T16:47:07.024Z",
+  "updatedAt": "2026-11-03T17:01:27.586Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-03T16:47:07.022Z",
+      "createdAt": "2026-11-03T17:01:27.566Z",
       "body": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
       "presenceHue": "gold",
       "paperId": "synthobs-tiny-gateway-rhyming-templates-2026-11",
@@ -24,6 +24,28 @@
         "paperId": "synthobs-tiny-gateway-rhyming-templates-2026-11",
         "docId": "WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03",
         "published": "2026-11-03T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_lattice-chat-product-engineering-manual-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-03T16:48:10.298Z",
+      "body": "Product Engineering Manual � Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
+      "presenceHue": "gold",
+      "paperId": "lattice-chat-product-engineering-manual-2026-09",
+      "artifact": {
+        "title": "Product Engineering Manual � Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
+        "kind": "whitepaper",
+        "path": "docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md",
+        "url": "/whitepaper/lattice-chat-product-engineering-manual",
+        "paperId": "lattice-chat-product-engineering-manual-2026-09",
+        "docId": "WP-LATTICE-CHAT-PEM-2026-09",
+        "published": "2026-11-03",
         "featured": true,
         "auditStatus": "pass"
       }
@@ -112,28 +134,6 @@
         "paperId": "synthobs-trgm-predictive-reality-catalog-2026-10",
         "docId": "WP-SYNTHOBS-TRGM-PREDICTIVE-REALITY-CATALOG-EGS-2026-10-25",
         "published": "2026-10-25T21:00:00Z",
-        "featured": true,
-        "auditStatus": "pass"
-      }
-    },
-    {
-      "id": "wp_lattice-chat-product-engineering-manual-2026-09",
-      "type": "ArtifactEvent",
-      "platform": "lattice",
-      "actor": "SynthOBS",
-      "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-10-25T20:14:25.272Z",
-      "body": "Product Engineering Manual · Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
-      "presenceHue": "gold",
-      "paperId": "lattice-chat-product-engineering-manual-2026-09",
-      "artifact": {
-        "title": "Product Engineering Manual · Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
-        "kind": "whitepaper",
-        "path": "docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md",
-        "url": "/whitepaper/lattice-chat-product-engineering-manual",
-        "paperId": "lattice-chat-product-engineering-manual-2026-09",
-        "docId": "WP-LATTICE-CHAT-PEM-2026-09",
-        "published": "2026-10-25",
         "featured": true,
         "auditStatus": "pass"
       }

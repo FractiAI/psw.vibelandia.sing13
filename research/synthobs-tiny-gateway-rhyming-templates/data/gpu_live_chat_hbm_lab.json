@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "product": "Tiny Footprint",
+  "device": "NVIDIA via nvcuda.dll + nvidia-smi",
+  "memoryClassNote": "Measured accelerator device memory (nvidia-smi). Consumer GeForce is typically GDDR; datacenter HBM is the operator analogue for the same resident-state problem.",
+  "liveStack": {
+    "sessions": 16,
+    "kvMibPerSession": 4,
+    "systemPromptMib": 12,
+    "weightStubMib": 32,
+    "mode": "live_local_chat_serving_proxy_on_gpu"
+  },
+  "nvidiaSmi": {
+    "idleMib": 0,
+    "conventionalPeakMib": 313,
+    "tinyPeakMib": 85,
+    "conventionalUsedVsIdleMib": 313,
+    "tinyUsedVsIdleMib": 85,
+    "reductionRatio": 0.7284345047923323
+  },
+  "cuMemAlloc": {
+    "conventionalMib": 288.0,
+    "tinyMib": 53.59999084472656,
+    "reductionRatio": 0.8138889206780328
+  },
+  "strategy": {
+    "proposition": "A lot of cost is paying rent on duplicated resident state so the same organizational pattern can be served many times.",
+    "sessionsPerNonWeightMibConventional": 0.0625,
+    "sessionsPerNonWeightMibTinyFootprint": 0.740741054707727,
+    "concurrencyDensityGain": 11.851856875323632,
+    "implications": [
+      "pack more concurrent work per box",
+      "buy less memory per unit of AI service",
+      "stretch limited accelerator supply further"
+    ]
+  },
+  "pass80": true
+}

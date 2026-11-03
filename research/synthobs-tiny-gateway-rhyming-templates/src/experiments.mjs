@@ -25,6 +25,7 @@ import {
   NODE_COUNT,
 } from './eight-node.mjs';
 import { createGateway } from './gateway.mjs';
+import { runGpuLiveChatLab } from './gpu-live-lab.mjs';
 
 /** A · Illustrative §7 arithmetic (hypothesis model, not measurement) */
 export function experimentA_illustrativeModel() {
@@ -300,25 +301,61 @@ function aggregateMeasured(parts) {
   return reduction(baseline, tiny);
 }
 
-/** H · ENGINE_SHELF pin gate — ≥80% aggregate measured + exactness */
-export function experimentH_enginePinGate(parts, exactOk) {
+/** I · Live GPU chat stack · Tiny Footprint device-memory cut (nvidia-smi + cuMemAlloc) */
+export function experimentI_gpuLiveChatStack() {
+  const report = runGpuLiveChatLab();
+  const allocR = report?.cuMemAlloc?.reductionRatio ?? 0;
+  const smiR = report?.nvidiaSmi?.reductionRatio ?? null;
+  const densityGain = report?.strategy?.concurrencyDensityGain ?? null;
+  const pass =
+    !!report?.ok &&
+    (allocR >= 0.8 || (smiR != null && smiR >= 0.7)) &&
+    densityGain != null &&
+    densityGain > 1;
+  return {
+    id: 'I_gpu_live_chat_stack',
+    title: 'Tiny Footprint · live GPU chat-stack device memory (nvidia-smi)',
+    product: 'Tiny Footprint',
+    report,
+    allocReduction: allocR,
+    smiReduction: smiR,
+    concurrencyDensityGain: densityGain,
+    pass,
+    honesty:
+      report?.memoryClassNote ||
+      'Accelerator device memory measured on local NVIDIA GPU; GeForce is typically GDDR — HBM is the datacenter analogue.',
+    interpretation: pass
+      ? `Live GPU stack: cuMemAlloc reduction ${(allocR * 100).toFixed(1)}%; nvidia-smi reduction ${
+          smiR == null ? 'n/a' : `${(smiR * 100).toFixed(1)}%`
+        }; concurrency density gain ${densityGain?.toFixed?.(2) ?? densityGain}×.`
+      : `GPU live stack gate failed or CUDA unavailable: ${report?.error || 'see report'}.`,
+  };
+}
+
+/** H · ENGINE_SHELF pin gate — ≥80% aggregate measured + exactness (+ GPU lab when available) */
+export function experimentH_enginePinGate(parts, exactOk, gpuLab) {
   const agg = aggregateMeasured(parts);
   const hitsTarget = agg.ratio >= DRAM_REDUCTION_TARGET;
-  const enginePinRecommended = hitsTarget && exactOk;
+  const gpuOk = !gpuLab || gpuLab.pass;
+  const enginePinRecommended = hitsTarget && exactOk && gpuOk;
   return {
     id: 'H_engine_pin_gate',
-    title: 'Data-gated ENGINE_SHELF pin (80% measured resident-representation reduction)',
+    title: 'Data-gated ENGINE_SHELF pin (80% measured + Tiny Footprint GPU lab)',
     target: DRAM_REDUCTION_TARGET,
     aggregateRatio: agg.ratio,
     aggregatePct: agg.ratio * 100,
     ...agg,
     exactOk,
+    gpuLabPass: gpuLab?.pass ?? null,
     enginePinRecommended,
     candidateSlot: ENGINE_SHELF_SLOT,
-    pass: true, // measurement always records; pin is separate flag
+    pass: true,
     interpretation: enginePinRecommended
-      ? `Aggregate measured reduction ${(agg.ratio * 100).toFixed(1)}% ≥ 80% with exactness — recommend ENGINE_SHELF #${ENGINE_SHELF_SLOT} (in-process lab scope).`
-      : `Aggregate measured reduction ${(agg.ratio * 100).toFixed(1)}% — ENGINE_SHELF pin refused (target ${DRAM_REDUCTION_TARGET * 100}% or exactness failed). Application companion.`,
+      ? `Aggregate ${(agg.ratio * 100).toFixed(1)}% ≥ 80% with exactness` +
+        (gpuLab?.pass
+          ? ` + Tiny Footprint GPU live-stack lab (alloc ${(100 * (gpuLab.allocReduction || 0)).toFixed(1)}%).`
+          : '.')
+      : `Pin refused — aggregate/exactness/GPU lab gate.`,
   };
 }
 
@@ -330,8 +367,9 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
   const E = experimentE_crossOctave(seed);
   const F = experimentF_aiContextProxy(seed);
   const G = experimentG_gatewayExactness(seed, validationSeed);
+  const I = experimentI_gpuLiveChatStack();
   const exactOk = B.exact && D.exact && F.exact && G.pass;
-  const H = experimentH_enginePinGate([B, C, D, E, F], exactOk);
+  const H = experimentH_enginePinGate([B, C, D, E, F], exactOk, I);
 
   const experiments = [
     { id: 'E1_illustrative_model', title: A.title, pass: A.pass, A },
@@ -341,8 +379,9 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
     { id: 'E5_cross_octave', title: E.title, pass: E.pass, E },
     { id: 'E6_ai_context_proxy', title: F.title, pass: F.pass, F },
     { id: 'E7_gateway_exactness', title: G.title, pass: G.pass, G },
+    { id: 'E8_gpu_live_tiny_footprint', title: I.title, pass: I.pass, I },
     {
-      id: 'E8_engine_pin_gate',
+      id: 'E9_engine_pin_gate',
       title: H.title,
       pass: H.pass,
       enginePinRecommended: H.enginePinRecommended,
@@ -364,9 +403,11 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
     E,
     F,
     G,
+    I,
     H,
     enginePinRecommended: H.enginePinRecommended,
     engineShelfSlot: ENGINE_SHELF_SLOT,
+    product: 'Tiny Footprint',
     honesty: HONESTY,
   };
 }

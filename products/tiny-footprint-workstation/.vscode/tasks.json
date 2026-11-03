@@ -30,6 +30,18 @@
       "type": "shell",
       "command": "node scripts/tiny.mjs report",
       "problemMatcher": []
+    },
+    {
+      "label": "tiny: join (validation)",
+      "type": "shell",
+      "command": "node scripts/tiny.mjs join",
+      "problemMatcher": []
+    },
+    {
+      "label": "tiny: share results",
+      "type": "shell",
+      "command": "node scripts/tiny.mjs share -y",
+      "problemMatcher": []
     }
   ]
 }

@@ -1,25 +1,36 @@
 #!/usr/bin/env node
 /**
  * Tiny Footprint Workstation CLI
- * Usage: node scripts/tiny.mjs <doctor|install|demo|benchmark|report|integrate>
+ * Usage:
+ *   node scripts/tiny.mjs <doctor|install|demo|benchmark|report|integrate|join|share>
+ *
+ * Share / join opt-in emails results to valetpru@gmail.com (mailto, or SMTP if configured).
  */
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
+import readline from 'node:readline/promises';
+import { stdin as input, stdout as output } from 'node:process';
 import { fileURLToPath } from 'node:url';
+import { shareResults } from './share-results.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const SUITE_CANDIDATES = [
-  path.join(ROOT, 'research', 'synthobs-tiny-gateway-rhyming-templates'), // standalone repo layout
-  path.join(ROOT, '..', '..', 'research', 'synthobs-tiny-gateway-rhyming-templates'), // SING 13 monorepo
+  path.join(ROOT, 'research', 'synthobs-tiny-gateway-rhyming-templates'),
+  path.join(ROOT, '..', '..', 'research', 'synthobs-tiny-gateway-rhyming-templates'),
 ];
 const SUITE = SUITE_CANDIDATES.find((p) => fs.existsSync(p)) || SUITE_CANDIDATES[0];
-const REPO = path.resolve(SUITE, '../..');
+const REPO = fs.existsSync(path.join(ROOT, 'package.json')) ? ROOT : path.resolve(SUITE, '../..');
 const REPORTS = path.join(ROOT, 'benchmarks', 'reports');
+const SHARE_TO = process.env.TINY_FOOTPRINT_SHARE_EMAIL || 'valetpru@gmail.com';
 
 function log(msg) {
   console.log(`[tiny] ${msg}`);
+}
+
+function flag(name) {
+  return process.argv.includes(name);
 }
 
 function runNode(script, args = [], opts = {}) {
@@ -32,10 +43,16 @@ function runNode(script, args = [], opts = {}) {
   return r.status ?? 1;
 }
 
+async function ask(rl, q, def = '') {
+  const a = (await rl.question(def ? `${q} [${def}]: ` : `${q}: `)).trim();
+  return a || def;
+}
+
 function doctor() {
   log('Tiny Footprint Workstation 0.1 · doctor');
   log(`workstation: ${ROOT}`);
   log(`suite: ${SUITE} ${fs.existsSync(SUITE) ? 'OK' : 'MISSING'}`);
+  log(`docs: ${fs.existsSync(path.join(ROOT, 'docs')) ? 'OK' : 'optional'}`);
   log(`node: ${process.version}`);
   const py = process.env.TINY_FOOTPRINT_PYTHON || 'py';
   const pr = spawnSync(py, ['-3', '--version'], { encoding: 'utf8' });
@@ -45,33 +62,32 @@ function doctor() {
   });
   if (smi.status === 0) log(`gpu: ${(smi.stdout || '').trim()}`);
   else log('gpu: nvidia-smi not available (CPU demo still works)');
+  log(`share recipient: ${SHARE_TO}`);
   log('doctor complete');
   return 0;
 }
 
 function install() {
-  log('install · verifying suite package scripts');
+  log('install · verifying kit');
   if (!fs.existsSync(SUITE)) {
-    log('ERROR: research suite not found. Clone full repo or sparse-checkout research/synthobs-tiny-gateway-rhyming-templates');
+    log('ERROR: research suite missing under research/synthobs-tiny-gateway-rhyming-templates');
     return 1;
   }
   fs.mkdirSync(REPORTS, { recursive: true });
-  const pkg = path.join(REPO, 'package.json');
-  if (fs.existsSync(pkg)) {
-    log('repo package.json present — run `npm ci` at repo root if dependencies missing');
-  }
-  log('install complete (Community Edition · no license key required)');
+  const pkg = path.join(ROOT, 'package.json');
+  if (fs.existsSync(pkg)) log('package.json OK — Community Edition needs no license key');
+  log('Next: node scripts/tiny.mjs demo');
+  log('Join industry testing: node scripts/tiny.mjs join');
   return 0;
 }
 
 function demo() {
-  log('demo · multi-session in-process Tiny Footprint workload');
-  const demoScript = path.join(ROOT, 'workloads', 'multi-session', 'run.mjs');
-  return runNode(demoScript);
+  log('demo · multi-session Tiny Footprint workload');
+  return runNode(path.join(ROOT, 'workloads', 'multi-session', 'run.mjs'));
 }
 
 function benchmark() {
-  log('benchmark · conventional vs Tiny (delegates to SynthOBS suite)');
+  log('benchmark · conventional vs Tiny');
   fs.mkdirSync(REPORTS, { recursive: true });
   const pipeline = path.join(SUITE, 'scripts', 'run_empirical_pipeline.mjs');
   if (!fs.existsSync(pipeline)) {
@@ -82,8 +98,12 @@ function benchmark() {
     cwd: SUITE,
     env: { TINY_FOOTPRINT_FORCE_LLM_LAB: process.env.TINY_FOOTPRINT_FORCE_LLM_LAB || '0' },
   });
-  // copy receipts into workstation reports
-  for (const name of ['empirical_report.json', 'empirical_report.md', 'gpu_live_chat_hbm_lab.json', 'gpu_llm_real_lab.json']) {
+  for (const name of [
+    'empirical_report.json',
+    'empirical_report.md',
+    'gpu_live_chat_hbm_lab.json',
+    'gpu_llm_real_lab.json',
+  ]) {
     const src = path.join(SUITE, 'data', name);
     if (fs.existsSync(src)) {
       fs.copyFileSync(src, path.join(REPORTS, name));
@@ -93,26 +113,19 @@ function benchmark() {
   return status;
 }
 
-function report() {
-  log('report · writing workstation summary HTML');
+function writeReportHtml() {
   fs.mkdirSync(REPORTS, { recursive: true });
   let empirical = null;
-  const empPath = path.join(REPORTS, 'empirical_report.json');
-  if (fs.existsSync(empPath)) {
-    try {
-      empirical = JSON.parse(fs.readFileSync(empPath, 'utf8'));
-    } catch {
-      empirical = null;
-    }
-  }
-  const llmPath = path.join(REPORTS, 'gpu_llm_real_lab.json');
   let llm = null;
-  if (fs.existsSync(llmPath)) {
-    try {
-      llm = JSON.parse(fs.readFileSync(llmPath, 'utf8'));
-    } catch {
-      llm = null;
-    }
+  try {
+    empirical = JSON.parse(fs.readFileSync(path.join(REPORTS, 'empirical_report.json'), 'utf8'));
+  } catch {
+    /* optional */
+  }
+  try {
+    llm = JSON.parse(fs.readFileSync(path.join(REPORTS, 'gpu_llm_real_lab.json'), 'utf8'));
+  } catch {
+    /* optional */
   }
   const html = `<!DOCTYPE html>
 <html><head><meta charset="utf-8"/><title>Tiny Footprint · Customer Benchmark</title>
@@ -130,29 +143,148 @@ h1{font-size:1.6rem}table{border-collapse:collapse;width:100%}td,th{border-botto
 <tr><td>Real LLM train-step speedup</td><td>${llm?.training?.comparison?.stepP50Speedup?.toFixed?.(2) ?? 'n/a'}×</td></tr>
 <tr><td>Device</td><td>${llm?.device ?? 'see receipts'}</td></tr>
 </table>
-<p class="muted">Raw receipts in benchmarks/reports/. Honesty: local lab ≠ datacenter HBM / hosted frontier guarantee.</p>
+<p class="muted">Raw receipts in benchmarks/reports/. Share: node scripts/tiny.mjs share</p>
 </body></html>`;
   const out = path.join(REPORTS, 'customer-benchmark.html');
   fs.writeFileSync(out, html, 'utf8');
   log(`wrote ${out}`);
+  return out;
+}
+
+async function report() {
+  writeReportHtml();
+  if (flag('--share') || flag('-s')) {
+    log(`share selected → emailing packet to ${SHARE_TO}`);
+    const result = shareResults({
+      name: process.env.TINY_FOOTPRINT_PARTICIPANT_NAME || '',
+      email: process.env.TINY_FOOTPRINT_PARTICIPANT_EMAIL || '',
+      org: process.env.TINY_FOOTPRINT_PARTICIPANT_ORG || '',
+      openMail: true,
+    });
+    log(
+      result.emailedViaSmtp
+        ? `SMTP send OK → ${result.to}`
+        : `mailto opened → ${result.to} (packet: ${result.jsonPath})`,
+    );
+  } else {
+    log('Tip: add --share to email results to the validation desk (valetpru@gmail.com)');
+  }
   return 0;
 }
 
 function integrate() {
-  log('integrate · supported adapters (v0.1 stubs)');
   const adapters = path.join(ROOT, 'tiny-footprint', 'adapters', 'README.md');
-  if (fs.existsSync(adapters)) {
-    console.log(fs.readFileSync(adapters, 'utf8'));
-  }
-  log('Next: pick an adapter folder, set .env, re-run benchmark against your server.');
+  if (fs.existsSync(adapters)) console.log(fs.readFileSync(adapters, 'utf8'));
+  log('Integrate via defined adapters — do not replace the customer AI stack.');
   return 0;
 }
 
-const cmd = process.argv[2] || 'doctor';
-const map = { doctor, install, demo, benchmark, report, integrate };
-if (!map[cmd]) {
-  console.error(`Unknown command: ${cmd}`);
-  console.error('Commands: doctor | install | demo | benchmark | report | integrate');
-  process.exit(1);
+async function join() {
+  log('Join the Tiny Footprint industry-wide validation initiative');
+  log(`Results share address: ${SHARE_TO}`);
+  const rl = readline.createInterface({ input, output });
+  try {
+    const name = await ask(rl, 'Your name');
+    const email = await ask(rl, 'Work email');
+    const org = await ask(rl, 'Organization');
+    const role = await ask(rl, 'Role', 'Infrastructure / MLOps');
+    const hardware = await ask(rl, 'Hardware interest', 'local GPU / HBM cluster');
+    const notes = await ask(rl, 'Notes (optional)', '');
+    const shareAns = (await ask(rl, 'Share your latest benchmark results with the validation desk? (y/N)', 'N')).toLowerCase();
+    const share = shareAns === 'y' || shareAns === 'yes';
+
+    const joinPath = path.join(REPORTS, 'validation-join.json');
+    fs.mkdirSync(REPORTS, { recursive: true });
+    const record = {
+      product: 'Tiny Footprint Validation Initiative',
+      at: new Date().toISOString(),
+      name,
+      email,
+      org,
+      role,
+      hardware,
+      notes,
+      shareResults: share,
+      shareTo: SHARE_TO,
+    };
+    fs.writeFileSync(joinPath, JSON.stringify(record, null, 2), 'utf8');
+    log(`saved ${joinPath}`);
+
+    // Always notify join interest; include results when selected
+    writeReportHtml();
+    const result = shareResults({
+      name,
+      email,
+      org,
+      role,
+      notes: `${notes}\nHardware: ${hardware}\nShareResultsSelected: ${share}`,
+      openMail: true,
+    });
+    if (!share) {
+      log('Join interest email opened (results optional — you answered no to sharing receipts).');
+    } else {
+      log(
+        result.emailedViaSmtp
+          ? `Results emailed via SMTP → ${SHARE_TO}`
+          : `Results share email opened → ${SHARE_TO}`,
+      );
+    }
+    log(`Packet on disk: ${result.jsonPath}`);
+    return 0;
+  } finally {
+    rl.close();
+  }
 }
-process.exit(map[cmd]());
+
+async function share() {
+  log(`share · opt-in send to ${SHARE_TO}`);
+  writeReportHtml();
+  const rl = flag('--yes') || flag('-y') ? null : readline.createInterface({ input, output });
+  try {
+    let meta = {
+      name: process.env.TINY_FOOTPRINT_PARTICIPANT_NAME || '',
+      email: process.env.TINY_FOOTPRINT_PARTICIPANT_EMAIL || '',
+      org: process.env.TINY_FOOTPRINT_PARTICIPANT_ORG || '',
+    };
+    if (rl) {
+      const confirm = (await ask(rl, `Email latest results to ${SHARE_TO}? (y/N)`, 'N')).toLowerCase();
+      if (confirm !== 'y' && confirm !== 'yes') {
+        log('Share cancelled — nothing sent.');
+        return 0;
+      }
+      meta = {
+        name: await ask(rl, 'Your name', meta.name),
+        email: await ask(rl, 'Your email', meta.email),
+        org: await ask(rl, 'Organization', meta.org),
+      };
+    }
+    const result = shareResults({ ...meta, openMail: true });
+    log(
+      result.emailedViaSmtp
+        ? `SMTP OK → ${result.to}`
+        : `mailto opened → ${result.to} · packet ${result.jsonPath}`,
+    );
+    return 0;
+  } finally {
+    rl?.close();
+  }
+}
+
+const cmd = process.argv[2] || 'doctor';
+const map = { doctor, install, demo, benchmark, report, integrate, join, share };
+
+async function main() {
+  if (!map[cmd]) {
+    console.error(`Unknown command: ${cmd}`);
+    console.error('Commands: doctor | install | demo | benchmark | report [--share] | integrate | join | share');
+    process.exit(1);
+  }
+  const out = map[cmd]();
+  const code = out && typeof out.then === 'function' ? await out : out;
+  process.exit(code ?? 0);
+}
+
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

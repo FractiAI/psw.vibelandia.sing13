@@ -12,6 +12,8 @@
     "install-kit": "node scripts/tiny.mjs install",
     "demo": "node scripts/tiny.mjs demo",
     "benchmark": "node scripts/tiny.mjs benchmark",
-    "report": "node scripts/tiny.mjs report"
+    "report": "node scripts/tiny.mjs report",
+    "join": "node scripts/tiny.mjs join",
+    "share": "node scripts/tiny.mjs share"
   }
 }

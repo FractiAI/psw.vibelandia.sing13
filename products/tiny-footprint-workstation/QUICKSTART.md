@@ -1,18 +1,23 @@
-# Tiny Footprint Workstation · Quick start
+# Quick start · Tiny Footprint Workstation
 
-1. **Open** this folder in VS Code (`code .`).
-2. Copy `.env.example` → `.env` and set optional paths.
-3. Run tasks from Terminal or `.vscode/tasks.json`:
+1. Clone **https://github.com/FractiAI/tiny-footprint-workstation**
+2. Open the folder in VS Code / Cursor
+3. Run:
 
-| Step | Command |
-|------|---------|
-| Check | `node scripts/tiny.mjs doctor` |
-| Install | `node scripts/tiny.mjs install` |
-| Demo | `node scripts/tiny.mjs demo` |
-| Benchmark | `node scripts/tiny.mjs benchmark` |
-| Report | `node scripts/tiny.mjs report` |
+```bash
+node scripts/tiny.mjs doctor
+node scripts/tiny.mjs install
+node scripts/tiny.mjs demo
+node scripts/tiny.mjs benchmark
+node scripts/tiny.mjs report
+```
 
-4. Open `benchmarks/reports/` for the latest HTML/JSON receipt.
-5. Optional GPU LLM lab (Windows DirectML): see `research/synthobs-tiny-gateway-rhyming-templates/requirements-directml.txt`.
+4. Join industry testing (optional share → **valetpru@gmail.com**):
 
-First success = a reproducible conventional-vs-Tiny report on **your** machine without FractiAI at the keyboard.
+```bash
+node scripts/tiny.mjs join
+```
+
+5. Open `benchmarks/reports/customer-benchmark.html`
+
+Read [README.md](./README.md) for product context and honesty rails.

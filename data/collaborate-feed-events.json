@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-03T17:09:35.839Z",
+  "updatedAt": "2026-11-03T17:24:50.254Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-03T17:09:35.837Z",
+      "createdAt": "2026-11-03T17:24:50.252Z",
       "body": "Product Engineering Manual � Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
       "presenceHue": "gold",
       "paperId": "lattice-chat-product-engineering-manual-2026-09",
@@ -34,7 +34,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-03T17:09:35.828Z",
+      "createdAt": "2026-11-03T17:24:50.236Z",
       "body": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
       "presenceHue": "gold",
       "paperId": "synthobs-tiny-gateway-rhyming-templates-2026-11",

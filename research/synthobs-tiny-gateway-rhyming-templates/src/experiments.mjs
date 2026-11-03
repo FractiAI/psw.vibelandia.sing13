@@ -26,6 +26,7 @@ import {
 } from './eight-node.mjs';
 import { createGateway } from './gateway.mjs';
 import { runGpuLiveChatLab } from './gpu-live-lab.mjs';
+import { runGpuLlmRealLab } from './gpu-llm-real-lab.mjs';
 
 /** A · Illustrative §7 arithmetic (hypothesis model, not measurement) */
 export function experimentA_illustrativeModel() {
@@ -346,6 +347,31 @@ export function experimentI_gpuLiveChatStack() {
   };
 }
 
+/** J · REAL local-GPU LLM inference + training (DirectML/CUDA) — not allocation proxy */
+export function experimentJ_gpuLlmReal() {
+  const report = runGpuLlmRealLab();
+  const prefill = report?.inference?.comparison?.prefillP50Speedup ?? null;
+  const generate = report?.inference?.comparison?.generateP50Speedup ?? null;
+  const train = report?.training?.comparison?.stepP50Speedup ?? null;
+  const pass = !!report?.ok && report?.labKind === 'real_llm_local_gpu';
+  return {
+    id: 'J_gpu_llm_real',
+    title: 'Tiny Footprint · real local-GPU LLM infer + train (DirectML/CUDA)',
+    product: 'Tiny Footprint',
+    report,
+    prefillP50Speedup: prefill,
+    generateP50Speedup: generate,
+    trainStepP50Speedup: train,
+    pass,
+    honesty: report?.honesty || 'Requires .venv-cuda with torch-directml; not the HtoD allocation proxy.',
+    interpretation: pass
+      ? `Real LLM on ${report?.device}: prefill ${prefill?.toFixed?.(2) ?? prefill}×, generate ${
+          generate?.toFixed?.(2) ?? generate
+        }×, train step ${train?.toFixed?.(2) ?? train}× (with vs without Tiny Footprint).`
+      : `Real LLM GPU lab unavailable: ${report?.error || 'see report'}.`,
+  };
+}
+
 /** H · ENGINE_SHELF pin gate — ≥80% aggregate measured + exactness (+ GPU lab when available) */
 export function experimentH_enginePinGate(parts, exactOk, gpuLab) {
   const agg = aggregateMeasured(parts);
@@ -382,6 +408,7 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
   const F = experimentF_aiContextProxy(seed);
   const G = experimentG_gatewayExactness(seed, validationSeed);
   const I = experimentI_gpuLiveChatStack();
+  const J = experimentJ_gpuLlmReal();
   const exactOk = B.exact && D.exact && F.exact && G.pass;
   const H = experimentH_enginePinGate([B, C, D, E, F], exactOk, I);
 
@@ -394,6 +421,7 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
     { id: 'E6_ai_context_proxy', title: F.title, pass: F.pass, F },
     { id: 'E7_gateway_exactness', title: G.title, pass: G.pass, G },
     { id: 'E8_gpu_live_tiny_footprint', title: I.title, pass: I.pass, I },
+    { id: 'E10_gpu_llm_real', title: J.title, pass: J.pass, J },
     {
       id: 'E9_engine_pin_gate',
       title: H.title,
@@ -418,6 +446,7 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
     F,
     G,
     I,
+    J,
     H,
     enginePinRecommended: H.enginePinRecommended,
     engineShelfSlot: ENGINE_SHELF_SLOT,

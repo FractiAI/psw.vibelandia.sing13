@@ -43,3 +43,7 @@ Thumbs.db
 # Supabase (not used in SING 13; lite edges only)
 # supabase/
 .env*.local
+
+# Tiny Footprint DirectML venv (local GPU LLM lab)
+research/synthobs-tiny-gateway-rhyming-templates/.venv-cuda/
+

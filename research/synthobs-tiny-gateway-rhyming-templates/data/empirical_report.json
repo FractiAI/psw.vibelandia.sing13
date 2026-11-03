@@ -3,7 +3,7 @@
   "DOC_ID": "WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03",
   "REGISTRY_ID": "synthobs-tiny-gateway-rhyming-templates-2026-11",
   "STUDY_TITLE": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
-  "generatedAt": "2026-11-03T17:19:37.296Z",
+  "generatedAt": "2026-11-03T18:10:07.476Z",
   "results": {
     "experiments": [
       {
@@ -175,47 +175,47 @@
                 "label": "conventional_duplicated_resident_state",
                 "turnMaterializeMs": {
                   "n": 24,
-                  "meanMs": 42.14034999798363,
-                  "p50Ms": 41.819849982857704,
-                  "p95Ms": 44.693300034850836,
-                  "minMs": 40.51609989255667,
-                  "maxMs": 45.71449989452958
+                  "meanMs": 48.04243752732873,
+                  "p50Ms": 45.13240000233054,
+                  "p95Ms": 61.144300270825624,
+                  "minMs": 40.46750022098422,
+                  "maxMs": 78.63039989024401
                 },
                 "sessionBringupMs": {
                   "n": 8,
-                  "meanMs": 6.031037715729326,
-                  "p50Ms": 5.791600095108151,
-                  "p95Ms": 6.508100312203169,
-                  "minMs": 5.601400043815374,
-                  "maxMs": 7.145800162106752
+                  "meanMs": 5.847049877047539,
+                  "p50Ms": 5.732949823141098,
+                  "p95Ms": 6.243099924176931,
+                  "minMs": 5.478400271385908,
+                  "maxMs": 6.4295995980501175
                 }
               },
               "withTinyFootprint": {
                 "label": "shared_pattern_plus_deltas",
                 "turnMaterializeMs": {
                   "n": 24,
-                  "meanMs": 3.849525024027874,
-                  "p50Ms": 3.7366999313235283,
-                  "p95Ms": 4.311800003051758,
-                  "minMs": 3.5748002119362354,
-                  "maxMs": 4.5910002663731575
+                  "meanMs": 4.031391639728099,
+                  "p50Ms": 4.015800077468157,
+                  "p95Ms": 4.2458996176719666,
+                  "minMs": 3.7660999223589897,
+                  "maxMs": 4.270500037819147
                 },
                 "sessionBringupMs": {
                   "n": 8,
-                  "meanMs": 3.188725095242262,
-                  "p50Ms": 3.198249964043498,
-                  "p95Ms": 3.2824999652802944,
-                  "minMs": 2.9203002341091633,
-                  "maxMs": 3.3832001499831676
+                  "meanMs": 3.137412539217621,
+                  "p50Ms": 3.0049001798033714,
+                  "p95Ms": 3.269399981945753,
+                  "minMs": 2.916400320827961,
+                  "maxMs": 3.883499652147293
                 }
               },
               "comparison": {
-                "turnP50RatioTinyOverConventional": 0.08935230357964535,
-                "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+                "turnP50RatioTinyOverConventional": 0.08897820805587094,
+                "bringupP50RatioTinyOverConventional": 0.5241455572616505,
                 "turnFasterWithTinyFootprint": true,
                 "bringupFasterWithTinyFootprint": true,
-                "turnSpeedup": 11.19165326396579,
-                "bringupSpeedup": 1.810865367066532
+                "turnSpeedup": 11.238706890703877,
+                "bringupSpeedup": 1.9078669773037984
               },
               "passLatencyGate": true
             },
@@ -249,57 +249,179 @@
               "label": "conventional_duplicated_resident_state",
               "turnMaterializeMs": {
                 "n": 24,
-                "meanMs": 42.14034999798363,
-                "p50Ms": 41.819849982857704,
-                "p95Ms": 44.693300034850836,
-                "minMs": 40.51609989255667,
-                "maxMs": 45.71449989452958
+                "meanMs": 48.04243752732873,
+                "p50Ms": 45.13240000233054,
+                "p95Ms": 61.144300270825624,
+                "minMs": 40.46750022098422,
+                "maxMs": 78.63039989024401
               },
               "sessionBringupMs": {
                 "n": 8,
-                "meanMs": 6.031037715729326,
-                "p50Ms": 5.791600095108151,
-                "p95Ms": 6.508100312203169,
-                "minMs": 5.601400043815374,
-                "maxMs": 7.145800162106752
+                "meanMs": 5.847049877047539,
+                "p50Ms": 5.732949823141098,
+                "p95Ms": 6.243099924176931,
+                "minMs": 5.478400271385908,
+                "maxMs": 6.4295995980501175
               }
             },
             "withTinyFootprint": {
               "label": "shared_pattern_plus_deltas",
               "turnMaterializeMs": {
                 "n": 24,
-                "meanMs": 3.849525024027874,
-                "p50Ms": 3.7366999313235283,
-                "p95Ms": 4.311800003051758,
-                "minMs": 3.5748002119362354,
-                "maxMs": 4.5910002663731575
+                "meanMs": 4.031391639728099,
+                "p50Ms": 4.015800077468157,
+                "p95Ms": 4.2458996176719666,
+                "minMs": 3.7660999223589897,
+                "maxMs": 4.270500037819147
               },
               "sessionBringupMs": {
                 "n": 8,
-                "meanMs": 3.188725095242262,
-                "p50Ms": 3.198249964043498,
-                "p95Ms": 3.2824999652802944,
-                "minMs": 2.9203002341091633,
-                "maxMs": 3.3832001499831676
+                "meanMs": 3.137412539217621,
+                "p50Ms": 3.0049001798033714,
+                "p95Ms": 3.269399981945753,
+                "minMs": 2.916400320827961,
+                "maxMs": 3.883499652147293
               }
             },
             "comparison": {
-              "turnP50RatioTinyOverConventional": 0.08935230357964535,
-              "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+              "turnP50RatioTinyOverConventional": 0.08897820805587094,
+              "bringupP50RatioTinyOverConventional": 0.5241455572616505,
               "turnFasterWithTinyFootprint": true,
               "bringupFasterWithTinyFootprint": true,
-              "turnSpeedup": 11.19165326396579,
-              "bringupSpeedup": 1.810865367066532
+              "turnSpeedup": 11.238706890703877,
+              "bringupSpeedup": 1.9078669773037984
             },
             "passLatencyGate": true
           },
-          "turnP50MsWithout": 41.819849982857704,
-          "turnP50MsWith": 3.7366999313235283,
-          "turnP50RatioTinyOverConventional": 0.08935230357964535,
-          "turnSpeedup": 11.19165326396579,
+          "turnP50MsWithout": 45.13240000233054,
+          "turnP50MsWith": 4.015800077468157,
+          "turnP50RatioTinyOverConventional": 0.08897820805587094,
+          "turnSpeedup": 11.238706890703877,
           "pass": true,
           "honesty": "Measured on NVIDIA GeForce GTX 860M via nvidia-smi / cuMemAlloc / cuMemcpyHtoD. This GeForce uses GDDR device memory; datacenter HBM is the operator analogue for the same duplicated-resident-state problem — not identical silicon. Latency is materialization path, not frontier LLM decode.",
-          "interpretation": "Live on NVIDIA GeForce GTX 860M: cuMemAlloc 81.4%; nvidia-smi 72.8%; density 11.85×; turn p50 without 41.82 ms → with Tiny Footprint 3.74 ms (11.19× speedup)."
+          "interpretation": "Live on NVIDIA GeForce GTX 860M: cuMemAlloc 81.4%; nvidia-smi 72.8%; density 11.85×; turn p50 without 45.13 ms → with Tiny Footprint 4.02 ms (11.24× speedup)."
+        }
+      },
+      {
+        "id": "E10_gpu_llm_real",
+        "title": "Tiny Footprint · real local-GPU LLM infer + train (DirectML/CUDA)",
+        "pass": true,
+        "J": {
+          "id": "J_gpu_llm_real",
+          "title": "Tiny Footprint · real local-GPU LLM infer + train (DirectML/CUDA)",
+          "product": "Tiny Footprint",
+          "report": {
+            "ok": true,
+            "product": "Tiny Footprint",
+            "labKind": "real_llm_local_gpu",
+            "device": "NVIDIA GeForce GTX 860M",
+            "deviceDetail": {
+              "name": "NVIDIA GeForce GTX 860M",
+              "totalMib": 2048,
+              "driverVersion": "512.77",
+              "backend": "directml",
+              "torchDevice": "privateuseone:0"
+            },
+            "model": {
+              "id": "sshleifer/tiny-gpt2",
+              "parameterCount": 203228
+            },
+            "workload": {
+              "sessions": 6,
+              "userTurns": 2,
+              "newTokens": 8,
+              "trials": 3,
+              "trainSteps": 5
+            },
+            "inference": {
+              "withoutTinyFootprint": {
+                "prefillBatchMs": {
+                  "n": 3,
+                  "meanMs": 216.40556709220013,
+                  "p50Ms": 213.7832003645599,
+                  "minMs": 204.07900027930737,
+                  "maxMs": 231.3545006327331
+                },
+                "generateBatchMs": {
+                  "n": 3,
+                  "meanMs": 1250.258933287114,
+                  "p50Ms": 1248.8449001684785,
+                  "minMs": 1226.2240001000464,
+                  "maxMs": 1275.7078995928168
+                },
+                "nvidiaSmiUsedMib": 265,
+                "torchPeakAllocMib": null
+              },
+              "withTinyFootprint": {
+                "prefillBatchMs": {
+                  "n": 3,
+                  "meanMs": 139.92300008734068,
+                  "p50Ms": 118.51439997553825,
+                  "minMs": 115.11790100485086,
+                  "maxMs": 186.1366992816329
+                },
+                "generateBatchMs": {
+                  "n": 3,
+                  "meanMs": 958.6153663694859,
+                  "p50Ms": 908.8737000711262,
+                  "minMs": 854.1218992322683,
+                  "maxMs": 1112.850499805063
+                },
+                "nvidiaSmiUsedMib": 265,
+                "torchPeakAllocMib": null
+              },
+              "comparison": {
+                "prefillP50Speedup": 1.8038584375289872,
+                "generateP50Speedup": 1.3740576936825732,
+                "prefillFasterWithTinyFootprint": true
+              }
+            },
+            "training": {
+              "withoutTinyFootprint": {
+                "stepMs": {
+                  "n": 5,
+                  "meanMs": 397.28961987420917,
+                  "p50Ms": 310.70669973269105,
+                  "minMs": 292.75189992040396,
+                  "maxMs": 729.2010001838207
+                },
+                "nvidiaSmiDeltaMib": 0,
+                "torchPeakAllocMib": null,
+                "optimizerCopies": 4
+              },
+              "withTinyFootprint": {
+                "stepMs": {
+                  "n": 5,
+                  "meanMs": 315.19177993759513,
+                  "p50Ms": 265.5048999004066,
+                  "minMs": 259.1621996834874,
+                  "maxMs": 490.98809994757175
+                },
+                "nvidiaSmiDeltaMib": 0,
+                "torchPeakAllocMib": null,
+                "optimizerCopies": 1
+              },
+              "comparison": {
+                "stepP50Speedup": 1.1702484581235226,
+                "fasterWithTinyFootprint": true,
+                "nvidiaSmiDeltaReductionRatio": null,
+                "lessResidentTrainMemoryWithTinyFootprint": false
+              }
+            },
+            "nvidiaSmi": {
+              "idleMib": 0
+            },
+            "honesty": "Real local-GPU causal-LM forward/generate + AdamW train microbench on NVIDIA GeForce GTX 860M via directml. Tiny Footprint = shared system-prefix KV reuse + single optimizer; without = duplicated full-prefix prefill per session + multiple optimizer copies. Not frontier decode TTFT on a hosted API; DirectML/CUDA on laptop GeForce ≠ datacenter HBM proof.",
+            "passRealLlmGate": true,
+            "liveRun": false,
+            "cached": true
+          },
+          "prefillP50Speedup": 1.8038584375289872,
+          "generateP50Speedup": 1.3740576936825732,
+          "trainStepP50Speedup": 1.1702484581235226,
+          "pass": true,
+          "honesty": "Real local-GPU causal-LM forward/generate + AdamW train microbench on NVIDIA GeForce GTX 860M via directml. Tiny Footprint = shared system-prefix KV reuse + single optimizer; without = duplicated full-prefix prefill per session + multiple optimizer copies. Not frontier decode TTFT on a hosted API; DirectML/CUDA on laptop GeForce ≠ datacenter HBM proof.",
+          "interpretation": "Real LLM on NVIDIA GeForce GTX 860M: prefill 1.80×, generate 1.37×, train step 1.17× (with vs without Tiny Footprint)."
         }
       },
       {
@@ -327,8 +449,8 @@
         "interpretation": "Aggregate 84.5% ≥ 80% with exactness + Tiny Footprint GPU live-stack lab (alloc 81.4%)."
       }
     ],
-    "n_pass": 9,
-    "n_total": 9,
+    "n_pass": 10,
+    "n_total": 10,
     "all_pass": true,
     "A": {
       "id": "A_illustrative_model",
@@ -460,47 +582,47 @@
             "label": "conventional_duplicated_resident_state",
             "turnMaterializeMs": {
               "n": 24,
-              "meanMs": 42.14034999798363,
-              "p50Ms": 41.819849982857704,
-              "p95Ms": 44.693300034850836,
-              "minMs": 40.51609989255667,
-              "maxMs": 45.71449989452958
+              "meanMs": 48.04243752732873,
+              "p50Ms": 45.13240000233054,
+              "p95Ms": 61.144300270825624,
+              "minMs": 40.46750022098422,
+              "maxMs": 78.63039989024401
             },
             "sessionBringupMs": {
               "n": 8,
-              "meanMs": 6.031037715729326,
-              "p50Ms": 5.791600095108151,
-              "p95Ms": 6.508100312203169,
-              "minMs": 5.601400043815374,
-              "maxMs": 7.145800162106752
+              "meanMs": 5.847049877047539,
+              "p50Ms": 5.732949823141098,
+              "p95Ms": 6.243099924176931,
+              "minMs": 5.478400271385908,
+              "maxMs": 6.4295995980501175
             }
           },
           "withTinyFootprint": {
             "label": "shared_pattern_plus_deltas",
             "turnMaterializeMs": {
               "n": 24,
-              "meanMs": 3.849525024027874,
-              "p50Ms": 3.7366999313235283,
-              "p95Ms": 4.311800003051758,
-              "minMs": 3.5748002119362354,
-              "maxMs": 4.5910002663731575
+              "meanMs": 4.031391639728099,
+              "p50Ms": 4.015800077468157,
+              "p95Ms": 4.2458996176719666,
+              "minMs": 3.7660999223589897,
+              "maxMs": 4.270500037819147
             },
             "sessionBringupMs": {
               "n": 8,
-              "meanMs": 3.188725095242262,
-              "p50Ms": 3.198249964043498,
-              "p95Ms": 3.2824999652802944,
-              "minMs": 2.9203002341091633,
-              "maxMs": 3.3832001499831676
+              "meanMs": 3.137412539217621,
+              "p50Ms": 3.0049001798033714,
+              "p95Ms": 3.269399981945753,
+              "minMs": 2.916400320827961,
+              "maxMs": 3.883499652147293
             }
           },
           "comparison": {
-            "turnP50RatioTinyOverConventional": 0.08935230357964535,
-            "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+            "turnP50RatioTinyOverConventional": 0.08897820805587094,
+            "bringupP50RatioTinyOverConventional": 0.5241455572616505,
             "turnFasterWithTinyFootprint": true,
             "bringupFasterWithTinyFootprint": true,
-            "turnSpeedup": 11.19165326396579,
-            "bringupSpeedup": 1.810865367066532
+            "turnSpeedup": 11.238706890703877,
+            "bringupSpeedup": 1.9078669773037984
           },
           "passLatencyGate": true
         },
@@ -534,57 +656,174 @@
           "label": "conventional_duplicated_resident_state",
           "turnMaterializeMs": {
             "n": 24,
-            "meanMs": 42.14034999798363,
-            "p50Ms": 41.819849982857704,
-            "p95Ms": 44.693300034850836,
-            "minMs": 40.51609989255667,
-            "maxMs": 45.71449989452958
+            "meanMs": 48.04243752732873,
+            "p50Ms": 45.13240000233054,
+            "p95Ms": 61.144300270825624,
+            "minMs": 40.46750022098422,
+            "maxMs": 78.63039989024401
           },
           "sessionBringupMs": {
             "n": 8,
-            "meanMs": 6.031037715729326,
-            "p50Ms": 5.791600095108151,
-            "p95Ms": 6.508100312203169,
-            "minMs": 5.601400043815374,
-            "maxMs": 7.145800162106752
+            "meanMs": 5.847049877047539,
+            "p50Ms": 5.732949823141098,
+            "p95Ms": 6.243099924176931,
+            "minMs": 5.478400271385908,
+            "maxMs": 6.4295995980501175
           }
         },
         "withTinyFootprint": {
           "label": "shared_pattern_plus_deltas",
           "turnMaterializeMs": {
             "n": 24,
-            "meanMs": 3.849525024027874,
-            "p50Ms": 3.7366999313235283,
-            "p95Ms": 4.311800003051758,
-            "minMs": 3.5748002119362354,
-            "maxMs": 4.5910002663731575
+            "meanMs": 4.031391639728099,
+            "p50Ms": 4.015800077468157,
+            "p95Ms": 4.2458996176719666,
+            "minMs": 3.7660999223589897,
+            "maxMs": 4.270500037819147
           },
           "sessionBringupMs": {
             "n": 8,
-            "meanMs": 3.188725095242262,
-            "p50Ms": 3.198249964043498,
-            "p95Ms": 3.2824999652802944,
-            "minMs": 2.9203002341091633,
-            "maxMs": 3.3832001499831676
+            "meanMs": 3.137412539217621,
+            "p50Ms": 3.0049001798033714,
+            "p95Ms": 3.269399981945753,
+            "minMs": 2.916400320827961,
+            "maxMs": 3.883499652147293
           }
         },
         "comparison": {
-          "turnP50RatioTinyOverConventional": 0.08935230357964535,
-          "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+          "turnP50RatioTinyOverConventional": 0.08897820805587094,
+          "bringupP50RatioTinyOverConventional": 0.5241455572616505,
           "turnFasterWithTinyFootprint": true,
           "bringupFasterWithTinyFootprint": true,
-          "turnSpeedup": 11.19165326396579,
-          "bringupSpeedup": 1.810865367066532
+          "turnSpeedup": 11.238706890703877,
+          "bringupSpeedup": 1.9078669773037984
         },
         "passLatencyGate": true
       },
-      "turnP50MsWithout": 41.819849982857704,
-      "turnP50MsWith": 3.7366999313235283,
-      "turnP50RatioTinyOverConventional": 0.08935230357964535,
-      "turnSpeedup": 11.19165326396579,
+      "turnP50MsWithout": 45.13240000233054,
+      "turnP50MsWith": 4.015800077468157,
+      "turnP50RatioTinyOverConventional": 0.08897820805587094,
+      "turnSpeedup": 11.238706890703877,
       "pass": true,
       "honesty": "Measured on NVIDIA GeForce GTX 860M via nvidia-smi / cuMemAlloc / cuMemcpyHtoD. This GeForce uses GDDR device memory; datacenter HBM is the operator analogue for the same duplicated-resident-state problem — not identical silicon. Latency is materialization path, not frontier LLM decode.",
-      "interpretation": "Live on NVIDIA GeForce GTX 860M: cuMemAlloc 81.4%; nvidia-smi 72.8%; density 11.85×; turn p50 without 41.82 ms → with Tiny Footprint 3.74 ms (11.19× speedup)."
+      "interpretation": "Live on NVIDIA GeForce GTX 860M: cuMemAlloc 81.4%; nvidia-smi 72.8%; density 11.85×; turn p50 without 45.13 ms → with Tiny Footprint 4.02 ms (11.24× speedup)."
+    },
+    "J": {
+      "id": "J_gpu_llm_real",
+      "title": "Tiny Footprint · real local-GPU LLM infer + train (DirectML/CUDA)",
+      "product": "Tiny Footprint",
+      "report": {
+        "ok": true,
+        "product": "Tiny Footprint",
+        "labKind": "real_llm_local_gpu",
+        "device": "NVIDIA GeForce GTX 860M",
+        "deviceDetail": {
+          "name": "NVIDIA GeForce GTX 860M",
+          "totalMib": 2048,
+          "driverVersion": "512.77",
+          "backend": "directml",
+          "torchDevice": "privateuseone:0"
+        },
+        "model": {
+          "id": "sshleifer/tiny-gpt2",
+          "parameterCount": 203228
+        },
+        "workload": {
+          "sessions": 6,
+          "userTurns": 2,
+          "newTokens": 8,
+          "trials": 3,
+          "trainSteps": 5
+        },
+        "inference": {
+          "withoutTinyFootprint": {
+            "prefillBatchMs": {
+              "n": 3,
+              "meanMs": 216.40556709220013,
+              "p50Ms": 213.7832003645599,
+              "minMs": 204.07900027930737,
+              "maxMs": 231.3545006327331
+            },
+            "generateBatchMs": {
+              "n": 3,
+              "meanMs": 1250.258933287114,
+              "p50Ms": 1248.8449001684785,
+              "minMs": 1226.2240001000464,
+              "maxMs": 1275.7078995928168
+            },
+            "nvidiaSmiUsedMib": 265,
+            "torchPeakAllocMib": null
+          },
+          "withTinyFootprint": {
+            "prefillBatchMs": {
+              "n": 3,
+              "meanMs": 139.92300008734068,
+              "p50Ms": 118.51439997553825,
+              "minMs": 115.11790100485086,
+              "maxMs": 186.1366992816329
+            },
+            "generateBatchMs": {
+              "n": 3,
+              "meanMs": 958.6153663694859,
+              "p50Ms": 908.8737000711262,
+              "minMs": 854.1218992322683,
+              "maxMs": 1112.850499805063
+            },
+            "nvidiaSmiUsedMib": 265,
+            "torchPeakAllocMib": null
+          },
+          "comparison": {
+            "prefillP50Speedup": 1.8038584375289872,
+            "generateP50Speedup": 1.3740576936825732,
+            "prefillFasterWithTinyFootprint": true
+          }
+        },
+        "training": {
+          "withoutTinyFootprint": {
+            "stepMs": {
+              "n": 5,
+              "meanMs": 397.28961987420917,
+              "p50Ms": 310.70669973269105,
+              "minMs": 292.75189992040396,
+              "maxMs": 729.2010001838207
+            },
+            "nvidiaSmiDeltaMib": 0,
+            "torchPeakAllocMib": null,
+            "optimizerCopies": 4
+          },
+          "withTinyFootprint": {
+            "stepMs": {
+              "n": 5,
+              "meanMs": 315.19177993759513,
+              "p50Ms": 265.5048999004066,
+              "minMs": 259.1621996834874,
+              "maxMs": 490.98809994757175
+            },
+            "nvidiaSmiDeltaMib": 0,
+            "torchPeakAllocMib": null,
+            "optimizerCopies": 1
+          },
+          "comparison": {
+            "stepP50Speedup": 1.1702484581235226,
+            "fasterWithTinyFootprint": true,
+            "nvidiaSmiDeltaReductionRatio": null,
+            "lessResidentTrainMemoryWithTinyFootprint": false
+          }
+        },
+        "nvidiaSmi": {
+          "idleMib": 0
+        },
+        "honesty": "Real local-GPU causal-LM forward/generate + AdamW train microbench on NVIDIA GeForce GTX 860M via directml. Tiny Footprint = shared system-prefix KV reuse + single optimizer; without = duplicated full-prefix prefill per session + multiple optimizer copies. Not frontier decode TTFT on a hosted API; DirectML/CUDA on laptop GeForce ≠ datacenter HBM proof.",
+        "passRealLlmGate": true,
+        "liveRun": false,
+        "cached": true
+      },
+      "prefillP50Speedup": 1.8038584375289872,
+      "generateP50Speedup": 1.3740576936825732,
+      "trainStepP50Speedup": 1.1702484581235226,
+      "pass": true,
+      "honesty": "Real local-GPU causal-LM forward/generate + AdamW train microbench on NVIDIA GeForce GTX 860M via directml. Tiny Footprint = shared system-prefix KV reuse + single optimizer; without = duplicated full-prefix prefill per session + multiple optimizer copies. Not frontier decode TTFT on a hosted API; DirectML/CUDA on laptop GeForce ≠ datacenter HBM proof.",
+      "interpretation": "Real LLM on NVIDIA GeForce GTX 860M: prefill 1.80×, generate 1.37×, train step 1.17× (with vs without Tiny Footprint)."
     },
     "H": {
       "id": "H_engine_pin_gate",
@@ -606,6 +845,6 @@
     "enginePinRecommended": true,
     "engineShelfSlot": 52,
     "product": "Tiny Footprint",
-    "honesty": "Tiny Gateway · Rhyming Templates / Tiny Footprint product: in-process representation lab + live laptop NVIDIA GeForce GTX 860M chat-stack device-memory and materialization-latency lab (nvcuda cuMemAlloc + cuMemcpyHtoD + nvidia-smi). Latency is HtoD materialization with vs without Tiny Footprint — not frontier LLM decode TTFT/TPS. This GeForce uses GDDR; datacenter HBM is the operator analogue — not identical silicon. Not a hosted frontier-vendor API bake-off. Φ_EGS is design grammar only. Engine pin is data-gated."
+    "honesty": "Tiny Gateway · Rhyming Templates / Tiny Footprint: in-process lab + (A) HtoD allocation proxy on GTX 860M and (B) REAL local-GPU LLM lab (sshleifer/tiny-gpt2 via torch-directml) measuring shared-prefix infer + AdamW train with vs without Tiny Footprint. Proxy ≠ model forward. DirectML on laptop GeForce ≠ datacenter HBM / hosted frontier API. Φ_EGS design grammar only. Engine pin is data-gated."
   }
 }

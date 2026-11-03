@@ -43,47 +43,47 @@
       "label": "conventional_duplicated_resident_state",
       "turnMaterializeMs": {
         "n": 24,
-        "meanMs": 42.14034999798363,
-        "p50Ms": 41.819849982857704,
-        "p95Ms": 44.693300034850836,
-        "minMs": 40.51609989255667,
-        "maxMs": 45.71449989452958
+        "meanMs": 43.524900024446346,
+        "p50Ms": 43.147899908944964,
+        "p95Ms": 45.80190032720566,
+        "minMs": 40.98620032891631,
+        "maxMs": 50.13710027560592
       },
       "sessionBringupMs": {
         "n": 8,
-        "meanMs": 6.031037715729326,
-        "p50Ms": 5.791600095108151,
-        "p95Ms": 6.508100312203169,
-        "minMs": 5.601400043815374,
-        "maxMs": 7.145800162106752
+        "meanMs": 6.05657504638657,
+        "p50Ms": 5.986350122839212,
+        "p95Ms": 6.270499899983406,
+        "minMs": 5.509800277650356,
+        "maxMs": 7.461499888449907
       }
     },
     "withTinyFootprint": {
       "label": "shared_pattern_plus_deltas",
       "turnMaterializeMs": {
         "n": 24,
-        "meanMs": 3.849525024027874,
-        "p50Ms": 3.7366999313235283,
-        "p95Ms": 4.311800003051758,
-        "minMs": 3.5748002119362354,
-        "maxMs": 4.5910002663731575
+        "meanMs": 4.599775013048202,
+        "p50Ms": 4.496699897572398,
+        "p95Ms": 5.030000116676092,
+        "minMs": 4.071800038218498,
+        "maxMs": 5.74659975245595
       },
       "sessionBringupMs": {
         "n": 8,
-        "meanMs": 3.188725095242262,
-        "p50Ms": 3.198249964043498,
-        "p95Ms": 3.2824999652802944,
-        "minMs": 2.9203002341091633,
-        "maxMs": 3.3832001499831676
+        "meanMs": 3.116649982985109,
+        "p50Ms": 3.0023499857634306,
+        "p95Ms": 3.4620999358594418,
+        "minMs": 2.9286998324096203,
+        "maxMs": 3.5286000929772854
       }
     },
     "comparison": {
-      "turnP50RatioTinyOverConventional": 0.08935230357964535,
-      "bringupP50RatioTinyOverConventional": 0.5522221685756386,
+      "turnP50RatioTinyOverConventional": 0.10421596200653534,
+      "bringupP50RatioTinyOverConventional": 0.501532640783709,
       "turnFasterWithTinyFootprint": true,
       "bringupFasterWithTinyFootprint": true,
-      "turnSpeedup": 11.19165326396579,
-      "bringupSpeedup": 1.810865367066532
+      "turnSpeedup": 9.595459090396252,
+      "bringupSpeedup": 1.993888171340896
     },
     "passLatencyGate": true
   },

@@ -208,14 +208,14 @@
     </ul>
 
     <h2>Measured on this laptop’s GeForce GTX</h2>
-    <p>Live device lab on <strong>NVIDIA GeForce GTX 860M</strong> (2&nbsp;GiB GDDR, driver via nvidia-smi) using nvcuda <code>cuMemAlloc</code> — conventional duplicated resident state vs Tiny Footprint shared-pattern serving proxy:</p>
-    <div class="tf-metrics" aria-label="Lab metrics">
-      <div><b>81.4%</b><span>cuMemAlloc cut</span></div>
-      <div><b>72.8%</b><span>nvidia-smi peak cut</span></div>
-      <div><b>11.2×</b><span>turn latency speedup</span></div>
-      <div><b>11.9×</b><span>concurrency density gain</span></div>
+    <p><strong>Real LLM lab</strong> on <strong>NVIDIA GeForce GTX 860M</strong> via torch-directml + <code>sshleifer/tiny-gpt2</code> — shared system-prefix KV reuse and single optimizer vs duplicated full-prefix / multi-optimizer:</p>
+    <div class="tf-metrics" aria-label="Real LLM metrics">
+      <div><b>1.80×</b><span>prefill faster (Tiny)</span></div>
+      <div><b>1.37×</b><span>generate faster (Tiny)</span></div>
+      <div><b>1.17×</b><span>train-step faster (Tiny)</span></div>
+      <div><b>84.5%</b><span>in-process aggregate</span></div>
     </div>
-    <p>Turn materialize p50 on this card: <strong>41.8&nbsp;ms without</strong> Tiny Footprint → <strong>3.7&nbsp;ms with</strong> (~11.2×). Session bring-up p50: 5.8&nbsp;ms → 3.2&nbsp;ms (~1.8×). In-process aggregate gate remains 84.5%. This GeForce uses GDDR. Datacenter HBM is the operator analogue—not identical silicon. Latency here is materialization (HtoD), not frontier LLM decode TTFT. Live local stack receipt—not a hosted frontier-vendor attestation.</p>
+    <p>Prefill batch p50: ~214&nbsp;ms without → ~119&nbsp;ms with Tiny Footprint. Generate batch p50: ~1249&nbsp;ms → ~909&nbsp;ms. Train-step p50: ~311&nbsp;ms → ~266&nbsp;ms. A separate HtoD allocation proxy still shows large device-memory cuts; that proxy is <em>not</em> a model forward. This GeForce uses GDDR via DirectML—not datacenter HBM silicon, not a hosted frontier API attestation.</p>
 
     <h2>How to implement with big LLMs</h2>
     <p>Offer Tiny Footprint as a serving fabric beside the model: shared system/policy/tool templates, per-session deltas, selective context reconstruction, shared originating story across worker nodes. Start where duplication is worst and quality is checkable. Measure resident memory, bandwidth, latency, and answer quality on equal workloads before shrinking purchased HBM/DRAM configs.</p>
@@ -223,7 +223,7 @@
     <h2>Invitation</h2>
     <p>Replay <code>npm run research:synthobs-tiny-gateway-rhyming-templates</code>, open the whitepaper, and request an operator pilot via the Purser. ENGINE_SHELF #52 carries the architecture pin; Tiny Footprint is how we name the product on the floor.</p>
 
-    <p class="honesty"><strong>Honesty:</strong> Tiny Footprint metrics above are from the SynthOBS suite (in-process + live NVIDIA GeForce GTX 860M chat-stack memory and materialization-latency lab on this laptop). Latency is HtoD materialization, not frontier decode TTFT/TPS. GDDR ≠ datacenter HBM silicon. Not a guarantee of CapEx −80% without your own measurement. Weights still occupy memory. Φ_EGS remains design grammar. Fair Exchange via the Purser.</p>
+    <p class="honesty"><strong>Honesty:</strong> Headline LLM numbers are from a real local-GPU causal-LM microbench (tiny-gpt2 on GTX 860M via DirectML)—infer + AdamW train with vs without Tiny Footprint. An older HtoD allocation proxy exists and must not be read as model decode. DirectML/GDDR ≠ datacenter HBM; not a hosted frontier bake-off; not CapEx −80% without your measurement. Φ_EGS design grammar only. Fair Exchange via the Purser.</p>
   </main>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>

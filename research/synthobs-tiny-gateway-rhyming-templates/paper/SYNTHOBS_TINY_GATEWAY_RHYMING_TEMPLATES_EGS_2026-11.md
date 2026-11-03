@@ -117,6 +117,20 @@ Receipt: `data/gpu_live_chat_hbm_lab.json`.
 
 ---
 
+
+
+## 4.2 Real local-GPU LLM lab (not the HtoD proxy)
+
+On **NVIDIA GeForce GTX 860M** via **torch-directml** + \sshleifer/tiny-gpt2\ (real forward / generate / AdamW):
+
+| Meter | Without Tiny Footprint | With Tiny Footprint | Speedup |
+|-------|-----------------------:|-------------------:|--------:|
+| Prefill batch p50 | ~214 ms | ~119 ms | ~1.80× |
+| Generate batch p50 | ~1249 ms | ~909 ms | ~1.37× |
+| Train-step p50 | ~311 ms | ~266 ms | ~1.17× |
+
+Tiny Footprint here means **shared system-prefix KV reuse** (infer) and **single optimizer** (train) versus duplicated full-prefix prefill and multiple optimizer copies. Receipt: \data/gpu_llm_real_lab.json\. The earlier cuMemAlloc/HtoD lab remains a separate allocation proxy and is not a model forward.
+
 ## 5. Product offer
 
 **Name:** Tiny Footprint  

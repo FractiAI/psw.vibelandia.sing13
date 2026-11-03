@@ -3,19 +3,22 @@
 **Document ID:** `WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03`
 **Registry ID:** `synthobs-tiny-gateway-rhyming-templates-2026-11`
 **Seed:** 20261103
-**Generated:** 2026-11-03T17:19:37.296Z
+**Generated:** 2026-11-03T18:10:07.476Z
 
 ## Verdict
 
 | All pass | `true` |
-| Passed | 9 / 9 |
+| Passed | 10 / 10 |
 | Aggregate measured reduction | 84.5% |
 | Tiny Footprint GPU alloc reduction | 81.4% |
 | Tiny Footprint nvidia-smi reduction | 72.8% |
 | Concurrency density gain | 11.85× |
-| Turn latency p50 without Tiny Footprint | 41.82 ms |
-| Turn latency p50 with Tiny Footprint | 3.74 ms |
-| Turn latency speedup (Tiny / conventional) | 11.19× |
+| Turn latency p50 without Tiny Footprint | 45.13 ms |
+| Turn latency p50 with Tiny Footprint | 4.02 ms |
+| Turn latency speedup (Tiny / conventional) | 11.24× |
+| Real LLM prefill speedup (with vs without) | 1.80× |
+| Real LLM generate speedup | 1.37× |
+| Real LLM train-step speedup | 1.17× |
 | Engine pin recommended | `true` (#52) |
 
 ## Workload reductions
@@ -32,7 +35,7 @@
 
 ## Honesty
 
-Tiny Gateway · Rhyming Templates / Tiny Footprint product: in-process representation lab + live laptop NVIDIA GeForce GTX 860M chat-stack device-memory and materialization-latency lab (nvcuda cuMemAlloc + cuMemcpyHtoD + nvidia-smi). Latency is HtoD materialization with vs without Tiny Footprint — not frontier LLM decode TTFT/TPS. This GeForce uses GDDR; datacenter HBM is the operator analogue — not identical silicon. Not a hosted frontier-vendor API bake-off. Φ_EGS is design grammar only. Engine pin is data-gated.
+Tiny Gateway · Rhyming Templates / Tiny Footprint: in-process lab + (A) HtoD allocation proxy on GTX 860M and (B) REAL local-GPU LLM lab (sshleifer/tiny-gpt2 via torch-directml) measuring shared-prefix infer + AdamW train with vs without Tiny Footprint. Proxy ≠ model forward. DirectML on laptop GeForce ≠ datacenter HBM / hosted frontier API. Φ_EGS design grammar only. Engine pin is data-gated.
 
 Standalone: FractiAI/synthobs-tiny-gateway-rhyming-templates
 

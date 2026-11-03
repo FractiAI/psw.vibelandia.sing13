@@ -43,6 +43,9 @@ function mdReport(report) {
     `| Turn latency p50 without Tiny Footprint | ${r.I?.turnP50MsWithout != null ? `${r.I.turnP50MsWithout.toFixed(2)} ms` : 'n/a'} |`,
     `| Turn latency p50 with Tiny Footprint | ${r.I?.turnP50MsWith != null ? `${r.I.turnP50MsWith.toFixed(2)} ms` : 'n/a'} |`,
     `| Turn latency speedup (Tiny / conventional) | ${r.I?.turnSpeedup != null ? `${r.I.turnSpeedup.toFixed(2)}×` : 'n/a'} |`,
+    `| Real LLM prefill speedup (with vs without) | ${r.J?.prefillP50Speedup != null ? `${r.J.prefillP50Speedup.toFixed(2)}×` : 'n/a'} |`,
+    `| Real LLM generate speedup | ${r.J?.generateP50Speedup != null ? `${r.J.generateP50Speedup.toFixed(2)}×` : 'n/a'} |`,
+    `| Real LLM train-step speedup | ${r.J?.trainStepP50Speedup != null ? `${r.J.trainStepP50Speedup.toFixed(2)}×` : 'n/a'} |`,
     `| Engine pin recommended | \`${r.enginePinRecommended}\` (#${ENGINE_SHELF_SLOT}) |`,
     '',
     '## Workload reductions',
@@ -71,6 +74,9 @@ function mdReport(report) {
 
 async function main() {
   console.log(`[tiny-gateway-rhyming] ${STUDY_TITLE}`);
+  if (process.env.TINY_FOOTPRINT_FORCE_LLM_LAB == null) {
+    process.env.TINY_FOOTPRINT_FORCE_LLM_LAB = '1';
+  }
   const results = runAllExperiments();
   const report = {
     schema: 'synthobs-tiny-gateway-rhyming-templates/v1',

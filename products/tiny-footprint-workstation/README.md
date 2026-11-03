@@ -27,9 +27,20 @@ Tiny Footprint is software you install **beside** your existing AI stack. It doe
 | **Server** | Enterprises | Company GPU servers |
 | **Cloud** | Hyperscale / GPU clouds | Provider infrastructure |
 
-Product story: [docs/PRODUCT.md](./docs/PRODUCT.md) · [docs/SIMPLE.md](./docs/SIMPLE.md) · [docs/TECH.md](./docs/TECH.md)  
-Web hub: https://www.ssvibelandiaquestfest24x365.com/tiny-footprint  
-Plain breakdown: https://www.ssvibelandiaquestfest24x365.com/tiny-footprint/simple
+Product story: [docs/PRODUCT.md](./docs/PRODUCT.md) · [docs/SIMPLE.md](./docs/SIMPLE.md) · [docs/TECH.md](./docs/TECH.md)
+
+### Brochures & plainspeak (in this repo)
+
+Open in a browser from `docs/web/`:
+
+| Doc | Path |
+|-----|------|
+| **Plainspeak** | [docs/web/simple.html](./docs/web/simple.html) |
+| **Tech brochure** | [docs/web/tech-brochure.html](./docs/web/tech-brochure.html) |
+| **Print / PDF brochure** | [docs/web/commercial-brochure-print.html](./docs/web/commercial-brochure-print.html) |
+| **Product hub snapshot** | [docs/web/product-hub.html](./docs/web/product-hub.html) |
+
+Live site: https://www.ssvibelandiaquestfest24x365.com/tiny-footprint · plainspeak: `/tiny-footprint/simple`
 
 ---
 
@@ -97,6 +108,7 @@ tiny-footprint-workstation/
 ├── README.md                 ← you are here
 ├── QUICKSTART.md
 ├── docs/                     ← product · simple · tech · validation
+│   └── web/                  ← plainspeak + tech/commercial brochures (HTML)
 ├── media/                    ← product images
 ├── scripts/tiny.mjs          ← doctor | install | demo | benchmark | report | join | share
 ├── tiny-gateway/             ← engine pointer

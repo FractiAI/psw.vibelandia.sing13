@@ -1,0 +1,253 @@
+{
+  "schema": "synthobs-tiny-gateway-rhyming-templates/v1",
+  "DOC_ID": "WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03",
+  "REGISTRY_ID": "synthobs-tiny-gateway-rhyming-templates-2026-11",
+  "STUDY_TITLE": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
+  "generatedAt": "2026-11-03T16:46:56.371Z",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_illustrative_model",
+        "title": "Illustrative 78.7% memory model arithmetic",
+        "pass": true,
+        "A": {
+          "id": "A_illustrative_model",
+          "title": "Illustrative 78.7% memory model arithmetic",
+          "remainingPct": 21.3,
+          "reductionPct": 78.69999999999999,
+          "nonWeightCutNeededPct": 94.11764705882354,
+          "approaches80": true,
+          "pass": true,
+          "honesty": "Architectural arithmetic only — not a measured DRAM/HBM result."
+        }
+      },
+      {
+        "id": "E2_structured_data",
+        "title": "Workload A · structured rhyming-template records",
+        "pass": true,
+        "B": {
+          "id": "B_structured_data",
+          "title": "Workload A · structured rhyming-template records",
+          "n": 500,
+          "ratio": 0.5433438568797685,
+          "saved": 41305,
+          "baselineBytes": 76020,
+          "tinyBytes": 34715,
+          "exact": true,
+          "pass": true
+        }
+      },
+      {
+        "id": "E3_cross_linked",
+        "title": "Workload B · cross-linked shared references",
+        "pass": true,
+        "C": {
+          "id": "C_cross_linked",
+          "title": "Workload B · cross-linked shared references",
+          "nNodes": 200,
+          "nEdges": 600,
+          "ratio": 0.8235809103011827,
+          "saved": 1024449,
+          "baselineBytes": 1243896,
+          "tinyBytes": 219447,
+          "pass": true
+        }
+      },
+      {
+        "id": "E4_eight_node",
+        "title": "Workload C · eight-node shared originating story",
+        "pass": true,
+        "D": {
+          "id": "D_eight_node_broadcast",
+          "title": "Workload C · eight-node shared originating story",
+          "ratio": 0.8641549185288119,
+          "saved": 38556,
+          "baselineBytes": 44617,
+          "tinyBytes": 6061,
+          "exact": true,
+          "pass": true
+        }
+      },
+      {
+        "id": "E5_cross_octave",
+        "title": "Workload D · selective cross-octave reconstruction",
+        "pass": true,
+        "E": {
+          "id": "E_cross_octave",
+          "title": "Workload D · selective cross-octave reconstruction",
+          "nVectors": 768,
+          "workingN": 4,
+          "ratio": 0.9948120355650975,
+          "saved": 776603,
+          "baselineBytes": 780653,
+          "tinyBytes": 4050,
+          "pass": true
+        }
+      },
+      {
+        "id": "E6_ai_context_proxy",
+        "title": "Workload E/F proxy · shared system prompt + turn deltas",
+        "pass": true,
+        "F": {
+          "id": "F_ai_context_proxy",
+          "title": "Workload E/F proxy · shared system prompt + turn deltas",
+          "sessions": 40,
+          "turns": 25,
+          "ratio": 0.4892008188160588,
+          "saved": 93680,
+          "baselineBytes": 191496,
+          "tinyBytes": 97816,
+          "exact": true,
+          "pass": true,
+          "honesty": "In-process context-representation proxy — not measured GPU KV-cache / HBM for a production LLM server."
+        }
+      },
+      {
+        "id": "E7_gateway_exactness",
+        "title": "Gateway exact reconstruction (primary + validation seeds)",
+        "pass": true,
+        "G": {
+          "id": "G_gateway_exactness",
+          "title": "Gateway exact reconstruction (primary + validation seeds)",
+          "primary": {
+            "n": 100,
+            "ok": 100,
+            "exactRate": 1
+          },
+          "validation": {
+            "n": 100,
+            "ok": 100,
+            "exactRate": 1
+          },
+          "pass": true
+        }
+      },
+      {
+        "id": "E8_engine_pin_gate",
+        "title": "Data-gated ENGINE_SHELF pin (80% measured resident-representation reduction)",
+        "pass": true,
+        "enginePinRecommended": true,
+        "H": {
+          "id": "H_engine_pin_gate",
+          "title": "Data-gated ENGINE_SHELF pin (80% measured resident-representation reduction)",
+          "target": 0.8,
+          "aggregateRatio": 0.8450413877455297,
+          "aggregatePct": 84.50413877455297,
+          "ratio": 0.8450413877455297,
+          "saved": 1974593,
+          "baselineBytes": 2336682,
+          "tinyBytes": 362089,
+          "exactOk": true,
+          "enginePinRecommended": true,
+          "candidateSlot": 52,
+          "pass": true,
+          "interpretation": "Aggregate measured reduction 84.5% ≥ 80% with exactness — recommend ENGINE_SHELF #52 (in-process lab scope)."
+        },
+        "interpretation": "Aggregate measured reduction 84.5% ≥ 80% with exactness — recommend ENGINE_SHELF #52 (in-process lab scope)."
+      }
+    ],
+    "n_pass": 8,
+    "n_total": 8,
+    "all_pass": true,
+    "A": {
+      "id": "A_illustrative_model",
+      "title": "Illustrative 78.7% memory model arithmetic",
+      "remainingPct": 21.3,
+      "reductionPct": 78.69999999999999,
+      "nonWeightCutNeededPct": 94.11764705882354,
+      "approaches80": true,
+      "pass": true,
+      "honesty": "Architectural arithmetic only — not a measured DRAM/HBM result."
+    },
+    "B": {
+      "id": "B_structured_data",
+      "title": "Workload A · structured rhyming-template records",
+      "n": 500,
+      "ratio": 0.5433438568797685,
+      "saved": 41305,
+      "baselineBytes": 76020,
+      "tinyBytes": 34715,
+      "exact": true,
+      "pass": true
+    },
+    "C": {
+      "id": "C_cross_linked",
+      "title": "Workload B · cross-linked shared references",
+      "nNodes": 200,
+      "nEdges": 600,
+      "ratio": 0.8235809103011827,
+      "saved": 1024449,
+      "baselineBytes": 1243896,
+      "tinyBytes": 219447,
+      "pass": true
+    },
+    "D": {
+      "id": "D_eight_node_broadcast",
+      "title": "Workload C · eight-node shared originating story",
+      "ratio": 0.8641549185288119,
+      "saved": 38556,
+      "baselineBytes": 44617,
+      "tinyBytes": 6061,
+      "exact": true,
+      "pass": true
+    },
+    "E": {
+      "id": "E_cross_octave",
+      "title": "Workload D · selective cross-octave reconstruction",
+      "nVectors": 768,
+      "workingN": 4,
+      "ratio": 0.9948120355650975,
+      "saved": 776603,
+      "baselineBytes": 780653,
+      "tinyBytes": 4050,
+      "pass": true
+    },
+    "F": {
+      "id": "F_ai_context_proxy",
+      "title": "Workload E/F proxy · shared system prompt + turn deltas",
+      "sessions": 40,
+      "turns": 25,
+      "ratio": 0.4892008188160588,
+      "saved": 93680,
+      "baselineBytes": 191496,
+      "tinyBytes": 97816,
+      "exact": true,
+      "pass": true,
+      "honesty": "In-process context-representation proxy — not measured GPU KV-cache / HBM for a production LLM server."
+    },
+    "G": {
+      "id": "G_gateway_exactness",
+      "title": "Gateway exact reconstruction (primary + validation seeds)",
+      "primary": {
+        "n": 100,
+        "ok": 100,
+        "exactRate": 1
+      },
+      "validation": {
+        "n": 100,
+        "ok": 100,
+        "exactRate": 1
+      },
+      "pass": true
+    },
+    "H": {
+      "id": "H_engine_pin_gate",
+      "title": "Data-gated ENGINE_SHELF pin (80% measured resident-representation reduction)",
+      "target": 0.8,
+      "aggregateRatio": 0.8450413877455297,
+      "aggregatePct": 84.50413877455297,
+      "ratio": 0.8450413877455297,
+      "saved": 1974593,
+      "baselineBytes": 2336682,
+      "tinyBytes": 362089,
+      "exactOk": true,
+      "enginePinRecommended": true,
+      "candidateSlot": 52,
+      "pass": true,
+      "interpretation": "Aggregate measured reduction 84.5% ≥ 80% with exactness — recommend ENGINE_SHELF #52 (in-process lab scope)."
+    },
+    "enginePinRecommended": true,
+    "engineShelfSlot": 52,
+    "honesty": "Tiny Gateway · Rhyming Templates: architectural framework + reproducible in-process memory lab (structured / graph / eight-node / cross-octave / AI-context proxy). The 80% DRAM/HBM reduction is a research target; suite measures byte-level resident representation size in Node, not datacenter accelerator HBM telemetry. Not a claim that production LLM serving already saves 80% HBM. Φ_EGS is design grammar only. Engine pin is data-gated."
+  }
+}

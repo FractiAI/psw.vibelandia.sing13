@@ -7,8 +7,8 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-CHAT-PEM-2026-09`  
 **Registry ID:** `lattice-chat-product-engineering-manual-2026-09`  
-**Date:** 2026-10-25
-**Published:** 2026-10-25
+**Date:** 2026-11-03
+**Published:** 2026-11-03
 **Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · BYOK · PRA Snap  
 **Live chat:** [`/lattice-chat?nest=octave99`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99)  
 **Product hero:** [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · primer [`/lattice/learn`](https://www.ssvibelandiaquestfest24x365.com/lattice/learn) · this manual [`/lattice/engineering`](https://www.ssvibelandiaquestfest24x365.com/lattice/engineering)  
@@ -21,7 +21,7 @@
 ---
 
 <!-- AUTO:LATTICE-PEM-META:BEGIN -->
-**Engine shelf sync:** 2026-10-25 · **53** ordered steps (**51** registry papers) · generator `npm run sync:lattice-pem`
+**Engine shelf sync:** 2026-11-03 · **54** ordered steps (**52** registry papers) · generator `npm run sync:lattice-pem`
 
 When a paper is **added to the Infinite Octaves engine pin**, append it to `ENGINE_SHELF` in `lib/infinite-octave-engine-shelf.mjs`, then re-run the sync (Cursor PRA stop hook does this automatically for matching engine / PEM / AGENT_SYNC edits). The same sync refreshes living engine-shelf appendices on the **online course** (`/omni-lattice-course`) and **companion textbook** (`/omni-lattice-textbook`). Digits × Octaves 01–99 remain the practical Story-depth map — not a second product brand. Application companions (PDVSA, macro-protein, …) stay off this shelf.
 <!-- AUTO:LATTICE-PEM-META:END -->
@@ -364,10 +364,11 @@ Provider API key is the credential. Stays on-device. Travels in request headers 
 | 49 | Wave–Node Mathematics companion (node · graph · FDTD · Kuramoto · 2D planning A–E lab · Φ_EGS) | [docs/SYNTHOBS_WAVE_NODE_MATHEMATICS_EGS_2026-10.md](/whitepaper/wave-node-mathematics) · registry `synthobs-wave-node-mathematics-2026-10` · `/ship-blog/wave-node-mathematics` · suite `research/synthobs-wave-node-mathematics/` · standalone `FractiAI/synthobs-wave-node-mathematics` · **not physical robot hardware / not manipulator benchmark:** `/ship-blog/wave-node-mathematics` · A* still shorter paths on held-out 2D maps |
 | 50 | Tiny Reality Generation Model companion (TRGM · 10 bit/s biological reality stream pipe · wave/node/fq genetic catalog · 3-symbol cyclic × polygon spin × Infinite Octave rhyme tree × folded DNA · Homeostasis Expedition · Φ_EGS) | [docs/SYNTHOBS_TINY_REALITY_GENERATION_MODEL_EGS_2026-10.md](/whitepaper/tiny-reality-generation-model) · registry `synthobs-tiny-reality-generation-model-2026-10` · `/ship-blog/tiny-reality-generation-model` · suite `research/synthobs-tiny-reality-generation-model/` · standalone `FractiAI/synthobs-tiny-reality-generation-model` · **not gene→physics / not measured neural bitrate / not wet-lab genetics / not universe sim:** `/ship-blog/tiny-reality-generation-model` · journey `/journey/homeostasis-expedition` · builds on Wave–Node #49 · 10 bit/s bio pipe + C1–C3 + G1–G5 + T1–T7 · next #51 predictive catalog |
 | 51 | TRGM Predictive Reality Catalog companion (independent predictive validation · held-out baselines · wave/node/fq predictive value · functional reality catalog · Homeostasis Expedition · Φ_EGS) | [docs/SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG_EGS_2026-10.md](/whitepaper/trgm-predictive-reality-catalog) · registry `synthobs-trgm-predictive-reality-catalog-2026-10` · `/ship-blog/trgm-predictive-reality-catalog` · suite `research/synthobs-trgm-predictive-reality-catalog/` · standalone `FractiAI/synthobs-trgm-predictive-reality-catalog` · **not molecular mechanism / not wet-lab genetics:** `/ship-blog/trgm-predictive-reality-catalog` · journey `/journey/homeostasis-expedition` · builds on TRGM #50 · V1–V8 |
-| 52 | Honesty plain speak | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 53 | Protocol spine | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 52 | Tiny Gateway · Rhyming Templates companion (memory-efficient computing · nested vectors · eight-node shared broadcast · selective reconstruction · 80% DRAM research target · Homeostasis Expedition · Φ_EGS) | [docs/SYNTHOBS_TINY_GATEWAY_RHYMING_TEMPLATES_EGS_2026-11.md](/whitepaper/tiny-gateway-rhyming-templates) · registry `synthobs-tiny-gateway-rhyming-templates-2026-11` · `/ship-blog/tiny-gateway-rhyming-templates` · suite `research/synthobs-tiny-gateway-rhyming-templates/` · standalone `FractiAI/synthobs-tiny-gateway-rhyming-templates` · **in-process representation lab / not production HBM proof:** `/ship-blog/tiny-gateway-rhyming-templates` · journey `/journey/homeostasis-expedition` · aggregate B–F 84.5% ≥ 80% · exact reconstruction · prior language+fusion remains application companion |
+| 53 | Honesty plain speak | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 54 | Protocol spine | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 
-_Living engine shelf · **53** steps · regenerated by `npm run sync:lattice-pem` from `lib/infinite-octave-engine-shelf.mjs`._
+_Living engine shelf · **54** steps · regenerated by `npm run sync:lattice-pem` from `lib/infinite-octave-engine-shelf.mjs`._
 <!-- AUTO:LATTICE-PEM-ENGINE-SHELF:END -->
 
 ---

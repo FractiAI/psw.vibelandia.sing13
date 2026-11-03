@@ -1,18 +1,40 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-01T01:16:52.075Z",
+  "updatedAt": "2026-11-03T16:47:07.024Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
     {
+      "id": "wp_synthobs-tiny-gateway-rhyming-templates-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-03T16:47:07.022Z",
+      "body": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tiny-gateway-rhyming-templates-2026-11",
+      "artifact": {
+        "title": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TINY_GATEWAY_RHYMING_TEMPLATES_EGS_2026-11.md",
+        "url": "/whitepaper/tiny-gateway-rhyming-templates",
+        "paperId": "synthobs-tiny-gateway-rhyming-templates-2026-11",
+        "docId": "WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03",
+        "published": "2026-11-03T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
       "id": "wp_synthobs-net-zero-periodic-table-2026-10",
       "type": "ArtifactEvent",
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-01T01:16:52.073Z",
+      "createdAt": "2026-11-01T01:18:34.750Z",
       "body": "Net Zero Expedition 002 — Periodic Table Complements: Group 13↔15 Electronegativity and Independent Property Survival",
       "presenceHue": "gold",
       "paperId": "synthobs-net-zero-periodic-table-2026-10",

@@ -1581,6 +1581,22 @@
       "destination": "/interfaces/blog-phase-aware-consensus-calculus-2026-10.html"
     },
     {
+      "source": "/ship-blog/tiny-gateway-rhyming-templates",
+      "destination": "/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/tiny-gateway-rhyming-templates/",
+      "destination": "/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/tiny-gateway-rhyming-templates",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-gateway-rhyming-templates-2026-11"
+    },
+    {
+      "source": "/whitepaper/tiny-gateway-rhyming-templates/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-gateway-rhyming-templates-2026-11"
+    },
+    {
       "source": "/ship-blog/net-zero-periodic-table",
       "destination": "/interfaces/blog-net-zero-periodic-table-2026-10.html"
     },

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "1d4267412a74c3f9",
+  "auditId": "8384647ba2f9572a",
   "paperId": "synthobs-net-zero-periodic-table-2026-10",
   "sourcePath": "docs/SYNTHOBS_NET_ZERO_PERIODIC_TABLE_EGS_2026-10.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-01T01:16:52.068Z"
+          "invokedAt": "2026-11-01T01:18:34.745Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-01T01:16:52.066Z",
-  "completedAt": "2026-11-01T01:16:52.069Z",
+  "startedAt": "2026-11-01T01:18:34.742Z",
+  "completedAt": "2026-11-01T01:18:34.746Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,

@@ -1,0 +1,13 @@
+{
+  "name": "synthobs-tiny-gateway-expedition",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiny Gateway Expedition 001 — SLM + high-rate civilian synthetic radar + template binding · FractiAI / SynthOBS",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

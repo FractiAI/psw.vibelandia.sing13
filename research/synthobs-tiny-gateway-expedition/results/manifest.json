@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "n_pass": 8,
+  "n_total": 8,
+  "languageSourceMode": "historical_real_corpus_plus_capability_fillers",
+  "fusionSourceMode": "assignment_civilian_synthetic",
+  "fixtureObservations": 86400,
+  "enginePinRecommended": false
+}

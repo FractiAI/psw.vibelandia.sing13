@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-03** · **402** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-04** · **404** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -467,6 +467,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | When Stress Pushes the Field Outside · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | Drawers That Don’t Spill Into Each Other · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Your Basement Stories Still Carry Current · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tiny-gateway-expedition-2026-11.html`](/interfaces/blog-tiny-gateway-expedition-2026-11.html) | Can Tiny Gateway Organize Language and High-Rate Fusion Without Pretending It Already Won? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tiny-gateway-language-radar-2026-10.html`](/interfaces/blog-tiny-gateway-language-radar-2026-10.html) | Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html`](/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html) | Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer? � Ship blog � SS Vibelandia |
 | [`/interfaces/blog-tiny-reality-generation-model-2026-10.html`](/interfaces/blog-tiny-reality-generation-model-2026-10.html) | Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent? · Ship blog · SS Vibelandia |
@@ -655,6 +656,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/journey/puerto-reno-gangway.html`](/interfaces/journey/puerto-reno-gangway.html) | Puerto Reno · Gangway Night · Journey · SS Vibelandia |
 | [`/interfaces/journey/redwood-sanctuary.html`](/interfaces/journey/redwood-sanctuary.html) | Redwood Sanctuary · Journey · SS Vibelandia |
 | [`/interfaces/journey/tahoe-catamaran.html`](/interfaces/journey/tahoe-catamaran.html) | Lake Tahoe · Catamaran Gold · Journey · SS Vibelandia |
+| [`/interfaces/journey/tiny-gateway-expedition.html`](/interfaces/journey/tiny-gateway-expedition.html) | Tiny Gateway Expedition · Journey · SS Vibelandia |
 | [`/interfaces/journey/truckee-sierra-forage.html`](/interfaces/journey/truckee-sierra-forage.html) | Truckee River & High Sierra Forage · Journey · SS Vibelandia |
 
 ### `lattice-chat/` (`/interfaces/lattice-chat/`)

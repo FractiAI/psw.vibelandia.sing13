@@ -1874,6 +1874,57 @@ const chapters = [
         'Invisible Frontier',
       ),
     ],
+    next: 'tiny-gateway-expedition',
+  }),
+  lesson({
+    id: 'tiny-gateway-expedition',
+    moduleId: 'week6',
+    week: 6,
+    part: 'Homework: Week 6',
+    partId: 'week6',
+    number: '6.9b',
+    title: 'Tiny Gateway Expedition — language, fusion, and template reuse',
+    minutes: 18,
+    tagline: 'Build · bind · measure · do not assume the win',
+    goals: [
+      'Name the Tiny Gateway stack stages without upgrading them into unfinished physics.',
+      'Separate language organization wins from fusion parity and reuse-gate failures.',
+      'Locate Expedition 001 on the journey trail, course homework, and standalone repo.',
+    ],
+    body: `<p>Week 6 already taught you to tell an <em>engine pin</em> from an <em>application companion</em>. Tiny Gateway Expedition 001 is the latter — a runnable Infinite Octaves expedition that implements Boundary Node → Recursive Tree → Golden Spiral scale bridge → Honeycomb Lattice → Wave–Node–Fq with explicit template binding, then measures that stack against conventional small-language pipelines and multi-sensor fusion.</p>
+<p>The assignment is deliberately skeptical. Do not assume the architecture is superior. Recreate the civilian synthetic airspace fixture (6 sensors · 180 tracks · 80 steps · 86 400 observations) when scripts are missing rather than inventing verified timing legends. Run a three-way language comparison (lightweight · micro-Transformer · Tiny Gateway). Time construct, select, bind, and execute separately so a fast select cannot masquerade as a fast end-to-end win.</p>
+<div class="worked-example">
+<p><strong>Scoreboard reading drill.</strong> On seed 20261104 the suite passed E1–E8 as protocol. Language accuracy ≈ 0.585 for Tiny Gateway vs ≈ 0.377 for both conventional arms — a bounded organizational win on real corpus text, not an LLM replacement. Fusion F1 tied near 0.097 on the assignment synthetic fixture (Δ = 0) with Tiny Gateway about 1.17× conventional runtime. Warm end-to-end template reuse failed the gate against bare conventional rebuild. Write one sceptic-proof sentence for each of those three lanes before you open the paper.</p>
+</div>
+<div class="misconception">
+<p><strong>The mix-up:</strong> “Tiny Gateway beat the language baselines, so the architecture is ready to replace neural inference and claim compute supremacy.”</p>
+<p><strong>The correction:</strong> Language organization, fusion detection quality, and reuse latency are different questions. Expedition 001 answers them separately and withholds ENGINE_SHELF. Companion textbook §6.4c and the journey trailhead keep the same rails.</p>
+</div>
+<div class="key-terms"><dl>
+<dt>Tiny Gateway stack</dt><dd>Boundary → Recursive Tree → φ-spiral → Honeycomb → Wave–Node–Fq + template binding — implemented as a lab hypothesis, not silicon physics.</dd>
+<dt>Reuse gate</dt><dd>Warm end-to-end template reuse must compete with optimized conventional rebuild; select-only speed does not count.</dd>
+<dt>Application companion</dt><dd>Ships on the research trail and in Week 6 homework without claiming ENGINE_SHELF.</dd>
+</dl></div>
+<p class="close-glyph">→ ∞^∞</p>`,
+    check: [
+      {
+        q: 'Name the Tiny Gateway stages in order.',
+        a: 'Boundary Node → Recursive Tree → Golden Spiral scale bridge → Honeycomb Lattice → Wave–Node–Fq, plus template binding and execution.',
+      },
+      {
+        q: 'What failed on Expedition 001 even though language accuracy improved?',
+        a: 'The warm end-to-end template reuse gate versus bare conventional rebuild — so ENGINE_SHELF stays refused.',
+      },
+      {
+        q: 'Where does a guest open the expedition trailhead?',
+        a: '/journey/tiny-gateway-expedition — with ship blog, whitepaper, standalone repo, and course/textbook links.',
+      },
+    ],
+    papers: [
+      wp('synthobs-tiny-gateway-expedition-2026-11', 'Tiny Gateway Expedition 001'),
+      wp('synthobs-tiny-gateway-language-radar-2026-10', 'Tiny Gateway · Leo language-radar prior'),
+      wp('synthobs-tiny-gateway-rhyming-templates-2026-11', 'Tiny Gateway · Rhyming Templates #52'),
+    ],
     next: 'how-to-continue',
   }),
   lesson({

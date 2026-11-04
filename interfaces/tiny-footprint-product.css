@@ -185,6 +185,26 @@ a:hover { color: #fff; }
   vertical-align: top;
 }
 .tf-table th { color: var(--tf-gold); font-weight: 700; }
+.tf-announce {
+  margin: 0;
+  padding: 0.85rem clamp(1rem, 3vw, 2rem);
+  background: rgba(201, 162, 39, 0.12);
+  border-bottom: 1px solid var(--tf-line);
+  font-size: 0.92rem;
+  color: rgba(232, 238, 246, 0.92);
+  line-height: 1.45;
+}
+.tf-announce strong {
+  color: var(--tf-gold-hi);
+  font-weight: 700;
+}
+.tf-announce a {
+  color: var(--tf-gold-hi);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.tf-announce a:hover { color: #fff; }
 @media (max-width: 640px) {
   .tf-hero { min-height: 70vh; }
 }

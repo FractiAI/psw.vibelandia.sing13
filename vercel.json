@@ -3217,6 +3217,30 @@
       "destination": "/interfaces/holographic-homeostasis-architects.html"
     },
     {
+      "source": "/fractisi",
+      "destination": "/interfaces/fractisi.html"
+    },
+    {
+      "source": "/fractisi/",
+      "destination": "/interfaces/fractisi.html"
+    },
+    {
+      "source": "/fractisi/recruit",
+      "destination": "/interfaces/fractisi-recruit.html"
+    },
+    {
+      "source": "/fractisi/recruit/",
+      "destination": "/interfaces/fractisi-recruit.html"
+    },
+    {
+      "source": "/fractisi/careers",
+      "destination": "/interfaces/fractisi-recruit.html"
+    },
+    {
+      "source": "/fractisi/careers/",
+      "destination": "/interfaces/fractisi-recruit.html"
+    },
+    {
       "source": "/fractios",
       "destination": "/interfaces/fractios-start-here.html"
     },

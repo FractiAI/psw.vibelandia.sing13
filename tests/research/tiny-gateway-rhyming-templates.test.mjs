@@ -12,6 +12,9 @@ describe('Tiny Gateway · Rhyming Templates · Tiny Footprint', () => {
       expect(r.all_pass).toBe(true);
       expect(r.R.pass).toBe(true);
       expect(r.R.brickAudit.pass).toBe(false);
+      expect(r.S.pass).toBe(true);
+      expect(r.S.tinyKvReductionVersusPrefixCache).toBeGreaterThan(0.3);
+      expect(r.S.tinyMaterializeSpeedupVersusPrefixCache).toBeGreaterThan(1.2);
       expect(r.H.aggregateRatio).toBeGreaterThanOrEqual(DRAM_REDUCTION_TARGET);
       expect(r.H.rhymeOk).toBe(true);
       expect(r.I.pass).toBe(true);

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   experimentR_holographicRhymeGate,
+  experimentS_h100RhymeVsPrefixSim,
   experimentH_enginePinGate,
 } from '../../research/synthobs-tiny-gateway-rhyming-templates/src/experiments.mjs';
 import {
@@ -33,5 +34,13 @@ describe('Holographic rhyme gate · Rhyming Templates', () => {
     const blocked = experimentH_enginePinGate([{ baselineBytes: 1000, tinyBytes: 100 }], true, { pass: true }, false);
     expect(blocked.enginePinRecommended).toBe(false);
     expect(blocked.pass).toBe(false);
+  });
+
+  it('H100 sim: identical prefix ties; rhyming different wording beats prefix cache', () => {
+    const S = experimentS_h100RhymeVsPrefixSim();
+    expect(S.pass).toBe(true);
+    expect(S.report.workloads.identicalPrefix.comparison.tinyVersusPrefixCacheResidentBytes).toBe(0);
+    expect(S.tinyKvReductionVersusPrefixCache).toBeGreaterThan(0.3);
+    expect(S.tinyMaterializeSpeedupVersusPrefixCache).toBeGreaterThan(1.2);
   });
 });

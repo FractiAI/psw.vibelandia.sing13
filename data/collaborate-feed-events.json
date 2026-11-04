@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-03T17:24:50.254Z",
+  "updatedAt": "2026-11-04T03:45:41.655Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-tiny-gateway-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-04T03:45:41.654Z",
+      "body": "Tiny Gateway Expedition 001 · Tiny Gateway: A Reusable Fractal-Holographic Computational Architecture for Language Processing, High-Rate Data Fusion, and Agentic Intelligence",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tiny-gateway-expedition-2026-11",
+      "artifact": {
+        "title": "Tiny Gateway Expedition 001 · Tiny Gateway: A Reusable Fractal-Holographic Computational Architecture for Language Processing, High-Rate Data Fusion, and Agentic Intelligence",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TINY_GATEWAY_EXPEDITION_EGS_2026-11.md",
+        "url": "/whitepaper/tiny-gateway-expedition",
+        "paperId": "synthobs-tiny-gateway-expedition-2026-11",
+        "docId": "WP-SYNTHOBS-TINY-GATEWAY-EXPEDITION-EGS-2026-11-04",
+        "published": "2026-11-04T03:35:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_lattice-chat-product-engineering-manual-2026-09",
       "type": "ArtifactEvent",

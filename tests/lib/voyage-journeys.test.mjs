@@ -19,8 +19,9 @@ function read(rel) {
 
 describe('Voyage journeys · adventures hub', () => {
   it('defines curated adventures distinct from exhibit shells', () => {
-    expect(VOYAGE_JOURNEYS.length).toBe(14);
+    expect(VOYAGE_JOURNEYS.length).toBe(15);
     expect(findJourney('homeostasis-expedition')?.customDetailPage).toBe(true);
+    expect(findJourney('tiny-gateway-expedition')?.customDetailPage).toBe(true);
     expect(findJourney('net-zero-expedition')?.customDetailPage).toBe(true);
     expect(VOYAGE_JOURNEY_INTRO).toContain('adventures we offer');
     expect(VOYAGE_JOURNEY_INTRO).not.toContain('deck SKUs');
@@ -83,6 +84,10 @@ describe('Voyage journeys · adventures hub', () => {
         if (j.slug === 'homeostasis-expedition') {
           expect(html).toContain('he-mission');
           expect(html).toContain('Mission of the Homeostasis Expedition');
+        } else if (j.slug === 'tiny-gateway-expedition') {
+          expect(html).toContain('tg-mission');
+          expect(html).toContain('Tiny Gateway Expedition');
+          expect(html).toContain('Build the stack');
         } else if (j.slug === 'net-zero-expedition') {
           expect(html).toContain('nz-mission');
           expect(html).toContain('Net Zero Expedition');

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="280" viewBox="0 0 520 280">
+  <rect width="100%" height="100%" fill="#faf8f5"/>
+  <text x="260" y="18" text-anchor="middle" font-family="Georgia,serif" font-size="14">Language accuracy · historical_real_corpus_plus_capability_fillers</text>
+  <rect x="44" y="111" width="138.66666666666666" height="129" fill="#1a5f7a"/><text x="113.33333333333333" y="254" text-anchor="middle" font-size="10">LW</text><rect x="190.66666666666666" y="111" width="138.66666666666666" height="129" fill="#1a5f7a"/><text x="260" y="254" text-anchor="middle" font-size="10">μTF</text><rect x="337.3333333333333" y="40" width="138.66666666666666" height="200" fill="#1a5f7a"/><text x="406.66666666666663" y="254" text-anchor="middle" font-size="10">TG</text>
+</svg>

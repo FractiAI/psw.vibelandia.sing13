@@ -765,6 +765,14 @@
       "destination": "/interfaces/journey/homeostasis-expedition.html"
     },
     {
+      "source": "/journey/tiny-gateway-expedition",
+      "destination": "/interfaces/journey/tiny-gateway-expedition.html"
+    },
+    {
+      "source": "/journey/tiny-gateway-expedition/",
+      "destination": "/interfaces/journey/tiny-gateway-expedition.html"
+    },
+    {
       "source": "/journey/net-zero-expedition",
       "destination": "/interfaces/journey/net-zero-expedition.html"
     },
@@ -1715,6 +1723,22 @@
     {
       "source": "/whitepaper/net-zero-missing-half/",
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-net-zero-missing-half-2026-10"
+    },
+    {
+      "source": "/ship-blog/tiny-gateway-expedition",
+      "destination": "/interfaces/blog-tiny-gateway-expedition-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/tiny-gateway-expedition/",
+      "destination": "/interfaces/blog-tiny-gateway-expedition-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/tiny-gateway-expedition",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-gateway-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/tiny-gateway-expedition/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-gateway-expedition-2026-11"
     },
     {
       "source": "/ship-blog/tiny-gateway-language-radar",

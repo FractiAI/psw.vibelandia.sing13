@@ -8,6 +8,7 @@
     "tiny": "./scripts/tiny.mjs"
   },
   "scripts": {
+    "test": "node tests/correctness/sdk.test.mjs && node tests/correctness/rhyme-gate.test.mjs && node tests/correctness/rhyme-vs-cache.test.mjs",
     "doctor": "node scripts/tiny.mjs doctor",
     "install-kit": "node scripts/tiny.mjs install",
     "demo": "node scripts/tiny.mjs demo",
@@ -15,5 +16,8 @@
     "report": "node scripts/tiny.mjs report",
     "join": "node scripts/tiny.mjs join",
     "share": "node scripts/tiny.mjs share"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

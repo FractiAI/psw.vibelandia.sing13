@@ -24,7 +24,7 @@ export const VALIDATION_SEED = 202611032;
 export const DRAM_REDUCTION_TARGET = 0.8;
 
 export const HONESTY =
-  'Tiny Gateway · Rhyming Templates / Tiny Footprint: in-process lab + (A) HtoD allocation proxy on GTX 860M and (B) REAL local-GPU LLM lab (sshleifer/tiny-gpt2 via torch-directml) measuring shared-prefix infer + AdamW train with vs without Tiny Footprint. Proxy ≠ model forward. DirectML on laptop GeForce ≠ datacenter HBM / hosted frontier API. Φ_EGS design grammar only. Engine pin is data-gated.';
+  'Tiny Gateway · Rhyming Templates / Tiny Footprint: holographic rhyme = repeating · self-similar · self-correcting · recursive (four-pillar gate). In-process lab + (A) HtoD allocation proxy on GTX 860M and (B) REAL local-GPU LLM lab (sshleifer/tiny-gpt2 via torch-directml) measuring shared-prefix infer + AdamW train with vs without Tiny Footprint — those GPU meters are prefix-reuse, not rhyme proofs. Proxy ≠ model forward. DirectML on laptop GeForce ≠ datacenter HBM / hosted frontier API. Φ_EGS design grammar only. Engine pin is data-gated.';
 
 export const BUILDS_ON = Object.freeze([
   'synthobs-tiny-gateway-language-radar-2026-10',

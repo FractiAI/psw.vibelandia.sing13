@@ -23,7 +23,7 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Architecture** | Rhyming Templates + selective reconstruction implementable in-suite | Every conventional AI stack already replaced |
+| **Architecture** | Rhyming Templates + selective reconstruction implementable in-suite. A holographic rhyme requires four pillars (repeating · self-similar · self-correcting · recursive); schema match or prefix reuse alone is not a rhyme | That a rhyme is a prefix cache or exact-text dedupe; every conventional AI stack already replaced |
 | **In-process lab** | Aggregate B?F representation-size reduction 84.5% with exact reconstruction | That alone equals datacenter CapEx ?80% |
 | **Tiny Footprint GPU lab** | Live chat-serving proxy on **NVIDIA GeForce GTX 860M** (this laptop): cuMemAlloc ~81.4%; nvidia-smi 313→85 MiB (~72.8%); density ~11.9×; turn materialize p50 **41.8 ms → 3.7 ms (~11.2×)**; bringup p50 **5.8 → 3.2 ms (~1.8×)** | Hosted frontier-vendor API bake-off; that GeForce GDDR is identical silicon to datacenter HBM; that these ms are frontier LLM decode TTFT/TPS |
 | **Latency wording** | Wall-clock `cuMemcpyHtoD` + sync for with/without Tiny Footprint materialization on GTX 860M | End-to-end frontier model generation latency on a hosted chat API |
@@ -49,9 +49,9 @@ Tiny Gateway is a computing architecture organized around **Rhyming Templates**:
 
 **Findings (executed suite).** Illustrative model: **78.7%** under stated assumptions (?**94.1%** of non-weight memory must be avoided for an 80% total cut if weights stay 15%). In-process workloads: structured **54.3%**; cross-linked **82.4%**; eight-node **86.4%**; selective octave **99.5%**; AI-context proxy **48.9%**; **aggregate B?F = 84.5% ? 80%** with exact reconstruction. **Tiny Footprint GPU live chat-stack lab (NVIDIA GeForce GTX 860M · this laptop):** cuMemAlloc conventional 288 MiB ? Tiny 53.6 MiB (**81.4%** cut); nvidia-smi peaks **313 ? 85 MiB (72.8%)**; sessions-per-non-weight-MiB density gain ?**11.9×**. **Latency (materialization, with vs without Tiny Footprint):** turn p50 **41.8 ms without → 3.7 ms with (~11.2× faster)**; session bring-up p50 **5.8 → 3.2 ms (~1.8×)**; HtoD traffic cut ~**89%**. Suite **E1?E9 = 9/9**. Engine pin **ENGINE_SHELF #52** retained.
 
-**Novelties.** (1) Rhyming Templates as organizational reuse. (2) Eight-node shared originating story. (3) Nested vectors beyond trees. (4) Selective reconstruction as memory control. (5) Explicit 80% gate. (6) **Tiny Footprint** productization with a live GPU chat-stack **memory + latency** receipts aligned to the duplicated-resident-state proposition.
+**Novelties.** (1) Rhyming Templates as organizational reuse under the holographic four-pillar gate. (2) Eight-node shared originating story. (3) Nested vectors beyond trees. (4) Selective reconstruction as memory control. (5) Explicit 80% gate + rhyme gate. (6) **Tiny Footprint** productization with a live GPU chat-stack **memory + latency** receipts (prefix-reuse meters) aligned to the duplicated-resident-state proposition. (7) Rhyme-versus-exact-cache contrast with brick-wall / schema-only negatives.
 
-**Potential novelties (open).** Multi-host Tiny Footprint; automatic template discovery without false matches; formal hexagon?circle geometry; operator runs on true HBM accelerators (A100/H100-class) against production frontier serving binaries.
+**Potential novelties (open).** Multi-host Tiny Footprint; richer automatic template discovery; formal hexagon–circle geometry; operator runs on true HBM accelerators (A100/H100-class) against production frontier serving binaries.
 
 **Implications.** Tiny Footprint is offered as a **capacity multiplier for serving**: keep the pattern once, store deltas/state, reconstruct the working set. That targets today?s expense and shortage pattern?too much rent on duplicated resident state?without claiming weights disappear. CapEx/energy follow only after operators remove purchasable memory from real configurations while holding latency and quality.
 
@@ -87,9 +87,10 @@ Generative possibility ? processes ? Infinite Octaves ? 3D Hexagon / eight-node 
 | D Eight-node | 86.4% | ? |
 | E Selective octave | 99.5% | ? |
 | F AI context proxy | 48.9% | ? |
-| G Exactness | 100% primary+validation | ? |
-| **I Tiny Footprint GPU live stack** | **alloc 81.4%; smi 72.8%; density ?11.9×; turn p50 44.3?4.1 ms (~10.8×)** | ? |
-| H/E9 Pin gate | aggregate 84.5% + GPU lab ? pin #52 | ? |
+| G Exactness | 100% primary+validation | ✓ |
+| R Holographic rhyme gate | four pillars pass; brick wall / schema-only fail; differing-words rhyme beats exact cache; identical text: cache smaller | ✓ |
+| **I Tiny Footprint GPU live stack** | **alloc 81.4%; smi 72.8%; density ~11.9×; turn p50 ~11×** (prefix-reuse meter) | ✓ |
+| H/E9 Pin gate | aggregate 84.5% + rhyme gate + GPU lab → pin #52 | ✓ |
 
 Reproduce: `npm run research:synthobs-tiny-gateway-rhyming-templates` · GPU lab script `scripts/gpu_live_chat_hbm_lab.py`.
 

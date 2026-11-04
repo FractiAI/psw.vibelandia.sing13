@@ -11,7 +11,7 @@
 
 ## What is Tiny Footprint?
 
-Tiny Footprint is software you install **beside** your existing AI stack. It does **not** replace your GPUs, your inference server, or your applications. It helps that AI use **memory more efficiently** and potentially **respond faster** by sharing reusable organizational patterns once and keeping compact per-session differences.
+Tiny Footprint is software you install **beside** your existing AI stack. It does **not** replace your GPUs, your inference server, or your applications. It helps that AI use **memory more efficiently** and potentially **respond faster** by matching a **holographic rhyme**: repeating · self-similar · self-correcting · recursive organization, stored once, with nested differences kept per session — including when the words differ. An exact-text cache only helps when the words themselves repeat; a shared identical system prompt is useful prefix reuse, not the full rhyme definition.
 
 | | Without Tiny Footprint | With Tiny Footprint |
 |--|------------------------|---------------------|

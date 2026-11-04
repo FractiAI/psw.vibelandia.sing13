@@ -10,7 +10,10 @@ describe('Tiny Gateway · Rhyming Templates · Tiny Footprint', () => {
       process.env.TINY_FOOTPRINT_FORCE_LLM_LAB = '0';
       const r = runAllExperiments();
       expect(r.all_pass).toBe(true);
+      expect(r.R.pass).toBe(true);
+      expect(r.R.brickAudit.pass).toBe(false);
       expect(r.H.aggregateRatio).toBeGreaterThanOrEqual(DRAM_REDUCTION_TARGET);
+      expect(r.H.rhymeOk).toBe(true);
       expect(r.I.pass).toBe(true);
       expect(r.I.allocReduction).toBeGreaterThanOrEqual(0.8);
       expect(r.I.turnP50MsWith).toBeLessThan(r.I.turnP50MsWithout);

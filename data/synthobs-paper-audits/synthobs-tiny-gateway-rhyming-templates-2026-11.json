@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "ef2799a1484c4df0",
+  "auditId": "b840a989899e337c",
   "paperId": "synthobs-tiny-gateway-rhyming-templates-2026-11",
   "sourcePath": "docs/SYNTHOBS_TINY_GATEWAY_RHYMING_TEMPLATES_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-03T17:24:50.231Z"
+          "invokedAt": "2026-11-04T21:33:47.674Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-03T17:24:50.229Z",
-  "completedAt": "2026-11-03T17:24:50.232Z",
+  "startedAt": "2026-11-04T21:33:47.673Z",
+  "completedAt": "2026-11-04T21:33:47.675Z",
   "iterations": 1,
-  "overallScore": 0.884,
+  "overallScore": 0.906,
   "passThreshold": 0.85,
   "convergence": {
     "status": "pass",
@@ -95,7 +95,7 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.884,
+      "overallScore": 0.906,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
@@ -105,7 +105,7 @@
         "references": 0.35,
         "abstractTitle": 1,
         "synthobsAttribution": 1,
-        "technicalPrecision": 0.7
+        "technicalPrecision": 0.85
       }
     }
   ],
@@ -119,15 +119,15 @@
       "references": 0.35,
       "abstractTitle": 1,
       "synthobsAttribution": 1,
-      "technicalPrecision": 0.7
+      "technicalPrecision": 0.85
     },
-    "overallScore": 0.884,
+    "overallScore": 0.906,
     "criticalBlockers": [],
     "suggestions": [
       "Expand References with ≥3 citable sources or repo cross-links."
     ],
     "meta": {
-      "wordCount": 1288,
+      "wordCount": 1696,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

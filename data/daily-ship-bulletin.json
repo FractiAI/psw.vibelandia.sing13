@@ -1,20 +1,20 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "dateline": {
-    "ymd": "2026-11-03",
-    "weekday": "Tuesday",
+    "ymd": "2026-11-04",
+    "weekday": "Wednesday",
     "month": "November",
-    "day": 3,
-    "label": "Tuesday, November 3",
-    "shortBoard": "Tuesday board · November 3 · Puerto Reno",
-    "newsLabel": "News of the day · Tuesday, November 3"
+    "day": 4,
+    "label": "Wednesday, November 4",
+    "shortBoard": "Wednesday board · November 4 · Puerto Reno",
+    "newsLabel": "News of the day · Wednesday, November 4"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Tuesday board · November 3 · Puerto Reno",
-  "newsLabel": "News of the day · Tuesday, November 3",
+  "cloudBadge": "Wednesday board · November 4 · Puerto Reno",
+  "newsLabel": "News of the day · Wednesday, November 4",
   "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/tiny-gateway-rhyming-templates\">Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer?</a>. Also new on the board: <a href=\"/ship-blog/net-zero-periodic-table\">Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-11-02-synthobs-net-zero-periodic-table-2026-10",
-    "title": "Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?",
-    "href": "/ship-blog/net-zero-periodic-table"
+    "id": "daily-2026-11-03-synthobs-tiny-gateway-rhyming-templates-2026-11",
+    "title": "Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer?",
+    "href": "/ship-blog/tiny-gateway-rhyming-templates"
   },
-  "generatedAt": "2026-11-03T20:57:12.934Z"
+  "generatedAt": "2026-11-04T21:15:07.498Z"
 }

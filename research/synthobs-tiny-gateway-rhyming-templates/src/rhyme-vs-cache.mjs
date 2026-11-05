@@ -1,9 +1,9 @@
 /**
  * Rhyme versus exact-text cache.
  *
- * A holographic rhyme matches organization (four-pillar gate + structural signature).
- * An exact cache hits only when the stored text is identical.
- * Byte counts are UTF-8 JSON, in process. Not a GPU measurement.
+ * A holographic rhyme matches organization from Net Zero (octave 0) through ascending
+ * octaves (four-pillar gate plus structural signature). An exact cache hits only when
+ * the stored text is identical. Byte counts are UTF-8 JSON, in process. Not a GPU measurement.
  */
 import {
   createTemplateCatalog,
@@ -17,28 +17,54 @@ import { PHI_EGS } from './constants.mjs';
 
 export const RHYME_SESSIONS = 40;
 
-/** Nested self-similar organization — required for four-pillar rhyme. */
+/** Net Zero → octave-nested self-similar organization (four-pillar gate). */
 export const RHYME_PATTERN = {
   kind: 'session',
-  schema: 'rhyme_v1',
+  schema: 'rhyme_v2',
   motion: 'repeat-mirror-recurse-correct',
+  netZero: {
+    kind: 'session',
+    octave: 0,
+    role: 'origin',
+    equilibrium: true,
+  },
   organization: {
     kind: 'session',
     role: 'user',
     octave: 1,
+    organization: {
+      kind: 'session',
+      role: 'lead',
+      octave: 2,
+    },
   },
   utterance: '',
 };
 
 function session(i, utterance) {
+  const role1 = i % 9 === 0 ? 'lead' : 'user';
+  const role2 = i % 5 === 0 ? 'lead' : 'user';
+  const octave1 = (i % 7) + 1;
+  const octave2 = Math.min(octave1 + 1, 8);
   return {
     kind: 'session',
-    schema: 'rhyme_v1',
+    schema: 'rhyme_v2',
     motion: 'repeat-mirror-recurse-correct',
+    netZero: {
+      kind: 'session',
+      octave: 0,
+      role: 'origin',
+      equilibrium: true,
+    },
     organization: {
       kind: 'session',
-      role: i % 9 === 0 ? 'lead' : 'user',
-      octave: (i % 7) + 1,
+      role: role1,
+      octave: octave1,
+      organization: {
+        kind: 'session',
+        role: role2,
+        octave: octave2,
+      },
     },
     utterance,
   };
@@ -105,6 +131,8 @@ export function compareRhymeToCache(items) {
     exactTextHits,
     equivalent,
     rhymeAuditPass: rhyme.audit.pass,
+    netZeroRoot: rhyme.audit.netZeroRoot === true,
+    octaveSpan: rhyme.audit.octaveSpan,
     naiveBytes,
     cacheBytes,
     rhymeBytes,

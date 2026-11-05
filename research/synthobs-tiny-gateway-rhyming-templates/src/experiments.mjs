@@ -33,6 +33,7 @@ import { runGpuLlmRealLab } from './gpu-llm-real-lab.mjs';
 import {
   auditRhyme,
   brickWallCandidate,
+  midOctaveOnlyCandidate,
   trueRhymeCandidate,
   FOUR_PILLARS,
 } from './holographic-rhyme-gate.mjs';
@@ -408,7 +409,8 @@ export function experimentJ_gpuLlmReal() {
 }
 
 /**
- * R · Holographic rhyme gate — four pillars required; brick wall / schema-only / exact-text ≠ rhyme.
+ * R · Holographic rhyme gate — four pillars from Net Zero (octave 0) through ascending octaves.
+ * Brick wall / schema-only / mid-octave-only / exact-text ≠ rhyme.
  * Prefix-cache reuse remains a separate meter (experiments F/I/J), not a rhyme proof.
  */
 export function experimentR_holographicRhymeGate() {
@@ -427,6 +429,9 @@ export function experimentR_holographicRhymeGate() {
     ],
     nestDepth: 0,
   });
+
+  const midOnly = midOctaveOnlyCandidate();
+  const midOnlyAudit = auditRhyme(midOnly);
 
   const vsCacheDiffering = compareRhymeToCache(differing);
   const vsCacheIdentical = compareRhymeToCache(identical);
@@ -457,12 +462,19 @@ export function experimentR_holographicRhymeGate() {
 
   const pass =
     trueAudit.pass &&
+    trueAudit.netZeroRoot === true &&
+    Array.isArray(trueAudit.octaveSpan) &&
+    trueAudit.octaveSpan.includes(0) &&
     FOUR_PILLARS.every((p) => trueAudit.pillars[p]?.pass) &&
     !brickAudit.pass &&
     brickAudit.failed.includes('self_similar') &&
     !schemaOnly.pass &&
+    !midOnlyAudit.pass &&
+    midOnlyAudit.failed.includes('recursive') &&
+    midOnlyAudit.pillars.recursive?.reason === 'missing_net_zero_octave_0_root' &&
     vsCacheDiffering.equivalent &&
     vsCacheDiffering.rhymeAuditPass &&
+    vsCacheDiffering.netZeroRoot === true &&
     vsCacheDiffering.rhymeBytes < vsCacheDiffering.cacheBytes &&
     vsCacheIdentical.equivalent &&
     vsCacheIdentical.cacheBytes < vsCacheIdentical.rhymeBytes &&
@@ -472,14 +484,17 @@ export function experimentR_holographicRhymeGate() {
 
   return {
     id: 'R_holographic_rhyme_gate',
-    title: 'Holographic rhyme gate (four pillars · brick wall fails · rhyme ≠ cache)',
+    title: 'Holographic rhyme gate (Net Zero → octaves · four pillars · mid-octave-only fails)',
     trueAudit,
     brickAudit,
     schemaOnly,
+    midOnlyAudit,
     vsCacheDiffering: {
       rhymeBytes: vsCacheDiffering.rhymeBytes,
       cacheBytes: vsCacheDiffering.cacheBytes,
       equivalent: vsCacheDiffering.equivalent,
+      netZeroRoot: vsCacheDiffering.netZeroRoot,
+      octaveSpan: vsCacheDiffering.octaveSpan,
     },
     vsCacheIdentical: {
       rhymeBytes: vsCacheIdentical.rhymeBytes,
@@ -492,7 +507,7 @@ export function experimentR_holographicRhymeGate() {
     pattern: RHYME_PATTERN,
     pass,
     honesty:
-      'Four-pillar catalog audit for Rhyming Templates. Brick wall / schema-only / exact-text cache are contrast cases. Shared-prefix GPU labs are prefix-reuse meters, not rhyme proofs.',
+      'Four-pillar catalog audit rooted at Net Zero (octave 0) through ascending octaves. Brick wall / schema-only / mid-octave-only / exact-text cache are contrast cases. Shared-prefix GPU labs are prefix-reuse meters, not rhyme proofs.',
   };
 }
 

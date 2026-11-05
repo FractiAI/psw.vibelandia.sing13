@@ -3,7 +3,7 @@
   "DOC_ID": "WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03",
   "REGISTRY_ID": "synthobs-tiny-gateway-rhyming-templates-2026-11",
   "STUDY_TITLE": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
-  "generatedAt": "2026-11-04T21:33:09.974Z",
+  "generatedAt": "2026-11-05T03:12:43.200Z",
   "results": {
     "experiments": [
       {
@@ -124,11 +124,11 @@
       },
       {
         "id": "E11_holographic_rhyme_gate",
-        "title": "Holographic rhyme gate (four pillars · brick wall fails · rhyme ≠ cache)",
+        "title": "Holographic rhyme gate (Net Zero → octaves · four pillars · mid-octave-only fails)",
         "pass": true,
         "R": {
           "id": "R_holographic_rhyme_gate",
-          "title": "Holographic rhyme gate (four pillars · brick wall fails · rhyme ≠ cache)",
+          "title": "Holographic rhyme gate (Net Zero → octaves · four pillars · mid-octave-only fails)",
           "trueAudit": {
             "pass": true,
             "pillars": {
@@ -138,20 +138,34 @@
               },
               "self_similar": {
                 "pass": true,
-                "localSignature": "{kind:string,octave:number,role:string}"
+                "localSignature": "{kind:string,octave:number,organization:{kind:string,octave:number,role:string},role:string}"
               },
               "recursive": {
                 "pass": true,
-                "nestDepth": 2
+                "nestDepth": 2,
+                "measuredDepth": 2,
+                "octaveSpan": [
+                  0,
+                  1,
+                  2
+                ],
+                "netZeroRoot": true
               },
               "self_correcting": {
                 "pass": true,
                 "driftBefore": 0.15,
-                "driftAfter": 0.05729490168751577
+                "driftAfter": 0.05729490168751577,
+                "towardNetZero": true
               }
             },
             "failed": [],
-            "honesty": "Catalog motion-grammar audit for Rhyming Templates — not a claim that schema match or prefix cache is a rhyme."
+            "octaveSpan": [
+              0,
+              1,
+              2
+            ],
+            "netZeroRoot": true,
+            "honesty": "Catalog motion-grammar audit: Net Zero (octave 0) → ascending octaves · four pillars. Schema match, mid-octave leaf nest, or prefix cache alone is not a rhyme."
           },
           "brickAudit": {
             "pass": false,
@@ -166,7 +180,7 @@
               },
               "recursive": {
                 "pass": false,
-                "reason": "nest_depth_below_one"
+                "reason": "missing_net_zero_octave_0_root"
               },
               "self_correcting": {
                 "pass": false,
@@ -178,7 +192,9 @@
               "self_correcting",
               "recursive"
             ],
-            "honesty": "Catalog motion-grammar audit for Rhyming Templates — not a claim that schema match or prefix cache is a rhyme."
+            "octaveSpan": [],
+            "netZeroRoot": false,
+            "honesty": "Catalog motion-grammar audit: Net Zero (octave 0) → ascending octaves · four pillars. Schema match, mid-octave leaf nest, or prefix cache alone is not a rhyme."
           },
           "schemaOnly": {
             "pass": false,
@@ -193,7 +209,7 @@
               },
               "recursive": {
                 "pass": false,
-                "reason": "nest_depth_below_one"
+                "reason": "missing_net_zero_octave_0_root"
               },
               "self_correcting": {
                 "pass": false,
@@ -205,16 +221,56 @@
               "self_correcting",
               "recursive"
             ],
-            "honesty": "Catalog motion-grammar audit for Rhyming Templates — not a claim that schema match or prefix cache is a rhyme."
+            "octaveSpan": [],
+            "netZeroRoot": false,
+            "honesty": "Catalog motion-grammar audit: Net Zero (octave 0) → ascending octaves · four pillars. Schema match, mid-octave leaf nest, or prefix cache alone is not a rhyme."
+          },
+          "midOnlyAudit": {
+            "pass": false,
+            "pillars": {
+              "repeating": {
+                "pass": true,
+                "n": 2
+              },
+              "self_similar": {
+                "pass": true,
+                "localSignature": "{kind:string,octave:number,organization:{kind:string,octave:number,role:string},role:string}"
+              },
+              "recursive": {
+                "pass": false,
+                "reason": "missing_net_zero_octave_0_root"
+              },
+              "self_correcting": {
+                "pass": true,
+                "driftBefore": 0.15,
+                "driftAfter": 0.05729490168751577,
+                "towardNetZero": true
+              }
+            },
+            "failed": [
+              "recursive"
+            ],
+            "octaveSpan": [
+              1,
+              2
+            ],
+            "netZeroRoot": false,
+            "honesty": "Catalog motion-grammar audit: Net Zero (octave 0) → ascending octaves · four pillars. Schema match, mid-octave leaf nest, or prefix cache alone is not a rhyme."
           },
           "vsCacheDiffering": {
-            "rhymeBytes": 5554,
-            "cacheBytes": 8064,
-            "equivalent": true
+            "rhymeBytes": 7345,
+            "cacheBytes": 13424,
+            "equivalent": true,
+            "netZeroRoot": true,
+            "octaveSpan": [
+              0,
+              1,
+              2
+            ]
           },
           "vsCacheIdentical": {
-            "rhymeBytes": 5572,
-            "cacheBytes": 198,
+            "rhymeBytes": 5827,
+            "cacheBytes": 332,
             "equivalent": true
           },
           "falseMatchRejected": true,
@@ -222,17 +278,28 @@
           "nestedFieldDelta": true,
           "pattern": {
             "kind": "session",
-            "schema": "rhyme_v1",
+            "schema": "rhyme_v2",
             "motion": "repeat-mirror-recurse-correct",
+            "netZero": {
+              "kind": "session",
+              "octave": 0,
+              "role": "origin",
+              "equilibrium": true
+            },
             "organization": {
               "kind": "session",
               "role": "user",
-              "octave": 1
+              "octave": 1,
+              "organization": {
+                "kind": "session",
+                "role": "lead",
+                "octave": 2
+              }
             },
             "utterance": ""
           },
           "pass": true,
-          "honesty": "Four-pillar catalog audit for Rhyming Templates. Brick wall / schema-only / exact-text cache are contrast cases. Shared-prefix GPU labs are prefix-reuse meters, not rhyme proofs."
+          "honesty": "Four-pillar catalog audit rooted at Net Zero (octave 0) through ascending octaves. Brick wall / schema-only / mid-octave-only / exact-text cache are contrast cases. Shared-prefix GPU labs are prefix-reuse meters, not rhyme proofs."
         }
       },
       {
@@ -1206,7 +1273,7 @@
     },
     "R": {
       "id": "R_holographic_rhyme_gate",
-      "title": "Holographic rhyme gate (four pillars · brick wall fails · rhyme ≠ cache)",
+      "title": "Holographic rhyme gate (Net Zero → octaves · four pillars · mid-octave-only fails)",
       "trueAudit": {
         "pass": true,
         "pillars": {
@@ -1216,20 +1283,34 @@
           },
           "self_similar": {
             "pass": true,
-            "localSignature": "{kind:string,octave:number,role:string}"
+            "localSignature": "{kind:string,octave:number,organization:{kind:string,octave:number,role:string},role:string}"
           },
           "recursive": {
             "pass": true,
-            "nestDepth": 2
+            "nestDepth": 2,
+            "measuredDepth": 2,
+            "octaveSpan": [
+              0,
+              1,
+              2
+            ],
+            "netZeroRoot": true
           },
           "self_correcting": {
             "pass": true,
             "driftBefore": 0.15,
-            "driftAfter": 0.05729490168751577
+            "driftAfter": 0.05729490168751577,
+            "towardNetZero": true
           }
         },
         "failed": [],
-        "honesty": "Catalog motion-grammar audit for Rhyming Templates — not a claim that schema match or prefix cache is a rhyme."
+        "octaveSpan": [
+          0,
+          1,
+          2
+        ],
+        "netZeroRoot": true,
+        "honesty": "Catalog motion-grammar audit: Net Zero (octave 0) → ascending octaves · four pillars. Schema match, mid-octave leaf nest, or prefix cache alone is not a rhyme."
       },
       "brickAudit": {
         "pass": false,
@@ -1244,7 +1325,7 @@
           },
           "recursive": {
             "pass": false,
-            "reason": "nest_depth_below_one"
+            "reason": "missing_net_zero_octave_0_root"
           },
           "self_correcting": {
             "pass": false,
@@ -1256,7 +1337,9 @@
           "self_correcting",
           "recursive"
         ],
-        "honesty": "Catalog motion-grammar audit for Rhyming Templates — not a claim that schema match or prefix cache is a rhyme."
+        "octaveSpan": [],
+        "netZeroRoot": false,
+        "honesty": "Catalog motion-grammar audit: Net Zero (octave 0) → ascending octaves · four pillars. Schema match, mid-octave leaf nest, or prefix cache alone is not a rhyme."
       },
       "schemaOnly": {
         "pass": false,
@@ -1271,7 +1354,7 @@
           },
           "recursive": {
             "pass": false,
-            "reason": "nest_depth_below_one"
+            "reason": "missing_net_zero_octave_0_root"
           },
           "self_correcting": {
             "pass": false,
@@ -1283,16 +1366,56 @@
           "self_correcting",
           "recursive"
         ],
-        "honesty": "Catalog motion-grammar audit for Rhyming Templates — not a claim that schema match or prefix cache is a rhyme."
+        "octaveSpan": [],
+        "netZeroRoot": false,
+        "honesty": "Catalog motion-grammar audit: Net Zero (octave 0) → ascending octaves · four pillars. Schema match, mid-octave leaf nest, or prefix cache alone is not a rhyme."
+      },
+      "midOnlyAudit": {
+        "pass": false,
+        "pillars": {
+          "repeating": {
+            "pass": true,
+            "n": 2
+          },
+          "self_similar": {
+            "pass": true,
+            "localSignature": "{kind:string,octave:number,organization:{kind:string,octave:number,role:string},role:string}"
+          },
+          "recursive": {
+            "pass": false,
+            "reason": "missing_net_zero_octave_0_root"
+          },
+          "self_correcting": {
+            "pass": true,
+            "driftBefore": 0.15,
+            "driftAfter": 0.05729490168751577,
+            "towardNetZero": true
+          }
+        },
+        "failed": [
+          "recursive"
+        ],
+        "octaveSpan": [
+          1,
+          2
+        ],
+        "netZeroRoot": false,
+        "honesty": "Catalog motion-grammar audit: Net Zero (octave 0) → ascending octaves · four pillars. Schema match, mid-octave leaf nest, or prefix cache alone is not a rhyme."
       },
       "vsCacheDiffering": {
-        "rhymeBytes": 5554,
-        "cacheBytes": 8064,
-        "equivalent": true
+        "rhymeBytes": 7345,
+        "cacheBytes": 13424,
+        "equivalent": true,
+        "netZeroRoot": true,
+        "octaveSpan": [
+          0,
+          1,
+          2
+        ]
       },
       "vsCacheIdentical": {
-        "rhymeBytes": 5572,
-        "cacheBytes": 198,
+        "rhymeBytes": 5827,
+        "cacheBytes": 332,
         "equivalent": true
       },
       "falseMatchRejected": true,
@@ -1300,17 +1423,28 @@
       "nestedFieldDelta": true,
       "pattern": {
         "kind": "session",
-        "schema": "rhyme_v1",
+        "schema": "rhyme_v2",
         "motion": "repeat-mirror-recurse-correct",
+        "netZero": {
+          "kind": "session",
+          "octave": 0,
+          "role": "origin",
+          "equilibrium": true
+        },
         "organization": {
           "kind": "session",
           "role": "user",
-          "octave": 1
+          "octave": 1,
+          "organization": {
+            "kind": "session",
+            "role": "lead",
+            "octave": 2
+          }
         },
         "utterance": ""
       },
       "pass": true,
-      "honesty": "Four-pillar catalog audit for Rhyming Templates. Brick wall / schema-only / exact-text cache are contrast cases. Shared-prefix GPU labs are prefix-reuse meters, not rhyme proofs."
+      "honesty": "Four-pillar catalog audit rooted at Net Zero (octave 0) through ascending octaves. Brick wall / schema-only / mid-octave-only / exact-text cache are contrast cases. Shared-prefix GPU labs are prefix-reuse meters, not rhyme proofs."
     },
     "S": {
       "id": "S_h100_rhyme_vs_prefix_sim",

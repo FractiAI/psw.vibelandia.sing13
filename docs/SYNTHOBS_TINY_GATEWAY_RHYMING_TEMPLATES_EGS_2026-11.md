@@ -2,7 +2,7 @@
 
 **An Architectural Framework for Infinite-Octave Organization, Nested-Vector Representation, Selective Reconstruction, Tiny Footprint productization, and an 80% DRAM / accelerator-resident reduction research target**
 
-**Research paper · Version 1.3 (route · context-fold hooks · energy-proxy companions) · Infinite Octave / SynthOBS · 4 November 2026 · ENGINE_SHELF #52**
+**Research paper · Version 1.4 (organizational rhyme-KV companion · measured cells · claim gate) · Infinite Octave / SynthOBS · 4 November 2026 · ENGINE_SHELF #52**
 
 | Field | Value |
 |-------|--------|
@@ -33,8 +33,9 @@
 | **K routing** | Signature-bucket structural route + scored partials; false-match reject | Semantic retrieval; full pairwise rhyme matrix; solar-synced routing |
 | **L context-fold hooks** | Recursive fold hooks + demo meters in-process | KV-cache compression product; infinite lossless context |
 | **M energy proxy** | Byte-touch / compare joule PROXY; depth scales under budget | Wall-socket calorimeter; datacenter PUE; CapEx−energy guarantee |
+| **T rhyme-KV share** | Organizational splice path + residency from measured `matchingCellFraction` (~14.6% on distilgpt2); `claimableShare=false` until spliced-cache resume is logit-equivalent | That JSON template/delta byte fractions are KV compression; CapEx/H100 $ from the JSON-hypothesis arm; that blind full-cache reuse is rhyme-KV |
 
-**Evidence classification:** Architectural lab + live local GPU chat-stack device-memory **and materialization-latency** lab + companion meters K/L/M (not in pin). Not a fab campaign; not a third-party frontier cloud attestation; not frontier decode TTFT.
+**Evidence classification:** Architectural lab + live local GPU chat-stack device-memory **and materialization-latency** lab + companion meters K/L/M/T (not in pin). Not a fab campaign; not a third-party frontier cloud attestation; not frontier decode TTFT.
 
 ---
 
@@ -50,11 +51,11 @@ Tiny Gateway is a computing architecture organized around **Rhyming Templates**:
 
 **Strategic proposition.** A lot of cost is paying rent on duplicated resident state so the same organizational pattern can be served many times. If operators deliver the same service with far less resident memory for that non-weight pile, they can pack more concurrent work per box, buy less memory per unit of AI service, and stretch limited accelerator supply further.
 
-**Findings (executed suite).** Illustrative model: **78.7%** under stated assumptions (≈**94.1%** of non-weight memory must be avoided for an 80% total cut if weights stay 15%). In-process workloads: structured **54.3%**; cross-linked **82.4%**; eight-node **86.4%**; selective octave **99.5%**; AI-context proxy **48.9%**; **aggregate B–F = 84.5% ≥ 80%** with exact reconstruction. **Tiny Footprint GPU live chat-stack lab (NVIDIA GeForce GTX 860M · this laptop):** cuMemAlloc conventional 288 MiB → Tiny 53.6 MiB (**81.4%** cut); nvidia-smi peaks **313 → 85 MiB (72.8%)**; sessions-per-non-weight-MiB density gain ≈**11.9×**. **Latency (materialization, with vs without Tiny Footprint):** turn p50 **41.8 ms without → 3.7 ms with (~11.2× faster)**; session bring-up p50 **5.8 → 3.2 ms (~1.8×)**; HtoD traffic cut ~**89%**. Companion meters (not in pin): **K** signature-bucket routing (bucket compares ≪ linear); **L** recursive context-fold hooks (foldRatio > 0); **M** energy-proxy depth scaling (`PROXY: true`). Engine pin **ENGINE_SHELF #52** retained.
+**Findings (executed suite).** Illustrative model: **78.7%** under stated assumptions (≈**94.1%** of non-weight memory must be avoided for an 80% total cut if weights stay 15%). In-process workloads: structured **54.3%**; cross-linked **82.4%**; eight-node **86.4%**; selective octave **99.5%**; AI-context proxy **48.9%**; **aggregate B–F = 84.5% ≥ 80%** with exact reconstruction. **Tiny Footprint GPU live chat-stack lab (NVIDIA GeForce GTX 860M · this laptop):** cuMemAlloc conventional 288 MiB → Tiny 53.6 MiB (**81.4%** cut); nvidia-smi peaks **313 → 85 MiB (72.8%)**; sessions-per-non-weight-MiB density gain ≈**11.9×**. **Latency (materialization, with vs without Tiny Footprint):** turn p50 **41.8 ms without → 3.7 ms with (~11.2× faster)**; session bring-up p50 **5.8 → 3.2 ms (~1.8×)**; HtoD traffic cut ~**89%**. Companion meters (not in pin): **K** signature-bucket routing (bucket compares ≪ linear); **L** recursive context-fold hooks (foldRatio > 0); **M** energy-proxy depth scaling (`PROXY: true`); **T** organizational rhyme-KV share — measured matching-cell fraction ≈**14.6%** on distilgpt2 (residency ~**13.7%** vs naïve when wording differs); JSON-hypothesis arm (~**36%**) is **not** a tensor meter; **`claimableShare=false`** until spliced-cache resume is logit-equivalent. Engine pin **ENGINE_SHELF #52** retained.
 
-**Novelties.** (1) Rhyming Templates as organizational reuse under the holographic four-pillar gate rooted at Net Zero → ascending octaves. (2) Eight-node shared originating story. (3) Nested vectors beyond trees. (4) Selective reconstruction as memory control. (5) Explicit 80% gate + rhyme gate. (6) **Tiny Footprint** productization with a live GPU chat-stack **memory + latency** receipts (prefix-reuse meters) aligned to the duplicated-resident-state proposition. (7) Rhyme-versus-exact-cache contrast with brick-wall / schema-only / mid-octave-only negatives. (8) Signature-bucket dynamic routing + recursive context-fold hooks + byte-touch joule PROXY companions (K/L/M).
+**Novelties.** (1) Rhyming Templates as organizational reuse under the holographic four-pillar gate rooted at Net Zero → ascending octaves. (2) Eight-node shared originating story. (3) Nested vectors beyond trees. (4) Selective reconstruction as memory control. (5) Explicit 80% gate + rhyme gate. (6) **Tiny Footprint** productization with a live GPU chat-stack **memory + latency** receipts (prefix-reuse meters) aligned to the duplicated-resident-state proposition. (7) Rhyme-versus-exact-cache contrast with brick-wall / schema-only / mid-octave-only negatives. (8) Signature-bucket dynamic routing + recursive context-fold hooks + byte-touch joule PROXY companions (K/L/M). (9) Organizational rhyme-KV splice path with measured-cell residency and a logit claim gate (T/E16 companion).
 
-**Potential novelties (open).** Multi-host Tiny Footprint; richer automatic template discovery; formal hexagon–circle geometry; operator runs on true HBM accelerators (A100/H100-class) against production frontier serving binaries.
+**Potential novelties (open).** Multi-host Tiny Footprint; richer automatic template discovery; formal hexagon–circle geometry; operator runs on true HBM accelerators (A100/H100-class) against production frontier serving binaries; larger-model spliced-cache resume that clears `claimableShare`.
 
 **Implications.** Tiny Footprint is offered as a **capacity multiplier for serving**: keep the pattern once, store deltas/state, reconstruct the working set. That targets today?s expense and shortage pattern?too much rent on duplicated resident state?without claiming weights disappear. CapEx/energy follow only after operators remove purchasable memory from real configurations while holding latency and quality.
 
@@ -92,12 +93,13 @@ Generative possibility ? processes ? Infinite Octaves ? 3D Hexagon / eight-node 
 | F AI context proxy | 48.9% | ? |
 | G Exactness | 100% primary+validation | ✓ |
 | R Holographic rhyme gate | four pillars pass from Net Zero → octaves; brick wall / schema-only / mid-octave-only fail; differing-words rhyme beats exact cache; identical text: cache smaller | ✓ |
-| S H100 rhyme vs prefix sim | identical exact prefix: Tiny = prefix cache; rhyming different wording: ~34% KV cut vs prefix cache, ~1.52× materialize bandwidth proxy (published H100 profile · not live silicon) | ✓ |
+| S H100 rhyme vs prefix sim | identical exact prefix: Tiny = prefix cache; rhyming different wording: JSON-hypothesis ~34% KV residency arm + bandwidth proxy (published H100 profile · not live silicon · not a tensor meter) | ✓ |
+| T Rhyme-KV share (companion) | splice path + measured cells ~14.6% (distilgpt2); residency ~13.7% vs naïve; claimableShare=false until logit-equivalent resume; JSON≠KV | ✓ |
 | **I Tiny Footprint GPU live stack** | **alloc 81.4%; smi 72.8%; density ~11.9×; turn p50 ~11×** (prefix-reuse meter) | ✓ |
 | K Dynamic route (companion) | signature-bucket compares ≪ linear; false-match reject; partial rank without N×N matrix | ✓ |
 | L Context-fold hooks (companion) | recursive fold meters; hooks fire; reconstruct window exact within bound | ✓ |
 | M Energy-proxy scale (companion) | under budgetJ depth scales down; PROXY flag always true | ✓ |
-| H/E9 Pin gate | aggregate 84.5% + rhyme gate + H100 rhyme-sim + GPU lab → pin #52 (K/L/M not required) | ✓ |
+| H/E9 Pin gate | aggregate 84.5% + rhyme gate + H100 rhyme-sim + GPU lab → pin #52 (K/L/M/T not required) | ✓ |
 
 Reproduce: `npm run research:synthobs-tiny-gateway-rhyming-templates` · GPU lab script `scripts/gpu_live_chat_hbm_lab.py`.
 
@@ -139,17 +141,30 @@ On **NVIDIA GeForce GTX 860M** via **torch-directml** + \sshleifer/tiny-gpt2\ (r
 
 Tiny Footprint here means **shared system-prefix KV reuse** (infer) and **single optimizer** (train) versus duplicated full-prefix prefill and multiple optimizer copies. Receipt: \data/gpu_llm_real_lab.json\. The earlier cuMemAlloc/HtoD lab remains a separate allocation proxy and is not a model forward.
 
-## 5. Product offer
+## 5. Organizational rhyme-KV share (companion · T / E16)
 
-**Name:** Tiny Footprint  
-**Brochure:** `/tiny-footprint`  
-**Positioning:** memory product for AI serving operators facing duplicated resident-state rent, memory cost, and accelerator scarcity ? with measured materialization latency that improves when the duplicated pile shrinks.
+Nested-story organization can match across prompts even when the words differ. Exact-prefix caches cannot share in that case. The organizational rhyme-KV path stores matching attention cells once and keeps non-matching cells private per session (`splice_kv_pairs` + `rhyme_kv_residency_bytes` in the Tiny Footprint workstation lab).
+
+| Arm | Source | Approx. residency cut vs naïve (16 sessions) | Claimable for serving? |
+|-----|--------|-----------------------------------------------:|------------------------|
+| JSON hypothesis | template/delta byte fraction applied as if KV | ~36% | **No** — not a tensor meter |
+| Measured cells | distilgpt2 `matchingCellFraction` ≈ 0.146 | ~13.7% | **No until** `resumeFromSplicedCache.equivalent` |
+
+Receipt wiring: suite `experimentT_rhymeKvShare` · workstation `measure_rhyme_sharing` path `organizational_rhyme_kv_splice`. Companion only — does not gate ENGINE_SHELF #52.
 
 ---
 
-## 6. Conclusion
+## 6. Product offer
 
-Version 1.2 adds measured Tiny Footprint **latency** (with vs without) beside the GPU live chat-stack memory receipt. On this laptop?s **NVIDIA GeForce GTX 860M**, Tiny Footprint cut resident device memory **and** sped turn materialization (~11.2× p50) and session bring-up (~1.8×), with explicit GDDR-vs-HBM honesty and an explicit non-claim on frontier decode TTFT.
+**Name:** Tiny Footprint  
+**Brochure:** `/tiny-footprint`  
+**Positioning:** memory product for AI serving operators facing duplicated resident-state rent, memory cost, and accelerator scarcity — with measured materialization latency that improves when the duplicated pile shrinks.
+
+---
+
+## 7. Conclusion
+
+Version 1.4 adds the organizational rhyme-KV companion (T/E16): a real splice path and measured-cell residency, with an explicit claim gate that stays closed on the published distilgpt2 fixture. Version 1.2’s Tiny Footprint **latency** receipt on this laptop’s **NVIDIA GeForce GTX 860M** still stands (materialization ~11.2× p50; bring-up ~1.8×), with GDDR-vs-HBM honesty and no frontier decode TTFT claim. JSON byte fractions remain a hypothesis arm, not a KV compression factor.
 
 **Journey:** `/journey/homeostasis-expedition` · **Brochure:** `/tiny-footprint`
 

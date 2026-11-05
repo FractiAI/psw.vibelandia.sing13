@@ -3,12 +3,12 @@
 **Document ID:** `WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03`
 **Registry ID:** `synthobs-tiny-gateway-rhyming-templates-2026-11`
 **Seed:** 20261103
-**Generated:** 2026-11-05T03:12:43.200Z
+**Generated:** 2026-11-05T03:59:10.503Z
 
 ## Verdict
 
 | All pass | `true` |
-| Passed | 15 / 15 |
+| Passed | 16 / 16 |
 | Aggregate measured reduction | 84.5% |
 | Tiny Footprint GPU alloc reduction | 81.4% |
 | Tiny Footprint nvidia-smi reduction | 72.8% |

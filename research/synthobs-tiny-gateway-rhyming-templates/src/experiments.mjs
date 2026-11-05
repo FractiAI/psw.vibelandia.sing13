@@ -47,6 +47,14 @@ import {
   runH100RhymeSim,
   assertH100RhymeSimInvariants,
 } from './h100-rhyme-sim.mjs';
+import {
+  H100_PROFILE_ONE_SESSION_KV_BYTES,
+  MEASURED_DISTILGPT2_CLAIMABLE_SHARE,
+  MEASURED_DISTILGPT2_MATCHING_CELL_FRACTION,
+  jsonHypothesisKvResidency,
+  measuredRhymeKvShareReport,
+  rhymeKvResidencyBytes,
+} from './rhyme-kv-share.mjs';
 import { rhymeScore } from './geometric-rhyme-route.mjs';
 import {
   createCompressionHookRegistry,
@@ -536,6 +544,41 @@ export function experimentS_h100RhymeVsPrefixSim() {
 }
 
 /**
+ * T · Organizational rhyme-KV share (measured cells vs JSON hypothesis).
+ * Companion meter — does not gate ENGINE_SHELF #52.
+ * claimableShare stays false until spliced-cache resume is logit-equivalent on the tensor lab.
+ */
+export function experimentT_rhymeKvShare() {
+  const measured = measuredRhymeKvShareReport();
+  const jsonHyp = jsonHypothesisKvResidency(
+    H100_PROFILE_ONE_SESSION_KV_BYTES,
+    1 - 121 / 198,
+    16,
+  );
+  const residencyOk =
+    measured.residency.matchingCellFraction === MEASURED_DISTILGPT2_MATCHING_CELL_FRACTION &&
+    measured.residency.reductionVersusNaive > 0 &&
+    measured.residency.reductionVersusNaive < jsonHyp.reductionVersusNaive;
+  const honestyOk = /matchingCellFraction/.test(measured.honesty) && /claimableShare/.test(measured.honesty);
+  const claimGateOk = measured.claimableShare === MEASURED_DISTILGPT2_CLAIMABLE_SHARE;
+  // Sanity: identical full match → share collapses toward prefix-style once-per-spine.
+  const fullMatch = rhymeKvResidencyBytes(H100_PROFILE_ONE_SESSION_KV_BYTES, 1, 16);
+  const fullMatchOk = Math.abs(fullMatch.reductionVersusNaive - (1 - 1 / 16)) < 1e-12;
+
+  return {
+    id: 'T_rhyme_kv_share',
+    title: 'Organizational rhyme-KV share · measured cells · splice path · claim gate',
+    measured,
+    jsonHypothesisReductionVersusNaive: jsonHyp.reductionVersusNaive,
+    measuredReductionVersusNaive: measured.residency.reductionVersusNaive,
+    claimableShare: measured.claimableShare,
+    path: measured.path,
+    pass: residencyOk && honestyOk && claimGateOk && fullMatchOk,
+    honesty: measured.honesty,
+  };
+}
+
+/**
  * K · Dynamic structural signature routing (companion meter — not in H pin).
  * Signature-bucket route vs naïve linear scan; false-match reject; partial rank.
  */
@@ -754,13 +797,14 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
   const G = experimentG_gatewayExactness(seed, validationSeed);
   const R = experimentR_holographicRhymeGate();
   const S = experimentS_h100RhymeVsPrefixSim();
+  const T = experimentT_rhymeKvShare();
   const K = experimentK_dynamicRoute();
   const L = experimentL_contextCompressHooks(seed);
   const M = experimentM_energyProxyScale(seed);
   const I = experimentI_gpuLiveChatStack();
   const J = experimentJ_gpuLlmReal();
   const exactOk = B.exact && D.exact && F.exact && G.pass;
-  // H pin unchanged — K/L/M are companion meters and do not gate #52.
+  // H pin unchanged — K/L/M/T are companion meters and do not gate #52.
   const H = experimentH_enginePinGate([B, C, D, E, F], exactOk, I, R.pass && S.pass);
 
   const experiments = [
@@ -773,6 +817,7 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
     { id: 'E7_gateway_exactness', title: G.title, pass: G.pass, G },
     { id: 'E11_holographic_rhyme_gate', title: R.title, pass: R.pass, R },
     { id: 'E12_h100_rhyme_vs_prefix_sim', title: S.title, pass: S.pass, S },
+    { id: 'E16_rhyme_kv_share', title: T.title, pass: T.pass, T },
     { id: 'E13_dynamic_route', title: K.title, pass: K.pass, K },
     { id: 'E14_context_compress_hooks', title: L.title, pass: L.pass, L },
     { id: 'E15_energy_proxy_scale', title: M.title, pass: M.pass, M },
@@ -803,6 +848,7 @@ export function runAllExperiments({ seed = DIGITAL_SEED, validationSeed = VALIDA
     G,
     R,
     S,
+    T,
     K,
     L,
     M,

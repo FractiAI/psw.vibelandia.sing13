@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "7df25ca547a2a2ad",
+  "auditId": "f574a96d27dc21f8",
   "paperId": "synthobs-tiny-gateway-rhyming-templates-2026-11",
   "sourcePath": "docs/SYNTHOBS_TINY_GATEWAY_RHYMING_TEMPLATES_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-05T03:12:43.321Z"
+          "invokedAt": "2026-11-05T03:59:13.337Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-05T03:12:43.320Z",
-  "completedAt": "2026-11-05T03:12:43.321Z",
+  "startedAt": "2026-11-05T03:59:13.336Z",
+  "completedAt": "2026-11-05T03:59:13.337Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,
@@ -127,7 +127,7 @@
       "Expand References with ≥3 citable sources or repo cross-links."
     ],
     "meta": {
-      "wordCount": 1724,
+      "wordCount": 1993,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

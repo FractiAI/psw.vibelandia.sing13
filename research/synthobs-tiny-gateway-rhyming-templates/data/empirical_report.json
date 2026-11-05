@@ -3,7 +3,7 @@
   "DOC_ID": "WP-SYNTHOBS-TINY-GATEWAY-RHYMING-TEMPLATES-EGS-2026-11-03",
   "REGISTRY_ID": "synthobs-tiny-gateway-rhyming-templates-2026-11",
   "STUDY_TITLE": "Tiny Gateway: Rhyming Templates and a New Architecture for Memory-Efficient Computing",
-  "generatedAt": "2026-11-05T03:12:43.200Z",
+  "generatedAt": "2026-11-05T03:59:10.503Z",
   "results": {
     "experiments": [
       {
@@ -500,6 +500,44 @@
           "tinyMaterializeSpeedupVersusPrefixCache": 1.5219443958734042,
           "pass": true,
           "honesty": "Simulation on a published H100 SXM profile. Peak-bandwidth copy time is an upper bound, not a predicted wall clock. On identical exact prefixes, Tiny Footprint matches production prefix-cache residency. On rhyming organization with different wording, prefix cache cannot share and Tiny Footprint uses the measured in-process Rhyming Template shared/delta fraction (0.388889 shared org / 0.611111 delta org) as a KV residency hypothesis — not a measured H100 transformer KV compression factor, and not the in-process 84.5% aggregate pasted onto device memory."
+        }
+      },
+      {
+        "id": "E16_rhyme_kv_share",
+        "title": "Organizational rhyme-KV share · measured cells · splice path · claim gate",
+        "pass": true,
+        "T": {
+          "id": "T_rhyme_kv_share",
+          "title": "Organizational rhyme-KV share · measured cells · splice path · claim gate",
+          "measured": {
+            "id": "T_rhyme_kv_share",
+            "path": "organizational_rhyme_kv_splice",
+            "matchingCellFraction": 0.14583333333333334,
+            "claimableShare": false,
+            "shareSource": "tiny-footprint-workstation llm lab · distilgpt2 rhymeSharing.matchingCellFraction (slot_every=8)",
+            "residency": {
+              "sessions": 16,
+              "fullKvBytesOneSession": 1140850688,
+              "matchingCellFraction": 0.14583333333333334,
+              "sharedSpineBytes": 166374059,
+              "privateBytesPerSession": 974476629,
+              "naiveBytes": 18253611008,
+              "rhymeKvBytes": 15758000128,
+              "reductionVersusNaive": 0.1367187500000001,
+              "reductionVersusPrefixWhenNoExactHits": 0.1367187500000001
+            },
+            "vsPrefixWhenWordingDiffers": {
+              "prefixShares": false,
+              "rhymeKvReductionVersusPrefix": 0.1367187500000001
+            },
+            "honesty": "Rhyme-KV shares matching attention cells across nested-story organization. Residency uses measured matchingCellFraction. claimableShare requires spliced-cache logit equivalence on the tensor lab; JSON fractions are not KV compression factors."
+          },
+          "jsonHypothesisReductionVersusNaive": 0.36458333333333326,
+          "measuredReductionVersusNaive": 0.1367187500000001,
+          "claimableShare": false,
+          "path": "organizational_rhyme_kv_splice",
+          "pass": true,
+          "honesty": "Rhyme-KV shares matching attention cells across nested-story organization. Residency uses measured matchingCellFraction. claimableShare requires spliced-cache logit equivalence on the tensor lab; JSON fractions are not KV compression factors."
         }
       },
       {
@@ -1187,8 +1225,8 @@
         "interpretation": "Aggregate 84.5% ≥ 80% with exactness + holographic rhyme gate + Tiny Footprint GPU live-stack lab (alloc 81.4%)."
       }
     ],
-    "n_pass": 15,
-    "n_total": 15,
+    "n_pass": 16,
+    "n_total": 16,
     "all_pass": true,
     "A": {
       "id": "A_illustrative_model",
@@ -1640,6 +1678,39 @@
       "tinyMaterializeSpeedupVersusPrefixCache": 1.5219443958734042,
       "pass": true,
       "honesty": "Simulation on a published H100 SXM profile. Peak-bandwidth copy time is an upper bound, not a predicted wall clock. On identical exact prefixes, Tiny Footprint matches production prefix-cache residency. On rhyming organization with different wording, prefix cache cannot share and Tiny Footprint uses the measured in-process Rhyming Template shared/delta fraction (0.388889 shared org / 0.611111 delta org) as a KV residency hypothesis — not a measured H100 transformer KV compression factor, and not the in-process 84.5% aggregate pasted onto device memory."
+    },
+    "T": {
+      "id": "T_rhyme_kv_share",
+      "title": "Organizational rhyme-KV share · measured cells · splice path · claim gate",
+      "measured": {
+        "id": "T_rhyme_kv_share",
+        "path": "organizational_rhyme_kv_splice",
+        "matchingCellFraction": 0.14583333333333334,
+        "claimableShare": false,
+        "shareSource": "tiny-footprint-workstation llm lab · distilgpt2 rhymeSharing.matchingCellFraction (slot_every=8)",
+        "residency": {
+          "sessions": 16,
+          "fullKvBytesOneSession": 1140850688,
+          "matchingCellFraction": 0.14583333333333334,
+          "sharedSpineBytes": 166374059,
+          "privateBytesPerSession": 974476629,
+          "naiveBytes": 18253611008,
+          "rhymeKvBytes": 15758000128,
+          "reductionVersusNaive": 0.1367187500000001,
+          "reductionVersusPrefixWhenNoExactHits": 0.1367187500000001
+        },
+        "vsPrefixWhenWordingDiffers": {
+          "prefixShares": false,
+          "rhymeKvReductionVersusPrefix": 0.1367187500000001
+        },
+        "honesty": "Rhyme-KV shares matching attention cells across nested-story organization. Residency uses measured matchingCellFraction. claimableShare requires spliced-cache logit equivalence on the tensor lab; JSON fractions are not KV compression factors."
+      },
+      "jsonHypothesisReductionVersusNaive": 0.36458333333333326,
+      "measuredReductionVersusNaive": 0.1367187500000001,
+      "claimableShare": false,
+      "path": "organizational_rhyme_kv_splice",
+      "pass": true,
+      "honesty": "Rhyme-KV shares matching attention cells across nested-story organization. Residency uses measured matchingCellFraction. claimableShare requires spliced-cache logit equivalence on the tensor lab; JSON fractions are not KV compression factors."
     },
     "K": {
       "id": "K_dynamic_route",

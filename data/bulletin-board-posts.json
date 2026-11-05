@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "posts": [
+    {
+      "id": "daily-2026-11-05-synthobs-tiny-gateway-rhyming-templates-2026-11",
+      "posted": "2026-11-05",
+      "featured": true,
+      "title": "Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer?",
+      "subtitle": "News of the day · Thursday, November 5",
+      "summary": "Tiny Footprint: stop rent on duplicated resident state. Aggregate 84.5%; GTX 860M memory+latency; rhyme-KV companion ~14.6% cells, claim gate closed; ENGINE_SHELF #52.",
+      "href": "/ship-blog/tiny-gateway-rhyming-templates",
+      "pill": "TODAY",
+      "docRef": "synthobs-tiny-gateway-rhyming-templates-2026-11",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-11-04-synthobs-tiny-gateway-rhyming-templates-2026-11",
       "posted": "2026-11-04",

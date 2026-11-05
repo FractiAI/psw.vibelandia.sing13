@@ -119,9 +119,10 @@ const modules = [
     title: 'Building, belonging & next doors',
     duration: '~2 hrs',
     blurb:
-      'Primes at work in folding and storage, the Y Goldilocks filing with its Fibonacci vault ladder, application companions versus engine pins, recursive self-improvement and drift as friction, the ERFT falsifiable recursive-fidelity test, the Invisible Frontier second chart, and how to keep learning after the course ends.',
+      'Primes at work in folding and storage, the Y Goldilocks filing with its Fibonacci vault ladder, application companions versus engine pins, Tiny Footprint · Tiny Gateway (ENGINE_SHELF #52) as the memory product of Rhyming Templates, recursive self-improvement and drift as friction, the ERFT falsifiable recursive-fidelity test, the Invisible Frontier second chart, and how to keep learning after the course ends.',
     outcomes: [
       'Distinguish engine pins from application companions (PDVSA gateway, macro-protein work engine, RSI Soft Story, ERFT) and file each correctly.',
+      'File Tiny Footprint / Tiny Gateway #52: Rhyming Templates, Net Zero → ascending octaves gate, GPU lab receipts, and rhyme-KV claim gate (JSON≠KV).',
       'Name drift as the major friction under self-rewriting tools, and file Φ_EGS as this catalog’s perpetual nesting Soft Story — not a CODATA claim.',
       'State ERFT’s matched five-arm question and that suite pass ≠ Φ win (null OK).',
       'Walk the V₃₄ / V₅₅ Chordata filing and the 89 + 144 = 233 Fibonacci resonance as catalog geometry only.',
@@ -1536,7 +1537,7 @@ const chapters = [
 <h3>The work-engine demo</h3>
 <p>The <strong>macro-protein work engine</strong> companion demonstrates the grammar on living systems: organisms filed as work engines, with a characteristic band <strong>θ<sub>bio</sub> ∈ [13, 17]</strong> as the catalog’s organismal register. Its external locks are the real, published scaling laws of biology — <strong>Kleiber’s law</strong> (metabolic rate scaling roughly as mass to the ¾ power) and the <strong>WBE model</strong> that grounds it in branching transport networks. Read the lock direction the way Lesson 6.3 taught: the published laws anchor the imagery; the companion re-derives nothing and adds no biology. The θ band is filing vocabulary — an address range, not a measured constant of life.</p>
 <div class="worked-example">
-<p>Sort a mixed stack of six papers into wall versus demo table — the librarian’s minute. (1) CMOS/protonic bridge: pinned at catalogPriority 0 — <strong>wall</strong> (the pin, in fact). (2) PDVSA Gateway Ops: marked application companion, simulator-tier — <strong>demo table</strong>. (3) Prime-parity framework: core Week 3 grammar every later paper reuses — <strong>wall</strong>. (4) Macro-protein work engine: domain demonstration over published scaling locks — <strong>demo table</strong>. (5) Holographic Singularity Crystal: engine construction with node k = 0 fixtures — <strong>wall</strong>. (6) SNA↔TCP/IP rhyme: historical spine for the gateway demo — <strong>demo table</strong> (it serves the companion). Now the payoff question: <em>why does the sort matter?</em> Because evaluation order and trust flow from it — auditors judge the engine by its pins; demos borrow credibility from the wall and must never lend it backward. Mixing the lists is how catalogs lose the trust the honesty rails earned.</p>
+<p>Sort a mixed stack of seven papers into wall versus demo table — the librarian’s minute. (1) CMOS/protonic bridge: pinned at catalogPriority 0 — <strong>wall</strong> (the pin, in fact). (2) PDVSA Gateway Ops: marked application companion, simulator-tier — <strong>demo table</strong>. (3) Prime-parity framework: core Week 3 grammar every later paper reuses — <strong>wall</strong>. (4) Macro-protein work engine: domain demonstration over published scaling locks — <strong>demo table</strong>. (5) Holographic Singularity Crystal: engine construction with node k = 0 fixtures — <strong>wall</strong>. (6) SNA↔TCP/IP rhyme: historical spine for the gateway demo — <strong>demo table</strong> (it serves the companion). (7) Tiny Gateway · Rhyming Templates (#52) with Tiny Footprint productization — <strong>wall</strong> (engine pin; Lesson 6.4c). Now the payoff question: <em>why does the sort matter?</em> Because evaluation order and trust flow from it — auditors judge the engine by its pins; demos borrow credibility from the wall and must never lend it backward. Mixing the lists is how catalogs lose the trust the honesty rails earned.</p>
 </div>
 <div class="misconception">
 <p><strong>The mix-up:</strong> “The PDVSA brief means the corpus operates live oilfield infrastructure — real telemetry, real incidents, a production deployment.”</p>
@@ -1574,6 +1575,68 @@ const chapters = [
       wp(
         'synthobs-macro-protein-work-engine-2026-09',
         'Macro-protein work engine',
+      ),
+    ],
+    next: 'tiny-footprint-gateway',
+  }),
+  lesson({
+    id: 'tiny-footprint-gateway',
+    moduleId: 'week6',
+    week: 6,
+    part: 'Homework: Week 6',
+    partId: 'week6',
+    number: '6.4c',
+    title: 'Tiny Footprint · Rhyming Templates (#52)',
+    minutes: 20,
+    tagline: 'Memory product · four-pillar rhyme · GPU lab · rhyme-KV claim gate',
+    goals: [
+      'File ENGINE_SHELF #52 as Tiny Gateway architecture productized as Tiny Footprint — an engine pin, not a demo-table companion.',
+      'State the four-pillar rhyme gate rooted at Net Zero → ascending octaves, and name what fails (brick wall / schema-only / exact-text cache alone).',
+      'Read GPU lab receipts and the organizational rhyme-KV companion at tier: measured cells ≠ JSON fractions; claimableShare stays closed until spliced resume is logit-equivalent.',
+    ],
+    body: `<p>A household that keeps eight photocopies of the same lease in eight drawers pays for paper it never reads. Modern AI serving often behaves the same way: the same organizational pattern shows up as system prompt, parse, index, embedding, cache, intermediate copy, and KV-style context — rent on duplicated resident state. <strong>Tiny Gateway</strong> is the architecture that treats many of those objects as <strong>rhymes</strong>: distinct expressions of a reusable organization called a <strong>Rhyming Template</strong>. The productized memory layer is named <strong>Tiny Footprint</strong>. This lesson files ENGINE_SHELF <strong>#52</strong> — a load-bearing pin on the wall, not a demo-table companion — and walks the honesty gates that keep CapEx slides from inventing themselves.</p>
+<h3>Rhyming Templates · nested vectors · selective reconstruction</h3>
+<p>Week 3 taught the four pillars that earn the name <em>rhyme</em>: repeating · self-similar · self-correcting · recursive. Tiny Gateway raises that gate one catalog step: a rhyme must root at <strong>Net Zero (octave 0)</strong> and nest through <strong>ascending octaves</strong>. Matching a mid-level schema, declaring a nest depth, or sharing exact words is not enough — brick walls, schema-only nests, and exact-text caches are contrast cases, not rhymes. Nested vectors carry relationships across scales. One originating story can fan out to eight connection nodes without eight full reprints. Selective reconstruction rebuilds only the working slice for the next job.</p>
+<h3>What the suite measured (and what it did not)</h3>
+<p>In-process workloads (structured, cross-linked, eight-node, selective octave, AI-context proxy) aggregate to about <strong>84.5%</strong> representation-size reduction with exact reconstruction — clear of the 80% research target. A live Tiny Footprint GPU chat-stack lab on a laptop <strong>NVIDIA GeForce GTX 860M</strong> reports cuMemAlloc ~81.4% cut, nvidia-smi ~72.8%, density ~11.9×, and turn materialization p50 ~11× faster (HtoD materialization, not frontier decode TTFT). Companion meters K/L/M (signature-bucket routing, recursive context-fold hooks, byte-touch joule PROXY) do not gate the pin. GeForce GDDR is the measured silicon; datacenter HBM is the operator analogue for the same duplicated-resident-state problem — not identical hardware.</p>
+<h3>Organizational rhyme-KV · the claim gate</h3>
+<p>When two prompts share nested-story organization but different words, an exact-prefix cache cannot help. A tempting shortcut is to treat a JSON template/delta byte fraction as if it were a KV-cache saving (~36% residency hypothesis on a published H100 profile). That arm stays labelled hypothesis. The organizational rhyme-KV companion (E16 / T) instead meters matching attention cells from real tensors (~14.6% on distilgpt2 → ~13.7% vs naïve). Blind full-cache reuse changes logits. Serving may advertise the residency saving only when spliced-cache resume stays logit-equivalent — and on the published fixture <code>claimableShare</code> stays <strong>false</strong>. JSON ≠ KV. No CapEx or AWS dollar claim rides that hypothesis arm.</p>
+<aside class="honesty-rail"><strong>Honesty.</strong> ENGINE_SHELF #52 with in-process + GTX 860M receipts. Not automatic CapEx −80%. Not hosted frontier API bake-off. Not HBM silicon identity. Rhyme-KV claimableShare closed until logit-equivalent spliced resume. Φ_EGS design grammar only.</aside>
+<div class="worked-example">
+<p>Sort four claims. (1) “Aggregate 84.5% in-process with exact reconstruction met the 80% gate.” File: <strong>in-suite empirical</strong> — pin-relevant, still not a datacenter CapEx guarantee. (2) “JSON shared-org fraction ≈34% means H100 KV memory falls 34%.” File: <strong>reject as KV claim</strong> — JSON hypothesis arm; tensor meter is ~14.6% cells and claim gate closed. (3) “Schema match alone is a holographic rhyme.” File: <strong>reject</strong> — Net Zero → ascending octaves four-pillar gate required. (4) “Open /tiny-footprint for the product brochure and the workstation kit.” File: <strong>fair product door</strong> — brochure, download, and validation paths are the edge experience of this pin.</p>
+</div>
+<div class="misconception">
+<p><strong>The mix-up:</strong> “Tiny Footprint is another application companion demo — or a promise that buying less HBM is already proven from JSON fractions.”</p>
+<p><strong>The correction:</strong> #52 is an engine pin with a named product. Measured GPU and in-process receipts stand; JSON≠KV; CapEx follows only after operators remove purchasable memory from real configurations while holding latency and quality.</p>
+</div>
+<div class="key-terms"><dl>
+<dt>Tiny Gateway</dt><dd>Architecture organized around Rhyming Templates, nested vectors, and selective reconstruction — ENGINE_SHELF #52.</dd>
+<dt>Tiny Footprint</dt><dd>Productized memory layer: keep the pattern once, store deltas/state, reconstruct the working set — brochure at <a href="/tiny-footprint">/tiny-footprint</a>.</dd>
+<dt>Net Zero → ascending octaves gate</dt><dd>Four-pillar rhyme must root at octave 0 and nest upward; schema-only / mid-octave leaf / exact-text cache are contrast cases.</dd>
+<dt>claimableShare</dt><dd>Serving may claim rhyme-KV residency savings only when spliced-cache resume is logit-equivalent — false on the published distilgpt2 fixture.</dd>
+</dl></div>`,
+    check: [
+      {
+        q: 'Is Tiny Gateway / Tiny Footprint an application companion or an engine pin?',
+        a: 'Engine pin — ENGINE_SHELF #52. Product brochure and workstation kit are the edge experience of that pin, not a demo-table substitute for it.',
+      },
+      {
+        q: 'When wording differs but organization rhymes, why can’t you paste a JSON byte fraction onto KV memory?',
+        a: 'JSON template/delta fractions are a residency hypothesis, not a tensor meter. Measured matching cells are ~14.6% on distilgpt2, and claimableShare stays false until spliced resume is logit-equivalent.',
+      },
+      {
+        q: 'What fails the raised holographic rhyme gate?',
+        a: 'Brick walls, schema-only matches, mid-octave leaf nests, and exact-text caches alone — a rhyme must root at Net Zero and ascend through octaves under all four pillars.',
+      },
+    ],
+    papers: [
+      wp(
+        'synthobs-tiny-gateway-rhyming-templates-2026-11',
+        'Tiny Gateway · Rhyming Templates · Tiny Footprint',
+      ),
+      wp(
+        'synthobs-holographic-rhyme-fractal-2026-09',
+        'Holographic rhyme · four pillars',
       ),
     ],
     next: 'rsi-drift',
@@ -1900,6 +1963,7 @@ const chapters = [
 <li><a href="/omni-lattice-course#engine-shelf-now">Living engine shelf</a> on this course page — refreshes whenever a paper is pinned into Infinite Octaves (<code>npm run sync:lattice-pem</code>), same generator as the Living PEM and companion textbook.</li>
 <li><a href="/lattice">Lattice Chat</a> — BYOK conversation on the Infinite Octaves nest. Ask it to walk a filing with you; hold it to the same tier discipline you hold the papers to.</li>
 <li><a href="/questfest">QUESTFEST board</a> — the ship board, where new papers land with plain-language notes, newest first.</li>
+<li><a href="/tiny-footprint">Tiny Footprint</a> · <a href="/brochure/tiny-footprint">tech brochure</a> · <a href="/whitepaper/tiny-gateway-rhyming-templates">#52 whitepaper</a> — ENGINE_SHELF memory product (Lesson 6.4c); Workstation kit and validation doors live on the same hub.</li>
 <li><a href="/journey">Journey</a> · <a href="/art">Omniversal Canvas</a> · <a href="/frontiersman-voyage">Frontiersman voyage</a> — the narrative decks, best enjoyed now that you can tell story tier from catalog tier without effort.</li>
 </ul>
 <p>Fair Exchange runs both directions, so here is the honest close: if this course gave you value, the reciprocal move is to read one primary paper carefully, keep its rails intact when you discuss it, and correct the next person who upgrades a filing into a proof — kindly, the way this course tried to. Keep Goldilocks: not too much machine, not too little human. Welcome aboard — and intentions matter.</p>

@@ -294,7 +294,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-06** · **406** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-06** · **407** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -530,8 +530,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
 | [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
 | [`/interfaces/fractios-start-here.html`](/interfaces/fractios-start-here.html) | START HERE — FractiOS · Holographic Homeostasis Firmware |
+| [`/interfaces/fractisi-pricing.html`](/interfaces/fractisi-pricing.html) | FractiSI Multi-Agent · Freemium Pricing & Packaging |
 | [`/interfaces/fractisi-recruit.html`](/interfaces/fractisi-recruit.html) | Founding CEO / commercial builder · FractiSI recruit |
-| [`/interfaces/fractisi.html`](/interfaces/fractisi.html) | FractiSI · FractiSI Multi-Agent (Tiny Footprint core) |
+| [`/interfaces/fractisi.html`](/interfaces/fractisi.html) | FractiSI · Commercial vehicle for Tiny Footprint |
 | [`/interfaces/front-desk-check-in-program.html`](/interfaces/front-desk-check-in-program.html) | Front Desk Check-In Program · J.S. Bach · SS Vibelandia |
 | [`/interfaces/front-desk.html`](/interfaces/front-desk.html) | Front Desk · SS Vibelandia check-in |
 | [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure · SS Vibelandia |
@@ -618,7 +619,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/tiny-footprint-brochure.html`](/interfaces/tiny-footprint-brochure.html) | Tiny Footprint · Memory product brochure · FractiAI |
 | [`/interfaces/tiny-footprint-cloud.html`](/interfaces/tiny-footprint-cloud.html) | FractiSI Multi-Agent · Tiny Footprint Cloud · Strategic platform |
 | [`/interfaces/tiny-footprint-download.html`](/interfaces/tiny-footprint-download.html) | Download FractiSI Multi-Agent |
-| [`/interfaces/tiny-footprint-local.html`](/interfaces/tiny-footprint-local.html) | FractiSI Multi-Agent · Tiny Footprint Local · Community & Developer Pro |
+| [`/interfaces/tiny-footprint-local.html`](/interfaces/tiny-footprint-local.html) | FractiSI Multi-Agent · Freemium Pricing & Packaging |
 | [`/interfaces/tiny-footprint-product.html`](/interfaces/tiny-footprint-product.html) | Tiny Footprint™ · Less Memory. Lower Latency. More AI Performance. |
 | [`/interfaces/tiny-footprint-server.html`](/interfaces/tiny-footprint-server.html) | FractiSI Multi-Agent · Tiny Footprint Server · Team & Enterprise |
 | [`/interfaces/tiny-footprint-simple.html`](/interfaces/tiny-footprint-simple.html) | Tiny Footprint · Simple breakdown |

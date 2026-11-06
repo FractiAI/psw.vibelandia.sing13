@@ -5,8 +5,8 @@
   <script src="/interfaces/vbi18n-failopen.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Download Tiny Footprint Workstation 0.1</title>
-  <meta name="description" content="Download or clone Tiny Footprint Workstation 0.1. Freemium Community Edition." />
+  <title>Download FractiSI Multi-Agent</title>
+  <meta name="description" content="Download or clone FractiSI Multi-Agent (Tiny Footprint core). Git + cloud token to try." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/tiny-footprint/download" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
@@ -15,25 +15,26 @@
 <body class="tf-product">
   <nav class="tf-nav"><a href="/tiny-footprint">Tiny Footprint</a><a href="/tiny-footprint/workstation">Workstation</a><a href="/tiny-footprint/local">Local freemium</a></nav>
   <main class="tf-wrap">
-    <p class="tf-kicker">Community Edition · FREE</p>
+    <p class="tf-kicker">FractiSI Multi-Agent · Community Edition</p>
     <h1 class="tf-brand" style="font-size:clamp(2.2rem,7vw,3.4rem)">Download</h1>
-    <p class="tf-tagline">Get Workstation 0.1 into your IDE in minutes.</p>
+    <p class="tf-tagline">Git + a cloud token. Clone the kit, run <code>try</code>, get a live preview URL.</p>
 
     <h2>Option A · Standalone kit (recommended)</h2>
-    <pre style="background:rgba(5,11,20,.85);padding:1rem;overflow:auto;border:1px solid rgba(201,162,39,.35)"><code>git clone https://github.com/FractiAI/tiny-footprint-multi-agent.git
-cd tiny-footprint-workstation
-code .
-node scripts/tiny.mjs doctor</code></pre>
-    <p><a href="https://github.com/FractiAI/tiny-footprint-multi-agent">github.com/FractiAI/tiny-footprint-multi-agent</a></p>
+    <pre style="background:rgba(5,11,20,.85);padding:1rem;overflow:auto;border:1px solid rgba(201,162,39,.35)"><code>git clone https://github.com/FractiAI/FractiSI-Multi-Agent.git
+cd FractiSI-Multi-Agent
+export VERCEL_TOKEN=…   # or FRACTISI_CLOUD_TOKEN
+node scripts/tiny.mjs try</code></pre>
+    <p><a href="https://github.com/FractiAI/FractiSI-Multi-Agent">github.com/FractiAI/FractiSI-Multi-Agent</a></p>
 
     <h2>Option B · From SING 13 monorepo</h2>
     <pre style="background:rgba(5,11,20,.85);padding:1rem;overflow:auto;border:1px solid rgba(201,162,39,.35)"><code>git clone https://github.com/FractiAI/psw.vibelandia.sing13.git
 cd psw.vibelandia.sing13/products/tiny-footprint-workstation
-code .
-node scripts/tiny.mjs doctor</code></pre>
+export VERCEL_TOKEN=…
+node scripts/tiny.mjs try</code></pre>
 
     <h2>First run</h2>
     <ol>
+      <li><code>node scripts/tiny.mjs try</code> — worktrees → compose → commit → cloud deploy (needs Git + token)</li>
       <li><code>node scripts/tiny.mjs doctor</code></li>
       <li><code>node scripts/tiny.mjs install</code></li>
       <li><code>node scripts/tiny.mjs demo</code></li>
@@ -44,7 +45,7 @@ node scripts/tiny.mjs doctor</code></pre>
 
     <h2>Downloads</h2>
     <div class="tf-cta">
-      <a class="tf-cta__gold" href="https://github.com/FractiAI/psw.vibelandia.sing13/archive/refs/heads/main.zip">Repo ZIP (GitHub)</a>
+      <a class="tf-cta__gold" href="https://github.com/FractiAI/FractiSI-Multi-Agent">Open FractiSI-Multi-Agent</a>
       <a class="tf-cta__ghost" href="/tiny-footprint/brochure-print">Commercial brochure (print HTML)</a>
       <a class="tf-cta__ghost" href="/brochure/tiny-footprint">Technical brochure</a>
     </div>
@@ -58,7 +59,7 @@ node scripts/tiny.mjs doctor</code></pre>
       <p id="tf-free-status" style="font-size:0.85rem;color:rgba(232,238,246,0.7)"></p>
     </form>
 
-    <p class="honesty">No proprietary weights leave your machine for the local demo. GPU benches need NVIDIA drivers where applicable. <a href="/tiny-footprint">Hub</a>.</p>
+    <p class="honesty">No proprietary weights leave your machine for the local demo. Cloud <code>try</code> uses your Vercel token only for preview deploy. GPU benches need NVIDIA drivers where applicable. Tiny Footprint remains the Layer A core inside FractiSI Multi-Agent. <a href="/tiny-footprint">Hub</a>.</p>
   </main>
   <script>
     document.getElementById('tf-free-form').addEventListener('submit', function (e) {
@@ -73,9 +74,9 @@ node scripts/tiny.mjs doctor</code></pre>
       document.getElementById('tf-free-status').textContent = 'Saved. Opening mail…';
       window.location.href =
         'mailto:valetpru@gmail.com?subject=' +
-        encodeURIComponent('Tiny Footprint Freemium · ' + email) +
+        encodeURIComponent('FractiSI Multi-Agent Freemium · ' + email) +
         '&body=' +
-        encodeURIComponent('Please add me to Tiny Footprint Community / Pro updates.\nEmail: ' + email);
+        encodeURIComponent('Please add me to FractiSI Multi-Agent / Tiny Footprint Community updates.\nEmail: ' + email);
     });
   </script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>

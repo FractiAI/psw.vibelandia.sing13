@@ -12,11 +12,11 @@ export const SHIP_BLOG_FILE = 'blog-fractisi-expedition-002-beyond-memory-2026-1
 export const EXPEDITION = 'FractiSI Research Expedition';
 export const EXPEDITION_NUMBER = 2;
 export const EXPEDITION_TITLE = 'Beyond Memory Savings';
-export const STANDALONE_PRODUCT_REPO = 'FractiAI/tiny-footprint-multi-agent';
+export const STANDALONE_PRODUCT_REPO = 'FractiAI/FractiSI-Multi-Agent';
 export const STUDY_TITLE =
   'FractiSI Research Expedition 002 — Beyond Memory Savings: Speed, Accuracy, Convergence, Discovery, and Collective Problem-Solving';
 export const ENGINE_SHELF_PINNED = false;
-export const PARENT_PRODUCT = 'Tiny Footprint Multi-Agent';
+export const PARENT_PRODUCT = 'FractiSI Multi-Agent';
 export const DIGITAL_SEED = 20261105;
 
 export const RESEARCH_QUESTION =

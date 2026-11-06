@@ -599,13 +599,13 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/tiny-footprint-brochure-print.html`](/interfaces/tiny-footprint-brochure-print.html) | Tiny Footprint™ · Commercial brochure (print) |
 | [`/interfaces/tiny-footprint-brochure.html`](/interfaces/tiny-footprint-brochure.html) | Tiny Footprint · Memory product brochure · FractiAI |
 | [`/interfaces/tiny-footprint-cloud.html`](/interfaces/tiny-footprint-cloud.html) | Tiny Footprint Cloud · Strategic platform |
-| [`/interfaces/tiny-footprint-download.html`](/interfaces/tiny-footprint-download.html) | Download Tiny Footprint Workstation 0.1 |
+| [`/interfaces/tiny-footprint-download.html`](/interfaces/tiny-footprint-download.html) | Download FractiSI Multi-Agent |
 | [`/interfaces/tiny-footprint-local.html`](/interfaces/tiny-footprint-local.html) | Tiny Footprint Local · Community & Developer Pro |
 | [`/interfaces/tiny-footprint-product.html`](/interfaces/tiny-footprint-product.html) | Tiny Footprint™ · Less Memory. Lower Latency. More AI Performance. |
 | [`/interfaces/tiny-footprint-server.html`](/interfaces/tiny-footprint-server.html) | Tiny Footprint Server · Team & Enterprise |
 | [`/interfaces/tiny-footprint-simple.html`](/interfaces/tiny-footprint-simple.html) | Tiny Footprint · Simple breakdown |
 | [`/interfaces/tiny-footprint-validation.html`](/interfaces/tiny-footprint-validation.html) | Tiny Footprint Validation Initiative · Sign up |
-| [`/interfaces/tiny-footprint-workstation.html`](/interfaces/tiny-footprint-workstation.html) | Tiny Footprint Workstation 0.1 · IDE kit |
+| [`/interfaces/tiny-footprint-workstation.html`](/interfaces/tiny-footprint-workstation.html) | FractiSI Multi-Agent · Workstation kit |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
 | [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Holographic Goldilocks Super Intelligence Frontiersmen |
 | [`/interfaces/what-it-means-to-be-frontier.html`](/interfaces/what-it-means-to-be-frontier.html) | What It Means to Be Frontier · Trail + self-test + Where Am I · SS Vibelandia |

@@ -1,4 +1,4 @@
-# Tiny Footprint Multi-Agent
+# FractiSI Multi-Agent
 
 ### One shared world. Many agents.
 
@@ -12,13 +12,13 @@
 
 ---
 
-## What is Tiny Footprint Multi-Agent?
+## What is FractiSI Multi-Agent?
 
-**Tiny Footprint Multi-Agent** is FractiSI’s product: one shared world (or shared organizational context) for many agents — template once, per-agent deltas, selective reconstruct. **DRAM concurrency** is the engine inside. Install it **beside** the agent runtime / serving stack you already run.
+**FractiSI Multi-Agent** is FractiSI’s flagship product. **Tiny Footprint** is the Layer A execution core: one shared world (or shared organizational context) for many agents — template once, per-agent deltas, selective reconstruct. Layers B–F add coordination, composition, Git awareness, and deploy approvals. **DRAM concurrency** is the engine inside. Install it **beside** the agent runtime / serving stack you already run.
 
 Agent fleets default to an expensive habit: **copy the shared world into every agent**. Compression shrinks each copy; it does not remove the copies. This kit is the Local / Workstation edition of that product.
 
-| | Without Tiny Footprint Multi-Agent | With Tiny Footprint Multi-Agent |
+| | Without FractiSI Multi-Agent | With FractiSI Multi-Agent |
 |--|------------------------------------|--------------------------------|
 | Shared context | Reprinted per agent / session | Registered once |
 | Per-agent state | Full world + local | Compact deltas |
@@ -63,8 +63,11 @@ Live site: https://fractisi.vercel.app · product: [/product/](https://fractisi.
 **Requirements:** Git · Node.js 18+ · VS Code (or Cursor) · optional NVIDIA GPU + Python for GPU labs
 
 ```bash
-git clone https://github.com/FractiAI/tiny-footprint-multi-agent.git
-cd tiny-footprint-multi-agent
+git clone https://github.com/FractiAI/FractiSI-Multi-Agent.git
+cd FractiSI-Multi-Agent
+export VERCEL_TOKEN=…
+node scripts/tiny.mjs try
+# or step-by-step:
 code .          # or: cursor .
 ```
 
@@ -138,7 +141,7 @@ Details: [docs/product/VALIDATION.md](./docs/product/VALIDATION.md)
 ## Repository layout
 
 ```
-tiny-footprint-multi-agent/          ← GitHub repo · Local kit for Tiny Footprint Multi-Agent
+FractiSI-Multi-Agent/               ← GitHub repo · FractiSI Multi-Agent kit
 ├── src/                  ← all logic, in submodules
 │   ├── core/             ← bytes, statistics, randomness, hashing
 │   ├── engine/           ← Tiny Gateway: templates, vectors, broadcast
@@ -232,7 +235,7 @@ Rendering the PDF needs a [docxology/template](https://github.com/docxology/temp
 
 Hub: https://fractisi.vercel.app/product/
 
-**Product name lock:** customers hear **Tiny Footprint Multi-Agent**. DRAM is the engine. SQL/network are later adapters — not separate diluted SKUs.
+**Product name lock:** customers hear **FractiSI Multi-Agent** (Tiny Footprint = core). DRAM is the engine. SQL/network are later adapters — not separate diluted SKUs.
 
 ---
 
@@ -251,7 +254,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for local checks and change rules. Repo
 
 ## FractiSI site
 
-Marketing site for **Tiny Footprint Multi-Agent** — product hub, research, library, open, company, recruit — lives at the repo root and deploys to https://fractisi.vercel.app (also mirrored to [FractiAI/fractisi](https://github.com/FractiAI/fractisi)).
+Marketing site for **FractiSI Multi-Agent** — product hub, research, library, open, company, recruit — lives at the repo root and deploys to https://fractisi.vercel.app (also mirrored to [FractiAI/fractisi](https://github.com/FractiAI/fractisi)).
 
 - Product: `/product/`
 - Multi-Agent paper: `/library/papers/tiny-footprint-multi-agent/`

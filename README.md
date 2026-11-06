@@ -532,7 +532,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/fractios-start-here.html`](/interfaces/fractios-start-here.html) | START HERE — FractiOS · Holographic Homeostasis Firmware |
 | [`/interfaces/fractisi-pricing.html`](/interfaces/fractisi-pricing.html) | FractiSI Multi-Agent · Freemium Pricing & Packaging |
 | [`/interfaces/fractisi-recruit.html`](/interfaces/fractisi-recruit.html) | Founding CEO / commercial builder · FractiSI recruit |
-| [`/interfaces/fractisi.html`](/interfaces/fractisi.html) | FractiSI · Commercial vehicle for Tiny Footprint |
+| [`/interfaces/fractisi.html`](/interfaces/fractisi.html) | FractiSI · FractiSI Multi-Agent · Shared-world intelligence |
 | [`/interfaces/front-desk-check-in-program.html`](/interfaces/front-desk-check-in-program.html) | Front Desk Check-In Program · J.S. Bach · SS Vibelandia |
 | [`/interfaces/front-desk.html`](/interfaces/front-desk.html) | Front Desk · SS Vibelandia check-in |
 | [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure · SS Vibelandia |
@@ -616,13 +616,13 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/synthio.html`](/interfaces/synthio.html) | Synthio · Syntheverse Sandbox |
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
 | [`/interfaces/tiny-footprint-brochure-print.html`](/interfaces/tiny-footprint-brochure-print.html) | FractiSI Multi-Agent · Tiny Footprint™ · Commercial brochure (print) |
-| [`/interfaces/tiny-footprint-brochure.html`](/interfaces/tiny-footprint-brochure.html) | Tiny Footprint · Memory product brochure · FractiAI |
+| [`/interfaces/tiny-footprint-brochure.html`](/interfaces/tiny-footprint-brochure.html) | FractiSI Multi-Agent · Technical brochure · FractiAI |
 | [`/interfaces/tiny-footprint-cloud.html`](/interfaces/tiny-footprint-cloud.html) | FractiSI Multi-Agent · Tiny Footprint Cloud · Strategic platform |
 | [`/interfaces/tiny-footprint-download.html`](/interfaces/tiny-footprint-download.html) | Download FractiSI Multi-Agent |
 | [`/interfaces/tiny-footprint-local.html`](/interfaces/tiny-footprint-local.html) | FractiSI Multi-Agent · Freemium Pricing & Packaging |
-| [`/interfaces/tiny-footprint-product.html`](/interfaces/tiny-footprint-product.html) | Tiny Footprint™ · Less Memory. Lower Latency. More AI Performance. |
+| [`/interfaces/tiny-footprint-product.html`](/interfaces/tiny-footprint-product.html) | FractiSI Multi-Agent · Shared-world intelligence & convergence |
 | [`/interfaces/tiny-footprint-server.html`](/interfaces/tiny-footprint-server.html) | FractiSI Multi-Agent · Tiny Footprint Server · Team & Enterprise |
-| [`/interfaces/tiny-footprint-simple.html`](/interfaces/tiny-footprint-simple.html) | Tiny Footprint · Simple breakdown |
+| [`/interfaces/tiny-footprint-simple.html`](/interfaces/tiny-footprint-simple.html) | FractiSI Multi-Agent · Simple breakdown |
 | [`/interfaces/tiny-footprint-validation.html`](/interfaces/tiny-footprint-validation.html) | FractiSI Multi-Agent · Tiny Footprint Validation Initiative · Sign up |
 | [`/interfaces/tiny-footprint-workstation.html`](/interfaces/tiny-footprint-workstation.html) | FractiSI Multi-Agent · Workstation kit |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |

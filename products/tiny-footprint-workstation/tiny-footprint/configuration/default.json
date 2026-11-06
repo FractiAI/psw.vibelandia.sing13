@@ -2,7 +2,7 @@
   "product": "Tiny Footprint",
   "version": "0.1.0",
   "edition": "community",
-  "headline": "Less Memory. Lower Latency. More AI Performance.",
+  "headline": "One shared world. Many perspectives. New discoveries. Faster convergence.",
   "benchmark": {
     "suiteRelative": "../../research/synthobs-tiny-gateway-rhyming-templates",
     "forceLlmLab": false
@@ -10,5 +10,6 @@
   "honesty": {
     "localGpuNotHbm": true,
     "notHostedFrontierBakeoff": true
-  }
+  },
+  "productName": "FractiSI Multi-Agent"
 }

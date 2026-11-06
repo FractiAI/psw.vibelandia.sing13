@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-03T17:24:50.254Z",
+  "updatedAt": "2026-11-06T09:36:14.580Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-fractisi-expedition-002-beyond-memory-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-06T09:36:14.579Z",
+      "body": "FractiSI Research Expedition 002 · Beyond Memory Savings: Discovery and Collective Problem-Solving",
+      "presenceHue": "gold",
+      "paperId": "synthobs-fractisi-expedition-002-beyond-memory-2026-11",
+      "artifact": {
+        "title": "FractiSI Research Expedition 002 · Beyond Memory Savings: Discovery and Collective Problem-Solving",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_FRACTISI_EXPEDITION_002_BEYOND_MEMORY_EGS_2026-11.md",
+        "url": "/whitepaper/fractisi-expedition-002-beyond-memory",
+        "paperId": "synthobs-fractisi-expedition-002-beyond-memory-2026-11",
+        "docId": "WP-FRACTISI-EXPEDITION-002-BEYOND-MEMORY-EGS-2026-11-05",
+        "published": "2026-11-05T20:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_lattice-chat-product-engineering-manual-2026-09",
       "type": "ArtifactEvent",

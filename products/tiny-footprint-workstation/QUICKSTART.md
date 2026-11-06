@@ -1,6 +1,6 @@
 # Quick start · Tiny Footprint Workstation
 
-1. Clone **https://github.com/FractiAI/tiny-footprint-workstation**
+1. Clone **https://github.com/FractiAI/tiny-footprint-multi-agent**
 2. Open the folder in VS Code / Cursor
 3. Run:
 

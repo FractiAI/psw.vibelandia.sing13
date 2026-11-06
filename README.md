@@ -276,7 +276,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-04** · **404** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-06** · **405** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -318,6 +318,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-erft-recursive-fidelity-2026-09.html`](/interfaces/blog-erft-recursive-fidelity-2026-09.html) | When Information Rewrites Itself, Does φ Reduce the Drift? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | Everything Is Connected — Walk It Carefully · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractios-holographic-os-2026-10.html`](/interfaces/blog-fractios-holographic-os-2026-10.html) | If Recursive Tools Keep Changing Themselves, What Operating Layer Keeps Identity Intact? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-fractisi-expedition-002-beyond-memory-2026-11.html`](/interfaces/blog-fractisi-expedition-002-beyond-memory-2026-11.html) | If Agents Share One World, Can They Discover What Flat Memory Misses? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html`](/interfaces/blog-fractiskills-portable-agent-skills-2026-09.html) | Your Nested Agents Need a Carry-On, Not a Shipping Container · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontier-agent-convergence-2026-10.html`](/interfaces/blog-frontier-agent-convergence-2026-10.html) | If You Ask Five AIs Whether They Agree with You, What Did You Actually Measure? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — One Tribe, Many Homes · Ship blog · SS Vibelandia |
@@ -468,7 +469,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | Drawers That Don’t Spill Into Each Other · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tier-c-holographic-wiring-2026-09.html`](/interfaces/blog-tier-c-holographic-wiring-2026-09.html) | Your Basement Stories Still Carry Current · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tiny-gateway-language-radar-2026-10.html`](/interfaces/blog-tiny-gateway-language-radar-2026-10.html) | Can a Tiny Gateway Reuse Templates Faster Than Ordinary Pipelines on Real Data? · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html`](/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html) | Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer? � Ship blog � SS Vibelandia |
+| [`/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html`](/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html) | Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tiny-reality-generation-model-2026-10.html`](/interfaces/blog-tiny-reality-generation-model-2026-10.html) | Can a Three-Symbol Cycle, Spun Like a Polygon and Folded into DNA, Stay Coherent? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09-old.html`](/interfaces/blog-topology-of-the-void-2026-09-old.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Empty Is Not Nothing on This Ship · Ship blog · SS Vibelandia |

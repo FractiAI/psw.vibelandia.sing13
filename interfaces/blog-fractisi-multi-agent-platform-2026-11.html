@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>When Many Coding Agents Share One Repo, Can Coordination Beat More Branches? · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="FractiSI Multi-Agent evolves Tiny Footprint into a coordination and composition platform that installs beside Cursor, Claude Code, VS Code, and Git." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/fractisi-multi-agent-platform" />
+  <meta property="og:title" content="When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?" />
+  <meta property="og:description" content="Architecture evolution of Tiny Footprint into FractiSI Multi-Agent." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/whitepaper/fractisi-multi-agent-platform">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Research note · FractiSI Multi-Agent</p>
+      <h1>When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?</h1>
+      <p class="dateline"><strong>FractiAI Research</strong> — November 6, 2026</p>
+    </header>
+
+    <p class="lead">Ask a hiring manager what happens when five contractors edit the same product at once. Someone spins up more tickets. Someone else spins up more branches. Rent on the build machines climbs, merge day stretches into the evening, and the expensive failure is rarely that a disk filled up. It is duplicated effort, silent interference, and a merge that compiles while the feature still disagrees with itself. Coding agents are walking into that same office. FractiSI Multi-Agent asks whether a population of agents can do more useful engineering work inside a fixed infrastructure budget without tripping over each other — not only whether they can share memory more cheaply.</p>
+
+    <h2>The problem teams actually feel</h2>
+    <p>Software organizations already pay for Git, GitHub or GitLab, CI minutes, and GPU or CPU capacity for agents. Adding agents often means cloning more context, opening more worktrees, and hoping reviewers catch collisions. Parents juggling a side project after school pickup notice the same pattern at smaller scale: two assistants rewrite the same helper file, both report success, and the evening disappears into conflict resolution. Tiny Footprint attacked the reprinting of shared context — one world, per-agent deltas, selective reconstruct. That remains the execution advantage. Expedition 002 then asked whether relationship-guided reconstruction could discover distributed structure under a fixed information budget. The next product step is operational: install coordination beside the tools teams refuse to abandon.</p>
+    <p>Paychecks and on-call rotations make the stakes concrete. A platform team that pays for fifty agent-hours a day cannot afford fifty silent collisions. A contractor who loses a Friday to merge cleanup is not failing because the model was too small; the workflow never said who owned the shared router file. FractiSI’s product objective is therefore greater useful completed work per infrastructure dollar, higher concurrent agent capacity when safe, and better composition of independent contributions.</p>
+
+    <h2>How we framed the architecture experiment</h2>
+    <p>We treated FractiSI Multi-Agent as an evolution of the existing Workstation kit, not a rewrite. Layer A keeps Tiny Footprint and Tiny Gateway. Layer B registers agents, tracks task ownership, and detects overlapping paths and shared-interface markers. Layer C stores project and contribution state locally. Layer D evaluates whether contributions are composable, validates them, integrates them, and can roll them back. Layer E inspects Git and allocates scoped workspaces without forcing a branch per agent. Layer F creates release candidates that cannot deploy without approval and a validated composition. Adapters normalize messages from Cursor, Claude Code, VS Code, and OpenAI-shaped agents onto one interface. Commercial Core, Professional, and Enterprise packs label entitlements of that same architecture.</p>
+    <p>The install path stays intentionally plain: clone the kit, run doctor and install, then initialize against an existing repository. FractiSI writes local state under a project folder, registers agents, and leaves the developer inside Cursor or VS Code. Docker Compose is available for self-hosted sidecars. Customers keep their remotes, CI, and deploy systems.</p>
+
+    <h2>Hypothesis</h2>
+    <p>If agents share a coordinated project state and compose only when compatibility checks pass, then under controlled multi-agent workloads the platform should reduce unmanaged path collisions relative to a pure branch free-for-all, while preserving Tiny Footprint’s shared-world memory model. Useful completed tasks should remain measurable under the same agent counts, without requiring customers to leave their IDE or replace Git.</p>
+
+    <h2>What the comparative lab measured</h2>
+    <p>The Workstation ships an in-process comparative bench with three arms. Arm A simulates conventional isolated branch ownership and counts merge conflicts when multiple agents claim the same paths. Arm B uses a shared-world Tiny Footprint memory model without coordination, so local writes succeed even when interference is invisible. Arm C runs FractiSI registration, ownership, conflict gating, and composition. Default runs cover five, ten, and twenty-five agents across repeated seeds; a full switch extends to fifty. Receipts write measured counters only — conflicts, useful tasks, compositions, latency units — and mark that they are not production dollar or GPU cost proofs.</p>
+    <p>On the November 2026 Workstation receipt, small populations often complete cleanly in both A and C when tasks are independent. As interdependence rises with agent count, Arm C blocks more high-severity overlaps before composition and still records successful integrated batches for the remaining compatible set. Arm B continues to complete local writes without composition success, which is exactly the memory-only failure mode the product is trying to outgrow. Those are architectural simulation results. They do not yet show that live language-model agents in Cursor will merge faster on a customer monolith.</p>
+
+    <h2>What the framework is for</h2>
+    <p>The framework value is a single installable platform that keeps Tiny Footprint as the concurrency engine while adding the coordination and composition layer teams ask for after the first demo. Procurement can price capability packs without inventing a second product name for every checkbox. Engineers can keep their preferred IDE. The research program can keep running honest labs — resource microbenchmarks, discovery expeditions, and now comparative coordination benches — without pretending an architectural simulation is an LLM bake-off.</p>
+
+    <h2>Invitation</h2>
+    <p>If you run agent fleets against real repositories, the next useful experiment is yours to host: same models, same prompts, same token budget, FractiSI coordination on versus off. Until then, the architecture assessment, platform API, and comparative receipts live in the kit and the companion whitepaper. The goal remains greater productive agent density and better composition of independent work — not a smaller footprint alone.</p>
+
+    <p class="honesty">Honesty: application companion architecture for FractiSI Multi-Agent / Tiny Footprint Workstation 0.2. Comparative bench figures are in-process measured simulations. Not ENGINE_SHELF. Not an LLM bake-off. Not production HBM or dollar-cost proof. Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox. Document ID WP-FRACTISI-MULTI-AGENT-PLATFORM-ARCH-EGS-2026-11-06.</p>
+  </article>
+  <p class="cta row"><a href="/whitepaper/fractisi-multi-agent-platform">Read the whitepaper</a> · <a href="https://github.com/FractiAI/tiny-footprint-multi-agent">Get the kit</a> · <a href="https://fractisi.vercel.app/">FractiSI site</a></p>
+  <footer>SS Vibelandia QUESTFEST · FractiAI Research</footer>
+</body>
+</html>

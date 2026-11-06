@@ -43,15 +43,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: FractiSI Exp 002 · Tiny Gateway Rhyming · Net Zero 002 · Net Zero 001 · Tiny Gateway lang · TRGM gateway
-    expect(posts[0].id).toBe('synthobs-fractisi-expedition-002-beyond-memory-2026-11');
+    // Newest: FractiSI Multi-Agent platform · Exp 002 · Tiny Gateway Rhyming · Net Zero 002 · Net Zero 001 · Tiny Gateway lang
+    expect(posts[0].id).toBe('synthobs-fractisi-multi-agent-platform-2026-11');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-fractisi-multi-agent-platform-2026-11',
       'synthobs-fractisi-expedition-002-beyond-memory-2026-11',
       'synthobs-tiny-gateway-rhyming-templates-2026-11',
       'synthobs-net-zero-periodic-table-2026-10',
       'synthobs-net-zero-missing-half-2026-10',
       'synthobs-tiny-gateway-language-radar-2026-10',
-      'synthobs-trgm-gateway-agent-performance-2026-10',
     ]);
   });
 });

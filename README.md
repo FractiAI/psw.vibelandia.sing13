@@ -31,6 +31,24 @@ Hardware / PPA / BEOL / CFET evaluators: start with the **CMOS 2.0 + protonic** 
 
 Honesty: silicon **vocabulary** for the engine — not a foundry tape-out. Full sync order: [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md).
 
+
+### 📌 PINNED · FractiSI Multi-Agent (flagship product)
+
+**FractiSI Multi-Agent** — coordinated agents, composition, Git worktrees, optional deploy. **Tiny Footprint** is the Layer A core.
+
+| | |
+|--|--|
+| **Standalone kit** | [`FractiAI/FractiSI-Multi-Agent`](https://github.com/FractiAI/FractiSI-Multi-Agent) · rich README on repo home |
+| **Site** | [fractisi.vercel.app](https://fractisi.vercel.app) · mirror [`FractiAI/fractisi`](https://github.com/FractiAI/fractisi) |
+| **Local mirror** | [`products/tiny-footprint-workstation/`](products/tiny-footprint-workstation/) |
+| **Try on a real repo** | `node scripts/tiny.mjs try --workload --repo "$PWD"` (Git only; add `--deploy` for preview) |
+| **Sandbox demo** | `node scripts/tiny.mjs try` in the kit (optional `--no-deploy`) |
+| **Paper** | [`docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md`](docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md) |
+| **Ship blog** | [/ship-blog/fractisi-multi-agent-platform](https://www.ssvibelandiaquestfest24x365.com/ship-blog/fractisi-multi-agent-platform) |
+
+Honesty: application companion architecture — not ENGINE_SHELF; adapters normalize IDE messages and do not yet auto-drive live Cursor/Claude sessions.
+
+
 This README is the **current map** of the monorepo, its **sibling empirical suites**, a **99 Octave Omni-Lattice primer**, the **latest major updates**, and **developer** steps to fork / reproduce / validate. Product deep-dives (Lattice Chat UI, Sovereignty Player playlists, Beehive residency) live in linked surfaces — they are not the top of this file.
 
 ---
@@ -513,7 +531,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
 | [`/interfaces/fractios-start-here.html`](/interfaces/fractios-start-here.html) | START HERE — FractiOS · Holographic Homeostasis Firmware |
 | [`/interfaces/fractisi-recruit.html`](/interfaces/fractisi-recruit.html) | Founding CEO / commercial builder · FractiSI recruit |
-| [`/interfaces/fractisi.html`](/interfaces/fractisi.html) | FractiSI · Commercial vehicle for Tiny Footprint |
+| [`/interfaces/fractisi.html`](/interfaces/fractisi.html) | FractiSI · FractiSI Multi-Agent (Tiny Footprint core) |
 | [`/interfaces/front-desk-check-in-program.html`](/interfaces/front-desk-check-in-program.html) | Front Desk Check-In Program · J.S. Bach · SS Vibelandia |
 | [`/interfaces/front-desk.html`](/interfaces/front-desk.html) | Front Desk · SS Vibelandia check-in |
 | [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure · SS Vibelandia |
@@ -596,15 +614,15 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/synthio-one-pager.html`](/interfaces/synthio-one-pager.html) | Synthio · MRI cloud-antenna one-pager · Syntheverse Sandbox |
 | [`/interfaces/synthio.html`](/interfaces/synthio.html) | Synthio · Syntheverse Sandbox |
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
-| [`/interfaces/tiny-footprint-brochure-print.html`](/interfaces/tiny-footprint-brochure-print.html) | Tiny Footprint™ · Commercial brochure (print) |
+| [`/interfaces/tiny-footprint-brochure-print.html`](/interfaces/tiny-footprint-brochure-print.html) | FractiSI Multi-Agent · Tiny Footprint™ · Commercial brochure (print) |
 | [`/interfaces/tiny-footprint-brochure.html`](/interfaces/tiny-footprint-brochure.html) | Tiny Footprint · Memory product brochure · FractiAI |
-| [`/interfaces/tiny-footprint-cloud.html`](/interfaces/tiny-footprint-cloud.html) | Tiny Footprint Cloud · Strategic platform |
+| [`/interfaces/tiny-footprint-cloud.html`](/interfaces/tiny-footprint-cloud.html) | FractiSI Multi-Agent · Tiny Footprint Cloud · Strategic platform |
 | [`/interfaces/tiny-footprint-download.html`](/interfaces/tiny-footprint-download.html) | Download FractiSI Multi-Agent |
-| [`/interfaces/tiny-footprint-local.html`](/interfaces/tiny-footprint-local.html) | Tiny Footprint Local · Community & Developer Pro |
+| [`/interfaces/tiny-footprint-local.html`](/interfaces/tiny-footprint-local.html) | FractiSI Multi-Agent · Tiny Footprint Local · Community & Developer Pro |
 | [`/interfaces/tiny-footprint-product.html`](/interfaces/tiny-footprint-product.html) | Tiny Footprint™ · Less Memory. Lower Latency. More AI Performance. |
-| [`/interfaces/tiny-footprint-server.html`](/interfaces/tiny-footprint-server.html) | Tiny Footprint Server · Team & Enterprise |
+| [`/interfaces/tiny-footprint-server.html`](/interfaces/tiny-footprint-server.html) | FractiSI Multi-Agent · Tiny Footprint Server · Team & Enterprise |
 | [`/interfaces/tiny-footprint-simple.html`](/interfaces/tiny-footprint-simple.html) | Tiny Footprint · Simple breakdown |
-| [`/interfaces/tiny-footprint-validation.html`](/interfaces/tiny-footprint-validation.html) | Tiny Footprint Validation Initiative · Sign up |
+| [`/interfaces/tiny-footprint-validation.html`](/interfaces/tiny-footprint-validation.html) | FractiSI Multi-Agent · Tiny Footprint Validation Initiative · Sign up |
 | [`/interfaces/tiny-footprint-workstation.html`](/interfaces/tiny-footprint-workstation.html) | FractiSI Multi-Agent · Workstation kit |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
 | [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Holographic Goldilocks Super Intelligence Frontiersmen |

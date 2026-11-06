@@ -1669,7 +1669,6 @@
       "destination": "/interfaces/tiny-footprint-brochure.html"
     },
     {
-    {
       "source": "/ship-blog/fractisi-multi-agent-platform",
       "destination": "/interfaces/blog-fractisi-multi-agent-platform-2026-11.html"
     },
@@ -3271,6 +3270,22 @@
     {
       "source": "/fractisi/careers/",
       "destination": "/interfaces/fractisi-recruit.html"
+    },
+    {
+      "source": "/fractisi/pricing",
+      "destination": "/interfaces/fractisi-pricing.html"
+    },
+    {
+      "source": "/fractisi/pricing/",
+      "destination": "/interfaces/fractisi-pricing.html"
+    },
+    {
+      "source": "/tiny-footprint/pricing",
+      "destination": "/interfaces/tiny-footprint-local.html"
+    },
+    {
+      "source": "/tiny-footprint/pricing/",
+      "destination": "/interfaces/tiny-footprint-local.html"
     },
     {
       "source": "/fractios",

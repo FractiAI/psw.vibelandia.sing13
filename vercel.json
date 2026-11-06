@@ -1669,6 +1669,22 @@
       "destination": "/interfaces/tiny-footprint-brochure.html"
     },
     {
+      "source": "/ship-blog/fractisi-expedition-002-beyond-memory",
+      "destination": "/interfaces/blog-fractisi-expedition-002-beyond-memory-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/fractisi-expedition-002-beyond-memory/",
+      "destination": "/interfaces/blog-fractisi-expedition-002-beyond-memory-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/fractisi-expedition-002-beyond-memory",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-fractisi-expedition-002-beyond-memory-2026-11"
+    },
+    {
+      "source": "/whitepaper/fractisi-expedition-002-beyond-memory/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-fractisi-expedition-002-beyond-memory-2026-11"
+    },
+    {
       "source": "/ship-blog/tiny-gateway-rhyming-templates",
       "destination": "/interfaces/blog-tiny-gateway-rhyming-templates-2026-11.html"
     },

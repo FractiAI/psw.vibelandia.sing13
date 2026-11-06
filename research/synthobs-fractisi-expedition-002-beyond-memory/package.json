@@ -1,0 +1,8 @@
+{
+  "name": "synthobs-fractisi-expedition-002-beyond-memory",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

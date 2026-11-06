@@ -256,6 +256,7 @@
     "publish:standalone:net-zero-periodic-table": "node scripts/publish-standalone-suite.mjs synthobs-net-zero-periodic-table",
     "publish:standalone:net-zero-periodic-table:create": "node scripts/publish-standalone-suite.mjs synthobs-net-zero-periodic-table --create-repo",
     "research:synthobs-tiny-gateway-rhyming-templates": "node research/synthobs-tiny-gateway-rhyming-templates/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-fractisi-expedition-002-beyond-memory": "node research/synthobs-fractisi-expedition-002-beyond-memory/scripts/run_empirical_pipeline.mjs",
     "publish:standalone:tiny-gateway-rhyming-templates": "node scripts/publish-standalone-suite.mjs synthobs-tiny-gateway-rhyming-templates",
     "publish:standalone:tiny-gateway-rhyming-templates:create": "node scripts/publish-standalone-suite.mjs synthobs-tiny-gateway-rhyming-templates --create-repo",
     "research:synthobs-trgm-predictive-reality-catalog": "node research/synthobs-trgm-predictive-reality-catalog/scripts/run_empirical_pipeline.mjs",

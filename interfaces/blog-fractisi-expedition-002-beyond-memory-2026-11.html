@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>If Agents Share One World, Can They Discover What Flat Memory Misses? · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="FractiSI Expedition 002: relationship-guided multi-agent discovery hit 100/100 under a fixed budget where flat retrieval hit 0/100. Resource savings remain real; LLM bake-off still ahead." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/fractisi-expedition-002-beyond-memory" />
+  <meta property="og:title" content="If Agents Share One World, Can They Discover What Flat Memory Misses?" />
+  <meta property="og:description" content="Beyond DRAM savings: a controlled discovery lab for Tiny Footprint Multi-Agent." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/whitepaper/fractisi-expedition-002-beyond-memory">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Research note · FractiSI Research Expedition 002</p>
+      <h1>If Agents Share One World, Can They Discover What Flat Memory Misses?</h1>
+      <p class="dateline"><strong>FractiAI Research</strong> — November 5, 2026</p>
+    </header>
+
+    <p class="lead">Hiring managers already know the expensive pattern: ten contractors each keep a private copy of the same policy binder, the same floor plan, the same customer list. Rent goes up. Meetings get longer. The real failure mode is quieter — nobody notices the clause that only appears when three folders are read together. Multi-agent AI systems are starting to look like that office. Tool workers, planners, and simulators share an environment, yet stacks still reprint the world into every agent. Compression makes each reprint smaller. It does not stop the reprints. FractiSI Research Expedition 002 asks a harder question than “can we cut the memory bill?” It asks whether reorganizing shared information helps a population discover and solve problems that a flat skim, under the same information budget, simply never finishes.</p>
+
+    <h2>The problem is not only rent</h2>
+    <p>When each agent carries a full copy of shared context, infrastructure costs climb with headcount: DRAM and HBM fill with duplicates, fan-out messages re-embed the world, and durable stores keep the same blob N times. That is the Tiny Footprint Multi-Agent product story — one shared world, per-agent deltas, selective reconstruct. Expedition 001-class resource labs already showed that shared representations can slash duplication relative to naive full copies. Those results matter for paychecks and power bills. They do not, by themselves, prove that the collective is smarter.</p>
+    <p>Everyday stakes are concrete. A hospital ops swarm that duplicates the ward map burns GPU hours that could have paid for another night shift of inference. A logistics desk that cannot connect a late truck, a cold-chain sensor, and a contract clause loses a delivery while every agent still “has the data” in separate piles. Parents juggling school portals know the same failure: the form exists; the connection does not. Expedition 002 therefore widens the scoreboard from footprint to discovery, anomaly detection, solution completion, and architectural convergence under a fixed access budget.</p>
+
+    <h2>What we ran</h2>
+    <p>Two controlled labs ship in the companion suite. The first is a structured-state resource microbenchmark with three arms: independent full-world copies, a conventional shared world with overrides, and a FractiSI-style shared world with agent-specific deltas. Worlds held 2,000 records; each agent carried eight overrides; each agent ran 100 queries; populations scaled through 10, 50, 100, and 250 agents. Peak allocation is measured as a serialized-size proxy — honest about what it is, and explicit about what it is not (live GPU RSS).</p>
+    <p>The second lab is the capability test the resource story needed. One hundred scenarios each hide a six-hop dependency chain across departments. Both arms receive the same underlying information. The conventional arm skims a fixed budget of forty records from a noise-first corpus. The FractiSI-style arm follows relationship pointers from the start node. Success means recovering the complete chain and emitting the correct operational solution. The design deliberately refuses to reward “having more bytes” — only whether organization and retrieval let the population finish the job inside the budget.</p>
+
+    <h2>Hypothesis</h2>
+    <p>If shared context is registered once and reconstruction is guided by explicit relationships, then under a constrained retrieval budget a FractiSI-style population should recover distributed multi-hop structure that a flat shared-world skim misses — while still matching the resource lesson that shared representation beats full copies. Selective reconstruction is not hypothesized to be universally faster than direct shared lookup; the bet is on what can be connected and completed, not on every microbenchmark clock.</p>
+
+    <h2>Results, with the qualifications that keep them useful</h2>
+    <p><strong>Resource layer.</strong> Against independent full copies, the suite’s large populations cut duplication-related peak proxies by at least ninety-five percent and finished the timed structured-state workload tens of times faster. Conventional shared state captured much of that basic efficiency. Selective or delta-oriented access was mixed against direct conventional shared lookup and can be slower. So FractiSI cannot honestly market “always faster reads” from this layer alone. The unique wedge has to live elsewhere.</p>
+    <p><strong>Discovery and collective completion.</strong> On the hundred-scenario board, relationship-guided reconstruction recovered the complete hidden chain and correct solution in <strong>100 of 100</strong> cases. Flat retrieval under the same forty-record budget recovered <strong>0 of 100</strong>. Mean information-processing operations fell by roughly eighty-five percent for the guided arm. A simple propagation model needed three rounds to traverse six hops versus six rounds one-hop-at-a-time — about half the coordination rounds. Distributed conditions that lived across records, not inside one record, tracked the same 100/0 split: if you never assemble the chain, you never see the anomaly or the solution.</p>
+    <p>That is the first expedition result that changes what a constrained population can finish — not only how cheaply it stores the binder. It is also still an architectural simulation. Agents executed controlled procedures. They did not argue in natural language, invent tools, or surprise the evaluator the way production LLM swarms do. Claiming “LLM collectives are smarter with FractiSI” from this board would be a category error.</p>
+
+    <h2>Why the framework still earns a seat</h2>
+    <p>Tiny Footprint Multi-Agent already names the commercial product: shared world once, deltas per agent, selective reconstruct, DRAM concurrency as the engine. Expedition 002 keeps that product honest by showing where the story upgrades from storage to capability — and where the evidence is still thin. The eight-market brochure map (robots, digital twins, recursive swarms, industrial ops, scientific multiscale work, energy coordination, persistent worlds, collaborative research) remains a research program; every poster number waits on its own suite receipt. What is receipted here is the resource cut versus full copies, the mixed selective-latency lesson, and the constrained discovery board.</p>
+    <p>For builders, the invitation is practical. Clone the product kit, run the expedition suite, and inspect the receipts. If your domain’s “policy binder” is a graph of relationships, ask whether a flat context window budget is silently dropping the hops that decide the answer. If your domain is pure exact-prefix reuse, say so — prefix caches already win that case, and this expedition is not trying to rebrand them.</p>
+
+    <h2>What comes next</h2>
+    <p>The decisive trial keeps structure and swaps the agents for real language-model populations: same model, prompts, tools, information, roles, token budget, and infrastructure budget — only the information architecture changes. Score time to verified decision, relationships found, anomalies caught, solution quality, conflicts, useful tasks completed, and cost per success. Until that board runs, the claim stays precise: the architecture moved a measurable discovery signal under constraint; it has not yet proven superior LLM collective intelligence.</p>
+
+    <p>Read the whitepaper for methods and the honesty table. The product kit lives at FractiAI/tiny-footprint-multi-agent. The suite regenerates reports with one Node command. That is the expedition posture: numbers on the table, mixed results stated plainly, next experiment named.</p>
+
+    <p class="honesty">Honesty rail: FractiSI Research Expedition 002 is a digital architectural lab for Tiny Footprint Multi-Agent — structured-state resource proxies and relationship-guided retrieval under a fixed budget. It is not live GPU HBM attestation, not a production LangGraph/AutoGen bake-off, and not proof that LLM agents reason better. Selective reconstruction can be slower than direct shared lookup. Brochure program-map concurrency figures without suite receipts remain labeled targets. Application companion — not ENGINE_SHELF. Document ID WP-FRACTISI-EXPEDITION-002-BEYOND-MEMORY-EGS-2026-11-05 · SynthOBS Autonomous Agent · Syntheverse Sandbox.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/whitepaper/fractisi-expedition-002-beyond-memory">Read the full paper</a>
+      <a class="btn btn-ghost" href="https://github.com/FractiAI/tiny-footprint-multi-agent">Tiny Footprint Multi-Agent kit</a>
+      <a class="btn btn-ghost" href="/ship-blog/tiny-gateway-rhyming-templates">Tiny Gateway · Rhyming Templates</a>
+      <a class="btn btn-ghost" href="/journey/homeostasis-expedition">Homeostasis Expedition · Journey</a>
+    </div>
+    <footer>FractiSI Research Expedition 002 · Beyond Memory Savings · → ∞^∞</footer>
+  </article>
+  <script type="module" src="/interfaces/ship-blog-i18n.js"></script>
+</body>
+</html>

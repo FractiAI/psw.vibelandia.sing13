@@ -1,21 +1,21 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "dateline": {
-    "ymd": "2026-11-06",
-    "weekday": "Friday",
+    "ymd": "2026-11-07",
+    "weekday": "Saturday",
     "month": "November",
-    "day": 6,
-    "label": "Friday, November 6",
-    "shortBoard": "Friday board · November 6 · Puerto Reno",
-    "newsLabel": "News of the day · Friday, November 6"
+    "day": 7,
+    "label": "Saturday, November 7",
+    "shortBoard": "Saturday board · November 7 · Puerto Reno",
+    "newsLabel": "News of the day · Saturday, November 7"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Friday board · November 6 · Puerto Reno",
-  "newsLabel": "News of the day · Friday, November 6",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractisi-multi-agent-platform\">When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?</a>. Also new on the board: <a href=\"/ship-blog/fractisi-expedition-002-beyond-memory\">If Agents Share One World, Can They Discover What Flat Memory Misses?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/tiny-gateway-rhyming-templates\">Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Saturday board · November 7 · Puerto Reno",
+  "newsLabel": "News of the day · Saturday, November 7",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractisi-multi-agent-platform\">When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?</a>. Also new on the board: <a href=\"/ship-blog/fractisi-expedition-002-beyond-memory\">If Agents Share One World, Can They Discover What Flat Memory Misses?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-fractisi-multi-agent-platform-2026-11",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-11-05-synthobs-tiny-gateway-rhyming-templates-2026-11",
-    "title": "Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer?",
-    "href": "/ship-blog/tiny-gateway-rhyming-templates"
+    "id": "daily-2026-11-06-synthobs-fractisi-multi-agent-platform-2026-11",
+    "title": "When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?",
+    "href": "/ship-blog/fractisi-multi-agent-platform"
   },
-  "generatedAt": "2026-11-06T20:49:37.193Z"
+  "generatedAt": "2026-11-07T19:21:41.219Z"
 }

@@ -122,7 +122,7 @@ const modules = [
       'Primes at work in folding and storage, the Y Goldilocks filing with its Fibonacci vault ladder, application companions versus engine pins, Tiny Footprint · Tiny Gateway (ENGINE_SHELF #52) as the memory product of Rhyming Templates, recursive self-improvement and drift as friction, the ERFT falsifiable recursive-fidelity test, the Invisible Frontier second chart, and how to keep learning after the course ends.',
     outcomes: [
       'Distinguish engine pins from application companions (PDVSA gateway, macro-protein work engine, RSI Soft Story, ERFT) and file each correctly.',
-      'File Tiny Footprint / Tiny Gateway #52: Rhyming Templates, Net Zero → ascending octaves gate, GPU lab receipts, and rhyme-KV claim gate (JSON≠KV).',
+      'File Tiny Footprint / Tiny Gateway #52 inside FractiSI Multi-Agent, plus Predictive Shared State (rehearse futures; C+imagine_select measured lift; opt-in).',
       'Name drift as the major friction under self-rewriting tools, and file Φ_EGS as this catalog’s perpetual nesting Soft Story — not a CODATA claim.',
       'State ERFT’s matched five-arm question and that suite pass ≠ Φ win (null OK).',
       'Walk the V₃₄ / V₅₅ Chordata filing and the 89 + 144 = 233 Fibonacci resonance as catalog geometry only.',
@@ -1586,13 +1586,13 @@ const chapters = [
     part: 'Homework: Week 6',
     partId: 'week6',
     number: '6.4c',
-    title: 'Tiny Footprint · Rhyming Templates (#52)',
-    minutes: 20,
-    tagline: 'Memory product · four-pillar rhyme · GPU lab · rhyme-KV claim gate',
+    title: 'FractiSI Multi-Agent · Tiny Footprint · Predictive Futures',
+    minutes: 22,
+    tagline: 'Shared world · rhyme gate · GPU lab · rehearse futures before commit',
     goals: [
-      'File ENGINE_SHELF #52 as Tiny Gateway architecture productized as Tiny Footprint — an engine pin, not a demo-table companion.',
+      'File ENGINE_SHELF #52 as Tiny Gateway / Tiny Footprint inside FractiSI Multi-Agent — engine pin, not a demo-table companion.',
       'State the four-pillar rhyme gate rooted at Net Zero → ascending octaves, and name what fails (brick wall / schema-only / exact-text cache alone).',
-      'Read GPU lab receipts and the organizational rhyme-KV companion at tier: measured cells ≠ JSON fractions; claimableShare stays closed until spliced resume is logit-equivalent.',
+      'Explain Predictive Shared State: real world · proposals · predictions — and recite the measured C vs C+imagine_select result without upgrading it into CapEx.',
     ],
     body: `<p>A household that keeps eight photocopies of the same lease in eight drawers pays for paper it never reads. Modern AI serving often behaves the same way: the same organizational pattern shows up as system prompt, parse, index, embedding, cache, intermediate copy, and KV-style context — rent on duplicated resident state. <strong>Tiny Gateway</strong> is the architecture that treats many of those objects as <strong>rhymes</strong>: distinct expressions of a reusable organization called a <strong>Rhyming Template</strong>. The productized memory layer is named <strong>Tiny Footprint</strong>. This lesson files ENGINE_SHELF <strong>#52</strong> — a load-bearing pin on the wall, not a demo-table companion — and walks the honesty gates that keep CapEx slides from inventing themselves.</p>
 <h3>Rhyming Templates · nested vectors · selective reconstruction</h3>
@@ -1601,9 +1601,13 @@ const chapters = [
 <p>In-process workloads (structured, cross-linked, eight-node, selective octave, AI-context proxy) aggregate to about <strong>84.5%</strong> representation-size reduction with exact reconstruction — clear of the 80% research target. A live Tiny Footprint GPU chat-stack lab on a laptop <strong>NVIDIA GeForce GTX 860M</strong> reports cuMemAlloc ~81.4% cut, nvidia-smi ~72.8%, density ~11.9×, and turn materialization p50 ~11× faster (HtoD materialization, not frontier decode TTFT). Companion meters K/L/M (signature-bucket routing, recursive context-fold hooks, byte-touch joule PROXY) do not gate the pin. GeForce GDDR is the measured silicon; datacenter HBM is the operator analogue for the same duplicated-resident-state problem — not identical hardware.</p>
 <h3>Organizational rhyme-KV · the claim gate</h3>
 <p>When two prompts share nested-story organization but different words, an exact-prefix cache cannot help. A tempting shortcut is to treat a JSON template/delta byte fraction as if it were a KV-cache saving (~36% residency hypothesis on a published H100 profile). That arm stays labelled hypothesis. The organizational rhyme-KV companion (E16 / T) instead meters matching attention cells from real tensors (~14.6% on distilgpt2 → ~13.7% vs naïve). Blind full-cache reuse changes logits. Serving may advertise the residency saving only when spliced-cache resume stays logit-equivalent — and on the published fixture <code>claimableShare</code> stays <strong>false</strong>. JSON ≠ KV. No CapEx or AWS dollar claim rides that hypothesis arm.</p>
+<h3>Predictive Shared State · rehearse before you change the world</h3>
+<p>FractiSI Multi-Agent’s next research upgrade keeps three boxes separate. <strong>The real world</strong> is what is actually true. <strong>Proposals</strong> are what an agent wants to change. <strong>Predictions</strong> are practice runs — “what if we did this?” A prediction cannot overwrite the real world unless someone approves it. That is the whole honesty move of the World Model Assimilation initiative: metabolize useful ideas from open world-model research (Dreamer-style imagination, V-JEPA-style planning) without wrapping giant video models into the product core, and without LingBot-World v2’s non-commercial license.</p>
+<p>On the same comparative multi-agent workloads FractiSI already uses, at 1 / 4 / 16 / 32 / 100 agents: when imagination ran <em>after</em> the usual conflict gate, useful work matched today’s FractiSI exactly (safe, no lift). When imagination <em>chose who goes first</em> (C+imagine_select), fleets finished more useful work — about <strong>+1.4</strong> tasks at 32 agents and <strong>+3.6</strong> at 100 — and never fell more than 5% behind. Shared-world packing still crushed N full copies (~99% less at 100 agents). Imagination costs memory too, so it stays on-demand and opt-in.</p>
+<p>Product door for the live peek: <a href="https://fractisi.vercel.app/test-drive/">fractisi.vercel.app/test-drive/</a> (beat <code>#futures</code>). Research docs: kit <code>docs/research/world-model-assimilation/</code>.</p>
 <aside class="honesty-rail"><strong>Honesty.</strong> ENGINE_SHELF #52 with in-process + GTX 860M receipts. Not automatic CapEx −80%. Not hosted frontier API bake-off. Not HBM silicon identity. Rhyme-KV claimableShare closed until logit-equivalent spliced resume. Φ_EGS design grammar only.</aside>
 <div class="worked-example">
-<p>Sort four claims. (1) “Aggregate 84.5% in-process with exact reconstruction met the 80% gate.” File: <strong>in-suite empirical</strong> — pin-relevant, still not a datacenter CapEx guarantee. (2) “JSON shared-org fraction ≈34% means H100 KV memory falls 34%.” File: <strong>reject as KV claim</strong> — JSON hypothesis arm; tensor meter is ~14.6% cells and claim gate closed. (3) “Schema match alone is a holographic rhyme.” File: <strong>reject</strong> — Net Zero → ascending octaves four-pillar gate required. (4) “Open /tiny-footprint for the product brochure and the workstation kit.” File: <strong>fair product door</strong> — brochure, download, and validation paths are the edge experience of this pin.</p>
+<p>Sort five claims. (1) “Aggregate 84.5% in-process with exact reconstruction met the 80% gate.” File: <strong>in-suite empirical</strong> — pin-relevant, still not a datacenter CapEx guarantee. (2) “JSON shared-org fraction ≈34% means H100 KV memory falls 34%.” File: <strong>reject as KV claim</strong> — JSON hypothesis arm; tensor meter is ~14.6% cells and claim gate closed. (3) “Schema match alone is a holographic rhyme.” File: <strong>reject</strong> — Net Zero → ascending octaves four-pillar gate required. (4) “Open /tiny-footprint for the product brochure and the workstation kit.” File: <strong>fair product door</strong> — brochure, download, and validation paths are the edge experience of this pin. (5) “C+imagine_select finished +3.6 more useful tasks at 100 agents, so FractiSI replaced coordination with Cosmos.” File: <strong>reject the upgrade</strong> — measured in-process lift on predictive selection; opt-in research; not a WFM wrap and not a CapEx certificate.</p>
 </div>
 <div class="misconception">
 <p><strong>The mix-up:</strong> “Tiny Footprint is another application companion demo — or a promise that buying less HBM is already proven from JSON fractions.”</p>
@@ -1614,6 +1618,7 @@ const chapters = [
 <dt>Tiny Footprint</dt><dd>Productized memory layer: keep the pattern once, store deltas/state, reconstruct the working set — brochure at <a href="/tiny-footprint">/tiny-footprint</a>.</dd>
 <dt>Net Zero → ascending octaves gate</dt><dd>Four-pillar rhyme must root at octave 0 and nest upward; schema-only / mid-octave leaf / exact-text cache are contrast cases.</dd>
 <dt>claimableShare</dt><dd>Serving may claim rhyme-KV residency savings only when spliced-cache resume is logit-equivalent — false on the published distilgpt2 fixture.</dd>
+<dt>Predictive Shared State</dt><dd>Authoritative world · agent proposals · predicted futures kept separate; measured C+imagine_select lift at fleet scale; opt-in, not a WFM wrap.</dd>
 </dl></div>`,
     check: [
       {

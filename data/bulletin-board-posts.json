@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "posts": [
+    {
+      "id": "daily-2026-11-08-synthobs-fractisi-multi-agent-platform-2026-11",
+      "posted": "2026-11-08",
+      "featured": true,
+      "title": "When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?",
+      "subtitle": "News of the day · Sunday, November 8",
+      "summary": "FractiSI Multi-Agent: Tiny Footprint stays the execution core; coordination, composition, Git awareness, and deploy approvals install beside Cursor/Claude/VS Code — not ENGINE_SHELF.",
+      "href": "/ship-blog/fractisi-multi-agent-platform",
+      "pill": "TODAY",
+      "docRef": "synthobs-fractisi-multi-agent-platform-2026-11",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-11-07-synthobs-fractisi-multi-agent-platform-2026-11",
       "posted": "2026-11-07",

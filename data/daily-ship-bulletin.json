@@ -1,20 +1,20 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "dateline": {
-    "ymd": "2026-11-09",
-    "weekday": "Monday",
+    "ymd": "2026-11-10",
+    "weekday": "Tuesday",
     "month": "November",
-    "day": 9,
-    "label": "Monday, November 9",
-    "shortBoard": "Monday board · November 9 · Puerto Reno",
-    "newsLabel": "News of the day · Monday, November 9"
+    "day": 10,
+    "label": "Tuesday, November 10",
+    "shortBoard": "Tuesday board · November 10 · Puerto Reno",
+    "newsLabel": "News of the day · Tuesday, November 10"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Monday board · November 9 · Puerto Reno",
-  "newsLabel": "News of the day · Monday, November 9",
+  "cloudBadge": "Tuesday board · November 10 · Puerto Reno",
+  "newsLabel": "News of the day · Tuesday, November 10",
   "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractisi-multi-agent-platform\">When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?</a>. Also new on the board: <a href=\"/ship-blog/fractisi-expedition-002-beyond-memory\">If Agents Share One World, Can They Discover What Flat Memory Misses?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-11-08-synthobs-fractisi-multi-agent-platform-2026-11",
+    "id": "daily-2026-11-09-synthobs-fractisi-multi-agent-platform-2026-11",
     "title": "When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?",
     "href": "/ship-blog/fractisi-multi-agent-platform"
   },
-  "generatedAt": "2026-11-09T23:45:32.019Z"
+  "generatedAt": "2026-11-10T21:15:45.224Z"
 }

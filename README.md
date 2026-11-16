@@ -395,7 +395,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-net-zero-periodic-table-2026-10.html`](/interfaces/blog-net-zero-periodic-table-2026-10.html) | Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine Digits, Ninety-Nine Octaves — Walk It · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nspfrnp-snap-peer-review-audit.html`](/interfaces/blog-nspfrnp-snap-peer-review-audit.html) | Peer Review Snap — Keep Claims Honest · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-nvidia-goldilocks-moment-2026-11.html`](/interfaces/blog-nvidia-goldilocks-moment-2026-11.html) | Upgrade the World Model, Not the Org Chart · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-nvidia-goldilocks-moment-2026-11.html`](/interfaces/blog-nvidia-goldilocks-moment-2026-11.html) | What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-official-prospectus-2026-08.html`](/interfaces/blog-official-prospectus-2026-08.html) | The Voyage Begins — Captain’s Seat Open · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-goldilocks-rideshare.html`](/interfaces/blog-omniversal-goldilocks-rideshare.html) | Goldilocks Rideshare for the Voyage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-nested-agent-lattice.html`](/interfaces/blog-omniversal-nested-agent-lattice.html) | How Nested Agents Actually Work · Ship blog · SS Vibelandia |

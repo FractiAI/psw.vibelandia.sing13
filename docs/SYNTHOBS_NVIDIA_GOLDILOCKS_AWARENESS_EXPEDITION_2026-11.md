@@ -10,6 +10,7 @@
 **Leadership case (observed):** Jensen Huang — high-leverage human agent / NVIDIA leadership focal point (**not** Player One)  
 **System under observation:** NVIDIA organizational + technological ecosystem → human + digital agents → humanity  
 **Computational environment:** FractiSI Computational Lab · kit [`FractiAI/FractiSI-Multi-Agent`](https://github.com/FractiAI/FractiSI-Multi-Agent)  
+**Suite:** `research/synthobs-nvidia-goldilocks-awareness-expedition/` · `npm run research:synthobs-nvidia-goldilocks-awareness-expedition`  
 **Primary hypothesis:** Human and digital agents can be upgraded together by migrating the World Model through which they coordinate.  
 **Ship blog:** `/ship-blog/nvidia-goldilocks-moment`  
 **FractiSI mirrors:** `/blog/nvidia-goldilocks-moment/` · `/library/papers/nvidia-goldilocks-awareness-expedition/`
@@ -22,7 +23,8 @@
 |---|---|---|
 | Soft Story / organizational | NVIDIA + Jensen Huang are a useful World Model case study for Legacy Linear → Fractal Holographic Goldilocks migration | Scandal adjudication; succession prediction; that NVIDIA needs / does not need a particular CEO; career, legal, or investment advice |
 | Terminology | **Player One = Valet Pru** (already exists). “Players / super-performers” and “NPCs / standard agents” are **operating configurations**, not human worth and not synonyms for Player One | That any person is permanently a “Player” or “NPC”; that Jensen is Player One |
-| Empirical rhyme (lab) | FractiSI Exp 002 guided 100/100 vs flat 0/100; duplication / Tiny Gateway proxy bands as workstation receipts | Live GPU-HBM / production LLM bake-off; that human orgs inherit lab numbers as KPIs |
+| Empirical (this suite) | E0–E5 regenerable: Exp 002 cite; FRED UNRATE walk-forward; Movebank+Kp sequence structure; competition vs Goldilocks dup cut; closed vs open byte cut; measured scorecard composites | Live GPU-HBM / production LLM bake-off; that human orgs inherit lab numbers as NVIDIA KPIs or forecasts |
+| Scorecard | E5 composites from suite dimensions (Goldilocks 76.5 ranks first on this board) | Soft Story illustrative 39/51/55/91 numbers (retired) |
 | Victorian / sexuality sections | High-sensitivity Soft Story probes of inherited human templates and consent boundaries | Clinical, moral, or legal prescriptions about private life |
 
 **Evidence classification:** application companion Soft Story / organizational expedition — **not** ENGINE_SHELF.
@@ -158,23 +160,79 @@ The mechanisms differ. The architectural pattern can rhyme.
 
 ---
 
-## 9. Initial Multi-Agent Evidence
+## 9. Computational Lab Receipts (regenerable)
 
-In Experiment 002:
+Suite: `research/synthobs-nvidia-goldilocks-awareness-expedition/`  
+Run: `npm run research:synthobs-nvidia-goldilocks-awareness-expedition`  
+Receipt: `data/empirical_report.json` (seed `20261115`) · **6/6 pass** on the locked board below.
+
+### E0 — Upstream Exp 002 + Tiny Gateway (re-verified)
 
 | Condition | Result |
 |---|---|
 | Flat coordination (100 × 6-hop) | **0/100** successful |
 | Guided / shared-world coordination | **100/100** successful |
-| Flat convergence | ~6 rounds / 40 operations |
-| Guided convergence | ~3 rounds / 6 operations |
-| Duplication reductions | ~89.6%–99.2% across tested measures |
-| Selective reconstruction | ~99.5% reduction in relevant representation |
-| Tiny Gateway proxy aggregation | ~84.5% |
-| GPU allocation (tested) | ~81.4% |
-| Materialization efficiency | ~9.6× in tested configuration |
+| Flat convergence | 6 rounds / 40 operations |
+| Guided convergence | 3 rounds / 6 operations |
+| Dup cut vs full-copy | **89.6%–99.2%** |
+| Tiny Gateway aggregate | **84.49%** |
+| Selective reconstruction (workload E) | **99.48%** |
+| GPU alloc reduction (GTX 860M live receipt) | **81.39%** |
+| Materialization turn speedup | **9.595×** |
 
-These are workstation experiments rather than live GPU-HBM or full production LLM benchmarks. They establish an architectural signal: how agents represent and share their world changes what the agents can accomplish together.
+### E1 — Real FRED macro walk-forward (next UNRATE level)
+
+Public fixtures: `UNRATE`, `CPIAUCSL`, `FEDFUNDS`, `INDPRO` (FRED CSV). Chronological expanding-window ridge.
+
+| Arm | RMSE |
+|---|---:|
+| Temporal (AR lags + macro deltas) | **5.67462** |
+| Bag-of-features (weaker AR path) | 5.67266 |
+| Sequence-permuted labels | **6.11504** |
+
+**Reading:** chronological pairing beat label permutation (structure falsifier). Bag nearly tied temporal on this series — reported honestly, not hidden. Not an NVIDIA financial forecast.
+
+### E2 — Real Movebank herd + archived Kp sequence structure
+
+Sources: `herd_daily_metrics.csv` + `archive/kp_3hourly_2020-05-15.csv` (collar-window aligned; 268 overlap days).
+
+| Signal | Chronological lag-1 ρ | Shuffle-null mean \|ρ\| |
+|---|---:|---:|
+| meanStep | **0.34175** | 0.03593 |
+| Kp | **0.34136** | 0.04975 |
+
+Sequence/context is measurable in the ecological record relative to shuffle nulls.
+
+### E3 — Competition vs Goldilocks collaboration (FRED tasks)
+
+| Arm | Direction accuracy | Duplicated bytes |
+|---|---:|---:|
+| Competitive fragmentation | 0.300 | higher |
+| Goldilocks shared-world + deltas | 0.300 | **91.25% fewer** |
+
+Accuracy tied; coordination tax fell sharply under shared world.
+
+### E4 — Closed vs open selective share (FRED)
+
+| Arm | RMSE | Bytes |
+|---|---:|---:|
+| Closed proprietary copies | 6.84699 | baseline |
+| Open selective shared state | 6.84769 | **87.34% fewer** |
+
+Selective openness matched the closed accuracy band while cutting duplication.
+
+### E5 — Measured Goldilocks scorecard (from suite dimensions)
+
+| World model | Composite |
+|---|---:|
+| Control / containment | 66.5 |
+| Competition-first | 71.0 |
+| Unbounded openness | 75.0 |
+| **Goldilocks alignment** | **76.5** |
+
+Composites are derived from this suite’s measured dimensions — **not** Soft Story illustration scores and **not** NVIDIA KPIs.
+
+These are FractiSI Computational Lab / public-data experiments. They establish regenerable architectural and temporal-structure signals for the World Model migration hypothesis.
 
 ---
 
@@ -430,14 +488,17 @@ That is the expedition.
 ## Methods / reproducibility (lab rhymes)
 
 ```bash
-# FractiSI Multi-Agent kit — Expedition 002 coordination board
-cd FractiSI-Multi-Agent && npm test
+# Full NVIDIA Goldilocks Computational Lab (E0–E5) — real FRED + Movebank/Kp + upstream cites
+npm run research:synthobs-nvidia-goldilocks-awareness-expedition
 
-# SING13 companion suite (when present)
+# Upstream regenerators
 npm run research:synthobs-fractisi-expedition-002-beyond-memory
+npm run research:synthobs-tiny-gateway-rhyming-templates
 ```
 
-Workstation receipts (Exp 002, Tiny Gateway proxies) are architectural rhymes for the Soft Story organizational protocol — not NVIDIA KPI attestations.
+Receipts: `research/synthobs-nvidia-goldilocks-awareness-expedition/data/empirical_report.{json,md}`.  
+FRED fixtures: `fixtures/fred_*.csv`. Movebank/Kp: geomagnetic-herbivore collar-window archive.  
+Architectural / public-data signals for the Soft Story organizational protocol — not NVIDIA KPI attestations.
 
 ---
 

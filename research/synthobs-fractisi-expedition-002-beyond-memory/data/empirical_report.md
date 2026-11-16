@@ -4,7 +4,7 @@
 **Registry ID:** `synthobs-fractisi-expedition-002-beyond-memory-2026-11`
 **Expedition:** FractiSI Research Expedition 2 · Beyond Memory Savings
 **Seed:** 20261105
-**Generated:** 2026-11-06T09:32:47.454Z
+**Generated:** 2026-11-16T07:21:30.654Z
 **Product kit:** FractiAI/FractiSI-Multi-Agent
 
 ## Verdict
@@ -15,8 +15,8 @@
 ## E1 · Resource microbench
 
 | Dup cut vs full-copy (min–max) | 89.6% – 99.2% |
-| Speedup vs full-copy (min–max) | 36.91× – 62.41× |
-| Selective vs conventional slowdown | -4.7% – 41.4% |
+| Speedup vs full-copy (min–max) | 50.54× – 76.50× |
+| Selective vs conventional slowdown | -6.7% – 42.5% |
 
 ## E2 · Discovery / collective
 

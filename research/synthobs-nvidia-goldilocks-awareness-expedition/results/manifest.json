@@ -1,0 +1,19 @@
+{
+  "docId": "WP-NVIDIA-GOLDILOCKS-AWARENESS-EXPEDITION-EGS-2026-11-15",
+  "registryId": "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
+  "all_pass": true,
+  "n_pass": 6,
+  "n_total": 6,
+  "generatedAt": "2026-11-16T07:25:39.161Z",
+  "e1": {
+    "temporal": 5.67462,
+    "bagOfFeatures": 5.67266,
+    "sequencePermuted": 6.11504
+  },
+  "e5": {
+    "controlContainment": 66.5,
+    "competitionFirst": 71,
+    "unboundedOpenness": 75,
+    "goldilocksAlignment": 76.5
+  }
+}

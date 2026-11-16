@@ -29,3 +29,9 @@ The original E8 multi-agent harness used 3 roles × 2 rounds × 3 arms ≈ **18 
 ## Honesty
 
 Lean E8 still tests “higher awareness → smarter decisions with matched facts.” It no longer tests *multi-agent organizational* coordination inside an arm — only the awareness board vs flat vs fragmented facts for a single agent. Multi-agent receipts from the partial original run remain archival under `data/e8/` and are **not** mixed into lean scoring (`data/e8_lean/`).
+
+## TPD exhaustion addendum (written before substitute-model lean rows)
+
+Primary Groq models (`gpt-oss-20b/120b`, `qwen3.8-27b`) had already consumed ~200k tokens/day from earlier E7/E8 multi-agent burns. Lean still could not finish those model IDs today.
+
+**Allowed substitutes for the same lean protocol (declared before first row):** any remaining Groq chat model with unused TPD, plus the local Qwen2.5-1.5B run. First substitutes: `allam-2-7b` (hosted) and continued `Qwen/Qwen2.5-1.5B-Instruct` (local). Optional second hosted: `openai/gpt-oss-safeguard-20b` if it follows COMMIT/SOLUTION tags. Decision rule unchanged; report each model separately.

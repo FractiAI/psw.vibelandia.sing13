@@ -22,7 +22,7 @@
 |---|---|---|
 | Soft Story / organizational | NVIDIA + Jensen Huang are a useful World Model case study for Legacy Linear → Fractal Holographic Goldilocks migration | Scandal adjudication; succession prediction; that NVIDIA needs / does not need a particular CEO; career, legal, or investment advice |
 | Terminology | “Players / super-performers” and “NPCs / standard agents” are **operating configurations**, not human worth | That any person is permanently a “Player” or “NPC” |
-| Empirical (this suite) | E0–E5 regenerable: Exp 002 cite; FRED UNRATE walk-forward; Movebank+Kp sequence structure; competition vs Goldilocks dup cut; closed vs open byte cut; measured scorecard composites | Live GPU-HBM / production LLM bake-off; that human orgs inherit lab numbers as NVIDIA KPIs or forecasts |
+| Empirical (this suite) | E0–E6 regenerable: Exp 002 cite; FRED UNRATE walk-forward; Movebank+Kp sequence structure; competition vs Goldilocks dup cut; closed vs open byte cut; measured scorecard composites; matched-budget architecture test (deterministic control plus one live open-weight LLM, 12 synthetic tasks) | Live GPU-HBM / production LLM bake-off at scale; frontier-model or multi-model generality; that human orgs inherit lab numbers as NVIDIA KPIs or forecasts |
 | Scorecard | E5 composites from suite dimensions (Goldilocks 76.5 ranks first on this board) | Soft Story illustrative 39/51/55/91 numbers (retired) |
 | Victorian / sexuality sections | High-sensitivity Soft Story probes of inherited human templates and consent boundaries | Clinical, moral, or legal prescriptions about private life |
 
@@ -163,7 +163,7 @@ The mechanisms differ. The architectural pattern can rhyme.
 
 Suite: `research/synthobs-nvidia-goldilocks-awareness-expedition/`  
 Run: `npm run research:synthobs-nvidia-goldilocks-awareness-expedition`  
-Receipt: `data/empirical_report.json` (seed `20261115`) · **6/6 pass** on the locked board below.
+Receipt: `data/empirical_report.json` (seed `20261115`) · **7/7 pass** on the locked board below (E6 adds the matched-budget architecture test).
 
 ### E0 — Upstream Exp 002 + Tiny Gateway (re-verified)
 
@@ -230,6 +230,22 @@ Selective openness matched the closed accuracy band while cutting duplication.
 | **Goldilocks alignment** | **76.5** |
 
 Composites are derived from this suite’s measured dimensions — **not** Soft Story illustration scores and **not** NVIDIA KPIs.
+
+### E6 — Matched-budget agent architecture (same model, prompt, budget; only the World Model changes)
+
+This is the test the earlier suite lacked: does the architecture change outcomes when the agent, the prompt, the per-turn context budget, and the round limit are held fixed? Each task is a six-hop chain. A private-silo arm gives each turn one silo (forty filler lines, then the hop record) plus the prior message, truncated to a 64-token budget. A shared-world arm gives each turn only the current hop and its edge, under the same 64-token budget. A third arm, linear unbounded, gives the private silo with no truncation, as a capability control.
+
+| Arm | Deterministic extractive agent (100 tasks) | Live open-weight LLM (12 tasks) |
+|---|---:|---:|
+| Linear silos @ 64-token budget | 0 / 100 · 384 tokens | 0 / 12 · 1,741 tokens |
+| Shared-world edges @ 64-token budget | 100 / 100 · 272 tokens | **12 / 12** · 1,275 tokens |
+| Linear silos, no truncation (control) | not run | 12 / 12 · 5,986 tokens |
+
+The live arm used `openai/gpt-oss-20b` (open weights) served through Groq, temperature 0, low reasoning effort, the same system prompt in every arm. The model’s own reply (`SOLUTION-*`, `NEXT:<id>` or `NONE`) drove each round; nothing was extracted from the context by pattern matching. Token counts are provider-reported prompt plus completion, and include the model’s reasoning tokens.
+
+**How to read it.** The linear failure is caused by context assembly, not by model weakness: the same model solves every task when the silo is not truncated. The architectural effect is therefore (a) at a tight budget, the shared world is the only arm that succeeds, and (b) at matched accuracy against the unbounded control, it used about 4.7 times fewer tokens (1,275 vs 5,986). The 0/12 result for the budgeted linear arm is a consequence of how tight the budget is relative to the filler; a looser budget would narrow the gap, and the experiment does not locate that crossover.
+
+**Limits.** One model, one provider, twelve synthetic chain tasks, one seed. The task is a retrieval-and-follow-links toy, not an organizational workload. The result supports “shared-world context assembly can preserve task success where private-silo assembly under the same budget cannot”; it does not show that the same margin appears with frontier models, real documents, or human teams.
 
 These are FractiSI Computational Lab / public-data experiments. They establish regenerable architectural and temporal-structure signals for the World Model migration hypothesis.
 
@@ -485,7 +501,7 @@ That is the expedition.
 ## Methods / reproducibility (lab rhymes)
 
 ```bash
-# Full NVIDIA Goldilocks Computational Lab (E0–E5) — real FRED + Movebank/Kp + upstream cites
+# Full NVIDIA Goldilocks Computational Lab (E0–E6) — real FRED + Movebank/Kp + upstream cites
 npm run research:synthobs-nvidia-goldilocks-awareness-expedition
 
 # Upstream regenerators

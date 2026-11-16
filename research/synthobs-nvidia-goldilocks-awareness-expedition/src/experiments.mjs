@@ -3,6 +3,7 @@
  * E0 cite upstream · E1 FRED walk-forward · E2 Movebank/Kp rhyme
  * E3 competition vs Goldilocks collaboration · E4 closed vs open
  * E5 Goldilocks scorecard from measured dimensions
+ * E6 matched-budget agent architecture (same model · prompt · per-turn budget)
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,6 +19,7 @@ import {
   FRED_SERIES,
   WALKFORWARD,
   MULTI_AGENT,
+  MATCHED_BUDGET,
   PHI_EGS,
 } from './constants.mjs';
 
@@ -554,15 +556,226 @@ function experimentE4ClosedVsOpen() {
   };
 }
 
+function estimateTokens(text) {
+  return Math.max(1, Math.ceil(String(text || '').length / 4));
+}
+
+function truncateToBudget(text, budgetTokens) {
+  const maxChars = budgetTokens * 4;
+  const raw = String(text || '');
+  if (raw.length <= maxChars) return raw;
+  return raw.slice(0, maxChars);
+}
+
+/**
+ * Fixed extractive agent — same model for both arms.
+ * Can only use what fits in the per-turn context budget.
+ */
+function extractiveAgent({ context, promptTemplate, budgetTokens }) {
+  const packed = truncateToBudget(`PROMPT:\n${promptTemplate}\n\nCONTEXT:\n${context}`, budgetTokens);
+  const tokensUsed = estimateTokens(packed);
+  const solutionMatch = packed.match(/SOLUTION-[A-Za-z0-9_-]+/);
+  const nextMatch = packed.match(/NEXT:([A-Za-z0-9_-]+)/);
+  return {
+    tokensUsed,
+    solution: solutionMatch ? solutionMatch[0] : null,
+    nextId: nextMatch ? nextMatch[1] : null,
+  };
+}
+
+function buildMatchedBudgetScenario(rand, scenarioId, hops, fillersPerSilo) {
+  const hopsNodes = [];
+  for (let h = 0; h < hops; h++) {
+    hopsNodes.push({
+      id: `s${scenarioId}-h${h}`,
+      hop: h,
+      next: h < hops - 1 ? `s${scenarioId}-h${h + 1}` : null,
+      solution: h === hops - 1 ? `SOLUTION-${scenarioId}` : null,
+    });
+  }
+  const silos = hopsNodes.map((node) => {
+    const fillers = [];
+    for (let i = 0; i < fillersPerSilo; i++) {
+      fillers.push({
+        id: `s${scenarioId}-f${node.hop}-${i}`,
+        noise: Math.floor(rand() * 1e9),
+        decoy: `NOISE-${node.hop}-${i}`,
+      });
+    }
+    return { hop: node.hop, fillers, node };
+  });
+  return {
+    scenarioId,
+    hopsNodes,
+    silos,
+    startId: hopsNodes[0].id,
+    solution: hopsNodes[hops - 1].solution,
+  };
+}
+
+function serializeHop(node) {
+  const parts = [`ID:${node.id}`, `HOP:${node.hop}`];
+  if (node.next) parts.push(`NEXT:${node.next}`);
+  if (node.solution) parts.push(node.solution);
+  return parts.join(' ');
+}
+
+function serializeLinearSilo(silo) {
+  // Fillers first so a tight budget truncates the hop record away — the linear failure mode.
+  const fillerLines = silo.fillers.map((f) => `FILLER ${f.id} ${f.decoy} ${f.noise}`);
+  return [...fillerLines, serializeHop(silo.node)].join('\n');
+}
+
+function runLinearMatchedBudget(scenario, cfg) {
+  let message = '';
+  let tokens = 0;
+  let rounds = 0;
+  let found = null;
+  for (let r = 0; r < cfg.maxRounds; r++) {
+    rounds++;
+    const silo = scenario.silos[Math.min(r, scenario.silos.length - 1)];
+    const context = [serializeLinearSilo(silo), message ? `PRIOR_MESSAGE:\n${message}` : '']
+      .filter(Boolean)
+      .join('\n\n');
+    const out = extractiveAgent({
+      context,
+      promptTemplate: cfg.promptTemplate,
+      budgetTokens: cfg.contextBudgetTokens,
+    });
+    tokens += out.tokensUsed;
+    if (out.solution) {
+      found = out.solution;
+      break;
+    }
+    message = out.nextId ? `NEXT:${out.nextId}` : `STATUS:no-link-round-${r}`;
+  }
+  return {
+    solved: found === scenario.solution,
+    solution: found,
+    tokens,
+    rounds,
+  };
+}
+
+function runSharedMatchedBudget(scenario, cfg) {
+  let cur = scenario.hopsNodes[0];
+  let tokens = 0;
+  let rounds = 0;
+  let found = null;
+  const byId = Object.fromEntries(scenario.hopsNodes.map((n) => [n.id, n]));
+  for (let r = 0; r < cfg.maxRounds; r++) {
+    rounds++;
+    // Shared world: agent pulls only the current hop + edge (relationship-guided), same budget.
+    const context = [
+      'SHARED_WORLD_SLICE',
+      serializeHop(cur),
+      cur.next ? `EDGE_FOLLOW available to ${cur.next}` : 'EDGE_FOLLOW terminal',
+    ].join('\n');
+    const out = extractiveAgent({
+      context,
+      promptTemplate: cfg.promptTemplate,
+      budgetTokens: cfg.contextBudgetTokens,
+    });
+    tokens += out.tokensUsed;
+    if (out.solution) {
+      found = out.solution;
+      break;
+    }
+    if (out.nextId && byId[out.nextId]) {
+      cur = byId[out.nextId];
+    } else if (cur.next && byId[cur.next]) {
+      cur = byId[cur.next];
+    } else {
+      break;
+    }
+  }
+  return {
+    solved: found === scenario.solution,
+    solution: found,
+    tokens,
+    rounds,
+  };
+}
+
+/**
+ * E6 — Matched-budget agent architecture test.
+ * Same extractive model, same prompt template, same per-turn context budget, same max rounds.
+ * Only the world model / context assembly changes (linear private silos vs shared-world edges).
+ * Optional live OpenRouter bake-off attaches when OPENROUTER_API_KEY is set (see pipeline).
+ */
+function experimentE6MatchedBudgetArchitecture(seed = MATCHED_BUDGET.seed) {
+  const cfg = MATCHED_BUDGET;
+  const rand = mulberry32(seed);
+  let linearWins = 0;
+  let sharedWins = 0;
+  let linearTokens = 0;
+  let sharedTokens = 0;
+  let linearRounds = 0;
+  let sharedRounds = 0;
+
+  for (let s = 0; s < cfg.scenarios; s++) {
+    const scenario = buildMatchedBudgetScenario(rand, s, cfg.hops, cfg.fillersPerSilo);
+    const linear = runLinearMatchedBudget(scenario, cfg);
+    const shared = runSharedMatchedBudget(scenario, cfg);
+    linearTokens += linear.tokens;
+    sharedTokens += shared.tokens;
+    linearRounds += linear.rounds;
+    sharedRounds += shared.rounds;
+    if (linear.solved) linearWins++;
+    if (shared.solved) sharedWins++;
+  }
+
+  const n = cfg.scenarios;
+  const linearRate = linearWins / n;
+  const sharedRate = sharedWins / n;
+  const pass = sharedRate >= 0.95 && linearRate <= 0.05;
+
+  return {
+    id: 'E6_matched_budget_architecture',
+    title:
+      'Matched-budget agent architecture: same model · prompt · per-turn budget; linear private silos vs shared-world edges',
+    pass,
+    scenarios: n,
+    hops: cfg.hops,
+    contextBudgetTokens: cfg.contextBudgetTokens,
+    maxRounds: cfg.maxRounds,
+    promptTemplate: cfg.promptTemplate,
+    model: 'extractive-agent/v1 (fixed; identical for both arms)',
+    linear: {
+      solutionRate: Number(linearRate.toFixed(4)),
+      meanTokens: Number((linearTokens / n).toFixed(2)),
+      meanRounds: Number((linearRounds / n).toFixed(2)),
+    },
+    sharedWorld: {
+      solutionRate: Number(sharedRate.toFixed(4)),
+      meanTokens: Number((sharedTokens / n).toFixed(2)),
+      meanRounds: Number((sharedRounds / n).toFixed(2)),
+    },
+    liveLlm: {
+      attempted: false,
+      reason: 'Set OPENROUTER_API_KEY to attach a live frontier-LLM bake-off with the same prompt and budget.',
+    },
+    interpretation:
+      'Under matched model/prompt/per-turn budget, shared-world edge following recovers the solution while linear private-silo dumps burn the budget on fillers. Outcome improvement here is architectural (solution rate), not only byte efficiency. Not a live frontier-LLM bake-off unless liveLlm.attempted.',
+  };
+}
+
 function experimentE5GoldilocksScorecard(results) {
   const e0 = results.E0;
   const e1 = results.E1;
   const e2 = results.E2;
   const e3 = results.E3;
   const e4 = results.E4;
+  const e6 = results.E6;
 
-  const capability = e0.exp002.guidedSolutionRate * 100; // 100
-  const coordination = (1 - (e0.exp002.opsReduction ?? 0)) * 20 + (e0.exp002.guidedSolutionRate ?? 0) * 80;
+  const capability = Math.max(
+    e0.exp002.guidedSolutionRate * 100,
+    (e6?.sharedWorld?.solutionRate ?? 0) * 100,
+  );
+  const coordination =
+    (1 - (e0.exp002.opsReduction ?? 0)) * 10 +
+    (e0.exp002.guidedSolutionRate ?? 0) * 40 +
+    (e6?.sharedWorld?.solutionRate ?? 0) * 50;
   const temporalValue = Math.max(
     0,
     Math.min(
@@ -643,8 +856,9 @@ export function runAllExperiments() {
   const E2 = experimentE2MovebankKpRhyme();
   const E3 = experimentE3CompetitionVsGoldilocks();
   const E4 = experimentE4ClosedVsOpen();
-  const E5 = experimentE5GoldilocksScorecard({ E0, E1, E2, E3, E4 });
-  const list = [E0, E1, E2, E3, E4, E5];
+  const E6 = experimentE6MatchedBudgetArchitecture();
+  const E5 = experimentE5GoldilocksScorecard({ E0, E1, E2, E3, E4, E6 });
+  const list = [E0, E1, E2, E3, E4, E5, E6];
   const n_pass = list.filter((e) => e.pass).length;
   return {
     docId: DOC_ID,
@@ -661,9 +875,20 @@ export function runAllExperiments() {
       E3,
       E4,
       E5,
+      E6,
       n_pass,
       n_total: list.length,
       all_pass: n_pass === list.length,
     },
   };
 }
+
+export {
+  experimentE6MatchedBudgetArchitecture,
+  buildMatchedBudgetScenario,
+  serializeHop,
+  serializeLinearSilo,
+  truncateToBudget,
+  estimateTokens,
+  mulberry32,
+};

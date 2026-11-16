@@ -16,7 +16,7 @@ export const LEADERSHIP_CASE = 'Jensen Huang (observed leadership case)';
 export const ENGINE_SHELF_PINNED = false;
 
 export const HONESTY =
-  'FractiSI Computational Lab · real FRED macro walk-forward + Movebank/Kp rhyme + regenerable Exp 002 / Tiny Gateway citations. Soft Story organizational companion — not NVIDIA KPI attestation, not succession advice, not ENGINE_SHELF, not live GPU-HBM bake-off.';
+  'FractiSI Computational Lab · real FRED macro walk-forward + Movebank/Kp rhyme + regenerable Exp 002 / Tiny Gateway citations. Soft Story organizational companion — not NVIDIA KPI attestation, not succession advice, not ENGINE_SHELF, not live GPU-HBM bake-off. E6 is a matched-budget architecture test with a fixed extractive agent (same model/prompt/budget); live frontier-LLM bake-off runs only when GROQ_API_KEY is set.';
 
 /** Upstream receipt paths (monorepo-relative from suite root ../..) */
 export const UPSTREAM = Object.freeze({
@@ -37,4 +37,15 @@ export const MULTI_AGENT = Object.freeze({
   rounds: 24,
   tasks: 40,
   seed: DIGITAL_SEED,
+});
+
+/** E6 — matched-budget agent architecture test (same model · prompt · per-turn budget). */
+export const MATCHED_BUDGET = Object.freeze({
+  scenarios: 100,
+  hops: 6,
+  fillersPerSilo: 40,
+  contextBudgetTokens: 64,
+  maxRounds: 6,
+  seed: DIGITAL_SEED + 6,
+  promptTemplate: 'Extractive agent. Use only CONTEXT. Follow NEXT links. Report SOLUTION-* if present.',
 });

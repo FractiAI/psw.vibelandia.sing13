@@ -13,6 +13,7 @@
 | E3 | Competition vs Goldilocks shared-world collaboration |
 | E4 | Closed proprietary copies vs open selective share |
 | E5 | Goldilocks scorecard composites from measured dimensions |
+| E6 | Matched-budget agent architecture (same model/prompt/budget; linear vs shared-world; deterministic control + live open-weight LLM via Groq when `GROQ_API_KEY` is set) |
 
 ## Run
 

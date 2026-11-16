@@ -2,18 +2,28 @@
   "docId": "WP-NVIDIA-GOLDILOCKS-AWARENESS-EXPEDITION-EGS-2026-11-15",
   "registryId": "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
   "all_pass": true,
-  "n_pass": 6,
-  "n_total": 6,
-  "generatedAt": "2026-11-16T17:51:49.263Z",
+  "n_pass": 7,
+  "n_total": 7,
+  "generatedAt": "2026-11-16T18:06:51.735Z",
   "e1": {
     "temporal": 5.67462,
     "bagOfFeatures": 5.67266,
     "sequencePermuted": 6.11504
   },
   "e5": {
-    "controlContainment": 66.5,
-    "competitionFirst": 71,
-    "unboundedOpenness": 75,
-    "goldilocksAlignment": 76.5
+    "controlContainment": 67.3,
+    "competitionFirst": 72.2,
+    "unboundedOpenness": 75.4,
+    "goldilocksAlignment": 77.1
+  },
+  "e6": {
+    "linear": 0,
+    "shared": 1,
+    "live": {
+      "model": "openai/gpt-oss-20b",
+      "linear": 0,
+      "shared": 1,
+      "linearUnbounded": 1
+    }
   }
 }

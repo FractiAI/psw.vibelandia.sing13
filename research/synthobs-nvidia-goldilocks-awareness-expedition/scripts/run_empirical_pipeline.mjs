@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DOC_ID, REGISTRY_ID, STUDY_TITLE, HONESTY, DIGITAL_SEED } from '../src/constants.mjs';
 import { runAllExperiments } from '../src/experiments.mjs';
+import { runE6LiveLlm } from '../src/e6_live_llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -11,7 +12,7 @@ const OUT = path.join(ROOT, 'data');
 const RESULTS = path.join(ROOT, 'results');
 
 function mdReport(report) {
-  const { E0, E1, E2, E3, E4, E5 } = report.results;
+  const { E0, E1, E2, E3, E4, E5, E6 } = report.results;
   return [
     `# ${STUDY_TITLE}`,
     '',
@@ -61,6 +62,16 @@ function mdReport(report) {
     '',
     ...E5.ranking.map((r) => `| ${r.worldModel} | ${r.score} |`),
     '',
+    '## E6 · Matched-budget agent architecture',
+    '',
+    `| Model | ${E6.model} |`,
+    `| Context budget (tokens/turn) | ${E6.contextBudgetTokens} |`,
+    `| Linear solution rate | ${E6.linear.solutionRate} |`,
+    `| Shared-world solution rate | ${E6.sharedWorld.solutionRate} |`,
+    `| Linear mean tokens / rounds | ${E6.linear.meanTokens} / ${E6.linear.meanRounds} |`,
+    `| Shared mean tokens / rounds | ${E6.sharedWorld.meanTokens} / ${E6.sharedWorld.meanRounds} |`,
+    `| Live LLM | ${E6.liveLlm?.attempted ? `${E6.liveLlm.model} · linear@budget ${E6.liveLlm.linear?.solutionRate} · shared@budget ${E6.liveLlm.sharedWorld?.solutionRate} · linear unbounded ${E6.liveLlm.linearUnbounded?.solutionRate} (tokens ${E6.liveLlm.linear?.meanTokens} / ${E6.liveLlm.sharedWorld?.meanTokens} / ${E6.liveLlm.linearUnbounded?.meanTokens})` : E6.liveLlm?.reason || 'not attempted'} |`,
+    '',
     '## Honesty',
     '',
     HONESTY,
@@ -71,6 +82,8 @@ function mdReport(report) {
 }
 
 const report = runAllExperiments();
+const live = await runE6LiveLlm({ scenarios: Number(process.env.E6_LIVE_SCENARIOS || 12) });
+report.results.E6.liveLlm = live;
 await fs.mkdir(OUT, { recursive: true });
 await fs.mkdir(RESULTS, { recursive: true });
 await fs.writeFile(path.join(OUT, 'empirical_report.json'), JSON.stringify(report, null, 2));
@@ -87,6 +100,18 @@ await fs.writeFile(
       generatedAt: report.generatedAt,
       e1: report.results.E1.rmse,
       e5: report.results.E5.worldModelComposites,
+      e6: {
+        linear: report.results.E6.linear.solutionRate,
+        shared: report.results.E6.sharedWorld.solutionRate,
+        live: report.results.E6.liveLlm?.attempted
+          ? {
+              model: report.results.E6.liveLlm.model,
+              linear: report.results.E6.liveLlm.linear?.solutionRate,
+              shared: report.results.E6.liveLlm.sharedWorld?.solutionRate,
+              linearUnbounded: report.results.E6.liveLlm.linearUnbounded?.solutionRate,
+            }
+          : null,
+      },
     },
     null,
     2,
@@ -105,6 +130,11 @@ console.log(
         dupReduction: report.results.E3.dupReduction,
       },
       e5: report.results.E5.worldModelComposites,
+      e6: {
+        linear: report.results.E6.linear.solutionRate,
+        shared: report.results.E6.sharedWorld.solutionRate,
+        liveAttempted: !!report.results.E6.liveLlm?.attempted,
+      },
     },
     null,
     2,

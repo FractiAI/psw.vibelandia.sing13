@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "0bbae9ad96793598",
+  "auditId": "4045f471d050fac4",
   "paperId": "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
   "sourcePath": "docs/SYNTHOBS_NVIDIA_GOLDILOCKS_AWARENESS_EXPEDITION_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-16T17:52:07.577Z"
+          "invokedAt": "2026-11-16T18:24:17.899Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-16T17:52:07.575Z",
-  "completedAt": "2026-11-16T17:52:07.578Z",
+  "startedAt": "2026-11-16T18:24:17.897Z",
+  "completedAt": "2026-11-16T18:24:17.900Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 4526,
+      "wordCount": 4947,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

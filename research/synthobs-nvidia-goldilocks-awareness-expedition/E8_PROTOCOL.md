@@ -52,8 +52,9 @@ Decoding: temperature 0. Roles: Scout, Planner, Auditor (same prompts across arm
 
 ## Models
 
-- `openai/gpt-oss-20b` and `openai/gpt-oss-120b` via Groq.
-- `Qwen/Qwen2.5-1.5B-Instruct` local (second family).
+- `openai/gpt-oss-120b` via Groq (primary large open-weight).
+- `qwen/qwen3.8-27b` via Groq (second hosted family). *Substitution note, written before that model's first E8 row:* `openai/gpt-oss-20b` hit a tokens-per-day cap during smoke setup, so the second hosted slot is Qwen3.8-27B instead of repeating a same-family 20B run.
+- `Qwen/Qwen2.5-1.5B-Instruct` local (third model / second family on CPU).
 
 Target N: 40 scenarios per hosted model (rate-limit permitting); 80 local.
 

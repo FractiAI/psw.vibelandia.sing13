@@ -294,7 +294,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-06** · **407** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-16** · **408** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -395,6 +395,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-net-zero-periodic-table-2026-10.html`](/interfaces/blog-net-zero-periodic-table-2026-10.html) | Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine Digits, Ninety-Nine Octaves — Walk It · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nspfrnp-snap-peer-review-audit.html`](/interfaces/blog-nspfrnp-snap-peer-review-audit.html) | Peer Review Snap — Keep Claims Honest · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-nvidia-goldilocks-moment-2026-11.html`](/interfaces/blog-nvidia-goldilocks-moment-2026-11.html) | NVIDIA’s Goldilocks Moment: From Crisis to Discovery · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-official-prospectus-2026-08.html`](/interfaces/blog-official-prospectus-2026-08.html) | The Voyage Begins — Captain’s Seat Open · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-goldilocks-rideshare.html`](/interfaces/blog-omniversal-goldilocks-rideshare.html) | Goldilocks Rideshare for the Voyage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-omniversal-nested-agent-lattice.html`](/interfaces/blog-omniversal-nested-agent-lattice.html) | How Nested Agents Actually Work · Ship blog · SS Vibelandia |

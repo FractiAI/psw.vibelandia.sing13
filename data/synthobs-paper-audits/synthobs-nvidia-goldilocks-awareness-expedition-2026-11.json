@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "2f7965de3d804452",
+  "auditId": "0bbae9ad96793598",
   "paperId": "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
   "sourcePath": "docs/SYNTHOBS_NVIDIA_GOLDILOCKS_AWARENESS_EXPEDITION_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,20 +43,20 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-16T17:50:09.550Z"
+          "invokedAt": "2026-11-16T17:52:07.577Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-16T17:50:09.549Z",
-  "completedAt": "2026-11-16T17:50:09.550Z",
+  "startedAt": "2026-11-16T17:52:07.575Z",
+  "completedAt": "2026-11-16T17:52:07.578Z",
   "iterations": 1,
-  "overallScore": 0.824,
+  "overallScore": 0.941,
   "passThreshold": 0.85,
   "convergence": {
-    "status": "soft_pass",
-    "reason": "soft_structural"
+    "status": "pass",
+    "reason": "threshold_met"
   },
   "rubric": {
     "honestyBoundary": {
@@ -95,17 +95,17 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.824,
+      "overallScore": 0.941,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
-        "methodsRepro": 0.6,
+        "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
-        "references": 0.35,
+        "references": 0.7,
         "abstractTitle": 1,
         "synthobsAttribution": 1,
-        "technicalPrecision": 0.7
+        "technicalPrecision": 0.85
       }
     }
   ],
@@ -113,28 +113,25 @@
     "mode": "structural",
     "scores": {
       "honestyBoundary": 1,
-      "methodsRepro": 0.6,
+      "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
-      "references": 0.35,
+      "references": 0.7,
       "abstractTitle": 1,
       "synthobsAttribution": 1,
-      "technicalPrecision": 0.7
+      "technicalPrecision": 0.85
     },
-    "overallScore": 0.824,
+    "overallScore": 0.941,
     "criticalBlockers": [],
-    "suggestions": [
-      "Expand References with ≥3 citable sources or repo cross-links.",
-      "Document methods, data sources, and reproducibility commands."
-    ],
+    "suggestions": [],
     "meta": {
-      "wordCount": 1324,
+      "wordCount": 4526,
       "overclaims": [],
       "refs": {
-        "hasRefsSection": false,
+        "hasRefsSection": true,
         "links": 1,
-        "numbered": 6,
-        "citeLines": 1
+        "numbered": 11,
+        "citeLines": 2
       }
     }
   },

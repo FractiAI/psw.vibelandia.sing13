@@ -1,5 +1,6 @@
-# Upgrading the World Model — Computational Lab
+# NVIDIA Goldilocks Awareness Expedition — Computational Lab
 
+**Leadership case (observed):** Jensen Huang  
 **Document ID:** `WP-NVIDIA-GOLDILOCKS-AWARENESS-EXPEDITION-EGS-2026-11-15`
 
 ## Experiments

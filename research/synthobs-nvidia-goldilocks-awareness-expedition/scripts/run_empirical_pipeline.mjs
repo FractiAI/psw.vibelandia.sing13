@@ -2,7 +2,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { DOC_ID, REGISTRY_ID, STUDY_TITLE, HONESTY, DIGITAL_SEED, PLAYER_ONE } from '../src/constants.mjs';
+import { DOC_ID, REGISTRY_ID, STUDY_TITLE, HONESTY, DIGITAL_SEED } from '../src/constants.mjs';
 import { runAllExperiments } from '../src/experiments.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -17,7 +17,6 @@ function mdReport(report) {
     '',
     `**Document ID:** \`${DOC_ID}\``,
     `**Registry ID:** \`${REGISTRY_ID}\``,
-    `**Player One:** ${PLAYER_ONE}`,
     `**Seed:** ${DIGITAL_SEED}`,
     `**Generated:** ${report.generatedAt}`,
     '',

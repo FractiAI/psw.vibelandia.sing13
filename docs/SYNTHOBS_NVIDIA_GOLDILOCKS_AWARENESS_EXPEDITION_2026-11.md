@@ -23,7 +23,7 @@
 | Soft Story / organizational | NVIDIA + Jensen Huang are a useful World Model case study for Legacy Linear → Fractal Holographic Goldilocks migration | Scandal adjudication; succession prediction; that NVIDIA needs / does not need a particular CEO; career, legal, or investment advice |
 | Terminology | “Players / super-performers” and “NPCs / standard agents” are **operating configurations**, not human worth | That any person is permanently a “Player” or “NPC” |
 | Empirical (this suite) | E0–E6 regenerable: Exp 002 cite; FRED UNRATE walk-forward; Movebank+Kp sequence structure; competition vs Goldilocks dup cut; closed vs open byte cut; measured scorecard composites; matched-budget architecture test (deterministic control plus one live open-weight LLM, 12 synthetic tasks) | Live GPU-HBM / production LLM bake-off at scale; frontier-model or multi-model generality; that human orgs inherit lab numbers as NVIDIA KPIs or forecasts |
-| Scorecard | E5 composites from suite dimensions (Goldilocks 76.5 ranks first on this board) | Soft Story illustrative 39/51/55/91 numbers (retired) |
+| Scorecard | E5 composites from suite dimensions (Goldilocks 77.1 ranks first on this board) | Soft Story illustrative 39/51/55/91 numbers (retired) |
 | Victorian / sexuality sections | High-sensitivity Soft Story probes of inherited human templates and consent boundaries | Clinical, moral, or legal prescriptions about private life |
 
 **Evidence classification:** application companion Soft Story / organizational expedition — **not** ENGINE_SHELF.
@@ -224,10 +224,10 @@ Selective openness matched the closed accuracy band while cutting duplication.
 
 | World model | Composite |
 |---|---:|
-| Control / containment | 66.5 |
-| Competition-first | 71.0 |
-| Unbounded openness | 75.0 |
-| **Goldilocks alignment** | **76.5** |
+| Control / containment | 67.3 |
+| Competition-first | 72.2 |
+| Unbounded openness | 75.4 |
+| **Goldilocks alignment** | **77.1** |
 
 Composites are derived from this suite’s measured dimensions — **not** Soft Story illustration scores and **not** NVIDIA KPIs.
 

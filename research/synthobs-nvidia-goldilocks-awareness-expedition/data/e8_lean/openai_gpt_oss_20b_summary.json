@@ -1,0 +1,49 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "protocol": "E8_PROTOCOL.md + E8_LEAN_AMENDMENT.md",
+  "lean": true,
+  "n": 5,
+  "arms": {
+    "SILO": {
+      "n": 5,
+      "valid_rate": 0.0,
+      "commit_rate": 0.0,
+      "solution_rate": 0.0,
+      "mean_tokens": 703.0
+    },
+    "FLAT": {
+      "n": 5,
+      "valid_rate": 0.0,
+      "commit_rate": 0.0,
+      "solution_rate": 0.0,
+      "mean_tokens": 847.6
+    },
+    "AWARE": {
+      "n": 5,
+      "valid_rate": 0.0,
+      "commit_rate": 0.0,
+      "solution_rate": 0.0,
+      "mean_tokens": 857.2
+    }
+  },
+  "contrasts": {
+    "AWARE_minus_SILO_valid": {
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "excludes_0": false
+    },
+    "AWARE_minus_FLAT_valid": {
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "excludes_0": false
+    }
+  },
+  "H3_token_ratio_AWARE_over_FLAT": 1.0113,
+  "gates": {
+    "H1": false,
+    "H2": false,
+    "H3": true
+  }
+}

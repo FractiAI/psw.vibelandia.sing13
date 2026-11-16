@@ -1,22 +1,29 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "dateline": {
-    "ymd": "2026-11-15",
-    "weekday": "Sunday",
+    "ymd": "2026-11-16",
+    "weekday": "Monday",
     "month": "November",
-    "day": 15,
-    "label": "Sunday, November 15",
-    "shortBoard": "Sunday board · November 15 · Puerto Reno",
-    "newsLabel": "News of the day · Sunday, November 15"
+    "day": 16,
+    "label": "Monday, November 16",
+    "shortBoard": "Monday board · November 16 · Puerto Reno",
+    "newsLabel": "News of the day · Monday, November 16"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Sunday board · November 15 · Puerto Reno",
-  "newsLabel": "News of the day · Sunday, November 15",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/fractisi-multi-agent-platform\">When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?</a>. Also new on the board: <a href=\"/ship-blog/fractisi-expedition-002-beyond-memory\">If Agents Share One World, Can They Discover What Flat Memory Misses?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Monday board · November 16 · Puerto Reno",
+  "newsLabel": "News of the day · Monday, November 16",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/nvidia-goldilocks-moment\">What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO</a>. Also new on the board: <a href=\"/ship-blog/fractisi-multi-agent-platform\">When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
+      "title": "What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO",
+      "href": "/ship-blog/nvidia-goldilocks-moment",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
+      "blurb": "Legacy Linear → Fractal Holographic Goldilocks: why capable agents, human and digital, need a shared World Model rather than a leadership swap. Six experiments on real public data; Exp 002 100/100 vs 0/100 — application companion."
+    },
     {
       "id": "synthobs-fractisi-multi-agent-platform-2026-11",
       "title": "When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/fractisi-expedition-002-beyond-memory",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-fractisi-expedition-002-beyond-memory-2026-11",
       "blurb": "FractiSI Expedition 002: beyond DRAM savings — relationship-guided discovery 100/100 vs flat 0/100 under a fixed budget; resource cuts vs full copies; not yet an LLM bake-off."
-    },
-    {
-      "id": "synthobs-tiny-gateway-rhyming-templates-2026-11",
-      "title": "Can Shared Patterns Cut AI Memory by Four-Fifths Without Losing the Answer?",
-      "href": "/ship-blog/tiny-gateway-rhyming-templates",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tiny-gateway-rhyming-templates-2026-11",
-      "blurb": "Tiny Footprint: stop rent on duplicated resident state. Aggregate 84.5%; GTX 860M memory+latency; rhyme-KV companion ~14.6% cells, claim gate closed; ENGINE_SHELF #52."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-11-14-synthobs-fractisi-multi-agent-platform-2026-11",
+    "id": "daily-2026-11-15-synthobs-fractisi-multi-agent-platform-2026-11",
     "title": "When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?",
     "href": "/ship-blog/fractisi-multi-agent-platform"
   },
-  "generatedAt": "2026-11-15T20:19:47.516Z"
+  "generatedAt": "2026-11-16T23:43:12.175Z"
 }

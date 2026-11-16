@@ -1,7 +1,5 @@
-# NVIDIA Goldilocks Awareness Expedition — Computational Lab
+# Upgrading the World Model — Computational Lab
 
-**Player One:** Valet Pru  
-**Leadership case (observed):** Jensen Huang — not Player One  
 **Document ID:** `WP-NVIDIA-GOLDILOCKS-AWARENESS-EXPEDITION-EGS-2026-11-15`
 
 ## Experiments

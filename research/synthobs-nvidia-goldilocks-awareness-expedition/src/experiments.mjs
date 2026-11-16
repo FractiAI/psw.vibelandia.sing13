@@ -12,8 +12,6 @@ import {
   REGISTRY_ID,
   STUDY_TITLE,
   DIGITAL_SEED,
-  PLAYER_ONE,
-  LEADERSHIP_CASE,
   HONESTY,
   UPSTREAM,
   FRED_SERIES,
@@ -166,8 +164,6 @@ function experimentE0UpstreamCitations() {
     id: 'E0_upstream_citations',
     title: 'Cite regenerable Exp 002 + Tiny Gateway receipts',
     pass,
-    playerOne: PLAYER_ONE,
-    leadershipCase: LEADERSHIP_CASE,
     exp002: {
       scenarios: e2?.scenarios,
       flatSolutionRate: e2?.flat?.solutionRate,
@@ -274,7 +270,7 @@ function experimentE1FredWalkForward() {
     interpretation:
       'Chronological AR pairing beat label-permuted training; bag (weaker AR path) is reported for contrast. Temporal order carried usable information on public FRED UNRATE.',
     honesty:
-      'Macro forecasting lab on public FRED series — not a claim about NVIDIA financials or CEO succession.',
+      'Macro forecasting lab on public FRED series — not a claim about NVIDIA financials.',
   };
 }
 
@@ -652,8 +648,6 @@ export function runAllExperiments() {
     docId: DOC_ID,
     registryId: REGISTRY_ID,
     title: STUDY_TITLE,
-    playerOne: PLAYER_ONE,
-    leadershipCase: LEADERSHIP_CASE,
     seed: DIGITAL_SEED,
     generatedAt: new Date().toISOString(),
     honesty: HONESTY,

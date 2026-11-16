@@ -1685,6 +1685,22 @@
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-fractisi-multi-agent-platform-2026-11"
     },
     {
+      "source": "/ship-blog/nvidia-goldilocks-moment",
+      "destination": "/interfaces/blog-nvidia-goldilocks-moment-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/nvidia-goldilocks-moment/",
+      "destination": "/interfaces/blog-nvidia-goldilocks-moment-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/nvidia-goldilocks-awareness-expedition",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-nvidia-goldilocks-awareness-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/nvidia-goldilocks-awareness-expedition/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-nvidia-goldilocks-awareness-expedition-2026-11"
+    },
+    {
       "source": "/ship-blog/fractisi-expedition-002-beyond-memory",
       "destination": "/interfaces/blog-fractisi-expedition-002-beyond-memory-2026-11.html"
     },

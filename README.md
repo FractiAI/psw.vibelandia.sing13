@@ -320,7 +320,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-computation-workhorse-science-2026-10.html`](/interfaces/blog-computation-workhorse-science-2026-10.html) | Should Computation Become the Primary Workhorse of Science? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09-old.html`](/interfaces/blog-consciousness-moat-2026-09-old.html) | The Machine-Feelings Fight Misses the Blueprint · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | When Labs Argue Model Welfare, What Shared Blind Spot Remains? · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-cosmic-rhyme-expedition-2026-11.html`](/interfaces/blog-cosmic-rhyme-expedition-2026-11.html) | When Cosmic Catalogs Are Read as Relationships, What New Patterns Survive? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-cosmic-rhyme-expedition-2026-11.html`](/interfaces/blog-cosmic-rhyme-expedition-2026-11.html) | What We Found Looking at the Sky Through a Protein-Folding Lens · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09-old.html`](/interfaces/blog-crystalline-unified-field-2026-09-old.html) | Your Commute Is One Crystal, Not Three Meters · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Speed, Distance, Time — One Crystal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html) | Four and Eight Are Memory, Not Destiny · Ship blog · SS Vibelandia |

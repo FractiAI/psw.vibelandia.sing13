@@ -83,19 +83,23 @@ function mdReport(report) {
     `| Mean measured byte reduction | ${(s.meanByteReduction * 100).toFixed(1)}% |`,
     `| Φ_EGS | ${PHI_EGS} |`,
     '',
-    '### E3 live wall-clock rows',
-    '',
-    '| N | Legacy ms | MRI ms | Speedup | Voxel↓ |',
-    '|--:|----------:|--------:|--------:|-------:|',
   ];
-  for (const r of e3?.rows || []) {
-    lines.push(
-      `| ${r.n} | ${r.legacyMs.toFixed(2)} ± ${r.legacyStd.toFixed(2)} | ${r.mriMs.toFixed(2)} ± ${r.mriStd.toFixed(2)} | ${r.speedup.toFixed(2)}× | ${(r.voxelReduction * 100).toFixed(1)}% |`,
-    );
-  }
-  lines.push('');
   for (const e of report.results.experiments) {
     lines.push(`### ${e.id} — ${e.title}`, '', `- Pass: \`${e.pass}\``, '');
+    if (e.id === 'E3_live_wall_clock_bloch_cpu') {
+      lines.push(
+        '#### E3 live wall-clock rows',
+        '',
+        '| N | Legacy ms | MRI ms | Speedup | Voxel↓ |',
+        '|--:|----------:|--------:|--------:|-------:|',
+      );
+      for (const r of e3?.rows || e.rows || []) {
+        lines.push(
+          `| ${r.n} | ${r.legacyMs.toFixed(2)} ± ${r.legacyStd.toFixed(2)} | ${r.mriMs.toFixed(2)} ± ${r.mriStd.toFixed(2)} | ${r.speedup.toFixed(2)}× | ${(r.voxelReduction * 100).toFixed(1)}% |`,
+        );
+      }
+      lines.push('');
+    }
   }
   const kReceipt = report.komamriLive?.receipt || report.komamriLive?.priorReceipt;
   if (kReceipt) {

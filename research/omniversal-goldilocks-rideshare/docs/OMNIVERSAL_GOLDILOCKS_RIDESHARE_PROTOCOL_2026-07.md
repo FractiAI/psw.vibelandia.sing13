@@ -21,7 +21,7 @@
 | **Protocol specification (OGRP)** | Four acceptance gates — density anchoring, thermodynamic minimization, generosity floor ($9), sovereign pacing — as **operational policy** for physical and virtual routing agents | That φ = 1.618 is *derived* from AAA or UW datasets; it is a **testable organizing postulate** in the scaling model |
 | **Executed experiments (E1–E5)** | Reproducible arithmetic on **published** AAA driving-cost tables and UW Urban Freight Lab parking-cruising statistics, plus analytic EGS overhead model verification (2026-07-07) | That a single Reno operator's field week proves universal rideshare optimality |
 | **Theorem 1 (EGS scaling)** | Closed-form minimum of $C(x)=x^2-\Phi x$ at $x=\Phi/2$; modeled divergence when $d/r \gg \Phi$ | Instrument-grade proof that human "depletion" maps 1:1 to $d/r$ ratio |
-| **Experiment C (generosity / tipping)** | Arithmetic break-even at $\Gamma_{\text{floor}}=\$9$ vs per-mile overhead tiers | Verified causal link between sustainable delivery method and voluntary tipping surplus without controlled trial data |
+| **Experiment D (generosity / tipping)** | Arithmetic break-even at $\Gamma_{\text{floor}}=\$9$ vs per-mile overhead tiers | Verified causal link between sustainable delivery method and voluntary tipping surplus without controlled trial data |
 | **Multi-agent JSON filter** | Reference implementation schema for Goldilocks AIOS acceptance | Production deployment certification on FractiAI edge without integration test receipt |
 
 **Executed vs proposed:** E1–E5 are **completed** reproducible tests in `research/omniversal-goldilocks-rideshare/`. Optional operator field logs use `data/field_trial_template.json` — **not required** for pipeline pass. See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
@@ -106,15 +106,15 @@ University of Washington Urban Freight Lab reports delivery vehicles in dense ur
 
 **Result (E2):** Legacy on-time algorithms optimized for open-road speed **under-model** high-density parking friction — explaining systematic "poor" corporate ratings for core operators who minimize total trip energy.
 
-### Experiment C: Generosity Filter Arithmetic (E4)
+### Experiment C: EGS Overhead Model (E3)
+
+Numeric sweep confirms $C(x)$ minimum at $x=\Phi/2$ and modeled $E_{\text{in}}/V_{\text{cap}}$ growth when $d/r$ exceeds $\Phi$.
+
+### Experiment D: Generosity Filter Arithmetic (E4)
 
 With $\Gamma_{\text{floor}} = \$9$, the pipeline computes minimum net yield per mile vs vehicle tiers. Low-value transactional extractions below the floor are **rejected by policy** before route acceptance.
 
 **Field tipping surplus (qualitative):** Operators may log voluntary tips in `data/field_trial_template.json`. Causal tipping claims require controlled trial — **not asserted** in E1–E5.
-
-### Experiment D: EGS Overhead Model (E3)
-
-Numeric sweep confirms $C(x)$ minimum at $x=\Phi/2$ and modeled $E_{\text{in}}/V_{\text{cap}}$ growth when $d/r$ exceeds $\Phi$.
 
 ### Experiment E: Density Gate & Protocol Schema (E5)
 

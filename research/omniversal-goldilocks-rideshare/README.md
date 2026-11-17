@@ -121,7 +121,7 @@ omniversal-goldilocks-rideshare/
 ├── src/
 │   ├── constants.mjs              # AAA · UW · micro-mobility literature anchors
 │   ├── egs-overhead.mjs           # Theorem 1 numeric verification
-│   └── benchmarks.mjs             # E1 · E2 · E4 · E5 helpers
+│   └── benchmarks.mjs             # E1 · E2 · E4 · E5 helpers (E3 lives in egs-overhead.mjs)
 ├── scripts/
 │   └── run_empirical_pipeline.mjs
 ├── METHODOLOGY.md                 # Falsification criteria · data tiers

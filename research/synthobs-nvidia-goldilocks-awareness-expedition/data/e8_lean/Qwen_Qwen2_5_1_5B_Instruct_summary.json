@@ -1,0 +1,49 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "protocol": "E8_PROTOCOL.md + E8_LEAN_AMENDMENT.md",
+  "lean": true,
+  "n": 60,
+  "arms": {
+    "SILO": {
+      "n": 60,
+      "valid_rate": 0.0667,
+      "commit_rate": 0.15,
+      "solution_rate": 0.0667,
+      "mean_tokens": 482.1
+    },
+    "FLAT": {
+      "n": 60,
+      "valid_rate": 0.1333,
+      "commit_rate": 0.0667,
+      "solution_rate": 0.1333,
+      "mean_tokens": 657.8
+    },
+    "AWARE": {
+      "n": 60,
+      "valid_rate": 0.05,
+      "commit_rate": 0.3333,
+      "solution_rate": 0.05,
+      "mean_tokens": 656.6
+    }
+  },
+  "contrasts": {
+    "AWARE_minus_SILO_valid": {
+      "mean": -0.0164,
+      "lo": -0.1,
+      "hi": 0.0667,
+      "excludes_0": false
+    },
+    "AWARE_minus_FLAT_valid": {
+      "mean": -0.0834,
+      "lo": -0.1833,
+      "hi": 0.0,
+      "excludes_0": false
+    }
+  },
+  "H3_token_ratio_AWARE_over_FLAT": 0.9982,
+  "gates": {
+    "H1": false,
+    "H2": false,
+    "H3": true
+  }
+}

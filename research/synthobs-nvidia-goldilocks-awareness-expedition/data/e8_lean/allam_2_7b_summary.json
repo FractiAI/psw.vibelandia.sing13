@@ -1,0 +1,49 @@
+{
+  "model": "allam-2-7b",
+  "protocol": "E8_PROTOCOL.md + E8_LEAN_AMENDMENT.md",
+  "lean": true,
+  "n": 30,
+  "arms": {
+    "SILO": {
+      "n": 30,
+      "valid_rate": 0.3333,
+      "commit_rate": 0.1333,
+      "solution_rate": 0.3333,
+      "mean_tokens": 660.6
+    },
+    "FLAT": {
+      "n": 30,
+      "valid_rate": 0.4333,
+      "commit_rate": 0.2,
+      "solution_rate": 0.4333,
+      "mean_tokens": 866.8
+    },
+    "AWARE": {
+      "n": 30,
+      "valid_rate": 0.6,
+      "commit_rate": 0.5333,
+      "solution_rate": 0.6,
+      "mean_tokens": 854.2
+    }
+  },
+  "contrasts": {
+    "AWARE_minus_SILO_valid": {
+      "mean": 0.2662,
+      "lo": 0.0333,
+      "hi": 0.5,
+      "excludes_0": true
+    },
+    "AWARE_minus_FLAT_valid": {
+      "mean": 0.1677,
+      "lo": -0.1,
+      "hi": 0.4,
+      "excludes_0": false
+    }
+  },
+  "H3_token_ratio_AWARE_over_FLAT": 0.9855,
+  "gates": {
+    "H1": true,
+    "H2": false,
+    "H3": true
+  }
+}

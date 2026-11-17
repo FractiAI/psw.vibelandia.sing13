@@ -22,7 +22,7 @@
 |---|---|---|
 | Soft Story / organizational | NVIDIA + Jensen Huang are a useful World Model case study for Legacy Linear → Fractal Holographic Goldilocks migration | Scandal adjudication; succession prediction; that NVIDIA needs / does not need a particular CEO; career, legal, or investment advice |
 | Terminology | “Players / super-performers” and “NPCs / standard agents” are **operating configurations**, not human worth | That any person is permanently a “Player” or “NPC” |
-| Empirical (this suite) | E0–E6 regenerable: Exp 002 cite; FRED UNRATE walk-forward; Movebank+Kp sequence structure; competition vs Goldilocks dup cut; closed vs open byte cut; measured scorecard composites; matched-budget architecture test (deterministic control plus one live open-weight LLM, 12 synthetic tasks) | Live GPU-HBM / production LLM bake-off at scale; frontier-model or multi-model generality; that human orgs inherit lab numbers as NVIDIA KPIs or forecasts |
+| Empirical (this suite) | E0–E6 regenerable; E9 real PDB+Pfam long-range contact rhyme (allam 0/0/62.5% LINEAR/FLAT/AWARE on 16 coevolution-consistent chains): Exp 002 cite; FRED UNRATE walk-forward; Movebank+Kp sequence structure; competition vs Goldilocks dup cut; closed vs open byte cut; measured scorecard composites; matched-budget architecture test (deterministic control plus one live open-weight LLM, 12 synthetic tasks) | Live GPU-HBM / production LLM bake-off at scale; frontier-model or multi-model generality; that human orgs inherit lab numbers as NVIDIA KPIs or forecasts |
 | Scorecard | E5 composites from suite dimensions (Goldilocks 77.1 ranks first on this board) | Soft Story illustrative 39/51/55/91 numbers (retired) |
 | Victorian / sexuality sections | High-sensitivity Soft Story probes of inherited human templates and consent boundaries | Clinical, moral, or legal prescriptions about private life |
 
@@ -159,6 +159,14 @@ The mechanisms differ. The architectural pattern can rhyme.
 
 ---
 
+## Protein folding as a rhyme for intelligence
+
+Complex systems that produce coherent behavior — folds, minds, teams, multi-agent stacks — share a structural rhyme. The **linear** description (sequence, token stream, private ticket queue) is always available and often fluent. The **fold** is the coherent whole. What turns sequence into fold is not more local reading; it is **long-range relational pattern**: contacts, couplings, who-depends-on-whom.
+
+In proteins, residues far apart in the chain can sit adjacent in 3D. Evolutionary couplings in families of related sequences reveal those contacts. That is why statistical / MSA-aware folding models could see what a single-sequence linear pass could not. In agents and organizations the same move applies: a shared World Model that holds relationships is the awareness layer; private silos and flat dumps are the linear pass.
+
+This paper’s E9 lab operationalizes that rhyme on **real PDB structures and real Pfam seed alignments**, with honesty boundaries intact: architectural evidence, not a claim that AlphaFold is retired or that NVIDIA KPIs follow.
+
 ## 9. Computational Lab Receipts (regenerable)
 
 Suite: `research/synthobs-nvidia-goldilocks-awareness-expedition/`  
@@ -250,6 +258,22 @@ The live arm used `openai/gpt-oss-20b` (open weights) served through Groq, tempe
 These are FractiSI Computational Lab / public-data experiments. They establish regenerable architectural and temporal-structure signals for the World Model migration hypothesis.
 
 ---
+
+
+### E9 — Protein-folding rhyme on real PDB + Pfam (long-range pattern vs linear)
+
+**Rhyme:** A protein sequence is to a fold as a linear observation stream is to intelligence. Long-range contacts (residues far in sequence, near in structure) are the fold’s relational secret. AlphaFold-class systems worked by exploiting **patterns across homologs**, not by reading one chain more carefully. The same rhyme applies to agents and organizations: a World Model that holds relationships should see structure a linear pass systematically cannot.
+
+**Data (public, not simulated):** RCSB PDB structures for gold CA contacts; InterPro/Pfam seed MSAs for homologs. Couplings for the AWARE board are computed from the MSA only — never from coordinates. Primary cohort: 16 chains where the top MSA coupling at the query residue agrees with a true long-range contact.
+
+| Arm | allam-2-7b exact (N=16) | Local Qwen2.5-1.5B (N=16) |
+|---|---:|---:|
+| LINEAR (sequence + local window) | 0.00 | 0.00 |
+| FLAT_MSA (real Pfam seed dump) | 0.00 | 0.00 |
+| AWARE (MSA relational board) | **0.625** | 0.00 |
+
+**Reading.** On allam-2-7b, relational awareness recovered the structural partner on 10/16 tasks; linear and flat-MSA arms recovered **none**. The tiny local model could not use the board. Pre-registered multi-model bar is only cleared on one capable hosted model under token-cap substitutes; treat as a real-data directional lock, not a universal proof. Suite paths: `E9_PROTOCOL.md`, `E9_REALDATA_AMENDMENT.md`, `data/e9_real/`.
+
 
 ## 10. Super-Performers and the NVIDIA Case
 

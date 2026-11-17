@@ -1,0 +1,53 @@
+{
+  "model": "allam-2-7b",
+  "protocol": "E9_PROTOCOL.md",
+  "rhyme": "protein-folding long-range contacts \u2192 relational awareness for intelligence",
+  "n": 3,
+  "arms": {
+    "LINEAR": {
+      "n": 3,
+      "exact_rate": 0.0,
+      "mean_f1": 0.0,
+      "mean_tokens": 200.0
+    },
+    "FLAT_MSA": {
+      "n": 3,
+      "exact_rate": 0.0,
+      "mean_f1": 0.0,
+      "mean_tokens": 357.3
+    },
+    "AWARE": {
+      "n": 3,
+      "exact_rate": 0.3333,
+      "mean_f1": 0.3333,
+      "mean_tokens": 366.0
+    }
+  },
+  "contrasts": {
+    "AWARE_minus_LINEAR": {
+      "mean": 0.3322,
+      "lo": 0.0,
+      "hi": 1.0,
+      "excludes_0": false
+    },
+    "AWARE_minus_FLAT_MSA": {
+      "mean": 0.3322,
+      "lo": 0.0,
+      "hi": 1.0,
+      "excludes_0": false
+    },
+    "FLAT_MSA_minus_LINEAR": {
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "excludes_0": false
+    }
+  },
+  "H3_token_ratio_AWARE_over_FLAT": 1.0243,
+  "gates": {
+    "H1": false,
+    "H2": false,
+    "H3": true,
+    "FLAT_extracts_pattern": false
+  }
+}

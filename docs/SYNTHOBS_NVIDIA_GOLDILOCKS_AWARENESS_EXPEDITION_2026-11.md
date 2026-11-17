@@ -297,7 +297,7 @@ Socioeconomic rhyme: query series + partners among UNRATE / CPIAUCSL / FEDFUNDS 
 | allam-2-7b (N=24) | 0.00 | 0.00 | **0.458** |
 | Qwen2.5-1.5B (N=24) | 0.00 | 0.00 | **1.00** |
 
-**Cross-rhyme reading.** Relational awareness beats linear on protein **and** on two higher systems (knowledge; macro). That is the generalization step toward smarter agents: the World Model that holds long-range relationships unlocks tasks sequence-local reading misses.
+**Cross-rhyme reading.** “Beat linear” means higher exact partner-recovery under the same model and question: AWARE’s rate exceeded LINEAR (and FLAT) on protein contacts, HotpotQA supporting title pairs, and FRED lagged series partners. The board supplies measured couplings; LINEAR never sees that map. That is the generalization step toward smarter agents: a World Model that holds long-range relationships unlocks recovery tasks sequence-local reading misses — not a claim that HotpotQA or FRED are proteins.
 
 
 

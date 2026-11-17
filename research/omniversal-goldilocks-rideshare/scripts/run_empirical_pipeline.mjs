@@ -86,7 +86,7 @@ async function main() {
     },
     hypothesisTests,
     honestyNote:
-      'E1–E2 use published AAA and UW freight statistics — economic comparison, not causal proof of φ routing. E3 is analytic model verification. E4 is policy arithmetic. Field tipping (Experiment C narrative) requires optional controlled logs — not asserted here.',
+      'E1–E2 use published AAA and UW freight statistics — economic comparison, not causal proof of φ routing. E3 is analytic model verification. E4 is policy arithmetic. Field tipping (Experiment D narrative) requires optional controlled logs — not asserted here.',
   };
 
   const jsonPath = join(DATA, 'empirical_report.json');

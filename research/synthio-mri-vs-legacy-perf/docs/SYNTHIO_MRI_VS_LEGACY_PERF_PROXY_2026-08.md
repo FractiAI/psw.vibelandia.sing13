@@ -84,6 +84,21 @@ Anti-DCE sinks keep returned checksums/signals live so V8 cannot elide the kerne
 
 ## Results
 
+### E1 — Topology message tax
+
+| N | Legacy edges | MRI edges | Reduction |
+|---|-------------:|----------:|----------:|
+| 8 | 28 | 7 | 4× |
+| 16 | 120 | 15 | 8× |
+| 32 | 496 | 31 | 16× |
+| 64 | 2016 | 63 | 32× |
+
+Mean reduction **15×**.
+
+### E2 / E4 — Tokens & measured voxel work
+
+Companion structural tokens (chars÷4) mean reduction **≈99.8%**. Measured Bloch voxel×TR work mean reduction **≈98.8%**.
+
 ### E3 — Live Node Bloch wall-clock (primary)
 
 From the shipped receipt (`empirical_report.md`):
@@ -109,21 +124,6 @@ From `data/komamri_live_receipt.json` (Julia `time_ns`, 32 spins, EPI example):
 | 10 | 1069.6 | 13.0 | 82.3× |
 
 Mean KomaMRI live speedup **≈46.1×**; all scales pass.
-
-### E1 — Topology message tax
-
-| N | Legacy edges | MRI edges | Reduction |
-|---|-------------:|----------:|----------:|
-| 8 | 28 | 7 | 4× |
-| 16 | 120 | 15 | 8× |
-| 32 | 496 | 31 | 16× |
-| 64 | 2016 | 63 | 32× |
-
-Mean reduction **15×**.
-
-### E2 / E4 — Tokens & measured voxel work
-
-Companion structural tokens (chars÷4) mean reduction **≈99.8%**. Measured Bloch voxel×TR work mean reduction **≈98.8%**.
 
 ### E5 — Cloud apps inside MRI sim
 

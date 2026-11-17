@@ -18,15 +18,6 @@
 | Mean measured byte reduction | 99.4% |
 | Φ_EGS | 1.618033988749895 |
 
-### E3 live wall-clock rows
-
-| N | Legacy ms | MRI ms | Speedup | Voxel↓ |
-|--:|----------:|--------:|--------:|-------:|
-| 8 | 11.01 ± 3.91 | 0.62 ± 0.48 | 17.73× | 96.4% |
-| 16 | 38.73 ± 1.19 | 0.29 ± 0.01 | 132.09× | 99.2% |
-| 32 | 151.77 ± 1.28 | 0.59 ± 0.37 | 257.40× | 99.8% |
-| 64 | 613.09 ± 0.67 | 0.65 ± 0.01 | 942.38× | 100.0% |
-
 ### E1_topology_message_tax — Nested MRI phase-lock edges beat flat legacy mesh
 
 - Pass: `true`
@@ -38,6 +29,15 @@
 ### E3_live_wall_clock_bloch_cpu — Live hrtime wall-clock: MRI shared-field Bloch beats legacy per-edge recompute
 
 - Pass: `true`
+
+#### E3 live wall-clock rows
+
+| N | Legacy ms | MRI ms | Speedup | Voxel↓ |
+|--:|----------:|--------:|--------:|-------:|
+| 8 | 11.01 ± 3.91 | 0.62 ± 0.48 | 17.73× | 96.4% |
+| 16 | 38.73 ± 1.19 | 0.29 ± 0.01 | 132.09× | 99.2% |
+| 32 | 151.77 ± 1.28 | 0.59 ± 0.37 | 257.40× | 99.8% |
+| 64 | 613.09 ± 0.67 | 0.65 ± 0.01 | 942.38× | 100.0% |
 
 ### E4_voxel_work_measured — Measured Bloch voxel×TR work drops under shared-field phase-lock
 

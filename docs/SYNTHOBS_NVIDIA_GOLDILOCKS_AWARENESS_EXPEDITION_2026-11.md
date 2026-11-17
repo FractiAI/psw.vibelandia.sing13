@@ -23,7 +23,7 @@
 | Soft Story / organizational | NVIDIA + Jensen Huang are a useful World Model case study for Legacy Linear → Fractal Holographic Goldilocks migration | Scandal adjudication; succession prediction; that NVIDIA needs / does not need a particular CEO; career, legal, or investment advice |
 | Terminology | “Players / super-performers” and “NPCs / standard agents” are **operating configurations**, not human worth | That any person is permanently a “Player” or “NPC” |
 | Empirical (this suite) | E0–E6 regenerable; E9 real PDB+Pfam long-range contact rhyme (allam 0/0/62.5% LINEAR/FLAT/AWARE on 16 coevolution-consistent chains): Exp 002 cite; FRED UNRATE walk-forward; Movebank+Kp sequence structure; competition vs Goldilocks dup cut; closed vs open byte cut; measured scorecard composites; matched-budget architecture test (deterministic control plus one live open-weight LLM, 12 synthetic tasks) | Live GPU-HBM / production LLM bake-off at scale; frontier-model or multi-model generality; that human orgs inherit lab numbers as NVIDIA KPIs or forecasts |
-| Scorecard | E5 composites from suite dimensions (Goldilocks 77.1 ranks first on this board) | Soft Story illustrative 39/51/55/91 numbers (retired) |
+| Scorecard | E5 composites from **E0–E6** dimensions (Goldilocks **77.1** still ranks first; E9–E12 cognitive/synergy arms sit beside the board unless amended into the weights) | Soft Story illustrative 39/51/55/91 numbers (retired); silent score inflation from later arms |
 | Victorian / sexuality sections | High-sensitivity Soft Story probes of inherited human templates and consent boundaries | Clinical, moral, or legal prescriptions about private life |
 
 **Evidence classification:** application companion Soft Story / organizational expedition — **not** ENGINE_SHELF.
@@ -241,7 +241,7 @@ Selective openness matched the closed accuracy band while cutting duplication.
 | Unbounded openness | 75.4 |
 | **Goldilocks alignment** | **77.1** |
 
-Composites are derived from this suite’s measured dimensions — **not** Soft Story illustration scores and **not** NVIDIA KPIs.
+Composites are derived from this suite’s **E0–E6** measured dimensions — **not** Soft Story illustration scores and **not** NVIDIA KPIs. Cognitive / folding / synergy arms **E9–E12** (and the mixed E7/E8 awareness protocols) are directional evidence that sits **beside** this board; they do **not** silently rewrite the regenerable **77.1** unless a scorecard amendment folds those arms into the weighted composite.
 
 ### E6 — Matched-budget agent architecture (same model, prompt, budget; only the World Model changes)
 

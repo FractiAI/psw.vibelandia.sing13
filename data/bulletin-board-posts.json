@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "posts": [
+    {
+      "id": "daily-2026-11-17-synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
+      "posted": "2026-11-17",
+      "featured": true,
+      "title": "What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO",
+      "subtitle": "News of the day · Tuesday, November 17",
+      "summary": "Legacy Linear → Fractal Holographic Goldilocks: why capable agents, human and digital, need a shared World Model rather than a leadership swap. Six experiments on real public data; Exp 002 100/100 vs 0/100 — application companion.",
+      "href": "/ship-blog/nvidia-goldilocks-moment",
+      "pill": "TODAY",
+      "docRef": "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-11-16-synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
       "posted": "2026-11-16",

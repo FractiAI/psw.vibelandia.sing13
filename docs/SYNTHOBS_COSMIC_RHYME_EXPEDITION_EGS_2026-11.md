@@ -86,12 +86,11 @@ Seed locked at `20261117`. FractiSI Multi-Agent mirrors the same suite under `re
 
 **Positive expedition signal:** H1 on all four layers plus surviving open motifs.
 
-### Telescope readouts (proportionate)
+### What we found · novelty ladder (plain language)
 
-1. **Architecture rhyme holds on cosmic catalogs.** Same claim shape as E9–E11: AWARE ranks relationships LINEAR never sees — representation, not invention of new physics.  
-2. **Survey-history super-patterns** (`disc_year~st_rad`, `disc_year~st_teff`) survive held-out + feature-nulls — catalog selection motifs in the observable cosmos.  
-3. **OpenNGC size–sky–brightness motifs** survive FDR; audited as selection/morphology candidates, not named web detections.  
-4. **WMAP TT lag structure** recoverable under AWARE lag boards.
+1. **Most novel (method):** the protein-folding LINEAR/FLAT/AWARE grammar recovers long-range partners on four public sky layers (~0% → 100% on held-out long-range tasks). Methodological generalization — not a new astronomical object.  
+2. **Moderate novelty (observation):** unsupervised motifs that survived held-out + FDR without being told to hunt selection effects — especially exoplanet discovery-year ↔ stellar size/temperature (survey-history fingerprint) and OpenNGC size ↔ sky position/brightness (catalog geometry). Patterns about how the observable cosmos is *recorded*.  
+3. **Not novel (physics):** no new particle, force, filament/void detection by name, or Universe ontology. AWARE wins because it uses a ranked relationship board LINEAR never sees.
 
 ## Φ_EGS note
 

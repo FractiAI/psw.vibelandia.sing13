@@ -1,0 +1,1682 @@
+[
+  {
+    "id": "e12-0",
+    "question": "What is the name of the ethnic group who settled in Canada in the 17th century that participated in a conflict with Irish Catholic immigrants in the Shiners' War?",
+    "answer": "French Canadians",
+    "t1": "Shiners' War",
+    "t2": "French Canadians",
+    "board": [
+      [
+        "History of the Irish Americans in Philadelphia",
+        "History of Irish Americans in Boston",
+        0.2579
+      ],
+      [
+        "Oku people (Sierra Leone)",
+        "Americo-Liberians",
+        0.2213
+      ],
+      [
+        "Oku people (Sierra Leone)",
+        "French Canadians",
+        0.1889
+      ],
+      [
+        "Oku people (Sierra Leone)",
+        "Black Bermudian",
+        0.1818
+      ],
+      [
+        "Americo-Liberians",
+        "French Canadians",
+        0.1743
+      ],
+      [
+        "Black Bermudian",
+        "French Canadians",
+        0.172
+      ],
+      [
+        "Ancient Order of Hibernians",
+        "History of the Irish Americans in Philadelphia",
+        0.1667
+      ],
+      [
+        "Ancient Order of Hibernians",
+        "History of Irish Americans in Boston",
+        0.1554
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 395,
+    "p2_len": 357
+  },
+  {
+    "id": "e12-1",
+    "question": "Creolized forms of which language are found in traditional African religions of Africa with some influence from Christianity?",
+    "answer": "Kongo",
+    "t1": "Kongo language",
+    "t2": "Afro-American religion",
+    "board": [
+      [
+        "Afro-American religion",
+        "Religion in Africa",
+        0.2254
+      ],
+      [
+        "Traditional Berber religion",
+        "Religion in Africa",
+        0.1915
+      ],
+      [
+        "Religion in Lesotho",
+        "Religion in Africa",
+        0.1772
+      ],
+      [
+        "West Africa",
+        "Religion in Lesotho",
+        0.1633
+      ],
+      [
+        "West Africa",
+        "Religion in Africa",
+        0.1616
+      ],
+      [
+        "Persecution of traditional African religion",
+        "Religion in Africa",
+        0.1571
+      ],
+      [
+        "Traditional Berber religion",
+        "Afro-American religion",
+        0.1538
+      ],
+      [
+        "Patrick N'Guema N'Dong",
+        "Religion in Africa",
+        0.1519
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 805,
+    "p2_len": 337
+  },
+  {
+    "id": "e12-2",
+    "question": "In what country did Irvine Gerald Sellar develop the second-tallest free-standing structure?",
+    "answer": "United Kingdom",
+    "t1": "Irvine Sellar",
+    "t2": "The Shard",
+    "board": [
+      [
+        "List of tallest buildings in Toronto",
+        "CN Tower",
+        0.25
+      ],
+      [
+        "The Shard",
+        "Q1 (building)",
+        0.2045
+      ],
+      [
+        "Ostankino Tower",
+        "List of tallest buildings in Toronto",
+        0.1961
+      ],
+      [
+        "Ostankino Tower",
+        "The Shard",
+        0.1932
+      ],
+      [
+        "The Shard",
+        "List of tallest buildings in Toronto",
+        0.1856
+      ],
+      [
+        "Tallinn TV Tower",
+        "Liaoning Broadcast and TV Tower",
+        0.1846
+      ],
+      [
+        "Ostankino Tower",
+        "Liaoning Broadcast and TV Tower",
+        0.1771
+      ],
+      [
+        "Ostankino Tower",
+        "Tallinn TV Tower",
+        0.1769
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 200,
+    "p2_len": 516
+  },
+  {
+    "id": "e12-3",
+    "question": "Viking: The Ultimate Obstacle Course was a game show that aired in Europe with the British presenter who was an Olympic participant in what sport?",
+    "answer": "bobsledder",
+    "t1": "Viking: The Ultimate Obstacle Course",
+    "t2": "Colin Bryce",
+    "board": [
+      [
+        "Wipeout (2008 U.S. game show)",
+        "A*mazing",
+        0.1754
+      ],
+      [
+        "Kunoichi (TV series)",
+        "A*mazing",
+        0.1714
+      ],
+      [
+        "Viking: The Ultimate Obstacle Course",
+        "A*mazing",
+        0.145
+      ],
+      [
+        "Kunoichi (TV series)",
+        "Viking: The Ultimate Obstacle Course",
+        0.1438
+      ],
+      [
+        "Kunoichi (TV series)",
+        "Makoto Nagano",
+        0.1395
+      ],
+      [
+        "Wipeout (2008 U.S. game show)",
+        "All American Girl (2003 TV series)",
+        0.1384
+      ],
+      [
+        "Wipeout (2008 U.S. game show)",
+        "Kunoichi (TV series)",
+        0.1353
+      ],
+      [
+        "Makoto Nagano",
+        "Viking: The Ultimate Obstacle Course",
+        0.1299
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 936,
+    "p2_len": 271
+  },
+  {
+    "id": "e12-4",
+    "question": "What Lord of the Rings actor starred alongside Paul Hogan in Flipper?",
+    "answer": "Elijah Wood",
+    "t1": "Flipper (1996 film)",
+    "t2": "Elijah Wood",
+    "board": [
+      [
+        "Elijah Wood",
+        "Bruce Montague",
+        0.175
+      ],
+      [
+        "The Paul Hogan Show",
+        "Crocodile Dundee in Los Angeles",
+        0.1596
+      ],
+      [
+        "Ariyon Bakare",
+        "Bruce Montague",
+        0.1553
+      ],
+      [
+        "Bruce Montague",
+        "Paul Hogan (darts player)",
+        0.1507
+      ],
+      [
+        "Elijah Wood",
+        "Paul Hogan (darts player)",
+        0.1475
+      ],
+      [
+        "Groomed",
+        "The Paul Hogan Show",
+        0.1461
+      ],
+      [
+        "Hoges: The Paul Hogan Story",
+        "The Paul Hogan Show",
+        0.1452
+      ],
+      [
+        "Flipper (1996 film)",
+        "Paul Hogan (darts player)",
+        0.1447
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 414,
+    "p2_len": 236
+  },
+  {
+    "id": "e12-5",
+    "question": "Which of the systems that uses the RedBoot is a double-deck, wide-body, four-engine jet airliner manufactured by European manufacturer Airbus?",
+    "answer": "Airbus A380",
+    "t1": "RedBoot",
+    "t2": "Airbus A380",
+    "board": [
+      [
+        "Airbus A310",
+        "Airbus A300",
+        0.3553
+      ],
+      [
+        "Airbus A340",
+        "McDonnell Douglas DC-10",
+        0.275
+      ],
+      [
+        "Fokker 70",
+        "Airbus A310",
+        0.2533
+      ],
+      [
+        "Airbus A310",
+        "Airbus A340",
+        0.2532
+      ],
+      [
+        "Airbus A310",
+        "Airbus A350 XWB",
+        0.25
+      ],
+      [
+        "Airbus A350 XWB",
+        "Airbus A340",
+        0.2444
+      ],
+      [
+        "Airbus A300",
+        "Airbus A340",
+        0.2371
+      ],
+      [
+        "Boeing 767",
+        "Boeing 707",
+        0.2347
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 386,
+    "p2_len": 536
+  },
+  {
+    "id": "e12-6",
+    "question": "What film did the sound editor for a 2013 Hong Kong-Chinese martial arts drama film based on the life story of the Wing Chun grandmaster Ip Man win two Academy Awards for?",
+    "answer": "\"Hacksaw Ridge\"",
+    "t1": "Robert Mackenzie (sound engineer)",
+    "t2": "The Grandmaster (film)",
+    "board": [
+      [
+        "Ip Man: The Final Fight",
+        "The Legend Is Born: Ip Man",
+        0.3614
+      ],
+      [
+        "Ip Man 2",
+        "The Legend Is Born: Ip Man",
+        0.3505
+      ],
+      [
+        "Ip Man (film)",
+        "Ip Man 3",
+        0.3367
+      ],
+      [
+        "Ip Man 2",
+        "Ip Man (film)",
+        0.3301
+      ],
+      [
+        "Ip Man (film series)",
+        "Ip Man 3",
+        0.3241
+      ],
+      [
+        "Ip Man: The Final Fight",
+        "Ip Man 3",
+        0.3111
+      ],
+      [
+        "The Legend Is Born: Ip Man",
+        "Ip Man 3",
+        0.3021
+      ],
+      [
+        "Ip Man: The Final Fight",
+        "Ip Man 2",
+        0.2917
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 453,
+    "p2_len": 828
+  },
+  {
+    "id": "e12-7",
+    "question": "Jayaraj made the 2016 epic historical drama that is an adaptation of what Shakespeare play?",
+    "answer": "Macbeth",
+    "t1": "Jayaraj",
+    "t2": "Veeram (2016 film)",
+    "board": [
+      [
+        "Veeram (2016 film)",
+        "The Eagle (2011 film)",
+        0.1809
+      ],
+      [
+        "The Last of the Mohicans (1992 film)",
+        "Ponnar Shankar (film)",
+        0.1789
+      ],
+      [
+        "Veeram (2016 film)",
+        "Ponnar Shankar (film)",
+        0.1696
+      ],
+      [
+        "The Eagle (2011 film)",
+        "The Last of the Mohicans (1992 film)",
+        0.1682
+      ],
+      [
+        "The Royal Hunt of the Sun (film)",
+        "The Last of the Mohicans (1992 film)",
+        0.165
+      ],
+      [
+        "Veeram (2016 film)",
+        "Khoon Ka Khoon",
+        0.1593
+      ],
+      [
+        "The Eagle (2011 film)",
+        "Ponnar Shankar (film)",
+        0.1552
+      ],
+      [
+        "Messalina (1951 film)",
+        "The Royal Hunt of the Sun (film)",
+        0.1531
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 564,
+    "p2_len": 453
+  },
+  {
+    "id": "e12-8",
+    "question": "What album did R.Kelly release the same year as producing \"These Are Special Times\" for Celine Dion. ",
+    "answer": "\"I Believe I Can Fly\"",
+    "t1": "These Are Special Times",
+    "t2": "R. Kelly",
+    "board": [
+      [
+        "A New Day Has Come (TV special)",
+        "These Are Special Times (TV special)",
+        0.422
+      ],
+      [
+        "These Are Special Times",
+        "Don't Save It All for Christmas Day",
+        0.2604
+      ],
+      [
+        "I'm Your Angel",
+        "Don't Save It All for Christmas Day",
+        0.2471
+      ],
+      [
+        "Don't Save It All for Christmas Day",
+        "These Are Special Times (TV special)",
+        0.2264
+      ],
+      [
+        "These Are Special Times",
+        "These Are Special Times (TV special)",
+        0.2124
+      ],
+      [
+        "I'm Your Angel",
+        "These Are Special Times",
+        0.2021
+      ],
+      [
+        "Don't Save It All for Christmas Day",
+        "A New Day Has Come (TV special)",
+        0.1983
+      ],
+      [
+        "I'm Your Angel",
+        "These Are Special Times (TV special)",
+        0.1961
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 524,
+    "p2_len": 908
+  },
+  {
+    "id": "e12-9",
+    "question": "Who was the personal assistant to General of the Armies John Joseph \"Black Jack\" Pershing during World War I?",
+    "answer": "William Corcoran Eustis",
+    "t1": "William Corcoran Eustis",
+    "t2": "John J. Pershing",
+    "board": [
+      [
+        "Battle of Ch\u00e2teau-Thierry (1918)",
+        "John J. Pershing",
+        0.3158
+      ],
+      [
+        "Pershing State Park",
+        "M26 Pershing",
+        0.3115
+      ],
+      [
+        "M26 Pershing",
+        "John J. Pershing",
+        0.2857
+      ],
+      [
+        "William Corcoran Eustis",
+        "M26 Pershing",
+        0.2698
+      ],
+      [
+        "Battle of Ch\u00e2teau-Thierry (1918)",
+        "M26 Pershing",
+        0.24
+      ],
+      [
+        "William Corcoran Eustis",
+        "John J. Pershing",
+        0.2254
+      ],
+      [
+        "William Corcoran Eustis",
+        "Pershing State Park",
+        0.1944
+      ],
+      [
+        "Battle of Ch\u00e2teau-Thierry (1918)",
+        "William Corcoran Eustis",
+        0.1928
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 312,
+    "p2_len": 279
+  },
+  {
+    "id": "e12-10",
+    "question": "What other method of extending an ice hockey game exists other than the one used in the 1932 Allan Cup?",
+    "answer": "the shootout",
+    "t1": "1932 Allan Cup",
+    "t2": "Overtime (ice hockey)",
+    "board": [
+      [
+        "Toronto National Sea Fleas",
+        "1932 Allan Cup",
+        0.6735
+      ],
+      [
+        "1918 Allan Cup",
+        "1915 Allan Cup",
+        0.3793
+      ],
+      [
+        "Allan Cup Hockey",
+        "Hamilton Steelhawks (senior)",
+        0.3167
+      ],
+      [
+        "Toronto National Sea Fleas",
+        "Trail Smoke Eaters (senior)",
+        0.2432
+      ],
+      [
+        "1918 Allan Cup",
+        "Hamilton Steelhawks (senior)",
+        0.2264
+      ],
+      [
+        "1915 Allan Cup",
+        "Hamilton Steelhawks (senior)",
+        0.2241
+      ],
+      [
+        "Toronto National Sea Fleas",
+        "Hamilton Steelhawks (senior)",
+        0.2241
+      ],
+      [
+        "Allan Cup Hockey",
+        "1915 Allan Cup",
+        0.2208
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 282,
+    "p2_len": 312
+  },
+  {
+    "id": "e12-11",
+    "question": "Jamie Harris is best known for his role as The Hook-Handed Man in a movie directed by who ?",
+    "answer": "Brad Silberling",
+    "t1": "Jamie Harris (actor)",
+    "t2": "Lemony Snicket's A Series of Unfortunate Events",
+    "board": [
+      [
+        "Usman Ally",
+        "Jamie Harris (actor)",
+        0.3421
+      ],
+      [
+        "Badla Jatti Da",
+        "The Dragon, the Hero",
+        0.1719
+      ],
+      [
+        "Badla Jatti Da",
+        "Jalam (film)",
+        0.1429
+      ],
+      [
+        "Badla Jatti Da",
+        "Maurice Walsh",
+        0.1351
+      ],
+      [
+        "Jamie Harris (actor)",
+        "Lemony Snicket's A Series of Unfortunate Events",
+        0.1333
+      ],
+      [
+        "Maurice Walsh",
+        "The Dragon, the Hero",
+        0.1333
+      ],
+      [
+        "Jamie Harris (actor)",
+        "Badla Jatti Da",
+        0.1286
+      ],
+      [
+        "Jalam (film)",
+        "The Dragon, the Hero",
+        0.1279
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 252,
+    "p2_len": 518
+  },
+  {
+    "id": "e12-12",
+    "question": "Wagner Moura received what nomination for playing the lead role of \"The King of Cocaine\"? ",
+    "answer": "Golden Globe",
+    "t1": "Wagner Moura",
+    "t2": "Pablo Escobar",
+    "board": [
+      [
+        "Futuro Beach",
+        "A Lua Me Disse",
+        0.2222
+      ],
+      [
+        "Futuro Beach",
+        "O Homem do Futuro",
+        0.2188
+      ],
+      [
+        "Trash (2014 film)",
+        "Futuro Beach",
+        0.2097
+      ],
+      [
+        "The Middle of the World (2003 film)",
+        "O Homem do Futuro",
+        0.202
+      ],
+      [
+        "Trash (2014 film)",
+        "O Homem do Futuro",
+        0.197
+      ],
+      [
+        "Leandro Firmino",
+        "Wagner Moura",
+        0.1875
+      ],
+      [
+        "Elite Squad: The Enemy Within",
+        "O Homem do Futuro",
+        0.1837
+      ],
+      [
+        "A Lua Me Disse",
+        "The Three Marias",
+        0.1613
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 595,
+    "p2_len": 546
+  },
+  {
+    "id": "e12-13",
+    "question": "Where is the company that owns thanKing Horse pub restaurant chain based ?",
+    "answer": "Bury St Edmunds,",
+    "t1": "Hungry Horse",
+    "t2": "Greene King",
+    "board": [
+      [
+        "Hungry Horse",
+        "Greene King",
+        0.193
+      ],
+      [
+        "VIP's",
+        "Fazoli's",
+        0.1616
+      ],
+      [
+        "VIP's",
+        "Todai (restaurant)",
+        0.1605
+      ],
+      [
+        "Hungry Horse",
+        "Piccadilly Pub",
+        0.16
+      ],
+      [
+        "Todai (restaurant)",
+        "The Works (restaurant)",
+        0.1591
+      ],
+      [
+        "Todai (restaurant)",
+        "Piccadilly Pub",
+        0.1522
+      ],
+      [
+        "Hungry Horse",
+        "Todai (restaurant)",
+        0.1509
+      ],
+      [
+        "Klenger Burger",
+        "Fazoli's",
+        0.1494
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 205,
+    "p2_len": 242
+  },
+  {
+    "id": "e12-14",
+    "question": "FC Barcelona ambassador Ronaldinho won what French award in addition to FIFA World Player of the Year?",
+    "answer": "Ballon d'Or",
+    "t1": "2004\u201305 FC Barcelona season",
+    "t2": "Ronaldinho",
+    "board": [
+      [
+        "2005 FIFA World Player of the Year",
+        "2006 FIFA World Player of the Year",
+        0.35
+      ],
+      [
+        "2010 FIFA Ballon d'Or",
+        "2009 FIFA World Player of the Year",
+        0.3243
+      ],
+      [
+        "2007 FIFA World Player of the Year",
+        "2009 FIFA World Player of the Year",
+        0.2333
+      ],
+      [
+        "Ronaldinho",
+        "Rom\u00e1rio",
+        0.2231
+      ],
+      [
+        "2007 FIFA World Player of the Year",
+        "2010 FIFA Ballon d'Or",
+        0.1944
+      ],
+      [
+        "2004\u201305 FC Barcelona season",
+        "2005 FIFA World Player of the Year",
+        0.1905
+      ],
+      [
+        "Rom\u00e1rio",
+        "2006 FIFA World Player of the Year",
+        0.1753
+      ],
+      [
+        "Ferenc Plattk\u00f3",
+        "Ronaldinho",
+        0.1582
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 936,
+    "p2_len": 705
+  },
+  {
+    "id": "e12-15",
+    "question": "Which soccer club's head coach was born August 1, 1973?",
+    "answer": "Columbus Crew Soccer Club",
+    "t1": "Columbus Crew SC",
+    "t2": "Gregg Berhalter",
+    "board": [
+      [
+        "2011\u201312 Louisville Lightning season",
+        "2013\u201314 Cincinnati Saints season",
+        0.3462
+      ],
+      [
+        "Bernie Lilavois",
+        "David Kramer (soccer)",
+        0.2754
+      ],
+      [
+        "Brian McManus",
+        "Bernie Lilavois",
+        0.275
+      ],
+      [
+        "Gregg Berhalter",
+        "David Kramer (soccer)",
+        0.2708
+      ],
+      [
+        "Brian McManus",
+        "David Kramer (soccer)",
+        0.25
+      ],
+      [
+        "Columbus Crew SC",
+        "Gregg Berhalter",
+        0.25
+      ],
+      [
+        "Gregg Berhalter",
+        "Bernie Lilavois",
+        0.2167
+      ],
+      [
+        "Columbus Crew SC",
+        "Brian McManus",
+        0.1978
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 527,
+    "p2_len": 143
+  },
+  {
+    "id": "e12-16",
+    "question": "The creek of which Paradise Creek is a tributary is a tributary of what river?",
+    "answer": "Delaware River",
+    "t1": "Paradise Creek (Pennsylvania)",
+    "t2": "Brodhead Creek",
+    "board": [
+      [
+        "Paradise Creek (Pennsylvania)",
+        "Brodhead Creek",
+        0.75
+      ],
+      [
+        "Estrella River",
+        "Cedar Creek (South Fork Eel River)",
+        0.2241
+      ],
+      [
+        "Estrella River",
+        "Ventura River",
+        0.2126
+      ],
+      [
+        "Ventura River",
+        "Cedar Creek (South Fork Eel River)",
+        0.2033
+      ],
+      [
+        "Estrella River",
+        "Tomichi Creek",
+        0.1946
+      ],
+      [
+        "Turkey Creek (Econlockhatchee River)",
+        "Ventura River",
+        0.193
+      ],
+      [
+        "Turkey Creek (Econlockhatchee River)",
+        "Cedar Creek (South Fork Eel River)",
+        0.1698
+      ],
+      [
+        "Tomichi Creek",
+        "Cedar Creek (South Fork Eel River)",
+        0.1622
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 115,
+    "p2_len": 120
+  },
+  {
+    "id": "e12-17",
+    "question": "Who wrote the tragic play which also has a 1968 film with a soundtrack by Nino Rota?",
+    "answer": "William Shakespeare",
+    "t1": "Romeo and Juliet (1968 film soundtrack)",
+    "t2": "Romeo and Juliet (1968 film)",
+    "board": [
+      [
+        "The Godfather Part II (soundtrack)",
+        "The Godfather (soundtrack)",
+        0.2381
+      ],
+      [
+        "Romeo and Juliet (1968 film soundtrack)",
+        "The Godfather (soundtrack)",
+        0.1957
+      ],
+      [
+        "Romeo and Juliet (1968 film soundtrack)",
+        "The Godfather Part II (soundtrack)",
+        0.1724
+      ],
+      [
+        "Romeo and Juliet (1968 film soundtrack)",
+        "Romeo and Juliet (1968 film)",
+        0.1571
+      ],
+      [
+        "Amarcord Nino Rota",
+        "Il cappello di paglia di Firenze",
+        0.1538
+      ],
+      [
+        "The Godfather (soundtrack)",
+        "Romeo and Juliet (1968 film)",
+        0.1364
+      ],
+      [
+        "Romeo and Juliet (1968 film)",
+        "Il cappello di paglia di Firenze",
+        0.1333
+      ],
+      [
+        "The Godfather (soundtrack)",
+        "The Cold Nose",
+        0.1319
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 525,
+    "p2_len": 133
+  },
+  {
+    "id": "e12-18",
+    "question": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+    "answer": "October 1922",
+    "t1": "Socialist Revolutionary Party",
+    "t2": "Russian Civil War",
+    "board": [
+      [
+        "Socialist Revolutionary Party",
+        "Alexander Kerensky",
+        0.2222
+      ],
+      [
+        "Socialist Revolutionary Party",
+        "Left-wing uprisings against the Bolsheviks",
+        0.2061
+      ],
+      [
+        "Communism in Russia",
+        "Alexander Kerensky",
+        0.197
+      ],
+      [
+        "Socialist Revolutionary Party",
+        "Communism in Russia",
+        0.1824
+      ],
+      [
+        "Communism in Russia",
+        "Left-wing uprisings against the Bolsheviks",
+        0.1797
+      ],
+      [
+        "Socialist Revolutionary Party",
+        "Lavr Kornilov",
+        0.1739
+      ],
+      [
+        "Socialist Revolutionary Party",
+        "Russian Civil War",
+        0.1659
+      ],
+      [
+        "Left-wing uprisings against the Bolsheviks",
+        "Alexander Kerensky",
+        0.1653
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 1105,
+    "p2_len": 1684
+  },
+  {
+    "id": "e12-19",
+    "question": "John ruskin named his album due to a removal of what?",
+    "answer": "marker pen",
+    "t1": "I Gotta Rash/We Are Thee Goblins from Canada",
+    "t2": "Nardwuar the Human Serviette",
+    "board": [
+      [
+        "I Gotta Rash/We Are Thee Goblins from Canada",
+        "Nardwuar the Human Serviette",
+        0.2029
+      ],
+      [
+        "Nardwuar the Human Serviette",
+        "Ruskin",
+        0.1803
+      ],
+      [
+        "Ruskin Pottery",
+        "John Ruskin (painting)",
+        0.1705
+      ],
+      [
+        "The Passion of John Ruskin",
+        "John Ruskin (painting)",
+        0.1667
+      ],
+      [
+        "Ruskin Pottery",
+        "The Passion of John Ruskin",
+        0.163
+      ],
+      [
+        "I Gotta Rash/We Are Thee Goblins from Canada",
+        "Ruskin",
+        0.16
+      ],
+      [
+        "Ruskin College",
+        "Ruskin",
+        0.1587
+      ],
+      [
+        "Ruskin Colony",
+        "Ruskin",
+        0.156
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 347,
+    "p2_len": 245
+  },
+  {
+    "id": "e12-20",
+    "question": "How many laps did Harry Prowell run during the 10,000 metres race at the 1967 Pan American Games?",
+    "answer": "25 laps",
+    "t1": "Harry Prowell",
+    "t2": "10,000 metres",
+    "board": [
+      [
+        "Ross MacKenzie (athlete)",
+        "Brian MacLaren",
+        0.7931
+      ],
+      [
+        "2015 Pan American Games",
+        "2011 Pan American Games",
+        0.2348
+      ],
+      [
+        "Harry Prowell",
+        "Dave Bailey (athlete)",
+        0.2098
+      ],
+      [
+        "European 10,000m Cup",
+        "10,000 metres",
+        0.2043
+      ],
+      [
+        "Brian MacLaren",
+        "Nora Rocha",
+        0.2025
+      ],
+      [
+        "Ross MacKenzie (athlete)",
+        "Nora Rocha",
+        0.2025
+      ],
+      [
+        "Ross MacKenzie (athlete)",
+        "Dave Bailey (athlete)",
+        0.1985
+      ],
+      [
+        "Kavita Tungar",
+        "10,000 metres",
+        0.19
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 657,
+    "p2_len": 543
+  },
+  {
+    "id": "e12-21",
+    "question": "What county is Keene High School located in?",
+    "answer": "Cheshire County",
+    "t1": "Keene High School",
+    "t2": "Marlborough, New Hampshire",
+    "board": [
+      [
+        "United Senior High School (Illinois)",
+        "Wethersfield High School (Illinois)",
+        0.2857
+      ],
+      [
+        "Jefferson High School (Delphos, Ohio)",
+        "Keene High School",
+        0.2031
+      ],
+      [
+        "Wanda R. Smith High School",
+        "Keene High School",
+        0.194
+      ],
+      [
+        "Jefferson High School (Delphos, Ohio)",
+        "Wanda R. Smith High School",
+        0.1882
+      ],
+      [
+        "Alumni Field (Keene)",
+        "Keene High School",
+        0.1806
+      ],
+      [
+        "United Senior High School (Illinois)",
+        "Jefferson High School (Delphos, Ohio)",
+        0.176
+      ],
+      [
+        "Alumni Field (Keene)",
+        "Wanda R. Smith High School",
+        0.172
+      ],
+      [
+        "Ridge Community High School",
+        "Wanda R. Smith High School",
+        0.1695
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 240,
+    "p2_len": 196
+  },
+  {
+    "id": "e12-22",
+    "question": "On which 2012 American military science fiction action film, directed by Peter Berg, did Jason Snell work? ",
+    "answer": "Battleship",
+    "t1": "Jason Snell (visual effects artist)",
+    "t2": "Battleship (film)",
+    "board": [
+      [
+        "G.I. Joe (film series)",
+        "G.I. Joe: Retaliation",
+        0.24
+      ],
+      [
+        "Battleship (film)",
+        "Ender's Game (film)",
+        0.1729
+      ],
+      [
+        "Ender's Game (film)",
+        "G.I. Joe (film series)",
+        0.1716
+      ],
+      [
+        "Jason Snell (visual effects artist)",
+        "Peter Berg",
+        0.169
+      ],
+      [
+        "Ender's Game (film)",
+        "Universal Soldier (1992 film)",
+        0.1551
+      ],
+      [
+        "Battleship (film)",
+        "G.I. Joe (film series)",
+        0.1524
+      ],
+      [
+        "Ender's Game (film)",
+        "G.I. Joe: Retaliation",
+        0.1515
+      ],
+      [
+        "Battleship (film)",
+        "G.I. Joe: Retaliation",
+        0.1493
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 542,
+    "p2_len": 441
+  },
+  {
+    "id": "e12-23",
+    "question": "Which club, founded in 1928, did Bob Johnson played for ",
+    "answer": "The club",
+    "t1": "Bob Johnson (footballer, born 1905)",
+    "t2": "Derry City F.C.",
+    "board": [
+      [
+        "Bob Johnson (footballer, born 1905)",
+        "Bob Johnson (actor)",
+        0.1545
+      ],
+      [
+        "Jim Johnson (ice hockey, born 1962)",
+        "Kris Johnson (basketball)",
+        0.1466
+      ],
+      [
+        "Darrius Johnson",
+        "Carl Johnson (soccer)",
+        0.1429
+      ],
+      [
+        "Bob Johnson (actor)",
+        "Kris Johnson (basketball)",
+        0.1259
+      ],
+      [
+        "Darrius Johnson",
+        "Kris Johnson (basketball)",
+        0.121
+      ],
+      [
+        "Bob Johnson (footballer, born 1905)",
+        "Kris Johnson (basketball)",
+        0.119
+      ],
+      [
+        "Bob Johnson (footballer, born 1905)",
+        "Jim Johnson (ice hockey, born 1962)",
+        0.1176
+      ],
+      [
+        "Carl Johnson (soccer)",
+        "Kris Johnson (basketball)",
+        0.1176
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 494,
+    "p2_len": 846
+  },
+  {
+    "id": "e12-24",
+    "question": "\"52nd Street\" is a 1978 album that earned two Grammy Awards for which piano-playing songwriter?",
+    "answer": "Billy Joel",
+    "t1": "52nd Street (album)",
+    "t2": "Billy Joel",
+    "board": [
+      [
+        "52nd Street (IRT Flushing Line)",
+        "Morton F. Plant House",
+        0.2742
+      ],
+      [
+        "52nd Street (IRT Flushing Line)",
+        "52nd Street station (Market\u2013Frankford Line)",
+        0.2034
+      ],
+      [
+        "52nd Street (IRT Flushing Line)",
+        "52nd Street (BMT Fifth Avenue Line)",
+        0.2
+      ],
+      [
+        "52nd Street (album)",
+        "Billy Joel",
+        0.175
+      ],
+      [
+        "52nd Street (album)",
+        "Morton F. Plant House",
+        0.1746
+      ],
+      [
+        "Morton F. Plant House",
+        "52nd Street (BMT Fifth Avenue Line)",
+        0.1705
+      ],
+      [
+        "52nd Street station (Market\u2013Frankford Line)",
+        "52nd Street (BMT Fifth Avenue Line)",
+        0.1585
+      ],
+      [
+        "Santa Fe, Oakland, California",
+        "52nd Street (BMT Fifth Avenue Line)",
+        0.1585
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 197,
+    "p2_len": 480
+  },
+  {
+    "id": "e12-25",
+    "question": "What type of profession does Alexandra David-N\u00e9el and Jack Kerouac have in common?",
+    "answer": "writer",
+    "t1": "Alexandra David-N\u00e9el",
+    "t2": "Jack Kerouac",
+    "board": [
+      [
+        "When I Was Cool",
+        "Off the Road",
+        0.1935
+      ],
+      [
+        "Readings by Jack Kerouac on the Beat Generation",
+        "Off the Road",
+        0.1923
+      ],
+      [
+        "Readings by Jack Kerouac on the Beat Generation",
+        "Jack Kerouac Reads On the Road",
+        0.1829
+      ],
+      [
+        "The Town and the City",
+        "Off the Road",
+        0.1695
+      ],
+      [
+        "Readings by Jack Kerouac on the Beat Generation",
+        "Visions of Gerard",
+        0.1573
+      ],
+      [
+        "The Town and the City",
+        "Visions of Gerard",
+        0.1562
+      ],
+      [
+        "When I Was Cool",
+        "Visions of Gerard",
+        0.1524
+      ],
+      [
+        "When I Was Cool",
+        "The Town and the City",
+        0.1513
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 586,
+    "p2_len": 170
+  },
+  {
+    "id": "e12-26",
+    "question": "The fictional private detective that appears in \"The Adventure of the Seven Clocks\" what written by whom?",
+    "answer": "Sir Arthur Conan Doyle",
+    "t1": "The Adventure of the Seven Clocks",
+    "t2": "Sherlock Holmes",
+    "board": [
+      [
+        "Hazell (TV series)",
+        "Pepe Carvalho",
+        0.2
+      ],
+      [
+        "Pepe Carvalho",
+        "Wilsberg",
+        0.2
+      ],
+      [
+        "Mickey Spillane's Mike Hammer",
+        "Michael Shayne",
+        0.1807
+      ],
+      [
+        "The Adventure of the Seven Clocks",
+        "Sherlock Holmes",
+        0.1803
+      ],
+      [
+        "Dan Turner, Hollywood Detective",
+        "Sherlock Holmes",
+        0.1739
+      ],
+      [
+        "Mickey Spillane's Mike Hammer",
+        "Pepe Carvalho",
+        0.1739
+      ],
+      [
+        "Mickey Spillane's Mike Hammer",
+        "Sherlock Holmes",
+        0.169
+      ],
+      [
+        "Tam Sventon",
+        "Sherlock Holmes",
+        0.1647
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 191,
+    "p2_len": 376
+  },
+  {
+    "id": "e12-27",
+    "question": "E! Hollywood Hold'em was hosted by a poker player of what nationality?",
+    "answer": "Irish",
+    "t1": "E! Hollywood Hold'em",
+    "t2": "Phil Laak",
+    "board": [
+      [
+        "Ben Lamb",
+        "Alexander Borteh",
+        0.2963
+      ],
+      [
+        "Alexander Borteh",
+        "Bernard Lee (poker player)",
+        0.2697
+      ],
+      [
+        "The Poker Player's Championship",
+        "Ben Lamb",
+        0.2373
+      ],
+      [
+        "Ben Lamb",
+        "Bernard Lee (poker player)",
+        0.2245
+      ],
+      [
+        "Alexander Borteh",
+        "Elio Fox",
+        0.2185
+      ],
+      [
+        "The Poker Player's Championship",
+        "Elio Fox",
+        0.2157
+      ],
+      [
+        "Elio Fox",
+        "Bernard Lee (poker player)",
+        0.2121
+      ],
+      [
+        "David Rheem",
+        "Bernard Lee (poker player)",
+        0.2117
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 456,
+    "p2_len": 280
+  },
+  {
+    "id": "e12-28",
+    "question": "What did the screewriter for a 2013 psychological thriller film directed by Denis Villeneuve get a Goya Award nomination for Best Adapted Screenplay at the 27th Goya Awards for? ",
+    "answer": "\"Invader (Invasor)\"",
+    "t1": "Javier Gull\u00f3n",
+    "t2": "Enemy (2013 film)",
+    "board": [
+      [
+        "Goya Award for Best Original Screenplay",
+        "Goya Award for Best Adapted Screenplay",
+        0.875
+      ],
+      [
+        "Goya Award for Best Fictional Short Film",
+        "Goya Award for Best European Film",
+        0.6552
+      ],
+      [
+        "Goya Award for Best Fictional Short Film",
+        "Goya Award for Best Original Screenplay",
+        0.6207
+      ],
+      [
+        "Goya Award for Best Original Screenplay",
+        "Goya Award for Best European Film",
+        0.6071
+      ],
+      [
+        "Goya Award for Best Fictional Short Film",
+        "Goya Award for Best Adapted Screenplay",
+        0.6
+      ],
+      [
+        "Goya Award for Best Adapted Screenplay",
+        "Goya Award for Best European Film",
+        0.5862
+      ],
+      [
+        "Javier Gull\u00f3n",
+        "Javier Pereira (actor)",
+        0.2857
+      ],
+      [
+        "Javier Gull\u00f3n",
+        "Goya Award for Best Adapted Screenplay",
+        0.2821
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 268,
+    "p2_len": 414
+  },
+  {
+    "id": "e12-29",
+    "question": "The College of Arts and Sciences of Ohio University is located on the university's central quadrangle lawn, which sits aligned to the cardinal directions, with what building facing true north?",
+    "answer": "Manasseh Cutler Hall",
+    "t1": "Ohio University College of Arts and Sciences",
+    "t2": "College Green of Ohio University",
+    "board": [
+      [
+        "Compass",
+        "Cardinal direction",
+        0.2389
+      ],
+      [
+        "Ossian C. Bird Arena",
+        "Ohio University College of Arts and Sciences",
+        0.1744
+      ],
+      [
+        "College Green of Ohio University",
+        "Ohio University College of Arts and Sciences",
+        0.1739
+      ],
+      [
+        "College Green of Ohio University",
+        "Ossian C. Bird Arena",
+        0.1562
+      ],
+      [
+        "Norlin Quadrangle Historic District",
+        "Ohio University College of Arts and Sciences",
+        0.1412
+      ],
+      [
+        "Dale F. Nitzschke",
+        "Ohio University College of Arts and Sciences",
+        0.1379
+      ],
+      [
+        "Tom Quad",
+        "University of Sydney Quadrangle",
+        0.1355
+      ],
+      [
+        "Norlin Quadrangle Historic District",
+        "University of Sydney Quadrangle",
+        0.1348
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa",
+      "split": "distractor/validation",
+      "type": "bridge"
+    },
+    "p1_len": 467,
+    "p2_len": 546
+  }
+]

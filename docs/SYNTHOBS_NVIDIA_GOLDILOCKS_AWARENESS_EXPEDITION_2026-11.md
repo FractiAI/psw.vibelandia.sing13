@@ -301,6 +301,19 @@ Socioeconomic rhyme: query series + partners among UNRATE / CPIAUCSL / FEDFUNDS 
 
 
 
+
+### E12 — Collaboration synergy (whole > sum of parts)
+
+**Claim tested:** collaborating agents with complementary information beat the OR of independent solos.
+
+**Deterministic control:** two parts hold `TOKEN-A` and `TOKEN-B`; only a shared join rule forms `TOKEN-A+TOKEN-B`. Result: solos/OR/wrong-join 0% · collab **100%** (N=100).
+
+**Real HotpotQA bridge (Qwen2.5-1.5B, N=30):**  
+- Answer EM: no synergy (OR 46.7% > collab 26.7%) — answers often lie in one passage.  
+- Complementary **title-pair** assembly: solos/OR **3.3%** · note-team 20% · **COLLAB_AWARE 30%** (COLLAB−OR CI excludes 0).
+
+**Reading.** We **do** show better collaboration where the joint product exceeds the sum of parts when the task is truly complementary. We **do not** claim every chat synthesizer beats solo OR on extractive answer EM.
+
 ## 10. Super-Performers and the NVIDIA Case
 
 NVIDIA is especially interesting because extraordinary technical and creative performance sits near the center of its historical and technological position.

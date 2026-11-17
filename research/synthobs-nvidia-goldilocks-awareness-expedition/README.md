@@ -29,3 +29,4 @@ Honesty: Soft Story organizational companion — not NVIDIA KPI attestation, not
 | E9 | Protein-folding rhyme on real PDB + Pfam seed MSAs (linear vs flat MSA vs relational awareness) |
 | E10 | Knowledge fold — HotpotQA bridge title-pair contacts (higher cognitive system) |
 | E11 | Macro teleconnection fold — real FRED series lag-coupling board |
+| E12 | Multi-agent collaboration synergy on HotpotQA (whole > sum of parts; title-pair + deterministic control) |

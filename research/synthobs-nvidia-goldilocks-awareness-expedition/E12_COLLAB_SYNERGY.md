@@ -49,3 +49,16 @@ Decoding: temperature 0. Lean: 2 solo calls + 2 note calls + 1 synthesizer for S
 ## Honesty
 
 Not NVIDIA KPIs; not a claim that chat notes equal organizations. HotpotQA bridge is a real multi-document task where complementary information is the natural “parts.”
+
+## Amendment A — complementary title-pair primary (pre-result for E12b rows)
+
+Hotpot answers almost always appear inside at least one supporting passage, so `INDEPENDENT_OR` on answer EM is an unfairly strong “sum of parts” and can beat weak synthesizers.  
+
+**E12b primary task (same items, same split):** recover the evidential contact `Title1||Title2`.  
+- SOLO_A only sees passage 1 (knows one title’s text).  
+- SOLO_B only sees passage 2.  
+- Neither solo can honestly emit both gold titles from one passage alone.  
+- `INDEPENDENT_OR` still fails unless a solo luckily guesses both titles.  
+- COLLAB_AWARE / SILO_TEAM must assemble the pair from complementary notes (+ board for AWARE).  
+
+Answer EM remains secondary. Synergy gates apply to **title-pair exact match**.

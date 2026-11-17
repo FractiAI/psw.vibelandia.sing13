@@ -1,0 +1,35 @@
+{
+  "model": "allam-2-7b",
+  "rhyme": "E11",
+  "n": 24,
+  "exact_rates": {
+    "LINEAR": 0,
+    "FLAT_MSA": 0,
+    "AWARE": 0.4583
+  },
+  "mean_tokens": {
+    "LINEAR": 231.8,
+    "FLAT_MSA": 522.6,
+    "AWARE": 235.5
+  },
+  "contrasts": {
+    "AWARE_minus_LINEAR": {
+      "mean": 0.4588,
+      "lo": 0.25,
+      "hi": 0.6667,
+      "excludes_0": true
+    },
+    "AWARE_minus_FLAT_MSA": {
+      "mean": 0.4588,
+      "lo": 0.25,
+      "hi": 0.6667,
+      "excludes_0": true
+    }
+  },
+  "H3_token_ratio": 0.4506,
+  "gates": {
+    "H1": true,
+    "H2": true,
+    "H3": true
+  }
+}

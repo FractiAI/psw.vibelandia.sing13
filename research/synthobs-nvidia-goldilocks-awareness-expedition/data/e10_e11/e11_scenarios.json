@@ -1,0 +1,1514 @@
+[
+  {
+    "id": "e11-0",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "UNRATE",
+    "as_of": "2005-03-01",
+    "gold": "INDPRO||UNRATE",
+    "partner": "INDPRO",
+    "involving": [
+      [
+        "INDPRO||UNRATE",
+        0.8211
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.7812
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.4873
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9505
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.8211
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.7812
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.615
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.4873
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.4339
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-1",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "CPIAUCSL",
+    "as_of": "1968-11-01",
+    "gold": "CPIAUCSL||INDPRO",
+    "partner": "INDPRO",
+    "involving": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.97
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.7026
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.4229
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.97
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.7362
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.7026
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.6784
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5266
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.4229
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-2",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "FEDFUNDS",
+    "as_of": "2022-11-01",
+    "gold": "CPIAUCSL||FEDFUNDS",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.8486
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.7115
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.6648
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.8486
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.8235
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.7559
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.7115
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.7096
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.6648
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-3",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "INDPRO",
+    "as_of": "1996-11-01",
+    "gold": "CPIAUCSL||INDPRO",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9896
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.8852
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.7068
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9896
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.8852
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.8354
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.8264
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.7068
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.6144
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-4",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "UNRATE",
+    "as_of": "1981-02-01",
+    "gold": "CPIAUCSL||UNRATE",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.8907
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.6924
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.5964
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.8907
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.7351
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.6924
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.682
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.5964
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.5425
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-5",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "CPIAUCSL",
+    "as_of": "1968-12-01",
+    "gold": "CPIAUCSL||INDPRO",
+    "partner": "INDPRO",
+    "involving": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9718
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.717
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.4499
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9718
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.7871
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.717
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.6869
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5402
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.4499
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-6",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "FEDFUNDS",
+    "as_of": "2004-01-01",
+    "gold": "FEDFUNDS||UNRATE",
+    "partner": "UNRATE",
+    "involving": [
+      [
+        "FEDFUNDS||UNRATE",
+        0.9606
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.8644
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.8254
+      ]
+    ],
+    "top_global": [
+      [
+        "FEDFUNDS||UNRATE",
+        0.9606
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.8644
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.8254
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.8172
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.7144
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.086
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-7",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "INDPRO",
+    "as_of": "1971-10-01",
+    "gold": "INDPRO||UNRATE",
+    "partner": "UNRATE",
+    "involving": [
+      [
+        "INDPRO||UNRATE",
+        0.7935
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.6242
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5039
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.9655
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.9008
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.7935
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.7135
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.6242
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5039
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-8",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "UNRATE",
+    "as_of": "1959-11-01",
+    "gold": "FEDFUNDS||UNRATE",
+    "partner": "FEDFUNDS",
+    "involving": [
+      [
+        "FEDFUNDS||UNRATE",
+        0.7622
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.7557
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.684
+      ]
+    ],
+    "top_global": [
+      [
+        "FEDFUNDS||UNRATE",
+        0.7622
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.7557
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.684
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.6008
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.3824
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.1503
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-9",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "CPIAUCSL",
+    "as_of": "2018-06-01",
+    "gold": "CPIAUCSL||FEDFUNDS",
+    "partner": "FEDFUNDS",
+    "involving": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.9876
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.9695
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.9064
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.9876
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.9695
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.9632
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.921
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.9064
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.6357
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-10",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "FEDFUNDS",
+    "as_of": "2022-09-01",
+    "gold": "FEDFUNDS||UNRATE",
+    "partner": "UNRATE",
+    "involving": [
+      [
+        "FEDFUNDS||UNRATE",
+        0.877
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.8366
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.8032
+      ]
+    ],
+    "top_global": [
+      [
+        "FEDFUNDS||UNRATE",
+        0.877
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.8366
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.8243
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.8032
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.6797
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.5977
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-11",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "INDPRO",
+    "as_of": "1969-04-01",
+    "gold": "CPIAUCSL||INDPRO",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9764
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.8693
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.6797
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9764
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.8693
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.8415
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.7856
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.7656
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.6797
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-12",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "UNRATE",
+    "as_of": "1959-01-01",
+    "gold": "CPIAUCSL||UNRATE",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.8534
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.849
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.8404
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.8534
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.849
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.8404
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.6119
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.6068
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.5075
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-13",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "CPIAUCSL",
+    "as_of": "1999-05-01",
+    "gold": "CPIAUCSL||INDPRO",
+    "partner": "INDPRO",
+    "involving": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9892
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.962
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.5589
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9892
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.9643
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.962
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.5589
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.3484
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.2956
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-14",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "FEDFUNDS",
+    "as_of": "2011-05-01",
+    "gold": "FEDFUNDS||UNRATE",
+    "partner": "UNRATE",
+    "involving": [
+      [
+        "FEDFUNDS||UNRATE",
+        0.9335
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5996
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.1325
+      ]
+    ],
+    "top_global": [
+      [
+        "FEDFUNDS||UNRATE",
+        0.9335
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.9225
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.9021
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5996
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.5473
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.1325
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-15",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "INDPRO",
+    "as_of": "1982-08-01",
+    "gold": "INDPRO||UNRATE",
+    "partner": "UNRATE",
+    "involving": [
+      [
+        "INDPRO||UNRATE",
+        0.767
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.512
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.4428
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.884
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.767
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.512
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.4428
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.2025
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.1094
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-16",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "UNRATE",
+    "as_of": "2017-11-01",
+    "gold": "CPIAUCSL||UNRATE",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.9551
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.8941
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.6381
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.98
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.9551
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.8941
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.6381
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.2697
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.2571
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-17",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "CPIAUCSL",
+    "as_of": "2025-11-01",
+    "gold": "CPIAUCSL||UNRATE",
+    "partner": "UNRATE",
+    "involving": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.9505
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.82
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.3254
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.9505
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.82
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.6991
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.3254
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.1943
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.1573
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-18",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "FEDFUNDS",
+    "as_of": "2023-06-01",
+    "gold": "CPIAUCSL||FEDFUNDS",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.9427
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.5688
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.4041
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.9427
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.936
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.9075
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.7829
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.5688
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.4041
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-19",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "INDPRO",
+    "as_of": "2016-07-01",
+    "gold": "FEDFUNDS||INDPRO",
+    "partner": "FEDFUNDS",
+    "involving": [
+      [
+        "FEDFUNDS||INDPRO",
+        0.7066
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.4468
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.2488
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.8208
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.7066
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.6536
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.647
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.4468
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.2488
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-20",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "UNRATE",
+    "as_of": "1999-04-01",
+    "gold": "CPIAUCSL||UNRATE",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||UNRATE",
+        0.9618
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.9599
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.5805
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.9891
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.9618
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.9599
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.5805
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5769
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.4795
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-21",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "CPIAUCSL",
+    "as_of": "2018-11-01",
+    "gold": "CPIAUCSL||FEDFUNDS",
+    "partner": "FEDFUNDS",
+    "involving": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.991
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.9753
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.9585
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.991
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.9778
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.9753
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.9598
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.9585
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.9081
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-22",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "FEDFUNDS",
+    "as_of": "2024-12-01",
+    "gold": "CPIAUCSL||FEDFUNDS",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.8808
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.7221
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5914
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.8808
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.841
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.7221
+      ],
+      [
+        "CPIAUCSL||INDPRO",
+        0.6759
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.5914
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.5292
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  },
+  {
+    "id": "e11-23",
+    "rhyme": "E11_macro_teleconnection_fold",
+    "query": "INDPRO",
+    "as_of": "1966-03-01",
+    "gold": "CPIAUCSL||INDPRO",
+    "partner": "CPIAUCSL",
+    "involving": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.988
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.9787
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.9406
+      ]
+    ],
+    "top_global": [
+      [
+        "CPIAUCSL||INDPRO",
+        0.988
+      ],
+      [
+        "INDPRO||UNRATE",
+        0.9787
+      ],
+      [
+        "CPIAUCSL||UNRATE",
+        0.977
+      ],
+      [
+        "CPIAUCSL||FEDFUNDS",
+        0.9541
+      ],
+      [
+        "FEDFUNDS||INDPRO",
+        0.9406
+      ],
+      [
+        "FEDFUNDS||UNRATE",
+        0.9173
+      ]
+    ],
+    "sources": {
+      "fred_series": [
+        "UNRATE",
+        "CPIAUCSL",
+        "FEDFUNDS",
+        "INDPRO"
+      ],
+      "fixture_or_url": "fixtures/fred_*.csv or fred.stlouisfed.org/graph/fredgraph.csv"
+    },
+    "recent_len": {
+      "UNRATE": 12,
+      "CPIAUCSL": 12,
+      "FEDFUNDS": 12,
+      "INDPRO": 12
+    }
+  }
+]

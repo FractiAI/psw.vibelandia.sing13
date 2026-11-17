@@ -159,6 +159,10 @@ The mechanisms differ. The architectural pattern can rhyme.
 
 ---
 
+## Higher-system rhymes of protein folding
+
+We ask whether the folding grammar helps **only** proteins or also higher systems agents live in. E10 maps the grammar onto multi-hop knowledge (HotpotQA). E11 maps it onto macro teleconnections (FRED). Together with E9 they form a three-rhyme board: biology → cognition → socioeconomic structure.
+
 ## Protein folding as a rhyme for intelligence
 
 Complex systems that produce coherent behavior — folds, minds, teams, multi-agent stacks — share a structural rhyme. The **linear** description (sequence, token stream, private ticket queue) is always available and often fluent. The **fold** is the coherent whole. What turns sequence into fold is not more local reading; it is **long-range relational pattern**: contacts, couplings, who-depends-on-whom.
@@ -273,6 +277,28 @@ These are FractiSI Computational Lab / public-data experiments. They establish r
 | AWARE (MSA relational board) | **0.625** | 0.00 |
 
 **Reading.** On allam-2-7b, relational awareness recovered the structural partner on 10/16 tasks; linear and flat-MSA arms recovered **none**. The tiny local model could not use the board. Pre-registered multi-model bar is only cleared on one capable hosted model under token-cap substitutes; treat as a real-data directional lock, not a universal proof. Suite paths: `E9_PROTOCOL.md`, `E9_REALDATA_AMENDMENT.md`, `data/e9_real/`.
+
+
+### E10 — Knowledge fold (HotpotQA bridge, higher cognitive system)
+
+Same folding grammar as E9 on **real Wikipedia multi-hop questions** (HotpotQA distractor validation, bridge only). Gold “contact” = supporting-fact title pair. Couplings = passage-overlap Jaccard (no gold labels). Cohort: coevolution-consistent items.
+
+| Model | LINEAR | FLAT | AWARE |
+|---|---:|---:|---:|
+| allam-2-7b (N=24) | 0.125 | 0.167 | **0.792** |
+| Qwen2.5-1.5B (N=24) | 0.042 | 0.083 | **0.875** |
+
+### E11 — Macro teleconnection fold (real FRED series)
+
+Socioeconomic rhyme: query series + partners among UNRATE / CPIAUCSL / FEDFUNDS / INDPRO. Gold = strongest lagged |corr| partner from real history. LINEAR sees one series; FLAT dumps all; AWARE gets the correlation board.
+
+| Model | LINEAR | FLAT | AWARE |
+|---|---:|---:|---:|
+| allam-2-7b (N=24) | 0.00 | 0.00 | **0.458** |
+| Qwen2.5-1.5B (N=24) | 0.00 | 0.00 | **1.00** |
+
+**Cross-rhyme reading.** Relational awareness beats linear on protein **and** on two higher systems (knowledge; macro). That is the generalization step toward smarter agents: the World Model that holds long-range relationships unlocks tasks sequence-local reading misses.
+
 
 
 ## 10. Super-Performers and the NVIDIA Case

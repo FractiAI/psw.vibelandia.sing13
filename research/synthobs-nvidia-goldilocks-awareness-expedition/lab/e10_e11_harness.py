@@ -133,9 +133,14 @@ class Local:
 def parse_solution(text: str):
     if not text:
         return None
-    m = re.search(r"SOLUTION:\s*(.+)$", text.strip(), flags=re.I | re.M)
-    raw = (m.group(1) if m else text).strip().strip(".")
-    # normalize pair forms
+    t = text.strip()
+    m = re.search(r"TitleA\s*[:=]\s*(.+?)\s*TitleB\s*[:=]\s*(.+)$", t, flags=re.I | re.S)
+    if m:
+        a, b = m.group(1).strip().strip("."), m.group(2).strip().strip(".")
+        return "||".join(sorted([a, b], key=str.lower))
+    m = re.search(r"SOLUTION:\s*(.+)$", t, flags=re.I | re.M)
+    raw = (m.group(1) if m else t).strip().strip(".")
+    raw = re.sub(r"^TitleA\|\|TitleB:\s*", "", raw, flags=re.I)
     if "||" in raw:
         a, b = [x.strip() for x in raw.split("||", 1)]
         return "||".join(sorted([a, b], key=str.lower))
@@ -143,6 +148,9 @@ def parse_solution(text: str):
         a, b = re.split(r"\s+and\s+", raw, maxsplit=1, flags=re.I)
         return "||".join(sorted([a.strip(), b.strip()], key=str.lower))
     return raw.strip()
+
+
+
 
 
 # ---------- E10 HotpotQA ----------

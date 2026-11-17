@@ -1,0 +1,2594 @@
+[
+  {
+    "id": "e10-0",
+    "rhyme": "E10_knowledge_fold",
+    "question": "How many members does the lower house of the state legislature in which Samuel Leavitt served have?",
+    "answer": "400 members",
+    "titles": [
+      "Arizona State Legislature",
+      "New Hampshire General Court",
+      "Nebraska House of Representatives",
+      "California State Assembly",
+      "West Virginia Legislature",
+      "Nevada Legislature",
+      "Hawaii State Legislature",
+      "Samuel Leavitt",
+      "Alaska House of Representatives",
+      "Dennis Pennington"
+    ],
+    "paras": {
+      "Arizona State Legislature": "The Arizona State Legislature is the state legislature of the U.S. state of Arizona.  It is a bicameral legislature that consists of a lower house, the House of Representatives, and an upper house, the Senate.  Composed of 90 legislators, the state legislature meets in the Capitol Complex in the state capital of Phoenix, Arizona.  Created by the Arizona Constitution upon statehood in 1912, the Arizona State Legislature met biennially until 1950.  Today, they meet annually.",
+      "New Hampshire General Court": "The General Court of New Hampshire is the bicameral state legislature of the U.S. state of New Hampshire.  The lower house is the New Hampshire House of Representatives with 400 members.  The upper house is the New Hampshire Senate with 24 members.",
+      "Nebraska House of Representatives": "The Nebraska House of Representatives was the lower house of the Nebraska Legislature from 1867 until 1936.  In 1934, Nebraska voters amended the state constitution to reconfigure the Nebraska State Legislature to a unicameral system\u2014this system became effective for the 1937 legislative session.  Beginning as a territorial lower house in 1854, it had 26 members; this number was raised to 39 members at the time of the first state constitution's promulgation in 1866, and the second state constitution in 1875 limited membership in the House at 100 members, a limit which would be filled by 1881.  The last representatives were elected to a two-year term in 1934 and began their service with the final House of Representatives session in 1935.",
+      "California State Assembly": "The California State Assembly is the lower house of the California State Legislature.  It consists of 80 members, with each member representing at least 465,000 people.  Due to the state's large population and relatively small legislature, the State Assembly has the largest population-per-representative ratio of any state lower house and second largest of any legislative lower house in the United States after the federal House of Representatives.  As a result of Proposition 140 in 1990 and Proposition 28 in 2012, members elected to the legislature prior to 2012 are restricted by term limits to three two-year terms (six years), while those elected in or after 2012 are allowed to serve 12 years in the legislature in any combination of four-year state senate or two-year state assembly terms.",
+      "West Virginia Legislature": "The West Virginia Legislature is the state legislature of the U.S. state of West Virginia.  A bicameral legislative body, the Legislature is split between the upper Senate and the lower House of Delegates.  It was established under Article VI of the West Virginia Constitution following the state's split from Virginia during the American Civil War in 1863.  As with its neighbor and former constituent Virginia General Assembly, the legislature's lower house is also referred to as a \"House of Delegates.\"",
+      "Nevada Legislature": "The Nevada Legislature is the state legislature of the U.S. state of Nevada.  The Legislature is a bicameral body, consisting of the lower house Nevada Assembly, with 42 members, and the upper house Nevada Senate, with 21 members.  All 63 members of the Legislature are elected from an equal amount of constituent districts across the state.  The Legislature is the third smallest bicameral state legislature in the United States (the Alaska Legislature is the smallest bicameral, with only 60 members and the Delaware General Assembly has 62 members).",
+      "Hawaii State Legislature": "The Hawaii State Legislature is the state legislature of the U.S. state of Hawaii.  The state legislature is a bicameral body consisting of a lower house, the Hawaii State House of Representatives, with 51 representatives, and an upper house, the 25-member Hawaii State Senate.  There are a total of 76 representatives in the legislature, each representing single member districts across the islands.  The powers of the legislature are granted under Article III of the Constitution of Hawaii.",
+      "Samuel Leavitt": "Lieut. Samuel Leavitt (1641\u20131707) was an early colonial settler of Exeter, New Hampshire, one of the four original towns in the colony of New Hampshire, where Leavitt later served as a delegate to the General Court as well as Lieutenant in the New Hampshire Militia, and subsequently as member of the New Hampshire House of Representatives.  The recipient of large grants of land in Rockingham County, Leavitt held positions of authority within the colonial province.",
+      "Alaska House of Representatives": "The Alaska House of Representatives is the lower house in the Alaska Legislature, the state legislature of the U.S. state of Alaska.  The House is composed of 40 members, each of whom represents a district of approximately 17,756 people per 2010 Census figures.  Members serve two-year terms without term limits.  With 40 representatives, the Alaska House is the smallest state legislative lower house in the United States.",
+      "Dennis Pennington": "Dennis Pennington (May 18, 1776 \u2013 September 2, 1854) was a farmer and a stonemason who became known for his many years in public office as an early legislator in the Indiana Territory and in Indiana's General Assembly as a representative of Harrison County, Indiana.  Pennington, a member of the Whig Party, became the first speaker of the Indiana territorial legislature's lower house in 1810, served as the territory's census enumerator in 1815, and represented Harrison County as one of its five delegates to the constitutional convention of 1816.  Pennington was the first speaker of the Indiana Senate (1816 to 1818), and served in the state legislature for eighteen years, which included five years in the Indiana House of Representatives and thirteen years in the Indiana Senate.  His major political contributions relate to his strong opposition to slavery.  Pennington ran unsuccessfully for Indiana's Lieutenant Governor in 1825.  In addition to his service in the state legislature, Penning was a Harrison County sheriff and a justice of the peace, a trustee of Indiana University, and a member of the Grand Lodge of Indiana.  He also supervised construction of the limestone courthouse that served as Indiana's first state capitol building in Corydon, Indiana.  The historic Old Capitol, the seat of state government from 1816 to 1825, is one of his most enduring legacies.  Fondly remembered as \"Old Uncle Dennis\" or \"Father Pennington,\" he was known for his common sense and strong character and became one of Harrison County's most influential citizens."
+    },
+    "gold": "New Hampshire General Court||Samuel Leavitt",
+    "gold_titles": [
+      "New Hampshire General Court",
+      "Samuel Leavitt"
+    ],
+    "local_title": "Samuel Leavitt",
+    "involving": [
+      [
+        "New Hampshire General Court||Samuel Leavitt",
+        0.129
+      ],
+      [
+        "Dennis Pennington||Samuel Leavitt",
+        0.12
+      ],
+      [
+        "Samuel Leavitt||West Virginia Legislature",
+        0.1163
+      ],
+      [
+        "Hawaii State Legislature||Samuel Leavitt",
+        0.1125
+      ],
+      [
+        "California State Assembly||Samuel Leavitt",
+        0.1081
+      ],
+      [
+        "Arizona State Legislature||Samuel Leavitt",
+        0.0952
+      ],
+      [
+        "Nevada Legislature||Samuel Leavitt",
+        0.093
+      ],
+      [
+        "Nebraska House of Representatives||Samuel Leavitt",
+        0.0901
+      ]
+    ],
+    "top_global": [
+      [
+        "Hawaii State Legislature||Nevada Legislature",
+        0.3492
+      ],
+      [
+        "Hawaii State Legislature||West Virginia Legislature",
+        0.2985
+      ],
+      [
+        "Hawaii State Legislature||New Hampshire General Court",
+        0.2979
+      ],
+      [
+        "Nevada Legislature||West Virginia Legislature",
+        0.2958
+      ],
+      [
+        "Nevada Legislature||New Hampshire General Court",
+        0.2941
+      ],
+      [
+        "Alaska House of Representatives||California State Assembly",
+        0.2809
+      ],
+      [
+        "Arizona State Legislature||Hawaii State Legislature",
+        0.2769
+      ],
+      [
+        "New Hampshire General Court||West Virginia Legislature",
+        0.2593
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-1",
+    "rhyme": "E10_knowledge_fold",
+    "question": "By what other names was the king known whose reign was the first included in the Year Books? ",
+    "answer": "Edward Longshanks and the Hammer of the Scots",
+    "titles": [
+      "Edward I of England",
+      "Mittasena of Anuradhapura",
+      "Prince Marko",
+      "Nicholas I of Russia",
+      "Gothabhaya of Anuradhapura",
+      "Amazasp I of Iberia",
+      "Unhanagara Hatthadatha of Anuradhapura",
+      "Year Books",
+      "Jacobean architecture",
+      "Aggabodhi III of Anuradhapura"
+    ],
+    "paras": {
+      "Edward I of England": "Edward I (17/18 June 1239 \u2013 7 July 1307), also known as Edward Longshanks and the Hammer of the Scots (Latin: \"Malleus Scotorum\" ), was King of England from 1272 to 1307.  He spent much of his reign reforming royal administration and common law.  Through an extensive legal inquiry, Edward investigated the tenure of various feudal liberties, while the law was reformed through a series of statutes regulating criminal and property law.  Increasingly, however, Edward's attention was drawn towards military affairs.",
+      "Mittasena of Anuradhapura": "Mittasena (or Mitta Sena or Karalsora) was King of Anuradhapura in the 5th century, whose reign lasted from 435 to 436.  He succeeded Chattagahaka Jantu as King of Anuradhapura.  During his reign, the kingdom was invaded by Pandu of The Six Dravidians.",
+      "Prince Marko": "Marko Mrnjav\u010devi\u0107 (, ] ; \u20091335 \u00a0\u2013 17 May 1395) was the \"de jure\" Serbian king from 1371 to 1395, while he was the \"de facto\" ruler of territory in western Macedonia centered on the town of Prilep.  He is known as Prince Marko (, \"Kraljevi\u0107 Marko\", ] ) and King Marko (Bulgarian: \u041a\u0440\u0430\u043b\u0438 \u041c\u0430\u0440\u043a\u043e ; Macedonian: K\u0440a\u043b\u0435 \u041c\u0430\u0440\u043a\u043e ) in South Slavic oral tradition, in which he has become a major character during the period of Ottoman rule over the Balkans.  Marko's father, King Vuka\u0161in, was co-ruler with Serbian Tsar Stefan Uro\u0161 V, whose reign was characterised by weakening central authority and the gradual disintegration of the Serbian Empire.  Vuka\u0161in's holdings included lands in western Macedonia and Kosovo.  In 1370 or 1371, he crowned Marko \"young king\"; this title included the possibility that Marko would succeed the childless Uro\u0161 on the Serbian throne.",
+      "Nicholas I of Russia": "Nicholas I (Russian: \u041d\u0438\u043a\u043e\u043b\u0430\u0439 I \u041f\u0430\u0432\u043b\u043e\u0432\u0438\u0447 , \"Nikolay I Pavlovich\" ; 6 July\u00a0[O.S. 25 June]\u00a01796 \u2013 2 March\u00a0[O.S. 18 February]\u00a01855 ) was the Emperor of Russia from 1825 until 1855.  He was also the King of Poland and Grand Duke of Finland.  He is best known as a political conservative whose reign was marked by geographical expansion, repression of dissent, economic stagnation, poor administrative policies, a corrupt bureaucracy, and frequent wars that culminated in Russia's defeat in the Crimean War of 1853\u201356.  His biographer Nicholas V. Riasanovsky says that Nicholas displayed determination, singleness of purpose, and an iron will, along with a powerful sense of duty and a dedication to very hard work.  He saw himself as a soldier\u2014a junior officer totally consumed by spit and polish.  A handsome man, he was highly nervous and aggressive.  Trained as an engineer, he was a stickler for minute detail.  In his public persona, says Riasanovsky, \"Nicholas I came to represent autocracy personified: infinitely majestic, determined and powerful, hard as stone, and relentless as fate.\"  His reign had an ideology called \"Official Nationality\" that was proclaimed officially in 1833.  It was a reactionary policy based on orthodoxy in religion, autocracy in government, and Russian nationalism.  He was the younger brother of his predecessor, Alexander I.  Nicholas inherited his brother's throne despite the failed Decembrist revolt against him and went on to become the most reactionary of all Russian leaders.  His aggressive foreign policy involved many expensive wars, having a disastrous effect on the empire's finances.",
+      "Gothabhaya of Anuradhapura": "Gothabhaya, also known as Meghavannabhaya, Gothakabhaya and Goluaba, was a king of the Anuradhapura Kingdom of Sri Lanka whose reign lasted from 254 to 267.  During his reign, Gothabhaya renovated several temples and monasteries and also built a new temple.  He is the last of three friends who seized the throne from King Vijaya Kumara and ruled the country.  He is known for banishing 60 Buddhist monks who followed teaching contradictory to Theravada, and also for rebelling against his friend Samghabodhi to seize the throne himself.",
+      "Amazasp I of Iberia": "Amazasp I (Georgian: \u10d0\u10db\u10d0\u10d6\u10d0\u10e1\u10de\u10d8 ) was a king of Iberia (Kartli, modern eastern Georgia) whose reign is placed by the early medieval Georgian historical compendia in the 2nd century.  Professor Cyril Toumanoff suggests 106\u2013116 as the years of his reign, and considers him to be the son and successor of Mithridates I of Iberia who is known from epigraphic material as a Roman ally.  Toumanoff also identifies him with the Amazaspus of the Armazi stele of Vespasian and Xepharnuges of the Armazi stele of Serapit.",
+      "Unhanagara Hatthadatha of Anuradhapura": "Unhanagara Hatthadatha was King of Anuradhapura in the 7th century, whose reign lasted the year 691.  He succeeded Aggabodhi IV as King of Anuradhapura and was succeeded by the first monarch from the House of Lambakanna II, Manavanna.",
+      "Year Books": "The Year Books are the modern English name that is now typically given to the earliest law reports of England.  Substantial numbers of manuscripts circulated during the later medieval period containing reports of pleas heard before the Common Bench.  In the sixteenth century versions of this material appeared in print form.  These publications constituted the earliest legal precedents of the common law.  They are extant in a continuous series from 1268 to 1535, covering the reigns of King Edward I to Henry VIII.  The language of the original manuscripts and editions was either Latin or Law French.",
+      "Jacobean architecture": "The Jacobean style is the second phase of Renaissance architecture in England, following the Elizabethan style.  It is named after King James I of England, with whose reign (1603-1625 in England) it is associated.  At the start of James' reign there was little stylistic break in architecture, as Elizabethan trends continued their development.  However his death in 1625 came as a decisive change towards more classical architecture, with Italian influence, was in progress, led by Inigo Jones; the style this began is sometimes called Stuart architecture, or English Baroque (though the latter term may be regarded as starting later).",
+      "Aggabodhi III of Anuradhapura": "Aggabodhi III was King of Anuradhapura in the 7th century, whose reign lasted the year 623 and from 624 to 640.  He succeeded his father Silameghavanna as King of Anuradhapura and was succeeded by Jettha Tissa III in his first reign and Dathopa Tissa I in his second."
+    },
+    "gold": "Edward I of England||Year Books",
+    "gold_titles": [
+      "Edward I of England",
+      "Year Books"
+    ],
+    "local_title": "Year Books",
+    "involving": [
+      [
+        "Edward I of England||Year Books",
+        0.1368
+      ],
+      [
+        "Amazasp I of Iberia||Year Books",
+        0.1327
+      ],
+      [
+        "Aggabodhi III of Anuradhapura||Year Books",
+        0.1196
+      ],
+      [
+        "Mittasena of Anuradhapura||Year Books",
+        0.1075
+      ],
+      [
+        "Prince Marko||Year Books",
+        0.1042
+      ],
+      [
+        "Jacobean architecture||Year Books",
+        0.1024
+      ],
+      [
+        "Unhanagara Hatthadatha of Anuradhapura||Year Books",
+        0.1
+      ],
+      [
+        "Gothabhaya of Anuradhapura||Year Books",
+        0.0833
+      ]
+    ],
+    "top_global": [
+      [
+        "Aggabodhi III of Anuradhapura||Unhanagara Hatthadatha of Anuradhapura",
+        0.4762
+      ],
+      [
+        "Aggabodhi III of Anuradhapura||Mittasena of Anuradhapura",
+        0.3469
+      ],
+      [
+        "Mittasena of Anuradhapura||Unhanagara Hatthadatha of Anuradhapura",
+        0.3191
+      ],
+      [
+        "Aggabodhi III of Anuradhapura||Amazasp I of Iberia",
+        0.1974
+      ],
+      [
+        "Gothabhaya of Anuradhapura||Mittasena of Anuradhapura",
+        0.1923
+      ],
+      [
+        "Aggabodhi III of Anuradhapura||Gothabhaya of Anuradhapura",
+        0.1772
+      ],
+      [
+        "Amazasp I of Iberia||Mittasena of Anuradhapura",
+        0.1667
+      ],
+      [
+        "Amazasp I of Iberia||Unhanagara Hatthadatha of Anuradhapura",
+        0.16
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-2",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What was the occupation of the man who published an individualist anarchist journal?",
+    "answer": "American schoolteacher and publisher",
+    "titles": [
+      "Joe Peacott",
+      "Henry Meulen",
+      "Bruno Filippi",
+      "Steven T. Byington",
+      "Han Ryner",
+      "Individualist anarchism",
+      "Lucifer the Lightbearer",
+      "L'Anarchie",
+      "Moses Harman",
+      "\u00c9mile Gravelle"
+    ],
+    "paras": {
+      "Joe Peacott": "Joe Peacott is an individualist anarchist writer based in the United States.  He is a leading figure at BAD Press, a publishing outlet for individualist anarchist philosophy.  His work on economics and sociology has been published by the Libertarian Alliance and referenced favourably by leading anarchist scholars such as Kevin A. Carson.",
+      "Henry Meulen": "Henry Meulen (1882\u20131978) was a British individualist anarchist and economist.  He was an editor of the periodical called \"The Individualist\", published by the Personal Rights Association and actively promoted the philosophy of free banking.  He is the author of \"Free Banking: An Outline of a Policy on Individualism\" (London: Macmillan, 1934) and \"Individualist Anarchism\" (Glasgow: The Strickland Press, 1949).",
+      "Bruno Filippi": "Bruno Filippi (March 30, 1900 \u2013 September 7, 1919) was an Italian individualist anarchist writer and activist who collaborated in the Italian individualist anarchist magazine \"Iconoclasta!\"  alongside Renzo Novatore.",
+      "Steven T. Byington": "Steven Tracy Byington (birthname Stephen) (December 10, 1869 \u2013 October 12, 1957) was a noted intellectual, translator, and American individualist anarchist.  He was born in Westford, Vermont, and later moved to Ballardvale section of Andover, Massachusetts.  A one-time proponent of Georgism, he converted to individualist anarchism after associating with Benjamin Tucker.  He was a firm believer in the promotion of individualist anarchism through education.  He said \"Anarchism has undertaken to change men's minds in one point by removing their faith in force\" (\"Quasi-Invasion and the Boycott\" in \"Liberty, X, 2\").  He began a \"Letter Writing Corps\" in 1894 which targeted specific individuals, including newspapers, to familiarize others with the philosophical doctrine.  He is known for translating two important anarchist works into English from German: Max Stirner's \"The Ego and Its Own\" and Paul Eltzbacher's \"Anarchism; exponents of the anarchist philosophy\" (also published by Dover with the title \"The Great Anarchists: Ideas and Teachings of Seven Major Thinkers\").",
+      "Han Ryner": "Jacques \u00c9lie Henri Ambroise Ner (7 December 1861\u00a0\u2013\u00a0February 6, 1938), also known by the pseudonym Han Ryner, was a French individualist anarchist philosopher and activist and a novelist.  He wrote for publications such as \"L'Art social\", \"L'Humanit\u00e9 nouvelle\", \"L'Ennemi du Peuple\", \"L'Id\u00e9e Libre de Lorulot\"; and \"L'En dehors\" and \"L'Unique\" of fellow anarchist individualist \u00c9mile Armand.  His thought is mainly influenced by stoicism and epicureanism.",
+      "Individualist anarchism": "Individualist anarchism refers to several traditions of thought within the anarchist movement that emphasize the individual and their will over external determinants such as groups, society, traditions, and ideological systems.  Individualist anarchism is not a single philosophy but refers to a group of individualistic philosophies that sometimes are in conflict.  Benjamin R. Tucker, a famous 19th-century individualist anarchist, held that \"if the individual has the right to govern himself, all external government is tyranny.\"",
+      "Lucifer the Lightbearer": "Lucifer the Lightbearer was an individualist anarchist journal published by Moses Harman in the late 19th and early 20th centuries.  Originally produced by a local branch of the National Liberal League as the \"Valley Falls Liberal\" (1880\u20131883), Harman changed the title after he assumed sole editorship in 1883.",
+      "L'Anarchie": "L'Anarchie (] , \"anarchy\") was a French individualist anarchist journal established in April 1905 by Albert Libertad.  Along with Libertad, contributors to the journal included \u00c9mile Armand, Andr\u00e9 Lorulot, \u00c9milie Lamotte, Raymond Callemin, and Victor Serge).  The magazine was based in Paris.",
+      "Moses Harman": "Moses Harman (October 12, 1830January 30, 1910) was an American schoolteacher and publisher notable for his staunch support for women's rights.  He was prosecuted under the Comstock Law for content published in his anarchist periodical \"Lucifer the Lightbearer\".  He was arrested and jailed multiple times for publishing allegedly obscene material.  His daughter, Lillian Harman, was also a notable anarchist.",
+      "\u00c9mile Gravelle": "\u00c9mile Gravelle (1855\u20131920) was a French individualist anarchist and naturist activist, writer and painter.  He published the review \"L'\u00c9tat Naturel\" (1894\u20131898) and collaborated with Henri Zisly and Henri Beylie on \"La Nouvelle Humanit\u00e9\", \"Le Naturien\" (1898), \"Le Sauvage\" (1898\u20131899), \"L'Ordre Naturel\" (1905), and \"La Vie Naturelle\" (1907\u20131914).  His ideas were important in individualist anarchist circles in France as well as Spain, where Federico Urales (pseudonym of Joan Montseny) promoted the ideas of Gravelle and Zisly in \"La Revista Blanca\" (1898\u20131905)."
+    },
+    "gold": "Lucifer the Lightbearer||Moses Harman",
+    "gold_titles": [
+      "Lucifer the Lightbearer",
+      "Moses Harman"
+    ],
+    "local_title": "Moses Harman",
+    "involving": [
+      [
+        "Lucifer the Lightbearer||Moses Harman",
+        0.1781
+      ],
+      [
+        "Joe Peacott||Moses Harman",
+        0.1429
+      ],
+      [
+        "Henry Meulen||Moses Harman",
+        0.1282
+      ],
+      [
+        "Bruno Filippi||Moses Harman",
+        0.1094
+      ],
+      [
+        "Moses Harman||Steven T. Byington",
+        0.0952
+      ],
+      [
+        "Han Ryner||Moses Harman",
+        0.0928
+      ],
+      [
+        "Moses Harman||\u00c9mile Gravelle",
+        0.0909
+      ],
+      [
+        "L'Anarchie||Moses Harman",
+        0.0789
+      ]
+    ],
+    "top_global": [
+      [
+        "Henry Meulen||Joe Peacott",
+        0.1831
+      ],
+      [
+        "Lucifer the Lightbearer||Moses Harman",
+        0.1781
+      ],
+      [
+        "Han Ryner||\u00c9mile Gravelle",
+        0.1731
+      ],
+      [
+        "Henry Meulen||Lucifer the Lightbearer",
+        0.1549
+      ],
+      [
+        "Joe Peacott||Lucifer the Lightbearer",
+        0.1549
+      ],
+      [
+        "Han Ryner||L'Anarchie",
+        0.1429
+      ],
+      [
+        "Joe Peacott||Moses Harman",
+        0.1429
+      ],
+      [
+        "L'Anarchie||\u00c9mile Gravelle",
+        0.1395
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-3",
+    "rhyme": "E10_knowledge_fold",
+    "question": "The musician who did \"Khalaara\" was born on what date?",
+    "answer": "15 March 1983",
+    "titles": [
+      "Quintron",
+      "Cameron Potts",
+      "Khachatur of Taron",
+      "Ryan Cassata",
+      "Zemfira",
+      "Yo Yo Honey Singh",
+      "Ishq Garaari",
+      "Stephen Trask",
+      "Milford Graves",
+      "Tevin Campbell"
+    ],
+    "paras": {
+      "Quintron": "Quintron (real name Robert Rolston; born c. 1967 in Germany) is an American musician and leader of the eponymous one-man-band, \"Quintron\".  He is a celebrated nightclub organist and inventor, who has patented a number of his own inventions and often performs at his own private club, the Spellcaster Lodge in New Orleans.  He frequently performs with his wife, musician and puppeteer Panacea Pussycat (also known as Miss Pussycat), co-founder of the 9th Ward's defunct Pussycat Caverns.  Quintron's most notable invention to date is the Drum Buddy, a mechanically-rotating, five-oscillator, light-activated drum machine.",
+      "Cameron Potts": "Cameron Potts (born 10 November 1971 in Subiaco, Western Australia), is a musician based in Melbourne.  Since 1999, he has toured regularly to the United States, Canada, Europe, Mexico, Japan, Taiwan, China, Malaysia, Scandinavia and Iceland with both Ninetynine, playing drums, and Baseball, playing violin.  His band Cuba Is Japan toured the far east in 2009, playing the Music Terminals Festival in Taiwan with Tricky, Placebo and a number of Australian acts including Mick Turner, The Stabs and The Holy Soul.  and a 5 date tour of China supporting Angie Hart.  He is not to be confused with Sydney musician Cameron Potts, lead singer and guitarist of Dead Letter Chorus.",
+      "Khachatur of Taron": "Khachatur of Taron or Khatchatur Taronetsi (Armenian: \u053d\u0561\u0579\u0561\u057f\u0578\u0582\u0580 \u054f\u0561\u0580\u0578\u0576\u0581\u056b , born Taron, western Armenia, date unknown; death date unknown) was a poet and musician who occupies a special place among the writers of Sharakans.",
+      "Ryan Cassata": "Ryan Otto Cassata (born December 13, 1993) is an American musician, public speaker, writer, filmmaker, and actor.  Cassata speaks at high schools and universities on the subject of Gender Dysphoria, being transgender, bullying and his personal transition from female to male, including a double mastectomy surgery in January 2012, when he was 18 years old.  He currently resides in San Francisco.  He has made appearances on the Larry King Live Show & The Tyra Banks Show to talk about being transgender.  He has performed at LGBT music festivals and has gone on tours across the United States of America.  Cassata has performed at popular music venues such as Whisky a Go Go, The Saint, The Bitter End, SideWalk Cafe, and Bowery Poetry Club.  Cassata won a date on Warped Tour 2013 through the Ernie Ball Battle of the Bands online competition and performed on the Acoustic Basement Stage on June 21, 2013.  Cassata also won a date on Warped Tour 2015 through the Ernie Ball Battle of the Bands and performed on the Ernie Ball Stage on June 20, 2015.",
+      "Zemfira": "Zemfira, born Zemfira Talgatovna Ramazanova (Russian: \u0417\u0435\u043c\u0444\u0438\u0440\u0430 \u0422\u0430\u043b\u0433\u0430\u0442\u043e\u0432\u043d\u0430 \u0420\u0430\u043c\u0430\u0437\u0430\u043d\u043e\u0432\u0430 , Tatar: \u0417\u0435\u043c\u0444\u0438\u0440\u0430 \u0422\u04d9\u043b\u0433\u0430\u0442\u044c \u043a\u044b\u0437\u044b \u0420\u0430\u043c\u0430\u0437\u0430\u043d\u043e\u0432\u0430, Zemfira T\u00e4l\u011f\u00e4t q\u0131z\u0131 Ramazanova ; born 26 August 1976 in Ufa, Bashkortostan) is a Russian rock musician.  She has been performing since 1998 and has been popular in Russia and other former Soviet republics.  To date Zemfira has sold over 3 million records.",
+      "Yo Yo Honey Singh": "Hirdesh Singh (born 15 March 1983), better known by his stage name Yo Yo Honey Singh or Honey Singh, is an Indian music producer, Pop singer, film actor.He started as a session and recording artist, and became a Bhangra music producer.  He has also begun to produce music for Bollywood films, and has become one of the highest-paid music producers in Bollywood.",
+      "Ishq Garaari": "Ishq Garaari is a Punjabi film directed by Dheeraj Rattan.  It is produced by Ravi Jain & Karan Bali and stars Sharry Maan, Rannvijay Singh, Mandy Takhar, Gulzar Chahal, Miss Pooja Vinaypal Buttar, Gunjan Walia and Prabhleen Sandhu, the film also has a song titled 'Khalaara' by Yo Yo Honey Singh.",
+      "Stephen Trask": "Stephen Trask, born Stephen R. Schwartz (born August 29, 1966\u2014the date of The Beatles' final concert) is an American musician and composer who graduated from Wesleyan University.",
+      "Milford Graves": "Milford Graves (born August 20, 1941 in Queens, New York) is an American jazz drummer and percussionist, most noteworthy for his early avant-garde contributions in the early 1960s with Paul Bley and the New York Art Quartet alongside John Tchicai, Roswell Rudd, and Reggie Workman.  He is considered to be a free jazz pioneer, liberating the percussion from its timekeeping role.  In fact, many of his music contemporaries, musician inspirees, and fans world-wide would argue that Graves is perhaps the most influential known musician in the development and continuing evolution of free-jazz/avant-garde music, to date.  Milford Graves taught at Bennington College, in Bennington, Vermont, as a full-time professor from 1973 until 2011, when he was awarded Emeritus status.",
+      "Tevin Campbell": "Tevin Jermod Campbell (born November 12, 1976) is an American singer, songwriter and actor.  Born in Waxahachie, Texas; he displayed a passion for singing at a very early age, performing gospel in his local church.  Following an audition for a famous jazz musician, Bobbi Humprey, in 1988, Campbell was signed to Warner Bros.  Records.  In 1991, Campbell collaborated with music impresario Quincy Jones performing lead vocals for \"Tomorrow\" on Jones' album \"Back on the Block\" and released his Platinum-selling debut album, \"T.E.V.I.N.\".  The album included his highest-charting single to date, \"Tell Me What You Want Me to Do\", peaking at number 6 on the \"Billboard\" Hot 100."
+    },
+    "gold": "Ishq Garaari||Yo Yo Honey Singh",
+    "gold_titles": [
+      "Ishq Garaari",
+      "Yo Yo Honey Singh"
+    ],
+    "local_title": "Ishq Garaari",
+    "involving": [
+      [
+        "Ishq Garaari||Yo Yo Honey Singh",
+        0.1358
+      ],
+      [
+        "Ishq Garaari||Quintron",
+        0.0636
+      ],
+      [
+        "Ishq Garaari||Zemfira",
+        0.0513
+      ],
+      [
+        "Ishq Garaari||Stephen Trask",
+        0.0469
+      ],
+      [
+        "Ishq Garaari||Khachatur of Taron",
+        0.0462
+      ],
+      [
+        "Cameron Potts||Ishq Garaari",
+        0.0431
+      ],
+      [
+        "Ishq Garaari||Ryan Cassata",
+        0.0408
+      ],
+      [
+        "Ishq Garaari||Tevin Campbell",
+        0.032
+      ]
+    ],
+    "top_global": [
+      [
+        "Khachatur of Taron||Stephen Trask",
+        0.1591
+      ],
+      [
+        "Quintron||Yo Yo Honey Singh",
+        0.1574
+      ],
+      [
+        "Milford Graves||Quintron",
+        0.1389
+      ],
+      [
+        "Ishq Garaari||Yo Yo Honey Singh",
+        0.1358
+      ],
+      [
+        "Milford Graves||Tevin Campbell",
+        0.1282
+      ],
+      [
+        "Tevin Campbell||Yo Yo Honey Singh",
+        0.123
+      ],
+      [
+        "Milford Graves||Yo Yo Honey Singh",
+        0.121
+      ],
+      [
+        "Ryan Cassata||Yo Yo Honey Singh",
+        0.1181
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-4",
+    "rhyme": "E10_knowledge_fold",
+    "question": "Den Tagayasu lived in the town that was bombed on which dates?",
+    "answer": "9\u201310 March 1945",
+    "titles": [
+      "Olyftack",
+      "Den Helder railway station",
+      "Den Helder Zuid railway station",
+      "Institut Jeanne d'Arc",
+      "Bombing of Tokyo",
+      "Identity tourism",
+      "Bombing of Durango",
+      "Den Tagayasu",
+      "Namsos (town)",
+      "Den Dolder"
+    ],
+    "paras": {
+      "Olyftack": "The Olyftack (Olive Branch), or in full \"Gulde van den Heyligen Geest die men noempt den Olyftack\" (Confraternity of the Holy Spirit called the Olive Branch) was a chamber of rhetoric that dates back to the early 16th century in Antwerp, when it was a social drama society drawing its membership primarily from merchants and tradesmen.  In 1660 it merged with its former rival the Violieren (which was more closely associated with artists and intellectuals), and in 1762 the society was dissolved altogether.",
+      "Den Helder railway station": "Den Helder is a Terminus railway station in the naval town of Den Helder, The Netherlands.  The station opened on 20 December 1865, and is the most northerly station in North Holland.  The station is the start of the Den Helder\u2013Amsterdam railway.  The original station building was demolished in 1958 and a new building was built a bit further south than previous.",
+      "Den Helder Zuid railway station": "Den Helder Zuid railway station (English: \"Den Helder South\") serves the town of Den Helder, Netherlands.  The station opened on 31 May 1980 and is located on the Den Helder\u2013Amsterdam railway.  The train services are operated by Nederlandse Spoorwegen.  The station has two platforms, of which only one is in use for both directions.",
+      "Institut Jeanne d'Arc": "The Institut Jeanne d'Arc, also Den Franske Skole, was a French-language Roman Catholic school at 74 Frederiksberg All\u00e9 in the Frederiksberg district of central Copenhagen, Denmark.  Established in 1924, it was accidentally bombed by the Royal Air Force on 21 March 1945 causing the death of 86 children and 18 adults.",
+      "Bombing of Tokyo": "The Bombing of Tokyo (\u6771\u4eac\u5927\u7a7a\u8972 , T\u014dky\u014ddaik\u016bsh\u016b ) often refers to a series of firebombing air raids by the United States Army Air Forces during the Pacific campaigns of World War II.  On the night of 9\u201310 March 1945, Operation Meetinghouse was conducted and is regarded as the single most destructive bombing raid in human history.  16 sqmi of central Tokyo was annihilated, over 1 million were made homeless with an estimated 100,000 civilian deaths.  The Japanese later called this event Night of the Black Snow.",
+      "Identity tourism": "Identity tourism research dates back to a 1984 special issue of Annals of Tourism Research guest edited by Pierre L. van den Berghe and Charles F. Keyes This volume examines the ways in which tourism intersects with the (re-)formation and revision of various forms of identity, particularly ethnic and cultural identities.  Since that time, various scholars have examined the intersection between dimensions of identity and tourism.  An important early contribution to the study of identity tourism was Lanfant, Allcock and Bruner's 1995 edited volume \"International Tourism, Identity and Change\".  As with the Keyes and van den Berghe special issue of Annals of Tourism Research, this volume moved us away from studying the impact of tourism on identity to investigating the intersection of tourism and identity in more dynamic ways, among other things looking at how \"local\" and \"tourist\" identities are mutually-constructed.  Likewise, Michel Picard and Robert Wood's path-breaking edited volume \"Tourism, Ethnicity and the State in Asian and Pacific Societies\" (1997, University of Hawaii Press), examined the ways in which tourism intersections with ethnic, cultural, regional and national identities, as well as with the political agendas of Pacific island and Southeast Asian states.  Abrams, Waldren and Mcleod's 1997 volume Tourists and Tourism: Identifying with People and Places also offered compelling case studies examining issues surrounding the construction of identity in the context of tourism.  Among other things the chapters in their volume investigated tourists' views of themselves and others in the course of their travels, the relationship of travelers to resident populations, and the ways in which tourists' quests for authenticity are entangled with their own sensibilities about their own identities.",
+      "Bombing of Durango": "The Bombing of Durango took place on 31 March 1937, during the Spanish Civil War.  On 31 March 1937 the Nationalists started their offensive against the Republican held province of Biscay.  The same day the \"Legion Condor\" and the \"Aviazione Legionaria\" bombed the town of Durango.  Around 250 civilians died, among them one priest and fourteen nuns.  Durango was the first defenseless European city bombed.  The Nationalists never acknowledged their guilt.",
+      "Den Tagayasu": "Den was born in Asakusa district of Tokyo in 1931.  Den's birth name was .  His hometown was subjected to American airbomb raids in 1945, though he and his family were able to move south to his mother's home in Kagoshima before they were attacked.  At the conclusion of World War II, Den returned to Tokyo and began high school, which he completed in 1952.  While in high school, Den organized a strike that resulted in the removal of the school principal.  Den suspected this organizing experience was one factor that allowed him to enroll into Waseda University that was governed by a leftist student organization.  While Den studied Chinese literature there, he also had considerable involvement in several violent demonstrations in 1952.  Consequently, Den was dismissed from Waseda.",
+      "Namsos (town)": "Namsos is a town and the administrative center of Namsos municipality in Nord-Tr\u00f8ndelag county, Norway.  It is located where the river of Namsen flows into Namsenfjorden.  Namsos received township in 1846.  In 1940, the town was bombed in the Namsos Campaign.  The town was the terminus of the Namsos Line and is served by Namsos Airport, H\u00f8knes\u00f8ra.  County Road 17 runs through the town, which is also the location of Namsos Hospital.  The 4.5 km2 town has a population (2013) of 8,282; giving the town a population density of 1840 PD/km2 .",
+      "Den Dolder": "Den Dolder ( ) is a town in the Dutch province of Utrecht.  It is a part of the municipality of Zeist, and lies about 4\u00a0km northeast of Bilthoven.  Den Dolder has a railway station on the route between Amersfoort and Utrecht and is best known for its mental institutions such as Dennendal and the Willem Arntz Hoeve.  Den Dolder also houses the big Dutch sauce manufacturer Remia referring to Den Dolder as Holland's Heart of Sauces as is depicted on the factory's side and is visible from the train passing by."
+    },
+    "gold": "Bombing of Tokyo||Den Tagayasu",
+    "gold_titles": [
+      "Bombing of Tokyo",
+      "Den Tagayasu"
+    ],
+    "local_title": "Den Tagayasu",
+    "involving": [
+      [
+        "Bombing of Tokyo||Den Tagayasu",
+        0.1127
+      ],
+      [
+        "Den Tagayasu||Institut Jeanne d'Arc",
+        0.1092
+      ],
+      [
+        "Den Tagayasu||Olyftack",
+        0.0815
+      ],
+      [
+        "Den Dolder||Den Tagayasu",
+        0.0809
+      ],
+      [
+        "Den Tagayasu||Identity tourism",
+        0.0787
+      ],
+      [
+        "Den Helder Zuid railway station||Den Tagayasu",
+        0.0776
+      ],
+      [
+        "Den Tagayasu||Namsos (town)",
+        0.0741
+      ],
+      [
+        "Den Helder railway station||Den Tagayasu",
+        0.0696
+      ]
+    ],
+    "top_global": [
+      [
+        "Den Helder railway station||Den Helder Zuid railway station",
+        0.2459
+      ],
+      [
+        "Den Dolder||Den Helder Zuid railway station",
+        0.1628
+      ],
+      [
+        "Den Dolder||Den Helder railway station",
+        0.1395
+      ],
+      [
+        "Den Dolder||Namsos (town)",
+        0.1215
+      ],
+      [
+        "Den Helder Zuid railway station||Namsos (town)",
+        0.1136
+      ],
+      [
+        "Bombing of Tokyo||Institut Jeanne d'Arc",
+        0.1132
+      ],
+      [
+        "Bombing of Tokyo||Den Tagayasu",
+        0.1127
+      ],
+      [
+        "Den Tagayasu||Institut Jeanne d'Arc",
+        0.1092
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-5",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What portable media player was distributed through HP?",
+    "answer": "iPod+HP",
+    "titles": [
+      "Portable media player",
+      "Walkman Bean",
+      "IPod Classic",
+      "Zvue",
+      "IPod+HP",
+      "K-PEX 100",
+      "Apple Inc.",
+      "Portable Media Center",
+      "Cowon D2",
+      "Microsoft PlaysForSure"
+    ],
+    "paras": {
+      "Portable media player": "A portable media player (PMP) or digital audio player (DAP) is a portable consumer electronics device capable of storing and playing digital media such as audio, images, and video files.  The data is typically stored on a CD, DVD, flash memory, microdrive, or hard drive.  Most portable media players are equipped with a 3.5\u00a0mm headphone jack, which users can plug headphones into, or connect to a boombox or hifi system.  In contrast, analog portable audio players play music from non-digital media that use analog signal storage, such as cassette tapes or vinyl records.",
+      "Walkman Bean": "The Walkman Bean was a flash memory-based portable media player by Sony.  The name refers to its shape, which was modelled after a jellybean, and its ancestor, the original Sony Walkman portable cassette player.  The product was released in October 2005, and production ceased in April 2006.",
+      "IPod Classic": "The iPod Classic (stylized and marketed as iPod classic and formerly just iPod) is a portable media player created and formerly marketed by Apple Inc.",
+      "Zvue": "ZVUE is a now inactive brand of portable media player designed and marketed by HandHeld Entertainment.  The ZVUE device combined a digital mp3 audio player with a personal video player and a JPEG viewer all in one consumer electronics device about the size of a pack of playing cards. Widely distributed by Walmart, the Zvue beat the Apple video iPod into mass distribution by more than one year [ citation]",
+      "IPod+HP": "The Apple iPod+HP is an Apple iPod 4G with an HP logo on the back, distributed through HP.",
+      "K-PEX 100": "The K-Pex 100 (Kingston Portable Entertainment eXperience) is a portable media player produced by Kingston Technologies.  It is capable of playing transcoded videos (. mpx), viewing still images (. jpg), and playing music files (. mp3, . wma).  It also comes with 2 games.  It is a rebranded Cenix GMP-M6, which is from Korea.  Production of the K-PEX has been discontinued.",
+      "Apple Inc.": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California that designs, develops, and sells consumer electronics, computer software, and online services.  The company's hardware products include the iPhone smartphone, the iPad tablet computer, the Mac personal computer, the iPod portable media player, the Apple Watch smartwatch, the Apple TV digital media player, and the HomePod smart speaker.  Apple's consumer software includes the macOS and iOS operating systems, the iTunes media player, the Safari web browser, and the iLife and iWork creativity and productivity suites.  Its online services include the iTunes Store, the iOS App Store and Mac App Store, Apple Music, and iCloud.",
+      "Portable Media Center": "Portable Media Center (PMC) is a defunct hard drive-based portable media player (PMP) platform developed by Microsoft.  Announced at the 2003 Consumer Electronics Show (CES), and released in early 2004, it was originally positioned as a competitor to Apple's iPod.",
+      "Cowon D2": "The Cowon D2 was a portable media player designed and marketed by Cowon Systems, Inc. The D2, released on December 5, 2006, was Cowon's first portable media player using a touchscreen as the main means of navigation.  It has since been discontinued.",
+      "Microsoft PlaysForSure": "Microsoft PlaysForSure was a certification given by Microsoft to portable devices and content services that had been tested against several hundred compatibility and performance requirements.  These requirements include codec support, Digital rights management support, UI responsiveness, device performance, compatibility with Windows Media Player, synchronization performance, and so on.  PlaysForSure certification was available for portable media players, network-attached digital media receivers, and media-enabled mobile phones.  The PlaysForSure logo was applied to device packaging as well as to online music stores and online video stores."
+    },
+    "gold": "IPod Classic||IPod+HP",
+    "gold_titles": [
+      "IPod Classic",
+      "IPod+HP"
+    ],
+    "local_title": "IPod+HP",
+    "involving": [
+      [
+        "IPod Classic||IPod+HP",
+        0.1481
+      ],
+      [
+        "IPod+HP||Zvue",
+        0.1053
+      ],
+      [
+        "IPod+HP||Portable Media Center",
+        0.0833
+      ],
+      [
+        "Apple Inc.||IPod+HP",
+        0.0694
+      ],
+      [
+        "IPod+HP||Microsoft PlaysForSure",
+        0.0588
+      ],
+      [
+        "IPod+HP||K-PEX 100",
+        0.0526
+      ],
+      [
+        "IPod+HP||Portable media player",
+        0.05
+      ],
+      [
+        "Cowon D2||IPod+HP",
+        0.0455
+      ]
+    ],
+    "top_global": [
+      [
+        "Cowon D2||IPod Classic",
+        0.2439
+      ],
+      [
+        "IPod Classic||Portable Media Center",
+        0.2391
+      ],
+      [
+        "Cowon D2||Portable Media Center",
+        0.2
+      ],
+      [
+        "Portable Media Center||Walkman Bean",
+        0.1935
+      ],
+      [
+        "IPod Classic||Zvue",
+        0.193
+      ],
+      [
+        "Cowon D2||K-PEX 100",
+        0.1765
+      ],
+      [
+        "Portable media player||Zvue",
+        0.1748
+      ],
+      [
+        "Cowon D2||Walkman Bean",
+        0.1724
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-6",
+    "rhyme": "E10_knowledge_fold",
+    "question": "Gretchen Gotay graduated from what American public research university that is located approximately 72 miles northeast of Atlanta?",
+    "answer": "The University of Georgia",
+    "titles": [
+      "Mount Burnett, Victoria",
+      "HD 4308",
+      "Puliancholai",
+      "Decatur, Georgia",
+      "Ailuk Atoll",
+      "University of Georgia",
+      "Gretchen Gotay",
+      "University of Maryland, Baltimore County",
+      "Eusebio Ayala, Paraguay",
+      "Aloi"
+    ],
+    "paras": {
+      "Mount Burnett, Victoria": "Mount Burnett is a small country town and bounded locality located approximately 72 km from Melbourne, in Victoria, Australia.  The town has no post office or town centre.  Most of the town is either farmland or rural housing.  The town shares its postcode (3781) with neighbouring town Cockatoo.  Mount Burnett is located in the Shire of Cardinia.",
+      "HD 4308": "HD 4308 is a 6th magnitude star located approximately 72 light years away in the southern constellation of Tucana.",
+      "Puliancholai": "Puliancholai is a hamlet of about 30 families and 10-15 teashops in the dense forest region of the same name on the foot hills of Kolli Hills (Eastern Ghats) Tamil Nadu, India.  It is located approximately 72\u00a0km away from Tiruchirappalli (district headquarters) by road.  The nearest town (about 30\u00a0km) is Thuraiyur.  Puliancholai can be also reached from Erode or Namakkal.",
+      "Decatur, Georgia": "Decatur is a city in, and the county seat of, DeKalb County, Georgia, United States and is part of the Atlanta metropolitan area.  With a population of 20,148 in the 2013 census, the municipality is sometimes assumed to be larger since multiple zip codes in unincorporated DeKalb County bear the Decatur name.  The city is served by three MARTA rail stations.  The city is located approximately 5 miles northeast of downtown Atlanta and shares its western border with Atlanta.",
+      "Ailuk Atoll": "Ailuk Atoll (Marshallese: Aelok , ) is a coral atoll of 57 islets in the Pacific Ocean, and forms a legislative district of the Ratak Chain of the Marshall Islands.  It is located approximately 72 km north from Wotje.  Its total land area is only 5.4 km2 , but it encloses a lagoon with an area of 177.45 km2 .  The major islets are: Ajelep, Aliej, Ailuk, Alkilwe, Barorkan, Biken, Enejabrok, Enejelar, Kapen and Marib.  Most of the islets are on the eastern side of the atoll.  The western and southern sides of the atoll have a nearly continuous submerged coral reef, with three main passes that lead into the lagoon: Erappu Channel, Marok Channel and Eneneman Channel on the west side.",
+      "University of Georgia": "The University of Georgia, also referred to as UGA or simply Georgia, is an American public research university.  Its main 762 acres campus is located in Athens, Georgia, approximately 72 mile northeast of Atlanta.  It is the flagship university of the University System of Georgia.  Founded in 1785, it is the country's oldest state-chartered university and the birthplace of the American system of public higher education.",
+      "Gretchen Gotay": "Gretchen Gotay Cordero (born August 14, 1980) is a Puerto Rican former swimmer, who specialized in freestyle and backstroke events.  She won a total of four medals (2 golds and 2 bronze) in both freestyle and medley relays at the Central American and Caribbean Games (1998, 2002, and 2006).  She is a member of Athens Bulldogs Swim Club under her personal coach Harvey Humphries, and a graduate with a master's degree in sports management at the University of Georgia in Athens.",
+      "University of Maryland, Baltimore County": "The University of Maryland, Baltimore County (often referred to as UMBC) is an American public research university, located in Baltimore County, Maryland, United States, mostly in the community of Catonsville, approximately 10 minutes (8.3 miles) from downtown Baltimore City, 9 minutes (6.1 miles) from Baltimore\u2013Washington International Airport (BWI).  With a fall 2016 enrollment of 13,640 students, 48 undergraduate majors, over 60 graduate programs (36 master, 24 doctoral, and 17 graduate certificate programs) and the first university research park in Maryland, UMBC has been named the #1 Up-and-Coming University for six years in a row, since 2009, by \"US News & World Report\".  In addition, \"US News & World Report\" has placed UMBC in the top ten for best undergraduate teaching six years in a row, being placed at #5, the second highest-ranked public university.",
+      "Eusebio Ayala, Paraguay": "Eusebio Ayala is a district of the Cordillera Department, Paraguay.  It is named after Eusebio Ayala, a former President of Paraguay.  It is located approximately 72\u00a0km of the city of Asuncion, capital of the Republic of Paraguay.",
+      "Aloi": "Aloi is a town in northern Uganda.  It is located approximately 72 km north-east of the city of Lira in the Northern Region."
+    },
+    "gold": "Gretchen Gotay||University of Georgia",
+    "gold_titles": [
+      "Gretchen Gotay",
+      "University of Georgia"
+    ],
+    "local_title": "Gretchen Gotay",
+    "involving": [
+      [
+        "Gretchen Gotay||University of Georgia",
+        0.1064
+      ],
+      [
+        "Gretchen Gotay||University of Maryland, Baltimore County",
+        0.0857
+      ],
+      [
+        "Decatur, Georgia||Gretchen Gotay",
+        0.0755
+      ],
+      [
+        "Gretchen Gotay||Mount Burnett, Victoria",
+        0.0737
+      ],
+      [
+        "Aloi||Gretchen Gotay",
+        0.0667
+      ],
+      [
+        "Gretchen Gotay||HD 4308",
+        0.0667
+      ],
+      [
+        "Eusebio Ayala, Paraguay||Gretchen Gotay",
+        0.0633
+      ],
+      [
+        "Ailuk Atoll||Gretchen Gotay",
+        0.0606
+      ]
+    ],
+    "top_global": [
+      [
+        "Aloi||Eusebio Ayala, Paraguay",
+        0.3125
+      ],
+      [
+        "Aloi||HD 4308",
+        0.2667
+      ],
+      [
+        "Aloi||Puliancholai",
+        0.2105
+      ],
+      [
+        "Aloi||Mount Burnett, Victoria",
+        0.2
+      ],
+      [
+        "Eusebio Ayala, Paraguay||HD 4308",
+        0.2
+      ],
+      [
+        "Mount Burnett, Victoria||Puliancholai",
+        0.1667
+      ],
+      [
+        "Eusebio Ayala, Paraguay||Puliancholai",
+        0.1587
+      ],
+      [
+        "HD 4308||Mount Burnett, Victoria",
+        0.1538
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-7",
+    "rhyme": "E10_knowledge_fold",
+    "question": "Substorm was described in qualitative terms by a scientist nominated for what seven times?",
+    "answer": "Nobel Prize",
+    "titles": [
+      "Reek Sunday",
+      "Kristian Birkeland",
+      "Wesley Silcox",
+      "Robert K. Yin",
+      "Rumford Medal",
+      "Simon Poelman",
+      "Celina Seghi",
+      "Dysosmia",
+      "Substorm",
+      "Bifurcation theory"
+    ],
+    "paras": {
+      "Reek Sunday": "Reek Sunday (Irish: \"Domhnach na Cruaiche\" ) or Garland Sunday is an annual day of pilgrimage in Ireland.  On the last Sunday in July, pilgrims climb Ireland's holiest mountain, Croagh Patrick (764 metres) in County Mayo.  It is held in honour of Saint Patrick who, in the year 441, spent 40 days fasting on the mountain.  Masses are held at the summit, where there is a small chapel.  Some climb the mountain barefoot, as an act of penance, and some carry out 'rounding rituals', which were formerly a key part of the pilgrimage.  This involves praying while walking sunwise around features on the mountain.  They walk seven times around the cairn of Leacht Ben\u00e1in (Benan's grave), fifteen times around the circular perimeter of the summit, seven times around Leaba Ph\u00e1draig (Patrick's bed), and then seven times around three ancient cairns known as Reilig Mhuire (Mary's cemetery).",
+      "Kristian Birkeland": "Kristian Olaf Bernhard Birkeland (13 December 1867 \u2013 15 June 1917) was a Norwegian scientist.  He is best remembered as the person whose theories of atmospheric electric currents elucidated the nature of the aurora borealis.  In order to fund his research on the aurorae, he invented the electromagnetic cannon and the Birkeland-Eyde process of fixing nitrogen from the air.  Birkeland was nominated for the Nobel Prize seven times.",
+      "Wesley Silcox": "Wesley Silcox (born May 30, 1985, in Santaquin, Utah) is an American professional bull rider.  He is of English descent.  He competes in the Professional Rodeo Cowboys Association (PRCA) and Championship Bull Riding (CBR) tour.  He has qualified for the PRCA's National Finals Rodeo seven times (2005-2008, 2010\u201311, 2015) and the CBR world finals seven times (2005\u201310, 2013).  He was the PRCA world champion bull rider in 2007 and the PRCA Xtreme Bulls Tour champion in 2010.",
+      "Robert K. Yin": "Robert K. Yin is an American social scientist and President of COSMOS Corporation, known for his work on case study research as well as on qualitative research.  Over the years, his work on case study research has been frequently cited.  Google Scholar listed it as the second highest methodological work (see Table 3 in the following link), qualitative or quantitative, over a 20-year period:",
+      "Rumford Medal": "The Rumford Medal is an award bestowed by Britain's Royal Society every alternating year for \"an outstandingly important recent discovery in the field of thermal or optical properties of matter made by a scientist working in Europe\".  First awarded during 1800, it was created after a 1796 donation of $5000 by the scientist Benjamin Thompson, known as Count Rumford, and is accompanied by a gift of \u00a31000.  Since its inception, the award has been granted to 101 scientists, including Rumford himself during 1800.  It has been awarded to citizens of the United Kingdom fifty-three times, Germany seventeen times, France fourteen times, the Netherlands seven times, Sweden four times, the United States three times, Italy twice and once each to citizens of Australia, Hungary, Belgium, Luxembourg and New Zealand.",
+      "Simon Poelman": "Simon Poelman (born 27 May 1963) is a former New Zealand decathlete, who has been described as New Zealand's best ever all-round athlete.  In the decathlon, his personal best of 8359 points (which is adjusted from 8366 points as it was hand timed) is still a New Zealand national record.  This was set at the national athletics championships in Christchurch 1987.  As well as being the national decathlon champion seven times.  He was also the New Zealand senior men's national champion in several individual events including the 100m (once), 110m hurdles (seven times), long jump (twice), pole vault (three times), and shot put (once).",
+      "Celina Seghi": "Celina Seghi (born 6 March 1920) is a former Italian alpine skier.  Born in Abetone, Tuscany, she was the youngest child in a family of nine and earned her first Italian championship medal, a bronze in the slalom, in 1934.  In 1937 she earned three national titles, her first victories at that level, by winning the slalom, downhill, and combined events.  In total she won a total of 25 gold, 6 silver, and 3 bronze medals at the Italian National Championships: gold seven times, silver thrice, and bronze twice in the downhill, gold and silver once each in the giant slalom, gold ten times, silver twice, and bronze once in the slalom, and gold seven times in the combined.",
+      "Dysosmia": "Dysosmia is a disorder described as any qualitative alteration or distortion of the perception of smell.  Qualitative alterations differ from quantitative alterations, which include anosmia and hyposmia.  Dysosmia can be classified as either parosmia (also called troposmia) or phantosmia.  Parosmia refers to a distortion in the perception of an odorant.  Odorants smell different from what one remembers.  Phantosmia refers to the perception of an odor when there's no actual odorant present.  The cause of dysosmia still remains a theory.  It is typically considered a neurological disorder and clinical associations with the disorder have been made.  Most cases are described as idiopathic and the main antecedents related to parosmia are URTIs, head trauma, and nasal and paranasal sinus disease.  Dysosmia tends to go away on its own but there are options for treatment for patients that want immediate relief.",
+      "Substorm": "A substorm, sometimes referred to as a magnetospheric substorm or an auroral substorm, is a brief disturbance in the Earth's magnetosphere that causes energy to be released from the \"tail\" of the magnetosphere and injected into the high latitude ionosphere.  Visually, a substorm is seen as a sudden brightening and increased movement of auroral arcs.  Substorms were first described in qualitative terms by Kristian Birkeland which he called polar elementary storms.  Sydney Chapman used the term substorm about 1960 which is now the standard term.  The morphology of aurora during of a substorm was first described by Syun-Ichi Akasofu in 1964 using data collected during the International Geophysical Year.",
+      "Bifurcation theory": "Bifurcation theory is the mathematical study of changes in the qualitative or topological structure of a given family, such as the integral curves of a family of vector fields, and the solutions of a family of differential equations. Most commonly applied to the mathematical study of dynamical systems, a bifurcation occurs when a small smooth change made to the parameter values (the bifurcation parameters) of a system causes a sudden 'qualitative' or topological change in its behaviour.  Bifurcations occur in both continuous systems (described by ODEs, DDEs or PDEs) and discrete systems (described by maps).  The name \"bifurcation\" was first introduced by Henri Poincar\u00e9 in 1885 in the first paper in mathematics showing such a behavior.  Henri Poincar\u00e9 also later named various types of stationary points and classified them."
+    },
+    "gold": "Kristian Birkeland||Substorm",
+    "gold_titles": [
+      "Kristian Birkeland",
+      "Substorm"
+    ],
+    "local_title": "Substorm",
+    "involving": [
+      [
+        "Kristian Birkeland||Substorm",
+        0.1197
+      ],
+      [
+        "Dysosmia||Substorm",
+        0.1192
+      ],
+      [
+        "Bifurcation theory||Substorm",
+        0.1168
+      ],
+      [
+        "Rumford Medal||Substorm",
+        0.1074
+      ],
+      [
+        "Robert K. Yin||Substorm",
+        0.0957
+      ],
+      [
+        "Simon Poelman||Substorm",
+        0.0942
+      ],
+      [
+        "Reek Sunday||Substorm",
+        0.0802
+      ],
+      [
+        "Celina Seghi||Substorm",
+        0.0787
+      ]
+    ],
+    "top_global": [
+      [
+        "Celina Seghi||Simon Poelman",
+        0.1525
+      ],
+      [
+        "Rumford Medal||Simon Poelman",
+        0.1389
+      ],
+      [
+        "Simon Poelman||Wesley Silcox",
+        0.1351
+      ],
+      [
+        "Robert K. Yin||Rumford Medal",
+        0.1301
+      ],
+      [
+        "Kristian Birkeland||Robert K. Yin",
+        0.129
+      ],
+      [
+        "Kristian Birkeland||Simon Poelman",
+        0.1207
+      ],
+      [
+        "Kristian Birkeland||Substorm",
+        0.1197
+      ],
+      [
+        "Celina Seghi||Rumford Medal",
+        0.1194
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-8",
+    "rhyme": "E10_knowledge_fold",
+    "question": "G\u00fcl Train is a project of which Eurasian political and economic intergovernmental organization?",
+    "answer": "Economic Cooperation Organisation",
+    "titles": [
+      "International Sugar Organization",
+      "Intergovernmental organization",
+      "United Nations",
+      "International Organization for Migration",
+      "Coalition for Rainforest Nations",
+      "ALBA",
+      "Economic Cooperation Organization",
+      "World Trade Organization",
+      "Enlargement of the Eurasian Economic Union",
+      "G\u00fcl Train"
+    ],
+    "paras": {
+      "International Sugar Organization": "The International Sugar Organization is an intergovernmental organization, based in London, which was established by the International Sugar Agreement of 1968, as the body responsible for administering the Agreement.  Unlike its predecessors under pre-1968 versions of the International Sugar Agreement, it does not have the power to regulate the international sugar trade by price-setting or export quotas but seeks to promote the trade in and consumption of sugar by gathering and publishing information on the sugar market, research into new uses for sugar and related products and as a forum for intergovernmental discussions on sugar.  As of June 2017, its membership consisted of 87 countries.",
+      "Intergovernmental organization": "An intergovernmental organization or international governmental organization (IGO) is an organization composed primarily of sovereign states (referred to as \"member states\"), or of other intergovernmental organizations.  Intergovernmental organizations are often called international organizations, although that term may also include international nongovernmental organization such as international nonprofit organizations or multinational corporations.",
+      "United Nations": "The United Nations (UN) is an intergovernmental organization tasked to promote international co-operation and to create and maintain international order.  A replacement for the ineffective League of Nations, the organization was established on 24 October 1945 after World War II in order to prevent another such conflict.  At its founding, the UN had 51 member states; there are now 193.  The headquarters of the UN is in Manhattan, New York City, and is subject to extraterritoriality.  Further main offices are situated in Geneva, Nairobi, and Vienna.  The organization is financed by assessed and voluntary contributions from its member states.  Its objectives include maintaining international peace and security, promoting human rights, fostering social and economic development, protecting the environment, and providing humanitarian aid in cases of famine, natural disaster, and armed conflict.  The UN is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world.",
+      "International Organization for Migration": "The International Organization for Migration (IOM) is an intergovernmental organization that provides services and advice concerning migration to governments and migrants, including internally displaced persons, refugees, and migrant workers.  As of September 2016, it became a related organization of the United Nations.  It was initially established in 1951 as the Intergovernmental Committee for European Migration (ICEM) to help resettle people displaced by World War II.  As of June 2016, the International Organization for Migration has 166 member states and 8 observer states.",
+      "Coalition for Rainforest Nations": "The Coalition for Rainforest Nations (CfRN) is an intergovernmental organization established by forested tropical counties to collaboratively reconcile forest stewardship with economic development.  The Rainforest Coalition aims to bring together both developing and industrialized nations for the purpose of creating community-driven, environmentally sustainable economic growth.",
+      "ALBA": "ALBA or ALBA-TCP, formally the Bolivarian Alliance for the Peoples of Our America (Spanish: \"Alianza Bolivariana para los Pueblos de Nuestra Am\u00e9rica\" ) or the Bolivarian Alliance for the Peoples of Our America - Peoples\u2019 Trade Treaty (Spanish: \"Alianza Bolivariana para los Pueblos de Nuestra Am\u00e9rica - Tratado de Comercio de los Pueblos\" ), is an intergovernmental organization based on the idea of the social, political and economic integration of the countries of Latin America and the Caribbean.  The name \"Bolivarian\" refers to the ideology of Sim\u00f3n Bol\u00edvar, the 19th-century South American independence leader born in Caracas who wanted Hispanic America to unite as a single \"Great Nation.\"  Founded initially by Cuba and Venezuela in 2004, it is associated with socialist and social democratic governments wishing to consolidate regional economic integration based on a vision of social welfare, bartering and mutual economic aid.  The eleven member countries are Antigua and Barbuda, Bolivia, Cuba, Dominica, Ecuador, Grenada, Nicaragua, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines and Venezuela.  Suriname was admitted to ALBA as a guest country at a February 2012 summit.  ALBA nations may conduct trade using a virtual regional currency known as the SUCRE.  Venezuela and Ecuador made the first bilateral trade deal using the Sucre, instead of the US dollar, on July 6, 2010.",
+      "Economic Cooperation Organization": "The Economic Cooperation Organisation or ECO is a Eurasian political and economic intergovernmental organization which was founded in 1985 in Tehran by the leaders of Iran, Pakistan and Turkey.  It provides a platform to discuss ways to improve development and promote trade and investment opportunities.  The ECO is an \"ad hoc\" organisation under the United Nations Charter (Chap.  VIII).  The objective is to establish a single market for goods and services, much like the European Union.  ECO's secretariat and cultural department are located in Iran, its economic bureau is in Turkey and its scientific bureau is situated in Pakistan.",
+      "World Trade Organization": "The World Trade Organization (WTO) is an intergovernmental organization that regulates international trade.  The WTO officially commenced on 1 January 1995 under the Marrakesh Agreement, signed by 123 nations on 15 April 1994, replacing the General Agreement on Tariffs and Trade (GATT), which commenced in 1948.  It is the largest international economic organization in the world.  The WTO deals with regulation of trade between participating countries by providing a framework for negotiating trade agreements and a dispute resolution process aimed at enforcing participants' adherence to WTO agreements, which are signed by representatives of member governments and ratified by their parliaments.  Most of the issues that the WTO focuses on derive from previous trade negotiations, especially from the Uruguay Round (1986\u20131994).",
+      "Enlargement of the Eurasian Economic Union": "The future enlargement of the Eurasian Economic Union is theoretically open to any Post-Soviet states and potentially any country of Europe or Asia.  In order to accede, a state must fulfill certain economic and political requirements.  Enlargement of the Union is also subject to the consent of all existing members and the candidate's adoption of existing EEU laws and implementing previous decisions made by the Eurasian Economic Commission.  The present agenda of the enlargement of the Eurasian Economic Union is primarily focused on Tajikistan.  Meanwhile, Moldova was granted Observer Status in April 2017.  The process of enlargement is referred to as Eurasian integration or Eurasianism.  This term is also used to refer to the intensification of economic cooperation between Eurasian Economic Union member states.",
+      "G\u00fcl Train": "G\u00fcl Train (Formerly ECO Train) (Urdu: \u200e ) is an international freight train service between Islamabad, Pakistan and Istanbul, Turkey via Tehran, Iran.  The train named after Turkish President Abdullah G\u00fcl and was launched on 14 August 2009 on trial basis.  It is an important project of Economic Cooperation Organization."
+    },
+    "gold": "Economic Cooperation Organization||G\u00fcl Train",
+    "gold_titles": [
+      "Economic Cooperation Organization",
+      "G\u00fcl Train"
+    ],
+    "local_title": "G\u00fcl Train",
+    "involving": [
+      [
+        "Economic Cooperation Organization||G\u00fcl Train",
+        0.1613
+      ],
+      [
+        "G\u00fcl Train||International Sugar Organization",
+        0.1031
+      ],
+      [
+        "G\u00fcl Train||World Trade Organization",
+        0.1019
+      ],
+      [
+        "G\u00fcl Train||International Organization for Migration",
+        0.1011
+      ],
+      [
+        "Coalition for Rainforest Nations||G\u00fcl Train",
+        0.0972
+      ],
+      [
+        "G\u00fcl Train||United Nations",
+        0.0859
+      ],
+      [
+        "Enlargement of the Eurasian Economic Union||G\u00fcl Train",
+        0.0841
+      ],
+      [
+        "G\u00fcl Train||Intergovernmental organization",
+        0.0725
+      ]
+    ],
+    "top_global": [
+      [
+        "Economic Cooperation Organization||International Sugar Organization",
+        0.1875
+      ],
+      [
+        "International Organization for Migration||International Sugar Organization",
+        0.1827
+      ],
+      [
+        "Economic Cooperation Organization||International Organization for Migration",
+        0.181
+      ],
+      [
+        "International Organization for Migration||United Nations",
+        0.1654
+      ],
+      [
+        "International Organization for Migration||World Trade Organization",
+        0.1638
+      ],
+      [
+        "Economic Cooperation Organization||G\u00fcl Train",
+        0.1613
+      ],
+      [
+        "International Sugar Organization||World Trade Organization",
+        0.1613
+      ],
+      [
+        "United Nations||World Trade Organization",
+        0.1579
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-9",
+    "rhyme": "E10_knowledge_fold",
+    "question": "Which 2003 action-adventure platforming video game was written by Reid Harrison?",
+    "answer": "Tak and the Power of Juju",
+    "titles": [
+      "Rayman 3: Hoodlum Havoc",
+      "Vexx",
+      "Castlevania: Legacy of Darkness",
+      "Prince of Persia (2008 video game)",
+      "Mr. Wimpy (video game)",
+      "Tak and the Power of Juju",
+      "Reid Harrison",
+      "Earthworm Jim (series)",
+      "Banjo-Kazooie: Grunty's Revenge",
+      "Virtual Boy Wario Land"
+    ],
+    "paras": {
+      "Rayman 3: Hoodlum Havoc": "Rayman 3: Hoodlum Havoc is the third major platform game installment in the \"Rayman\" series.  It tells the story of how Rayman stops Andr\u00e9, an evil black lum, from taking over the world with his army of sack-like \"Hoodlum\" soldiers.  Unlike the game's predecessor, \"Rayman 3\" took a more light-hearted turn, it has sarcastic self-referential undertones and pokes fun at the platforming video game genre.  It was released for the GameCube, PlayStation 2, Xbox and Microsoft Windows by Ubi Soft in 2003 and OS X by Feral Interactive in 2004.  A remastered HD version of the game was released for PlayStation Network and Xbox Live Arcade in 2012.  2D versions were developed for the Game Boy Advance and N-Gage.  A follow up game, \"\", was released for the Game Boy Advance in 2005.  This would be the last main series \"Rayman\" game to be released until \"Rayman Origins\" in 2011.  The game is also the latest in the series to be in 3D.",
+      "Vexx": "Vexx is a 2003 platforming video game developed by Acclaim Studios Austin and published by Acclaim Entertainment for the PlayStation 2, GameCube and Xbox video game consoles.  The game was released in North America on February 11, 2003 and in Europe on April 4, 2003.  The objective consists of collecting magical hearts and unlocking more worlds to play, defeating enemies and jumping across platforms.  Vexx is armed only with the legendary Astani war talons, which give him the power to defeat his enemies, as well as fly and swim under water.",
+      "Castlevania: Legacy of Darkness": "Castlevania: Legacy of Darkness is an action-adventure platforming video game, that was developed and published by Konami for the Nintendo 64.  It was first released in North America on November 30, 1999 and is a prequel and expanded version to the first \"Castlevania\" game on the Nintendo 64, but also contains a remake of the original game with improved graphics, added villains, and alternate versions of some levels.",
+      "Prince of Persia (2008 video game)": "Prince of Persia is an action-adventure and platforming video game developed by Ubisoft Montreal and published by Ubisoft.  It is part of the \"Prince of Persia\" franchise.  The game was released in the United States on December 2, 2008 for PlayStation 3 and Xbox 360 and on December 9, 2008 for Microsoft Windows.  It was later released on March 24, 2009 for Mac OS X via the Cider engine.",
+      "Mr. Wimpy (video game)": "Mr. Wimpy is a platforming video game released by Ocean Software in 1984.  The game was intended to be a promotional tie with Wimpy restaurants as their logos, company mascots, and theme tunes were reproduced.  The game was released on the Oric 1, ZX Spectrum, BBC Micro and Commodore 64.  The gameplay is similar to the video game \"BurgerTime\".",
+      "Tak and the Power of Juju": "Tak and the Power of Juju is a 2003 action-adventure platforming video game developed by Avalanche Software and published by THQ for the GameCube, PlayStation 2 and Game Boy Advance.  The game was released in North America on October 15, 2003 and in Europe on March 12, 2004.  The Game Boy Advance version was also released on a Triple Pack cartridge bundled with \"\" and \"\" in 2005.  The game spawned two direct sequels, \"\" and \"\" as well as two indirect sequels, \"Tak and the Guardians of Gross\" and \"\".",
+      "Reid Harrison": "Reid Harrison is an American screenwriter and television producer.  He has written for television shows such as \"The PJs\", \"George & Leo\", \"Men Behaving Badly\", \"Brother's Keeper\", \"Gary & Mike\", \"George of the Jungle\", \"Pinky and the Brain\", \"Duckman\", \"Drawn Together\", \"The Mullets\", \"3 South\", \"Tak and the Power of Juju\" and \"Danger Mouse\".",
+      "Earthworm Jim (series)": "Earthworm Jim is a series of side-scrolling platforming video games, the first game of which was released in 1994.  The series is noted for its platforming and shooting gameplay, surrealist humor, and edgy art style.  Four games were released in the series: \"Earthworm Jim\", \"Earthworm Jim 2\", \"Earthworm Jim 3D\", and \"\".  The series lay dormant for almost a decade before Gameloft remade the original game in HD for PlayStation Network and Xbox Live Arcade in 2010.  Interplay announced an \"Earthworm Jim 4\" in 2008, but little has surfaced since.",
+      "Banjo-Kazooie: Grunty's Revenge": "Banjo-Kazooie: Grunty's Revenge is a 2003 platforming video game developed by Rare and published by THQ for the Game Boy Advance.  The game was released in North America on 10 September 2003 and in Europe on 24 October 2003.  \"Banjo-Kazooie: Grunty's Revenge\" is a spin-off game in the \"Banjo-Kazooie\" series and takes place two months after the events of \"Banjo-Kazooie\" for the Nintendo 64.  The game also contains a time travel plot; its story actually takes place before the events of \"Banjo-Kazooie\" as well.  \"Banjo-Kazooie: Grunty's Revenge\" used an overhead platform design similar to \"Conker's Pocket Tales\" to replicate the 3-D feel of the console entries in the series, but on a smaller scale.",
+      "Virtual Boy Wario Land": "Virtual Boy Wario Land (Japanese: \u30d0\u30fc\u30c1\u30e3\u30eb\u30dc\u30fc\u30a4\u30ef\u30ea\u30aa\u30e9\u30f3\u30c9\u3000\u30a2\u30ef\u30be\u30f3\u306e\u79d8\u5b9d , Hepburn: B\u0101charu B\u014di Wario Rando: Awazon no Hih\u014d ) is a platforming video game developed and published by Nintendo for the Virtual Boy game system in 1995.  It stars Wario in a platforming adventure quite similar to most of his other starring roles."
+    },
+    "gold": "Reid Harrison||Tak and the Power of Juju",
+    "gold_titles": [
+      "Reid Harrison",
+      "Tak and the Power of Juju"
+    ],
+    "local_title": "Reid Harrison",
+    "involving": [
+      [
+        "Reid Harrison||Tak and the Power of Juju",
+        0.1011
+      ],
+      [
+        "Prince of Persia (2008 video game)||Reid Harrison",
+        0.0843
+      ],
+      [
+        "Banjo-Kazooie: Grunty's Revenge||Reid Harrison",
+        0.0833
+      ],
+      [
+        "Earthworm Jim (series)||Reid Harrison",
+        0.0737
+      ],
+      [
+        "Castlevania: Legacy of Darkness||Reid Harrison",
+        0.0682
+      ],
+      [
+        "Reid Harrison||Vexx",
+        0.0673
+      ],
+      [
+        "Rayman 3: Hoodlum Havoc||Reid Harrison",
+        0.0657
+      ],
+      [
+        "Reid Harrison||Virtual Boy Wario Land",
+        0.0641
+      ]
+    ],
+    "top_global": [
+      [
+        "Tak and the Power of Juju||Vexx",
+        0.2812
+      ],
+      [
+        "Banjo-Kazooie: Grunty's Revenge||Tak and the Power of Juju",
+        0.2772
+      ],
+      [
+        "Castlevania: Legacy of Darkness||Tak and the Power of Juju",
+        0.2771
+      ],
+      [
+        "Banjo-Kazooie: Grunty's Revenge||Castlevania: Legacy of Darkness",
+        0.25
+      ],
+      [
+        "Prince of Persia (2008 video game)||Tak and the Power of Juju",
+        0.2439
+      ],
+      [
+        "Castlevania: Legacy of Darkness||Prince of Persia (2008 video game)",
+        0.2405
+      ],
+      [
+        "Castlevania: Legacy of Darkness||Virtual Boy Wario Land",
+        0.2297
+      ],
+      [
+        "Castlevania: Legacy of Darkness||Vexx",
+        0.202
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-10",
+    "rhyme": "E10_knowledge_fold",
+    "question": "In which Florida city is Skyplex being constructed, featuring Skyscraper, the tallest rollercoaster in the world?",
+    "answer": "Orlando",
+    "titles": [
+      "Conch Republic",
+      "BD Bacat\u00e1",
+      "List of tallest buildings in the United States",
+      "Skyplex",
+      "Florida's Turnpike",
+      "Florida City, Florida",
+      "Homestead Extension of Florida's Turnpike",
+      "Rivergate Tower",
+      "Skyscraper (roller coaster)",
+      "List of tallest Buildings in Bradenton, Florida"
+    ],
+    "paras": {
+      "Conch Republic": "The Conch Republic is a micronation declared as a tongue-in-cheek secession of the city of Key West, Florida, from the United States on April 23, 1982.  It has been maintained as a tourism booster for the city since.  Since then, the term \"Conch Republic\" has been expanded to refer to \"all of the Florida Keys, or, that geographic apportionment of land that falls within the legally defined boundaries of Monroe County, Florida, northward to 'Skeeter's Last Chance Saloon' in Florida City, Dade County, Florida, with Key West as the nation's capital and all territories north of Key West being referred to as 'The Northern Territories'.",
+      "BD Bacat\u00e1": "BD Bacat\u00e1 (abbreviation for \"Bogot\u00e1 Downtown Bacat\u00e1\") is a skyscraper currently under construction in Bogot\u00e1, Colombia, the tallest in the country, surpassing the Torre Colpatria and the second tallest in South America.  The building is 67 stories high and covers a total surface area of 1200000 sqft .  Development includes office and retail space, apartments and a 364 room hotel, replacing the former Hotel Bacat\u00e1 that was constructed in the same location.  It will be the tallest skyscraper in Colombia, and the first crowdfunded skyscraper, meaning that it was funded by private individuals through the purchase of shares and fiduciary rights allowed under Colombian law.",
+      "List of tallest buildings in the United States": "The world's first skyscraper was built in Chicago in 1885.  Since that time, the United States has been home and still is home to some of the world's tallest skyscrapers.  New York City, specifically the borough of Manhattan, notably has the tallest skyline in the country.  Eleven American buildings have held the title of tallest building in the world (9 in New York City).  New York City and Chicago have always been the centers of American skyscraper building.  The 10-story Home Insurance Building, built in Chicago in 1885, is regarded as the world's first skyscraper; the building was constructed using a novel steel-loadbearing frame which became a standard of the industry worldwide.",
+      "Skyplex": "Skyplex 360 is an entertainment complex owned by Wallack Holdings LLC that is scheduled to open in 2020.  It will be located on a 14 acre lot at the Northeast corner of Sand Lake Road and International Drive in Orlando, Florida.  The complex will include a 570 ft tower, which will feature the world's tallest roller coaster, Skyscraper, and the world's largest Perkins Restaurant and Bakery.  It is expected to cost , be 1500000 sqft , and include a 2,400-car parking with valet.",
+      "Florida's Turnpike": "Florida's Turnpike, designated as State Road 91 (SR 91) and the Ronald Reagan Turnpike, is a toll road in Florida, maintained by Florida's Turnpike Enterprise (FTE).  Spanning approximately 309 mi along a north\u2013south axis, the turnpike is in two sections.  The SR 91 mainline runs roughly 265 mi , from its southern terminus at an interchange with Interstate 95 (I-95) in Miami Gardens to an interchange with I-75 in Wildwood at its northern terminus.  The Homestead Extension of Florida's Turnpike (abbreviated HEFT and designated as SR 821) continues from the southern end of the mainline for another 48 mi to US Highway 1 (US 1) in Florida City.",
+      "Florida City, Florida": "Florida City is a city in Miami-Dade County, Florida, United States and is the southernmost municipality in the South Florida metropolitan area.  Florida City is primarily a Miami suburb and a major agricultural area.",
+      "Homestead Extension of Florida's Turnpike": "The Homestead Extension of Florida's Turnpike (HEFT), designated as State Road 821 (SR 821) and the Ronald Reagan Turnpike, is the southern extension of Florida's Turnpike, a toll road in Florida operated by Florida's Turnpike Enterprise (FTE).  Spanning approximately 48 mi along a north-south axis, it supplements the 265 mi \"mainline\" (designated as SR 91) to form the complete 309 mi turnpike.  The extension begins at its southern terminus at US Highway 1 (US 1) in Florida City, and transitions into the SR 91 mainline in Miramar at its northern end.  Despite their designations as different state roads, the mainline and the extension are continuous in their exit numbering.",
+      "Rivergate Tower": "The Rivergate Tower is a 454\u00a0ft (138m) tall skyscraper in Tampa, Florida.  With 31 floors, it is the sixth tallest building in Tampa.  Rivergate Tower's principal tenant is Sykes Enterprises, a publicly traded company that operates technical help and customer support centers internationally.  The building was constructed in 1988 as headquarters for NCNB, a predecessor to Nations Bank.  It cost $150 million.  Parking is provided in a two-story sub level structure with a total of 731 spaces.  The building was constructed from 1986 to 1988.  Harry Wolf (architect) based its measurements on the Fibonacci series.  in which each number is the sum of the two preceding numbers.  His design for Rivergate Tower was given the 1993 National Honor Award from the American Institute of Architects.  The building is faced in French and Texas limestone, making it one of the tallest limestone structures in the world.  The distinctive cylindrical shape was meant to symbolize a lighthouse and represent optimism.  The building was purchased by In-Rel Properties in 2011.  On April 18, 2012, the American Institute of Architects's Florida Chapter placed the Rivergate Tower on its list of \"Florida Architecture: 100 Years.  100 Places\".  The Gulf of Mexico can be seen from the building.",
+      "Skyscraper (roller coaster)": "Skyscraper is an upcoming roller coaster that will be located at the planned Skyplex complex in Orlando, Florida.  Under development by American and Swiss manufacturers US Thrill Rides and Intamin, the attraction will be a Polercoaster model which utilizes an observation tower as its main support structure.  After several delays, Skyscraper is expected to open in 2020 with construction on the Skyplex complex beginning in 2017.  Upon completion, it will become the tallest roller coaster in the world at over 500 ft and will feature both the steepest drop and highest inversion.",
+      "List of tallest Buildings in Bradenton, Florida": "This List of Tallest Buildings in Bradenton ranks skyscrapers and high-rises in Florida City of Bradenton, Florida by height.  The tallest building in the city is DeSoto Towers, standing at 146\u00a0ft. high."
+    },
+    "gold": "Skyplex||Skyscraper (roller coaster)",
+    "gold_titles": [
+      "Skyplex",
+      "Skyscraper (roller coaster)"
+    ],
+    "local_title": "Skyscraper (roller coaster)",
+    "involving": [
+      [
+        "Skyplex||Skyscraper (roller coaster)",
+        0.3137
+      ],
+      [
+        "Rivergate Tower||Skyscraper (roller coaster)",
+        0.1412
+      ],
+      [
+        "BD Bacat\u00e1||Skyscraper (roller coaster)",
+        0.122
+      ],
+      [
+        "Florida's Turnpike||Skyscraper (roller coaster)",
+        0.1148
+      ],
+      [
+        "List of tallest buildings in the United States||Skyscraper (roller coaster)",
+        0.1102
+      ],
+      [
+        "Homestead Extension of Florida's Turnpike||Skyscraper (roller coaster)",
+        0.1074
+      ],
+      [
+        "List of tallest Buildings in Bradenton, Florida||Skyscraper (roller coaster)",
+        0.1059
+      ],
+      [
+        "Conch Republic||Skyscraper (roller coaster)",
+        0.0968
+      ]
+    ],
+    "top_global": [
+      [
+        "Florida's Turnpike||Homestead Extension of Florida's Turnpike",
+        0.5529
+      ],
+      [
+        "Skyplex||Skyscraper (roller coaster)",
+        0.3137
+      ],
+      [
+        "Florida City, Florida||List of tallest Buildings in Bradenton, Florida",
+        0.15
+      ],
+      [
+        "Conch Republic||Florida's Turnpike",
+        0.1453
+      ],
+      [
+        "Conch Republic||Florida City, Florida",
+        0.1429
+      ],
+      [
+        "Conch Republic||List of tallest buildings in the United States",
+        0.1416
+      ],
+      [
+        "Rivergate Tower||Skyscraper (roller coaster)",
+        0.1412
+      ],
+      [
+        "Rivergate Tower||Skyplex",
+        0.1377
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-11",
+    "rhyme": "E10_knowledge_fold",
+    "question": "August R. Lindt served as chairman of a UN program from 1956 to 1960 that won how many noble prizes ?",
+    "answer": "two Nobel Peace Prizes",
+    "titles": [
+      "Drzewica coat of arms",
+      "\u0141odzia coat of arms",
+      "August R. Lindt",
+      "Ferenc N\u00e1dasdy",
+      "United Nations High Commissioner for Refugees",
+      "Bengal Institute of Technology &amp; Management",
+      "Kalinowa coat of arms",
+      "\u0141ab\u0119d\u017a coat of arms",
+      "Principality of Balshaj",
+      "House of Falkenstein"
+    ],
+    "paras": {
+      "Drzewica coat of arms": "Drzewica - is a Polish coat of arms that was used by many noble families in medieval Poland and later under the Polish-Lithuanian Commonwealth.",
+      "\u0141odzia coat of arms": "\u0141odzia (obsolete Polish for \"boat\") is a Polish coat of arms.  It was used by many noble families of the Kingdom of Poland and the Polish-Lithuanian Commonwealth.  A variant serves as the coat of arms of the city of \u0141\u00f3d\u017a (the city's name literally means \"Boat\").  It's a classic example of the so-called \"canting arms\" well known in European heraldry as it was borne by the medieval lords de \u0141odzia (a feudal lordship) and their clan.  Hence the boat in the shield, clearly alluding to the estate's name literally meaning \"Boat(town)\".  Also some unrelated families would bear it who were either legally adopted into the clan by its bloodline members or misattributed to the clan by error or usurpation.",
+      "August R. Lindt": "August R. Lindt (born 5 August 1905 in Bern, died 14 April 2000 in Bern), also known as Auguste R. Lindt, was a Swiss lawyer and diplomat.  He served as Chairman of UNICEF from 1953 to 1954 and as United Nations High Commissioner for Refugees from 1956 to 1960.",
+      "Ferenc N\u00e1dasdy": "Count Ferenc N\u00e1dasdy de N\u00e1dasd et Fogarasf\u00f6ld (6 October 1555 \u2013 4 January 1604) was a Hungarian nobleman.  His family, N\u00e1dasdy, was one of the wealthiest and most influential of the era in Hungary.  In 1571, when Ferenc was 16, his mother, Orsolya N\u00e1dasdy (n\u00e9e Kanizsay), using her association with many noble families in Hungary, organized a marriage to the young Elizabeth B\u00e1thory (or Hungarian: B\u00e1thory Erzs\u00e9bet), daughter of the Count Gy\u00f6rgy and Anna B\u00e1thory.  The B\u00e1thory family were as rich and illustrious as the N\u00e1dasdy family, though older and more influential, since they had several relatives who had the charge of N\u00e1dor (palatine) of Hungary.  Among them, included a cardinal, a King of Lithuania-Poland, and a Prince of Transylvania.",
+      "United Nations High Commissioner for Refugees": "The Office of the United Nations High Commissioner for Refugees (UNHCR), also known as the UN Refugee Agency, is a United Nations programme mandated to protect and support refugees at the request of a government or the UN itself and assists in their voluntary repatriation, local integration or resettlement to a third country.  Its headquarters are in Geneva, Switzerland, and it is a member of the United Nations Development Group.  The UNHCR has won two Nobel Peace Prizes, once in 1954 and again in 1981.",
+      "Bengal Institute of Technology &amp; Management": "Bengal Institute of Technology & Management (BITM) is a private engineering college adjacent to Santiniketan in the state of West Bengal, India.  The Institute is situated a few kilometers from the erudite and scholarly hamlet of Santiniketan, which has produced two of India's eminent Noble Prizes winners.  It is affiliated to West Bengal University of Technology and is approved by the AICTE.  The college is accredited by NAAC.",
+      "Kalinowa coat of arms": "Kalinowa - is a Polish coat of arms that was used by many noble families in medieval Poland and later under the Polish-Lithuanian Commonwealth.",
+      "\u0141ab\u0119d\u017a coat of arms": "\u0141ab\u0119d\u017a (Polish for \"Swan\") is a Polish coat of arms.  It was used by many noble families known as \"szlachta\" in Polish in medieval Poland and later under the Polish-Lithuanian Commonwealth, branches of the original medieval Duninowie (\"\u0141ab\u0119dzie\") family as well as families connected with the Clan by adoption.",
+      "Principality of Balshaj": "Among the independent Albanian principals, which flourished after the middle of the nineteenth century,the most important was that of the Balshaj family originating from the nearby Balz in Shkodra city.  During the Serbian invasion , the name of this family remains in the dark.  Yet there is reason to suppose that Balshaj was one of many noble Albanian doors,expropriated and mistreated of this area.However, after the mid-nineteenth century, the three Balshaj brothers, Strazimiri, Gjergji I and Balsha II, set this family at the forefront of Albania's state-building process , utilizing the convenient moment that followed the death of car Stefan Dushan.  With the dissolution of his Empire, the Balshaj brothers were working to turn Genta, like the former Diocletian, into an independent state from the Serbian kingdom.For this purpose, they cut off any connection with the new Serbian czar yard, Stefan Urosh, who considered Balshaj as \"rebellious\" and treated them as his controversial opponents.",
+      "House of Falkenstein": "The Lords of Falkenstein in the H\u00f6llental (German: \"Herren von Falkenstein im H\u00f6llental\" ) already so-called in von Knobloch's Upper Baden Family Book (\"Oberbadischem Geschlechterbuch\") of 1898 to 1919, had its main family seat at Falkenstein Castle on a steep hill spur where the narrow H\u00f6llental valley opened up into the broad Dreisam valley.  The name Falkenstein was borne by many noble families; Kindler of Knobloch counted six in the Upper Baden region alone: \"im H\u00f6llenthale\", \"auf dem Schwarzwalde\", \"zu Rimsingen\", \"am Bodensee\", \"im Buchsgau\", \"im Wasgau\"."
+    },
+    "gold": "August R. Lindt||United Nations High Commissioner for Refugees",
+    "gold_titles": [
+      "August R. Lindt",
+      "United Nations High Commissioner for Refugees"
+    ],
+    "local_title": "August R. Lindt",
+    "involving": [
+      [
+        "August R. Lindt||United Nations High Commissioner for Refugees",
+        0.1829
+      ],
+      [
+        "August R. Lindt||\u0141ab\u0119d\u017a coat of arms",
+        0.1143
+      ],
+      [
+        "August R. Lindt||\u0141odzia coat of arms",
+        0.0952
+      ],
+      [
+        "August R. Lindt||Drzewica coat of arms",
+        0.0877
+      ],
+      [
+        "August R. Lindt||Kalinowa coat of arms",
+        0.0877
+      ],
+      [
+        "August R. Lindt||Bengal Institute of Technology &amp; Management",
+        0.0779
+      ],
+      [
+        "August R. Lindt||Ferenc N\u00e1dasdy",
+        0.0603
+      ],
+      [
+        "August R. Lindt||Principality of Balshaj",
+        0.0593
+      ]
+    ],
+    "top_global": [
+      [
+        "Drzewica coat of arms||Kalinowa coat of arms",
+        0.9167
+      ],
+      [
+        "Drzewica coat of arms||\u0141ab\u0119d\u017a coat of arms",
+        0.5122
+      ],
+      [
+        "Kalinowa coat of arms||\u0141ab\u0119d\u017a coat of arms",
+        0.5122
+      ],
+      [
+        "\u0141ab\u0119d\u017a coat of arms||\u0141odzia coat of arms",
+        0.2921
+      ],
+      [
+        "Drzewica coat of arms||\u0141odzia coat of arms",
+        0.2375
+      ],
+      [
+        "Kalinowa coat of arms||\u0141odzia coat of arms",
+        0.2375
+      ],
+      [
+        "August R. Lindt||United Nations High Commissioner for Refugees",
+        0.1829
+      ],
+      [
+        "House of Falkenstein||\u0141odzia coat of arms",
+        0.1452
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-12",
+    "rhyme": "E10_knowledge_fold",
+    "question": "Who wrote the 1995 American action film starring a two-time consensus All-American?",
+    "answer": "Steven Selling",
+    "titles": [
+      "Tedy Bruschi",
+      "Dick Wildung",
+      "Joe Garten",
+      "Sebastian Janikowski",
+      "Jim McIntyre (basketball)",
+      "One Tough Bastard",
+      "Bart Carlton",
+      "Ed Reed",
+      "Les Witte",
+      "Brian Bosworth"
+    ],
+    "paras": {
+      "Tedy Bruschi": "Tedy Lacap Bruschi ( ; born June 9, 1973) is a former professional American football player who was a linebacker in the National Football League (NFL) for thirteen seasons.  He played college football for the University of Arizona, and was a two-time consensus All-American.  He was drafted by the New England Patriots in the third round of the 1996 NFL Draft, and played his entire professional career with the Patriots.  Bruschi won three Super Bowls and was a two-time All-Pro selection.",
+      "Dick Wildung": "Richard Kay \"Dick\" Wildung (August 16, 1921\u00a0\u2013 March 15, 2006) was an American football tackle in the National Football League for the Green Bay Packers.  Wildung attended the University of Minnesota, where he was a two-time consensus All-American as a tackle following the 1941 and 1942 seasons.  He served in World War II as a Navy lieutenant on a PT boat in the Pacific Ocean from 1943 through 1945.",
+      "Joe Garten": "Joe Garten (born August 13, 1968) is a former American college and professional football player who was an offensive lineman in the Canadian Football League (CFL) and World League of American Football (WLAF).  He played college football for the University of Colorado, where he was a two-time consensus All-American.  He played professionally for the Las Vegas Posse and San Antonio Texans of the CFL, and the Barcelona Dragons and Frankfurt Galaxy of the WLAF.",
+      "Sebastian Janikowski": "Sebastian Pawel Janikowski (] ; born March 2, 1978) is a Polish-born American football placekicker for the Oakland Raiders of the National Football League (NFL).  He played college football for Florida State University, and was a two-time consensus All-American.  On September 12, 2011 in a \"Monday Night Football\" game against the Denver Broncos, he tied the previous NFL record for the longest field goal at 63 yards, sharing the record with Tom Dempsey, Jason Elam, and David Akers.  The record stood for just over two years when it was broken by Denver Broncos kicker Matt Prater on December 8, 2013.  Janikowski also holds the record for most games played with the Raiders; as of Week 11 of the 2016 season, he has played 262 games with the team.",
+      "Jim McIntyre (basketball)": "Reverend James McIntyre (1927 \u2013 December 10, 2005) was an American basketball player for the University of Minnesota from 1945\u201346 to 1948\u201349.  A native of Minneapolis, Minnesota, he led Patrick Henry High School to two state championships before becoming a two-time consensus All-American at Minnesota.  McIntyre is recognized as being the University of Minnesota's first true \"big man.\"  Standing at 6 ft and playing the center position, he was especially large for players of the late 1940s era.  During his career, he was a two-time First Team All-Big Ten Conference and one-time Second Team All-Big Ten selection.  McIntyre scored 1,223\u00a0points and had set a then-single season Minnesota scoring record of 360\u00a0points.",
+      "One Tough Bastard": "One Tough Bastard, also known as One Man's Justice, is a 1995 American action film written by Steven Selling, directed by Kurt Wimmer and starring Brian Bosworth and Bruce Payne.",
+      "Bart Carlton": "Bart Carlton was an American standout college basketball player at Ada Teachers College (later named East Central University) in Ada, Oklahoma during the early 1930s.  He was a two-time All-American in 1930 and 1931.  Carlton was also named the Helms National Player of the Year in 1931 despite having never been a consensus All-American, giving him the odd distinction as the only national player of the year who was never a consensus All-American (since consensus voting began in 1928\u201329).",
+      "Ed Reed": "Edward Earl Reed Jr. (born September 11, 1978) is a former American football safety who spent the majority of his career with the Baltimore Ravens of the National Football League (NFL).  He played college football for the University of Miami, where he was a two-time consensus All-American.  He was drafted by the Ravens in the first round of the 2002 NFL Draft and played eleven seasons for Baltimore before playing with the Houston Texans and New York Jets in 2013.  He finished his career with the Ravens, signing a one-day contract on May 7, 2015.",
+      "Les Witte": "Leslie \"Les\" Witte (April 2, 1911 \u2013 December 23, 1973), nicknamed \"Beanie\" and \"One Grand Witte\", was a two-time consensus All-American basketball player for the Wyoming Cowboys in 1932 and 1934.  A forward, he was the first All-American in University of Wyoming history and was also the first Wyoming player to score 1,000\u00a0career points, finishing with 1,069, which was the inspiration for his \"One Grand Witte\" nickname.",
+      "Brian Bosworth": "Brian Keith Bosworth (born March 9, 1965), nicknamed \"The Boz,\" is a former American professional football player who played as a linebacker for the Seattle Seahawks in the National Football League (NFL).  Bosworth played college football for the University of Oklahoma, and was a two-time consensus All-American.  He gained fame and notoriety through his flamboyant personality, controversial comments about the National Collegiate Athletic Association (NCAA) and radical hair cuts.  Bosworth was less successful in the NFL and injuries forced him to retire after three seasons."
+    },
+    "gold": "Brian Bosworth||One Tough Bastard",
+    "gold_titles": [
+      "Brian Bosworth",
+      "One Tough Bastard"
+    ],
+    "local_title": "One Tough Bastard",
+    "involving": [
+      [
+        "Brian Bosworth||One Tough Bastard",
+        0.0805
+      ],
+      [
+        "Jim McIntyre (basketball)||One Tough Bastard",
+        0.0769
+      ],
+      [
+        "Les Witte||One Tough Bastard",
+        0.0685
+      ],
+      [
+        "Ed Reed||One Tough Bastard",
+        0.0682
+      ],
+      [
+        "Bart Carlton||One Tough Bastard",
+        0.0658
+      ],
+      [
+        "One Tough Bastard||Sebastian Janikowski",
+        0.0648
+      ],
+      [
+        "One Tough Bastard||Tedy Bruschi",
+        0.0641
+      ],
+      [
+        "Joe Garten||One Tough Bastard",
+        0.0548
+      ]
+    ],
+    "top_global": [
+      [
+        "Ed Reed||Tedy Bruschi",
+        0.375
+      ],
+      [
+        "Brian Bosworth||Tedy Bruschi",
+        0.3444
+      ],
+      [
+        "Joe Garten||Tedy Bruschi",
+        0.3
+      ],
+      [
+        "Brian Bosworth||Joe Garten",
+        0.2637
+      ],
+      [
+        "Ed Reed||Joe Garten",
+        0.2637
+      ],
+      [
+        "Brian Bosworth||Ed Reed",
+        0.2453
+      ],
+      [
+        "Dick Wildung||Joe Garten",
+        0.2381
+      ],
+      [
+        "Ed Reed||Sebastian Janikowski",
+        0.2339
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-13",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What was Thomas Boutflower Bennet's role at The Collegiate School of St Peter?",
+    "answer": "schoolmaster at J. L. Young's Adelaide Educational Institution and at Saint Peter's College.",
+    "titles": [
+      "Thomas Boutflower Bennett",
+      "Wexford Collegiate School for the Arts",
+      "St Peter's College, Oxford",
+      "St Peter's Collegiate School",
+      "West End Collegiate Church",
+      "Julian Bickersteth",
+      "Scottish Church Collegiate School",
+      "The Lodge School",
+      "Wichita Collegiate School",
+      "St Peter's College, Adelaide"
+    ],
+    "paras": {
+      "Thomas Boutflower Bennett": "Thomas Boutflower Bennett (1808- 14 September 1894) was an early colonist of South Australia, remembered as a schoolmaster at J. L. Young's Adelaide Educational Institution and at Saint Peter's College.",
+      "Wexford Collegiate School for the Arts": "Wexford Collegiate School for the Arts (commonly known as Wexford Collegiate, WCSA, Wexford CSA, Wexford or \"Wex\" for short); formerly Wexford Collegiate Institute is a public high school located in the Scarborough district of Toronto, Ontario, Canada.  Run and organized by the Toronto District School Board, the school officially opened its doors to students in September 1965 as Wexford CI by the Scarborough Board of Education and was renamed Wexford Collegiate School for the Arts in 2006 in recognition of its specialized arts programs.",
+      "St Peter's College, Oxford": "St Peter's College is one of the constituent colleges of the University of Oxford and is located in New Inn Hall Street, Oxford, United Kingdom.  It occupies the site of two of the university's oldest inns, both of which were founded in the 13th century.  The modern college was founded as St Peter's Hall in 1929 by Francis James Chavasse, Bishop of Liverpool, and achieved full collegiate status in 1961, becoming St Peter's College.  In 1979, it began to admit women.",
+      "St Peter's Collegiate School": "St Peter's Collegiate School is a mixed Church of England secondary school and sixth form located in the Compton area of Wolverhampton in the West Midlands of England.  The school is named after Saint Peter, one of the Twelve Apostles of Jesus Christ.",
+      "West End Collegiate Church": "The West End Collegiate Church is a church on West End Avenue at 77th Street on Manhattan's Upper West Side.  It is part of The Collegiate Reformed Protestant Dutch Church in the City of New York, the oldest Protestant church with a continuing organization in America.  The West End Collegiate Church and Collegiate School, which includes the adjacent Collegiate School, is listed on the U.S. National Register of Historic Places.",
+      "Julian Bickersteth": "Kenneth Julian Faithfull Bickersteth, {'1': \", '2': \", '3': \", '4': \"} (5 July 1885 \u2013 16 October 1962) was a British Anglican priest, chaplain, and headmaster.  He started his career as a school chaplain and teacher.  During World War I, he served as a military chaplain.  Between the wars he was headmaster of The Collegiate School of St Peter in Adelaide, Australia, and then headmaster of Felsted School in Essex, England.  From 1942 to 1958, he served as Archdeacon of Maidstone in the Diocese of Canterbury, Church of England.",
+      "Scottish Church Collegiate School": "The Scottish Church Collegiate School is a selective boys' school in north Kolkata, West Bengal having a history of more than 180 years.  The school was founded in 1830 by Reverend Alexander Duff, who came to Calcutta as the first missionary of the Church of Scotland to India.  The Scottish Church Collegiate School is affiliated with the West Bengal Board of Secondary Education, and the West Bengal Council of Higher Secondary Education for the secondary and higher secondary school examinations respectively.  The school functions under the Governing Body of Diocesan Schools, the Diocesan Board of Education and the Church of North India.",
+      "The Lodge School": "In 2010 The Lodge School celebrated its 265th anniversary as an institution of learning in Barbados.  This extended period has not been continuous, as the school has closed and reopened four times during these two and a half centuries.  The school has been known as Codrington College, The College, The Mansion School, the Codrington Grammar School, The Codrington Foundation School, Codrington Collegiate School, Codrington Endowed School, Codrington Lodge Grammar School and The Lodge Collegiate School.  By 1882 the school's name had finally settled on The Lodge School, after the Chaplain's Lodge where some of the early classes were undertaken.",
+      "Wichita Collegiate School": "Wichita Collegiate School, known locally as Collegiate, is a private, co-educational, non-denominational, and non-profit college preparatory day school founded in 1963 currently enrolling 966 students from preschool through 12th grade located in Wichita, Kansas, United States.  The Headmaster is Tom Davis.  Wichita Collegiate School has built a statewide reputation for academic excellence.  The school motto is: \"\"Proba te Dignum\"\" (Latin for \"Prove Yourself Worthy\")",
+      "St Peter's College, Adelaide": "St Peter's College (officially The Collegiate School of St Peter, but commonly known as SPSC, Sancti Petri Schola Collegiata, St Peter's or Saints) is an independent boys' school in the South Australian capital of Adelaide.  Founded in 1847 by members of the Anglican Church of Australia, the school is noted for its history and famous alumni, including three Nobel laureates, forty-two Rhodes scholars and ten Australian State Premiers."
+    },
+    "gold": "St Peter's College, Adelaide||Thomas Boutflower Bennett",
+    "gold_titles": [
+      "St Peter's College, Adelaide",
+      "Thomas Boutflower Bennett"
+    ],
+    "local_title": "Thomas Boutflower Bennett",
+    "involving": [
+      [
+        "St Peter's College, Adelaide||Thomas Boutflower Bennett",
+        0.1351
+      ],
+      [
+        "The Lodge School||Thomas Boutflower Bennett",
+        0.1154
+      ],
+      [
+        "St Peter's Collegiate School||Thomas Boutflower Bennett",
+        0.1091
+      ],
+      [
+        "Julian Bickersteth||Thomas Boutflower Bennett",
+        0.1
+      ],
+      [
+        "St Peter's College, Oxford||Thomas Boutflower Bennett",
+        0.0909
+      ],
+      [
+        "Thomas Boutflower Bennett||Wexford Collegiate School for the Arts",
+        0.0822
+      ],
+      [
+        "Thomas Boutflower Bennett||West End Collegiate Church",
+        0.0746
+      ],
+      [
+        "Thomas Boutflower Bennett||Wichita Collegiate School",
+        0.0641
+      ]
+    ],
+    "top_global": [
+      [
+        "St Peter's Collegiate School||West End Collegiate Church",
+        0.1774
+      ],
+      [
+        "Scottish Church Collegiate School||Wexford Collegiate School for the Arts",
+        0.1705
+      ],
+      [
+        "St Peter's College, Adelaide||Wexford Collegiate School for the Arts",
+        0.1705
+      ],
+      [
+        "Scottish Church Collegiate School||St Peter's College, Adelaide",
+        0.1489
+      ],
+      [
+        "St Peter's College, Adelaide||St Peter's College, Oxford",
+        0.1489
+      ],
+      [
+        "Scottish Church Collegiate School||St Peter's Collegiate School",
+        0.1486
+      ],
+      [
+        "St Peter's College, Adelaide||St Peter's Collegiate School",
+        0.1486
+      ],
+      [
+        "St Peter's College, Oxford||St Peter's Collegiate School",
+        0.1486
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-14",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What regional capital town is close to the all female  Notre Dame High School in Fiapre?",
+    "answer": "Brong-Ahafo Region, Sunyani",
+    "titles": [
+      "Mercy Cross High School (Biloxi, Mississippi)",
+      "Notre Dame High School for Girls",
+      "Notre Dame High School (Belmont, California)",
+      "Notre Dame High School (Toronto)",
+      "Notre Dame High School, Glasgow",
+      "Fiapre",
+      "Mount Notre Dame High School",
+      "Notre Dame High School (Ghana)",
+      "Notre Dame High School, Norwich",
+      "Tyler Asemota"
+    ],
+    "paras": {
+      "Mercy Cross High School (Biloxi, Mississippi)": "Mercy Cross High School was a private, Roman Catholic high school in Biloxi, Mississippi, founded in 1981.  It was the merger of two of Biloxi's most iconic high schools, Sacred Heart High School and Notre Dame High School.  Sacred Heart was the all girls school while Notre Dame was the all boys school.  Mercy Cross was the co-ed merger of the two.  The name, Mercy Cross, was derived from the Sisters of Mercy and the Brothers of the Holy Cross who taught students at schools in the diocese for decades.  Feeder schools included Nativity BVM Elementary, Our Lady of Fatima Elementary, Sacred Heart Elementary, and St. Alphonsus Elementary.",
+      "Notre Dame High School for Girls": "Notre Dame High School for Girls was a private, Roman Catholic, all-girls college prep high school in Chicago, Illinois.  Notre Dame High School for Girls was founded in 1938 by the Sisters of Notre Dame de Namur and in 2009, was incorporated by the Archdiocese of Chicago, making it part of the St. Ferdinand Parish.  Teaching grades 9-12; it is located on the Northwest side of Chicago at 3115 N. Mason Ave., 60634.  The school was located in the heart of a quiet, cozy neighborhood and easily accessed by public transportation.  Its teachings were based on the educational philosophy of St. Julie Billiart, founder of the Sisters of Notre Dame de Namur.  The school provides moral, academic, physical and social education.",
+      "Notre Dame High School (Belmont, California)": "Notre Dame High School, Belmont is a private, All-Female, Catholic, college preparatory high school located in the San Mateo County suburb of Belmont, California.  The school is operated by the Sisters of Notre Dame de Namur for the Archdiocese of San Francisco.  The school's mission is driven by the teachings of Saint Julie Billiart, the foundress of the Sisters of Notre Dame de Namur.",
+      "Notre Dame High School (Toronto)": "Notre Dame High School (also known as NDHS, Notre Dame H.S., Notre Dame, or simply Dame) is an all-girls Roman Catholic secondary school in Toronto, Ontario, Canada.",
+      "Notre Dame High School, Glasgow": "Notre Dame High School is a comprehensive state school for girls located on Observatory Road in Glasgow, Scotland, and founded in 1897.  Notre Dame High is the only remaining single sex comprehensive school in Scotland.",
+      "Fiapre": "Fiapre is a town in Sunyani West District in the Brong-Ahafo Region of Ghana.  Fiapre is very close to the regional capital town of the Brong-Ahafo Region, Sunyani.",
+      "Mount Notre Dame High School": "Mount Notre Dame High School (often abbreviated MND or Mt. Notre Dame) is a private, all-female, college-preparatory high school in Reading, a city in Hamilton County, Ohio, north of Cincinnati, Ohio.  Founded in 1860, Mount Notre Dame originally was a boarding school known for its excellence in education.  The school is one of six all-female Catholic high schools in the Cincinnati area and the only that is run by the Sisters of Notre Dame de Namur as a part of the Archdiocese of Cincinnati.",
+      "Notre Dame High School (Ghana)": "Notre Dame High School is an all female second cycle institution in Fiapre in the Brong-Ahafo Region of Ghana.",
+      "Notre Dame High School, Norwich": "Notre Dame High School is a Roman Catholic secondary school and sixth form with academy status located in Norwich, England.  The current Headteacher is Mr Brian Conway.  The school was opened in 1864 and currently teaches around 1,400 pupils, 400 of whom are in the sixth form.  The Roman Catholic Diocese of East Anglia, Norfolk County Council, and the Department for Education all support Notre Dame High School.",
+      "Tyler Asemota": "Asemota currently attends Notre Dame High School and has been a student there for all four years.  Living in Reseda, California most of his life, Asemota looked up to many high profile athletes from Notre Dame High School, such as Koa Farmer, Khalfani Muhammed, and notable alumni Giancarlo Stanton.  Asemota found late interest in football during his sophomore year when a football coach approached him during a track meet because of his outstanding blend of height and speed.  The same coach, Calvin Taylor, then had Asemota playing wide receiver and free safety for him that season in 2014. "
+    },
+    "gold": "Fiapre||Notre Dame High School (Ghana)",
+    "gold_titles": [
+      "Fiapre",
+      "Notre Dame High School (Ghana)"
+    ],
+    "local_title": "Notre Dame High School (Ghana)",
+    "involving": [
+      [
+        "Fiapre||Notre Dame High School (Ghana)",
+        0.3103
+      ],
+      [
+        "Notre Dame High School (Ghana)||Notre Dame High School (Toronto)",
+        0.2353
+      ],
+      [
+        "Notre Dame High School (Belmont, California)||Notre Dame High School (Ghana)",
+        0.2128
+      ],
+      [
+        "Notre Dame High School (Ghana)||Notre Dame High School, Glasgow",
+        0.1892
+      ],
+      [
+        "Mount Notre Dame High School||Notre Dame High School (Ghana)",
+        0.1613
+      ],
+      [
+        "Notre Dame High School (Ghana)||Notre Dame High School, Norwich",
+        0.1552
+      ],
+      [
+        "Mercy Cross High School (Biloxi, Mississippi)||Notre Dame High School (Ghana)",
+        0.1176
+      ],
+      [
+        "Notre Dame High School (Ghana)||Notre Dame High School for Girls",
+        0.1084
+      ]
+    ],
+    "top_global": [
+      [
+        "Mount Notre Dame High School||Notre Dame High School (Belmont, California)",
+        0.3188
+      ],
+      [
+        "Fiapre||Notre Dame High School (Ghana)",
+        0.3103
+      ],
+      [
+        "Notre Dame High School (Belmont, California)||Notre Dame High School for Girls",
+        0.2614
+      ],
+      [
+        "Mount Notre Dame High School||Notre Dame High School for Girls",
+        0.2475
+      ],
+      [
+        "Notre Dame High School (Ghana)||Notre Dame High School (Toronto)",
+        0.2353
+      ],
+      [
+        "Notre Dame High School (Belmont, California)||Notre Dame High School (Ghana)",
+        0.2128
+      ],
+      [
+        "Mercy Cross High School (Biloxi, Mississippi)||Notre Dame High School for Girls",
+        0.2037
+      ],
+      [
+        "Notre Dame High School (Belmont, California)||Notre Dame High School, Norwich",
+        0.1944
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-15",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What year was the man, who is credited for developing a Crescograph, born?",
+    "answer": "1858",
+    "titles": [
+      "Tex Brashear",
+      "Gaja (wine)",
+      "Brian Close",
+      "Sean Delaney (musician)",
+      "Crescograph",
+      "Jagadish Chandra Bose",
+      "Bramah N. Singh",
+      "Rosa Mundi (group)",
+      "George Groves (sound engineer)",
+      "George Horine"
+    ],
+    "paras": {
+      "Tex Brashear": "Tex Brashear (born January 2, 1955) is a voice actor, who after a career in radio in Texas, Arizona, and Los Angeles, made the transition into voice acting.  Known as \"The Man of 1000 Voices\" (although he actually does more than 3000), Brashear has been heard in thousands of cartoons, radio and television commercials, and has narrated many nature and historical films.  His \"basso profundo\" voice has been heard in countless movie trailers through the years.  His comedic singing has even been featured on \"The Doctor Demento Show\".  He has also voiced and produced comedy bits for \"The Howard Stern Show\" and \"The Rush Limbaugh Program\".  Winner of 102 Addy Awards, he is also credited with discovering and developing the technique of reverse breathing, a vocal technique used by voice actors to help sustain their long breaths.  It is somewhat related to circular breathing.  In addition to voice acting, he has also served as casting director and dialect coach for many films, both American and foreign, and has contributed many research papers on the history of the American Southwest.",
+      "Gaja (wine)": "Gaja is an Italian wine producer from the Piemonte region in the district of Langhe, chiefly producing a number of Barbaresco and Barolo wines, and later diversified into Brunello and \"Super-Tuscan\" production.  Its current owner and president Angelo Gaja is credited with developing techniques that have revolutionised winemaking in Italy, and terms such as \"the undisputed king of Barbaresco\", and \"the man who dragged Piedmont into the modern world\" have been applied to him, and whose Barbaresco wine is considered a status symbol on a par with Ch\u00e2teau Lafite-Rothschild or Krug.",
+      "Brian Close": "Dennis Brian Close, CBE (24 February 1931 \u2013 13 September 2015) was an English cricketer, the youngest man ever to play Test cricket for England.  He was picked to play against New Zealand in July 1949, when he was 18\u00a0years old.  Close went on to play 22\u00a0Test matches for England, captaining them seven times to six wins and one drawn test.  Close also captained Yorkshire to four county championship titles \u2013 the main domestic trophy in English cricket.  He later went on to captain Somerset, where he is widely credited with developing the county into a hard-playing team, and helping to mould Viv Richards and Ian Botham into the successful players they became.",
+      "Sean Delaney (musician)": "Prentice John Delaney Jr. (January 8, 1945 \u2013 April 13, 2003), better known as Sean Delaney, was an American musician, producer, road manager and songwriter, best known for his work with the rock band KISS from the early 1970s until the early 1980s.  He is largely credited with developing their choreography onstage, and co-wrote many songs with Paul Stanley, including \"Mr. Speed\", \"Makin' Love\", and \"Take Me\" from the 1976 album \"Rock and Roll Over\", and \"All American Man\" from the studio side of the 1977 album \"Alive II\".",
+      "Crescograph": "A crescograph is a device for measuring growth in plants.  It was invented in the early 20th century by Sir Jagadish Chandra Bose.",
+      "Jagadish Chandra Bose": "Sir Jagadish Chandra Bose, CSI, CIE, FRS ( ; ] ; 30 November 1858 \u2013 23 November 1937), also spelled Jagdish and Jagadis, was a Bengali polymath, physicist, biologist, biophysicist, botanist and archaeologist, and an early writer of science fiction.  Living in British India, he pioneered the investigation of radio and microwave optics, made significant contributions to plant science, and laid the foundations of experimental science in the Indian subcontinent.  IEEE named him one of the fathers of radio science.  Bose is considered the father of Bengali science fiction, and also invented the crescograph, a device for measuring the growth of plants.  A crater on the moon has been named in his honour.",
+      "Bramah N. Singh": "Bramah N. Singh (3 March 1938 - 20 September 2014) was a cardiac pharmacologist and academic.  Born in Fiji, he graduated in medicine from University of Otago (New Zealand) in 1963 and completed residency at Auckland Hospital, followed by a cardiology fellowship at Greenlane Hospital.  In 1969, Singh was awarded a Nuffield travelling fellowship and moved to Oxford to work with the Miles Vaughan Williams.  There, he worked on the anti-arrhythmic properties of drugs including amiodarone.  Such work helped to refine the characteristics of Class III compounds in the developing Vaughan Williams classification.  Some reviews on antidysrythmic drugs during his lifeyime credited his work in developing the classification system equally with Vaughan Williams, leading to the classification sometimes being called the Singh Vaughan Williams classification.",
+      "Rosa Mundi (group)": "Rosa Mundi was the name of a very short lived electronic music supergroup which consisted of Rose McDowall, John Balance and possibly Peter Christopherson.  The group is only credited for one song, \"The Snow Man\" which appeared on the compilations \"The Final Solstice\" and \"The Final Solstice II\" and the split 7\" vinyl \"Grief\".  Furthermore, Rosa Mundi is credited on the song \"Christmas Is Now Drawing Near\" from the Coil single \"\", later released on \"Moons Milk (In Four Phases)\".  Since both songs, \"The Snow Man\" and \"Christmas Is Now Drawing Near\", were both originally released in 1999, it can be said that this is the only year the group functioned.  However, the song \"Rosa Decidua\" from the 1998 Coil EP , while not credited to Rosa Mundi, has exactly the same line-up.",
+      "George Groves (sound engineer)": "George Robert Groves (13 December 1901 \u2013 4 September 1976) was a film sound pioneer who played a significant role in developing the technology that brought sound to the silent screen.  He is also credited as being Hollywood\u2019s first \u2018sound man\u2019; he was the recording engineer on the seminal Al Jolson picture, \"The Jazz Singer\" (1927), as well as many other early talkies.  In a career with Warner Brothers that spanned 46 years, he rose to become their Director of Sound and won two Academy Awards.",
+      "George Horine": "George Leslie Horine (February 3, 1890 \u2013 November 28, 1948) was an American athlete who mainly competed in the high jump.  He is credited with developing a technique called a forerunner to the western roll, a technique he developed due to the layout of his backyard where he practiced which was considered \"backward\" at the time.  While on the track team at Stanford University, his technique was corrected to the more conventional jumping style of the time.  He equalled the NCAA record in the event at 6' 4\" as a sophomore.  His junior year, 1912, he reverted to his old style, improving to 6' 4\u00a03/4\" and then a world record 6' 6\u00a01/8\".  A few weeks later at the Olympic Trials, he improved again to jump 6' 7\" making him the first man to break the 2 m barrier.  It was the first high jump world record ratified by the IAAF.  He never improved upon his record, which stood for two years."
+    },
+    "gold": "Crescograph||Jagadish Chandra Bose",
+    "gold_titles": [
+      "Crescograph",
+      "Jagadish Chandra Bose"
+    ],
+    "local_title": "Crescograph",
+    "involving": [
+      [
+        "Crescograph||Jagadish Chandra Bose",
+        0.2152
+      ],
+      [
+        "Crescograph||Rosa Mundi (group)",
+        0.0722
+      ],
+      [
+        "Crescograph||George Groves (sound engineer)",
+        0.0714
+      ],
+      [
+        "Crescograph||George Horine",
+        0.0702
+      ],
+      [
+        "Brian Close||Crescograph",
+        0.0612
+      ],
+      [
+        "Crescograph||Sean Delaney (musician)",
+        0.0581
+      ],
+      [
+        "Crescograph||Tex Brashear",
+        0.0538
+      ],
+      [
+        "Bramah N. Singh||Crescograph",
+        0.051
+      ]
+    ],
+    "top_global": [
+      [
+        "Crescograph||Jagadish Chandra Bose",
+        0.2152
+      ],
+      [
+        "George Groves (sound engineer)||George Horine",
+        0.1409
+      ],
+      [
+        "George Groves (sound engineer)||Tex Brashear",
+        0.135
+      ],
+      [
+        "George Groves (sound engineer)||Sean Delaney (musician)",
+        0.1301
+      ],
+      [
+        "Brian Close||George Horine",
+        0.1288
+      ],
+      [
+        "Brian Close||George Groves (sound engineer)",
+        0.1259
+      ],
+      [
+        "Gaja (wine)||George Horine",
+        0.125
+      ],
+      [
+        "George Horine||Tex Brashear",
+        0.1244
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-16",
+    "rhyme": "E10_knowledge_fold",
+    "question": " Jason Regler, stated that he had the idea for the flashing wristbands during a song built around which instrument ?",
+    "answer": "an organ",
+    "titles": [
+      "Everyday (Ariana Grande song)",
+      "Applause (Lady Gaga song)",
+      "World Faith",
+      "Octobass",
+      "Talk Dirty (Jason Derulo song)",
+      "Quogue (LIRR station)",
+      "Xyloband",
+      "Ask (The Smiths song)",
+      "Fix You",
+      "Do You... (Miguel song)"
+    ],
+    "paras": {
+      "Everyday (Ariana Grande song)": "\"Everyday\" is a song recorded by American singer Ariana Grande, featuring rapper Future.  The track appears on \"Dangerous Woman\", her third studio album.  The song was written by Savan Kotecha, Ilya, Grande and Future, and produced by Ilya.  \"Everyday\" is a woozy electropop and trap song built around a grinding beat and a thrumming bassline.  One of Grande's more lyrically explicit songs, the lyrics speak of sexual satisfaction.  The track received mixed reviews from music critics who appreciated its production, but were ambivalent towards Future's feature.",
+      "Applause (Lady Gaga song)": "\"Applause\" is a song by American singer Lady Gaga from her third studio album, \"Artpop\" (2013).  It was released as the album's lead single through Interscope Records on August 12, 2013.  Written and produced by Gaga, DJ White Shadow, Dino Zisis and Nick Monson, additional songwriters included Martin Bresso, Nicolas Mercier, Julien Arias and William Grigahcine.  \"Applause\" was inspired by the cheering of her fans, which kept her motivated during the months she toured with the Born This Way Ball in pain, before cancelling it due to a hip injury.  It is an electropop and Eurodance song built around synthesizers and hi-NRG beats, with lyrics addressing how Gaga is dependent upon her fan's adoration and how she lives to perform.",
+      "World Faith": "World Faith is an international NGO founded in 2008 by Frank Fredericks.  The organization\u2019s stated mission is \"to end religious violence.\u201d  It aims to promote opportunities for interfaith dialogue through community service projects to \u201c[foster] genuine dialogue that is built around the shared values of service\u201d and to \u201c[inspire] project participants to build cross-identity friendships and strengthen their understanding of other religious traditions.\u201d  World Faith\u2019s activities pivot around the idea of revising the system of global peacebuilding, with a special focus on the role of faith identity in conflict.",
+      "Octobass": "The octobass is an extremely large and rare (only 7 in existence) bowed string instrument that was first built around 1850 in Paris by the French luthier Jean-Baptiste Vuillaume (1798\u20131875).  It has three strings and is essentially a larger version of the double bass (the specimen in the collection of the Mus\u00e9e de la Musique in Paris measures in length, whereas a full-size double bass is generally approximately in length).  Because of the extreme fingerboard length and string thickness, the musician plays it using a system of levers and pedals.  It has never been produced on a large scale or used much by composers (though Hector Berlioz wrote favorably about the instrument and proposed its widespread adoption).  In addition to the Paris instrument, octobasses exist in the collections of the Musical Instrument Museum in Phoenix, Arizona and the Kunsthistorisches Museum in Vienna.",
+      "Talk Dirty (Jason Derulo song)": "\"Talk Dirty\" is a song by American singer Jason Derulo, released as the second single from his third studio album, \"Tattoos\" (2013), in Europe and Oceania.  Derulo's third studio album was retitled \"Talk Dirty\" for its US release, featuring an alternative track listing.  It was released as the third single in the US on January 7, 2014.  Additional vocals are provided by American rapper 2 Chainz, making it Derulo's first single to feature a guest performer, excluding the French version of \"Whatcha Say\".  The artists co-wrote the song with Jason Evigan, Sean Douglas, Ori Kaplan, Tamir Muskat, Tomer Yosef, and Wallpaper frontman Ricky Reed; the latter is also the song's producer.  The song is built around sampled instrumentals from \"Hermetico\" by the Israeli band Balkan Beat Box from their 2007 studio album \"Nu Med\".  The main saxophone lick is based on characteristic Turkish traditional ornamentations, particularly rendering the Turkish wind instrument Zurna.",
+      "Quogue (LIRR station)": "Quogue was a station stop along the Montauk Branch of the Long Island Rail Road and the station was built around June, 1875.  During construction the station was moved by the village \"on a Sunday morning\" from its original and current location to a location on Old Depot Road.  The second depot was built around 1882 and later was moved to a private location around 1905.  The third depot was built around 1905 and at some point was elevated for the bridge over the former New York State Route 113.  The station house was razed around April, 1964 but the station stop itself continued to operate until March 16, 1998.  This station, along with nine others around that time were closed due to low ridership, which did not make it very cost-effective to build high-level platforms to support the new C3 railcars the LIRR was procuring at the time.",
+      "Xyloband": "Xylobands are wristbands that contain light-emitting diodes and radio frequency receivers.  The lights inside the wristband can be controlled by a software program, which sends signals to the wristband, instructing it to light up or blink, for example.  The RGB version has a white strap and can emit any colour on the spectrum.  The single colour version is available in green, blue, yellow, red, pink and white.  The first use of Xylobands on a large scale was on Coldplay's 2012 Mylo Xyloto tour.  A Xyloband was given to each member of the audience, and as the concert played, the flashing of the bands was synchronized to the music.  The inventor of the wristbands, Jason Regler, stated that he had the idea for the flashing wristbands while at a Coldplay concert, during the song \"Fix You\".",
+      "Ask (The Smiths song)": "\"Ask\" is a song recorded by the English rock band the Smiths.  It was released as a single on 20 October 1986 through Rough Trade Records.  Credited to vocalist Morrissey and guitarist Johnny Marr, \"Ask\" is an upbeat, positive pop song built around major chords.  Its lyrics touch on shyness and encourages the listener to release their inhibitions.  Its multiple guitar parts and complex production led to disagreements regarding its final mix.  In addition, Craig Gannon, one-time rhythm guitarist for the group, has claimed he wrote and was denied credit for the song's chord structure.",
+      "Fix You": "\"Fix You\" is a song by British rock band Coldplay.  It was written by all four members of the band for their third studio album, \"X&Y\" (2005).  The track is built around an organ accompanied by slow tempo drums and vocals.",
+      "Do You... (Miguel song)": "\"Do You...\" is a song by American R&B recording artist Miguel.  It was released on September 18, 2012, as the second single from his 2012 album \"Kaleidoscope Dream\".  It was written by producer Jerry Duplessis, co-producer Arden Altino, guitarist Paul Pesco, and Miguel, who recorded the song at Platinum Sound Recording Studios in New York City.  \"Do You...\" is a love song built around gentle guitar strumming and a playful rhythm section.  Its lyrics pose flirtatious, rhetorical questions and feature both metaphorical and literal references to narcotics."
+    },
+    "gold": "Fix You||Xyloband",
+    "gold_titles": [
+      "Fix You",
+      "Xyloband"
+    ],
+    "local_title": "Xyloband",
+    "involving": [
+      [
+        "Fix You||Xyloband",
+        0.114
+      ],
+      [
+        "Ask (The Smiths song)||Xyloband",
+        0.1133
+      ],
+      [
+        "Talk Dirty (Jason Derulo song)||Xyloband",
+        0.1117
+      ],
+      [
+        "Do You... (Miguel song)||Xyloband",
+        0.1103
+      ],
+      [
+        "Applause (Lady Gaga song)||Xyloband",
+        0.1091
+      ],
+      [
+        "Octobass||Xyloband",
+        0.1078
+      ],
+      [
+        "World Faith||Xyloband",
+        0.1056
+      ],
+      [
+        "Quogue (LIRR station)||Xyloband",
+        0.0824
+      ]
+    ],
+    "top_global": [
+      [
+        "Ask (The Smiths song)||Do You... (Miguel song)",
+        0.1746
+      ],
+      [
+        "Everyday (Ariana Grande song)||Fix You",
+        0.1724
+      ],
+      [
+        "Applause (Lady Gaga song)||Everyday (Ariana Grande song)",
+        0.1704
+      ],
+      [
+        "Do You... (Miguel song)||Everyday (Ariana Grande song)",
+        0.1624
+      ],
+      [
+        "Do You... (Miguel song)||Talk Dirty (Jason Derulo song)",
+        0.1613
+      ],
+      [
+        "Applause (Lady Gaga song)||Talk Dirty (Jason Derulo song)",
+        0.1609
+      ],
+      [
+        "Everyday (Ariana Grande song)||Talk Dirty (Jason Derulo song)",
+        0.16
+      ],
+      [
+        "Fix You||Talk Dirty (Jason Derulo song)",
+        0.1587
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-17",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What drummer stared along side a former president of the screen actors guild in a 2005 film?",
+    "answer": "Brad Wilk",
+    "titles": [
+      "Screen Actors Guild Life Achievement Award",
+      "Benicio del Toro",
+      "Geoffrey Rush",
+      "List of awards and nominations received by Lost",
+      "Ed Asner",
+      "Too Big to Fail (film)",
+      "1st Screen Actors Guild Awards",
+      "SAG Foundation",
+      "Sleeping Dogs Lie (2005 film)",
+      "Sam Waterston"
+    ],
+    "paras": {
+      "Screen Actors Guild Life Achievement Award": "The Screen Actors Guild Life Achievement Award is given by the Screen Actors Guild's National Honors and Tributes Committee \"for outstanding achievement in fostering the finest ideals of the acting profession.\"  The award predates the 1st Screen Actors Guild Awards by over thirty years, having been presented annually since 1962, except for 1964 and 1981.",
+      "Benicio del Toro": "Benicio Monserrate Rafael del Toro S\u00e1nchez (born February 19, 1967) is a Puerto Rican actor.  He won an Academy Award, BAFTA Award, Golden Globe Award and Screen Actors Guild Award for his portrayal of the jaded but morally upright police officer Javier Rodriguez in the film \"Traffic\" (2000).  Del Toro's performance as ex-con turned religious fanatic in despair, Jack Jordan, in Alejandro Gonz\u00e1lez I\u00f1\u00e1rritu's \"21 Grams\" (2003) earned him a second Academy Award nomination for Best Supporting Actor, as well as a second Screen Actors Guild Awards nomination and a BAFTA Awards nomination for Best Actor in a Leading Role.",
+      "Geoffrey Rush": "Geoffrey Roy Rush {'1': \", '2': \", '3': \", '4': \"} (born 6 July 1951) is an Australian actor and film producer.  Rush is the youngest amongst the few people who have won the \"Triple Crown of Acting\": the Academy Award, the Primetime Emmy Award, and the Tony Award.  He has won one Academy Award for acting (from four nominations), three British Academy Film Awards (from five nominations), two Golden Globe Awards and four Screen Actors Guild Awards. Rush is the founding President of the Australian Academy of Cinema and Television Arts and was named the 2012 Australian of the Year.  He is also the first actor to win the Academy Award, BAFTA Award, Critics' Choice Movie Award, Golden Globe Award, and Screen Actors Guild Award for a single performance in film for his performance in \"Shine\" (1996).",
+      "List of awards and nominations received by Lost": "Lost is an American drama series that aired on ABC from September 22, 2004 until May 23, 2010.  It has been nominated for a variety of different awards, including 54 Primetime Emmy Awards (eleven wins), 48 Saturn Awards (thirteen wins), 33 Teen Choice Awards, 17 Television Critics Association Awards (four wins), 12 Golden Reel Awards (five wins), eight Satellite Awards (one win), seven Golden Globe Awards (one win), six Producers Guild of America Awards (one win), six Writers Guild of America Awards (one win), five Directors Guild of America Awards, two NAACP Image Awards (one win), two Screen Actors Guild Awards (one win), and one BAFTA Award.  Amongst the wins for the series are a Primetime Emmy Award for Outstanding Drama Series, a Golden Globe Award for Best Television Series \u2013 Drama, a Screen Actors Guild Award for Outstanding Performance by an Ensemble in a Drama Series, and a Peabody Award.",
+      "Ed Asner": "Yitzhak Edward Asner (born November 15, 1929) is an American actor, voice actor and a former president of the Screen Actors Guild.  He is primarily known for his role as Lou Grant during the 1970s and early 1980s, on both \"The Mary Tyler Moore Show\" and its spin-off series \"Lou Grant\", making him one of the few television actors to portray the same leading character in both a comedy and a drama.  He is also known for portraying Santa Claus in the comedy film \"Elf\" (2003) and its animated remake \"\" (2014).  He is the most honored male performer in the history of the Primetime Emmy Awards, having won seven.",
+      "Too Big to Fail (film)": "Too Big to Fail is an American television drama film first broadcast on HBO on May 23, 2011 based on Andrew Ross Sorkin's non-fiction book \"\" (2009).  The film was directed by Curtis Hanson.  It received 11 nominations at the 63rd Primetime Emmy Awards; Paul Giamatti's portrayal of Ben Bernanke earned him the Screen Actors Guild Award for Outstanding Performance by a Male Actor in a Miniseries or Television Movie at the 18th Screen Actors Guild Awards.",
+      "1st Screen Actors Guild Awards": "The Inaugural Screen Actors Guild Awards aired on NBC from Stage 12, Universal Studios, on February 25, 1995.  Unveiled during this evening for the first time was the Guild\u2019s new award statuette, The Actor, as well as the first awards for ensembles in drama series and comedy series which honor all of the actors who are the regulars in television series.  From this auspicious beginning the Screen Actors Guild Awards\u00ae has been embraced as one of the most prestigious in the entertainment industry.",
+      "SAG Foundation": "The Screen Actors Guild Foundation is an American organisation that provides assistance and educational programming to the professionals of Screen Actors Guild.  It also provides children\u2019s literacy programs to the public.  Founded in 1985, it relies solely on support from grants, corporate sponsorships and individuals to maintain its programs.",
+      "Sleeping Dogs Lie (2005 film)": "Sleeping Dogs Lie is a 2005 American drama film by writer Chumahan Bowen and director Stuart Lessner, starring Rage Against the Machine drummer Brad Wilk and Ed Asner.  The film also features Tool lead singer Maynard James Keenan as Deputy Lance.",
+      "Sam Waterston": "Samuel Atkinson Waterston (born November 15, 1940) is an American actor, producer and director.  Among other roles, he is noted for his portrayal of Sydney Schanberg in \"The Killing Fields\" (1984), for which he received an Academy Award nomination, and his starring role as Jack McCoy on the long-running NBC television series \"Law & Order\" (1994\u20132010), which brought him Golden Globe and Screen Actors Guild Awards.  He has been nominated for multiple Golden Globe, Screen Actors Guild, BAFTA and Emmy awards, having starred in over eighty film and television productions during his fifty-year career.  He has also starred in numerous stage productions.  AllMovie historian Hal Erickson characterized Waterston as having \"cultivated a loyal following with his quietly charismatic, unfailingly solid performances.\""
+    },
+    "gold": "Ed Asner||Sleeping Dogs Lie (2005 film)",
+    "gold_titles": [
+      "Ed Asner",
+      "Sleeping Dogs Lie (2005 film)"
+    ],
+    "local_title": "Sleeping Dogs Lie (2005 film)",
+    "involving": [
+      [
+        "Ed Asner||Sleeping Dogs Lie (2005 film)",
+        0.0943
+      ],
+      [
+        "Sam Waterston||Sleeping Dogs Lie (2005 film)",
+        0.0833
+      ],
+      [
+        "Sleeping Dogs Lie (2005 film)||Too Big to Fail (film)",
+        0.0737
+      ],
+      [
+        "SAG Foundation||Sleeping Dogs Lie (2005 film)",
+        0.0694
+      ],
+      [
+        "List of awards and nominations received by Lost||Sleeping Dogs Lie (2005 film)",
+        0.0636
+      ],
+      [
+        "Benicio del Toro||Sleeping Dogs Lie (2005 film)",
+        0.0571
+      ],
+      [
+        "Geoffrey Rush||Sleeping Dogs Lie (2005 film)",
+        0.0556
+      ],
+      [
+        "Screen Actors Guild Life Achievement Award||Sleeping Dogs Lie (2005 film)",
+        0.0541
+      ]
+    ],
+    "top_global": [
+      [
+        "Geoffrey Rush||List of awards and nominations received by Lost",
+        0.24
+      ],
+      [
+        "Ed Asner||Sam Waterston",
+        0.2143
+      ],
+      [
+        "Benicio del Toro||Sam Waterston",
+        0.2044
+      ],
+      [
+        "Ed Asner||Geoffrey Rush",
+        0.2031
+      ],
+      [
+        "List of awards and nominations received by Lost||Too Big to Fail (film)",
+        0.2017
+      ],
+      [
+        "Geoffrey Rush||Sam Waterston",
+        0.2
+      ],
+      [
+        "Geoffrey Rush||Too Big to Fail (film)",
+        0.1966
+      ],
+      [
+        "Benicio del Toro||Geoffrey Rush",
+        0.192
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-18",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What is type of philosophies is The Structure of Liberty about?",
+    "answer": "political",
+    "titles": [
+      "Product type",
+      "The Structure of Liberty",
+      "MEROPS",
+      "Cortical dysplasia",
+      "Debates within libertarianism",
+      "Liberty Hill Historic District",
+      "Libertarianism",
+      "Structural type system",
+      "Urban planning in China",
+      "Liberty Place"
+    ],
+    "paras": {
+      "Product type": "In programming languages and type theory, a product of \"types\" is another, compounded, type in a structure.  The \"operands\" of the product are types, and the structure of a product type is determined by the fixed order of the operands in the product.  An instance of a product type retains the fixed order, but otherwise may contain all possible instances of its primitive data types.  The expression of an instance of a product type will be a tuple, and is called a \"tuple type\" of expression.  A product of types is a direct product of two or more types.",
+      "The Structure of Liberty": "The Structure of Liberty is a book by legal theorist Randy Barnett which offers a libertarian theory of law and politics.  Barnett calls his theory \"the liberal conception of justice\", emphasizing the relationship between legal libertarianism and classical liberalism.",
+      "MEROPS": "The classification is based on similarities at the tertiary and primary structural levels.  Comparisons are restricted to that part of the sequence directly involved in the reaction, which in the case of a peptidase must include the active site, and for a protein inhibitor the reactive site.  The classification is hierarchical: sequences are assembled into families, and families are assembled into clans.  A family is assembled around a \"type example\", the sequence of a well-characterized peptidase or inhibitor.  All other sequences in the family must be related to the family type example, either directly or through a transitive relationship involving one or more sequences already shown to be family members.  Typically, FastA or BlastP are used to establish sequence relationships, with an expect value of 0.001 or lower taken to be statistically significant.  A clan is also assembled around a type example, this being the structure of a well-characterized peptidase or inhibitor.  A family is included in a clan if the tertiary structure of a family member can be shown to be related to that of the clan type example.  Typically, DALI is used to establish clan membership, with a z score of 6.00 standard deviation units or above considered to be statistically significant.  For peptidases, other evidence to indicate that families are related when a tertiary structure is absent includes the same order of catalytic residues in the sequences.",
+      "Cortical dysplasia": "Focal cortical dysplasia (FCD) is a congenital abnormality of brain development where the neurons in an area of the brain failed to migrate in the proper formation in utero.  Focal cortical dysplasia is a common cause of intractable epilepsy in children and is a frequent cause of epilepsy in adults.  There are several subtypes of FCD including type 1a, 1b, 2a, 2b, 3a, 3b, and 3c, each with distinct histopathological features.  All forms of focal cortical dysplasia lead to disorganization of the normal structure of the cerebral cortex.  Type 1 FCD exhibits subtle alterations in cortical lamination.  Type 2a FCD exhibits neurons that are larger than normal that are called cytomegalic dysmorphic neurons (CDN).  FCD type 2b exhibits complete loss of laminar structure, and the presence of CDN and enlarged cells are called balloon cells (BC) for their large elliptical cell body shape, laterally displaced nucleus, and lack of dendrites or axons.  The developmental origin of balloon cells is currently believed to be derived from neuronal or glial progenitor cells.  Balloon cells are similar in structure to giant cells in the disorder tuberous sclerosis complex.",
+      "Debates within libertarianism": "Libertarianism is variously defined by sources.  There is no general consensus among scholars on the definition nor on how one should use the term as a historical category.  Scholars generally agree that libertarianism refers to the group of political philosophies which emphasize freedom, individual liberty, and voluntary association.  Libertarians generally advocate a society with little or no government power.",
+      "Liberty Hill Historic District": "Liberty Hill Historic District is a national historic district located at Liberty Hill, Kershaw County, South Carolina.  The district encompasses 34 contributing buildings and 2 contributing structure in the small rural community of Liberty Hill.  The district includes several imposing Greek Revival structures, Greek Revival cottages, and an 1880s vernacular Gothic Revival church.  The later, turn of the 20th century residences are primarily one-story, simple clapboard cottages.  The town\u2019s history begins as early as ca. 1813 when Peter Garlick\u2019s store (location unknown) was a gathering place for surrounding farmers.  Soon, impressive structures were built by planters in the area.  Remaining from the 1830s are Cool Spring and the Joseph Cunningham House.  The majority of the town\u2019s antebellum buildings, however, were built ca. 1840-1850.  During this period Liberty Hill was a very wealthy community.  However, the final days of the American Civil War ended that prosperity.  Nevertheless, the town did eventually reassert itself and appears to have changed very little since the beginning of the 20th century.",
+      "Libertarianism": "Libertarianism (Latin: \"libertas\" , \"freedom\") is a collection of political philosophies and movements that uphold liberty as a core principle.  Libertarians seek to maximize political freedom and autonomy, emphasizing freedom of choice, voluntary association, individual judgment, and self-ownership.",
+      "Structural type system": "A structural type system (or \"property-based\" type system) is a major class of type system, in which type compatibility and equivalence are determined by the type's actual structure or definition, and not by other characteristics such as its name or place of declaration.  Structural systems are used to determine if types are equivalent and whether a type is a subtype of another.  It contrasts with nominative systems, where comparisons are based on the names of the types or explicit declarations, and duck typing, in which only the part of the structure accessed at runtime is checked for compatibility.",
+      "Urban planning in China": "Urban Planning in China (\u4e2d\u56fd) or The People's Republic of China (\u4e2d\u534e\u4eba\u6c11\u5171\u548c\u56fd) is currently characterized by a top down approach, high density urban development and extensive urbanization.  China's urban planning philosophies and practices have undergone multiple transitions due to governance and economic structure changes throughout the nation's extensive history.The founding of the People's Republic of China in 1949 marks the beginning of three recent historical stages of urban planning philosophies and practice that represent a divergence from traditional Chinese urban planning morphologies are broadly categorized as socialist, hybrid and global cities.",
+      "Liberty Place": "Liberty Place is a skyscraper complex in Philadelphia, Pennsylvania, United States.  The complex is composed of a 61-story, 945 ft skyscraper called One Liberty Place, a 58-story, 848 ft skyscraper called Two Liberty Place, a two-story shopping mall called the Shops at Liberty Place, and the 14-story Westin Philadelphia Hotel.  Prior to the construction of Liberty Place, there was a \"gentlemen's agreement\" not to build any structure in Center City higher than the statue of William Penn on top of Philadelphia City Hall.  The tradition lasted until 1984 when developer Willard G. Rouse III of Rouse & Associates announced plans to build an office building complex that included two towers taller than City Hall.  There was a great amount of opposition to the construction of the towers with critics believing breaking the height limit would lead to construction of many more tall skyscrapers, ruining the livability and charm of Center City.  Despite the opposition, construction of One Liberty Place was approved and the first phase of the project began in 1985 and was completed in 1987.  When One Liberty Place was completed, it was the tallest skyscraper in Philadelphia."
+    },
+    "gold": "Libertarianism||The Structure of Liberty",
+    "gold_titles": [
+      "Libertarianism",
+      "The Structure of Liberty"
+    ],
+    "local_title": "The Structure of Liberty",
+    "involving": [
+      [
+        "Libertarianism||The Structure of Liberty",
+        0.1296
+      ],
+      [
+        "Debates within libertarianism||The Structure of Liberty",
+        0.1268
+      ],
+      [
+        "Product type||The Structure of Liberty",
+        0.1231
+      ],
+      [
+        "Structural type system||The Structure of Liberty",
+        0.0952
+      ],
+      [
+        "The Structure of Liberty||Urban planning in China",
+        0.0814
+      ],
+      [
+        "MEROPS||The Structure of Liberty",
+        0.0611
+      ],
+      [
+        "Liberty Hill Historic District||The Structure of Liberty",
+        0.0588
+      ],
+      [
+        "Liberty Place||The Structure of Liberty",
+        0.056
+      ]
+    ],
+    "top_global": [
+      [
+        "Debates within libertarianism||Libertarianism",
+        0.2462
+      ],
+      [
+        "Product type||Structural type system",
+        0.1667
+      ],
+      [
+        "MEROPS||Structural type system",
+        0.1554
+      ],
+      [
+        "Debates within libertarianism||Structural type system",
+        0.1313
+      ],
+      [
+        "Libertarianism||The Structure of Liberty",
+        0.1296
+      ],
+      [
+        "Debates within libertarianism||The Structure of Liberty",
+        0.1268
+      ],
+      [
+        "Product type||The Structure of Liberty",
+        0.1231
+      ],
+      [
+        "Debates within libertarianism||Urban planning in China",
+        0.1188
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-19",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What crossroads is the town located 10 km north of the Charcoal Tank Nature Reserve located?",
+    "answer": "Newell Highway",
+    "titles": [
+      "Bargerveen Nature Reserve",
+      "West Wyalong",
+      "Jonkershoek Nature Reserve",
+      "Hermon nature reserve",
+      "Castlereagh Nature Reserve",
+      "Pasvik Nature Reserve",
+      "Charcoal Tank Nature Reserve",
+      "Northeast Ecological Corridor",
+      "Niagara Glen Nature Reserve",
+      "Delta de la Dranse National Nature Reserve"
+    ],
+    "paras": {
+      "Bargerveen Nature Reserve": "Bargerveen Nature Reserve is a nature reserve in the Dutch province of Drenthe that has been included in the Natura 2000 ecological network.  Since 2006 it is part of the Internationaler Naturpark Bourtanger Moor-Bargerveen (\"engl.  Bourtanger Moor-Bargerveen International Nature Park\"), a nature reserve located on both sides of the border between the Netherlands and Germany.  Most of the transboundary nature reserve, some 134 km2 , lies in Germany, in the west of the state of Lower Saxony.  The sparsely populated landscape consists of large peat areas, heather, and small lakes.",
+      "West Wyalong": "West Wyalong is a town in New South Wales, Australia, which is the main town of the Bland Shire, located in the Central West region of New South Wales.  It is located 467 km west of Sydney.  It is located on the crossroads of the Newell Highway between Melbourne and Brisbane, and the Mid-Western Highway between Sydney and Adelaide.  It is situated 262 m above sea level.",
+      "Jonkershoek Nature Reserve": "Jonkershoek Nature Reserve is a CapeNature nature reserve located approximately 10 km south-east of the town of Stellenbosch in the Western Cape province of South Africa.  It covers an area of approximately 11000 ha .",
+      "Hermon nature reserve": "Hermon nature reserve (\u05e9\u05de\u05d5\u05e8\u05ea \u05d7\u05e8\u05de\u05d5\u05df) is a nature reserve located in the north of the Golan Heights, which was declared a nature reserve on December 6, 1974.  The reserve includes an area in southern Mount Hermon which is located in the Israeli occupied portion of the Golan Heights.  The reserve excludes the Mount Hermon ski resort, Neve Ativ and the Nimrod Fortress.  The total area of the reserve is 18,842 acres (76,250 dunam).",
+      "Castlereagh Nature Reserve": "The Castlereagh Nature Reserve is a protected nature reserve located in the western suburbs of Sydney in New South Wales, Australia.  The 495 ha reserve is situated 60 km west of the central business district, approximately 10 km north-east of Penrith and located near the townships of Castlereagh and Londonderry .  In 1960, 266 ha was reclaimed for use as a Child Welfare Training School, and in 1971, 389 ha was reclaimed for the establishment of a liquid waste disposal facility.",
+      "Pasvik Nature Reserve": "Pasvik Nature Reserve (Norwegian: \"Pasvik naturreservat\" ; Russian: \u041f\u0430\u0441\u0432\u0438\u043a, Pasvik zapovednik ) is a bilateral nature reserve located in the valley of Pasvikdalen in Norway and Russia.  The nature reserve was established in 1992 (Russia) and 1993 (Norway), and covers an area of 166.4 km2 .  The Norwegian part, in the municipality of S\u00f8r-Varanger, covers 19.1 km2 , while the Russian part, in Pechengsky District, Murmansk Oblast, covers 147.3 km2 .  The nature reserve includes unexploited parts of Pasvikelva and has a rich birdlife.",
+      "Charcoal Tank Nature Reserve": "The Charcoal Tank Nature Reserve is a protected nature reserve in the central western region of New South Wales, Australia.  The 86.4 ha reserve is situated 10 km south of West Wyalong and may be accessed via the Newell Highway and The Charcoal Tank Road.  The reserve is an important refuge for native flora and fauna in a highly fragmented landscape, one in which the majority of the original vegetation has been removed.",
+      "Northeast Ecological Corridor": "The Northeast Ecological Corridor Nature Reserve (NECNR) refers to an area designated as a protected Nature Reserve located on the northeast coast of Puerto Rico, between the municipalities of Luquillo and Fajardo.  Specifically, the lands that comprise the NEC are located between Luquillo\u2019s town square to the west and Seven Seas Beach to the east, being delineated by PR Route # 3 to its south and the Atlantic Ocean to its north.  It was decreed as a protected area by former Puerto Rico Governor An\u00edbal S. Acevedo-Vil\u00e1 in April 2008, a decision reversed by Governor Luis G. Fortu\u00f1o-Burset in October 2009, although he later passed a law in June 2012 re-designated as nature reserve two-thirds of its lands, after intense lobbying and public pressure.  Later, in 2013, Governor Alejandro Garc\u00eda-Padilla signed a law declaring all lands within the NEC a nature reserve.  The area comprises 2,969.64 acres (1201.77 hectares), which include such diverse habitats as forests, wetlands, beaches, coral communities, and a sporadically bioluminescent lagoon.  The Corridor is also home to 866 species of flora and fauna, of which 54 are considered critical elements, meaning rare, threatened, endangered and endemic species classified by the Puerto Rico Department of Natural and Environmental Resources (DNER), some even designated as critically endangered by the International Union for Conservation of Nature and Natural Resources (IUCN).  These include, among others, federally endangered species such as the plain pigeon, the snowy plover, the Puerto Rican boa, the hawksbill sea turtle and the West Indian manatee.  The beaches along the NEC, which are 8.74 kilometers (5.43 miles) long are important nesting grounds for the leatherback sea turtle (\"Dermochelys coriacea\"), which starts its nesting season around April each year.",
+      "Niagara Glen Nature Reserve": "Niagara Glen Nature Reserve is a nature reserve located near the Niagara Whirlpool along the Canadian side of the Niagara Gorge.  It is one of the best preserved remaining example of Southern Ontario's original Carolinian forest.  The park is operated by the Niagara Parks Commission, an agency of the Ontario government.  The park features overlooks of the whirlpool and gorge as well as several hiking trails through the Carolinian forest.  The nature reserve protects a pristine area of the Niagara Escarpment.  The nature reserve is open to the public daily, as long as weather permits.",
+      "Delta de la Dranse National Nature Reserve": "The Delta de la Dranse National Nature Reserve is a nature reserve located in the delta of the Dranse river.  The reserve is located to the east of the commune of Thonon-les-Bains in southeastern France.  At 1.5 km long by 500 m wide, it covers a small area of 53 ha at an elevation ranging from 372 to .  Offering a rich botanic biodiversity, the site was declared a national nature reserve in January 1980 and declared a special \"zone of protection\" since September 1986."
+    },
+    "gold": "Charcoal Tank Nature Reserve||West Wyalong",
+    "gold_titles": [
+      "Charcoal Tank Nature Reserve",
+      "West Wyalong"
+    ],
+    "local_title": "Charcoal Tank Nature Reserve",
+    "involving": [
+      [
+        "Charcoal Tank Nature Reserve||West Wyalong",
+        0.2817
+      ],
+      [
+        "Castlereagh Nature Reserve||Charcoal Tank Nature Reserve",
+        0.253
+      ],
+      [
+        "Charcoal Tank Nature Reserve||Jonkershoek Nature Reserve",
+        0.2
+      ],
+      [
+        "Bargerveen Nature Reserve||Charcoal Tank Nature Reserve",
+        0.1224
+      ],
+      [
+        "Charcoal Tank Nature Reserve||Pasvik Nature Reserve",
+        0.1222
+      ],
+      [
+        "Charcoal Tank Nature Reserve||Hermon nature reserve",
+        0.1205
+      ],
+      [
+        "Charcoal Tank Nature Reserve||Delta de la Dranse National Nature Reserve",
+        0.1122
+      ],
+      [
+        "Charcoal Tank Nature Reserve||Niagara Glen Nature Reserve",
+        0.1042
+      ]
+    ],
+    "top_global": [
+      [
+        "Charcoal Tank Nature Reserve||West Wyalong",
+        0.2817
+      ],
+      [
+        "Castlereagh Nature Reserve||Charcoal Tank Nature Reserve",
+        0.253
+      ],
+      [
+        "Castlereagh Nature Reserve||Jonkershoek Nature Reserve",
+        0.2308
+      ],
+      [
+        "Castlereagh Nature Reserve||West Wyalong",
+        0.2237
+      ],
+      [
+        "Delta de la Dranse National Nature Reserve||Jonkershoek Nature Reserve",
+        0.2143
+      ],
+      [
+        "Charcoal Tank Nature Reserve||Jonkershoek Nature Reserve",
+        0.2
+      ],
+      [
+        "Jonkershoek Nature Reserve||West Wyalong",
+        0.1964
+      ],
+      [
+        "Hermon nature reserve||Jonkershoek Nature Reserve",
+        0.1695
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-20",
+    "rhyme": "E10_knowledge_fold",
+    "question": "Shani Gandi has worked with Kelsea Ballerini in what country?",
+    "answer": "American",
+    "titles": [
+      "Unapologetically",
+      "Legends (Kelsea Ballerini song)",
+      "Yeah Boy",
+      "Shani Gandhi",
+      "Love Me Like You Mean It",
+      "Kelsea Ballerini (EP)",
+      "Peter Pan (Kelsea Ballerini song)",
+      "The First Time (Kelsea Ballerini album)",
+      "Dibs (song)",
+      "Kelsea Ballerini"
+    ],
+    "paras": {
+      "Unapologetically": "Unapologetically is the upcoming second studio album by American country music artist Kelsea Ballerini.  It is set to be released on November 3, 2017.  Ballerini announced the album's title and release date on July 25, 2017.  In August, the album's track listing was first revealed to fans during a four-day check-in event over the mobile app Swarm.",
+      "Legends (Kelsea Ballerini song)": "\"Legends\" is a song by American country pop singer Kelsea Ballerini for her forthcoming second studio album, \"Unapologetically\" (2017).  Ballerini co-wrote the track with Hillary Lindsey, Raymel Menefee and Forest Glen Whitehead.  The song was released as a digital single on June 7, 2017 and impacted American country radio on July 10, serving as the lead single for the album.",
+      "Yeah Boy": "\"Yeah Boy\" is a song co-written and recorded by American country pop singer Kelsea Ballerini for her debut studio album, \"The First Time\" (2015).  Ballerini co-wrote the song with Forest Glen Whitehead and Keesy Timmer.  It was released to American country radio on October 10, 2016 as the album's fourth and final single.  The song garnered a positive reception from critics praising its upbeat nature and Ballerini's bubbly charm for being a return to her first two singles.",
+      "Shani Gandhi": "Shani Gandhi is an Australian music producer/engineer based in Nashville, Tennessee.  A native of Perth, she moved to Ithaca, New York in 2007, to pursue a Bachelor of Music degree at Ithaca College.  Her career in Nashville has paired her with such producers as Gary Paczosa, Michael Wagener, Neal Cappellino, and Marshall Altman.  Gandhi has engineered and mixed albums for the likes of Alison Krauss & Union Station, George Jones & The Smoky Mountain Boys, Kelsea Ballerini, Sarah Jarosz, and Parker Millsap.",
+      "Love Me Like You Mean It": "\"Love Me Like You Mean It\" is a song co-written and recorded by American country pop singer Kelsea Ballerini.  Ballerini co-wrote the song with Josh Kerr, Forest Glen Whitehead and Lance Carpenter.  It was released on July 8, 2014 as Ballerini's debut single and the lead single from her debut studio album, \"The First Time\", released on May 19, 2015, by Black River Entertainment.  The song is about a young woman showing interest in a man.",
+      "Kelsea Ballerini (EP)": "Kelsea Ballerini is the debut extended play (EP) by American country pop singer Kelsea Ballerini.  It was released on November 24, 2014, by Black River Entertainment.  The EP contains five tracks that would later be included on Ballerini's debut full-length album, \"The First Time\", in 2015, including the singles \"Love Me Like You Mean It\", \"Dibs\", and \"Yeah Boy\".",
+      "Peter Pan (Kelsea Ballerini song)": "\"Peter Pan\" is a song co-written and recorded by American country pop singer Kelsea Ballerini for her debut studio album, \"The First Time\" (2015).  Ballerini co-wrote the song with Forest Glen Whitehead and Jesse Lee.  It was released to American country radio on March 21, 2016 as the album's third single.  The song is a country pop ballad about a lost love being compared to the song's namesake as a metaphor for being immature and having a tendency to run off to his own fantasy.",
+      "The First Time (Kelsea Ballerini album)": "The First Time is the debut studio album by American country pop singer Kelsea Ballerini.  It was released on May 19, 2015, by Black River Entertainment.  The album's track listing and cover art was released on April 1, 2015.  With the album's first three singles all reaching number one on the \"Billboard\" Country Airplay chart, Ballerini became the first new female artist to send her first three releases to the top of the charts.",
+      "Dibs (song)": "\"Dibs\" is a song co-written and recorded by American country pop singer Kelsea Ballerini for her debut studio album, \"The First Time\" (2015).  Ballerini co-wrote the song with Josh Kerr, Ryan Griffin, and Jason Duke.  It was released to American country radio on July 20, 2015 as the album's second single.",
+      "Kelsea Ballerini": "Kelsea Nicole Ballerini (born September 12, 1993) is an American country pop singer and songwriter.  She is signed to Black River Entertainment, and released her first album \"The First Time\" in 2015.  She received a nomination for Best New Artist at the 2017 Grammy Awards."
+    },
+    "gold": "Kelsea Ballerini||Shani Gandhi",
+    "gold_titles": [
+      "Kelsea Ballerini",
+      "Shani Gandhi"
+    ],
+    "local_title": "Shani Gandhi",
+    "involving": [
+      [
+        "Kelsea Ballerini||Shani Gandhi",
+        0.1522
+      ],
+      [
+        "Dibs (song)||Shani Gandhi",
+        0.1111
+      ],
+      [
+        "Legends (Kelsea Ballerini song)||Shani Gandhi",
+        0.098
+      ],
+      [
+        "Peter Pan (Kelsea Ballerini song)||Shani Gandhi",
+        0.0948
+      ],
+      [
+        "Shani Gandhi||Yeah Boy",
+        0.0948
+      ],
+      [
+        "Shani Gandhi||The First Time (Kelsea Ballerini album)",
+        0.0917
+      ],
+      [
+        "Love Me Like You Mean It||Shani Gandhi",
+        0.0862
+      ],
+      [
+        "Shani Gandhi||Unapologetically",
+        0.0849
+      ]
+    ],
+    "top_global": [
+      [
+        "Dibs (song)||Love Me Like You Mean It",
+        0.4857
+      ],
+      [
+        "Dibs (song)||Peter Pan (Kelsea Ballerini song)",
+        0.4789
+      ],
+      [
+        "Dibs (song)||Yeah Boy",
+        0.4789
+      ],
+      [
+        "Peter Pan (Kelsea Ballerini song)||Yeah Boy",
+        0.4699
+      ],
+      [
+        "Dibs (song)||Legends (Kelsea Ballerini song)",
+        0.4286
+      ],
+      [
+        "Love Me Like You Mean It||Peter Pan (Kelsea Ballerini song)",
+        0.4235
+      ],
+      [
+        "Love Me Like You Mean It||Yeah Boy",
+        0.407
+      ],
+      [
+        "Kelsea Ballerini (EP)||Love Me Like You Mean It",
+        0.375
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-21",
+    "rhyme": "E10_knowledge_fold",
+    "question": "The Bee Cliff in northeast Tennessee overlooks a river that is how many miles long?",
+    "answer": "78.5 mi long",
+    "titles": [
+      "East Falls, Philadelphia",
+      "Wollunqua",
+      "Little Emory River",
+      "Rock shelter",
+      "Watauga River",
+      "Tri-Cities, Tennessee",
+      "Bee Cliff (Tennessee)",
+      "Landsat program",
+      "Shoal Creek (Tennessee River)",
+      "Stone State Park"
+    ],
+    "paras": {
+      "East Falls, Philadelphia": "East Falls is a neighborhood in the Northwest section of Philadelphia, Pennsylvania, United States on the east or left bank side of the now submerged Schuylkill River cataracts, the 'Falls of the Schuylkill' that became submerged as the Schuylkill Canal and Fairmount Water Works projects were completed in 1822.  The East Falls community is located adjacent to Germantown, Roxborough, Allegheny West, and Nicetown-Tioga neighborhoods.  East Falls is also adjacent to Wissahickon Valley Park.  The neighborhood runs along a stretch of Ridge Avenue that is only a few miles long, along the banks of the Schuylkill River then extends northeast to Wissahickon Avenue.  East Falls overlooks the multi-use recreational path of Fairmount Park along Kelly Drive, and is desirable for its central location, an easy commute to Center City, with easy access to several major roadways and public transportation.  East Falls continues to develop, with new housing, retail space and recreation centers in production.  It features three streets in proximity with the word \"Queen\" in them (Queen Lane, New Queen Street, and Indian Queen Lane), two train stations, a number of bars and restaurants, a small Korean grocer, illustrious mansions as well as some recently renovated housing that continues to increase in value.",
+      "Wollunqua": "In Australian aboriginal mythology, Wollunqua (or Wollunka, Wollunkua) is a snake-god of rain and fertility, who emerged from a watering hole in the Murschison Mountains.  Wollunqua is said to be many miles long.",
+      "Little Emory River": "The Little Emory River rises in Morgan County, Tennessee near the town of Coalfield.  It is one of the major tributaries to the Emory River.  It crosses into Roane County, where it soon becomes an embayment of Watts Bar Lake several miles upstream of its mouth into the Emory.  (Watts Bar Lake is a relatively deep reservoir and causes \"slack water\" conditions many miles up several Tennessee River tributaries, not just the main stream.)",
+      "Rock shelter": "A rock shelter \u2014 also rockhouse, crepuscular cave, bluff shelter, or abri \u2014 is a shallow cave-like opening at the base of a bluff or cliff.  In contrast to solutional cave (karst) caves, which are often many miles long, rock shelters are almost always modest in size and extent.",
+      "Watauga River": "The Watauga River is a large stream of western North Carolina and East Tennessee.  It is 78.5 mi long with its headwaters on the slopes of Grandfather Mountain and Peak Mountain in Watauga County, North Carolina.",
+      "Tri-Cities, Tennessee": "The Tri-Cities is the region comprising the cities of Kingsport, Johnson City, and Bristol and the surrounding smaller towns and communities in Northeast Tennessee and Southwest Virginia.  All three cities are located in Northeast Tennessee, while Bristol has a twin city of the same name in Virginia.",
+      "Bee Cliff (Tennessee)": "The Bee Cliff is a prominent northeast Tennessee geological limestone feature with high caves that overlooks the Watauga River and the Siam community of Carter County, Tennessee.",
+      "Landsat program": "The Landsat program is the longest-running enterprise for acquisition of satellite imagery of Earth.  On July 23, 1972 the Earth Resources Technology Satellite was launched.  This was eventually renamed to Landsat.  The most recent, Landsat 8, was launched on February 11, 2013.  The instruments on the Landsat satellites have acquired millions of images.  The images, archived in the United States and at Landsat receiving stations around the world, are a unique resource for global change research and applications in agriculture, cartography, geology, forestry, regional planning, surveillance and education, and can be viewed through the U.S. Geological Survey (USGS) 'EarthExplorer' website.  Landsat 7 data has eight spectral bands with spatial resolutions ranging from 15 to 60 meters; the temporal resolution is 16 days.  Landsat images are usually divided into scenes for easy downloading.  Each Landsat scene is about 115 miles long and 115 miles wide (or 100 nautical miles long and 100 nautical miles wide, or 185 kilometers long and 185 kilometers wide).",
+      "Shoal Creek (Tennessee River)": "Shoal Creek (originally called the Sycamore River) is a 64.7 miles long River from its East point or 63.6 River miles long from the North point on the Little Shoal Creek north of Lawrenceburg, Tennessee.  The stream rises in northern Lawrence County, Tennessee, and enters the Tennessee River in Lauderdale County, Alabama, where its lower reaches are impounded in the backwater of Wilson Dam.",
+      "Stone State Park": "Stone State Park is a state park of Iowa, USA, located in the bluffs and ravines adjacent to the Big Sioux River.  The park consists of 1069 acre in Woodbury and Plymouth Counties near Sioux City, and overlooks the South Dakota-Iowa border.  Stone Park is near the northernmost extent of the Loess Hills, and is at the transition from clay bluffs and prairie to sedimentary rock hills and bur oak forest along the Iowa side of the Big Sioux River.  A variety of prairie plants can be found on the steep slopes and ridges, including yucca, penstemon, rough blazing star, silky aster, and pasque flower.  Wild turkey, white-tailed deer, coyote, and red fox are found in the park.  Birdlife includes the turkey vulture, barred owl, rufous-sided (eastern) towhee, and the ovenbird.  Exposed bedrock in the park is composed of lignite, shale, sandstone, and limestone, and dates to the Cretaceous period; it is rich in marine fossils.  The park contains many miles of hiking and equestrian trails, and is a popular destination for day visitors, overnight campers, mountain bike enthusiasts, and picnickers."
+    },
+    "gold": "Bee Cliff (Tennessee)||Watauga River",
+    "gold_titles": [
+      "Bee Cliff (Tennessee)",
+      "Watauga River"
+    ],
+    "local_title": "Bee Cliff (Tennessee)",
+    "involving": [
+      [
+        "Bee Cliff (Tennessee)||Watauga River",
+        0.2326
+      ],
+      [
+        "Bee Cliff (Tennessee)||Tri-Cities, Tennessee",
+        0.1458
+      ],
+      [
+        "Bee Cliff (Tennessee)||Shoal Creek (Tennessee River)",
+        0.1333
+      ],
+      [
+        "Bee Cliff (Tennessee)||Rock shelter",
+        0.1273
+      ],
+      [
+        "Bee Cliff (Tennessee)||Little Emory River",
+        0.1212
+      ],
+      [
+        "Bee Cliff (Tennessee)||Wollunqua",
+        0.102
+      ],
+      [
+        "Bee Cliff (Tennessee)||East Falls, Philadelphia",
+        0.0797
+      ],
+      [
+        "Bee Cliff (Tennessee)||Stone State Park",
+        0.0606
+      ]
+    ],
+    "top_global": [
+      [
+        "Shoal Creek (Tennessee River)||Watauga River",
+        0.2586
+      ],
+      [
+        "Bee Cliff (Tennessee)||Watauga River",
+        0.2326
+      ],
+      [
+        "Rock shelter||Wollunqua",
+        0.193
+      ],
+      [
+        "Little Emory River||Shoal Creek (Tennessee River)",
+        0.1899
+      ],
+      [
+        "Little Emory River||Watauga River",
+        0.1791
+      ],
+      [
+        "Shoal Creek (Tennessee River)||Wollunqua",
+        0.1562
+      ],
+      [
+        "Bee Cliff (Tennessee)||Tri-Cities, Tennessee",
+        0.1458
+      ],
+      [
+        "Rock shelter||Shoal Creek (Tennessee River)",
+        0.1389
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-22",
+    "rhyme": "E10_knowledge_fold",
+    "question": "Jing Tian was known for her role in a movie directed by who?",
+    "answer": "Ding Sheng",
+    "titles": [
+      "The Glory of Tang Dynasty",
+      "From Vegas to Macau",
+      "Fist &amp; Faith",
+      "Police Story 2013",
+      "The Great Wall (film)",
+      "Ultra Reinforcement",
+      "Better and Better (film)",
+      "Kong: Skull Island",
+      "Jing Tian",
+      "Pacific Rim: Uprising"
+    ],
+    "paras": {
+      "The Glory of Tang Dynasty": "The Glory of Tang Dynasty (Chinese: \u5927\u5510\u8363\u8000) is a 2017 Chinese television series starring Jing Tian and Allen Ren.  It is based on the novel \"The Concubine of Tang: Legend of Pearl\" (\u5927\u5510\u540e\u5983\u4f20\u4e4b\u73cd\u73e0\u4f20\u5947) by Cang Mingshui; and tells the fictional love story of Emperor Daizong and Consort Shen, aided by the grandiose historical background of the An Shi Rebellion (755-763).  The series was aired for 92 episodes, split into two seasons, from 29 January to 3 May 2017 on Anhui TV and Beijing TV.",
+      "From Vegas to Macau": "From Vegas to Macau (), also known as The Man From Macau (), is a Hong Kong-Chinese crime comedy film directed by Wong Jing.  The film stars Chow Yun-fat, Nicholas Tse, Chapman To and Jing Tian.  The film was released during 2014 Chinese New Year.",
+      "Fist &amp; Faith": "Fist & Faith (Chinese: \u9752\u79be\u7537\u9ad8) is a Chinese coming-of-age film directed by Jiang Zhuoyuan, starring Jing Tian and Oho Ou.  It was released in China on July 13, 2017.",
+      "Police Story 2013": "Police Story 2013 (also known as Police Story: Lockdown) is a 2013 Chinese-Hong Kong action crime thriller film directed and written by Ding Sheng, and starring Jackie Chan in another reboot of the \"Police Story\" film series.  The film is directed by Ding Sheng, who previously helmed Chan's \"Little Big Soldier\".  Unlike the previous \"Police Story\" films where he portrays a Hong Kong cop, Chan instead portrays a mainland Chinese officer.",
+      "The Great Wall (film)": "The Great Wall () is a 2016 monster film directed by Zhang Yimou and written by Tony Gilroy, Doug Miro and Carlo Bernard.  The US\u2013China co-production stars Matt Damon, Jing Tian, Pedro Pascal, Willem Dafoe, and Andy Lau.  It is Zhang's first English-language film.",
+      "Ultra Reinforcement": "Ultra Reinforcement is a 2012 Chinese historical romantic comedy film directed and written by Lam Chi-chung, starring Wallace Huo, Jing Tian, Dylan Kuo, and Cheung Tat-ming.  The film was released in China on 24 January 2012.",
+      "Better and Better (film)": "Better and Better is a 2013 Chinese romantic comedy film directed by Zhang Yibai and Xie Dongshen and written by Xu Zhengchao, starring Aaron Kwok, Wang Baoqiang, Tong Dawei, Xu Jinglei, Jing Tian, and Sandra Ng.  The film premiered in China on 10 February 2013.",
+      "Kong: Skull Island": "Kong: Skull Island is a 2017 American monster film that is a reboot of the \"King Kong\" franchise and serves as the second film in Legendary's franchise MonsterVerse.  The film stars an ensemble cast consisting of Tom Hiddleston, Samuel L. Jackson, John Goodman, Brie Larson, Jing Tian, Toby Kebbell, John Ortiz, Corey Hawkins, Jason Mitchell, Shea Whigham, Thomas Mann, Terry Notary, and John C. Reilly.  \"Kong\" follows a team of scientists and Vietnam War soldiers who travel to an uncharted island in the Pacific and encounter terrifying creatures and the mighty Kong.  The film is directed by Jordan Vogt-Roberts and written by Dan Gilroy, Max Borenstein and Derek Connolly, from a story by John Gatins.",
+      "Jing Tian": "Jing Tian (born 21 July 1988) is a Chinese actress.  She graduated from the Beijing Dance Academy and Beijing Film Academy.  She is known for her roles in war epic \"The Warring States\" (2011) and the action films \"Special ID\" and \"Police Story 2013\" (both in 2013).  She is part of the cast for three Legendary Pictures films, including a prominent role in \"The Great Wall\" (2016) as well as \"\" (2017) and the upcoming \"\".",
+      "Pacific Rim: Uprising": "Pacific Rim: Uprising is an upcoming American science fiction monster film directed by Steven S. DeKnight and written by DeKnight, Emily Carmichael, Kira Snyder, and T.S. Nowlin from a story by Guillermo del Toro.  It is the sequel to the 2013 film \"Pacific Rim\", and stars John Boyega, Scott Eastwood, Cailee Spaeny, Adria Arjona and Jing Tian, with Rinko Kikuchi, Charlie Day and Burn Gorman returning in their roles from the original film.  It is scheduled to be released on March 23, 2018, by Universal Pictures."
+    },
+    "gold": "Jing Tian||Police Story 2013",
+    "gold_titles": [
+      "Jing Tian",
+      "Police Story 2013"
+    ],
+    "local_title": "Jing Tian",
+    "involving": [
+      [
+        "Jing Tian||Police Story 2013",
+        0.1744
+      ],
+      [
+        "Fist &amp; Faith||Jing Tian",
+        0.1571
+      ],
+      [
+        "From Vegas to Macau||Jing Tian",
+        0.141
+      ],
+      [
+        "Jing Tian||Kong: Skull Island",
+        0.1322
+      ],
+      [
+        "Jing Tian||Pacific Rim: Uprising",
+        0.1321
+      ],
+      [
+        "Jing Tian||The Glory of Tang Dynasty",
+        0.1275
+      ],
+      [
+        "Better and Better (film)||Jing Tian",
+        0.125
+      ],
+      [
+        "Jing Tian||The Great Wall (film)",
+        0.1205
+      ]
+    ],
+    "top_global": [
+      [
+        "Fist &amp; Faith||Ultra Reinforcement",
+        0.3125
+      ],
+      [
+        "Better and Better (film)||Ultra Reinforcement",
+        0.3091
+      ],
+      [
+        "Better and Better (film)||Fist &amp; Faith",
+        0.25
+      ],
+      [
+        "From Vegas to Macau||Ultra Reinforcement",
+        0.2241
+      ],
+      [
+        "Fist &amp; Faith||From Vegas to Macau",
+        0.2075
+      ],
+      [
+        "From Vegas to Macau||Police Story 2013",
+        0.2
+      ],
+      [
+        "Better and Better (film)||The Great Wall (film)",
+        0.1846
+      ],
+      [
+        "Better and Better (film)||From Vegas to Macau",
+        0.1774
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  },
+  {
+    "id": "e10-23",
+    "rhyme": "E10_knowledge_fold",
+    "question": "What American corporation owns Claim Jumper?",
+    "answer": "Landry's",
+    "titles": [
+      "Buschwhacker",
+      "Clancy of the Mounted",
+      "The Willows Shopping Center",
+      "Bonanza Bunny",
+      "London Life Insurance Company",
+      "Landry's, Inc.",
+      "Baker v. Morton",
+      "CBS Television Stations",
+      "Aspial Corporation",
+      "Claim Jumper"
+    ],
+    "paras": {
+      "Buschwhacker": "Buschwhacker is a term for NASCAR drivers who are regulars in the top-level Sprint Cup Series but who also compete on a regular basis in the second-tier Xfinity Series.  The original coinage of the term Buschwacker refers to Anheuser-Busch's longtime title sponsorship of the series through their Busch Beer brand.  A new term, Claim jumper, was coined to refer to Nationwide Insurance's sponsorship of the series from 2008 to 2014.  In 2015, the term Signal Pirate was created in reference to current sponsorship of the series by Comcast's Xfinity brand.",
+      "Clancy of the Mounted": "Clancy of the Mounted (1933) is an American Pre-Code Universal movie serial based on the poem \"\" by Robert W. Service, directed by Ray Taylor.  Tom Tyler played Sgt. Clancy, and William L. Thorne played the villainous claim jumper, Black McDougal.",
+      "The Willows Shopping Center": "The Willows Shopping Center is located in one of the fastest growing areas of the East Bay in Concord, California.  The center boasts a strong line up of national retailers including Old Navy, ULTA Beauty, Cost Plus World Market, REI, UFC Gym, Claim Jumper, Benihana and the newest member in holiday 2006, Pier One.  Located in a densely populated area, the customer is a college educated, white collar professional, with over two-thirds opening their own home.  The average household income of $92,574 is 24 percent above the state average.  Over forty-five percent of customers are between the ages of 35 and 54 and in the prime of their career.  The center is located adjacent to and is visible from the major north/south of I-680 that links the area to San Francisco.  In addition, two BART stations provide rapid transit for office workers from the surrounding area to the city.",
+      "Bonanza Bunny": "Bonanza Bunny is a 1959 Bugs Bunny cartoon featuring French Canadian claim jumper Blacque Jacque Shellacque.",
+      "London Life Insurance Company": "The London Life Insurance Company is a Canadian life insurance company best known for its \"Freedom 55\" slogan, evocative of saving money to an extent that would allow one to retire at age 55.  London Life is a part of Great-West Lifeco subsidiary The Great-West Life Assurance Company, which in turn is controlled by Power Financial Corporation (Great-West Lifeco owns 100% of The Great-West Life Assurance Company; Power Corporation owns 72% of Great-West Lifeco.  Great-West Lifeco is the only one of those finance companies that is a member of the TSX Composite Index.)",
+      "Landry's, Inc.": "Landry's, Inc., is an American, privately owned, multi-brand dining/hospitality/entertainment/gaming corporation.  Headquartered in Houston, Texas, Landry's, Inc. owns and operates more than 600 restaurant/hotel/casino/entertainment destinations in 37 states and the District of Columbia.  The company also owns and operates numerous international locations.",
+      "Baker v. Morton": "Baker v. Morton, 79 U.S. 150 (1870) , was the first \"serious\" court case to come out of Omaha, Nebraska Territory, prior to statehood.  In the trial a claim jumper fought against local land barons to stake out a homestead in the area that was to become the city of Omaha.  The case was important for establishing homesteaders rights and ensuring the future growth of Omaha would benefit everyone, not only wealthy landowners.",
+      "CBS Television Stations": "The CBS Television Stations is a division of CBS Corporation that owns and operates a group of American television stations.  As of December 2014, CBS Corporation owns thirty stations, broken down as follows: sixteen are the key stations of the CBS Television Network; eight are aligned with The CW Television Network, which is co-owned by CBS with Time Warner; four independent stations; two stations affiliated with MyNetworkTV.",
+      "Aspial Corporation": "Aspial Corporation is a Singapore-based jewellery corporation with a chain of boutiques in Singapore.  Aspial Corporation owns the Aspial, Lee Hwa, Goldheart and Citigems brands.  Aspial Corporation is a contemporary fashion jeweller in Singapore and is the only listed jeweller on the Singapore Exchange.  The company's Aspial brand consists of its top range products, followed by Lee Hwa Jewellery, Goldheart and Citigems which cater to the younger people.",
+      "Claim Jumper": "Claim Jumper Restaurant and Saloon is an American restaurant chain with more than 40 locations.  The company is based in Houston, Texas.  Claim Jumper is wholly owned by Landry's, Inc."
+    },
+    "gold": "Claim Jumper||Landry's, Inc.",
+    "gold_titles": [
+      "Claim Jumper",
+      "Landry's, Inc."
+    ],
+    "local_title": "Claim Jumper",
+    "involving": [
+      [
+        "Claim Jumper||Landry's, Inc.",
+        0.3469
+      ],
+      [
+        "Aspial Corporation||Claim Jumper",
+        0.1724
+      ],
+      [
+        "Claim Jumper||Clancy of the Mounted",
+        0.1698
+      ],
+      [
+        "CBS Television Stations||Claim Jumper",
+        0.1167
+      ],
+      [
+        "Buschwhacker||Claim Jumper",
+        0.0875
+      ],
+      [
+        "Claim Jumper||London Life Insurance Company",
+        0.0811
+      ],
+      [
+        "Baker v. Morton||Claim Jumper",
+        0.08
+      ],
+      [
+        "Bonanza Bunny||Claim Jumper",
+        0.0789
+      ]
+    ],
+    "top_global": [
+      [
+        "Claim Jumper||Landry's, Inc.",
+        0.3469
+      ],
+      [
+        "Aspial Corporation||Claim Jumper",
+        0.1724
+      ],
+      [
+        "Claim Jumper||Clancy of the Mounted",
+        0.1698
+      ],
+      [
+        "Aspial Corporation||London Life Insurance Company",
+        0.1566
+      ],
+      [
+        "Aspial Corporation||Landry's, Inc.",
+        0.1389
+      ],
+      [
+        "Aspial Corporation||CBS Television Stations",
+        0.137
+      ],
+      [
+        "CBS Television Stations||Landry's, Inc.",
+        0.125
+      ],
+      [
+        "Aspial Corporation||Buschwhacker",
+        0.1196
+      ]
+    ],
+    "sources": {
+      "dataset": "hotpotqa/hotpot_qa distractor validation",
+      "type": "bridge"
+    }
+  }
+]

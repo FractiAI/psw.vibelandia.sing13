@@ -415,13 +415,23 @@ def pack_aware(sc):
 
 
 def parse_solution(text: str):
-    m = re.search(r"SOLUTION:\s*([0-9]+)\s*-\s*([0-9]+)", text or "", flags=re.I)
-    if not m:
+    if not text:
         return None
-    a, b = int(m.group(1)), int(m.group(2))
+    t = text.strip()
+    m = re.search(r"SOLUTION:\s*([0-9]+)\s*[-–]\s*([0-9]+)", t, flags=re.I)
+    if not m:
+        m = re.search(r"=\s*([0-9]{1,3})\s*[-–]\s*([0-9]{1,3})\b", t)
+    if not m:
+        pairs = re.findall(r"\b([0-9]{1,3})\s*[-–]\s*([0-9]{1,3})\b", t)
+        if not pairs:
+            return None
+        a, b = int(pairs[-1][0]), int(pairs[-1][1])
+    else:
+        a, b = int(m.group(1)), int(m.group(2))
     if a > b:
         a, b = b, a
     return f"{a}-{b}"
+
 
 
 class Groq:

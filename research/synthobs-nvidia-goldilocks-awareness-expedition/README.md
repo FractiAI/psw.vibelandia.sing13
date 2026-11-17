@@ -26,3 +26,4 @@ Fixtures: `fixtures/fred_*.csv` (public FRED). Movebank/Kp read from `research/g
 Honesty: Soft Story organizational companion — not NVIDIA KPI attestation, not ENGINE_SHELF.
 
 → ∞^∞
+| E9 | Protein-folding rhyme on real PDB + Pfam seed MSAs (linear vs flat MSA vs relational awareness) |

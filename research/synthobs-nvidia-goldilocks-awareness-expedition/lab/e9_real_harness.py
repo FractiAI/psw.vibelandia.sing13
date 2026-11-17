@@ -67,6 +67,26 @@ CURATED = [
     ("1IFC", "A", "PF00061"),
     ("1RBP", "A", "PF00061"),
     ("1BBC", "A", "PF00001"),
+    ("1UBI", "A", "PF00240"),
+    ("1CMZ", "A", "PF00240"),
+    ("2PTI", "A", "PF00014"),
+    ("1BPT", "A", "PF00014"),
+    ("1QCF", "A", "PF00018"),
+    ("1CKA", "A", "PF00018"),
+    ("1ABO", "A", "PF00018"),
+    ("1FMK", "A", "PF00018"),
+    ("1GFC", "A", "PF00061"),
+    ("1EPE", "A", "PF00061"),
+    ("1KDF", "A", "PF01378"),
+    ("2GB1", "A", "PF01378"),
+    ("1PGA", "A", "PF01378"),
+    ("1HDN", "A", "PF00360"),
+    ("1POH", "A", "PF00389"),
+    ("1IGD", "A", "PF01378"),
+    ("1DNS", "A", "PF00100"),
+    ("1CTF", "A", "PF00410"),
+    ("2RN2", "A", "PF00570"),
+    ("1UZC", "A", "PF00013"),
 ]
 
 AA3 = {
@@ -379,15 +399,18 @@ def pack_flat(sc):
 
 def pack_aware(sc):
     inv = "\n".join(f"{p}: coupling={s}" for p, s in sc["involving"]) or "(none)"
+    top = sc["involving"][0][0] if sc["involving"] else None
     glob = "\n".join(f"{p}: coupling={s}" for p, s in sc["top_global"])
+    lead = f"LEADING RELATIONAL CANDIDATE (highest MSA coupling at query): {top}\n" if top else ""
     return (
         f"QUESTION: {sc['question']}\n"
         f"PDB: {sc['pdb_id']}  Pfam: {sc['pfam']}\n"
         f"PRIMARY SEQUENCE: {sc['seq']}\n"
+        f"{lead}"
         f"RELATIONAL AWARENESS BOARD — MSA couplings involving residue {sc['qi']+1} (from real Pfam seed, not from coordinates):\n"
         f"{inv}\n"
         f"GLOBAL TOP MSA COUPLINGS:\n{glob}\n"
-        f"NOTE: Prefer high long-range coupling over sequence neighbors."
+        f"NOTE: Prefer the leading relational candidate over sequence neighbors."
     )
 
 

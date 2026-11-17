@@ -1,0 +1,1826 @@
+[
+  {
+    "id": "e9r-0",
+    "sid": 0,
+    "pdb_id": "1UBQ",
+    "chain": "A",
+    "pfam": "PF00240",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1UBQ.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00240/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.8889,
+    "msa_match_row": "UBQ8_ARATH/81-152",
+    "n_msa": 59,
+    "seq": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+    "question": "Residue 43 (1-based) in PDB 1UBQ chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 42,
+    "gold": "43-50",
+    "gold_0": [
+      42,
+      49
+    ],
+    "struct_contact_count": 116,
+    "dump_rows": [
+      "OASL_HUMAN/436-507: VFVKNPDGGSYAYAINPNSFILGLKQQIEDQQGLPKKQQQLEFQGQVLQDWLGLGIYGIQDSDTLILSKKKG",
+      "RS30_HUMAN/3-72: LFVRAQELHTFEVTGQETVAQIKAHVASLEGIAPEDQVVLLAGAPLEDEATLGQCGVEALTTLEVAGRML",
+      "Q18231_CAEEL/3-69: IFLLGLDNTTHTLDVDASTTLSAIKGVIGAGEEFSISYGSKVLSEELTLGECQIESLSTLSVNGRLL",
+      "ISG15_HUMAN/84-155: ILVRNNKGRSSTYEVRLTQTVAHLKQQVSGLEGVQDDLFWLTFEGKPLEDQLPLGEYGLKPLSTVFMNLRLR",
+      "ISG15_BOVIN/81-152: ILVRNDKGRSSPYEVQLKQTVAELKQQVCQKERVQADQFWLSFEGRPMDDEHPLEEYGLMKGCTVFMNLRLR",
+      "ISG15_MOUSE/82-153: ILVRNERGHSNIYEVFLTQTVDTLKKKVSQREQVHEDQFWLSFEGRPMEDKELLGEYGLKPQCTVIKHLRLR",
+      "YKA4_CAEEL/343-415: ILIKLKFMNDTEKNTYASLEDTVAKFKVDHFTNLANQVIRLIYQGQLLREDHRTLEEYGLQPGSIVHCHISTT",
+      "R7SL1_ARATH/3-74: VYIDTETGSSFSITIDFGETVLEIKEKIEKSQGIPVSKQILYLDGKALEDDLHKIDYMILFESRLLLRISPD",
+      "Q9ZQZ4_ARATH/3-74: MTVENESGSTFSIDIGLQDTVLTFKRKIEMTQRIPVSRQTIFFQGKLLEDHLDIFEWDILQNPLLHLSISPD",
+      "Q9VEC8_DROME/3-75: ITIKVLKGKDCTIEVAPTSTILEVKHQIEAELQISATNQKLLLLGRPLNNEQTIASYPNIKEGTKLNLVVIKP",
+      "UBL4A_MOUSE/3-74: LTVKALQGRECSLQVAEDELVSTLKHLVSDKLNVPVRQQRLLFKGKALADEKRLSDYNIGPNSKLNLVVKPL",
+      "PRKN_MOUSE/3-74: VFVRFNSSYGFPVEVDSDTSILQLKEVVAKRQGVPADQLRVIFAGKELPNHLTVQNCDLEQQSIVHIVQRPR"
+    ],
+    "involving": [
+      [
+        "43-50",
+        0.5614
+      ],
+      [
+        "43-56",
+        0.4915
+      ],
+      [
+        "43-69",
+        0.4407
+      ],
+      [
+        "15-43",
+        0.3966
+      ],
+      [
+        "26-43",
+        0.3729
+      ],
+      [
+        "43-71",
+        0.2881
+      ],
+      [
+        "8-43",
+        0.2778
+      ],
+      [
+        "30-43",
+        0.2712
+      ],
+      [
+        "43-67",
+        0.2712
+      ],
+      [
+        "43-61",
+        0.2281
+      ]
+    ],
+    "top_global": [
+      [
+        "43-50",
+        0.5614
+      ],
+      [
+        "43-56",
+        0.4915
+      ],
+      [
+        "35-47",
+        0.4912
+      ],
+      [
+        "6-27",
+        0.4828
+      ],
+      [
+        "50-56",
+        0.4737
+      ],
+      [
+        "3-30",
+        0.4576
+      ],
+      [
+        "10-47",
+        0.4483
+      ],
+      [
+        "43-69",
+        0.4407
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-1",
+    "sid": 1,
+    "pdb_id": "1VII",
+    "chain": "A",
+    "pfam": "PF02209",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1VII.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF02209/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.7778,
+    "msa_match_row": "H9H7Z4_MONDO/752-787",
+    "n_msa": 167,
+    "seq": "MLSDEDFKAVFGMTRSAFANLPLWKQQNLKKEKGLF",
+    "question": "Residue 11 (1-based) in PDB 1VII chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 10,
+    "gold": "11-18",
+    "gold_0": [
+      10,
+      17
+    ],
+    "struct_contact_count": 16,
+    "dump_rows": [
+      "A0A0D2WSP5_CAPO3/1729-1764: YLSEHEFKKLFGMTKREYEAVPPWKKDNLKKAANLY",
+      "D2V8T8_NAEGR/245-280: YLSSEDFKKHFGMTLTEYVKLGAFQKKKLKKQLDLF",
+      "E0VLV9_PEDHC/1174-1209: YLKPQCFQELFGLEKEEFIRMPSWKKKKLKQEAGLF",
+      "D8UCU3_VOLCA/228-264: WLAEEDFKRLFEGLEWAEYSRLPEWRKTRLKQAAGLF",
+      "D3BNR7_HETP5/631-666: YLSDEEFQKVLGMQKTEWEVLPGWKKSERKKSVGLF",
+      "F4PYR8_CACFS/1606-1641: YLSDDEFIKHLGVTKQEWEVMPLWKRTEKKKTSNLF",
+      "F0ZCG3_DICPU/2560-2595: YLSDEEFTKIFNMNRDEFGALPAWKRSNLKSKLSLF",
+      "TALB_DICDI/2579-2614: YLSDEEFKAVFNCERSELAAMPTWKRNNIKTKLGLF",
+      "C4M041_ENTH1/1024-1059: YLSDEEFVKVFKRSRSDYNKMKKFEKEQLKKQHKLF",
+      "I7M0R9_TETTS/388-423: YLSDQEFHKIFQMNKQEFAALKAWRQKELKQKHKLF",
+      "D8LHW2_ECTSI/294-329: WLCPVEFEAVFAMSFSEFRALPSWKRVALKRELLLF",
+      "T1FQJ6_HELRO/472-507: YLSNMEFESLFKMPRNEFRALQADQQILLKKKYLLA"
+    ],
+    "involving": [
+      [
+        "11-18",
+        0.6407
+      ],
+      [
+        "11-36",
+        0.5629
+      ],
+      [
+        "11-35",
+        0.2156
+      ],
+      [
+        "2-11",
+        0.2096
+      ],
+      [
+        "11-21",
+        0.2036
+      ],
+      [
+        "11-29",
+        0.1437
+      ],
+      [
+        "11-23",
+        0.0299
+      ],
+      [
+        "11-33",
+        0.0299
+      ],
+      [
+        "11-19",
+        0.024
+      ],
+      [
+        "11-34",
+        0.018
+      ]
+    ],
+    "top_global": [
+      [
+        "2-35",
+        0.9102
+      ],
+      [
+        "7-18",
+        0.8683
+      ],
+      [
+        "7-36",
+        0.7904
+      ],
+      [
+        "2-21",
+        0.7186
+      ],
+      [
+        "18-36",
+        0.6886
+      ],
+      [
+        "21-35",
+        0.6886
+      ],
+      [
+        "11-18",
+        0.6407
+      ],
+      [
+        "25-31",
+        0.6347
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-2",
+    "sid": 2,
+    "pdb_id": "1NYF",
+    "chain": "A",
+    "pfam": "PF00018",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1NYF.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00018/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.7917,
+    "msa_match_row": "FGR_HUMAN/83-130",
+    "n_msa": 55,
+    "seq": "TGVTLFVALYDYEARTEDDLSFHKGEKFQILNSSEGDWWEARSLTTGETGYIPSNYVAPVDSIQAEE",
+    "question": "Residue 7 (1-based) in PDB 1NYF chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 6,
+    "gold": "7-30",
+    "gold_0": [
+      6,
+      29
+    ],
+    "struct_contact_count": 165,
+    "dump_rows": [
+      "VAV_HUMAN/788-834: KARYDFCARDRSELSLKEGDIIKILNKKGQQGWWRGEIYGRVGWFPA",
+      "HSE1_YEAST/223-268: RALYDLTTNEPDELSFRKGDVITVLEQVYRDWWKGALRGNMGIFPL",
+      "MYOC_DICDI/1129-1176: IALYEYDAMQPDELTFKENDVINLIKKVDADWWQGELVRTKQIGMLPS",
+      "HCLS1_HUMAN/434-479: VAVYDYQGEGSDELSFDPDDVITDIEMVDEGWWRGRCHGHFGLFPA",
+      "Q6FWR1_CANGA/526-572: AEYDYEAAEDNELTFEENDKIINIEFVDDDWWLGELEKTGEKGLFPS",
+      "YKA7_CAEEL/197-244: IAKFDYAPTQSDEMGLRIGDTVLISKKVDAEWFYGENQNQRTFGIVPS",
+      "NCF2_HUMAN/463-508: EALFSYEATQPEDLEFQEGDIILVLSKVNEEWLEGECKGKVGIFPK",
+      "YKA7_CAEEL/277-322: TAIYDYNSNEAGDLNFAVGSQIMVTARVNEEWLEGECFGRSGIFPS",
+      "GRAP_DROME/158-203: QALYDFVPQESGELDFRRGDVITVTDRSDENWWNGEIGNRKGIFPA",
+      "SEM5_CAEEL/160-205: QALFDFNPQESGELAFKRGDVITLINKDDPNWWEGQLNNRRGIFPS",
+      "GRB2_CHICK/162-207: QALFDFDPQEEGELGFRRGDFIQVLDNSDPNWWKGACHGQTGMFPR",
+      "SEM5_CAEEL/4-50: VAEHDFQAGSPDELSFKRGNTLKVLNKDEDPHWYKAELDGNEGFIPS"
+    ],
+    "involving": [
+      [
+        "7-30",
+        0.2963
+      ],
+      [
+        "7-40",
+        0.1667
+      ],
+      [
+        "7-52",
+        0.1667
+      ],
+      [
+        "7-15",
+        0.1481
+      ],
+      [
+        "7-49",
+        0.1296
+      ],
+      [
+        "7-33",
+        0.12
+      ],
+      [
+        "7-28",
+        0.1111
+      ],
+      [
+        "7-48",
+        0.1087
+      ],
+      [
+        "7-13",
+        0.0926
+      ],
+      [
+        "7-27",
+        0.0926
+      ]
+    ],
+    "top_global": [
+      [
+        "25-50",
+        0.7636
+      ],
+      [
+        "9-20",
+        0.5455
+      ],
+      [
+        "25-47",
+        0.5
+      ],
+      [
+        "8-14",
+        0.4545
+      ],
+      [
+        "9-31",
+        0.3818
+      ],
+      [
+        "11-26",
+        0.3818
+      ],
+      [
+        "20-31",
+        0.3818
+      ],
+      [
+        "41-50",
+        0.3273
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-3",
+    "sid": 3,
+    "pdb_id": "1CSP",
+    "chain": "A",
+    "pfam": "PF00313",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1CSP.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00313/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.7656,
+    "msa_match_row": "CSPA_BACAN/3-66",
+    "n_msa": 33,
+    "seq": "MLEGKVKWFNSEKGFGFIEVEGQDDVFVHFSAIQGEGFKTLEEGQAVSFEIVEGNRGPQAANVTKEA",
+    "question": "Residue 6 (1-based) in PDB 1CSP chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 5,
+    "gold": "6-47",
+    "gold_0": [
+      5,
+      46
+    ],
+    "struct_contact_count": 149,
+    "dump_rows": [
+      "CSDE1_HUMAN/186-248: CQGVVCAMKEAFGFIERGDVVKEIFFHYSEFKGDLETLQPGDDVEFTIKDRNGKEVATDVRLL",
+      "CSDE1_RAT/519-582: LLGYVATLKDNFGFIETANHDKEIFFHYSEFSGDVDSLELGDMVEYSLSKGKGNKVSAEKVNKT",
+      "CSDE1_RAT/26-90: ETGVIEKLLTSYGFIQCSERQARLFFHCSQYNGNLQDLKVGDDVEFEVSSDRRTGKPIAIKLVKI",
+      "CSDE1_RAT/674-738: RRATVECVKDQFGFINYEVGDSKKLFFHVKEVQDGIELQAGDEVEFSVILNQRTGKCSACNVWRV",
+      "A0A089PMD5_PLUGE/5-68: KGQVKWFNESKGFGFITPADGSKDVFVHFSAIQGNGFKTLAEGQNVEFEIQDGQKGPAAVNVTA",
+      "CSPB_ECOLI/5-70: MTGLVKWFNADKGFGFISPVDGSKDVFVHFSAIQNDNYRTLFEGQKVTFSIESGAKGPAAANVIIT",
+      "CSPG_ECOLI/5-69: MTGLVKWFNADKGFGFITPDDGSKDVFVHFTAIQSNEFRTLNENQKVEFSIEQGQRGPAAANVVT",
+      "O34279_YERPE/5-70: MTGLVKWFDAGKGFGFITPADGSKDVFVHFSAIQSNDFKTLDEGQNVEFSIENGAKGPAAVNVIAL",
+      "CSPF_ECOLI/5-70: MTGIVKTFDGKSGKGLITPSDGRIDVQLHVSALNLRDAEEITTGLRVEFCRINGLRGPSAANVYLS",
+      "Q32HR9_SHIDS/5-69: MTGIVKTFDRKSGKGFIIPSDGRKEVQVHISAFTPRDAEVLIPGLRVEFCRVNGLRGPTAANVYL",
+      "CSPC_BACCR/1-65: MQGRVKWFNAEKGFGFIEREDGDDVFVHFSAIQQDGYKSLEEGQQVEFDIVDGARGPQAANVVKL",
+      "CSPA_LISMO/2-66: EQGTVKWFNAEKGFGFIERENGDDVFVHFSAIQGDGFKSLDEGQAVTFDVEEGQRGPQAANVQKA"
+    ],
+    "involving": [
+      [
+        "6-47",
+        0.9394
+      ],
+      [
+        "6-63",
+        0.8485
+      ],
+      [
+        "6-28",
+        0.7273
+      ],
+      [
+        "6-26",
+        0.6061
+      ],
+      [
+        "6-51",
+        0.303
+      ],
+      [
+        "6-52",
+        0.2424
+      ],
+      [
+        "6-61",
+        0.1515
+      ],
+      [
+        "6-65",
+        0.125
+      ],
+      [
+        "6-46",
+        0.0909
+      ],
+      [
+        "6-64",
+        0.0909
+      ]
+    ],
+    "top_global": [
+      [
+        "4-16",
+        0.9697
+      ],
+      [
+        "6-47",
+        0.9394
+      ],
+      [
+        "17-27",
+        0.9394
+      ],
+      [
+        "17-49",
+        0.8788
+      ],
+      [
+        "47-63",
+        0.8788
+      ],
+      [
+        "4-14",
+        0.8485
+      ],
+      [
+        "6-63",
+        0.8485
+      ],
+      [
+        "27-49",
+        0.8485
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-4",
+    "sid": 4,
+    "pdb_id": "1MJC",
+    "chain": "A",
+    "pfam": "PF00313",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1MJC.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00313/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.803,
+    "msa_match_row": "CSPB_ECOLI/5-70",
+    "n_msa": 33,
+    "seq": "SGKMTGIVKWFNADKGFGFITPDDGSKDVFVHFSAIQNDGYKSLDEGQKVSFTIESGAKGPAAGNVTSL",
+    "question": "Residue 8 (1-based) in PDB 1MJC chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 7,
+    "gold": "8-50",
+    "gold_0": [
+      7,
+      49
+    ],
+    "struct_contact_count": 150,
+    "dump_rows": [
+      "CSDE1_HUMAN/186-248: CQGVVCAMKEAFGFIERGDVVKEIFFHYSEFKGDLETLQPGDDVEFTIKDRNGKEVATDVRLL",
+      "CSDE1_RAT/519-582: LLGYVATLKDNFGFIETANHDKEIFFHYSEFSGDVDSLELGDMVEYSLSKGKGNKVSAEKVNKT",
+      "CSDE1_RAT/26-90: ETGVIEKLLTSYGFIQCSERQARLFFHCSQYNGNLQDLKVGDDVEFEVSSDRRTGKPIAIKLVKI",
+      "CSDE1_RAT/674-738: RRATVECVKDQFGFINYEVGDSKKLFFHVKEVQDGIELQAGDEVEFSVILNQRTGKCSACNVWRV",
+      "A0A089PMD5_PLUGE/5-68: KGQVKWFNESKGFGFITPADGSKDVFVHFSAIQGNGFKTLAEGQNVEFEIQDGQKGPAAVNVTA",
+      "CSPB_ECOLI/5-70: MTGLVKWFNADKGFGFISPVDGSKDVFVHFSAIQNDNYRTLFEGQKVTFSIESGAKGPAAANVIIT",
+      "CSPG_ECOLI/5-69: MTGLVKWFNADKGFGFITPDDGSKDVFVHFTAIQSNEFRTLNENQKVEFSIEQGQRGPAAANVVT",
+      "O34279_YERPE/5-70: MTGLVKWFDAGKGFGFITPADGSKDVFVHFSAIQSNDFKTLDEGQNVEFSIENGAKGPAAVNVIAL",
+      "CSPF_ECOLI/5-70: MTGIVKTFDGKSGKGLITPSDGRIDVQLHVSALNLRDAEEITTGLRVEFCRINGLRGPSAANVYLS",
+      "Q32HR9_SHIDS/5-69: MTGIVKTFDRKSGKGFIIPSDGRKEVQVHISAFTPRDAEVLIPGLRVEFCRVNGLRGPTAANVYL",
+      "CSPC_BACCR/1-65: MQGRVKWFNAEKGFGFIEREDGDDVFVHFSAIQQDGYKSLEEGQQVEFDIVDGARGPQAANVVKL",
+      "CSPA_LISMO/2-66: EQGTVKWFNAEKGFGFIERENGDDVFVHFSAIQGDGFKSLDEGQAVTFDVEEGQRGPQAANVQKA"
+    ],
+    "involving": [
+      [
+        "8-50",
+        0.9394
+      ],
+      [
+        "8-66",
+        0.8485
+      ],
+      [
+        "8-31",
+        0.7273
+      ],
+      [
+        "8-29",
+        0.6061
+      ],
+      [
+        "8-54",
+        0.303
+      ],
+      [
+        "8-55",
+        0.2424
+      ],
+      [
+        "8-69",
+        0.1818
+      ],
+      [
+        "8-64",
+        0.1515
+      ],
+      [
+        "8-68",
+        0.125
+      ],
+      [
+        "8-49",
+        0.0909
+      ]
+    ],
+    "top_global": [
+      [
+        "6-18",
+        0.9697
+      ],
+      [
+        "8-50",
+        0.9394
+      ],
+      [
+        "19-30",
+        0.9394
+      ],
+      [
+        "19-52",
+        0.8788
+      ],
+      [
+        "50-66",
+        0.8788
+      ],
+      [
+        "6-16",
+        0.8485
+      ],
+      [
+        "8-66",
+        0.8485
+      ],
+      [
+        "30-52",
+        0.8485
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-5",
+    "sid": 5,
+    "pdb_id": "1R69",
+    "chain": "A",
+    "pfam": "PF01381",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1R69.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF01381/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 1.0,
+    "msa_match_row": "RPC1_BP434/7-60",
+    "n_msa": 164,
+    "seq": "SISSRVKSKRIQLGLNQAELAQKVGTTQQSIEQLENGKTKRPRFLPELASALGVSVDWLLNGTSDSNVR",
+    "question": "Residue 19 (1-based) in PDB 1R69 chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 18,
+    "gold": "19-35",
+    "gold_0": [
+      18,
+      34
+    ],
+    "struct_contact_count": 63,
+    "dump_rows": [
+      "A0A1L8TJV1_ENTGA/19-73: IKEARLSKGLTREQVGSMIQIAPRYLTNIENKGQQPSFHVVYDLVTLLNISLDGF",
+      "Q56397_ENTFL/17-71: IKEARLQRGLTREQVGALIEIDPRYLTNIENKGQHPSIQVLYDLVSLLHVSVDEF",
+      "MTSA_LACLC/16-73: IKEKRLRLNMTQKELADAVGMSKNGDRTIRRWENGETCPSQLEISAILRFPEIAPFEN",
+      "MTS2_SHISO/9-66: IKEKRERLHMTQKEFADALGLSKYGDRTIRRWERGETKPTGAELKAVIDFPDTPPYPN",
+      "DICA_ECOLI/12-66: IRYRRKNLKHTQRSLAKALKISHVSVSQWERGDSEPTGKNLFALSKVLQCSPTWI",
+      "RPC2_BPP22/10-64: IRARRKKLKIRQAALGKMVGVSNVAISQWERSETEPNGENLLALSKALQCSPDYL",
+      "O64369_9CAUD/8-63: LRAERIAKGMNQDEMAKAMGWHTRSSYAKRENGITTISATELVKMASILGYGTNQL",
+      "Q77RJ3_9CAUD/8-62: VKAERVAKGYTQAKMAELMGLARNQYNKRENGKISFTADELITLADLLGYGRDEI",
+      "Q55133_SYNY3/10-66: LQRLCEQAGYASLSKLSETADISTWYLYRLERGLIAQIPLGVMVKLAIALGLTLEEL",
+      "Y497_RICPR/19-73: IYSLRLAKGLSRQQLAEVIDVTHQQLQKYEKAINRISVGRLVLIAEALDRNIDYF",
+      "DNU4_RHORU/20-74: VRQRRTALILDQETLARRIGVSFQQIQKYERGRNRISASRLYDIAKALAVPIDYF",
+      "Y4WC_SINFN/24-78: IRQRREWQNMSQTTLGEAIGVTFQQVQKYEKGVNRVGAGRLQQISKALKVEPSYF"
+    ],
+    "involving": [
+      [
+        "19-35",
+        0.2453
+      ],
+      [
+        "19-43",
+        0.1572
+      ],
+      [
+        "19-33",
+        0.1509
+      ],
+      [
+        "12-19",
+        0.1429
+      ],
+      [
+        "11-19",
+        0.137
+      ],
+      [
+        "19-58",
+        0.1321
+      ],
+      [
+        "8-19",
+        0.1195
+      ],
+      [
+        "19-47",
+        0.1132
+      ],
+      [
+        "19-50",
+        0.1069
+      ],
+      [
+        "19-38",
+        0.0952
+      ]
+    ],
+    "top_global": [
+      [
+        "25-37",
+        0.4877
+      ],
+      [
+        "6-48",
+        0.3865
+      ],
+      [
+        "21-49",
+        0.3765
+      ],
+      [
+        "14-37",
+        0.3704
+      ],
+      [
+        "20-52",
+        0.3681
+      ],
+      [
+        "14-25",
+        0.35
+      ],
+      [
+        "37-53",
+        0.3232
+      ],
+      [
+        "6-45",
+        0.3067
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-6",
+    "sid": 6,
+    "pdb_id": "1ENH",
+    "chain": "A",
+    "pfam": "PF00046",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1ENH.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00046/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.8519,
+    "msa_match_row": "HMIN_BOMMO/373-429",
+    "n_msa": 135,
+    "seq": "RPRTAFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRAKI",
+    "question": "Residue 18 (1-based) in PDB 1ENH chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 17,
+    "gold": "18-47",
+    "gold_0": [
+      17,
+      46
+    ],
+    "struct_contact_count": 20,
+    "dump_rows": [
+      "ZEN2_DROME/44-100: KRSRTAFSSLQLIELEREFHLNKYLARTRRIEISQRLALTERQVKIWFQNRRMKLKK",
+      "B4GEN0_DROPE/87-143: KRSRTAFTSVQLVELENEFKSNMYLYRTRRIEIAQRLSLCERQVKIWFQNRRMKFKK",
+      "B3SD77_TRIAD/126-182: KRIRTAYTSMQLLELEKEFNSSRYLSRLRRIEIANMLNLSEKQVKIWFQNRRVKWKK",
+      "PDX1_HUMAN/147-203: KRTRTAYTRAQLLELEKEFLFNKYISRPRRVELAVMLNLTERHIKIWFQNRRMKWKK",
+      "HXA3_MOUSE/193-249: KRARTAYTSAQLVELEKEFHFNRYLCRPRRVEMANLLNLTERQIKIWFQNRRMKYKK",
+      "Q9BK03_TRICA/80-136: KRARTAYTSAQLVELEREFHHGKYLSRPRRIQIAENLNLSERQIKIWFQNRRMKHKK",
+      "H2YKQ8_CIOSA/245-301: RKKRVPYTKYQLLELEKEFHFNQYLSRERRLEVAKSVKLSDRQVKIWFQNRRMKWKK",
+      "HMD2_CHICK/2-58: EKYRVVYTDHQRLELEKEFHCNRYITIRRKSELAVNLGLSERQVKSWFQNRRAKERK",
+      "HXDCA_DANRE/195-251: RKKRKPYTKPQLTELENEFMMNEFINRQKRKELSDRLELSDQQVKIWFQNRRMKKKR",
+      "ABDB_DROME/388-444: RKKRKPYSKFQTLELEKEFLFNAYVSKQKRWELARNLQLTERQVKIWFQNRRMKNKK",
+      "T1EF40_HELRO/21-77: RKKRKPYTRYQTMVLENEFVSNSYITRQKRWEISCKLHLSERQVKVWFQNRRMKRKK",
+      "HXD11_MOUSE/252-308: RKKRCPYTKYQIRELEREFFFNVYINKEKRLQLSRMLNLTDRQVKIWFQNRRMKEKK"
+    ],
+    "involving": [
+      [
+        "18-47",
+        0.8593
+      ],
+      [
+        "6-18",
+        0.5185
+      ],
+      [
+        "18-45",
+        0.0815
+      ],
+      [
+        "18-27",
+        0.0667
+      ],
+      [
+        "18-54",
+        0.037
+      ],
+      [
+        "12-18",
+        0.0222
+      ],
+      [
+        "2-18",
+        0.0148
+      ],
+      [
+        "18-44",
+        0.0148
+      ],
+      [
+        "18-50",
+        0.0148
+      ],
+      [
+        "9-18",
+        0.0074
+      ]
+    ],
+    "top_global": [
+      [
+        "3-51",
+        0.8741
+      ],
+      [
+        "18-47",
+        0.8593
+      ],
+      [
+        "14-38",
+        0.7333
+      ],
+      [
+        "3-50",
+        0.7259
+      ],
+      [
+        "10-48",
+        0.7259
+      ],
+      [
+        "29-51",
+        0.6741
+      ],
+      [
+        "14-36",
+        0.6593
+      ],
+      [
+        "3-29",
+        0.6444
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-7",
+    "sid": 7,
+    "pdb_id": "1TTF",
+    "chain": "A",
+    "pfam": "PF00041",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1TTF.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00041/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.9663,
+    "msa_match_row": "FINC_BOVIN/1541-1629",
+    "n_msa": 96,
+    "seq": "VSDVPRDLEVVAATPTSLLISWDAPAVTVRYYRITYGETGGNSPVQEFTVPGSKSTATISGLKPGVDYTITVYAVTGRGDSPASSKPISINYRT",
+    "question": "Residue 34 (1-based) in PDB 1TTF chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 33,
+    "gold": "34-72",
+    "gold_0": [
+      33,
+      71
+    ],
+    "struct_contact_count": 203,
+    "dump_rows": [
+      "PTP99_DROME/172-265: SKPQNLTILDVSANSITMSWHPPKNQNGAIAGYHVFHIHDNQTGVEIVKNSRNSVETLIHFELQNLRPYTDYRVIVKAFTTKNEGEPSDQIAQR",
+      "KALM_CHICK/544-647: AKPENLSASFIVQEGNITGHFSWKISKAVLHQPMTGFQVTWAEVTTESRQNSLPNSIISQSQILPADHYVLTVPNLRPSMLYRLEVQVLTTGGEGPATIKLFRT",
+      "NRG_DROME/918-1013: SPVQGLDAYPLGSSAFMLHWKKPLYPNGKLTGYKIYYEEVKESYVGERREYDPHITDPRVTRMKMAGLKPNSKYRISITATTKMGEGSEHYIEKTT",
+      "LAR_DROME/418-509: SAPRNVQVRTLSSSTMVITWEPPETPNGQVTGYKVYYTTNSNQPEASWNSQMVDNSELTTVSELTPHAIYTVRVQAYTSMGAGPMSTPVQVK",
+      "EPHA2_HUMAN/330-430: SAPHYLTAVGMGAKVELRWTPPQDSGGREDIVYSVTCEQCWPESGECGPCEASVRYSEPPHGLTRTSVTVSDLEPHMNYTFTVEARNGVSGLVTSRSFRTA",
+      "EPHB2_CHICK/327-428: SAPQAVISSVNETSLMLEWTPPRDSGGREDLVYNIICKSCGSGRGACTRCGDNVQFAPRQLGLTEPRIYISDLLAHTQYTFEIQAVNGVTDQSPFSPQFASV",
+      "EPHA3_CHICK/326-427: SAPRNVISNINETSVILDWSWPLDTGGRKDVTFNIICKKCGGSSKICEPCSDNVRFLPRQTGLTNTTVTVVDLLAHTNYTFEIDAVNGVSDLSTLSRQFAAV",
+      "EPHA1_HUMAN/334-437: SAPRNLSFSASGTQLSLRWEPPADTGGRQDVRYSVRCSQCQGTAQDGGPCQPCGVGVHFSPGARGLTTPAVHVNGLEPYANYTFNVEAQNGVSGLGSSGHASTS",
+      "PTP10_DROME/865-944: EPITQLHATNITDTEISLRWDLPKGEYNDFDIAYLTADNLLAQNMTTRNEITISDLRPHRNYTFTVVVRSGTESSVLRSS",
+      "PTPRB_HUMAN/1356-1440: DKIQNLHCRPQNSTAIACSWIPPDSDFDGYSIECRKMDTQEVEFSRKLEKEKSLLNIMMLVPHKRYLVSIKVQSAGMTSEVVEDS",
+      "EPHA2_HUMAN/437-525: TEPPKVRLEGRSTTSLSVSWSIPPPQQSRVWKYEVTYRKKGDSNSYNVRRTEGFSVTLDDLAPDTTYLVQVQALTQEGQGAGSKVHEFQ",
+      "LAR_DROME/710-806: GDPQDVKATPLNSTSIHVSWKPPLEKDRNGIIRGYHIHAQELRDEGKGFLNEPFKFDVVDTLEFNVTGLQPDTKYSIQVAALTRKGDGDRSAAIVVK"
+    ],
+    "involving": [
+      [
+        "34-72",
+        0.5263
+      ],
+      [
+        "34-59",
+        0.3511
+      ],
+      [
+        "20-34",
+        0.3085
+      ],
+      [
+        "34-70",
+        0.3021
+      ],
+      [
+        "18-34",
+        0.25
+      ],
+      [
+        "34-50",
+        0.2234
+      ],
+      [
+        "13-34",
+        0.2188
+      ],
+      [
+        "8-34",
+        0.2088
+      ],
+      [
+        "34-62",
+        0.1979
+      ],
+      [
+        "10-34",
+        0.1978
+      ]
+    ],
+    "top_global": [
+      [
+        "32-68",
+        0.6875
+      ],
+      [
+        "5-64",
+        0.5625
+      ],
+      [
+        "5-25",
+        0.5269
+      ],
+      [
+        "34-72",
+        0.5263
+      ],
+      [
+        "8-62",
+        0.4725
+      ],
+      [
+        "27-81",
+        0.4038
+      ],
+      [
+        "5-87",
+        0.375
+      ],
+      [
+        "25-64",
+        0.3656
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-8",
+    "sid": 8,
+    "pdb_id": "1OPA",
+    "chain": "A",
+    "pfam": "PF00061",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1OPA.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00061/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.907,
+    "msa_match_row": "RET2_HUMAN/6-134",
+    "n_msa": 154,
+    "seq": "MTKDQNGTWEMESNENFEGYMKALDIDFATRKIAVRLTQTKIIVQDGDNFKTKTNSTFRNYDLDFTVGVEFDEHTKGLDGRNVKTLVTWEGNTLVCVQKGEKENRGWKQWVEGDKLYLELTCGDQVCRQVFKKK",
+    "question": "Residue 87 (1-based) in PDB 1OPA chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 86,
+    "gold": "87-95",
+    "gold_0": [
+      86,
+      94
+    ],
+    "struct_contact_count": 294,
+    "dump_rows": [
+      "AMBP_PLEPL/43-187: VGTWHDVALTSSCPHMQRNRADAAIGKLVLEKDTGNKLKVTRTRLRHGTCVEMSGEYELTSTPGRIFYHIDRWDADVDAYVVHTNYDEYAIIIMSKQKTSGENSTSLKLYSRTMSVRDTV",
+      "Q91484_SALSA/40-185: MGKWHDIAIGSTCPWMQRHKGDAAIGTLELQASGTEDKVSMTRSMKKHGKCEQISGDYELTATPGRLTYHIAKWGADVDAYVVDTNYDEYAIVMLSKQKTGGEKTKSAKLYSRTMELPPT",
+      "P70004_XENLA/40-184: YGKWYDIAIGSTCKWLKHHKEKFNMGTLELSDGETDGEVRIVNTRMRHGTCSQIVGSYQKTETPGKFDYFNARWGTTIQNYIVFTNYNEYVIMQMRKKKGSETTTTVKLYGRSPDLRPTL",
+      "AMBP_BOVIN/41-186: YGKWFNVAVGSTCPWLKRFKEKMTMSTVVLIAGPTSKEISVTNTHRRKGVCESISGTYEKTSADGKFLYHKAKWNITMESYVVHTNYDEYAIFLTKKLSRRHGPTITVKLYGREPQLRES",
+      "AMBP_MOUSE/40-185: YGKWYNLAVGSTCPWLSRIKDKMSVSTLVLQEGATETEISMTSTRWRRGVCEEITGAYQKTDIDGKFLYHKSKWNITLESYVVHTNYDEYAIFLTKKSSHHHGLTITAKLYGREPQLRDS",
+      "AMBP_HUMAN/41-186: YGKWYNLAIGSTCPWLKKIMDRMTVSTLVLGEGATEAEISMTSTRWRKGVCEETSGAYEKTDTDGKFLYHKSKWNITMESYVVHTNYDEYAIFLTKKFSRHHGPTITAKLYGRAPQLRET",
+      "O70160_CAVPO/41-186: YGKWYSLAIGSTCPWLKRIKDRLSVDTMVLGKGATEAQMSTTRTHWRRGVCERTSGFYEKTDTAGKYLYSNPKWNLTMESYVVHTNYDEYATVLTKKFSRHHGPTITAKLYGREPQLRDS",
+      "PTGDS_MOUSE/40-184: LGRWYSAGLASNSSWFREKKAVLYMCKTVVAPSTEGGLNLTSTFLRKNQCETKIMVLQPAGAPGHYTYSSPHSGSIHSVSVVEANYDEYALLFSRGTKGPGQDFRMATLYSRTQTLKDEL",
+      "Q9N2C2_RABIT/40-184: LGRWFTAGLASNSSWFREKKAALSMCRSTVAPTEEGALNITSTFLRKNQCETRTLLLQPAGRPGRYTYTSPHWGSTYSVWVVDTDYKEFALLYSEGAKGPGQDFRMATLYSRSQTPGAEL",
+      "PTGDS_FELCA/40-184: LGRWFTSGLASNSSWFREKKNALSMCISVVAPSAEGGLNLTTTFLRKDQCETRTLLLRPAETPGCYSYTSPHWGSTHDVWVVATDYEEYALLYTAGTKSPGQDFHMATLYSRTQTPRAEV",
+      "PTGDS_PIG/38-182: LGRWFTSGLASNSSWFLEKKKVLSMCKSLVAPAPDGGFNLTSTFLRKDQCVTRTLMLRPAGPPGCYSYTSPHGGSNLEVSVVETDYKNYALLHTESGPSPGPAFRMATLYSRSQAPGAAV",
+      "PTGDS_BOVIN/40-184: LGRWFTSGLASNSSWFLEKKKVLSMCKSVVAPAADGGLNLTSTFLRKDQCETRTLLLRPAGPPGCYSYTSPHWSSTHEVSVAETDYETYALLYTEGVRGPGQDFRMATLYSRSQNPRAEV"
+    ],
+    "involving": [
+      [
+        "87-95",
+        0.431
+      ],
+      [
+        "87-125",
+        0.3103
+      ],
+      [
+        "87-108",
+        0.2931
+      ],
+      [
+        "87-117",
+        0.2807
+      ],
+      [
+        "87-126",
+        0.2759
+      ],
+      [
+        "26-87",
+        0.2586
+      ],
+      [
+        "52-87",
+        0.2586
+      ],
+      [
+        "43-87",
+        0.2069
+      ],
+      [
+        "87-111",
+        0.1897
+      ],
+      [
+        "87-122",
+        0.1897
+      ]
+    ],
+    "top_global": [
+      [
+        "7-47",
+        0.487
+      ],
+      [
+        "7-102",
+        0.4741
+      ],
+      [
+        "76-105",
+        0.4531
+      ],
+      [
+        "87-95",
+        0.431
+      ],
+      [
+        "48-79",
+        0.4041
+      ],
+      [
+        "65-71",
+        0.404
+      ],
+      [
+        "47-68",
+        0.3766
+      ],
+      [
+        "18-72",
+        0.375
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-9",
+    "sid": 9,
+    "pdb_id": "1IFC",
+    "chain": "A",
+    "pfam": "PF00061",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1IFC.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00061/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.9225,
+    "msa_match_row": "FABPI_MOUSE/4-132",
+    "n_msa": 154,
+    "seq": "MAFDGTWKVDRNENYEKFMEKMGINVVKRKLGAHDNLKLTITQEGNKFTVKESSNFRNIDVVFELGVDFAYSLADGTELTGTWTMEGNKLVGKFKRVDNGKELIAVREISGNELIQTYTYEGVEAKRIFKKE",
+    "question": "Residue 83 (1-based) in PDB 1IFC chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 82,
+    "gold": "83-91",
+    "gold_0": [
+      82,
+      90
+    ],
+    "struct_contact_count": 282,
+    "dump_rows": [
+      "AMBP_PLEPL/43-187: VGTWHDVALTSSCPHMQRNRADAAIGKLVLEKDTGNKLKVTRTRLRHGTCVEMSGEYELTSTPGRIFYHIDRWDADVDAYVVHTNYDEYAIIIMSKQKTSGENSTSLKLYSRTMSVRDTV",
+      "Q91484_SALSA/40-185: MGKWHDIAIGSTCPWMQRHKGDAAIGTLELQASGTEDKVSMTRSMKKHGKCEQISGDYELTATPGRLTYHIAKWGADVDAYVVDTNYDEYAIVMLSKQKTGGEKTKSAKLYSRTMELPPT",
+      "P70004_XENLA/40-184: YGKWYDIAIGSTCKWLKHHKEKFNMGTLELSDGETDGEVRIVNTRMRHGTCSQIVGSYQKTETPGKFDYFNARWGTTIQNYIVFTNYNEYVIMQMRKKKGSETTTTVKLYGRSPDLRPTL",
+      "AMBP_BOVIN/41-186: YGKWFNVAVGSTCPWLKRFKEKMTMSTVVLIAGPTSKEISVTNTHRRKGVCESISGTYEKTSADGKFLYHKAKWNITMESYVVHTNYDEYAIFLTKKLSRRHGPTITVKLYGREPQLRES",
+      "AMBP_MOUSE/40-185: YGKWYNLAVGSTCPWLSRIKDKMSVSTLVLQEGATETEISMTSTRWRRGVCEEITGAYQKTDIDGKFLYHKSKWNITLESYVVHTNYDEYAIFLTKKSSHHHGLTITAKLYGREPQLRDS",
+      "AMBP_HUMAN/41-186: YGKWYNLAIGSTCPWLKKIMDRMTVSTLVLGEGATEAEISMTSTRWRKGVCEETSGAYEKTDTDGKFLYHKSKWNITMESYVVHTNYDEYAIFLTKKFSRHHGPTITAKLYGRAPQLRET",
+      "O70160_CAVPO/41-186: YGKWYSLAIGSTCPWLKRIKDRLSVDTMVLGKGATEAQMSTTRTHWRRGVCERTSGFYEKTDTAGKYLYSNPKWNLTMESYVVHTNYDEYATVLTKKFSRHHGPTITAKLYGREPQLRDS",
+      "PTGDS_MOUSE/40-184: LGRWYSAGLASNSSWFREKKAVLYMCKTVVAPSTEGGLNLTSTFLRKNQCETKIMVLQPAGAPGHYTYSSPHSGSIHSVSVVEANYDEYALLFSRGTKGPGQDFRMATLYSRTQTLKDEL",
+      "Q9N2C2_RABIT/40-184: LGRWFTAGLASNSSWFREKKAALSMCRSTVAPTEEGALNITSTFLRKNQCETRTLLLQPAGRPGRYTYTSPHWGSTYSVWVVDTDYKEFALLYSEGAKGPGQDFRMATLYSRSQTPGAEL",
+      "PTGDS_FELCA/40-184: LGRWFTSGLASNSSWFREKKNALSMCISVVAPSAEGGLNLTTTFLRKDQCETRTLLLRPAETPGCYSYTSPHWGSTHDVWVVATDYEEYALLYTAGTKSPGQDFHMATLYSRTQTPRAEV",
+      "PTGDS_PIG/38-182: LGRWFTSGLASNSSWFLEKKKVLSMCKSLVAPAPDGGFNLTSTFLRKDQCVTRTLMLRPAGPPGCYSYTSPHGGSNLEVSVVETDYKNYALLHTESGPSPGPAFRMATLYSRSQAPGAAV",
+      "PTGDS_BOVIN/40-184: LGRWFTSGLASNSSWFLEKKKVLSMCKSVVAPAADGGLNLTSTFLRKDQCETRTLLLRPAGPPGCYSYTSPHWSSTHEVSVAETDYETYALLYTEGVRGPGQDFRMATLYSRSQNPRAEV"
+    ],
+    "involving": [
+      [
+        "83-91",
+        0.431
+      ],
+      [
+        "83-123",
+        0.3103
+      ],
+      [
+        "83-106",
+        0.2931
+      ],
+      [
+        "83-115",
+        0.2807
+      ],
+      [
+        "83-124",
+        0.2759
+      ],
+      [
+        "24-83",
+        0.2586
+      ],
+      [
+        "50-83",
+        0.2586
+      ],
+      [
+        "41-83",
+        0.2069
+      ],
+      [
+        "83-109",
+        0.1897
+      ],
+      [
+        "83-120",
+        0.1897
+      ]
+    ],
+    "top_global": [
+      [
+        "5-45",
+        0.487
+      ],
+      [
+        "5-100",
+        0.4741
+      ],
+      [
+        "73-103",
+        0.4531
+      ],
+      [
+        "83-91",
+        0.431
+      ],
+      [
+        "46-75",
+        0.4041
+      ],
+      [
+        "63-69",
+        0.404
+      ],
+      [
+        "45-66",
+        0.3766
+      ],
+      [
+        "16-70",
+        0.375
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-10",
+    "sid": 10,
+    "pdb_id": "1RBP",
+    "chain": "A",
+    "pfam": "PF00061",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1RBP.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00061/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.9205,
+    "msa_match_row": "RET4_BOVIN/21-171",
+    "n_msa": 154,
+    "seq": "ERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIVAEFSVDETGQMSATAKGRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGNDDHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFVFSRDPNGLPPEAQKIVRQRQEELCLARQYRLIVHNGYCDGRSERNL",
+    "question": "Residue 84 (1-based) in PDB 1RBP chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 83,
+    "gold": "84-90",
+    "gold_0": [
+      83,
+      89
+    ],
+    "struct_contact_count": 411,
+    "dump_rows": [
+      "AMBP_PLEPL/43-187: VGTWHDVALTSSCPHMQRNRADAAIGKLVLEKDTGNKLKVTRTRLRHGTCVEMSGEYELTSTPGRIFYHIDRWDADVDAYVVHTNYDEYAIIIMSKQKTSGENSTSLKLYSRTMSVRDTV",
+      "Q91484_SALSA/40-185: MGKWHDIAIGSTCPWMQRHKGDAAIGTLELQASGTEDKVSMTRSMKKHGKCEQISGDYELTATPGRLTYHIAKWGADVDAYVVDTNYDEYAIVMLSKQKTGGEKTKSAKLYSRTMELPPT",
+      "P70004_XENLA/40-184: YGKWYDIAIGSTCKWLKHHKEKFNMGTLELSDGETDGEVRIVNTRMRHGTCSQIVGSYQKTETPGKFDYFNARWGTTIQNYIVFTNYNEYVIMQMRKKKGSETTTTVKLYGRSPDLRPTL",
+      "AMBP_BOVIN/41-186: YGKWFNVAVGSTCPWLKRFKEKMTMSTVVLIAGPTSKEISVTNTHRRKGVCESISGTYEKTSADGKFLYHKAKWNITMESYVVHTNYDEYAIFLTKKLSRRHGPTITVKLYGREPQLRES",
+      "AMBP_MOUSE/40-185: YGKWYNLAVGSTCPWLSRIKDKMSVSTLVLQEGATETEISMTSTRWRRGVCEEITGAYQKTDIDGKFLYHKSKWNITLESYVVHTNYDEYAIFLTKKSSHHHGLTITAKLYGREPQLRDS",
+      "AMBP_HUMAN/41-186: YGKWYNLAIGSTCPWLKKIMDRMTVSTLVLGEGATEAEISMTSTRWRKGVCEETSGAYEKTDTDGKFLYHKSKWNITMESYVVHTNYDEYAIFLTKKFSRHHGPTITAKLYGRAPQLRET",
+      "O70160_CAVPO/41-186: YGKWYSLAIGSTCPWLKRIKDRLSVDTMVLGKGATEAQMSTTRTHWRRGVCERTSGFYEKTDTAGKYLYSNPKWNLTMESYVVHTNYDEYATVLTKKFSRHHGPTITAKLYGREPQLRDS",
+      "PTGDS_MOUSE/40-184: LGRWYSAGLASNSSWFREKKAVLYMCKTVVAPSTEGGLNLTSTFLRKNQCETKIMVLQPAGAPGHYTYSSPHSGSIHSVSVVEANYDEYALLFSRGTKGPGQDFRMATLYSRTQTLKDEL",
+      "Q9N2C2_RABIT/40-184: LGRWFTAGLASNSSWFREKKAALSMCRSTVAPTEEGALNITSTFLRKNQCETRTLLLQPAGRPGRYTYTSPHWGSTYSVWVVDTDYKEFALLYSEGAKGPGQDFRMATLYSRSQTPGAEL",
+      "PTGDS_FELCA/40-184: LGRWFTSGLASNSSWFREKKNALSMCISVVAPSAEGGLNLTTTFLRKDQCETRTLLLRPAETPGCYSYTSPHWGSTHDVWVVATDYEEYALLYTAGTKSPGQDFHMATLYSRTQTPRAEV",
+      "PTGDS_PIG/38-182: LGRWFTSGLASNSSWFLEKKKVLSMCKSLVAPAPDGGFNLTSTFLRKDQCVTRTLMLRPAGPPGCYSYTSPHGGSNLEVSVVETDYKNYALLHTESGPSPGPAFRMATLYSRSQAPGAAV",
+      "PTGDS_BOVIN/40-184: LGRWFTSGLASNSSWFLEKKKVLSMCKSVVAPAADGGLNLTSTFLRKDQCETRTLLLRPAGPPGCYSYTSPHWSSTHEVSVAETDYETYALLYTEGVRGPGQDFRMATLYSRSQNPRAEV"
+    ],
+    "involving": [
+      [
+        "84-90",
+        0.404
+      ],
+      [
+        "22-84",
+        0.3487
+      ],
+      [
+        "68-84",
+        0.3289
+      ],
+      [
+        "84-158",
+        0.2829
+      ],
+      [
+        "77-84",
+        0.2583
+      ],
+      [
+        "84-138",
+        0.2105
+      ],
+      [
+        "28-84",
+        0.2039
+      ],
+      [
+        "34-84",
+        0.1788
+      ],
+      [
+        "51-84",
+        0.1689
+      ],
+      [
+        "84-97",
+        0.1689
+      ]
+    ],
+    "top_global": [
+      [
+        "22-65",
+        0.487
+      ],
+      [
+        "22-127",
+        0.4741
+      ],
+      [
+        "95-130",
+        0.4531
+      ],
+      [
+        "66-98",
+        0.4041
+      ],
+      [
+        "84-90",
+        0.404
+      ],
+      [
+        "65-87",
+        0.3766
+      ],
+      [
+        "32-91",
+        0.375
+      ],
+      [
+        "86-148",
+        0.3646
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-11",
+    "sid": 11,
+    "pdb_id": "1UBI",
+    "chain": "A",
+    "pfam": "PF00240",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1UBI.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00240/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.8889,
+    "msa_match_row": "UBQ8_ARATH/81-152",
+    "n_msa": 59,
+    "seq": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+    "question": "Residue 43 (1-based) in PDB 1UBI chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 42,
+    "gold": "43-50",
+    "gold_0": [
+      42,
+      49
+    ],
+    "struct_contact_count": 118,
+    "dump_rows": [
+      "OASL_HUMAN/436-507: VFVKNPDGGSYAYAINPNSFILGLKQQIEDQQGLPKKQQQLEFQGQVLQDWLGLGIYGIQDSDTLILSKKKG",
+      "RS30_HUMAN/3-72: LFVRAQELHTFEVTGQETVAQIKAHVASLEGIAPEDQVVLLAGAPLEDEATLGQCGVEALTTLEVAGRML",
+      "Q18231_CAEEL/3-69: IFLLGLDNTTHTLDVDASTTLSAIKGVIGAGEEFSISYGSKVLSEELTLGECQIESLSTLSVNGRLL",
+      "ISG15_HUMAN/84-155: ILVRNNKGRSSTYEVRLTQTVAHLKQQVSGLEGVQDDLFWLTFEGKPLEDQLPLGEYGLKPLSTVFMNLRLR",
+      "ISG15_BOVIN/81-152: ILVRNDKGRSSPYEVQLKQTVAELKQQVCQKERVQADQFWLSFEGRPMDDEHPLEEYGLMKGCTVFMNLRLR",
+      "ISG15_MOUSE/82-153: ILVRNERGHSNIYEVFLTQTVDTLKKKVSQREQVHEDQFWLSFEGRPMEDKELLGEYGLKPQCTVIKHLRLR",
+      "YKA4_CAEEL/343-415: ILIKLKFMNDTEKNTYASLEDTVAKFKVDHFTNLANQVIRLIYQGQLLREDHRTLEEYGLQPGSIVHCHISTT",
+      "R7SL1_ARATH/3-74: VYIDTETGSSFSITIDFGETVLEIKEKIEKSQGIPVSKQILYLDGKALEDDLHKIDYMILFESRLLLRISPD",
+      "Q9ZQZ4_ARATH/3-74: MTVENESGSTFSIDIGLQDTVLTFKRKIEMTQRIPVSRQTIFFQGKLLEDHLDIFEWDILQNPLLHLSISPD",
+      "Q9VEC8_DROME/3-75: ITIKVLKGKDCTIEVAPTSTILEVKHQIEAELQISATNQKLLLLGRPLNNEQTIASYPNIKEGTKLNLVVIKP",
+      "UBL4A_MOUSE/3-74: LTVKALQGRECSLQVAEDELVSTLKHLVSDKLNVPVRQQRLLFKGKALADEKRLSDYNIGPNSKLNLVVKPL",
+      "PRKN_MOUSE/3-74: VFVRFNSSYGFPVEVDSDTSILQLKEVVAKRQGVPADQLRVIFAGKELPNHLTVQNCDLEQQSIVHIVQRPR"
+    ],
+    "involving": [
+      [
+        "43-50",
+        0.5614
+      ],
+      [
+        "43-56",
+        0.4915
+      ],
+      [
+        "43-69",
+        0.4407
+      ],
+      [
+        "15-43",
+        0.3966
+      ],
+      [
+        "26-43",
+        0.3729
+      ],
+      [
+        "43-71",
+        0.2881
+      ],
+      [
+        "8-43",
+        0.2778
+      ],
+      [
+        "30-43",
+        0.2712
+      ],
+      [
+        "43-67",
+        0.2712
+      ],
+      [
+        "43-61",
+        0.2281
+      ]
+    ],
+    "top_global": [
+      [
+        "43-50",
+        0.5614
+      ],
+      [
+        "43-56",
+        0.4915
+      ],
+      [
+        "35-47",
+        0.4912
+      ],
+      [
+        "6-27",
+        0.4828
+      ],
+      [
+        "50-56",
+        0.4737
+      ],
+      [
+        "3-30",
+        0.4576
+      ],
+      [
+        "10-47",
+        0.4483
+      ],
+      [
+        "43-69",
+        0.4407
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-12",
+    "sid": 12,
+    "pdb_id": "1BPT",
+    "chain": "A",
+    "pfam": "PF00014",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1BPT.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00014/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.9811,
+    "msa_match_row": "BPT1_BOVIN/39-91",
+    "n_msa": 98,
+    "seq": "RPDFCLEPPYTGPCKARIIRYFANAKAGLCQTFVYGGCRAKRNNFKSAEDCMRTCGGA",
+    "question": "Residue 12 (1-based) in PDB 1BPT chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 11,
+    "gold": "12-37",
+    "gold_0": [
+      11,
+      36
+    ],
+    "struct_contact_count": 116,
+    "dump_rows": [
+      "Q23456_CAEEL/256-309: PCSLSPDKGFPGSVTVNMWYYDPTSTTCSPFMYLGKGGNSNRFETSEECLETCG",
+      "TFPI2_HUMAN/95-150: VCRLQVSVDDQCEGSTEKYFFNLSSMTCEKFFSGGCHRNRIENRFPDEATCMGFCA",
+      "PPN1_CAEEL/1913-1965: ICTLRPEPGPCRLGLEKYFYDPVIQSCHMFHYGGCEGNANRFDSELDCFRRCS",
+      "Q18761_CAEEL/35-87: ICLEDVDPGPCQYYQVQWFWDKQVEECKEFHYGGCMGTKNRFSSKQQCVKQCK",
+      "O17644_CAEEL/982-1034: FCLSARDSGPCNNFEKRYGYDANTDTCVEYQYGGCEGTLNNFHSLQRCTEICC",
+      "Q94164_CAEEL/22-79: RCSKSIFDSNLTAKCEKSSTIKFHFDQSTGLCMNFRWDGCKDQENKFDSLQECASTCL",
+      "A8XY36_CAEBR/1446-1498: VCDEAKDTGPCTNFATKWYYNQADGTCNRFHYGGCQGTNNRFDNEQQCKAACQ",
+      "O45881_CAEEL/1082-1134: KCLQPVEPGPCKNFADRWYFNVDDGTCHPFKYGGCAGNRNHFFTQKECEVHCA",
+      "AMBP_BOVIN/286-338: ACNLPIVQGPCRSYIQLWAFDAVKGKCVRFSYGGCKGNGNKFYSEKECKEYCG",
+      "A4_TAKRU/289-341: VCWAQAESGPCRAMLERWYFNPKKRRCVPFLFGGCGGNRNNFESEEYCLAVCS",
+      "APLP2_HUMAN/309-361: VCSQEAMTGPCRAVMPRWYFDLSKGKCVRFIYGGCGGNRNNFESEDYCMAVCK",
+      "A4_HUMAN/290-342: VCSEQAETGPCRAMISRWYFDVTEGKCAPFFYGGCGGNRNNFDTEEYCMAVCG"
+    ],
+    "involving": [
+      [
+        "12-37",
+        0.949
+      ],
+      [
+        "12-40",
+        0.949
+      ],
+      [
+        "12-36",
+        0.4388
+      ],
+      [
+        "12-39",
+        0.3571
+      ],
+      [
+        "12-28",
+        0.2347
+      ],
+      [
+        "12-56",
+        0.1327
+      ],
+      [
+        "12-42",
+        0.0816
+      ],
+      [
+        "12-46",
+        0.0408
+      ],
+      [
+        "12-25",
+        0.0309
+      ],
+      [
+        "6-12",
+        0.0306
+      ]
+    ],
+    "top_global": [
+      [
+        "5-30",
+        1.0
+      ],
+      [
+        "5-51",
+        1.0
+      ],
+      [
+        "5-55",
+        1.0
+      ],
+      [
+        "30-51",
+        1.0
+      ],
+      [
+        "30-55",
+        1.0
+      ],
+      [
+        "12-37",
+        0.949
+      ],
+      [
+        "12-40",
+        0.949
+      ],
+      [
+        "33-45",
+        0.898
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-13",
+    "sid": 13,
+    "pdb_id": "1QCF",
+    "chain": "A",
+    "pfam": "PF00018",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1QCF.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00018/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 1.0,
+    "msa_match_row": "HCK_HUMAN/84-130",
+    "n_msa": 55,
+    "seq": "GAMGSGIRIIVVALYDYEAIHHEDLSFQKGDQMVVLEESGEWWKARSLATRKEGYIPSNYVARVDSLETEEWFFKGISRKDAERQLLAPGNMLGSFMIRDSETTKGSYSLSVRDYDPRQGDTVKHYKIRTLDNGGFYISPRSTFSTLQELVDHYKKGNDGLCQKLSVPCMSSKPQKPWEKDAWEIPRESLKLEKKLGAGQFGEVWMATYNKHTKVAVKTMKPGSMSVEAFLAEANVMKTLQHDKLVKLHAVVTKEPIYIITEFMAKGSLLDFLKSDEGSKQPLPKLIDFSAQIAEGMAFIEQRNYIHRDLRAANILVSASLVCKIADFGLARVIEDNEYTAREGAKFPIKWTAPEAINFGSFTIKSDVWSFGILLMEIVTYGRIPYPGMSNPEVIRALERGYRMPRPENCPEELYNIMMRCWKNRPEERPTFEYIQSVLDDFYTATESQXEEIP",
+    "question": "Residue 21 (1-based) in PDB 1QCF chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 20,
+    "gold": "21-50",
+    "gold_0": [
+      20,
+      49
+    ],
+    "struct_contact_count": 765,
+    "dump_rows": [
+      "VAV_HUMAN/788-834: KARYDFCARDRSELSLKEGDIIKILNKKGQQGWWRGEIYGRVGWFPA",
+      "HSE1_YEAST/223-268: RALYDLTTNEPDELSFRKGDVITVLEQVYRDWWKGALRGNMGIFPL",
+      "MYOC_DICDI/1129-1176: IALYEYDAMQPDELTFKENDVINLIKKVDADWWQGELVRTKQIGMLPS",
+      "HCLS1_HUMAN/434-479: VAVYDYQGEGSDELSFDPDDVITDIEMVDEGWWRGRCHGHFGLFPA",
+      "Q6FWR1_CANGA/526-572: AEYDYEAAEDNELTFEENDKIINIEFVDDDWWLGELEKTGEKGLFPS",
+      "YKA7_CAEEL/197-244: IAKFDYAPTQSDEMGLRIGDTVLISKKVDAEWFYGENQNQRTFGIVPS",
+      "NCF2_HUMAN/463-508: EALFSYEATQPEDLEFQEGDIILVLSKVNEEWLEGECKGKVGIFPK",
+      "YKA7_CAEEL/277-322: TAIYDYNSNEAGDLNFAVGSQIMVTARVNEEWLEGECFGRSGIFPS",
+      "GRAP_DROME/158-203: QALYDFVPQESGELDFRRGDVITVTDRSDENWWNGEIGNRKGIFPA",
+      "SEM5_CAEEL/160-205: QALFDFNPQESGELAFKRGDVITLINKDDPNWWEGQLNNRRGIFPS",
+      "GRB2_CHICK/162-207: QALFDFDPQEEGELGFRRGDFIQVLDNSDPNWWKGACHGQTGMFPR",
+      "SEM5_CAEEL/4-50: VAEHDFQAGSPDELSFKRGNTLKVLNKDEDPHWYKAELDGNEGFIPS"
+    ],
+    "involving": [
+      [
+        "21-50",
+        0.2571
+      ],
+      [
+        "21-37",
+        0.1818
+      ],
+      [
+        "21-28",
+        0.1273
+      ],
+      [
+        "21-31",
+        0.1273
+      ],
+      [
+        "21-41",
+        0.1273
+      ],
+      [
+        "21-29",
+        0.1091
+      ],
+      [
+        "21-38",
+        0.098
+      ],
+      [
+        "21-44",
+        0.0909
+      ],
+      [
+        "21-49",
+        0.0909
+      ],
+      [
+        "21-30",
+        0.0727
+      ]
+    ],
+    "top_global": [
+      [
+        "30-54",
+        0.7636
+      ],
+      [
+        "14-25",
+        0.5455
+      ],
+      [
+        "30-51",
+        0.5
+      ],
+      [
+        "13-19",
+        0.4545
+      ],
+      [
+        "14-36",
+        0.3818
+      ],
+      [
+        "16-31",
+        0.3818
+      ],
+      [
+        "25-36",
+        0.3818
+      ],
+      [
+        "45-54",
+        0.3273
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-14",
+    "sid": 14,
+    "pdb_id": "1CKA",
+    "chain": "A",
+    "pfam": "PF00018",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1CKA.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00018/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 0.6809,
+    "msa_match_row": "CRKL_HUMAN/129-175",
+    "n_msa": 55,
+    "seq": "AEYVRALFDFNGNDEEDLPFKKGDILRIRDKPEEQWWNAEDSEGKRGMIPVPYVEKY",
+    "question": "Residue 39 (1-based) in PDB 1CKA chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 38,
+    "gold": "39-47",
+    "gold_0": [
+      38,
+      46
+    ],
+    "struct_contact_count": 125,
+    "dump_rows": [
+      "VAV_HUMAN/788-834: KARYDFCARDRSELSLKEGDIIKILNKKGQQGWWRGEIYGRVGWFPA",
+      "HSE1_YEAST/223-268: RALYDLTTNEPDELSFRKGDVITVLEQVYRDWWKGALRGNMGIFPL",
+      "MYOC_DICDI/1129-1176: IALYEYDAMQPDELTFKENDVINLIKKVDADWWQGELVRTKQIGMLPS",
+      "HCLS1_HUMAN/434-479: VAVYDYQGEGSDELSFDPDDVITDIEMVDEGWWRGRCHGHFGLFPA",
+      "Q6FWR1_CANGA/526-572: AEYDYEAAEDNELTFEENDKIINIEFVDDDWWLGELEKTGEKGLFPS",
+      "YKA7_CAEEL/197-244: IAKFDYAPTQSDEMGLRIGDTVLISKKVDAEWFYGENQNQRTFGIVPS",
+      "NCF2_HUMAN/463-508: EALFSYEATQPEDLEFQEGDIILVLSKVNEEWLEGECKGKVGIFPK",
+      "YKA7_CAEEL/277-322: TAIYDYNSNEAGDLNFAVGSQIMVTARVNEEWLEGECFGRSGIFPS",
+      "GRAP_DROME/158-203: QALYDFVPQESGELDFRRGDVITVTDRSDENWWNGEIGNRKGIFPA",
+      "SEM5_CAEEL/160-205: QALFDFNPQESGELAFKRGDVITLINKDDPNWWEGQLNNRRGIFPS",
+      "GRB2_CHICK/162-207: QALFDFDPQEEGELGFRRGDFIQVLDNSDPNWWKGACHGQTGMFPR",
+      "SEM5_CAEEL/4-50: VAEHDFQAGSPDELSFKRGNTLKVLNKDEDPHWYKAELDGNEGFIPS"
+    ],
+    "involving": [
+      [
+        "39-47",
+        0.3273
+      ],
+      [
+        "6-39",
+        0.3091
+      ],
+      [
+        "23-39",
+        0.3091
+      ],
+      [
+        "12-39",
+        0.2545
+      ],
+      [
+        "39-49",
+        0.1091
+      ],
+      [
+        "16-39",
+        0.0909
+      ],
+      [
+        "28-39",
+        0.0909
+      ],
+      [
+        "5-39",
+        0.0741
+      ],
+      [
+        "11-39",
+        0.0727
+      ],
+      [
+        "15-39",
+        0.0727
+      ]
+    ],
+    "top_global": [
+      [
+        "23-47",
+        0.7636
+      ],
+      [
+        "7-18",
+        0.5455
+      ],
+      [
+        "6-12",
+        0.4545
+      ],
+      [
+        "7-29",
+        0.3818
+      ],
+      [
+        "9-24",
+        0.3818
+      ],
+      [
+        "18-29",
+        0.3818
+      ],
+      [
+        "39-47",
+        0.3273
+      ],
+      [
+        "6-39",
+        0.3091
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  },
+  {
+    "id": "e9r-15",
+    "sid": 15,
+    "pdb_id": "1ABO",
+    "chain": "A",
+    "pfam": "PF00018",
+    "sources": {
+      "pdb_url": "https://files.rcsb.org/download/1ABO.pdb",
+      "pfam_seed_url": "https://www.ebi.ac.uk/interpro/wwwapi/entry/pfam/PF00018/?annotation=alignment:seed&download"
+    },
+    "msa_match_identity": 1.0,
+    "msa_match_row": "ABL1_HUMAN/67-113",
+    "n_msa": 55,
+    "seq": "MNDPNLFVALYDFVASGDNTLSITKGEKLRVLGYNHNGEWCEAQTKNGQGWVPSNYITPVNS",
+    "question": "Residue 10 (1-based) in PDB 1ABO chain A has a long-range structural partner (separation \u2265 6). Report the contact pair.",
+    "qi": 9,
+    "gold": "10-21",
+    "gold_0": [
+      9,
+      20
+    ],
+    "struct_contact_count": 139,
+    "dump_rows": [
+      "VAV_HUMAN/788-834: KARYDFCARDRSELSLKEGDIIKILNKKGQQGWWRGEIYGRVGWFPA",
+      "HSE1_YEAST/223-268: RALYDLTTNEPDELSFRKGDVITVLEQVYRDWWKGALRGNMGIFPL",
+      "MYOC_DICDI/1129-1176: IALYEYDAMQPDELTFKENDVINLIKKVDADWWQGELVRTKQIGMLPS",
+      "HCLS1_HUMAN/434-479: VAVYDYQGEGSDELSFDPDDVITDIEMVDEGWWRGRCHGHFGLFPA",
+      "Q6FWR1_CANGA/526-572: AEYDYEAAEDNELTFEENDKIINIEFVDDDWWLGELEKTGEKGLFPS",
+      "YKA7_CAEEL/197-244: IAKFDYAPTQSDEMGLRIGDTVLISKKVDAEWFYGENQNQRTFGIVPS",
+      "NCF2_HUMAN/463-508: EALFSYEATQPEDLEFQEGDIILVLSKVNEEWLEGECKGKVGIFPK",
+      "YKA7_CAEEL/277-322: TAIYDYNSNEAGDLNFAVGSQIMVTARVNEEWLEGECFGRSGIFPS",
+      "GRAP_DROME/158-203: QALYDFVPQESGELDFRRGDVITVTDRSDENWWNGEIGNRKGIFPA",
+      "SEM5_CAEEL/160-205: QALFDFNPQESGELAFKRGDVITLINKDDPNWWEGQLNNRRGIFPS",
+      "GRB2_CHICK/162-207: QALFDFDPQEEGELGFRRGDFIQVLDNSDPNWWKGACHGQTGMFPR",
+      "SEM5_CAEEL/4-50: VAEHDFQAGSPDELSFKRGNTLKVLNKDEDPHWYKAELDGNEGFIPS"
+    ],
+    "involving": [
+      [
+        "10-21",
+        0.5455
+      ],
+      [
+        "10-32",
+        0.3818
+      ],
+      [
+        "10-29",
+        0.2182
+      ],
+      [
+        "10-23",
+        0.1455
+      ],
+      [
+        "10-46",
+        0.1455
+      ],
+      [
+        "10-51",
+        0.1455
+      ],
+      [
+        "10-31",
+        0.1273
+      ],
+      [
+        "10-25",
+        0.0909
+      ],
+      [
+        "10-30",
+        0.0909
+      ],
+      [
+        "10-42",
+        0.0909
+      ]
+    ],
+    "top_global": [
+      [
+        "26-50",
+        0.7636
+      ],
+      [
+        "10-21",
+        0.5455
+      ],
+      [
+        "9-15",
+        0.4545
+      ],
+      [
+        "10-32",
+        0.3818
+      ],
+      [
+        "12-27",
+        0.3818
+      ],
+      [
+        "21-32",
+        0.3818
+      ],
+      [
+        "43-50",
+        0.3273
+      ],
+      [
+        "9-43",
+        0.3091
+      ]
+    ],
+    "cohort": "coevolution_consistent"
+  }
+]

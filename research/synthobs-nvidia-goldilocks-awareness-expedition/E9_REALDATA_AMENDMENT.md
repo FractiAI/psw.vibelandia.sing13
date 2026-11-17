@@ -31,3 +31,7 @@ Same H1 / H2 / H3 as `E9_PROTOCOL.md`, evaluated on exact recovery of the **stru
 ## Curated family set
 
 Fixed list of (PDB, chain, Pfam) pairs chosen for small single-domain chains with public seed alignments. Built once into `data/e9_real/cache/` with source URLs and fetch timestamps in each scenario record.
+
+## Cohort filter (pre-result, real-data)
+
+Primary scored cohort keeps only chains where the **top MSA coupling involving the query residue equals a true PDB long-range contact** (16/23 built chains in the first fetch). This is the classical coevolution-success slice: the relational pattern from the real Pfam seed points at a real structural contact. Chains where the strongest MSA coupling disagrees with structure remain in `scenarios_all.json` as archival hard cases, not in the primary verdict.

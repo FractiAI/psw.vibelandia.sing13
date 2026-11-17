@@ -1685,6 +1685,22 @@
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-fractisi-multi-agent-platform-2026-11"
     },
     {
+      "source": "/ship-blog/cosmic-rhyme-expedition",
+      "destination": "/interfaces/blog-cosmic-rhyme-expedition-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/cosmic-rhyme-expedition/",
+      "destination": "/interfaces/blog-cosmic-rhyme-expedition-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/cosmic-rhyme-expedition",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-cosmic-rhyme-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/cosmic-rhyme-expedition/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-cosmic-rhyme-expedition-2026-11"
+    },
+    {
       "source": "/ship-blog/nvidia-goldilocks-moment",
       "destination": "/interfaces/blog-nvidia-goldilocks-moment-2026-11.html"
     },

@@ -12,8 +12,14 @@
 | E2 | Movebank herd + Kp chronological rhyme |
 | E3 | Competition vs Goldilocks shared-world collaboration |
 | E4 | Closed proprietary copies vs open selective share |
-| E5 | Goldilocks scorecard composites from measured dimensions |
+| E5 | Goldilocks scorecard composites from measured dimensions (locked board still **77.1** from E0–E6; E9–E12 do not rewrite E5 unless amended) |
 | E6 | Matched-budget agent architecture (same model/prompt/budget; linear vs shared-world; deterministic control + live open-weight LLM via Groq when `GROQ_API_KEY` is set) |
+| E7 | Shared world vs BM25 on HotpotQA (protocol; early-stop archival) |
+| E8 | Higher awareness vs flat/silo facts (lean arm; pre-registered bar not cleared) |
+| E9 | Protein-folding rhyme on real PDB + Pfam seed MSAs (linear vs flat MSA vs relational awareness) |
+| E10 | Knowledge fold — HotpotQA bridge title-pair contacts (higher cognitive system) |
+| E11 | Macro teleconnection fold — real FRED series lag-coupling board |
+| E12 | Multi-agent collaboration synergy on HotpotQA (whole > sum of parts; title-pair + deterministic control) |
 
 ## Run
 
@@ -26,7 +32,3 @@ Fixtures: `fixtures/fred_*.csv` (public FRED). Movebank/Kp read from `research/g
 Honesty: Soft Story organizational companion — not NVIDIA KPI attestation, not ENGINE_SHELF.
 
 → ∞^∞
-| E9 | Protein-folding rhyme on real PDB + Pfam seed MSAs (linear vs flat MSA vs relational awareness) |
-| E10 | Knowledge fold — HotpotQA bridge title-pair contacts (higher cognitive system) |
-| E11 | Macro teleconnection fold — real FRED series lag-coupling board |
-| E12 | Multi-agent collaboration synergy on HotpotQA (whole > sum of parts; title-pair + deterministic control) |

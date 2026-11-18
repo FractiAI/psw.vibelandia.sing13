@@ -47,6 +47,21 @@ E9–E12 established that a relational awareness board can recover structure a l
 
 The `?` is the discovery target. We do not instruct the system to find filaments, voids, or dark-matter maps.
 
+## Legend · LLM rhymes → cosmic data (C5)
+
+Canonical map: `research/synthobs-cosmic-rhyme-expedition/LLM_RHYME_LEGEND.md` · receipt field `c5.legend` · export `LLM_RHYME_COSMIC_LEGEND`.
+
+**One-line:** Protein sequence : MSA board : contact = Knowledge passage : title board : title pair = Macro series : lag board : teleconnection = Cosmic catalog/spectrum : AWARE language pack : partner id.
+
+| Layer | Source | Row | Linear window | Board | Gold |
+|---|---|---|---|---|---|
+| `exoplanet` | NASA `pscomppars` | planet + host | RA neighbors | z-scored cosine | non-local planet id |
+| `neo` | JPL CAD | encounter | time/RA local | encounter features | non-local encounter id |
+| `ngc` | OpenNGC | deep-sky object | RA neighbors | morphology/sky | non-local object id |
+| `wmap_tt` | WMAP 9-yr TT | multipole ℓ | ±ℓ window | lag \|corr\| | ℓ + best lag |
+
+Pack arms: **LINEAR** = local text · **FLAT** = dump · **AWARE** = LEADING + ranked measured board.
+
 ## Method (C1–C5)
 
 Pre-registered in `research/synthobs-cosmic-rhyme-expedition/PROTOCOL.md` before result rows. Fixtures are vendored under `research/synthobs-cosmic-rhyme-expedition/fixtures/` and regenerable from public hosts:

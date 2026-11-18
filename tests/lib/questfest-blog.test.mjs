@@ -43,15 +43,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: NVIDIA Goldilocks · FractiSI Multi-Agent platform · Exp 002 · Tiny Gateway Rhyming · Net Zero 002 · Net Zero 001
-    expect(posts[0].id).toBe('synthobs-nvidia-goldilocks-awareness-expedition-2026-11');
+    // Newest: Cosmic Rhyme · NVIDIA Goldilocks · FractiSI Multi-Agent platform · Exp 002 · Tiny Gateway Rhyming · Net Zero 002
+    expect(posts[0].id).toBe('synthobs-cosmic-rhyme-expedition-2026-11');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-cosmic-rhyme-expedition-2026-11',
       'synthobs-nvidia-goldilocks-awareness-expedition-2026-11',
       'synthobs-fractisi-multi-agent-platform-2026-11',
       'synthobs-fractisi-expedition-002-beyond-memory-2026-11',
       'synthobs-tiny-gateway-rhyming-templates-2026-11',
       'synthobs-net-zero-periodic-table-2026-10',
-      'synthobs-net-zero-missing-half-2026-10',
     ]);
   });
 });

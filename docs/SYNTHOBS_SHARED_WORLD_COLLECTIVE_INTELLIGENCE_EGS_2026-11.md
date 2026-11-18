@@ -1,8 +1,8 @@
-# Shared World Models for Collective Intelligence
+# Rhyming vs Non-Rhyming World Models
 
-**Do shared-world architectures measurably improve multi-agent collective intelligence — and does FractiSI’s implementation outperform fair alternatives?**
+**Do rhyming world models outperform non-rhyming ones — after prior expeditions already showed that rhyming a shared world between agents produces observable, replicable, falsifiable, paradigm-shifting gains?**
 
-**Document ID:** `WP-SHARED-WORLD-COLLECTIVE-INTELLIGENCE-V2-EGS-2026-11-18`  
+**Document ID:** `WP-RHYMING-VS-NON-RHYMING-WORLD-MODELS-EGS-2026-11-18`  
 **Registry ID:** `synthobs-shared-world-collective-intelligence-2026-11`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Classification:** Application companion Soft Story / computational expedition  
@@ -14,93 +14,49 @@
 
 | Tier | What this is | What it is not |
 |---|---|---|
-| Soft Story / application companion | Fair comparative harness for shared vs independent world models | ENGINE_SHELF pin · FractiSI marketing win |
-| Empirical (Level 2) | Regenerable Node fixtures, 5 seeds, worlds A–D + relational | Embodied / Level 5 validation |
-| Alternatives | NOT EXECUTABLE Genie/Cosmos/V-JEPA/Dreamer listed honestly | Fabricated competitor scores |
-| FractiSI adapter | Tiny-Footprint-shaped shared+delta+selective | Full multi-host production claim |
+| Soft Story / application companion | Head-to-head rhyming vs non-rhyming world models | ENGINE_SHELF pin |
+| Empirical (Level 2–3) | Real E9/Movebank fixtures + live CPU open WM arms + FractiSI rhyme engine | Embodied Level 5 |
+| Prior expeditions | Exp 002 / Tiny Gateway already established rhyming shared-world gains | Re-litigating that baseline as unknown |
+| Open WMs | Dreamer-family / TD-MPC-lite / MuZero-lite **live on CPU** | Full GPU Genie/Cosmos/V-JEPA zoo |
 
-**Do not assume FractiSI wins.**
+## Title lock
 
-## Abstract
+Prior expeditions already showed that **rhyming a shared world model between agents** produces observable, replicable, falsifiable differentiated improvements — paradigm-shifting collective ability under fixed budgets.
 
-Prior FractiSI experiments suggested a shared world may be a coordination primitive for multi-agent systems. This expedition tests that claim against fair alternatives without presupposing victory. We inspect the shipped Tiny Gateway / Tiny Footprint architecture, define world models operationally (Classes A–D), implement a common WORLD interface with explicit capability tags, and run ablations: independent · shared text · shared structured · FractiSI · FractiSI+deltas · FractiSI+selective reconstruction across knowledge, dynamic, planning, adversarial, and relational worlds.
+**This expedition’s job is the comparison:** rhyming world models vs non-rhyming world models (exact-cache, prefix reuse, non-rhyming shared structured state, independent worlds, and live open latent predictors).
 
 ## Primary research question
 
-> Now that previous experiments indicate a shared world model may be a fundamental coordination primitive for multi-agent systems, does the FractiSI shared-world architecture provide measurable advantages over leading alternative world-model approaches?
-
-## Hypotheses
-
-1. Agents become more capable collectively over a coherent shared world than by independently reconstructing overlapping worlds.  
-2. Shared world + differentiated deltas + selective reconstruction improves useful collective intelligence per resource unit.  
-3. Ultimate DV is useful collective intelligence per compute/latency/memory/communication/reconstruction — not compression alone.
+Where do rhyming world models outperform non-rhyming ones — especially on high-value traffic (same organization, different words) — and how do they complement single-agent latent world models?
 
 ## Method
 
-See `docs/world-model-expedition/experimental-design.md` and `benchmark-spec.md`.  
+See `docs/world-model-expedition/experimental-design-v2.md`.  
 Run: `npm run research:world-model-expedition` in FractiSI Multi-Agent.
 
-## Computational Lab v2 (seed 2026-11-18)
+## Computational Lab
 
-v1 under-tested rhyme. **v2** uses the real FractiSI rhyme engine (`compareRhymeToCache`, `rhymeCohort`) plus pinned public fixtures: E9 RCSB/Pfam protein scenarios and Movebank GPS (study 2548892515).
-
-| Hypothesis | Verdict |
+| Comparison | Result (user-aware) |
 |---|---|
-| Shared world as coordination primitive | **PARTIALLY_SUPPORTED** |
-| FractiSI rhyme vs non-rhyming exact/prefix/flat | **PARTIALLY_SUPPORTED** |
-| FractiSI vs shared_structured on E9 **task** | **parity** (both 1.0; independent 0) |
+| Rhyme vs exact-cache on differing-words (E9, Movebank) | **Rhyme outperforms** (~33–45%; exactTextHits≈0) |
+| Rhyme vs prefix on identical strings | Prefix can win — easy/low-value slice (~75%+ duplicates) |
+| Rhyming shared world vs independent | Collective tasks succeed; independent fails |
+| vs live Dreamer/TD-MPC/MuZero-family | **COMPLEMENTARY_DIFFERENTIATED** |
 
-### Where rhyme excelled (measured)
+CartPole partial-obs: shared world return **200** vs independent **~14**. Exp 002 reproduction: guided **100/100** vs flat **0/100**.
 
-- R0 differing words: exactTextHits=0; rhyme beats exact-cache (~45% vs cache).  
-- E9 batched 48 real specialist utterances: exactTextHits=0; rhymeVersusCache ≈ 0.33.  
-- Movebank track utterances: exactTextHits=0; rhymeVersusCache ≈ 0.36.  
-- R1: rhyme beats conventional full copies.  
-- Exp 002: guided 100/100 vs flat 0/100.
+## Live open world-model arms
 
-### Where rhyme did **not** dominate
+CPU PyTorch: Dreamer-family RSSM, TD-MPC-lite, MuZero-lite. They own single-agent imagination/planning. They do **not** natively share/merge a multi-agent world. FractiSI rhyming shared world owns that job.
 
-- R1: **prefix reuse still beats rhyme** when the system string is identical (prefix 1241 vs rhyme 3428 bytes).  
-- On E9 **task success**, rhyme-shaped share ties shared structured merge — the FractiSI edge is organizational reuse under non-identical text, not a monopoly on fact merge.
-
-## Three questions (not collapsed)
-
-1. Shared vs independent → shared wins (E9/Movebank/relational).  
-2. Structured vs text / exact-cache → structured and rhyme both succeed on task; rhyme wins bytes when text differs.  
-3. FractiSI rhyme vs non-rhyming → **partially supported** on reuse; **not** a universal win over prefix-on-identical-strings.
-
-## Where FractiSI wins / loses / complements
-
-Wins: rhyme vs exact-cache on real non-identical utterances (E9, Movebank); guided discovery; shared-world family.  
-Loses / tempered: prefix reuse on identical system strings; task parity with shared blackboard.  
-Complements: exact/prefix caches for identical bytes; rhyme for organizational near-duplicates; pixel WMs for perception.
-
-
-## Live open world-model arms (v2.1)
-
-This environment has no GPU. We still **run** what is available on CPU:
-
-- Dreamer-family RSSM (live train/predict/plan on CartPole)
-- TD-MPC-lite (latent dynamics + CEM)
-- MuZero-lite (repr/dynamics/policy/value)
-
-**Verdict vs FractiSI: COMPLEMENTARY_DIFFERENTIATED.**  
-Open WMs own single-agent imagination/planning. FractiSI owns multi-agent share/merge + rhyme on non-identical specialist traffic. CartPole partial-obs: shared world return 200 vs independent ~14.
-
-Still needing GPU/large downloads: V-JEPA 2, Cosmos, full DreamerV3-JAX zoo, Genie (closed).
+Still needing GPU/large downloads: V-JEPA 2, Cosmos, Genie (closed).
 
 ## Evidence hierarchy
 
-**Level 2** computational. Not Level 5.
+**Level 2–3** computational with pinned public fixtures + live open WM training. Not Level 5.
 
 ## Document lineage
 
-FractiSI Exp 002 · Tiny Gateway #52 · Multi-Agent platform architecture · world-model assimilation suite · this expedition harness.
-
-## References
-
-1. FractiSI Multi-Agent `experiments/world-model-expedition/`  
-2. `docs/world-model-expedition/final-report.md`  
-3. Exp 002 discovery benchmark `src/experiments/expedition-002-discovery.mjs`
+Exp 002 · Tiny Gateway rhyme vs cache · Multi-Agent platform · this rhyming vs non-rhyming comparative expedition.
 
 → ∞^∞

@@ -427,7 +427,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | When Tools Rewrite Themselves, Is Drift the Real Rent? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | When Tools Rewrite Themselves, Does φ Keep Meaning Intact? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-self-observing-genome-2026-09.html`](/interfaces/blog-self-observing-genome-2026-09.html) | DNA Is a Mirror You Can File — Not a Mind You Can Hire · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-shared-world-collective-intelligence-2026-11.html`](/interfaces/blog-shared-world-collective-intelligence-2026-11.html) | Do Shared Worlds Make Agents Smarter Together? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-shared-world-collective-intelligence-2026-11.html`](/interfaces/blog-shared-world-collective-intelligence-2026-11.html) | Do Rhyming World Models Outperform Non-Rhyming Ones? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html`](/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html) | Sing, Muse — Chart the Voyage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A Smaller Pack for the Golden Key · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html`](/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html) | When Old Rails Met New Roads · Ship blog · SS Vibelandia |

@@ -45,6 +45,18 @@ Run: `npm run research:world-model-expedition` in FractiSI Multi-Agent.
 
 CartPole partial-obs: shared world return **200** vs independent **~14**. Exp 002 reproduction: guided **100/100** vs flat **0/100**.
 
+## EXECUTABLE status lock
+
+| Arm | Status on this expedition |
+|---|---|
+| Dreamer-family RSSM | **EXECUTABLE** (live CPU train/predict/plan) |
+| TD-MPC-lite | **EXECUTABLE** (live CPU) |
+| MuZero-lite | **EXECUTABLE** (live CPU) |
+| FractiSI rhyme engine | **EXECUTABLE** |
+| V-JEPA 2 | Not on this CPU VM (needs GPU) |
+| Cosmos | Not on this CPU VM (needs GPU) |
+| Genie 3/4 | Closed — no weights |
+
 ## Live open world-model arms
 
 CPU PyTorch: Dreamer-family RSSM, TD-MPC-lite, MuZero-lite. They own single-agent imagination/planning. They do **not** natively share/merge a multi-agent world. FractiSI rhyming shared world owns that job.

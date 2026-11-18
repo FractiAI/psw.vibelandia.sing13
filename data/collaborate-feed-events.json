@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-06T09:36:14.580Z",
+  "updatedAt": "2026-11-18T00:14:51.276Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-18T00:14:51.275Z",
+      "body": "LLM Rhyme Expedition — Cosmic Catalogs and the Human Genome",
+      "presenceHue": "gold",
+      "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+      "artifact": {
+        "title": "LLM Rhyme Expedition — Cosmic Catalogs and the Human Genome",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_LLM_RHYME_COSMIC_GENOME_EXPEDITION_EGS_2026-11.md",
+        "url": "/whitepaper/llm-rhyme-cosmic-genome",
+        "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+        "docId": "WP-LLM-RHYME-COSMIC-GENOME-EXPEDITION-EGS-2026-11-18",
+        "published": "2026-11-18T01:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-cosmic-rhyme-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-18T00:06:03.071Z",
+      "body": "Cosmic Rhyme Expedition — Searching for New Relational Patterns in the Cosmic Layer",
+      "presenceHue": "gold",
+      "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
+      "artifact": {
+        "title": "Cosmic Rhyme Expedition — Searching for New Relational Patterns in the Cosmic Layer",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_COSMIC_RHYME_EXPEDITION_EGS_2026-11.md",
+        "url": "/whitepaper/cosmic-rhyme-expedition",
+        "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
+        "docId": "WP-COSMIC-RHYME-EXPEDITION-EGS-2026-11-17",
+        "published": "2026-11-17T23:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-fractisi-expedition-002-beyond-memory-2026-11",
       "type": "ArtifactEvent",

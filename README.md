@@ -294,7 +294,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-17** · **409** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-18** · **410** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -382,6 +382,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-linear-shadow-fractal-2026-09-old.html`](/interfaces/blog-linear-shadow-fractal-2026-09-old.html) | The Scoreboard Is Not the Whole Game · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | When Progress Is Measured on One Axis, What Does the Shadow Miss? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-living-architect-protective-lattice-2026-10.html`](/interfaces/blog-living-architect-protective-lattice-2026-10.html) | Can Coral Skeletons and Mollusk Shells Share the Same Protective Architecture That Helps Agents Boot Up? · Ship blog · S |
+| [`/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html`](/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html) | When You Pack the Sky and the Genome as Language, Does the Folding Rhyme Still Show Up? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as Work Engines on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as Magnets That Hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Pressure Cooks You Denser — Stay Goldilocks · Ship blog · SS Vibelandia |

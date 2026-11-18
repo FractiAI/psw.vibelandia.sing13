@@ -86,30 +86,22 @@ C4d NEO: residualize against distance.
 
 A candidate_novel_physics hit must beat nulls and must not sit in the locked known-template list. Candidate ≠ confirmed law.
 
-### C5 — LLM / language-pack rhyme (E9–E11 packing on cosmic fixtures)
+### C5 — LLM / language-pack rhyme (**split out**)
 
-C1 answers the folding rhyme in feature space. C5 asks whether the **same rhyme appears when cosmic observations are packed as language** the way E9–E11 packed proteins / Hotpot / FRED for LLMs.
+Language-pack ownership moved to the dedicated expedition:
 
-For each C1-style long-range partner task on exoplanets, NEOs, OpenNGC, and WMAP TT:
+- Paper: `docs/SYNTHOBS_LLM_RHYME_COSMIC_GENOME_EXPEDITION_EGS_2026-11.md`
+- Suite: `research/synthobs-llm-rhyme-cosmic-genome-expedition/`
+- Ship blog: `/ship-blog/llm-rhyme-cosmic-genome`
 
-1. **LINEAR pack** — query + local RA/time/ℓ window feature lines only.  
-2. **FLAT pack** — query + unstructured dump of train/local/distractor lines (no ranks).  
-3. **AWARE pack** — query + `LEADING RELATIONAL CANDIDATE` + ranked `RELATIONAL AWARENESS BOARD` from measured couplings (no gold labels in the board construction).
-
-**Default runner (CI):** pack-compliant reader — follows AWARE leading candidate / first local / first dump id. Proves the rhyme lives in the language pack without a network call.  
-**Contrast:** lexical-blind reader (token overlap with query line; ignores board ranks).  
-**Optional live LLM:** if `COSMIC_LLM_URL` + `COSMIC_LLM_KEY` are set, same packs may be sent to a model; not required for expedition signal. Same H1/H2 thresholds as C1. Token/char economics reported (H3-style).
-
-C5 is secondary to C1–C4. Pack-compliant AWARE wins ≠ frontier model superiority ≠ novel physics.
-
-**Legend (map of LLM rhymes → cosmic data):** `LLM_RHYME_LEGEND.md` and code export `LLM_RHYME_COSMIC_LEGEND` in `src/llm-rhyme.mjs`. Domain bridge E9/E10/E11 → exoplanet/neo/ngc/wmap_tt layers; pack arms LINEAR/FLAT/AWARE. Receipts include `c5.legend`.
+That suite covers cosmic language packs **and** a human-genome demonstration/exploration arm. Cosmic Rhyme keeps C1–C4. Historical C5 code may remain as a pointer / compatibility shim.
 
 ## Honesty boundary (locks)
 
 - Application companion expedition — **not** ENGINE_SHELF, not a claim of new fundamental physics, not a Universe ontology.  
 - Architecture / representation result: relational boards can expose structure hard to recover linearly from the **same** public observations.  
 - Surviving motifs require held-out + null survival; rediscoveries are reported as rediscoveries.  
-- C1–C4 need no LLM. C5 default is language-pack / pack-compliant (deterministic). Live LLM is optional and not a bake-off claim.
+- C1–C4 need no LLM. Language-pack rhyme lives in the LLM Rhyme expedition.
 
 ## Verdict rules
 

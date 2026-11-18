@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-18T03:23:57.000Z",
+  "updatedAt": "2026-11-18T22:46:46.674Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-pilot-rhyme-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-18T22:46:46.673Z",
+      "body": "Pilot Rhyme Expedition — Director and Pilot Seats that Share One World",
+      "presenceHue": "gold",
+      "paperId": "synthobs-pilot-rhyme-expedition-2026-11",
+      "artifact": {
+        "title": "Pilot Rhyme Expedition — Director and Pilot Seats that Share One World",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_PILOT_RHYME_EXPEDITION_EGS_2026-11.md",
+        "url": "/whitepaper/pilot-rhyme-expedition",
+        "paperId": "synthobs-pilot-rhyme-expedition-2026-11",
+        "docId": "WP-PILOT-RHYME-EXPEDITION-EGS-2026-11-18",
+        "published": "2026-11-18T22:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_lattice-chat-product-engineering-manual-2026-09",
       "type": "ArtifactEvent",

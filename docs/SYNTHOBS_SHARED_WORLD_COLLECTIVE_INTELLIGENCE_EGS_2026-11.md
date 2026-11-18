@@ -81,3 +81,8 @@ Exp 002 · Tiny Gateway rhyme vs cache · Multi-Agent platform · this rhyming v
 - **Rhyme features of the FractiSI Multi-Agent World Model:** Rhyming Templates, Shared-World Rhyme, Protein Folding Rhyme (#53, new), LLM Rhyme (#54, new).
 
 → ∞^∞
+
+
+## Addendum · 2026-11-18 · Pilot Rhyme (#55)
+
+Fifth World Model rhyme feature: Director/Pilot role rhyme. Lab: 100/100 vs flat 0/100; exact role cache 0 hits; Pilot Rhyme store 22% smaller than exact cache and 80% smaller than private copies. Paper: `/whitepaper/pilot-rhyme-expedition` · ship blog `/ship-blog/pilot-rhyme-expedition`.

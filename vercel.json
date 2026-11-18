@@ -4,11 +4,38 @@
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
-    { "source": "/ship-blog/shared-world-collective-intelligence", "destination": "/interfaces/blog-shared-world-collective-intelligence-2026-11.html" },
-    { "source": "/ship-blog/shared-world-collective-intelligence/", "destination": "/interfaces/blog-shared-world-collective-intelligence-2026-11.html" },
-    { "source": "/whitepaper/shared-world-collective-intelligence", "destination": "/api/whitepaper?id=synthobs-shared-world-collective-intelligence-2026-11" },
-    { "source": "/whitepaper/shared-world-collective-intelligence/", "destination": "/api/whitepaper?id=synthobs-shared-world-collective-intelligence-2026-11" },
-
+    {
+      "source": "/whitepaper/pilot-rhyme-expedition/",
+      "destination": "/api/whitepaper?id=synthobs-pilot-rhyme-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/pilot-rhyme-expedition",
+      "destination": "/api/whitepaper?id=synthobs-pilot-rhyme-expedition-2026-11"
+    },
+    {
+      "source": "/ship-blog/pilot-rhyme-expedition/",
+      "destination": "/interfaces/blog-pilot-rhyme-expedition-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/pilot-rhyme-expedition",
+      "destination": "/interfaces/blog-pilot-rhyme-expedition-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/shared-world-collective-intelligence",
+      "destination": "/interfaces/blog-shared-world-collective-intelligence-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/shared-world-collective-intelligence/",
+      "destination": "/interfaces/blog-shared-world-collective-intelligence-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/shared-world-collective-intelligence",
+      "destination": "/api/whitepaper?id=synthobs-shared-world-collective-intelligence-2026-11"
+    },
+    {
+      "source": "/whitepaper/shared-world-collective-intelligence/",
+      "destination": "/api/whitepaper?id=synthobs-shared-world-collective-intelligence-2026-11"
+    },
     {
       "source": "/",
       "destination": "/interfaces/omniverse-canvas.html"

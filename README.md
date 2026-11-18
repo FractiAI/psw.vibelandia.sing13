@@ -46,7 +46,7 @@ Honesty: silicon **vocabulary** for the engine — not a foundry tape-out. Full 
 | **Paper** | [`docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md`](docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md) |
 | **Ship blog** | [/ship-blog/fractisi-multi-agent-platform](https://www.ssvibelandiaquestfest24x365.com/ship-blog/fractisi-multi-agent-platform) |
 | **Latest result** | **Rhyming vs non-rhyming world models** — rhyme −33% to −45% bytes vs exact cache on real PDB/Pfam and Movebank traffic · shared world 5×–20× lower next-state error than private copies of the same model · upstream DreamerV3 / MuZero / TD-MPC2 / V-JEPA 2 executed locally · complementary to live Dreamer / TD-MPC / MuZero-family arms · [/ship-blog/shared-world-collective-intelligence](https://www.ssvibelandiaquestfest24x365.com/ship-blog/shared-world-collective-intelligence) |
-| **World Model features · Rhyme** | Four rhyme features: **Rhyming Templates** (structure reuse) · **Shared-World Rhyme** (multi-agent share/merge) · **Protein Folding Rhyme** (new · ENGINE_SHELF #53 · [/ship-blog/cosmic-rhyme-expedition](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cosmic-rhyme-expedition)) · **LLM Rhyme** (new · ENGINE_SHELF #54 · [/ship-blog/llm-rhyme-cosmic-genome](https://www.ssvibelandiaquestfest24x365.com/ship-blog/llm-rhyme-cosmic-genome)) |
+| **World Model features · Rhyme** | Four rhyme features: **Rhyming Templates** (structure reuse) · **Shared-World Rhyme** (multi-agent share/merge) · **Protein Folding Rhyme** (new · ENGINE_SHELF #53 · [/ship-blog/cosmic-rhyme-expedition](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cosmic-rhyme-expedition)) · **Pilot Rhyme** (new · ENGINE_SHELF #55 · [/ship-blog/pilot-rhyme-expedition](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pilot-rhyme-expedition)) · **LLM Rhyme** (ENGINE_SHELF #54 · [/ship-blog/llm-rhyme-cosmic-genome](https://www.ssvibelandiaquestfest24x365.com/ship-blog/llm-rhyme-cosmic-genome)) |
 
 Honesty: application companion architecture — not ENGINE_SHELF; adapters normalize IDE messages and do not yet auto-drive live Cursor/Claude sessions.
 
@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-18** · **411** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-18** · **412** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -411,6 +411,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-pacing-paradox-2026-09.html`](/interfaces/blog-pacing-paradox-2026-09.html) | Slow the Race — or Change the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | One Brief for the Whole Crew · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-phase-aware-consensus-calculus-2026-10.html`](/interfaces/blog-phase-aware-consensus-calculus-2026-10.html) | When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-pilot-rhyme-expedition-2026-11.html`](/interfaces/blog-pilot-rhyme-expedition-2026-11.html) | Pilot Rhyme: One Map-Holder, Many Local Agents · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth Letting Go at the Core · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | Plants Keep Building Under Pressure · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09-old.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09-old.html) | Memory Without the Parity Tax · Ship blog · SS Vibelandia |

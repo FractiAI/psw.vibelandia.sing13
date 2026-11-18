@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-18T01:44:38.336Z",
+  "updatedAt": "2026-11-18T03:23:57.000Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-18T01:44:38.336Z",
+      "createdAt": "2026-11-18T03:23:57.000Z",
       "body": "Product Engineering Manual � Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
       "presenceHue": "gold",
       "paperId": "lattice-chat-product-engineering-manual-2026-09",
@@ -29,34 +29,12 @@
       }
     },
     {
-      "id": "wp_synthobs-cosmic-rhyme-expedition-2026-11",
-      "type": "ArtifactEvent",
-      "platform": "lattice",
-      "actor": "SynthOBS",
-      "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-18T01:44:38.332Z",
-      "body": "Cosmic Rhyme Expedition — Exploring Protein Folding Rhymes on Public Sky Catalogs",
-      "presenceHue": "gold",
-      "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
-      "artifact": {
-        "title": "Cosmic Rhyme Expedition — Exploring Protein Folding Rhymes on Public Sky Catalogs",
-        "kind": "whitepaper",
-        "path": "docs/SYNTHOBS_COSMIC_RHYME_EXPEDITION_EGS_2026-11.md",
-        "url": "/whitepaper/cosmic-rhyme-expedition",
-        "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
-        "docId": "WP-COSMIC-RHYME-EXPEDITION-EGS-2026-11-17",
-        "published": "2026-11-17T23:00:00Z",
-        "featured": true,
-        "auditStatus": "pass"
-      }
-    },
-    {
       "id": "wp_synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
       "type": "ArtifactEvent",
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-18T01:44:38.330Z",
+      "createdAt": "2026-11-18T03:23:56.995Z",
       "body": "LLM Rhyme Expedition — Exploring the LLM Rhyme on Cosmic Catalogs and the Human Genome",
       "presenceHue": "gold",
       "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
@@ -68,6 +46,28 @@
         "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
         "docId": "WP-LLM-RHYME-COSMIC-GENOME-EXPEDITION-EGS-2026-11-18",
         "published": "2026-11-18T01:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-cosmic-rhyme-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-18T03:23:56.992Z",
+      "body": "Cosmic Rhyme Expedition — Exploring Protein Folding Rhymes on Public Sky Catalogs",
+      "presenceHue": "gold",
+      "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
+      "artifact": {
+        "title": "Cosmic Rhyme Expedition — Exploring Protein Folding Rhymes on Public Sky Catalogs",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_COSMIC_RHYME_EXPEDITION_EGS_2026-11.md",
+        "url": "/whitepaper/cosmic-rhyme-expedition",
+        "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
+        "docId": "WP-COSMIC-RHYME-EXPEDITION-EGS-2026-11-17",
+        "published": "2026-11-17T23:00:00Z",
         "featured": true,
         "auditStatus": "pass"
       }

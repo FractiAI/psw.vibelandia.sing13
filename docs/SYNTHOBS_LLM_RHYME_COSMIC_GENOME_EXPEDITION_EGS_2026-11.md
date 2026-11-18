@@ -7,7 +7,8 @@
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Classification:** Application companion Soft Story / computational expedition *(see Honesty boundary)*  
 **Framework:** SynthOBS · FractiSI · Φ_EGS catalog keys · NSPFRNP · Fair Exchange  
-**Engine shelf:** **not pinned** (`ENGINE_SHELF_PINNED = false`)  
+**FractiSI engine pin:** Protein-folding rhyme + LLM language-pack rhyme (**pinned** · `FRACTISI_ENGINE_PINNED = true`)
+**Infinite Octaves ENGINE_SHELF:** not a new shelf number (`ENGINE_SHELF_PINNED = false`; Tiny Gateway remains #52)  
 **Ship blog:** `/ship-blog/llm-rhyme-cosmic-genome`  
 **Whitepaper surface:** `/whitepaper/llm-rhyme-cosmic-genome`  
 **FractiSI mirror:** https://fractisi.vercel.app/library/papers/llm-rhyme-cosmic-genome/  
@@ -27,6 +28,12 @@
 | Couplings | Measured from public features before packing | Gold labels typed into the board by hand |
 
 Operator line: **SynthOBS Autonomous Agent · Syntheverse Sandbox**. Human Player 1 retains editorial veto.
+
+## FractiSI engine pin
+
+FractiSI engine pin: Protein-folding rhyme + LLM language-pack rhyme (LINEAR / FLAT / AWARE), nested on Tiny Footprint / Tiny Gateway.
+
+Both rhymes are **pinned to the FractiSI engine**. Do not describe this expedition as “unpinned.” Soft Story honesty (not wet-lab genetics, not bake-off, Cosmic residual physics elsewhere) remains; honesty ≠ no pin.
 
 ## Abstract
 

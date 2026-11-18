@@ -1685,8 +1685,6 @@
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-fractisi-multi-agent-platform-2026-11"
     },
     {
-
-    {
       "source": "/ship-blog/llm-rhyme-cosmic-genome",
       "destination": "/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html"
     },
@@ -1702,6 +1700,7 @@
       "source": "/whitepaper/llm-rhyme-cosmic-genome/",
       "destination": "/interfaces/whitepaper-surface.html?id=synthobs-llm-rhyme-cosmic-genome-expedition-2026-11"
     },
+    {
       "source": "/ship-blog/cosmic-rhyme-expedition",
       "destination": "/interfaces/blog-cosmic-rhyme-expedition-2026-11.html"
     },

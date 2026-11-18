@@ -224,38 +224,38 @@
     </section>
 
     <section class="tf-diff-board" role="region" aria-label="Why teams visit — full lab differentiators">
-      <h2>Why teams visit · full lab differentiators</h2>
-      <p class="tf-diff-why">Results vs <strong>flat skim</strong>, <strong>full-copy</strong>, <strong>gzip-only</strong>, and <strong>exact-text / prefix cache</strong> — what multi-agent teams come here to find.</p>
+      <h2>What the tests show</h2>
+      <p class="tf-diff-why">Compared with skimming, full copies per agent, compression alone, and caches that only match identical text. What agent teams come here to find.</p>
       <div class="tf-diff-stats">
         <div class="tf-diff-stat">
-          <strong>Sees what flat models miss</strong>
-          <p class="tf-price">100 / 100 vs 0 / 100</p>
-          <p>Expedition 002 · guided recovery finds chains, anomalies, solutions. Flat skim: zero.</p>
+          <strong>Finds answers others miss</strong>
+          <p class="tf-price">100 of 100 vs 0</p>
+          <p>A shared world assembled every hidden chain. Skimming found none.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Converges on answers faster</strong>
-          <p class="tf-price">−50% rounds · −85% ops</p>
-          <p>3 rounds vs 6; mean 6 ops vs 40 on the same constrained discovery path.</p>
+          <strong>Gets to the answer faster</strong>
+          <p class="tf-price">Half the rounds</p>
+          <p>Three rounds instead of six, and 85% fewer operations, on the same search.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Density vs full per-agent copy</strong>
-          <p class="tf-price">36.91× – 62.41×</p>
-          <p>Dup cut 89.6%–99.2%. Selective coarse-only ~99.5% fewer runtime bytes.</p>
+          <strong>More agents per machine</strong>
+          <p class="tf-price">36× to 62×</p>
+          <p>The shared world is stored once. Each agent adds only its difference.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Still wins after gzip</strong>
-          <p class="tf-price">~42%+ residual</p>
-          <p>Shared pack vs naive copies — ~42% residual after gzip (smaller world); ~98% when world dominates. Compression shrinks copies; it does not remove the cross-copy tax.</p>
+          <strong>Still smaller after compression</strong>
+          <p class="tf-price">42%+ smaller</p>
+          <p>Compressing full copies does not remove the repeated content. A shared world does.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Beats exact-text cache when words differ</strong>
-          <p class="tf-price">−33% to −45% vs exact cache</p>
-          <p>Real RCSB PDB / Pfam and Movebank GPS traffic: exact cache hit zero times; rhyme used a third to nearly half fewer bytes. Exact cache and prefix reuse still win on identical text.</p>
+          <strong>Smaller when the words change</strong>
+          <p class="tf-price">33% to 49% smaller</p>
+          <p>Real protein, GPS and agent messages. An exact-match cache never hit; rhyme stored the same traffic in a third to a half less space. With identical text, an exact cache still wins.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Tiny Gateway · DRAM &amp; materialize</strong>
-          <p class="tf-price">84.5% · 81.4% · ~9.6×</p>
-          <p>Aggregate cut 84.5% · GPU alloc proxy 81.4% · materialize ~9.6×. H100 rhyme-vs-prefix ~34% is simulation only.</p>
+          <strong>Tiny Gateway · memory</strong>
+          <p class="tf-price">84.5% · 81.4%</p>
+          <p>Less data held and less GPU memory allocated. Lab measurement; the H100 result is a simulation.</p>
         </div>
       </div>
       <p class="tf-diff-foot">Architectural / structured-state labs — not CapEx guarantees, not an LLM bake-off, not established “80% DRAM for AI serving.” <a href="/ship-blog/fractisi-expedition-002-beyond-memory">Exp 002</a> · <a href="/whitepaper/tiny-gateway-rhyming-templates">Tiny Gateway</a> · <a href="/fractisi/pricing">Pricing</a>.</p>

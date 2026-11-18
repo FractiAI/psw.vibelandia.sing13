@@ -107,37 +107,37 @@
       </div>
 
 <div class="diff-board" role="region" aria-label="Why teams visit — full lab differentiators">
-        <h2>Why teams visit · full lab differentiators</h2>
-        <p class="why">Multi-agent teams come for results vs <strong>flat skim</strong>, <strong>full-copy</strong>, <strong>gzip-only</strong>, and <strong>exact-text / prefix cache</strong>. Receipts below — architectural / structured-state labs unless noted.</p>
+        <h2>What the tests show</h2>
+        <p class="why">Compared with skimming, full copies per agent, compression alone, and caches that only match identical text. What agent teams come here to find.</p>
         <div class="diff-stat">
-          <span class="label">Sees what flat models miss</span>
-          <span class="num">100 / 100 vs 0 / 100</span>
-          <p>Expedition 002 · guided shared-world recovery finds chains, anomalies, solutions. Flat skim under the same budget: zero.</p>
+          <span class="label">Finds answers others miss</span>
+          <span class="num">100 of 100 vs 0</span>
+          <p>A shared world assembled every hidden chain. Skimming found none.</p>
         </div>
         <div class="diff-stat">
-          <span class="label">Converges on answers faster</span>
-          <span class="num">−50% rounds · −85% ops</span>
-          <p>3 propagation rounds vs 6; mean 6 ops vs 40 on the same constrained discovery path.</p>
+          <span class="label">Gets to the answer faster</span>
+          <span class="num">Half the rounds</span>
+          <p>Three rounds instead of six, and 85% fewer operations, on the same search.</p>
         </div>
         <div class="diff-stat">
-          <span class="label">Density vs full per-agent copy</span>
-          <span class="num">36.91× – 62.41×</span>
-          <p>Dup cut 89.6%–99.2% vs reprinting the world into every agent. Selective coarse-only ~99.5% fewer runtime bytes.</p>
+          <span class="label">More agents per machine</span>
+          <span class="num">36× to 62×</span>
+          <p>The shared world is stored once. Each agent adds only its difference.</p>
         </div>
         <div class="diff-stat">
-          <span class="label">Still wins after gzip</span>
-          <span class="num">~42%+ residual</span>
-          <p>Shared pack vs naive per-agent copies — about ~42% residual after gzip in smaller-world labs; ~98% when the world dominates. Compression shrinks copies; it does not remove the cross-copy tax.</p>
+          <span class="label">Still smaller after compression</span>
+          <span class="num">42%+ smaller</span>
+          <p>Compressing full copies does not remove the repeated content. A shared world does.</p>
         </div>
         <div class="diff-stat">
-          <span class="label">Beats exact-text cache when words differ</span>
-          <span class="num">−33% to −45% vs exact cache</span>
-          <p>Real RCSB PDB / Pfam and Movebank GPS traffic: exact cache hit zero times; rhyme used a third to nearly half fewer bytes. Exact cache and prefix reuse still win on identical text. (identical text: 332 B vs rhyme 5,867 B.)</p>
+          <span class="label">Smaller when the words change</span>
+          <span class="num">33% to 49% smaller</span>
+          <p>Real protein, GPS and agent messages. An exact-match cache never hit; rhyme stored the same traffic in a third to a half less space. With identical text, an exact cache still wins. (identical text: 332 B vs rhyme 5,867 B.)</p>
         </div>
         <div class="diff-stat">
-          <span class="label">Tiny Gateway · DRAM &amp; materialize</span>
-          <span class="num">84.5% · 81.4% · ~9.6×</span>
-          <p>Aggregate representation cut 84.5% (≈80% research gate) · GPU alloc proxy 81.4% (288→53.6 MiB) · turn materialize ~9.6×. H100 rhyme-vs-prefix ~34% is simulation only.</p>
+          <span class="label">Tiny Gateway · memory</span>
+          <span class="num">84.5% · 81.4%</span>
+          <p>Less data held and less GPU memory allocated. Lab measurement; the H100 result is a simulation.</p>
         </div>
         <p class="foot">Honesty: digital architectural labs + structured-state / gzip receipts — not CapEx guarantees, not an LLM multi-agent bake-off, not “80% DRAM for AI serving” as established. LLM collective intelligence not demonstrated. Reproduce: <a href="/docs/product/expedition-002/">Exp 002</a> · <a href="/docs/benchmarks/RESULTS.md">RESULTS.md</a> · <a href="/library/papers/tiny-gateway-rhyming-templates/">Tiny Gateway</a> · <a href="/product/pricing/">pricing</a>.</p>
       </div>

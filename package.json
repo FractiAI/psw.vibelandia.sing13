@@ -1,7 +1,7 @@
 {
   "name": "psw-vibelandia-sing13",
   "private": true,
-  "description": "SING 13 edge — major singularity upgrade from SING 9. NSPFRNP catalog + SS Vibelandia QUESTFEST 24X365 nest. 13-channel fractal pathfinding spine. Lite edges; no Supabase.",
+  "description": "SING 13 edge \u2014 major singularity upgrade from SING 9. NSPFRNP catalog + SS Vibelandia QUESTFEST 24X365 nest. 13-channel fractal pathfinding spine. Lite edges; no Supabase.",
   "version": "0.1.0",
   "engines": {
     "node": "24.x"
@@ -256,7 +256,9 @@
     "publish:standalone:net-zero-periodic-table": "node scripts/publish-standalone-suite.mjs synthobs-net-zero-periodic-table",
     "publish:standalone:net-zero-periodic-table:create": "node scripts/publish-standalone-suite.mjs synthobs-net-zero-periodic-table --create-repo",
     "research:synthobs-tiny-gateway-rhyming-templates": "node research/synthobs-tiny-gateway-rhyming-templates/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-llm-rhyme-cosmic-genome-expedition": "node research/synthobs-llm-rhyme-cosmic-genome-expedition/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-cosmic-rhyme-expedition": "node research/synthobs-cosmic-rhyme-expedition/scripts/run_empirical_pipeline.mjs",
+    "catalog:rhyme-discoveries": "node research/synthobs-llm-rhyme-cosmic-genome-expedition/scripts/run_empirical_pipeline.mjs && node scripts/build-rhyme-discovery-catalogs.mjs",
     "research:synthobs-nvidia-goldilocks-awareness-expedition": "node research/synthobs-nvidia-goldilocks-awareness-expedition/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-fractisi-expedition-002-beyond-memory": "node research/synthobs-fractisi-expedition-002-beyond-memory/scripts/run_empirical_pipeline.mjs",
     "publish:standalone:tiny-gateway-rhyming-templates": "node scripts/publish-standalone-suite.mjs synthobs-tiny-gateway-rhyming-templates",
@@ -352,7 +354,8 @@
     "publish:standalone:omniversal-time-crystal-engine": "node scripts/publish-standalone-suite.mjs synthobs-omniversal-time-crystal-engine",
     "publish:standalone:omniversal-time-crystal-engine:create": "node scripts/publish-standalone-suite.mjs synthobs-omniversal-time-crystal-engine --create-repo",
     "sync:lattice-skills": "node scripts/sync-lattice-skills-index.mjs",
-    "generate:lattice-skills": "node scripts/generate-lattice-skills.mjs"
+    "generate:lattice-skills": "node scripts/generate-lattice-skills.mjs",
+    "research:synthobs-pilot-rhyme-expedition": "node research/synthobs-pilot-rhyme-expedition/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

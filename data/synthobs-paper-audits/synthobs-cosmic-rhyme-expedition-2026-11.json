@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "75b69aec78f77c4b",
+  "auditId": "920610b97205c991",
   "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
   "sourcePath": "docs/SYNTHOBS_COSMIC_RHYME_EXPEDITION_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-17T23:36:05.008Z"
+          "invokedAt": "2026-11-18T03:23:56.990Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-17T23:36:05.007Z",
-  "completedAt": "2026-11-17T23:36:05.009Z",
+  "startedAt": "2026-11-18T03:23:56.989Z",
+  "completedAt": "2026-11-18T03:23:56.991Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 911,
+      "wordCount": 1316,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 0,
-        "numbered": 14,
+        "numbered": 15,
         "citeLines": 7
       }
     }

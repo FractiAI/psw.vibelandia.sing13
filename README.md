@@ -45,6 +45,8 @@ Honesty: silicon **vocabulary** for the engine — not a foundry tape-out. Full 
 | **Sandbox demo** | `node scripts/tiny.mjs try` in the kit (optional `--no-deploy`) |
 | **Paper** | [`docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md`](docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md) |
 | **Ship blog** | [/ship-blog/fractisi-multi-agent-platform](https://www.ssvibelandiaquestfest24x365.com/ship-blog/fractisi-multi-agent-platform) |
+| **Latest result** | **Rhyming vs non-rhyming world models** — rhyme −33% to −45% bytes vs exact cache on real PDB/Pfam and Movebank traffic · shared world 5×–20× lower next-state error than private copies of the same model · upstream DreamerV3 / MuZero / TD-MPC2 / V-JEPA 2 executed locally · complementary to live Dreamer / TD-MPC / MuZero-family arms · [/ship-blog/shared-world-collective-intelligence](https://www.ssvibelandiaquestfest24x365.com/ship-blog/shared-world-collective-intelligence) |
+| **World Model features · Rhyme** | Four rhyme features: **Rhyming Templates** (structure reuse) · **Shared-World Rhyme** (multi-agent share/merge) · **Protein Folding Rhyme** (new · ENGINE_SHELF #53 · [/ship-blog/cosmic-rhyme-expedition](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cosmic-rhyme-expedition)) · **Pilot Rhyme** (new · ENGINE_SHELF #55 · [/ship-blog/pilot-rhyme-expedition](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pilot-rhyme-expedition)) · **LLM Rhyme** (ENGINE_SHELF #54 · [/ship-blog/llm-rhyme-cosmic-genome](https://www.ssvibelandiaquestfest24x365.com/ship-blog/llm-rhyme-cosmic-genome)) |
 
 Honesty: application companion architecture — not ENGINE_SHELF; adapters normalize IDE messages and do not yet auto-drive live Cursor/Claude sessions.
 
@@ -294,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-17** · **409** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-18** · **412** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -320,7 +322,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-computation-workhorse-science-2026-10.html`](/interfaces/blog-computation-workhorse-science-2026-10.html) | Should Computation Become the Primary Workhorse of Science? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09-old.html`](/interfaces/blog-consciousness-moat-2026-09-old.html) | The Machine-Feelings Fight Misses the Blueprint · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | When Labs Argue Model Welfare, What Shared Blind Spot Remains? · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-cosmic-rhyme-expedition-2026-11.html`](/interfaces/blog-cosmic-rhyme-expedition-2026-11.html) | When Cosmic Catalogs Are Read as Relationships, What New Patterns Survive? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-cosmic-rhyme-expedition-2026-11.html`](/interfaces/blog-cosmic-rhyme-expedition-2026-11.html) | Protein Folding as a Rhyme for the Sky · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09-old.html`](/interfaces/blog-crystalline-unified-field-2026-09-old.html) | Your Commute Is One Crystal, Not Three Meters · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Speed, Distance, Time — One Crystal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html) | Four and Eight Are Memory, Not Destiny · Ship blog · SS Vibelandia |
@@ -382,6 +384,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-linear-shadow-fractal-2026-09-old.html`](/interfaces/blog-linear-shadow-fractal-2026-09-old.html) | The Scoreboard Is Not the Whole Game · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | When Progress Is Measured on One Axis, What Does the Shadow Miss? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-living-architect-protective-lattice-2026-10.html`](/interfaces/blog-living-architect-protective-lattice-2026-10.html) | Can Coral Skeletons and Mollusk Shells Share the Same Protective Architecture That Helps Agents Boot Up? · Ship blog · S |
+| [`/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html`](/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html) | Exploring the LLM Rhyme on Sky and Genome · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as Work Engines on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as Magnets That Hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Pressure Cooks You Denser — Stay Goldilocks · Ship blog · SS Vibelandia |
@@ -408,6 +411,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-pacing-paradox-2026-09.html`](/interfaces/blog-pacing-paradox-2026-09.html) | Slow the Race — or Change the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html`](/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html) | One Brief for the Whole Crew · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-phase-aware-consensus-calculus-2026-10.html`](/interfaces/blog-phase-aware-consensus-calculus-2026-10.html) | When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-pilot-rhyme-expedition-2026-11.html`](/interfaces/blog-pilot-rhyme-expedition-2026-11.html) | Pilot Rhyme: One Map-Holder, Many Local Agents · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth Letting Go at the Core · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | Plants Keep Building Under Pressure · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09-old.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09-old.html) | Memory Without the Parity Tax · Ship blog · SS Vibelandia |
@@ -426,6 +430,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | When Tools Rewrite Themselves, Is Drift the Real Rent? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | When Tools Rewrite Themselves, Does φ Keep Meaning Intact? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-self-observing-genome-2026-09.html`](/interfaces/blog-self-observing-genome-2026-09.html) | DNA Is a Mirror You Can File — Not a Mind You Can Hire · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-shared-world-collective-intelligence-2026-11.html`](/interfaces/blog-shared-world-collective-intelligence-2026-11.html) | Do Rhyming World Models Outperform Non-Rhyming Ones? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html`](/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html) | Sing, Muse — Chart the Voyage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A Smaller Pack for the Golden Key · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html`](/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html) | When Old Rails Met New Roads · Ship blog · SS Vibelandia |

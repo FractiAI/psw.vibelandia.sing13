@@ -42,7 +42,7 @@
       <p class="tf-kicker">FractiSI · flagship product · Tiny Footprint core · Tiny Gateway™</p>
       <h1 class="tf-brand">FractiSI Multi-Agent</h1>
       <p class="tf-tagline">The Fractal Holographic Goldilocks World Model for Digital (and Human) Agents.</p>
-      <p class="tf-sub">Full board: <strong>100/100 vs flat</strong> · <strong>−50% rounds</strong> · <strong>36–62×</strong> vs full-copy · <strong>~42%+</strong> still after gzip · rhyme <strong>beats exact-text cache</strong> when words differ · Tiny Gateway <strong>84.5% / 81.4%</strong>. Beside the AI you already run.</p>
+      <p class="tf-sub">One shared world for your agents, and it recognizes repeat work even when the words change: <strong>33% to 49% smaller</strong> messages, <strong>100 of 100</strong> hidden answers found vs 0, <strong>36–62×</strong> more agents per machine. Beside the AI you already run.</p>
       <div class="tf-cta">
         <a class="tf-cta__gold" href="/tiny-footprint/download">Try FractiSI Multi-Agent</a>
         <a class="tf-cta__ghost" href="/tiny-footprint/simple">Simple breakdown</a>
@@ -54,6 +54,29 @@
   <main class="tf-wrap">
 
     
+    <section class="tf-diff-board" id="head-to-head" role="region" aria-label="Rhyming vs non-rhyming world models">
+      <h2>Rhyming vs non-rhyming world models</h2>
+      <p class="tf-diff-why">Real agent work is the same job in different words. A normal cache only helps when text is identical. A rhyming world model recognizes the pattern. We tested both on real data and on open-source models we ran ourselves.</p>
+      <div class="tf-diff-stats">
+        <div class="tf-diff-stat">
+          <strong>Smaller, when the words change</strong>
+          <p class="tf-price">33% to 49% less</p>
+          <p>Real protein, GPS and agent messages. An exact-match cache never hit. Rhyme stored the same traffic in a third to a half less space.</p>
+        </div>
+        <div class="tf-diff-stat">
+          <strong>Shared world vs private copies</strong>
+          <p class="tf-price">5× to 20× more accurate</p>
+          <p>Same model, four agents that each see one piece. One shared world predicts what happens next far better than private copies.</p>
+        </div>
+        <div class="tf-diff-stat">
+          <strong>Open-source models, run for real</strong>
+          <p class="tf-price">4 upstream models</p>
+          <p>DreamerV3, MuZero, TD-MPC2 and V-JEPA 2 ran on CPU. All are strong for one agent. None can share a world between agents. FractiSI does that.</p>
+        </div>
+      </div>
+      <p class="tf-diff-foot">With mostly identical text, an exact cache wins, and FractiSI keeps it. On the protein task a plain shared notebook also got every answer right, so there the gain is size, not accuracy. TD-MPC2 is a partial reproduction and the models were trained for minutes. <a href="https://fractisi.vercel.app/rhyming-vs-non-rhyming/">Full expedition page</a> · <a href="/ship-blog/shared-world-collective-intelligence">Write-up</a> · <a href="/whitepaper/shared-world-collective-intelligence">Paper</a>.</p>
+    </section>
+
     <section class="tf-plan-strip" role="region" aria-label="Pricing plans">
       <h2>Pricing plans</h2>
       <p class="tf-plan-promise">The Fractal Holographic Goldilocks World Model for Digital (and Human) Agents.</p>
@@ -88,42 +111,77 @@
     </section>
 
     <section class="tf-diff-board" role="region" aria-label="Why teams visit — full lab differentiators">
-      <h2>Why teams visit · full lab differentiators</h2>
-      <p class="tf-diff-why">Results vs <strong>flat skim</strong>, <strong>full-copy</strong>, <strong>gzip-only</strong>, and <strong>exact-text / prefix cache</strong> — what multi-agent teams come here to find.</p>
+      <h2>What the tests show</h2>
+      <p class="tf-diff-why">Compared with skimming, full copies per agent, compression alone, and caches that only match identical text. What agent teams come here to find.</p>
       <div class="tf-diff-stats">
         <div class="tf-diff-stat">
-          <strong>Sees what flat models miss</strong>
-          <p class="tf-price">100 / 100 vs 0 / 100</p>
-          <p>Expedition 002 · guided recovery finds chains, anomalies, solutions. Flat skim: zero.</p>
+          <strong>Finds answers others miss</strong>
+          <p class="tf-price">100 of 100 vs 0</p>
+          <p>A shared world assembled every hidden chain. Skimming found none.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Converges on answers faster</strong>
-          <p class="tf-price">−50% rounds · −85% ops</p>
-          <p>3 rounds vs 6; mean 6 ops vs 40 on the same constrained discovery path.</p>
+          <strong>Gets to the answer faster</strong>
+          <p class="tf-price">Half the rounds</p>
+          <p>Three rounds instead of six, and 85% fewer operations, on the same search.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Density vs full per-agent copy</strong>
-          <p class="tf-price">36.91× – 62.41×</p>
-          <p>Dup cut 89.6%–99.2%. Selective coarse-only ~99.5% fewer runtime bytes.</p>
+          <strong>More agents per machine</strong>
+          <p class="tf-price">36× to 62×</p>
+          <p>The shared world is stored once. Each agent adds only its difference.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Still wins after gzip</strong>
-          <p class="tf-price">~42%+ residual</p>
-          <p>Shared pack vs naive copies — ~42% residual after gzip (smaller world); ~98% when world dominates. Compression shrinks copies; it does not remove the cross-copy tax.</p>
+          <strong>Still smaller after compression</strong>
+          <p class="tf-price">42%+ smaller</p>
+          <p>Compressing full copies does not remove the repeated content. A shared world does.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Beats exact-text cache when words differ</strong>
-          <p class="tf-price">4,758 vs 6,704 B</p>
-          <p>40 same-shape sessions: rhyme beats exact-text cache. Exact cache wins only identical text. Prefix reuse already helps exact prompts in production.</p>
+          <strong>Smaller when the words change</strong>
+          <p class="tf-price">33% to 49% smaller</p>
+          <p>Real protein, GPS and agent messages. An exact-match cache never hit; rhyme stored the same traffic in a third to a half less space. With identical text, an exact cache still wins.</p>
         </div>
         <div class="tf-diff-stat">
-          <strong>Tiny Gateway · DRAM &amp; materialize</strong>
-          <p class="tf-price">84.5% · 81.4% · ~9.6×</p>
-          <p>Aggregate cut 84.5% · GPU alloc proxy 81.4% · materialize ~9.6×. H100 rhyme-vs-prefix ~34% is simulation only.</p>
+          <strong>Tiny Gateway · memory</strong>
+          <p class="tf-price">84.5% · 81.4%</p>
+          <p>Less data held and less GPU memory allocated. Lab measurement; the H100 result is a simulation.</p>
         </div>
       </div>
       <p class="tf-diff-foot">Architectural / structured-state labs — not CapEx guarantees, not an LLM bake-off, not established “80% DRAM for AI serving.” <a href="/ship-blog/fractisi-expedition-002-beyond-memory">Exp 002</a> · <a href="/whitepaper/tiny-gateway-rhyming-templates">Tiny Gateway</a> · <a href="/fractisi/pricing">Pricing</a>.</p>
     </section>
+
+        <section class="tf-diff-board" id="rhyme-features" role="region" aria-label="What makes the world model different">
+      <h2>What makes the world model different: rhyme</h2>
+      <p class="tf-diff-why">Rhyme means recognizing the pattern, not just the words. It shows up in five features. Pilot Rhyme is new.</p>
+      <div class="tf-diff-stats">
+        <div class="tf-diff-stat">
+          <strong>Rhyming Templates</strong>
+          <p class="tf-price">Up to 49% smaller</p>
+          <p>Store a pattern once, then each session as only what differs.</p>
+        </div>
+        <div class="tf-diff-stat">
+          <strong>Shared-World Rhyme</strong>
+          <p class="tf-price">5× to 20× more accurate</p>
+          <p>Agents that each see part of the picture write into one world and predict better together.</p>
+        </div>
+        <div class="tf-diff-stat">
+          <strong>Protein Folding Rhyme · new</strong>
+          <p class="tf-price">Found every time</p>
+          <p>Map a sequence as relationships and the hidden long-distance match appears. Looking only at neighbors, almost never. <a href="/ship-blog/cosmic-rhyme-expedition">Read more</a>.</p>
+        </div>
+        <div class="tf-diff-stat">
+          <strong>LLM Rhyme · new</strong>
+          <p class="tf-price">Found every time</p>
+          <p>Give a language model that map in its prompt and it finds the match. Plain or shuffled text, almost never. <a href="/ship-blog/llm-rhyme-cosmic-genome">Read more</a>.</p>
+        
+        <div class="tf-diff-stat">
+          <strong>Pilot Rhyme · new</strong>
+          <p class="tf-price">100 of 100 · 22% smaller</p>
+          <p>Director holds the map; Pilots run local steps; roles once; mission deltas; one shared world. Flat peers: 0. Exact role cache: 0 hits. <a href="/ship-blog/pilot-rhyme-expedition">Read more</a>.</p>
+        </div></div>
+      </div>
+      <p class="tf-diff-foot">Public sky catalogs and small public genome panels. The genome test is a demo, not a medical finding. If the reader ignores the map, the gain disappears, so the map does the work. <a href="/whitepaper/cosmic-rhyme-expedition">Cosmic Rhyme paper</a> · <a href="/whitepaper/llm-rhyme-cosmic-genome">LLM Rhyme paper</a>.</p>
+    </section>
+
+
 
     <h2>The simplest way to understand FractiSI Multi-Agent</h2>
     <p>We deliver software that gets installed <strong>alongside</strong> the customer’s existing AI software. It helps that AI use memory more efficiently and potentially respond faster. The customer does not buy a new computer, replace GPUs, or move operations to FractiAI—they install Tiny Footprint where their AI already runs.</p>

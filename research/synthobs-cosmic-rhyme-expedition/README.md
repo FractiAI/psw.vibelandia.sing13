@@ -18,4 +18,16 @@ npm run research:synthobs-cosmic-rhyme-expedition
 
 Receipts: `data/empirical_report.{json,md}` · Protocol: `PROTOCOL.md`
 
+| ID | Question |
+|---|---|
+| C1 | LINEAR / FLAT / AWARE partner recovery |
+| C2 | Open motif discovery vs nulls + FDR |
+| C3 | WMAP TT multipole spectral rhyme |
+| C4 | Residual novel-physics candidate search |
+| C5 | LLM / language-pack rhyme (E9–E11 packing) |
+
+## Legend
+
+Map of prior LLM / folding rhymes → cosmic fixtures: [`LLM_RHYME_LEGEND.md`](./LLM_RHYME_LEGEND.md) · code export `LLM_RHYME_COSMIC_LEGEND` · receipt `c5.legend`.
+
 → ∞^∞

@@ -75,12 +75,35 @@ For each candidate motif:
 
 Treat WMAP TT multipoles as a linear sequence. Compare LINEAR local multipole windows vs AWARE lag-coupling board for recovering held-out spectral partners (strongest lag correlation). Same H1/H2 shape as C1.
 
+### C4 — Novel-physics candidate search (why C1–C3 were not enough)
+
+C1–C3 answer whether the protein-folding rhyme (relational representation vs linear reading) travels on cosmic catalogs. That is the expedition focus. Separately, C4 searches for new-physics candidates: leftovers after known selection and known templates are removed. Survivors are reported as candidates for new physics under this protocol.
+
+**Discovery requirement:** H1/H2 pass rates are gates, not the product. Motif survivors (C2), residual candidates (C4), and cross-theater fold discoveries (E9–E12) must be written to `data/DISCOVERY_CATALOG.{json,md}` and the unified `data/RHYME_DISCOVERY_CATALOG.md` / `npm run catalog:rhyme-discoveries`.
+
+C4a exoplanets: residualize physics axes against disc_year/RA/Dec/distance; nulls = column shuffle + footprint scramble.
+C4b WMAP TT: residualize log Cl against smooth log-ell continuum; null = residual shuffle; acoustic-peak lean → rediscovery.
+C4c OpenNGC: size residual vs brightness; isotropic sky scramble.
+C4d NEO: residualize against distance.
+
+A candidate_novel_physics hit must beat nulls and must not sit in the locked known-template list. Candidate ≠ confirmed law.
+
+### C5 — LLM / language-pack rhyme (**split out**)
+
+Language-pack ownership moved to the dedicated expedition:
+
+- Paper: `docs/SYNTHOBS_LLM_RHYME_COSMIC_GENOME_EXPEDITION_EGS_2026-11.md`
+- Suite: `research/synthobs-llm-rhyme-cosmic-genome-expedition/`
+- Ship blog: `/ship-blog/llm-rhyme-cosmic-genome`
+
+That suite covers cosmic language packs **and** a human-genome demonstration/exploration arm. Cosmic Rhyme keeps C1–C4. Historical C5 code may remain as a pointer / compatibility shim.
+
 ## Honesty boundary (locks)
 
 - Application companion expedition — **not** ENGINE_SHELF, not a claim of new fundamental physics, not a Universe ontology.  
 - Architecture / representation result: relational boards can expose structure hard to recover linearly from the **same** public observations.  
 - Surviving motifs require held-out + null survival; rediscoveries are reported as rediscoveries.  
-- No LLM bake-off required for C1–C3 architecture controls (deterministic / statistical). Optional LLM arms are secondary.
+- C1–C4 need no LLM. Language-pack rhyme lives in the LLM Rhyme expedition.
 
 ## Verdict rules
 

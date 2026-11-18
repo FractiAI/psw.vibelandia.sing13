@@ -75,6 +75,20 @@ Wins: rhyme vs exact-cache on real non-identical utterances (E9, Movebank); guid
 Loses / tempered: prefix reuse on identical system strings; task parity with shared blackboard.  
 Complements: exact/prefix caches for identical bytes; rhyme for organizational near-duplicates; pixel WMs for perception.
 
+
+## Live open world-model arms (v2.1)
+
+This environment has no GPU. We still **run** what is available on CPU:
+
+- Dreamer-family RSSM (live train/predict/plan on CartPole)
+- TD-MPC-lite (latent dynamics + CEM)
+- MuZero-lite (repr/dynamics/policy/value)
+
+**Verdict vs FractiSI: COMPLEMENTARY_DIFFERENTIATED.**  
+Open WMs own single-agent imagination/planning. FractiSI owns multi-agent share/merge + rhyme on non-identical specialist traffic. CartPole partial-obs: shared world return 200 vs independent ~14.
+
+Still needing GPU/large downloads: V-JEPA 2, Cosmos, full DreamerV3-JAX zoo, Genie (closed).
+
 ## Evidence hierarchy
 
 **Level 2** computational. Not Level 5.

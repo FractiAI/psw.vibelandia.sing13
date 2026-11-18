@@ -1,29 +1,29 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-18T00:50:15.686Z",
+  "updatedAt": "2026-11-18T01:44:38.336Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
     {
-      "id": "wp_synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+      "id": "wp_lattice-chat-product-engineering-manual-2026-09",
       "type": "ArtifactEvent",
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-18T00:50:15.685Z",
-      "body": "LLM Rhyme Expedition — Cosmic Catalogs and the Human Genome",
+      "createdAt": "2026-11-18T01:44:38.336Z",
+      "body": "Product Engineering Manual � Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
       "presenceHue": "gold",
-      "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+      "paperId": "lattice-chat-product-engineering-manual-2026-09",
       "artifact": {
-        "title": "LLM Rhyme Expedition — Cosmic Catalogs and the Human Genome",
+        "title": "Product Engineering Manual � Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
         "kind": "whitepaper",
-        "path": "docs/SYNTHOBS_LLM_RHYME_COSMIC_GENOME_EXPEDITION_EGS_2026-11.md",
-        "url": "/whitepaper/llm-rhyme-cosmic-genome",
-        "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
-        "docId": "WP-LLM-RHYME-COSMIC-GENOME-EXPEDITION-EGS-2026-11-18",
-        "published": "2026-11-18T01:00:00Z",
+        "path": "docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md",
+        "url": "/whitepaper/lattice-chat-product-engineering-manual",
+        "paperId": "lattice-chat-product-engineering-manual-2026-09",
+        "docId": "WP-LATTICE-CHAT-PEM-2026-09",
+        "published": "2026-11-18",
         "featured": true,
         "auditStatus": "pass"
       }
@@ -34,18 +34,40 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-18T00:16:13.113Z",
-      "body": "Cosmic Rhyme Expedition — Searching for New Relational Patterns in the Cosmic Layer",
+      "createdAt": "2026-11-18T01:44:38.332Z",
+      "body": "Cosmic Rhyme Expedition — Exploring Protein Folding Rhymes on Public Sky Catalogs",
       "presenceHue": "gold",
       "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
       "artifact": {
-        "title": "Cosmic Rhyme Expedition — Searching for New Relational Patterns in the Cosmic Layer",
+        "title": "Cosmic Rhyme Expedition — Exploring Protein Folding Rhymes on Public Sky Catalogs",
         "kind": "whitepaper",
         "path": "docs/SYNTHOBS_COSMIC_RHYME_EXPEDITION_EGS_2026-11.md",
         "url": "/whitepaper/cosmic-rhyme-expedition",
         "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",
         "docId": "WP-COSMIC-RHYME-EXPEDITION-EGS-2026-11-17",
         "published": "2026-11-17T23:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-18T01:44:38.330Z",
+      "body": "LLM Rhyme Expedition — Exploring the LLM Rhyme on Cosmic Catalogs and the Human Genome",
+      "presenceHue": "gold",
+      "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+      "artifact": {
+        "title": "LLM Rhyme Expedition — Exploring the LLM Rhyme on Cosmic Catalogs and the Human Genome",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_LLM_RHYME_COSMIC_GENOME_EXPEDITION_EGS_2026-11.md",
+        "url": "/whitepaper/llm-rhyme-cosmic-genome",
+        "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+        "docId": "WP-LLM-RHYME-COSMIC-GENOME-EXPEDITION-EGS-2026-11-18",
+        "published": "2026-11-18T01:00:00Z",
         "featured": true,
         "auditStatus": "pass"
       }
@@ -68,28 +90,6 @@
         "paperId": "synthobs-fractisi-expedition-002-beyond-memory-2026-11",
         "docId": "WP-FRACTISI-EXPEDITION-002-BEYOND-MEMORY-EGS-2026-11-05",
         "published": "2026-11-05T20:00:00Z",
-        "featured": true,
-        "auditStatus": "pass"
-      }
-    },
-    {
-      "id": "wp_lattice-chat-product-engineering-manual-2026-09",
-      "type": "ArtifactEvent",
-      "platform": "lattice",
-      "actor": "SynthOBS",
-      "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-03T17:24:50.252Z",
-      "body": "Product Engineering Manual � Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
-      "presenceHue": "gold",
-      "paperId": "lattice-chat-product-engineering-manual-2026-09",
-      "artifact": {
-        "title": "Product Engineering Manual � Infinite Octave Omniversal Lattice Catalog (Living Engine Shelf)",
-        "kind": "whitepaper",
-        "path": "docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md",
-        "url": "/whitepaper/lattice-chat-product-engineering-manual",
-        "paperId": "lattice-chat-product-engineering-manual-2026-09",
-        "docId": "WP-LATTICE-CHAT-PEM-2026-09",
-        "published": "2026-11-03",
         "featured": true,
         "auditStatus": "pass"
       }

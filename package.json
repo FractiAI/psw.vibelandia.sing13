@@ -258,6 +258,7 @@
     "research:synthobs-tiny-gateway-rhyming-templates": "node research/synthobs-tiny-gateway-rhyming-templates/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-llm-rhyme-cosmic-genome-expedition": "node research/synthobs-llm-rhyme-cosmic-genome-expedition/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-cosmic-rhyme-expedition": "node research/synthobs-cosmic-rhyme-expedition/scripts/run_empirical_pipeline.mjs",
+    "catalog:rhyme-discoveries": "node research/synthobs-llm-rhyme-cosmic-genome-expedition/scripts/run_empirical_pipeline.mjs && node scripts/build-rhyme-discovery-catalogs.mjs",
     "research:synthobs-nvidia-goldilocks-awareness-expedition": "node research/synthobs-nvidia-goldilocks-awareness-expedition/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-fractisi-expedition-002-beyond-memory": "node research/synthobs-fractisi-expedition-002-beyond-memory/scripts/run_empirical_pipeline.mjs",
     "publish:standalone:tiny-gateway-rhyming-templates": "node scripts/publish-standalone-suite.mjs synthobs-tiny-gateway-rhyming-templates",

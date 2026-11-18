@@ -42,6 +42,8 @@ The protein-folding rhyme (E9) and its knowledge (E10) and macro (E11) peers sho
 
 Default scoring uses a **pack-compliant reader** (no API key). A **lexical-blind** contrast ignores board ranks and only matches overlapping tokens. Optional live LLM calls via environment variables are supported but **not** required for expedition signal. Positive signal: ≥2 cosmic layers pass H1 **and** ≥1 genome layer passes H1.
 
+**Discovery requirement:** H1/H2 gates are not the product. Each theater must emit a **named discovery catalog** — AWARE-only held-out partners and top awareness-board couplings — written to `research/synthobs-llm-rhyme-cosmic-genome-expedition/data/DISCOVERY_CATALOG.{json,md}` and rolled into unified `data/RHYME_DISCOVERY_CATALOG.md` with the protein-folding rhyme theaters.
+
 ## Primary research question
 
 > Does the E9–E11 LINEAR / FLAT / AWARE language-pack rhyme appear when public cosmic observations and public human-genome panels are packed as language?
@@ -154,6 +156,21 @@ Suite modules: `src/load.mjs`, `src/packs.mjs`, `src/experiments.mjs`, `src/stat
 
 **Positive expedition signal:** cosmic **4/4** H1 · genome **2/2** H1.
 
+### Discovery catalog (named findings — not pass rates alone)
+
+Machine catalogs: `research/synthobs-llm-rhyme-cosmic-genome-expedition/data/DISCOVERY_CATALOG.md` · unified `data/RHYME_DISCOVERY_CATALOG.md`.
+
+| Theater | Example AWARE-only / board discoveries |
+|---|---|
+| Cosmic exoplanet | HAT-P-8 b ↔ WASP-7 b · HD 62509 b ↔ HD 11977 b · 91 Aqr b ↔ mu Leo b · TrES-3 b ↔ CoRoT-2 b |
+| Cosmic NEO | 2012 XL16 ↔ 2015 KS120 · 2015 AB45 ↔ 2015 BC515 |
+| Cosmic OpenNGC | IC0069 ↔ IC0096 · IC0058 ↔ IC0036 |
+| Cosmic WMAP TT | ell partners under leading lag (e.g. ell-604 ↔ ell-609); board lags 5 / 1 / 11 |
+| Genome exons | NPY↔SOD1 · INS↔POMC · APP↔DYRK1A cross-gene partners |
+| Genome chrM | window pairs e.g. chrM:1860–1980 ↔ chrM:2100–2220 |
+
+Nested protein-folding catalogs (E9–E12 + Cosmic motifs + two candidates for new physics) live in the same unified `RHYME_DISCOVERY_CATALOG`.
+
 ### Lexical-blind contrast
 
 Lexical-blind AWARE on genome arms ≈ **0%**. Cosmic lexical-blind AWARE ≈ **0%**. The win is the **map in the pack**, not accidental string overlap with the query line.
@@ -170,11 +187,11 @@ AWARE packs are shorter as well as more recoverable under pack-compliant reading
 
 ## What we found · novelty ladder
 
-1. **Method travels into language (primary claim).** The same packing grammar that worked on proteins, knowledge passages, and macro series recovers long-range partners when public sky catalogs and a public genome panel are written as LINEAR / FLAT / AWARE prompts.  
-2. **Genome demonstration (qualified).** Cross-gene exon tasks and chrM windows show the same 0% → 100% shape. Demonstration / exploration — not wet-lab genetics, not clinical.  
+1. **Named discoveries under language packs (primary claim).** AWARE packs list concrete partners and couplings per theater — not only a pass rate — on public sky catalogs and a public genome panel.  
+2. **Genome demonstration (qualified).** Cross-gene exon and chrM window discoveries show the same packing shape. Demonstration / exploration — not wet-lab genetics, not clinical.  
 3. **Token economics rhyme.** AWARE boards are shorter than FLAT dumps while carrying the recoverable map.  
 4. **Not a frontier bake-off.** Pack-compliant wins prove the rhyme lives in the language pack. Live LLM preference is a separate optional experiment.  
-5. **Not Cosmic Rhyme physics.** Residual WMAP candidates (lags 11 / 14) remain Cosmic Rhyme C4 claims.
+5. **Cosmic residual physics (sibling).** Cosmic Rhyme C4 reports **two candidates for new physics** (WMAP residual lags 11 / 14); this paper catalogs LLM-pack discoveries and points there for the residual sieve.
 
 ## Relation to Cosmic Rhyme and E9–E11
 

@@ -96,6 +96,21 @@ Seed locked at `20261117`. FractiSI Multi-Agent mirrors the same suite under `re
 
 **Positive expedition signal:** H1 on all four layers plus surviving open motifs; C4 positive under protocol.
 
+### Discovery catalog (named findings — not pass rates alone)
+
+Machine catalogs: `research/synthobs-cosmic-rhyme-expedition/data/DISCOVERY_CATALOG.md` · unified `data/RHYME_DISCOVERY_CATALOG.md`.
+
+| Theater | Named discoveries (protein-folding rhyme) |
+|---|---|
+| Protein (E9) | AWARE-only PDB contacts e.g. 1VII 11–18, 1NYF 7–30, 1MJC 8–50, 1R69 19–35, 1ENH 18–47, … |
+| Knowledge (E10) | AWARE-only HotpotQA title pairs e.g. New Hampshire General Court\|\|Samuel Leavitt, … |
+| Macro (E11) | AWARE-only FRED teleconnections CPIAUCSL↔UNRATE / FEDFUNDS / INDPRO; INDPRO↔UNRATE |
+| Collaboration (E12) | COLLAB_AWARE title-pair synergy (whole > OR of solos) |
+| Cosmic · exoplanet | Motifs `disc_year~st_rad`, `disc_year~st_teff` |
+| Cosmic · OpenNGC | Motifs `maj_ax~ra`, `dec~min_ax`, `dec~maj_ax`, `min_ax~ra`, `min_ax~v_mag`, `maj_ax~v_mag` |
+| Cosmic · WMAP residual | **Two candidates for new physics:** residual lags **11**, **14** |
+| Cosmic · residual controls | Known rediscoveries: exo mass–radius/stellar; WMAP lags 17–19; NEO `h_mag~log_v_rel` |
+
 ### What we found · novelty ladder (plain language)
 
 1. **Focus (method):** the protein-folding LINEAR/FLAT/AWARE grammar recovers long-range partners on four public sky layers (~0% → 100% on held-out long-range tasks). That is the expedition title claim.  

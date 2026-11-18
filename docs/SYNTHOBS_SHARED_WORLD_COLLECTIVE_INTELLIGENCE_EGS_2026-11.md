@@ -2,7 +2,7 @@
 
 **Do shared-world architectures measurably improve multi-agent collective intelligence — and does FractiSI’s implementation outperform fair alternatives?**
 
-**Document ID:** `WP-SHARED-WORLD-COLLECTIVE-INTELLIGENCE-EGS-2026-11-18`  
+**Document ID:** `WP-SHARED-WORLD-COLLECTIVE-INTELLIGENCE-V2-EGS-2026-11-18`  
 **Registry ID:** `synthobs-shared-world-collective-intelligence-2026-11`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Classification:** Application companion Soft Story / computational expedition  
@@ -40,26 +40,40 @@ Prior FractiSI experiments suggested a shared world may be a coordination primit
 See `docs/world-model-expedition/experimental-design.md` and `benchmark-spec.md`.  
 Run: `npm run research:world-model-expedition` in FractiSI Multi-Agent.
 
-## Computational Lab (seed 2026-11-18)
+## Computational Lab v2 (seed 2026-11-18)
+
+v1 under-tested rhyme. **v2** uses the real FractiSI rhyme engine (`compareRhymeToCache`, `rhymeCohort`) plus pinned public fixtures: E9 RCSB/Pfam protein scenarios and Movebank GPS (study 2548892515).
 
 | Hypothesis | Verdict |
 |---|---|
 | Shared world as coordination primitive | **PARTIALLY_SUPPORTED** |
-| FractiSI-specific implementation advantage | **INCONCLUSIVE** |
+| FractiSI rhyme vs non-rhyming exact/prefix/flat | **PARTIALLY_SUPPORTED** |
+| FractiSI vs shared_structured on E9 **task** | **parity** (both 1.0; independent 0) |
 
-Headline successScore means: independent **0**; shared_text / shared_structured / FractiSI-selective ≈ **0.95–1.0** on the collective grid. Scaling: duplicationRatio rises with N for independent and shared_text; structured/FractiSI-selective stay ≈1.0. Relational world: independent 0 · shared arms 1.0. Exp 002 reproduction: guided **100/100** vs flat **0/100**, ops −85%.
+### Where rhyme excelled (measured)
+
+- R0 differing words: exactTextHits=0; rhyme beats exact-cache (~45% vs cache).  
+- E9 batched 48 real specialist utterances: exactTextHits=0; rhymeVersusCache ≈ 0.33.  
+- Movebank track utterances: exactTextHits=0; rhymeVersusCache ≈ 0.36.  
+- R1: rhyme beats conventional full copies.  
+- Exp 002: guided 100/100 vs flat 0/100.
+
+### Where rhyme did **not** dominate
+
+- R1: **prefix reuse still beats rhyme** when the system string is identical (prefix 1241 vs rhyme 3428 bytes).  
+- On E9 **task success**, rhyme-shaped share ties shared structured merge — the FractiSI edge is organizational reuse under non-identical text, not a monopoly on fact merge.
 
 ## Three questions (not collapsed)
 
-1. Shared vs independent → shared wins on these fixtures.  
-2. Structured vs text → both succeed; structured wins on duplication at scale.  
-3. FractiSI vs other shared → **parity** with shared structured blackboard here.
+1. Shared vs independent → shared wins (E9/Movebank/relational).  
+2. Structured vs text / exact-cache → structured and rhyme both succeed on task; rhyme wins bytes when text differs.  
+3. FractiSI rhyme vs non-rhyming → **partially supported** on reuse; **not** a universal win over prefix-on-identical-strings.
 
 ## Where FractiSI wins / loses / complements
 
-Wins: family membership with shared structured state; Exp 002 guided discovery; selective working sets.  
-Loses / tempered: no large unique edge vs competent blackboard on this grid.  
-Complements: pixel WMs for perception; structured shared worlds for cross-agent merge.
+Wins: rhyme vs exact-cache on real non-identical utterances (E9, Movebank); guided discovery; shared-world family.  
+Loses / tempered: prefix reuse on identical system strings; task parity with shared blackboard.  
+Complements: exact/prefix caches for identical bytes; rhyme for organizational near-duplicates; pixel WMs for perception.
 
 ## Evidence hierarchy
 

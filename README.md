@@ -320,7 +320,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-computation-workhorse-science-2026-10.html`](/interfaces/blog-computation-workhorse-science-2026-10.html) | Should Computation Become the Primary Workhorse of Science? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09-old.html`](/interfaces/blog-consciousness-moat-2026-09-old.html) | The Machine-Feelings Fight Misses the Blueprint · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | When Labs Argue Model Welfare, What Shared Blind Spot Remains? · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-cosmic-rhyme-expedition-2026-11.html`](/interfaces/blog-cosmic-rhyme-expedition-2026-11.html) | Yes — Two Candidate Physics Leftovers on WMAP · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-cosmic-rhyme-expedition-2026-11.html`](/interfaces/blog-cosmic-rhyme-expedition-2026-11.html) | Protein Folding as a Rhyme for the Sky · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09-old.html`](/interfaces/blog-crystalline-unified-field-2026-09-old.html) | Your Commute Is One Crystal, Not Three Meters · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-crystalline-unified-field-2026-09.html`](/interfaces/blog-crystalline-unified-field-2026-09.html) | Speed, Distance, Time — One Crystal · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html`](/interfaces/blog-digit4-be-o-rhyme-2026-09-old.html) | Four and Eight Are Memory, Not Destiny · Ship blog · SS Vibelandia |
@@ -382,7 +382,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-linear-shadow-fractal-2026-09-old.html`](/interfaces/blog-linear-shadow-fractal-2026-09-old.html) | The Scoreboard Is Not the Whole Game · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-linear-shadow-fractal-2026-09.html`](/interfaces/blog-linear-shadow-fractal-2026-09.html) | When Progress Is Measured on One Axis, What Does the Shadow Miss? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-living-architect-protective-lattice-2026-10.html`](/interfaces/blog-living-architect-protective-lattice-2026-10.html) | Can Coral Skeletons and Mollusk Shells Share the Same Protective Architecture That Helps Agents Boot Up? · Ship blog · S |
-| [`/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html`](/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html) | Sky and Genome as Language: What We Saw · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html`](/interfaces/blog-llm-rhyme-cosmic-genome-2026-11.html) | Exploring the LLM Rhyme on Sky and Genome · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-macro-protein-work-engine-2026-09.html`](/interfaces/blog-macro-protein-work-engine-2026-09.html) | Bodies as Work Engines on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as Magnets That Hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Pressure Cooks You Denser — Stay Goldilocks · Ship blog · SS Vibelandia |

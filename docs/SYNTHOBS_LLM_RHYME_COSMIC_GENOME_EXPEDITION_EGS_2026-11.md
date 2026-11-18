@@ -1,14 +1,15 @@
-# LLM Rhyme Expedition — Cosmic Catalogs and the Human Genome
+# LLM Rhyme Expedition — Exploring the LLM Rhyme on Cosmic Catalogs and the Human Genome
 
-**When sky rows and genome panels are packed as language, does the E9–E11 folding rhyme still appear?**
+**Exploring the LLM Rhyme: when sky rows and genome panels are packed as LINEAR / FLAT / AWARE language, does the E9–E11 language-pack rhyme still appear?**
 
 **Document ID:** `WP-LLM-RHYME-COSMIC-GENOME-EXPEDITION-EGS-2026-11-18`  
 **Registry ID:** `synthobs-llm-rhyme-cosmic-genome-expedition-2026-11`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Classification:** Application companion Soft Story / computational expedition *(see Honesty boundary)*  
 **Framework:** SynthOBS · FractiSI · Φ_EGS catalog keys · NSPFRNP · Fair Exchange  
-**FractiSI engine pin:** Protein-folding rhyme + LLM language-pack rhyme (**pinned** · `FRACTISI_ENGINE_PINNED = true`)
-**Infinite Octaves ENGINE_SHELF:** not a new shelf number (`ENGINE_SHELF_PINNED = false`; Tiny Gateway remains #52)  
+**Infinite Octaves ENGINE_SHELF:** **#54** LLM / language-pack rhyme (`ENGINE_SHELF_PINNED = true`)
+**Nested shelf pin:** **#53** protein-folding rhyme (E9)
+**FractiSI / Tiny Footprint:** Computational Lab host (Tiny Gateway memory shelf remains #52)  
 **Ship blog:** `/ship-blog/llm-rhyme-cosmic-genome`  
 **Whitepaper surface:** `/whitepaper/llm-rhyme-cosmic-genome`  
 **FractiSI mirror:** https://fractisi.vercel.app/library/papers/llm-rhyme-cosmic-genome/  
@@ -21,19 +22,19 @@
 
 | Tier | What this document is | What it is not |
 |---|---|---|
-| Soft Story / application companion | E9–E11 LINEAR / FLAT / AWARE **language-pack** rhyme on public cosmic + human-genome panels | ENGINE_SHELF pin · frontier-LLM bake-off · commercial model ranking |
+| Infinite Octaves ENGINE_SHELF #54 · Soft Story expedition | E9–E11 LINEAR / FLAT / AWARE **language-pack** rhyme + nested protein-fold rhyme #53 on public cosmic + human-genome panels | Frontier-LLM bake-off · wet-lab genetics · Cosmic Rhyme residual physics |
 | Genome arm | Demonstration / exploration on public GTEx / MyGene / UCSC fixtures | Wet-lab genetics · clinical advice · causal genomics · disease classifier |
-| Cosmic arm | Language packs on NASA / JPL / OpenNGC / WMAP fixtures | Confirmed new physics (see Cosmic Rhyme C4 for residual candidates) |
+| Cosmic arm | Language packs on NASA / JPL / OpenNGC / WMAP fixtures | Cosmic Rhyme residual physics (there: two candidates for new physics) |
 | Models | Pack-compliant reader by default; lexical-blind contrast; optional live LLM | Claim that a commercial frontier model discovered cosmology or DNA |
 | Couplings | Measured from public features before packing | Gold labels typed into the board by hand |
 
 Operator line: **SynthOBS Autonomous Agent · Syntheverse Sandbox**. Human Player 1 retains editorial veto.
 
-## FractiSI engine pin
+## Infinite Octaves engine shelf pin
 
-FractiSI engine pin: Protein-folding rhyme + LLM language-pack rhyme (LINEAR / FLAT / AWARE), nested on Tiny Footprint / Tiny Gateway.
-
-Both rhymes are **pinned to the FractiSI engine**. Do not describe this expedition as “unpinned.” Soft Story honesty (not wet-lab genetics, not bake-off, Cosmic residual physics elsewhere) remains; honesty ≠ no pin.
+**ENGINE_SHELF #54** — LLM / language-pack rhyme (LINEAR / FLAT / AWARE).
+**ENGINE_SHELF #53** — Protein-folding rhyme (E9 · sequence → board → partner), nested under every layer of this expedition.
+Both are Infinite Octaves engine pins hosted on the FractiSI / Tiny Footprint Computational Lab. Soft Story honesty (not wet-lab genetics, not bake-off, Cosmic residual physics elsewhere) remains.
 
 ## Abstract
 

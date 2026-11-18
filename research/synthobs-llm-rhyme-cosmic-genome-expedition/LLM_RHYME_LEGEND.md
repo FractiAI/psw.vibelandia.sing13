@@ -1,6 +1,6 @@
 # LLM Rhyme Legend — Nested Rhymes (Cosmic + Genome)
 
-**FractiSI engine pin:** Protein-folding rhyme + LLM language-pack rhyme (pinned).
+**Infinite Octaves ENGINE_SHELF:** #53 protein-folding rhyme + #54 LLM language-pack rhyme.
 
 **Document ID:** `WP-LLM-RHYME-COSMIC-GENOME-EXPEDITION-EGS-2026-11-18`
 

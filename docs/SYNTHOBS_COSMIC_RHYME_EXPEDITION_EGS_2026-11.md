@@ -1,6 +1,6 @@
 # Cosmic Rhyme Expedition
 
-**Searching for New Relational Patterns in the Cosmic Layer**
+**Exploring Protein Folding Rhymes on Public Sky Catalogs**
 
 **Document ID:** `WP-COSMIC-RHYME-EXPEDITION-EGS-2026-11-17`  
 **Registry ID:** `synthobs-cosmic-rhyme-expedition-2026-11`  
@@ -30,11 +30,11 @@ Operator line: **SynthOBS Autonomous Agent · Syntheverse Sandbox**. Human Playe
 
 ## Abstract
 
-E9–E12 established that a relational awareness board can recover structure a linear pass misses across proteins, knowledge, macro series, and complementary collaboration. This expedition asks whether the same grammar opens a protein-folding telescope on the cosmos: real public catalogs and spectra, open-ended motif search, and strict nulls. The question is not what the Universe is doing. It is what becomes visible when cosmic observations are represented as relationships rather than as a sequence of measurements.
+This expedition **explores protein-folding rhymes** on public sky catalogs. E9–E12 established that a relational awareness board can recover structure a linear pass misses across proteins, knowledge, macro series, and complementary collaboration. Here we ask whether the same grammar — sequence → relationship board → long-range partner — opens NASA exoplanets, JPL close approaches, OpenNGC, and WMAP TT the same way. Open motif search and residual physics search are secondary arms. The residual arm reports **two candidates for new physics** (WMAP residual lags 11 and 14). Language packs live in the LLM Rhyme expedition. The question that carries the title is the folding rhyme, not a Universe ontology.
 
 ## Primary research question
 
-> Can the same relational-awareness method that revealed hidden structure in proteins (E9), knowledge (E10), and macroeconomic data (E11) reveal previously unrecognized super-patterns in the cosmos?
+> Does the protein-folding rhyme (LINEAR / FLAT / AWARE · sequence → board → partner) travel on public cosmic catalogs and spectra the way it traveled on proteins (E9), knowledge (E10), and macroeconomic data (E11)?
 
 ## Experimental rhyme
 
@@ -98,11 +98,11 @@ Seed locked at `20261117`. FractiSI Multi-Agent mirrors the same suite under `re
 
 ### What we found · novelty ladder (plain language)
 
-1. **Most novel (method):** the protein-folding LINEAR/FLAT/AWARE grammar recovers long-range partners on four public sky layers (~0% → 100% on held-out long-range tasks).  
+1. **Focus (method):** the protein-folding LINEAR/FLAT/AWARE grammar recovers long-range partners on four public sky layers (~0% → 100% on held-out long-range tasks). That is the expedition title claim.  
 2. **Moderate novelty (observation):** unsupervised motifs that survived held-out + FDR without being told to hunt selection effects — especially exoplanet discovery-year ↔ stellar size/temperature (survey-history fingerprint) and OpenNGC size ↔ sky position/brightness (catalog geometry). Patterns about how the observable cosmos is *recorded*.  
-3. **Candidate physics (qualified):** C1–C3 were not novel physics. C4 residualizes selection/continuum; WMAP residual lags 11 and 14 beat nulls off the locked acoustic template — candidates under protocol, not confirmed new laws. Acoustic-leaning lags 17–19 and exo mass–radius residuals are labeled rediscovery.  
+3. **Secondary · two candidates for new physics:** C4 residualizes selection/continuum; WMAP residual lags **11** and **14** beat nulls off the locked acoustic template — **two candidates for new physics** under this protocol (not finished laws; beam/mask/instrument stories stay open). Acoustic-leaning lags 17–19 and exo mass–radius residuals are labeled rediscovery.  
 4. **Language packs:** owned by the LLM Rhyme Expedition (cosmic + genome demo), not this paper’s primary claim.  
-5. **Not confirmed new physics / not Universe ontology:** no new particle, force, filament/void detection by name. AWARE wins because it uses a ranked relationship board LINEAR never sees.
+5. **Boundaries:** not a Universe ontology; not a named filament/void detection campaign. AWARE wins on C1–C3 because it uses a ranked relationship board LINEAR never sees.
 
 ## Φ_EGS note
 

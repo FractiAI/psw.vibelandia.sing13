@@ -43,7 +43,7 @@ Run: `npm run research:world-model-expedition` in FractiSI Multi-Agent.
 | Rhyming shared world vs independent | Collective tasks succeed; independent fails |
 | vs live Dreamer/TD-MPC/MuZero-family | **COMPLEMENTARY_DIFFERENTIATED** |
 
-CartPole partial-obs: shared world return **200** vs independent **~14**. Exp 002 reproduction: guided **100/100** vs flat **0/100**.
+CartPole partial-obs, same model with private copies vs one shared world: next-state error 5.7×–20× lower with the shared world (superseded the earlier hand-rule 200 vs ~14; see the update section). Exp 002 reproduction: guided **100/100** vs flat **0/100**.
 
 ## EXECUTABLE status lock
 
@@ -70,5 +70,14 @@ Still needing GPU/large downloads: V-JEPA 2, Cosmos, Genie (closed).
 ## Document lineage
 
 Exp 002 · Tiny Gateway rhyme vs cache · Multi-Agent platform · this rhyming vs non-rhyming comparative expedition.
+
+→ ∞^∞
+
+## Addendum · 2026-11-18 · upstream arms, same-model test, rhyme features
+
+- **Upstream models executed on CPU:** DreamerV3 (danijar/dreamerv3, 5,000 steps), MuZero (muzero-general, 3,000 updates), TD-MPC2 (official 5M checkpoints, real MuJoCo), V-JEPA 2 (ViT-L encoder on real CartPole renders). None has share or merge. Receipts: `research/synthobs-shared-world-collective-intelligence/data/open_wm_official/`.
+- **Same model, two deployments:** four agents each see one CartPole dimension; each compact arm drives its own rollout controller. Shared world predicts the next state 5.7×–20× better than private copies; control return is unchanged for two of three arms. A plain blackboard would match the accuracy gain; the rhyme layer's own contribution is bytes (400 agent messages: 136,546 B exact cache vs 69,912 B rhyme).
+- **Correction:** the earlier "shared 200 vs independent ~14" compared two hand-written rules and is not a world-model result.
+- **Rhyme features of the FractiSI Multi-Agent World Model:** Rhyming Templates, Shared-World Rhyme, Protein Folding Rhyme (#53, new), LLM Rhyme (#54, new).
 
 → ∞^∞

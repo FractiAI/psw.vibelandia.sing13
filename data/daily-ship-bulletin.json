@@ -1,22 +1,29 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "dateline": {
-    "ymd": "2026-11-17",
-    "weekday": "Tuesday",
+    "ymd": "2026-11-18",
+    "weekday": "Wednesday",
     "month": "November",
-    "day": 17,
-    "label": "Tuesday, November 17",
-    "shortBoard": "Tuesday board · November 17 · Puerto Reno",
-    "newsLabel": "News of the day · Tuesday, November 17"
+    "day": 18,
+    "label": "Wednesday, November 18",
+    "shortBoard": "Wednesday board · November 18 · Puerto Reno",
+    "newsLabel": "News of the day · Wednesday, November 18"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Tuesday board · November 17 · Puerto Reno",
-  "newsLabel": "News of the day · Tuesday, November 17",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/nvidia-goldilocks-moment\">What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO</a>. Also new on the board: <a href=\"/ship-blog/fractisi-multi-agent-platform\">When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Wednesday board · November 18 · Puerto Reno",
+  "newsLabel": "News of the day · Wednesday, November 18",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/cosmic-rhyme-expedition\">What We Found Looking at the Sky Through a Protein-Folding Lens</a>. Also new on the board: <a href=\"/ship-blog/nvidia-goldilocks-moment\">What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-cosmic-rhyme-expedition-2026-11",
+      "title": "What We Found Looking at the Sky Through a Protein-Folding Lens",
+      "href": "/ship-blog/cosmic-rhyme-expedition",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-cosmic-rhyme-expedition-2026-11",
+      "blurb": "Plain findings: the folding rhyme works on sky catalogs; open search found survey-history and catalog-selection motifs — not new physics. Cosmos, not Universe."
+    },
     {
       "id": "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
       "title": "What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/fractisi-multi-agent-platform",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-fractisi-multi-agent-platform-2026-11",
       "blurb": "FractiSI Multi-Agent: Tiny Footprint stays the execution core; coordination, composition, Git awareness, and deploy approvals install beside Cursor/Claude/VS Code — not ENGINE_SHELF."
-    },
-    {
-      "id": "synthobs-fractisi-expedition-002-beyond-memory-2026-11",
-      "title": "If Agents Share One World, Can They Discover What Flat Memory Misses?",
-      "href": "/ship-blog/fractisi-expedition-002-beyond-memory",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-fractisi-expedition-002-beyond-memory-2026-11",
-      "blurb": "FractiSI Expedition 002: beyond DRAM savings — relationship-guided discovery 100/100 vs flat 0/100 under a fixed budget; resource cuts vs full copies; not yet an LLM bake-off."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-11-16-synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
+    "id": "daily-2026-11-17-synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
     "title": "What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO",
     "href": "/ship-blog/nvidia-goldilocks-moment"
   },
-  "generatedAt": "2026-11-17T22:50:46.151Z"
+  "generatedAt": "2026-11-18T22:33:42.520Z"
 }

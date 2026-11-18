@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "posts": [
+    {
+      "id": "daily-2026-11-18-synthobs-cosmic-rhyme-expedition-2026-11",
+      "posted": "2026-11-18",
+      "featured": true,
+      "title": "What We Found Looking at the Sky Through a Protein-Folding Lens",
+      "subtitle": "News of the day · Wednesday, November 18",
+      "summary": "Plain findings: the folding rhyme works on sky catalogs; open search found survey-history and catalog-selection motifs — not new physics. Cosmos, not Universe.",
+      "href": "/ship-blog/cosmic-rhyme-expedition",
+      "pill": "TODAY",
+      "docRef": "synthobs-cosmic-rhyme-expedition-2026-11",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-11-17-synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
       "posted": "2026-11-17",

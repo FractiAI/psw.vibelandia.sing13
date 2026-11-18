@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-18T00:14:51.276Z",
+  "updatedAt": "2026-11-18T00:48:48.005Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-18T00:14:51.275Z",
+      "createdAt": "2026-11-18T00:48:48.004Z",
       "body": "LLM Rhyme Expedition — Cosmic Catalogs and the Human Genome",
       "presenceHue": "gold",
       "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
@@ -34,7 +34,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-18T00:06:03.071Z",
+      "createdAt": "2026-11-18T00:16:13.113Z",
       "body": "Cosmic Rhyme Expedition — Searching for New Relational Patterns in the Cosmic Layer",
       "presenceHue": "gold",
       "paperId": "synthobs-cosmic-rhyme-expedition-2026-11",

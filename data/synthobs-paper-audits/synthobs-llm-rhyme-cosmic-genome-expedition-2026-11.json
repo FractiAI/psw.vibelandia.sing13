@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "0462b3cd51028c3a",
+  "auditId": "6ed72a878f995d42",
   "paperId": "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
   "sourcePath": "docs/SYNTHOBS_LLM_RHYME_COSMIC_GENOME_EXPEDITION_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-18T00:14:51.273Z"
+          "invokedAt": "2026-11-18T00:48:48.001Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-18T00:14:51.272Z",
-  "completedAt": "2026-11-18T00:14:51.273Z",
+  "startedAt": "2026-11-18T00:48:48.000Z",
+  "completedAt": "2026-11-18T00:48:48.001Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 992,
+      "wordCount": 1940,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 0,
-        "numbered": 20,
-        "citeLines": 8
+        "numbered": 35,
+        "citeLines": 10
       }
     }
   },

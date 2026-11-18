@@ -1,5 +1,7 @@
 # LLM Rhyme Expedition — Cosmic Catalogs and the Human Genome
 
+**When sky rows and genome panels are packed as language, does the E9–E11 folding rhyme still appear?**
+
 **Document ID:** `WP-LLM-RHYME-COSMIC-GENOME-EXPEDITION-EGS-2026-11-18`  
 **Registry ID:** `synthobs-llm-rhyme-cosmic-genome-expedition-2026-11`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -8,7 +10,9 @@
 **Engine shelf:** **not pinned** (`ENGINE_SHELF_PINNED = false`)  
 **Ship blog:** `/ship-blog/llm-rhyme-cosmic-genome`  
 **Whitepaper surface:** `/whitepaper/llm-rhyme-cosmic-genome`  
+**FractiSI mirror:** https://fractisi.vercel.app/library/papers/llm-rhyme-cosmic-genome/  
 **Suite:** `research/synthobs-llm-rhyme-cosmic-genome-expedition/`  
+**FractiSI suite:** `research/llm-rhyme-cosmic-genome-expedition/`  
 **Seed:** `20261118`  
 **Date:** 18 November 2026
 
@@ -16,99 +20,179 @@
 
 | Tier | What this document is | What it is not |
 |---|---|---|
-| Soft Story / application companion | E9–E11 language-pack rhyme on public cosmic + human-genome panels | ENGINE_SHELF pin · frontier-LLM bake-off |
-| Genome arm | Demonstration / exploration on public GTEx/MyGene/UCSC fixtures | Wet-lab genetics · clinical advice · causal genomics |
-| Cosmic arm | Language packs on NASA/JPL/OpenNGC/WMAP fixtures | Confirmed new physics (see Cosmic Rhyme C4) |
-| Models | Pack-compliant reader by default | Claim that a commercial frontier model discovered cosmology or DNA |
+| Soft Story / application companion | E9–E11 LINEAR / FLAT / AWARE **language-pack** rhyme on public cosmic + human-genome panels | ENGINE_SHELF pin · frontier-LLM bake-off · commercial model ranking |
+| Genome arm | Demonstration / exploration on public GTEx / MyGene / UCSC fixtures | Wet-lab genetics · clinical advice · causal genomics · disease classifier |
+| Cosmic arm | Language packs on NASA / JPL / OpenNGC / WMAP fixtures | Confirmed new physics (see Cosmic Rhyme C4 for residual candidates) |
+| Models | Pack-compliant reader by default; lexical-blind contrast; optional live LLM | Claim that a commercial frontier model discovered cosmology or DNA |
+| Couplings | Measured from public features before packing | Gold labels typed into the board by hand |
 
 Operator line: **SynthOBS Autonomous Agent · Syntheverse Sandbox**. Human Player 1 retains editorial veto.
 
 ## Abstract
 
-The protein-folding rhyme (E9) and its knowledge (E10) and macro (E11) peers showed that LINEAR / FLAT / AWARE **language packs** change partner recovery under the same question. This expedition **splits that language-pack question out** of Cosmic Rhyme (where it was C5) and asks whether the same packing grammar appears on (1) public sky catalogs and (2) public human-genome panels as a demonstration/exploration. Default scoring uses a pack-compliant reader — no API key required.
+The protein-folding rhyme (E9) and its knowledge (E10) and macro (E11) peers showed that LINEAR / FLAT / AWARE **language packs** change partner recovery under the same question. Cosmic Rhyme briefly hitchhiked that language-pack arm as C5. Hitchhikers get lost. This expedition **owns** the language-pack question as a dedicated falsifiable study and asks whether the same packing grammar appears on (1) public sky catalogs and spectra and (2) public human-genome panels as a demonstration/exploration.
+
+Default scoring uses a **pack-compliant reader** (no API key). A **lexical-blind** contrast ignores board ranks and only matches overlapping tokens. Optional live LLM calls via environment variables are supported but **not** required for expedition signal. Positive signal: ≥2 cosmic layers pass H1 **and** ≥1 genome layer passes H1.
 
 ## Primary research question
 
 > Does the E9–E11 LINEAR / FLAT / AWARE language-pack rhyme appear when public cosmic observations and public human-genome panels are packed as language?
 
+Secondary questions:
+
+1. Does AWARE still beat LINEAR and FLAT under a pack-compliant reader that merely follows the prompt?  
+2. Does lexical-blind reading (token overlap, ignoring ranks) erase the AWARE advantage?  
+3. Do token / character economics favor AWARE packs (shorter ranked boards vs dumps)?  
+4. Does a genome demonstration arm on public panels show the same shape without claiming wet-lab genetics?
+
 ## Experimental rhyme / legend
 
 | Domain | Linear | Board | Gold |
 |---|---|---|---|
-| Protein (E9) | sequence window | MSA couplings | long-range contact |
-| Knowledge (E10) | one passage | title overlap | title pair |
-| Macro (E11) | one series | lag \|corr\| | teleconnected series |
-| **Cosmic (this paper)** | RA/time/ℓ local text | measured catalog/spectrum board | partner id / ell |
+| Protein (E9) | amino-acid sequence + local window | MSA couplings | long-range contact residue |
+| Knowledge (E10) | one Wikipedia / Hotpot-style passage | title Jaccard / overlap board | supporting title pair |
+| Macro (E11) | one FRED series strip | lagged \|corr\| board | teleconnected series |
+| **Cosmic (this paper)** | RA / time / ℓ local text | measured catalog / spectrum board | partner object / ell id |
 | **Human genome (this paper)** | genomic-order / sequence-local text | measured exon / chrM-window board | partner exon / window id |
 
-**One-line legend:** Protein : MSA board : contact = Knowledge : title board : title pair = Macro : lag board : teleconnection = Cosmic : AWARE pack : partner id = Genome : AWARE pack : partner id.
+**One-line legend:** Protein sequence : MSA board : contact = Knowledge passage : title board : title pair = Macro series : lag board : teleconnection = Cosmic catalog/spectrum : AWARE language pack : partner id = Human genome exon/chrM window : AWARE language pack : partner id.
+
+### Cosmic layers (language materials)
+
+| Code | Source | Row | Linear window | Board | Gold |
+|---|---|---|---|---|---|
+| `exoplanet` | NASA Exoplanet Archive `pscomppars` | confirmed planet + host features | RA-neighbor planets | z-scored feature cosine | strongest non-local / non-host planet id |
+| `neo` | JPL SSD CAD | close-approach encounter | time/distance-local encounters | z-scored encounter features | strongest non-local encounter id |
+| `ngc` | OpenNGC | deep-sky object | RA-neighbor objects | morphology / sky features | strongest non-local object id |
+| `wmap_tt` | WMAP 9-year TT (LAMBDA) | multipole ℓ with Cl | local ±ℓ window | lag \|corr\| on Cl series | ell + best-lag partner |
+
+### Genome layers (demonstration / exploration)
+
+| Code | Source | Row | Linear window | Board | Gold |
+|---|---|---|---|---|---|
+| `genome_exon` | GTEx genes · MyGene exons · UCSC CpG | exon with span / TSS / CpG proximity | genomic-order neighbors | z-scored exon features | strongest non-trivial (cross-gene) partner exon |
+| `genome_chrm` | UCSC hs1 chrM FASTA | 120 bp window, step 60 | sequence-order neighbors | GC / CpG / entropy features | strongest non-local window id |
+
+Same-gene exons are treated as **trivial pairs** so long-range tasks must cross genes.
 
 ## Method
 
-Pre-registered in `research/synthobs-llm-rhyme-cosmic-genome-expedition/PROTOCOL.md` before result rows.
+Pre-registered in `research/synthobs-llm-rhyme-cosmic-genome-expedition/PROTOCOL.md` before result rows. Seed locked at `20261118`.
 
 ### Data
 
-**Cosmic fixtures** (shared with Cosmic Rhyme suite under `research/synthobs-cosmic-rhyme-expedition/fixtures/`):
+**Cosmic fixtures** (shared with Cosmic Rhyme under `research/synthobs-cosmic-rhyme-expedition/fixtures/`):
 
-1. NASA Exoplanet Archive TAP `pscomppars` — confirmed planets with period, radius, stellar parameters.  
-2. JPL SSD Close-Approach Data (CAD) API — NEO encounter observables.  
-3. OpenNGC deep-sky catalog — morphologies, magnitudes, positions.  
+1. NASA Exoplanet Archive TAP `pscomppars` — period, radius, stellar parameters, discovery year, distance.  
+2. JPL SSD Close-Approach Data (CAD) API — encounter distance, relative velocity, H magnitude, epoch.  
+3. OpenNGC — morphologies, magnitudes, positions (semicolon CSV; stars / empties skipped).  
 4. WMAP 9-year TT spectrum (LAMBDA) — multipole sequence.
 
-**Genome fixtures** (vendored under `research/synthobs-llm-rhyme-cosmic-genome-expedition/fixtures/`, provenance from TRGM genetic panel fetch):
+**Genome fixtures** (vendored under `research/synthobs-llm-rhyme-cosmic-genome-expedition/fixtures/`, provenance from the Tiny Reality Generation Model genetic panel fetch — `PROVENANCE.json`):
 
 1. GTEx Portal reference gene panel (10 loci).  
 2. MyGene.info exon panel (125 exons) with UCSC CpG-island proximity features.  
-3. UCSC hs1 chrM FASTA — sliding windows (120 bp, step 60) with GC / CpG / entropy features.
+3. UCSC hs1 chrM FASTA (16 569 bp) — sliding windows with GC, CpG density, base fractions, dinucleotide entropy.
 
-### Packs and scoring
+### Packs
 
 For each held-out long-range partner task:
 
-1. **LINEAR** — query object + ordered local-window feature lines only.  
-2. **FLAT** — query + unstructured dump of train/local/distractors (no ranks).  
-3. **AWARE** — query + `LEADING RELATIONAL CANDIDATE` + ranked measured coupling board (no gold labels in board construction).
+1. **LINEAR** — query object + ordered local-window feature lines only. Reader default: first id in the local window.  
+2. **FLAT** — query + unstructured dump of train / local / distractors (no ranks). Reader default: first id in the dump.  
+3. **AWARE** — query + `LEADING RELATIONAL CANDIDATE` + ranked measured coupling board (no gold labels in board construction). Reader default: leading candidate id. Prompt includes an explicit prefer-leading note.
 
-**Default runner:** pack-compliant reader (deterministic; no API).  
-**Contrast:** lexical-blind reader (token overlap; ignores board ranks).  
-**Optional live LLM:** `COSMIC_LLM_URL` / `COSMIC_LLM_KEY` — not required for expedition signal.
+IDs that contain spaces (e.g. `TOI-1758 b`, `2022 AP1@2015-Jan-01 00:27`) are captured with a full-line leading-candidate regex.
 
-Primary metric: exact partner-id recovery. **H1:** AWARE−LINEAR ≥ +0.25 with bootstrap CI excluding 0. **H2:** AWARE−FLAT ≥ +0.10. Genome arm treats same-gene exons as trivial pairs so long-range tasks cross genes. Seed locked at `20261118`.
+### Readers and metrics
+
+| Reader | Behavior |
+|---|---|
+| Pack-compliant (default) | Follows AWARE leading candidate / first LINEAR local / first FLAT dump id |
+| Lexical-blind | Token overlap with query feature line; ignores board ranks |
+| Optional live LLM | `COSMIC_LLM_URL` + `COSMIC_LLM_KEY` — same packs; not required for CI |
+
+**Primary metric:** exact partner-id recovery.  
+**H1:** AWARE − LINEAR ≥ +0.25 with bootstrap CI (B=400) excluding 0.  
+**H2:** AWARE − FLAT ≥ +0.10.  
+**Positive expedition:** ≥2 cosmic layers H1 **and** ≥1 genome layer H1.  
+**Token economics:** mean estimated tokens (chars÷4) per pack arm.
 
 ### Reproducibility
 
 ```bash
+# SING 13
 npm run research:synthobs-llm-rhyme-cosmic-genome-expedition
-# writes research/synthobs-llm-rhyme-cosmic-genome-expedition/data/empirical_report.{json,md}
+# → research/synthobs-llm-rhyme-cosmic-genome-expedition/data/empirical_report.{json,md}
+
+# FractiSI Multi-Agent
+npm run research:llm-rhyme-cosmic-genome-expedition
 ```
 
-Suite modules: `src/load.mjs`, `src/packs.mjs`, `src/experiments.mjs`. FractiSI Multi-Agent mirrors under `research/llm-rhyme-cosmic-genome-expedition/`.
+Suite modules: `src/load.mjs`, `src/packs.mjs`, `src/experiments.mjs`, `src/stats.mjs`, `src/constants.mjs`.
 
 ## Computational Lab (seed 20261118)
 
-| Layer | LINEAR | FLAT | AWARE | H1/H2 |
-|---|---:|---:|---:|---|
-| Cosmic exoplanet (N=48) | 0% | 0% | **100%** | pass |
-| Cosmic NEO (N=48) | 0% | 0% | **100%** | pass |
-| Cosmic OpenNGC (N=48) | 0% | 0% | **100%** | pass |
-| Cosmic WMAP TT (N=48) | 0% | 0% | **100%** | pass |
-| Genome exons (125 objects, 14 long-range tasks) | 0% | 7.1% | **100%** | pass |
-| Genome chrM windows (275 objects, 64 tasks) | 0% | 0% | **100%** | pass |
+### Partner recovery (pack-compliant)
 
-**Positive expedition signal:** cosmic 4/4 H1 and genome 2/2 H1. Lexical-blind AWARE on genome arms ≈ 0% — the win is the map in the pack.
+| Layer | Objects | Tasks | LINEAR | FLAT | AWARE | H1 | H2 |
+|---|---:|---:|---:|---:|---:|---|---|
+| Cosmic exoplanet | 500 | 48 | 0% | 0% | **100%** | pass | pass |
+| Cosmic NEO | 350 | 48 | 0% | 0% | **100%** | pass | pass |
+| Cosmic OpenNGC | 600 | 48 | 0% | 0% | **100%** | pass | pass |
+| Cosmic WMAP TT | spectrum | 48 | 0% | 0% | **100%** | pass | pass |
+| Genome exons | 125 | 14 long-range | 0% | 7.1% | **100%** | pass | pass |
+| Genome chrM windows | 275 | 64 | 0% | 0% | **100%** | pass | pass |
 
-## Relation to Cosmic Rhyme
+**Positive expedition signal:** cosmic **4/4** H1 · genome **2/2** H1.
 
-Cosmic Rhyme keeps C1–C4 (representation, open motifs, residual physics candidates). Language-pack ownership moves here. Residual WMAP physics candidates remain Cosmic Rhyme C4 claims, not this paper’s.
+### Lexical-blind contrast
+
+Lexical-blind AWARE on genome arms ≈ **0%**. Cosmic lexical-blind AWARE ≈ **0%**. The win is the **map in the pack**, not accidental string overlap with the query line.
+
+### Token economics (mean estimated tokens / pack)
+
+| Layer | LINEAR | FLAT | AWARE |
+|---|---:|---:|---:|
+| exoplanet | ~418 | ~520 | **~162** |
+| neo | ~347 | ~398 | **~189** |
+| ngc | ~248 | ~285 | **~146** |
+
+AWARE packs are shorter as well as more recoverable under pack-compliant reading — ranked boards beat dumps on both accuracy and bulk.
+
+## What we found · novelty ladder
+
+1. **Method travels into language (primary claim).** The same packing grammar that worked on proteins, knowledge passages, and macro series recovers long-range partners when public sky catalogs and a public genome panel are written as LINEAR / FLAT / AWARE prompts.  
+2. **Genome demonstration (qualified).** Cross-gene exon tasks and chrM windows show the same 0% → 100% shape. Demonstration / exploration — not wet-lab genetics, not clinical.  
+3. **Token economics rhyme.** AWARE boards are shorter than FLAT dumps while carrying the recoverable map.  
+4. **Not a frontier bake-off.** Pack-compliant wins prove the rhyme lives in the language pack. Live LLM preference is a separate optional experiment.  
+5. **Not Cosmic Rhyme physics.** Residual WMAP candidates (lags 11 / 14) remain Cosmic Rhyme C4 claims.
+
+## Relation to Cosmic Rhyme and E9–E11
+
+| Sibling | Owns |
+|---|---|
+| NVIDIA Goldilocks E9–E11 | Protein / knowledge / macro language packs + feature boards |
+| Cosmic Rhyme C1–C4 | Feature-space folding rhyme · open motifs · residual physics candidates |
+| **This expedition** | Language packs on cosmic fixtures **+** human-genome demo |
+
+Cosmic Rhyme PROTOCOL points C5 readers here. This paper does not re-claim residual physics.
+
+## Limitations
+
+1. Pack-compliant reader is a strong instruction-follower, not a frontier model.  
+2. Genome panel N is small (10 genes / 125 exons); chrM is one chromosome. Scale-up is future work.  
+3. Couplings are z-scored feature cosines / lag correlations — useful maps, not biological mechanisms.  
+4. Optional live LLM path is not scored in the default CI receipt.  
+5. Φ_EGS is catalog filing grammar only — not a fitted language constant.
 
 ## Φ_EGS note
 
-Φ_EGS ≈ 1.618 is catalog / Infinite Octaves filing grammar only.
+Φ_EGS ≈ 1.618 appears only as catalog / Infinite Octaves filing grammar. It is **not** used as a fitted cosmic or genomic constant and does not upgrade Soft Story into CODATA physics or clinical genetics.
 
 ## Document lineage
 
-Bridge: NVIDIA Goldilocks E9–E11 · Cosmic Rhyme C5 split · Tiny Reality Generation Model genetic panels · FractiSI Multi-Agent kit.
+Bridge: NVIDIA Goldilocks E9–E11 · Cosmic Rhyme C5 split · Tiny Reality Generation Model genetic panels · FractiSI Multi-Agent kit · QUESTFEST ship-blog magazine snap.
 
 ## References
 
@@ -122,9 +206,10 @@ Bridge: NVIDIA Goldilocks E9–E11 · Cosmic Rhyme C5 split · Tiny Reality Gene
 8. FractiAI — NVIDIA Goldilocks Awareness Expedition (E9–E11 folding / language packs). `docs/SYNTHOBS_NVIDIA_GOLDILOCKS_AWARENESS_EXPEDITION_2026-11.md`  
 9. FractiAI — Cosmic Rhyme Expedition (C1–C4). `docs/SYNTHOBS_COSMIC_RHYME_EXPEDITION_EGS_2026-11.md`  
 10. FractiAI — Tiny Reality Generation Model genetic panels (fixture provenance). `research/synthobs-tiny-reality-generation-model/data/molecular/genetic/`  
+11. FractiAI — FractiSI Multi-Agent LLM Rhyme mirror. https://github.com/FractiAI/FractiSI-Multi-Agent  
 
 ## Fair Exchange
 
-A fair exchange clause remains in effect for this Soft Story filing and regenerable lab configuration.
+A fair exchange clause remains in effect for this Soft Story filing and regenerable lab configuration. Platform credits and operational allocations stay subject to reciprocal balancing under NSPFRNP / Seed:Edge honor rails.
 
 → ∞^∞

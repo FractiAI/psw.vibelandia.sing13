@@ -131,8 +131,8 @@
         </div>
         <div class="diff-stat">
           <span class="label">Beats exact-text cache when words differ</span>
-          <span class="num">4,758 vs 6,704 B</span>
-          <p>40 same-shape / different-words sessions: rhyme templates beat exact-text cache. Exact cache wins only identical text (332 B vs rhyme 5,867 B). Prefix reuse already helps exact prompts in production.</p>
+          <span class="num">−33% to −45% vs exact cache</span>
+          <p>Real RCSB PDB / Pfam and Movebank GPS traffic: exact cache hit zero times; rhyme used a third to nearly half fewer bytes. Exact cache and prefix reuse still win on identical text. (identical text: 332 B vs rhyme 5,867 B.)</p>
         </div>
         <div class="diff-stat">
           <span class="label">Tiny Gateway · DRAM &amp; materialize</span>

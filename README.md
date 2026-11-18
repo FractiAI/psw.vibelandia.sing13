@@ -45,6 +45,7 @@ Honesty: silicon **vocabulary** for the engine — not a foundry tape-out. Full 
 | **Sandbox demo** | `node scripts/tiny.mjs try` in the kit (optional `--no-deploy`) |
 | **Paper** | [`docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md`](docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md) |
 | **Ship blog** | [/ship-blog/fractisi-multi-agent-platform](https://www.ssvibelandiaquestfest24x365.com/ship-blog/fractisi-multi-agent-platform) |
+| **Latest result** | **Rhyming vs non-rhyming world models** — rhyme −33% to −45% bytes vs exact cache on real PDB/Pfam and Movebank traffic · shared vs separate worlds 200 vs 14 · complementary to live Dreamer / TD-MPC / MuZero-family arms · [/ship-blog/shared-world-collective-intelligence](https://www.ssvibelandiaquestfest24x365.com/ship-blog/shared-world-collective-intelligence) |
 
 Honesty: application companion architecture — not ENGINE_SHELF; adapters normalize IDE messages and do not yet auto-drive live Cursor/Claude sessions.
 

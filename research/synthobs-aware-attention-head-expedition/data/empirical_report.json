@@ -1,0 +1,274 @@
+{
+  "documentId": "WP-AWARE-ATTENTION-HEAD-SPIRIT-OCTAVES-EGS-2026-11-20",
+  "registryId": "synthobs-aware-attention-head-expedition-2026-11",
+  "seed": 20261120,
+  "trialsPerFamily": 200,
+  "honesty": "Computational expedition on scripted agent simulators. It tests which mechanisms (persistent head, evidence-checked attention, on-demand shells, cross-context transfer) are necessary for each task family under stated loss assumptions. It is not a measurement of real LLM agents, not a claim about spirit or consciousness, and not ENGINE_SHELF until a live-agent replication exists. Φ_EGS filing grammar only.",
+  "assumptions": {
+    "missionDriftPerSwitch": {
+      "A": 0.15,
+      "B": 0.15,
+      "C": 0.02
+    },
+    "factLossPerHandoff": {
+      "A": 0.3,
+      "B": 0.1,
+      "C": 0.03
+    },
+    "shellReliability": 0.88,
+    "shellCost": 3,
+    "budgetRange": [
+      2,
+      8
+    ],
+    "majorityRange": [
+      3,
+      7
+    ],
+    "truthConfidence": [
+      0.55,
+      0.9
+    ],
+    "decoyConfidence": [
+      0.55,
+      0.9
+    ],
+    "majorityConfidence": [
+      0.3,
+      0.6
+    ],
+    "decoyShare": 0.35,
+    "octaveSequenceLength": [
+      3,
+      5
+    ]
+  },
+  "families": {
+    "attention_trap": {
+      "n": 200,
+      "A": {
+        "success": 0.395,
+        "compute": 6.575
+      },
+      "B": {
+        "success": 0.42,
+        "compute": 7.575
+      },
+      "C": {
+        "success": 1,
+        "compute": 5
+      },
+      "CminusB": {
+        "mean": 0.58,
+        "lo": 0.515,
+        "hi": 0.65
+      },
+      "CminusA": {
+        "mean": 0.605,
+        "lo": 0.54,
+        "hi": 0.675
+      },
+      "ablations": {
+        "evidenceCheck": {
+          "success": 0.605,
+          "dropVsFullC": 0.395
+        },
+        "metaAttention": {
+          "success": 0.42,
+          "dropVsFullC": 0.5800000000000001
+        }
+      }
+    },
+    "self_construction": {
+      "n": 200,
+      "A": {
+        "success": 0.68,
+        "compute": 2.345
+      },
+      "B": {
+        "success": 0.68,
+        "compute": 3.345
+      },
+      "C": {
+        "success": 0.865,
+        "compute": 2.68
+      },
+      "CminusB": {
+        "mean": 0.185,
+        "lo": 0.12,
+        "hi": 0.25
+      },
+      "CminusA": {
+        "mean": 0.185,
+        "lo": 0.12,
+        "hi": 0.25
+      },
+      "ablations": {
+        "shellCreation": {
+          "success": 0.68,
+          "dropVsFullC": 0.18499999999999994
+        }
+      }
+    },
+    "identity_persistence": {
+      "n": 200,
+      "A": {
+        "success": 0.77,
+        "compute": 4.06
+      },
+      "B": {
+        "success": 0.77,
+        "compute": 5.06
+      },
+      "C": {
+        "success": 0.965,
+        "compute": 5.06
+      },
+      "CminusB": {
+        "mean": 0.195,
+        "lo": 0.14,
+        "hi": 0.25
+      },
+      "CminusA": {
+        "mean": 0.195,
+        "lo": 0.14,
+        "hi": 0.255
+      },
+      "ablations": {
+        "persistentIdentity": {
+          "success": 0.77,
+          "dropVsFullC": 0.19499999999999995
+        }
+      }
+    },
+    "octave_transfer": {
+      "n": 200,
+      "A": {
+        "success": 0.68,
+        "compute": 3.025
+      },
+      "B": {
+        "success": 0.865,
+        "compute": 4.025
+      },
+      "C": {
+        "success": 0.96,
+        "compute": 7.05
+      },
+      "CminusB": {
+        "mean": 0.095,
+        "lo": 0.055,
+        "hi": 0.14
+      },
+      "CminusA": {
+        "mean": 0.28,
+        "lo": 0.22,
+        "hi": 0.35
+      },
+      "ablations": {
+        "crossOctaveTransfer": {
+          "success": 0.865,
+          "dropVsFullC": 0.09499999999999997
+        }
+      }
+    }
+  },
+  "decoyRobustness": {
+    "decoy": {
+      "n": 79,
+      "A": 1,
+      "B": 0.9746835443037974,
+      "C": 1
+    },
+    "genuineMinority": {
+      "n": 121,
+      "A": 0,
+      "B": 0.05785123966942149,
+      "C": 1
+    },
+    "naiveRedirect": {
+      "decoy": 0,
+      "genuineMinority": 1,
+      "overall": 0.605
+    }
+  },
+  "sensitivity": [
+    {
+      "baselineLossRate": 0.02,
+      "identity": {
+        "B": 0.965,
+        "C": 0.965,
+        "gap": 0
+      },
+      "transfer": {
+        "B": 0.965,
+        "C": 0.96,
+        "gap": -0.0050000000000000044
+      }
+    },
+    {
+      "baselineLossRate": 0.05,
+      "identity": {
+        "B": 0.905,
+        "C": 0.965,
+        "gap": 0.05999999999999994
+      },
+      "transfer": {
+        "B": 0.935,
+        "C": 0.96,
+        "gap": 0.02499999999999991
+      }
+    },
+    {
+      "baselineLossRate": 0.1,
+      "identity": {
+        "B": 0.825,
+        "C": 0.965,
+        "gap": 0.14
+      },
+      "transfer": {
+        "B": 0.865,
+        "C": 0.96,
+        "gap": 0.09499999999999997
+      }
+    },
+    {
+      "baselineLossRate": 0.15,
+      "identity": {
+        "B": 0.77,
+        "C": 0.965,
+        "gap": 0.19499999999999995
+      },
+      "transfer": {
+        "B": 0.825,
+        "C": 0.96,
+        "gap": 0.135
+      }
+    }
+  ],
+  "overall": {
+    "A": 0.63125,
+    "B": 0.68375,
+    "C": 0.9475
+  },
+  "compute": {
+    "A": 4.00125,
+    "B": 5.00125,
+    "C": 4.9475
+  },
+  "gates": {
+    "G1_C_beats_B_overall": true,
+    "G2_not_gullible_on_decoys": true,
+    "G3_each_ablation_hurts": true,
+    "G4_null_control_closes_gap": true,
+    "G5_compute_within_3x_B": true
+  },
+  "verdict": {
+    "mechanismVerified": true,
+    "liveAgentReplication": false,
+    "engineShelfPinned": false,
+    "engineShelfDecision": "deferred: scripted simulator passes mechanism gates; pin waits for a live-agent replication",
+    "summary": "Aware head 94.8% vs shared world 68.4% vs flat 63.1% across 4 families; mechanism gates pass; ENGINE_SHELF pin deferred."
+  },
+  "generatedAt": "2026-11-19T16:50:38.665Z"
+}

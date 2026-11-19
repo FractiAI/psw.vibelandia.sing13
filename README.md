@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-19** · **418** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-19** · **419** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -313,6 +313,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-archetypal-grand-story-2026-10.html`](/interfaces/blog-archetypal-grand-story-2026-10.html) | If Every Life Is a Mix of Story Characters, What Is the Hero Actually Returning To? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-attention-awareness-downstream-2026-10.html`](/interfaces/blog-attention-awareness-downstream-2026-10.html) | When a System Pays Attention, What Changes Downstream Because It Did? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 — Crowded Calendar, Not Prophecy · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-aware-attention-head-2026-11.html`](/interfaces/blog-aware-attention-head-2026-11.html) | What Does a Persistent Orchestrating Head Actually Need to Beat a Voting Crowd? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Awareness Gates from Zero to Eighty-One · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-vs-brute-force-2026-09.html`](/interfaces/blog-awareness-vs-brute-force-2026-09.html) | Spend Awareness Before Brute Force · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-beyond-crispr-discovery-2026-10.html`](/interfaces/blog-beyond-crispr-discovery-2026-10.html) | If CRISPR Is Memory of Past Invaders, What Writes Tomorrow’s Diversity? · Ship blog · SS Vibelandia |

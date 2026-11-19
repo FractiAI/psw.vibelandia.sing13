@@ -43,15 +43,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Bridge thickening · Wiring wet lab · Combo · NPY↔SOD1 · APP↔DNMT3A · WMAP
-            expect(posts[0].id).toBe('synthobs-wiring-bridge-thickening-2026-11');
+    // Newest: Aware head · Bridge thickening · Wiring wet lab · Combo · NPY↔SOD1 · APP↔DNMT3A
+    expect(posts[0].id).toBe('synthobs-aware-attention-head-expedition-2026-11');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-aware-attention-head-expedition-2026-11',
       'synthobs-wiring-bridge-thickening-2026-11',
       'synthobs-wiring-discoveries-rhyming-world-model-2026-11',
       'synthobs-combo-rhyme-wiring-expedition-2026-11',
       'synthobs-npy-sod1-rhyme-validation-2026-11',
       'synthobs-app-dnmt3a-rhyme-validation-2026-11',
-      'synthobs-wmap-residual-lag11-validation-2026-11',
     ]);
   });
 });

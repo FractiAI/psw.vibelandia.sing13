@@ -3,7 +3,7 @@
 **Document ID:** `WP-NPY-SOD1-RHYME-VALIDATION-EGS-2026-11-19`
 **Registry:** `synthobs-npy-sod1-rhyme-validation-2026-11`
 **Seed:** 20261119
-**Runtime:** 43 ms
+**Runtime:** 49 ms
 **ENGINE_SHELF pinned:** false
 
 ## Verdict

@@ -37,6 +37,22 @@
       "destination": "/interfaces/blog-wiring-discoveries-2026-11.html"
     },
     {
+      "source": "/whitepaper/aware-attention-head/",
+      "destination": "/api/whitepaper?id=synthobs-aware-attention-head-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/aware-attention-head",
+      "destination": "/api/whitepaper?id=synthobs-aware-attention-head-expedition-2026-11"
+    },
+    {
+      "source": "/ship-blog/aware-attention-head/",
+      "destination": "/interfaces/blog-aware-attention-head-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/aware-attention-head",
+      "destination": "/interfaces/blog-aware-attention-head-2026-11.html"
+    },
+    {
       "source": "/whitepaper/combo-rhyme-wiring/",
       "destination": "/api/whitepaper?id=synthobs-combo-rhyme-wiring-expedition-2026-11"
     },

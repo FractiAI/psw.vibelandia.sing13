@@ -129,6 +129,52 @@
       "investigation_id": "INV-HE-2026-10-02-006",
       "lab": "digital",
       "href": "/journey/hero-leo#digital-lab"
+    },
+    {
+      "id": "EVT-SCOUT-SCOUT-2026-11-19T1650",
+      "timestamp": "2026-11-19T16:50:51.062Z",
+      "type": "prospect",
+      "summary": "Hero Leo scouted catalog (15) and returned top 11 prospects.",
+      "href": "/journey/hero-leo#scout"
+    },
+    {
+      "id": "EVT-SCOUT-SCOUT-2026-11-19T1650",
+      "timestamp": "2026-11-19T16:50:51.067Z",
+      "type": "prospect",
+      "summary": "Hero Leo scouted catalog (15) and returned top 11 prospects.",
+      "href": "/journey/hero-leo#scout"
+    },
+    {
+      "id": "EVT-INV-HE-2026-11-19-007",
+      "timestamp": "2026-11-19T16:50:51.068Z",
+      "type": "computational_test",
+      "summary": "Digital Lab completed prospect P-PHASE2B-RECEIPT → INV-HE-2026-11-19-007 (OPEN_QUESTION, E1).",
+      "investigation_id": "INV-HE-2026-11-19-007",
+      "lab": "digital",
+      "href": "/journey/hero-leo#digital-lab"
+    },
+    {
+      "id": "EVT-SCOUT-SCOUT-2026-11-19T1650",
+      "timestamp": "2026-11-19T16:50:51.070Z",
+      "type": "prospect",
+      "summary": "Hero Leo scouted catalog (15) and returned top 11 prospects.",
+      "href": "/journey/hero-leo#scout"
+    },
+    {
+      "id": "EVT-SCOUT-SCOUT-2026-11-19T1650",
+      "timestamp": "2026-11-19T16:50:51.073Z",
+      "type": "prospect",
+      "summary": "Hero Leo scouted catalog (15) and returned top 11 prospects.",
+      "href": "/journey/hero-leo#scout"
+    },
+    {
+      "id": "EVT-INV-HE-2026-11-19-008",
+      "timestamp": "2026-11-19T16:50:51.074Z",
+      "type": "computational_test",
+      "summary": "Digital Lab completed prospect P-AGENTIC-CONVERGENCE-PORT → INV-HE-2026-11-19-008 (REDISCOVERY, E2).",
+      "investigation_id": "INV-HE-2026-11-19-008",
+      "lab": "digital",
+      "href": "/journey/hero-leo#digital-lab"
     }
   ]
 }

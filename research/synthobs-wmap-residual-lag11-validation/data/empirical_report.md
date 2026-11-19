@@ -3,7 +3,7 @@
 **Document ID:** `WP-WMAP-RESIDUAL-LAG11-VALIDATION-EGS-2026-11-19`
 **Registry:** `synthobs-wmap-residual-lag11-validation-2026-11`
 **Seed:** 20261119
-**Runtime:** 503 ms
+**Runtime:** 559 ms
 **ENGINE_SHELF pinned:** false
 
 ## Verdict

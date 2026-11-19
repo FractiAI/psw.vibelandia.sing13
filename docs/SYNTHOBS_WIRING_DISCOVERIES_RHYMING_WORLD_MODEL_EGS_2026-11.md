@@ -5,6 +5,7 @@
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Classification:** Application companion Soft Story / framework · **not** Infinite Octaves ENGINE_SHELF  
 **Date:** 20 November 2026  
+**FractiSI mirror:** https://fractisi.vercel.app/library/papers/wiring-discoveries/  
 **Ship blog:** `/ship-blog/wiring-discoveries`  
 **Peers:** NPY↔SOD1 · APP↔DNMT3A · WMAP lag wiring · Combo Rhyme Wiring Expedition  
 

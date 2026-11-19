@@ -6,6 +6,7 @@
 **Classification:** Application companion Soft Story / computational expedition · **not** ENGINE_SHELF  
 **Date:** 20 November 2026  
 **Harness:** `research/synthobs-combo-rhyme-wiring-expedition/`  
+**FractiSI mirror:** https://fractisi.vercel.app/library/papers/combo-rhyme-wiring/  
 **Ship blog:** `/ship-blog/combo-rhyme-wiring`  
 **Data:** REAL `data/RHYME_DISCOVERY_CATALOG.json` · live-cached STRING panel (2026-11-19)  
 

@@ -6,6 +6,7 @@
 **Classification:** Application companion Soft Story · **new wiring discovery** · **not** ENGINE_SHELF  
 **Date:** 19 November 2026  
 **Harness:** `research/synthobs-npy-sod1-rhyme-validation/`  
+**FractiSI mirror:** https://fractisi.vercel.app/library/papers/npy-sod1-rhyme-validation/  
 **Ship blog:** `/ship-blog/npy-sod1-rhyme-validation`  
 **Data:** REAL GTEx/MyGene · live-cached STRING/OpenTargets · curated existing wet-lab literature (`fixtures/wiring_literature.json`)
 

@@ -6,6 +6,7 @@
 **Classification:** Application companion Soft Story / methodology · **not** Infinite Octaves ENGINE_SHELF  
 **Date:** 20 November 2026  
 **Harness:** Combo E7 — `research/synthobs-combo-rhyme-wiring-expedition/` (multi-layer bridge lane)  
+**FractiSI mirror:** https://fractisi.vercel.app/library/papers/wiring-bridge-thickening/  
 **Ship blog:** `/ship-blog/wiring-bridge-thickening`  
 **Peers:** Wiring Wet Lab framework · Combo Rhyme Wiring Expedition · NPY↔SOD1 / APP↔DNMT3A wiring wet labs  
 

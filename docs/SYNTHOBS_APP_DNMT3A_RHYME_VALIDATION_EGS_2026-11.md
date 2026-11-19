@@ -6,6 +6,7 @@
 **Classification:** Application companion Soft Story · **new wiring discovery** · **not** ENGINE_SHELF  
 **Date:** 19 November 2026  
 **Harness:** `research/synthobs-app-dnmt3a-rhyme-validation/`  
+**FractiSI mirror:** https://fractisi.vercel.app/library/papers/app-dnmt3a-rhyme-validation/  
 **Ship blog:** `/ship-blog/app-dnmt3a-rhyme-validation`  
 **Data:** REAL GTEx/MyGene · live-cached STRING/OpenTargets · curated existing wet-lab literature
 

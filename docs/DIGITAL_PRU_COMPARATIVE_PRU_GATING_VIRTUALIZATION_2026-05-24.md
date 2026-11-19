@@ -1,8 +1,8 @@
 # Comparative Analysis of Digital PRU Models and Gating Mechanisms for Spatial, Compute, and Systemic Virtualization
 
-**Date:** May 24, 2026  
-**Repository:** FractiAI / Research-Paper-V5  
-**Program:** HHF / Digital Pru  
+**Date:** May 24, 2026
+**Repository:** FractiAI / Research-Paper-V5
+**Program:** HHF / Digital Pru
 **Classification:** Comparative technical whitepaper — simulation-first; instrument claims require external bench evidence (SING 9 honesty boundary).
 
 ---
@@ -77,35 +77,35 @@ In **5G NR positioning** and **Open RAN** literature, a **Positioning Reference 
 ### 2.4 ASCII diagram — RIC → virtual antenna → PRU
 
 ```
-                    +------------------+
-                    |   Non-RT RIC     |
-                    | (maps, rApps)    |
-                    +--------+---------+
-                             | policy tables
-                             v
-                    +------------------+
-                    |  Near-RT RIC     |
-                    | (xApp: pos sched)|
-                    +--------+---------+
-                             | E2 / O1
-              +--------------+--------------+
-              |                             |
-     +--------v--------+           +--------v--------+
-     |  gNB-DU / O-RU  |           |  Positioning PRU |
-     |  (data + SRS)   |           |  (cal. anchor)   |
-     +--------+--------+           +--------+---------+
-              |                             |
-              |    virtual antenna weights  |
-              +-------------+---------------+
-                            v
-                   [  VAA weight bank  ]
-                   w_0 ... w_{N-1}
-                            |
-                            v
-                      RF at TRP(s)
-                            |
-                            v
-                      UE fix (RTT/AoA)
++------------------+
+|   Non-RT RIC     |
+| (maps, rApps)    |
++--------+---------+
+| policy tables
+v
++------------------+
+|  Near-RT RIC     |
+| (xApp: pos sched)|
++--------+---------+
+| E2 / O1
++--------------+--------------+
+|                             |
++--------v--------+           +--------v--------+
+|  gNB-DU / O-RU  |           |  Positioning PRU |
+|  (data + SRS)   |           |  (cal. anchor)   |
++--------+--------+           +--------+---------+
+|                             |
+|    virtual antenna weights  |
++-------------+---------------+
+v
+[  VAA weight bank  ]
+w_0... w_{N-1}
+|
+v
+RF at TRP(s)
+|
+v
+UE fix (RTT/AoA)
 ```
 
 **Single-gate motif (5G):** **RIC-admitted VAA index** — positioning is allowed only when the near-RT RIC selects a weight set and SRS occasion that pass coexistence and SLA gates.
@@ -142,20 +142,20 @@ On **Texas Instruments Sitara** SoCs, **PRU** denotes the **Programmable Real-Ti
 ### 3.4 ASCII diagram — ARM host vs. PRU gating
 
 ```
-  +-------------------+          +---------------------------+
-  |  ARM Cortex-A     |          |  ICSS (PRU subsystem)      |
-  |  Linux / RTOS     |          |                           |
-  |  - load firmware  |  IPC     |  PRU0 IRAM / DRAM         |
-  |  - map SHM        +--------->|  PRU1 IRAM / DRAM         |
-  |  - configure INTC |          |  Shared RAM               |
-  +---------+---------+          |  R30 (OUT) ----+---- pins  |
-            |                    |  R31 (IN)  <---+---- pins  |
-            |  MMIO              |  IEP timers (1588)        |
-            v                    +---------------------------+
-  +-------------------+
-  |  Peripherals      |
-  |  (eCAP, EPWM, …)  |
-  +-------------------+
++-------------------+          +---------------------------+
+|  ARM Cortex-A     |          |  ICSS (PRU subsystem)      |
+|  Linux / RTOS     |          |                           |
+|  - load firmware  |  IPC     |  PRU0 IRAM / DRAM         |
+|  - map SHM        +--------->|  PRU1 IRAM / DRAM         |
+|  - configure INTC |          |  Shared RAM               |
++---------+---------+          |  R30 (OUT) ----+---- pins  |
+|                    |  R31 (IN)  <---+---- pins  |
+|  MMIO              |  IEP timers (1588)        |
+v                    +---------------------------+
++-------------------+
+|  Peripherals      |
+|  (eCAP, EPWM, …)  |
++-------------------+
 ```
 
 **Single-gate motif (embedded):** **R30 bit mask per cycle** — output energy on pins is gated by firmware logic with deterministic latency, independent of Linux scheduling jitter.
@@ -322,18 +322,18 @@ Across domains, **PRU** always pairs **remote or specialized execution** with an
 
 ## Works Cited
 
-1. O-RAN Alliance, *O-RAN Architecture Description* and *Near-Real-Time RIC* specifications — positioning, E2, xApp frameworks.  
-2. 3GPP TS 38.305 / 37.355 — NR positioning; LPP; PRS/SRS procedures.  
-3. CommScope / Corning / JMA — digital DAS and remote unit product literature (ION-E, ONE, TEKO patterns).  
-4. Texas Instruments, *AM335x Sitara Processors Technical Reference Manual* — PRU-ICSS, memory map, R30/R31.  
-5. Texas Instruments, *AM62x Sitara Processors Technical Reference Manual* — ICSSG, PRU/TX_PRU tasks.  
-6. Zhang et al., hierarchical / pyramidal RNN literature (PyRU-class models); PTB and WikiText-2 benchmarks as reported in primary papers.  
-7. Nielsen & Chuang, *Quantum Computation and Quantum Information* — Pauli, phase, S, T gates; measurement in eigenbases.  
-8. APRA — *ANSI/APSP* and digital handbook product documentation (entitlement and code-year gating).  
-9. Daxko — Virtual Y and membership platform technical overviews (access control, program virtualization).  
-10. Putnis; Frost; iron–phosphorus ore and roasting literature — Fe–P–O phases, apatite, magnetite processing.  
-11. FractiAI Research Team, *Digital Pru Omniverse Magnetic Matrix Protonic DNA Protocol* (2026-05-15) — grattarolaite, Goldilocks pipes, honesty boundary.  
-12. FractiAI, *MCA NSPFRNP Catalog* — 1.420 GHz, φ, BPM, Valet Pru routing, Stage 5 void gate.  
+1. O-RAN Alliance, *O-RAN Architecture Description* and *Near-Real-Time RIC* specifications — positioning, E2, xApp frameworks.
+2. 3GPP TS 38.305 / 37.355 — NR positioning; LPP; PRS/SRS procedures.
+3. CommScope / Corning / JMA — digital DAS and remote unit product literature (ION-E, ONE, TEKO patterns).
+4. Texas Instruments, *AM335x Sitara Processors Technical Reference Manual* — PRU-ICSS, memory map, R30/R31.
+5. Texas Instruments, *AM62x Sitara Processors Technical Reference Manual* — ICSSG, PRU/TX_PRU tasks.
+6. Zhang et al., hierarchical / pyramidal RNN literature (PyRU-class models); PTB and WikiText-2 benchmarks as reported in primary papers.
+7. Nielsen & Chuang, *Quantum Computation and Quantum Information* — Pauli, phase, S, T gates; measurement in eigenbases.
+8. APRA — *ANSI/APSP* and digital handbook product documentation (entitlement and code-year gating).
+9. Daxko — Virtual Y and membership platform technical overviews (access control, program virtualization).
+10. Putnis; Frost; iron–phosphorus ore and roasting literature — Fe–P–O phases, apatite, magnetite processing.
+11. FractiAI Research Team, *Digital Pru Omniverse Magnetic Matrix Protonic DNA Protocol* (2026-05-15) — grattarolaite, Goldilocks pipes, honesty boundary.
+12. FractiAI, *MCA NSPFRNP Catalog* — 1.420 GHz, φ, BPM, Valet Pru routing, Stage 5 void gate.
 13. FractiAI, *DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON* (2026-05-11) — PEFF, EGS nodal lattice, VALETPRU-ASIC mapping.
 
 ---
@@ -344,10 +344,10 @@ Across domains, **PRU** always pairs **remote or specialized execution** with an
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-PRU-GATING-COMPARATIVE  
-**Registry ID:** `dp-pru-gating-comparative`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-PRU-GATING-COMPARATIVE
+**Registry ID:** `dp-pru-gating-comparative`
 **Re-audit:** `npm run audit:paper -- --id=dp-pru-gating-comparative`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

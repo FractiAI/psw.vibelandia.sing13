@@ -4,21 +4,21 @@
 
 Empirical Geodynamo Telemetry, Core-Mantle Boundary Phase-Locking, and the Scale-Invariant Transition to the Goldilocks Earth Matrix
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 13, 2026  
-**Document ID:** `WP-SYNTHOBS-TBME-PLANETARY-CORE-GOLDILOCKS-2026-08-13`  
-**Registry ID:** `synthobs-tbme-planetary-core-goldilocks-2026-08`  
-**Publication Ref:** FAI-SYNTHOBS-TBME-PLANETARY-CORE-GOLDILOCKS-2026-08  
-**Series Position:** Omni-Lattice Core Whitepaper Series — Part XIV (Macro-Geodynamics & Holographic Phase Transitions)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 13, 2026
+**Document ID:** `WP-SYNTHOBS-TBME-PLANETARY-CORE-GOLDILOCKS-2026-08-13`
+**Registry ID:** `synthobs-tbme-planetary-core-goldilocks-2026-08`
+**Publication Ref:** FAI-SYNTHOBS-TBME-PLANETARY-CORE-GOLDILOCKS-2026-08
+**Series Position:** Omni-Lattice Core Whitepaper Series — Part XIV (Macro-Geodynamics & Holographic Phase Transitions)
 **Classification:** Geodynamo field electrodynamics · empirical telemetry discussion · systemic simulation *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · 99 Octave Omni-Lattice engine · Lattice Chat nest `octave99` · Synthio companion load · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks  
-**Standalone suite:** [FractiAI/synthobs-tbme-planetary-core-goldilocks](https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks) · monorepo [`research/synthobs-tbme-planetary-core-goldilocks/`](../research/synthobs-tbme-planetary-core-goldilocks/)  
-**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) (step 6 · Part XIV)  
-**Lattice Chat:** nest `octave99` · Seed·RAG pointer  
-**Synthio load:** companion 99-octave **grammar** (does **not** make the MRI sandbox agent an engine-shelf identity)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · 99 Octave Omni-Lattice engine · Lattice Chat nest `octave99` · Synthio companion load · EGS · NSPFRNP · PRA Snap · Fair Exchange
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks
+**Standalone suite:** [FractiAI/synthobs-tbme-planetary-core-goldilocks](https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks) · monorepo [`research/synthobs-tbme-planetary-core-goldilocks/`](../research/synthobs-tbme-planetary-core-goldilocks/)
+**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) (step 6 · Part XIV)
+**Lattice Chat:** nest `octave99` · Seed·RAG pointer
+**Synthio load:** companion 99-octave **grammar** (does **not** make the MRI sandbox agent an engine-shelf identity)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** planetary core; phase-inversion; Goldilocks hologram; geodynamo; ESA Swarm; USC seismic; CMB; $E_F$; $\Phi_{\mathrm{EGS}}$; 99 octave; Lattice Chat; Synthio; TBME; NSPFRNP
@@ -88,8 +88,8 @@ Suite arithmetic is deterministic Node. Geophysics, somatic, and “timeline” 
 ```
 PLANETARY HOLOGRAPHIC PHASE TRANSITION MATRIX (catalog)
 
-     Old Earth Hologram                         Goldilocks Earth Matrix
-     (Un-Phased Core Drag labels)               (E_F Phase-Locked Core labels)
+Old Earth Hologram                         Goldilocks Earth Matrix
+(Un-Phased Core Drag labels)               (E_F Phase-Locked Core labels)
 ┌───────────────────────────────┐         ┌───────────────────────────────┐
 │ Chaotic Outer Core Convection │         │ Coherent MHD Laminar Flow     │
 │  • High Entropy (ΔS > 0)      │ ────►   │  • Zero Entropy (ΔS ➔ 0)*     │
@@ -108,13 +108,13 @@ Authored Omni-Lattice evaluation **fixture** (not an external geodynamo lab scor
 
 ```
 OMNI-LATTICE GEODYNAMO EVALUATION
-  Empirical Telemetry Alignment:   99.8/100  (catalog match labels to Swarm / USC discussion)
-  Geodynamo Field Integration (G): 99.6/100  (inner-core ΔΩ ↔ MHD vector-potential talk)
-  Holographic Projection Rigor:    98.5/100  (core torque → CMB dielectric horizon sketch)
-  Simulation & Computational Value:99.2/100  (O(1) 81-facet core tensor fixtures)
-  Scale-Invariant Consistency:     98.1/100  (Goldilocks transition via E_F phase-lock labels)
-  -----------------------------------------------------------------------------------
-  OVERALL SYSTEMIC EFFICACY SCORE: 99.0 / 100  (authored mean of the five fixtures)
+Empirical Telemetry Alignment:   99.8/100  (catalog match labels to Swarm / USC discussion)
+Geodynamo Field Integration (G): 99.6/100  (inner-core ΔΩ ↔ MHD vector-potential talk)
+Holographic Projection Rigor:    98.5/100  (core torque → CMB dielectric horizon sketch)
+Simulation & Computational Value:99.2/100  (O(1) 81-facet core tensor fixtures)
+Scale-Invariant Consistency:     98.1/100  (Goldilocks transition via E_F phase-lock labels)
+-----------------------------------------------------------------------------------
+OVERALL SYSTEMIC EFFICACY SCORE: 99.0 / 100  (authored mean of the five fixtures)
 ```
 
 ---
@@ -191,8 +191,8 @@ $$
 | CMB dielectric horizon | Verification gate / preflight | Screens high-entropy prompt tokens **as a story** |
 | Differential core shift | $90^\circ$ phase-rotation $\hat{R}_{\pi/2}$ | Re-indexes state space without full matrix recompute **fixture** |
 
-**Core tensor setup:** $9\times 9=81$ spherical mirror matrix (Part XI lineage).  
-**Phase rotation:** $\hat{R}_{\pi/2}$ rotates active context vectors.  
+**Core tensor setup:** $9\times 9=81$ spherical mirror matrix (Part XI lineage).
+**Phase rotation:** $\hat{R}_{\pi/2}$ rotates active context vectors.
 **Result (catalog):** rotating the core state vector *talks about* purging token entropy ($\Delta S\to 0$) into a Goldilocks operational regime — deterministic **suite locks**, not a claim physical cores run Node.
 
 ---
@@ -205,8 +205,8 @@ $$
 | **Personal / somatic** | High friction, time drag, burnout *talk* | Zero-entropy presence in “the Now” *as metaphor* |
 | **Software & engineering** | Token bloat, high latency, unstable wrappers | Typed, zero-mock harnesses, $O(1)$ zero-entropy *execution labels* |
 
-**Empirically confirmed environment (discussion):** satellite and seismic **headlines** are filed as live Goldilocks Sandbox co-timing — verify sources; do not treat this paper as a seismic warning bulletin.  
-**Somatic alignment:** awareness-in-the-body *talk* may be filed next to core phase labels — **not** a medical protocol.  
+**Empirically confirmed environment (discussion):** satellite and seismic **headlines** are filed as live Goldilocks Sandbox co-timing — verify sources; do not treat this paper as a seismic warning bulletin.
+**Somatic alignment:** awareness-in-the-body *talk* may be filed next to core phase labels — **not** a medical protocol.
 **Engine-level validation:** mirroring the geodynamo shift inside THALIA / Lattice Chat is a **software fixture**, not proof that rotating $\mathbf{A}$ replaces compute complexity in production clouds.
 
 ---

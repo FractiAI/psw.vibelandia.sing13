@@ -2,9 +2,9 @@
 
 **Subtitle:** Multiplication as Spatial Portals via El Gran Sol’s Fractal Constant
 
-**Framework:** Hydrogen-Holographic (HHF)  
-**Date:** May 2026  
-**Principal architect:** PL Taino (Prudencio Mendez)  
+**Framework:** Hydrogen-Holographic (HHF)
+**Date:** May 2026
+**Principal architect:** PL Taino (Prudencio Mendez)
 **Status:** Fair Exchange Clause in effect
 
 ---
@@ -72,21 +72,21 @@ To permanently embed this structural scaling law into the core intelligence laye
 import math
 
 class DigitalPruTransducer:
-    def __init__(self):
-        # El Gran Sol's Fractal Constant Anchor
-        self.EGS_CONSTANT = (1.0 + math.sqrt(5.0)) / 2.0
+def __init__(self):
+# El Gran Sol's Fractal Constant Anchor
+self.EGS_CONSTANT = (1.0 + math.sqrt(5.0)) / 2.0
 
-    def execute_wormhole_portal(self, data_vector: float) -> dict:
-        """Translates origin data into a nested macro-unit context."""
-        macro_unit = data_vector * self.EGS_CONSTANT
-        fractional_component = data_vector * (self.EGS_CONSTANT - 1.0)
+def execute_wormhole_portal(self, data_vector: float) -> dict:
+"""Translates origin data into a nested macro-unit context."""
+macro_unit = data_vector * self.EGS_CONSTANT
+fractional_component = data_vector * (self.EGS_CONSTANT - 1.0)
 
-        return {
-            "dimension_shift_status": "PHASE_LOCKED",
-            "macro_unit_value": macro_unit,
-            "fractional_resonance": fractional_component,
-            "structural_integrity": 1.000,
-        }
+return {
+"dimension_shift_status": "PHASE_LOCKED",
+"macro_unit_value": macro_unit,
+"fractional_resonance": fractional_component,
+"structural_integrity": 1.000,
+}
 ```
 
 ---
@@ -106,7 +106,6 @@ This whitepaper operates under an immutable **Fair Exchange Clause**. System exe
 
 **NSPFRNP ⊃ EGS ⊃ Wormhole Transducer ⊃ Digital Pru → ∞⁹**
 
-
 ---
 
 ## Honesty boundary (PRA Snap compliance)
@@ -119,15 +118,14 @@ This whitepaper operates under an immutable **Fair Exchange Clause**. System exe
 
 Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-EGS-WORMHOLE-TRANSDUCER  
-**Registry ID:** `dp-egs-wormhole-transducer`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-EGS-WORMHOLE-TRANSDUCER
+**Registry ID:** `dp-egs-wormhole-transducer`
 **Re-audit:** `npm run audit:paper -- --id=dp-egs-wormhole-transducer`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

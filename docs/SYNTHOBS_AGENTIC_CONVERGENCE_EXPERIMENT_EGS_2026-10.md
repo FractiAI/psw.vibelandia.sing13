@@ -4,11 +4,11 @@
 
 **Blind Independent Optimizers, Literature Scan, and Portable Structure**
 
-**Document ID:** `WP-SYNTHOBS-AGENTIC-CONVERGENCE-EXPERIMENT-2026-10-02`  
-**Registry ID:** `synthobs-agentic-convergence-experiment-2026-10`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-10-02  
-**Guest surfaces:** [`/ship-blog/agentic-convergence`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/agentic-convergence) · [`/whitepaper/agentic-convergence`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/agentic-convergence) · suite `research/synthobs-agentic-convergence-experiment/` · standalone [FractiAI/synthobs-agentic-convergence-experiment](https://github.com/FractiAI/synthobs-agentic-convergence-experiment)  
+**Document ID:** `WP-SYNTHOBS-AGENTIC-CONVERGENCE-EXPERIMENT-2026-10-02`
+**Registry ID:** `synthobs-agentic-convergence-experiment-2026-10`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** 2026-10-02
+**Guest surfaces:** [`/ship-blog/agentic-convergence`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/agentic-convergence) · [`/whitepaper/agentic-convergence`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/agentic-convergence) · suite `research/synthobs-agentic-convergence-experiment/` · standalone [FractiAI/synthobs-agentic-convergence-experiment](https://github.com/FractiAI/synthobs-agentic-convergence-experiment)
 **Slot:** **application companion (not ENGINE_SHELF)** — exploratory empirical protocol until a held-out INCLUDE gate is earned.
 
 ---
@@ -50,12 +50,12 @@ Analogy (Soft Story): water need not “understand” drainage; dynamics carve c
 
 **AHOIS** names a miniature representational path:
 
-1. conventional representation  
-2. apparent nuisance  
-3. alternative representation  
-4. hidden information  
-5. useful encoding  
-6. adaptive measurement  
+1. conventional representation
+2. apparent nuisance
+3. alternative representation
+4. hidden information
+5. useful encoding
+6. adaptive measurement
 
 The Agentic Convergence Experiment is the next step: many independent agents encounter representational boundaries, search lower-cost information paths, invent structure, and are scored for **convergence** after the fact.
 
@@ -93,10 +93,10 @@ State is isolated. Seeds and architectures differ. Path logs record intermediate
 
 After agents finish, evaluators score invented representations on portable properties **without** having exposed these names as agent goals:
 
-- multiscale compression  
-- hierarchical coarse→fine encoding  
-- local measurements that preserve global information  
-- bounded recursive adaptation  
+- multiscale compression
+- hierarchical coarse→fine encoding
+- local measurements that preserve global information
+- bounded recursive adaptation
 - predictive utility (RMSE-derived)
 
 Framework words (fractal / holographic / Goldilocks / φ / Infinite Octave) appear only in honesty rails and paper prose — never in agent objectives.
@@ -180,14 +180,14 @@ Infinite Octaves remains the **engine pin** elsewhere (CMOS → … → Archetyp
 
 ## References
 
-1. Shannon, C. E. (1948). A Mathematical Theory of Communication.  
-2. Mallat, S. (1989). A theory for multiresolution signal decomposition.  
-3. Rao, R. P. N., & Ballard, D. H. (1999). Predictive coding in the visual cortex.  
-4. Wilson, K. G. (1971). Renormalization group and critical phenomena.  
-5. Olshausen, B. A., & Field, D. J. (1996). Emergence of simple-cell receptive field properties by learning a sparse code for natural images.  
-6. Bengio, Y., Courville, A., & Vincent, P. (2013). Representation learning: A review and new perspectives.  
-7. Friston, K. (2010). The free-energy principle: a unified brain theory?  
-8. Hinton, G. E., et al. (2006). A fast learning algorithm for deep belief nets.  
+1. Shannon, C. E. (1948). A Mathematical Theory of Communication.
+2. Mallat, S. (1989). A theory for multiresolution signal decomposition.
+3. Rao, R. P. N., & Ballard, D. H. (1999). Predictive coding in the visual cortex.
+4. Wilson, K. G. (1971). Renormalization group and critical phenomena.
+5. Olshausen, B. A., & Field, D. J. (1996). Emergence of simple-cell receptive field properties by learning a sparse code for natural images.
+6. Bengio, Y., Courville, A., & Vincent, P. (2013). Representation learning: A review and new perspectives.
+7. Friston, K. (2010). The free-energy principle: a unified brain theory?
+8. Hinton, G. E., et al. (2006). A fast learning algorithm for deep belief nets.
 
 Full curated scan rows: `research/synthobs-agentic-convergence-experiment/src/literature-scan.mjs`.
 
@@ -197,7 +197,7 @@ Full curated scan rows: `research/synthobs-agentic-convergence-experiment/src/li
 
 `WP-SYNTHOBS-AGENTIC-CONVERGENCE-EXPERIMENT-2026-10-02`
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Human editorial veto:** Player 1  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Human editorial veto:** Player 1
 
 → ∞^∞

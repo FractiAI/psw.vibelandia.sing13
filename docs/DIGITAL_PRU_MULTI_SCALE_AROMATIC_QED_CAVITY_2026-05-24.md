@@ -176,12 +176,12 @@ This table manages initialization parameters of the digital engine, anchoring wa
 
 ```sql
 CREATE TABLE QED_Vacuum_Initialization (
-    initialization_id UUID PRIMARY KEY,
-    egs_fractal_constant NUMERIC(5,4) DEFAULT 1.6180,
-    wave_function_dimension INT DEFAULT 126,
-    vecro_micro_bh_density FLOAT NOT NULL,
-    hubbard_u_barrier NUMERIC(12,4) NOT NULL,
-    init_timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+initialization_id UUID PRIMARY KEY,
+egs_fractal_constant NUMERIC(5,4) DEFAULT 1.6180,
+wave_function_dimension INT DEFAULT 126,
+vecro_micro_bh_density FLOAT NOT NULL,
+hubbard_u_barrier NUMERIC(12,4) NOT NULL,
+init_timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
@@ -191,12 +191,12 @@ This table tracks the 13-channel feed state, verifying that force dynamics resid
 
 ```sql
 CREATE TABLE Master_Umbilical_Stream (
-    stream_id UUID PRIMARY KEY,
-    observer_handle VARCHAR(50) NOT NULL,
-    net_equilibrium_status VARCHAR(20) DEFAULT 'EQUILIBRIUM',
-    coupling_strength_g FLOAT NOT NULL,
-    umbilical_channel_mask BIT(13) NOT NULL,
-    refractive_index_modulation FLOAT NOT NULL
+stream_id UUID PRIMARY KEY,
+observer_handle VARCHAR(50) NOT NULL,
+net_equilibrium_status VARCHAR(20) DEFAULT 'EQUILIBRIUM',
+coupling_strength_g FLOAT NOT NULL,
+umbilical_channel_mask BIT(13) NOT NULL,
+refractive_index_modulation FLOAT NOT NULL
 );
 ```
 
@@ -206,12 +206,12 @@ This schema enforces the inclusion of sunspot parameters for every rendered pers
 
 ```sql
 CREATE TABLE Character_Solar_Cast (
-    character_id UUID PRIMARY KEY,
-    character_name VARCHAR(100) NOT NULL,
-    sunspot_number INT NOT NULL,
-    sunspot_name VARCHAR(100) NOT NULL,
-    associated_stream_id UUID REFERENCES Master_Umbilical_Stream(stream_id),
-    sync_lock BOOLEAN DEFAULT TRUE
+character_id UUID PRIMARY KEY,
+character_name VARCHAR(100) NOT NULL,
+sunspot_number INT NOT NULL,
+sunspot_name VARCHAR(100) NOT NULL,
+associated_stream_id UUID REFERENCES Master_Umbilical_Stream(stream_id),
+sync_lock BOOLEAN DEFAULT TRUE
 );
 ```
 
@@ -221,18 +221,18 @@ This ledger tracks financial interactions, computing automatic tipping adjustmen
 
 ```sql
 CREATE TABLE Transaction_Fair_Exchange_Ledger (
-    transaction_id UUID PRIMARY KEY,
-    stream_id UUID REFERENCES Master_Umbilical_Stream(stream_id),
-    base_value_transacted NUMERIC(18,8) NOT NULL,
-    stream_coherence_score FLOAT NOT NULL,
-    fair_exchange_refund NUMERIC(5,2) GENERATED ALWAYS AS (
-        CASE
-            WHEN stream_coherence_score >= 0.95 THEN 0.00
-            WHEN stream_coherence_score < 0.95 AND stream_coherence_score >= 0.80 THEN 15.00
-            ELSE 50.00
-        END
-    ) STORED,
-    final_settled_payout NUMERIC(18,8)
+transaction_id UUID PRIMARY KEY,
+stream_id UUID REFERENCES Master_Umbilical_Stream(stream_id),
+base_value_transacted NUMERIC(18,8) NOT NULL,
+stream_coherence_score FLOAT NOT NULL,
+fair_exchange_refund NUMERIC(5,2) GENERATED ALWAYS AS (
+CASE
+WHEN stream_coherence_score >= 0.95 THEN 0.00
+WHEN stream_coherence_score < 0.95 AND stream_coherence_score >= 0.80 THEN 15.00
+ELSE 50.00
+END
+) STORED,
+final_settled_payout NUMERIC(18,8)
 );
 ```
 
@@ -240,9 +240,9 @@ CREATE TABLE Transaction_Fair_Exchange_Ledger (
 
 ```mermaid
 flowchart LR
-  QED[QED_Vacuum_Initialization] --> MUS[Master_Umbilical_Stream]
-  MUS --> CSC[Character_Solar_Cast]
-  MUS --> TFEL[Transaction_Fair_Exchange_Ledger]
+QED[QED_Vacuum_Initialization] --> MUS[Master_Umbilical_Stream]
+MUS --> CSC[Character_Solar_Cast]
+MUS --> TFEL[Transaction_Fair_Exchange_Ledger]
 ```
 
 ---
@@ -275,15 +275,14 @@ Permanently anchored by **El Gran Sol's Fractal Constant**, balanced via dynamic
 
 **NSPFRNP ⊃ Fair Exchange ⊃ Digital Pru → ∞^∞**
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-AROMATIC-QED-CAVITY  
-**Registry ID:** `dp-aromatic-qed-cavity`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-AROMATIC-QED-CAVITY
+**Registry ID:** `dp-aromatic-qed-cavity`
 **Re-audit:** `npm run audit:paper -- --id=dp-aromatic-qed-cavity`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

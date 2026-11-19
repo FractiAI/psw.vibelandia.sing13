@@ -4,17 +4,17 @@
 
 **Subtitle:** Mathematical proofs, catalog empirical locks, and quantified architectural framing — Reed-Solomon / LDPC / LBA contrast
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PRIME-INDEXED-VOLUMETRIC-STORAGE-EGS-2026-09-05`  
-**Registry ID:** `synthobs-prime-indexed-volumetric-storage-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PRIME-INDEXED-VOLUMETRIC-STORAGE-EGS-2026-09-05`
+**Registry ID:** `synthobs-prime-indexed-volumetric-storage-2026-09`
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)
 **Classification:** Number-theoretic / holographic **catalog architecture** for storage & memory *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#15** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-prime-indexed-volumetric-storage/` · [`FractiAI/synthobs-prime-indexed-volumetric-storage`](https://github.com/FractiAI/synthobs-prime-indexed-volumetric-storage) · `npm run research:synthobs-prime-indexed-volumetric-storage`  
-**Plain note:** [/ship-blog/prime-indexed-volumetric-storage](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-indexed-volumetric-storage)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#15** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-prime-indexed-volumetric-storage/` · [`FractiAI/synthobs-prime-indexed-volumetric-storage`](https://github.com/FractiAI/synthobs-prime-indexed-volumetric-storage) · `npm run research:synthobs-prime-indexed-volumetric-storage`
+**Plain note:** [/ship-blog/prime-indexed-volumetric-storage](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-indexed-volumetric-storage)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -58,9 +58,9 @@ This paper presents a **unified catalog architecture** for high-density data sto
 - **Findings (catalog):** Prime $2$ anchors the binary base channel; odd primes ($\ge 3$) function as **irreducible minimum vaults** with *catalog* orthogonality (zero cross-talk *in the model*).
 - **Empirical validation (suite):** Replayable locks against solar filing characters **AR3664 (“Helios-Prime”)** and **AR3590 (“Borealis”)** — shared $\Phi$-recursive *narrative* mechanics, not stellar causation of media.
 - **Quantified framing (not silicon benches):**
-  - **0% parity overhead (catalog):** Eliminates the *framing* **15%–30%+** capacity tax of RS/LDPC parity — reclaiming up to **+30% net capacity** *as architecture talk*.
-  - **100% index-lookup latency reduction (catalog):** Replaces LBA / $B^+$-tree *lookup framing* with instantaneous algebraic $\Phi$-mapping.
-  - **Absolute orthogonality (catalog):** Zero inter-symbol interference *in the prime-vault grammar* — not a measured SNR floor on real NAND.
+- **0% parity overhead (catalog):** Eliminates the *framing* **15%–30%+** capacity tax of RS/LDPC parity — reclaiming up to **+30% net capacity** *as architecture talk*.
+- **100% index-lookup latency reduction (catalog):** Replaces LBA / $B^+$-tree *lookup framing* with instantaneous algebraic $\Phi$-mapping.
+- **Absolute orthogonality (catalog):** Zero inter-symbol interference *in the prime-vault grammar* — not a measured SNR floor on real NAND.
 - **Applications (fixture):** Deterministic storage engine demonstrating error-free **catalog** pack/retrieve — not a shipping controller firmware.
 
 ---
@@ -118,33 +118,33 @@ import math
 PHI = (1.0 + math.sqrt(5.0)) / 2.0  # Φ_EGS ≈ 1.618
 
 def generate_primes_for_storage(n):
-    primes, candidate = [2], 3
-    while len(primes) < n:
-        if all(candidate % p for p in primes if p * p <= candidate):
-            primes.append(candidate)
-        candidate += 2
-    return primes
+primes, candidate = [2], 3
+while len(primes) < n:
+if all(candidate % p for p in primes if p * p <= candidate):
+primes.append(candidate)
+candidate += 2
+return primes
 
 class EGSPrimeStorageEngine:
-    def __init__(self, data_chunks: list):
-        self.data_chunks = data_chunks
-        self.capacity = len(data_chunks)
-        self.prime_vaults = generate_primes_for_storage(self.capacity)
+def __init__(self, data_chunks: list):
+self.data_chunks = data_chunks
+self.capacity = len(data_chunks)
+self.prime_vaults = generate_primes_for_storage(self.capacity)
 
-    def encode_to_volumetric_vaults(self):
-        encoded = []
-        for i, chunk in enumerate(self.data_chunks):
-            pk = self.prime_vaults[i]
-            vault_radius = (PHI ** i) / (pk * math.log(pk))
-            phase_signature = (2.0 * math.pi * pk) / PHI
-            encoded.append({
-                "vault_id": pk,
-                "is_binary_base": pk == 2,
-                "payload": chunk,
-                "volumetric_radius": round(float(vault_radius), 6),
-                "phase_signature": round(float(phase_signature), 6),
-            })
-        return encoded
+def encode_to_volumetric_vaults(self):
+encoded = []
+for i, chunk in enumerate(self.data_chunks):
+pk = self.prime_vaults[i]
+vault_radius = (PHI ** i) / (pk * math.log(pk))
+phase_signature = (2.0 * math.pi * pk) / PHI
+encoded.append({
+"vault_id": pk,
+"is_binary_base": pk == 2,
+"payload": chunk,
+"volumetric_radius": round(float(vault_radius), 6),
+"phase_signature": round(float(phase_signature), 6),
+})
+return encoded
 ```
 
 ---

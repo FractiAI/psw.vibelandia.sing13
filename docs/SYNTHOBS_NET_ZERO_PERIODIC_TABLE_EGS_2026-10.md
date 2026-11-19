@@ -64,10 +64,10 @@ Expedition 001 established complementary decomposition beyond mirror symmetry, a
 
 ## 2. Research questions
 
-1. Can Group 13↔15 be expressed as a Net Zero complementary grammar (involution + octet accounting)?  
-2. Do Pauling electronegativity differences \(\Delta\chi(p)=\chi_{15}(p)-\chi_{13}(p)\) show a consistent period-dependent pattern?  
-3. Does that pattern survive on independent Allen and Allred–Rochow scales?  
-4. Do independent properties (first ionization energy, covalent radius) show concordant complementary structure?  
+1. Can Group 13↔15 be expressed as a Net Zero complementary grammar (involution + octet accounting)?
+2. Do Pauling electronegativity differences \(\Delta\chi(p)=\chi_{15}(p)-\chi_{13}(p)\) show a consistent period-dependent pattern?
+3. Does that pattern survive on independent Allen and Allred–Rochow scales?
+4. Do independent properties (first ionization energy, covalent radius) show concordant complementary structure?
 5. What novel observations does the Expedition 001 model catalog when applied here?
 
 ---
@@ -124,10 +124,10 @@ Machine-readable: `data/novel_observations.json`. “Novel” = newly framed joi
 
 ## 6. Principal findings
 
-1. Complementary Structure Inference maps cleanly onto period-paired G13↔G15.  
-2. Electronegativity differences exhibit a consistent period-dependent pattern under stated metrics.  
-3. The pattern survives two independent EN scales and tracks ionization-energy differences.  
-4. Radius complements reinforce early periods; heavy-element period 6 remains the soft edge.  
+1. Complementary Structure Inference maps cleanly onto period-paired G13↔G15.
+2. Electronegativity differences exhibit a consistent period-dependent pattern under stated metrics.
+3. The pattern survives two independent EN scales and tracks ionization-energy differences.
+4. Radius complements reinforce early periods; heavy-element period 6 remains the soft edge.
 5. The novel observation catalog records eight supported suite-framed claims.
 
 ---

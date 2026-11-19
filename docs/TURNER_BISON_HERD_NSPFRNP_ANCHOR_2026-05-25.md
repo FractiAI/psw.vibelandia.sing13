@@ -1,9 +1,9 @@
 # Strategic Report: Passive, No GPS Collar Bison Herd Management System Applied to Turner Enterprise Rangeland
 
-**Document ref:** HHA-NSPFRNP-ANCHOR-2026-05-25  
-**Prepared by:** Pru Mendez  
-**Contact:** info@fractiai.com  
-**Target context:** Turner Enterprise Contiguous Land Network (2 million acres / 45,000 head)  
+**Document ref:** HHA-NSPFRNP-ANCHOR-2026-05-25
+**Prepared by:** Pru Mendez
+**Contact:** info@fractiai.com
+**Target context:** Turner Enterprise Contiguous Land Network (2 million acres / 45,000 head)
 **Multi-taxa wavefield:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (bison N-S keystone anchor; elk, mule deer, pronghorn corridor roles)
 
 ---
@@ -79,18 +79,18 @@ Space-weather **display** may cite NOAA solar flux baseline **137 sfu**, sunspot
 
 ## Part VI — Empirical accuracy reconciliation
 
-1. **Pasture rotation timelines** — Fence-line wave-lock matched Turner Institute of Ecoagriculture spring logs (Flying D lower river-basin gate opening).  
-2. **Biomass depletion velocity** — ADM 1,450 lbs/acre vs continuous grazing signature without field sampling.  
+1. **Pasture rotation timelines** — Fence-line wave-lock matched Turner Institute of Ecoagriculture spring logs (Flying D lower river-basin gate opening).
+2. **Biomass depletion velocity** — ADM 1,450 lbs/acre vs continuous grazing signature without field sampling.
 3. **Biological mass displacement** — PLL delays calibrated to TESF mean weight 1,100 lbs per adult cow unit.
 
 ---
 
 ## Part VII — Live stream summary
 
-- Hydrogen line broadcast: 1420.4 MHz  
-- Radio solar flux: 137 sfu  
-- Sunspot target: 86 (AR4446)  
-- Noise floor: Kp = 1.00  
+- Hydrogen line broadcast: 1420.4 MHz
+- Radio solar flux: 137 sfu
+- Sunspot target: 86 (AR4446)
+- Noise floor: Kp = 1.00
 
 ---
 
@@ -116,9 +116,9 @@ Position trails + ADM baseline + metabolic index (2.6%) → cumulative drawdown 
 
 ## Part IX — Ingestion pipeline (single chronological matrix)
 
-1. **Ingest** — Fence-line PLL returns (1420 MHz Goubau waveguide) + NOAA ionospheric flux + public Turner/TESF baselines.  
-2. **Scale** — Non-linear EGS (1.618) filter → Kp = 1.00 noise floor before fuse.  
-3. **Radar** — Passive radar synthesis: cross-reference **fence-line gate returns** with **Open-Meteo assimilated soil-moisture** (satellite + stations), **NOAA geomagnetic layers** (Boulder K, geospace Dst, L1 RTSW Bz), and **HIFLD US transmission corridors** (free ArcGIS). Magnetic coupling boosts grid resolution; high-voltage lines near pastures increase placement leverage.  
+1. **Ingest** — Fence-line PLL returns (1420 MHz Goubau waveguide) + NOAA ionospheric flux + public Turner/TESF baselines.
+2. **Scale** — Non-linear EGS (1.618) filter → Kp = 1.00 noise floor before fuse.
+3. **Radar** — Passive radar synthesis: cross-reference **fence-line gate returns** with **Open-Meteo assimilated soil-moisture** (satellite + stations), **NOAA geomagnetic layers** (Boulder K, geospace Dst, L1 RTSW Bz), and **HIFLD US transmission corridors** (free ArcGIS). Magnetic coupling boosts grid resolution; high-voltage lines near pastures increase placement leverage.
 4. **Synthesis** — Metabolic + ADM + radar placement field → unified **modeled** herd awareness stream.
 
 **Console status:** synthesis is **locked to the ingest snapshot** for that run (live) or **per day** in date-range mode — not a claim of third-party operational validation.
@@ -139,10 +139,10 @@ Position trails + ADM baseline + metabolic index (2.6%) → cumulative drawdown 
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** TURNER-BISON-HERD-REPORT  
-**Registry ID:** `turner-bison-herd-report`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** TURNER-BISON-HERD-REPORT
+**Registry ID:** `turner-bison-herd-report`
 **Re-audit:** `npm run audit:paper -- --id=turner-bison-herd-report`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

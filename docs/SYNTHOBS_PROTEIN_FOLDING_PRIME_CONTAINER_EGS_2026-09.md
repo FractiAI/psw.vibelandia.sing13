@@ -4,17 +4,17 @@
 
 **Subtitle:** Mathematical proofs, catalog empirical locks, and deterministic solver — contrasted with AlphaFold’s statistical paradigm
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PROTEIN-FOLDING-PRIME-CONTAINER-EGS-2026-09-05`  
-**Registry ID:** `synthobs-protein-folding-prime-container-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PROTEIN-FOLDING-PRIME-CONTAINER-EGS-2026-09-05`
+**Registry ID:** `synthobs-protein-folding-prime-container-2026-09`
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)
 **Classification:** Number-theoretic / holographic **catalog architecture** for folding grammar *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#14** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-protein-folding-prime-container/` · [`FractiAI/synthobs-protein-folding-prime-container`](https://github.com/FractiAI/synthobs-protein-folding-prime-container) · `npm run research:synthobs-protein-folding-prime-container`  
-**Plain note:** [/ship-blog/protein-folding-prime-container](https://www.ssvibelandiaquestfest24x365.com/ship-blog/protein-folding-prime-container)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#14** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-protein-folding-prime-container/` · [`FractiAI/synthobs-protein-folding-prime-container`](https://github.com/FractiAI/synthobs-protein-folding-prime-container) · `npm run research:synthobs-protein-folding-prime-container`
+**Plain note:** [/ship-blog/protein-folding-prime-container](https://www.ssvibelandiaquestfest24x365.com/ship-blog/protein-folding-prime-container)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -130,45 +130,45 @@ import numpy as np
 PHI = (1.0 + math.sqrt(5.0)) / 2.0  # Φ_EGS ≈ 1.618
 
 def generate_odd_primes(n):
-    primes, candidate = [], 3
-    while len(primes) < n:
-        if all(candidate % p for p in primes if p * p <= candidate):
-            primes.append(candidate)
-        candidate += 2
-    return primes
+primes, candidate = [], 3
+while len(primes) < n:
+if all(candidate % p for p in primes if p * p <= candidate):
+primes.append(candidate)
+candidate += 2
+return primes
 
 class EGSProteinContainerSolver:
-    def __init__(self, sequence: str):
-        self.sequence = sequence.upper()
-        self.length = len(sequence)
-        self.prime_containers = generate_odd_primes(self.length)
+def __init__(self, sequence: str):
+self.sequence = sequence.upper()
+self.length = len(sequence)
+self.prime_containers = generate_odd_primes(self.length)
 
-    def compute_conformational_coordinates(self):
-        coordinates, current_pos = [], np.zeros(3)
-        for i, residue in enumerate(self.sequence):
-            pk = self.prime_containers[i]
-            radius = (PHI ** i) / (pk * math.log(pk))
-            theta = (2.0 * math.pi * pk) / PHI
-            phi_angle = math.acos(1.0 - (2.0 * (i + 1) / (self.length + 1)))
-            delta = radius * np.array([
-                math.sin(phi_angle) * math.cos(theta),
-                math.sin(phi_angle) * math.sin(theta),
-                math.cos(phi_angle),
-            ])
-            current_pos = current_pos + delta
-            coordinates.append({
-                "residue": residue,
-                "index": i + 1,
-                "prime_container": pk,
-                "coordinates": [round(float(c), 4) for c in current_pos],
-            })
-        return coordinates
+def compute_conformational_coordinates(self):
+coordinates, current_pos = [], np.zeros(3)
+for i, residue in enumerate(self.sequence):
+pk = self.prime_containers[i]
+radius = (PHI ** i) / (pk * math.log(pk))
+theta = (2.0 * math.pi * pk) / PHI
+phi_angle = math.acos(1.0 - (2.0 * (i + 1) / (self.length + 1)))
+delta = radius * np.array([
+math.sin(phi_angle) * math.cos(theta),
+math.sin(phi_angle) * math.sin(theta),
+math.cos(phi_angle),
+])
+current_pos = current_pos + delta
+coordinates.append({
+"residue": residue,
+"index": i + 1,
+"prime_container": pk,
+"coordinates": [round(float(c), 4) for c in current_pos],
+})
+return coordinates
 
-    def calculate_folding_energy(self):
-        return sum(
-            (1.0 / (pk ** PHI)) * math.exp(-((i + 1) / PHI))
-            for i, pk in enumerate(self.prime_containers)
-        )
+def calculate_folding_energy(self):
+return sum(
+(1.0 / (pk ** PHI)) * math.exp(-((i + 1) / PHI))
+for i, pk in enumerate(self.prime_containers)
+)
 ```
 
 ---

@@ -4,18 +4,18 @@
 
 ## A Phase-Contrast Mapping of the 81 Fundamental Nodal Geometries Constructing Spacetime Projection
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-81-ORBITAL-SINGULARITY-2026-07-31`  
-**Registry ID:** `synthobs-81-orbital-singularity-2026-07`  
-**Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
-**Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · 81-node ($9\times 9$) register · Lattice Chat Agent (software metaphor only)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-81-orbital-singularity  
-**Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-81-orbital-singularity` · [`empirical_report.json`](../research/synthobs-81-orbital-singularity/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-81-ORBITAL-SINGULARITY-2026-07-31`
+**Registry ID:** `synthobs-81-orbital-singularity-2026-07`
+**Category:** TBME · Theoretical Bio-Medical & Physical Explorations
+**Date:** July 31, 2026
+**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · 81-node ($9\times 9$) register · Lattice Chat Agent (software metaphor only)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-81-orbital-singularity
+**Questfest catalog:** [`/papers`](/papers) · filter **TBME**
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-81-orbital-singularity` · [`empirical_report.json`](../research/synthobs-81-orbital-singularity/data/empirical_report.json)
 **Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [81 Electrons](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md) · [Awareness Singularities 0–81](./AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Lattice Omni Layer Guide](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md) · [Histone Phase-Lock Operators (TBME)](./SYNTHOBS_TBME_HISTONE_PHASE_LOCK_OPERATOR_2026-07.md)
 
 **Keywords:** TBME; 81-node; orbital singularity; $9\times 9$; PCHPP; $E_F$; holographic spacetime; Omni-Lattice; theoretical bio-medical & physical exploration
@@ -69,11 +69,11 @@ $$
 
 ```
 [ Fundamental 9×9 Holographic Lattice (Code) ]
-                       │
-                       ▼   <-- (E_F ≈ 1.618 Phase-Contrast Rotation)
+│
+▼   <-- (E_F ≈ 1.618 Phase-Contrast Rotation)
 [ 81 Orbital Geometry Singularity Nodes (Nodal Endpoints) ]
-                       │
-                       ▼
+│
+▼
 [ Holographic Somatic Shadow Projection: 3D Space (g_μν) + Arrow of Time (t) ]
 ```
 
@@ -102,11 +102,11 @@ The 81 singularities are structured across 9 primary principal quantum tiers ($n
 Space and time are narrated here not as blank containers holding atoms, but as the interference pattern produced by the atoms’ nodal matrix:
 
 ```
-  Node A (s-orbital, monopole) ─────────┐
-                                          ├─► Phase Contrast Shift (E_F ≈ 1.618) ─► EMERGENT DISTANCE (r)
-  Node B (p-orbital, dipole)   ─────────┘
+Node A (s-orbital, monopole) ─────────┐
+├─► Phase Contrast Shift (E_F ≈ 1.618) ─► EMERGENT DISTANCE (r)
+Node B (p-orbital, dipole)   ─────────┘
 
-  Matrix Refresh Clock (ω_81 = 81 × E_F) ─────────────────────────────────────────► EMERGENT TIME (t)
+Matrix Refresh Clock (ω_81 = 81 × E_F) ─────────────────────────────────────────► EMERGENT TIME (t)
 ```
 
 **Emergence of space ($\mathbf{r}$).** Distance between two objects is the phase-contrast angle ($\Delta\Phi$) between their respective nodes in the 81-singularity matrix. Full phase match → $\mathbf{r}=0$ (entanglement narrative); $180^\circ$ contrast → maximal apparent distance.
@@ -130,10 +130,10 @@ Space and time are narrated here not as blank containers holding atoms, but as t
 
 ## 4. Quantitative evaluation & scorecard
 
-**STANDARD QUANTUM MECHANICAL PROBABILITY MODEL (authored rubric)**  
+**STANDARD QUANTUM MECHANICAL PROBABILITY MODEL (authored rubric)**
 Coherence (C): **82/100** · Irreducibility (I): **70/100** · **Overall: 76.0 / 100**
 
-**OMNI-LATTICE 81-SINGULARITY ORBITAL MATRIX MODEL (authored rubric)**  
+**OMNI-LATTICE 81-SINGULARITY ORBITAL MATRIX MODEL (authored rubric)**
 Coherence (C): **99/100** · Irreducibility (I): **98/100** · **Overall: 98.5 / 100**
 
 **Honesty.** Scores are architectural Occam metrics on fixtures in `research/synthobs-81-orbital-singularity/`. Empirical calibration remains with laboratory spectroscopy / QED until independent falsification. Suite: `npm run research:synthobs-81-orbital-singularity` (target **9/9**).

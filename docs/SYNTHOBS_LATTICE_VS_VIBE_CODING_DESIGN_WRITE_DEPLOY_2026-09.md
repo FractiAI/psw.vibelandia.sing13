@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** The note reports regenerable receipts favoring lattice-structured coding over unstructured vibe coding. Treat figures as suite-local unless named public coding benchmarks are cited.
 
-**Authors:** FractiAI Research Group · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 2, 2026  
-**Document ID:** `WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02`  
-**Registry ID:** `synthobs-lattice-vs-vibe-coding-2026-09`  
-**Classification:** Empirical paired comparison · operational product study  
-**Framework:** Infinite Octaves Omniversal Lattice Chat · NSPFRNP · Nested Agent Lattice · PRA Snap  
-**Parent papers:** [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-lattice-vs-vibe-coding  
-**Standalone suite:** [FractiAI/synthobs-lattice-vs-vibe-coding](https://github.com/FractiAI/synthobs-lattice-vs-vibe-coding) · monorepo [`research/synthobs-lattice-vs-vibe-coding/`](../research/synthobs-lattice-vs-vibe-coding/)  
-**Live surfaces:** [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice/proof`](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)  
+**Authors:** FractiAI Research Group · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 2, 2026
+**Document ID:** `WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02`
+**Registry ID:** `synthobs-lattice-vs-vibe-coding-2026-09`
+**Classification:** Empirical paired comparison · operational product study
+**Framework:** Infinite Octaves Omniversal Lattice Chat · NSPFRNP · Nested Agent Lattice · PRA Snap
+**Parent papers:** [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-lattice-vs-vibe-coding
+**Standalone suite:** [FractiAI/synthobs-lattice-vs-vibe-coding](https://github.com/FractiAI/synthobs-lattice-vs-vibe-coding) · monorepo [`research/synthobs-lattice-vs-vibe-coding/`](../research/synthobs-lattice-vs-vibe-coding/)
+**Live surfaces:** [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice/proof`](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Keywords:** Lattice Chat; vibe coding; design; write; deploy; nested agents; unprompted nesting; efficiency; performance; security; scalability; paired comparison; NSPFRNP; SynthOBS
@@ -54,17 +54,17 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 
 **Evidence lanes:**
 
-1. **Live Cursor usage matrix** (`data/lattice-vs-standard-cursor-usage-matrix.json`) — composer-2.5 paired runs with provider-reported tokens (includes **explicit** nesting on T5).  
-2. **Unprompted nesting matrix** (`data/lattice-vs-vibe-coding-unprompted-matrix.json`) — T5b plan + T7 minimal impl **without** nesting keywords.  
+1. **Live Cursor usage matrix** (`data/lattice-vs-standard-cursor-usage-matrix.json`) — composer-2.5 paired runs with provider-reported tokens (includes **explicit** nesting on T5).
+2. **Unprompted nesting matrix** (`data/lattice-vs-vibe-coding-unprompted-matrix.json`) — T5b plan + T7 minimal impl **without** nesting keywords.
 3. **Structural context-load estimate** (`data/lattice-vs-standard-comparison.json`) — chars÷4 companion on the same multi-band design ask.
 
 **Findings:**
 
-1. **Design:** On multi-band nested planning, Lattice used **~42% fewer tokens** than vibe coding (live Cursor, task T5). Structural companion shows **~99% lower estimated context load** (3,123 vs 298,296 tokens) when nested + pointers replace fat dump — structural only, not marketing headline.  
-2. **Write:** On code locate (T4) + pointer-RAG fact extraction (T3), Lattice won both paired tasks with **~51–67% token savings** and **fewer tool calls** on code locate (6 vs 12).  
-3. **Deploy:** On ops/config grounding (T6), Lattice won with **~52% token savings** and fewer tool calls (6 vs 10) while delivering the same BYOK answer.  
-4. **Overall:** Lattice won **4/4** design · write · deploy paired tasks in the committed matrix; mean token savings **~53%** across those rows (work-class range **~35–70%** per companion token proof).  
-5. **Unprompted nesting (T5b · T7):** Without nested/peer-firewall keywords, Lattice spontaneously nests on **2/2** tasks (mean rubric **~0.85**); vibe coding stays flat (**0/2**, mean **~0.25**). When nesting **is** prompted (T5), both arms tie — the real-world delta is **default topology**, not prose mimicry.  
+1. **Design:** On multi-band nested planning, Lattice used **~42% fewer tokens** than vibe coding (live Cursor, task T5). Structural companion shows **~99% lower estimated context load** (3,123 vs 298,296 tokens) when nested + pointers replace fat dump — structural only, not marketing headline.
+2. **Write:** On code locate (T4) + pointer-RAG fact extraction (T3), Lattice won both paired tasks with **~51–67% token savings** and **fewer tool calls** on code locate (6 vs 12).
+3. **Deploy:** On ops/config grounding (T6), Lattice won with **~52% token savings** and fewer tool calls (6 vs 10) while delivering the same BYOK answer.
+4. **Overall:** Lattice won **4/4** design · write · deploy paired tasks in the committed matrix; mean token savings **~53%** across those rows (work-class range **~35–70%** per companion token proof).
+5. **Unprompted nesting (T5b · T7):** Without nested/peer-firewall keywords, Lattice spontaneously nests on **2/2** tasks (mean rubric **~0.85**); vibe coding stays flat (**0/2**, mean **~0.25**). When nesting **is** prompted (T5), both arms tie — the real-world delta is **default topology**, not prose mimicry.
 6. **Implementation pillars:** Lattice wins **6/6** rows on efficiency, performance, security, scalability, and implementation quality — minimal diffs, vitest coverage, bounded guards vs wide refactors.
 
 **Output comparison (design · performance · size · quality):**
@@ -160,8 +160,8 @@ When T5 **explicitly** asks for nested plans, both arms score ~1.0 — nesting l
 
 ## Companions
 
-- [Infinite Octaves Omniversal Lattice Chat](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md)  
-- [Lattice token reduction proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)  
+- [Infinite Octaves Omniversal Lattice Chat](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md)
+- [Lattice token reduction proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)
 - [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 
 → ∞^∞

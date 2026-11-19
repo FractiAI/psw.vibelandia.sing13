@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** In the algebraic model, adaptive cancelation restores phase alignment with ΔS approaching 0 on normalized simulation weights, and the suite passes 9/9. This is a metaphor-tier simulation, not a clinical or wet-lab result.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-HIV-2026-07`  
-**Registry ID:** `synthobs-omni-lattice-hiv-2026-07`  
-**Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-hiv  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-omni-lattice-hiv` · [`empirical_report.json`](../research/synthobs-omni-lattice-hiv/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-HIV-2026-07`
+**Registry ID:** `synthobs-omni-lattice-hiv-2026-07`
+**Date:** July 28, 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-hiv
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-omni-lattice-hiv` · [`empirical_report.json`](../research/synthobs-omni-lattice-hiv/data/empirical_report.json)
 **Companions:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [X Chromosome Decode](./SYNTHOBS_X_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md) · [Chemical Bond Metaphors](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md)
 
 **Keywords:** HIV; adversarial operator; Omni-Lattice; holographic operators; evolutionary catalyst; $E_F$; SynthOBS; NSPFRNP
@@ -172,8 +172,8 @@ Pointer: `docs/SYNTHOBS_OMNI_LATTICE_HIV_ADVERSARIAL_OPERATOR_2026-07.md`.
 
 ## 8. Falsification
 
-1. Word / sentence catalogs incomplete.  
-2. Adaptive cancelation fails to restore phase on the locked model.  
+1. Word / sentence catalogs incomplete.
+2. Adaptive cancelation fails to restore phase on the locked model.
 3. Publishing EX-HIV / $48\times$ / “$E_F$ cures HIV” without honesty gates.
 
 ---
@@ -186,10 +186,10 @@ Omni-Lattice Unification III models HIV as an adversarial holographic operator *
 
 ## References
 
-1. SynthOBS Holographic Operators.  
-2. Omni-Lattice Unification.  
-3. Nested Agent Lattice.  
-4. X Chromosome Holographic Operator Translation.  
-5. Phase-Locked Chemical Bond Metaphors.  
-6. NSPFRNP Snap Peer-Review Audit.  
+1. SynthOBS Holographic Operators.
+2. Omni-Lattice Unification.
+3. Nested Agent Lattice.
+4. X Chromosome Holographic Operator Translation.
+5. Phase-Locked Chemical Bond Metaphors.
+6. NSPFRNP Snap Peer-Review Audit.
 7. Coherence plain speak honesty document.

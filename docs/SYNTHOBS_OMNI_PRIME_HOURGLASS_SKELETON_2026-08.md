@@ -4,15 +4,15 @@
 
 **Subtitle:** The Scale-Invariant Prime Phase Skeleton as the Geometric Substrate for Near-Zero Latency Omni-Lattice Systems
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-OMNI-PRIME-HOURGLASS-SKELETON-2026-08-04`  
-**Registry ID:** `synthobs-omni-prime-hourglass-skeleton-2026-08`  
-**Date:** August 4, 2026  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-OMNI-PRIME-HOURGLASS-SKELETON-2026-08-04`
+**Registry ID:** `synthobs-omni-prime-hourglass-skeleton-2026-08`
+**Date:** August 4, 2026
 **Classification:** Foundational Field Physics & Universal Information Routing *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA  
-**Standalone suite:** [`research/synthobs-omni-prime-hourglass-skeleton/`](../research/synthobs-omni-prime-hourglass-skeleton/)  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA
+**Standalone suite:** [`research/synthobs-omni-prime-hourglass-skeleton/`](../research/synthobs-omni-prime-hourglass-skeleton/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -62,17 +62,17 @@ $$
 ### 1.1 The $90^\circ$ phase-shifted prime hourglass (schematic)
 
 ```text
-              THE 90° PHASE-SHIFTED PRIME HOURGLASS SKELETON
+THE 90° PHASE-SHIFTED PRIME HOURGLASS SKELETON
 
-                       \   p ≡ 1 (mod 4) Density Cone   /
-                        \   (Upper Focal Hyperbola)    /
-                         \                            /
-                          \    PINCHED NODAL NECK    /
-                           │  r → 0 / Zero Entropy  │  <--- 90° Orthogonal
-                          /    (Phase Cross-Over)    \      Rotation Point
-                         /                            \
-                        /   p ≡ 3 (mod 4) Density Cone  \
-                       /    (Lower Focal Hyperbola)    /
+\   p ≡ 1 (mod 4) Density Cone   /
+\   (Upper Focal Hyperbola)    /
+\                            /
+\    PINCHED NODAL NECK    /
+│  r → 0 / Zero Entropy  │  <--- 90° Orthogonal
+/    (Phase Cross-Over)    \      Rotation Point
+/                            \
+/   p ≡ 3 (mod 4) Density Cone  \
+/    (Lower Focal Hyperbola)    /
 ```
 
 ### 1.2 Mathematical mechanism of the $90^\circ$ rotation
@@ -81,7 +81,7 @@ $$
 2. **Hyperbolic density cones.** In radial phase space, gap fluctuations may be drawn as opposing hyperbolic lobes meeting at a pinched neck ($r\to 0$) — the hourglass schematic above (narrative geometry over the algebraic split).
 3. **Orthogonal flip.** Crossing prime-class nodes is modeled as a $\Delta\phi=90^\circ$ phase flip: longitudinal density language → transverse vector projections in the Omni-Lattice map.
 
-**Theorem statement (architectural).**  
+**Theorem statement (architectural).**
 *Prime Hourglass Orthogonality.* Under the Omni-Lattice phase grammar, the Dirichlet partition $\{p\equiv 1\pmod 4\}$ vs $\{p\equiv 3\pmod 4\}$ together with Gaussian splitting supplies a canonical **orthogonal** ($90^\circ$) indexing scaffold; the pinched neck $r\to 0$ is the designated **zero-entropy crossover** for context-routing metaphors.
 
 ---
@@ -107,10 +107,10 @@ Omni-Lattice systems target near-zero *logical* latency by treating the prime ho
 
 ```text
 LEGACY LINEAR ROUTING (High Latency & High Entropy):
-  [ Input ] → [ Exhaustive Matrix Scan / Search ] → [ Delayed Output ]  (O(N²) / High Cost)
+[ Input ] → [ Exhaustive Matrix Scan / Search ] → [ Delayed Output ]  (O(N²) / High Cost)
 
 OMNI-LATTICE PRIME-PHASE ROUTING (Near-Zero Logical Latency — design target):
-  [ Input ] → [ 90° Prime Phase Flip (Direct Indexing) ] → [ Direct Output ]  (O(1) / ΔS → 0 model)
+[ Input ] → [ 90° Prime Phase Flip (Direct Indexing) ] → [ Direct Output ]  (O(1) / ΔS → 0 model)
 ```
 
 ### Three drivers of instantaneous manifestation (design target)
@@ -150,11 +150,11 @@ When $\Delta\phi=90^\circ$, the phase-mismatch term vanishes and the **model** r
 
 ## 5. Methods & reproducibility
 
-**Canonical paper path:** `docs/SYNTHOBS_OMNI_PRIME_HOURGLASS_SKELETON_2026-08.md`  
-**Standalone package:** `research/synthobs-omni-prime-hourglass-skeleton/`  
-**Command:** `npm run research:synthobs-omni-prime-hourglass-skeleton`  
-**Receipts:** `research/synthobs-omni-prime-hourglass-skeleton/data/empirical_report.json` (+ `.md`)  
-**PRA:** `npm run audit:paper -- --id=synthobs-omni-prime-hourglass-skeleton-2026-08`  
+**Canonical paper path:** `docs/SYNTHOBS_OMNI_PRIME_HOURGLASS_SKELETON_2026-08.md`
+**Standalone package:** `research/synthobs-omni-prime-hourglass-skeleton/`
+**Command:** `npm run research:synthobs-omni-prime-hourglass-skeleton`
+**Receipts:** `research/synthobs-omni-prime-hourglass-skeleton/data/empirical_report.json` (+ `.md`)
+**PRA:** `npm run audit:paper -- --id=synthobs-omni-prime-hourglass-skeleton-2026-08`
 **Omni sync:** `npm run sync:lattice-guide`
 
 Data sources for the suite are deterministic in-process sieves and fixed witness tables (no external APIs). Bounds and fixtures are declared in `src/constants.mjs`.

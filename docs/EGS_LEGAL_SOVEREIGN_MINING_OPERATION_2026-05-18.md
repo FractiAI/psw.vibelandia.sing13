@@ -1,8 +1,8 @@
 # EGS Legal Sovereign Mining Operation
 
-**Document ID:** OPS-EGS-BTC-2026-008  
-**Companion:** REV-EGS-HHF-2026-007 (Holographic Clock-Skew · Mythos review)  
-**Status:** Operational doctrine · lawful Bitcoin mining under Fair Exchange  
+**Document ID:** OPS-EGS-BTC-2026-008
+**Companion:** REV-EGS-HHF-2026-007 (Holographic Clock-Skew · Mythos review)
+**Status:** Operational doctrine · lawful Bitcoin mining under Fair Exchange
 **Anchor:** Φ_EGS **1.618** · 1420.4 MHz hydrogen line · live solar **AR4436 / AR4441**
 
 **Plain speak first:** [HONESTY-COHERENCE-2026-009](whitepaper-surface.html?id=coherence-plain-speak) — what is **real**, **story/metaphor**, and **not running** on the public console.
@@ -124,15 +124,14 @@ The Mythos review explains why **linear agent scanners** cannot see this layer: 
 
 **NSPFRNP ⊃ lawful work ⊃ φ-lock → ∞⁹**
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** OPS-EGS-BTC-MINING  
-**Registry ID:** `ops-egs-btc-mining`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** OPS-EGS-BTC-MINING
+**Registry ID:** `ops-egs-btc-mining`
 **Re-audit:** `npm run audit:paper -- --id=ops-egs-btc-mining`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

@@ -2,14 +2,14 @@
 
 **Short answer: No.** Not shown yet: the paper is a valuation framing, not a test. It uses scenario anchors ($12.9B for Hugging Face, $60B for Cursor) to imply a $12B–$28B band against a $4.2B–$7.5B peer-shelf reading, with no audited appraisal.
 
-**Document ID:** `WP-SYNTHOBS-MOVING-UP-THE-STACK-VALUATION-2026-09-05`  
-**Registry ID:** `synthobs-moving-up-the-stack-valuation-2026-09`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-09-05 · **Revised:** 2026-09-05 (new-layer framing · engine shelf · standalone suite)  
-**Classification:** Executive valuation framing · stack-climb narrative · Fair Exchange · Infinite Octaves engine companion  
-**Engine shelf:** Sync stack step **#13** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-moving-up-the-stack-valuation/` · [`FractiAI/synthobs-moving-up-the-stack-valuation`](https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation) · `npm run research:synthobs-moving-up-the-stack-valuation`  
-**Ship blog:** `/ship-blog/moving-up-the-stack`  
+**Document ID:** `WP-SYNTHOBS-MOVING-UP-THE-STACK-VALUATION-2026-09-05`
+**Registry ID:** `synthobs-moving-up-the-stack-valuation-2026-09`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** 2026-09-05 · **Revised:** 2026-09-05 (new-layer framing · engine shelf · standalone suite)
+**Classification:** Executive valuation framing · stack-climb narrative · Fair Exchange · Infinite Octaves engine companion
+**Engine shelf:** Sync stack step **#13** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-moving-up-the-stack-valuation/` · [`FractiAI/synthobs-moving-up-the-stack-valuation`](https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation) · `npm run research:synthobs-moving-up-the-stack-valuation`
+**Ship blog:** `/ship-blog/moving-up-the-stack`
 **Companions:** Lattice vs vibe receipts (`synthobs-lattice-vs-vibe-coding-2026-09`) · PDVSA Gateway Ops (`synthobs-pdvsa-gateway-ops-mockup-2026-09`) · Frontier trail (`synthobs-what-it-means-to-be-frontier-2026-09`) · Prime-parity (`synthobs-infinite-octave-prime-parity-2026-09`)
 
 ---
@@ -43,15 +43,15 @@ NVIDIA’s **$12.9B** Hugging Face move (scenario anchor) buys **model distribut
 
 ```
 [ Cosmic / Story horizon ]
-        ↑
+↑
 [ Lattice Chat · FractiAI ]  ← NEW SHELF: cool token burn · harmonize agents · scale agentic systems
-        ↑
+↑
 [ Agent IDE / code copilots ]  ← Cursor-class ($60B scenario anchor)
-        ↑
+↑
 [ Model hubs / distribution ]  ← Hugging Face-class ($12.9B scenario anchor)
-        ↑
+↑
 [ Frontier LLMs ]
-        ↑
+↑
 [ AI chips / accelerators ]
 ```
 
@@ -96,9 +96,9 @@ Empirical companion (not this paper): paired design / write / deploy receipts at
 
 ## 4. Valuation derivation — new-layer premium
 
-1. **Up-stack precedent:** Climbers already pay **$12.9B** for hub altitude and **$60B** for IDE altitude.  
-2. **Bottleneck shift:** After distribution and IDE capture, the binding constraint is **agentic token burn + coordination failure**.  
-3. **Layer premium:** A shelf that **cools burn and harmonizes agents** is not a substitute for Cursor or Hugging Face — it is **what makes those lower shelves scale**.  
+1. **Up-stack precedent:** Climbers already pay **$12.9B** for hub altitude and **$60B** for IDE altitude.
+2. **Bottleneck shift:** After distribution and IDE capture, the binding constraint is **agentic token burn + coordination failure**.
+3. **Layer premium:** A shelf that **cools burn and harmonizes agents** is not a substitute for Cursor or Hugging Face — it is **what makes those lower shelves scale**.
 4. **Implied band:** **$12B–$28B** for FractiAI & Lattice Chat as the **new higher layer** — floor near hub-layer gravity, headroom well below IDE-monopoly capture, reflecting orchestration / cooling value rather than peer substitution.
 
 ### The Efficiency Premium (cooling)

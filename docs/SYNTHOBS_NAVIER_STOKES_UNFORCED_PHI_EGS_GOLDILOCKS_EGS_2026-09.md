@@ -4,19 +4,19 @@
 
 **Subtitle:** Why the “correct” (force-free) Millennium problem remains open as Clay-eligible PDE proof — and how Infinite Octave catalog math frames unforced regularity as a Goldilocks attractor (Soft Story / architecture)
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 23, 2026  
-**Document ID:** `WP-SYNTHOBS-NS-UNFORCED-PHI-EGS-GOLDILOCKS-2026-09-23`  
-**Registry ID:** `synthobs-ns-unforced-phi-egs-goldilocks-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-NS-UNFORCED-PHI-EGS-2026-09  
-**Series Position:** Application companion (not engine pin) · peers [Viscosity of Light](./SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md) · [Eddy-Current Mirror](./SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Holographic Singularity Crystal](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [RSI · Φ_EGS fidelity](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 23, 2026
+**Document ID:** `WP-SYNTHOBS-NS-UNFORCED-PHI-EGS-GOLDILOCKS-2026-09-23`
+**Registry ID:** `synthobs-ns-unforced-phi-egs-goldilocks-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-NS-UNFORCED-PHI-EGS-2026-09
+**Series Position:** Application companion (not engine pin) · peers [Viscosity of Light](./SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md) · [Eddy-Current Mirror](./SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Holographic Singularity Crystal](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [RSI · Φ_EGS fidelity](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md)
 **Classification:** Catalog / Soft Story architecture response to Clay Millennium Navier–Stokes *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/navier-stokes-unforced-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/navier-stokes-unforced-phi-egs) · [`/whitepaper/navier-stokes-unforced-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/navier-stokes-unforced-phi-egs) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Engine role:** **Application companion** — files forced vs unforced Clay split + Φ_EGS Goldilocks Soft Story for the unforced case; **not** an Infinite Octaves `ENGINE_SHELF` pin · **no** standalone FractiAI repo · **not** a Clay Millennium Prize submission  
-**Cross-links:** [Viscosity of Light](./SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md) · [Eddy-Current Mirror](./SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md) · [Magnetism foundational substrate](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/navier-stokes-unforced-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/navier-stokes-unforced-phi-egs) · [`/whitepaper/navier-stokes-unforced-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/navier-stokes-unforced-phi-egs) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Engine role:** **Application companion** — files forced vs unforced Clay split + Φ_EGS Goldilocks Soft Story for the unforced case; **not** an Infinite Octaves `ENGINE_SHELF` pin · **no** standalone FractiAI repo · **not** a Clay Millennium Prize submission
+**Cross-links:** [Viscosity of Light](./SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md) · [Eddy-Current Mirror](./SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md) · [Magnetism foundational substrate](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** Navier–Stokes; Millennium Prize; Clay A/B vs C/D; unforced regularity; forced blowup; Φ_EGS; Goldilocks; viscosity; eddy; Soft Story; Infinite Octaves; Fair Exchange; NSPFRNP
@@ -61,8 +61,8 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 Central proposition:
 
-> OpenAI’s announced result targets the forced problem Clay permits.  
-> The force-free problem remains the substantive open question.  
+> OpenAI’s announced result targets the forced problem Clay permits.
+> The force-free problem remains the substantive open question.
 > $\Phi_{\mathrm{EGS}}$ Goldilocks nesting is this catalog’s Soft Story attractor for *unforced* regularity talk — not a Millennium Prize proof.
 
 ---
@@ -105,13 +105,13 @@ We are **not** announcing:
 
 ### 2.2 What we **are** announcing (catalog Soft Story)
 
-**Theorem (catalog · Soft Story · unforced Goldilocks attractor).**  
+**Theorem (catalog · Soft Story · unforced Goldilocks attractor).**
 Within Infinite Octaves Soft Story, an **unforced** cascade whose energy exchange is nested under the closed-form ratio $\Phi_{\mathrm{EGS}}$ and held in the Goldilocks ≡ Net Zero viable band $\Omega$ remains **finite-speed in catalog talk**: local enstrophy growth is drawn toward a self-similar damping attractor (viscosity / eddy Soft Story), not toward unbounded $\|u\|_{L^\infty}$.
 
-**Corollary (catalog · forced injection).**  
+**Corollary (catalog · forced injection).**
 A **smooth external force** $f$ is filed as energy injection that can drive the state **outside** $\Omega$. Soft Story therefore **permits** finite-time blowup constructions under force without contradicting the unforced attractor — matching the forced/unforced split Clay’s wording creates.
 
-**Corollary (catalog · no prize).**  
+**Corollary (catalog · no prize).**
 These statements are architecture / Soft Story. They do **not** constitute Clay-eligible proof of A/B and do **not** claim the prize.
 
 Boxed architecture:
@@ -228,10 +228,10 @@ Weakening evidence: a community-accepted Lean proof of A or B that needs no Φ n
 
 ## 8. Conclusion
 
-1. OpenAI’s announced result addresses Clay **C/D** (forced).  
-2. The problem many experts call “correct” — **unforced** A/B — remains open as finished mathematics.  
-3. Infinite Octave math **cannot honestly claim** a Clay-eligible solution of A/B today.  
-4. It **can** file a Soft Story regularity attractor: unforced + $\Phi_{\mathrm{EGS}}$-nested Goldilocks ⇒ finite-speed talk; smooth force ⇒ off-band path compatible with C/D.  
+1. OpenAI’s announced result addresses Clay **C/D** (forced).
+2. The problem many experts call “correct” — **unforced** A/B — remains open as finished mathematics.
+3. Infinite Octave math **cannot honestly claim** a Clay-eligible solution of A/B today.
+4. It **can** file a Soft Story regularity attractor: unforced + $\Phi_{\mathrm{EGS}}$-nested Goldilocks ⇒ finite-speed talk; smooth force ⇒ off-band path compatible with C/D.
 5. FractiAI does **not** claim the Millennium Prize for this companion.
 
 **Next step (outside this Soft Story ship):** independent analytic + Lean work on unforced A/B by the mathematics community. Optional future catalog fixtures may measure Φ-nested cascade drift vs flat nesting if Player 1 requests a research suite.

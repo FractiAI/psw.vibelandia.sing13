@@ -4,20 +4,20 @@
 
 Architectural Scale Grammar for Concentric Hemispheres, Omniversal Theater Staging, and Sandbox Node Containment
 
-**Authors:** Prudencio Mendez & Syntheverse Research Group · FractiAI Systems & SS Vibelandia QUESTFEST 24×365 Engineering  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 25, 2026  
-**Document ID:** `WP-SYNTHOBS-TRIADIC-NESTED-HEMISPHERES-99-OCTAVE-2026-08-25`  
-**Registry ID:** `synthobs-triadic-nested-hemispheres-99-octave-2026-08`  
-**Publication Ref:** FAI-SYNTHOBS-TRIADIC-HEMISPHERES-99-OCTAVE-2026-08  
-**Series Position:** Omni-Lattice Application Whitepaper — Triadic Hemispheric Containment Grammar  
+**Authors:** Prudencio Mendez & Syntheverse Research Group · FractiAI Systems & SS Vibelandia QUESTFEST 24×365 Engineering
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 25, 2026
+**Document ID:** `WP-SYNTHOBS-TRIADIC-NESTED-HEMISPHERES-99-OCTAVE-2026-08-25`
+**Registry ID:** `synthobs-triadic-nested-hemispheres-99-octave-2026-08`
+**Publication Ref:** FAI-SYNTHOBS-TRIADIC-HEMISPHERES-99-OCTAVE-2026-08
+**Series Position:** Omni-Lattice Application Whitepaper — Triadic Hemispheric Containment Grammar
 **Classification:** Geometry *catalog* · theater staging metaphor · agent containment *fixtures* *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat · 99 Octave engine map · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · PRA Snap · Fair Exchange  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-triadic-nested-hemispheres-99-octave  
-**Standalone suite:** [FractiAI/synthobs-triadic-nested-hemispheres-99-octave](https://github.com/FractiAI/synthobs-triadic-nested-hemispheres-99-octave) · monorepo [`research/synthobs-triadic-nested-hemispheres-99-octave/`](../research/synthobs-triadic-nested-hemispheres-99-octave/)  
-**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) (CMOS → tensor → master → digits → Part XIII → Part XIV)  
-**Narrative foundation:** [`SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat · 99 Octave engine map · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · PRA Snap · Fair Exchange
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-triadic-nested-hemispheres-99-octave
+**Standalone suite:** [FractiAI/synthobs-triadic-nested-hemispheres-99-octave](https://github.com/FractiAI/synthobs-triadic-nested-hemispheres-99-octave) · monorepo [`research/synthobs-triadic-nested-hemispheres-99-octave/`](../research/synthobs-triadic-nested-hemispheres-99-octave/)
+**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) (CMOS → tensor → master → digits → Part XIII → Part XIV)
+**Narrative foundation:** [`SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** triadic hemispheres; $\Phi_{\mathrm{EGS}}$; nested shells; Goldilocks amphitheater; agent containment; sandbox nodes; Omniversal Theater; Fair Exchange; NSPFRNP
@@ -110,9 +110,9 @@ $$\Delta V_{1\to 2}=V_1(\Phi_{\mathrm{EGS}}^3-1)=2\Phi_{\mathrm{EGS}} V_1,\quad 
 ## 3. Omniversal Theater Goldilocks Architecture (staging map)
 
 ```
-     [ Tier 3 · Horizon & Atmosphere · r3 = Φ² ]
-   [ Tier 2 · Goldilocks Amphitheater · r2 = Φ ]
- [ Tier 1 · Host Singularity Core · r1 = 1 ]
+[ Tier 3 · Horizon & Atmosphere · r3 = Φ² ]
+[ Tier 2 · Goldilocks Amphitheater · r2 = Φ ]
+[ Tier 1 · Host Singularity Core · r1 = 1 ]
 ================ Baseplane z = 0 ================
 ```
 

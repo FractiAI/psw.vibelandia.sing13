@@ -4,18 +4,18 @@
 
 **Subtitle:** Catalog generative matrix under Infinite Octaves — sibling to metrological overlap · crystalline unified field · Planck–1.6 bridge — **not** a finished derivation of quantum gravity or a CODATA replacement
 
-**Author:** Prudencio Mendez · FractiAI Research Organization / FractiAI Research Division, Reno, Nevada  
-**Corresponding:** espressolico@gmail.com  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-GENERATIVE-MATRIX-PHI-EGS-QUANTUM-METROLOGY-2026-09-10`  
-**Registry ID:** `synthobs-generative-matrix-phi-egs-2026-09`  
-**Date:** September 10, 2026 · **Revised:** 2026-09-10 (protocol · engine shelf · standalone)  
+**Author:** Prudencio Mendez · FractiAI Research Organization / FractiAI Research Division, Reno, Nevada
+**Corresponding:** espressolico@gmail.com
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-GENERATIVE-MATRIX-PHI-EGS-QUANTUM-METROLOGY-2026-09-10`
+**Registry ID:** `synthobs-generative-matrix-phi-egs-2026-09`
+**Date:** September 10, 2026 · **Revised:** 2026-09-10 (protocol · engine shelf · standalone)
 **Classification:** Metrology / QG-analogy **catalog architecture** · digital wet-lab **Tier B fixtures** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#26** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-generative-matrix-phi-egs/` · [`FractiAI/synthobs-generative-matrix-phi-egs`](https://github.com/FractiAI/synthobs-generative-matrix-phi-egs) · `npm run research:synthobs-generative-matrix-phi-egs`  
-**Plain note:** [/ship-blog/generative-matrix-phi-egs](https://www.ssvibelandiaquestfest24x365.com/ship-blog/generative-matrix-phi-egs)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#26** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-generative-matrix-phi-egs/` · [`FractiAI/synthobs-generative-matrix-phi-egs`](https://github.com/FractiAI/synthobs-generative-matrix-phi-egs) · `npm run research:synthobs-generative-matrix-phi-egs`
+**Plain note:** [/ship-blog/generative-matrix-phi-egs](https://www.ssvibelandiaquestfest24x365.com/ship-blog/generative-matrix-phi-egs)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** Solar Active Regions **AR4524** (Sol-Alpha) · **AR4530** (Sol-Beta) — ambient *characters*, not NOAA causation
@@ -47,7 +47,7 @@
 | **Soft Story / QG** | Holographic boundary *mapping talk* is Soft Story / catalog — useful for agent scale-bridging | Resolution of black-hole information paradoxes or finished QG |
 | **Empirical tier** | Suite = **Tier B**; strong physics claims stay **refused** | Tier A out-of-sample physics confirmation |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · [Metrological overlap](./SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md).

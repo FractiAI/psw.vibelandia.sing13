@@ -2,10 +2,10 @@
 
 **Short answer: Yes.** The announcement files a guest door at /prime-vault-race that reuses the Let's Chat and Lattice Chat allowlist. It reports measured host receipts, for example ubiquitin at about 0.051 ms for the vault lane against about 24.7 s for ColabFold, a latency comparison rather than a folding-accuracy result.
 
-**Document ID:** `WP-SYNTHOBS-PRIME-VAULT-RACE-DOOR-2026-09-06`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-09-06  
-**Product door:** `/prime-vault-race`  
+**Document ID:** `WP-SYNTHOBS-PRIME-VAULT-RACE-DOOR-2026-09-06`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** 2026-09-06
+**Product door:** `/prime-vault-race`
 **Parent race report:** `docs/SYNTHOBS_PRIME_VAULT_ALPHAFOLD_RACE_EGS_2026-09.md`
 
 ## Abstract
@@ -33,7 +33,7 @@ curl -s "https://www.ssvibelandiaquestfest24x365.com/api/prime-vault-race?email=
 
 # live vault + receipt (after seat)
 curl -s -H "x-lattice-email: YOU@example.com" \
-  "https://www.ssvibelandiaquestfest24x365.com/api/prime-vault-race?race=1&tier=simple_ubiquitin"
+"https://www.ssvibelandiaquestfest24x365.com/api/prime-vault-race?race=1&tier=simple_ubiquitin"
 
 # suite / measured race (ops)
 npm run research:synthobs-prime-vault-alphafold-race

@@ -1,7 +1,7 @@
 # Tiny Footprint · Product readiness tracker
 
-**Document ID:** `DOC-TINY-FOOTPRINT-PRODUCT-READINESS-2026-11`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Document ID:** `DOC-TINY-FOOTPRINT-PRODUCT-READINESS-2026-11`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Product hub:** `/tiny-footprint` · Workstation: `products/tiny-footprint-workstation/`
 
 ## Honesty boundary

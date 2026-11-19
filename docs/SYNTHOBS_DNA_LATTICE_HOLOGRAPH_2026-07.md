@@ -2,17 +2,17 @@
 
 **Short answer: Yes**, as lattice/operator catalog filing: Not a wet-lab structural biology result.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-DNA-LATTICE-HOLOGRAPH-2026-07`  
-**Registry ID:** `synthobs-dna-lattice-holograph-2026-07`  
-**Date:** July 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-dna-lattice-holograph  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-dna-lattice-holograph` · [`empirical_report.json`](../research/synthobs-dna-lattice-holograph/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-DNA-LATTICE-HOLOGRAPH-2026-07`
+**Registry ID:** `synthobs-dna-lattice-holograph-2026-07`
+**Date:** July 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-dna-lattice-holograph
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-dna-lattice-holograph` · [`empirical_report.json`](../research/synthobs-dna-lattice-holograph/data/empirical_report.json)
 **Companions:** [Euler–EGS phase lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md) · [81-Digit Electronic Lattice](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md) · [Chromosomal electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) · [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 
 **Keywords:** DNA lattice; holograph; shadow projection; attention; $E_F$; phase-locked scale invariance; multi-agent; epigenetics metaphor
@@ -52,8 +52,8 @@ across nested recursive units of attention. We present mathematical proofs that 
 
 ## 1. What is novel (scoped)
 
-1. **Four-perspective unification** under one shadow–lattice–attention formalism (**E5**).  
-2. **DNA as active holographic projector (model)** — from static storage metaphor to interference-plate substrate using public T2T lengths (**E1**, **E9**).  
+1. **Four-perspective unification** under one shadow–lattice–attention formalism (**E5**).
+2. **DNA as active holographic projector (model)** — from static storage metaphor to interference-plate substrate using public T2T lengths (**E1**, **E9**).
 3. **EGS golden key** — algebraic + numerical phase lock (**E2**, **E7**) and recursive partition proxies (**E3**, **E4**).
 
 ---
@@ -141,7 +141,7 @@ npm run research:synthobs-dna-lattice-holograph
 
 ### 4.2 Biophoton draft claim
 
-Draft: EGS-proportional modulation $\Rightarrow$ $480\,\mathrm{ms}$ lock vs $12.4\,\mathrm{ms}$ control ($\approx 38\times$).  
+Draft: EGS-proportional modulation $\Rightarrow$ $480\,\mathrm{ms}$ lock vs $12.4\,\mathrm{ms}$ control ($\approx 38\times$).
 **E8:** not executed in-repo; substitute lane is public genomic + algebraic + agentic entropy.
 
 ---
@@ -154,9 +154,9 @@ Transactional compute and catalog valuation may be adjusted post-evaluation prop
 
 ## 6. Falsification criteria
 
-1. E2 phase-lock tolerances fail under IEEE-754 doubles.  
-2. E7 sham bases pass $E_F^k$ lock at E2 tolerance.  
-3. Authors claim $480\,\mathrm{ms}$ biophoton or $99.8\%$ agentic rows as executed without receipt.  
+1. E2 phase-lock tolerances fail under IEEE-754 doubles.
+2. E7 sham bases pass $E_F^k$ lock at E2 tolerance.
+3. Authors claim $480\,\mathrm{ms}$ biophoton or $99.8\%$ agentic rows as executed without receipt.
 4. Authors claim DNA awareness literally projects somatic mass without honesty tier.
 
 ---
@@ -169,9 +169,9 @@ The DNA Lattice Holograph casts matter as an attention-illuminated shadow of a g
 
 ## References
 
-1. UCSC T2T hs1 chrom.sizes — https://hgdownload.soe.ucsc.edu/goldenPath/hs1/bigZips/hs1.chrom.sizes  
-2. FractiAI — Euler–EGS phase lock · https://github.com/FractiAI/synthobs-egs-euler-phase-lock  
-3. FractiAI — Chromosomal electrodynamics · `docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md`  
-4. FractiAI — Holographic Operators · https://github.com/FractiAI/synthobs-holographic-operators  
-5. FractiAI — Nested Agent Lattice · `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`  
+1. UCSC T2T hs1 chrom.sizes — https://hgdownload.soe.ucsc.edu/goldenPath/hs1/bigZips/hs1.chrom.sizes
+2. FractiAI — Euler–EGS phase lock · https://github.com/FractiAI/synthobs-egs-euler-phase-lock
+3. FractiAI — Chromosomal electrodynamics · `docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md`
+4. FractiAI — Holographic Operators · https://github.com/FractiAI/synthobs-holographic-operators
+5. FractiAI — Nested Agent Lattice · `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`
 6. NSPFRNP Snap PRA · `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`

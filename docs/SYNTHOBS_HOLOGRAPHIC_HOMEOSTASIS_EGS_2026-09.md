@@ -4,19 +4,19 @@
 
 Infinite Octaves Omniversal Lattice companion · dynamic stability · PARTS ↔ WHOLE ↔ PARTS · Goldilocks viability · Φ_EGS
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 21, 2026  
-**Document ID:** `WP-SYNTHOBS-HOLOGRAPHIC-HOMEOSTASIS-2026-09-21`  
-**Registry ID:** `synthobs-holographic-homeostasis-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-HOLOGRAPHIC-HOMEOSTASIS-2026-09  
-**Series Position:** Infinite Octaves engine companion · peers [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Topology of the Void](./SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [Holographic Singularity Crystal · Net Zero](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 21, 2026
+**Document ID:** `WP-SYNTHOBS-HOLOGRAPHIC-HOMEOSTASIS-2026-09-21`
+**Registry ID:** `synthobs-holographic-homeostasis-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-HOLOGRAPHIC-HOMEOSTASIS-2026-09
+**Series Position:** Infinite Octaves engine companion · peers [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Topology of the Void](./SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [Holographic Singularity Crystal · Net Zero](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 **Classification:** Catalog / Soft Story companion · general systems hypothesis · structural fixtures *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/holographic-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-homeostasis) · [`/whitepaper/holographic-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/holographic-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion — Holographic Homeostasis · suite `research/synthobs-holographic-homeostasis/` · standalone `FractiAI/synthobs-holographic-homeostasis` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
-**Cross-links:** [Homeostasis Expedition · Journey](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [e × φ × Prime Recursive Homeostasis](./SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md) · [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Topology of the Void](./SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Linear shadow of fractal](./SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/holographic-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-homeostasis) · [`/whitepaper/holographic-homeostasis`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/holographic-homeostasis) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion — Holographic Homeostasis · suite `research/synthobs-holographic-homeostasis/` · standalone `FractiAI/synthobs-holographic-homeostasis` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)
+**Cross-links:** [Homeostasis Expedition · Journey](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [e × φ × Prime Recursive Homeostasis](./SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md) · [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Topology of the Void](./SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Linear shadow of fractal](./SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** Holographic Homeostasis; dynamic stability; distributed regulation; multiscale; Goldilocks; Net Zero; PARTS↔WHOLE; Φ_EGS; Infinite Octaves; Fair Exchange; NSPFRNP
@@ -124,8 +124,8 @@ sense → predict → prepare → respond → correct
 
 Cells communicate, compete, cooperate, replace one another, and respond to surrounding tissue. Reciprocal:
 
-- **cell → tissue** — local behavior contributes to tissue-level stability  
-- **tissue → cell** — tissue environment constrains which cellular states remain viable  
+- **cell → tissue** — local behavior contributes to tissue-level stability
+- **tissue → cell** — tissue environment constrains which cellular states remain viable
 
 The higher-level state emerges from local interactions while simultaneously constraining them.
 
@@ -149,13 +149,13 @@ At each level: local interactions → higher-level state, and higher-level state
 
 Defining characteristics:
 
-1. **Dynamic** — continuously changing  
-2. **Regulatory** — responds to disturbances and changing conditions  
-3. **Distributed** — not necessarily one central controller  
-4. **Reciprocal** — parts affect the whole; the whole affects the parts  
-5. **Multiscale** — across levels of organization  
-6. **Adaptive** — viable operating condition can change  
-7. **Goldilocks-oriented** — maintains viable relationships rather than absolute stasis  
+1. **Dynamic** — continuously changing
+2. **Regulatory** — responds to disturbances and changing conditions
+3. **Distributed** — not necessarily one central controller
+4. **Reciprocal** — parts affect the whole; the whole affects the parts
+5. **Multiscale** — across levels of organization
+6. **Adaptive** — viable operating condition can change
+7. **Goldilocks-oriented** — maintains viable relationships rather than absolute stasis
 
 Central loop:
 

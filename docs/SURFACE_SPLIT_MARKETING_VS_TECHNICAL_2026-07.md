@@ -1,7 +1,7 @@
 # Marketing vs Technical Surfaces · SING 13 Edge
 
-**Document ID:** SURFACE-SPLIT-MKT-TECH-2026-07  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Document ID:** SURFACE-SPLIT-MKT-TECH-2026-07
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Audience:** Agents and editors shipping public HTML
 
 ---

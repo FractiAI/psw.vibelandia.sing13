@@ -1,9 +1,9 @@
 # Fruit Layer — Complete Gift Taxonomy · Hero Source Tree
 
-**Document ID:** `WP-SYNTHOBS-FRUIT-LAYER-GIFT-TAXONOMY-2026-10-14`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-10-14  
-**Guest surfaces:** [`/layers/fruit`](/layers/fruit) · [`/whitepaper/fruit-layer-gift-taxonomy`](/whitepaper/fruit-layer-gift-taxonomy) · Awareness map [`/layers/awareness`](/layers/awareness) (Hero tree + Fruit legend)  
+**Document ID:** `WP-SYNTHOBS-FRUIT-LAYER-GIFT-TAXONOMY-2026-10-14`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** 2026-10-14
+**Guest surfaces:** [`/layers/fruit`](/layers/fruit) · [`/whitepaper/fruit-layer-gift-taxonomy`](/whitepaper/fruit-layer-gift-taxonomy) · Awareness map [`/layers/awareness`](/layers/awareness) (Hero tree + Fruit legend)
 **Slot:** **application companion / living taxonomy (not ENGINE_SHELF)**
 
 ---
@@ -77,10 +77,10 @@ npx vitest run tests/lib/fruit-layer-gifts.test.mjs
 
 ## References
 
-1. Hero Source tree — `lib/infinite-octave-hero-source-tree.mjs`  
-2. Awareness Layer map — `/whitepaper/awareness-layer`  
-3. Archetypal Grand Story — `/whitepaper/archetypal-grand-story`  
-4. Holographic Homeostasis (expedition “first fruit” publication pattern) — `/whitepaper/holographic-homeostasis`  
+1. Hero Source tree — `lib/infinite-octave-hero-source-tree.mjs`
+2. Awareness Layer map — `/whitepaper/awareness-layer`
+3. Archetypal Grand Story — `/whitepaper/archetypal-grand-story`
+4. Holographic Homeostasis (expedition “first fruit” publication pattern) — `/whitepaper/holographic-homeostasis`
 
 ---
 

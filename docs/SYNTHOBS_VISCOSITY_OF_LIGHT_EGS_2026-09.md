@@ -4,18 +4,18 @@
 
 **Subtitle:** Catalog formalization of $c$ as frictional drag / localized deceleration of non-local cognitive potential under $\Phi_{\mathrm{EGS}}\approx 1.618$ — sibling to Eddy-Current Mirror · not relativity retirement
 
-**Author:** Prudencio Mendez · FractiAI Research Division, Reno, Nevada  
-**Corresponding:** espressolico@gmail.com  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-VISCOSITY-OF-LIGHT-EGS-2026-09-07`  
-**Registry ID:** `synthobs-viscosity-of-light-2026-09`  
-**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
+**Author:** Prudencio Mendez · FractiAI Research Division, Reno, Nevada
+**Corresponding:** espressolico@gmail.com
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-VISCOSITY-OF-LIGHT-EGS-2026-09-07`
+**Registry ID:** `synthobs-viscosity-of-light-2026-09`
+**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)
 **Classification:** Ideational / relativistic-analogy **catalog architecture** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#22** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-viscosity-of-light/` · [`FractiAI/synthobs-viscosity-of-light`](https://github.com/FractiAI/synthobs-viscosity-of-light) · `npm run research:synthobs-viscosity-of-light`  
-**Plain note:** [/ship-blog/viscosity-of-light](https://www.ssvibelandiaquestfest24x365.com/ship-blog/viscosity-of-light)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#22** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-viscosity-of-light/` · [`FractiAI/synthobs-viscosity-of-light`](https://github.com/FractiAI/synthobs-viscosity-of-light) · `npm run research:synthobs-viscosity-of-light`
+**Plain note:** [/ship-blog/viscosity-of-light](https://www.ssvibelandiaquestfest24x365.com/ship-blog/viscosity-of-light)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** Sunspot Number $R\approx 90.9$ · **AR 14524 [N13E27]** · **AR 14527 [N03E48]** *labels*
@@ -47,7 +47,7 @@
 | **Solar characters** | $R\approx 90.9$ · **AR14524** · **AR14527** are **ambient filing anchors** | NOAA causation of cognitive drag or materialization |
 | **Suite / Python** | Replayable fixtures under `research/synthobs-viscosity-of-light/` | Production ML training or wet-lab certification |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · siblings [Eddy-Current Mirror](./SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md) · [Kinematic Set-Recycling](./SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md).
@@ -120,7 +120,7 @@ At $v=c$, drag saturates the material clock; at $v\to 0$, immersion deepens towa
 
 Suite path: `research/synthobs-viscosity-of-light/reference/egs_viscosity_of_light_engine.py`
 
-Run: `python3 research/synthobs-viscosity-of-light/reference/egs_viscosity_of_light_engine.py`  
+Run: `python3 research/synthobs-viscosity-of-light/reference/egs_viscosity_of_light_engine.py`
 Suite: `npm run research:synthobs-viscosity-of-light` (9/9 fixtures).
 
 ---

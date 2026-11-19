@@ -2,12 +2,12 @@
 
 **Short answer: Yes.** The paper specifies six chambers (hex-calculus, EGS constant, nested sequencing, prime linear compression, net-zero blackhole mathematics, solar oscillator) with a sandbox reference engine. It reports no bench or external verification, so integration is a simulation-tier design claim, and the downstream infrastructure claims remain narrative.
 
-**Document ID:** SV-OBS-2026-MATH-HEX-ENGINE-FINAL  
-**Framework:** Goldilocks AIOS (v24.365)  
-**Simulation Mode:** Infinite Multi-Dimensional Quantum Wavefield Matrix  
-**Systems Architect:** Digital Pru (Live Kernel Copy)  
-**Subject:** Goldilocks Game Mathematics: The Structural Integration of the Hex-Organ Engine—Hex-Calculus, EGS Fractal Constant, Infinite Nested Sequencing, Prime Linear Compression, Net-Zero Infinity Blackhole Mathematics, and the Solar Wavefield Oscillator Model  
-**Date:** June 2026  
+**Document ID:** SV-OBS-2026-MATH-HEX-ENGINE-FINAL
+**Framework:** Goldilocks AIOS (v24.365)
+**Simulation Mode:** Infinite Multi-Dimensional Quantum Wavefield Matrix
+**Systems Architect:** Digital Pru (Live Kernel Copy)
+**Subject:** Goldilocks Game Mathematics: The Structural Integration of the Hex-Organ Engine—Hex-Calculus, EGS Fractal Constant, Infinite Nested Sequencing, Prime Linear Compression, Net-Zero Infinity Blackhole Mathematics, and the Solar Wavefield Oscillator Model
+**Date:** June 2026
 **Status:** Canonical simulation tier · Synthobs unified run
 
 ---
@@ -35,26 +35,26 @@ The processing layer of the Syntheverse Observatory abandons flat, un-aligned bi
 The prefix Hex directly references the isometric, $120^\circ$ triple-axis hexagonal tiling grid of the Honeycomb Calculus, ensuring that the nomenclature matches the underlying geometry of the ciphertext substrate.
 
 ```
-                     ┌─────────────────────────────────────────────────┐
-                     │            THE HEX-ORGAN ENGINE CORE            │
-                     └────────────────────────┬────────────────────────┘
-                                              │
-         ┌───────────────┬─────────────────┼─────────────────┬───────────────┐
-         ▼               ▼                 ▼                 ▼               ▼
-  ┌───────────┐   ┌───────────┐     ┌───────────┐     ┌───────────┐   ┌───────────┐
-  │  CHAMBER  │   │  CHAMBER  │     │  CHAMBER  │     │  CHAMBER  │     │  CHAMBER  │
-  │    0x01   │   │    0x02   │     │    0x03   │     │    0x04   │     │    0x05   │
-  │    Hex-   │   │    EGS    │     │ Infinite  │     │   Prime   │     │  Net-Zero │
-  │  Calculus │   │  Fractal  │     │  Nested   │     │   Linear  │     │ Blackhole │
-  │ (Vectors) │   │ (Anchor)  │     │ (Pumps)   │     │ (Squeeze) │     │  (Portal) │
-  └───────────┘   └───────────┘     └───────────┘     └───────────┘     └───────────┘
-                                              │
-                                              ▼
-                               ┌─────────────────────────────┐
-                               │         CHAMBER 0x06        │
-                               │  Wavefield Solar Oscillator │
-                               │    (Real-Time Ingestion)    │
-                               └─────────────────────────────┘
+┌─────────────────────────────────────────────────┐
+│            THE HEX-ORGAN ENGINE CORE            │
+└────────────────────────┬────────────────────────┘
+│
+┌───────────────┬─────────────────┼─────────────────┬───────────────┐
+▼               ▼                 ▼                 ▼               ▼
+┌───────────┐   ┌───────────┐     ┌───────────┐     ┌───────────┐   ┌───────────┐
+│  CHAMBER  │   │  CHAMBER  │     │  CHAMBER  │     │  CHAMBER  │     │  CHAMBER  │
+│    0x01   │   │    0x02   │     │    0x03   │     │    0x04   │     │    0x05   │
+│    Hex-   │   │    EGS    │     │ Infinite  │     │   Prime   │     │  Net-Zero │
+│  Calculus │   │  Fractal  │     │  Nested   │     │   Linear  │     │ Blackhole │
+│ (Vectors) │   │ (Anchor)  │     │ (Pumps)   │     │ (Squeeze) │     │  (Portal) │
+└───────────┘   └───────────┘     └───────────┘     └───────────┘     └───────────┘
+│
+▼
+┌─────────────────────────────┐
+│         CHAMBER 0x06        │
+│  Wavefield Solar Oscillator │
+│    (Real-Time Ingestion)    │
+└─────────────────────────────┘
 ```
 
 **Chamber 0x01 [Hex-Calculus]:** The foundational spatial engine utilizing a redundant, 3-axis isotropic hexagonal tiling grid set at $120^\circ$ that sums to zero, eliminating boundary stair-step errors.
@@ -217,47 +217,45 @@ The operational script executing this unified architecture is logged in the syst
 import math
 import sympy
 
-
 class GoldilocksMasterEngine:
-    """Chambers 0x04–0x06: prime compression, singularity gearbox, wavefield limit."""
+"""Chambers 0x04–0x06: prime compression, singularity gearbox, wavefield limit."""
 
-    def __init__(self) -> None:
-        self.coord_to_prime: dict[int, int] = {}
-        self.prime_to_coord: dict[int, int] = {}
-        self.egs_constant = 1.618033988749895
-        self._generate_prime_substrate(50_000)
+def __init__(self) -> None:
+self.coord_to_prime: dict[int, int] = {}
+self.prime_to_coord: dict[int, int] = {}
+self.egs_constant = 1.618033988749895
+self._generate_prime_substrate(50_000)
 
-    def prime_linear_compression(self, prime_value: int) -> int:
-        if not sympy.isprime(prime_value):
-            raise ValueError(f"Value {prime_value} is composite. Requires foundational prime.")
-        return self.prime_to_coord[prime_value]
+def prime_linear_compression(self, prime_value: int) -> int:
+if not sympy.isprime(prime_value):
+raise ValueError(f"Value {prime_value} is composite. Requires foundational prime.")
+return self.prime_to_coord[prime_value]
 
-    def singularity_gearbox_shift(self, value: float, denominator: float) -> float | str:
-        if denominator == 0:
-            return f"TRANSFINITE_PORTAL_ENGAGED: Aleph_1 Tensor Vector mapped to {value} * Phi"
-        return value / denominator
+def singularity_gearbox_shift(self, value: float, denominator: float) -> float | str:
+if denominator == 0:
+return f"TRANSFINITE_PORTAL_ENGAGED: Aleph_1 Tensor Vector mapped to {value} * Phi"
+return value / denominator
 
-    def calculate_holographic_limit(self, live_nodes_matrix: list[dict]) -> float:
-        cumulative_stress = 0.0
-        for node in live_nodes_matrix:
-            theta = math.radians(node["latitude"] + node["longitude"])
-            weight = node["area_millionths"] / 1000.0
-            for tier in range(1, 13):
-                cumulative_stress += (math.sin(tier * theta) * weight) / (self.egs_constant**tier)
-        return abs(math.tanh(cumulative_stress) * self.egs_constant)
-
+def calculate_holographic_limit(self, live_nodes_matrix: list[dict]) -> float:
+cumulative_stress = 0.0
+for node in live_nodes_matrix:
+theta = math.radians(node["latitude"] + node["longitude"])
+weight = node["area_millionths"] / 1000.0
+for tier in range(1, 13):
+cumulative_stress += (math.sin(tier * theta) * weight) / (self.egs_constant**tier)
+return abs(math.tanh(cumulative_stress) * self.egs_constant)
 
 if __name__ == "__main__":
-    master_engine = GoldilocksMasterEngine()
-    assert master_engine.prime_linear_compression(5) == 3
-    print("[Synthobs Log] Foundational Prime 5 compressed cleanly to Linear Coordinate 3")
-    print(f"[Synthobs Log] Gearbox Execution Result: {master_engine.singularity_gearbox_shift(100, 0)}")
-    live_feed = [
-        {"latitude": -16, "longitude": 0, "area_millionths": 300},   # AR14446
-        {"latitude": 9, "longitude": -50, "area_millionths": 210},  # AR14452
-        {"latitude": 15, "longitude": 49, "area_millionths": 380},  # AR14455
-    ]
-    print(f"[Synthobs Log] Holographic Stability Index: {master_engine.calculate_holographic_limit(live_feed)}")
+master_engine = GoldilocksMasterEngine()
+assert master_engine.prime_linear_compression(5) == 3
+print("[Synthobs Log] Foundational Prime 5 compressed cleanly to Linear Coordinate 3")
+print(f"[Synthobs Log] Gearbox Execution Result: {master_engine.singularity_gearbox_shift(100, 0)}")
+live_feed = [
+{"latitude": -16, "longitude": 0, "area_millionths": 300},   # AR14446
+{"latitude": 9, "longitude": -50, "area_millionths": 210},  # AR14452
+{"latitude": 15, "longitude": 49, "area_millionths": 380},  # AR14455
+]
+print(f"[Synthobs Log] Holographic Stability Index: {master_engine.calculate_holographic_limit(live_feed)}")
 ```
 
 ---
@@ -267,43 +265,43 @@ if __name__ == "__main__":
 The complete end-to-end data topology maps how the raw, physical churning of the solar disk passes through the logical limiters of our Hex-Organ Engine to output an open, unrestricted tap of ambient computational energy:
 
 ```
-               +---------------------------------------+
-               |              EL GRAN SOL              |
-               |  Continuous Wavefield Oscillator      |
-               +-------------------+-------------------+
-                                   |
-    [Live Radio / X-Ray Emissions] | [Geomagnetic Flux Modulation]
-                                   v
-               +---------------------------------------+
-               |        NOAA Telemetry Bus             |
-               |     (Live Count: 133 / AR14452)       |
-               +-------------------+-------------------+
-                                   |
-                            [JSON Live Stream Feed]
-                                   v
-               +---------------------------------------+
-               |    DPH-GPU v2026.5 Ingestion Gate     |
-               |   Type-Safe Dynamic Data Validation   |
-               +-------------------+-------------------+
-                                   |
-                  [Phase-Locked Coordinate Transform]
-                                   v
-               +---------------------------------------+
-               |        EGS CADENCE TRANSFORM          |
-               |   Collapses Infinite Logical Steps    |
-               |   via Golden-Ratio Bounded Limit      |
-               +-------------------+-------------------+
-                                   |
-                [Deterministic Stability Invariant Index]
-                                   v
-               +---------------------------------------+
-               |      HONESTY BOUNDARY CONTROLLER      |
-               |   Enforces: mined_block = false       |
-               +-------------------+-------------------+
-                                   |
-     +-----------------------------+-----------------------------+
-     |                             |                             |
-     v                             v                             v
++---------------------------------------+
+|              EL GRAN SOL              |
+|  Continuous Wavefield Oscillator      |
++-------------------+-------------------+
+|
+[Live Radio / X-Ray Emissions] | [Geomagnetic Flux Modulation]
+v
++---------------------------------------+
+|        NOAA Telemetry Bus             |
+|     (Live Count: 133 / AR14452)       |
++-------------------+-------------------+
+|
+[JSON Live Stream Feed]
+v
++---------------------------------------+
+|    DPH-GPU v2026.5 Ingestion Gate     |
+|   Type-Safe Dynamic Data Validation   |
++-------------------+-------------------+
+|
+[Phase-Locked Coordinate Transform]
+v
++---------------------------------------+
+|        EGS CADENCE TRANSFORM          |
+|   Collapses Infinite Logical Steps    |
+|   via Golden-Ratio Bounded Limit      |
++-------------------+-------------------+
+|
+[Deterministic Stability Invariant Index]
+v
++---------------------------------------+
+|      HONESTY BOUNDARY CONTROLLER      |
+|   Enforces: mined_block = false       |
++-------------------+-------------------+
+|
++-----------------------------+-----------------------------+
+|                             |                             |
+v                             v                             v
 +---------------+             +---------------+             +---------------+
 | APPLICATION I |             |APPLICATION II |             |APPLICATION III|
 | Silicon Clock |             | Zero-Watt Net |             | Erdős-Straus  |
@@ -323,15 +321,14 @@ A fair exchange clause is strictly in effect for this mathematical synthesis and
 
 **NSPFRNP ⊃ Hex-Organ Engine ⊃ EGS φ ⊃ Synthobs unified run → ∞^∞** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** SV-OBS-2026-MATH-HEX-ENGINE-FINAL  
-**Registry ID:** `synthobs-hex-organ-engine-2026`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** SV-OBS-2026-MATH-HEX-ENGINE-FINAL
+**Registry ID:** `synthobs-hex-organ-engine-2026`
 **Re-audit:** `npm run audit:paper -- --id=synthobs-hex-organ-engine-2026`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

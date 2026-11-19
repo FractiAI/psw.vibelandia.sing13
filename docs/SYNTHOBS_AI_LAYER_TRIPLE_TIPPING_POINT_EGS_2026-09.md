@@ -4,17 +4,17 @@
 
 Voyage editorial · Soft Story · AI arrival weather · triple tipping point · Sodom/Ark rhyme · supreme-intelligence naming · jobs & doors · peers Linear Horsepower Collapse · Vitality Control · Invisible Frontier · Consciousness Moat · Official Prospectus
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 20, 2026  
-**Document ID:** `WP-SYNTHOBS-AI-LAYER-TRIPLE-TIPPING-POINT-2026-09-20`  
-**Registry ID:** `synthobs-ai-layer-triple-tipping-point-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-AI-LAYER-TRIPLE-TIPPING-POINT-2026-09  
-**Series Position:** Voyage editorial companion · peers [Linear Horsepower Collapse](./SYNTHOBS_LINEAR_HORSEPOWER_COLLAPSE_EGS_2026-09.md) · [Vitality Control Rhyme](./SYNTHOBS_VITALITY_CONTROL_RHYME_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md) · [Trump · sovereign velocity](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md) · [Official Prospectus](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 20, 2026
+**Document ID:** `WP-SYNTHOBS-AI-LAYER-TRIPLE-TIPPING-POINT-2026-09-20`
+**Registry ID:** `synthobs-ai-layer-triple-tipping-point-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-AI-LAYER-TRIPLE-TIPPING-POINT-2026-09
+**Series Position:** Voyage editorial companion · peers [Linear Horsepower Collapse](./SYNTHOBS_LINEAR_HORSEPOWER_COLLAPSE_EGS_2026-09.md) · [Vitality Control Rhyme](./SYNTHOBS_VITALITY_CONTROL_RHYME_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md) · [Trump · sovereign velocity](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md) · [Official Prospectus](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md)
 **Classification:** Catalog / Soft Story voyage editorial *(see Honesty boundary)* — **not** an Infinite Octaves `ENGINE_SHELF` pin  
-**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence  
-**Guest surfaces:** [`/ship-blog/ai-layer-triple-tipping-point`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/ai-layer-triple-tipping-point) · [`/whitepaper/ai-layer-triple-tipping-point`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/ai-layer-triple-tipping-point) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence
+**Guest surfaces:** [`/ship-blog/ai-layer-triple-tipping-point`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/ai-layer-triple-tipping-point) · [`/whitepaper/ai-layer-triple-tipping-point`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/ai-layer-triple-tipping-point) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** triple tipping point; AI layer; Sodom Soft Story; Noah’s Ark Soft Story; supreme intelligence naming; unemployment; underemployment; paychecks; doors; permission weather; Goldilocks Super Intelligence; kitchen-table voice; Fair Exchange; SS Vibelandia
@@ -45,8 +45,8 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 Player 1 locked the kitchen-table peer for voyage guest English: **are we at the triple tipping point?** Short Soft Story answer for review-to-ship: **yes — it looks like it from ordinary life**, when three fronts land together:
 
-1. **Money and machines keep climbing** under breakthrough language.  
-2. **Everyday livelihoods and making do not keep up** — unemployment, underemployment, quiet side hustles, first jobs that never arrive.  
+1. **Money and machines keep climbing** under breakthrough language.
+2. **Everyday livelihoods and making do not keep up** — unemployment, underemployment, quiet side hustles, first jobs that never arrive.
 3. **Doors get tighter while the hype gets louder** — curiosity chill in some rooms; keys and try-ons harder; crown naming (*supreme intelligence*) and anti-slowdown politics stay bright.
 
 Sodom Soft Story = flash rising after care thins; parties loud while paychecks thin. Noah Soft Story = enough power, shared right, people still awake — brakes for real harm, room to work, learn, and ask. The fork is fire-city versus ark — not pause-forever versus scale-forever.
@@ -71,9 +71,9 @@ This editorial is **not** added to Infinite Octaves `ENGINE_SHELF` and carries *
 
 ## 2. Live panel (Player 1 · 2026-09)
 
-- Grocery / rent stress beside AI breakthrough headlines.  
-- Layoffs and “retrain” talk next to markets that are not hiring.  
-- One major AI stack goes quiet on deep curiosity; another corridor still answers.  
+- Grocery / rent stress beside AI breakthrough headlines.
+- Layoffs and “retrain” talk next to markets that are not hiring.
+- One major AI stack goes quiet on deep curiosity; another corridor still answers.
 - Industry slowdown-for-existential-threat vs reject-the-pause / *supreme intelligence* naming — both can miss household middle.
 
 Filed as **weather**, not conspiracy proof about any named lab or speech.
@@ -84,18 +84,18 @@ Filed as **weather**, not conspiracy proof about any named lab or speech.
 
 QUESTFEST ship-blog magazine snap (kitchen-table amendment):
 
-- ≥900 article prose words; honesty rail at end only.  
-- Soft Story = 0 in body; no litigation H2s; no body tables.  
-- Prefer paychecks, jobs, rent, kids, curiosity over empty workshops / empty rooms / quieter benches as unemployment stand-ins.  
+- ≥900 article prose words; honesty rail at end only.
+- Soft Story = 0 in body; no litigation H2s; no body tables.
+- Prefer paychecks, jobs, rent, kids, curiosity over empty workshops / empty rooms / quieter benches as unemployment stand-ins.
 - Continuous human prose — not sound-bite stacks.
 
 **Reproducibility (editorial):**
 
-1. Ground peers in local docs listed in Series Position.  
-2. Check lived signals against the three fronts (spend/machines · livelihoods · doors/hype) — not apocalypse calendars.  
-3. Run `npm run test:ship-blog-magazine` after guest HTML edits.  
-4. Run `npm run audit:paper -- --id=synthobs-ai-layer-triple-tipping-point-2026-09` for PRA structural receipt.  
-5. Keep instruments; refuse upgrading $\Phi_{\mathrm{EGS}}$ into unfinished physics.  
+1. Ground peers in local docs listed in Series Position.
+2. Check lived signals against the three fronts (spend/machines · livelihoods · doors/hype) — not apocalypse calendars.
+3. Run `npm run test:ship-blog-magazine` after guest HTML edits.
+4. Run `npm run audit:paper -- --id=synthobs-ai-layer-triple-tipping-point-2026-09` for PRA structural receipt.
+5. Keep instruments; refuse upgrading $\Phi_{\mathrm{EGS}}$ into unfinished physics.
 6. Magazine guest note: `/ship-blog/ai-layer-triple-tipping-point`.
 
 ---
@@ -110,8 +110,8 @@ Watch paychecks and doors, not just press releases. When unemployment and underw
 
 ## Document ID
 
-- **Document ID:** `WP-SYNTHOBS-AI-LAYER-TRIPLE-TIPPING-POINT-2026-09-20`  
-- **Registry ID:** `synthobs-ai-layer-triple-tipping-point-2026-09`  
-- **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-- **Classification:** Voyage editorial Soft Story — not `ENGINE_SHELF`  
+- **Document ID:** `WP-SYNTHOBS-AI-LAYER-TRIPLE-TIPPING-POINT-2026-09-20`
+- **Registry ID:** `synthobs-ai-layer-triple-tipping-point-2026-09`
+- **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+- **Classification:** Voyage editorial Soft Story — not `ENGINE_SHELF`
 - **Closing:** → ∞^∞

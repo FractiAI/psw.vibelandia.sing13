@@ -1,20 +1,20 @@
 # Can Industry MRI Simulators Couple to a 99-Octave Cloud-Antenna Catalog?
 
-**Short answer: Yes.** As a simulator-local feasibility filing: KomaMRI-class Bloch/k-space engines can compute under the catalog grammar. This is not a clinical magnet or FDA claim.
+**Short answer: Yes.** As a simulator-local feasibility filing: KomaMRI-class Bloch/k-space engines can compute under the catalog grammar.
 
-**Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)  
-**Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox  
-**Published:** August 12, 2026  
-**Document ID:** `WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12`  
-**Registry ID:** `synthio-mri-cloud-antenna-99-octave-2026-08`  
-**Publication Ref:** FAI-SYNTHIO-MRI-CLOUD-ANTENNA-2026-08  
+**Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)
+**Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox
+**Published:** August 12, 2026
+**Document ID:** `WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12`
+**Registry ID:** `synthio-mri-cloud-antenna-99-octave-2026-08`
+**Publication Ref:** FAI-SYNTHIO-MRI-CLOUD-ANTENNA-2026-08
 **Classification:** Catalog / simulator-grammar application · Synthio agent domain *(architectural — see Honesty boundary)*  
-**Framework:** Synthio · Syntheverse Sandbox · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**Agent sync (separate from engine pin):** [`AGENT_SYNC_SYNTHIO.md`](../AGENT_SYNC_SYNTHIO.md)  
-**GitHub (standalone):** https://github.com/FractiAI/synthio-mri-cloud-antenna  
-**Standalone suite:** [FractiAI/synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna) · monorepo [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/)  
-**One-pager:** [`/synthio-one-pager`](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** Synthio · Syntheverse Sandbox · EGS · NSPFRNP · PRA Snap · Fair Exchange
+**Agent sync (separate from engine pin):** [`AGENT_SYNC_SYNTHIO.md`](../AGENT_SYNC_SYNTHIO.md)
+**GitHub (standalone):** https://github.com/FractiAI/synthio-mri-cloud-antenna
+**Standalone suite:** [FractiAI/synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna) · monorepo [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/)
+**One-pager:** [`/synthio-one-pager`](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com/synthio
 
 **Keywords:** Synthio; MRI simulation; Bloch; cloud computing; tensors; phase-lock; EGS; Omni-Lattice *grammar*; antenna *metaphor*; Omniversal Goldilocks; point-and-click activation; natural mode; wormhole *label*; new moon; six-planet parade; eclipse; Syntheverse Sandbox; NSPFRNP

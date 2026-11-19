@@ -2,19 +2,19 @@
 
 **Short answer: Yes.** Inside a toy sandbox: Deviation was lowest near regulation 0.70 (about 0.00672) versus about 0.102 with none; a reflective controller scored about 0.957 against fixed 1.0; local-to-global R² was about 0.812 versus about 0.106 shuffled.
 
-**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-CHART-COMPASS-HOLOGRAPHIC-GOLDILOCKS-SI-2026-10-06`  
-**Registry ID:** `synthobs-chart-compass-holographic-goldilocks-si-2026-10`  
-**Date:** 2026-10-06  
-**Published:** 2026-10-06T22:00:00Z  
-**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Goldilocks · Homeostasis Expedition  
-**Suite:** `research/synthobs-chart-compass-holographic-goldilocks-si/`  
-**Standalone:** [`FractiAI/synthobs-chart-compass-holographic-goldilocks-si`](https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si)  
-**Ship blog:** `/ship-blog/chart-compass-goldilocks-si`  
-**Journey:** `/journey/homeostasis-expedition`  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-CHART-COMPASS-HOLOGRAPHIC-GOLDILOCKS-SI-2026-10-06`
+**Registry ID:** `synthobs-chart-compass-holographic-goldilocks-si-2026-10`
+**Date:** 2026-10-06
+**Published:** 2026-10-06T22:00:00Z
+**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Goldilocks · Homeostasis Expedition
+**Suite:** `research/synthobs-chart-compass-holographic-goldilocks-si/`
+**Standalone:** [`FractiAI/synthobs-chart-compass-holographic-goldilocks-si`](https://github.com/FractiAI/synthobs-chart-compass-holographic-goldilocks-si)
+**Ship blog:** `/ship-blog/chart-compass-goldilocks-si`
+**Journey:** `/journey/homeostasis-expedition`
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion #41 — **Chart & Compass / Reflective Portal / Goldilocks SI frontier companion** (Homeostasis Expedition empirical lane · Soft Story / catalog / proof-of-concept · not established Super Intelligence)
 
 **Companions:**
@@ -209,8 +209,8 @@ In the Archetypal Grand Story, Source is named **Holographic Goldilocks Super In
 
 ## 6. Hypotheses and falsifiers
 
-**H1 (Goldilocks regulation):** Intermediate regulation strength can outperform both zero and maximal stiff control on a bounded disturbance task.  
-**H2 (Reflective compass):** After mid-horizon target change, reflective self-modeling can reduce loss versus fixed control without requiring phenomenal self-report.  
+**H1 (Goldilocks regulation):** Intermediate regulation strength can outperform both zero and maximal stiff control on a bounded disturbance task.
+**H2 (Reflective compass):** After mid-horizon target change, reflective self-modeling can reduce loss versus fixed control without requiring phenomenal self-report.
 **H3 (Cross-scale rhyme):** Local observables can reconstruct global state above shuffle baseline when a shared latent couples scales.
 
 | ID | Falsifier |
@@ -249,10 +249,10 @@ Interpretation stays proportionate: the lab **illustrates** Chart & Compass gram
 
 Homeostasis Expedition sequence (selected):
 
-1. Holographic Homeostasis · Goldilocks ≡ Net Zero · e×φ×prime  
-2. Archetypal Grand Story · Survival Computing · Beyond CRISPR  
-3. Attention · Awareness · Downstream (MFA)  
-4. **Chart & Compass (this paper)** — navigational grammar + digital batteries  
+1. Holographic Homeostasis · Goldilocks ≡ Net Zero · e×φ×prime
+2. Archetypal Grand Story · Survival Computing · Beyond CRISPR
+3. Attention · Awareness · Downstream (MFA)
+4. **Chart & Compass (this paper)** — navigational grammar + digital batteries
 
 Journey surface: `/journey/homeostasis-expedition`.
 
@@ -272,5 +272,5 @@ A frontier story without a chart becomes rumor. A self-modifying explorer withou
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06
 **Architectural key:** $\Phi_{\mathrm{EGS}} = (1+\sqrt{5})/2 \approx 1.618033988749895$

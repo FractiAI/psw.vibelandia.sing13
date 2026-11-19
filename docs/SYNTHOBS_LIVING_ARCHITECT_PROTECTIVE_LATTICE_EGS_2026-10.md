@@ -6,13 +6,13 @@
 
 **Research manuscript · 11 October 2026 · FractiAI / Infinite Octaves / SynthOBS**
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-LIVING-ARCHITECT-PROTECTIVE-LATTICE-EGS-2026-10-11`  
-**Registry ID:** `synthobs-living-architect-protective-lattice-2026-10`  
-**Suite:** `research/synthobs-living-architect-protective-lattice/`  
-**Standalone:** [`FractiAI/synthobs-living-architect-protective-lattice`](https://github.com/FractiAI/synthobs-living-architect-protective-lattice)  
-**Ship blog:** `/ship-blog/living-architect-protective-lattice`  
-**Journey:** `/journey/homeostasis-expedition`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-LIVING-ARCHITECT-PROTECTIVE-LATTICE-EGS-2026-10-11`
+**Registry ID:** `synthobs-living-architect-protective-lattice-2026-10`
+**Suite:** `research/synthobs-living-architect-protective-lattice/`
+**Standalone:** [`FractiAI/synthobs-living-architect-protective-lattice`](https://github.com/FractiAI/synthobs-living-architect-protective-lattice)
+**Ship blog:** `/ship-blog/living-architect-protective-lattice`
+**Journey:** `/journey/homeostasis-expedition`
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#44** — **Living Architect / protective lattice / cross-domain audit** (coral · mollusk · recursive agent · boot-up carry-forward · **not** harmonized empirical validation)
 
 **Companions:** [Observable Boot-Up](./SYNTHOBS_HOMEOSTASIS_EXPEDITION_OBSERVABLE_BOOT_UP_EGS_2026-10.md) · [Organizational Discovery](./SYNTHOBS_ORGANIZATIONAL_DISCOVERY_HOMEOSTASIS_EGS_2026-10.md)

@@ -4,17 +4,17 @@
 
 **Subtitle:** Mathematical proofs, published-scaling locks, and catalog architecture — Kleiber / WBE / Fibonacci developmental contrast
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05`  
-**Registry ID:** `synthobs-macro-protein-work-engine-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · application companion · standalone)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05`
+**Registry ID:** `synthobs-macro-protein-work-engine-2026-09`
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · application companion · standalone)
 **Classification:** Thermodynamic / holographic **catalog architecture** for organismal work *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine role:** **Application / comparison / demo companion** — applies Infinite Octave grammar; **not** an engine-shelf pin  
-**Standalone suite:** `research/synthobs-macro-protein-work-engine/` · [`FractiAI/synthobs-macro-protein-work-engine`](https://github.com/FractiAI/synthobs-macro-protein-work-engine) · `npm run research:synthobs-macro-protein-work-engine`  
-**Plain note:** [/ship-blog/macro-protein-work-engine](https://www.ssvibelandiaquestfest24x365.com/ship-blog/macro-protein-work-engine)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine role:** **Application / comparison / demo companion** — applies Infinite Octave grammar; **not** an engine-shelf pin
+**Standalone suite:** `research/synthobs-macro-protein-work-engine/` · [`FractiAI/synthobs-macro-protein-work-engine`](https://github.com/FractiAI/synthobs-macro-protein-work-engine) · `npm run research:synthobs-macro-protein-work-engine`
+**Plain note:** [/ship-blog/macro-protein-work-engine](https://www.ssvibelandiaquestfest24x365.com/ship-blog/macro-protein-work-engine)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -127,25 +127,25 @@ PHI = (1.0 + math.sqrt(5.0)) / 2.0  # Φ_EGS ≈ 1.618
 THETA_BIO_LO, THETA_BIO_HI = 13, 17
 
 def work_capacity(n, W0=1.0, E_activ=1.0):
-    return W0 * (PHI ** n) * math.exp(-E_activ / (PHI ** n))
+return W0 * (PHI ** n) * math.exp(-E_activ / (PHI ** n))
 
 def theta_bio(Lambda_organism, Lambda_pe):
-    return math.log(Lambda_organism / Lambda_pe) / math.log(PHI)
+return math.log(Lambda_organism / Lambda_pe) / math.log(PHI)
 
 class EGSMacroProteinWorkEngine:
-    """Catalog work-engine for organismal octave filing (catalog length units)."""
+"""Catalog work-engine for organismal octave filing (catalog length units)."""
 
-    def __init__(self, Lambda_organism, Lambda_pe=1.0):
-        self.Lambda_organism = float(Lambda_organism)
-        self.Lambda_pe = float(Lambda_pe)
-        self.theta = theta_bio(self.Lambda_organism, self.Lambda_pe)
+def __init__(self, Lambda_organism, Lambda_pe=1.0):
+self.Lambda_organism = float(Lambda_organism)
+self.Lambda_pe = float(Lambda_pe)
+self.theta = theta_bio(self.Lambda_organism, self.Lambda_pe)
 
-    def in_bio_band(self):
-        return THETA_BIO_LO <= self.theta <= THETA_BIO_HI
+def in_bio_band(self):
+return THETA_BIO_LO <= self.theta <= THETA_BIO_HI
 
-    def work_at_nearest_tier(self):
-        n = int(round(self.theta))
-        return {"tier": n, "W": work_capacity(n), "in_band": 13 <= n <= 17}
+def work_at_nearest_tier(self):
+n = int(round(self.theta))
+return {"tier": n, "W": work_capacity(n), "in_band": 13 <= n <= 17}
 ```
 
 Suite locks replay $\Phi$ identity, $\theta_{\mathrm{bio}}$ band membership for fixture length ratios (catalog octave units where $\Lambda_{\mathrm{organism}}=\Phi_{\mathrm{EGS}}^{15}\cdot\Lambda_{\mathrm{pe}}$ lands mid-band), and $W(n)$ finiteness — **not** measured BMR tables or SI proton→human meter certificates.

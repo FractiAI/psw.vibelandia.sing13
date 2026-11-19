@@ -2,12 +2,12 @@
 
 **Short answer: Yes.** On 100 six-hop missions, all three Director/Pilot arms recovered 100 of 100 while flat peers recovered 0. Pilot Rhyme's store was 67,243 B, 22% smaller than the exact-text cache (0 hits) and 80% smaller than private copies; the accuracy gain comes from the roles, not the rhyme.
 
-**Document ID:** `WP-PILOT-RHYME-EXPEDITION-EGS-2026-11-18`  
-**Registry ID:** `synthobs-pilot-rhyme-expedition-2026-11`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Classification:** Application companion Soft Story / computational expedition · Infinite Octaves ENGINE_SHELF #55 · FractiSI World Model rhyme feature  
-**Date:** 18 November 2026  
-**Harness:** FractiSI Multi-Agent `research/pilot-rhyme-expedition/` · mirror `research/synthobs-pilot-rhyme-expedition/`  
+**Document ID:** `WP-PILOT-RHYME-EXPEDITION-EGS-2026-11-18`
+**Registry ID:** `synthobs-pilot-rhyme-expedition-2026-11`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Classification:** Application companion Soft Story / computational expedition · Infinite Octaves ENGINE_SHELF #55 · FractiSI World Model rhyme feature
+**Date:** 18 November 2026
+**Harness:** FractiSI Multi-Agent `research/pilot-rhyme-expedition/` · mirror `research/synthobs-pilot-rhyme-expedition/`
 **Ship blog:** `/ship-blog/pilot-rhyme-expedition`
 
 ## Honesty boundary
@@ -31,10 +31,10 @@ Does a Director/Pilot **role rhyme** (reusable role template + shared world + pe
 
 Five arms on 100 missions (seed `20261118`, six hops, three Pilots under one Director):
 
-1. **flat_peers** — equal agents, private skims, no roles  
-2. **shared_text** — unstructured shared board, no roles  
-3. **director_pilot_private** — roles with private full copies  
-4. **director_pilot_exact_cache** — roles with exact-text packet cache  
+1. **flat_peers** — equal agents, private skims, no roles
+2. **shared_text** — unstructured shared board, no roles
+3. **director_pilot_private** — roles with private full copies
+4. **director_pilot_exact_cache** — roles with exact-text packet cache
 5. **director_pilot_rhyme** — Pilot Rhyme (template once + shared world + deltas)
 
 Run: `npm run research:pilot-rhyme-expedition` (kit) or `npm run research:synthobs-pilot-rhyme-expedition` (SING 13).
@@ -56,7 +56,6 @@ Run: `npm run research:pilot-rhyme-expedition` (kit) or `npm run research:syntho
 ## World Model feature lock
 
 Pilot Rhyme = Director holds the map · Pilots run local steps · roles stored once · each mission as only what differs · one shared world.
-
 
 ## Theater candidate recovery
 

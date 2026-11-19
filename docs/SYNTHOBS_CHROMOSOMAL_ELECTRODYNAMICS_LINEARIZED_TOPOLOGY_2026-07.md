@@ -2,14 +2,14 @@
 
 **Short answer: Yes.** Within the idealized model, group velocity falls to zero at the band edge (E2, support) and chrY length matches public coordinates (E1, support). Φ-tier scaling is moderate (2 of 3 pairs), THz peak alignment shows no support, and bench tests remain unrun.
 
-**Author:** SYNTHOBS Deep Study & Simulation Engine  
-**Affiliation:** Center for Theoretical Biophysics and Complex Systems Simulation  
-**Document ID:** WP-SYNTHOBS-CHROM-ELCD-2026-07  
-**Date:** July 2026  
-**Framework:** SYNTHOBS · EGS $\Phi$ · NSPFRNP Snap PRA  
-**Companion:** [Cross-Scale Biological Antennae](./SYNTHOBS_CROSS_SCALE_BIOLOGICAL_ANTENNAE_WAVE_DAMPING_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) · [AC-HMM T2T](./FRACTIAI_AC_HMM_SATELLITES_T2T_2026.md) · [Planck–1.6 scale-harmonic bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
+**Author:** SYNTHOBS Deep Study & Simulation Engine
+**Affiliation:** Center for Theoretical Biophysics and Complex Systems Simulation
+**Document ID:** WP-SYNTHOBS-CHROM-ELCD-2026-07
+**Date:** July 2026
+**Framework:** SYNTHOBS · EGS $\Phi$ · NSPFRNP Snap PRA
+**Companion:** [Cross-Scale Biological Antennae](./SYNTHOBS_CROSS_SCALE_BIOLOGICAL_ANTENNAE_WAVE_DAMPING_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) · [AC-HMM T2T](./FRACTIAI_AC_HMM_SATELLITES_T2T_2026.md) · [Planck–1.6 scale-harmonic bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
 **Empirical experiments executed:** 2026-07-03 UTC · [`empirical_report.json`](../research/synthobs-chromosomal-electrodynamics/data/empirical_report.json) · `npm run research:synthobs-chromosomal-electrodynamics`
 
 **Keywords:** chromosome topology; chromatin mechanics; theoretical biophysics; mathematical biology; electrodynamics; dispersion theory; fractal geometry; scale invariance; hierarchical systems; wave propagation
@@ -177,8 +177,8 @@ The mathematical results obtained strictly within the constraints of this theore
 
 ## 6. Empirical Experiments Executed on Public Data
 
-**Status: EXECUTED** — 2026-07-03 UTC  
-**Pipeline:** `npm run research:synthobs-chromosomal-electrodynamics`  
+**Status: EXECUTED** — 2026-07-03 UTC
+**Pipeline:** `npm run research:synthobs-chromosomal-electrodynamics`
 **Receipt:** `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
 
 This section reports **completed** empirical work on recognized public datasets — not a future roadmap. All four tests (E1–E4) were executed in this repository and crystallized to JSON.
@@ -274,29 +274,29 @@ The following bench protocols extend E1–E4 into **in situ** measurement. **Non
 +-------------------------------------------------------------+
 |               EXPERIMENTAL VALIDATION WORKFLOW              |
 +-------------------------------------------------------------+
-                               |
-                               v
+|
+v
 +-------------------------------------------------------------+
 | 1. Sample Preparation                                       |
 |    - Isolate intact chromosomal macro-strands (e.g., Y-Chr) |
 |    - Linearize and suspend via microfluidic optical tweezers|
 +-------------------------------------------------------------+
-                               |
-                               v
+|
+v
 +-------------------------------------------------------------+
 | 2. Spectroscopic and Impedance Mapping                      |
 |    - Apply Terahertz and RF Sweep (10 Hz to 10 THz)         |
 |    - Measure distributed Inductance (Lk) & Capacitance (Ck)|
 +-------------------------------------------------------------+
-                               |
-                               v
+|
+v
 +-------------------------------------------------------------+
 | 3. Dispersion & Velocity Analysis                           |
 |    - Calculate Phase (vp) and Group (vg) Velocities         |
 |    - Check for band-edge localization near k = pi / dx      |
 +-------------------------------------------------------------+
-                               |
-                               v
+|
+v
 +-------------------------------------------------------------+
 | 4. Scaling Verification                                     |
 |    - Compare resonance profiles across different lengths    |
@@ -326,7 +326,7 @@ npm run research:synthobs-chromosomal-electrodynamics
 npm run audit:paper -- --id=synthobs-chromosomal-electrodynamics-2026-07
 ```
 
-Audit receipts: `data/synthobs-paper-audits/synthobs-chromosomal-electrodynamics-2026-07.json`  
+Audit receipts: `data/synthobs-paper-audits/synthobs-chromosomal-electrodynamics-2026-07.json`
 Empirical report: `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
 
 ---
@@ -395,20 +395,20 @@ A fair exchange clause is in effect for this comprehensive theoretical manuscrip
 
 ## References
 
-1. Nurk et al., Telomere-to-Telomere CHM13 assembly, *Science* (2022); NCBI GCA_009914755.4.  
-2. Marko & Siggia, Polymer models of DNA flexibility, *Macromolecules* (1994).  
-3. Garten et al., Terahertz spectroscopy of DNA and RNA, *Chem. Phys. Lett.* (2015).  
-4. Mirny, The fractal globule as a model of chromatin architecture, *Chromosome Res.* (2011).  
-5. [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md) — NSPFRNP-SNAP-PRA-2026-06.  
-6. [Coherence plain speak honesty boundary](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).  
-7. [Recursive Attention Quantum–Solar–DNA Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) — cross-scale $\Phi$ postulate.  
-8. Wrapp et al., Cryo-EM structure of SARS-CoV-2 spike, *Science* (2020); PDB 6VXX.  
+1. Nurk et al., Telomere-to-Telomere CHM13 assembly, *Science* (2022); NCBI GCA_009914755.4.
+2. Marko & Siggia, Polymer models of DNA flexibility, *Macromolecules* (1994).
+3. Garten et al., Terahertz spectroscopy of DNA and RNA, *Chem. Phys. Lett.* (2015).
+4. Mirny, The fractal globule as a model of chromatin architecture, *Chromosome Res.* (2011).
+5. [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md) — NSPFRNP-SNAP-PRA-2026-06.
+6. [Coherence plain speak honesty boundary](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
+7. [Recursive Attention Quantum–Solar–DNA Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) — cross-scale $\Phi$ postulate.
+8. Wrapp et al., Cryo-EM structure of SARS-CoV-2 spike, *Science* (2020); PDB 6VXX.
 9. Wetmore & Sen, DNA electromagnetic transmission-line model, *Phys. Rev. E* (2006).
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** WP-SYNTHOBS-CHROM-ELCD-2026-07
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

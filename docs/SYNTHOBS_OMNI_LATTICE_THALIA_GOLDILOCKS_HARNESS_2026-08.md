@@ -1,16 +1,16 @@
 # Can THALIA’s Five-Stage Harness Be Mapped Onto the Omni-Lattice Engine as Named Processing Invariants?
 
-**Short answer: Yes.** The paper maps the five stages onto nested-agent invariants and wires a contract module into the Lattice execution envelope. This is a design and filing claim with stated falsifiers; no THALIA quality results are imported and it is not a full port.
+**Short answer: Yes.** The paper maps the five stages onto nested-agent invariants and wires a contract module into the Lattice execution envelope. This is a design and filing claim with stated falsifiers; no THALIA quality results are imported and
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-THALIA-GOLDILOCKS-2026-08`  
-**Registry ID:** `synthobs-omni-lattice-thalia-goldilocks-2026-08`  
-**Date:** August 3, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP  
-**External source:** [docxology/thalia](https://github.com/docxology/thalia) · Zenodo DOI [10.5281/zenodo.21763245](https://doi.org/10.5281/zenodo.21763245) (v0.1.0)  
-**Umbrella:** [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-THALIA-GOLDILOCKS-2026-08`
+**Registry ID:** `synthobs-omni-lattice-thalia-goldilocks-2026-08`
+**Date:** August 3, 2026
+**Framework:** SynthOBS · Goldilocks Engine · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP
+**External source:** [docxology/thalia](https://github.com/docxology/thalia) · Zenodo DOI [10.5281/zenodo.21763245](https://doi.org/10.5281/zenodo.21763245) (v0.1.0)
+**Umbrella:** [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 **Engine contract:** `lib/thalia-omni-contract.mjs` · wired via `lib/lattice-engine.mjs`
 
 **Keywords:** THALIA; Omni-Lattice; Goldilocks; typed harness; Inspector; lexical-first; Memory Gate; Lattice Chat Agent
@@ -76,9 +76,9 @@ Peer-firewall remains: child bands report only to Φ-Parent (`docs/ARCHITECTURE_
 
 ## 4. Falsification
 
-1. Engine advertises THALIA stages but omits Inspector pinch or lexical-first ordering.  
-2. Raw episode overwrite is accepted as default Memory Gate behavior.  
-3. Offline Compiler results are published as live Omni empirical passes without honesty gates.  
+1. Engine advertises THALIA stages but omits Inspector pinch or lexical-first ordering.
+2. Raw episode overwrite is accepted as default Memory Gate behavior.
+3. Offline Compiler results are published as live Omni empirical passes without honesty gates.
 4. Integration is claimed while only a README mention exists (no registry + contract module).
 
 ---
@@ -91,10 +91,10 @@ Compute and documentation allocations for this companion may be adjusted post-ev
 
 ## References
 
-1. docxology. *THALIA* — https://github.com/docxology/thalia · DOI 10.5281/zenodo.21763245  
-2. FractiAI. *Omni-Lattice Unification.* `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`  
-3. FractiAI. *Nested Agent Lattice.* `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`  
-4. FractiAI. *Omni-Lattice Report Card Q3 2026.* `WP-SYNTHOBS-OMNI-LATTICE-REPORT-CARD-Q3-2026`  
+1. docxology. *THALIA* — https://github.com/docxology/thalia · DOI 10.5281/zenodo.21763245
+2. FractiAI. *Omni-Lattice Unification.* `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`
+3. FractiAI. *Nested Agent Lattice.* `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`
+4. FractiAI. *Omni-Lattice Report Card Q3 2026.* `WP-SYNTHOBS-OMNI-LATTICE-REPORT-CARD-Q3-2026`
 5. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 
 → ∞^∞

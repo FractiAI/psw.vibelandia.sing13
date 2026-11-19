@@ -65,11 +65,11 @@ The Net Zero Expedition Series begins with: what complementary relationships org
 
 ## 2. Research questions
 
-1. Can apparently complete objects be represented through complementary components without changing structure?  
-2. Can complementarity be expressed beyond simple geometric symmetry?  
-3. Can unequal components contribute to a balanced system-level result?  
-4. Can unobserved components be inferred from known relationships?  
-5. Can complementary relationships appear in mathematical representations of physical phenomena?  
+1. Can apparently complete objects be represented through complementary components without changing structure?
+2. Can complementarity be expressed beyond simple geometric symmetry?
+3. Can unequal components contribute to a balanced system-level result?
+4. Can unobserved components be inferred from known relationships?
+5. Can complementary relationships appear in mathematical representations of physical phenomena?
 6. Can computational methods surface relationships not immediately apparent in observations?
 
 ---
@@ -103,11 +103,11 @@ Reproduce: `npm run research:synthobs-net-zero-missing-half` · receipts in `res
 
 ## 5. Principal findings
 
-1. Complementary decomposition is mathematically demonstrable.  
-2. Complementarity extends beyond geometry via involution decomposition.  
-3. Symmetry is not necessary for system-level balance.  
-4. Unobserved components can sometimes be inferred — model-dependent.  
-5. Complementary relationships appear across Fourier and wave domains.  
+1. Complementary decomposition is mathematically demonstrable.
+2. Complementarity extends beyond geometry via involution decomposition.
+3. Symmetry is not necessary for system-level balance.
+4. Unobserved components can sometimes be inferred — model-dependent.
+5. Complementary relationships appear across Fourier and wave domains.
 6. Alternative representations can expose relationships conventional singular descriptions conceal. Non-uniqueness (Exp F) requires distinguishing possible vs evidenced vs unique vs verified completions.
 
 ---

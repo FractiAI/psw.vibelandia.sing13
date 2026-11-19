@@ -1,17 +1,17 @@
 # Synthio · MRI cloud-antenna — one-pager
 
-**Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)  
-**Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox  
-**Published:** August 12, 2026  
-**Document ID:** `WP-SYNTHIO-MRI-CLOUD-ANTENNA-ONE-PAGER-2026-08-12`  
-**Registry ID:** `synthio-mri-cloud-antenna-one-pager-2026-08`  
+**Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)
+**Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox
+**Published:** August 12, 2026
+**Document ID:** `WP-SYNTHIO-MRI-CLOUD-ANTENNA-ONE-PAGER-2026-08-12`
+**Registry ID:** `synthio-mri-cloud-antenna-one-pager-2026-08`
 **Classification:** One-pager · Synthio agent card *(architectural — see Honesty boundary)*  
-**Parent suite:** [FractiAI/synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna)  
-**Paper:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md)  
-**HTML:** [/synthio-one-pager](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager)  
-**Dashboard:** [/synthio-dashboard](https://www.ssvibelandiaquestfest24x365.com/synthio-dashboard) · whiteboard pin on [/my-whiteboard](https://www.ssvibelandiaquestfest24x365.com/my-whiteboard)  
-**Cloud Services:** [/synthio-cloud](https://www.ssvibelandiaquestfest24x365.com/synthio-cloud) · [distributed KomaMRI note](./SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md)  
-**Chat:** [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio)  
+**Parent suite:** [FractiAI/synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna)
+**Paper:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md)
+**HTML:** [/synthio-one-pager](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager)
+**Dashboard:** [/synthio-dashboard](https://www.ssvibelandiaquestfest24x365.com/synthio-dashboard) · whiteboard pin on [/my-whiteboard](https://www.ssvibelandiaquestfest24x365.com/my-whiteboard)
+**Cloud Services:** [/synthio-cloud](https://www.ssvibelandiaquestfest24x365.com/synthio-cloud) · [distributed KomaMRI note](./SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md)
+**Chat:** [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio)
 **Agent sync:** [`AGENT_SYNC_SYNTHIO.md`](../AGENT_SYNC_SYNTHIO.md)
 
 ---

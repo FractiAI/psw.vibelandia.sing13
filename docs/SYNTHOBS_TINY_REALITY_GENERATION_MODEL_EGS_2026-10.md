@@ -59,11 +59,11 @@
 
 Homeostasis Expedition asks how nested systems stay viable. TRGM’s primary lock is no longer “generate any miniature and score it,” but a specific stack:
 
-1. **10 bits/s biological reality stream pipe** (rate-limited Soft Story input bandwidth),  
-2. **Intelligent three-symbol cyclic input** (Σ = {0,1,2} ↔ wave / node / fq),  
-3. **Clocked by rotating polygon spin** (regular \(N\)-gon phase),  
-4. **Fed into an Infinite Octave recursive holographic-rhyme tree** (Φ_EGS scale ladder),  
-5. **Implemented on folded compact DNA** (nucleosome wrap grammar on hs1),  
+1. **10 bits/s biological reality stream pipe** (rate-limited Soft Story input bandwidth),
+2. **Intelligent three-symbol cyclic input** (Σ = {0,1,2} ↔ wave / node / fq),
+3. **Clocked by rotating polygon spin** (regular \(N\)-gon phase),
+4. **Fed into an Infinite Octave recursive holographic-rhyme tree** (Φ_EGS scale ladder),
+5. **Implemented on folded compact DNA** (nucleosome wrap grammar on hs1),
 
 and whether that stack is **coherent** and **beneficial** relative to ablations that drop structure, clock, tree, or fold.
 
@@ -71,11 +71,11 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 
 ## 2. Contributions
 
-1. Primary-hypothesis laboratory **T1–T7** (executed, not fabricated) — includes **T7** locking the **10 bits/s biological reality stream pipe**.  
-2. **Genetic-node laboratory G1–G5** on pinned public data (GTEx · MyGene · UCSC hs1 chrM · hg38 CpG).  
-3. **Wave / node / fq catalog C1–C3** — every identified genetic feature associated with one triad input (symbols 0/1/2).  
-4. Ablation battery: unstructured · unclocked · flat · unfolded DNA.  
-5. Supporting TRGM E1–E5 + molecular theater M1–M5 + historical H1–H3.  
+1. Primary-hypothesis laboratory **T1–T7** (executed, not fabricated) — includes **T7** locking the **10 bits/s biological reality stream pipe**.
+2. **Genetic-node laboratory G1–G5** on pinned public data (GTEx · MyGene · UCSC hs1 chrM · hg38 CpG).
+3. **Wave / node / fq catalog C1–C3** — every identified genetic feature associated with one triad input (symbols 0/1/2).
+4. Ablation battery: unstructured · unclocked · flat · unfolded DNA.
+5. Supporting TRGM E1–E5 + molecular theater M1–M5 + historical H1–H3.
 6. ENGINE_SHELF #50 DNA layer drilled to gene/exon/sequence/CpG detail with triad catalog + bio pipe.
 
 ---
@@ -99,15 +99,15 @@ and whether that stack is **coherent** and **beneficial** relative to ablations 
 
 ## 4. Methods
 
-- **Bio pipe:** `src/biological-reality-pipe.mjs` · `BIO_REALITY_PIPE_BIT_RATE_BPS = 10` · symbols/s = \(10 / \log_2 3\) · duration = \(N_{\mathrm{ticks}} \cdot \log_2 3 / 10\). Full stack always attaches the pipe (T7).  
-- **T-lab:** `research/synthobs-tiny-reality-generation-model/src/triadic-octave-dna-lab.mjs`  
-- **Motif:** symbol \(k \mapsto (\lfloor k\Phi\rfloor + k)\bmod 3\); period 9; 3 cycles.  
-- **Clock:** `placeCircle(9,…)` spin; sync = vertex–motif lock rate.  
-- **Tree:** layers at Φ^{offset} for offset ∈ [−3,+3]; shrink check on finer octaves = 1/Φ.  
-- **Fold:** WRAP_BP=147 · NUCLEOSOME_TURNS=1.65 · theater Archimedean pack; compaction = linear span / folded extent.  
-- **Genetic fixtures:** `data/molecular/genetic/` — `genes.panel.json` (GTEx), `exons.panel.json` (MyGene), `chrM.hs1.fa` (UCSC hs1), `cpg.panel.json` (UCSC hg38 cpgIslandExt), `hg38.chrom.sizes`, `PROVENANCE.json`.  
-- **Wave/node/fq catalog:** `wave_node_fq_catalog.json` · builder `src/wave-node-fq-catalog.mjs` · feature-kind map + gene Soft Story primaries.  
-- **Benefit:** viable under hard gates **and** coherenceScore ≥ 0.7.  
+- **Bio pipe:** `src/biological-reality-pipe.mjs` · `BIO_REALITY_PIPE_BIT_RATE_BPS = 10` · symbols/s = \(10 / \log_2 3\) · duration = \(N_{\mathrm{ticks}} \cdot \log_2 3 / 10\). Full stack always attaches the pipe (T7).
+- **T-lab:** `research/synthobs-tiny-reality-generation-model/src/triadic-octave-dna-lab.mjs`
+- **Motif:** symbol \(k \mapsto (\lfloor k\Phi\rfloor + k)\bmod 3\); period 9; 3 cycles.
+- **Clock:** `placeCircle(9,…)` spin; sync = vertex–motif lock rate.
+- **Tree:** layers at Φ^{offset} for offset ∈ [−3,+3]; shrink check on finer octaves = 1/Φ.
+- **Fold:** WRAP_BP=147 · NUCLEOSOME_TURNS=1.65 · theater Archimedean pack; compaction = linear span / folded extent.
+- **Genetic fixtures:** `data/molecular/genetic/` — `genes.panel.json` (GTEx), `exons.panel.json` (MyGene), `chrM.hs1.fa` (UCSC hs1), `cpg.panel.json` (UCSC hg38 cpgIslandExt), `hg38.chrom.sizes`, `PROVENANCE.json`.
+- **Wave/node/fq catalog:** `wave_node_fq_catalog.json` · builder `src/wave-node-fq-catalog.mjs` · feature-kind map + gene Soft Story primaries.
+- **Benefit:** viable under hard gates **and** coherenceScore ≥ 0.7.
 - **Runner:** `npm run research:synthobs-tiny-reality-generation-model`.
 
 ---
@@ -235,11 +235,11 @@ Primary hypothesis **T1–T7 = 7/7** (includes **10 bits/s biological reality st
 
 What to prioritize in the next version:
 
-1. **Independent predictive validation** — reproduce #50 from a clean checkout; verify fixture hashes, provenance, exact runner, and all reported metrics.  
-2. **Held-out biological regions** — test on independent loci / datasets; avoid tuning the grammar and evaluating it on the same examples.  
-3. **Strong matched baselines** — simpler sequence models, randomized mappings, alternative recursive encodings, equivalent non-DNA spatial layouts.  
-4. **wave/node/fq predictive value** — preserve the 199-feature catalog; compare against shuffled and biologically conventional classifications.  
-5. **Functional reality catalog** — store each generated structure’s recipe, parameters, multiscale tree, spatial representation, validation metrics, and version so it can be retrieved, regenerated, compared, and recombined.  
+1. **Independent predictive validation** — reproduce #50 from a clean checkout; verify fixture hashes, provenance, exact runner, and all reported metrics.
+2. **Held-out biological regions** — test on independent loci / datasets; avoid tuning the grammar and evaluating it on the same examples.
+3. **Strong matched baselines** — simpler sequence models, randomized mappings, alternative recursive encodings, equivalent non-DNA spatial layouts.
+4. **wave/node/fq predictive value** — preserve the 199-feature catalog; compare against shuffled and biologically conventional classifications.
+5. **Functional reality catalog** — store each generated structure’s recipe, parameters, multiscale tree, spatial representation, validation metrics, and version so it can be retrieved, regenerated, compared, and recombined.
 6. **Separate biology track** — a computational DNA-inspired representation is a legitimate research architecture; claims about molecular mechanisms inside living chromosomes require independent biological evidence.
 
 Shipped as ENGINE_SHELF **#51**: [`docs/SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG_EGS_2026-10.md`](SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG_EGS_2026-10.md) · `/ship-blog/trgm-predictive-reality-catalog` · suite `research/synthobs-trgm-predictive-reality-catalog/`.
@@ -248,15 +248,15 @@ Shipped as ENGINE_SHELF **#51**: [`docs/SYNTHOBS_TRGM_PREDICTIVE_REALITY_CATALOG
 
 ## References
 
-1. Kuramoto, Y. (1984). *Chemical Oscillations, Waves, and Turbulence*. Springer.  
-2. Taflove, A., & Hagness, S. C. (2005). *Computational Electrodynamics* (FDTD). Artech House.  
-3. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A* minimum-cost paths. *IEEE Trans. SSC*.  
-4. FractiAI Wave–Node Mathematics (2026). ENGINE_SHELF #49.  
-5. Luger, K., et al. Crystal structure of the nucleosome core particle — wrap ≈147 bp / ≈1.65 turns (structural-biology figure reused as grammar).  
-6. GTEx Portal API v2 — gene reference coordinates (GRCh38).  
-7. MyGene.info v3 — exon / CDS transcript structures.  
-8. UCSC Genome Browser — hs1 chrM sequence; hg38 `cpgIslandExt` track.  
-9. Movebank study 2548892515 — Snowy Range Moose.  
+1. Kuramoto, Y. (1984). *Chemical Oscillations, Waves, and Turbulence*. Springer.
+2. Taflove, A., & Hagness, S. C. (2005). *Computational Electrodynamics* (FDTD). Artech House.
+3. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A* minimum-cost paths. *IEEE Trans. SSC*.
+4. FractiAI Wave–Node Mathematics (2026). ENGINE_SHELF #49.
+5. Luger, K., et al. Crystal structure of the nucleosome core particle — wrap ≈147 bp / ≈1.65 turns (structural-biology figure reused as grammar).
+6. GTEx Portal API v2 — gene reference coordinates (GRCh38).
+7. MyGene.info v3 — exon / CDS transcript structures.
+8. UCSC Genome Browser — hs1 chrM sequence; hg38 `cpgIslandExt` track.
+9. Movebank study 2548892515 — Snowy Range Moose.
 10. GFZ Kp index archive.
 
 ---

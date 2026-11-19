@@ -4,16 +4,16 @@
 
 **Blind Independent Artifact Investigation, FIRE-Bench Situating, and Conformity Contrast**
 
-**Authors:** FractiAI Research Team · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-FRONTIER-AGENT-CONVERGENCE-EGS-2026-10-07`  
-**Registry ID:** `synthobs-frontier-agent-convergence-2026-10`  
-**Published:** 2026-10-07  
-**Framework:** Infinite Octaves Omni-Lattice · NSPFRNP · Seed:Edge · Fair Exchange  
-**Suite:** `research/synthobs-frontier-agent-convergence/`  
-**Standalone:** [FractiAI/synthobs-frontier-agent-convergence](https://github.com/FractiAI/synthobs-frontier-agent-convergence)  
-**Ship blog:** [`/ship-blog/frontier-agent-convergence`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/frontier-agent-convergence)  
-**Whitepaper:** [`/whitepaper/frontier-agent-convergence`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/frontier-agent-convergence)  
+**Authors:** FractiAI Research Team · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-FRONTIER-AGENT-CONVERGENCE-EGS-2026-10-07`
+**Registry ID:** `synthobs-frontier-agent-convergence-2026-10`
+**Published:** 2026-10-07
+**Framework:** Infinite Octaves Omni-Lattice · NSPFRNP · Seed:Edge · Fair Exchange
+**Suite:** `research/synthobs-frontier-agent-convergence/`
+**Standalone:** [FractiAI/synthobs-frontier-agent-convergence](https://github.com/FractiAI/synthobs-frontier-agent-convergence)
+**Ship blog:** [`/ship-blog/frontier-agent-convergence`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/frontier-agent-convergence)
+**Whitepaper:** [`/whitepaper/frontier-agent-convergence`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/frontier-agent-convergence)
 **Slot:** **application companion (not ENGINE_SHELF)** — exploratory empirical protocol; fixture tier until a live multi-provider INCLUDE gate is earned.
 
 ---
@@ -93,13 +93,13 @@ Both refuse engine-pin physics claims. Both keep Φ_EGS out of agent objectives.
 
 ## 3. Central hypothesis
 
-**H1 — Structural convergence under blindness.**  
+**H1 — Structural convergence under blindness.**
 Independent agents given a public artifact and a first-principles instruction will share a core of structural findings (executable research present, honesty rails, replayable labs, claim–evidence separation, unsupported-physics flags) above a pre-registered coverage gate, without collapsing to identical tag sets.
 
-**H2 — Conformity contrast.**  
+**H2 — Conformity contrast.**
 An agree-with-Pru control will score higher forced-agreement and lower honesty/falsifier detection than blind explorers.
 
-**H3 — Protocol necessity.**  
+**H3 — Protocol necessity.**
 If explorers and conformity controls are indistinguishable on honesty and claim–evidence margins, the blind protocol adds no measurable value in the fixture model.
 
 ---

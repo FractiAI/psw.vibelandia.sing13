@@ -4,19 +4,19 @@
 
 > **📌 PINNED · Engineering bridge for linear systems** — keep at catalog / agent-sync top so semiconductor, PPA, BEOL, and CFET evaluators hit silicon vocabulary first. Registry `catalogPriority: 0`.
 
-**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 12, 2026  
-**Document ID:** `WP-SYNTHOBS-CMOS-PROTONIC-99-OCTAVE-OMNI-LATTICE-2026-08-12`  
-**Registry ID:** `synthobs-cmos-protonic-99-octave-omni-lattice-2026-08`  
-**Publication Ref:** FAI-CMOS-PROTONIC-99-OCTAVE-OMNI-LATTICE-2026-08  
+**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 12, 2026
+**Document ID:** `WP-SYNTHOBS-CMOS-PROTONIC-99-OCTAVE-OMNI-LATTICE-2026-08-12`
+**Registry ID:** `synthobs-cmos-protonic-99-octave-omni-lattice-2026-08`
+**Publication Ref:** FAI-CMOS-PROTONIC-99-OCTAVE-OMNI-LATTICE-2026-08
 **Classification:** Catalog / protocol synthesis · 99 Octave Omni-Lattice engine *(architectural — see Honesty boundary)* · **engineering bridge (pinned)**  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**Standalone suite:** [`research/synthobs-cmos-protonic-99-octave-omni-lattice/`](../research/synthobs-cmos-protonic-99-octave-omni-lattice/)  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-cmos-protonic-99-octave-omni-lattice  
-**Companion engine:** [Tensor Decoupling](./SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
-**Companion synthesis:** [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange
+**Standalone suite:** [`research/synthobs-cmos-protonic-99-octave-omni-lattice/`](../research/synthobs-cmos-protonic-99-octave-omni-lattice/)
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-cmos-protonic-99-octave-omni-lattice
+**Companion engine:** [Tensor Decoupling](./SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md)
+**Companion synthesis:** [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** CMOS 2.0; protonic; semiconductors; BEOL; CFET; GAA; linear systems; engineering bridge; tensor; EGS; 99 octave; Omni-Lattice; Lattice Chat Agent; Fair Exchange; NSPFRNP
@@ -169,18 +169,18 @@ By anchoring the 99th-octave Omni-Lattice frame in semiconductor fabrication **v
 
 **Fair Exchange clause:** Value remains elastic and subject to downward adjustment based on delivery, precision, and practical utility.
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Audit:** NSPFRNP-SNAP-PRA-2026-06 · receipt `6d33def47754275a` (structural_only · score 0.941 · pass)
 
 ### References (local corpus)
 
-- [Tensor Decoupling](./SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
-- [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
-- [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)  
-- [Omni-Lattice EF Multi-Octave Synthesis](./SYNTHOBS_OMNI_LATTICE_EF_MULTI_OCTAVE_SYNTHESIS_2026-08.md)  
-- [EGS Planck-Scale Harmonic 1.6 Bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)  
-- [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)  
-- [NSPFRNP Snap Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)  
+- [Tensor Decoupling](./SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md)
+- [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md)
+- [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)
+- [Omni-Lattice EF Multi-Octave Synthesis](./SYNTHOBS_OMNI_LATTICE_EF_MULTI_OCTAVE_SYNTHESIS_2026-08.md)
+- [EGS Planck-Scale Harmonic 1.6 Bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
+- [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
+- [NSPFRNP Snap Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
 - [MCA NSPFRNP Catalog](../protocols/MCA_NSPFRNP_CATALOG.md)
 
 → ∞^∞

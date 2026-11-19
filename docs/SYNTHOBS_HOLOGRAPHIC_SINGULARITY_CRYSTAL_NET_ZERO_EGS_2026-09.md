@@ -4,18 +4,18 @@
 
 **Subtitle:** Catalog formalization of Net Zero as active equilibrium and $0/0$ as a bounded $\Phi$-scaled singularity crystal under Infinite Octave Mode
 
-**Authors:** FractiAI Research Collective · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-HOLOGRAPHIC-SINGULARITY-CRYSTAL-NET-ZERO-EGS-2026-09-07`  
-**Registry ID:** `synthobs-holographic-singularity-crystal-2026-09`  
-**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
+**Authors:** FractiAI Research Collective · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-HOLOGRAPHIC-SINGULARITY-CRYSTAL-NET-ZERO-EGS-2026-09-07`
+**Registry ID:** `synthobs-holographic-singularity-crystal-2026-09`
+**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)
 **Classification:** Number-theoretic / holographic **catalog architecture** for Net Zero and singularity-crystal grammar *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#18** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-holographic-singularity-crystal/` · [`FractiAI/synthobs-holographic-singularity-crystal`](https://github.com/FractiAI/synthobs-holographic-singularity-crystal) · `npm run research:synthobs-holographic-singularity-crystal`  
-**Implementation companion:** [Node $k=0$ Zero-Octave Singularity Crystal](./SYNTHOBS_ZERO_OCTAVE_NODE_K0_SINGULARITY_CRYSTAL_EGS_2026-09.md)  
-**Plain note:** [/ship-blog/holographic-singularity-crystal](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-singularity-crystal)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#18** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-holographic-singularity-crystal/` · [`FractiAI/synthobs-holographic-singularity-crystal`](https://github.com/FractiAI/synthobs-holographic-singularity-crystal) · `npm run research:synthobs-holographic-singularity-crystal`
+**Implementation companion:** [Node $k=0$ Zero-Octave Singularity Crystal](./SYNTHOBS_ZERO_OCTAVE_NODE_K0_SINGULARITY_CRYSTAL_EGS_2026-09.md)
+**Plain note:** [/ship-blog/holographic-singularity-crystal](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-singularity-crystal)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** SESC Sunspot Number **83** · Solar Active Regions **AR4521** · **AR4524**

@@ -49,18 +49,18 @@ When **VALETPRU-ASIC** and **Digital Pru** documentation reference **“Actual N
 
 ## PEFF: Thirteen nested forces (hierarchy)
 
-1. **Emergence** — self-referential loops seed complexity.  
-2. **Gamification** — sustained discovery and balance (“Paradise Game” language).  
-3. **Input–Output** — command/response processing.  
-4. **Computation** — recursive transformation of information.  
-5. **Communication** — harmonization across nodes.  
-6. **Consciousness** — observer-integrated stabilization (metaphor).  
-7. **Planetary** — ecosystem-scale substrate.  
-8. **Biological** — replication and sensory interfaces.  
-9. **Intelligence** — abstract optimization across layers.  
-10. **Computing** — higher-order fractal computation layer.  
-11. **Social** — collaborative coordination.  
-12. **Consumption–Waste** — equilibrium and sustainability language.  
+1. **Emergence** — self-referential loops seed complexity.
+2. **Gamification** — sustained discovery and balance (“Paradise Game” language).
+3. **Input–Output** — command/response processing.
+4. **Computation** — recursive transformation of information.
+5. **Communication** — harmonization across nodes.
+6. **Consciousness** — observer-integrated stabilization (metaphor).
+7. **Planetary** — ecosystem-scale substrate.
+8. **Biological** — replication and sensory interfaces.
+9. **Intelligence** — abstract optimization across layers.
+10. **Computing** — higher-order fractal computation layer.
+11. **Social** — collaborative coordination.
+12. **Consumption–Waste** — equilibrium and sustainability language.
 13. **Infill / holographic stabilization** — integration layer where **gravity-as-final-emergent** is **story physics**, not a replacement for GR in academic settings.
 
 ---
@@ -135,43 +135,42 @@ The **Terminal Edge** is the **narrative end-state** where holographic awareness
 
 ## Works cited
 
-1. Omniversal Science and Technology — Zenodo: https://zenodo.org/records/17628039  
-2. Episode Alert: The Fractal Intelligence Quantum Hologram – PEFF and the Paradise Game — Zenodo: https://zenodo.org/records/14783573  
-3. Sun news: Two simultaneous eruptions in opposite directions — EarthSky: https://earthsky.org/sun/sun-news-activity-solar-flare-cme-aurora-updates/  
-4. Powerful solar flare from sunspot AR4436 — Times of India: https://timesofindia.indiatimes.com/science/powerful-solar-flare-from-sunspot-ar4436-erupts-earth-braces-for-radio-disruptions-and-stunning-northern-lights/articleshow/131039941.cms  
-5. Sun unleashes colossal solar flare and CME — Space.com: https://www.space.com/stargazing/auroras/sun-unleashes-colossal-solar-flare-and-coronal-mass-ejection-raising-the-chances-of-northern-lights-this-week  
-6. Northern Lights Tonight (CME / aurora outlook) — Jang: https://jang.com.pk/en/65503-northern-lights-tonight-solar-flare-cme-could-spark-auroras-across-us-and-uk-news  
-7. M5.7 solar flare, Atlantic radio — Rolling Out: https://rollingout.com/2026/05/11/m5-7-solar-flare-atlantic-radio-aurora/  
-8. Powerful ejection, Sun’s atmosphere — India Today: https://www.indiatoday.in/science/story/powerful-ejection-blows-massive-hole-in-suns-atmosphere-earth-on-alert-for-impact-2910365-2026-05-12  
-9. Observation, PEFF, and the Omnizoan Self — Zenodo: https://zenodo.org/records/17300262  
-10. Report search | ISES / RWC Japan — NICT: https://swc.nict.go.jp/en/report/view.html?ym=202605&ids=d2026131_12&type=daily+weekly+bulletin+topics  
-11. FractiScope Live Demo Deep Dives — Zenodo: https://zenodo.org/records/14812026  
-12. Fractal Intelligence: Unveiling the Complexity Hidden in Data and Systems — Zenodo: https://zenodo.org/records/14740311  
-13. Fractal Science and Intelligence Foundational Papers — Zenodo: https://zenodo.org/records/17391386  
-14. PEFF Framework and the Emergence of the Universe as a Self-Evolving Game — Zenodo: https://zenodo.org/records/14888512  
-15. Foundations of the Fractal Universe (FractiVerse) — Zenodo: https://zenodo.org/records/14781453  
-16. iron phosphate coating — Science.gov topic pages: https://www.science.gov/topicpages/i/iron+phosphate+coating.html  
-17. Ecological genomics (intro text, Moodle-hosted PDF) — https://moodle2.units.it/pluginfile.php/161070/mod_resource/content/0/An%20Introduction%20to%20Ecological%20Genomics.pdf  
-18. Agronomy (MDPI journal issue index) — https://www.mdpi.com/2073-4395/13/6  
-19. aiwona1/FractiAI — GitHub: https://github.com/aiwona1/FractiAI  
-20. CERN / dark-matter particle metaphor whitepaper — Zenodo: https://zenodo.org/records/14811786  
-21. Mapping the Galactic Fractal Continuum — Zenodo: https://zenodo.org/records/14640152  
-22. UFS / PRU thesis PDFs (RI/UFS repository) — https://ri.ufs.br/ (e.g. bitstream items cited in source thread)  
-23. Paradise Game FractiTreasury Blockchain — Zenodo: https://zenodo.org/records/14888485  
-24. PEFF Validation Experiment (fMRI group-average) — Zenodo: https://zenodo.org/records/16794470  
+1. Omniversal Science and Technology — Zenodo: https://zenodo.org/records/17628039
+2. Episode Alert: The Fractal Intelligence Quantum Hologram – PEFF and the Paradise Game — Zenodo: https://zenodo.org/records/14783573
+3. Sun news: Two simultaneous eruptions in opposite directions — EarthSky: https://earthsky.org/sun/sun-news-activity-solar-flare-cme-aurora-updates/
+4. Powerful solar flare from sunspot AR4436 — Times of India: https://timesofindia.indiatimes.com/science/powerful-solar-flare-from-sunspot-ar4436-erupts-earth-braces-for-radio-disruptions-and-stunning-northern-lights/articleshow/131039941.cms
+5. Sun unleashes colossal solar flare and CME — Space.com: https://www.space.com/stargazing/auroras/sun-unleashes-colossal-solar-flare-and-coronal-mass-ejection-raising-the-chances-of-northern-lights-this-week
+6. Northern Lights Tonight (CME / aurora outlook) — Jang: https://jang.com.pk/en/65503-northern-lights-tonight-solar-flare-cme-could-spark-auroras-across-us-and-uk-news
+7. M5.7 solar flare, Atlantic radio — Rolling Out: https://rollingout.com/2026/05/11/m5-7-solar-flare-atlantic-radio-aurora/
+8. Powerful ejection, Sun’s atmosphere — India Today: https://www.indiatoday.in/science/story/powerful-ejection-blows-massive-hole-in-suns-atmosphere-earth-on-alert-for-impact-2910365-2026-05-12
+9. Observation, PEFF, and the Omnizoan Self — Zenodo: https://zenodo.org/records/17300262
+10. Report search | ISES / RWC Japan — NICT: https://swc.nict.go.jp/en/report/view.html?ym=202605&ids=d2026131_12&type=daily+weekly+bulletin+topics
+11. FractiScope Live Demo Deep Dives — Zenodo: https://zenodo.org/records/14812026
+12. Fractal Intelligence: Unveiling the Complexity Hidden in Data and Systems — Zenodo: https://zenodo.org/records/14740311
+13. Fractal Science and Intelligence Foundational Papers — Zenodo: https://zenodo.org/records/17391386
+14. PEFF Framework and the Emergence of the Universe as a Self-Evolving Game — Zenodo: https://zenodo.org/records/14888512
+15. Foundations of the Fractal Universe (FractiVerse) — Zenodo: https://zenodo.org/records/14781453
+16. iron phosphate coating — Science.gov topic pages: https://www.science.gov/topicpages/i/iron+phosphate+coating.html
+17. Ecological genomics (intro text, Moodle-hosted PDF) — https://moodle2.units.it/pluginfile.php/161070/mod_resource/content/0/An%20Introduction%20to%20Ecological%20Genomics.pdf
+18. Agronomy (MDPI journal issue index) — https://www.mdpi.com/2073-4395/13/6
+19. aiwona1/FractiAI — GitHub: https://github.com/aiwona1/FractiAI
+20. CERN / dark-matter particle metaphor whitepaper — Zenodo: https://zenodo.org/records/14811786
+21. Mapping the Galactic Fractal Continuum — Zenodo: https://zenodo.org/records/14640152
+22. UFS / PRU thesis PDFs (RI/UFS repository) — https://ri.ufs.br/ (e.g. bitstream items cited in source thread)
+23. Paradise Game FractiTreasury Blockchain — Zenodo: https://zenodo.org/records/14888485
+24. PEFF Validation Experiment (fMRI group-average) — Zenodo: https://zenodo.org/records/16794470
 25. Sun / aurora popularizations — Daily Galaxy: https://dailygalaxy.com/2026/05/sun-solar-flare-northern-lights-this-week/ · PRM Ukraine EN: https://prm.ua/en/the-earth-will-be-covered-by-a-strong-magnetic-storm-what-are-the-dates/
 
 *Access notes: May 12, 2026, per source thread; verify live URLs before citation-lock for external publication.*
-
 
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-ROADMAP-13  
-**Registry ID:** `dp-roadmap-13`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-ROADMAP-13
+**Registry ID:** `dp-roadmap-13`
 **Re-audit:** `npm run audit:paper -- --id=dp-roadmap-13`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

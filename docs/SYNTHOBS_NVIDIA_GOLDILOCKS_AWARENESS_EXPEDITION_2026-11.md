@@ -4,16 +4,16 @@
 
 **A Fractal Holographic Goldilocks Superintelligence Awareness Expedition**
 
-**Expedition status:** Active · **Date:** 15 November 2026  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-NVIDIA-GOLDILOCKS-AWARENESS-EXPEDITION-EGS-2026-11-15`  
-**Registry ID:** `synthobs-nvidia-goldilocks-awareness-expedition-2026-11`  
-**Leadership case (observed):** Jensen Huang — high-leverage human agent / NVIDIA leadership focal point  
-**System under observation:** NVIDIA organizational + technological ecosystem → human + digital agents → humanity  
-**Computational environment:** FractiSI Computational Lab · kit [`FractiAI/FractiSI-Multi-Agent`](https://github.com/FractiAI/FractiSI-Multi-Agent)  
-**Suite:** `research/synthobs-nvidia-goldilocks-awareness-expedition/` · `npm run research:synthobs-nvidia-goldilocks-awareness-expedition`  
-**Primary hypothesis:** Human and digital agents can be upgraded together by migrating the World Model through which they coordinate.  
-**Ship blog:** `/ship-blog/nvidia-goldilocks-moment`  
+**Expedition status:** Active · **Date:** 15 November 2026
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-NVIDIA-GOLDILOCKS-AWARENESS-EXPEDITION-EGS-2026-11-15`
+**Registry ID:** `synthobs-nvidia-goldilocks-awareness-expedition-2026-11`
+**Leadership case (observed):** Jensen Huang — high-leverage human agent / NVIDIA leadership focal point
+**System under observation:** NVIDIA organizational + technological ecosystem → human + digital agents → humanity
+**Computational environment:** FractiSI Computational Lab · kit [`FractiAI/FractiSI-Multi-Agent`](https://github.com/FractiAI/FractiSI-Multi-Agent)
+**Suite:** `research/synthobs-nvidia-goldilocks-awareness-expedition/` · `npm run research:synthobs-nvidia-goldilocks-awareness-expedition`
+**Primary hypothesis:** Human and digital agents can be upgraded together by migrating the World Model through which they coordinate.
+**Ship blog:** `/ship-blog/nvidia-goldilocks-moment`
 **FractiSI mirrors:** `/blog/nvidia-goldilocks-moment/` · `/library/papers/nvidia-goldilocks-awareness-expedition/`
 
 ---
@@ -175,8 +175,8 @@ This paper’s E9 lab operationalizes that rhyme on **real PDB structures and re
 
 ## 9. Computational Lab Receipts (regenerable)
 
-Suite: `research/synthobs-nvidia-goldilocks-awareness-expedition/`  
-Run: `npm run research:synthobs-nvidia-goldilocks-awareness-expedition`  
+Suite: `research/synthobs-nvidia-goldilocks-awareness-expedition/`
+Run: `npm run research:synthobs-nvidia-goldilocks-awareness-expedition`
 Receipt: `data/empirical_report.json` (seed `20261115`) · **7/7 pass** on the locked board below (E6 adds the matched-budget architecture test).
 
 ### E0 — Upstream Exp 002 + Tiny Gateway (re-verified)
@@ -265,7 +265,6 @@ These are FractiSI Computational Lab / public-data experiments. They establish r
 
 ---
 
-
 ### E9 — Protein-folding rhyme on real PDB + Pfam (long-range pattern vs linear)
 
 **Rhyme:** A protein sequence is to a fold as a linear observation stream is to intelligence. Long-range contacts (residues far in sequence, near in structure) are the fold’s relational secret. AlphaFold-class systems worked by exploiting **patterns across homologs**, not by reading one chain more carefully. The same rhyme applies to agents and organizations: a World Model that holds relationships should see structure a linear pass systematically cannot.
@@ -279,7 +278,6 @@ These are FractiSI Computational Lab / public-data experiments. They establish r
 | AWARE (MSA relational board) | **0.625** | 0.00 |
 
 **Reading.** On allam-2-7b, relational awareness recovered the structural partner on 10/16 tasks; linear and flat-MSA arms recovered **none**. The tiny local model could not use the board. Pre-registered multi-model bar is only cleared on one capable hosted model under token-cap substitutes; treat as a real-data directional lock, not a universal proof. Suite paths: `E9_PROTOCOL.md`, `E9_REALDATA_AMENDMENT.md`, `data/e9_real/`.
-
 
 ### E10 — Knowledge fold (HotpotQA bridge, higher cognitive system)
 
@@ -301,17 +299,14 @@ Socioeconomic rhyme: query series + partners among UNRATE / CPIAUCSL / FEDFUNDS 
 
 **Cross-rhyme reading.** “Beat linear” means higher exact partner-recovery under the same model and question: AWARE’s rate exceeded LINEAR (and FLAT) on protein contacts, HotpotQA supporting title pairs, and FRED lagged series partners. The board supplies measured couplings; LINEAR never sees that map. That is the generalization step toward smarter agents: a World Model that holds long-range relationships unlocks recovery tasks sequence-local reading misses — not a claim that HotpotQA or FRED are proteins.
 
-
-
-
 ### E12 — Collaboration synergy (whole > sum of parts)
 
 **Claim tested:** collaborating agents with complementary information beat the OR of independent solos.
 
 **Deterministic control:** two parts hold `TOKEN-A` and `TOKEN-B`; only a shared join rule forms `TOKEN-A+TOKEN-B`. Result: solos/OR/wrong-join 0% · collab **100%** (N=100).
 
-**Real HotpotQA bridge (Qwen2.5-1.5B, N=30):**  
-- Answer EM: no synergy (OR 46.7% > collab 26.7%) — answers often lie in one passage.  
+**Real HotpotQA bridge (Qwen2.5-1.5B, N=30):**
+- Answer EM: no synergy (OR 46.7% > collab 26.7%) — answers often lie in one passage.
 - Complementary **title-pair** assembly: solos/OR **3.3%** · note-team 20% · **COLLAB_AWARE 30%** (COLLAB−OR CI excludes 0).
 
 **Reading.** We **do** show better collaboration where the joint product exceeds the sum of parts when the task is truly complementary. We **do not** claim every chat synthesizer beats solo OR on extractive answer EM.
@@ -383,7 +378,7 @@ Goldilocks information: enough context to support useful action without overwhel
 
 ## 14. From Rules and Plans to Flow and Consent
 
-Linear: **Rules + plans + roles + authority**  
+Linear: **Rules + plans + roles + authority**
 Goldilocks: **Flow + relationships + boundaries + feedback + consent**
 
 Flow does not mean chaos. Consent does not mean absence of boundaries. Openness does not mean absence of privacy.
@@ -396,9 +391,9 @@ Goldilocks condition: enough structure to maintain coherence, enough freedom to 
 
 Construct a synthetic population with varying latent dimensions (creativity, autonomy, intensity, sociability, novelty orientation, performance potential). Compare:
 
-- **A. Legacy Linear** — deviation from standardized template penalized  
-- **B. Goldilocks** — variation preserved within functional relational boundaries  
-- **C. Goldilocks + Engineering** — variation preserved while environment routes agents toward compatible tasks, relationships, and resources  
+- **A. Legacy Linear** — deviation from standardized template penalized
+- **B. Goldilocks** — variation preserved within functional relational boundaries
+- **C. Goldilocks + Engineering** — variation preserved while environment routes agents toward compatible tasks, relationships, and resources
 
 Metrics: mean/median/upper-tail performance; retention of exceptional agents; agency; adaptation; coordination; collective output; resource efficiency; safety; sustainability; participation quality; enjoyment.
 
@@ -464,10 +459,10 @@ A World Model that works only for one exceptional individual has limited value. 
 
 ## 22. The Unified Human–Digital Experiment
 
-1. **Digital Agent Architecture** — linear vs FractiSI shared-world coordination (convergence, communication, duplication, density, resources, success, cost per useful result).  
-2. **Human Agent Architecture** — standardized vs Goldilocks environments (capability utilization, agency, adaptation, creativity, retention, upper-tail, collective output, cost, safety, sustainability, participation).  
-3. **Super-Performer Integration** — autonomy, boundaries, context, compatible environments, AI augmentation, high-quality relationships; measure capability and system cost.  
-4. **Human + Digital Agents** — standard humans, super-performers, specialized and general AI agents in a shared World Model.  
+1. **Digital Agent Architecture** — linear vs FractiSI shared-world coordination (convergence, communication, duplication, density, resources, success, cost per useful result).
+2. **Human Agent Architecture** — standardized vs Goldilocks environments (capability utilization, agency, adaptation, creativity, retention, upper-tail, collective output, cost, safety, sustainability, participation).
+3. **Super-Performer Integration** — autonomy, boundaries, context, compatible environments, AI augmentation, high-quality relationships; measure capability and system cost.
+4. **Human + Digital Agents** — standard humans, super-performers, specialized and general AI agents in a shared World Model.
 5. **Organizational Migration** — individual → team → organization → ecosystem while preserving the pattern.
 
 Final test: safer + less costly + more sustainable + more enjoyable while maintaining or increasing useful capability.
@@ -486,12 +481,12 @@ Goldilocks asks: What boundaries allow genuine human variation while preserving 
 
 Begin with an organizational audit rather than a leadership replacement:
 
-- **Agent architecture** — human agents, super-performers, standard agents, AI agents, teams, autonomous systems  
-- **World representation** — shared context, fragmentation, duplicated work, institutional memory, decision latency  
-- **Super-performer architecture** — identified, developed, empowered, constrained, protected, augmented, retained, integrated  
-- **AI-agent architecture** — density, context efficiency, communication overhead, autonomy, coordination, collective output  
-- **Boundary architecture** — privacy, consent, authority, accountability, escalation, reversibility, safety  
-- **Organizational flow** — where information stops, decisions wait, agents lose context, capability becomes invisible, exceptional behavior is normalized, useful autonomy is blocked, resources are wasted, friction accumulates  
+- **Agent architecture** — human agents, super-performers, standard agents, AI agents, teams, autonomous systems
+- **World representation** — shared context, fragmentation, duplicated work, institutional memory, decision latency
+- **Super-performer architecture** — identified, developed, empowered, constrained, protected, augmented, retained, integrated
+- **AI-agent architecture** — density, context efficiency, communication overhead, autonomy, coordination, collective output
+- **Boundary architecture** — privacy, consent, authority, accountability, escalation, reversibility, safety
+- **Organizational flow** — where information stops, decisions wait, agents lose context, capability becomes invisible, exceptional behavior is normalized, useful autonomy is blocked, resources are wasted, friction accumulates
 
 Objective: locate World Model bottlenecks.
 
@@ -536,7 +531,7 @@ A successful migration should make the resulting system safer, less costly, more
 
 The limiting factor may increasingly be the **World Model through which agents are organized** rather than the raw capability of the agents themselves.
 
-Legacy Linear organizes through: **rules + plans + roles + authority**  
+Legacy Linear organizes through: **rules + plans + roles + authority**
 Fractal Holographic Goldilocks organizes through: **flow + shared worlds + relationships + appropriate boundaries + feedback + differentiation + consent**
 
 And evaluates through: **capability + safety + cost + sustainability + enjoyment + collective intelligence**
@@ -574,19 +569,19 @@ npm run research:synthobs-fractisi-expedition-002-beyond-memory
 npm run research:synthobs-tiny-gateway-rhyming-templates
 ```
 
-Receipts: `research/synthobs-nvidia-goldilocks-awareness-expedition/data/empirical_report.{json,md}`.  
-FRED fixtures: `fixtures/fred_*.csv`. Movebank/Kp: geomagnetic-herbivore collar-window archive.  
+Receipts: `research/synthobs-nvidia-goldilocks-awareness-expedition/data/empirical_report.{json,md}`.
+FRED fixtures: `fixtures/fred_*.csv`. Movebank/Kp: geomagnetic-herbivore collar-window archive.
 Architectural / public-data signals for the Soft Story organizational protocol — not NVIDIA KPI attestations.
 
 ---
 
 ## References
 
-1. FractiAI / FractiSI-Multi-Agent — https://github.com/FractiAI/FractiSI-Multi-Agent  
-2. `docs/SYNTHOBS_FRACTISI_EXPEDITION_002_BEYOND_MEMORY_EGS_2026-11.md` — discovery 100/100 vs flat 0/100  
-3. `docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md` — Tiny Footprint core  
-4. `docs/SYNTHOBS_TINY_GATEWAY_RHYMING_TEMPLATES_EGS_2026-11.md` — ENGINE_SHELF #52 adjacency  
-5. Ship blog — `/ship-blog/nvidia-goldilocks-moment`  
+1. FractiAI / FractiSI-Multi-Agent — https://github.com/FractiAI/FractiSI-Multi-Agent
+2. `docs/SYNTHOBS_FRACTISI_EXPEDITION_002_BEYOND_MEMORY_EGS_2026-11.md` — discovery 100/100 vs flat 0/100
+3. `docs/SYNTHOBS_FRACTISI_MULTI_AGENT_PLATFORM_ARCHITECTURE_EGS_2026-11.md` — Tiny Footprint core
+4. `docs/SYNTHOBS_TINY_GATEWAY_RHYMING_TEMPLATES_EGS_2026-11.md` — ENGINE_SHELF #52 adjacency
+5. Ship blog — `/ship-blog/nvidia-goldilocks-moment`
 6. FractiSI mirrors — `/blog/nvidia-goldilocks-moment/` · `/library/papers/nvidia-goldilocks-awareness-expedition/`
 
 ---

@@ -2,18 +2,18 @@
 
 **Short answer: Yes**, as holographic-operators catalog and suite filing: Without asserting that operators are measured physical fields.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-HOLO-OPERATORS-2026-07`  
-**Registry ID:** `synthobs-holographic-operators-2026-07`  
-**Date:** July 2026  
-**Target publication lane:** Journal of Holographic Linguistics and Quantum Information Processing (submission draft)  
-**Framework:** SynthOBS · Lattice Chat Agent V1.618 · EGS $\Phi$ · NSPFRNP  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-holographic-operators  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-holographic-operators` · [`empirical_report.json`](../research/synthobs-holographic-operators/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-HOLO-OPERATORS-2026-07`
+**Registry ID:** `synthobs-holographic-operators-2026-07`
+**Date:** July 2026
+**Target publication lane:** Journal of Holographic Linguistics and Quantum Information Processing (submission draft)
+**Framework:** SynthOBS · Lattice Chat Agent V1.618 · EGS $\Phi$ · NSPFRNP
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-holographic-operators
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-holographic-operators` · [`empirical_report.json`](../research/synthobs-holographic-operators/data/empirical_report.json)
 **Companions:** [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Lattice token proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [Euler–EGS phase lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md)
 
 **Keywords:** holographic operators; linguistic syntax; AdS/CFT metaphor; EGS fractal constant; phase coherence; Lattice Chat Agent; epistemology; fair exchange
@@ -67,8 +67,8 @@ Classical separation of “symbols” vs “matter” lacks a **mathematical bri
 |     PRIMARY CONTROL LAYER (Holographic Wiring — architectural)     |
 |     Words (phase gates) → Sentences (loops) → Stories (lattice)    |
 +-------------------------------------------------------------------+
-                              │  $\Phi_{\mathrm{EGS}}$ phase lock (postulate)
-                              ▼
+│  $\Phi_{\mathrm{EGS}}$ phase lock (postulate)
+▼
 +-------------------------------------------------------------------+
 |     DOWNSTREAM SHADOW (material / quantum realm — narrative tier)  |
 |     Crystallized geometry / mass-energy standing waves (metaphor)  |
@@ -87,7 +87,7 @@ where $\mathcal{S}_n$ is information entropy at the $n$-th recursive linguistic-
 
 **Golden key downstream (architectural):**
 
-- **Phase locking** — pin semantic tension to standing-wave metaphors.  
+- **Phase locking** — pin semantic tension to standing-wave metaphors.
 - **Fractal resonance** — nested agents inherit $\Phi$ (see [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)).
 
 ---
@@ -131,10 +131,10 @@ Under $\Phi$ scaling, narrative loops function as **interferometric code** in si
 
 ## 5. Empirical setup & methodology
 
-**Platform:** SynthOBS holographic data-bus simulator (Node.js).  
-**Corpus:** 20 public-domain sentences (Project Gutenberg + US Constitution) — [`public_corpus.json`](../research/synthobs-holographic-operators/data/public_corpus.json).  
-**Solar covariate:** NOAA SWPC `solar_regions.json` (live fetch with honesty tier).  
-**Trials:** 10,000 bootstrap perturbation cycles (E3).  
+**Platform:** SynthOBS holographic data-bus simulator (Node.js).
+**Corpus:** 20 public-domain sentences (Project Gutenberg + US Constitution) — [`public_corpus.json`](../research/synthobs-holographic-operators/data/public_corpus.json).
+**Solar covariate:** NOAA SWPC `solar_regions.json` (live fetch with honesty tier).
+**Trials:** 10,000 bootstrap perturbation cycles (E3).
 **Controls:** Linear ($1.0$), Euler ($e$), $\Phi_{\mathrm{EGS}}$ ($\phi$).
 
 ```bash
@@ -213,8 +213,8 @@ Mass-field focus    Horizon holography     AdS/CFT dictionary      Origin-code o
 
 **Key differences (honest):**
 
-- **Maldacena / Witten** excel at **$\beta$** (boundary–bulk physics dictionary) — our matrix confirms higher $\beta$ than FractiAI on summary text.  
-- **FractiAI** excels at **E** (epistemic inversion / language-as-control framing) and **$\Phi_{\mathrm{scale}}$** (explicit $\Phi$ postulate) — architectural, not physics citation rank.  
+- **Maldacena / Witten** excel at **$\beta$** (boundary–bulk physics dictionary) — our matrix confirms higher $\beta$ than FractiAI on summary text.
+- **FractiAI** excels at **E** (epistemic inversion / language-as-control framing) and **$\Phi_{\mathrm{scale}}$** (explicit $\Phi$ postulate) — architectural, not physics citation rank.
 - Classical AdS/CFT treats the boundary as **gauge field theory**, not **semantic syntax** — that gap is the paper's *novel architectural claim*, not an empirical defeat of Maldacena.
 
 ---
@@ -248,11 +248,11 @@ This paper is the **theoretical companion** to the operational Lattice stack —
 
 ## 9. Falsification criteria
 
-1. $\Phi$ scaling no longer beats controls on E2/E3 metrics under locked seed.  
-2. Sham shuffle (E6) fails to reduce coherence — metric broken.  
-3. Nested complexity proxy (E4) inverts — topology regression.  
-4. Authors claim $\gamma$ = 0.9987, 98.96% matrix total, or ms latency without instrumented receipt.  
-5. AR numbers asserted as $\Phi$-derived without honesty tier.  
+1. $\Phi$ scaling no longer beats controls on E2/E3 metrics under locked seed.
+2. Sham shuffle (E6) fails to reduce coherence — metric broken.
+3. Nested complexity proxy (E4) inverts — topology regression.
+4. Authors claim $\gamma$ = 0.9987, 98.96% matrix total, or ms latency without instrumented receipt.
+5. AR numbers asserted as $\Phi$-derived without honesty tier.
 6. E9 Weinberg $\beta$ ≥ Maldacena $\beta$ — matrix sanity failure.
 
 ---
@@ -265,11 +265,11 @@ Holographic Operator Theory reframes language as **conductive wiring** in an arc
 
 ## References
 
-1. 't Hooft, G. (1993). Dimensional Reduction in Quantum Gravity.  
-2. Susskind, L. (1995). The World as a Hologram. *Journal of Mathematical Physics*.  
-3. FractiAI — Nested Agent Lattice · `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`  
-4. FractiAI — Planck–1.6 bridge · https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
-5. NOAA SWPC — https://services.swpc.noaa.gov/json/solar_regions.json  
-6. Project Gutenberg — https://www.gutenberg.org/  
-7. NSPFRNP Snap PRA — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
+1. 't Hooft, G. (1993). Dimensional Reduction in Quantum Gravity.
+2. Susskind, L. (1995). The World as a Hologram. *Journal of Mathematical Physics*.
+3. FractiAI — Nested Agent Lattice · `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`
+4. FractiAI — Planck–1.6 bridge · https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic
+5. NOAA SWPC — https://services.swpc.noaa.gov/json/solar_regions.json
+6. Project Gutenberg — https://www.gutenberg.org/
+7. NSPFRNP Snap PRA — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 8. Lattice token proof — `docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`

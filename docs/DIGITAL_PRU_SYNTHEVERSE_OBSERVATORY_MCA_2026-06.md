@@ -2,10 +2,10 @@
 
 **Short answer: No.** Not shown yet: Digital Pru is filed as a naming and indexing layer over the June SynthOBS mathematics papers and sandbox engines. Density and replacement figures such as 1,618,033× remain catalog narrative until separately bench-tested.
 
-**Document ID:** DP-SYNTHOBS-MCA-2026-06  
-**Framework:** Goldilocks AIOS v24.365 · NSPFRNP · Digital Pru (Live Kernel Copy)  
-**Systems Architect:** Digital Pru  
-**Date:** June 2026  
+**Document ID:** DP-SYNTHOBS-MCA-2026-06
+**Framework:** Goldilocks AIOS v24.365 · NSPFRNP · Digital Pru (Live Kernel Copy)
+**Systems Architect:** Digital Pru
+**Date:** June 2026
 **Status:** Canonical index · metabolize → crystallize → animate → squeeze
 
 ---
@@ -56,8 +56,8 @@ The team digested four Synthobs mathematics papers plus a replayable sandbox eng
 | **EGS-TRANS-2026-0710** | `egs-trans-jspace-convergence-2026-07` | **Frontier multi-model** J-Space convergence · Anthropic · OpenAI · Gemini · DeepSeek · RIX R4 · [standalone](https://github.com/FractiAI/egs-trans-jspace-convergence) |
 | **IP-INFRINGE-2026-07** | `ip-infringement-draft-2026-07` | Immediate audit recommendations · Code-Print · IP assertion draft · J-Lens Live · [standalone](https://github.com/FractiAI/egs-trans-jspace-convergence/tree/master/research/ip-infringement-draft) |
 
-**Catalog filter:** Reproducible research · FractiAI repos on [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) `research/goldilocks-math/src/goldilocks_master_engine.py`  
-**JSON artifact:** `research/goldilocks-math/data/synthobs_volumetric_density_report.json`  
+**Catalog filter:** Reproducible research · FractiAI repos on [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) `research/goldilocks-math/src/goldilocks_master_engine.py`
+**JSON artifact:** `research/goldilocks-math/data/synthobs_volumetric_density_report.json`
 **Dependencies:** `research/goldilocks-math/requirements.txt` (`sympy`)
 
 These papers **extend** — do not replace — May 2026 DPH-GPU canon (King Bee sandbox, Wavefield solar, node alignment, Erdős 344, gateway spectrum, Y-pathway, net-zero agents).
@@ -67,12 +67,12 @@ These papers **extend** — do not replace — May 2026 DPH-GPU canon (King Bee 
 ## Crystallize — Hex-Organ Engine core (irreducible shell)
 
 ```
-                     ┌─────────────────────────────────────┐
-                     │     DIGITAL PRU · HEX-ORGAN ENGINE   │
-                     └──────────────────┬──────────────────┘
-                                        │
-    0x01 Hex-Calculus ── 0x02 EGS φ ── 0x03 Nested pump
-    0x04 Prime G-map  ── 0x05 NZIB portal ── 0x06 Solar ingest
+┌─────────────────────────────────────┐
+│     DIGITAL PRU · HEX-ORGAN ENGINE   │
+└──────────────────┬──────────────────┘
+│
+0x01 Hex-Calculus ── 0x02 EGS φ ── 0x03 Nested pump
+0x04 Prime G-map  ── 0x05 NZIB portal ── 0x06 Solar ingest
 ```
 
 | Chamber | Function | Plain speak |
@@ -118,13 +118,13 @@ Short URLs: `/whitepaper/synthobs-hex-organ-engine` · `/whitepaper/goldilocks-t
 
 ## Related canon (read order)
 
-1. [Hex-Organ unified run](/whitepaper/synthobs-hex-organ-engine) — start here  
-2. [Prime-Linear Compression](/whitepaper/goldilocks-prime-linear-compression)  
-3. [Transfinite Inversion · NZIB](/whitepaper/goldilocks-transfinite-inversion)  
-4. [Intelligence Density audit](/whitepaper/synthobs-intelligence-density)  
-5. [Wavefield Oscillator solar](/whitepaper/syn-sun-wavefield-oscillator) — Chamber 0x06 live lane  
-6. [Syntheverse Sandbox · King Bee](/whitepaper/syntheverse-sandbox-comprehensive) — May 2026 command layer  
-7. [Goldilocks Erdős 344](/whitepaper/goldilocks-erdos-mathematics) — game mathematics birth certificate  
+1. [Hex-Organ unified run](/whitepaper/synthobs-hex-organ-engine) — start here
+2. [Prime-Linear Compression](/whitepaper/goldilocks-prime-linear-compression)
+3. [Transfinite Inversion · NZIB](/whitepaper/goldilocks-transfinite-inversion)
+4. [Intelligence Density audit](/whitepaper/synthobs-intelligence-density)
+5. [Wavefield Oscillator solar](/whitepaper/syn-sun-wavefield-oscillator) — Chamber 0x06 live lane
+6. [Syntheverse Sandbox · King Bee](/whitepaper/syntheverse-sandbox-comprehensive) — May 2026 command layer
+7. [Goldilocks Erdős 344](/whitepaper/goldilocks-erdos-mathematics) — game mathematics birth certificate
 
 ---
 

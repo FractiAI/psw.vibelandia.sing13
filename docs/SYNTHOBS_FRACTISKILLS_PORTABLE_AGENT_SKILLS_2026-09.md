@@ -4,21 +4,21 @@
 
 **Subtitle:** Application companion — whole-site `SKILL.md` corpus as resonant filing under Infinite Octaves Lattice Chat (**not** an engine pin; **not** a live public crawl claim of unfinished physics)
 
-**Author:** Prudencio Mendez · FractiAI · Reno, Nevada  
-**Related work / credit:** **Daniel Ari Friedman, Ph.D.** — originator of **FractiSkills** (one portable agent `SKILL.md` per page)  
-**Original paper:** Friedman, Daniel Ari (2026). *FractiSkills: One Portable Agent Skill per Page* (v0.1.0). Zenodo. DOI [10.5281/zenodo.22712651](https://doi.org/10.5281/zenodo.22712651) · [zenodo.org/records/22712651](https://zenodo.org/records/22712651)  
-**Original repo:** [`docxology/FractiSkills`](https://github.com/docxology/FractiSkills)  
-**Corresponding:** espressolico@gmail.com  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-FRACTISKILLS-PORTABLE-AGENT-SKILLS-2026-09-11`  
-**Registry ID:** `synthobs-fractiskills-portable-agent-skills-2026-09`  
-**Date:** September 11, 2026 · **Revised:** 2026-09-11 (Daniel credit · original paper/repo links)  
+**Author:** Prudencio Mendez · FractiAI · Reno, Nevada
+**Related work / credit:** **Daniel Ari Friedman, Ph.D.** — originator of **FractiSkills** (one portable agent `SKILL.md` per page)
+**Original paper:** Friedman, Daniel Ari (2026). *FractiSkills: One Portable Agent Skill per Page* (v0.1.0). Zenodo. DOI [10.5281/zenodo.22712651](https://doi.org/10.5281/zenodo.22712651) · [zenodo.org/records/22712651](https://zenodo.org/records/22712651)
+**Original repo:** [`docxology/FractiSkills`](https://github.com/docxology/FractiSkills)
+**Corresponding:** espressolico@gmail.com
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-FRACTISKILLS-PORTABLE-AGENT-SKILLS-2026-09-11`
+**Registry ID:** `synthobs-fractiskills-portable-agent-skills-2026-09`
+**Date:** September 11, 2026 · **Revised:** 2026-09-11 (Daniel credit · original paper/repo links)
 **Classification:** Lattice-catalog **application companion** · digital wet-lab **Tier B fixtures** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP · FractiSkills  
-**Engine role:** **Application companion** under the AI catalog layer — consumed by Lattice Chat; **not** an Infinite Octaves engine-shelf pin  
-**Standalone suite:** `research/synthobs-fractiskills-portable-agent-skills/` · [`FractiAI/synthobs-fractiskills-portable-agent-skills`](https://github.com/FractiAI/synthobs-fractiskills-portable-agent-skills) · `npm run research:synthobs-fractiskills-portable-agent-skills`  
-**Plain note:** [/ship-blog/fractiskills-portable-agent-skills](https://www.ssvibelandiaquestfest24x365.com/ship-blog/fractiskills-portable-agent-skills)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP · FractiSkills
+**Engine role:** **Application companion** under the AI catalog layer — consumed by Lattice Chat; **not** an Infinite Octaves engine-shelf pin
+**Standalone suite:** `research/synthobs-fractiskills-portable-agent-skills/` · [`FractiAI/synthobs-fractiskills-portable-agent-skills`](https://github.com/FractiAI/synthobs-fractiskills-portable-agent-skills) · `npm run research:synthobs-fractiskills-portable-agent-skills`
+**Plain note:** [/ship-blog/fractiskills-portable-agent-skills](https://www.ssvibelandiaquestfest24x365.com/ship-blog/fractiskills-portable-agent-skills)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** Solar Active Regions **AR4524** (Sol-Alpha) · **AR4530** (Sol-Beta) — ambient *characters*, not NOAA causation
@@ -51,8 +51,8 @@
 | **Catalog position** | FractiSkills is an **application companion** under the AI catalog layer, **consumed by** Infinite Octaves Lattice Chat | That FractiSkills is an engine pin, or a GPU-free infinity theorem |
 | **Digital wet lab** | Tier B fixtures lock Φ_EGS, clutch Δ, corpus index presence / skill count floors, pointer budgets, and honesty strings | Heliophysics causation from AR4524/AR4530; live-crawl benchmarks as Tier A science |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
-**Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
+**Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
 **Upstream credit:** Daniel Ari Friedman, Ph.D. · FractiSkills origin · [DOI 10.5281/zenodo.22712651](https://doi.org/10.5281/zenodo.22712651) · [`docxology/FractiSkills`](https://github.com/docxology/FractiSkills). This SING 13 filing is a **local Lattice Chat application companion** inspired by that work — **not** an embed of Skillarum and **not** a republication of the live public-crawl manuscript.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · [AI Catalog Layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) · [Lattice Chat product](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md).
@@ -107,16 +107,16 @@ $\Phi_{\mathrm{EGS}}\approx 1.618$ supplies nesting grammar for how skill pointe
 
 ```text
 registries (papers · ship-blog · protocols · research · interfaces)
-        ↓  discover
-   surface set
-        ↓  render
-  skills/<area>/<id>/SKILL.md
-        ↓  index
-     skills/index.json  (skillCount ≈ 421)
+↓  discover
+surface set
+↓  render
+skills/<area>/<id>/SKILL.md
+↓  index
+skills/index.json  (skillCount ≈ 421)
 ```
 
-1. **Discover** — walk whitepaper registry, QUESTFEST blog posts, protocols, research suites, major interfaces.  
-2. **Render** — write/update `SKILL.md` packages (curated Lattice/Core meta skills retained).  
+1. **Discover** — walk whitepaper registry, QUESTFEST blog posts, protocols, research suites, major interfaces.
+2. **Render** — write/update `SKILL.md` packages (curated Lattice/Core meta skills retained).
 3. **Index** — emit `skills/index.json` with honesty stamp and `skillCount`.
 
 Command: `npm run generate:lattice-skills`.
@@ -141,18 +141,18 @@ Lattice Chat loads FractiSkills under a **Goldilocks budget** (`lib/lattice-skil
 
 ## 6. Findings & novelties (catalog)
 
-1. **Named companion:** FractiSkills is filed as the portable `SKILL.md` corpus under the AI catalog layer for Infinite Octaves Lattice Chat.  
-2. **Local scale:** Current monorepo index locks **≈421** skills — Tier B structural presence, not a public crawl certificate.  
-3. **Pointer-first law:** ≤8 / ≤2 budgets keep token burn Goldilocks while preserving surface fidelity.  
+1. **Named companion:** FractiSkills is filed as the portable `SKILL.md` corpus under the AI catalog layer for Infinite Octaves Lattice Chat.
+2. **Local scale:** Current monorepo index locks **≈421** skills — Tier B structural presence, not a public crawl certificate.
+3. **Pointer-first law:** ≤8 / ≤2 budgets keep token burn Goldilocks while preserving surface fidelity.
 4. **Sibling rhyme:** Catalog layer supplies filing office identity; Nested Agent Lattice supplies parent↔child topology; Lattice Chat product supplies the guest valet; Official Prospectus supplies narrative foundation — FractiSkills supplies **portable skills**.
 
 ---
 
 ## 7. Limitations
 
-* Corpus size drifts as registries grow; fixtures use floors (≥200 in suite; expected ≥400 in constants), not a frozen cosmology.  
-* Skill quality depends on registry metadata and curated briefs — not automatic physics proofs.  
-* No claim of Skillarum parity, marketplace distribution, or third-party skill runtime compliance beyond this monorepo.  
+* Corpus size drifts as registries grow; fixtures use floors (≥200 in suite; expected ≥400 in constants), not a frozen cosmology.
+* Skill quality depends on registry metadata and curated briefs — not automatic physics proofs.
+* No claim of Skillarum parity, marketplace distribution, or third-party skill runtime compliance beyond this monorepo.
 * Solar **AR4524** / **AR4530** are filing characters only.
 
 ---

@@ -2,17 +2,17 @@
 
 **Short answer: Yes**, as macro phase-lock catalog filing: Not a new seismology or space-weather forecast skill claim unless a named public catalog arm is in the receipt.
 
-**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 11, 2026  
-**Document ID:** `WP-SYNTHOBS-MACRO-SEISMIC-PHASE-LOCK-99-OCTAVE-2026-08-11`  
-**Registry ID:** `synthobs-macro-seismic-phase-lock-99-octave-2026-08`  
-**Publication Ref:** FAI-MACRO-SEISMIC-99-OCTAVE-2026-08  
+**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 11, 2026
+**Document ID:** `WP-SYNTHOBS-MACRO-SEISMIC-PHASE-LOCK-99-OCTAVE-2026-08-11`
+**Registry ID:** `synthobs-macro-seismic-phase-lock-99-octave-2026-08`
+**Publication Ref:** FAI-MACRO-SEISMIC-99-OCTAVE-2026-08
 **Classification:** Application paper · 99 Octave lens *(catalog / protocol — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**Standalone suite:** [`research/synthobs-macro-seismic-phase-lock-99-octave/`](../research/synthobs-macro-seismic-phase-lock-99-octave/)  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-macro-seismic-phase-lock-99-octave  
-**Companion engine papers:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md) · [Constructive Morphogenesis](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange
+**Standalone suite:** [`research/synthobs-macro-seismic-phase-lock-99-octave/`](../research/synthobs-macro-seismic-phase-lock-99-octave/)
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-macro-seismic-phase-lock-99-octave
+**Companion engine papers:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md) · [Constructive Morphogenesis](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Keywords:** macro-seismic; phase-lock; ionosphere; solar telemetry; 99 octave; EGS; Lattice Chat Agent; Fair Exchange; NSPFRNP
@@ -85,8 +85,8 @@ This is a **dashboard / agent-governing equation** for discussing critical-stres
 
 Configured under nest `octave99`, Lattice Chat Agent can ingest **space-weather labels** (solar wind velocity, geomagnetic indices, sunspot flux) alongside **seismic event feeds** as dual streams:
 
-1. **Macro-environmental ingestion** — R2/R3 radio-blackout and proton-density labels as clocking signals for *discussion* of stress-accumulation windows.  
-2. **Virtual aperture calculation** — capacitive-load *metaphor* across continental grids toward major fault intersections (Philippine Mobile Belt, Caribbean boundary, San Andreas/Cascadia as catalog names).  
+1. **Macro-environmental ingestion** — R2/R3 radio-blackout and proton-density labels as clocking signals for *discussion* of stress-accumulation windows.
+2. **Virtual aperture calculation** — capacitive-load *metaphor* across continental grids toward major fault intersections (Philippine Mobile Belt, Caribbean boundary, San Andreas/Cascadia as catalog names).
 3. **Resonant phase-locking** — identify when electromagnetic-compression **labels** approach $\Phi_{\mathrm{EGS}}^{-99}$ thresholds for *high-discussion-priority* windows — **not** blind statistical forecasts of exact localized slip.
 
 ---

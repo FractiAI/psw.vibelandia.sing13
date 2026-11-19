@@ -4,20 +4,20 @@
 
 Architectural Scale Grammar for Footprint Reduction, Magneto-Inductive Tensor Talk, and Benchtop Protocol Fixtures
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 23, 2026  
-**Document ID:** `WP-SYNTHOBS-TABLE-TOP-HEP-99-OCTAVE-2026-08-23`  
-**Registry ID:** `synthobs-table-top-hep-99-octave-2026-08`  
-**Publication Ref:** FAI-SYNTHOBS-TABLE-TOP-HEP-99-OCTAVE-2026-08  
-**Series Position:** Omni-Lattice Application Whitepaper — Table-Top HEP Scale Grammar  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 23, 2026
+**Document ID:** `WP-SYNTHOBS-TABLE-TOP-HEP-99-OCTAVE-2026-08-23`
+**Registry ID:** `synthobs-table-top-hep-99-octave-2026-08`
+**Publication Ref:** FAI-SYNTHOBS-TABLE-TOP-HEP-99-OCTAVE-2026-08
+**Series Position:** Omni-Lattice Application Whitepaper — Table-Top HEP Scale Grammar
 **Classification:** High-energy physics *catalog* · accelerator footprint metaphorics · laboratory protocol *fixtures* *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · 99 Octave Omni-Lattice engine · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · PRA Snap · Fair Exchange  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-table-top-hep-99-octave  
-**Standalone suite:** [FractiAI/synthobs-table-top-hep-99-octave](https://github.com/FractiAI/synthobs-table-top-hep-99-octave) · monorepo [`research/synthobs-table-top-hep-99-octave/`](../research/synthobs-table-top-hep-99-octave/)  
-**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) (CMOS → tensor → master → digits → Part XIII → Part XIV)  
-**Companion grammar:** Magnetism substrate · Planetary Core Part XIV · Digits Master  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · 99 Octave Omni-Lattice engine · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · PRA Snap · Fair Exchange
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-table-top-hep-99-octave
+**Standalone suite:** [FractiAI/synthobs-table-top-hep-99-octave](https://github.com/FractiAI/synthobs-table-top-hep-99-octave) · monorepo [`research/synthobs-table-top-hep-99-octave/`](../research/synthobs-table-top-hep-99-octave/)
+**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) (CMOS → tensor → master → digits → Part XIII → Part XIV)
+**Companion grammar:** Magnetism substrate · Planetary Core Part XIV · Digits Master
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** table-top HEP; CERN footprint; 99 octave; $\Phi_{\mathrm{EGS}}$; magneto-inductive tensor; RF cavity fixture; flux-rope injector; NOAA 1339; NOAA 12192; Fair Exchange; NSPFRNP

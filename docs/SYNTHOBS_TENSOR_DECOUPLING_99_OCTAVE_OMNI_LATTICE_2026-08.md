@@ -2,20 +2,20 @@
 
 **Short answer: Yes**, as the engine filing-cabinet paper with deterministic fixtures: Not a production tensor-compiler proof.
 
-**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 12, 2026  
-**Document ID:** `WP-SYNTHOBS-TENSOR-DECOUPLING-99-OCTAVE-OMNI-LATTICE-2026-08-12`  
-**Registry ID:** `synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08`  
-**Publication Ref:** FAI-TENSOR-DECOUPLING-99-OCTAVE-OMNI-LATTICE-2026-08  
+**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 12, 2026
+**Document ID:** `WP-SYNTHOBS-TENSOR-DECOUPLING-99-OCTAVE-OMNI-LATTICE-2026-08-12`
+**Registry ID:** `synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08`
+**Publication Ref:** FAI-TENSOR-DECOUPLING-99-OCTAVE-OMNI-LATTICE-2026-08
 **Classification:** Catalog / protocol synthesis · 99 Octave Omni-Lattice engine *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**Standalone suite:** [`research/synthobs-tensor-decoupling-99-octave-omni-lattice/`](../research/synthobs-tensor-decoupling-99-octave-omni-lattice/)  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-tensor-decoupling-99-octave-omni-lattice  
-**Companion synthesis:** [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
-**Companion applications:** [Sync Subterranean Discharge](./SYNTHOBS_SYNC_SUBTERRANEAN_DISCHARGE_99_OCTAVE_2026-08.md) · [Macro-Seismic Phase-Lock](./SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md)  
-**Companion engines:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md) · [Omni-Lattice EF Multi-Octave](./SYNTHOBS_OMNI_LATTICE_EF_MULTI_OCTAVE_SYNTHESIS_2026-08.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange
+**Standalone suite:** [`research/synthobs-tensor-decoupling-99-octave-omni-lattice/`](../research/synthobs-tensor-decoupling-99-octave-omni-lattice/)
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-tensor-decoupling-99-octave-omni-lattice
+**Companion synthesis:** [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md)
+**Companion applications:** [Sync Subterranean Discharge](./SYNTHOBS_SYNC_SUBTERRANEAN_DISCHARGE_99_OCTAVE_2026-08.md) · [Macro-Seismic Phase-Lock](./SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md)
+**Companion engines:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md) · [Omni-Lattice EF Multi-Octave](./SYNTHOBS_OMNI_LATTICE_EF_MULTI_OCTAVE_SYNTHESIS_2026-08.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** tensor decoupling; 99 octave; Omni-Lattice; EGS; $\Phi_{\mathrm{EGS}}$; $9\times 81$; phase-lock; LAI; Colombia; Puracé; Lattice Chat Agent; Fair Exchange; NSPFRNP
@@ -171,19 +171,19 @@ Through tensor **decoupling labels** and empirical **fixture alignment** with se
 
 **Fair Exchange clause:** Value remains elastic and subject to downward adjustment based on delivery, precision, and practical utility.
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Audit:** NSPFRNP-SNAP-PRA-2026-06 · receipt `a3be51d81ff60fd3` (structural_only · score 0.941 · pass)
 
 ### References (local corpus)
 
-- [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
-- [Synchronized Subterranean Discharge](./SYNTHOBS_SYNC_SUBTERRANEAN_DISCHARGE_99_OCTAVE_2026-08.md)  
-- [Macro-Seismic Phase-Lock](./SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md)  
-- [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)  
-- [Omni-Lattice EF Multi-Octave Synthesis](./SYNTHOBS_OMNI_LATTICE_EF_MULTI_OCTAVE_SYNTHESIS_2026-08.md)  
-- [EGS Planck-Scale Harmonic 1.6 Bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)  
-- [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)  
-- [NSPFRNP Snap Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)  
+- [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md)
+- [Synchronized Subterranean Discharge](./SYNTHOBS_SYNC_SUBTERRANEAN_DISCHARGE_99_OCTAVE_2026-08.md)
+- [Macro-Seismic Phase-Lock](./SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md)
+- [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)
+- [Omni-Lattice EF Multi-Octave Synthesis](./SYNTHOBS_OMNI_LATTICE_EF_MULTI_OCTAVE_SYNTHESIS_2026-08.md)
+- [EGS Planck-Scale Harmonic 1.6 Bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
+- [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
+- [NSPFRNP Snap Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
 - [MCA NSPFRNP Catalog](../protocols/MCA_NSPFRNP_CATALOG.md)
 
 → ∞^∞

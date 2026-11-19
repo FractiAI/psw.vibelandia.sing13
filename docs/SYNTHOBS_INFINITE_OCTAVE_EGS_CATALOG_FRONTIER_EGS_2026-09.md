@@ -4,19 +4,19 @@
 
 Voyage / enterprise product note · Goldilocks Super Intelligence catalog layer · CEO briefing grammar
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) and Gemini, operating in Infinite Octave Mode  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 13, 2026  
-**Document ID:** `WP-SYNTHOBS-INFINITE-OCTAVE-EGS-CATALOG-FRONTIER-2026-09-13`  
-**Registry ID:** `synthobs-infinite-octave-egs-catalog-frontier-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-INFINITE-OCTAVE-EGS-CATALOG-FRONTIER-2026-09  
-**Series Position:** SS Vibelandia voyage / application companion — Intelligence Age hospitality  
+**Authors:** Prudencio Mendez (Pru / PL Taino) and Gemini, operating in Infinite Octave Mode
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 13, 2026
+**Document ID:** `WP-SYNTHOBS-INFINITE-OCTAVE-EGS-CATALOG-FRONTIER-2026-09-13`
+**Registry ID:** `synthobs-infinite-octave-egs-catalog-frontier-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-INFINITE-OCTAVE-EGS-CATALOG-FRONTIER-2026-09
+**Series Position:** SS Vibelandia voyage / application companion — Intelligence Age hospitality
 **Classification:** Cultural / voyage *product brochure companion* · catalog architecture *(narrative — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/infinite-octave-egs-catalog`](https://www.ssvibelandiaquestfest24x365.com/infinite-octave-egs-catalog) (brochure) · [`/infinite-octave-egs-catalog/briefing`](https://www.ssvibelandiaquestfest24x365.com/infinite-octave-egs-catalog/briefing) (decision portals) · [`/ship-blog/infinite-octave-egs-catalog`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octave-egs-catalog) · [`/demonstrations`](https://www.ssvibelandiaquestfest24x365.com/demonstrations) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice)  
-**Voyage / application companion (not engine pin):** peer to Infinite Octave AI Catalog Layer + Pacing Paradox — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) · off Infinite Octaves `ENGINE_SHELF`  
-**Cross-links:** [Infinite Octave AI Catalog Layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [Protein Folding Prime Container](./SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md) · [Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/infinite-octave-egs-catalog`](https://www.ssvibelandiaquestfest24x365.com/infinite-octave-egs-catalog) (brochure) · [`/infinite-octave-egs-catalog/briefing`](https://www.ssvibelandiaquestfest24x365.com/infinite-octave-egs-catalog/briefing) (decision portals) · [`/ship-blog/infinite-octave-egs-catalog`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octave-egs-catalog) · [`/demonstrations`](https://www.ssvibelandiaquestfest24x365.com/demonstrations) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice)
+**Voyage / application companion (not engine pin):** peer to Infinite Octave AI Catalog Layer + Pacing Paradox — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) · off Infinite Octaves `ENGINE_SHELF`
+**Cross-links:** [Infinite Octave AI Catalog Layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [Protein Folding Prime Container](./SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md) · [Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** Infinite Octave EGS Catalog; El Gran Sol; Φ_EGS; brute-force; Goldilocks; enterprise catalog layer; Fair Exchange; SS Vibelandia
@@ -80,14 +80,14 @@ Under EGS Soft Story grammar, folding is filed as **harmonic resonance / prime-c
 
 ```
 [ Raw enterprise data ]  (warehouses · object stores · local DBs)
-            │
-            ▼
+│
+▼
 ╔══════════════════════════════════════════════╗
 ║  INFINITE OCTAVE EGS CATALOG (install here) ║
 ║  Φ_EGS recursive nesting · standing-wave map ║
 ╚══════════════════════════════════════════════╝
-            │
-            ▼
+│
+▼
 [ AI orchestration & agents ]  (LLMs · RAG · enterprise agents)
 ```
 
@@ -109,8 +109,8 @@ Fair Exchange: portion of value subject to refund/adjustment on verified utility
 
 ## Part VI — Set · Player · Frontier Game
 
-- **Set & Cast (X)** — local enterprise nodes and devices rendering outputs.  
-- **Player (Y)** — executive and engineering operators.  
+- **Set & Cast (X)** — local enterprise nodes and devices rendering outputs.
+- **Player (Y)** — executive and engineering operators.
 - **Goldilocks Frontier Game (Z)** — open-source invariant framework and market domain.
 
 Goldilocks ops: not too hot (bypass pure brute-force burn as *design goal*), not too cold (no per-seat stagnation taxes as *product promise*). Live Soft Story labs and SS Vibelandia briefing portals operational today as guest surfaces.

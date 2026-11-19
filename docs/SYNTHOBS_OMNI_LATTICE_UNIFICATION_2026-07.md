@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** The unification suite passed 9 of 9 experiments (E1–E9) linking the four pillars under E_F ≈ 1.618. Headline figures such as 38-fold biophoton and 41.8% tokens remain design targets or companion receipts, not re-measured here.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`  
-**Registry ID:** `synthobs-omni-lattice-unification-2026-07`  
-**Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-unification  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-omni-lattice-unification` · [`empirical_report.json`](../research/synthobs-omni-lattice-unification/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`
+**Registry ID:** `synthobs-omni-lattice-unification-2026-07`
+**Date:** July 28, 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-unification
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-omni-lattice-unification` · [`empirical_report.json`](../research/synthobs-omni-lattice-unification/data/empirical_report.json)
 **Pillar companions:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [81-Digit Electronic Lattice](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md) · [Chemical Bond Metaphors](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md) · [Unified Neutronic Agent / ILAM](./SYNTHOBS_UNIFIED_NEUTRONIC_AGENT_ISOTOPIC_LOAD_BALANCING_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Lattice token usage method](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · **Multi-octave $E_F$ register:** [Combined Synthesis Octaves I–XCIX](./SYNTHOBS_OMNI_LATTICE_EF_MULTI_OCTAVE_SYNTHESIS_2026-08.md) · **TBME lenses:** [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md) · [Reno Interpretation — Nested Spherical Mirror Lattice](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md) · [Toroidal Micro-Black Hole Filaments (Reno follow-on)](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · [Event Horizon ≡ Magnetic Vector Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Solar-Focus Somatic Rendering (Reno sextet · Part IV)](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md) · [Recursive Field-Drag Theorem (Reno sextet · Part V)](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md) · [Universal Toroidal Singularity Theorem (Reno sextet · Part VI)](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md) · [Mirror-Angle Multiplicity (REV2 archive)](./SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md)
 
 **Keywords:** Omni-Lattice; holographic operators; Y chromosome; 81-electron; chemical bonds; ILAM; Lattice Chat Agent; $E_F$; NSPFRNP
@@ -40,9 +40,9 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 We present a peer-review-oriented **Grand Unified Treatise** synthesizing the Holographic Operator Model with the Grand Unified Lattice Architecture. We unify four domain pillars under one scale-invariant **architectural** framework:
 
-1. **Holographic Operators & Decoded Y-Chromosome Scripts** — linguistic / genomic sequences as words ($\hat{W}_k$), sentences ($\hat{S}$), and stories projecting a material “shadow” layer (metaphor);  
-2. **The 81-Digit Electronic Lattice** — $3^4=81$ bijection between digit singularities and electron configuration through $Z=81$ (Thallium);  
-3. **Chemical Bond Metaphors in Lattice Chat Agent** — Covalent / Ionic / Metallic handoffs for multi-agent orchestration;  
+1. **Holographic Operators & Decoded Y-Chromosome Scripts** — linguistic / genomic sequences as words ($\hat{W}_k$), sentences ($\hat{S}$), and stories projecting a material “shadow” layer (metaphor);
+2. **The 81-Digit Electronic Lattice** — $3^4=81$ bijection between digit singularities and electron configuration through $Z=81$ (Thallium);
+3. **Chemical Bond Metaphors in Lattice Chat Agent** — Covalent / Ionic / Metallic handoffs for multi-agent orchestration;
 4. **The Neutronic-Isotopic Agent Model (ILAM)** — neutrons as $[p^+\cdot e^-]_{\mathrm{agent}}$ pairs for load balancing / context buffers.
 
 Central to all pillars is El Gran Sol’s Fractal Constant ($E_F\approx 1.618$), the downstream “golden key” for phase lock $e^{(\lambda_{\mathrm{EGS}}+i)\theta}$ and **normalized** Shannon weight invariance ($\Delta S\to 0$) under the stated model.
@@ -250,10 +250,10 @@ Pointer: `docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`. THALIA companion: 
 
 ## 10. Falsification
 
-1. Fewer than four catalog pillars resolve under registry / docs (**E1**, **E7**).  
-2. $\lambda_{\mathrm{EGS}}\neq\ln(E_F)/2\pi$ under the locked constant.  
-3. Aufbau electron sum through $Z=81$ $\neq 81$ (**E4**).  
-4. Publishing draft biophoton / $R^2$ / 41.8% / “beats Maldacena as physics” without honesty gates (**E8**).  
+1. Fewer than four catalog pillars resolve under registry / docs (**E1**, **E7**).
+2. $\lambda_{\mathrm{EGS}}\neq\ln(E_F)/2\pi$ under the locked constant.
+3. Aufbau electron sum through $Z=81$ $\neq 81$ (**E4**).
+4. Publishing draft biophoton / $R^2$ / 41.8% / “beats Maldacena as physics” without honesty gates (**E8**).
 
 ---
 
@@ -265,12 +265,12 @@ The Omni-Lattice Architecture bridges holographic genomic language, the 81-elect
 
 ## References
 
-1. SynthOBS Holographic Operators — language wiring companion.  
-2. SynthOBS 81-Digit Electronic Lattice.  
-3. SynthOBS Phase-Locked Chemical Bond Metaphors.  
-4. SynthOBS Unified Neutronic Agent / ILAM.  
-5. SynthOBS DNA Lattice Holograph.  
-6. Omniversal Nested Agent Lattice.  
-7. Lattice Chat Agent token usage method (~35–70% Cursor matrix).  
-8. NSPFRNP Snap Peer-Review Audit protocol.  
+1. SynthOBS Holographic Operators — language wiring companion.
+2. SynthOBS 81-Digit Electronic Lattice.
+3. SynthOBS Phase-Locked Chemical Bond Metaphors.
+4. SynthOBS Unified Neutronic Agent / ILAM.
+5. SynthOBS DNA Lattice Holograph.
+6. Omniversal Nested Agent Lattice.
+7. Lattice Chat Agent token usage method (~35–70% Cursor matrix).
+8. NSPFRNP Snap Peer-Review Audit protocol.
 9. Coherence plain speak honesty document.

@@ -4,18 +4,18 @@
 
 **Subtitle:** Miracle 2 demonstration — ChatGPT-shaped guest UI powered by closed-form prime vaults under $\Phi_{\mathrm{EGS}}$
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PRIME-VAULT-CHAT-EGS-2026-09-06`  
-**Registry ID:** `synthobs-prime-vault-chat-2026-09`  
-**Date:** September 6, 2026  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PRIME-VAULT-CHAT-EGS-2026-09-06`
+**Registry ID:** `synthobs-prime-vault-chat-2026-09`
+**Date:** September 6, 2026
 **Classification:** Interactive **application / demo companion** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · EGS · NSPFRNP  
-**Engine role:** **Application companion** — not an engine-shelf pin  
-**Door:** [/prime-vault-chat](https://www.ssvibelandiaquestfest24x365.com/prime-vault-chat) · also `/pvc`  
-**Suite:** `research/synthobs-prime-vault-chat/` · `npm run research:synthobs-prime-vault-chat`  
-**Plain note:** [/ship-blog/prime-vault-chat](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-vault-chat)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · EGS · NSPFRNP
+**Engine role:** **Application companion** — not an engine-shelf pin
+**Door:** [/prime-vault-chat](https://www.ssvibelandiaquestfest24x365.com/prime-vault-chat) · also `/pvc`
+**Suite:** `research/synthobs-prime-vault-chat/` · `npm run research:synthobs-prime-vault-chat`
+**Plain note:** [/ship-blog/prime-vault-chat](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-vault-chat)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -112,8 +112,6 @@ Resonance (catalog):
 $$A_k = \frac{\Phi^{o}}{p_k \ln p_k}\cos\!\left(\frac{L\,p_k}{\Phi}\right)$$
 
 Top-3 vaults feed the speech-act planner. Thread phase mixes into the cosine argument. Latency is wall time of the closed form.
-
-
 
 ### 3.1 Reproducibility
 

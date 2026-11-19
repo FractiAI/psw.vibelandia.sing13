@@ -160,33 +160,32 @@ Treat **Solar Cycle 25 peak** intervals as Hatch-density seasons.Mitigate cyanob
 
 Note: Entries mix peer literature, journalism, repositories, and transmedia citations from the authoring bundle — **triangulate** operational space weather via **NOAA SWPC**.
 
-- Boris Oksengendler profile — ResearchGate. https://www.researchgate.net/profile/Boris-Oksengendler  
-- Quantum tunnelling in DNA — University of Surrey. https://www.surrey.ac.uk/leverhulme-quantum-biology-doctoral-training-centre/research/quantum-tunnelling-dna  
-- DNA as a quantum system in evolution — *PLOS One*. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0344520  
-- Engineering transport via collisional noise — *Entropy* / MDPI. https://www.mdpi.com/1099-4300/26/1/20  
-- Roasting-induced phosphorus removal (high-phosphorus iron ore) — IJMMM / USTB preview. http://ijmmm.ustb.edu.cn/cn/article/pdf/preview/10.1007/s12613-015-1079-x.pdf  
-- Coal-based direct reduction dephosphorization review — *Minerals*. https://www.mdpi.com/2075-163X/15/10/1067  
-- Fe–P alloy production from high-phosphorus oolitic ore — ResearchGate. https://www.researchgate.net/publication/394002118  
-- Magnetic field facilitated Fe₃O₄/C/red P chain material — ACS Applied Materials & Interfaces. https://pubs.acs.org/doi/10.1021/acsami.7b17341  
-- Lie-algebraic ODR proton transfer framework — ResearchGate publication 403632857. https://www.researchgate.net/publication/403632857  
-- Microcystins effects on fish — ResearchGate aggregation. https://www.researchgate.net/publication/7283520  
-- NOAA Space Weather Prediction Center — https://www.swpc.noaa.gov  
-- Solar cycle 25 overview — Wikipedia. https://en.wikipedia.org/wiki/Solar_cycle_25  
-- Prophet-style sunspot forecast paper — PMC. https://pmc.ncbi.nlm.nih.gov/articles/PMC12808647/  
-- AR4436 solar flare reporting — Times of India. https://timesofindia.indiatimes.com/science/powerful-solar-flare-from-sunspot-ar4436-erupts-earth-braces-for-radio-disruptions-and-stunning-northern-lights/articleshow/131039941.cms  
-- Atlantic radio blackout / flare — Gadgets360. https://www.gadgets360.com/science/news/powerful-m5-7-solar-flare-triggers-radio-blackouts-on-earth-11483174  
-- Ground News aggregation — solar atmosphere ejection coverage. https://ground.news/article/powerful-ejection-blows-massive-hole-in-suns-atmosphere-earth-on-alert-for-impact  
-- Space.com aurora / CME forecasting hub — https://www.space.com/news/space-history  
-- FractiAI / Holographic-Hydrogen-Fractal-MRI-Demo — GitHub. https://github.com/fractiai/Holographic-Hydrogen-Fractal-MRI-Demo  
-- aiwona1 / FractiAI repositories — GitHub. https://github.com/aiwona1/FractiAI  
-- Green synthesis iron oxides/phosphates (tea polyphenols) — ACS *Inorganic Chemistry*. https://pubs.acs.org/doi/10.1021/acs.inorgchem.0c03794  
-- Microsoft Project Silica overview — Microsoft. https://www.microsoft.com/en-us/research/project/project-silica/  
-- 1993 Wright Laboratory summer research volume — DTIC ADA278515. https://apps.dtic.mil/sti/tr/pdf/ADA278515.pdf  
+- Boris Oksengendler profile — ResearchGate. https://www.researchgate.net/profile/Boris-Oksengendler
+- Quantum tunnelling in DNA — University of Surrey. https://www.surrey.ac.uk/leverhulme-quantum-biology-doctoral-training-centre/research/quantum-tunnelling-dna
+- DNA as a quantum system in evolution — *PLOS One*. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0344520
+- Engineering transport via collisional noise — *Entropy* / MDPI. https://www.mdpi.com/1099-4300/26/1/20
+- Roasting-induced phosphorus removal (high-phosphorus iron ore) — IJMMM / USTB preview. http://ijmmm.ustb.edu.cn/cn/article/pdf/preview/10.1007/s12613-015-1079-x.pdf
+- Coal-based direct reduction dephosphorization review — *Minerals*. https://www.mdpi.com/2075-163X/15/10/1067
+- Fe–P alloy production from high-phosphorus oolitic ore — ResearchGate. https://www.researchgate.net/publication/394002118
+- Magnetic field facilitated Fe₃O₄/C/red P chain material — ACS Applied Materials & Interfaces. https://pubs.acs.org/doi/10.1021/acsami.7b17341
+- Lie-algebraic ODR proton transfer framework — ResearchGate publication 403632857. https://www.researchgate.net/publication/403632857
+- Microcystins effects on fish — ResearchGate aggregation. https://www.researchgate.net/publication/7283520
+- NOAA Space Weather Prediction Center — https://www.swpc.noaa.gov
+- Solar cycle 25 overview — Wikipedia. https://en.wikipedia.org/wiki/Solar_cycle_25
+- Prophet-style sunspot forecast paper — PMC. https://pmc.ncbi.nlm.nih.gov/articles/PMC12808647/
+- AR4436 solar flare reporting — Times of India. https://timesofindia.indiatimes.com/science/powerful-solar-flare-from-sunspot-ar4436-erupts-earth-braces-for-radio-disruptions-and-stunning-northern-lights/articleshow/131039941.cms
+- Atlantic radio blackout / flare — Gadgets360. https://www.gadgets360.com/science/news/powerful-m5-7-solar-flare-triggers-radio-blackouts-on-earth-11483174
+- Ground News aggregation — solar atmosphere ejection coverage. https://ground.news/article/powerful-ejection-blows-massive-hole-in-suns-atmosphere-earth-on-alert-for-impact
+- Space.com aurora / CME forecasting hub — https://www.space.com/news/space-history
+- FractiAI / Holographic-Hydrogen-Fractal-MRI-Demo — GitHub. https://github.com/fractiai/Holographic-Hydrogen-Fractal-MRI-Demo
+- aiwona1 / FractiAI repositories — GitHub. https://github.com/aiwona1/FractiAI
+- Green synthesis iron oxides/phosphates (tea polyphenols) — ACS *Inorganic Chemistry*. https://pubs.acs.org/doi/10.1021/acs.inorgchem.0c03794
+- Microsoft Project Silica overview — Microsoft. https://www.microsoft.com/en-us/research/project/project-silica/
+- 1993 Wright Laboratory summer research volume — DTIC ADA278515. https://apps.dtic.mil/sti/tr/pdf/ADA278515.pdf
 
 ---
 
 **NSPFRNP:** Metabolize → Crystallize → Animate → Squeeze all, all nested · → ∞⁹
-
 
 ---
 
@@ -200,15 +199,14 @@ Note: Entries mix peer literature, journalism, repositories, and transmedia cita
 
 Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-PARADISE-SIMULATION  
-**Registry ID:** `dp-paradise-simulation`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-PARADISE-SIMULATION
+**Registry ID:** `dp-paradise-simulation`
 **Re-audit:** `npm run audit:paper -- --id=dp-paradise-simulation`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

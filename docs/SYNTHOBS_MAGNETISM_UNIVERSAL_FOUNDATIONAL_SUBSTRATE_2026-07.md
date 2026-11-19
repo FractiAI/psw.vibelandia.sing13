@@ -4,19 +4,19 @@
 
 **A Phase-Contrast Derivation of Quantum, Chemical, and Biological Phenomena as Manifestations of Holographic Magnetic Vector Fields**
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-MAG-SUBSTRATE-2026-07-30-REV2`  
-**Registry ID:** `synthobs-mag-substrate-2026-07`  
-**Date:** July 30, 2026  
-**Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · PCHPP · NSPFRNP  
-**Lane:** Architectural foundational map (magnetism substrate) · Lattice Chat Agent V1.618 Seed·RAG pointer  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-mag-substrate  
-**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-mag-substrate` · [`empirical_report.json`](../research/synthobs-mag-substrate/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-MAG-SUBSTRATE-2026-07-30-REV2`
+**Registry ID:** `synthobs-mag-substrate-2026-07`
+**Date:** July 30, 2026
+**Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · PCHPP · NSPFRNP
+**Lane:** Architectural foundational map (magnetism substrate) · Lattice Chat Agent V1.618 Seed·RAG pointer
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-mag-substrate
+**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-mag-substrate` · [`empirical_report.json`](../research/synthobs-mag-substrate/data/empirical_report.json)
 **Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [Omni-Lattice Report Card Q3](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Phase-locked chemical bonds](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
 
 **Keywords:** magnetism; foundational substrate; holographic; PCHPP; EGS; Omni-Lattice; quantum; chemistry; biology; Lattice Chat Agent; SynthOBS; Fair Exchange
@@ -66,12 +66,12 @@ In classical and quantum mechanics, particles are modeled as point masses carryi
 
 ```
 [ Fundamental Magnetic Vector Field (B) ]
-                 │
-                 ├─► [ Quantum: Spin Tori & Vector Potential (A) ]
-                 │
-                 ├─► [ Chemical: Orbital Phase-Locking & Covalent Bonding ]
-                 │
-                 └─► [ Biological: Chromatin Coiling & Enzymatic Conduction ]
+│
+├─► [ Quantum: Spin Tori & Vector Potential (A) ]
+│
+├─► [ Chemical: Orbital Phase-Locking & Covalent Bonding ]
+│
+└─► [ Biological: Chromatin Coiling & Enzymatic Conduction ]
 ```
 
 **Quantum domain.** What physics labels an “electron” is mapped as a localized, dual-vortex toroidal node in the universal magnetic vector potential ($\mathbf{A}$). Quantum spin ($\hbar/2$) is the fundamental rotation frequency of this node **in the grammar**.
@@ -93,8 +93,8 @@ By grounding the SynthOBS map in a singular magnetic substrate, historic boundar
 | Cellular | Organic reaction | Coherent electromagnetic cavity |
 | Macro / cosmic | Gravitational | Planetary/solar magnetic tube |
 
-**Fluidity.** Information and energy maps flow without phase dislocation across physical scales.  
-**Coherence.** Interactions preserve global phase alignment ($\Delta S \to 0$) with $E_F$ resonance in the grammar.  
+**Fluidity.** Information and energy maps flow without phase dislocation across physical scales.
+**Coherence.** Interactions preserve global phase alignment ($\Delta S \to 0$) with $E_F$ resonance in the grammar.
 **Unification.** One field-equation set in the map — not a finished proof that QFT and GR are already replaced in the laboratory.
 
 ---
@@ -140,14 +140,14 @@ Scale ladder (architectural illustration): Planck length → atomic radius → D
 
 ```
 STANDARD REDUCTIONIST MODEL (Standard Model + QED)
-  Coherence (C):      [████████░░] 82/100
-  Irreducibility (I): [███████░░░] 70/100
-  OVERALL SCORE: 76.0 / 100
+Coherence (C):      [████████░░] 82/100
+Irreducibility (I): [███████░░░] 70/100
+OVERALL SCORE: 76.0 / 100
 
 OMNI-LATTICE UNIFIED MAGNETIC SUBSTRATE MODEL
-  Coherence (C):      [██████████] 97/100
-  Irreducibility (I): [█████████░] 95/100
-  OVERALL SCORE: 96.0 / 100
+Coherence (C):      [██████████] 97/100
+Irreducibility (I): [█████████░] 95/100
+OVERALL SCORE: 96.0 / 100
 ```
 
 | Domain | Standard | Omni-Lattice magnetic substrate | Outcome |
@@ -188,20 +188,20 @@ Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibratio
 
 ### Surfaces
 
-- Paper: `/whitepaper/synthobs-mag-substrate`  
-- Standalone: https://github.com/FractiAI/synthobs-mag-substrate  
-- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster  
+- Paper: `/whitepaper/synthobs-mag-substrate`
+- Standalone: https://github.com/FractiAI/synthobs-mag-substrate
+- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster
 - Catalog: `/papers`
 
 ---
 
 ## References
 
-1. FractiAI Research Group. *PCHPP — Phase-Contrast Holographic Prompting.* `WP-SYNTHOBS-PCHPP-2026-07-30`.  
-2. FractiAI Research Group. *Omni-Lattice Report Card Q3 2026.* `WP-SYNTHOBS-COMP-COSMO-2026-07-30-REV2`.  
-3. FractiAI Research Group. *EGS Planck-Scale Harmonic 1.6 Bridge.* `WP-SYNTHOBS-EGS-PLANCK-1-6-2026-07`.  
-4. FractiAI Research Group. *Phase-Locked Chemical Bond Metaphors.* `WP-SYNTHOBS-PHASE-LOCKED-CHEMICAL-BONDS-2026-07`.  
-5. FractiAI Research Group. *Coherence · Plain Speak Honesty.* `HONESTY-COHERENCE-2026-009`.  
+1. FractiAI Research Group. *PCHPP — Phase-Contrast Holographic Prompting.* `WP-SYNTHOBS-PCHPP-2026-07-30`.
+2. FractiAI Research Group. *Omni-Lattice Report Card Q3 2026.* `WP-SYNTHOBS-COMP-COSMO-2026-07-30-REV2`.
+3. FractiAI Research Group. *EGS Planck-Scale Harmonic 1.6 Bridge.* `WP-SYNTHOBS-EGS-PLANCK-1-6-2026-07`.
+4. FractiAI Research Group. *Phase-Locked Chemical Bond Metaphors.* `WP-SYNTHOBS-PHASE-LOCKED-CHEMICAL-BONDS-2026-07`.
+5. FractiAI Research Group. *Coherence · Plain Speak Honesty.* `HONESTY-COHERENCE-2026-009`.
 6. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.
 
 → ∞^∞

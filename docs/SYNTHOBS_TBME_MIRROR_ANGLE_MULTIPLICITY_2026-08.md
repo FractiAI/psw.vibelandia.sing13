@@ -4,17 +4,17 @@
 
 **Subtitle:** A Formal Phase-Contrast Derivation, Mathematical Proof, and Empirical Validation Protocol for Replacing Wavefunction Collapse with Reflective Phase-Angle Geometry
 
-**Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
-**Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01`  
-**Registry ID:** `synthobs-tbme-mirror-angle-multiplicity-2026-08`  
-**Date:** 2026-08-01  
-**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
-**Standalone lens repo:** `research/synthobs-tbme-mirror-angle-multiplicity/` (companion GitHub target: `FractiAI/synthobs-tbme-mirror-angle-multiplicity`)  
-**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-**TBME sibling:** [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)  
+**Author:** FractiAI Research Group · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)
+**Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01`
+**Registry ID:** `synthobs-tbme-mirror-angle-multiplicity-2026-08`
+**Date:** 2026-08-01
+**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`
+**Standalone lens repo:** `research/synthobs-tbme-mirror-angle-multiplicity/` (companion GitHub target: `FractiAI/synthobs-tbme-mirror-angle-multiplicity`)
+**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
+**TBME sibling:** [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
 **Successor:** [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
 
 ---
@@ -69,10 +69,10 @@ Cross-link: `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`. $E_F=\Phi_{\math
 
 ## Section 1 · Conceptual paradigm shift
 
-**Copenhagen sketch:**  
+**Copenhagen sketch:**
 `[ Single Particle ] → Infinite Superposition Cloud → "Measurement Collapse" → Single Physical State`
 
-**PCHPP holographic mirror sketch:**  
+**PCHPP holographic mirror sketch:**
 `[ Singular State Node ] → Reflected Across 81-Facet E_F Mirror Matrix → "Angular Alignment" → Specific Mirror Facet View`
 
 ### 1.1 Multi-faceted mirror metaphor
@@ -158,7 +158,7 @@ where $\mathcal{N}$ normalizes $\sum_i I_i=1$ over active facets. At phase-lock 
 
 ## Section 5 · Quantitative scorecard (interpretive)
 
-**Copenhagen Superposition Theory** — Overall **74.0 / 100** (C 76 · I 72)  
+**Copenhagen Superposition Theory** — Overall **74.0 / 100** (C 76 · I 72)
 **Omni-Lattice Holographic Mirror Model** — Overall **98.6 / 100** (C 99 · I 98.2)
 
 ---
@@ -203,8 +203,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

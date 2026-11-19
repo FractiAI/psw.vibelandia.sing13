@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** As an architectural mapping: the suite passes 9 of 9 checks, including a normalized entropy-change identity. The reported R² and mortality figures are design targets rather than field measurements, and field science remains the authority on the ants.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-POGONOMYRMEX-2026-07`  
-**Registry ID:** `synthobs-omni-lattice-pogonomyrmex-2026-07`  
-**Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-pogonomyrmex  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-omni-lattice-pogonomyrmex` · [`empirical_report.json`](../research/synthobs-omni-lattice-pogonomyrmex/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-POGONOMYRMEX-2026-07`
+**Registry ID:** `synthobs-omni-lattice-pogonomyrmex-2026-07`
+**Date:** July 28, 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-pogonomyrmex
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-omni-lattice-pogonomyrmex` · [`empirical_report.json`](../research/synthobs-omni-lattice-pogonomyrmex/data/empirical_report.json)
 **Companions:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Chemical Bond Metaphors](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md) · [Proof by Continuous Execution](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)
 
 **Keywords:** *Pogonomyrmex barbatus*; harvester ant; biogenic amines; stigmergy; active inference; Omni-Lattice; $E_F$; Lattice Chat Agent; NSPFRNP
@@ -186,8 +186,8 @@ Pointer: `docs/SYNTHOBS_OMNI_LATTICE_POGONOMYRMEX_BARBATUS_2026-07.md`.
 
 ## 8. Falsification
 
-1. Word / sentence catalogs incomplete.  
-2. $\lambda_{\mathrm{EGS}}$ or normalized $\Delta S$ identity fails.  
+1. Word / sentence catalogs incomplete.
+2. $\lambda_{\mathrm{EGS}}$ or normalized $\Delta S$ identity fails.
 3. Publishing EX-POG figures as new field science without honesty gates.
 
 ---
@@ -200,11 +200,11 @@ Omni-Lattice Unification V maps *Pogonomyrmex barbatus* biogenic amine gating, s
 
 ## References
 
-1. SynthOBS Holographic Operators.  
-2. Omni-Lattice Unification.  
-3. Nested Agent Lattice.  
-4. Phase-Locked Chemical Bond Metaphors (metallic pool).  
-5. Proof by Continuous Execution.  
-6. Field active-inference / harvester-ant literature (Friedman, Gordon, and collaborators) — primary empirical authority.  
-7. NSPFRNP Snap Peer-Review Audit.  
+1. SynthOBS Holographic Operators.
+2. Omni-Lattice Unification.
+3. Nested Agent Lattice.
+4. Phase-Locked Chemical Bond Metaphors (metallic pool).
+5. Proof by Continuous Execution.
+6. Field active-inference / harvester-ant literature (Friedman, Gordon, and collaborators) — primary empirical authority.
+7. NSPFRNP Snap Peer-Review Audit.
 8. Coherence plain speak honesty document.

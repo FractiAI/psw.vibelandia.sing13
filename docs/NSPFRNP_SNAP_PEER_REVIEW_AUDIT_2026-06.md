@@ -2,11 +2,11 @@
 
 **Short answer: Yes.** As protocol filing: structural peer audit Snap with receipts, pass bars and iteration caps is the operational audit path. Effectiveness is process, not a meta-analysis of all past papers.
 
-**Document ID:** NSPFRNP-SNAP-PRA-2026-06  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Author lane:** Primary drafting (Cursor / CI)  
-**Reviewer lane:** Second LLM (independent prompt · distinct scoring)  
-**Protocol:** [NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)  
+**Document ID:** NSPFRNP-SNAP-PRA-2026-06
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Author lane:** Primary drafting (Cursor / CI)
+**Reviewer lane:** Second LLM (independent prompt · distinct scoring)
+**Protocol:** [NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
 **Status:** Operational Run Lock [Until Further Notice]
 
 ---
@@ -15,10 +15,10 @@
 
 This snap **does not** claim that structural lint or a single LLM pass equals external journal peer review. It **does** enforce:
 
-1. **Recursive second-LLM critique** when `SYNTHOBS_AUDIT_LLM_ENABLED=1` and API keys are present  
-2. **Hard iteration cap** and **plateau detection** so loops cannot run forever  
-3. **Mandatory SynthOBS sandbox attribution** on all technical papers  
-4. **Honesty-boundary and doc-ID blockers** that fail closed until fixed  
+1. **Recursive second-LLM critique** when `SYNTHOBS_AUDIT_LLM_ENABLED=1` and API keys are present
+2. **Hard iteration cap** and **plateau detection** so loops cannot run forever
+3. **Mandatory SynthOBS sandbox attribution** on all technical papers
+4. **Honesty-boundary and doc-ID blockers** that fail closed until fixed
 
 When LLM is off, receipts are labeled `structural_only` — still valuable, not mislabeled as dual-LLM certification.
 
@@ -54,11 +54,11 @@ Technical papers and whitepapers in `psw.vibelandia.sing13` are now governed by 
 
 ```
 Author draft (markdown)
-    → Reviewer · Anthropic (JSON rubric + blockers)     ← Make B
-    → Merge with SynthOBS structural rubric
-    → Author revision · OpenAI (guidance) if continuing ← Make A
-    → loop (max 6)
-    → Crystallize receipt + metaAudit → data/synthobs-paper-audits/{paperId}.json
+→ Reviewer · Anthropic (JSON rubric + blockers)     ← Make B
+→ Merge with SynthOBS structural rubric
+→ Author revision · OpenAI (guidance) if continuing ← Make A
+→ loop (max 6)
+→ Crystallize receipt + metaAudit → data/synthobs-paper-audits/{paperId}.json
 ```
 
 ### Meta-audit trail (mandatory per paper)
@@ -114,5 +114,5 @@ Both operate under NSPFRNP MCA and Digital Pru orchestration; PRA Snap is **mand
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Fair Exchange Clause:** active · Player 1 review · → ∞^∞

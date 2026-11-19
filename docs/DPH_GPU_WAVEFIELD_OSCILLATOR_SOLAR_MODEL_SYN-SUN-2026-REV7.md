@@ -58,18 +58,18 @@ Where $\theta$ represents the localized angular coordinate on the rotating solar
 
 ```
 ========================================================================
-             SYNTHEVERSE LIVE REAL-TIME TELEMETRY BUS (DPH-GPU)
+SYNTHEVERSE LIVE REAL-TIME TELEMETRY BUS (DPH-GPU)
 ========================================================================
- [ NOAA Live Solar Feed ] ──> Sunspot Count: 133 ──> [Dynamic API Ingestion]
-                                                               │
-                                                               ▼
- [ Idealized Continuous Field ] ──> E_s(θ) = ∑ sin(kθ) / φ^k ──┘
-                                                               │
-                                                               ▼
- [ Live Parameter Modulation ] ──> AR14446 (Caryx · βγ) & AR14452 (Solon · βγ) Nodes
-                                                               │
-                                                               ▼
- [ Metrology Phase Filter ] ────> [ HonestyBoundary (mined_block: false) ]
+[ NOAA Live Solar Feed ] ──> Sunspot Count: 133 ──> [Dynamic API Ingestion]
+│
+▼
+[ Idealized Continuous Field ] ──> E_s(θ) = ∑ sin(kθ) / φ^k ──┘
+│
+▼
+[ Live Parameter Modulation ] ──> AR14446 (Caryx · βγ) & AR14452 (Solon · βγ) Nodes
+│
+▼
+[ Metrology Phase Filter ] ────> [ HonestyBoundary (mined_block: false) ]
 ========================================================================
 ```
 
@@ -195,20 +195,20 @@ The telemetry data streaming from the NOAA space weather APIs is cast directly i
 // Location: ssvibelandia_core/src/metrology/types.ts
 
 export interface ActiveSolarNode {
-  readonly regionId: string;         // e.g., "AR14452"
-  readonly codename: string | null;  // e.g., "Solon"
-  readonly latitude: number;         // Heliospheric coordinate metrics
-  readonly longitude: number;        // Shifting meridian alignment
-  readonly magneticClass: 'Alpha' | 'Beta' | 'Beta-Gamma' | 'Delta';
-  readonly sunspotCount: number;     // Density weight numerator
-  readonly areaMillionths: number;   // Physical footprint on solar disk
+readonly regionId: string;         // e.g., "AR14452"
+readonly codename: string | null;  // e.g., "Solon"
+readonly latitude: number;         // Heliospheric coordinate metrics
+readonly longitude: number;        // Shifting meridian alignment
+readonly magneticClass: 'Alpha' | 'Beta' | 'Beta-Gamma' | 'Delta';
+readonly sunspotCount: number;     // Density weight numerator
+readonly areaMillionths: number;   // Physical footprint on solar disk
 }
 
 export interface HolographicPacingMatrix {
-  readonly telemetryTimestamp: number;
-  readonly globalSunspotCount: number; // e.g., 133
-  readonly liveNodes: readonly ActiveSolarNode[];
-  readonly egsStabilityIndex: number; // Strictly bounded between 0.0 and 1.618
+readonly telemetryTimestamp: number;
+readonly globalSunspotCount: number; // e.g., 133
+readonly liveNodes: readonly ActiveSolarNode[];
+readonly egsStabilityIndex: number; // Strictly bounded between 0.0 and 1.618
 }
 ```
 
@@ -226,23 +226,23 @@ import math
 EGS_FRACTAL_CONSTANT = 1.618033988749895
 
 def calculate_holographic_limit(live_matrix: dict) -> float:
-    """
-    Applies the EGS fractal scaling ratio as a logical boundary limit,
-    collapsing infinite logical complexity down to a stable harmonic baseline
-    in a self-similar fashion to Newtonian limits.
-    """
-    cumulative_stress = 0.0
-    for node in live_matrix['live_nodes']:
-        # Map node coordinates and area weights to a continuous radian arc
-        theta = math.radians(node['latitude'] + node['longitude'])
-        weight = node['area_millionths'] / 1000.0
+"""
+Applies the EGS fractal scaling ratio as a logical boundary limit,
+collapsing infinite logical complexity down to a stable harmonic baseline
+in a self-similar fashion to Newtonian limits.
+"""
+cumulative_stress = 0.0
+for node in live_matrix['live_nodes']:
+# Map node coordinates and area weights to a continuous radian arc
+theta = math.radians(node['latitude'] + node['longitude'])
+weight = node['area_millionths'] / 1000.0
         
-        # Calculate localized harmonic damping across the first 12 field tiers
-        for tier in range(1, 13):
-            cumulative_stress += (math.sin(tier * theta) * weight) / (EGS_FRACTAL_CONSTANT ** tier)
+# Calculate localized harmonic damping across the first 12 field tiers
+for tier in range(1, 13):
+cumulative_stress += (math.sin(tier * theta) * weight) / (EGS_FRACTAL_CONSTANT ** tier)
             
-    # Return normalized stability score bounded by the golden ratio limit
-    return abs(math.tanh(cumulative_stress) * EGS_FRACTAL_CONSTANT)
+# Return normalized stability score bounded by the golden ratio limit
+return abs(math.tanh(cumulative_stress) * EGS_FRACTAL_CONSTANT)
 ```
 
 **Runtime mirror (Node):** `lib/metrology/clock-skew-filter.mjs` · **`calculateHolographicLimit`**
@@ -254,43 +254,43 @@ def calculate_holographic_limit(live_matrix: dict) -> float:
 The complete end-to-end data topology maps how the raw, physical churning of the solar disk passes through the logical limiters of the architecture to output an open, unrestricted tap of ambient computational energy:
 
 ```
-                 +---------------------------------------+
-                 |              EL GRAN SOL              |
-                 |     Continuous Wavefield Oscillator   |
-                 +-------------------+-------------------+
-                                     |
-      [Live Radio / X-Ray Emissions] | [Geomagnetic Flux Modulation]
-                                     v
-                 +---------------------------------------+
-                 |         NOAA Telemetry Bus            |
-                 |     (Live Count: 133 / AR14452)       |
-                 +-------------------+-------------------+
-                                     |
-                        [JSON Live Stream Feed]
-                                     v
-                 +---------------------------------------+
-                 |     DPH-GPU v2026.5 Ingestion Gate    |
-                 |   Type-Safe Dynamic Data Validation   |
-                 +-------------------+-------------------+
-                                     |
-                    [Phase-Locked Coordinate Transform]
-                                     v
-                 +---------------------------------------+
-                 |        EGS CADENCE TRANSFORM          |
-                 |   Collapses Infinite Logical Steps    |
-                 |   via Golden-Ratio Bounded Limit      |
-                 +-------------------+-------------------+
-                                     |
-                  [Deterministic Stability Invariant Index]
-                                     v
-                 +---------------------------------------+
-                 |      HONESTY BOUNDARY CONTROLLER      |
-                 |     Enforces: mined_block = false     |
-                 +-------------------+-------------------+
-                                     |
-       +-----------------------------+-----------------------------+
-       |                             |                             |
-       v                             v                             v
++---------------------------------------+
+|              EL GRAN SOL              |
+|     Continuous Wavefield Oscillator   |
++-------------------+-------------------+
+|
+[Live Radio / X-Ray Emissions] | [Geomagnetic Flux Modulation]
+v
++---------------------------------------+
+|         NOAA Telemetry Bus            |
+|     (Live Count: 133 / AR14452)       |
++-------------------+-------------------+
+|
+[JSON Live Stream Feed]
+v
++---------------------------------------+
+|     DPH-GPU v2026.5 Ingestion Gate    |
+|   Type-Safe Dynamic Data Validation   |
++-------------------+-------------------+
+|
+[Phase-Locked Coordinate Transform]
+v
++---------------------------------------+
+|        EGS CADENCE TRANSFORM          |
+|   Collapses Infinite Logical Steps    |
+|   via Golden-Ratio Bounded Limit      |
++-------------------+-------------------+
+|
+[Deterministic Stability Invariant Index]
+v
++---------------------------------------+
+|      HONESTY BOUNDARY CONTROLLER      |
+|     Enforces: mined_block = false     |
++-------------------+-------------------+
+|
++-----------------------------+-----------------------------+
+|                             |                             |
+v                             v                             v
 +---------------+             +---------------+             +---------------+
 | APPLICATION I |             |APPLICATION II |             |APPLICATION III|
 | Silicon Clock |             | Zero-Watt Net |             | Erdős-Straus  |
@@ -329,15 +329,14 @@ The structural parameters outlined in this framework have been officially subjec
 
 **NSPFRNP ⊃ DPH-GPU ⊃ Wavefield Oscillator ⊃ EGS φ → ∞^∞**
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** SYN-SUN-2026-REV7  
-**Registry ID:** `syn-sun-wavefield-oscillator`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** SYN-SUN-2026-REV7
+**Registry ID:** `syn-sun-wavefield-oscillator`
 **Re-audit:** `npm run audit:paper -- --id=syn-sun-wavefield-oscillator`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

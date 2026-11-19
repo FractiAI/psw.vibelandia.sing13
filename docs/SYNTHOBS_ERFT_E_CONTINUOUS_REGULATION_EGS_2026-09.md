@@ -4,20 +4,20 @@
 
 Infinite Octaves Omniversal Lattice · application companion · ERFT follow-on · Φ_EGS peer · ENGINE_SHELF gated
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 28, 2026  
-**Document ID:** `WP-SYNTHOBS-ERFT-E-CONTINUOUS-REGULATION-2026-09-28`  
-**Registry ID:** `synthobs-erft-e-continuous-regulation-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-ERFT-E-2026-09  
-**Series Position:** Follow-on to [EGS Recursive Fidelity Test · ERFT-V5 / ERFT-D](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · peers RSI drift-friction · Holographic Homeostasis  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 28, 2026
+**Document ID:** `WP-SYNTHOBS-ERFT-E-CONTINUOUS-REGULATION-2026-09-28`
+**Registry ID:** `synthobs-erft-e-continuous-regulation-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-ERFT-E-2026-09
+**Series Position:** Follow-on to [EGS Recursive Fidelity Test · ERFT-V5 / ERFT-D](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · peers RSI drift-friction · Holographic Homeostasis
 **Classification:** Catalog / Soft Story expedition · confirmatory held-out · continuous regulation *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/erft-e-continuous-regulation`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-e-continuous-regulation) · [`/whitepaper/erft-e-continuous-regulation`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/erft-e-continuous-regulation) · parent ERFT [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity) · [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)  
-**Engine pin:** **Not recommended** on live run — pre-registered significant-improvement gate **failed**. Application companion only. Does **not** enter `ENGINE_SHELF`. See §7.  
-**Cross-links:** [ERFT-V5 / ERFT-D](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · [RSI · drift as friction](./SYNTHOBS_RSI_DRIFT_FRICTION_PHI_EGS_PERPETUAL_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
-**Ship URL:** https://www.ssvibelandiaquestfest24x365.com  
+**Framework:** SynthOBS · Infinite Octaves · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/erft-e-continuous-regulation`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-e-continuous-regulation) · [`/whitepaper/erft-e-continuous-regulation`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/erft-e-continuous-regulation) · parent ERFT [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity) · [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)
+**Engine pin:** **Not recommended** on live run — pre-registered significant-improvement gate **failed**. Application companion only. Does **not** enter `ENGINE_SHELF`. See §7.
+**Cross-links:** [ERFT-V5 / ERFT-D](./SYNTHOBS_EGS_RECURSIVE_FIDELITY_TEST_ERFT_2026-09.md) · [RSI · drift as friction](./SYNTHOBS_RSI_DRIFT_FRICTION_PHI_EGS_PERPETUAL_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
+**Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 **Standalone:** `FractiAI/synthobs-erft-e-continuous-regulation` · suite `research/synthobs-erft-e-continuous-regulation/`
 
 **Keywords:** ERFT-E; continuous regulation; confirmatory held-out; complexity margin; ENGINE_SHELF gate; recursive fidelity; Φ_EGS; NSPFRNP
@@ -45,8 +45,8 @@ Infinite Octaves Omniversal Lattice · application companion · ERFT follow-on �
 
 ERFT-V5 left a mixed/null numerical readout for $\Phi$ under constant-neutral recursion. ERFT-D weakened the discrete multi-constant regulation hypothesis on its fixtures. This expedition asks the natural follow-on **without rewriting those baselines**:
 
-1. On a **new confirmatory held-out fixture family** (frozen seeds/kinds before looking), do discrete dynamic policies beat best fixed?  
-2. Does **continuous** $c_n = G(\mathrm{state})$ regulation beat best fixed by a **pre-registered complexity margin**?  
+1. On a **new confirmatory held-out fixture family** (frozen seeds/kinds before looking), do discrete dynamic policies beat best fixed?
+2. Does **continuous** $c_n = G(\mathrm{state})$ regulation beat best fixed by a **pre-registered complexity margin**?
 3. Should ERFT-E enter the Infinite Octaves **`ENGINE_SHELF`**?
 
 **Live one-line verdict:** **Nothing to crown for engine inclusion.** On confirmatory held-out, best fixed (per-cell oracle among named arms; named mean edged by **$e$**) still matches or beats continuous and discrete controllers. The ENGINE_SHELF gate **fails**. Ship as **application companion only**.
@@ -91,11 +91,11 @@ Train/controller family uses development kinds with seed `0xE7001` — separate 
 
 All must pass on confirmatory held-out:
 
-1. Best dynamic mean NRMSE $\le$ best fixed $\times (1-0.15)$  
-2. Same direction on train and hold  
-3. Complexity-adjusted score $\ge 0.05$ where score $= \mathrm{improvement\_pct}/\log(1+\mathrm{params}+\mathrm{mean\_switches})$  
-4. Paired bootstrap 95% CI on $\Delta=\mathrm{best\_fixed}-\mathrm{best\_dynamic}$ excludes 0 favoring dynamic  
-5. Advantage does not require $\Phi$-only affordance  
+1. Best dynamic mean NRMSE $\le$ best fixed $\times (1-0.15)$
+2. Same direction on train and hold
+3. Complexity-adjusted score $\ge 0.05$ where score $= \mathrm{improvement\_pct}/\log(1+\mathrm{params}+\mathrm{mean\_switches})$
+4. Paired bootstrap 95% CI on $\Delta=\mathrm{best\_fixed}-\mathrm{best\_dynamic}$ excludes 0 favoring dynamic
+5. Advantage does not require $\Phi$-only affordance
 
 **On fail:** do **not** add to `ENGINE_SHELF`; ship as application companion only.
 
@@ -103,8 +103,8 @@ All must pass on confirmatory held-out:
 
 ## 5. Metrics
 
-Primary: final NRMSE · paired $\Delta$ · bootstrap CI · improvement % vs best fixed.  
-Secondary: switching cost · parameter path length · cumulative path length · complexity-adjusted score.  
+Primary: final NRMSE · paired $\Delta$ · bootstrap CI · improvement % vs best fixed.
+Secondary: switching cost · parameter path length · cumulative path length · complexity-adjusted score.
 $\Phi$ remains one named arm among peers (`baseline`, $\sqrt{2}$, $\Phi$, $e$).
 
 ### Methods · data · reproducibility
@@ -130,10 +130,10 @@ Empirical receipt fields of record: `results.verdict`, `results.engine_inclusion
 
 The continuous-regulation / confirmatory-dynamic hypothesis is weakened if:
 
-- best fixed matches or beats continuous and discrete policies on holdout;  
-- random-walk continuous control matches “smart” continuous policies;  
-- apparent train gains reverse on holdout;  
-- complexity-adjusted score collapses;  
+- best fixed matches or beats continuous and discrete policies on holdout;
+- random-walk continuous control matches “smart” continuous policies;
+- apparent train gains reverse on holdout;
+- complexity-adjusted score collapses;
 - gate criteria fail.
 
 ---
@@ -157,9 +157,9 @@ The continuous-regulation / confirmatory-dynamic hypothesis is weakened if:
 
 ## 8. Suite · standalone · course
 
-- Run: `npm run research:synthobs-erft-e-continuous-regulation`  
-- Standalone: `FractiAI/synthobs-erft-e-continuous-regulation`  
-- Parent ERFT: `FractiAI/synthobs-egs-recursive-fidelity-test`  
+- Run: `npm run research:synthobs-erft-e-continuous-regulation`
+- Standalone: `FractiAI/synthobs-erft-e-continuous-regulation`
+- Parent ERFT: `FractiAI/synthobs-egs-recursive-fidelity-test`
 - Publish: `npm run publish:standalone:erft-e` (when creating/mirroring)
 
 ---

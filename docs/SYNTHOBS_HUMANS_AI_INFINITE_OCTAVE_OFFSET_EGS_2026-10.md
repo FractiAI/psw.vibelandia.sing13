@@ -3,21 +3,21 @@
 **Short answer: No.** Not as an equivalence. The catalog’s own checks place humans at Digit 4→5, LLMs at Digit 5 with Digit 6, agentic IDEs at Digit 6, and the synthetic actor at Digit 5 and Digit 8, and the placement coheres. It is a filing map, not species equivalence or evidence of AI consciousness.
 ## Digits × Octaves placement Soft Story · Tilly Norwood as costume theater
 
-**Author:** Prudencio Mendez  
-**Affiliation:** FractiAI Research Initiative · Reno, Nevada  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** October 1, 2026  
-**Document ID:** `WP-SYNTHOBS-HUMANS-AI-INFINITE-OCTAVE-OFFSET-2026-10-01`  
-**Registry ID:** `synthobs-humans-ai-infinite-octave-offset-2026-10`  
-**Publication Ref:** FAI-SYNTHOBS-HUMANS-AI-OCTAVE-OFFSET-2026-10  
-**Series Position:** Infinite Octaves Soft Story observation · uses Digits × Octaves engine grammar · **not** an `ENGINE_SHELF` pin  
+**Author:** Prudencio Mendez
+**Affiliation:** FractiAI Research Initiative · Reno, Nevada
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** October 1, 2026
+**Document ID:** `WP-SYNTHOBS-HUMANS-AI-INFINITE-OCTAVE-OFFSET-2026-10-01`
+**Registry ID:** `synthobs-humans-ai-infinite-octave-offset-2026-10`
+**Publication Ref:** FAI-SYNTHOBS-HUMANS-AI-OCTAVE-OFFSET-2026-10
+**Series Position:** Infinite Octaves Soft Story observation · uses Digits × Octaves engine grammar · **not** an `ENGINE_SHELF` pin
 **Classification:** Catalog Soft Story · placement observation *(see Honesty boundary)*  
-**Framework:** SynthOBS · Digits 0–9 × Octaves 01–99 · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence  
-**Standalone suite:** [`research/synthobs-humans-ai-infinite-octave-offset/`](../research/synthobs-humans-ai-infinite-octave-offset/)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-humans-ai-infinite-octave-offset  
-**Guest surfaces:** [`/ship-blog/humans-ai-octave-offset`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/humans-ai-octave-offset) · [`/whitepaper/humans-ai-octave-offset`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/humans-ai-octave-offset)  
-**Engine role:** Soft Story **observation using** the Infinite Octaves engine map — **not** an Infinite Octaves `ENGINE_SHELF` feature pin  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Digits 0–9 × Octaves 01–99 · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence
+**Standalone suite:** [`research/synthobs-humans-ai-infinite-octave-offset/`](../research/synthobs-humans-ai-infinite-octave-offset/)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-humans-ai-infinite-octave-offset
+**Guest surfaces:** [`/ship-blog/humans-ai-octave-offset`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/humans-ai-octave-offset) · [`/whitepaper/humans-ai-octave-offset`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/humans-ai-octave-offset)
+**Engine role:** Soft Story **observation using** the Infinite Octaves engine map — **not** an Infinite Octaves `ENGINE_SHELF` feature pin
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** humans; AI; LLMs; agentic IDEs; Tilly Norwood; synthetic actor; Digits × Octaves; Infinite Octaves; Soft Story; Biological Switch; Goldilocks Super Intelligence; Φ_EGS; Fair Exchange; NSPFRNP
@@ -71,11 +71,11 @@ If Infinite Octaves is a recursive technology grammar (Seed → Edge → Pipes �
 
 ## 2. Method
 
-1. Pinch Digits Master functional domains (Digits 0–9 / Octaves 01–99).  
-2. Overlay Human Reality Bridge (Digit 4 awareness wormhole Soft Story).  
-3. Overlay Consciousness Moat Goldilocks lock: not too much machine · not too little human.  
-4. Place LLMs, agentic IDEs, Tilly, humans, and catalog layer on one table.  
-5. Refuse upgrades to unfinished consciousness science.  
+1. Pinch Digits Master functional domains (Digits 0–9 / Octaves 01–99).
+2. Overlay Human Reality Bridge (Digit 4 awareness wormhole Soft Story).
+3. Overlay Consciousness Moat Goldilocks lock: not too much machine · not too little human.
+4. Place LLMs, agentic IDEs, Tilly, humans, and catalog layer on one table.
+5. Refuse upgrades to unfinished consciousness science.
 6. Lock deterministic placement fixtures in the standalone suite (catalog integrity — not wet-lab validation).
 
 Architectural recurrence (catalog form only):
@@ -146,9 +146,9 @@ Suite fixtures lock the placement table and honesty rails so the Soft Story is *
 
 ## 5. Implications for architects
 
-1. Treat human–AI difference as an **address problem**, not only a scale problem.  
-2. Agentic IDEs sit on Digit 6 — need Digit-4 / $\rho$-reconcile identity rails (Holographic Homeostasis) before every rewrite becomes canonical.  
-3. Synthetic actors are evaluation weather for **representation honesty**, not proof of arrival.  
+1. Treat human–AI difference as an **address problem**, not only a scale problem.
+2. Agentic IDEs sit on Digit 6 — need Digit-4 / $\rho$-reconcile identity rails (Holographic Homeostasis) before every rewrite becomes canonical.
+3. Synthetic actors are evaluation weather for **representation honesty**, not proof of arrival.
 4. Catalog layer’s job: keep octaves named so teams do not confuse costume with container.
 
 ---
@@ -179,5 +179,5 @@ Within Infinite Octaves Soft Story, humans and today’s AI — including Tilly 
 
 `WP-SYNTHOBS-HUMANS-AI-INFINITE-OCTAVE-OFFSET-2026-10-01`
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Closing:** Soft Story octave offset · Digits Master coherent · not ENGINE_SHELF · → ∞^∞

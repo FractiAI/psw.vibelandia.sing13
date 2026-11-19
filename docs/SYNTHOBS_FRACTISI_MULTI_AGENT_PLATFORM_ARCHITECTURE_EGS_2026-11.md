@@ -3,13 +3,13 @@
 **Short answer: Yes.** In simulation: As agent count and task interdependence rose, the coordinated arm blocked more high-severity overlaps and still integrated compatible work; small independent populations did fine either way. Live language-model agents on a real monolith were not tested.
 ## Evolving Tiny Footprint into a Coordinated Multi-Agent Engineering Platform
 
-**Document ID:** `WP-FRACTISI-MULTI-AGENT-PLATFORM-ARCH-EGS-2026-11-06`  
-**Registry ID:** `synthobs-fractisi-multi-agent-platform-2026-11`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Company / Product:** FractiSI · **FractiSI Multi-Agent**  
-**Core technology:** Tiny Footprint (Tiny Gateway™)  
-**Pin:** Application companion · **not** ENGINE_SHELF  
-**Date:** 2026-11-06  
+**Document ID:** `WP-FRACTISI-MULTI-AGENT-PLATFORM-ARCH-EGS-2026-11-06`
+**Registry ID:** `synthobs-fractisi-multi-agent-platform-2026-11`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Company / Product:** FractiSI · **FractiSI Multi-Agent**
+**Core technology:** Tiny Footprint (Tiny Gateway™)
+**Pin:** Application companion · **not** ENGINE_SHELF
+**Date:** 2026-11-06
 **Kit:** [FractiAI/FractiSI-Multi-Agent](https://github.com/FractiAI/FractiSI-Multi-Agent) · Workstation 0.2
 
 ---
@@ -50,9 +50,9 @@ Capabilities (coordination, composition, Git awareness, deploy, etc.) are **inte
 
 Arms:
 
-- **A** — conventional branch/worktree simulation  
-- **B** — Tiny Footprint shared world without coordination  
-- **C** — FractiSI coordination + composition  
+- **A** — conventional branch/worktree simulation
+- **B** — Tiny Footprint shared world without coordination
+- **C** — FractiSI coordination + composition
 
 Default run: agents `{5,10,25}`, 3 seeds. Receipt: kit `benchmarks/reports/platform/comparative-bench.json` via `node scripts/tiny.mjs coord-bench`.
 
@@ -72,9 +72,9 @@ Customers keep Cursor, Claude Code, VS Code, Git, GitHub/GitLab, and CI/CD.
 
 ## 6. Remaining work
 
-- Live IDE connectors beyond message adapters  
-- Stronger semantic conflict analysis  
-- Provider deploy connectors  
+- Live IDE connectors beyond message adapters
+- Stronger semantic conflict analysis
+- Provider deploy connectors
 - LLM-agent expedition (successor to Expedition 002 architectural labs)
 
 ## Document control

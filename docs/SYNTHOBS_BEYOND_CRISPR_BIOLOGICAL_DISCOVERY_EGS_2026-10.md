@@ -4,11 +4,11 @@
 
 **Multi-Scale Relational Search for Biological Information-Processing Architectures**
 
-**Document ID:** `WP-SYNTHOBS-BEYOND-CRISPR-BIOLOGICAL-DISCOVERY-2026-10-02`  
-**Registry ID:** `synthobs-beyond-crispr-biological-discovery-2026-10`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-10-02  
-**Guest surfaces:** [`/ship-blog/beyond-crispr-discovery`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/beyond-crispr-discovery) · [`/whitepaper/beyond-crispr-discovery`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/beyond-crispr-discovery) · journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · suite `research/synthobs-beyond-crispr-biological-discovery/` · standalone [FractiAI/synthobs-beyond-crispr-biological-discovery](https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery)  
+**Document ID:** `WP-SYNTHOBS-BEYOND-CRISPR-BIOLOGICAL-DISCOVERY-2026-10-02`
+**Registry ID:** `synthobs-beyond-crispr-biological-discovery-2026-10`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** 2026-10-02
+**Guest surfaces:** [`/ship-blog/beyond-crispr-discovery`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/beyond-crispr-discovery) · [`/whitepaper/beyond-crispr-discovery`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/beyond-crispr-discovery) · journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · suite `research/synthobs-beyond-crispr-biological-discovery/` · standalone [FractiAI/synthobs-beyond-crispr-biological-discovery](https://github.com/FractiAI/synthobs-beyond-crispr-biological-discovery)
 **Slot:** **application companion (not ENGINE_SHELF)** — Homeostasis Expedition discovery trail · Soft Story / catalog fixtures.
 
 ---
@@ -85,16 +85,16 @@ A candidate becomes more interesting **only after** surviving these controls. CR
 
 Each candidate is scored 0–1 on:
 
-1. Novelty  
-2. Recurrence  
-3. Independence  
-4. Modularity  
-5. Information flow  
-6. Memory  
-7. Feedback  
-8. Multi-scale recurrence  
-9. Evolutionary constraint  
-10. Experimental tractability  
+1. Novelty
+2. Recurrence
+3. Independence
+4. Modularity
+5. Information flow
+6. Memory
+7. Feedback
+8. Multi-scale recurrence
+9. Evolutionary constraint
+10. Experimental tractability
 
 **No arbitrary single “winner” score.** Queue triage uses `researchInterest` as a sort key only — down-weighting well-explained systems and confound risk.
 
@@ -124,11 +124,11 @@ Full deliverable fields (architecture, miss reasons, evidence, falsification, pr
 
 A gap candidate becomes scientifically major only if wet-lab work supports:
 
-1. senses an external/internal state,  
-2. converts it into an information representation,  
-3. stores that representation,  
-4. retrieves or compares it later,  
-5. changes future behavior,  
+1. senses an external/internal state,
+2. converts it into an information representation,
+3. stores that representation,
+4. retrieves or compares it later,
+5. changes future behavior,
 6. through a mechanism **not previously recognized**.
 
 Rediscovering CBASS does **not** satisfy (6). That is intentional.
@@ -161,12 +161,12 @@ npm run research:synthobs-beyond-crispr-biological-discovery
 
 **Blind discovery phases (computational):**
 
-1. Blind seeds (architecture-only; no preferred lead labeled)  
-2. Independent literature class: known / partially_known / genuinely_unexplained / positive_control  
-3. Shortlist 3–5 (exclude baseline + positive control)  
-4. One falsifiable prediction per shortlisted candidate  
-5. Wet-lab (documented follow-up — cheapest clean prediction first)  
-6. Kill if it fails  
+1. Blind seeds (architecture-only; no preferred lead labeled)
+2. Independent literature class: known / partially_known / genuinely_unexplained / positive_control
+3. Shortlist 3–5 (exclude baseline + positive control)
+4. One falsifiable prediction per shortlisted candidate
+5. Wet-lab (documented follow-up — cheapest clean prediction first)
+6. Kill if it fails
 
 **Phase 2b (operational · BYOK):** live Lattice Chat blind discovery — export prompt `npm run export:phase-2b-beyond-crispr` · journey [`/journey/beyond-crispr-phase-2b`](https://www.ssvibelandiaquestfest24x365.com/journey/beyond-crispr-phase-2b) · protocol `docs/SYNTHOBS_BEYOND_CRISPR_PHASE_2B_LATTICE_2026-10.md`. Archive receipts locally; compare live queue to literature (rediscovery ≠ gap). Not executed inside CI.
 
@@ -178,11 +178,11 @@ npm run research:synthobs-beyond-crispr-biological-discovery
 
 Regenerate with the pipeline. Expected shape when all gates pass:
 
-- All candidates survive primary anti-bias floors (still may be fully explained).  
-- **C4** classified as `positive_control_framework_validation` — CBASS rediscovery for methodology, **not** novelty.  
-- Gap shortlist prioritizes **C11 / C12 / C13** (`genuinely_unexplained`) before partially_known actives.  
-- **Declared winner:** `null`.  
-- Discovery lead (typical): **C11 ART-class unresolved RT–partner–long-repeat architectures**.  
+- All candidates survive primary anti-bias floors (still may be fully explained).
+- **C4** classified as `positive_control_framework_validation` — CBASS rediscovery for methodology, **not** novelty.
+- Gap shortlist prioritizes **C11 / C12 / C13** (`genuinely_unexplained`) before partially_known actives.
+- **Declared winner:** `null`.
+- Discovery lead (typical): **C11 ART-class unresolved RT–partner–long-repeat architectures**.
 - Strong known peers for framing contrast: **C2 DGRs** (future-diversity writing) · CRISPR baseline · CBASS positive control.
 
 ### 9.1 Framework validation (not a discovery claim)
@@ -235,15 +235,15 @@ Related SING13 Soft Story peers (contrast, not proof): Self-Observing Genome · 
 
 ## 13. References (selected)
 
-1. Barrangou et al., *Science* (2007) — CRISPR acquired resistance.  
-2. Doulatov et al., *Nature* (2004) — diversity-generating retroelements.  
-3. Millman et al., *Cell* (2020) — retrons in anti-phage defense.  
-4. Cohen et al., *Nature* (2019) — cyclic GMP–AMP bacterial signaling.  
-5. Ofir et al., *Nature* (2021) — bacterial TIR / Thoeris NAD+ depletion.  
-6. Brennecke et al., *Cell* (2007) — piRNA loci as TE regulators.  
-7. Mazel, *Nat. Rev. Microbiol.* (2006) — integrons as agents of bacterial evolution.  
-8. Allis & Jenuwein, *Nat. Rev. Genet.* (2016) — epigenetic control hallmarks.  
-9. Prusiner, *PNAS* (1998) — prions.  
+1. Barrangou et al., *Science* (2007) — CRISPR acquired resistance.
+2. Doulatov et al., *Nature* (2004) — diversity-generating retroelements.
+3. Millman et al., *Cell* (2020) — retrons in anti-phage defense.
+4. Cohen et al., *Nature* (2019) — cyclic GMP–AMP bacterial signaling.
+5. Ofir et al., *Nature* (2021) — bacterial TIR / Thoeris NAD+ depletion.
+6. Brennecke et al., *Cell* (2007) — piRNA loci as TE regulators.
+7. Mazel, *Nat. Rev. Microbiol.* (2006) — integrons as agents of bacterial evolution.
+8. Allis & Jenuwein, *Nat. Rev. Genet.* (2016) — epigenetic control hallmarks.
+9. Prusiner, *PNAS* (1998) — prions.
 10. Swarts et al., *Nature* (2014) — prokaryotic Argonaute DNA interference.
 
 ---

@@ -55,7 +55,7 @@ R_k := h(O_θ(u_k), η_k)
 - MPI* = memory traffic / cache requests
 - DPI* = stall cycles / warp eligibility
 
-**Identifiable support M_id:** O_θ injective modulo ~_arch  
+**Identifiable support M_id:** O_θ injective modulo ~_arch
 **Degenerate support M_deg:** κ(Σ_k) > K_max — geometry collapse
 
 ---

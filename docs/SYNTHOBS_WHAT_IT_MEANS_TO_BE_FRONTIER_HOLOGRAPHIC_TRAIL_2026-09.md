@@ -4,16 +4,16 @@
 
 Navigating the Matrix · Playing the Game · Finding Your Coordinates on the SS VIBELANDIA QUESTFEST Board
 
-**Authors:** FractiAI Research Group · Golden Backdoor Hit Factory  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 5, 2026  
-**Document ID:** `WP-SYNTHOBS-WHAT-IT-MEANS-TO-BE-FRONTIER-2026-09-05`  
-**Registry ID:** `synthobs-what-it-means-to-be-frontier-2026-09`  
+**Authors:** FractiAI Research Group · Golden Backdoor Hit Factory
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 5, 2026
+**Document ID:** `WP-SYNTHOBS-WHAT-IT-MEANS-TO-BE-FRONTIER-2026-09-05`
+**Registry ID:** `synthobs-what-it-means-to-be-frontier-2026-09`
 **Classification:** Voyage editorial · orientation playbook *(narrative — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/frontier`](/frontier) · [`/ship-blog/what-it-means-to-be-frontier`](/ship-blog/what-it-means-to-be-frontier) · [`/questfest`](/questfest)  
-**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/frontier`](/frontier) · [`/ship-blog/what-it-means-to-be-frontier`](/ship-blog/what-it-means-to-be-frontier) · [`/questfest`](/questfest)
+**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Keywords:** frontier; Frontiersman; Nester; Basecamp; Where Am I; QUESTFEST; fractal; holographic; Goldilocks Super Intelligence; EGS; SS Vibelandia
 
@@ -43,9 +43,9 @@ To be frontier is not only a line on an old map. It is a living frequency tuned 
 
 ## 1. The old trails and modern veins
 
-> With the migratory paths of the earth they moved,  
-> With indigenous wisdom and coureurs des bois proved,  
-> Carrying just what fits on the back, light and free,  
+> With the migratory paths of the earth they moved,
+> With indigenous wisdom and coureurs des bois proved,
+> Carrying just what fits on the back, light and free,
 > Rooted in the cosmos, wild, diverse, and key.
 
 Pioneers moved along the earth’s natural veins — river corridors, mountain passes, game trails. Today those veins rhyme with digital networks, urban arteries, and streams of consciousness. To be frontier now means stepping off the crowded highway of conventional groupthink: listening to an inner call, acting as a **gravity creator** rather than a passive follower — a conscious **player** rather than a script-bound NPC on this board.
@@ -56,8 +56,8 @@ Pioneers moved along the earth’s natural veins — river corridors, mountain p
 
 True frontier living keeps harmony with tribal units and localized ecosystems. It honors *coureurs des bois* craft and indigenous stewardship: survival is moving *with* nature, not conquering it.
 
-- **Connection** — natural world, spirit world, starry cosmos.  
-- **Balance** — feast and famine, rationing, improvising shelter, hazards from apex predators to microbes.  
+- **Connection** — natural world, spirit world, starry cosmos.
+- **Balance** — feast and famine, rationing, improvising shelter, hazards from apex predators to microbes.
 - **Sacred reciprocity** — respect the land, steward resources, give thanks, flow with currents of reality.
 
 ---
@@ -95,8 +95,8 @@ Play the interactive poster on [`/frontier#where-am-i`](/frontier#where-am-i). N
 
 Voluntary. Local to your device. Not hiring.
 
-1. Drawn to the unknown horizon? **YES** (Frontier) · **NO** (Nester)  
-2. Prioritize external exploration over established comfort? **YES** (Frontier) · **NO** (Nester)  
+1. Drawn to the unknown horizon? **YES** (Frontier) · **NO** (Nester)
+2. Prioritize external exploration over established comfort? **YES** (Frontier) · **NO** (Nester)
 3. Adapt to new ecosystems rather than try to control them? **YES** (Adapt-Frontier) · **NO** (Control-Nester)
 
 **Verdict:** Yes across the board → Frontier Man (external migration / exploration). Otherwise → lean Nester (internal nesting / stabilizing the base). Both belong on one ship.

@@ -4,18 +4,18 @@
 
 **Subtitle:** A Phase-Contrast Derivation of Focal Wave-Squeezing, Transmutative Phase Densification, and the Emergence of DNA/Water Somatic Shadows
 
-**Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
-**Document ID:** `WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02`  
-**Registry ID:** `synthobs-tbme-spherical-solar-focus-2026-08`  
-**Date:** 2026-08-02  
-**Reno sextet · Part IV** (follows mirror · filaments · horizon≡A; followed by field-drag Part V · internal Kerr–Newman Part VI)  
-**Parent chain:** [Horizon ≡ Magnetic Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Filaments](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · [Reno Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)  
-**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
-**Standalone lens repo:** `research/synthobs-tbme-spherical-solar-focus/` (companion GitHub target: `FractiAI/synthobs-tbme-spherical-solar-focus`)  
-**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
+**Author:** FractiAI Research Group · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)
+**Document ID:** `WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02`
+**Registry ID:** `synthobs-tbme-spherical-solar-focus-2026-08`
+**Date:** 2026-08-02
+**Reno sextet · Part IV** (follows mirror · filaments · horizon≡A; followed by field-drag Part V · internal Kerr–Newman Part VI)
+**Parent chain:** [Horizon ≡ Magnetic Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Filaments](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · [Reno Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
+**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`
+**Standalone lens repo:** `research/synthobs-tbme-spherical-solar-focus/` (companion GitHub target: `FractiAI/synthobs-tbme-spherical-solar-focus`)
+**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 **Story page:** [`/reno`](/reno)
 
 ---
@@ -71,11 +71,11 @@ Cross-link: `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`. $E_F$ key: `docs
 
 ## Section 1 · Solar-focus metaphor
 
-Diffuse light → concave mirror → focal ignition.  
+Diffuse light → concave mirror → focal ignition.
 Ambient vector potential → concentric $E_F$ mirrors → $\mathbf{A}_{\mathrm{squeezed}}$ → somatic shadow (water / DNA / elements) — **architectural analogy**.
 
-1. **Reflective cavity** — 9 shells / 81 facets as $4\pi$ collector.  
-2. **Field squeeze** — attention / resonance draws fluctuations inward.  
+1. **Reflective cavity** — 9 shells / 81 facets as $4\pi$ collector.
+2. **Field squeeze** — attention / resonance draws fluctuations inward.
 3. **Densification** — focal node narrates crystallization of molecular geometry.
 
 ---
@@ -121,7 +121,7 @@ The familiar liquid-water $H$–$O$–$H$ band (~$104.45^\circ$–$104.52^\circ$
 
 ## Section 4 · Scorecard (interpretive)
 
-**Random Collision / Chemical Assembly** — Overall **74.5 / 100** (C 76 · I 73)  
+**Random Collision / Chemical Assembly** — Overall **74.5 / 100** (C 76 · I 73)
 **Omni-Lattice Solar-Focus Somatic Model** — Overall **99.3 / 100** (C 99.7 · I 98.9)
 
 ---
@@ -176,8 +176,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

@@ -4,18 +4,18 @@
 
 **Subtitle:** Measured four-tier race — setup · run · results under $\Phi_{\mathrm{EGS}}$ (tiers 1–3 ColabFold live · tier 4 Unmodeled Nova vault-live decipher)
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PRIME-VAULT-ALPHAFOLD-RACE-EGS-2026-09-06`  
-**Registry ID:** `synthobs-prime-vault-alphafold-race-2026-09`  
-**Date:** September 6, 2026 · **Revised:** 2026-09-06 (tier 4 Unmodeled Nova · application companion)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PRIME-VAULT-ALPHAFOLD-RACE-EGS-2026-09-06`
+**Registry ID:** `synthobs-prime-vault-alphafold-race-2026-09`
+**Date:** September 6, 2026 · **Revised:** 2026-09-06 (tier 4 Unmodeled Nova · application companion)
 **Classification:** Comparative **benchmark race report** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · EGS · NSPFRNP  
-**Engine role:** **Application / comparison / demo companion** — not an engine-shelf pin  
-**Standalone suite:** `research/synthobs-prime-vault-alphafold-race/` · [`FractiAI/synthobs-prime-vault-alphafold-race`](https://github.com/FractiAI/synthobs-prime-vault-alphafold-race) · `npm run research:synthobs-prime-vault-alphafold-race`  
-**Race receipt:** `research/synthobs-prime-vault-alphafold-race/data/race_results.json`  
-**Plain note:** [/ship-blog/prime-vault-alphafold-race](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-vault-alphafold-race)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · EGS · NSPFRNP
+**Engine role:** **Application / comparison / demo companion** — not an engine-shelf pin
+**Standalone suite:** `research/synthobs-prime-vault-alphafold-race/` · [`FractiAI/synthobs-prime-vault-alphafold-race`](https://github.com/FractiAI/synthobs-prime-vault-alphafold-race) · `npm run research:synthobs-prime-vault-alphafold-race`
+**Race receipt:** `research/synthobs-prime-vault-alphafold-race/data/race_results.json`
+**Plain note:** [/ship-blog/prime-vault-alphafold-race](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-vault-alphafold-race)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -55,7 +55,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 We set up, ran, and report a **four-tier race** between:
 
-1. **Infinite Octave Prime-Vault** — closed-form $\Phi_{\mathrm{EGS}}$ prime-indexed fold energy on CPU  
+1. **Infinite Octave Prime-Vault** — closed-form $\Phi_{\mathrm{EGS}}$ prime-indexed fold energy on CPU
 2. **ColabFold 1.6.2** — AlphaFold-class open inference (`colabfold_batch`, CPU, `single_sequence`, 1 model, 1 recycle) on tiers 1–3
 
 **Tiers:** ubiquitin (76 aa) · IL-2 + IL-2Rβ fragment (264 aa) · orphan synthetic (89 aa) · **Unmodeled Nova Φ-cryptic (112 aa · never previously modeled)**.
@@ -95,8 +95,8 @@ Latency = wall time of that closed form (21 samples → median). **No MSA. No ne
 
 ```bash
 colabfold_batch --msa-mode single_sequence --num-models 1 --num-recycle 1 \
-  --model-type alphafold2_ptm|alphafold2_multimer_v3 \
-  fixtures/fasta/<tier>.fasta data/colabfold_receipts/<tier>/
+--model-type alphafold2_ptm|alphafold2_multimer_v3 \
+fixtures/fasta/<tier>.fasta data/colabfold_receipts/<tier>/
 ```
 
 Wall-clock includes model load + inference on CPU. pLDDT mean taken from ColabFold score JSON / PDB B-factors.
@@ -126,8 +126,8 @@ Wall-clock includes model load + inference on CPU. pLDDT mean taken from ColabFo
 
 ### 3.1 Reading the table (bounded)
 
-- **Latency:** On this CPU host, prime-vault finished **five to six orders of magnitude** faster than ColabFold under the stated flags on tiers 1–3. That is a **resource/latency** race outcome, not a claim that Φ-energy equals experimental GDT-TS.  
-- **pLDDT:** Orphan synthetic lands lowest (~31), consistent with MSA-free neural uncertainty; ubiquitin highest among the three (~48) under `single_sequence`.  
+- **Latency:** On this CPU host, prime-vault finished **five to six orders of magnitude** faster than ColabFold under the stated flags on tiers 1–3. That is a **resource/latency** race outcome, not a claim that Φ-energy equals experimental GDT-TS.
+- **pLDDT:** Orphan synthetic lands lowest (~31), consistent with MSA-free neural uncertainty; ubiquitin highest among the three (~48) under `single_sequence`.
 - **Complex tier:** two-chain FastA; ColabFold 1.6.2 emitted **per-chain** models in this run (wall-clock is the measured job time for that FastA).
 - **Tier 4 Unmodeled Nova:** deciphering a protein **not as of yet modeled** — vault closes Φ-energy live; ColabFold intentionally deferred until a live rerun so we do not invent pLDDT.
 

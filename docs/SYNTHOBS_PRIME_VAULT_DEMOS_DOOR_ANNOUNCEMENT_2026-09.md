@@ -2,15 +2,15 @@
 
 **Short answer: Yes.** The announcement files a single hub at /demonstrations that links the Race and Chat demonstrations, with reproduction commands for each suite. It reports no new experiment; the claim is a filing and access design, and seating uses the shared email allowlist.
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PRIME-VAULT-DEMOS-DOOR-2026-09-06`  
-**Registry ID:** `synthobs-prime-vault-demos-door-2026-09`  
-**Date:** September 6, 2026  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PRIME-VAULT-DEMOS-DOOR-2026-09-06`
+**Registry ID:** `synthobs-prime-vault-demos-door-2026-09`
+**Date:** September 6, 2026
 **Classification:** Guest **announcement** *(see Honesty boundary)*  
-**Engine role:** Application companion announcement — not an engine-shelf pin  
-**Door:** [/demonstrations](https://www.ssvibelandiaquestfest24x365.com/demonstrations) · also `/demos`  
-**Plain note:** [/ship-blog/prime-vault-demos](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-vault-demos)  
+**Engine role:** Application companion announcement — not an engine-shelf pin
+**Door:** [/demonstrations](https://www.ssvibelandiaquestfest24x365.com/demonstrations) · also `/demos`
+**Plain note:** [/ship-blog/prime-vault-demos](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-vault-demos)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**

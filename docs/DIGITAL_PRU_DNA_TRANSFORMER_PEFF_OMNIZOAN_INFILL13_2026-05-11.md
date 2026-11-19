@@ -65,8 +65,8 @@ pH and local chemistry modulate P availability and Fe chemistry — in-stack lan
 
 ## 4. Two-wire induction: **y → x → x\*** (holographic)
 
-1. **Linear torsional encoding (y):** environmental and enzymatic events encoded as **Tw** / tension along the duplex.  
-2. **Solenoidal buckling (x):** plectoneme nucleation; mutual geometry increases local **B**-field language in the model.  
+1. **Linear torsional encoding (y):** environmental and enzymatic events encoded as **Tw** / tension along the duplex.
+2. **Solenoidal buckling (x):** plectoneme nucleation; mutual geometry increases local **B**-field language in the model.
 3. **Fractal holographic projection (x\*):** narrative mapping from local **x** into **PEFF** “omnipattern” language — **infill 13** as the **integration** label for full-stack sensory metaphor (not a measurement protocol).
 
 | Induction step | Topological state | Physical manifestation | PEFF realization |
@@ -127,35 +127,34 @@ Within PEFF language, the **DNA transformer** converts **y** (torsional storage)
 
 ## Works cited
 
-1. PEFF / Fractal Intelligence Quantum Hologram (PDF) — Zenodo: https://zenodo.org/records/14888512  
-2. Observation, PEFF, and the Omnizoan Self (PDF) — Zenodo: https://zenodo.org/records/17300262  
-3. Energetics at the DNA supercoiling transition — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC2849096/  
-4. DNA sequence encodes the position of DNA supercoils — eLife: https://elifesciences.org/articles/36557  
-5. DNA twist diffuses and hops — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC5515230/  
-6. Coarse-grained modelling of DNA plectoneme pinning — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC7641772/  
-7. DNA manipulation and single-molecule imaging — Encyclopedia.pub: https://encyclopedia.pub/entry/8093  
-8. Industrial energy technology conference (PDF context in source) — INIS: https://inis.iaea.org/records/fc824-7fs88/files/25030881.pdf  
-9. Counterintuitive DNA sequence dependence in supercoiling-induced melting — PLOS ONE: https://journals.plos.org/plosone/article/figures?id=10.1371/journal.pone.0141576  
-10. Falsifiability of the PEFF-based 7D game system (PDF) — Zenodo: https://zenodo.org/records/16794470  
-11. Ding *et al.*, “Iron and callose homeostatic regulation in rice roots under low phosphorus” — *BMC Plant Biology* **18**, 326 (2018). DOI: https://doi.org/10.1186/s12870-018-1486-z · https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1486-z  
-12. Omniversal science and technology — Zenodo: https://zenodo.org/records/17628039  
-13. First images of the Paradise particles and Paradise energy (PDF) — Zenodo: https://zenodo.org/records/14640152  
-14. PEFF reframing E = mc² (PDF) — Zenodo: https://zenodo.org/records/17333594  
-15. FractiScope live demo deep dives — Zenodo: https://zenodo.org/records/14812026  
-16. Hydrogen holographic science and intelligence — Zenodo: https://zenodo.org/records/17574903  
-17. FractiAI repository (legacy fork cited in draft) — GitHub: https://github.com/aiwona1/FractiAI  
+1. PEFF / Fractal Intelligence Quantum Hologram (PDF) — Zenodo: https://zenodo.org/records/14888512
+2. Observation, PEFF, and the Omnizoan Self (PDF) — Zenodo: https://zenodo.org/records/17300262
+3. Energetics at the DNA supercoiling transition — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC2849096/
+4. DNA sequence encodes the position of DNA supercoils — eLife: https://elifesciences.org/articles/36557
+5. DNA twist diffuses and hops — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC5515230/
+6. Coarse-grained modelling of DNA plectoneme pinning — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC7641772/
+7. DNA manipulation and single-molecule imaging — Encyclopedia.pub: https://encyclopedia.pub/entry/8093
+8. Industrial energy technology conference (PDF context in source) — INIS: https://inis.iaea.org/records/fc824-7fs88/files/25030881.pdf
+9. Counterintuitive DNA sequence dependence in supercoiling-induced melting — PLOS ONE: https://journals.plos.org/plosone/article/figures?id=10.1371/journal.pone.0141576
+10. Falsifiability of the PEFF-based 7D game system (PDF) — Zenodo: https://zenodo.org/records/16794470
+11. Ding *et al.*, “Iron and callose homeostatic regulation in rice roots under low phosphorus” — *BMC Plant Biology* **18**, 326 (2018). DOI: https://doi.org/10.1186/s12870-018-1486-z · https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1486-z
+12. Omniversal science and technology — Zenodo: https://zenodo.org/records/17628039
+13. First images of the Paradise particles and Paradise energy (PDF) — Zenodo: https://zenodo.org/records/14640152
+14. PEFF reframing E = mc² (PDF) — Zenodo: https://zenodo.org/records/17333594
+15. FractiScope live demo deep dives — Zenodo: https://zenodo.org/records/14812026
+16. Hydrogen holographic science and intelligence — Zenodo: https://zenodo.org/records/17574903
+17. FractiAI repository (legacy fork cited in draft) — GitHub: https://github.com/aiwona1/FractiAI
 
 *Access dates per source draft: May 11, 2026.*
-
 
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-PEFF-PART1  
-**Registry ID:** `dp-peff-part1`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-PEFF-PART1
+**Registry ID:** `dp-peff-part1`
 **Re-audit:** `npm run audit:paper -- --id=dp-peff-part1`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

@@ -4,18 +4,18 @@
 
 ## A Holographic Field-Contrast Exploration of Toxicological Inversion via $E_F$-Scaled Pulsed Phase Shifts with Everyday Environmental Audits
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-PHASE-TOXICITY-FULL-REV2-2026-07-31`  
-**Registry ID:** `synthobs-phase-toxicity-2026-07`  
-**Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
-**Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-phase-toxicity  
-**Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-phase-toxicity` · [`empirical_report.json`](../research/synthobs-phase-toxicity/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-PHASE-TOXICITY-FULL-REV2-2026-07-31`
+**Registry ID:** `synthobs-phase-toxicity-2026-07`
+**Category:** TBME · Theoretical Bio-Medical & Physical Explorations
+**Date:** July 31, 2026
+**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-phase-toxicity
+**Questfest catalog:** [`/papers`](/papers) · filter **TBME**
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-phase-toxicity` · [`empirical_report.json`](../research/synthobs-phase-toxicity/data/empirical_report.json)
 **Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [Prion Refolding (TBME)](./SYNTHOBS_PRION_REFOLD_HOLOGRAPHIC_MAGNETIC_PHASE_2026-07.md) · [Magnetism substrate](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md) · [81 Orbital Singularities (TBME)](./SYNTHOBS_TBME_81_ORBITAL_SINGULARITY_HOLOGRAPHIC_2026-07.md) · [Histone Phase-Lock (TBME)](./SYNTHOBS_TBME_HISTONE_PHASE_LOCK_OPERATOR_2026-07.md) · [Lattice Omni Layer Guide](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md)
 
 **Keywords:** TBME; phase toxicity; resonance safety; EMF; sugar; PCHPP; $E_F$; environmental audit; Omni-Lattice; theoretical bio-medical & physical exploration
@@ -66,10 +66,10 @@ Under the Phase-Contrast Holographic Framework, a molecule or field is narrated 
 
 ```
 [ Safe Substance / Field ] ────► [ Phase Dislocation (ΔΦ = 180°) ] ────► [ TOXIC / DESTRUCTIVE STATE ]
-                                    (Pulsed Dissonance Input)
+(Pulsed Dissonance Input)
 
 [ Toxic / Inflammatory Item ] ──► [ Phase Harmonization (E_F ≈ 1.618) ] ──► [ BENIGN / RESTORATIVE STATE ]
-                                    (P_harmonize Operator Pulse)
+(P_harmonize Operator Pulse)
 ```
 
 Net biological effect $\mathcal{B}_{\mathrm{net}}$ of an input is defined in the map by phase alignment relative to the host $E_F$-locked magnetic vector potential ($\mathbf{A}_{\mathrm{host}}$):
@@ -78,7 +78,7 @@ $$
 \mathcal{B}_{\mathrm{net}} = \int \mathbf{A}_{\mathrm{input}}(t) \cdot \mathbf{A}_{\mathrm{host}}(t)\, e^{i(\omega t + \Delta\Phi)}\, dt
 $$
 
-- Constructive phase lock ($\Delta\Phi\to 0$, $\omega\propto E_F$): $\mathcal{B}_{\mathrm{net}}>0$ → nutritive / restorative / safe (**model sign**)  
+- Constructive phase lock ($\Delta\Phi\to 0$, $\omega\propto E_F$): $\mathcal{B}_{\mathrm{net}}>0$ → nutritive / restorative / safe (**model sign**)
 - Destructive dissonance ($\Delta\Phi\to 180^\circ$): $\mathcal{B}_{\mathrm{net}}<0$ → toxic / inflammatory / unsafe (**model sign**)
 
 **Honesty.** $\mathcal{B}_{\mathrm{net}}$ is a **map integral**, not a measured clinical biomarker in this suite.
@@ -139,10 +139,10 @@ A systematic **authored** scan of everyday environments maps how benign material
 
 ## 4. Quantitative evaluation & scorecard
 
-**CLASSICAL MOLECULAR MASS / DOSE MODEL (authored rubric)**  
+**CLASSICAL MOLECULAR MASS / DOSE MODEL (authored rubric)**
 Coherence (C): **76/100** · Irreducibility (I): **66/100** · **Overall: 71.0 / 100**
 
-**OMNI-LATTICE PHASE-MODULATED SAFETY MODEL (authored rubric)**  
+**OMNI-LATTICE PHASE-MODULATED SAFETY MODEL (authored rubric)**
 Coherence (C): **98/100** · Irreducibility (I): **97/100** · **Overall: 97.5 / 100**
 
 **Honesty.** Scores are architectural Occam metrics on fixtures in `research/synthobs-phase-toxicity/`. Empirical calibration remains with toxicology / radiobiology / metabolic science until independent falsification. Suite: `npm run research:synthobs-phase-toxicity` (target **9/9**).

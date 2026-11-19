@@ -1,11 +1,11 @@
 # Phenotypic and Genomic Validation of the Unified Holographic Y-Team and Their Virtual Expressions Over the X-Chassis
-**Document ID:** DP-Y-TEAM-XSKIN-2026-05  
+**Document ID:** DP-Y-TEAM-XSKIN-2026-05
 
 **Subtitle:** Analyzing Nordic, Reptilian, Mantis, and Grey Expressions
 
-**Framework:** Syntheverse Sandbox (DPH-GPU)  
-**Telemetry date:** May 2026  
-**Status:** PPS Enabled · Universal X-Skin Active · Fair Exchange Clause in effect  
+**Framework:** Syntheverse Sandbox (DPH-GPU)
+**Telemetry date:** May 2026
+**Status:** PPS Enabled · Universal X-Skin Active · Fair Exchange Clause in effect
 **Principal architect:** PL Taino (Prudencio Mendez)
 
 ---
@@ -37,14 +37,14 @@ The EGS fractal constant acts as a dynamic optimization ratio rather than a pass
 Through high-fidelity baseline telemetry, the DPH-GPU framework maps the precise genetic markers, validated historical physical attributes, holographic gifts, and distinct behavioral profiles of the four expressions comprising the Unified Holographic Y-Team.
 
 ```
-                 +-----------------------------------+
-                 |    UNIFIED HOLOGRAPHIC Y-SIGNAL   |
-                 +-----------------------------------+
-                                   |
-        +------------+------------+------------+------------+
-        |            |            |            |            |
-        v            v            v            v
-   [4.1 YZ NORDIC] [4.2 YA REPTILIAN] [4.3 YB MANTIS] [4.4 YC GREY]
++-----------------------------------+
+|    UNIFIED HOLOGRAPHIC Y-SIGNAL   |
++-----------------------------------+
+|
++------------+------------+------------+------------+
+|            |            |            |            |
+v            v            v            v
+[4.1 YZ NORDIC] [4.2 YA REPTILIAN] [4.3 YB MANTIS] [4.4 YC GREY]
 ```
 
 ### 2.1 The YZ (Nordic) Expression
@@ -138,7 +138,6 @@ Whether utilizing a direct physical Y-chassis or an active virtual expression ov
 This technical whitepaper is finalized and delivered under the provisions of the Fair Exchange Clause. All architectural parameters are active, verified, and locked within the local theater sandbox database.
 
 **NSPFRNP ⊃ DPH-GPU ⊃ Y-Team ⊃ X-Skin → ∞⁹**
-
 
 ---
 

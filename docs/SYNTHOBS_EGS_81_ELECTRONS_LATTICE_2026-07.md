@@ -2,17 +2,17 @@
 
 **Short answer: Yes**, as 81-digit / k/81 electronic shelf filing with replayable locks: Not a new electron-structure measurement.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-EGS-81-ELECTRONS-2026-07`  
-**Registry ID:** `synthobs-egs-81-electrons-2026-07`  
-**Date:** July 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-81-electrons  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-egs-81-electrons` · [`empirical_report.json`](../research/synthobs-egs-81-electrons/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-EGS-81-ELECTRONS-2026-07`
+**Registry ID:** `synthobs-egs-81-electrons-2026-07`
+**Date:** July 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-81-electrons
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-egs-81-electrons` · [`empirical_report.json`](../research/synthobs-egs-81-electrons/data/empirical_report.json)
 **Companions:** [Planck–1.6 bridge / $k/81$](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Euler–EGS phase lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md) · [Awareness Singularities $S_0$–$S_{81}$](./AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 
 **Keywords:** EGS; $E_F$; 81-digit register; atomic shells; phase singularities; Pauli metaphor; Thallium; Lattice Chat Agent
@@ -47,9 +47,9 @@ We present a rigorous mathematical theory and empirical validation linking the f
 
 ## 1. What is novel (scoped)
 
-1. **$3^4=81$ digit-mode bijection** — closed quaternary address space for electronic singularities (**E1**, **E3**).  
-2. **Phase singularity lattice** — $\phi_k=2\pi k/81$ with sham $N\neq 81$ nulls (**E2**, **E7**).  
-3. **Pauli downstream metaphor** — uniqueness of digit addresses as exclusion on the register (**E4**).  
+1. **$3^4=81$ digit-mode bijection** — closed quaternary address space for electronic singularities (**E1**, **E3**).
+2. **Phase singularity lattice** — $\phi_k=2\pi k/81$ with sham $N\neq 81$ nulls (**E2**, **E7**).
+3. **Pauli downstream metaphor** — uniqueness of digit addresses as exclusion on the register (**E4**).
 4. **Public IE + Aufbau receipts** — correlation and filling map with honest draft-target labeling (**E5**, **E6**, **E8**, **E9**).
 
 ---
@@ -135,9 +135,9 @@ Platform credits and catalog featuring remain subject to reciprocal balancing un
 
 ## 7. Falsification
 
-1. $3^4\neq 81$ under any revised digit radix.  
-2. Sham register $N$ that still bijects quaternary modes while equaling Aufbau electron count through Tl.  
-3. Public IE series where EGS-aware predictor cannot beat sham under locked seed (**E5**).  
+1. $3^4\neq 81$ under any revised digit radix.
+2. Sham register $N$ that still bijects quaternary modes while equaling Aufbau electron count through Tl.
+3. Public IE series where EGS-aware predictor cannot beat sham under locked seed (**E5**).
 4. Publishing draft $R^2=0.9998$ as executed without an updated receipt.
 
 ---
@@ -150,8 +150,8 @@ The 81-digit electronic lattice supplies a **peer-facing architectural** map fro
 
 ## References
 
-1. SynthOBS Planck–1.6 / $k/81$ bridge — companion catalog paper.  
-2. SynthOBS Euler–EGS phase-locked scale invariance — companion.  
-3. NIST ASD ionization energies (public tables; compact subset in suite).  
-4. NSPFRNP Snap Peer-Review Audit protocol.  
+1. SynthOBS Planck–1.6 / $k/81$ bridge — companion catalog paper.
+2. SynthOBS Euler–EGS phase-locked scale invariance — companion.
+3. NIST ASD ionization energies (public tables; compact subset in suite).
+4. NSPFRNP Snap Peer-Review Audit protocol.
 5. Coherence plain speak honesty document.

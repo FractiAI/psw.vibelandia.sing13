@@ -4,17 +4,17 @@
 
 **Exploring Protein Folding Rhymes on Public Sky Catalogs**
 
-**Document ID:** `WP-COSMIC-RHYME-EXPEDITION-EGS-2026-11-17`  
-**Registry ID:** `synthobs-cosmic-rhyme-expedition-2026-11`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Document ID:** `WP-COSMIC-RHYME-EXPEDITION-EGS-2026-11-17`
+**Registry ID:** `synthobs-cosmic-rhyme-expedition-2026-11`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Classification:** Application companion Soft Story / computational expedition *(see Honesty boundary)*  
-**Framework:** SynthOBS · FractiSI · Φ_EGS catalog keys · NSPFRNP · Fair Exchange  
-**Engine shelf:** **not pinned** (`ENGINE_SHELF_PINNED = false`)  
-**Ship blog:** `/ship-blog/cosmic-rhyme-expedition`  
-**Whitepaper surface:** `/whitepaper/cosmic-rhyme-expedition`  
-**Suite:** `research/synthobs-cosmic-rhyme-expedition/`  
-**FractiSI mirror:** https://fractisi.vercel.app/library/papers/cosmic-rhyme-expedition/  
-**Seed:** `20261117`  
+**Framework:** SynthOBS · FractiSI · Φ_EGS catalog keys · NSPFRNP · Fair Exchange
+**Engine shelf:** **not pinned** (`ENGINE_SHELF_PINNED = false`)
+**Ship blog:** `/ship-blog/cosmic-rhyme-expedition`
+**Whitepaper surface:** `/whitepaper/cosmic-rhyme-expedition`
+**Suite:** `research/synthobs-cosmic-rhyme-expedition/`
+**FractiSI mirror:** https://fractisi.vercel.app/library/papers/cosmic-rhyme-expedition/
+**Seed:** `20261117`
 **Date:** 17 November 2026
 
 ## Honesty boundary
@@ -53,14 +53,13 @@ The `?` is the discovery target. We do not instruct the system to find filaments
 
 Owned by `/ship-blog/llm-rhyme-cosmic-genome` · suite `research/synthobs-llm-rhyme-cosmic-genome-expedition/`.
 
-
 ## Method (C1–C4; C5 split)
 
 Pre-registered in `research/synthobs-cosmic-rhyme-expedition/PROTOCOL.md` before result rows. Fixtures are vendored under `research/synthobs-cosmic-rhyme-expedition/fixtures/` and regenerable from public hosts:
 
-1. NASA Exoplanet Archive TAP (`pscomppars`) — confirmed planets with period, radius, stellar parameters.  
-2. JPL SSD Close-Approach Data (CAD) API — NEO encounter observables.  
-3. OpenNGC deep-sky catalog — morphologies, magnitudes, positions.  
+1. NASA Exoplanet Archive TAP (`pscomppars`) — confirmed planets with period, radius, stellar parameters.
+2. JPL SSD Close-Approach Data (CAD) API — NEO encounter observables.
+3. OpenNGC deep-sky catalog — morphologies, magnitudes, positions.
 4. WMAP 9-year TT spectrum (LAMBDA) — multipole sequence.
 
 | Arm | Representation |
@@ -69,10 +68,10 @@ Pre-registered in `research/synthobs-cosmic-rhyme-expedition/PROTOCOL.md` before
 | **FLAT** | Same materials dumped without a ranked map |
 | **AWARE** | Explicit coupling board from measured multi-feature relationships |
 
-- **C1** — held-out long-range partner recovery (exoplanets, NEOs, OpenNGC). Gold partner = strongest unlabeled cosine coupling outside the local window; H1 requires AWARE−LINEAR ≥ +0.25 with bootstrap CI excluding 0.  
-- **C2** — open motif discovery vs feature-permutation null + held-out replication + Benjamini–Hochberg FDR (q=0.1); tautological feature pairs banned before scoring.  
-- **C3** — WMAP TT multipole spectral rhyme via lag-correlation boards.  
-- **C4** — novel-physics candidate search on residuals after selection/continuum removal (exo, WMAP, NGC, NEO) with shuffle / footprint nulls; known-template list locked. Candidate ≠ confirmed law.  
+- **C1** — held-out long-range partner recovery (exoplanets, NEOs, OpenNGC). Gold partner = strongest unlabeled cosine coupling outside the local window; H1 requires AWARE−LINEAR ≥ +0.25 with bootstrap CI excluding 0.
+- **C2** — open motif discovery vs feature-permutation null + held-out replication + Benjamini–Hochberg FDR (q=0.1); tautological feature pairs banned before scoring.
+- **C3** — WMAP TT multipole spectral rhyme via lag-correlation boards.
+- **C4** — novel-physics candidate search on residuals after selection/continuum removal (exo, WMAP, NGC, NEO) with shuffle / footprint nulls; known-template list locked. Candidate ≠ confirmed law.
 - **C5** — LLM / language-pack rhyme: **split** to `synthobs-llm-rhyme-cosmic-genome-expedition-2026-11` (`/ship-blog/llm-rhyme-cosmic-genome`), which also adds a human-genome demonstration arm.
 
 **Reproducibility:**
@@ -115,10 +114,10 @@ Machine catalogs: `research/synthobs-cosmic-rhyme-expedition/data/DISCOVERY_CATA
 
 ### What we found · novelty ladder (plain language)
 
-1. **Focus (method):** the protein-folding LINEAR/FLAT/AWARE grammar recovers long-range partners on four public sky layers (~0% → 100% on held-out long-range tasks). That is the expedition title claim.  
-2. **Moderate novelty (observation):** unsupervised motifs that survived held-out + FDR without being told to hunt selection effects — especially exoplanet discovery-year ↔ stellar size/temperature (survey-history fingerprint) and OpenNGC size ↔ sky position/brightness (catalog geometry). Patterns about how the observable cosmos is *recorded*.  
-3. **Secondary · two candidates for new physics:** C4 residualizes selection/continuum; WMAP residual lags **11** and **14** beat nulls off the locked acoustic template — **two candidates for new physics** under this protocol (not finished laws; beam/mask/instrument stories stay open). Acoustic-leaning lags 17–19 and exo mass–radius residuals are labeled rediscovery.  
-4. **Language packs:** owned by the LLM Rhyme Expedition (cosmic + genome demo), not this paper’s primary claim.  
+1. **Focus (method):** the protein-folding LINEAR/FLAT/AWARE grammar recovers long-range partners on four public sky layers (~0% → 100% on held-out long-range tasks). That is the expedition title claim.
+2. **Moderate novelty (observation):** unsupervised motifs that survived held-out + FDR without being told to hunt selection effects — especially exoplanet discovery-year ↔ stellar size/temperature (survey-history fingerprint) and OpenNGC size ↔ sky position/brightness (catalog geometry). Patterns about how the observable cosmos is *recorded*.
+3. **Secondary · two candidates for new physics:** C4 residualizes selection/continuum; WMAP residual lags **11** and **14** beat nulls off the locked acoustic template — **two candidates for new physics** under this protocol (not finished laws; beam/mask/instrument stories stay open). Acoustic-leaning lags 17–19 and exo mass–radius residuals are labeled rediscovery.
+4. **Language packs:** owned by the LLM Rhyme Expedition (cosmic + genome demo), not this paper’s primary claim.
 5. **Boundaries:** not a Universe ontology; not a named filament/void detection campaign. AWARE wins on C1–C3 because it uses a ranked relationship board LINEAR never sees.
 
 ## Φ_EGS note
@@ -131,12 +130,12 @@ Bridge: NVIDIA Goldilocks / E9–E12 · FractiSI Test Drive relational/collab la
 
 ## References
 
-1. NASA Exoplanet Archive — Planetary Systems Composite Parameters (`pscomppars`), IPAC/Caltech. https://exoplanetarchive.ipac.caltech.edu/  
-2. JPL Solar System Dynamics — Close-Approach Data API. https://ssd-api.jpl.nasa.gov/doc/cad.html  
-3. Verga, M. — OpenNGC catalog (deep-sky objects). https://github.com/mattiaverga/OpenNGC  
-4. Hinshaw et al. / LAMBDA — WMAP nine-year TT power spectrum data product. https://lambda.gsfc.nasa.gov/  
-5. FractiAI — NVIDIA Goldilocks Awareness Expedition (E9–E12 folding rhyme). `docs/SYNTHOBS_NVIDIA_GOLDILOCKS_AWARENESS_EXPEDITION_2026-11.md`  
-6. FractiAI — FractiSI Multi-Agent Cosmic Rhyme mirror. https://github.com/FractiAI/FractiSI-Multi-Agent  
+1. NASA Exoplanet Archive — Planetary Systems Composite Parameters (`pscomppars`), IPAC/Caltech. https://exoplanetarchive.ipac.caltech.edu/
+2. JPL Solar System Dynamics — Close-Approach Data API. https://ssd-api.jpl.nasa.gov/doc/cad.html
+3. Verga, M. — OpenNGC catalog (deep-sky objects). https://github.com/mattiaverga/OpenNGC
+4. Hinshaw et al. / LAMBDA — WMAP nine-year TT power spectrum data product. https://lambda.gsfc.nasa.gov/
+5. FractiAI — NVIDIA Goldilocks Awareness Expedition (E9–E12 folding rhyme). `docs/SYNTHOBS_NVIDIA_GOLDILOCKS_AWARENESS_EXPEDITION_2026-11.md`
+6. FractiAI — FractiSI Multi-Agent Cosmic Rhyme mirror. https://github.com/FractiAI/FractiSI-Multi-Agent
 
 ## Fair Exchange
 

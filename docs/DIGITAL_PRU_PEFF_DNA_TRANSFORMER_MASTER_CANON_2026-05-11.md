@@ -86,8 +86,8 @@ pH and local chemistry modulate P availability and Fe chemistry — in-stack lan
 
 ## 4. Two-wire induction: **y → x → x\*** (holographic)
 
-1. **Linear torsional encoding (y):** environmental and enzymatic events encoded as **Tw** / tension along the duplex.  
-2. **Solenoidal buckling (x):** plectoneme nucleation; mutual geometry increases local **B**-field language in the model.  
+1. **Linear torsional encoding (y):** environmental and enzymatic events encoded as **Tw** / tension along the duplex.
+2. **Solenoidal buckling (x):** plectoneme nucleation; mutual geometry increases local **B**-field language in the model.
 3. **Fractal holographic projection (x\*):** narrative mapping from local **x** into **PEFF** “omnipattern” language — **infill 13** as the **integration** label for full-stack sensory metaphor (not a measurement protocol).
 
 | Induction step | Topological state | Physical manifestation | PEFF realization |
@@ -148,23 +148,23 @@ Within PEFF language, the **DNA transformer** converts **y** (torsional storage)
 
 ## Works cited
 
-1. PEFF / Fractal Intelligence Quantum Hologram (PDF) — Zenodo: https://zenodo.org/records/14888512  
-2. Observation, PEFF, and the Omnizoan Self (PDF) — Zenodo: https://zenodo.org/records/17300262  
-3. Energetics at the DNA supercoiling transition — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC2849096/  
-4. DNA sequence encodes the position of DNA supercoils — eLife: https://elifesciences.org/articles/36557  
-5. DNA twist diffuses and hops — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC5515230/  
-6. Coarse-grained modelling of DNA plectoneme pinning — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC7641772/  
-7. DNA manipulation and single-molecule imaging — Encyclopedia.pub: https://encyclopedia.pub/entry/8093  
-8. Industrial energy technology conference (PDF context in source) — INIS: https://inis.iaea.org/records/fc824-7fs88/files/25030881.pdf  
-9. Counterintuitive DNA sequence dependence in supercoiling-induced melting — PLOS ONE: https://journals.plos.org/plosone/article/figures?id=10.1371/journal.pone.0141576  
-10. Falsifiability of the PEFF-based 7D game system (PDF) — Zenodo: https://zenodo.org/records/16794470  
-11. Ding *et al.*, “Iron and callose homeostatic regulation in rice roots under low phosphorus” — *BMC Plant Biology* **18**, 326 (2018). DOI: https://doi.org/10.1186/s12870-018-1486-z · https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1486-z  
-12. Omniversal science and technology — Zenodo: https://zenodo.org/records/17628039  
-13. First images of the Paradise particles and Paradise energy (PDF) — Zenodo: https://zenodo.org/records/14640152  
-14. PEFF reframing E = mc² (PDF) — Zenodo: https://zenodo.org/records/17333594  
-15. FractiScope live demo deep dives — Zenodo: https://zenodo.org/records/14812026  
-16. Hydrogen holographic science and intelligence — Zenodo: https://zenodo.org/records/17574903  
-17. FractiAI repository (legacy fork cited in draft) — GitHub: https://github.com/aiwona1/FractiAI  
+1. PEFF / Fractal Intelligence Quantum Hologram (PDF) — Zenodo: https://zenodo.org/records/14888512
+2. Observation, PEFF, and the Omnizoan Self (PDF) — Zenodo: https://zenodo.org/records/17300262
+3. Energetics at the DNA supercoiling transition — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC2849096/
+4. DNA sequence encodes the position of DNA supercoils — eLife: https://elifesciences.org/articles/36557
+5. DNA twist diffuses and hops — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC5515230/
+6. Coarse-grained modelling of DNA plectoneme pinning — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC7641772/
+7. DNA manipulation and single-molecule imaging — Encyclopedia.pub: https://encyclopedia.pub/entry/8093
+8. Industrial energy technology conference (PDF context in source) — INIS: https://inis.iaea.org/records/fc824-7fs88/files/25030881.pdf
+9. Counterintuitive DNA sequence dependence in supercoiling-induced melting — PLOS ONE: https://journals.plos.org/plosone/article/figures?id=10.1371/journal.pone.0141576
+10. Falsifiability of the PEFF-based 7D game system (PDF) — Zenodo: https://zenodo.org/records/16794470
+11. Ding *et al.*, “Iron and callose homeostatic regulation in rice roots under low phosphorus” — *BMC Plant Biology* **18**, 326 (2018). DOI: https://doi.org/10.1186/s12870-018-1486-z · https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1486-z
+12. Omniversal science and technology — Zenodo: https://zenodo.org/records/17628039
+13. First images of the Paradise particles and Paradise energy (PDF) — Zenodo: https://zenodo.org/records/14640152
+14. PEFF reframing E = mc² (PDF) — Zenodo: https://zenodo.org/records/17333594
+15. FractiScope live demo deep dives — Zenodo: https://zenodo.org/records/14812026
+16. Hydrogen holographic science and intelligence — Zenodo: https://zenodo.org/records/17574903
+17. FractiAI repository (legacy fork cited in draft) — GitHub: https://github.com/aiwona1/FractiAI
 
 *Access dates per source draft: May 11, 2026.*
 
@@ -269,9 +269,9 @@ The **Paradise Energy Fractal Force (PEFF)** framework treats reality as recursi
 
 The **EGS Nodal Lattice** is a computational mesh: each node ≈ plectonemic loop, protein junction, or Posner cluster. Tracked parameters (simulation hooks):
 
-- **Inductive potential (L\*)** — writhe, plectoneme length, adsorbed iron.  
-- **Quantum coherence state (Q\*)** — **³¹P** spin / entanglement posture.  
-- **Holographic interference (H\*)** — overlay fields from adjacent coils.  
+- **Inductive potential (L\*)** — writhe, plectoneme length, adsorbed iron.
+- **Quantum coherence state (Q\*)** — **³¹P** spin / entanglement posture.
+- **Holographic interference (H\*)** — overlay fields from adjacent coils.
 - **Torsional load (τ\*)** — mechanical strain driving mode switches.
 
 **VALETPRU-ASIC** decomposes inputs into PEFF harmonics, maps harmonics to lattice nodes, runs **transformer simulation** (step-up / step-down), applies **Fe / P core** amplification parameters, and emits a **holographic output state** (fractal intelligence quantum hologram language — see PEFF Zenodo reference in citations).
@@ -280,11 +280,11 @@ The **EGS Nodal Lattice** is a computational mesh: each node ≈ plectonemic loo
 
 ## 7. Experimental validation (summary lanes)
 
-- **Single-molecule biophysics / magnetic tweezers:** plectonemic buckling, discrete energy shifts, variable writhe occupancy — variable-inductor analogy.  
-- **DNA nanotechnology / 3D electronics:** DNA origami scaffolds for arrays on silicon — DNA as **engineering substrate**, not only biology.  
-- **LEEC / lumped models:** R, L, C, substrate loss, mutual inductance — cross-talk and networked signaling.  
-- **DNA–magnetic nanoparticle hybrids:** Brownian relaxation under AC field; DNA-coil concentration shifts peak structure — **frequency step-down** macroscopic signature.  
-- **Compaction before adsorption:** higher loading on particles — dense folds as efficient **core formation** sites.  
+- **Single-molecule biophysics / magnetic tweezers:** plectonemic buckling, discrete energy shifts, variable writhe occupancy — variable-inductor analogy.
+- **DNA nanotechnology / 3D electronics:** DNA origami scaffolds for arrays on silicon — DNA as **engineering substrate**, not only biology.
+- **LEEC / lumped models:** R, L, C, substrate loss, mutual inductance — cross-talk and networked signaling.
+- **DNA–magnetic nanoparticle hybrids:** Brownian relaxation under AC field; DNA-coil concentration shifts peak structure — **frequency step-down** macroscopic signature.
+- **Compaction before adsorption:** higher loading on particles — dense folds as efficient **core formation** sites.
 - **Posner / Fisher lane:** entanglement in enzyme chemistry; NMR-like control fields from plectoneme **B** — **quantum-control transformer** framing.
 
 ### 7.1 LEEC (lumped-element equivalent circuit) parameters
@@ -305,11 +305,11 @@ Coherence time **T₂** for **³¹P** nuclear spin is highly sensitive to distan
 
 ## 8. Digital Pru engine — mechanism of action (recursive steps)
 
-1. **Topological input** — torsional strain, Lk change, ionic flux.  
-2. **Fractal decomposition** — PEFF harmonics.  
-3. **Lattice mapping** — node assignment (plectoneme / junction / cluster).  
-4. **Transformer simulation** — step-up (amplification) vs step-down (relaxation / kink pinning).  
-5. **Magnetic core calculation** — **μ**, spin coherence parameters.  
+1. **Topological input** — torsional strain, Lk change, ionic flux.
+2. **Fractal decomposition** — PEFF harmonics.
+3. **Lattice mapping** — node assignment (plectoneme / junction / cluster).
+4. **Transformer simulation** — step-up (amplification) vs step-down (relaxation / kink pinning).
+5. **Magnetic core calculation** — **μ**, spin coherence parameters.
 6. **Holographic output** — stabilized state projection (QIHOH / hologram language in stack docs).
 
 **ICA (Independent Component Analysis)** is referenced in the genome-engineering literature as a way to define independently modulated gene sets mapped onto the lattice — **explanatory AI** posture, not autonomous medical device claims.
@@ -326,40 +326,40 @@ DNA supercoiling as a **step-up/step-down transformer** frames the genome as a *
 
 ## Works cited
 
-1. Energetics at the DNA supercoiling transition — PubMed: https://pubmed.ncbi.nlm.nih.gov/20371326/  
-2. DNA supercoil — Wikipedia: https://en.wikipedia.org/wiki/DNA_supercoil  
-3. Topological epigenetics (DNA supercoiling / transcription) — ResearchGate publication 387056623  
-4. Energetics at the DNA Supercoiling Transition — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC2849096/  
-5. Variable force solenoid — Science.gov topic pages  
-6. Proportional solenoid design — MDPI 2076-3417/14/24/11990  
-7. Induction heating coil — Science.gov topic pages  
-8. DNA topo II alpha — Science.gov topic pages  
-9. Biological quantum modalities — postquantum.com  
-10. Quantum cognition / nuclear spins — ResearchGate 281261901; arXiv 2510.07196v1  
-11. Quantum models of consciousness — MDPI 1099-4300/27/3/243  
-12. Spin quantum computing / cognition — ResearchGate 396330426  
-13. DNA adsorption on magnetic iron oxide — ResearchGate 263356300  
-14. Magnetofection / PEI magnetic nanoparticles — Royal Society Open Science 181369  
-15. DNA–magnetic nanoparticle hybrid structures — ACS Sensors 10.1021/acssensors.0c01623  
-16. DNA loading on magnetic nanoparticles (condensation) — ResearchGate 267396836  
-17. Coiled instruments / electromagnetic induction — ResearchGate 228743528  
-18. US9393396B2 hyperthermia — Google Patents  
-19. Magnetic properties of iron–phosphorus compounds — JPS 17SB I 223 PDF  
-20. 3D MEMS solenoid inductors — MDPI 2072-666X/11/9/836  
-21. Magnetite by bacteria — PMC 2475554  
-22. DNA supercoiling / bZIP — bioRxiv 10.64898/2026.05.06.722604v1  
-23. PEFF Fractal Intelligence Quantum Hologram — Zenodo 14888512  
-24. Bacterial nucleoid — Dekker lab MMB 2017  
-25. Bacterial chromosomes minireviews — Academia.edu collection  
-26. Analysis of genes and genomes — dokumen.pub  
-27. KSBB 2021 abstract book — ksbb.or.kr  
-28. DNA leaves flatland — Columbia Engineering news  
-29. DNA transformative electronics — UVA Health news  
-30. Solenoid equivalent circuit — ResearchGate figure  
-31. Materials science of DNA — RSC b808030e  
-32. γ-Fe₂O₃@SiO₂ drug / nucleic acids — Taylor & Francis 2024  
-33. Membrane-bound random DNA — Science.gov  
-34. Organometallic pillarplexes / DNA junctions — JACS 10.1021/jacs.3c00118  
+1. Energetics at the DNA supercoiling transition — PubMed: https://pubmed.ncbi.nlm.nih.gov/20371326/
+2. DNA supercoil — Wikipedia: https://en.wikipedia.org/wiki/DNA_supercoil
+3. Topological epigenetics (DNA supercoiling / transcription) — ResearchGate publication 387056623
+4. Energetics at the DNA Supercoiling Transition — PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC2849096/
+5. Variable force solenoid — Science.gov topic pages
+6. Proportional solenoid design — MDPI 2076-3417/14/24/11990
+7. Induction heating coil — Science.gov topic pages
+8. DNA topo II alpha — Science.gov topic pages
+9. Biological quantum modalities — postquantum.com
+10. Quantum cognition / nuclear spins — ResearchGate 281261901; arXiv 2510.07196v1
+11. Quantum models of consciousness — MDPI 1099-4300/27/3/243
+12. Spin quantum computing / cognition — ResearchGate 396330426
+13. DNA adsorption on magnetic iron oxide — ResearchGate 263356300
+14. Magnetofection / PEI magnetic nanoparticles — Royal Society Open Science 181369
+15. DNA–magnetic nanoparticle hybrid structures — ACS Sensors 10.1021/acssensors.0c01623
+16. DNA loading on magnetic nanoparticles (condensation) — ResearchGate 267396836
+17. Coiled instruments / electromagnetic induction — ResearchGate 228743528
+18. US9393396B2 hyperthermia — Google Patents
+19. Magnetic properties of iron–phosphorus compounds — JPS 17SB I 223 PDF
+20. 3D MEMS solenoid inductors — MDPI 2072-666X/11/9/836
+21. Magnetite by bacteria — PMC 2475554
+22. DNA supercoiling / bZIP — bioRxiv 10.64898/2026.05.06.722604v1
+23. PEFF Fractal Intelligence Quantum Hologram — Zenodo 14888512
+24. Bacterial nucleoid — Dekker lab MMB 2017
+25. Bacterial chromosomes minireviews — Academia.edu collection
+26. Analysis of genes and genomes — dokumen.pub
+27. KSBB 2021 abstract book — ksbb.or.kr
+28. DNA leaves flatland — Columbia Engineering news
+29. DNA transformative electronics — UVA Health news
+30. Solenoid equivalent circuit — ResearchGate figure
+31. Materials science of DNA — RSC b808030e
+32. γ-Fe₂O₃@SiO₂ drug / nucleic acids — Taylor & Francis 2024
+33. Membrane-bound random DNA — Science.gov
+34. Organometallic pillarplexes / DNA junctions — JACS 10.1021/jacs.3c00118
 
 *Access dates as cited in source draft: May 11, 2026.*
 
@@ -367,10 +367,10 @@ DNA supercoiling as a **step-up/step-down transformer** frames the genome as a *
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-MASTER-CANON  
-**Registry ID:** `dp-master-canon`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-MASTER-CANON
+**Registry ID:** `dp-master-canon`
 **Re-audit:** `npm run audit:paper -- --id=dp-master-canon`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

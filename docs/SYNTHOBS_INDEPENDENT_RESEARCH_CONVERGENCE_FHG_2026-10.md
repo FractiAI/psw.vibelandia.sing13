@@ -6,14 +6,14 @@
 
 **Literature synthesis + integrated FHG convergence test (Layer B executed in Hero Leo Computational Lab · fixtures)**
 
-**Research lead:** Pru “El Taíno” Méndez · **Research program:** FractiAI  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-INDEPENDENT-RESEARCH-CONVERGENCE-FHG-2026-10-14`  
-**Registry ID:** `synthobs-independent-research-convergence-fhg-2026-10`  
-**Published:** 2026-10-14 · **Evidence cutoff:** October 14, 2026  
-**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Homeostasis Expedition  
-**Guest surfaces:** [`/ship-blog/all-roads-independent-research-convergence`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/all-roads-independent-research-convergence) · [`/whitepaper/all-roads-independent-research-convergence`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/all-roads-independent-research-convergence) · [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition)  
-**Slot:** **application companion (not ENGINE_SHELF)** · Homeostasis Expedition  
+**Research lead:** Pru “El Taíno” Méndez · **Research program:** FractiAI
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-INDEPENDENT-RESEARCH-CONVERGENCE-FHG-2026-10-14`
+**Registry ID:** `synthobs-independent-research-convergence-fhg-2026-10`
+**Published:** 2026-10-14 · **Evidence cutoff:** October 14, 2026
+**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Homeostasis Expedition
+**Guest surfaces:** [`/ship-blog/all-roads-independent-research-convergence`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/all-roads-independent-research-convergence) · [`/whitepaper/all-roads-independent-research-convergence`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/all-roads-independent-research-convergence) · [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition)
+**Slot:** **application companion (not ENGINE_SHELF)** · Homeostasis Expedition
 **Ship blog (feature):** [`interfaces/blog-independent-research-convergence-fhg-2026-10.html`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/all-roads-independent-research-convergence)
 
 ---
@@ -159,7 +159,7 @@ The following six anchors are the **exact** independent-research spine for IRC-F
 
 ### 6.1 Fractal lane — language complexity and LLM mimicry
 
-**Alabdulmohsin, I., & Steiner, A. P. (ICML 2025)** — *A Tale of Two Structures: Do LLMs Capture the Fractal Complexity of Language?*  
+**Alabdulmohsin, I., & Steiner, A. P. (ICML 2025)** — *A Tale of Two Structures: Do LLMs Capture the Fractal Complexity of Language?*
 PMLR: [ICML 2025 proceedings](https://proceedings.mlr.press/v267/alabdulmohsin25a.html) · Poster: [ICML virtual](https://icml.cc/virtual/2025/poster/44028)
 
 | Claim (summarized) | FHG lane | IRC-FHG use |
@@ -170,7 +170,7 @@ PMLR: [ICML 2025 proceedings](https://proceedings.mlr.press/v267/alabdulmohsin25
 
 ### 6.2 Fractal lane — component-level consistency for reasoning
 
-**Luo, Z., Liu, J., Miao, Y., Chen, L., & Li, D. (ICML 2026)** — *Task-and-Model-Aware Fractal-Consistency for Efficient LLM Reasoning* (TMAFC)  
+**Luo, Z., Liu, J., Miao, Y., Chen, L., & Li, D. (ICML 2026)** — *Task-and-Model-Aware Fractal-Consistency for Efficient LLM Reasoning* (TMAFC)
 Poster: [ICML virtual](https://icml.cc/virtual/2026/poster/60626) · OpenReview: [forum yKk1hcDCkN](https://openreview.net/forum?id=yKk1hcDCkN)
 
 | Claim (summarized) | FHG lane | IRC-FHG use |
@@ -181,7 +181,7 @@ Poster: [ICML virtual](https://icml.cc/virtual/2026/poster/60626) · OpenReview:
 
 ### 6.3 Holographic lane — task-agnostic expansion / reduction on graphs
 
-**Bevilacqua, B., Robinson, J., Leskovec, J., & Ribeiro, B. (ICLR 2025)** — *Holographic Node Representations: Pre-training Task-Agnostic Node Embeddings*  
+**Bevilacqua, B., Robinson, J., Leskovec, J., & Ribeiro, B. (ICLR 2025)** — *Holographic Node Representations: Pre-training Task-Agnostic Node Embeddings*
 PDF: [ICLR 2025](https://proceedings.iclr.cc/paper_files/paper/2025/file/a11f92ee1cd124fddba25cc76a45055a-Paper-Conference.pdf) · Poster: [ICML virtual](https://iclr.cc/virtual/2025/poster/28064)
 
 | Claim (summarized) | FHG lane | IRC-FHG use |
@@ -192,7 +192,7 @@ PDF: [ICLR 2025](https://proceedings.iclr.cc/paper_files/paper/2025/file/a11f92e
 
 ### 6.4 Holographic lane — hypothesis-path expansion and reduction under budget
 
-**Qiu, S., Huang, H., Zhong, S., Zuo, P., & Li, M. (ICML 2026)** — *HyPER: Bridging Exploration and Exploitation for Scalable LLM Reasoning with Hypothesis Path Expansion and Reduction*  
+**Qiu, S., Huang, H., Zhong, S., Zuo, P., & Li, M. (ICML 2026)** — *HyPER: Bridging Exploration and Exploitation for Scalable LLM Reasoning with Hypothesis Path Expansion and Reduction*
 Poster: [ICML virtual](https://icml.cc/virtual/2026/poster/65181) · arXiv: [2602.06527](https://arxiv.org/abs/2602.06527) · Code: [ShengxuanQiu/HyPER](https://github.com/ShengxuanQiu/HyPER)
 
 | Claim (summarized) | FHG lane | IRC-FHG use |
@@ -203,7 +203,7 @@ Poster: [ICML virtual](https://icml.cc/virtual/2026/poster/65181) · arXiv: [260
 
 ### 6.5 Goldilocks lane — optimal self-consistency and sample scaling
 
-**Feng, A., Alonso, M., Odonnat, A., Feofanov, V., & Redko, I. (ICML 2026)** — *Optimal Self-Consistency for Efficient Reasoning with Large Language Models*  
+**Feng, A., Alonso, M., Odonnat, A., Feofanov, V., & Redko, I. (ICML 2026)** — *Optimal Self-Consistency for Efficient Reasoning with Large Language Models*
 Poster: [ICML virtual](https://icml.cc/virtual/2026/poster/61225) · arXiv: [2511.12309](https://arxiv.org/abs/2511.12309)
 
 | Claim (summarized) | FHG lane | IRC-FHG use |
@@ -214,7 +214,7 @@ Poster: [ICML virtual](https://icml.cc/virtual/2026/poster/61225) · arXiv: [251
 
 ### 6.6 Goldilocks lane — recursive self-improvement with hidden evaluation
 
-**Srikanth, D., Zhao, B., Xu, D., Wu, Y., & Jiang, Z. (2026)** — *Recursive Self-Improvement of AI Research Agents*  
+**Srikanth, D., Zhao, B., Xu, D., Wu, Y., & Jiang, Z. (2026)** — *Recursive Self-Improvement of AI Research Agents*
 arXiv: [2609.26457](https://arxiv.org/abs/2609.26457)
 
 | Claim (summarized) | FHG lane | IRC-FHG use |
@@ -356,20 +356,20 @@ Controls are **wasteful baselines**, not sycophancy prompts: fixed-sample self-c
 ┌──────────────────────────────────────────────────────────┐
 │ Pre-registered panel P1–P6 (blind objectives, shared budget) │
 └────────────────────────────┬─────────────────────────────┘
-                             ▼
-                  ┌──────────────────────┐
-                  │ FHG post-hoc scorer  │
-                  │  S_F , S_H , S_G     │
-                  └──────────┬───────────┘
-                             ▼
-                  ┌──────────────────────┐
-                  │ Wasteful baselines   │
-                  │ + vocabulary falsifier│
-                  └──────────┬───────────┘
-                             ▼
-                  ┌──────────────────────┐
-                  │ Gates + null report  │
-                  └──────────────────────┘
+▼
+┌──────────────────────┐
+│ FHG post-hoc scorer  │
+│  S_F , S_H , S_G     │
+└──────────┬───────────┘
+▼
+┌──────────────────────┐
+│ Wasteful baselines   │
+│ + vocabulary falsifier│
+└──────────┬───────────┘
+▼
+┌──────────────────────┐
+│ Gates + null report  │
+└──────────────────────┘
 ```
 
 ### 10.4 Cohort table (proposed)
@@ -531,14 +531,14 @@ The title question — **do different roads still meet at Fractal, Holographic, 
 
 ## References
 
-1. Alabdulmohsin, I., & Steiner, A. P. (2025). A Tale of Two Structures: Do LLMs Capture the Fractal Complexity of Language? *Proceedings of the 42nd International Conference on Machine Learning (ICML 2025)*, PMLR 267, 964–1025. https://proceedings.mlr.press/v267/alabdulmohsin25a.html  
-2. Luo, Z., Liu, J., Miao, Y., Chen, L., & Li, D. (2026). Task-and-Model-Aware Fractal-Consistency for Efficient LLM Reasoning. *Forty-third International Conference on Machine Learning (ICML 2026)*. https://openreview.net/forum?id=yKk1hcDCkN · https://icml.cc/virtual/2026/poster/60626  
-3. Bevilacqua, B., Robinson, J., Leskovec, J., & Ribeiro, B. (2025). Holographic Node Representations: Pre-training Task-Agnostic Node Embeddings. *International Conference on Learning Representations (ICLR 2025)*. https://proceedings.iclr.cc/paper_files/paper/2025/file/a11f92ee1cd124fddba25cc76a45055a-Paper-Conference.pdf  
-4. Qiu, S., Huang, H., Zhong, S., Zuo, P., & Li, M. (2026). HyPER: Bridging Exploration and Exploitation for Scalable LLM Reasoning with Hypothesis Path Expansion and Reduction. *International Conference on Machine Learning (ICML 2026)*. https://arxiv.org/abs/2602.06527 · https://icml.cc/virtual/2026/poster/65181  
-5. Feng, A., Alonso, M., Odonnat, A., Feofanov, V., & Redko, I. (2026). Optimal Self-Consistency for Efficient Reasoning with Large Language Models. *International Conference on Machine Learning (ICML 2026)*. https://arxiv.org/abs/2511.12309 · https://icml.cc/virtual/2026/poster/61225  
-6. Srikanth, D., Zhao, B., Xu, D., Wu, Y., & Jiang, Z. (2026). Recursive Self-Improvement of AI Research Agents. *arXiv preprint* arXiv:2609.26457. https://arxiv.org/abs/2609.26457  
-7. Shannon, C. E. (1948). A Mathematical Theory of Communication. *(classical information-rate ancestor)*  
-8. Mallat, S. (1989). A theory for multiresolution signal decomposition. *(classical multiscale ancestor)*  
+1. Alabdulmohsin, I., & Steiner, A. P. (2025). A Tale of Two Structures: Do LLMs Capture the Fractal Complexity of Language? *Proceedings of the 42nd International Conference on Machine Learning (ICML 2025)*, PMLR 267, 964–1025. https://proceedings.mlr.press/v267/alabdulmohsin25a.html
+2. Luo, Z., Liu, J., Miao, Y., Chen, L., & Li, D. (2026). Task-and-Model-Aware Fractal-Consistency for Efficient LLM Reasoning. *Forty-third International Conference on Machine Learning (ICML 2026)*. https://openreview.net/forum?id=yKk1hcDCkN · https://icml.cc/virtual/2026/poster/60626
+3. Bevilacqua, B., Robinson, J., Leskovec, J., & Ribeiro, B. (2025). Holographic Node Representations: Pre-training Task-Agnostic Node Embeddings. *International Conference on Learning Representations (ICLR 2025)*. https://proceedings.iclr.cc/paper_files/paper/2025/file/a11f92ee1cd124fddba25cc76a45055a-Paper-Conference.pdf
+4. Qiu, S., Huang, H., Zhong, S., Zuo, P., & Li, M. (2026). HyPER: Bridging Exploration and Exploitation for Scalable LLM Reasoning with Hypothesis Path Expansion and Reduction. *International Conference on Machine Learning (ICML 2026)*. https://arxiv.org/abs/2602.06527 · https://icml.cc/virtual/2026/poster/65181
+5. Feng, A., Alonso, M., Odonnat, A., Feofanov, V., & Redko, I. (2026). Optimal Self-Consistency for Efficient Reasoning with Large Language Models. *International Conference on Machine Learning (ICML 2026)*. https://arxiv.org/abs/2511.12309 · https://icml.cc/virtual/2026/poster/61225
+6. Srikanth, D., Zhao, B., Xu, D., Wu, Y., & Jiang, Z. (2026). Recursive Self-Improvement of AI Research Agents. *arXiv preprint* arXiv:2609.26457. https://arxiv.org/abs/2609.26457
+7. Shannon, C. E. (1948). A Mathematical Theory of Communication. *(classical information-rate ancestor)*
+8. Mallat, S. (1989). A theory for multiresolution signal decomposition. *(classical multiscale ancestor)*
 
 ---
 
@@ -562,6 +562,6 @@ This document was prepared by the **SynthOBS Autonomous Agent** operating in the
 
 **Document ID:** `WP-SYNTHOBS-INDEPENDENT-RESEARCH-CONVERGENCE-FHG-2026-10-14` · **Registry ID:** `synthobs-independent-research-convergence-fhg-2026-10`
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 
 → ∞^∞

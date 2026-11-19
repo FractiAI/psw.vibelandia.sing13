@@ -2,12 +2,12 @@
 
 **Short answer: Yes**, as multi-agent sync filing: Confirm whether headline sync metrics are scripted or on real agent logs in the suite receipt.
 
-**Document Reference:** WP-2026-EGS-004-REV10  
-**Framework Layer:** Synthetic Observation and Evaluation (SynthOBS)  
-**Classification:** Theoretical Framework & Experimental Protocol Specification  
-**Source Node:** [GitHub Repository AiwonA1/FractiAI](https://github.com/AiwonA1/FractiAI)  
-**Date:** June 7, 2026  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Document Reference:** WP-2026-EGS-004-REV10
+**Framework Layer:** Synthetic Observation and Evaluation (SynthOBS)
+**Classification:** Theoretical Framework & Experimental Protocol Specification
+**Source Node:** [GitHub Repository AiwonA1/FractiAI](https://github.com/AiwonA1/FractiAI)
+**Date:** June 7, 2026
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Companions (July 2026):** [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 
 ---
@@ -228,10 +228,10 @@ This technical white paper operates strictly under an active fair exchange claus
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** WP-2026-EGS-004-REV10  
-**Registry ID:** `synthobs-emergent-sync-multi-agent-2026`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** WP-2026-EGS-004-REV10
+**Registry ID:** `synthobs-emergent-sync-multi-agent-2026`
 **Re-audit:** `npm run audit:paper -- --id=synthobs-emergent-sync-multi-agent-2026`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

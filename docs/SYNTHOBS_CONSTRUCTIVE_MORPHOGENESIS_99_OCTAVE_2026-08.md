@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** As a design mapping only: the suite passes 9 of 9 fixtures covering the four swarms and a stress cascade ordered hydrogen, carbon, silicon, theater. The paper adds no plant-microbe dataset, so it supports the agent design rather than any plant biology.
 
-**Type:** Exploratory response paper · catalog / protocol  
-**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 9, 2026  
-**Document ID:** `WP-SYNTHOBS-CONSTRUCTIVE-MORPHOGENESIS-99-OCTAVE-2026-08-09`  
-**Registry ID:** `synthobs-constructive-morphogenesis-99-octave-2026-08`  
-**Publication Ref:** FAI-CONSTRUCTIVE-MORPHOGENESIS-99-OCTAVE-2026-08  
-**Context source:** Analytical response framing to plant–microbe stress signaling / AMF dynamics (New Phytologist commentary ref. nph.71423 / Mugambi et al.) — **citation for conversation context only; not an endorsement by that journal**  
-**Standalone suite:** [`research/synthobs-constructive-morphogenesis-99-octave/`](../research/synthobs-constructive-morphogenesis-99-octave/)  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-constructive-morphogenesis-99-octave  
-**Companion master:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)  
+**Type:** Exploratory response paper · catalog / protocol
+**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 9, 2026
+**Document ID:** `WP-SYNTHOBS-CONSTRUCTIVE-MORPHOGENESIS-99-OCTAVE-2026-08-09`
+**Registry ID:** `synthobs-constructive-morphogenesis-99-octave-2026-08`
+**Publication Ref:** FAI-CONSTRUCTIVE-MORPHOGENESIS-99-OCTAVE-2026-08
+**Context source:** Analytical response framing to plant–microbe stress signaling / AMF dynamics (New Phytologist commentary ref. nph.71423 / Mugambi et al.) — **citation for conversation context only; not an endorsement by that journal**
+**Standalone suite:** [`research/synthobs-constructive-morphogenesis-99-octave/`](../research/synthobs-constructive-morphogenesis-99-octave/)
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-constructive-morphogenesis-99-octave
+**Companion master:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Keywords:** constructive morphogenesis; AMF; Silicon/Carbon/Hydrogen swarms; Holographic Theater; EGS; Infinite Octaves Omniversal Lattice Chat Agent; Fair Exchange
@@ -67,17 +67,17 @@ We translate that multi-scale story into nested agent domains for Lattice Chat A
 ## 2. Nested agentic swarms (four metaphoric domains)
 
 ```
-      [ HOLOGRAPHIC THEATER ]  (macro-field / phase-space resonance)
-                 │
-      ┌──────────┴──────────┐
-      ▼                     ▼
+[ HOLOGRAPHIC THEATER ]  (macro-field / phase-space resonance)
+│
+┌──────────┴──────────┐
+▼                     ▼
 [SILICON LATTICE]    [CARBON SWARM]
 (Structural frame)   (Dynamic architecture)
-      │                     │
-      └──────────┬──────────┘
-                 ▼
-         [HYDROGEN SWARM]
-       (Proton / redox signals)
+│                     │
+└──────────┬──────────┘
+▼
+[HYDROGEN SWARM]
+(Proton / redox signals)
 ```
 
 | Swarm | Biological counterpart (analogy) | Agentic function |
@@ -95,8 +95,8 @@ $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2$ is the non-linear scaling ratio for self-si
 
 Downstream catalog uses:
 
-1. Compartment stability under high “transposon-like” change (Silicon).  
-2. Redox → transcription alignment without destructive cascade (Hydrogen → Carbon).  
+1. Compartment stability under high “transposon-like” change (Silicon).
+2. Redox → transcription alignment without destructive cascade (Hydrogen → Carbon).
 3. Ecological persistence as continued edge expansion (Theater).
 
 ---

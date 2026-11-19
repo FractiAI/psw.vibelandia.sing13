@@ -4,16 +4,16 @@
 
 **Subtitle:** Sole-even-prime $2$ as binary dyad anchor · odd primes as irreducible minimum sets · $\Phi_{\mathrm{EGS}}$ scale recursion
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-INFINITE-OCTAVE-PRIME-PARITY-2026-09-04`  
-**Registry ID:** `synthobs-infinite-octave-prime-parity-2026-09`  
-**Date:** September 4, 2026  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-INFINITE-OCTAVE-PRIME-PARITY-2026-09-04`
+**Registry ID:** `synthobs-infinite-octave-prime-parity-2026-09`
+**Date:** September 4, 2026
 **Classification:** Number-theoretic catalog map + Infinite Octaves companion *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Standalone suite:** [`research/synthobs-infinite-octave-prime-parity/`](../research/synthobs-infinite-octave-prime-parity/)  
-**Plain note:** [/ship-blog/infinite-octave-prime-parity](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octave-prime-parity)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Standalone suite:** [`research/synthobs-infinite-octave-prime-parity/`](../research/synthobs-infinite-octave-prime-parity/)
+**Plain note:** [/ship-blog/infinite-octave-prime-parity](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octave-prime-parity)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -151,8 +151,8 @@ Replayable checks live in `research/synthobs-infinite-octave-prime-parity/` (`np
 
 ## 5. Operator & audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**PRA:** `npm run audit:paper -- --id=synthobs-infinite-octave-prime-parity-2026-09`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**PRA:** `npm run audit:paper -- --id=synthobs-infinite-octave-prime-parity-2026-09`
 **Engine shelf:** `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` (Prime-parity companion)
 
 → ∞^∞

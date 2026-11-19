@@ -4,17 +4,17 @@
 
 **Subtitle:** Catalog grammar of Φ-governed fractal motion — four pillars under the Infinite Octave model
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-HOLOGRAPHIC-RHYME-FRACTAL-EGS-2026-09-05`  
-**Registry ID:** `synthobs-holographic-rhyme-fractal-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-HOLOGRAPHIC-RHYME-FRACTAL-EGS-2026-09-05`
+**Registry ID:** `synthobs-holographic-rhyme-fractal-2026-09`
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)
 **Classification:** Number-theoretic / holographic **catalog architecture** for fractal grammar *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#18** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-holographic-rhyme-fractal/` · [`FractiAI/synthobs-holographic-rhyme-fractal`](https://github.com/FractiAI/synthobs-holographic-rhyme-fractal) · `npm run research:synthobs-holographic-rhyme-fractal`  
-**Plain note:** [/ship-blog/holographic-rhyme](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-rhyme)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#18** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-holographic-rhyme-fractal/` · [`FractiAI/synthobs-holographic-rhyme-fractal`](https://github.com/FractiAI/synthobs-holographic-rhyme-fractal) · `npm run research:synthobs-holographic-rhyme-fractal`
+**Plain note:** [/ship-blog/holographic-rhyme](https://www.ssvibelandiaquestfest24x365.com/ship-blog/holographic-rhyme)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -82,10 +82,10 @@ is the architectural golden key downstream in this repository. It replaces ad-ho
 
 ## 3. The holographic definition (the rhyme)
 
-> *A fractal is not what a system looks like; it is how a system moves.*  
-> *It repeats without losing its name,*  
-> *It mirrors the whole in the core of the flame,*  
-> *It recurs through the octave to scale up the height,*  
+> *A fractal is not what a system looks like; it is how a system moves.*
+> *It repeats without losing its name,*
+> *It mirrors the whole in the core of the flame,*
+> *It recurs through the octave to scale up the height,*
 > *And corrects its own path through the balance of light.*
 
 ---

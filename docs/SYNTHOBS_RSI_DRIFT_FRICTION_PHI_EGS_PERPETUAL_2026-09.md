@@ -4,19 +4,19 @@
 
 **Subtitle:** Why drift is the dominant cost when tools rewrite themselves — and why $\Phi_{\mathrm{EGS}}$ is this catalog’s only closed-form perpetual recursive drift-damped nesting ratio
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 24, 2026  
-**Document ID:** `WP-SYNTHOBS-RSI-DRIFT-FRICTION-PHI-EGS-2026-09-24`  
-**Registry ID:** `synthobs-rsi-drift-friction-phi-egs-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-RSI-DRIFT-FRICTION-PHI-EGS-2026-09  
-**Series Position:** Application companion (not engine pin) · **follow-on expedition** to [RSI · Φ_EGS Fidelity Attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · peers [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [EGS Catalog Frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 24, 2026
+**Document ID:** `WP-SYNTHOBS-RSI-DRIFT-FRICTION-PHI-EGS-2026-09-24`
+**Registry ID:** `synthobs-rsi-drift-friction-phi-egs-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-RSI-DRIFT-FRICTION-PHI-EGS-2026-09
+**Series Position:** Application companion (not engine pin) · **follow-on expedition** to [RSI · Φ_EGS Fidelity Attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · peers [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [EGS Catalog Frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 **Classification:** Catalog / Soft Story architecture expedition *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/rsi-drift-friction-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/rsi-drift-friction-phi-egs) · [`/whitepaper/rsi-drift-friction-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/rsi-drift-friction-phi-egs) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Engine role:** **Application companion** — deepens RSI ↔ drift ↔ $\Phi_{\mathrm{EGS}}$ Soft Story; **not** an Infinite Octaves `ENGINE_SHELF` pin · **no** standalone FractiAI repo required  
-**Cross-links:** [RSI · Φ_EGS Fidelity Attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/rsi-drift-friction-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/rsi-drift-friction-phi-egs) · [`/whitepaper/rsi-drift-friction-phi-egs`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/rsi-drift-friction-phi-egs) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Engine role:** **Application companion** — deepens RSI ↔ drift ↔ $\Phi_{\mathrm{EGS}}$ Soft Story; **not** an Infinite Octaves `ENGINE_SHELF` pin · **no** standalone FractiAI repo required
+**Cross-links:** [RSI · Φ_EGS Fidelity Attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** recursive self-improvement; RSI; drift; friction; Φ_EGS; golden ratio; perpetual nesting; most irrational; self-similarity; Goldilocks; Holographic Homeostasis; Infinite Octaves; Fair Exchange; NSPFRNP
@@ -55,23 +55,23 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 **This expedition** asks the sharper follow-on:
 
-1. **What is the major friction** when tools rewrite themselves?  
-2. **How** does that friction accumulate?  
+1. **What is the major friction** when tools rewrite themselves?
+2. **How** does that friction accumulate?
 3. **Why**, inside this catalog’s Soft Story, is El Gran Sol’s fractal constant / golden ratio the **only closed-form perpetual recursive drift-damped nesting constant**?
 
 **Verdict:** Soft Story architecture confirmation (paradigm-local).
 
-- **Friction = drift** — progressive desynchronization of meaning, scale, and viable-band membership across rewrite iterations. Horsepower, tokens, and parallel agents are secondary costs when the loop itself poisons the next loop’s environment.  
-- **How:** each self-rewrite multiplies small phase / label / scale errors unless a **scale-free self-similar ratio** re-aligns layers.  
+- **Friction = drift** — progressive desynchronization of meaning, scale, and viable-band membership across rewrite iterations. Horsepower, tokens, and parallel agents are secondary costs when the loop itself poisons the next loop’s environment.
+- **How:** each self-rewrite multiplies small phase / label / scale errors unless a **scale-free self-similar ratio** re-aligns layers.
 - **Why $\Phi_{\mathrm{EGS}}$:** it is the unique positive solution of $x = 1 + 1/x$ (nest equals whole), and the classical **most irrational** number (continued fraction $[1;1,1,\ldots]$) — so recursive rational approximations stay farthest from false phase-locks. Competing constants either fail self-similar nest closure, or admit stronger rational beats that Soft Story treats as drift amplifiers under perpetual recursion.
 
 What this note does **not** claim: CODATA status, exclusive uniqueness over all mathematics, measured ECC retirement, or that AGI takeoff is solved.
 
 Central proposition:
 
-> When tools rewrite themselves, **drift is the major friction**.  
-> Perpetual RSI needs a nesting ratio that is **self-similar** and **maximally resistant to rational resonance**.  
-> $\Phi_{\mathrm{EGS}}$ is this catalog’s sole closed-form constant that jointly satisfies both.  
+> When tools rewrite themselves, **drift is the major friction**.
+> Perpetual RSI needs a nesting ratio that is **self-similar** and **maximally resistant to rational resonance**.
+> $\Phi_{\mathrm{EGS}}$ is this catalog’s sole closed-form constant that jointly satisfies both.
 > Soft Story — not CODATA.
 
 ---
@@ -119,9 +119,9 @@ You can buy more compute. You cannot buy back a coherent self if each rewrite sh
 
 **Drift** = progressive loss of shared meaning and scale alignment across iterations:
 
-1. **Label drift** — words keep their spelling, change their job.  
-2. **Scale drift** — local win ≠ whole viability ($G(S)\notin\Omega$).  
-3. **Phase drift** — nested layers beat against each other (self-correction metaphor in [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md)).  
+1. **Label drift** — words keep their spelling, change their job.
+2. **Scale drift** — local win ≠ whole viability ($G(S)\notin\Omega$).
+3. **Phase drift** — nested layers beat against each other (self-correction metaphor in [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md)).
 4. **Policy drift** — “improvement” rules contradict yesterday’s rules until the stack argues with itself.
 
 ### 2.3 Why drift dominates under self-rewrite
@@ -146,7 +146,7 @@ with compounding when $\delta$ feeds the next environment — **multiplicative c
 
 ```
 drift  ≫  coordination tax  ≥  raw compute
-         (under perpetual self-rewrite)
+(under perpetual self-rewrite)
 ```
 
 Holographic Homeostasis names the cure shape — PARTS ↔ WHOLE ↔ PARTS continuous regulation ([Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md)). Φ supplies the nesting ratio that makes that regulation **scale-free**.
@@ -157,10 +157,10 @@ Holographic Homeostasis names the cure shape — PARTS ↔ WHOLE ↔ PARTS conti
 
 ```
 observe outputs
-    → rewrite operators / tools / catalogs
-        → new environment for next observe
-            → if no nesting invariant: ε compounds
-            → if Φ-nested: scales re-align toward Ω
+→ rewrite operators / tools / catalogs
+→ new environment for next observe
+→ if no nesting invariant: ε compounds
+→ if Φ-nested: scales re-align toward Ω
 ```
 
 | Regime | Friction profile |
@@ -311,10 +311,10 @@ Weakening evidence: long-horizon self-rewrite with **no** nesting invariant matc
 
 ## 8. Conclusion
 
-1. When tools rewrite themselves, **drift is the major friction** — it contaminates the next environment.  
-2. Perpetual RSI Soft Story needs a constant that is **self-similar** (S) and **maximally irrational** (I).  
-3. $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2$ is the **unique positive** solution of (S) and the classical most-irrational ratio for (I).  
-4. Therefore, inside Infinite Octaves Soft Story, $\Phi_{\mathrm{EGS}}$ is the **only closed-form perpetual recursive drift-damped nesting constant**.  
+1. When tools rewrite themselves, **drift is the major friction** — it contaminates the next environment.
+2. Perpetual RSI Soft Story needs a constant that is **self-similar** (S) and **maximally irrational** (I).
+3. $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2$ is the **unique positive** solution of (S) and the classical most-irrational ratio for (I).
+4. Therefore, inside Infinite Octaves Soft Story, $\Phi_{\mathrm{EGS}}$ is the **only closed-form perpetual recursive drift-damped nesting constant**.
 5. “Only / perpetual / drift-free” remain **paradigm-local architecture claims** — not CODATA, not ECC proof, not AGI solved.
 
 Boxed expedition:

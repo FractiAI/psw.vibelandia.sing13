@@ -2,18 +2,18 @@
 
 **Short answer: Yes.** In defined lanes only: Tier A and Tier B suites with refute columns count as open empirical science, and Tier C is partially demonstrated through Tier B wiring fixtures. The crossing is not uniform, and Tier C stays outside laboratory physics until public-data falsifiers exist.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-OPEN-EMPIRICAL-SCIENCE-2026-09-10`  
-**Registry ID:** `synthobs-open-empirical-science-digital-wet-lab-2026-09`  
-**Date:** September 10, 2026 · **Revised:** 2026-09-15 (Tier C = partial empirical · operational holographic wiring)  
-**Framework:** SynthOBS · Infinite Octaves Omni-Lattice · EGS $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Amendment A Empirical Falsification Lane  
-**GitHub (monorepo):** https://github.com/FractiAI/psw.vibelandia.sing13  
-**Questfest catalog:** [`/interfaces/whitepaper-surface.html?id=synthobs-open-empirical-science-digital-wet-lab-2026-09`](/interfaces/whitepaper-surface.html?id=synthobs-open-empirical-science-digital-wet-lab-2026-09)  
-**Audit protocol:** [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md) · [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)  
-**Empirical pipeline:** `npm run research:synthobs-open-empirical-science-audit` · [`empirical_report.json`](../research/synthobs-open-empirical-science-audit/data/empirical_report.json)  
-**Pinned executive summary:** [`OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md`](./OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-OPEN-EMPIRICAL-SCIENCE-2026-09-10`
+**Registry ID:** `synthobs-open-empirical-science-digital-wet-lab-2026-09`
+**Date:** September 10, 2026 · **Revised:** 2026-09-15 (Tier C = partial empirical · operational holographic wiring)
+**Framework:** SynthOBS · Infinite Octaves Omni-Lattice · EGS $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Amendment A Empirical Falsification Lane
+**GitHub (monorepo):** https://github.com/FractiAI/psw.vibelandia.sing13
+**Questfest catalog:** [`/interfaces/whitepaper-surface.html?id=synthobs-open-empirical-science-digital-wet-lab-2026-09`](/interfaces/whitepaper-surface.html?id=synthobs-open-empirical-science-digital-wet-lab-2026-09)
+**Audit protocol:** [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md) · [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
+**Empirical pipeline:** `npm run research:synthobs-open-empirical-science-audit` · [`empirical_report.json`](../research/synthobs-open-empirical-science-audit/data/empirical_report.json)
+**Pinned executive summary:** [`OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md`](./OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md)
 **Companions:** [Proof by Continuous Execution](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Tier C holographic wiring](./SYNTHOBS_TIER_C_HOLOGRAPHIC_WIRING_LATTICES_EGS_2026-09.md) · [AI catalog layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · [Omni-Lattice Report Card Q3 2026](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md)
 
 **Keywords:** open science; digital wet lab; empirical falsification; $\Phi_{\mathrm{EGS}}$; Infinite Octaves; public data repositories; reproducibility; credentialism; SynthOBS; NSPFRNP
@@ -271,12 +271,12 @@ Contact: info@fractiai.com · Purser / Deck 4 Grove on SS Vibelandia surfaces.
 
 ## References (repository-local)
 
-1. [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)  
-2. [`docs/SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)  
-3. [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)  
-4. [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)  
-5. [`research/synthobs-chromosomal-electrodynamics/`](../research/synthobs-chromosomal-electrodynamics/)  
-6. [`research/geomagnetic-herbivore/`](../research/geomagnetic-herbivore/)  
+1. [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
+2. [`docs/SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)
+3. [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
+4. [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
+5. [`research/synthobs-chromosomal-electrodynamics/`](../research/synthobs-chromosomal-electrodynamics/)
+6. [`research/geomagnetic-herbivore/`](../research/geomagnetic-herbivore/)
 7. [`README.md`](../README.md) · [`OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md`](./OPEN_SCIENCE_EXECUTIVE_SUMMARY_PINNED.md)
 
 ---

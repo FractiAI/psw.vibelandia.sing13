@@ -2,10 +2,10 @@
 
 **Autonomous research memory and publication-gated expedition cockpit (Phases 1–2)**
 
-**Document ID:** `WP-SYNTHOBS-HERO-LEO-HOMEOSTASIS-SCOUT-2026-10-02`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-10-02  
-**Guest surfaces:** [`/journey/hero-leo`](https://www.ssvibelandiaquestfest24x365.com/journey/hero-leo) · API [`/api/hero-leo`](https://www.ssvibelandiaquestfest24x365.com/api/hero-leo) · trail [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Beyond CRISPR peer [`/whitepaper/beyond-crispr-discovery`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/beyond-crispr-discovery)  
+**Document ID:** `WP-SYNTHOBS-HERO-LEO-HOMEOSTASIS-SCOUT-2026-10-02`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** 2026-10-02
+**Guest surfaces:** [`/journey/hero-leo`](https://www.ssvibelandiaquestfest24x365.com/journey/hero-leo) · API [`/api/hero-leo`](https://www.ssvibelandiaquestfest24x365.com/api/hero-leo) · trail [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Beyond CRISPR peer [`/whitepaper/beyond-crispr-discovery`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/beyond-crispr-discovery)
 **Slot:** **application companion (not ENGINE_SHELF)** — research-memory cockpit attached to the Homeostasis Expedition; not a claim of continuous autonomous wet-lab discovery.
 
 ---
@@ -104,8 +104,8 @@ Completions write **computational research notes** (typically E1) with null-firs
 
 First-class **Digital Lab** on `/journey/hero-leo#digital-lab`:
 
-1. **Suite run** — re-run Beyond CRISPR empirical pipeline (`npm run hero-leo:digital-lab` or `POST { "action":"suite-run" }`).  
-2. **Score receipt** — compact projection of `empirical_report.json` (`all_pass`, `n_pass`/`n_total`, lead, gaps, positive controls, top queue).  
+1. **Suite run** — re-run Beyond CRISPR empirical pipeline (`npm run hero-leo:digital-lab` or `POST { "action":"suite-run" }`).
+2. **Score receipt** — compact projection of `empirical_report.json` (`all_pass`, `n_pass`/`n_total`, lead, gaps, positive controls, top queue).
 3. **Complete prospects** — same computational completion path as Scout; ledger rows carry `lab: "digital"`.
 
 Wet-lab execution remains **out of scope** for this panel (`config.digitalLab.wetLabOutOfScope`).
@@ -119,12 +119,11 @@ Wet-lab execution remains **out of scope** for this panel (`config.digitalLab.we
 
 ## 5. Not yet claimed (Phases 4–7+)
 
-- Continuous background prospecting daemon without Player 1 press  
-- Automatic whitepaper / blog / repository generation without human gate  
-- Wet-lab execution (Digital Lab does not claim wet-lab)  
-- Independent external replication  
-- That completing a prospect equals experimentally established discovery  
-
+- Continuous background prospecting daemon without Player 1 press
+- Automatic whitepaper / blog / repository generation without human gate
+- Wet-lab execution (Digital Lab does not claim wet-lab)
+- Independent external replication
+- That completing a prospect equals experimentally established discovery
 
 ---
 
@@ -145,11 +144,11 @@ Wet-lab execution remains **out of scope** for this panel (`config.digitalLab.we
 
 ## References
 
-1. Beyond CRISPR Biological Discovery Challenge — `docs/SYNTHOBS_BEYOND_CRISPR_BIOLOGICAL_DISCOVERY_EGS_2026-10.md` · `/whitepaper/beyond-crispr-discovery`.  
-2. Beyond CRISPR Phase 2b Lattice protocol — `docs/SYNTHOBS_BEYOND_CRISPR_PHASE_2B_LATTICE_2026-10.md`.  
-3. C11 ART-class wet-lab brief — `docs/SYNTHOBS_BEYOND_CRISPR_C11_ART_CLASS_WET_LAB_BRIEF_2026-10.md`.  
-4. Agentic Convergence Experiment (method peer) — `docs/SYNTHOBS_AGENTIC_CONVERGENCE_EXPERIMENT_EGS_2026-10.md`.  
-5. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.  
+1. Beyond CRISPR Biological Discovery Challenge — `docs/SYNTHOBS_BEYOND_CRISPR_BIOLOGICAL_DISCOVERY_EGS_2026-10.md` · `/whitepaper/beyond-crispr-discovery`.
+2. Beyond CRISPR Phase 2b Lattice protocol — `docs/SYNTHOBS_BEYOND_CRISPR_PHASE_2B_LATTICE_2026-10.md`.
+3. C11 ART-class wet-lab brief — `docs/SYNTHOBS_BEYOND_CRISPR_C11_ART_CLASS_WET_LAB_BRIEF_2026-10.md`.
+4. Agentic Convergence Experiment (method peer) — `docs/SYNTHOBS_AGENTIC_CONVERGENCE_EXPERIMENT_EGS_2026-10.md`.
+5. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.
 6. Homeostasis Expedition surface — `/journey/homeostasis-expedition`.
 
 ---
@@ -158,7 +157,7 @@ Wet-lab execution remains **out of scope** for this panel (`config.digitalLab.we
 
 `WP-SYNTHOBS-HERO-LEO-HOMEOSTASIS-SCOUT-2026-10-02`
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Human editorial veto:** Player 1  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Human editorial veto:** Player 1
 
 → ∞^∞

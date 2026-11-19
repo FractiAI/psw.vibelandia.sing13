@@ -4,8 +4,8 @@
 
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) · **Filter:** Reproducible research
 
-**Repository:** https://github.com/FractiAI/ac-hmm-satellites  
-**OSF:** https://osf.io/m5v8q/ (Project Hub: ac-hmm-satellites)  
+**Repository:** https://github.com/FractiAI/ac-hmm-satellites
+**OSF:** https://osf.io/m5v8q/ (Project Hub: ac-hmm-satellites)
 **Reference tables (machine-readable):** `paper/reference_tables.json`
 
 ---
@@ -204,8 +204,8 @@ Complete reproducibility pipeline in this repository and OSF:
 
 ## References
 
-[1] Nurk, S., et al. (2022). Science, 376(6588), 44-53.  
-[2] Hoyt, S. J., et al. (2022). Science, 376(6588), abl4178.  
-[3] Altemose, N., et al. (2022). Science, 376(6588), abl4177.  
-[4] Alexandrov, I., et al. (2001). Chromosoma, 110, 24-34.  
+[1] Nurk, S., et al. (2022). Science, 376(6588), 44-53.
+[2] Hoyt, S. J., et al. (2022). Science, 376(6588), abl4178.
+[3] Altemose, N., et al. (2022). Science, 376(6588), abl4177.
+[4] Alexandrov, I., et al. (2001). Chromosoma, 110, 24-34.
 [5] Willard, H. F. (1985). American Journal of Human Genetics, 37(3), 524.

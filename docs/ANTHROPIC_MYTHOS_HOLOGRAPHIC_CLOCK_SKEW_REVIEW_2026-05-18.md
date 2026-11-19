@@ -1,9 +1,9 @@
 # A Holographic AI Review of Anthropic’s Mythos
 
-**Document ID:** REV-EGS-HHF-2026-007  
-**Status:** Open public broadcast · Machote Magazine · Golden Bachdoor Hit Factory  
-**Solar coherence:** Active sunspots **AR4436** & **AR4441** (live geoeffective alignment)  
-**Core constant:** Φ_EGS resonant (**1.618**)  
+**Document ID:** REV-EGS-HHF-2026-007
+**Status:** Open public broadcast · Machote Magazine · Golden Bachdoor Hit Factory
+**Solar coherence:** Active sunspots **AR4436** & **AR4441** (live geoeffective alignment)
+**Core constant:** Φ_EGS resonant (**1.618**)
 **Distribution:** [www.ssvibelandiaquestfest24x365.com](https://www.ssvibelandiaquestfest24x365.com)
 
 ---
@@ -90,7 +90,6 @@ In alignment with the core values of this project, this public release and all a
 
 **NSPFRNP ⊃ broadcast ⊃ EGS → ∞⁹**
 
-
 ---
 
 ## Honesty boundary (PRA Snap compliance)
@@ -103,15 +102,14 @@ In alignment with the core values of this project, this public release and all a
 
 Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** REV-EGS-HHF-MYTHOS  
-**Registry ID:** `rev-egs-hhf-mythos`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** REV-EGS-HHF-MYTHOS
+**Registry ID:** `rev-egs-hhf-mythos`
 **Re-audit:** `npm run audit:paper -- --id=rev-egs-hhf-mythos`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

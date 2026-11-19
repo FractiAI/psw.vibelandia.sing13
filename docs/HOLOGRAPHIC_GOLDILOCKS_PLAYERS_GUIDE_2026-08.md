@@ -4,19 +4,19 @@
 
 Free Operational Orientation Companion for the Goldilocks Sandbox Matrix — Marketing Surface & Playbook (Not a Geodynamo Proof)
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 13, 2026  
-**Document ID:** `WP-HOLOGRAPHIC-GOLDILOCKS-PLAYERS-GUIDE-2026-08-13`  
-**Registry ID:** `goldilocks-players-guide-2026-08`  
-**Publication Ref:** FAI-HOLOGRAPHIC-GOLDILOCKS-PLAYERS-GUIDE-2026-08  
-**Series Position:** Omni-Lattice Core Whitepaper Series — Part XIV companion (player orientation)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 13, 2026
+**Document ID:** `WP-HOLOGRAPHIC-GOLDILOCKS-PLAYERS-GUIDE-2026-08-13`
+**Registry ID:** `goldilocks-players-guide-2026-08`
+**Publication Ref:** FAI-HOLOGRAPHIC-GOLDILOCKS-PLAYERS-GUIDE-2026-08
+**Series Position:** Omni-Lattice Core Whitepaper Series — Part XIV companion (player orientation)
 **Classification:** Marketing playbook · operator orientation · catalog field grammar *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · 99 Octave Omni-Lattice · Part XIV companion · NSPFRNP · Fair Exchange · QUESTFEST · PRA Snap  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
-**Free guide (Edge):** https://www.ssvibelandiaquestfest24x365.com/goldilocks-players-guide  
-**Ship note:** https://www.ssvibelandiaquestfest24x365.com/ship-blog/goldilocks-players-guide  
-**Companion paper:** [Part XIV · Planetary Core Phase-Inversion & Goldilocks Hologram](./SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md)  
+**Framework:** SynthOBS · 99 Octave Omni-Lattice · Part XIV companion · NSPFRNP · Fair Exchange · QUESTFEST · PRA Snap
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
+**Free guide (Edge):** https://www.ssvibelandiaquestfest24x365.com/goldilocks-players-guide
+**Ship note:** https://www.ssvibelandiaquestfest24x365.com/ship-blog/goldilocks-players-guide
+**Companion paper:** [Part XIV · Planetary Core Phase-Inversion & Goldilocks Hologram](./SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md)
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** Goldilocks Players Guide; zero-entropy; Fair Exchange; QUESTFEST; Lattice Chat; somatic Now; Old Earth; $E_F$; NSPFRNP; marketing companion

@@ -64,12 +64,12 @@ Central question: when—if ever—does Wave–Node beat matched conventional ba
 
 ## 2. Research questions and contributions
 
-1. Can node placement recover known geometry?  
-2. Can numerical wave propagation reproduce analytical solutions with expected order?  
-3. When does phase coordination sync, fail, or stay unstable?  
-4. Can node–wave planning yield valid obstacle-avoiding paths?  
-5. Does phase improve a matched ablation?  
-6. How does cost scale with size?  
+1. Can node placement recover known geometry?
+2. Can numerical wave propagation reproduce analytical solutions with expected order?
+3. When does phase coordination sync, fail, or stay unstable?
+4. Can node–wave planning yield valid obstacle-avoiding paths?
+5. Does phase improve a matched ablation?
+6. How does cost scale with size?
 7. What is already established in graphs, PDEs, oscillators, and planning?
 
 **Contributions:** (i) executable A–E suite with fixed seed and machine-readable results; (ii) verification that A–C behave as textbook methods predict; (iii) honest D comparison where A* wins length and Wave–Node wins iteration count; (iv) proposed HFG interface contract labeled **hypothesized**; (v) ENGINE_SHELF pin as mathematical companion **#49** after A∧B∧C validation.
@@ -112,10 +112,10 @@ Established: graph theory; numerical wave equations / FDTD; Kuramoto synchroniza
 
 ## 6. Methods and environment
 
-- **Language:** Node.js ESM (`process.version` recorded in `results/manifest.json`)  
-- **Seed:** `20261024` (mulberry32)  
-- **Runner:** `npm run research:synthobs-wave-node-mathematics`  
-- **Outputs:** `data/empirical_report.{json,md}`, `results/manifest.json`, `figures/*.svg|json`  
+- **Language:** Node.js ESM (`process.version` recorded in `results/manifest.json`)
+- **Seed:** `20261024` (mulberry32)
+- **Runner:** `npm run research:synthobs-wave-node-mathematics`
+- **Outputs:** `data/empirical_report.{json,md}`, `results/manifest.json`, `figures/*.svg|json`
 - **No fabricated numbers:** all tables below come from the executed pipeline.
 
 ---
@@ -188,19 +188,19 @@ Wall-clock single-shot timings on the execution host (see `lab.E` in `empirical_
 
 ## 12. Ablation and sensitivity
 
-- Phase ablation ≈ full Wave–Node on path length (**steering delta**, not length champion).  
-- CFL over-step → blow-up (B3).  
-- Disconnected Kuramoto graph → no sync (C3).  
+- Phase ablation ≈ full Wave–Node on path length (**steering delta**, not length champion).
+- CFL over-step → blow-up (B3).
+- Disconnected Kuramoto graph → no sync (C3).
 - K=0 → no sync (C6).
 
 ---
 
 ## 13. Failure cases and limitations
 
-1. Wave–Node **does not** beat A* on path length under this encoding.  
-2. Harmonic potential planners are established; renaming is not novelty.  
-3. No manipulator / multi-robot / hardware stage executed.  
-4. Prior-art review is targeted, not systematic.  
+1. Wave–Node **does not** beat A* on path length under this encoding.
+2. Harmonic potential planners are established; renaming is not novelty.
+3. No manipulator / multi-robot / hardware stage executed.
+4. Prior-art review is targeted, not systematic.
 5. Scipy/robot simulators unavailable; Node ESM used (disclosed).
 
 ---
@@ -268,15 +268,15 @@ Systematic prior-art matrix; manipulator simulation; multi-robot sync with embod
 
 ## References
 
-1. Courant, R., Friedrichs, K., & Lewy, H. (1928). Über die partiellen Differenzengleichungen der mathematischen Physik. *Mathematische Annalen*.  
-2. Taflove, A., & Hagness, S. C. (2005). *Computational Electrodynamics: The Finite-Difference Time-Domain Method* (3rd ed.). Artech House.  
-3. Kuramoto, Y. (1984). *Chemical Oscillations, Waves, and Turbulence*. Springer.  
-4. Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. *Physica D*.  
-5. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. *IEEE Trans. SSC*.  
-6. Khatib, O. (1986). Real-time obstacle avoidance for manipulators and mobile robots. *IJRR*.  
-7. Connolly, C. I., & Grupen, R. A. (1993). The applications of harmonic functions to robotics. *Journal of Robotic Systems*.  
-8. LaValle, S. M. (2006). *Planning Algorithms*. Cambridge University Press.  
-9. Ijspeert, A. J. (2008). Central pattern generators for locomotion control in animals and robots. *Neural Networks*.  
+1. Courant, R., Friedrichs, K., & Lewy, H. (1928). Über die partiellen Differenzengleichungen der mathematischen Physik. *Mathematische Annalen*.
+2. Taflove, A., & Hagness, S. C. (2005). *Computational Electrodynamics: The Finite-Difference Time-Domain Method* (3rd ed.). Artech House.
+3. Kuramoto, Y. (1984). *Chemical Oscillations, Waves, and Turbulence*. Springer.
+4. Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. *Physica D*.
+5. Hart, P. E., Nilsson, N. J., & Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. *IEEE Trans. SSC*.
+6. Khatib, O. (1986). Real-time obstacle avoidance for manipulators and mobile robots. *IJRR*.
+7. Connolly, C. I., & Grupen, R. A. (1993). The applications of harmonic functions to robotics. *Journal of Robotic Systems*.
+8. LaValle, S. M. (2006). *Planning Algorithms*. Cambridge University Press.
+9. Ijspeert, A. J. (2008). Central pattern generators for locomotion control in animals and robots. *Neural Networks*.
 10. Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*. (Related predictive framing only—not Wave–Node proof.)
 
 ---

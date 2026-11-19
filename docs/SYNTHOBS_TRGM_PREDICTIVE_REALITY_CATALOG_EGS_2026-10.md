@@ -57,23 +57,23 @@
 
 TRGM #50 shipped a structured three-symbol cyclic stream × polygon spin × Infinite Octave rhyme tree on folded DNA, with genetic nodes catalogued to wave / node / fq. The next milestone is not a louder metaphor. It is independent predictive validation and a reusable reality catalog:
 
-1. Reproduce #50 from a clean checkout (hashes, provenance, runner, locked metrics).  
-2. Test on held-out biological regions — avoid tuning the grammar and scoring it on the same examples.  
-3. Compare against strong matched baselines.  
-4. Ask whether wave/node/fq assignments add predictive value.  
-5. Store each generated structure so it can be retrieved, regenerated, compared, and recombined.  
+1. Reproduce #50 from a clean checkout (hashes, provenance, runner, locked metrics).
+2. Test on held-out biological regions — avoid tuning the grammar and scoring it on the same examples.
+3. Compare against strong matched baselines.
+4. Ask whether wave/node/fq assignments add predictive value.
+5. Store each generated structure so it can be retrieved, regenerated, compared, and recombined.
 6. Keep biology claims on their own validation track.
 
 ---
 
 ## 2. Contributions
 
-1. **V1** — Clean reproduce of TRGM #50 fixture hashes + locked metrics.  
-2. **V2–V4** — Held-out biological split + matched baselines (shuffle · conventional · sequence-proxy).  
-3. **V5** — Architecture baselines: Φ tree vs flat; DNA theater vs null layout.  
-4. **V6** — wave/node/fq assignment contrast vs shuffled symbol map (199-feature catalog preserved).  
-5. **V7** — Functional reality catalog (recipe · parameters · multiscale tree · spatial · validation · version).  
-6. **V8** — Explicit separate biology-claim track.  
+1. **V1** — Clean reproduce of TRGM #50 fixture hashes + locked metrics.
+2. **V2–V4** — Held-out biological split + matched baselines (shuffle · conventional · sequence-proxy).
+3. **V5** — Architecture baselines: Φ tree vs flat; DNA theater vs null layout.
+4. **V6** — wave/node/fq assignment contrast vs shuffled symbol map (199-feature catalog preserved).
+5. **V7** — Functional reality catalog (recipe · parameters · multiscale tree · spatial · validation · version).
+6. **V8** — Explicit separate biology-claim track.
 7. ENGINE_SHELF #51 companion pin.
 
 ---
@@ -94,11 +94,11 @@ TRGM #50 shipped a structured three-symbol cyclic stream × polygon spin × Infi
 
 ## 4. Methods
 
-- **Reproduce:** `src/reproduce50.mjs` — SHA-256 of pinned fixtures under `research/synthobs-tiny-reality-generation-model/data/molecular/genetic/` · import `runAllExperiments` from #50 · lock seed `20261025`, n_total=24, held viability=1, null=0, catalogEntries=199.  
-- **Held-out lab:** `src/heldout-baselines.mjs` — split genes by chrom; score balanced accuracy of feature-kind grammar vs shuffle / conventional / sequence-proxy on held non-gene features.  
-- **Architecture:** Φ holographic-rhyme tree vs flat encode coherence; folded DNA viability vs null scatter.  
-- **Channel contrast:** polygon-spin clock sync on correct triad stream vs motif-hit rate after symbol permutation.  
-- **Reality catalog:** `src/reality-catalog.mjs` — schema `trgm-reality-catalog-record/v1` · version `trgm-51/v1` · store JSON under `data/reality-catalog/`.  
+- **Reproduce:** `src/reproduce50.mjs` — SHA-256 of pinned fixtures under `research/synthobs-tiny-reality-generation-model/data/molecular/genetic/` · import `runAllExperiments` from #50 · lock seed `20261025`, n_total=24, held viability=1, null=0, catalogEntries=199.
+- **Held-out lab:** `src/heldout-baselines.mjs` — split genes by chrom; score balanced accuracy of feature-kind grammar vs shuffle / conventional / sequence-proxy on held non-gene features.
+- **Architecture:** Φ holographic-rhyme tree vs flat encode coherence; folded DNA viability vs null scatter.
+- **Channel contrast:** polygon-spin clock sync on correct triad stream vs motif-hit rate after symbol permutation.
+- **Reality catalog:** `src/reality-catalog.mjs` — schema `trgm-reality-catalog-record/v1` · version `trgm-51/v1` · store JSON under `data/reality-catalog/`.
 - **Runner:** `npm run research:synthobs-trgm-predictive-reality-catalog`.
 
 ---
@@ -156,19 +156,19 @@ Numbers match `research/synthobs-trgm-predictive-reality-catalog/data/empirical_
 
 ## 10. Next milestone (priority)
 
-1. Broader held-out corpora beyond the current gene panel (additional chromosomes / independent assemblies).  
-2. Stronger sequence models as baselines (k-mer / Markov proxies) beside the current heuristics.  
-3. Catalog-scale recombination search with viability filters.  
+1. Broader held-out corpora beyond the current gene panel (additional chromosomes / independent assemblies).
+2. Stronger sequence models as baselines (k-mer / Markov proxies) beside the current heuristics.
+3. Catalog-scale recombination search with viability filters.
 4. Optional wet-lab biology track only when independent experimental partners exist — never upgraded from Soft Story alone.
 
 ---
 
 ## References
 
-1. FractiAI Tiny Reality Generation Model (2026). ENGINE_SHELF #50.  
-2. FractiAI Wave–Node Mathematics (2026). ENGINE_SHELF #49.  
-3. GTEx Portal API v2 — gene reference coordinates (GRCh38).  
-4. MyGene.info v3 — exon / CDS transcript structures.  
+1. FractiAI Tiny Reality Generation Model (2026). ENGINE_SHELF #50.
+2. FractiAI Wave–Node Mathematics (2026). ENGINE_SHELF #49.
+3. GTEx Portal API v2 — gene reference coordinates (GRCh38).
+4. MyGene.info v3 — exon / CDS transcript structures.
 5. UCSC Genome Browser — hs1 chrM sequence; hg38 `cpgIslandExt` track.
 
 ---

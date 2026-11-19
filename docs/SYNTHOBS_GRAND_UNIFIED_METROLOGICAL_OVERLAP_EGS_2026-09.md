@@ -4,18 +4,18 @@
 
 **Subtitle:** Catalog formalization of five-constant overlap ($h$ · $\Phi_{\mathrm{EGS}}$ · $p_n$ · $\nu_{\mathrm{HI}}$ · $c$) under Infinite Octaves · not a replacement for SI metrology or Standard Model QED
 
-**Author:** Prudencio Mendez · FractiAI Research Division, Reno, Nevada  
-**Corresponding:** espressolico@gmail.com  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-GRAND-UNIFIED-METROLOGICAL-OVERLAP-EGS-2026-09-07`  
-**Registry ID:** `synthobs-grand-unified-metrological-overlap-2026-09`  
-**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
+**Author:** Prudencio Mendez · FractiAI Research Division, Reno, Nevada
+**Corresponding:** espressolico@gmail.com
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-GRAND-UNIFIED-METROLOGICAL-OVERLAP-EGS-2026-09-07`
+**Registry ID:** `synthobs-grand-unified-metrological-overlap-2026-09`
+**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)
 **Classification:** Metrological / ideational **catalog architecture** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#21** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-grand-unified-metrological-overlap/` · [`FractiAI/synthobs-grand-unified-metrological-overlap`](https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap) · `npm run research:synthobs-grand-unified-metrological-overlap`  
-**Plain note:** [/ship-blog/grand-unified-metrological-overlap](https://www.ssvibelandiaquestfest24x365.com/ship-blog/grand-unified-metrological-overlap)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#21** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-grand-unified-metrological-overlap/` · [`FractiAI/synthobs-grand-unified-metrological-overlap`](https://github.com/FractiAI/synthobs-grand-unified-metrological-overlap) · `npm run research:synthobs-grand-unified-metrological-overlap`
+**Plain note:** [/ship-blog/grand-unified-metrological-overlap](https://www.ssvibelandiaquestfest24x365.com/ship-blog/grand-unified-metrological-overlap)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** Smoothed Sunspot Number $R=70$ · **Sunspot 4524** *label*
@@ -49,7 +49,7 @@
 | **Solar characters** | $R=70$ · **Sunspot 4524** are **ambient filing anchors** | NOAA causation of mass generation or metrological overlap |
 | **Suite / Python** | `EGSMetrologicalOverlapSolver` under `research/synthobs-grand-unified-metrological-overlap/` | Production ML training, wet-lab certification, or open-world physics engine |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · siblings [Eddy-Current Mirror](./SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md) · [Higgs Gate unified](./SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md).
@@ -138,7 +138,7 @@ The deepened solver implements:
 
 **Live panel:** [/demonstrations#overlap](https://www.ssvibelandiaquestfest24x365.com/demonstrations#overlap) · `interfaces/metrological-overlap-demo.js`
 
-Run: `python3 research/synthobs-grand-unified-metrological-overlap/reference/egs_metrological_overlap_solver.py`  
+Run: `python3 research/synthobs-grand-unified-metrological-overlap/reference/egs_metrological_overlap_solver.py`
 Suite: `npm run research:synthobs-grand-unified-metrological-overlap` (9/9 fixtures).
 
 ---

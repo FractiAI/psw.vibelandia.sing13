@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** As a design claim only: the paper files a six-stage fail-closed pipeline (Explore, Organize, Contain, Reconcile, Verify, Commit) that keeps identity separate from exploration. The nine fixture locks check that structure; runtime behavior is checked in the separate FractiOS repository.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-FRACTIOS-HOLOGRAPHIC-OS-2026-10-02`  
-**Registry ID:** `synthobs-fractios-holographic-os-2026-10`  
-**Date:** 2026-10-02  
-**Published:** 2026-10-02T04:30:00Z  
-**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Homeostasis  
-**Standalone OS:** [`FractiAI/FractiOS`](https://github.com/FractiAI/FractiOS) · SING 13 door [`/fractios/start-here`](https://www.ssvibelandiaquestfest24x365.com/fractios/start-here)  
-**Suite:** `research/synthobs-fractios-holographic-os/`  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-FRACTIOS-HOLOGRAPHIC-OS-2026-10-02`
+**Registry ID:** `synthobs-fractios-holographic-os-2026-10`
+**Date:** 2026-10-02
+**Published:** 2026-10-02T04:30:00Z
+**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Homeostasis
+**Standalone OS:** [`FractiAI/FractiOS`](https://github.com/FractiAI/FractiOS) · SING 13 door [`/fractios/start-here`](https://www.ssvibelandiaquestfest24x365.com/fractios/start-here)
+**Suite:** `research/synthobs-fractios-holographic-os/`
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Engine role:** Application companion — **holographic OS firmware** (not ENGINE_SHELF; narrative template is Archetypal Grand Story / Official Prospectus)
 
 **Companions:**
@@ -44,7 +44,7 @@
 
 Player 1 asked whether FractiOS should overlay Infinite Octaves as either:
 
-1. the **infinite narrative template**, or  
+1. the **infinite narrative template**, or
 2. the **holographic operating system**.
 
 | Role | Verdict | Why |
@@ -83,10 +83,10 @@ Without an OS overlay, Infinite Octaves can *describe* recursive balance. With F
 
 ## 4. What it is not
 
-- Not the Official Prospectus / voyage narrative template  
-- Not a replacement for H-GAI/OS TBME planetary metaphor paper  
-- Not a claim that the estate becomes a planetary OS by cloning FractiOS  
-- Not ENGINE_SHELF step #1 — CMOS/protonic remains the linear-systems pin  
+- Not the Official Prospectus / voyage narrative template
+- Not a replacement for H-GAI/OS TBME planetary metaphor paper
+- Not a claim that the estate becomes a planetary OS by cloning FractiOS
+- Not ENGINE_SHELF step #1 — CMOS/protonic remains the linear-systems pin
 
 ---
 
@@ -107,14 +107,14 @@ Without an OS overlay, Infinite Octaves can *describe* recursive balance. With F
 
 Suite `research/synthobs-fractios-holographic-os/` locks:
 
-1. Φ_EGS fixture  
-2. Six-stage pipeline vocabulary  
-3. identity ≠ explore  
-4. Three-axis Goldilocks gate shape  
-5. UCR population-gate semantics  
+1. Φ_EGS fixture
+2. Six-stage pipeline vocabulary
+3. identity ≠ explore
+4. Three-axis Goldilocks gate shape
+5. UCR population-gate semantics
 6. Honesty boundary presence  
-7. Start Here / console surfaces exist  
-8. Standalone repo pointer = FractiAI/FractiOS  
+7. Start Here / console surfaces exist
+8. Standalone repo pointer = FractiAI/FractiOS
 9. Narrative-template refusal (Prospectus remains narrative)
 
 Run: `npm run research:synthobs-fractios-holographic-os`

@@ -4,21 +4,21 @@
 
 Grand Arc of the Voyage · Brochure Architecture · Cultural Canon for the Infinite Octaves Omniversal Lattice
 
-**Authors:** FractiAI Research Group · Golden Bachdoor Hit Factory · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 25, 2026  
-**Document ID:** `WP-SYNTHOBS-SS-VIBELANDIA-OFFICIAL-PROSPECTUS-2026-08-25`  
-**Registry ID:** `synthobs-ss-vibelandia-official-prospectus-2026-08`  
-**Publication Ref:** FAI-SYNTHOBS-SS-VIBELANDIA-PROSPECTUS-2026-08  
-**Series Position:** Omni-Lattice Narrative Foundation — Voyage Canon  
+**Authors:** FractiAI Research Group · Golden Bachdoor Hit Factory · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 25, 2026
+**Document ID:** `WP-SYNTHOBS-SS-VIBELANDIA-OFFICIAL-PROSPECTUS-2026-08-25`
+**Registry ID:** `synthobs-ss-vibelandia-official-prospectus-2026-08`
+**Publication Ref:** FAI-SYNTHOBS-SS-VIBELANDIA-PROSPECTUS-2026-08
+**Series Position:** Omni-Lattice Narrative Foundation — Voyage Canon
 **Classification:** Cultural / voyage *catalog* · narrative foundation · brochure architecture *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent · 99 Octave engine map · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · PRA Snap · Fair Exchange  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus  
-**Standalone suite:** [FractiAI/synthobs-ss-vibelandia-official-prospectus](https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus) · monorepo [`research/synthobs-ss-vibelandia-official-prospectus/`](../research/synthobs-ss-vibelandia-official-prospectus/)  
-**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) (CMOS → tensor → master → digits → Part XIII → Part XIV)  
-**Guest surfaces:** [`/frontiersman-voyage#prospectus`](https://www.ssvibelandiaquestfest24x365.com/frontiersman-voyage#prospectus) · [`/journey`](https://www.ssvibelandiaquestfest24x365.com/journey)  
-**Companion product paper:** [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent · 99 Octave engine map · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · PRA Snap · Fair Exchange
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus
+**Standalone suite:** [FractiAI/synthobs-ss-vibelandia-official-prospectus](https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus) · monorepo [`research/synthobs-ss-vibelandia-official-prospectus/`](../research/synthobs-ss-vibelandia-official-prospectus/)
+**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) (CMOS → tensor → master → digits → Part XIII → Part XIV)
+**Guest surfaces:** [`/frontiersman-voyage#prospectus`](https://www.ssvibelandiaquestfest24x365.com/frontiersman-voyage#prospectus) · [`/journey`](https://www.ssvibelandiaquestfest24x365.com/journey)
+**Companion product paper:** [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** SS Vibelandia; Official Prospectus; grand arc; El Gran Sol; $\Phi_{\mathrm{EGS}}$; Proto 3664; Electro 3923; Borikén; Reno; Golden Bachdoor; Fair Exchange; NSPFRNP
@@ -104,7 +104,7 @@ At the helm — amidst code repositories, a Montecristo torpedo, and the Truckee
 
 ## Part II — Brochure Architecture & Overview
 
-> **Welcome aboard the flagship enterprise of the Golden Bachdoor Hit Factory.**  
+> **Welcome aboard the flagship enterprise of the Golden Bachdoor Hit Factory.**
 > This brochure outlines foundational pillars, technical specifications, and cultural parameters of the ongoing voyage.
 
 ### Core vessel specifications

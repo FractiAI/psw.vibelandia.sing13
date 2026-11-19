@@ -4,18 +4,18 @@
 
 **Subtitle:** Catalog formalization of observer-velocity multiplex of a single physical set under $\Phi_{\mathrm{EGS}}\approx 1.618$ — Truckee River corridor field grammar
 
-**Author:** Prudencio Mendez · FractiAI Research Division, Reno, Nevada  
-**Corresponding:** espressolico@gmail.com  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-KINEMATIC-SET-RECYCLING-TRUCKEE-EGS-2026-09-07`  
-**Registry ID:** `synthobs-kinematic-set-recycling-truckee-2026-09`  
-**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
+**Author:** Prudencio Mendez · FractiAI Research Division, Reno, Nevada
+**Corresponding:** espressolico@gmail.com
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-KINEMATIC-SET-RECYCLING-TRUCKEE-EGS-2026-09-07`
+**Registry ID:** `synthobs-kinematic-set-recycling-truckee-2026-09`
+**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)
 **Classification:** Environmental / perceptual **catalog architecture** for velocity-multiplexed theaters *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#19** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-kinematic-set-recycling-truckee/` · [`FractiAI/synthobs-kinematic-set-recycling-truckee`](https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee) · `npm run research:synthobs-kinematic-set-recycling-truckee`  
-**Plain note:** [/ship-blog/kinematic-set-recycling](https://www.ssvibelandiaquestfest24x365.com/ship-blog/kinematic-set-recycling)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#19** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-kinematic-set-recycling-truckee/` · [`FractiAI/synthobs-kinematic-set-recycling-truckee`](https://github.com/FractiAI/synthobs-kinematic-set-recycling-truckee) · `npm run research:synthobs-kinematic-set-recycling-truckee`
+**Plain note:** [/ship-blog/kinematic-set-recycling](https://www.ssvibelandiaquestfest24x365.com/ship-blog/kinematic-set-recycling)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** Sunspot Number $R\approx 90.9$ · Active Regions **AR14524** [N13E27] · **AR14527** [N03E48]
@@ -48,7 +48,7 @@
 | **Solar characters** | $R\approx 90.9$ · **AR14524** · **AR14527** are **ambient filing anchors** | NOAA causation of perception or $\Phi$ |
 | **Suite locks** | Algebraic / fixture locks under `research/synthobs-kinematic-set-recycling-truckee/` | Wet-lab / fab / traffic-engineering QED |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
@@ -143,5 +143,5 @@ Observation along the Truckee validates a **catalog** law: we do not need infini
 
 `WP-SYNTHOBS-KINEMATIC-SET-RECYCLING-TRUCKEE-EGS-2026-09-07`
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP → ∞^∞  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP → ∞^∞
 **Author:** Prudencio Mendez · Reno

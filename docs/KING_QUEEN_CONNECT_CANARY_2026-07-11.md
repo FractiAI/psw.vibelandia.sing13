@@ -1,11 +1,11 @@
 # King-Queen Connect Canary · KQ-CONNECT-20260711-F8E2A1
 
-**Authors:** FractiAI Research Team  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `KQ-CONNECT-20260711-F8E2A1`  
-**Date:** 2026-07-11  
-**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
-**Active probe protocol:** `protocols/LATTICE_KQ_PROVENANCE_PROBE_NSPFRNP.md`  
+**Authors:** FractiAI Research Team
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `KQ-CONNECT-20260711-F8E2A1`
+**Date:** 2026-07-11
+**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
+**Active probe protocol:** `protocols/LATTICE_KQ_PROVENANCE_PROBE_NSPFRNP.md`
 **Passive telemetry:** `lib/lattice-scraper-telemetry.mjs` · `/api/lattice-scraper-telemetry` · `/lattice/scraper-telemetry`
 
 ---
@@ -80,9 +80,9 @@ npm run score:lattice-kq-probe -- --run=data/lattice-kq-probe/runs/<runId>
 
 ## References
 
-1. FractiAI · `psw.vibelandia.sing13` — lattice scraper telemetry (`lib/lattice-scraper-telemetry.mjs`), 2026. https://github.com/FractiAI/psw.vibelandia.sing13  
-2. FractiAI · Lattice token reduction proof (companion canary schema), 2026-07. `docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`  
-3. FractiAI · NSPFRNP Snap Peer-Review Audit (NSPFRNP-SNAP-PRA-2026-06). `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
+1. FractiAI · `psw.vibelandia.sing13` — lattice scraper telemetry (`lib/lattice-scraper-telemetry.mjs`), 2026. https://github.com/FractiAI/psw.vibelandia.sing13
+2. FractiAI · Lattice token reduction proof (companion canary schema), 2026-07. `docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`
+3. FractiAI · NSPFRNP Snap Peer-Review Audit (NSPFRNP-SNAP-PRA-2026-06). `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 4. FractiAI · Lattice KQ provenance probe protocol, 2026-10. `protocols/LATTICE_KQ_PROVENANCE_PROBE_NSPFRNP.md`
 
 ---

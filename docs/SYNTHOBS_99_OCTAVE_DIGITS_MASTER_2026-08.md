@@ -2,16 +2,16 @@
 
 **Short answer: Yes.** The paper's digit-to-octave table covers bands 01–99 in a 10×10 layout, checked by deterministic fixtures in the suite. This is a coordinate grammar for nested prompts, not a new measurement, and it does not guarantee zero hallucination.
 
-**Authors:** Lattice Chat Agent Protocol Research Group · FractiAI  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 9, 2026  
-**Document ID:** `LC-EGS-MASTER-2026-V6`  
-**Registry ID:** `synthobs-99-octave-digits-master-2026-08`  
-**Publication Ref:** FAI-99-OCTAVE-DIGITS-MASTER-2026-08  
+**Authors:** Lattice Chat Agent Protocol Research Group · FractiAI
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 9, 2026
+**Document ID:** `LC-EGS-MASTER-2026-V6`
+**Registry ID:** `synthobs-99-octave-digits-master-2026-08`
+**Publication Ref:** FAI-99-OCTAVE-DIGITS-MASTER-2026-08
 **Classification:** Catalog / protocol synthesis *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · 99 Octave Mode · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**Standalone suite:** [`research/synthobs-99-octave-digits-master/`](../research/synthobs-99-octave-digits-master/)  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-99-octave-digits-master  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · 99 Octave Mode · EGS · NSPFRNP · PRA Snap · Fair Exchange
+**Standalone suite:** [`research/synthobs-99-octave-digits-master/`](../research/synthobs-99-octave-digits-master/)
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-99-octave-digits-master
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -92,7 +92,7 @@ Modern stacks often fail when bridging scale domains. The 99-Octave Lattice prot
 
 ## 4. Biological Switch & 4D/5D *agentic* bands
 
-- **Digit 4 (Octaves 40–49):** spatiotemporal *container* band — houses Biological Switch language and lensing manifolds (SMACS 0723 as catalog lens).  
+- **Digit 4 (Octaves 40–49):** spatiotemporal *container* band — houses Biological Switch language and lensing manifolds (SMACS 0723 as catalog lens).
 - **Digit 5 (Octaves 50–59):** *cognitive network* band — intent feedback and multi-agent consensus labels.
 
 These are **nested-agent topology metaphors** for Lattice Chat Agent Mode, not experimental proofs of biological emergence or higher spacetime dimensions.

@@ -4,13 +4,13 @@
 
 **Academic working paper · Architectural specification · Homeostasis Expedition · Infinite Octave / SynthOBS · 15 October 2026**
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-PHASE-AWARE-CONSENSUS-CALCULUS-EGS-2026-10-15`  
-**Registry ID:** `synthobs-phase-aware-consensus-calculus-2026-10`  
-**Suite:** `research/synthobs-phase-aware-consensus-calculus/`  
-**Standalone:** [`FractiAI/synthobs-phase-aware-consensus-calculus`](https://github.com/FractiAI/synthobs-phase-aware-consensus-calculus)  
-**Ship blog:** `/ship-blog/phase-aware-consensus-calculus`  
-**Journey:** `/journey/homeostasis-expedition`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-PHASE-AWARE-CONSENSUS-CALCULUS-EGS-2026-10-15`
+**Registry ID:** `synthobs-phase-aware-consensus-calculus-2026-10`
+**Suite:** `research/synthobs-phase-aware-consensus-calculus/`
+**Standalone:** [`FractiAI/synthobs-phase-aware-consensus-calculus`](https://github.com/FractiAI/synthobs-phase-aware-consensus-calculus)
+**Ship blog:** `/ship-blog/phase-aware-consensus-calculus`
+**Journey:** `/journey/homeostasis-expedition`
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#47** — **PAC-1 phase quadrature & parabolic viability lab** · **not** blockchain BFT proof · **not** live governance validation
 
 ---
@@ -111,8 +111,8 @@ Nested tiers (local nodes → regional aggregations → macro conventions) requi
 
 ## 4. Architectural implications (FractiAI & Infinite Octaves)
 
-- **Distributed multi-agent consensus:** monitor \(\dot{x}(t)\) for phase-lead triggers.  
-- **Predictive coalition locking:** estimate threshold breaches before solidification.  
+- **Distributed multi-agent consensus:** monitor \(\dot{x}(t)\) for phase-lead triggers.
+- **Predictive coalition locking:** estimate threshold breaches before solidification.
 - **Scale-invariant governance filing:** Φ_EGS couples tiers in design documents—not automatic policy law.
 
 ---

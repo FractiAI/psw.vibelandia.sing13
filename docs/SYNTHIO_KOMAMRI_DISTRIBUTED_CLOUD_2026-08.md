@@ -2,15 +2,15 @@
 
 **Short answer: Yes.** As an integration plan and primary-engine filing for KomaMRI.jl. Production multi-node MRI simulation benchmarks are proposed, not completed as a clinical claim.
 
-**Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)  
-**Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox  
-**Published:** August 12, 2026  
-**Document ID:** `WP-SYNTHIO-KOMAMRI-DISTRIBUTED-CLOUD-2026-08-12`  
-**Registry ID:** `synthio-komamri-distributed-cloud-2026-08`  
+**Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)
+**Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox
+**Published:** August 12, 2026
+**Document ID:** `WP-SYNTHIO-KOMAMRI-DISTRIBUTED-CLOUD-2026-08-12`
+**Registry ID:** `synthio-komamri-distributed-cloud-2026-08`
 **Classification:** Architecture note · Synthio Cloud Services *(sandbox — see Honesty boundary)*  
-**Parent paper:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md)  
-**Parent suite:** [FractiAI/synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna)  
-**Session UI:** [/synthio-cloud](https://www.ssvibelandiaquestfest24x365.com/synthio-cloud)  
+**Parent paper:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md)
+**Parent suite:** [FractiAI/synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna)
+**Session UI:** [/synthio-cloud](https://www.ssvibelandiaquestfest24x365.com/synthio-cloud)
 **Dashboard:** [/synthio-dashboard](https://www.ssvibelandiaquestfest24x365.com/synthio-dashboard)
 
 ---
@@ -68,16 +68,16 @@ using Distributed
 addprocs([("cloud-node-1", 4), ("cloud-node-2", 4)], exename="julia")
 
 @everywhere begin
-    using KomaMRI
-    using CUDA  # optional when GPU workers are available
+using KomaMRI
+using CUDA  # optional when GPU workers are available
 end
 
 @everywhere function run_distributed_omni_simulation(seq, obj, sys)
-    # Shard phantom across distributed network workers
-    # Apply EGS fractal constant tensor scaling across network blocks
-    sim_params = Dict(:Nblocks => 20)
-    raw = simulate(obj, seq, sys; sim_params=sim_params)
-    return raw
+# Shard phantom across distributed network workers
+# Apply EGS fractal constant tensor scaling across network blocks
+sim_params = Dict(:Nblocks => 20)
+raw = simulate(obj, seq, sys; sim_params=sim_params)
+return raw
 end
 
 # Execute parallel tensor collapse across the cloud network fabric

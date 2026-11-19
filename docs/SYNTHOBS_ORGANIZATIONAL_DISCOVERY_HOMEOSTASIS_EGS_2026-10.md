@@ -4,13 +4,13 @@
 
 **Research program · Homeostasis Expedition · Infinite Octave / SynthOBS · 11 October 2026**
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-ORGANIZATIONAL-DISCOVERY-HOMEOSTASIS-EGS-2026-10-11`  
-**Registry ID:** `synthobs-organizational-discovery-homeostasis-2026-10`  
-**Suite:** `research/synthobs-organizational-discovery-homeostasis/`  
-**Standalone:** [`FractiAI/synthobs-organizational-discovery-homeostasis`](https://github.com/FractiAI/synthobs-organizational-discovery-homeostasis)  
-**Ship blog:** `/ship-blog/organizational-discovery-homeostasis`  
-**Journey:** `/journey/homeostasis-expedition`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-ORGANIZATIONAL-DISCOVERY-HOMEOSTASIS-EGS-2026-10-11`
+**Registry ID:** `synthobs-organizational-discovery-homeostasis-2026-10`
+**Suite:** `research/synthobs-organizational-discovery-homeostasis/`
+**Standalone:** [`FractiAI/synthobs-organizational-discovery-homeostasis`](https://github.com/FractiAI/synthobs-organizational-discovery-homeostasis)
+**Ship blog:** `/ship-blog/organizational-discovery-homeostasis`
+**Journey:** `/journey/homeostasis-expedition`
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#45** — **Organizational discovery computational lab (ODH-1)** · **not** SI awareness · **not** recursive self-improvement proof
 
 ---
@@ -61,8 +61,8 @@ Module: `research/synthobs-organizational-discovery-homeostasis/src/computationa
 
 ### 0.2 Key paired comparisons
 
-- Stable C vs B: **−7.33%** error (organizational wins all 150 paired runs in manuscript record).  
-- Shift C vs B: **+6.83%** error (fixed org chart brittle).  
+- Stable C vs B: **−7.33%** error (organizational wins all 150 paired runs in manuscript record).
+- Shift C vs B: **+6.83%** error (fixed org chart brittle).
 - Shift E vs D: **−6.68%** (retraining cross-node model restores advantage).
 
 ### 0.3 Forecast RMSE (secondary)

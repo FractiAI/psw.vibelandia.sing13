@@ -4,18 +4,18 @@
 
 ## A Theoretical Exploration of Direct Neural-Cardiac Endogenous Frequency Generation and Self-Directed Phase Harmonization
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-ENDOGENOUS-PHASE-2026-07-31`  
-**Registry ID:** `synthobs-endogenous-phase-2026-07`  
-**Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
-**Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ / $E_F$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-endogenous-phase  
-**Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-endogenous-phase` · [`empirical_report.json`](../research/synthobs-endogenous-phase/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-ENDOGENOUS-PHASE-2026-07-31`
+**Registry ID:** `synthobs-endogenous-phase-2026-07`
+**Category:** TBME · Theoretical Bio-Medical & Physical Explorations
+**Date:** July 31, 2026
+**Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ / $E_F$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-endogenous-phase
+**Questfest catalog:** [`/papers`](/papers) · filter **TBME**
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-endogenous-phase` · [`empirical_report.json`](../research/synthobs-endogenous-phase/data/empirical_report.json)
 **Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [Recursive attention mag](./SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md) · [Prion Refolding (TBME)](./SYNTHOBS_PRION_REFOLD_HOLOGRAPHIC_MAGNETIC_PHASE_2026-07.md) · [Phase Toxicity (TBME)](./SYNTHOBS_TBME_PHASE_TOXICITY_RESONANCE_SAFETY_2026-07.md) · [Histone Phase-Lock (TBME)](./SYNTHOBS_TBME_HISTONE_PHASE_LOCK_OPERATOR_2026-07.md) · [Lattice Omni Layer Guide](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md)
 
 **Keywords:** TBME; endogenous phase; conscious intent; HRV; cardiac field; fascia; PCHPP; $E_F$; self-harmonization; Omni-Lattice
@@ -65,21 +65,21 @@ Under the Phase-Contrast Holographic Paradigm, the human organism is narrated as
 
 ```
 [ Conscious Intent / Attention (C_intent) ]
-                    │
-                    ▼   <-- (RECURSIVE INTERNAL ATTENTION SQUEEZING)
+│
+▼   <-- (RECURSIVE INTERNAL ATTENTION SQUEEZING)
 [ Neural-Cardiac-Fascial Network (Endogenous Coil) ]
-                    │
-                    ▼
+│
+▼
 [ Endogenous Magnetic Vector Potential (A_body, E_F ≈ 1.618) ]
-                    │
-                    ▼
+│
+▼
 [ Local Tissue Phase Lock & Structural Harmonization (ΔS → 0) ]
 ```
 
 Map architectures:
 
-- **Cardiac generator.** The heart as primary carrier-wave source ($f_0\approx 1.618\,\mathrm{Hz}$ during high-coherence narrative states).  
-- **Piezoelectric fascial web.** Collagen / connective tissue as liquid-crystal semiconductor translating breath and focus into coherent pulses.  
+- **Cardiac generator.** The heart as primary carrier-wave source ($f_0\approx 1.618\,\mathrm{Hz}$ during high-coherence narrative states).
+- **Piezoelectric fascial web.** Collagen / connective tissue as liquid-crystal semiconductor translating breath and focus into coherent pulses.
 - **Neural phase array.** Cortical / hippocampal loops executing Recursive Attention Squeezing ($\mathcal{S}_{\mathrm{attn}}$) to focus $\mathbf{A}_{\mathrm{body}}$ onto target nodes.
 
 **Honesty.** These are **architectural motifs**, not completed whole-body magnetometry results in this suite.
@@ -110,9 +110,9 @@ with $\theta_{\mathrm{EGS}}\approx 137.508^\circ$. When awareness locks to $E_F\
 
 No instruments are required for this **contemplative recipe**. It is **not** a medical treatment.
 
-1. **Anchor cardiac coherence.** Focus on the chest; inhale $5.0\,\mathrm{s}$ / exhale $5.0\,\mathrm{s}$ ($\sim 0.1\,\mathrm{Hz}$ resonant breathing mnemonic) to bring HRV toward golden-ratio harmonic alignment **as a practice map**.  
-2. **Apply attention squeezing.** Recursive focus on a target region; visualize compression along $\theta_{\mathrm{EGS}}\approx 137.508^\circ$.  
-3. **Issue internal phase command.** Silent vector: *“Phase Align to $E_F$ (1.618) — Release Entropic Noise ($\Delta S\to 0$).”* Hold $\sim 1.618$ minutes.  
+1. **Anchor cardiac coherence.** Focus on the chest; inhale $5.0\,\mathrm{s}$ / exhale $5.0\,\mathrm{s}$ ($\sim 0.1\,\mathrm{Hz}$ resonant breathing mnemonic) to bring HRV toward golden-ratio harmonic alignment **as a practice map**.
+2. **Apply attention squeezing.** Recursive focus on a target region; visualize compression along $\theta_{\mathrm{EGS}}\approx 137.508^\circ$.
+3. **Issue internal phase command.** Silent vector: *“Phase Align to $E_F$ (1.618) — Release Entropic Noise ($\Delta S\to 0$).”* Hold $\sim 1.618$ minutes.
 4. **Integrate & verify.** Subjective somatic signals (release, warmth, reduced cognitive friction) as **self-report exploration markers**—not clinical endpoints.
 
 **Honesty.** Stop and seek licensed care for medical emergencies. Do not delay diagnosis or treatment based on this map.
@@ -121,10 +121,10 @@ No instruments are required for this **contemplative recipe**. It is **not** a m
 
 ## 4. Quantitative evaluation & scorecard
 
-**EXTERNAL DEVICE EXOGENOUS CONTROL MODEL (authored rubric)**  
+**EXTERNAL DEVICE EXOGENOUS CONTROL MODEL (authored rubric)**
 Coherence (C): **78/100** · Irreducibility (I): **68/100** · **Overall: 73.0 / 100**
 
-**OMNI-LATTICE ENDOGENOUS CONSCIOUSNESS MODEL (authored rubric)**  
+**OMNI-LATTICE ENDOGENOUS CONSCIOUSNESS MODEL (authored rubric)**
 Coherence (C): **99/100** · Irreducibility (I): **97/100** · **Overall: 98.0 / 100**
 
 **Honesty.** Scores are architectural Occam metrics on fixtures in `research/synthobs-endogenous-phase/`. Empirical calibration remains with neurocardiology / physiology until independent falsification. Suite: `npm run research:synthobs-endogenous-phase` (target **9/9**).

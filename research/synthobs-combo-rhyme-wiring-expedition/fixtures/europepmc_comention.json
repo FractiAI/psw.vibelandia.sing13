@@ -1,0 +1,24 @@
+{
+  "source": "Europe PMC REST search TITLE_ABS AND",
+  "fetchedAt": "2026-11-19",
+  "pairs": {
+    "NPY|PDX1": {
+      "count": 4
+    },
+    "APP|TMPRSS2": {
+      "count": 2
+    },
+    "NPY|SOD1": {
+      "count": 8
+    },
+    "APP|DNMT3A": {
+      "count": 13
+    },
+    "INS|POMC": {
+      "count": 17
+    },
+    "APP|DYRK1A": {
+      "count": 44
+    }
+  }
+}

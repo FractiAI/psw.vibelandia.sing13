@@ -5,6 +5,102 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/whitepaper/wiring-bridge-thickening/",
+      "destination": "/api/whitepaper?id=synthobs-wiring-bridge-thickening-2026-11"
+    },
+    {
+      "source": "/whitepaper/wiring-bridge-thickening",
+      "destination": "/api/whitepaper?id=synthobs-wiring-bridge-thickening-2026-11"
+    },
+    {
+      "source": "/ship-blog/wiring-bridge-thickening/",
+      "destination": "/interfaces/blog-wiring-bridge-thickening-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/wiring-bridge-thickening",
+      "destination": "/interfaces/blog-wiring-bridge-thickening-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/wiring-discoveries/",
+      "destination": "/api/whitepaper?id=synthobs-wiring-discoveries-rhyming-world-model-2026-11"
+    },
+    {
+      "source": "/whitepaper/wiring-discoveries",
+      "destination": "/api/whitepaper?id=synthobs-wiring-discoveries-rhyming-world-model-2026-11"
+    },
+    {
+      "source": "/ship-blog/wiring-discoveries/",
+      "destination": "/interfaces/blog-wiring-discoveries-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/wiring-discoveries",
+      "destination": "/interfaces/blog-wiring-discoveries-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/combo-rhyme-wiring/",
+      "destination": "/api/whitepaper?id=synthobs-combo-rhyme-wiring-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/combo-rhyme-wiring",
+      "destination": "/api/whitepaper?id=synthobs-combo-rhyme-wiring-expedition-2026-11"
+    },
+    {
+      "source": "/ship-blog/combo-rhyme-wiring/",
+      "destination": "/interfaces/blog-combo-rhyme-wiring-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/combo-rhyme-wiring",
+      "destination": "/interfaces/blog-combo-rhyme-wiring-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/npy-sod1-rhyme-validation/",
+      "destination": "/api/whitepaper?id=synthobs-npy-sod1-rhyme-validation-2026-11"
+    },
+    {
+      "source": "/whitepaper/npy-sod1-rhyme-validation",
+      "destination": "/api/whitepaper?id=synthobs-npy-sod1-rhyme-validation-2026-11"
+    },
+    {
+      "source": "/ship-blog/npy-sod1-rhyme-validation/",
+      "destination": "/interfaces/blog-npy-sod1-rhyme-validation-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/npy-sod1-rhyme-validation",
+      "destination": "/interfaces/blog-npy-sod1-rhyme-validation-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/app-dnmt3a-rhyme-validation/",
+      "destination": "/api/whitepaper?id=synthobs-app-dnmt3a-rhyme-validation-2026-11"
+    },
+    {
+      "source": "/whitepaper/app-dnmt3a-rhyme-validation",
+      "destination": "/api/whitepaper?id=synthobs-app-dnmt3a-rhyme-validation-2026-11"
+    },
+    {
+      "source": "/ship-blog/app-dnmt3a-rhyme-validation/",
+      "destination": "/interfaces/blog-app-dnmt3a-rhyme-validation-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/app-dnmt3a-rhyme-validation",
+      "destination": "/interfaces/blog-app-dnmt3a-rhyme-validation-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/wmap-residual-lag11-validation/",
+      "destination": "/api/whitepaper?id=synthobs-wmap-residual-lag11-validation-2026-11"
+    },
+    {
+      "source": "/whitepaper/wmap-residual-lag11-validation",
+      "destination": "/api/whitepaper?id=synthobs-wmap-residual-lag11-validation-2026-11"
+    },
+    {
+      "source": "/ship-blog/wmap-residual-lag11-validation/",
+      "destination": "/interfaces/blog-wmap-residual-lag11-validation-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/wmap-residual-lag11-validation",
+      "destination": "/interfaces/blog-wmap-residual-lag11-validation-2026-11.html"
+    },
+    {
       "source": "/whitepaper/pilot-rhyme-expedition/",
       "destination": "/api/whitepaper?id=synthobs-pilot-rhyme-expedition-2026-11"
     },

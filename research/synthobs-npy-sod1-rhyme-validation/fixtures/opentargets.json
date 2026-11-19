@@ -1,0 +1,332 @@
+{
+  "source": "OpenTargets Platform GraphQL API",
+  "fetchedAt": "2026-11-19",
+  "focusA": {
+    "ensemblId": "ENSG00000122585",
+    "approvedSymbol": "NPY",
+    "diseaseCount": 864,
+    "topDiseases": [
+      {
+        "name": "type 2 diabetes mellitus",
+        "id": "MONDO_0005148",
+        "score": 0.31906010689742653
+      },
+      {
+        "name": "Nephropathy",
+        "id": "HP_0000112",
+        "score": 0.30958255339011065
+      },
+      {
+        "name": "nephritis",
+        "id": "MONDO_0001166",
+        "score": 0.3031887737162158
+      },
+      {
+        "name": "scoliosis",
+        "id": "MONDO_0005392",
+        "score": 0.3015821342641413
+      },
+      {
+        "name": "diabetes mellitus",
+        "id": "MONDO_0005015",
+        "score": 0.2981468896337478
+      },
+      {
+        "name": "male reproductive organ cancer",
+        "id": "MONDO_0005836",
+        "score": 0.29461711225900294
+      },
+      {
+        "name": "alcohol drinking",
+        "id": "EFO_0004329",
+        "score": 0.29257376226966275
+      },
+      {
+        "name": "insomnia",
+        "id": "MONDO_0013600",
+        "score": 0.2860866074904911
+      },
+      {
+        "name": "stroke disorder",
+        "id": "MONDO_0005098",
+        "score": 0.28540590456353515
+      },
+      {
+        "name": "neurodegenerative disease",
+        "id": "MONDO_0005559",
+        "score": 0.27657350288348725
+      },
+      {
+        "name": "secondary malignant neoplasm",
+        "id": "MONDO_0024881",
+        "score": 0.2582777224990261
+      },
+      {
+        "name": "neoplasm",
+        "id": "MONDO_0005070",
+        "score": 0.25531394722733924
+      },
+      {
+        "name": "intelligence",
+        "id": "EFO_0004337",
+        "score": 0.23915573033661633
+      },
+      {
+        "name": "obesity disorder",
+        "id": "MONDO_0011122",
+        "score": 0.2205272276335508
+      },
+      {
+        "name": "bile duct disorder",
+        "id": "MONDO_0002887",
+        "score": 0.18051474509947155
+      }
+    ]
+  },
+  "focusB": {
+    "ensemblId": "ENSG00000142168",
+    "approvedSymbol": "SOD1",
+    "diseaseCount": 3830,
+    "topDiseases": [
+      {
+        "name": "amyotrophic lateral sclerosis",
+        "id": "MONDO_0004976",
+        "score": 0.8830763002883033
+      },
+      {
+        "name": "spastic tetraplegia and axial hypotonia, progressive",
+        "id": "EFO_0010567",
+        "score": 0.6897085227254762
+      },
+      {
+        "name": "motor neuron disorder",
+        "id": "MONDO_0020128",
+        "score": 0.5951491946885983
+      },
+      {
+        "name": "neurodegenerative disease",
+        "id": "MONDO_0005559",
+        "score": 0.5546210197019004
+      },
+      {
+        "name": "familial amyotrophic lateral sclerosis",
+        "id": "MONDO_0005144",
+        "score": 0.5017966940787082
+      },
+      {
+        "name": "sporadic amyotrophic lateral sclerosis",
+        "id": "MONDO_0005145",
+        "score": 0.49528994500311896
+      },
+      {
+        "name": "frontotemporal dementia with motor neuron disease",
+        "id": "MONDO_0017161",
+        "score": 0.3558504846014045
+      },
+      {
+        "name": "Limb muscle weakness",
+        "id": "HP_0003690",
+        "score": 0.3400134663099256
+      },
+      {
+        "name": "Atrophy/Degeneration affecting the central nervous system",
+        "id": "HP_0007367",
+        "score": 0.30657026358995404
+      },
+      {
+        "name": "Abnormal central motor function",
+        "id": "HP_0011442",
+        "score": 0.26609749537298527
+      },
+      {
+        "name": "cervical carcinoma",
+        "id": "MONDO_0005131",
+        "score": 0.2602302069321952
+      },
+      {
+        "name": "skull disorder",
+        "id": "MONDO_0024654",
+        "score": 0.2402207727616704
+      },
+      {
+        "name": "tonsillitis",
+        "id": "MONDO_0001039",
+        "score": 0.23700395757400208
+      },
+      {
+        "name": "Charcot-Marie-Tooth disease",
+        "id": "MONDO_0015626",
+        "score": 0.19372737202576318
+      },
+      {
+        "name": "alcohol drinking",
+        "id": "EFO_0004329",
+        "score": 0.17642870352057535
+      }
+    ]
+  },
+  "positiveControlIns": {
+    "ensemblId": "ENSG00000254647",
+    "approvedSymbol": "INS",
+    "diseaseCount": 2992,
+    "topDiseases": [
+      {
+        "name": "diabetes mellitus, permanent neonatal 4",
+        "id": "MONDO_0030089",
+        "score": 0.7854986627467073
+      },
+      {
+        "name": "hyperproinsulinemia",
+        "id": "MONDO_0014535",
+        "score": 0.7422832304855211
+      },
+      {
+        "name": "maturity-onset diabetes of the young",
+        "id": "MONDO_0018911",
+        "score": 0.7363997129035293
+      },
+      {
+        "name": "type 1 diabetes mellitus",
+        "id": "MONDO_0005147",
+        "score": 0.7327599739145182
+      },
+      {
+        "name": "permanent neonatal diabetes mellitus",
+        "id": "MONDO_0100164",
+        "score": 0.6950734659700192
+      },
+      {
+        "name": "maturity-onset diabetes of the young type 10",
+        "id": "MONDO_0013240",
+        "score": 0.6853660532736621
+      },
+      {
+        "name": "type 2 diabetes mellitus",
+        "id": "MONDO_0005148",
+        "score": 0.5914367309112698
+      },
+      {
+        "name": "diabetes mellitus",
+        "id": "MONDO_0005015",
+        "score": 0.5888226028972947
+      },
+      {
+        "name": "monogenic diabetes",
+        "id": "MONDO_0015967",
+        "score": 0.5639880018609719
+      },
+      {
+        "name": "diabetic retinopathy",
+        "id": "MONDO_0005266",
+        "score": 0.5120187918496572
+      },
+      {
+        "name": "transient neonatal diabetes, dominant/recessive",
+        "id": "EFO_0020040",
+        "score": 0.5061929515776419
+      },
+      {
+        "name": "AL amyloidosis",
+        "id": "MONDO_0019438",
+        "score": 0.4725090948435804
+      },
+      {
+        "name": "autoimmune disease",
+        "id": "MONDO_0007179",
+        "score": 0.4521014826313801
+      },
+      {
+        "name": "retinal disorder",
+        "id": "MONDO_0005283",
+        "score": 0.44856802740827184
+      },
+      {
+        "name": "neonatal diabetes mellitus",
+        "id": "MONDO_0016391",
+        "score": 0.4283473305442819
+      }
+    ]
+  },
+  "positiveControlPomc": {
+    "ensemblId": "ENSG00000115138",
+    "approvedSymbol": "POMC",
+    "diseaseCount": 1935,
+    "topDiseases": [
+      {
+        "name": "obesity due to pro-opiomelanocortin deficiency",
+        "id": "MONDO_0012335",
+        "score": 0.6969516618431788
+      },
+      {
+        "name": "obesity disorder",
+        "id": "MONDO_0011122",
+        "score": 0.5740483007150636
+      },
+      {
+        "name": "hair color",
+        "id": "EFO_0003924",
+        "score": 0.47083906367043477
+      },
+      {
+        "name": "inherited obesity",
+        "id": "MONDO_0019182",
+        "score": 0.42579511731013925
+      },
+      {
+        "name": "autoimmune disease",
+        "id": "MONDO_0007179",
+        "score": 0.4191012041150338
+      },
+      {
+        "name": "hereditary disease",
+        "id": "MONDO_0003847",
+        "score": 0.41579589573296366
+      },
+      {
+        "name": "adrenal gland disorder",
+        "id": "MONDO_0005495",
+        "score": 0.3703825615968628
+      },
+      {
+        "name": "cardiovascular disorder",
+        "id": "MONDO_0004995",
+        "score": 0.34123991050708957
+      },
+      {
+        "name": "Crohn disease",
+        "id": "MONDO_0005011",
+        "score": 0.32212699922117444
+      },
+      {
+        "name": "ulcerative colitis",
+        "id": "MONDO_0005101",
+        "score": 0.3186603837397329
+      },
+      {
+        "name": "inflammatory spondylopathy",
+        "id": "MONDO_0001434",
+        "score": 0.31748033984397195
+      },
+      {
+        "name": "mental disorder",
+        "id": "MONDO_0005084",
+        "score": 0.29369499369322033
+      },
+      {
+        "name": "substance-related disorder",
+        "id": "MONDO_0002494",
+        "score": 0.2906901655817582
+      },
+      {
+        "name": "hypertensive disorder",
+        "id": "MONDO_0005044",
+        "score": 0.281834426649511
+      },
+      {
+        "name": "uterine corpus leiomyoma",
+        "id": "MONDO_0007886",
+        "score": 0.27277892694006944
+      }
+    ]
+  }
+}

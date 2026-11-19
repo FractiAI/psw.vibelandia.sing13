@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-19** · **412** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-19** · **418** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -309,6 +309,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Sparse Models for Repeating Genomic Roads · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-agentic-convergence-2026-10.html`](/interfaces/blog-agentic-convergence-2026-10.html) | If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html`](/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html) | When AI Spend Climbs, Do Livelihoods and Doors Keep Pace? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-app-dnmt3a-rhyme-validation-2026-11.html`](/interfaces/blog-app-dnmt3a-rhyme-validation-2026-11.html) | Can Published DNMT3A Tools That Edit APP Be Filed as New Wiring? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-archetypal-grand-story-2026-10.html`](/interfaces/blog-archetypal-grand-story-2026-10.html) | If Every Life Is a Mix of Story Characters, What Is the Hero Actually Returning To? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-attention-awareness-downstream-2026-10.html`](/interfaces/blog-attention-awareness-downstream-2026-10.html) | When a System Pays Attention, What Changes Downstream Because It Did? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 — Crowded Calendar, Not Prophecy · Ship blog · SS Vibelandia |
@@ -319,6 +320,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | The Engine on a Silicon Shelf · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexist with AI — Which Post Are You? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | One Window on Quake and Volcano Alert · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-combo-rhyme-wiring-2026-11.html`](/interfaces/blog-combo-rhyme-wiring-2026-11.html) | When Protein-Folding, LLM, and Pilot Rhymes Share One Catalog, Do New Wires Appear? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-computation-workhorse-science-2026-10.html`](/interfaces/blog-computation-workhorse-science-2026-10.html) | Should Computation Become the Primary Workhorse of Science? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09-old.html`](/interfaces/blog-consciousness-moat-2026-09-old.html) | The Machine-Feelings Fight Misses the Blueprint · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-consciousness-moat-2026-09.html`](/interfaces/blog-consciousness-moat-2026-09.html) | When Labs Argue Model Welfare, What Shared Blind Spot Remains? · Ship blog · SS Vibelandia |
@@ -398,6 +400,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-net-zero-missing-half-2026-10.html`](/interfaces/blog-net-zero-missing-half-2026-10.html) | When You See Only Half the Circle, What Completes the Whole? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-net-zero-periodic-table-2026-10.html`](/interfaces/blog-net-zero-periodic-table-2026-10.html) | Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine Digits, Ninety-Nine Octaves — Walk It · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-npy-sod1-rhyme-validation-2026-11.html`](/interfaces/blog-npy-sod1-rhyme-validation-2026-11.html) | When Existing ALS Wet Labs Wire NPY to SOD1, Is That a New Discovery? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nspfrnp-snap-peer-review-audit.html`](/interfaces/blog-nspfrnp-snap-peer-review-audit.html) | Peer Review Snap — Keep Claims Honest · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-nvidia-goldilocks-moment-2026-11.html`](/interfaces/blog-nvidia-goldilocks-moment-2026-11.html) | What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-official-prospectus-2026-08.html`](/interfaces/blog-official-prospectus-2026-08.html) | The Voyage Begins — Captain’s Seat Open · Ship blog · SS Vibelandia |
@@ -510,6 +513,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-wave-node-mathematics-2026-10.html`](/interfaces/blog-wave-node-mathematics-2026-10.html) | When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What Frontier Means for Families · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the sun got loud — and what a household should do with weather talk · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-wiring-bridge-thickening-2026-11.html`](/interfaces/blog-wiring-bridge-thickening-2026-11.html) | Bridge Thickening — When Different Rhymes Keep Landing on the Same Pair · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-wiring-discoveries-2026-11.html`](/interfaces/blog-wiring-discoveries-2026-11.html) | The Wiring Wet Lab — Why Re-Spend Time and Money When the Work Is Already Done? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-wmap-residual-lag11-validation-2026-11.html`](/interfaces/blog-wmap-residual-lag11-validation-2026-11.html) | Is Residual Lag Wiring on the Real WMAP Spectrum a Discovery If Beam Stories Can Still Kill It? · Ship blog · SS Vibelan |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y as Story Geometry, Not Destiny · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-zero-octave-node-k0-2026-09.html`](/interfaces/blog-zero-octave-node-k0-2026-09.html) | Node Zero — Your Start Gate · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-zero-octave-y-goldilocks-2026-09-old.html`](/interfaces/blog-zero-octave-y-goldilocks-2026-09-old.html) | The Y Walked the Balance Band First · Ship blog · SS Vibelandia |

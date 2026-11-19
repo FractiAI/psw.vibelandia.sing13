@@ -1,0 +1,7 @@
+export function mean(xs){return xs.reduce((a,b)=>a+b,0)/Math.max(xs.length,1)}
+export function mulberry32(seed){let a=seed>>>0;return()=>{a=(a+0x6d2b79f5)>>>0;let t=a;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296}}
+export function shuffleInPlace(arr,rnd){for(let i=arr.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+export function cosine(a,b){let num=0,da=0,db=0;for(const k of Object.keys(a)){num+=a[k]*b[k];da+=a[k]*a[k];db+=b[k]*b[k]}const den=Math.sqrt(da*db);return den===0?0:num/den}
+export function zScoreColumns(objects,keys){const stats={};for(const k of keys){const vals=objects.map(o=>o.features[k]);const m=mean(vals);const s=Math.sqrt(mean(vals.map(x=>(x-m)**2)))||1;stats[k]={m,s}}const zObjects=objects.map(o=>{const z={};for(const k of keys)z[k]=(o.features[k]-stats[k].m)/stats[k].s;return{...o,z}});return{zObjects,stats}}
+export function proveCouplingSymmetry(za,zb){const ab=cosine(za,zb),ba=cosine(zb,za);return{id:'cosine_symmetry',statement:'cos(a,b)===cos(b,a)',ab,ba,delta:Math.abs(ab-ba),ok:Math.abs(ab-ba)<1e-12}}
+export function proveZscoreMeanNearZero(objects,keys,eps=1e-9){const{zObjects}=zScoreColumns(objects,keys);const lemmas=keys.map(k=>{const m=mean(zObjects.map(o=>o.z[k]));return{id:'zscore_mean_near_zero:'+k,statement:'mean(z_'+k+')≈0',mean:m,eps,ok:Math.abs(m)<eps}});return{ok:lemmas.every(l=>l.ok),lemmas}}

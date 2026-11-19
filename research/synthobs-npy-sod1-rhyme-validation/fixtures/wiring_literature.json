@@ -1,0 +1,84 @@
+{
+  "discoveryClass": "new_wiring",
+  "claim": "Assemble existing wet-lab pieces into NPY\u2194SOD1 disease-context wiring that STRING does not list as a PPI edge.",
+  "noveltyGate": "STRING focus empty AND \u22653 independent wet-lab pieces spanning (A) NPY altered in SOD1/ALS tissue, (B) NPY functional effect in SOD1 models, (C) human ALS motor-cortex NPY change.",
+  "falsifiers": [
+    "STRING gains a scored NPY\u2013SOD1 PPI edge on re-query \u2192 demote to rediscovery wiring",
+    "Fewer than 3 pre-registered wet-lab pieces survive citation check \u2192 fail assembly",
+    "No SOD1-genotype or ALS-tissue piece \u2192 fail (disease-context bridge missing)"
+  ],
+  "doesNotClaim": [
+    "new wet-lab assay performed by us",
+    "direct NPY\u2013SOD1 protein binding",
+    "clinical treatment recommendation"
+  ],
+  "pieces": [
+    {
+      "id": "W1",
+      "role": "sod1_context_npy_altered",
+      "title": "Calretinin and Neuropeptide Y interneurons are differentially altered in the motor cortex of the SOD1G93A mouse model of ALS",
+      "cite": "Clark et al., Sci Rep 7:44461 (2017)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5353592/",
+      "wetLab": true,
+      "whatItShows": "NPY+ interneuron density altered in SOD1G93A motor cortex across disease stages.",
+      "wires": [
+        "NPY",
+        "SOD1G93A_motor_cortex"
+      ]
+    },
+    {
+      "id": "W2",
+      "role": "human_als_npy_elevated",
+      "title": "Intranasal neuropeptide Y1 receptor antagonism improves motor deficits in symptomatic SOD1 ALS mice",
+      "cite": "Clark et al., Ann Clin Transl Neurol 10:1985\u20131999 (2023)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10647012/",
+      "wetLab": true,
+      "whatItShows": "Human ALS motor cortex NPY labelling \u2191 (~75%); SOD1G93A cortical cultures + intranasal NPY/Y1 pharmacology alter excitability, motor deficits, survival signals.",
+      "wires": [
+        "NPY",
+        "human_ALS_motor_cortex",
+        "SOD1G93A",
+        "NPY_Y1"
+      ]
+    },
+    {
+      "id": "W3",
+      "role": "review_bridge_oxidative_excitability",
+      "title": "Pathogenic or protective? Neuropeptide Y in amyotrophic lateral sclerosis",
+      "cite": "Clark et al., J Neurochem (review; ALS/NPY mechanisms)",
+      "url": "https://doi.org/10.1111/jnc.15125",
+      "wetLab": false,
+      "whatItShows": "Synthesizes NPY roles in ALS pathways that SOD1 models also hitch (excitotoxicity, oxidative stress, hyperexcitability).",
+      "wires": [
+        "NPY",
+        "ALS_pathway_board"
+      ]
+    },
+    {
+      "id": "W4",
+      "role": "sod1_oxidative_anchor",
+      "title": "Astrocytes expressing mutant SOD1 trigger motoneuron death via nitroxidative stress",
+      "cite": "Front. Cell. Neurosci. (SOD1 astrocyte ACM / nitroxidative stress)",
+      "url": "https://www.frontiersin.org/journals/cellular-neuroscience/articles/10.3389/fncel.2014.00024/full",
+      "wetLab": true,
+      "whatItShows": "Mutant SOD1 astrocytes drive motoneuron death through nitroxidative stress \u2014 the SOD1 disease wire NPY literature claims to modulate.",
+      "wires": [
+        "SOD1",
+        "nitroxidative_stress",
+        "motoneuron"
+      ]
+    }
+  ],
+  "assembledWiring": {
+    "edge": "NPY \u2194 SOD1",
+    "edgeType": "disease_context_wiring",
+    "not": "STRING_PPI",
+    "path": [
+      "NPY interneurons remodel in SOD1G93A motor cortex (W1)",
+      "NPY elevated in human ALS motor cortex; NPY/Y1 changes SOD1G93A physiology (W2)",
+      "NPY mechanism board overlaps SOD1 oxidative/excitability board (W3+W4)"
+    ],
+    "catalogStatus": "STRING_empty_PPI",
+    "discovery": "new_wiring_from_existing_wet_labs"
+  }
+}

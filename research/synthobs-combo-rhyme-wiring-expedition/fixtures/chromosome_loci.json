@@ -1,0 +1,36 @@
+{
+  "source": "LLM exons.panel.json gene chromosomes",
+  "genes": {
+    "NPY": [
+      "chr7"
+    ],
+    "PDX1": [
+      "chr13"
+    ],
+    "APP": [
+      "chr21"
+    ],
+    "TMPRSS2": [
+      "chr21"
+    ],
+    "SOD1": [
+      "chr21"
+    ],
+    "DYRK1A": [
+      "chr21"
+    ],
+    "INS": [
+      "chr11"
+    ],
+    "POMC": [
+      "chr2"
+    ],
+    "DNMT1": [
+      "chr19"
+    ],
+    "DNMT3A": [
+      "chr2"
+    ]
+  },
+  "note": "Same-chromosome pairs can be recovered by locus neighborhood rhyme without disease wiring."
+}

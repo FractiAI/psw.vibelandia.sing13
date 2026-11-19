@@ -355,7 +355,11 @@
     "publish:standalone:omniversal-time-crystal-engine:create": "node scripts/publish-standalone-suite.mjs synthobs-omniversal-time-crystal-engine --create-repo",
     "sync:lattice-skills": "node scripts/sync-lattice-skills-index.mjs",
     "generate:lattice-skills": "node scripts/generate-lattice-skills.mjs",
-    "research:synthobs-pilot-rhyme-expedition": "node research/synthobs-pilot-rhyme-expedition/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-pilot-rhyme-expedition": "node research/synthobs-pilot-rhyme-expedition/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-npy-sod1-rhyme-validation": "node research/synthobs-npy-sod1-rhyme-validation/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-app-dnmt3a-rhyme-validation": "node research/synthobs-app-dnmt3a-rhyme-validation/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-wmap-residual-lag11-validation": "node research/synthobs-wmap-residual-lag11-validation/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-combo-rhyme-wiring-expedition": "node research/synthobs-combo-rhyme-wiring-expedition/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

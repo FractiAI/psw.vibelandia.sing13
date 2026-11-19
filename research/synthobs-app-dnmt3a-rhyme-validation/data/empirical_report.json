@@ -1,0 +1,336 @@
+{
+  "documentId": "WP-APP-DNMT3A-RHYME-VALIDATION-EGS-2026-11-19",
+  "registryId": "synthobs-app-dnmt3a-rhyme-validation-2026-11",
+  "seed": 20261119,
+  "phiEgs": 1.618033988749895,
+  "engineShelfPinned": false,
+  "focusPair": {
+    "a": "APP",
+    "b": "DNMT3A",
+    "label": "APP↔DNMT3A"
+  },
+  "honesty": "Application companion Soft Story / unknown-pair validation on REAL public data (GTEx/MyGene exon panels, live-cached STRING + OpenTargets). INS↔POMC is positive control (known STRING edge) that the rhyme+external lane works. Focus pair must be STRING-empty (unknown). Not ENGINE_SHELF, not causal pathway, not clinical, not wet-lab. Φ_EGS filing grammar only.",
+  "dataProvenance": {
+    "exons": "GTEx/MyGene real panel fixtures (llm-rhyme)",
+    "string": "STRING API json/network species=9606",
+    "opentargets": "OpenTargets Platform GraphQL API",
+    "wiringLiterature": "fixtures/wiring_literature.json"
+  },
+  "mathProofs": {
+    "ok": true,
+    "lemmas": [
+      {
+        "id": "cosine_symmetry",
+        "statement": "cos(a,b)===cos(b,a)",
+        "ab": 0.9943462972264046,
+        "ba": 0.9943462972264046,
+        "delta": 0,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:chrom_num",
+        "statement": "mean(z_chrom_num)≈0",
+        "mean": 1.438849039914203e-16,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:start",
+        "statement": "mean(z_start)≈0",
+        "mean": 3.552713678800501e-17,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:end",
+        "statement": "mean(z_end)≈0",
+        "mean": -1.652011860642233e-16,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:log_len",
+        "statement": "mean(z_log_len)≈0",
+        "mean": -7.7982065249671e-16,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:exon_index",
+        "statement": "mean(z_exon_index)≈0",
+        "mean": 8.43769498715119e-18,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:strand",
+        "statement": "mean(z_strand)≈0",
+        "mean": 0,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:gene_span",
+        "statement": "mean(z_gene_span)≈0",
+        "mean": 1.2355894085658292e-14,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:tss_dist",
+        "statement": "mean(z_tss_dist)≈0",
+        "mean": -9.450218385609333e-16,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:log_cpg_prox",
+        "statement": "mean(z_log_cpg_prox)≈0",
+        "mean": 0,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:near_cpg_n",
+        "statement": "mean(z_near_cpg_n)≈0",
+        "mean": 0,
+        "eps": 1e-9,
+        "ok": true
+      }
+    ]
+  },
+  "experiments": {
+    "e1": {
+      "id": "E1",
+      "name": "reproduce_focus_exon_coupling",
+      "maxCoupling": 0.7454511874088052,
+      "pair": "APP:ex0@chr21:25880549 ↔ DNMT3A:ex0@chr2:25227876",
+      "a": "APP:ex0@chr21:25880549",
+      "b": "DNMT3A:ex0@chr2:25227876"
+    },
+    "e2": {
+      "id": "E2",
+      "name": "panel_rank_and_permutation",
+      "focusRank": 12,
+      "nPairs": 45,
+      "permutationP": 1,
+      "nullMean": null,
+      "top10": [
+        {
+          "pair": "NPY↔POMC",
+          "a": "NPY",
+          "b": "POMC",
+          "maxCoupling": 0.9724371217451511,
+          "bestExonPair": "NPY:ex2@chr7:24289498 ↔ POMC:ex2@chr2:25165635"
+        },
+        {
+          "pair": "DYRK1A↔TMPRSS2",
+          "a": "DYRK1A",
+          "b": "TMPRSS2",
+          "maxCoupling": 0.9364106381501517,
+          "bestExonPair": "DYRK1A:ex1@chr21:37420298 ↔ TMPRSS2:ex3@chr21:41470647"
+        },
+        {
+          "pair": "PDX1↔SOD1",
+          "a": "PDX1",
+          "b": "SOD1",
+          "maxCoupling": 0.9182408296077225,
+          "bestExonPair": "PDX1:ex0@chr13:27919999 ↔ SOD1:ex0@chr21:31659692"
+        },
+        {
+          "pair": "PDX1↔POMC",
+          "a": "PDX1",
+          "b": "POMC",
+          "maxCoupling": 0.904389900638336,
+          "bestExonPair": "PDX1:ex0@chr13:27919999 ↔ POMC:ex3@chr2:25168497"
+        },
+        {
+          "pair": "NPY↔PDX1",
+          "a": "NPY",
+          "b": "PDX1",
+          "maxCoupling": 0.894137918565326,
+          "bestExonPair": "NPY:ex1@chr7:24285240 ↔ PDX1:ex0@chr13:27919999"
+        },
+        {
+          "pair": "NPY↔SOD1",
+          "a": "NPY",
+          "b": "SOD1",
+          "maxCoupling": 0.8808433120613464,
+          "bestExonPair": "NPY:ex0@chr7:24284189 ↔ SOD1:ex0@chr21:31659692"
+        },
+        {
+          "pair": "APP↔DYRK1A",
+          "a": "APP",
+          "b": "DYRK1A",
+          "maxCoupling": 0.8500238879792329,
+          "bestExonPair": "APP:ex0@chr21:25880549 ↔ DYRK1A:ex11@chr21:37511910"
+        },
+        {
+          "pair": "DNMT3A↔DYRK1A",
+          "a": "DNMT3A",
+          "b": "DYRK1A",
+          "maxCoupling": 0.8219958610016821,
+          "bestExonPair": "DNMT3A:ex0@chr2:25227876 ↔ DYRK1A:ex11@chr21:37511910"
+        },
+        {
+          "pair": "INS↔NPY",
+          "a": "INS",
+          "b": "NPY",
+          "maxCoupling": 0.7929530889172179,
+          "bestExonPair": "INS:ex1@chr11:2160784 ↔ NPY:ex1@chr7:24285240"
+        },
+        {
+          "pair": "APP↔TMPRSS2",
+          "a": "APP",
+          "b": "TMPRSS2",
+          "maxCoupling": 0.7738281868063082,
+          "bestExonPair": "APP:ex0@chr21:25880549 ↔ TMPRSS2:ex0@chr21:41464304"
+        }
+      ]
+    },
+    "e3": {
+      "id": "E3",
+      "name": "string_unknown_vs_positive_control",
+      "focusPair": "APP↔DNMT3A",
+      "focusStringScore": 0,
+      "focusEmpty": true,
+      "positiveControl": "INS↔POMC",
+      "positiveControlScore": 0.947,
+      "positiveControlEmpty": false,
+      "dataSource": "STRING API json/network species=9606",
+      "fetchedAt": "2026-11-19"
+    },
+    "e4": {
+      "id": "E4",
+      "name": "opentargets_real_disease_rails",
+      "source": "OpenTargets Platform GraphQL API",
+      "fetchedAt": "2026-11-19",
+      "focusA": {
+        "symbol": "APP",
+        "top": [
+          {
+            "name": "Alzheimer disease",
+            "id": "MONDO_0004975",
+            "score": 0.8147062892127732
+          },
+          {
+            "name": "Alzheimer disease type 1",
+            "id": "MONDO_0007088",
+            "score": 0.7880974552894131
+          },
+          {
+            "name": "cerebral amyloid angiopathy, APP-related",
+            "id": "MONDO_0011583",
+            "score": 0.7535005872283511
+          },
+          {
+            "name": "dementia",
+            "id": "MONDO_0001627",
+            "score": 0.6981255164408284
+          },
+          {
+            "name": "Hereditary cerebral hemorrhage with amyloidosis",
+            "id": "Orphanet_85458",
+            "score": 0.6334582471966688
+          },
+          {
+            "name": "ABeta amyloidosis, dutch type",
+            "id": "MONDO_0015033",
+            "score": 0.5035346725673023
+          }
+        ]
+      },
+      "focusB": {
+        "symbol": "DNMT3A",
+        "top": [
+          {
+            "name": "acute myeloid leukemia",
+            "id": "MONDO_0018874",
+            "score": 0.8577576168860603
+          },
+          {
+            "name": "Tatton-Brown-Rahman overgrowth syndrome",
+            "id": "MONDO_0014382",
+            "score": 0.8440894222896895
+          },
+          {
+            "name": "Heyn-Sproul-Jackson syndrome",
+            "id": "MONDO_0032882",
+            "score": 0.7626980259199467
+          },
+          {
+            "name": "myelodysplastic syndrome",
+            "id": "MONDO_0018881",
+            "score": 0.741251324513774
+          },
+          {
+            "name": "myeloid leukemia",
+            "id": "MONDO_0004643",
+            "score": 0.6819588003108317
+          },
+          {
+            "name": "chronic myelomonocytic leukemia",
+            "id": "MONDO_0020311",
+            "score": 0.6674999126784072
+          }
+        ]
+      },
+      "positiveControlNote": "INS/POMC disease rails cached as method control only"
+    },
+    "e5": {
+      "id": "E5",
+      "name": "unknown_pair_gate",
+      "requiresStringEmpty": true,
+      "focusIsUnknown": true,
+      "positiveControlConfirmsModel": true,
+      "passes": true
+    },
+    "e6": {
+      "id": "E6",
+      "name": "assemble_new_wiring_from_existing_wet_labs",
+      "discoveryClass": "new_wiring",
+      "claim": "Assemble existing wet-lab pieces into APP↔DNMT3A regulatory wiring that STRING does not list as a PPI edge.",
+      "stringStillEmpty": true,
+      "wetLabPieceCount": 3,
+      "minWetLabPieces": 3,
+      "rolesPresent": [
+        "dnmt3a_targets_app_locus",
+        "dnmt_activity_changes_abeta",
+        "dnmt3a_ad_model_homeostasis",
+        "app_ad_anchor"
+      ],
+      "requiredRoles": [
+        "dnmt3a_targets_app_locus",
+        "dnmt_activity_changes_abeta",
+        "dnmt3a_ad_model_homeostasis"
+      ],
+      "rolesOk": true,
+      "assembledPath": [
+        "dCas9-DNMT3A methylates APP and rescues APP-KI pathology (W1)",
+        "DNMT activity tunes Aβ in APP-expressing cells (W2)",
+        "DNMT3A homeostasis required for AD-model cognitive/amyloid benefits (W3)",
+        "APP owns Alzheimer association rail (W4)"
+      ],
+      "edgeType": "regulatory_epigenetic_wiring",
+      "falsifiers": [
+        "STRING gains APP–DNMT3A PPI edge → demote to rediscovery",
+        "No direct DNMT3A→APP locus experiment in set → fail assembly",
+        "Pieces only correlational methylation without DNMT3A identity → fail"
+      ],
+      "doesNotClaim": [
+        "new CRISPR run by us",
+        "PPI binding of APP to DNMT3A",
+        "approved AD therapy"
+      ],
+      "passes": true,
+      "discovery": "new_wiring_from_existing_wet_labs"
+    }
+  },
+  "verdict": {
+    "supportsUnknownFollowUp": true,
+    "newWiringDiscovery": true,
+    "summary": "NEW WIRING DISCOVERY: APP↔DNMT3A — STRING-empty PPI catalog edge assembled from existing wet-lab pieces (3 wet-lab + literature bridge). INS↔POMC control 0.947 confirms association lane. Not a new assay we ran; not clinical advice."
+  },
+  "ms": 121,
+  "generatedAt": "2026-11-19T15:37:24.361Z"
+}

@@ -1,0 +1,1055 @@
+{
+  "documentId": "WP-COMBO-RHYME-WIRING-EXPEDITION-EGS-2026-11-20",
+  "registryId": "synthobs-combo-rhyme-wiring-expedition-2026-11",
+  "seed": 20261120,
+  "phiEgs": 1.618033988749895,
+  "engineShelfPinned": false,
+  "honesty": "Application companion Soft Story / combo rhyme wiring expedition. Combines protein-folding + LLM + Pilot rhymes on REAL discovery catalogs + live-cached STRING panel. Surfaces new STRING-empty wiring candidates. Not ENGINE_SHELF, not wet-lab we ran, not clinical advice. Φ_EGS filing grammar only.",
+  "dataProvenance": {
+    "catalogs": "data/RHYME_DISCOVERY_CATALOG.json (protein-folding + LLM + Pilot)",
+    "string": "STRING API json/network species=9606",
+    "wiring": "fixtures/wiring_new_candidates.json",
+    "opentargets": "Open Targets Platform GraphQL API v4",
+    "europepmc": "Europe PMC REST search TITLE_ABS AND",
+    "chromosomes": "LLM exons.panel.json gene chromosomes"
+  },
+  "experiments": {
+    "e1": {
+      "id": "E1",
+      "name": "load_three_rhyme_catalogs",
+      "proteinFolding": {
+        "n": 48,
+        "kinds": [
+          "aware_only_long_range_contact",
+          "aware_only_title_pair",
+          "aware_only_teleconnection",
+          "collab_synergy_discovery",
+          "open_motif_survivor",
+          "candidate_novel_physics",
+          "known_physics_rediscovery"
+        ]
+      },
+      "llm": {
+        "n": 136
+      },
+      "pilot": {
+        "n": 692
+      },
+      "catalogGeneratedAt": "2026-11-19T01:26:37.247Z",
+      "passes": true
+    },
+    "e2": {
+      "id": "E2",
+      "name": "merge_genome_partners_across_llm_and_pilot",
+      "nGenomeHits": 63,
+      "nUniquePairs": 13,
+      "nCrossRhyme": 4,
+      "topPairs": [
+        {
+          "a": "NPY",
+          "b": "SOD1",
+          "key": "NPY|SOD1",
+          "maxCoupling": 0.9139,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "theaters": [
+            "genome_exon",
+            "genome · exon"
+          ],
+          "n": 10,
+          "crossRhyme": true,
+          "examples": [
+            "NPY:ex0@chr7:24284189 ↔ SOD1:ex0@chr21:31659692",
+            "SOD1:ex1@chr21:31663789 ↔ NPY:ex2@chr7:24289498",
+            "NPY:ex0@chr7:24284189 ↔ SOD1:ex0@chr21:31659692"
+          ],
+          "label": "NPY↔SOD1"
+        },
+        {
+          "a": "INS",
+          "b": "POMC",
+          "key": "INS|POMC",
+          "maxCoupling": 0.7384237154015189,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "theaters": [
+            "genome_exon",
+            "genome · exon"
+          ],
+          "n": 10,
+          "crossRhyme": true,
+          "examples": [
+            "INS:ex2@chr11:2161167 ↔ POMC:ex2@chr2:25165635",
+            "POMC:ex1@chr2:25164640 ↔ INS:ex1@chr11:2160784",
+            "INS:ex2@chr11:2161167 ↔ POMC:ex2@chr2:25165635"
+          ],
+          "label": "INS↔POMC"
+        },
+        {
+          "a": "APP",
+          "b": "DYRK1A",
+          "key": "APP|DYRK1A",
+          "maxCoupling": 0.6001172292972239,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "theaters": [
+            "genome_exon",
+            "genome · exon"
+          ],
+          "n": 14,
+          "crossRhyme": true,
+          "examples": [
+            "APP:ex3@chr21:25905023 ↔ DYRK1A:ex3@chr21:37478207",
+            "DYRK1A:ex9@chr21:37505282 ↔ APP:ex10@chr21:26021839",
+            "APP:ex12@chr21:26053235 ↔ DYRK1A:ex10@chr21:37506098"
+          ],
+          "label": "APP↔DYRK1A"
+        },
+        {
+          "a": "DNMT1",
+          "b": "DNMT3A",
+          "key": "DNMT1|DNMT3A",
+          "maxCoupling": 0.41730148944650086,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "theaters": [
+            "genome_exon",
+            "genome · exon"
+          ],
+          "n": 4,
+          "crossRhyme": true,
+          "examples": [
+            "DNMT1:ex40@chr19:10194819 ↔ DNMT3A:ex23@chr2:25342429",
+            "DNMT1:ex0@chr19:10133345 ↔ DNMT3A:ex0@chr2:25227876",
+            "DNMT1:ex34@chr19:10175539 ↔ DNMT3A:ex21@chr2:25300138"
+          ],
+          "label": "DNMT1↔DNMT3A"
+        },
+        {
+          "a": "NPY",
+          "b": "PDX1",
+          "key": "NPY|PDX1",
+          "maxCoupling": 0.7474,
+          "rhymes": [
+            "llm"
+          ],
+          "theaters": [
+            "genome_exon"
+          ],
+          "n": 1,
+          "crossRhyme": false,
+          "examples": [
+            "NPY:ex0@chr7:24284189 ↔ PDX1:ex0@chr13:27919999"
+          ],
+          "label": "NPY↔PDX1"
+        },
+        {
+          "a": "DNMT3A",
+          "b": "APP",
+          "key": "APP|DNMT3A",
+          "maxCoupling": 0.7264644276451352,
+          "rhymes": [
+            "pilot"
+          ],
+          "theaters": [
+            "genome · exon"
+          ],
+          "n": 1,
+          "crossRhyme": false,
+          "examples": [
+            "DNMT3A:ex23@chr2:25342429 ↔ APP:ex15@chr21:26170984"
+          ],
+          "label": "DNMT3A↔APP"
+        },
+        {
+          "a": "APP",
+          "b": "TMPRSS2",
+          "key": "APP|TMPRSS2",
+          "maxCoupling": 0.7065860995125953,
+          "rhymes": [
+            "pilot"
+          ],
+          "theaters": [
+            "genome · exon"
+          ],
+          "n": 1,
+          "crossRhyme": false,
+          "examples": [
+            "APP:ex0@chr21:25880549 ↔ TMPRSS2:ex0@chr21:41464304"
+          ],
+          "label": "APP↔TMPRSS2"
+        },
+        {
+          "a": "PDX1",
+          "b": "POMC",
+          "key": "PDX1|POMC",
+          "maxCoupling": 0.6821,
+          "rhymes": [
+            "llm"
+          ],
+          "theaters": [
+            "genome_exon"
+          ],
+          "n": 2,
+          "crossRhyme": false,
+          "examples": [
+            "PDX1:ex1@chr13:27924255 ↔ POMC:ex0@chr2:25160852",
+            "PDX1:ex1@chr13:27924255 ↔ POMC:ex0@chr2:25160852"
+          ],
+          "label": "PDX1↔POMC"
+        },
+        {
+          "a": "POMC",
+          "b": "NPY",
+          "key": "NPY|POMC",
+          "maxCoupling": 0.6809,
+          "rhymes": [
+            "llm"
+          ],
+          "theaters": [
+            "genome_exon"
+          ],
+          "n": 1,
+          "crossRhyme": false,
+          "examples": [
+            "POMC:ex2@chr2:25165635 ↔ NPY:ex0@chr7:24284189"
+          ],
+          "label": "POMC↔NPY"
+        },
+        {
+          "a": "TMPRSS2",
+          "b": "DYRK1A",
+          "key": "DYRK1A|TMPRSS2",
+          "maxCoupling": 0.5407,
+          "rhymes": [
+            "llm"
+          ],
+          "theaters": [
+            "genome_exon"
+          ],
+          "n": 1,
+          "crossRhyme": false,
+          "examples": [
+            "TMPRSS2:ex1@chr21:41467733 ↔ DYRK1A:ex2@chr21:37472683"
+          ],
+          "label": "TMPRSS2↔DYRK1A"
+        },
+        {
+          "a": "DNMT3A",
+          "b": "POMC",
+          "key": "DNMT3A|POMC",
+          "maxCoupling": 0.4471726649581574,
+          "rhymes": [
+            "pilot"
+          ],
+          "theaters": [
+            "genome · exon"
+          ],
+          "n": 8,
+          "crossRhyme": false,
+          "examples": [
+            "DNMT3A:ex8@chr2:25243897 ↔ POMC:ex2@chr2:25165635",
+            "DNMT3A:ex9@chr2:25244154 ↔ POMC:ex0@chr2:25160852",
+            "DNMT3A:ex10@chr2:25244539 ↔ POMC:ex2@chr2:25165635"
+          ],
+          "label": "DNMT3A↔POMC"
+        },
+        {
+          "a": "DNMT1",
+          "b": "INS",
+          "key": "DNMT1|INS",
+          "maxCoupling": 0.3728431608870961,
+          "rhymes": [
+            "pilot"
+          ],
+          "theaters": [
+            "genome · exon"
+          ],
+          "n": 9,
+          "crossRhyme": false,
+          "examples": [
+            "DNMT1:ex1@chr19:10134216 ↔ INS:ex0@chr11:2159778",
+            "DNMT1:ex4@chr19:10137084 ↔ INS:ex0@chr11:2159778",
+            "DNMT1:ex10@chr19:10141104 ↔ INS:ex2@chr11:2161167"
+          ],
+          "label": "DNMT1↔INS"
+        }
+      ],
+      "crossRhymePairs": [
+        {
+          "a": "NPY",
+          "b": "SOD1",
+          "key": "NPY|SOD1",
+          "maxCoupling": 0.9139,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "theaters": [
+            "genome_exon",
+            "genome · exon"
+          ],
+          "n": 10,
+          "crossRhyme": true,
+          "examples": [
+            "NPY:ex0@chr7:24284189 ↔ SOD1:ex0@chr21:31659692",
+            "SOD1:ex1@chr21:31663789 ↔ NPY:ex2@chr7:24289498",
+            "NPY:ex0@chr7:24284189 ↔ SOD1:ex0@chr21:31659692"
+          ],
+          "label": "NPY↔SOD1"
+        },
+        {
+          "a": "INS",
+          "b": "POMC",
+          "key": "INS|POMC",
+          "maxCoupling": 0.7384237154015189,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "theaters": [
+            "genome_exon",
+            "genome · exon"
+          ],
+          "n": 10,
+          "crossRhyme": true,
+          "examples": [
+            "INS:ex2@chr11:2161167 ↔ POMC:ex2@chr2:25165635",
+            "POMC:ex1@chr2:25164640 ↔ INS:ex1@chr11:2160784",
+            "INS:ex2@chr11:2161167 ↔ POMC:ex2@chr2:25165635"
+          ],
+          "label": "INS↔POMC"
+        },
+        {
+          "a": "APP",
+          "b": "DYRK1A",
+          "key": "APP|DYRK1A",
+          "maxCoupling": 0.6001172292972239,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "theaters": [
+            "genome_exon",
+            "genome · exon"
+          ],
+          "n": 14,
+          "crossRhyme": true,
+          "examples": [
+            "APP:ex3@chr21:25905023 ↔ DYRK1A:ex3@chr21:37478207",
+            "DYRK1A:ex9@chr21:37505282 ↔ APP:ex10@chr21:26021839",
+            "APP:ex12@chr21:26053235 ↔ DYRK1A:ex10@chr21:37506098"
+          ],
+          "label": "APP↔DYRK1A"
+        },
+        {
+          "a": "DNMT1",
+          "b": "DNMT3A",
+          "key": "DNMT1|DNMT3A",
+          "maxCoupling": 0.41730148944650086,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "theaters": [
+            "genome_exon",
+            "genome · exon"
+          ],
+          "n": 4,
+          "crossRhyme": true,
+          "examples": [
+            "DNMT1:ex40@chr19:10194819 ↔ DNMT3A:ex23@chr2:25342429",
+            "DNMT1:ex0@chr19:10133345 ↔ DNMT3A:ex0@chr2:25227876",
+            "DNMT1:ex34@chr19:10175539 ↔ DNMT3A:ex21@chr2:25300138"
+          ],
+          "label": "DNMT1↔DNMT3A"
+        }
+      ],
+      "passes": true
+    },
+    "e3": {
+      "id": "E3",
+      "name": "string_classify_panel",
+      "source": "STRING API json/network species=9606",
+      "fetchedAt": "2026-11-19",
+      "controlInsPomc": {
+        "a": "INS",
+        "b": "POMC",
+        "nEdges": 1,
+        "empty": false,
+        "maxScore": 0.947,
+        "edges": [
+          {
+            "stringId_A": "9606.ENSP00000380432",
+            "stringId_B": "9606.ENSP00000384092",
+            "preferredName_A": "INS",
+            "preferredName_B": "POMC",
+            "ncbiTaxonId": "9606",
+            "score": 0.947,
+            "nscore": 0,
+            "fscore": 0,
+            "pscore": 0,
+            "ascore": 0.061,
+            "escore": 0,
+            "dscore": 0,
+            "tscore": 0.946
+          }
+        ]
+      },
+      "classified": [
+        {
+          "label": "NPY↔SOD1",
+          "crossRhyme": true,
+          "maxCoupling": 0.9139,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "stringClass": "unqueried",
+          "stringScore": null,
+          "priorWiringCompanion": true
+        },
+        {
+          "label": "INS↔POMC",
+          "crossRhyme": true,
+          "maxCoupling": 0.7384237154015189,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "stringClass": "string_known_strong",
+          "stringScore": 0.947,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "APP↔DYRK1A",
+          "crossRhyme": true,
+          "maxCoupling": 0.6001172292972239,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "stringClass": "string_known_partial",
+          "stringScore": 0.57,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "DNMT1↔DNMT3A",
+          "crossRhyme": true,
+          "maxCoupling": 0.41730148944650086,
+          "rhymes": [
+            "llm",
+            "pilot"
+          ],
+          "stringClass": "string_known_strong",
+          "stringScore": 0.999,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "NPY↔PDX1",
+          "crossRhyme": false,
+          "maxCoupling": 0.7474,
+          "rhymes": [
+            "llm"
+          ],
+          "stringClass": "string_empty",
+          "stringScore": 0,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "DNMT3A↔APP",
+          "crossRhyme": false,
+          "maxCoupling": 0.7264644276451352,
+          "rhymes": [
+            "pilot"
+          ],
+          "stringClass": "unqueried",
+          "stringScore": null,
+          "priorWiringCompanion": true
+        },
+        {
+          "label": "APP↔TMPRSS2",
+          "crossRhyme": false,
+          "maxCoupling": 0.7065860995125953,
+          "rhymes": [
+            "pilot"
+          ],
+          "stringClass": "string_empty",
+          "stringScore": 0,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "PDX1↔POMC",
+          "crossRhyme": false,
+          "maxCoupling": 0.6821,
+          "rhymes": [
+            "llm"
+          ],
+          "stringClass": "unqueried",
+          "stringScore": null,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "POMC↔NPY",
+          "crossRhyme": false,
+          "maxCoupling": 0.6809,
+          "rhymes": [
+            "llm"
+          ],
+          "stringClass": "unqueried",
+          "stringScore": null,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "TMPRSS2↔DYRK1A",
+          "crossRhyme": false,
+          "maxCoupling": 0.5407,
+          "rhymes": [
+            "llm"
+          ],
+          "stringClass": "unqueried",
+          "stringScore": null,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "DNMT3A↔POMC",
+          "crossRhyme": false,
+          "maxCoupling": 0.4471726649581574,
+          "rhymes": [
+            "pilot"
+          ],
+          "stringClass": "unqueried",
+          "stringScore": null,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "DNMT1↔INS",
+          "crossRhyme": false,
+          "maxCoupling": 0.3728431608870961,
+          "rhymes": [
+            "pilot"
+          ],
+          "stringClass": "unqueried",
+          "stringScore": null,
+          "priorWiringCompanion": false
+        },
+        {
+          "label": "DNMT1↔PDX1",
+          "crossRhyme": false,
+          "maxCoupling": 0.3257252539099502,
+          "rhymes": [
+            "pilot"
+          ],
+          "stringClass": "unqueried",
+          "stringScore": null,
+          "priorWiringCompanion": false
+        }
+      ],
+      "passes": true
+    },
+    "e4": {
+      "id": "E4",
+      "name": "surface_new_string_empty_wiring_candidates",
+      "minCoupling": 0.5,
+      "nNewEmpty": 2,
+      "candidates": [
+        {
+          "a": "NPY",
+          "b": "PDX1",
+          "key": "NPY|PDX1",
+          "maxCoupling": 0.7474,
+          "rhymes": [
+            "llm"
+          ],
+          "theaters": [
+            "genome_exon"
+          ],
+          "n": 1,
+          "crossRhyme": false,
+          "examples": [
+            "NPY:ex0@chr7:24284189 ↔ PDX1:ex0@chr13:27919999"
+          ],
+          "label": "NPY↔PDX1",
+          "stringClass": "string_empty",
+          "stringScore": 0,
+          "stringEmpty": true,
+          "priorWiringCompanion": false
+        },
+        {
+          "a": "APP",
+          "b": "TMPRSS2",
+          "key": "APP|TMPRSS2",
+          "maxCoupling": 0.7065860995125953,
+          "rhymes": [
+            "pilot"
+          ],
+          "theaters": [
+            "genome · exon"
+          ],
+          "n": 1,
+          "crossRhyme": false,
+          "examples": [
+            "APP:ex0@chr21:25880549 ↔ TMPRSS2:ex0@chr21:41464304"
+          ],
+          "label": "APP↔TMPRSS2",
+          "stringClass": "string_empty",
+          "stringScore": 0,
+          "stringEmpty": true,
+          "priorWiringCompanion": false
+        }
+      ],
+      "wiringMeta": [
+        {
+          "pair": "NPY↔PDX1",
+          "coupling": 0.7474,
+          "rhymes": [
+            "llm"
+          ],
+          "stringEmpty": true,
+          "wetLabBridge": [
+            {
+              "title": "Neuropeptide Y expression marks partially differentiated β cells in mice and humans",
+              "cite": "JCI Insight 2017",
+              "url": "https://doi.org/10.1172/jci.insight.94005",
+              "note": "NPY marks immature β cells; PDX1 marks pancreatic progenitors — developmental neighborhood."
+            },
+            {
+              "title": "Regulation of Pancreatic β-Cell Function by the NPY System",
+              "cite": "Endocrinology 2021",
+              "url": "https://doi.org/10.1210/endocr/bqab070",
+              "note": "NPY system regulates β-cell function where PDX1 is identity TF."
+            }
+          ],
+          "edgeType": "disease_context_wiring_candidate",
+          "honesty": "STRING-empty PPI; wet-lab bridge is β-cell developmental/functional neighborhood — not direct NPY–PDX1 binding."
+        },
+        {
+          "pair": "APP↔TMPRSS2",
+          "coupling": 0.7065860995125953,
+          "rhymes": [
+            "pilot"
+          ],
+          "stringEmpty": true,
+          "wetLabBridge": [
+            {
+              "title": "CSF and frontal cortex TMPRSS2 and ACE2 differ in Down syndrome and Alzheimer’s disease",
+              "cite": "Acta Neuropathol Commun 2026",
+              "url": "https://link.springer.com/article/10.1186/s40478-026-02289-9",
+              "note": "TMPRSS2 measured in AD/DS brain/CSF contexts; APP cited regarding SARS-CoV-2 spike interaction — thinner bridge than NPY–PDX1."
+            }
+          ],
+          "edgeType": "speculative_wiring_candidate",
+          "honesty": "STRING-empty; wet-lab bridge thinner — triage only, not strong disease-context wire yet."
+        }
+      ],
+      "passes": true
+    },
+    "e5": {
+      "id": "E5",
+      "name": "protein_folding_rhyme_grammar_attestation",
+      "nProteinCatalog": 48,
+      "nAwareLongRangeContacts": 10,
+      "role": "Protein-folding rhyme supplies the long-range partner-recovery grammar reused by LLM and Pilot language/world-model rhymes.",
+      "sample": [
+        "1VII contact 11-18",
+        "1NYF contact 7-30",
+        "1MJC contact 8-50",
+        "1R69 contact 19-35",
+        "1ENH contact 18-47"
+      ],
+      "passes": true
+    },
+    "e6": {
+      "id": "E6",
+      "name": "combo_wiring_discovery_gate",
+      "requires": [
+        "three rhyme catalogs loaded",
+        "cross-rhyme genome pairs exist",
+        "STRING control INS↔POMC ≥ 0.9",
+        "≥1 new STRING-empty candidate above coupling floor",
+        "protein-folding grammar attested"
+      ],
+      "passes": true,
+      "headlineCandidates": [
+        "NPY↔PDX1",
+        "APP↔TMPRSS2"
+      ]
+    },
+    "e7": {
+      "id": "E7",
+      "name": "multi_layer_bridge_thickening",
+      "purpose": "Ask whether independent rhymes (LLM, Pilot, OpenTargets disease, EuropePMC co-mention, exon cosine) arrive at the same pairs — and whether same-chromosome locus confounds the join.",
+      "sources": {
+        "opentargets": "Open Targets Platform GraphQL API v4",
+        "europepmc": "Europe PMC REST search TITLE_ABS AND",
+        "chromosomes": "LLM exons.panel.json gene chromosomes",
+        "exonPanel": "synthobs-npy-sod1-rhyme-validation exon features"
+      },
+      "profiles": [
+        {
+          "a": "NPY",
+          "b": "PDX1",
+          "key": "NPY|PDX1",
+          "label": "NPY↔PDX1",
+          "role": "new_empty",
+          "coupling": 0.7474,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": false,
+            "crossRhyme": false,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.13636363636363635,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "scoliosis",
+            "diabetes mellitus",
+            "neoplasm",
+            "frozen shoulder",
+            "duodenal ulcer"
+          ],
+          "literatureCount": 4,
+          "exon": {
+            "rank": 5,
+            "nPairs": 45,
+            "maxCoupling": 0.894137918565326
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 4,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        },
+        {
+          "a": "APP",
+          "b": "TMPRSS2",
+          "key": "APP|TMPRSS2",
+          "label": "APP↔TMPRSS2",
+          "role": "new_empty",
+          "coupling": 0.7065860995125953,
+          "layers": {
+            "llmRhyme": false,
+            "pilotRhyme": true,
+            "crossRhyme": false,
+            "diseaseRail": false,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": true
+          },
+          "diseaseJaccard": 0,
+          "diseaseShared": [],
+          "literatureCount": 2,
+          "exon": {
+            "rank": 10,
+            "nPairs": 45,
+            "maxCoupling": 0.7738281868063082
+          },
+          "locus": {
+            "same": true,
+            "chr": "chr21"
+          },
+          "thickeningLayerCount": 3,
+          "bridgeVerdict": "THIN / CHR-CONFOUND RISK — rhyme without disease rail; same chromosome"
+        },
+        {
+          "a": "NPY",
+          "b": "SOD1",
+          "key": "NPY|SOD1",
+          "label": "NPY↔SOD1",
+          "role": "prior_peer",
+          "coupling": 0.9139,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": true,
+            "crossRhyme": true,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.13636363636363635,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "diabetes mellitus",
+            "alcohol drinking",
+            "neurodegenerative disease",
+            "neoplasm",
+            "cancer"
+          ],
+          "literatureCount": 8,
+          "exon": {
+            "rank": 6,
+            "nPairs": 45,
+            "maxCoupling": 0.8808433120613464
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 5,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        },
+        {
+          "a": "APP",
+          "b": "DNMT3A",
+          "key": "APP|DNMT3A",
+          "label": "APP↔DNMT3A",
+          "role": "prior_peer",
+          "coupling": 0.7264644276451352,
+          "layers": {
+            "llmRhyme": false,
+            "pilotRhyme": true,
+            "crossRhyme": false,
+            "diseaseRail": false,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0,
+          "diseaseShared": [],
+          "literatureCount": 13,
+          "exon": {
+            "rank": 12,
+            "nPairs": 45,
+            "maxCoupling": 0.7454511874088052
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 3,
+          "bridgeVerdict": "PARTIAL — some layers, not full thicken gate"
+        },
+        {
+          "a": "INS",
+          "b": "POMC",
+          "key": "INS|POMC",
+          "label": "INS↔POMC",
+          "role": "control",
+          "coupling": 0.7384237154015189,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": true,
+            "crossRhyme": true,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.041666666666666664,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "autoimmune disease"
+          ],
+          "literatureCount": 17,
+          "exon": {
+            "rank": 13,
+            "nPairs": 45,
+            "maxCoupling": 0.7377238751007751
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 5,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        }
+      ],
+      "thickened": [
+        {
+          "a": "NPY",
+          "b": "PDX1",
+          "key": "NPY|PDX1",
+          "label": "NPY↔PDX1",
+          "role": "new_empty",
+          "coupling": 0.7474,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": false,
+            "crossRhyme": false,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.13636363636363635,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "scoliosis",
+            "diabetes mellitus",
+            "neoplasm",
+            "frozen shoulder",
+            "duodenal ulcer"
+          ],
+          "literatureCount": 4,
+          "exon": {
+            "rank": 5,
+            "nPairs": 45,
+            "maxCoupling": 0.894137918565326
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 4,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        },
+        {
+          "a": "NPY",
+          "b": "SOD1",
+          "key": "NPY|SOD1",
+          "label": "NPY↔SOD1",
+          "role": "prior_peer",
+          "coupling": 0.9139,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": true,
+            "crossRhyme": true,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.13636363636363635,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "diabetes mellitus",
+            "alcohol drinking",
+            "neurodegenerative disease",
+            "neoplasm",
+            "cancer"
+          ],
+          "literatureCount": 8,
+          "exon": {
+            "rank": 6,
+            "nPairs": 45,
+            "maxCoupling": 0.8808433120613464
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 5,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        },
+        {
+          "a": "INS",
+          "b": "POMC",
+          "key": "INS|POMC",
+          "label": "INS↔POMC",
+          "role": "control",
+          "coupling": 0.7384237154015189,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": true,
+            "crossRhyme": true,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.041666666666666664,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "autoimmune disease"
+          ],
+          "literatureCount": 17,
+          "exon": {
+            "rank": 13,
+            "nPairs": 45,
+            "maxCoupling": 0.7377238751007751
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 5,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        }
+      ],
+      "thinOrConfounded": [
+        {
+          "a": "APP",
+          "b": "TMPRSS2",
+          "key": "APP|TMPRSS2",
+          "label": "APP↔TMPRSS2",
+          "role": "new_empty",
+          "coupling": 0.7065860995125953,
+          "layers": {
+            "llmRhyme": false,
+            "pilotRhyme": true,
+            "crossRhyme": false,
+            "diseaseRail": false,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": true
+          },
+          "diseaseJaccard": 0,
+          "diseaseShared": [],
+          "literatureCount": 2,
+          "exon": {
+            "rank": 10,
+            "nPairs": 45,
+            "maxCoupling": 0.7738281868063082
+          },
+          "locus": {
+            "same": true,
+            "chr": "chr21"
+          },
+          "thickeningLayerCount": 3,
+          "bridgeVerdict": "THIN / CHR-CONFOUND RISK — rhyme without disease rail; same chromosome"
+        }
+      ],
+      "passes": true
+    }
+  },
+  "verdict": {
+    "comboWiringExpeditionPass": true,
+    "bridgeThickeningPass": true,
+    "newWiringCandidates": [
+      {
+        "label": "NPY↔PDX1",
+        "maxCoupling": 0.7474,
+        "rhymes": [
+          "llm"
+        ],
+        "stringEmpty": true
+      },
+      {
+        "label": "APP↔TMPRSS2",
+        "maxCoupling": 0.7065860995125953,
+        "rhymes": [
+          "pilot"
+        ],
+        "stringEmpty": true
+      }
+    ],
+    "thickenedNewCandidates": [
+      "NPY↔PDX1"
+    ],
+    "thinOrConfoundedNewCandidates": [
+      "APP↔TMPRSS2"
+    ],
+    "crossRhymeRecoveries": [
+      "NPY↔SOD1",
+      "INS↔POMC",
+      "APP↔DYRK1A",
+      "DNMT1↔DNMT3A"
+    ],
+    "summary": "COMBO RHYME WIRING EXPEDITION PASS — new STRING-empty: NPY↔PDX1, APP↔TMPRSS2. Bridge thickening: thickened=NPY↔PDX1; thin/confounded=APP↔TMPRSS2. Not clinical; not ENGINE_SHELF."
+  },
+  "ms": 28,
+  "generatedAt": "2026-11-19T16:10:26.365Z"
+}

@@ -6,12 +6,12 @@
 
 **Research manuscript · 13 October 2026 · FractiAI / Infinite Octaves / SynthOBS**
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-COMPUTATION-WORKHORSE-SCIENCE-EGS-2026-10-13`  
-**Registry ID:** `synthobs-computation-workhorse-science-2026-10`  
-**Suite:** `research/synthobs-computation-workhorse-science/`  
-**Standalone:** [`FractiAI/synthobs-computation-workhorse-science`](https://github.com/FractiAI/synthobs-computation-workhorse-science)  
-**Ship blog:** `/ship-blog/computation-workhorse-science`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-COMPUTATION-WORKHORSE-SCIENCE-EGS-2026-10-13`
+**Registry ID:** `synthobs-computation-workhorse-science-2026-10`
+**Suite:** `research/synthobs-computation-workhorse-science/`
+**Standalone:** [`FractiAI/synthobs-computation-workhorse-science`](https://github.com/FractiAI/synthobs-computation-workhorse-science)
+**Ship blog:** `/ship-blog/computation-workhorse-science`
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#46** — **research economics · four-condition design · CW-2 synthetic execution**
 
 **Validation status:** Prespecified factorial design **executed** as **CW-2** (seed **20261013**, **200** matched repetitions, 24-project portfolios, 365-day cutoff). Reported contrasts are **Soft Story / synthetic** under declared cost and time parameters — **not calibrated** to real grant portfolios and **do not alone establish real-world superiority**.

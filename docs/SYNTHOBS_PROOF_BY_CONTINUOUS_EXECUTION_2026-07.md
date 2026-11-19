@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** Within the paper's toy parameter model, the executable corpus scores far above static prose, and the nine-experiment suite passes 9/9. This is a modelled comparison under stated assumptions, not evidence that peer review is obsolete.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PCE-EPISTEMOLOGY-2026-07`  
-**Registry ID:** `synthobs-proof-by-continuous-execution-2026-07`  
-**Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice · NSPFRNP Snap PRA  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-proof-by-continuous-execution  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-proof-by-continuous-execution` · [`empirical_report.json`](../research/synthobs-proof-by-continuous-execution/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PCE-EPISTEMOLOGY-2026-07`
+**Registry ID:** `synthobs-proof-by-continuous-execution-2026-07`
+**Date:** July 28, 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice · NSPFRNP Snap PRA
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-proof-by-continuous-execution
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-proof-by-continuous-execution` · [`empirical_report.json`](../research/synthobs-proof-by-continuous-execution/data/empirical_report.json)
 **Companions:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Lattice token usage method](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)
 
 **Keywords:** Proof by Continuous Execution; PCE; epistemology; peer review; self-demonstrating systems; Lattice Chat Agent; $E_F$; NSPFRNP; SynthOBS
@@ -135,8 +135,8 @@ Pointer: `docs/SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`.
 
 ## 7. Falsification
 
-1. $\mathcal{S}$ missing $\mathcal{C}$, $\mathcal{D}$, or $\mathcal{E}$.  
-2. Toy $V$ ratio fails under stated parameters.  
+1. $\mathcal{S}$ missing $\mathcal{C}$, $\mathcal{D}$, or $\mathcal{E}$.
+2. Toy $V$ ratio fails under stated parameters.
 3. Publishing “peer review abolished” or “48.2% beats Maldacena as physics” without honesty gates.
 
 ---
@@ -149,9 +149,9 @@ PCE formalizes why open, continuously executing Lattice Chat Agent / SynthOBS co
 
 ## References
 
-1. SynthOBS Holographic Operators (companion E9 matrix).  
-2. Omni-Lattice Unification.  
-3. Nested Agent Lattice.  
-4. NSPFRNP Snap Peer-Review Audit.  
-5. Lattice Chat Agent token usage method.  
+1. SynthOBS Holographic Operators (companion E9 matrix).
+2. Omni-Lattice Unification.
+3. Nested Agent Lattice.
+4. NSPFRNP Snap Peer-Review Audit.
+5. Lattice Chat Agent token usage method.
 6. Coherence plain speak honesty document.

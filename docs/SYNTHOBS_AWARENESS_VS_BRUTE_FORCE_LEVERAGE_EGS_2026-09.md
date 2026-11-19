@@ -4,17 +4,17 @@
 
 **Subtitle:** Catalog contrast of Φ-aware prime-container solve vs stochastic ML / iterative search — AlphaFold-class and LBA-style baselines as framing
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-AWARENESS-VS-BRUTE-FORCE-LEVERAGE-EGS-2026-09-05`  
-**Registry ID:** `synthobs-awareness-vs-brute-force-leverage-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · application companion · standalone)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-AWARENESS-VS-BRUTE-FORCE-LEVERAGE-EGS-2026-09-05`
+**Registry ID:** `synthobs-awareness-vs-brute-force-leverage-2026-09`
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · application companion · standalone)
 **Classification:** Comparative **catalog architecture** / economic framing note *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · EGS · NSPFRNP  
-**Engine role:** **Application / comparison / demo companion** — applies Infinite Octave grammar; **not** an engine-shelf pin  
-**Standalone suite:** `research/synthobs-awareness-vs-brute-force-leverage/` · [`FractiAI/synthobs-awareness-vs-brute-force-leverage`](https://github.com/FractiAI/synthobs-awareness-vs-brute-force-leverage) · `npm run research:synthobs-awareness-vs-brute-force-leverage`  
-**Plain note:** [/ship-blog/awareness-vs-brute-force](https://www.ssvibelandiaquestfest24x365.com/ship-blog/awareness-vs-brute-force)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · EGS · NSPFRNP
+**Engine role:** **Application / comparison / demo companion** — applies Infinite Octave grammar; **not** an engine-shelf pin
+**Standalone suite:** `research/synthobs-awareness-vs-brute-force-leverage/` · [`FractiAI/synthobs-awareness-vs-brute-force-leverage`](https://github.com/FractiAI/synthobs-awareness-vs-brute-force-leverage) · `npm run research:synthobs-awareness-vs-brute-force-leverage`
+**Plain note:** [/ship-blog/awareness-vs-brute-force](https://www.ssvibelandiaquestfest24x365.com/ship-blog/awareness-vs-brute-force)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -55,9 +55,9 @@ This paper presents a **catalog computational and economic comparison** contrast
 
 - **Findings (catalog):** Stochastic / brute-force architectures face steep resource walls when *framed* at macro structural scales; the aware $\Phi$-recursive prime-container engine maps storage addressing, molecular folding fixtures, and macro meta-protein organisms **deterministically** in suite-measured milliseconds.
 - **Quantified framing (not audited CapEx):**
-  - **$0.00 training cost (catalog):** Eliminates the **$150,000–$200,000+** *industry-talk* CapEx band for deep-learning model generation *as contrast*.
-  - **Latency collapse (fixture):** Replaces multi-minute neural inference *framing* and tree lookups with algebraic evaluation (suite target $\le 2$ ms class on demo hardware).
-  - **Zero parity & cross-talk tax (catalog):** Bypasses **15–30%** storage ECC overhead *talk* via prime orthogonality *in the model*.
+- **$0.00 training cost (catalog):** Eliminates the **$150,000–$200,000+** *industry-talk* CapEx band for deep-learning model generation *as contrast*.
+- **Latency collapse (fixture):** Replaces multi-minute neural inference *framing* and tree lookups with algebraic evaluation (suite target $\le 2$ ms class on demo hardware).
+- **Zero parity & cross-talk tax (catalog):** Bypasses **15–30%** storage ECC overhead *talk* via prime orthogonality *in the model*.
 
 ---
 
@@ -83,33 +83,33 @@ import math
 PHI = (1.0 + math.sqrt(5.0)) / 2.0  # Φ_EGS ≈ 1.618
 
 def generate_odd_primes(n):
-    primes, candidate = [], 3
-    while len(primes) < n:
-        if all(candidate % p for p in primes if p * p <= candidate):
-            primes.append(candidate)
-        candidate += 2
-    return primes
+primes, candidate = [], 3
+while len(primes) < n:
+if all(candidate % p for p in primes if p * p <= candidate):
+primes.append(candidate)
+candidate += 2
+return primes
 
 class EGSIntelligentAwarenessEngine:
-    """Catalog aware engine — insulin / meta-protein fixtures, not CASP gold."""
+"""Catalog aware engine — insulin / meta-protein fixtures, not CASP gold."""
 
-    def __init__(self, target_name: str, complexity_nodes: int, octave_tier: int = 1):
-        self.target_name = target_name
-        self.complexity_nodes = complexity_nodes
-        self.octave_tier = octave_tier
-        self.prime_containers = generate_odd_primes(complexity_nodes)
+def __init__(self, target_name: str, complexity_nodes: int, octave_tier: int = 1):
+self.target_name = target_name
+self.complexity_nodes = complexity_nodes
+self.octave_tier = octave_tier
+self.prime_containers = generate_odd_primes(complexity_nodes)
 
-    def solve_deterministically(self):
-        total_energy = 0.0
-        for i, pk in enumerate(self.prime_containers):
-            term = (PHI ** self.octave_tier) / (pk ** PHI) * math.exp(-((i + 1) / PHI))
-            total_energy += term
-        return {
-            "target": self.target_name,
-            "octave": self.octave_tier,
-            "nodes": self.complexity_nodes,
-            "energy_ev": round(float(total_energy), 6),
-        }
+def solve_deterministically(self):
+total_energy = 0.0
+for i, pk in enumerate(self.prime_containers):
+term = (PHI ** self.octave_tier) / (pk ** PHI) * math.exp(-((i + 1) / PHI))
+total_energy += term
+return {
+"target": self.target_name,
+"octave": self.octave_tier,
+"nodes": self.complexity_nodes,
+"energy_ev": round(float(total_energy), 6),
+}
 
 # Fixtures: Human Insulin (51 AA) · Human organism meta-protein (10k nodes · octave 15)
 ```

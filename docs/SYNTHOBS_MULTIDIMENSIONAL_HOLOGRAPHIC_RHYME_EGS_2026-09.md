@@ -4,17 +4,17 @@
 
 **Subtitle:** Catalog holography beyond static boundary screens — $\Phi$-recursive $xD\pm yD$ summation
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-MULTIDIMENSIONAL-HOLOGRAPHIC-RHYME-EGS-2026-09-05`  
-**Registry ID:** `synthobs-multidimensional-holographic-rhyme-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-MULTIDIMENSIONAL-HOLOGRAPHIC-RHYME-EGS-2026-09-05`
+**Registry ID:** `synthobs-multidimensional-holographic-rhyme-2026-09`
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)
 **Classification:** Number-theoretic / holographic **catalog architecture** for multi-tier encoding *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#19** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-multidimensional-holographic-rhyme/` · [`FractiAI/synthobs-multidimensional-holographic-rhyme`](https://github.com/FractiAI/synthobs-multidimensional-holographic-rhyme) · `npm run research:synthobs-multidimensional-holographic-rhyme`  
-**Plain note:** [/ship-blog/multidimensional-holographic-rhyme](https://www.ssvibelandiaquestfest24x365.com/ship-blog/multidimensional-holographic-rhyme)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#19** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-multidimensional-holographic-rhyme/` · [`FractiAI/synthobs-multidimensional-holographic-rhyme`](https://github.com/FractiAI/synthobs-multidimensional-holographic-rhyme) · `npm run research:synthobs-multidimensional-holographic-rhyme`
+**Plain note:** [/ship-blog/multidimensional-holographic-rhyme](https://www.ssvibelandiaquestfest24x365.com/ship-blog/multidimensional-holographic-rhyme)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**

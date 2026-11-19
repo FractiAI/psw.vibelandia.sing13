@@ -2,14 +2,14 @@
 
 **Short answer: Yes.** On published AAA tables, micro-mobility operating cost in the model is about $0.0050 per mile against $0.7718 for the composite vehicle average, and cited studies put parking cruising near 28% of trip time. These are arithmetic on published tables and a model, not a field trial.
 
-**Author:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** WP-OGRP-2026-07  
-**Date:** July 2026  
-**Framework:** OGRP · EGS φ · NSPFRNP · Digital Pru routing layer  
-**Repository:** https://github.com/FractiAI/omniversal-goldilocks-rideshare  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
+**Author:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** WP-OGRP-2026-07
+**Date:** July 2026
+**Framework:** OGRP · EGS φ · NSPFRNP · Digital Pru routing layer
+**Repository:** https://github.com/FractiAI/omniversal-goldilocks-rideshare
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
 **Empirical pipeline:** `npm run research:omniversal-goldilocks-rideshare` · [`empirical_report.json`](../research/omniversal-goldilocks-rideshare/data/empirical_report.json)
 
 **Keywords:** rideshare, micro-mobility, thermodynamic routing, EGS fractal constant, urban density, Reno core, fair exchange, sprawl disqualification
@@ -136,13 +136,13 @@ Reference configuration (`config/ogrp_protocol.json`):
 
 ```json
 {
-  "protocol": "OmniversalGoldilocksRideshare",
-  "egs_constant": 1.618,
-  "acceptance_criteria": {
-    "density_gate_min_density": "high_core",
-    "value_floor_token_equivalent": 9.0,
-    "sovereign_pacing_enabled": true
-  }
+"protocol": "OmniversalGoldilocksRideshare",
+"egs_constant": 1.618,
+"acceptance_criteria": {
+"density_gate_min_density": "high_core",
+"value_floor_token_equivalent": 9.0,
+"sovereign_pacing_enabled": true
+}
 }
 ```
 

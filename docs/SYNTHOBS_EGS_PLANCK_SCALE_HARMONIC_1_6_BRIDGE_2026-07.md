@@ -2,15 +2,15 @@
 
 **Short answer: Yes.** All nine reproducible numerical experiments pass, including a sham-mantissa null at n=10^5, with a clutch Δ of about 0.001779 between Φ and the Planck mantissa. This supports a scale key for simulation only; the digit match depends on SI and base-10 units and derives nothing about quantum gravity.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** SynthOBS Foundation Models & Goldilocks Engine · EGS-NLRF · NSPFRNP  
-**Document ID:** `WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07`  
-**Registry ID:** `synthobs-egs-planck-scale-harmonic-2026-07`  
-**Date:** 2026-07  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
-**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Framework:** SynthOBS Foundation Models & Goldilocks Engine · EGS-NLRF · NSPFRNP
+**Document ID:** `WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07`
+**Registry ID:** `synthobs-egs-planck-scale-harmonic-2026-07`
+**Date:** 2026-07
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic
+**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
 **Lattice companions:** [EGS-NLRF](./FRACTIAI_EGS_NLRF_HYDROGEN_2026.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Chromosomal electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md)
 
 ---
@@ -57,8 +57,8 @@ Conventional physics treats $\hbar$, $c$, and $G$ as independent empirical input
 
 ### Downstream role
 
-- Sets foundational harmonic step $\log_{10}\Phi_{\mathrm{EGS}} \approx 0.209$.  
-- Non-zero lower bound when paired with $l_P$ at $k=0$.  
+- Sets foundational harmonic step $\log_{10}\Phi_{\mathrm{EGS}} \approx 0.209$.
+- Non-zero lower bound when paired with $l_P$ at $k=0$.
 - Phase-coherent log-spacing from subatomic registers through heliospheric and cosmic bands of the 81-digit grid.
 
 ---
@@ -95,7 +95,7 @@ $$
 l_P\times 10^{35} = 1.6\,p_3 p_4\ldots p_{81}.
 $$
 
-**Fixed anchor:** truncated prefix $1.6$ (and $1.61$) shared.  
+**Fixed anchor:** truncated prefix $1.6$ (and $1.61$) shared.
 **Dynamic tail / clutch:**
 
 $$
@@ -117,8 +117,8 @@ $$
 
 Exact infinite-digit identity would be a **rigid crystal** metaphor. Measured $\Delta$ supplies bounded local freedom for impedance mismatch, phase slip, and observer scaffolding—while global recursion converges on $\Phi_{\mathrm{EGS}}$.
 
-**A. Fractal clutch** — $1.6$ flywheel; digits $3+$ friction plate; $\Delta$ = scale-slip tolerance.  
-**B. Differential gears** — recursive $k\to k+1$ transforms energy without destructive interference (prior).  
+**A. Fractal clutch** — $1.6$ flywheel; digits $3+$ friction plate; $\Delta$ = scale-slip tolerance.
+**B. Differential gears** — recursive $k\to k+1$ transforms energy without destructive interference (prior).
 **C. Scaffolding** — local slip $\leftrightarrow$ global convergence boundary as the awareness metaphor in SynthOBS observers.
 
 ---
@@ -147,15 +147,15 @@ Integer digit $1$ defines the volumetric phase boundary / holographic memory con
 
 Tenths digit $6$ anchors a three-part electrodynamic flywheel metaphor:
 
-- **Magnetic (inductor):** field memory, structural inductance, containment.  
-- **Quantum (capacitor / slip-plate):** spin states, discrete transitions, clutch play.  
+- **Magnetic (inductor):** field memory, structural inductance, containment.
+- **Quantum (capacitor / slip-plate):** spin states, discrete transitions, clutch play.
 - **Electric (driver):** kinetic discharge, wave propagation, signal execution.
 
 ### C. Heliospheric mapping & sunspot dynamics (interpretive)
 
 Within digits **28–54**, solar active regions are treated as **real-time hardware clocks** modulating system cadence in the Goldilocks OS metaphor:
 
-- **AR 4482 (phase modulator metaphor):** variable magnetic clutch — flare-like releases as tension dumps that re-align planetary magnetospheric harmonics in the model narrative.  
+- **AR 4482 (phase modulator metaphor):** variable magnetic clutch — flare-like releases as tension dumps that re-align planetary magnetospheric harmonics in the model narrative.
 - **AR 4491 (inductive anchor metaphor):** steadier inductive locking of the interplanetary current sheet within a Goldilocks operational band.
 
 **Honesty:** These AR labels are **illustrative couplings** to public space-weather discourse and live NOAA-class buses—not empirical fits claiming AR numbers are encoded in $\Phi$ digits. Forecast skill is **not** claimed in this paper; see E3/E5/E9 for numerical priors only.
@@ -164,9 +164,9 @@ Within digits **28–54**, solar active regions are treated as **real-time hardw
 
 ## 6. Practical applications (scoped)
 
-1. **Singularity-free simulation engines** — clamp $r\ge l_P$ so $1/r^2$ potentials stay finite (E4).  
-2. **Multi-scale resonant transfer priors** — treat $\Delta$ as an impedance play band (E6).  
-3. **Real-time space weather / solar field modeling (prior)** — $\Phi$-spaced / $k/81$ operators as regularity priors on turbulent cascades; AR clocks as interpretive registers (not skill-scored here).  
+1. **Singularity-free simulation engines** — clamp $r\ge l_P$ so $1/r^2$ potentials stay finite (E4).
+2. **Multi-scale resonant transfer priors** — treat $\Delta$ as an impedance play band (E6).
+3. **Real-time space weather / solar field modeling (prior)** — $\Phi$-spaced / $k/81$ operators as regularity priors on turbulent cascades; AR clocks as interpretive registers (not skill-scored here).
 4. **Non-lossy fractal scale storage (architectural)** — recursive $\Phi$-ladders as compression coordinates (E3, E7).
 
 ---
@@ -224,11 +224,11 @@ cd synthobs-egs-planck-scale-harmonic && npm run research
 
 ## 9. Falsification criteria
 
-1. Clamped $1/r^2$ sums fail under the published pipeline.  
-2. $\Phi$-ladder log-spacing RMSE exceeds machine-precision bounds.  
-3. Clutch-band impedance no longer beats wild-slip baselines.  
-4. 81-grid bands develop gaps/overlaps or cease to sum to 81.  
-5. $k/81$ wave schedule ceases to beat sham under locked seed.  
+1. Clamped $1/r^2$ sums fail under the published pipeline.
+2. $\Phi$-ladder log-spacing RMSE exceeds machine-precision bounds.
+3. Clutch-band impedance no longer beats wild-slip baselines.
+4. 81-grid bands develop gaps/overlaps or cease to sum to 81.
+5. $k/81$ wave schedule ceases to beat sham under locked seed.
 6. Authors claim SI mantissa coincidence or AR IDs as unit-invariant physical law without new evidence.
 
 ---
@@ -247,15 +247,15 @@ The prefix similarity between the SI Planck mantissa ($1.616\ldots$) and $\Phi_{
 
 ## References
 
-1. CODATA 2018 recommended values — Planck length $l_P = 1.616255\times 10^{-35}\,\mathrm{m}$.  
-2. Mohr, Newell, Taylor — CODATA recommended values of the fundamental physical constants (Rev. Mod. Phys.).  
-3. Livio, M. — *The Golden Ratio* (historical / mathematical background for $\Phi$).  
-4. FractiAI EGS-NLRF — https://github.com/FractiAI/egs-nlrf  
-5. Recursive attention causality — `docs/RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md`  
-6. Canonical empirical receipts — https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
-7. NSPFRNP Snap PRA — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
-8. SynthOBS Hex-Organ / MCA index — `docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md`  
-9. Omniversal Nested Agent Lattice — `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`  
-10. Chromosomal electrodynamics (cytographic LC lattice) — `docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md`  
-11. NOAA / SWPC space-weather context (active-region discourse) — https://www.swpc.noaa.gov/  
+1. CODATA 2018 recommended values — Planck length $l_P = 1.616255\times 10^{-35}\,\mathrm{m}$.
+2. Mohr, Newell, Taylor — CODATA recommended values of the fundamental physical constants (Rev. Mod. Phys.).
+3. Livio, M. — *The Golden Ratio* (historical / mathematical background for $\Phi$).
+4. FractiAI EGS-NLRF — https://github.com/FractiAI/egs-nlrf
+5. Recursive attention causality — `docs/RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md`
+6. Canonical empirical receipts — https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic
+7. NSPFRNP Snap PRA — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
+8. SynthOBS Hex-Organ / MCA index — `docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md`
+9. Omniversal Nested Agent Lattice — `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`
+10. Chromosomal electrodynamics (cytographic LC lattice) — `docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md`
+11. NOAA / SWPC space-weather context (active-region discourse) — https://www.swpc.noaa.gov/
 12. NIST / CODATA portal — https://physics.nist.gov/cuu/Constants/

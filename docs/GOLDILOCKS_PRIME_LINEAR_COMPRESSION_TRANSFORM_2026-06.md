@@ -2,11 +2,11 @@
 
 **Short answer: Yes.** On a bounded prime substrate, the reference engine reproduces the bijection G(p_n) = n and matches composite lifts to SymPy factors. It does not show faster factoring of RSA moduli or replace production cryptography.
 
-**Author:** Lead Systems Architect  
-**Framework:** Goldilocks AIOS / Syntheverse Sandbox Deployment  
-**Document ID:** WP-GGM-PLC-2026-06  
-**Date:** June 2026  
-**Status:** Sandbox reference · epistemic validation tier  
+**Author:** Lead Systems Architect
+**Framework:** Goldilocks AIOS / Syntheverse Sandbox Deployment
+**Document ID:** WP-GGM-PLC-2026-06
+**Date:** June 2026
+**Status:** Sandbox reference · epistemic validation tier
 **Companion:** [Goldilocks Game Mathematics · Erdős 344](/docs/GOLDILOCKS_GAME_MATHEMATICS_ERDOS_344_2026-05-26.md) · `research/goldilocks-math/src/goldilocks_master_engine.py`
 
 ---
@@ -169,15 +169,15 @@ PLC-T coordinates do not live on a bare integer line in Goldilocks AIOS — they
 ### 5.1 ASCII hex diagram · coordinate shell $n \leq 7$
 
 ```
-                    [G⁻¹(3)=5]
-                   /          \
-          [G⁻¹(2)=3]          [G⁻¹(5)=11]
-         /          \        /          \
- [G⁻¹(1)=2] ——— [CENTER · φ-lock] ——— [G⁻¹(4)=7]
-         \          /        \          /
-          [G⁻¹(6)=13]        [G⁻¹(7)=17]
-                   \          /
-                    [G⁻¹(8)=19]
+[G⁻¹(3)=5]
+/          \
+[G⁻¹(2)=3]          [G⁻¹(5)=11]
+/          \        /          \
+[G⁻¹(1)=2] ——— [CENTER · φ-lock] ——— [G⁻¹(4)=7]
+\          /        \          /
+[G⁻¹(6)=13]        [G⁻¹(7)=17]
+\          /
+[G⁻¹(8)=19]
 ```
 
 **Reading the diagram:**
@@ -257,21 +257,21 @@ Architectural flow:
 
 ```
 [Non-linear problem statement]
-            │
-            ▼
-    [PLC-T · G(p_n) substrate]
-            │
-     ┌──────┴──────┐
-     ▼             ▼
+│
+▼
+[PLC-T · G(p_n) substrate]
+│
+┌──────┴──────┐
+▼             ▼
 [Composite      [R_G(n) EGS
- vector path]    resonance]
-     │             │
-     └──────┬──────┘
-            ▼
-   [Honeycomb hex-organ router]
-            │
-            ▼
- [Erdős · Gateway · AIOS · DPH-GPU consumers]
+vector path]    resonance]
+│             │
+└──────┬──────┘
+▼
+[Honeycomb hex-organ router]
+│
+▼
+[Erdős · Gateway · AIOS · DPH-GPU consumers]
 ```
 
 ---

@@ -2,9 +2,9 @@
 
 **Short answer: Yes.** The announcement specifies a five-tier climb with live Twin relay, an email seat check shared with Lattice Chat, and curl commands to verify seat, Twin state and telemetry. It reports no playtest data or measured outcomes, so this is a design and access filing.
 
-**Document ID:** `WP-SYNTHOBS-GOLDILOCKS-QUEST-FULL-GEN-2026-09-06`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-09-06  
+**Document ID:** `WP-SYNTHOBS-GOLDILOCKS-QUEST-FULL-GEN-2026-09-06`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** 2026-09-06
 **Generation:** `full-gen-v3`
 
 ## Abstract
@@ -57,12 +57,12 @@ curl -s "https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-quest?email=
 
 # Twin state
 curl -s -H "x-lattice-email: YOU@example.com" \
-  "https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-quest"
+"https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-quest"
 
 # telemetry
 curl -s -X POST -H "x-lattice-email: YOU@example.com" -H "Content-Type: application/json" \
-  -d '{"action":"telemetry","tier":3,"basePoints":2,"graceDelta":2,"trapResisted":true,"unselfishOffer":true}' \
-  "https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-quest"
+-d '{"action":"telemetry","tier":3,"basePoints":2,"graceDelta":2,"trapResisted":true,"unselfishOffer":true}' \
+"https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-quest"
 ```
 
 Ops grant: `node scripts/lattice-grant-access.mjs you@example.com`

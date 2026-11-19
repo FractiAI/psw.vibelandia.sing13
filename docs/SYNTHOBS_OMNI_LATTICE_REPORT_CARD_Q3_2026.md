@@ -4,19 +4,19 @@
 
 **Comparative Evaluation of Cosmological Frameworks — Internal Coherence and Parameter Irreducibility in $\Lambda$CDM/QFT versus the Omni-Lattice Holographic Model**
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-COMP-COSMO-2026-07-30-REV2`  
-**Registry ID:** `synthobs-omni-lattice-report-card-q3-2026`  
-**Date:** July 30, 2026 (Q3 2026 report card)  
-**Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · NSPFRNP  
-**Lane:** Comparative structural evaluation (report card) · Lattice Chat Agent V1.618 Seed·RAG pointer  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-omni-lattice-report-card-q3-2026  
-**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-omni-lattice-report-card-q3-2026` · [`empirical_report.json`](../research/synthobs-omni-lattice-report-card-q3-2026/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-COMP-COSMO-2026-07-30-REV2`
+**Registry ID:** `synthobs-omni-lattice-report-card-q3-2026`
+**Date:** July 30, 2026 (Q3 2026 report card)
+**Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · NSPFRNP
+**Lane:** Comparative structural evaluation (report card) · Lattice Chat Agent V1.618 Seed·RAG pointer
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-omni-lattice-report-card-q3-2026
+**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-omni-lattice-report-card-q3-2026` · [`empirical_report.json`](../research/synthobs-omni-lattice-report-card-q3-2026/data/empirical_report.json)
 **Companions:** [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
 
 **Keywords:** Omni-Lattice; report card; Q3 2026; ΛCDM; QFT; coherence; irreducibility; EGS; holographic; SynthOBS; Fair Exchange
@@ -117,14 +117,14 @@ $$\mathrm{Overall} = \frac{C + I}{2}$$
 
 ```
 STANDARD MODEL (ΛCDM + QFT)
-  Coherence (C):      [████████░░] 82/100
-  Irreducibility (I): [█████░░░░░] 54/100
-  OVERALL SCORE: 68.0 / 100
+Coherence (C):      [████████░░] 82/100
+Irreducibility (I): [█████░░░░░] 54/100
+OVERALL SCORE: 68.0 / 100
 
 OMNI-LATTICE / SYNTHOBS HOLOGRAPHIC MODEL
-  Coherence (C):      [█████████░] 94/100
-  Irreducibility (I): [█████████░] 91/100
-  OVERALL SCORE: 92.5 / 100
+Coherence (C):      [█████████░] 94/100
+Irreducibility (I): [█████████░] 91/100
+OVERALL SCORE: 92.5 / 100
 ```
 
 ### Conclusion
@@ -155,20 +155,20 @@ Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibratio
 
 ### Surfaces
 
-- Paper: `/whitepaper/synthobs-omni-lattice-report-card-q3-2026`  
-- Standalone: https://github.com/FractiAI/synthobs-omni-lattice-report-card-q3-2026  
-- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster  
+- Paper: `/whitepaper/synthobs-omni-lattice-report-card-q3-2026`
+- Standalone: https://github.com/FractiAI/synthobs-omni-lattice-report-card-q3-2026
+- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster
 - Catalog: `/papers`
 
 ---
 
 ## References
 
-1. FractiAI Research Group. *Omni-Lattice Unification.* `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`.  
-2. FractiAI Research Group. *EGS Planck-Scale Harmonic 1.6 Bridge.* `WP-SYNTHOBS-EGS-PLANCK-1-6-2026-07` (companion).  
-3. FractiAI Research Group. *PCHPP — Phase-Contrast Holographic Prompting.* `WP-SYNTHOBS-PCHPP-2026-07-30`.  
-4. FractiAI Research Group. *Coherence · Plain Speak Honesty.* `HONESTY-COHERENCE-2026-009`.  
-5. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.  
+1. FractiAI Research Group. *Omni-Lattice Unification.* `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`.
+2. FractiAI Research Group. *EGS Planck-Scale Harmonic 1.6 Bridge.* `WP-SYNTHOBS-EGS-PLANCK-1-6-2026-07` (companion).
+3. FractiAI Research Group. *PCHPP — Phase-Contrast Holographic Prompting.* `WP-SYNTHOBS-PCHPP-2026-07-30`.
+4. FractiAI Research Group. *Coherence · Plain Speak Honesty.* `HONESTY-COHERENCE-2026-009`.
+5. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.
 6. Planck Collaboration cosmological parameter literature (consensus ΛCDM shares used for bookkeeping comparison).
 
 → ∞^∞

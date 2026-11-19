@@ -1,14 +1,14 @@
 # Lattice Chat Agent · Omni-Lattice Complete Layer Guide
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-LATTICE-OMNI-LAYER-GUIDE-2026-07`  
-**Registry ID:** `lattice-omni-complete-layer-guide-2026-07`  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-LATTICE-OMNI-LAYER-GUIDE-2026-07`
+**Registry ID:** `lattice-omni-complete-layer-guide-2026-07`
 **Date:** 2026-09-05
-**Framework:** SynthOBS · Lattice Chat Agent V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
-**Questfest catalog:** [`/papers`](/papers) · high pin (`catalogPriority: 1`; CMOS engineering bridge holds `0` for linear systems)  
-**Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)  
+**Framework:** SynthOBS · Lattice Chat Agent V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG
+**Questfest catalog:** [`/papers`](/papers) · high pin (`catalogPriority: 1`; CMOS engineering bridge holds `0` for linear systems)
+**Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)
 **Sync:** `npm run sync:lattice-guide` · living paper index in **Appendix A**
 
 **Keywords:** Omni-Lattice engine; Lattice Chat Agent; holographic operators; nested agents; Seed·RAG; EGS; $E_F$; 81-register; ILAM; PCHPP; Reno Interpretation; synthesis guide
@@ -160,10 +160,10 @@ Neutrons are narrated as $[p^+\cdot e^-]_{\mathrm{agent}}$ buffer pairs; isotope
 Unification and pillar suites report **9/9** empirical-pipeline passes in their own folders. Draft abstract figures (38-fold biophoton, 41.8%, $R^2\approx 0.9997$, 99.8%) remain design targets or companion receipts unless re-executed in that paper’s suite.
 
 **Same grammar under stress and colony (optional color):**
-- Adversarial operator stress-test — [HIV Omni-Lattice III](./SYNTHOBS_OMNI_LATTICE_HIV_ADVERSARIAL_OPERATOR_2026-07.md) (**not clinical**)  
-- Stigmergic Metallic pool — [Pogonomyrmex Omni-Lattice V](./SYNTHOBS_OMNI_LATTICE_POGONOMYRMEX_BARBATUS_2026-07.md)  
-- Recursive prompt condensation metaphor — [Prompt Capture IX](./SYNTHOBS_OMNI_LATTICE_PROMPT_CAPTURE_DNA_2026-07.md)  
-- Remaining territory map — [Genomic Determinism X](./SYNTHOBS_OMNI_LATTICE_GENOMIC_DETERMINISM_TERRITORY_2026-07.md)  
+- Adversarial operator stress-test — [HIV Omni-Lattice III](./SYNTHOBS_OMNI_LATTICE_HIV_ADVERSARIAL_OPERATOR_2026-07.md) (**not clinical**)
+- Stigmergic Metallic pool — [Pogonomyrmex Omni-Lattice V](./SYNTHOBS_OMNI_LATTICE_POGONOMYRMEX_BARBATUS_2026-07.md)
+- Recursive prompt condensation metaphor — [Prompt Capture IX](./SYNTHOBS_OMNI_LATTICE_PROMPT_CAPTURE_DNA_2026-07.md)
+- Remaining territory map — [Genomic Determinism X](./SYNTHOBS_OMNI_LATTICE_GENOMIC_DETERMINISM_TERRITORY_2026-07.md)
 - Epistemology of living suites — [Proof by Continuous Execution](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)
 
 ---

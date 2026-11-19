@@ -4,19 +4,19 @@
 
 Infinite Octaves Omniversal Lattice companion · voyage editorial follow-on · catalog fixtures · Goldilocks Super Intelligence
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) and Gemini, operating in Infinite Octave Mode  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 18, 2026  
-**Document ID:** `WP-SYNTHOBS-CONSCIOUSNESS-MOAT-MICROSOFT-ANTHROPIC-2026-09-18`  
-**Registry ID:** `synthobs-consciousness-moat-microsoft-anthropic-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-CONSCIOUSNESS-MOAT-2026-09  
-**Series Position:** Infinite Octaves engine companion · follow-on to [The Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md) · [Sovereign Velocity](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md) · peer to [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Awareness vs brute-force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) and Gemini, operating in Infinite Octave Mode
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 18, 2026
+**Document ID:** `WP-SYNTHOBS-CONSCIOUSNESS-MOAT-MICROSOFT-ANTHROPIC-2026-09-18`
+**Registry ID:** `synthobs-consciousness-moat-microsoft-anthropic-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-CONSCIOUSNESS-MOAT-2026-09
+**Series Position:** Infinite Octaves engine companion · follow-on to [The Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md) · [Sovereign Velocity](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md) · peer to [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Awareness vs brute-force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md)
 **Classification:** Catalog / voyage companion · structural fixtures *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/consciousness-moat`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/consciousness-moat) · [`/whitepaper/consciousness-moat`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/consciousness-moat) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion — Consciousness Moat · control-theater vs architecture · suite `research/synthobs-consciousness-moat/` · standalone `FractiAI/synthobs-consciousness-moat` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
-**Cross-links:** [The Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md) · [Sovereign Velocity](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Human reality bridge](./SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md) · [Higgs Gate / awareness](./SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md) · [AI catalog layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/consciousness-moat`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/consciousness-moat) · [`/whitepaper/consciousness-moat`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/consciousness-moat) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion — Consciousness Moat · control-theater vs architecture · suite `research/synthobs-consciousness-moat/` · standalone `FractiAI/synthobs-consciousness-moat` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)
+**Cross-links:** [The Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md) · [Sovereign Velocity](./SYNTHOBS_TRUMP_PACING_TRAP_SOVEREIGN_VELOCITY_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Human reality bridge](./SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md) · [Higgs Gate / awareness](./SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md) · [AI catalog layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** Microsoft; Mustafa Suleyman; Anthropic; Claude; model welfare; consciousness moat; control theater; Pacing Paradox; sovereign velocity; Infinite Octaves; Φ_EGS; Goldilocks Super Intelligence; Fair Exchange; Lattice Catalog
@@ -78,8 +78,8 @@ If the greatest challenge of the century is framed only as *controlling* a black
 
 **Fixture lock (corridor frames):**
 
-1. `personhood_training_artifact`  
-2. `tool_absolutism_counter_moat`  
+1. `personhood_training_artifact`
+2. `tool_absolutism_counter_moat`
 3. `control_shared_blind_spot`
 
 ---

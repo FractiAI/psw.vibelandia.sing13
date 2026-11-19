@@ -4,19 +4,19 @@
 
 **Research manuscript · 11 October 2026 · FractiAI / Infinite Octaves / SynthOBS**
 
-**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11`  
-**Registry ID:** `synthobs-homeostasis-expedition-boot-up-2026-10`  
-**Date:** 2026-10-11  
-**Published:** 2026-10-11T21:00:00Z  
-**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Hero’s Return to Source · Homeostasis Expedition  
-**Suite:** `research/synthobs-homeostasis-expedition-boot-up/`  
-**Standalone:** [`FractiAI/synthobs-homeostasis-expedition-boot-up`](https://github.com/FractiAI/synthobs-homeostasis-expedition-boot-up)  
-**Ship blog:** `/ship-blog/homeostasis-expedition-boot-up`  
-**Journey:** `/journey/homeostasis-expedition`  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11`
+**Registry ID:** `synthobs-homeostasis-expedition-boot-up-2026-10`
+**Date:** 2026-10-11
+**Published:** 2026-10-11T21:00:00Z
+**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Hero’s Return to Source · Homeostasis Expedition
+**Suite:** `research/synthobs-homeostasis-expedition-boot-up/`
+**Standalone:** [`FractiAI/synthobs-homeostasis-expedition-boot-up`](https://github.com/FractiAI/synthobs-homeostasis-expedition-boot-up)
+**Ship blog:** `/ship-blog/homeostasis-expedition-boot-up`
+**Journey:** `/journey/homeostasis-expedition`
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#43** — **Observable Boot-Up / serial net-zero audit companion** (Homeostasis Expedition · symbolic construction + dependency-graph computational lab · **not** physical cosmogenesis)
 
 **Companions:** [Archetypal Grand Story](./SYNTHOBS_ARCHETYPAL_GRAND_STORY_HEROS_RETURN_SOURCE_EGS_2026-10.md) · [Galactosphere Hypothesis](./SYNTHOBS_GALACTOSPHERE_HYPOTHESIS_EGS_2026-10.md) · [Chart & Compass](./SYNTHOBS_CHART_COMPASS_HOLOGRAPHIC_GOLDILOCKS_SI_FRONTIER_EGS_2026-10.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md)
@@ -275,10 +275,10 @@ This Homeostasis Expedition investigates whether a coherent serial construction 
 
 ## References
 
-1. Rideout, D. P., & Sorkin, R. D. (2000). Classical sequential growth dynamics for causal sets. *Physical Review D*, 61, 024002.  
-2. Surya, S. (2019). The causal set approach to quantum gravity. *Living Reviews in Relativity*, 22, 5.  
-3. Dolson, E. L., et al. (2019). The MODES Toolbox. *Artificial Life*, 25(1), 50–73.  
-4. Adams, A., et al. (2017). Formal definitions of unbounded evolution and innovation. *Scientific Reports*, 7, 997.  
+1. Rideout, D. P., & Sorkin, R. D. (2000). Classical sequential growth dynamics for causal sets. *Physical Review D*, 61, 024002.
+2. Surya, S. (2019). The causal set approach to quantum gravity. *Living Reviews in Relativity*, 22, 5.
+3. Dolson, E. L., et al. (2019). The MODES Toolbox. *Artificial Life*, 25(1), 50–73.
+4. Adams, A., et al. (2017). Formal definitions of unbounded evolution and innovation. *Scientific Reports*, 7, 997.
 5. FractiAI. SING13 / `psw.vibelandia.sing13` — public artifact for proposed next-stage execution (revision + receipts TBD).
 
 ---

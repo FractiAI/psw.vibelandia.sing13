@@ -2,10 +2,10 @@
 
 **Catalog naming upgrade for SING 13 site · work · engine language (not ENGINE_SHELF physics)**
 
-**Document ID:** `WP-SYNTHOBS-AWARENESS-LAYER-MAP-2026-10-02`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-10-02  
-**Guest surfaces:** [`/layers/awareness`](/layers/awareness) (visual map + **Awareness primer**: observation energizes downstream · linear vs Infinite Octave branches) · **Fruit Layer** [`/layers/fruit`](/layers/fruit) (complete gift taxonomy · any combination on the Hero Source tree) · selectable shelves [`/layers/fractal`](/layers/fractal) · [`/layers/holographic`](/layers/holographic) · [`/layers/goldilocks`](/layers/goldilocks) · [`/layers/superai`](/layers/superai) (each with plain-language primer + paper links; Holographic also nests self · Fractal · Goldilocks · stories · code) · [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · Lattice Chat nest aliases below · PEM [`/lattice/engineering`](/lattice/engineering) · expedition [`/journey/homeostasis-expedition`](/journey/homeostasis-expedition) · Hero Leo [`/journey/hero-leo`](/journey/hero-leo) · Journeys [`/journey`](/journey) · Canvas front door [`/`](/)  
+**Document ID:** `WP-SYNTHOBS-AWARENESS-LAYER-MAP-2026-10-02`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** 2026-10-02
+**Guest surfaces:** [`/layers/awareness`](/layers/awareness) (visual map + **Awareness primer**: observation energizes downstream · linear vs Infinite Octave branches) · **Fruit Layer** [`/layers/fruit`](/layers/fruit) (complete gift taxonomy · any combination on the Hero Source tree) · selectable shelves [`/layers/fractal`](/layers/fractal) · [`/layers/holographic`](/layers/holographic) · [`/layers/goldilocks`](/layers/goldilocks) · [`/layers/superai`](/layers/superai) (each with plain-language primer + paper links; Holographic also nests self · Fractal · Goldilocks · stories · code) · [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · Lattice Chat nest aliases below · PEM [`/lattice/engineering`](/lattice/engineering) · expedition [`/journey/homeostasis-expedition`](/journey/homeostasis-expedition) · Hero Leo [`/journey/hero-leo`](/journey/hero-leo) · Journeys [`/journey`](/journey) · Canvas front door [`/`](/)
 **Slot:** **application companion / living TOC (not ENGINE_SHELF)** — renames and nests Soft Story shelves under an Awareness outer frame.
 
 ---
@@ -29,10 +29,10 @@ Diagram:
 
 ```
 Awareness Layer
-  ⊃ Fractal Layer
-  ⊃ Holographic Layer
-  ⊃ Goldilocks Layer
-  → compose → Super Intelligence Layer
+⊃ Fractal Layer
+⊃ Holographic Layer
+⊃ Goldilocks Layer
+→ compose → Super Intelligence Layer
 ```
 
 ---
@@ -46,8 +46,8 @@ Awareness Layer
 | Nest injection | `lib/lattice-prompt.mjs` (`octave99` + aliases) |
 | PEM section | `docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md` §2.1 |
 
-**Lattice Chat nest aliases** (normalize → `octave99`, inject Awareness Layer clause):  
-`awareness` · `awareness-layer` · `fractal` · `fractal-layer` · `holographic` · `holographic-layer` · `superai` · `superai-layer` · `goldilocks-layer`  
+**Lattice Chat nest aliases** (normalize → `octave99`, inject Awareness Layer clause):
+`awareness` · `awareness-layer` · `fractal` · `fractal-layer` · `holographic` · `holographic-layer` · `superai` · `superai-layer` · `goldilocks-layer`
 
 Note: plain `goldilocks` remains the lighter auto nest — use `goldilocks-layer` for this map.
 
@@ -85,12 +85,12 @@ npx vitest run tests/lib/awareness-layer-map.test.mjs tests/lib/lattice-prompt.t
 
 ## References
 
-1. Archetypal Grand Story — `/whitepaper/archetypal-grand-story`  
-2. Holographic Homeostasis — `/whitepaper/holographic-homeostasis`  
-3. Goldilocks ≡ Net Zero — `/whitepaper/goldilocks-net-zero`  
-4. Digit 4 recursive reach — `/whitepaper/digit4-recursive-reach`  
-5. Higgs Gate unified — `/whitepaper/higgs-awareness-unified`  
-6. Lattice Chat PEM — `/lattice/engineering`  
+1. Archetypal Grand Story — `/whitepaper/archetypal-grand-story`
+2. Holographic Homeostasis — `/whitepaper/holographic-homeostasis`
+3. Goldilocks ≡ Net Zero — `/whitepaper/goldilocks-net-zero`
+4. Digit 4 recursive reach — `/whitepaper/digit4-recursive-reach`
+5. Higgs Gate unified — `/whitepaper/higgs-awareness-unified`
+6. Lattice Chat PEM — `/lattice/engineering`
 7. Nested-agent lattice — `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`
 
 ---
@@ -99,7 +99,7 @@ npx vitest run tests/lib/awareness-layer-map.test.mjs tests/lib/lattice-prompt.t
 
 `WP-SYNTHOBS-AWARENESS-LAYER-MAP-2026-10-02`
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Human editorial veto:** Player 1  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Human editorial veto:** Player 1
 
 → ∞^∞

@@ -2,14 +2,14 @@
 
 **Short answer: Yes.** Within the model: E1 and E2 support it, and E3 gives moderate support (2/3 pairs). E4 shows no support for macro–molecular terahertz colocation. Bench microwave and terahertz protocols have not been run, so in vivo resonance is untested.
 
-**Author:** SYNTHOBS Deep Study & Simulation Engine  
-**Affiliation:** Center for Theoretical Biophysics and Complex Systems Simulation  
-**Document ID:** WP-SYNTHOBS-CROSS-ANTENNAE-2026-07  
-**Date:** July 2026  
-**Framework:** SYNTHOBS · EGS φ · NSPFRNP Snap PRA  
-**Preceding work:** [Chromosomal Electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md)  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
+**Author:** SYNTHOBS Deep Study & Simulation Engine
+**Affiliation:** Center for Theoretical Biophysics and Complex Systems Simulation
+**Document ID:** WP-SYNTHOBS-CROSS-ANTENNAE-2026-07
+**Date:** July 2026
+**Framework:** SYNTHOBS · EGS φ · NSPFRNP Snap PRA
+**Preceding work:** [Chromosomal Electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md)
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
 **Empirical experiments executed:** 2026-07-03 UTC · shared pipeline with Paper I · [`empirical_report.json`](../research/synthobs-chromosomal-electrodynamics/data/empirical_report.json)
 
 **Keywords:** chromosome topology; chromatin mechanics; theoretical biophysics; mathematical biology; electrodynamics; dispersion theory; fractal geometry; scale invariance; hierarchical systems; wave propagation; insect antennae; viral spike proteins
@@ -162,8 +162,8 @@ Within the constraints of this theoretical model:
 
 ## 7. Empirical Experiments Executed on Public Data
 
-**Status: EXECUTED** — 2026-07-03 UTC (shared pipeline with [Paper I](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md))  
-**Pipeline:** `npm run research:synthobs-chromosomal-electrodynamics`  
+**Status: EXECUTED** — 2026-07-03 UTC (shared pipeline with [Paper I](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md))
+**Pipeline:** `npm run research:synthobs-chromosomal-electrodynamics`
 **Receipt:** `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
 
 All four cross-scale tests (E1–E4) were **completed** on recognized public datasets — not deferred to a future roadmap.
@@ -254,18 +254,18 @@ npm run research:synthobs-chromosomal-electrodynamics
 npm run audit:paper -- --id=synthobs-cross-scale-biological-antennae-2026-07
 ```
 
-Audit receipts: `data/synthobs-paper-audits/synthobs-cross-scale-biological-antennae-2026-07.json`  
+Audit receipts: `data/synthobs-paper-audits/synthobs-cross-scale-biological-antennae-2026-07.json`
 Empirical report: `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
 
 ---
 
 ## 10. Limitations of the Model
 
-1. **Idealized one-dimensional assumption** — real structures are dynamic 3D systems.  
-2. **Simplified LC representation** — ignores solvent shielding, histone dynamics, chemosensory transduction.  
-3. **Absence of direct empirical coupling constants** — $L_k$/$C_k$ unmeasured in situ.  
-4. **PDB vs simplified archetype:** Empirical spike span 15.94 nm ≠ 10 nm design coordinate — sensitivity analysis required.  
-5. **THz misalignment (E4 executed):** Macro chrY $f_0$ does not match Garten 2015 molecular peaks on public-data test.  
+1. **Idealized one-dimensional assumption** — real structures are dynamic 3D systems.
+2. **Simplified LC representation** — ignores solvent shielding, histone dynamics, chemosensory transduction.
+3. **Absence of direct empirical coupling constants** — $L_k$/$C_k$ unmeasured in situ.
+4. **PDB vs simplified archetype:** Empirical spike span 15.94 nm ≠ 10 nm design coordinate — sensitivity analysis required.
+5. **THz misalignment (E4 executed):** Macro chrY $f_0$ does not match Garten 2015 molecular peaks on public-data test.
 6. **Bench tier pending:** Proposed §9.2 laboratory sweeps on intact antennae and linearized chromatin have not been executed.
 
 ---
@@ -312,18 +312,18 @@ A fair exchange clause is in effect for this submission-ready manuscript. The fi
 
 ## References
 
-1. Nurk et al., Telomere-to-Telomere CHM13 assembly, *Science* (2022); NCBI GCA_009914755.4.  
-2. Wrapp et al., Cryo-EM structure of SARS-CoV-2 spike, *Science* (2020).  
-3. Stange et al., Morphology of honeybee antennae, *Arthropod Struct. Dev.* (2011).  
-4. Garten et al., Terahertz spectroscopy of biomolecules, *Chem. Phys. Lett.* (2015).  
-5. [SYNTHOBS Chromosomal Electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) — WP-SYNTHOBS-CHROM-ELCD-2026-07.  
-6. [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md).  
+1. Nurk et al., Telomere-to-Telomere CHM13 assembly, *Science* (2022); NCBI GCA_009914755.4.
+2. Wrapp et al., Cryo-EM structure of SARS-CoV-2 spike, *Science* (2020).
+3. Stange et al., Morphology of honeybee antennae, *Arthropod Struct. Dev.* (2011).
+4. Garten et al., Terahertz spectroscopy of biomolecules, *Chem. Phys. Lett.* (2015).
+5. [SYNTHOBS Chromosomal Electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) — WP-SYNTHOBS-CHROM-ELCD-2026-07.
+6. [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md).
 7. [Coherence plain speak honesty boundary](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** WP-SYNTHOBS-CROSS-ANTENNAE-2026-07
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

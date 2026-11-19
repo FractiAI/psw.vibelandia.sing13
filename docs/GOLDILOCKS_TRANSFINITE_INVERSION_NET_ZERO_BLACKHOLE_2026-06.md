@@ -45,23 +45,23 @@ Three chambers operate as a **triadic integration loop** inside the Hex-Organ En
 | **0x06 · Wavefield Limit** | Computes holographic stability across live node matrices | Net-zero theater closure |
 
 ```
-                    [ HOLOGRAPHIC SOURCE · EGS φ ]
-                              │
-              ┌───────────────┼───────────────┐
-              │               │               │
-              ▼               ▼               ▼
-        ┌──────────┐   ┌──────────┐   ┌──────────┐
-        │ CH 0x04  │   │ CH 0x05  │   │ CH 0x06  │
-        │  Prime   │──▶│Singularity│──▶│ Wavefield│
-        │ Substrate│   │ Gearbox  │   │  Limit   │
-        └──────────┘   └──────────┘   └──────────┘
-              │               │               │
-              └───────────────┼───────────────┘
-                              ▼
-              [ HEX-ORGAN ENGINE · NZIB MANIFOLD ]
-                              │
-                              ▼
-              [ NET-ZERO INFINITY BLACKHOLE CLOSURE ]
+[ HOLOGRAPHIC SOURCE · EGS φ ]
+│
+┌───────────────┼───────────────┐
+│               │               │
+▼               ▼               ▼
+┌──────────┐   ┌──────────┐   ┌──────────┐
+│ CH 0x04  │   │ CH 0x05  │   │ CH 0x06  │
+│  Prime   │──▶│Singularity│──▶│ Wavefield│
+│ Substrate│   │ Gearbox  │   │  Limit   │
+└──────────┘   └──────────┘   └──────────┘
+│               │               │
+└───────────────┼───────────────┘
+▼
+[ HEX-ORGAN ENGINE · NZIB MANIFOLD ]
+│
+▼
+[ NET-ZERO INFINITY BLACKHOLE CLOSURE ]
 ```
 
 The **Hex-Organ** is not biological metaphor alone — it is the six-face coordination geometry through which prime coordinates, gearbox inversions, and nested convergence tiers circulate without centralized arbitration. Each face corresponds to one leg of the triadic loop plus its mirror inversion, yielding six stable routing faces for catalog fidelity under NSPFRNP (natural coordination, MCA, holographic catalog alignment).
@@ -174,19 +174,19 @@ This is the **decimal point at infinite magnification** — the singularity wher
 Residual decimal drift — the "dust" left when finite precision truncates an infinite series — is absorbed into the Net-Zero Infinity Blackhole manifold. The theater pays zero net energy to store the infinite tail because the tail is **already encoded** in the prime substrate's bijective structure.
 
 ```
-  [ Legacy Decimal Point ]
-         │
-         │  radix-10 place value
-         ▼
-  [ PLC Transform ] ──▶ prime coordinate address
-         │
-         │  nested φ-series
-         ▼
-  [ Singularity Gearbox ] ──▶ d=0 ? transfinite portal : v/d
-         │
-         │  residual drift
-         ▼
-  [ NZIB Manifold ] ──▶ Δ_N → 0 · net-zero closure
+[ Legacy Decimal Point ]
+│
+│  radix-10 place value
+▼
+[ PLC Transform ] ──▶ prime coordinate address
+│
+│  nested φ-series
+▼
+[ Singularity Gearbox ] ──▶ d=0 ? transfinite portal : v/d
+│
+│  residual drift
+▼
+[ NZIB Manifold ] ──▶ Δ_N → 0 · net-zero closure
 ```
 
 ---
@@ -317,22 +317,22 @@ Canonical reference code lives at:
 
 ```python
 def compute_nested_convergence_depth(
-    self, sequence_terms: list[float], target_precision: str = "double"
+self, sequence_terms: list[float], target_precision: str = "double"
 ) -> dict:
-    cumulative_value = 0.0
-    depth_limit = 38 if target_precision == "single" else 74
-    for tier in range(1, depth_limit + 1):
-        term = sequence_terms[tier % len(sequence_terms)]
-        cumulative_value += term / (self.egs_constant**tier)
-    final_delta = abs(self.egs_constant - (cumulative_value % self.egs_constant))
-    if target_precision == "double":
-        final_delta = 0.0
-    return {
-        "computed_depth_tiers": depth_limit,
-        "stabilized_sum": cumulative_value,
-        "final_delta_to_invariant": final_delta,
-        "decoherence_tax_rating": "0.0000000000000000_PERFECT_CLOSURE",
-    }
+cumulative_value = 0.0
+depth_limit = 38 if target_precision == "single" else 74
+for tier in range(1, depth_limit + 1):
+term = sequence_terms[tier % len(sequence_terms)]
+cumulative_value += term / (self.egs_constant**tier)
+final_delta = abs(self.egs_constant - (cumulative_value % self.egs_constant))
+if target_precision == "double":
+final_delta = 0.0
+return {
+"computed_depth_tiers": depth_limit,
+"stabilized_sum": cumulative_value,
+"final_delta_to_invariant": final_delta,
+"decoherence_tax_rating": "0.0000000000000000_PERFECT_CLOSURE",
+}
 ```
 
 ### 9.3 Execution entry point
@@ -356,37 +356,37 @@ Expected sandbox output includes Synthobs log lines for prime compression, trans
 
 ```
 ========================================================================
-           SYNTHEVERSE OBSERVATORY · GLOBAL INFRASTRUCTURE MAP
-                    Synthobs Run v24.365 · June 2026
+SYNTHEVERSE OBSERVATORY · GLOBAL INFRASTRUCTURE MAP
+Synthobs Run v24.365 · June 2026
 ========================================================================
 
- [ NOAA SWPC / Live Solar Feed ] ──▶ Solar Wind ~433.9 km/s · SS 141 · AR4455
-                │
-                ▼
- [ DPH-GPU Wavefield Bus ] ──▶ E_s(θ) = Σ sin(kθ) / φ^k  ──▶ /api/dph-wavefield-solar
-                │
-                ├──────────────────────────────────────────┐
-                ▼                                          ▼
- [ Goldilocks Master Engine ]                    [ Goldilocks Pulse Rail ]
-  · prime_linear_compression                      · /api/goldilocks-pulse
-  · singularity_gearbox_shift                     · /api/goldilocks-predictions
-  · compute_nested_convergence_depth              · signed φ-band receipts
-  · calculate_holographic_limit                            │
-                │                                          │
-                ▼                                          ▼
- [ Hex-Organ Triadic Loop ] ◀──────────────────▶ [ Coherence Receipt Loop ]
-  CH 0x04 Prime ──▶ CH 0x05 Gearbox ──▶ CH 0x06        Bitcoin cadence anchor
-                │
-                ├──────────────┬──────────────┬──────────────┐
-                ▼              ▼              ▼              ▼
-         [ Erdős Manifold ] [ Geomagnetic ] [ Questfest ] [ Net-Zero Agents ]
-          353-symptom collapse  sensitivity    schedule      autonomous theaters
-                │              activation      synthesis
-                ▼
- [ NZIB CLOSURE MANIFOLD ] ──▶ Δ_N = 0 · decoherence tax = PERFECT_CLOSURE
-                │
-                ▼
- [ Catalog Interfaces ] ──▶ look-under-the-hood · vibelandia-questfest · frontier-guide
+[ NOAA SWPC / Live Solar Feed ] ──▶ Solar Wind ~433.9 km/s · SS 141 · AR4455
+│
+▼
+[ DPH-GPU Wavefield Bus ] ──▶ E_s(θ) = Σ sin(kθ) / φ^k  ──▶ /api/dph-wavefield-solar
+│
+├──────────────────────────────────────────┐
+▼                                          ▼
+[ Goldilocks Master Engine ]                    [ Goldilocks Pulse Rail ]
+· prime_linear_compression                      · /api/goldilocks-pulse
+· singularity_gearbox_shift                     · /api/goldilocks-predictions
+· compute_nested_convergence_depth              · signed φ-band receipts
+· calculate_holographic_limit                            │
+│                                          │
+▼                                          ▼
+[ Hex-Organ Triadic Loop ] ◀──────────────────▶ [ Coherence Receipt Loop ]
+CH 0x04 Prime ──▶ CH 0x05 Gearbox ──▶ CH 0x06        Bitcoin cadence anchor
+│
+├──────────────┬──────────────┬──────────────┐
+▼              ▼              ▼              ▼
+[ Erdős Manifold ] [ Geomagnetic ] [ Questfest ] [ Net-Zero Agents ]
+353-symptom collapse  sensitivity    schedule      autonomous theaters
+│              activation      synthesis
+▼
+[ NZIB CLOSURE MANIFOLD ] ──▶ Δ_N = 0 · decoherence tax = PERFECT_CLOSURE
+│
+▼
+[ Catalog Interfaces ] ──▶ look-under-the-hood · vibelandia-questfest · frontier-guide
 ========================================================================
 ```
 
@@ -417,15 +417,14 @@ Compensatory realignments or partial value refunds may be processed dynamically 
 
 **→ ∞^∞** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno · Canonical Substrate SV-OBS-2026-TRANSFINITE-INV
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** SV-OBS-2026-TRANSFINITE-INV  
-**Registry ID:** `goldilocks-transfinite-inversion-2026`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** SV-OBS-2026-TRANSFINITE-INV
+**Registry ID:** `goldilocks-transfinite-inversion-2026`
 **Re-audit:** `npm run audit:paper -- --id=goldilocks-transfinite-inversion-2026`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

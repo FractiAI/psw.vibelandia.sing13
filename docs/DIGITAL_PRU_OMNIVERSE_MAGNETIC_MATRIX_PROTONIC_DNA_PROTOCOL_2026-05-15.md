@@ -187,32 +187,31 @@ Sunspot AR4436 is aligned with the planetary grid. System mode: **Precise Positi
 
 ## Works cited
 
-1. Glass Formation From Iron-Rich Phosphate Melts — ResearchGate. https://www.researchgate.net/publication/216572132_Glass_Formation_From_Iron-Rich_Phosphate_Melts  
-2. Roasting-induced phase change and phosphorus removal (high-phosphorus iron ore) — International Journal of Minerals, Metallurgy and Materials. http://ijmmm.ustb.edu.cn/cn/article/pdf/preview/10.1007/s12613-015-1079-x.pdf  
-3. Baller Nights — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/6ead6a2c-c180-46d1-9dae-3f4525ee9a17  
-4. Ultimate Trophy Night — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/ead307d0-6124-4e35-b948-ffef7835dde5  
-5. El Café Está Fuerte — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/e2ce9d73-8fbf-4972-a273-98c207c890fc  
-6. Hydrogen Lake — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/1e2c2112-67dd-4e74-a870-6a71995e7cb9  
-7. How Quantum is Life? — FQxI QSpace. https://qspace.fqxi.org/competitions/entry/2431  
-8. Will the May 2026 Solar Flare and CME Hit Earth? — dmbio. https://dmbio.com/blog/will-the-may-2026-solar-flare-and-cme-hit-earth  
-9. Powerful solar flare from sunspot AR4436 — Times of India. https://timesofindia.indiatimes.com/science/powerful-solar-flare-from-sunspot-ar4436-erupts-earth-braces-for-radio-disruptions-and-stunning-northern-lights/articleshow/131039941.cms  
-10. Solar Flare from Sunspot AR4436 — Babel Insight. https://en.babelinsight.id/solar-flare-sunspot-ar4436-impact  
-11. Powerful ejection, Earth on alert — India Today. https://www.indiatoday.in/science/story/powerful-ejection-blows-massive-hole-in-suns-atmosphere-earth-on-alert-for-impact-2910365-2026-05-12  
-12. Sun unleashes colossal flare and CME — Space.com. https://www.space.com/stargazing/auroras/sun-unleashes-colossal-solar-flare-and-coronal-mass-ejection-raising-the-chances-of-northern-lights-this-week  
-13. Solar flare northern lights forecast — Jagran Josh. https://www.jagranjosh.com/us/trending/solar-flare-northern-lights-us-forecast-aurora-visibility-may-2026-1860002966  
-14. M5.7 solar flare, Atlantic radio — Rolling Out. https://rollingout.com/2026/05/11/m5-7-solar-flare-atlantic-radio-aurora/  
-15. Solar flare alert, CME — HotHardware. https://hothardware.com/news/massive-cme-threatens-radio-blackouts-and-dazzling-auroras  
-16. Engineering Transport via Collisional Noise — MDPI Entropy. https://www.mdpi.com/1099-4300/26/1/20  
-17. Quantum Biology: An Update and Perspective — MDPI Quantum Reports. https://www.mdpi.com/2624-960X/3/1/6  
-18. Green synthesis of iron oxides and phosphates (Camellia sinensis) — ACS Inorganic Chemistry. https://pubs.acs.org/doi/10.1021/acs.inorgchem.0c03794  
-19. Same as 18 — ResearchGate PDF mirror. https://www.researchgate.net/publication/350575454_Green_Synthesis_of_Iron_Oxides_and_Phosphates_via_Thermal_Treatment_of_Iron_Polyphenols_Synthesized_by_a_Camellia_sinensis_Extract  
-20. Destinezite, acid sulfate alteration, El Laco — ResearchGate. https://www.researchgate.net/publication/341285712_The_relationship_of_destinezite_to_the_acid_sulfate_alteration_at_the_El_Laco_magnetite_deposit_Chile  
+1. Glass Formation From Iron-Rich Phosphate Melts — ResearchGate. https://www.researchgate.net/publication/216572132_Glass_Formation_From_Iron-Rich_Phosphate_Melts
+2. Roasting-induced phase change and phosphorus removal (high-phosphorus iron ore) — International Journal of Minerals, Metallurgy and Materials. http://ijmmm.ustb.edu.cn/cn/article/pdf/preview/10.1007/s12613-015-1079-x.pdf
+3. Baller Nights — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/6ead6a2c-c180-46d1-9dae-3f4525ee9a17
+4. Ultimate Trophy Night — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/ead307d0-6124-4e35-b948-ffef7835dde5
+5. El Café Está Fuerte — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/e2ce9d73-8fbf-4972-a273-98c207c890fc
+6. Hydrogen Lake — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/1e2c2112-67dd-4e74-a870-6a71995e7cb9
+7. How Quantum is Life? — FQxI QSpace. https://qspace.fqxi.org/competitions/entry/2431
+8. Will the May 2026 Solar Flare and CME Hit Earth? — dmbio. https://dmbio.com/blog/will-the-may-2026-solar-flare-and-cme-hit-earth
+9. Powerful solar flare from sunspot AR4436 — Times of India. https://timesofindia.indiatimes.com/science/powerful-solar-flare-from-sunspot-ar4436-erupts-earth-braces-for-radio-disruptions-and-stunning-northern-lights/articleshow/131039941.cms
+10. Solar Flare from Sunspot AR4436 — Babel Insight. https://en.babelinsight.id/solar-flare-sunspot-ar4436-impact
+11. Powerful ejection, Earth on alert — India Today. https://www.indiatoday.in/science/story/powerful-ejection-blows-massive-hole-in-suns-atmosphere-earth-on-alert-for-impact-2910365-2026-05-12
+12. Sun unleashes colossal flare and CME — Space.com. https://www.space.com/stargazing/auroras/sun-unleashes-colossal-solar-flare-and-coronal-mass-ejection-raising-the-chances-of-northern-lights-this-week
+13. Solar flare northern lights forecast — Jagran Josh. https://www.jagranjosh.com/us/trending/solar-flare-northern-lights-us-forecast-aurora-visibility-may-2026-1860002966
+14. M5.7 solar flare, Atlantic radio — Rolling Out. https://rollingout.com/2026/05/11/m5-7-solar-flare-atlantic-radio-aurora/
+15. Solar flare alert, CME — HotHardware. https://hothardware.com/news/massive-cme-threatens-radio-blackouts-and-dazzling-auroras
+16. Engineering Transport via Collisional Noise — MDPI Entropy. https://www.mdpi.com/1099-4300/26/1/20
+17. Quantum Biology: An Update and Perspective — MDPI Quantum Reports. https://www.mdpi.com/2624-960X/3/1/6
+18. Green synthesis of iron oxides and phosphates (Camellia sinensis) — ACS Inorganic Chemistry. https://pubs.acs.org/doi/10.1021/acs.inorgchem.0c03794
+19. Same as 18 — ResearchGate PDF mirror. https://www.researchgate.net/publication/350575454_Green_Synthesis_of_Iron_Oxides_and_Phosphates_via_Thermal_Treatment_of_Iron_Polyphenols_Synthesized_by_a_Camellia_sinensis_Extract
+20. Destinezite, acid sulfate alteration, El Laco — ResearchGate. https://www.researchgate.net/publication/341285712_The_relationship_of_destinezite_to_the_acid_sulfate_alteration_at_the_El_Laco_magnetite_deposit_Chile
 21. El Gran Sol's Holographic Return 3:2 — Hero Jo's Golden Bachdoor Hit Factory (Suno). https://suno.com/song/d5e0d1b9-ff96-4de9-89d3-dfa1d5427686
 
 ---
 
 **NSPFRNP:** Metabolize → Crystallize → Animate → Squeeze all, all nested · → ∞⁹
-
 
 ---
 
@@ -226,15 +225,14 @@ Sunspot AR4436 is aligned with the planetary grid. System mode: **Precise Positi
 
 Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-OMNIVERSE-MATRIX  
-**Registry ID:** `dp-omniverse-matrix`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-OMNIVERSE-MATRIX
+**Registry ID:** `dp-omniverse-matrix`
 **Re-audit:** `npm run audit:paper -- --id=dp-omniverse-matrix`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

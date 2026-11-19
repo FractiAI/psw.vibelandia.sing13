@@ -4,20 +4,20 @@
 
 **Subtitle:** Technical manuscript & implementation specification — Zero-Octave locus, Net Zero field fixtures, and executable Prime Vault diagnostic
 
-**Authors:** FractiAI Research Collective · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-ZERO-OCTAVE-NODE-K0-SINGULARITY-CRYSTAL-EGS-2026-09-07`  
-**Registry ID:** `synthobs-zero-octave-node-k0-2026-09`  
-**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · suite · standalone)  
+**Authors:** FractiAI Research Collective · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-ZERO-OCTAVE-NODE-K0-SINGULARITY-CRYSTAL-EGS-2026-09-07`
+**Registry ID:** `synthobs-zero-octave-node-k0-2026-09`
+**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · suite · standalone)
 **Classification:** Implementation / catalog **architecture** for Node $k=0$ *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Parent paper:** [Holographic Singularity Crystal · Net Zero](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · engine shelf **#20**  
-**Standalone suite:** `research/synthobs-holographic-singularity-crystal/` · [`FractiAI/synthobs-holographic-singularity-crystal`](https://github.com/FractiAI/synthobs-holographic-singularity-crystal) · `npm run research:synthobs-holographic-singularity-crystal`  
-**Plain note:** [/ship-blog/zero-octave-node-k0](https://www.ssvibelandiaquestfest24x365.com/ship-blog/zero-octave-node-k0)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Parent paper:** [Holographic Singularity Crystal · Net Zero](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · engine shelf **#20**
+**Standalone suite:** `research/synthobs-holographic-singularity-crystal/` · [`FractiAI/synthobs-holographic-singularity-crystal`](https://github.com/FractiAI/synthobs-holographic-singularity-crystal) · `npm run research:synthobs-holographic-singularity-crystal`
+**Plain note:** [/ship-blog/zero-octave-node-k0](https://www.ssvibelandiaquestfest24x365.com/ship-blog/zero-octave-node-k0)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
-**Active Telemetry Anchor (filing):** SESC Sunspot Number **83** · Solar Active Regions **AR4521** · **AR4524**  
+**Active Telemetry Anchor (filing):** SESC Sunspot Number **83** · Solar Active Regions **AR4521** · **AR4524**
 **Core Framework Constant:** El Gran Sol’s Fractal Constant ($\Phi_{\mathrm{EGS}}\approx 1.618$)
 
 **Keywords:** Node $k=0$; Zero-Octave; Awakening Phase Gate; singularity crystal; Net Zero; $\Phi_{\mathrm{EGS}}$; prime vault; Python reference; NSPFRNP
@@ -90,54 +90,54 @@ Honesty: catalog / algebra fixtures — not GR/QFT singularity QED.
 import numpy as np
 
 class ZeroOctaveSingularityCrystal:
-    def __init__(self, phi: float = 1.618033988749895):
-        self.phi = phi
-        self.sunspot_number = 83
-        self.active_regions = ["AR4521", "AR4524"]
-        self.node_k = 0  # Awakening Phase Gate
+def __init__(self, phi: float = 1.618033988749895):
+self.phi = phi
+self.sunspot_number = 83
+self.active_regions = ["AR4521", "AR4524"]
+self.node_k = 0  # Awakening Phase Gate
 
-    def compute_net_zero_field(self, vector_field: np.ndarray) -> float:
-        """Calculates surface integral cancellation for Net Zero (0)."""
-        net_flux = np.sum(vector_field)
-        balanced_flux = net_flux - net_flux
-        return float(balanced_flux)
+def compute_net_zero_field(self, vector_field: np.ndarray) -> float:
+"""Calculates surface integral cancellation for Net Zero (0)."""
+net_flux = np.sum(vector_field)
+balanced_flux = net_flux - net_flux
+return float(balanced_flux)
 
-    def resolve_indeterminate_zero_crystal(self, x_vals: np.ndarray) -> np.ndarray:
-        """
-        Resolves 0/0 indeterminate form via Phi-scaled topological limit
-        instead of infinite divergence (fixture: NaN → Phi^0 = 1.0).
-        """
-        numerator = self.phi * (x_vals ** 3)
-        denominator = self.phi * (x_vals ** 3)
+def resolve_indeterminate_zero_crystal(self, x_vals: np.ndarray) -> np.ndarray:
+"""
+Resolves 0/0 indeterminate form via Phi-scaled topological limit
+instead of infinite divergence (fixture: NaN → Phi^0 = 1.0).
+"""
+numerator = self.phi * (x_vals ** 3)
+denominator = self.phi * (x_vals ** 3)
 
-        with np.errstate(divide='ignore', invalid='ignore'):
-            result = numerator / denominator
-            result[np.isnan(result)] = 1.000000
+with np.errstate(divide='ignore', invalid='ignore'):
+result = numerator / denominator
+result[np.isnan(result)] = 1.000000
 
-        return result
+return result
 
-    def execute_prime_vault_diagnostic(self):
-        print("=== ZERO-OCTAVE SINGULARITY CRYSTAL DIAGNOSTIC ===")
-        print(f"Active Locus: Node k = {self.node_k} (Awakening Phase Gate)")
-        print(f"Fractal Constant (Phi): {self.phi}")
-        print(
-            f"Solar Telemetry Anchor (filing): SESC Sunspot Number {self.sunspot_number} "
-            f"({', '.join(self.active_regions)})"
-        )
+def execute_prime_vault_diagnostic(self):
+print("=== ZERO-OCTAVE SINGULARITY CRYSTAL DIAGNOSTIC ===")
+print(f"Active Locus: Node k = {self.node_k} (Awakening Phase Gate)")
+print(f"Fractal Constant (Phi): {self.phi}")
+print(
+f"Solar Telemetry Anchor (filing): SESC Sunspot Number {self.sunspot_number} "
+f"({', '.join(self.active_regions)})"
+)
 
-        mock_field = np.array([1.618, -1.618, 3.141, -3.141])
-        net_z = self.compute_net_zero_field(mock_field)
-        print(f"Net Zero Field Integral: {net_z} (Absolute Equilibrium Confirmed)")
+mock_field = np.array([1.618, -1.618, 3.141, -3.141])
+net_z = self.compute_net_zero_field(mock_field)
+print(f"Net Zero Field Integral: {net_z} (Absolute Equilibrium Confirmed)")
 
-        x_test = np.array([0.1, 0.01, 0.001, 0.0, -0.001, -0.01])
-        crystal_matrix = self.resolve_indeterminate_zero_crystal(x_test)
-        print(f"0/0 Limit Resolution Array across Zero Boundary: {crystal_matrix}")
-        print("Singularity Crystal State: STABLE (Infinite possibilities talk, zero divergence fixture).")
-        print("==================================================")
+x_test = np.array([0.1, 0.01, 0.001, 0.0, -0.001, -0.01])
+crystal_matrix = self.resolve_indeterminate_zero_crystal(x_test)
+print(f"0/0 Limit Resolution Array across Zero Boundary: {crystal_matrix}")
+print("Singularity Crystal State: STABLE (Infinite possibilities talk, zero divergence fixture).")
+print("==================================================")
 
 if __name__ == "__main__":
-    engine = ZeroOctaveSingularityCrystal()
-    engine.execute_prime_vault_diagnostic()
+engine = ZeroOctaveSingularityCrystal()
+engine.execute_prime_vault_diagnostic()
 ```
 
 ---

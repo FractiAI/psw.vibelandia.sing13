@@ -2,19 +2,19 @@
 
 **Short answer: Yes.** In a six-stream digital sandbox, directed attention raised the target's downstream decision share by about +0.27 versus uniform processing, and suppression lowered it by about −0.12. Counterfactual attention, blocked from the decision path, left share flat. Human and cross-substrate tests are still open.
 
-**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-ATTENTION-AWARENESS-DOWNSTREAM-ACTIVATION-2026-10-05`  
-**Registry ID:** `synthobs-attention-awareness-downstream-activation-2026-10`  
-**Date:** 2026-10-05  
-**Published:** 2026-10-05T20:00:00Z  
-**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Goldilocks · Homeostasis Expedition  
-**Suite:** `research/synthobs-attention-awareness-downstream-activation/`  
-**Standalone:** [`FractiAI/synthobs-attention-awareness-downstream-activation`](https://github.com/FractiAI/synthobs-attention-awareness-downstream-activation)  
-**Ship blog:** `/ship-blog/attention-awareness-downstream`  
-**Journey:** `/journey/homeostasis-expedition`  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-ATTENTION-AWARENESS-DOWNSTREAM-ACTIVATION-2026-10-05`
+**Registry ID:** `synthobs-attention-awareness-downstream-activation-2026-10`
+**Date:** 2026-10-05
+**Published:** 2026-10-05T20:00:00Z
+**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Goldilocks · Homeostasis Expedition
+**Suite:** `research/synthobs-attention-awareness-downstream-activation/`
+**Standalone:** [`FractiAI/synthobs-attention-awareness-downstream-activation`](https://github.com/FractiAI/synthobs-attention-awareness-downstream-activation)
+**Ship blog:** `/ship-blog/attention-awareness-downstream`
+**Journey:** `/journey/homeostasis-expedition`
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion #39 — **attention / MFA / downstream-activation companion** (Homeostasis Expedition empirical lane · Minimal Functional Awareness clearly labeled · not phenomenal consciousness proof)
 
 **Companions:**

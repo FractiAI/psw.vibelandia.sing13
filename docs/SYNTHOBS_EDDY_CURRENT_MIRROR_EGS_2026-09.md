@@ -4,18 +4,18 @@
 
 **Subtitle:** Catalog formalization of $c$ as transduction line · self-observation brake · eddy-current analogy under $\Phi_{\mathrm{EGS}}\approx 1.618$
 
-**Author:** Prudencio Mendez · FractiAI Research Division, Reno, Nevada  
-**Corresponding:** espressolico@gmail.com  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-EDDY-CURRENT-MIRROR-EGS-2026-09-07`  
-**Registry ID:** `synthobs-eddy-current-mirror-2026-09`  
-**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)  
+**Author:** Prudencio Mendez · FractiAI Research Division, Reno, Nevada
+**Corresponding:** espressolico@gmail.com
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-EDDY-CURRENT-MIRROR-EGS-2026-09-07`
+**Registry ID:** `synthobs-eddy-current-mirror-2026-09`
+**Date:** September 7, 2026 · **Revised:** 2026-09-07 (protocol · engine shelf · standalone)
 **Classification:** Ideational / electromagnetic-analogy **catalog architecture** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#20** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-eddy-current-mirror/` · [`FractiAI/synthobs-eddy-current-mirror`](https://github.com/FractiAI/synthobs-eddy-current-mirror) · `npm run research:synthobs-eddy-current-mirror`  
-**Plain note:** [/ship-blog/eddy-current-mirror](https://www.ssvibelandiaquestfest24x365.com/ship-blog/eddy-current-mirror)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#20** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-eddy-current-mirror/` · [`FractiAI/synthobs-eddy-current-mirror`](https://github.com/FractiAI/synthobs-eddy-current-mirror) · `npm run research:synthobs-eddy-current-mirror`
+**Plain note:** [/ship-blog/eddy-current-mirror](https://www.ssvibelandiaquestfest24x365.com/ship-blog/eddy-current-mirror)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** Smoothed Sunspot Number $R=70$ · **Sunspot 4524** · C9-class flux *label*
@@ -48,7 +48,7 @@
 | **Solar characters** | $R=70$ · **Sunspot 4524** · C9-class flux are **ambient filing anchors** | NOAA causation of mass or ideation fields |
 | **Suite / Python** | Replayable fixtures under `research/synthobs-eddy-current-mirror/` | Production ML training or wet-lab certification |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · sibling [Kinematic Set-Recycling](./SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md).
@@ -124,37 +124,37 @@ Canonical copy: `research/synthobs-eddy-current-mirror/reference/egs_transductio
 import numpy as np
 
 class EGSTransductionEngine:
-    def __init__(self, sunspot_number=70.0, egs_constant=1.61803398875):
-        self.r_sunspot = sunspot_number
-        self.egs = egs_constant
-        self.c = 299792458.0  # m/s
+def __init__(self, sunspot_number=70.0, egs_constant=1.61803398875):
+self.r_sunspot = sunspot_number
+self.egs = egs_constant
+self.c = 299792458.0  # m/s
 
-    def ideation_field(self, x, t, octaves=5):
-        psi_total = np.zeros_like(x, dtype=complex)
-        for n in range(octaves):
-            scaling_factor = self.egs ** (-n)
-            frequency = (n + 1) * np.pi / self.egs
-            psi_total += scaling_factor * np.exp(
-                1j * (frequency * x - self.c * t / scaling_factor)
-            )
-        return psi_total
+def ideation_field(self, x, t, octaves=5):
+psi_total = np.zeros_like(x, dtype=complex)
+for n in range(octaves):
+scaling_factor = self.egs ** (-n)
+frequency = (n + 1) * np.pi / self.egs
+psi_total += scaling_factor * np.exp(
+1j * (frequency * x - self.c * t / scaling_factor)
+)
+return psi_total
 
-    def eddy_current_damping(self, velocity, conductivity=5.8e7):
-        damping_coefficient = conductivity * (self.r_sunspot / 70.0) * 1e-9
-        return -damping_coefficient * velocity
+def eddy_current_damping(self, velocity, conductivity=5.8e7):
+damping_coefficient = conductivity * (self.r_sunspot / 70.0) * 1e-9
+return -damping_coefficient * velocity
 
-    def calculate_materialized_mass(self, gradient_psi_vol):
-        mass = (1.0 / (self.c ** 2)) * np.sum(gradient_psi_vol)
-        return np.abs(mass)
+def calculate_materialized_mass(self, gradient_psi_vol):
+mass = (1.0 / (self.c ** 2)) * np.sum(gradient_psi_vol)
+return np.abs(mass)
 
 if __name__ == "__main__":
-    engine = EGSTransductionEngine()
-    spatial_grid = np.linspace(0, 10, 100)
-    thought_potential = engine.ideation_field(spatial_grid, 0.01)
-    grad_psi = np.gradient(thought_potential)
-    print(engine.egs, engine.r_sunspot,
-          engine.calculate_materialized_mass(grad_psi),
-          engine.eddy_current_damping(15.0))
+engine = EGSTransductionEngine()
+spatial_grid = np.linspace(0, 10, 100)
+thought_potential = engine.ideation_field(spatial_grid, 0.01)
+grad_psi = np.gradient(thought_potential)
+print(engine.egs, engine.r_sunspot,
+engine.calculate_materialized_mass(grad_psi),
+engine.eddy_current_damping(15.0))
 ```
 
 **Honesty:** NumPy fixture — not measured rest-mass of thought.
@@ -179,5 +179,5 @@ By filing the speed of light as the precise transduction line from thought to ma
 
 `WP-SYNTHOBS-EDDY-CURRENT-MIRROR-EGS-2026-09-07`
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP → ∞^∞  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP → ∞^∞
 **Author:** Prudencio Mendez · Reno

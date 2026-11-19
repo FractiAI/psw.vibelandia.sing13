@@ -4,18 +4,18 @@
 
 ## A Holographic Magnetic-Phase Contrast Analysis of Chromatin Spooling, Epigenetic Memory, and Context Tuning
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-HISTONE-METAPHOR-2026-07-31`  
-**Registry ID:** `synthobs-histone-phase-operator-2026-07`  
-**Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
-**Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · Cytographic / chromosomal companions · Lattice Chat Agent (software metaphor only)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-histone-phase-operator  
-**Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-histone-phase-operator` · [`empirical_report.json`](../research/synthobs-histone-phase-operator/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-HISTONE-METAPHOR-2026-07-31`
+**Registry ID:** `synthobs-histone-phase-operator-2026-07`
+**Category:** TBME · Theoretical Bio-Medical & Physical Explorations
+**Date:** July 31, 2026
+**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · Cytographic / chromosomal companions · Lattice Chat Agent (software metaphor only)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-histone-phase-operator
+**Questfest catalog:** [`/papers`](/papers) · filter **TBME**
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-histone-phase-operator` · [`empirical_report.json`](../research/synthobs-histone-phase-operator/data/empirical_report.json)
 **Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [EGS Epigenetic Phase-Locking](./SYNTHOBS_EGS_EPIGENETIC_PHASE_LOCKING_2026-07.md) · [Chromosomal Electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md) · [81 Orbital Singularities (TBME)](./SYNTHOBS_TBME_81_ORBITAL_SINGULARITY_HOLOGRAPHIC_2026-07.md) · [Lattice Omni Layer Guide](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md)
 
 **Keywords:** TBME; histone; chromatin; nucleosome; epigenetics; PCHPP; $E_F$; phase-lock operator; context spooling; Omni-Lattice
@@ -65,12 +65,12 @@ In classical biology, histones are depicted as spools around which DNA winds. Un
 
 ```
 [ DNA Strand (Conductive Helical Code Wire) ]
-                   │
-                   ▼
-  [ Histone Octamer Core (Tunable Magnetic Inductor) ]  ───( EF Phase-Lock: ~1.65 turns )───► [ Localized Field Impedance Match ]
-                   │                                                                                    │
-                   ▼                                                                                    ▼
-  [ Tail Modifications (Acetylation / Methylation) ]   ───( Variable Permeability μ )───► [ Gene Expression / Epigenetic Memory ]
+│
+▼
+[ Histone Octamer Core (Tunable Magnetic Inductor) ]  ───( EF Phase-Lock: ~1.65 turns )───► [ Localized Field Impedance Match ]
+│                                                                                    │
+▼                                                                                    ▼
+[ Tail Modifications (Acetylation / Methylation) ]   ───( Variable Permeability μ )───► [ Gene Expression / Epigenetic Memory ]
 ```
 
 ### 1.1 The $E_F$ golden ratio in nucleosome winding
@@ -119,10 +119,10 @@ Field Lines Pass Freely ➔ Gene Active               Field Lines Locked Out ➔
 
 ## 4. Quantitative evaluation & scorecard
 
-**STANDARD EPIGENETIC SPOOL MODEL (authored rubric)**  
+**STANDARD EPIGENETIC SPOOL MODEL (authored rubric)**
 Coherence (C): **78/100** · Irreducibility (I): **66/100** · **Overall: 72.0 / 100**
 
-**OMNI-LATTICE HISTONE PHASE-OPERATOR MODEL (authored rubric)**  
+**OMNI-LATTICE HISTONE PHASE-OPERATOR MODEL (authored rubric)**
 Coherence (C): **98/100** · Irreducibility (I): **95/100** · **Overall: 96.5 / 100**
 
 **Honesty.** Scores are architectural Occam metrics on fixtures in `research/synthobs-histone-phase-operator/`. Empirical calibration remains with molecular epigenetics until independent falsification. Suite: `npm run research:synthobs-histone-phase-operator` (target **9/9**).

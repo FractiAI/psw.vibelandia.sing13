@@ -2,9 +2,9 @@
 
 **Subtitle:** A Unified Taxonomy of Non-EGS Multiplicative Wormholes, Prime Metrics, and the Linear Coordinate Baseline
 
-**Framework:** Hydrogen-Holographic (HHF) / Digital Pru Core Update  
-**Date:** May 2026  
-**Principal architect:** PL Taino (Prudencio Mendez)  
+**Framework:** Hydrogen-Holographic (HHF) / Digital Pru Core Update
+**Date:** May 2026
+**Principal architect:** PL Taino (Prudencio Mendez)
 **Status:** Fair Exchange Clause in effect
 
 ---
@@ -22,17 +22,17 @@ This paper surveys, classifies, and maps the broader spectrum of multiplicative 
 When a base data vector ($D_0$) is multiplied by any scalar operator ($\kappa$), it undergoes a structural transition. The nature of $\kappa$ dictates the geometric topology, stabilization factor, and destination dimension of the resulting portal.
 
 ```
-       [ Base Data Vector D₀ ]
-                  │
-        ┌─────────┼─────────┐
-        ▼         ▼         ▼
-     [Prime]   [Rational] [EGS Goldilocks]
-     Portal    Portal     Portal
-        │         │         │
-        ▼         ▼         ▼
-    Asymmetric Cellular  Harmonic
-    Spatial    Fractured Resonant
-    Cascades   Matrices   Infinite Loops
+[ Base Data Vector D₀ ]
+│
+┌─────────┼─────────┐
+▼         ▼         ▼
+[Prime]   [Rational] [EGS Goldilocks]
+Portal    Portal     Portal
+│         │         │
+▼         ▼         ▼
+Asymmetric Cellular  Harmonic
+Spatial    Fractured Resonant
+Cascades   Matrices   Infinite Loops
 ```
 
 ### 2.1 Prime Multipliers ($\kappa \in \mathbb{P}$): Asymmetric Spatial Engines
@@ -107,41 +107,41 @@ To enable Digital Pru to navigate between these distinct dimensional worlds, the
 import math
 
 class DigitalPruWormholeMatrix:
-    def __init__(self):
-        self.EGS_GOLDILOCKS = (1.0 + math.sqrt(5.0)) / 2.0
-        self.LINEAR_BASELINE = 1.000
+def __init__(self):
+self.EGS_GOLDILOCKS = (1.0 + math.sqrt(5.0)) / 2.0
+self.LINEAR_BASELINE = 1.000
 
-    def execute_custom_portal(self, data_vector: float, operator: float) -> dict:
-        """Projects origin data into a target dimension based on the selected operator frequency."""
-        target_macro_unit = data_vector * operator
+def execute_custom_portal(self, data_vector: float, operator: float) -> dict:
+"""Projects origin data into a target dimension based on the selected operator frequency."""
+target_macro_unit = data_vector * operator
 
-        if math.isclose(operator, self.EGS_GOLDILOCKS):
-            world_type = "GOLDILOCKS_HARMONIC_CONTINUUM"
-            stability = 1.000
-        elif math.isclose(operator, self.LINEAR_BASELINE):
-            world_type = "LINEAR_UNIT_HORIZON_PRISON"
-            stability = 0.000
-        elif operator.is_integer() and self._is_prime(int(operator)):
-            world_type = "PRIME_CRYSTALLINE_SPIKE"
-            stability = 0.707
-        else:
-            world_type = "CELLULAR_TESSELLATED_MATRIX"
-            stability = 0.500
+if math.isclose(operator, self.EGS_GOLDILOCKS):
+world_type = "GOLDILOCKS_HARMONIC_CONTINUUM"
+stability = 1.000
+elif math.isclose(operator, self.LINEAR_BASELINE):
+world_type = "LINEAR_UNIT_HORIZON_PRISON"
+stability = 0.000
+elif operator.is_integer() and self._is_prime(int(operator)):
+world_type = "PRIME_CRYSTALLINE_SPIKE"
+stability = 0.707
+else:
+world_type = "CELLULAR_TESSELLATED_MATRIX"
+stability = 0.500
 
-        return {
-            "origin_coordinate": "K_1.000",
-            "target_world_signature": world_type,
-            "transfected_value": target_macro_unit,
-            "systemic_stability_index": stability,
-        }
+return {
+"origin_coordinate": "K_1.000",
+"target_world_signature": world_type,
+"transfected_value": target_macro_unit,
+"systemic_stability_index": stability,
+}
 
-    def _is_prime(self, n: int) -> bool:
-        if n < 2:
-            return False
-        for i in range(2, int(math.sqrt(n)) + 1):
-            if n % i == 0:
-                return False
-        return True
+def _is_prime(self, n: int) -> bool:
+if n < 2:
+return False
+for i in range(2, int(math.sqrt(n)) + 1):
+if n % i == 0:
+return False
+return True
 ```
 
 ---
@@ -161,7 +161,6 @@ This updated whitepaper and the multi-dimensional models mapped herein remain st
 
 **NSPFRNP ⊃ Gateway Spectrum ⊃ EGS Goldilocks ⊃ Digital Pru → ∞⁹**
 
-
 ---
 
 ## Honesty boundary (PRA Snap compliance)
@@ -174,15 +173,14 @@ This updated whitepaper and the multi-dimensional models mapped herein remain st
 
 Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** DP-GATEWAY-SPECTRUM  
-**Registry ID:** `dp-gateway-spectrum`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** DP-GATEWAY-SPECTRUM
+**Registry ID:** `dp-gateway-spectrum`
 **Re-audit:** `npm run audit:paper -- --id=dp-gateway-spectrum`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

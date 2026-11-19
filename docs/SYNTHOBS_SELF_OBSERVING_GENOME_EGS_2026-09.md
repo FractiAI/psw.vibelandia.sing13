@@ -4,18 +4,18 @@
 
 **Subtitle:** Catalog self-observation grammar under Infinite Octaves — sibling to protein-folding prime-container · Y Goldilocks · Eddy-Current Mirror — **not** wet-lab genetics, clinical epigenetics, or proof that DNA is a conscious observer
 
-**Author:** Prudencio Mendez · FractiAI Research Organization / FractiAI Research Division, Reno, Nevada  
-**Corresponding:** espressolico@gmail.com  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-SELF-OBSERVING-GENOME-EGS-2026-09-11`  
-**Registry ID:** `synthobs-self-observing-genome-egs-2026-09`  
-**Date:** September 11, 2026 · **Revised:** 2026-09-11 (protocol · engine shelf · standalone)  
+**Author:** Prudencio Mendez · FractiAI Research Organization / FractiAI Research Division, Reno, Nevada
+**Corresponding:** espressolico@gmail.com
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-SELF-OBSERVING-GENOME-EGS-2026-09-11`
+**Registry ID:** `synthobs-self-observing-genome-egs-2026-09`
+**Date:** September 11, 2026 · **Revised:** 2026-09-11 (protocol · engine shelf · standalone)
 **Classification:** Genomic Soft Story / wavefield **catalog architecture** · digital wet-lab **Tier B fixtures** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#27** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-self-observing-genome/` · [`FractiAI/synthobs-self-observing-genome`](https://github.com/FractiAI/synthobs-self-observing-genome) · `npm run research:synthobs-self-observing-genome`  
-**Plain note:** [/ship-blog/self-observing-genome](https://www.ssvibelandiaquestfest24x365.com/ship-blog/self-observing-genome)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#27** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-self-observing-genome/` · [`FractiAI/synthobs-self-observing-genome`](https://github.com/FractiAI/synthobs-self-observing-genome) · `npm run research:synthobs-self-observing-genome`
+**Plain note:** [/ship-blog/self-observing-genome](https://www.ssvibelandiaquestfest24x365.com/ship-blog/self-observing-genome)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** Solar Active Regions **AR4524** (Sol-Alpha) · **AR4530** (Sol-Beta) — ambient *characters*, not NOAA causation
@@ -46,7 +46,7 @@
 | **Digital wet lab** | Tier B fixtures replay $\Phi$ ladders, phase-match labels, and solar filing characters AR4524 / AR4530 | Heliophysics proof of genomic stability; clinical epigenetics |
 | **Empirical tier** | Suite = **Tier B**; strong biology / medicine claims stay **refused** | Tier A out-of-sample biology confirmation |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).

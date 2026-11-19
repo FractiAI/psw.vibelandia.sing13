@@ -4,13 +4,13 @@
 
 **Homeostasis Expedition research paper · Infinite Octave / SynthOBS · 15 October 2026**
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-GEOMETRY-HOST-DEPENDENT-RELATIONSHIP-EGS-2026-10-15`  
-**Registry ID:** `synthobs-geometry-host-dependent-relationship-2026-10`  
-**Suite:** `research/synthobs-geometry-host-dependent-relationship/`  
-**Standalone:** [`FractiAI/synthobs-geometry-host-dependent-relationship`](https://github.com/FractiAI/synthobs-geometry-host-dependent-relationship)  
-**Ship blog:** `/ship-blog/geometry-host-dependent-relationship`  
-**Journey:** `/journey/homeostasis-expedition`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-GEOMETRY-HOST-DEPENDENT-RELATIONSHIP-EGS-2026-10-15`
+**Registry ID:** `synthobs-geometry-host-dependent-relationship-2026-10`
+**Suite:** `research/synthobs-geometry-host-dependent-relationship/`
+**Standalone:** [`FractiAI/synthobs-geometry-host-dependent-relationship`](https://github.com/FractiAI/synthobs-geometry-host-dependent-relationship)
+**Ship blog:** `/ship-blog/geometry-host-dependent-relationship`
+**Journey:** `/journey/homeostasis-expedition`
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion **#48** — **GHDR-1 host-dependent path lab** · **not** natural-system fractality proof · **not** cross-domain recurrence validation
 
 ---
@@ -84,9 +84,9 @@ Six objectives: literature foundations; formalize \(G=\Phi(R,H,C,D)\); cross-sys
 
 ## 3. Literature foundations (focused)
 
-- Halley et al. (2004): fractal uses/abuses in ecology.  
-- Boguñá et al. (2021): network geometry.  
-- Tylianakis & Morris (2017): ecological networks across gradients.  
+- Halley et al. (2004): fractal uses/abuses in ecology.
+- Boguñá et al. (2021): network geometry.
+- Tylianakis & Morris (2017): ecological networks across gradients.
 - Guimarães (2020): networks across organizational levels.
 
 Synthesis claim (provisional): treat **host dependence** and **cross-host recurrence** as separable measurable questions.
@@ -109,7 +109,7 @@ Spatial, structural, relational, dynamical, functional, and environmental repres
 
 ## 9–11. Hypotheses · experimental program
 
-- **H1 (host dependence):** GHDR-1 **supports** in synthetic grid.  
+- **H1 (host dependence):** GHDR-1 **supports** in synthetic grid.
 - **H2–H4:** defined with falsification criteria; **not executed** in this receipt.
 
 Stages A–F listed in full paper narrative; code checklist exported as experiment E8 in suite.
@@ -126,9 +126,9 @@ Stages A–F listed in full paper narrative; code checklist exported as experime
 
 ## References
 
-Boguñá, M., et al. (2021). Network geometry. *Nature Reviews Physics*, 3, 114–135.  
-Guimarães, P. R. (2020). Ecological networks across levels. *Annu. Rev. Ecol. Evol. Syst.*, 51, 433–460.  
-Halley, J. M., et al. (2004). Uses and abuses of fractal methodology in ecology. *Ecology Letters*, 7(3), 254–271.  
+Boguñá, M., et al. (2021). Network geometry. *Nature Reviews Physics*, 3, 114–135.
+Guimarães, P. R. (2020). Ecological networks across levels. *Annu. Rev. Ecol. Evol. Syst.*, 51, 433–460.
+Halley, J. M., et al. (2004). Uses and abuses of fractal methodology in ecology. *Ecology Letters*, 7(3), 254–271.
 Tylianakis, J. M., & Morris, R. J. (2017). Ecological networks across environmental gradients. *Annu. Rev. Ecol. Evol. Syst.*, 48, 25–48.
 
 ---

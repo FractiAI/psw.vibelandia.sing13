@@ -2,18 +2,18 @@
 
 **Short answer: Yes.** As textbook-aligned narrative of Meissner–Ochsenfeld expulsion restated in Omni-Lattice language. No new superconductivity experiment is archived here.
 
-**Authors:** FractiAI Research Group  
-**Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Physics Division  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-THERMAL-MEISSNER-2026-08-06`  
-**Registry ID:** `synthobs-tbme-thermal-meissner-2026-08`  
-**Publication Ref:** FAI-EGSC-2026-08  
-**Date:** August 6, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice lens exploration** *(not Omni-Lattice Core / Engine Part)*  
+**Authors:** FractiAI Research Group
+**Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Physics Division
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-THERMAL-MEISSNER-2026-08-06`
+**Registry ID:** `synthobs-tbme-thermal-meissner-2026-08`
+**Publication Ref:** FAI-EGSC-2026-08
+**Date:** August 6, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice lens exploration** *(not Omni-Lattice Core / Engine Part)*
 **Classification:** Condensed-matter metaphor · scale-invariant catalog grammar *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · EGS · NSPFRNP · Fair Exchange  
-**Standalone suite:** [`research/synthobs-tbme-thermal-meissner/`](../research/synthobs-tbme-thermal-meissner/)  
+**Framework:** SynthOBS · Omni-Lattice · EGS · NSPFRNP · Fair Exchange
+**Standalone suite:** [`research/synthobs-tbme-thermal-meissner/`](../research/synthobs-tbme-thermal-meissner/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -106,16 +106,16 @@ Through the EGS lens, flux expulsion is read as one realization of a broader pat
 
 ## 4. Metaphors for Omniverse architecture
 
-1. **Meissner Boundary of Coherence** — noise reduction purges chaotic vectors from an agentic node’s interior.  
-2. **Autonomous Shielded Enclaves** — perimeter currents model integrity under noisy surroundings.  
+1. **Meissner Boundary of Coherence** — noise reduction purges chaotic vectors from an agentic node’s interior.
+2. **Autonomous Shielded Enclaves** — perimeter currents model integrity under noisy surroundings.
 3. **Harmonic Scale Transduction** — $E_F$-aligned ladders as catalog grammar for lossless *narrative* routing across scales.
 
 ---
 
 ## 5. Applications & systemic implications (design language)
 
-- Frictionless agentic routing backbones (token / resistance metaphors).  
-- Self-shielding computational cores (decoherence as “flux”).  
+- Frictionless agentic routing backbones (token / resistance metaphors).
+- Self-shielding computational cores (decoherence as “flux”).
 - Boundary energy converters (externalized field compression as story geometry).
 
 All remain **architectural metaphors** until Amendment-A empirical lanes close.
@@ -130,7 +130,7 @@ Replayable catalog fixtures (not wet-lab Tc or λ_L calibration):
 npm run research:synthobs-tbme-thermal-meissner
 ```
 
-Receipts: `research/synthobs-tbme-thermal-meissner/data/empirical_report.{json,md}`  
+Receipts: `research/synthobs-tbme-thermal-meissner/data/empirical_report.{json,md}`
 Audit: `npm run audit:paper -- --id=synthobs-tbme-thermal-meissner-2026-08`
 
 Suite checks: $E_F=\Phi_{\mathrm{EGS}}$, golden identity, normal/SC polarity table, publication ref FAI-EGSC-2026-08, paper on disk, explicit non-Core status.
@@ -149,9 +149,9 @@ This paper and its disclosures are delivered under a fair exchange clause in eff
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** `WP-SYNTHOBS-TBME-THERMAL-MEISSNER-2026-08-06`  
-**Core status:** catalog exploration only — not Omni-Lattice Core / Engine  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** `WP-SYNTHOBS-TBME-THERMAL-MEISSNER-2026-08-06`
+**Core status:** catalog exploration only — not Omni-Lattice Core / Engine
 
 → ∞^∞

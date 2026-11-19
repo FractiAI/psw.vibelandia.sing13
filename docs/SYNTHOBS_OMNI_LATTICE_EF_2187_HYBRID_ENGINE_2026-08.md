@@ -2,13 +2,13 @@
 
 **Short answer: No.** Not shown yet: the token benefit is stated as expected, with no measured comparison. What is reproducible in the repository is the structure: 2,187 fractional digits of Φ index 27 matrices of 81, running from a Node kernel and file-backed index without a central vector database.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-EF-2187-HYBRID-2026-08`  
-**Registry ID:** `synthobs-omni-lattice-ef-2187-hybrid-2026-08`  
-**Date:** August 8, 2026  
-**Framework:** SynthOBS · Goldilocks · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP · THALIA · SIM  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-EF-2187-HYBRID-2026-08`
+**Registry ID:** `synthobs-omni-lattice-ef-2187-hybrid-2026-08`
+**Date:** August 8, 2026
+**Framework:** SynthOBS · Goldilocks · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP · THALIA · SIM
 **Engine:** `lib/ef-kernel.mjs` · data `data/ef-lattice/` · optional Python twin `research/synthobs-ef-2187-hybrid/`
 
 **Keywords:** $E_F$; 2187; $9\times9$; hybrid engine; scale-indexed RAG; Landauer (architectural); Omni-Lattice
@@ -40,15 +40,15 @@ We integrate the **2,187-node** ($3\times 9^3$) $E_F$ digit lattice into Omni-La
 ## 1. Architecture
 
 ```
-        EFKernel (lib/ef-kernel.mjs)
-                 │
-    ┌────────────┴────────────┐
-    ▼                         ▼
+EFKernel (lib/ef-kernel.mjs)
+│
+┌────────────┴────────────┐
+▼                         ▼
 Deterministic coords     Scale-indexed pinch
 node / matrix / octave   Matrix·Node windows
-    └────────────┬────────────┘
-                 ▼
-     Lattice Chat Agent Φ-Parent / nest router
+└────────────┬────────────┘
+▼
+Lattice Chat Agent Φ-Parent / nest router
 ```
 
 Token benefit (expected, work-class): Omni asks retrieve matrix/node windows instead of pasting the full monograph — same family as Seed·RAG savings (`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`), not a universal SLA.
@@ -69,9 +69,9 @@ Token benefit (expected, work-class): Omni asks retrieve matrix/node windows ins
 
 ## 3. Falsification
 
-1. Shipping “calorimeter clamped” or “immortality” without lab receipts.  
-2. Kernel length ≠ 2187 or matrix count ≠ 27.  
-3. Center hosted vector DB required for pinch to work.  
+1. Shipping “calorimeter clamped” or “immortality” without lab receipts.
+2. Kernel length ≠ 2187 or matrix count ≠ 27.
+3. Center hosted vector DB required for pinch to work.
 4. Claiming SIM / SI arrival from digit indexing alone.
 
 ---
@@ -84,15 +84,15 @@ Allocations remain subject to reciprocal balancing under Old School / Fair Excha
 
 ## References
 
-1. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-2. Nested Agent Lattice — [`docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
-3. THALIA Goldilocks — [`docs/SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md)  
-4. SIM — [`docs/SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md)  
-5. Token proof — [`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)  
-6. Proof by Continuous Execution — [`docs/SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)  
-7. Report Card Q3 — [`docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md`](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md)  
-8. NSPFRNP PRA — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)  
-9. Runtime kernel — [`lib/ef-kernel.mjs`](../lib/ef-kernel.mjs)  
+1. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
+2. Nested Agent Lattice — [`docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
+3. THALIA Goldilocks — [`docs/SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md)
+4. SIM — [`docs/SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md)
+5. Token proof — [`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)
+6. Proof by Continuous Execution — [`docs/SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)
+7. Report Card Q3 — [`docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md`](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md)
+8. NSPFRNP PRA — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
+9. Runtime kernel — [`lib/ef-kernel.mjs`](../lib/ef-kernel.mjs)
 10. Matrix registry — [`data/ef-lattice/matrices-27.json`](../data/ef-lattice/matrices-27.json)
 
 → ∞^∞

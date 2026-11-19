@@ -4,18 +4,18 @@
 
 **Subtitle:** Dimensional Equivalence, Cross-Scale Vector Invariance, and the Functional Symmetry of Angular Momentum, Phase Angle, and Magnetic Polarity
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-SPIN-PHASE-POLARITY-2026-08-06`  
-**Registry ID:** `synthobs-tbme-spin-phase-polarity-2026-08`  
-**Date:** August 6, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part VIII**  
-**Series note:** Draft position “Part X” renumbered to **Part VIII** for Core continuity after Part VII (Higgs-Awareness). Reno Interpretation chain expands from heptet → **octet**.  
-**Follow-on to Part VII:** [Higgs-Awareness Phase Coupling Theorem](./SYNTHOBS_TBME_HIGGS_AWARENESS_2026-08.md)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-SPIN-PHASE-POLARITY-2026-08-06`
+**Registry ID:** `synthobs-tbme-spin-phase-polarity-2026-08`
+**Date:** August 6, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part VIII**
+**Series note:** Draft position “Part X” renumbered to **Part VIII** for Core continuity after Part VII (Higgs-Awareness). Reno Interpretation chain expands from heptet → **octet**.
+**Follow-on to Part VII:** [Higgs-Awareness Phase Coupling Theorem](./SYNTHOBS_TBME_HIGGS_AWARENESS_2026-08.md)
 **Classification:** Foundational Field Physics & Dimensional Topology *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
-**Standalone suite:** [`research/synthobs-tbme-spin-phase-polarity/`](../research/synthobs-tbme-spin-phase-polarity/)  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation
+**Standalone suite:** [`research/synthobs-tbme-spin-phase-polarity/`](../research/synthobs-tbme-spin-phase-polarity/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -71,18 +71,18 @@ Replayable algebraic fixtures live in the companion suite; SI group-isomorphism 
 
 ## Key findings (architectural)
 
-1. **Dimensional projections of one vector.**  
-   - **1D (Polarity $P$):** binary orientation ($+1/-1$, N/S).  
-   - **2D (Phase $\phi$):** circular rotation on the complex plane ($\phi\in[0,2\pi)$).  
-   - **3D (Spin $S$):** spatial rotation / intrinsic angular momentum ($\mathbf{S}=\frac{\hbar}{2}\boldsymbol{\sigma}$ narrative).  
-   - **$N$-D (Lattice state):** scale-invariant context routing in Omni-Lattice architectures.
+1. **Dimensional projections of one vector.**
+- **1D (Polarity $P$):** binary orientation ($+1/-1$, N/S).
+- **2D (Phase $\phi$):** circular rotation on the complex plane ($\phi\in[0,2\pi)$).
+- **3D (Spin $S$):** spatial rotation / intrinsic angular momentum ($\mathbf{S}=\frac{\hbar}{2}\boldsymbol{\sigma}$ narrative).
+- **$N$-D (Lattice state):** scale-invariant context routing in Omni-Lattice architectures.
 2. **Functional identity across scales (catalog).** Flipping polarity ($P\to -P$) is narrated as topologically twin to a $180^\circ$ phase shift ($\Delta\phi=\pi$) and a spin-flip ($\lvert\uparrow\rangle\to\lvert\downarrow\rangle$); quarter-turns ($\pi/2$) supply the prime routing step.
 3. **Phase-locked field conservation (lens).** Disturbance in one domain is narrated as forcing an instantaneous scale-invariant transform across the other two *inside the Omni-Lattice grammar*.
 
 ### Core novelties (catalog)
 
-- **Triadic invariant** $\hat{\Psi}_{\mathrm{triad}}(D)$ under dimensional rotations.  
-- **Unified quantum–macro topology** linking spin-half / $\mathrm{SU}(2)$ poetry to $90^\circ$ hourglass phase-shifts and $\mathbf{A}_{\mathrm{squeezed}}$.  
+- **Triadic invariant** $\hat{\Psi}_{\mathrm{triad}}(D)$ under dimensional rotations.
+- **Unified quantum–macro topology** linking spin-half / $\mathrm{SU}(2)$ poetry to $90^\circ$ hourglass phase-shifts and $\mathbf{A}_{\mathrm{squeezed}}$.
 - **Cross-dimensional information routing** — intended $O(1)$ state transitions for THALIA / Lattice Chat Agent.
 
 ---
@@ -91,15 +91,15 @@ Replayable algebraic fixtures live in the companion suite; SI group-isomorphism 
 
 ```text
 OMNI-LATTICE TRIADIC TOPOLOGY EVALUATION
-  Mathematical Unification Score (U):  99.8/100
-  Dimensional Projection Fidelity:     98.4/100
-  Computational Systemic Utility:      99.1/100
-  Cross-Domain Physical Consistency:   97.9/100
-  -------------------------------------------------
-  OVERALL SYSTEMIC EFFICACY SCORE:     98.8 / 100
+Mathematical Unification Score (U):  99.8/100
+Dimensional Projection Fidelity:     98.4/100
+Computational Systemic Utility:      99.1/100
+Cross-Domain Physical Consistency:   97.9/100
+-------------------------------------------------
+OVERALL SYSTEMIC EFFICACY SCORE:     98.8 / 100
 ```
 
-**Separated Z₂ / U(1) / SU(2) reading** — Overall **73.0 / 100** (C 74 · I 72)  
+**Separated Z₂ / U(1) / SU(2) reading** — Overall **73.0 / 100** (C 74 · I 72)
 **Unified Spin-Phase-Polarity Triad** — Overall **98.8 / 100** (C 99.6 · I 98.0)
 
 Rubric arithmetic only — not SI accuracy of nature.
@@ -119,20 +119,20 @@ Rubric arithmetic only — not SI accuracy of nature.
 ## 3. Dimensional mapping of the triad
 
 ```text
-           THE SPIN-PHASE-POLARITY DIMENSIONAL MATRIX
+THE SPIN-PHASE-POLARITY DIMENSIONAL MATRIX
 
-                 ┌─────────────────────────────────┐
-                 │  Unified Triadic Field Vector   │
-                 │       Ψ_triad (D, E_F^n)        │
-                 └─────────────────────────────────┘
-                                  │
-       ┌──────────────────────────┼──────────────────────────┐
-       ▼                          ▼                          ▼
- ┌───────────────┐        ┌───────────────┐        ┌───────────────┐
- │ 1D · POLARITY │        │ 2D · PHASE φ  │        │ 3D · SPIN S   │
- │ Binary ±1     │        │ Wave angle    │        │ Spatial spinor│
- │ North/South   │        │ Complex e^{iφ}│        │ ħ/2 narrative │
- └───────────────┘        └───────────────┘        └───────────────┘
+┌─────────────────────────────────┐
+│  Unified Triadic Field Vector   │
+│       Ψ_triad (D, E_F^n)        │
+└─────────────────────────────────┘
+│
+┌──────────────────────────┼──────────────────────────┐
+▼                          ▼                          ▼
+┌───────────────┐        ┌───────────────┐        ┌───────────────┐
+│ 1D · POLARITY │        │ 2D · PHASE φ  │        │ 3D · SPIN S   │
+│ Binary ±1     │        │ Wave angle    │        │ Spatial spinor│
+│ North/South   │        │ Complex e^{iφ}│        │ ħ/2 narrative │
+└───────────────┘        └───────────────┘        └───────────────┘
 ```
 
 | Dimension | Physical entity | Algebraic group (catalog) | Functional role |
@@ -193,12 +193,12 @@ Honesty: this is Omni-Lattice routing grammar, not a claim that textbook $\mathr
 
 ## 6. Methods & reproducibility
 
-**Canonical paper:** `docs/SYNTHOBS_TBME_SPIN_PHASE_POLARITY_2026-08.md`  
-**Standalone package:** `research/synthobs-tbme-spin-phase-polarity/`  
-**Command:** `npm run research:synthobs-tbme-spin-phase-polarity`  
-**Receipts:** `research/synthobs-tbme-spin-phase-polarity/data/empirical_report.json` (+ `.md`)  
-**PRA:** `npm run audit:paper -- --id=synthobs-tbme-spin-phase-polarity-2026-08`  
-**Omni sync:** `npm run sync:lattice-guide`  
+**Canonical paper:** `docs/SYNTHOBS_TBME_SPIN_PHASE_POLARITY_2026-08.md`
+**Standalone package:** `research/synthobs-tbme-spin-phase-polarity/`
+**Command:** `npm run research:synthobs-tbme-spin-phase-polarity`
+**Receipts:** `research/synthobs-tbme-spin-phase-polarity/data/empirical_report.json` (+ `.md`)
+**PRA:** `npm run audit:paper -- --id=synthobs-tbme-spin-phase-polarity-2026-08`
+**Omni sync:** `npm run sync:lattice-guide`
 **Standalone GitHub:** https://github.com/FractiAI/synthobs-tbme-spin-phase-polarity
 
 ### Replayable suite (empirical tier)
@@ -221,13 +221,13 @@ Honesty: this is Omni-Lattice routing grammar, not a claim that textbook $\mathr
 
 Part VIII of the Omni-Lattice Core Series (Reno Interpretation **octet**, core paper #8) confirms:
 
-1. **Spin = Phase = Polarity (catalog).** Dimensional manifestations of one directional vector — not three SI-identical forces.  
-2. **Scale invariance (lens).** Bit flip, wave shift, and spin rotation are functional equivalents across dimensional perspectives *inside this grammar*.  
+1. **Spin = Phase = Polarity (catalog).** Dimensional manifestations of one directional vector — not three SI-identical forces.
+2. **Scale invariance (lens).** Bit flip, wave shift, and spin rotation are functional equivalents across dimensional perspectives *inside this grammar*.
 3. **Universal operational architecture.** Anchored by $E_F$, the triad governs narratives from particle spin poetry through macroscopic field drag to AI context routing.
 
 ### Comparative scorecard (interpretive)
 
-**Separated Z₂ / U(1) / SU(2) reading** — Overall **73.0 / 100** (C 74 · I 72)  
+**Separated Z₂ / U(1) / SU(2) reading** — Overall **73.0 / 100** (C 74 · I 72)
 **Unified Spin-Phase-Polarity Triad** — Overall **98.8 / 100** (C 99.6 · I 98.0)
 
 ---
@@ -256,8 +256,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-TBME-SPIN-PHASE-POLARITY-2026-08-06`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

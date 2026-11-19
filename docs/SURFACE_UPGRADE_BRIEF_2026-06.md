@@ -19,7 +19,7 @@ Surfaces sell trust and access in **irreducible minimums** — the fewest words 
 | Spanglish 80/20 where it fits QUESTFEST | Corporate press voice on the top deck |
 | Honesty rail: **real · metaphor · not on site** when needed | Clinical or RF claims on surfaces |
 
-**Template sentence:**  
+**Template sentence:**
 *[What it is in one breath] — [what you do] — [what you get].*
 
 Example: **Members pass** — follow Machote Moderno Magazine, send $16.18 on honor, get full play on this browser for 30 days.
@@ -115,9 +115,9 @@ Press articles, blogs, campaigns, special projects, bulletin board, onboarding, 
 
 ## Next upgrade pass (Wave 3 — suggested)
 
-1. **Secondary surfaces** — `look-at-the-sun.html`, `fractiai.html`, `press-releases.html`, `goldilocks-beehive-residency.html` plain speak  
-2. **i18n** — extend plain strings to Spanish deck where `vbi18n` already runs  
-3. **Nav unify** — one quicklinks bar audit; nest ladder CTAs on all Tier-1 surfaces  
-4. **Press article bodies** — optional plain lead paragraphs only; technical PR bodies unchanged  
+1. **Secondary surfaces** — `look-at-the-sun.html`, `fractiai.html`, `press-releases.html`, `goldilocks-beehive-residency.html` plain speak
+2. **i18n** — extend plain strings to Spanish deck where `vbi18n` already runs
+3. **Nav unify** — one quicklinks bar audit; nest ladder CTAs on all Tier-1 surfaces
+4. **Press article bodies** — optional plain lead paragraphs only; technical PR bodies unchanged
 
 **NSPFRNP ⊃ MCA → ∞^∞**

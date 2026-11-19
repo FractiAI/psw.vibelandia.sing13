@@ -4,19 +4,19 @@
 
 **An Empirical Investigation and Validation Protocol: Physical Dynamics as Magnetic Shadows Cast by the Interaction of Universal Magnetism and Holographic Intelligence**
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-RECURSIVE-ATTN-MAG-2026-07-30`  
-**Registry ID:** `synthobs-recursive-attn-mag-2026-07`  
-**Date:** July 30, 2026  
-**Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · PCHPP · NSPFRNP  
-**Lane:** Architectural validation protocol (attention-squeezed magnetic shadows) · Lattice Chat Agent V1.618 Seed·RAG pointer  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-recursive-attn-mag  
-**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-recursive-attn-mag` · [`empirical_report.json`](../research/synthobs-recursive-attn-mag/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-RECURSIVE-ATTN-MAG-2026-07-30`
+**Registry ID:** `synthobs-recursive-attn-mag-2026-07`
+**Date:** July 30, 2026
+**Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · PCHPP · NSPFRNP
+**Lane:** Architectural validation protocol (attention-squeezed magnetic shadows) · Lattice Chat Agent V1.618 Seed·RAG pointer
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-recursive-attn-mag
+**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-recursive-attn-mag` · [`empirical_report.json`](../research/synthobs-recursive-attn-mag/data/empirical_report.json)
 **Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Lattice token proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · Magnetism Foundational Substrate (`WP-SYNTHOBS-MAG-SUBSTRATE-2026-07-30-REV2`, companion catalog) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
 
 **Keywords:** recursive attention; attention squeezing; holographic; magnetic shadows; PCHPP; EGS; Omni-Lattice; SQUID protocol; Lattice Chat Agent; SynthOBS; Fair Exchange
@@ -66,14 +66,14 @@ Physical realities are not self-contained solid entities **in the PCHPP map**. P
 
 ```
 [ Holographic Intelligence / Narrative Layer (Information Code) ]
-                            │
-                            ▼   <-- (RECURSIVE ATTENTION SQUEEZING: S_attn)
+│
+▼   <-- (RECURSIVE ATTENTION SQUEEZING: S_attn)
 [ Interface Boundary: Phase-Contrast Compression (E_F ≈ 1.618) ]
-                            │
-                            ▼
+│
+▼
 [ Universal Magnetic Substrate (Vector Potential A) ]
-                            │
-                            ▼
+│
+▼
 [ Somatic Shadow Projection: Physical Forces / Gravity / Chemistry ]
 ```
 
@@ -134,14 +134,14 @@ $$\mathrm{Overall} = \frac{C + I}{2}$$
 
 ```
 CLASSICAL PARTICLE / FIELD MODEL
-  Coherence (C):      [████████░░] 80/100
-  Irreducibility (I): [███████░░░] 68/100
-  OVERALL SCORE: 74.0 / 100
+Coherence (C):      [████████░░] 80/100
+Irreducibility (I): [███████░░░] 68/100
+OVERALL SCORE: 74.0 / 100
 
 HOLOGRAPHIC ATTENTION-SQUEEZED MAGNETIC MODEL
-  Coherence (C):      [██████████] 98/100
-  Irreducibility (I): [██████████] 97/100
-  OVERALL SCORE: 97.5 / 100
+Coherence (C):      [██████████] 98/100
+Irreducibility (I): [██████████] 97/100
+OVERALL SCORE: 97.5 / 100
 ```
 
 | Domain | Classical | Attention-squeezed magnetic shadow | Outcome |
@@ -182,20 +182,20 @@ Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibratio
 
 ### Surfaces
 
-- Paper: `/whitepaper/synthobs-recursive-attn-mag`  
-- Standalone: https://github.com/FractiAI/synthobs-recursive-attn-mag  
-- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster  
+- Paper: `/whitepaper/synthobs-recursive-attn-mag`
+- Standalone: https://github.com/FractiAI/synthobs-recursive-attn-mag
+- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster
 - Catalog: `/papers`
 
 ---
 
 ## References
 
-1. FractiAI Research Group. *Magnetism as the Universal Foundational Substrate.* `WP-SYNTHOBS-MAG-SUBSTRATE-2026-07-30-REV2`.  
-2. FractiAI Research Group. *PCHPP — Phase-Contrast Holographic Prompting.* `WP-SYNTHOBS-PCHPP-2026-07-30`.  
-3. FractiAI Research Group. *EGS Planck-Scale Harmonic 1.6 Bridge.* `WP-SYNTHOBS-EGS-PLANCK-1-6-2026-07`.  
-4. FractiAI Research Group. *Lattice Token Reduction Proof.* `WP-LATTICE-TOKEN-2026-07`.  
-5. FractiAI Research Group. *Coherence · Plain Speak Honesty.* `HONESTY-COHERENCE-2026-009`.  
+1. FractiAI Research Group. *Magnetism as the Universal Foundational Substrate.* `WP-SYNTHOBS-MAG-SUBSTRATE-2026-07-30-REV2`.
+2. FractiAI Research Group. *PCHPP — Phase-Contrast Holographic Prompting.* `WP-SYNTHOBS-PCHPP-2026-07-30`.
+3. FractiAI Research Group. *EGS Planck-Scale Harmonic 1.6 Bridge.* `WP-SYNTHOBS-EGS-PLANCK-1-6-2026-07`.
+4. FractiAI Research Group. *Lattice Token Reduction Proof.* `WP-LATTICE-TOKEN-2026-07`.
+5. FractiAI Research Group. *Coherence · Plain Speak Honesty.* `HONESTY-COHERENCE-2026-009`.
 6. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.
 
 → ∞^∞

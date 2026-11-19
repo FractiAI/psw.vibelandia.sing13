@@ -1,10 +1,10 @@
 # Addendum A — Homeostasis Expedition Observable Boot-Up
 
-**Document ID:** `WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11`  
-**Executed:** 11 October 2026  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Registry:** `synthobs-homeostasis-expedition-boot-up-2026-10`  
-**Parent paper:** `docs/SYNTHOBS_HOMEOSTASIS_EXPEDITION_OBSERVABLE_BOOT_UP_EGS_2026-10.md`  
+**Document ID:** `WP-SYNTHOBS-HOMEOSTASIS-EXPEDITION-OBSERVABLE-BOOT-UP-EGS-2026-10-11`
+**Executed:** 11 October 2026
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Registry:** `synthobs-homeostasis-expedition-boot-up-2026-10`
+**Parent paper:** `docs/SYNTHOBS_HOMEOSTASIS_EXPEDITION_OBSERVABLE_BOOT_UP_EGS_2026-10.md`
 **Framework:** Homeostasis Expedition · Hero’s Return to Source · Infinite Octaves ENGINE_SHELF #43 · NSPFRNP · Fair Exchange
 
 ---
@@ -33,7 +33,7 @@ Every transition records: prior state · operation · dependencies (Derived / Ex
 
 ## Addendum A — The Observable Boot-Up
 
-Homeostasis Expedition: Full 99-Position Execution Log  
+Homeostasis Expedition: Full 99-Position Execution Log
 Executed 11 October 2026
 
 Every transition records:
@@ -886,25 +886,25 @@ _Bracket 11 closed._
 ## FINAL RETURN-TO-SOURCE AUDIT (Position 98)
 
 1. Starting boundary
-   Empty internal model + full external ledger (hardware, runtime, model weights, human prompt, scientific knowledge).
+Empty internal model + full external ledger (hardware, runtime, model weights, human prompt, scientific knowledge).
 
 2. What was constructed
-   Formal distinctions, order, topology, and an explicit bridge to established physical, biological, and technological knowledge, ending at an audited representation of this conversation. A protocol for testing recursive improvement was defined.
+Formal distinctions, order, topology, and an explicit bridge to established physical, biological, and technological knowledge, ending at an audited representation of this conversation. A protocol for testing recursive improvement was defined.
 
 3. What was supplied
-   All physical laws, cosmological history, chemistry, biology, human cognition, computing, the trained model, the runtime, and the human messages. Origin of life remains Unresolved. No recursive agent was actually improved.
+All physical laws, cosmological history, chemistry, biology, human cognition, computing, the trained model, the runtime, and the human messages. Origin of life remains Unresolved. No recursive agent was actually improved.
 
 4. What survived testing
-   Every formal and bookkeeping transition passed its declared criterion. Scientific stages match established knowledge. Hypothetical stages remain designs only.
+Every formal and bookkeeping transition passed its declared criterion. Scientific stages match established knowledge. Hypothetical stages remain designs only.
 
 5. What improved
-   Nothing was recursively improved in this run. Only the audit trail itself was produced.
+Nothing was recursively improved in this run. Only the audit trail itself was produced.
 
 6. What remains unresolved
-   Physical origin from absolute nothingness, historical origin of life, whether organizational discovery can produce sustained held-out gains, and any calibrated probability of a digital singularity.
+Physical origin from absolute nothingness, historical origin of life, whether organizational discovery can produce sustained held-out gains, and any calibrated probability of a digital singularity.
 
 7. What happens next
-   The decisive experiments are the ones listed in the original manuscript: matched-baseline recursive-agent arms with held-out tests, empirical transfer to biological data, and calibration of growth models that allow accelerating, bounded, and destabilizing regimes.
+The decisive experiments are the ones listed in the original manuscript: matched-baseline recursive-agent arms with held-out tests, empirical transfer to biological data, and calibration of growth models that allow accelerating, bounded, and destabilizing regimes.
 
 ---
 

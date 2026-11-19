@@ -2,15 +2,15 @@
 
 **Short answer: Yes.** In a 100,000-player topology estimate, nested agents used 3.6 × 10⁷ input tokens against 2.97 × 10⁹ for a flat mesh, roughly 72 times fewer in total. This holds under the documented assumptions and is not based on live invoices.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-OMNI-NESTED-AGENT-LATTICE-2026-07`  
-**Registry ID:** `omniversal-nested-agent-lattice-2026-07`  
-**Date:** July 2026 (Planck bridge integration · July 21, 2026)  
-**Framework:** SynthOBS · Goldilocks Engine · EGS Nested Agent Lattice · NSPFRNP  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-OMNI-NESTED-AGENT-LATTICE-2026-07`
+**Registry ID:** `omniversal-nested-agent-lattice-2026-07`
+**Date:** July 2026 (Planck bridge integration · July 21, 2026)
+**Framework:** SynthOBS · Goldilocks Engine · EGS Nested Agent Lattice · NSPFRNP
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
 **Companions:** [Planck–1.6 scale-harmonic bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [EGS-NLRF](./FRACTIAI_EGS_NLRF_HYDROGEN_2026.md) · [Chromosomal electrodynamics (cytographic LC lattice)](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) · [Emergent sync multi-agent](./SYNTHEVERSE_EMERGENT_SYNC_RECURSIVE_MULTI_AGENT_2026-06.md)
 
 **Keywords:** nested agents; EGS Nested Agent Lattice; Goldilocks nesting; micro-snapshot; $\Phi_{\mathrm{EGS}}$; Planck 1.6 bridge; 81-digit metapattern; k/81; systemic compression
@@ -78,8 +78,8 @@ These rows are **architectural contrasts**, not instrumented production benchmar
 +---------------------------------------------------------+
 ```
 
-**Blueprints** = immutable geometric specs (depth, max children, wake policy).  
-**Interfaces** = low-latency local state transitions.  
+**Blueprints** = immutable geometric specs (depth, max children, wake policy).
+**Interfaces** = low-latency local state transitions.
 **Scale law:**
 
 $$
@@ -141,7 +141,7 @@ with $d_t^{(\ell)}$ constrained so sibling width respects $\Phi_{\mathrm{EGS}}$ 
 
 ## 6. Empirical lane (executed topology estimate)
 
-**Pipeline:** `node scripts/harmonopoly-token-sim.mjs`  
+**Pipeline:** `node scripts/harmonopoly-token-sim.mjs`
 **Receipt:** `research/harmonopoly-nested-token-sim/data/token_sim_100k.json`
 
 | Metric (one wave · 100k players) | Flat mesh | Nested Goldilocks |
@@ -169,9 +169,9 @@ with $d_t^{(\ell)}$ constrained so sibling width respects $\Phi_{\mathrm{EGS}}$ 
 
 ## 8. Falsification criteria
 
-1. Nested Goldilocks token model no longer beats flat mesh under the published sim assumptions.  
-2. Peer-firewall is abandoned and $O(N^2)$ sync returns as the default.  
-3. Nest depth ignores $k/81$ / Planck clamp and fans out without bound while claiming Goldilocks fidelity.  
+1. Nested Goldilocks token model no longer beats flat mesh under the published sim assumptions.
+2. Peer-firewall is abandoned and $O(N^2)$ sync returns as the default.
+3. Nest depth ignores $k/81$ / Planck clamp and fans out without bound while claiming Goldilocks fidelity.
 4. Authors claim SI mantissa coincidence as unit-invariant quantum-gravity proof without new evidence.
 
 ---
@@ -190,9 +190,9 @@ The EGS Nested Agent Lattice reframes omniversal computing as **recursive, scale
 
 ## References
 
-1. FractiAI — Planck–1.6 scale-harmonic bridge · https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
-2. FractiAI — EGS-NLRF · https://github.com/FractiAI/egs-nlrf  
-3. `docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md`  
-4. `docs/SYNTHEVERSE_EMERGENT_SYNC_RECURSIVE_MULTI_AGENT_2026-06.md`  
-5. Harmonopoly token sim receipt · `research/harmonopoly-nested-token-sim/data/token_sim_100k.json`  
+1. FractiAI — Planck–1.6 scale-harmonic bridge · https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic
+2. FractiAI — EGS-NLRF · https://github.com/FractiAI/egs-nlrf
+3. `docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md`
+4. `docs/SYNTHEVERSE_EMERGENT_SYNC_RECURSIVE_MULTI_AGENT_2026-06.md`
+5. Harmonopoly token sim receipt · `research/harmonopoly-nested-token-sim/data/token_sim_100k.json`
 6. NSPFRNP Snap PRA · `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`

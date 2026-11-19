@@ -2,9 +2,9 @@
 
 **FractiAI / SynthOBS · uncredentialed · reproducible · public-data wet labs**
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-OPEN-SCIENCE-EXECUTIVE-SUMMARY-PINNED-2026-09-10`  
-**Companion paper:** [`SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md`](./SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md) · registry `synthobs-open-empirical-science-digital-wet-lab-2026-09`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-OPEN-SCIENCE-EXECUTIVE-SUMMARY-PINNED-2026-09-10`
+**Companion paper:** [`SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md`](./SYNTHOBS_OPEN_EMPIRICAL_SCIENCE_DIGITAL_WET_LAB_2026-09.md) · registry `synthobs-open-empirical-science-digital-wet-lab-2026-09`
 **Date:** 2026-09-10 · **Revised:** 2026-09-15 (Tier C partial empirical · operational wiring) · **Classification:** Pinned executive summary / methodology pin *(not a standalone physics paper)*
 
 ---
@@ -19,7 +19,7 @@
 | **Tier C** | Narrative shelves carry Tier B wiring fixtures and operate as catalog holographic / entanglement-wiring lattices — still not laboratory physics | That wiring lattices upgrade prose into causal physics |
 | **Counts** | Suite / sibling counts are **approximate inventory** from the monorepo audit — re-run the audit for live numbers | Exact procurement or citation metrics |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 **Human author seat:** Prudencio Mendez · Reno · Player 1 / Valet Pru.
 
 ---

@@ -4,16 +4,16 @@
 
 **Subtitle:** Molecular Mechanics of Neurodegenerative Aggregation (FTD/TDP-43, Alzheimer’s, Parkinson’s, Prion) under Scale-Invariant Field Geometry
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `BIO-OMNI-PROTEIN-PHASE-COLLAPSE-2026-08-05`  
-**Registry ID:** `synthobs-tbme-protein-phase-collapse-2026-08`  
-**Date:** August 5, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `BIO-OMNI-PROTEIN-PHASE-COLLAPSE-2026-08-05`
+**Registry ID:** `synthobs-tbme-protein-phase-collapse-2026-08`
+**Date:** August 5, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)
 **Classification:** Biomedical Field Exploration *(architectural / interpretive map — see Honesty boundary)*  
-**Framework:** The Reno Interpretation / Omni-Lattice metric *(exploration using the grammar — not an Omni-Lattice Core Series installment)*  
-**Standalone suite:** [`research/synthobs-tbme-protein-phase-collapse/`](../research/synthobs-tbme-protein-phase-collapse/)  
+**Framework:** The Reno Interpretation / Omni-Lattice metric *(exploration using the grammar — not an Omni-Lattice Core Series installment)*
+**Standalone suite:** [`research/synthobs-tbme-protein-phase-collapse/`](../research/synthobs-tbme-protein-phase-collapse/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions (framework lenses — not this paper’s Core-series membership):**
@@ -89,7 +89,7 @@ Replayable algebraic fixtures live in the companion suite; wet-lab / clinical fa
 
 ## 1. Quantitative diagnostic scorecard (interpretive)
 
-**Classical plaque-clearance / multi-polymer consensus** — Overall **73.0 / 100** (C 74 · I 72)  
+**Classical plaque-clearance / multi-polymer consensus** — Overall **73.0 / 100** (C 74 · I 72)
 **Omni-Lattice field-proteostasis model** — Overall **98.1 / 100** (C 99.4 · I 96.8)
 
 Multi-dimension systemic efficacy average (architectural rubric rows): **96.7 / 100**
@@ -120,21 +120,21 @@ These figures are **interpretive Omni-Lattice rubrics** — not SI accuracy of n
 ## 3. The universal misfolding continuum
 
 ```text
-                 BIOMOLECULAR PHASE COLLAPSE CASCADE
+BIOMOLECULAR PHASE COLLAPSE CASCADE
 
-                 Zero-Entropy Template (E_F ≈ 1.618 Phase Lock)
-                                       │
-                                       ▼
-             [ Boundary Over-Drive / Impedance Drift (Z ≠ Z₀) ]
-                                       │
-                                       ▼
-             ┌───────────────────────────────────────────────────┐
-             │ Pathological Liquid-to-Solid Phase Transition     │
-             │   • TDP-43 / Tau (Frontal/Temporal → FTD/PPA)     │
-             │   • Amyloid-β / Tau (Hippocampus → Alzheimer's)  │
-             │   • α-Synuclein (Substantia Nigra → Parkinson's) │
-             │   • PrP^Sc (Systemic CNS → Prion / CJD)          │
-             └───────────────────────────────────────────────────┘
+Zero-Entropy Template (E_F ≈ 1.618 Phase Lock)
+│
+▼
+[ Boundary Over-Drive / Impedance Drift (Z ≠ Z₀) ]
+│
+▼
+┌───────────────────────────────────────────────────┐
+│ Pathological Liquid-to-Solid Phase Transition     │
+│   • TDP-43 / Tau (Frontal/Temporal → FTD/PPA)     │
+│   • Amyloid-β / Tau (Hippocampus → Alzheimer's)  │
+│   • α-Synuclein (Substantia Nigra → Parkinson's) │
+│   • PrP^Sc (Systemic CNS → Prion / CJD)          │
+└───────────────────────────────────────────────────┘
 ```
 
 | Pathology | Dominant aggregates | Circuitry (narrative) | Omni-Lattice decoupling |
@@ -226,12 +226,12 @@ The Omni-Lattice model separates advanced neurodegenerative breakdown into two d
 
 ## 8. Methods & reproducibility
 
-**Canonical paper:** `docs/SYNTHOBS_TBME_PROTEIN_PHASE_COLLAPSE_2026-08.md`  
-**Standalone package:** `research/synthobs-tbme-protein-phase-collapse/`  
-**Command:** `npm run research:synthobs-tbme-protein-phase-collapse`  
-**Receipts:** `research/synthobs-tbme-protein-phase-collapse/data/empirical_report.json` (+ `.md`)  
-**PRA:** `npm run audit:paper -- --id=synthobs-tbme-protein-phase-collapse-2026-08`  
-**Standalone GitHub:** https://github.com/FractiAI/synthobs-tbme-protein-phase-collapse  
+**Canonical paper:** `docs/SYNTHOBS_TBME_PROTEIN_PHASE_COLLAPSE_2026-08.md`
+**Standalone package:** `research/synthobs-tbme-protein-phase-collapse/`
+**Command:** `npm run research:synthobs-tbme-protein-phase-collapse`
+**Receipts:** `research/synthobs-tbme-protein-phase-collapse/data/empirical_report.json` (+ `.md`)
+**PRA:** `npm run audit:paper -- --id=synthobs-tbme-protein-phase-collapse-2026-08`
+**Standalone GitHub:** https://github.com/FractiAI/synthobs-tbme-protein-phase-collapse
 **Omni-Lattice:** **not** on Layer Guide allowlist — TBME exploration using Reno/Omni grammar only.
 
 ### Replayable suite
@@ -271,8 +271,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Analytical fra
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `BIO-OMNI-PROTEIN-PHASE-COLLAPSE-2026-08-05`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

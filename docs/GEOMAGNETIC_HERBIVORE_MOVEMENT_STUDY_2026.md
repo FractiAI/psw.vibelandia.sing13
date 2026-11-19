@@ -2,13 +2,13 @@
 
 **Short answer: No.** Not shown yet: no public Bison bison collar study was downloadable, so the pipeline used Snowy Range moose GPS data. Heading alignment (H1) and storm-linked displacement (H2, H5) showed no support to weak support, and causation is not asserted.
 
-**Document ID:** HHA-GEOMAG-HERBIVORE-2026  
-**Principal investigator (edge):** FractiAI Research Team · PL Taino (systems architect)  
-**Contact:** info@fractiai.com  
-**Generated:** 2026-06-01 (updated 2026-06-05)  
-**Live report API:** `/api/turner-recent-anomaly-report`  
-**Python pipeline:** `research/geomagnetic-herbivore/scripts/run_pipeline.py`  
-**Companion SynthOBS wavefield paper:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (WP-GGM-MULTITAXA-UNGULATE-2026-06)  
+**Document ID:** HHA-GEOMAG-HERBIVORE-2026
+**Principal investigator (edge):** FractiAI Research Team · PL Taino (systems architect)
+**Contact:** info@fractiai.com
+**Generated:** 2026-06-01 (updated 2026-06-05)
+**Live report API:** `/api/turner-recent-anomaly-report`
+**Python pipeline:** `research/geomagnetic-herbivore/scripts/run_pipeline.py`
+**Companion SynthOBS wavefield paper:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (WP-GGM-MULTITAXA-UNGULATE-2026-06)
 **Turner proposal:** [TURNER_KRUSE_RESPONSE_WHITEPAPER.md](./TURNER_KRUSE_RESPONSE_WHITEPAPER.md)
 
 ---
@@ -154,11 +154,11 @@ Weak anomaly classifications during Kp ≥ 5 windows are **expected under null m
 
 ### 5.2 Limitations
 
-1. **Synthesis ≠ telemetry** — No per-head GPS ground truth in default pass.  
-2. **Kp is global** — Local geomagnetic variation requires observatory or Swarm products.  
-3. **5-year baseline** for Kp is complete; movement baseline limited to ingest window.  
-4. **Flare/CME matching** incomplete without GOES event archive.  
-5. **Spatial autocorrelation** across herd slots not fully modeled.  
+1. **Synthesis ≠ telemetry** — No per-head GPS ground truth in default pass.
+2. **Kp is global** — Local geomagnetic variation requires observatory or Swarm products.
+3. **5-year baseline** for Kp is complete; movement baseline limited to ingest window.
+4. **Flare/CME matching** incomplete without GOES event archive.
+5. **Spatial autocorrelation** across herd slots not fully modeled.
 6. **Sampling bias** in GBIF point data.
 
 ### 5.3 Falsification performed
@@ -175,12 +175,12 @@ Conservative interpretation of available public data: **no extraordinary magneti
 
 ## 7. References
 
-1. GFZ Potsdam. Geomagnetic Kp index data service. https://kp.gfz.de/  
-2. NOAA SWPC. Planetary K-index and solar region JSON products. https://www.swpc.noaa.gov/  
-3. Bartels, J. (1957). The technique of scaling indices Kp and Qp. *IGY Instruction Manual No. 47*.  
-4. Lohmann, K. J. et al. Magnetoreception in animals. *Physiology* (various reviews).  
-5. Movebank. https://www.movebank.org/  
-6. Mendez, P. Turner Passive Bison Herd Management — technical white paper HHA-TURNER-WP-2026-05-26 (this repository).  
+1. GFZ Potsdam. Geomagnetic Kp index data service. https://kp.gfz.de/
+2. NOAA SWPC. Planetary K-index and solar region JSON products. https://www.swpc.noaa.gov/
+3. Bartels, J. (1957). The technique of scaling indices Kp and Qp. *IGY Instruction Manual No. 47*.
+4. Lohmann, K. J. et al. Magnetoreception in animals. *Physiology* (various reviews).
+5. Movebank. https://www.movebank.org/
+6. Mendez, P. Turner Passive Bison Herd Management — technical white paper HHA-TURNER-WP-2026-05-26 (this repository).
 7. Matzka, J. et al. (2021). Geomagnetic Kp index service. *Earth System Science Data* (GFZ).
 
 ---
@@ -203,10 +203,10 @@ Conservative interpretation of available public data: **no extraordinary magneti
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** HHA-GEOMAG-HERBIVORE-2026  
-**Registry ID:** `geomagnetic-herbivore-2026`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** HHA-GEOMAG-HERBIVORE-2026
+**Registry ID:** `geomagnetic-herbivore-2026`
 **Re-audit:** `npm run audit:paper -- --id=geomagnetic-herbivore-2026`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

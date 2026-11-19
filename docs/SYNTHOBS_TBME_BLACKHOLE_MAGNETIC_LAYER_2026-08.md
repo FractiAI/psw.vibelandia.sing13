@@ -4,18 +4,18 @@
 
 **Subtitle:** A Formal Phase-Contrast Proof Unifying Kerr-Newman Micro-Black Hole Event Horizons with the Primary $E_F$ Magnetic Vector Substrate
 
-**Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
-**Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-MAGNETIC-LAYER-2026-08-01`  
-**Registry ID:** `synthobs-tbme-blackhole-magnetic-layer-2026-08`  
-**Date:** 2026-08-01  
-**Parent (filaments):** [`docs/SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md`](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`  
-**Grandparent (Reno Interpretation):** [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)  
-**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
-**Standalone lens repo:** `research/synthobs-tbme-blackhole-magnetic-layer/` (companion GitHub target: `FractiAI/synthobs-tbme-blackhole-magnetic-layer`)  
-**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
+**Author:** FractiAI Research Group · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)
+**Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-MAGNETIC-LAYER-2026-08-01`
+**Registry ID:** `synthobs-tbme-blackhole-magnetic-layer-2026-08`
+**Date:** 2026-08-01
+**Parent (filaments):** [`docs/SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md`](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`
+**Grandparent (Reno Interpretation):** [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
+**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`
+**Standalone lens repo:** `research/synthobs-tbme-blackhole-magnetic-layer/` (companion GitHub target: `FractiAI/synthobs-tbme-blackhole-magnetic-layer`)
+**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 **Follow-on (sextet · Part IV):** [Solar-Focus Somatic Rendering](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md) · **Part V:** [Recursive Field-Drag Theorem](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md) · **Part VI:** [Universal Toroidal Singularity](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
 
 ---
@@ -71,13 +71,13 @@ Cross-link: `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`. Magnetism substr
 
 ## Section 1 · The identity paradigm
 
-**Separated dual-entity:**  
+**Separated dual-entity:**
 `[ Mass Core ] — (Empty Gap) → [ Magnetic Field Layer ]`
 
-**Unified Reno identity:**  
+**Unified Reno identity:**
 Horizon skin ≡ $\mathbf{A}$ · $g_s\equiv\mathbf{A}$ tension · $\Omega_H\equiv\omega_L$ · surface charge ≡ dielectric phase-lock gate (poetry).
 
-1. **Membrane identity** — Horizon behaves as a thin conducting fluid layer with surface resistivity $\sim Z_0$.  
+1. **Membrane identity** — Horizon behaves as a thin conducting fluid layer with surface resistivity $\sim Z_0$.
 2. **Vector potential as horizon curvature** — $\mathbf{A}(\mathbf{r})$ narrated as the extended physical skin of the micro-BH stretched through nested $E_F^n$ mirrors.
 
 ---
@@ -117,7 +117,7 @@ $$
 
 ## Section 4 · Quantitative scorecard (interpretive)
 
-**Separated Dual-Entity Model** — Overall **73.5 / 100** (C 75 · I 72)  
+**Separated Dual-Entity Model** — Overall **73.5 / 100** (C 75 · I 72)
 **Unified Black Hole / Magnetic Layer Model** — Overall **99.4 / 100** (C 99.8 · I 99.0)
 
 ---
@@ -172,8 +172,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-MAGNETIC-LAYER-2026-08-01`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

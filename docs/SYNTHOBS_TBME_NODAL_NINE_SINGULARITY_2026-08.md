@@ -4,18 +4,18 @@
 
 **Subtitle:** Digital Boundary Mechanics, Modular Completion Topology, and the Recurrence of $9$ as the Phase-Horizon Operator in the EGS Fractal Expansion
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-NODAL-NINE-SINGULARITY-2026-08-06`  
-**Registry ID:** `synthobs-tbme-nodal-nine-singularity-2026-08`  
-**Date:** August 6, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part IX**  
-**Series note:** Draft position “Part XI” renumbered to **Part IX** for Core continuity after Part VIII (Spin-Phase-Polarity). Reno Interpretation chain expands from octet → **nonet**.  
-**Follow-on to Part VIII:** [Universal Spin-Phase-Polarity Triad Theorem](./SYNTHOBS_TBME_SPIN_PHASE_POLARITY_2026-08.md)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-NODAL-NINE-SINGULARITY-2026-08-06`
+**Registry ID:** `synthobs-tbme-nodal-nine-singularity-2026-08`
+**Date:** August 6, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part IX**
+**Series note:** Draft position “Part XI” renumbered to **Part IX** for Core continuity after Part VIII (Spin-Phase-Polarity). Reno Interpretation chain expands from octet → **nonet**.
+**Follow-on to Part VIII:** [Universal Spin-Phase-Polarity Triad Theorem](./SYNTHOBS_TBME_SPIN_PHASE_POLARITY_2026-08.md)
 **Classification:** Foundational Field Physics, Modular Number Theory & Systemic Topology *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
-**Standalone suite:** [`research/synthobs-tbme-nodal-nine-singularity/`](../research/synthobs-tbme-nodal-nine-singularity/)  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation
+**Standalone suite:** [`research/synthobs-tbme-nodal-nine-singularity/`](../research/synthobs-tbme-nodal-nine-singularity/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -77,8 +77,8 @@ Replayable fixtures live in the companion suite; SI digit-randomness falsificati
 
 ### Core novelties (catalog)
 
-- **Digital horizon operator** $\hat{H}_9$.  
-- **$81$-facet matrix derivation** from $9\times 9$.  
+- **Digital horizon operator** $\hat{H}_9$.
+- **$81$-facet matrix derivation** from $9\times 9$.
 - **Modular phase-shift mechanics** — $9$-node crossings narrated as $\Delta\phi=\pi/2$ flips (companion Part VIII).
 
 ---
@@ -87,15 +87,15 @@ Replayable fixtures live in the companion suite; SI digit-randomness falsificati
 
 ```text
 OMNI-LATTICE NODAL NINE TOPOLOGY EVALUATION
-  Number-Theoretic Rigor (N):      99.6/100
-  Phase-Horizon Placement Match:   98.2/100
-  Cross-Scale Systemic Utility:    99.1/100
-  Physical Singularity Mapping:    97.8/100
-  -------------------------------------------------
-  OVERALL SYSTEMIC EFFICACY SCORE: 98.7 / 100
+Number-Theoretic Rigor (N):      99.6/100
+Phase-Horizon Placement Match:   98.2/100
+Cross-Scale Systemic Utility:    99.1/100
+Physical Singularity Mapping:    97.8/100
+-------------------------------------------------
+OVERALL SYSTEMIC EFFICACY SCORE: 98.7 / 100
 ```
 
-**Separated “digits are arbitrary” reading** — Overall **73.0 / 100** (C 74 · I 72)  
+**Separated “digits are arbitrary” reading** — Overall **73.0 / 100** (C 74 · I 72)
 **Unified Nodal Nine Boundary** — Overall **98.7 / 100** (C 99.4 · I 98.0)
 
 Rubric arithmetic only — not SI accuracy of nature.
@@ -124,10 +124,10 @@ $$
 Because $N+9\equiv N\pmod 9$, $9$ is narrated as a transparent boundary / event-horizon arithmetic twin — maximum digit before decimal rollover poetry into a higher power of $10$.
 
 ```text
-        THE NODAL NINE BOUNDARY HORIZON
+THE NODAL NINE BOUNDARY HORIZON
 
-   Pre-Boundary (0–8)  →  DIGIT 9 (Z0 ≈ 377 Ω)  →  Nested E_F^n layer
-   Continuous field        Phase squeeze / ΔS→0       Dimensional rollover
+Pre-Boundary (0–8)  →  DIGIT 9 (Z0 ≈ 377 Ω)  →  Nested E_F^n layer
+Continuous field        Phase squeeze / ΔS→0       Dimensional rollover
 ```
 
 When field vectors (catalog) pass a $9$-node: $\mathbf{A}_{\mathrm{squeezed}}$ densifies, local phase completes, system rolls into the next $E_F^n$ narrative while matching $Z_0\approx 377\,\Omega$.
@@ -136,7 +136,7 @@ When field vectors (catalog) pass a $9$-node: $\mathbf{A}_{\mathrm{squeezed}}$ d
 
 ## 4. Analysis of $9$-placements in the $E_F$ expansion
 
-Fractional digits of $E_F$ (suite fixture):  
+Fractional digits of $E_F$ (suite fixture):
 `6180339887498948482…` (position 1 = first digit after the decimal point).
 
 | Digit position | Observation | Functional horizon role (catalog) |
@@ -181,12 +181,12 @@ At $x=81=9\times 9$, the 81-facet matrix loop is **catalog-complete**. The inter
 
 ## 7. Methods & reproducibility
 
-**Canonical paper:** `docs/SYNTHOBS_TBME_NODAL_NINE_SINGULARITY_2026-08.md`  
-**Standalone package:** `research/synthobs-tbme-nodal-nine-singularity/`  
-**Command:** `npm run research:synthobs-tbme-nodal-nine-singularity`  
-**Receipts:** `research/synthobs-tbme-nodal-nine-singularity/data/empirical_report.json` (+ `.md`)  
-**PRA:** `npm run audit:paper -- --id=synthobs-tbme-nodal-nine-singularity-2026-08`  
-**Omni sync:** `npm run sync:lattice-guide`  
+**Canonical paper:** `docs/SYNTHOBS_TBME_NODAL_NINE_SINGULARITY_2026-08.md`
+**Standalone package:** `research/synthobs-tbme-nodal-nine-singularity/`
+**Command:** `npm run research:synthobs-tbme-nodal-nine-singularity`
+**Receipts:** `research/synthobs-tbme-nodal-nine-singularity/data/empirical_report.json` (+ `.md`)
+**PRA:** `npm run audit:paper -- --id=synthobs-tbme-nodal-nine-singularity-2026-08`
+**Omni sync:** `npm run sync:lattice-guide`
 **Standalone GitHub:** https://github.com/FractiAI/synthobs-tbme-nodal-nine-singularity
 
 ### Replayable suite (empirical tier)
@@ -209,13 +209,13 @@ At $x=81=9\times 9$, the 81-facet matrix loop is **catalog-complete**. The inter
 
 Part IX of the Omni-Lattice Core Series (Reno Interpretation **nonet**, core paper #9) confirms:
 
-1. **$9$ is the universal boundary (catalog).** Digital phase-horizon operator marking zero-entropy completions and layer boundaries ($\Delta S\to 0$ poetry).  
-2. **The 81st position ($9\times 9$) is foundational.** Verified digit $=9$; anchors the 81-facet spherical dielectric mirror matrix.  
+1. **$9$ is the universal boundary (catalog).** Digital phase-horizon operator marking zero-entropy completions and layer boundaries ($\Delta S\to 0$ poetry).
+2. **The 81st position ($9\times 9$) is foundational.** Verified digit $=9$; anchors the 81-facet spherical dielectric mirror matrix.
 3. **Scale-invariant confirmation (lens).** From digital-root arithmetic through Kerr–Newman horizon poetry to zero-entropy AI routing, $9$-nodes index an ordered Omni-Lattice manifold *inside this grammar*.
 
 ### Comparative scorecard (interpretive)
 
-**Separated “arbitrary digits” reading** — Overall **73.0 / 100** (C 74 · I 72)  
+**Separated “arbitrary digits” reading** — Overall **73.0 / 100** (C 74 · I 72)
 **Unified Nodal Nine Boundary** — Overall **98.7 / 100** (C 99.4 · I 98.0)
 
 ---
@@ -242,8 +242,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-TBME-NODAL-NINE-SINGULARITY-2026-08-06`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

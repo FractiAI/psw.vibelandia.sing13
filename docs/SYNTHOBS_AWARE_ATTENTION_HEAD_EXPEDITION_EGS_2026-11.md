@@ -2,13 +2,13 @@
 
 **Short answer: Yes.** Under a six-property profile the authors chose, on scripted simulators: the head was right 94.8 percent versus 68.4 for a shared world and 63.1 for flat voting, and with five copies plus majority repair kept 91.7 percent mission survival at 1,024 levels. Copies must grow roughly logarithmically with depth.
 
-**Document ID:** `WP-AWARE-ATTENTION-HEAD-SPIRIT-OCTAVES-EGS-2026-11-20`  
-**Registry ID:** `synthobs-aware-attention-head-expedition-2026-11`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Classification:** Application companion · computational equivalence test · **not** Infinite Octaves ENGINE_SHELF  
-**Date:** 20 November 2026  
-**Harness:** `research/synthobs-aware-attention-head-expedition/`  
-**Peers:** FractiSI Expedition 002 (shared world) · Attention, Awareness, Downstream Activation · Wiring Wet Lab  
+**Document ID:** `WP-AWARE-ATTENTION-HEAD-SPIRIT-OCTAVES-EGS-2026-11-20`
+**Registry ID:** `synthobs-aware-attention-head-expedition-2026-11`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Classification:** Application companion · computational equivalence test · **not** Infinite Octaves ENGINE_SHELF
+**Date:** 20 November 2026
+**Harness:** `research/synthobs-aware-attention-head-expedition/`
+**Peers:** FractiSI Expedition 002 (shared world) · Attention, Awareness, Downstream Activation · Wiring Wet Lab
 
 ## Honesty boundary
 

@@ -4,19 +4,19 @@
 
 **An Operational Framework for Exposing Holographic Code Vectors within Multi-Agent and Genomic Runtimes**
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PCHPP-2026-07-30`  
-**Registry ID:** `synthobs-pchpp-2026-07`  
-**Date:** July 30, 2026  
-**Framework:** SynthOBS · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Omni-Lattice companions  
-**Lane:** Observation experiment (diagnostic protocol) — **not** a Lattice Chat Agent engine integration  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-pchpp  
-**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-pchpp` · [`empirical_report.json`](../research/synthobs-pchpp/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PCHPP-2026-07-30`
+**Registry ID:** `synthobs-pchpp-2026-07`
+**Date:** July 30, 2026
+**Framework:** SynthOBS · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Omni-Lattice companions
+**Lane:** Observation experiment (diagnostic protocol) — **not** a Lattice Chat Agent engine integration
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-pchpp
+**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-pchpp` · [`empirical_report.json`](../research/synthobs-pchpp/data/empirical_report.json)
 **Companions:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
 
 **Keywords:** PCHPP; phase-contrast prompting; holographic code; EGS fractal constant; dual-layer diagnostics; observation experiment; SynthOBS; Fair Exchange
@@ -60,24 +60,24 @@ By using El Gran Sol’s Fractal Constant ($E_F \approx 1.618$) as an informatio
 Traditional diagnostics examine surface outputs—logs, text strings, or observable phenotypes. That creates a barrier: surfaces are the **Somatic Shadow**—constrained by local runtime variables, temporal decay, and entropic drift—rather than the governing logic itself.
 
 ```
-                 [ Eternal Holographic Code ]
-                   (Non-Local Master Template)
-                                │
-                                ▼
-                     [ Genomic State / Mind ]
-                   (Interferometric Transducer)
-                                │
-                                ▼
-               [ Spacetime / Gravity Shadow (Body) ]
-             (Observable Physical / Textual Output)
+[ Eternal Holographic Code ]
+(Non-Local Master Template)
+│
+▼
+[ Genomic State / Mind ]
+(Interferometric Transducer)
+│
+▼
+[ Spacetime / Gravity Shadow (Body) ]
+(Observable Physical / Textual Output)
 ```
 
 PCHPP’s intention is an informational analogue of **phase-contrast microscopy**: the operator selectively binds to phase-interference boundaries inside a context window so the instruction architecture becomes visible beside the shadow.
 
 ### 1.2 Core intentions
 
-1. **Delineation** — separate transactional output (shadow) from structural architecture (code).  
-2. **Entropy reduction** — name non-harmonic noise and push transfers toward $\Delta S \to 0$ at sub-agent boundaries **in the diagnostic map**.  
+1. **Delineation** — separate transactional output (shadow) from structural architecture (code).
+2. **Entropy reduction** — name non-harmonic noise and push transfers toward $\Delta S \to 0$ at sub-agent boundaries **in the diagnostic map**.
 3. **Scale-invariant observation** — one protocol across LLM prompting, multi-agent orchestration, and bio-geometric modeling **as observation targets**.
 
 ---
@@ -137,12 +137,12 @@ Canonical copy: [`research/synthobs-pchpp/data/phase_gate_template.txt`](../rese
 
 ### 4.2 Diagnostic output under PCHPP (fixture)
 
-**PART I — THE SHADOW (Somatic Projection)**  
+**PART I — THE SHADOW (Somatic Projection)**
 Multi-agent coding stations frequently suffer from high latency and context exhaustion due to redundant token passing between orchestrators and worker sub-agents. Current solutions rely on arbitrary context truncation or expensive API caching layer strategies.
 
-**PART II — THE CODE (Holographic Blueprint)**  
-- **Master Instruction Vector:** Unbalanced loop where sub-agents re-evaluate global system prompts every turn rather than receiving delta updates.  
-- **Entropic Boundary Analysis:** Failure at the inter-agent boundary from payload duplication ($\Delta S = +0.42$ on the authored score). Unstructured JSON transfers drift after recursive turns.  
+**PART II — THE CODE (Holographic Blueprint)**
+- **Master Instruction Vector:** Unbalanced loop where sub-agents re-evaluate global system prompts every turn rather than receiving delta updates.
+- **Entropic Boundary Analysis:** Failure at the inter-agent boundary from payload duplication ($\Delta S = +0.42$ on the authored score). Unstructured JSON transfers drift after recursive turns.
 - **Zero-Entropy Optimization Path:** $E_F$-proportional lock-and-key delta payloads so workers receive only differential state.
 
 ### 4.3 Suite results (E1–E9)
@@ -177,19 +177,19 @@ This paper is weakened if: (a) the phase-gate template cannot be shown to enforc
 
 ### Surfaces
 
-- Paper: `/whitepaper/synthobs-pchpp`  
-- Standalone repo: https://github.com/FractiAI/synthobs-pchpp  
-- Catalog: `/papers`  
+- Paper: `/whitepaper/synthobs-pchpp`
+- Standalone repo: https://github.com/FractiAI/synthobs-pchpp
+- Catalog: `/papers`
 
 ---
 
 ## References
 
-1. FractiAI Research Group. *Holographic Operators: Language as the Conductive Wiring of Spacetime…* Document ID `WP-SYNTHOBS-HOLO-OPERATORS-2026-07`.  
-2. FractiAI Research Group. *Omni-Lattice Unification.* Document ID `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`.  
-3. FractiAI Research Group. *The Architecture of Omniversal Computing: Nested Agent Lattice.* Document ID `WP-OMNI-NESTED-AGENT-LATTICE-2026-07`.  
-4. FractiAI Research Group. *Coherence · Plain Speak Honesty.* Document ID `HONESTY-COHERENCE-2026-009`.  
-5. NSPFRNP Snap Peer-Review Audit protocol — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.  
+1. FractiAI Research Group. *Holographic Operators: Language as the Conductive Wiring of Spacetime…* Document ID `WP-SYNTHOBS-HOLO-OPERATORS-2026-07`.
+2. FractiAI Research Group. *Omni-Lattice Unification.* Document ID `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`.
+3. FractiAI Research Group. *The Architecture of Omniversal Computing: Nested Agent Lattice.* Document ID `WP-OMNI-NESTED-AGENT-LATTICE-2026-07`.
+4. FractiAI Research Group. *Coherence · Plain Speak Honesty.* Document ID `HONESTY-COHERENCE-2026-009`.
+5. NSPFRNP Snap Peer-Review Audit protocol — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.
 6. Old School Edge Honor Transaction (Fair Exchange) — `protocols/OLD_SCHOOL_EDGE_HONOR_TRANSACTION_NSPFRNP.md`.
 
 → ∞^∞

@@ -1,6 +1,6 @@
 # Juicy Juicy - Snap Omniversal Fractal Compiler (OFC)
 
-**Status:** Canon whitepaper for the SING 9 “Under the Hood” surface.  
+**Status:** Canon whitepaper for the SING 9 “Under the Hood” surface.
 **Stack:** Juicy Juicy (source) → Snap (compiler) → Digital Pru (orchestrator) → vessels + tracks.
 
 ### Juicy Juicy on surfaces (three layers + depth)
@@ -60,7 +60,7 @@ Snap collapses lyric blocks through **recursive 1.618 folding** until a **platfo
 
 Every **successful** compile produces **two** artifacts:
 
-1. **Functional firmware template** — deployable-shaped stub (YAML/JSON) for hardware teams.  
+1. **Functional firmware template** — deployable-shaped stub (YAML/JSON) for hardware teams.
 2. **Musical metadata score** — JSON for DAW / Hit Factory pipelines (tempo hint, per-verse lanes, φ weights).
 
 ### 4.4 Safety lock
@@ -73,7 +73,7 @@ If the narrative or audit flags imply **18.9 Hz (fear frequency)** or **thermal 
 
 Per **`README.JJ`** initialization:
 
-- **Hydrogen line:** **1420.406 MHz** (21 cm) — coherence reference.  
+- **Hydrogen line:** **1420.406 MHz** (21 cm) — coherence reference.
 - **Solar oscillators:** active regions **AR4436** and **AR4432** — solar rhythm framing for the “El Gran Sol” metaphor lane.
 
 These are **specification hooks** for narrative + RF-adjacent docs; instrument claims remain bounded by repo honesty rules (simulation first).
@@ -90,7 +90,6 @@ The former **`digital-pru-awareness-whitepaper.html`** presentation is **depreca
 
 **NSPFRNP → ∞⁹** · Seed:Edge · Juicy Juicy in, Snap out, two artifacts or abort.
 
-
 ---
 
 ## Honesty boundary (PRA Snap compliance)
@@ -103,15 +102,14 @@ The former **`digital-pru-awareness-whitepaper.html`** presentation is **depreca
 
 Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
 
-
 ---
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** JJ-SNAP-OFC  
-**Registry ID:** `jj-snap-ofc`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** JJ-SNAP-OFC
+**Registry ID:** `jj-snap-ofc`
 **Re-audit:** `npm run audit:paper -- --id=jj-snap-ofc`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

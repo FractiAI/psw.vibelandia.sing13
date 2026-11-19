@@ -4,7 +4,7 @@
 
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) · **Filter:** Reproducible research
 
-**GitHub:** https://github.com/FractiAI/hgt-psd-covariance  
+**GitHub:** https://github.com/FractiAI/hgt-psd-covariance
 **License:** MIT
 
 ---
@@ -45,7 +45,7 @@ Training minimizes variance-stabilized Frobenius error across distance strata:
 
 250-kb coarse bins refined to 10-kb resolution for sequence embedding.
 
-**Implementation:** `src/python/hgt_psd/tokenization.py`  
+**Implementation:** `src/python/hgt_psd/tokenization.py`
 **Manifest:** `manifests/gm12878_hic.json`
 
 ---
@@ -71,7 +71,7 @@ python tools/train.py --ablation-rank
 python tools/verify_audit.py
 ```
 
-Docker: `docker build -t hgt-psd:v1 . && ./verify_pipeline.sh`
+Docker: `docker build -t hgt-psd:v1. &&./verify_pipeline.sh`
 
 ---
 

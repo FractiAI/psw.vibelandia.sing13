@@ -4,17 +4,17 @@
 
 **Subtitle:** A Phase-Contrast Derivation of Central Singularity Topology, Gravitational-Electromagnetic Coupling, and Filamental Radiative Networks in **The Reno Interpretation**
 
-**Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
-**Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`  
-**Registry ID:** `synthobs-tbme-blackhole-filaments-reno-2026-08`  
-**Date:** 2026-08-01  
-**Parent (Reno Interpretation):** [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md) · `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`  
-**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
-**Standalone lens repo:** `research/synthobs-tbme-blackhole-filaments-reno/` (companion GitHub target: `FractiAI/synthobs-tbme-blackhole-filaments-reno`)  
-**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
+**Author:** FractiAI Research Group · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)
+**Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`
+**Registry ID:** `synthobs-tbme-blackhole-filaments-reno-2026-08`
+**Date:** 2026-08-01
+**Parent (Reno Interpretation):** [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md) · `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`
+**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`
+**Standalone lens repo:** `research/synthobs-tbme-blackhole-filaments-reno/` (companion GitHub target: `FractiAI/synthobs-tbme-blackhole-filaments-reno`)
+**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 **TBME siblings:** [Reno Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md) · [Event Horizon ≡ Magnetic Vector Layer (follow-on)](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Solar-Focus Somatic Rendering (sextet · Part IV)](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md) · [Recursive Field-Drag Theorem (sextet · Part V)](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md) · [Universal Toroidal Singularity (sextet · Part VI)](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md) · [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
 
 ---
@@ -73,16 +73,16 @@ Cross-link: `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`. $E_F=\Phi_{\math
 
 ## Section 1 · Topological unification
 
-**Point-charge sketch:**  
+**Point-charge sketch:**
 `[ 0D Point ] → Infinite Self-Energy → Renormalization → Ghostly Cloud`
 
-**Reno toroidal BH sketch:**  
+**Reno toroidal BH sketch:**
 `[ Kerr-Newman Ring ] → Filamental Vector Web → 81-Facet Nested Mirrors → Observed World`
 
 ### 1.1 Micro-black hole & filament metaphor
 
-1. **Ring core** — spinning toroidal singularity carrying mass, charge, spin ($J=\hbar/2$ narrative).  
-2. **Filaments** — quantized vortex flux tubes ($\Phi_0=h/2e$ form) sprouting from the ring.  
+1. **Ring core** — spinning toroidal singularity carrying mass, charge, spin ($J=\hbar/2$ narrative).
+2. **Filaments** — quantized vortex flux tubes ($\Phi_0=h/2e$ form) sprouting from the ring.
 3. **Mirror reflection** — filaments strike nested $E_F^n$ shells; facet intersections narrate orbitals / tracks.
 
 ---
@@ -156,7 +156,7 @@ Run: `npm run research:synthobs-tbme-blackhole-filaments-reno`
 
 ## Section 5 · Quantitative scorecard (interpretive)
 
-**Point-Charge Standard Model** — Overall **72.5 / 100** (C 74 · I 71)  
+**Point-Charge Standard Model** — Overall **72.5 / 100** (C 74 · I 71)
 **Reno Toroidal Black Hole Filamental Model** — Overall **99.2 / 100** (C 99.7 · I 98.7)
 
 These scores are **rubric / interpretive**, not SI accuracy of nature.
@@ -206,8 +206,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

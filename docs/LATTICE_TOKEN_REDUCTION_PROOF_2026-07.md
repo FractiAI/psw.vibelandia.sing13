@@ -1,10 +1,10 @@
 # Lattice Chat Agent V1.618 · Usage claim (~35–70%) + structural estimate
 
-**Document ID:** LATTICE-TOKEN-PROOF-2026-07  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audience:** Builders and operators who care about agent usage  
-**Live page:** [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)  
-**Primary receipt:** [`data/lattice-vs-standard-cursor-usage-matrix.json`](../data/lattice-vs-standard-cursor-usage-matrix.json)  
+**Document ID:** LATTICE-TOKEN-PROOF-2026-07
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audience:** Builders and operators who care about agent usage
+**Live page:** [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)
+**Primary receipt:** [`data/lattice-vs-standard-cursor-usage-matrix.json`](../data/lattice-vs-standard-cursor-usage-matrix.json)
 **Secondary receipt:** [`data/lattice-vs-standard-comparison.json`](../data/lattice-vs-standard-comparison.json)
 
 ---

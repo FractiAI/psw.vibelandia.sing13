@@ -1,18 +1,18 @@
 # Can the Human X Chromosome Be Decoded as a Holographic Operator Script?
 
-**Short answer: Yes**, as operator-grammar catalog filing for X-regulatory motifs: It is not a wet-lab decoding of new genes or clinical X-linked disease claims.
+**Short answer: Yes**, as operator-grammar catalog filing for X-regulatory motifs
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-X-CHROMOSOME-HOLO-OPERATORS-2026-07`  
-**Registry ID:** `synthobs-x-chromosome-holographic-2026-07`  
-**Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-x-chromosome-holographic  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-x-chromosome-holographic` · [`empirical_report.json`](../research/synthobs-x-chromosome-holographic/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-X-CHROMOSOME-HOLO-OPERATORS-2026-07`
+**Registry ID:** `synthobs-x-chromosome-holographic-2026-07`
+**Date:** July 28, 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-x-chromosome-holographic
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-x-chromosome-holographic` · [`empirical_report.json`](../research/synthobs-x-chromosome-holographic/data/empirical_report.json)
 **Companions:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 
 **Keywords:** X chromosome; Xist; Tsix; holographic operators; maternal matrix; Omni-Lattice; $E_F$; NSPFRNP
@@ -204,8 +204,8 @@ Pointer: `docs/SYNTHOBS_X_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md
 
 ## 9. Falsification
 
-1. Fewer than five word gates or three sentence loops in the catalog.  
-2. Dosage normalization identity fails under locked $E_F$.  
+1. Fewer than five word gates or three sentence loops in the catalog.
+2. Dosage normalization identity fails under locked $E_F$.
 3. Publishing EX1–EX3 as wet-lab without honesty gates.
 
 ---
@@ -218,9 +218,9 @@ The X chromosome, under Omni-Lattice operator grammar, is the maternal matrix pr
 
 ## References
 
-1. SynthOBS Holographic Operators.  
-2. Omni-Lattice Unification.  
-3. DNA Lattice Holograph.  
-4. Nested Agent Lattice.  
-5. NSPFRNP Snap Peer-Review Audit.  
+1. SynthOBS Holographic Operators.
+2. Omni-Lattice Unification.
+3. DNA Lattice Holograph.
+4. Nested Agent Lattice.
+5. NSPFRNP Snap Peer-Review Audit.
 6. Coherence plain speak honesty document.

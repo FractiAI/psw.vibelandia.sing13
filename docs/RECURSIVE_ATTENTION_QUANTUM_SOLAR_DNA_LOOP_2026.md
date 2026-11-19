@@ -2,10 +2,10 @@
 
 **Short answer: Yes.** As an integrative map: a normalized attention-allocation operator is filed across five scales. The document does not report a single cross-scale measurement campaign.
 
-**Document ID:** WP-2026-ATTENTION-RECURSIVE-LOOP  
-**Framework:** HHF · DPH-GPU · SynthOBS · EGS φ  
-**Date:** June 2026  
-**Operator:** FractiAI Research Team · Syntheverse Sandbox  
+**Document ID:** WP-2026-ATTENTION-RECURSIVE-LOOP
+**Framework:** HHF · DPH-GPU · SynthOBS · EGS φ
+**Date:** June 2026
+**Operator:** FractiAI Research Team · Syntheverse Sandbox
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
 
 ---
@@ -28,10 +28,10 @@ Correlation across layers ≠ causation until transfer functions are estimated w
 
 We propose that **attention**—not as a metaphor alone, but as a **normalized allocation operator** over degrees of freedom—provides a single readable thread connecting five scales:
 
-1. **Cognitive attention** — thoughts, imaginations, and narrative focus as boundary-weighted information on an internal manifold.  
-2. **Human neural attention** — measurable allocation over sensory and executive channels (EEG/fMRI proxies, behavioral gating).  
-3. **DNA electromagnetic attention** — genomic structure as selective flux concentration via coiling, phosphorus spin memory, and iron-mediated amplification (PEFF / VALETPRU framing).  
-4. **Quantum-hydrogen attention** — transition selection and lattice organization on Φ-scaled coordinates in precision spectroscopy (EGS-NLRF).  
+1. **Cognitive attention** — thoughts, imaginations, and narrative focus as boundary-weighted information on an internal manifold.
+2. **Human neural attention** — measurable allocation over sensory and executive channels (EEG/fMRI proxies, behavioral gating).
+3. **DNA electromagnetic attention** — genomic structure as selective flux concentration via coiling, phosphorus spin memory, and iron-mediated amplification (PEFF / VALETPRU framing).
+4. **Quantum-hydrogen attention** — transition selection and lattice organization on Φ-scaled coordinates in precision spectroscopy (EGS-NLRF).
 5. **Solar wavefield attention** — active-region modulation and pheromone-channel gating on the 21 cm hydrogen line and NOAA-driven wavefield bus (SYN-SUN / DPH-GPU).
 
 The loop is **recursive**: solar boundary conditions modulate local hydrogen coherence metrics; hydrogen transitions set the precision floor for electromagnetic genomics; DNA topology biases which neural patterns stabilize; neural patterns express cognitive attention; cognitive attention (including imagination) projects back as model postulate, training objective, and observational filter—closing the loop through human measurement and SynthOBS audit.
@@ -46,10 +46,10 @@ We document **empirical touchpoints** at each hop from four reproducible FractiA
 
 Across physics, biology, and cognition, systems face the same structural problem: **too many degrees of freedom, finite measurement bandwidth**. Every scale solves this by **selective weighting**—what we call attention when the selector is an agent or an effective field.
 
-- In **transformers**, attention is explicit: softmax weights over tokens.  
-- In **neuroscience**, attention gates sensory gain and working-memory retention.  
-- In **genomics**, supercoiling and chromatin contacts gate which loci participate in expression.  
-- In **hydrogen spectroscopy**, transition amplitudes gate which modes carry observable energy.  
+- In **transformers**, attention is explicit: softmax weights over tokens.
+- In **neuroscience**, attention gates sensory gain and working-memory retention.
+- In **genomics**, supercoiling and chromatin contacts gate which loci participate in expression.
+- In **hydrogen spectroscopy**, transition amplitudes gate which modes carry observable energy.
 - In **heliophysics**, active regions gate which magnetic topologies dominate local wavefields.
 
 This paper does not collapse these into one equation. It asserts a **coherent loop of representations**: each layer implements a constrained attention operator; adjacent layers are linked by **transfer maps** that preserve coherence metrics up to documented noise floors.
@@ -61,39 +61,39 @@ This paper does not collapse these into one equation. It asserts a **coherent lo
 ## 2. The recursive coherent loop (architecture)
 
 ```
-                    ┌─────────────────────────────────────┐
-                    │  COGNITIVE ATTENTION A_cog          │
-                    │  thoughts · imaginations · narrative │
-                    └──────────────┬──────────────────────┘
-                                   │ projection / model prior
-                                   v
-                    ┌─────────────────────────────────────┐
-                    │  HUMAN NEURAL ATTENTION A_neural    │
-                    │  gain · salience · executive gating  │
-                    └──────────────┬──────────────────────┘
-                                   │ bio-electromagnetic coupling
-                                   v
-                    ┌─────────────────────────────────────┐
-                    │  DNA ELECTROMAGNETIC ATTENTION A_dna │
-                    │  coiling · spin memory · flux focus    │
-                    └──────────────┬──────────────────────┘
-                                   │ QED / lattice boundary
-                                   v
-                    ┌─────────────────────────────────────┐
-                    │  QUANTUM-HYDROGEN ATTENTION A_q      │
-                    │  transitions · Φ-lattice · NIST refs   │
-                    └──────────────┬──────────────────────┘
-                                   │ 21 cm · wavefield · AR coupling
-                                   v
-                    ┌─────────────────────────────────────┐
-                    │  SOLAR WAVEFIELD ATTENTION A_sun     │
-                    │  NOAA bus · active regions · DPH-GPU │
-                    └──────────────┬──────────────────────┘
-                                   │ environmental prior
-                                   └──────────► (back to A_cog)
+┌─────────────────────────────────────┐
+│  COGNITIVE ATTENTION A_cog          │
+│  thoughts · imaginations · narrative │
+└──────────────┬──────────────────────┘
+│ projection / model prior
+v
+┌─────────────────────────────────────┐
+│  HUMAN NEURAL ATTENTION A_neural    │
+│  gain · salience · executive gating  │
+└──────────────┬──────────────────────┘
+│ bio-electromagnetic coupling
+v
+┌─────────────────────────────────────┐
+│  DNA ELECTROMAGNETIC ATTENTION A_dna │
+│  coiling · spin memory · flux focus    │
+└──────────────┬──────────────────────┘
+│ QED / lattice boundary
+v
+┌─────────────────────────────────────┐
+│  QUANTUM-HYDROGEN ATTENTION A_q      │
+│  transitions · Φ-lattice · NIST refs   │
+└──────────────┬──────────────────────┘
+│ 21 cm · wavefield · AR coupling
+v
+┌─────────────────────────────────────┐
+│  SOLAR WAVEFIELD ATTENTION A_sun     │
+│  NOAA bus · active regions · DPH-GPU │
+└──────────────┬──────────────────────┘
+│ environmental prior
+└──────────► (back to A_cog)
 ```
 
-**Coherence condition (schematic):**  
+**Coherence condition (schematic):**
 Let \(C_\ell\) be a coherence functional at layer \(\ell\). The loop is **coherent** when composite transfer satisfies:
 
 \[
@@ -110,7 +110,7 @@ where each \(\epsilon_{\text{layer}}\) is set by that layer's public data uncert
 
 **Definition.** \(A_{\text{cog}}\) weights an internal state space \(\mathcal{I}\) of propositions, images, and counterfactuals. Imagination is **off-manifold exploration** with reduced sensory likelihood constraints—still an attention policy, but with a different prior.
 
-**Transfer out:** priors on what humans measure, build, and fund (institutional attention).  
+**Transfer out:** priors on what humans measure, build, and fund (institutional attention).
 **Transfer in:** narrative and model outputs from tools (AI, media, catalogs).
 
 *SynthOBS note:* multi-agent phase coherence (WP-2026-EGS-004) models how recursive software networks allocate token-vector density—an externalized cousin of \(A_{\text{cog}}\) at silicon scale.
@@ -119,14 +119,14 @@ where each \(\epsilon_{\text{layer}}\) is set by that layer's public data uncert
 
 **Definition.** Gain modulation over sensory and memory channels; measurable via reaction time, pupilometry, EEG alpha/beta gating, fMRI salience networks.
 
-**Transfer in:** somatic and environmental fields (including low-frequency geomagnetic and acoustic couplings per PEFF canon).  
+**Transfer in:** somatic and environmental fields (including low-frequency geomagnetic and acoustic couplings per PEFF canon).
 **Transfer out:** motor behavior, speech, tool use—including running reproducible pipelines.
 
 ### 3.3 DNA electromagnetic attention \(A_{\text{dna}}\)
 
 **Definition.** Following PEFF / Digital Pru bio-electromagnetic canon: plectonemic coiling acts as a **transformer** concentrating magnetic flux; \(^{31}\)P nuclear spin supports memory-like persistence; iron centers amplify local \(B\).
 
-**Transfer in:** field exposures from environment and cell-scale currents.  
+**Transfer in:** field exposures from environment and cell-scale currents.
 **Transfer out:** expression programs and structural variation—**which genomic degrees of freedom participate** = genomic attention.
 
 *Empirical touchpoint:* [hgt-psd-covariance](https://github.com/FractiAI/hgt-psd-covariance) — chromatin contacts as **PSD-valid** conditional covariance (physical attention over loci pairs).
@@ -135,7 +135,7 @@ where each \(\epsilon_{\text{layer}}\) is set by that layer's public data uncert
 
 **Definition.** Observable selection on hydrogenic transitions; boundary-lattice coordinates \(x_i = \ln(\nu_{\text{theory},i})/\ln\Phi\).
 
-**Transfer in:** electromagnetic boundary conditions from molecular and mesoscale structure.  
+**Transfer in:** electromagnetic boundary conditions from molecular and mesoscale structure.
 **Transfer out:** precision spectroscopic residuals testable against QED.
 
 *Empirical touchpoint:* [egs-nlrf](https://github.com/FractiAI/egs-nlrf) — **13 NIST ASD Balmer lines**, RMS residual 0.210 cm⁻¹ vs CODATA Rydberg; falsification ledger active.
@@ -144,7 +144,7 @@ where each \(\epsilon_{\text{layer}}\) is set by that layer's public data uncert
 
 **Definition.** Active-region and pheromone-channel gating on the solar–hydrogen wavefield bus; step-down modulation via Φ scaling (SYN-SUN-2026-REV7).
 
-**Transfer in:** heliospheric forcing.  
+**Transfer in:** heliospheric forcing.
 **Transfer out:** environmental covariates for biological and software synchronization studies.
 
 *Empirical touchpoint:* live [`/api/dph-wavefield-solar`](https://www.ssvibelandiaquestfest24x365.com/api/dph-wavefield-solar) · comprehensive sandbox analysis (SYN-SANDBOX-2026-REPORT).
@@ -202,8 +202,8 @@ npm run research:recursive-attention-causality
 
 Imagination is not outside physics—it is **low-likelihood state traversal** in \(A_{\text{cog}}\) that still updates:
 
-- what humans choose to measure (NIST exports, T2T loci, GPU traces);  
-- what models optimize (PSD cones, HMM contexts, epigenetic pipelines);  
+- what humans choose to measure (NIST exports, T2T loci, GPU traces);
+- what models optimize (PSD cones, HMM contexts, epigenetic pipelines);
 - what catalogs surface (Questfest whitepaper index, PRA Snap audits).
 
 Thus the loop closes **observationally**: cognition selects experiments; experiments update boundary data; boundary data constrains fantasy. Coherence is **recursive discipline**, not guaranteed harmony.
@@ -214,11 +214,11 @@ Thus the loop closes **observationally**: cognition selects experiments; experim
 
 The unified map is **rejected** if:
 
-1. **Quantum hop:** EGS-NLRF improves χ² beyond QED with pre-registered α_Φ on NIST data **and** replicates independently.  
-2. **Genomic hop:** PSD contact predictions systematically violate measured Hi-C outside uncertainty on held-out loci.  
-3. **Telemetry hop:** Full EESM pipeline fails to beat raw baseline under **real** CUPTI traces on H100-class hardware.  
-4. **Sequence hop:** AC-HMM fails to generalize on full-length T2T loci with BLASTN leakage controls.  
-5. **Solar hop:** Wavefield oscillator metrics show no reproducible covariation with pre-registered biological or software coherence endpoints.  
+1. **Quantum hop:** EGS-NLRF improves χ² beyond QED with pre-registered α_Φ on NIST data **and** replicates independently.
+2. **Genomic hop:** PSD contact predictions systematically violate measured Hi-C outside uncertainty on held-out loci.
+3. **Telemetry hop:** Full EESM pipeline fails to beat raw baseline under **real** CUPTI traces on H100-class hardware.
+4. **Sequence hop:** AC-HMM fails to generalize on full-length T2T loci with BLASTN leakage controls.
+5. **Solar hop:** Wavefield oscillator metrics show no reproducible covariation with pre-registered biological or software coherence endpoints.
 6. **Cognitive hop:** Proposed \(T_{\text{cog}\to\text{neural}}\) transfer functions fail blind prediction on independent attention-task batteries.
 
 ---
@@ -260,8 +260,8 @@ Token configurations, catalog placement, and emphasis may be adjusted based on s
 
 ## References
 
-Kramida et al., NIST ASD v5.11 (DOI 10.18434/T4W30F).  
-Rao et al., Hi-C contact maps (GM12878).  
-T2T-CHM13v2.0 (NCBI GCA_009914755.4).  
-NOAA Space Weather Prediction Center.  
+Kramida et al., NIST ASD v5.11 (DOI 10.18434/T4W30F).
+Rao et al., Hi-C contact maps (GM12878).
+T2T-CHM13v2.0 (NCBI GCA_009914755.4).
+NOAA Space Weather Prediction Center.
 FractiAI reproducible repositories: egs-nlrf, hgt-psd-covariance, eesm-gpu-telemetry, ac-hmm-satellites.

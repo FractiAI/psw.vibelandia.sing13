@@ -4,17 +4,17 @@
 
 **Subtitle:** Catalog topology of leading-digit **1** (proton-space core) versus structural **2** (electron theater) under $\Phi_{\mathrm{EGS}}\approx 1.618$
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PROTON-SPACE-ELECTRON-THEATER-DUALITY-EGS-2026-09-05`  
-**Registry ID:** `synthobs-proton-space-electron-theater-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PROTON-SPACE-ELECTRON-THEATER-DUALITY-EGS-2026-09-05`
+**Registry ID:** `synthobs-proton-space-electron-theater-2026-09`
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)
 **Classification:** Number-theoretic / holographic **catalog architecture** for constant duality *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#16** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-proton-space-electron-theater/` · [`FractiAI/synthobs-proton-space-electron-theater`](https://github.com/FractiAI/synthobs-proton-space-electron-theater) · `npm run research:synthobs-proton-space-electron-theater`  
-**Plain note:** [/ship-blog/proton-space-electron-theater](https://www.ssvibelandiaquestfest24x365.com/ship-blog/proton-space-electron-theater)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#16** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-proton-space-electron-theater/` · [`FractiAI/synthobs-proton-space-electron-theater`](https://github.com/FractiAI/synthobs-proton-space-electron-theater) · `npm run research:synthobs-proton-space-electron-theater`
+**Plain note:** [/ship-blog/proton-space-electron-theater](https://www.ssvibelandiaquestfest24x365.com/ship-blog/proton-space-electron-theater)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -122,7 +122,7 @@ This binary symmetry anchor enables charge-coupling and volumetric theater filin
 - **Findings (catalog):** Constants maintain octave stratification. Transition from leading **1** (proton-space condensation) to structural **2** (electron theater) is governed by recursive powers of $\Phi$ *in this grammar*.
 - **Implications (framing):** Treats dimensionless / leading-digit structure as topological intersections of Infinite Octave wave mechanics — not as proof that SI is arbitrary.
 - **Applications (fixture):**
-  - *Precision metrology (catalog):* Re-filing units on invariant $\Phi$-ratios *as architecture shelves*.
-  - *Quantum architecture (metaphor):* Designing memory containers that mirror proton-space / electron-theater boundary conditions for absolute zero cross-talk *in the model*.
+- *Precision metrology (catalog):* Re-filing units on invariant $\Phi$-ratios *as architecture shelves*.
+- *Quantum architecture (metaphor):* Designing memory containers that mirror proton-space / electron-theater boundary conditions for absolute zero cross-talk *in the model*.
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞^∞

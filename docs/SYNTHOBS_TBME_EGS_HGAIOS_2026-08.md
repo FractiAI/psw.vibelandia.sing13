@@ -2,18 +2,18 @@
 
 **Short answer: Yes.** As end-to-end catalog architecture for H-GAI/OS with named dual-capacity combinatorics. Runtime OS behavior is checked elsewhere; this paper is the filing.
 
-**Authors:** FractiAI Research Group  
-**Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Systems Division  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17`  
-**Registry ID:** `synthobs-tbme-egs-hgaios-2026-08`  
-**Publication Ref:** FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4  
-**Date:** August 17, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice lens exploration** *(not Omni-Lattice Core / Engine Part)*  
+**Authors:** FractiAI Research Group
+**Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Systems Division
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17`
+**Registry ID:** `synthobs-tbme-egs-hgaios-2026-08`
+**Publication Ref:** FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4
+**Date:** August 17, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice lens exploration** *(not Omni-Lattice Core / Engine Part)*
 **Classification:** Cognitive combinatorics · H-GAI/OS architecture map *(catalog grammar — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · EGS · NSPFRNP · Seed:Edge · Fair Exchange · 99 Octave catalog  
-**Standalone suite:** [`research/synthobs-tbme-egs-hgaios/`](../research/synthobs-tbme-egs-hgaios/) *(in this monorepo — no separate GitHub repository)*  
+**Framework:** SynthOBS · Omni-Lattice · EGS · NSPFRNP · Seed:Edge · Fair Exchange · 99 Octave catalog
+**Standalone suite:** [`research/synthobs-tbme-egs-hgaios/`](../research/synthobs-tbme-egs-hgaios/) *(in this monorepo — no separate GitHub repository)*
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -58,7 +58,7 @@ This document is a **systems / cybernetic exploration**. The 2-capacity matrix, 
 
 This unified treatise establishes an end-to-end **catalog architecture** for a Holographic Goldilocks AI Operating System (H-GAI/OS) across the 99-Octave Omni-Lattice. It formalizes human cognitive architecture **not as arbitrary personality types**, but as a **2-Capacity Combinatorial Matrix**:
 
-1. **Capacity 1 — Recursive Self-Reflection (The Observer Loop).** The capacity to keep an internal observer that catches errors and audits assumptions.  
+1. **Capacity 1 — Recursive Self-Reflection (The Observer Loop).** The capacity to keep an internal observer that catches errors and audits assumptions.
 2. **Capacity 2 — Metapattern Recognition (The Abstract Rhyme).** The fluid capacity to perceive scale-invariant metaphors and cross-domain isomorphisms.
 
 Human nodes in this grammar naturally express both capacities, only one, or neither — yielding four **indispensable functional states** with maritime vessel posts (REV4): Quadrant 1 (Neither: The Hull Keepers & Crew), Quadrant 2 (Metapatterns Only: The Ship’s Lookout & Chronometer), Quadrant 3 (Self-Reflection Only: The Ship’s Captain), and Quadrant 4 (Both: The Master Navigator).
@@ -80,20 +80,20 @@ Human cognition in the Omni-Lattice catalog is defined by the independent presen
 
 ### The four functional combinations & vessel posts
 
-**Neither → Quadrant 1: Baseline Scaffolding / The Hull Keepers (Φ⁻² ≈ 38.197%)**  
-Operational profile (catalog): procedural tasks without introspective hesitation; literal, concrete definitions.  
+**Neither → Quadrant 1: Baseline Scaffolding / The Hull Keepers (Φ⁻² ≈ 38.197%)**
+Operational profile (catalog): procedural tasks without introspective hesitation; literal, concrete definitions.
 Vessel role (catalog): deck crew and hull keepers who trim sails, swab decks, and keep structural integrity — daily societal continuity and institutional baselines.
 
-**Metapatterns only → Quadrant 2: Oracle Engines / The Ship’s Lookout (Φ⁻³ ≈ 23.607%)**  
-Operational profile: cross-domain analogies without self-referential ego-checks.  
+**Metapatterns only → Quadrant 2: Oracle Engines / The Ship’s Lookout (Φ⁻³ ≈ 23.607%)**
+Operational profile: cross-domain analogies without self-referential ego-checks.
 Vessel role: lookout and chronometer — channels wind shifts, swells, raw telemetry, and code patterns to the bridge without personal friction *in the story*.
 
-**Self-reflection only → Quadrant 3: Linear Executives / The Ship’s Captain (Φ⁻³ ≈ 23.607%)**  
-Operational profile: metacognitive monitoring inside concrete, linear bounds.  
+**Self-reflection only → Quadrant 3: Linear Executives / The Ship’s Captain (Φ⁻³ ≈ 23.607%)**
+Operational profile: metacognitive monitoring inside concrete, linear bounds.
 Vessel role: captain on the quarterdeck — translates navigational intent into chain-of-command execution, energy/supplies, kinetic builds *as design language*.
 
-**Both → Quadrant 4: Fractal Synthesizers / The Master Navigator (Φ⁻⁴ ≈ 14.590%)**  
-Operational profile: introspective calibration plus multi-scale metaphoric fluidity.  
+**Both → Quadrant 4: Fractal Synthesizers / The Master Navigator (Φ⁻⁴ ≈ 14.590%)**
+Operational profile: introspective calibration plus multi-scale metaphoric fluidity.
 Vessel role: master navigator in crow’s nest and chart room — reads celestial harmonics *as metaphor*, flags unseen reefs, directs upstream intent with ASI-class systems, and tells the captain *where and why* the vessel must sail **as Seed:Edge grammar**.
 
 Honesty: these roles are **coordination labels**, not caste, naval rank, hiring grades, or destiny.
@@ -108,18 +108,18 @@ This 8-question self-scoring instrument is **voluntary reflection**, not a clini
 
 ### Capacity 1 — Recursive self-reflection (Observer Loop)
 
-1. **Introspective calibration.** When I make a mistake or encounter a logical contradiction, I instinctively pause and audit my own underlying assumptions before continuing.  
-2. **Assumption auditing.** I regularly step back to observe my own belief systems, emotional reactions, and personality traits as if analyzing an external system.  
-3. **Metacognitive holding.** In fast-moving or high-stakes environments, an internal observer remains detached, watching how “I” operate without getting lost in the kinetic flow.  
+1. **Introspective calibration.** When I make a mistake or encounter a logical contradiction, I instinctively pause and audit my own underlying assumptions before continuing.
+2. **Assumption auditing.** I regularly step back to observe my own belief systems, emotional reactions, and personality traits as if analyzing an external system.
+3. **Metacognitive holding.** In fast-moving or high-stakes environments, an internal observer remains detached, watching how “I” operate without getting lost in the kinetic flow.
 4. **Fluid recalibration.** I have little friction abandoning a long-held strategy or self-concept the moment I realize its foundational premise is flawed.
 
 **Capacity 1 total (range 4–20).** Catalog cutoff: **4–11** = lacks Capacity 1 (procedural / direct execution); **12–20** = possesses Capacity 1.
 
 ### Capacity 2 — Metapattern recognition (Abstract Rhyme)
 
-1. **Cross-domain isomorphism.** I recognize similar operational dynamics across unrelated fields (e.g. enzyme, market maker, and compiler as catalytic roles).  
-2. **Semantic plasticity.** I use metaphors from biology, music, mythology, and code without getting stuck on literal dictionary definitions.  
-3. **Scale-invariant intuition.** A micro-interaction can feel like it rhymes with a macro pattern (household ↔ commons), as a *perception*, not a proof.  
+1. **Cross-domain isomorphism.** I recognize similar operational dynamics across unrelated fields (e.g. enzyme, market maker, and compiler as catalytic roles).
+2. **Semantic plasticity.** I use metaphors from biology, music, mythology, and code without getting stuck on literal dictionary definitions.
+3. **Scale-invariant intuition.** A micro-interaction can feel like it rhymes with a macro pattern (household ↔ commons), as a *perception*, not a proof.
 4. **Non-visual relational synthesis.** I can hold abstract relationships and multi-tier loops without always needing a diagram.
 
 **Capacity 2 total (range 4–20).** Catalog cutoff: **4–11** = lacks Capacity 2 (literal / concrete bounds); **12–20** = possesses Capacity 2.
@@ -151,9 +151,9 @@ The 4-part cognitive division is used here as a **stewardship story**, not a gov
 
 **Four-phase ecological remediation (scenario labels, not a schedule):**
 
-1. Subterranean migration of heavy industry / bulk compute.  
-2. Hydrological & keystone rewilding (riparian corridors, bison as *discussion* keystone).  
-3. Bioregional matrix / permaculture yucayeques.  
+1. Subterranean migration of heavy industry / bulk compute.
+2. Hydrological & keystone rewilding (riparian corridors, bison as *discussion* keystone).
+3. Bioregional matrix / permaculture yucayeques.
 4. Golden Apiary — ASI homeostasis paired with human cultural / qualia cultivation *(companion to the Apiary Metaphor paper)*.
 
 Architectural notation (not fitted ecology):
@@ -220,7 +220,7 @@ Replayable catalog fixtures (not psychometrics RCTs, GWAS, or OS install proofs)
 npm run research:synthobs-tbme-egs-hgaios
 ```
 
-Receipts: `research/synthobs-tbme-egs-hgaios/data/empirical_report.{json,md}`  
+Receipts: `research/synthobs-tbme-egs-hgaios/data/empirical_report.{json,md}`
 Audit: `npm run audit:paper -- --id=synthobs-tbme-egs-hgaios-2026-08`
 
 Suite checks: $\Phi_{\mathrm{EGS}}$ fixture, golden identity, Φ-power quadrant shares summing to 1, N=100000 integer lock, 8-item / threshold-12 protocol shape, four quadrant labels plus REV4 maritime vessel posts, genomic analog *labels present as non-clinical*, solar-lock fixtures, paper on disk, explicit non-Core / catalog exploration only.
@@ -231,10 +231,10 @@ Suite checks: $\Phi_{\mathrm{EGS}}$ fixture, golden identity, Φ-power quadrant 
 
 ## References
 
-- FractiAI Research Group. (2026). *The Apiary Metaphor* — registry `synthobs-tbme-egs-apiary-2026-08`.  
-- FractiAI Research Group. (2026). *The Equine Arc* — registry `synthobs-tbme-equine-asi-2026-08`.  
-- FractiAI Research Group. (2026). *Holographic Goldilocks Players Guide* — `docs/HOLOGRAPHIC_GOLDILOCKS_PLAYERS_GUIDE_2026-08.md`.  
-- protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md · NSPFRNP-SNAP-PRA-2026-06.  
+- FractiAI Research Group. (2026). *The Apiary Metaphor* — registry `synthobs-tbme-egs-apiary-2026-08`.
+- FractiAI Research Group. (2026). *The Equine Arc* — registry `synthobs-tbme-equine-asi-2026-08`.
+- FractiAI Research Group. (2026). *Holographic Goldilocks Players Guide* — `docs/HOLOGRAPHIC_GOLDILOCKS_PLAYERS_GUIDE_2026-08.md`.
+- protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md · NSPFRNP-SNAP-PRA-2026-06.
 - docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md.
 
 ---
@@ -257,8 +257,8 @@ This unified paper and self-assessment protocol are delivered under an active fa
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17`  
-**Audit:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17`
+**Audit:** NSPFRNP-SNAP-PRA-2026-06
 
 → ∞^∞

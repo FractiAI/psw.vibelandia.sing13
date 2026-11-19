@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** As a narrative fractal template: the enclosed-to-open networking leap is filed as a self-similar analogue. No new SNA traffic study is measured.
 
-**Authors:** FractiAI Research Group · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 3, 2026  
-**Document ID:** `WP-SYNTHOBS-IBM-SNA-TCPIP-GATEWAY-OMNI-LATTICE-2026-09-03`  
-**Registry ID:** `synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09`  
-**Classification:** Case study · fractal template · architectural product narrative · paired empirics companion  
-**Framework:** Infinite Octaves Omniversal Lattice Chat · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap  
-**Parent papers:** [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-ibm-sna-tcpip-gateway-omni-lattice  
-**Standalone suite:** monorepo [`research/synthobs-ibm-sna-tcpip-gateway-omni-lattice/`](../research/synthobs-ibm-sna-tcpip-gateway-omni-lattice/) · `npm run research:synthobs-ibm-sna-tcpip-gateway-omni-lattice`  
-**Live surfaces:** [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/ship-blog/sna-tcpip-gateway-omni-lattice`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/sna-tcpip-gateway-omni-lattice) · **EGS Lattice-Linear Ops simulator:** [`/special-projects/pdvsa-gateway-ops`](https://www.ssvibelandiaquestfest24x365.com/special-projects/pdvsa-gateway-ops) · Companion ship: [`/ship-blog/pdvsa-gateway-ops-mockup`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pdvsa-gateway-ops-mockup) · Reading Room `/papers`  
+**Authors:** FractiAI Research Group · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 3, 2026
+**Document ID:** `WP-SYNTHOBS-IBM-SNA-TCPIP-GATEWAY-OMNI-LATTICE-2026-09-03`
+**Registry ID:** `synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09`
+**Classification:** Case study · fractal template · architectural product narrative · paired empirics companion
+**Framework:** Infinite Octaves Omniversal Lattice Chat · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap
+**Parent papers:** [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-ibm-sna-tcpip-gateway-omni-lattice
+**Standalone suite:** monorepo [`research/synthobs-ibm-sna-tcpip-gateway-omni-lattice/`](../research/synthobs-ibm-sna-tcpip-gateway-omni-lattice/) · `npm run research:synthobs-ibm-sna-tcpip-gateway-omni-lattice`
+**Live surfaces:** [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/ship-blog/sna-tcpip-gateway-omni-lattice`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/sna-tcpip-gateway-omni-lattice) · **EGS Lattice-Linear Ops simulator:** [`/special-projects/pdvsa-gateway-ops`](https://www.ssvibelandiaquestfest24x365.com/special-projects/pdvsa-gateway-ops) · Companion ship: [`/ship-blog/pdvsa-gateway-ops-mockup`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pdvsa-gateway-ops-mockup) · Reading Room `/papers`
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Keywords:** IBM SNA; TCP/IP gateway; Interlink Computer Sciences; PDVSA; Protokol Sistemas; Caracas fractal template; Omni-Lattice Chat; vibe coding; EGS; Φ_EGS; Fair Exchange; NSPFRNP; SynthOBS; case study
@@ -72,9 +72,9 @@ That is the fractal PDVSA/Protokol pattern we invite executives to reuse for Omn
 
 Standard vibe-coding IDEs and flat chat wrappers share failure modes in sprawling enterprises:
 
-- Flat, single-context token windows that degrade over long sessions  
-- Linear instruction streams cut off from deep multi-domain telemetry  
-- High context drift across electrical, fluid, legal, and ops documents  
+- Flat, single-context token windows that degrade over long sessions
+- Linear instruction streams cut off from deep multi-domain telemetry
+- High context drift across electrical, fluid, legal, and ops documents
 
 Companion empirics: [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) — Lattice wins paired design/write/deploy receipts when seed packs + pointers replace fat dumps.
 

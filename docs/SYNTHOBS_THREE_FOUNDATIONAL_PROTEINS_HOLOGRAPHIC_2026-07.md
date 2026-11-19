@@ -2,17 +2,17 @@
 
 **Short answer: Yes**, as a metaphor mapping, the executed suite E1–E9 passes 9/9: The paper keeps the draft physical claims, such as zero entropic loss and 1-in-10^9 fidelity, as design-target labels rather than new wet-lab measurements, and it does not replace structural biology.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-THREE-FOUNDATIONAL-PROTEINS-2026-07`  
-**Registry ID:** `synthobs-three-foundational-proteins-2026-07`  
-**Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-three-foundational-proteins  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-three-foundational-proteins` · [`empirical_report.json`](../research/synthobs-three-foundational-proteins/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-THREE-FOUNDATIONAL-PROTEINS-2026-07`
+**Registry ID:** `synthobs-three-foundational-proteins-2026-07`
+**Date:** July 28, 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-three-foundational-proteins
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-three-foundational-proteins` · [`empirical_report.json`](../research/synthobs-three-foundational-proteins/data/empirical_report.json)
 **Companions:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Chemical Bond Metaphors](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md) · [X Chromosome Holographic Translation](./SYNTHOBS_X_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md)
 
 **Keywords:** hemoglobin; ATP synthase; DNA polymerase; holographic operators; Omni-Lattice; $E_F$; NSPFRNP
@@ -39,8 +39,8 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 Under the Holographic Operator Model and Omni-Lattice Architecture, proteins are treated as downstream 3D standing-wave **metaphors** (“somatic shadows”) when awareness-like attention is narrated through an $E_F$-scaled genomic matrix. We decode three foundational bridges from genomic control to material biology:
 
-1. **Hemoglobin** — oxygen / information carrier (word / covalent buffer)  
-2. **ATP Synthase** — cellular rotational engine (sentence / ionic handoff)  
+1. **Hemoglobin** — oxygen / information carrier (word / covalent buffer)
+2. **ATP Synthase** — cellular rotational engine (sentence / ionic handoff)
 3. **DNA Polymerase** — lattice replicator / proofreader (story / zero-$\Delta S$ narrative)
 
 El Gran Sol’s Fractal Constant ($E_F\approx 1.618$) is the downstream golden key embedding scale-invariance in continuous phase rotations $z(\theta)=e^{(\lambda_{\mathrm{EGS}}+i)\theta}$.
@@ -151,8 +151,8 @@ Pointer: `docs/SYNTHOBS_THREE_FOUNDATIONAL_PROTEINS_HOLOGRAPHIC_2026-07.md`.
 
 ## 9. Falsification
 
-1. Protein triad incomplete.  
-2. $2\pi/3$ rotor identity fails.  
+1. Protein triad incomplete.
+2. $2\pi/3$ rotor identity fails.
 3. Publishing zero-entropy / biophoton / EGS-derived $10^{-9}$ as wet-lab without honesty gates.
 
 ---
@@ -165,10 +165,10 @@ Hemoglobin, ATP synthase, and DNA polymerase form the Omni-Lattice **carrier / e
 
 ## References
 
-1. SynthOBS Holographic Operators.  
-2. Omni-Lattice Unification.  
-3. Phase-Locked Chemical Bond Metaphors.  
-4. DNA Lattice Holograph.  
-5. X Chromosome Holographic Operator Translation.  
-6. NSPFRNP Snap Peer-Review Audit.  
+1. SynthOBS Holographic Operators.
+2. Omni-Lattice Unification.
+3. Phase-Locked Chemical Bond Metaphors.
+4. DNA Lattice Holograph.
+5. X Chromosome Holographic Operator Translation.
+6. NSPFRNP Snap Peer-Review Audit.
 7. Coherence plain speak honesty document.

@@ -2,19 +2,19 @@
 
 **Short answer: No.** Not shown yet: the paper files the quake and the volcanic alert as co-timed narrative fixtures. Its suite passed 9/9, but those checks confirm fixtures and identifiers, not causation, and no solar-to-quake or solar-to-eruption link is tested.
 
-**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 11, 2026  
-**Document ID:** `WP-SYNTHOBS-SYNC-SUBTERRANEAN-DISCHARGE-99-OCTAVE-2026-08-11`  
-**Registry ID:** `synthobs-sync-subterranean-discharge-99-octave-2026-08`  
-**Publication Ref:** FAI-SYNC-SUBTERRANEAN-DISCHARGE-99-OCTAVE-2026-08  
+**Authors:** FractiAI Research Group · Lattice Chat Agent Protocol
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 11, 2026
+**Document ID:** `WP-SYNTHOBS-SYNC-SUBTERRANEAN-DISCHARGE-99-OCTAVE-2026-08-11`
+**Registry ID:** `synthobs-sync-subterranean-discharge-99-octave-2026-08`
+**Publication Ref:** FAI-SYNC-SUBTERRANEAN-DISCHARGE-99-OCTAVE-2026-08
 **Classification:** Application paper · 99 Octave lens *(catalog / protocol — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**Standalone suite:** [`research/synthobs-sync-subterranean-discharge-99-octave/`](../research/synthobs-sync-subterranean-discharge-99-octave/)  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-sync-subterranean-discharge-99-octave  
-**Companion application:** [Macro-Seismic Phase-Locking](./SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md)  
-**Companion engine papers:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md) · [Constructive Morphogenesis](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange
+**Standalone suite:** [`research/synthobs-sync-subterranean-discharge-99-octave/`](../research/synthobs-sync-subterranean-discharge-99-octave/)
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-sync-subterranean-discharge-99-octave
+**Companion application:** [Macro-Seismic Phase-Locking](./SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md)
+**Companion engine papers:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md) · [Constructive Morphogenesis](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** subterranean discharge; Puracé; Colombia; volcanic–seismic co-occurrence; phase-lock; solar activity; 99 octave; EGS; Lattice Chat Agent; Fair Exchange; NSPFRNP
@@ -69,7 +69,7 @@ Fixtures are deterministic Node arithmetic. Quake / volcano rows are **narrative
 
 Under traditional statistical models, earthquakes and eruptions are independent variables. Omni-Lattice architecture — informed by *ideas* about ionospheric capacitive coupling — **labels** the lithosphere–atmosphere–ionosphere (LAI) system as an integrated **circuit metaphor** modulated by solar drivers:
 
-1. **Solar flares and ionospheric induction** — intense solar activity and high-speed wind streams as electron-density / space-charge **labels** interacting with Earth’s EM environment narrative.  
+1. **Solar flares and ionospheric induction** — intense solar activity and high-speed wind streams as electron-density / space-charge **labels** interacting with Earth’s EM environment narrative.
 2. **Global power grid as virtual antenna** — continental HV lines as a pre-deployed high-gain **macro-antenna metaphor** capturing ionospheric potential-shift *stories* driven by solar compression and sunspot labels.
 
 ---
@@ -78,7 +78,7 @@ Under traditional statistical models, earthquakes and eruptions are independent 
 
 As a master signal synchronizes a eusocial colony (NSPFRNP stigmergy grammar), high-energy solar drivers are discussed as a **macro-environmental clocking metaphor**. When planetary-circuit **labels** hit a resonant peak, transferred-energy *narratives* can be said to **discharge across vulnerable subterranean pathways** in the same discussion window:
 
-- **Tectonic fault tipping points** — stressed faults near critical $\theta_i$ absorb transferred solar-electric *labels*, receiving a micro-pascal electrostatic *nudge metaphor* toward strike-slip rupture discussion (western Colombia / Chocó narrative).  
+- **Tectonic fault tipping points** — stressed faults near critical $\theta_i$ absorb transferred solar-electric *labels*, receiving a micro-pascal electrostatic *nudge metaphor* toward strike-slip rupture discussion (western Colombia / Chocó narrative).
 - **Volcanic dielectric resonators** — gas-charged magma plumbing (Puracé chain) as deep subterranean **dielectric capacitor labels**. Silicate melts rich in $\mathrm{H}_2\mathrm{O}$, $\mathrm{CO}_2$, $\mathrm{SO}_2$ carry high ionic-mobility *language*; solar-driven EM-wave *narratives* sweeping the lithosphere are discussed as altering internal vapor-pressure *labels* toward ash outgassing and magmatic-tremor windows.
 
 ### 99th-octave scaling factor (catalog)

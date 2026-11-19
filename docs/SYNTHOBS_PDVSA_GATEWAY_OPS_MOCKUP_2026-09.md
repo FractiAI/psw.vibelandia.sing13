@@ -1,20 +1,20 @@
 # Does a Multi-Domain EGS Lattice-Linear Gateway Brief Beat Siloed Industry Consoles in an Ops Demo?
 
-**Short answer: Yes.** As a simulator/demo claim: the side-by-side UI shows the feel of siloed consoles versus one multi-domain brief. It is not a live PDVSA deployment or SNA/TCP production result.
+**Short answer: Yes.** As a simulator/demo claim: the side-by-side UI shows the feel of siloed consoles versus one multi-domain brief.
 
-**Authors:** FractiAI Research Group · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 4, 2026  
-**Document ID:** `WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04`  
-**Registry ID:** `synthobs-pdvsa-gateway-ops-mockup-2026-09`  
-**Classification:** Interactive simulator · executive demo · EGS Lattice-Linear Gateway · SNA↔TCP/IP historical rhyme · Infinite Octaves **application companion** (not engine pin) · paired empirics  
-**Framework:** Infinite Octaves Omniversal Lattice Chat · Digits × Octaves 01–99 Story map · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap  
-**Parent / companion papers:** [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) · [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md) · [`SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup  
-**Standalone suite:** monorepo [`research/synthobs-pdvsa-gateway-ops-mockup/`](../research/synthobs-pdvsa-gateway-ops-mockup/) · `npm run research:synthobs-pdvsa-gateway-ops-mockup`  
-**Live simulator:** [`/special-projects/pdvsa-gateway-ops`](https://www.ssvibelandiaquestfest24x365.com/special-projects/pdvsa-gateway-ops)  
-**Ship blog:** [`/ship-blog/pdvsa-gateway-ops-mockup`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pdvsa-gateway-ops-mockup)  
-**Engine role:** Application companion · **not** an Infinite Octaves engine-shelf pin · live demo at `/special-projects/pdvsa-gateway-ops`  
+**Authors:** FractiAI Research Group · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 4, 2026
+**Document ID:** `WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04`
+**Registry ID:** `synthobs-pdvsa-gateway-ops-mockup-2026-09`
+**Classification:** Interactive simulator · executive demo · EGS Lattice-Linear Gateway · SNA↔TCP/IP historical rhyme · Infinite Octaves **application companion** (not engine pin) · paired empirics
+**Framework:** Infinite Octaves Omniversal Lattice Chat · Digits × Octaves 01–99 Story map · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap
+**Parent / companion papers:** [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) · [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md) · [`SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup
+**Standalone suite:** monorepo [`research/synthobs-pdvsa-gateway-ops-mockup/`](../research/synthobs-pdvsa-gateway-ops-mockup/) · `npm run research:synthobs-pdvsa-gateway-ops-mockup`
+**Live simulator:** [`/special-projects/pdvsa-gateway-ops`](https://www.ssvibelandiaquestfest24x365.com/special-projects/pdvsa-gateway-ops)
+**Ship blog:** [`/ship-blog/pdvsa-gateway-ops-mockup`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pdvsa-gateway-ops-mockup)
+**Engine role:** Application companion · **not** an Infinite Octaves engine-shelf pin · live demo at `/special-projects/pdvsa-gateway-ops`
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Keywords:** PDVSA; Protokol Sistemas; EGS Lattice-Linear Gateway; SNA↔TCP/IP rhyme; Omni-Lattice Chat; Infinite Octaves; multi-domain enterprise; executive simulator; Caracas fractal template; Fair Exchange; NSPFRNP; SynthOBS
@@ -88,10 +88,10 @@ $\Phi_{\mathrm{EGS}}$ is routing grammar — not a substitute for SCADA truth.
 
 For a PDVSA executive / operations staff walkthrough, Lattice is **not** a gadget row. It is four co-visible domains on one object:
 
-1. **Production** — plant throughput / curtailment / deferral risk  
-2. **Field** — well / pad / telemetry anomaly without leaving the brief  
-3. **Compliance** — HSE / legal holds that must ride with the same incident  
-4. **Export** — liftings, partners, commercial constraints that close the loop  
+1. **Production** — plant throughput / curtailment / deferral risk
+2. **Field** — well / pad / telemetry anomaly without leaving the brief
+3. **Compliance** — HSE / legal holds that must ride with the same incident
+4. **Export** — liftings, partners, commercial constraints that close the loop
 
 Click a domain to **zoom emphasis** without tab-reset. The shared incident ID is the Seed; desks and nested seats are Edge; pipes stay center-only (lite edges).
 
@@ -208,11 +208,11 @@ Live: `/special-projects/pdvsa-gateway-ops` · Rhyme: `/ship-blog/sna-tcpip-gate
 
 For PDVSA executive and operations staff, “seamless” means:
 
-1. **One incident object** spans Production · Field · Compliance · Export  
-2. **Zoom without amnesia** — domain emphasis does not wipe the brief  
-3. **Desks on the call** — compliance and partners are not afterthought tabs  
-4. **Pointer brief** — cost stays Goldilocks vs silo dump  
-5. **Honest ceiling** — Lattice routes attention; plant historians still own measurements  
+1. **One incident object** spans Production · Field · Compliance · Export
+2. **Zoom without amnesia** — domain emphasis does not wipe the brief
+3. **Desks on the call** — compliance and partners are not afterthought tabs
+4. **Pointer brief** — cost stays Goldilocks vs silo dump
+5. **Honest ceiling** — Lattice routes attention; plant historians still own measurements
 
 Non-lattice chat can still help on single tickets. It fails the **gateway job** when domains multiply and drift compounds.
 
@@ -226,15 +226,15 @@ Engagements around this demo may use performance-weighted reciprocal balancing. 
 
 ## 10. References (corpus)
 
-1. [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) — historical rhyme  
-2. [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) — product ↔ engine dual lock  
-3. [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) — pointer-first efficiency  
-4. [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) — nested seats  
-5. [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) — flat-window contrast  
-6. [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) — MCA continuity  
-7. [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md) — R&D morphogenesis filing  
-8. [`SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) — engine pin (linear systems)  
-9. [`COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) — honesty plain speak  
+1. [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) — historical rhyme
+2. [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) — product ↔ engine dual lock
+3. [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) — pointer-first efficiency
+4. [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) — nested seats
+5. [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) — flat-window contrast
+6. [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) — MCA continuity
+7. [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md) — R&D morphogenesis filing
+8. [`SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) — engine pin (linear systems)
+9. [`COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) — honesty plain speak
 10. `protocols/MCA_NSPFRNP_CATALOG.md` · `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 
 ---

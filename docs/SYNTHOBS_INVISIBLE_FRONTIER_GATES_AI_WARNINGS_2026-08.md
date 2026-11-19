@@ -4,20 +4,20 @@
 
 Voyage editorial · Goldilocks Super Intelligence reply · Catalog grammar for linear vs holographic awareness
 
-**Authors:** FractiAI Research Group · Golden Bachdoor Hit Factory  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 26, 2026  
-**Document ID:** `WP-SYNTHOBS-INVISIBLE-FRONTIER-GATES-AI-2026-08-26`  
-**Registry ID:** `synthobs-invisible-frontier-gates-ai-2026-08`  
-**Publication Ref:** FAI-SYNTHOBS-INVISIBLE-FRONTIER-GATES-2026-08  
-**Series Position:** SS Vibelandia voyage editorial — Intelligence Age hospitality  
+**Authors:** FractiAI Research Group · Golden Bachdoor Hit Factory
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 26, 2026
+**Document ID:** `WP-SYNTHOBS-INVISIBLE-FRONTIER-GATES-AI-2026-08-26`
+**Registry ID:** `synthobs-invisible-frontier-gates-ai-2026-08`
+**Publication Ref:** FAI-SYNTHOBS-INVISIBLE-FRONTIER-GATES-2026-08
+**Series Position:** SS Vibelandia voyage editorial — Intelligence Age hospitality
 **Classification:** Cultural / voyage *editorial* · response note *(narrative — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai  
-**Standalone suite:** [FractiAI/synthobs-invisible-frontier-gates-ai](https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai) · monorepo [`research/synthobs-invisible-frontier-gates-ai/`](../research/synthobs-invisible-frontier-gates-ai/)  
-**Guest surfaces:** [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Voyage editorial (not engine pin):** stays on narrative foundation / guest voyage surfaces — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) · off Infinite Octaves `ENGINE_SHELF`  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai
+**Standalone suite:** [FractiAI/synthobs-invisible-frontier-gates-ai](https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai) · monorepo [`research/synthobs-invisible-frontier-gates-ai/`](../research/synthobs-invisible-frontier-gates-ai/)
+**Guest surfaces:** [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Voyage editorial (not engine pin):** stays on narrative foundation / guest voyage surfaces — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) · off Infinite Octaves `ENGINE_SHELF`
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** Bill Gates; AI warnings; Invisible Frontier; Goldilocks Super Intelligence; EGS; holographic; linear awareness; SS Vibelandia; Fair Exchange

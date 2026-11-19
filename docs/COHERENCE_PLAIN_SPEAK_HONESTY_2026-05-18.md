@@ -1,9 +1,9 @@
 # Coherence · plain speak · what's real
 
-**Document ID:** HONESTY-COHERENCE-2026-009  
-**Registry ID:** `coherence-plain-speak`  
-**Companions:** REV-EGS-HHF-2026-007 · OPS-EGS-BTC-2026-008 · Infinite Octaves engine shelf (CMOS → Viscosity · Metrological Overlap · Eddy · …)  
-**Audience:** Guests, builders, and auditors — no jargon required.  
+**Document ID:** HONESTY-COHERENCE-2026-009
+**Registry ID:** `coherence-plain-speak`
+**Companions:** REV-EGS-HHF-2026-007 · OPS-EGS-BTC-2026-008 · Infinite Octaves engine shelf (CMOS → Viscosity · Metrological Overlap · Eddy · …)
+**Audience:** Guests, builders, and auditors — no jargon required.
 **Updated:** 2026-09-08 (omnidimensional coherence reading · BTC receipt rails unchanged)
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
@@ -125,11 +125,11 @@ Read the Mythos paper and engine companions for the full frame; read **this** do
 
 ## Not running here · do not mistake the console
 
-- **No ASIC/GPU hashrate** on Vercel or in the browser tab.  
-- **No pool stratum connection** from this Tier 0 stack.  
-- **No Bitcoin block rewards** from pulses alone — pulses are **receipts**, not mined coins.  
-- **No payout changes** from the public web (`POST /api/mining-rail` is disabled).  
-- **No claim** to capture every network block without proportional global hashrate.  
+- **No ASIC/GPU hashrate** on Vercel or in the browser tab.
+- **No pool stratum connection** from this Tier 0 stack.
+- **No Bitcoin block rewards** from pulses alone — pulses are **receipts**, not mined coins.
+- **No payout changes** from the public web (`POST /api/mining-rail` is disabled).
+- **No claim** to capture every network block without proportional global hashrate.
 - **No claim** that Soft Story companions prove unfinished physics.
 
 **Future (optional, separate):** edge ASICs + registered pool + operator env — see OPS-EGS-BTC-2026-008 §5. That is **scale**, not what this display console does today.
@@ -138,33 +138,33 @@ Read the Mythos paper and engine companions for the full frame; read **this** do
 
 ## How to read the Hero Houdini deck
 
-1. **Act I–II** — story and whitepaper frame.  
-2. **Act III ledger** — **real** recent pulses/blocks from our API; status tiles are **rail narrative** labels, not live pool dashboards unless we later wire pool API keys.  
-3. **Autopilot box** — **real** server automation.  
+1. **Act I–II** — story and whitepaper frame.
+2. **Act III ledger** — **real** recent pulses/blocks from our API; status tiles are **rail narrative** labels, not live pool dashboards unless we later wire pool API keys.
+3. **Autopilot box** — **real** server automation.
 4. **Operational anchor** — **real** fixed address in JSON; **display only** on the site.
 
 ---
 
 ## Related honesty docs
 
-- [Resonance notice](/whitepaper/dp-resonance-notice) — omniverse canon boundary.  
-- [Mythos review](/whitepaper/rev-egs-hhf-mythos) — clock-skew in the EGS security frame.  
-- [Mining ops](/whitepaper/ops-egs-btc-mining) — lawful PoW when metal exists.  
-- [Viscosity of Light](/ship-blog/viscosity-of-light) · [Eddy-Current Mirror](/ship-blog/eddy-current-mirror) · [Metrological Overlap](/ship-blog/grand-unified-metrological-overlap) — Soft Story companions (catalog, not physics retirement).  
+- [Resonance notice](/whitepaper/dp-resonance-notice) — omniverse canon boundary.
+- [Mythos review](/whitepaper/rev-egs-hhf-mythos) — clock-skew in the EGS security frame.
+- [Mining ops](/whitepaper/ops-egs-btc-mining) — lawful PoW when metal exists.
+- [Viscosity of Light](/ship-blog/viscosity-of-light) · [Eddy-Current Mirror](/ship-blog/eddy-current-mirror) · [Metrological Overlap](/ship-blog/grand-unified-metrological-overlap) — Soft Story companions (catalog, not physics retirement).
 - [Official Prospectus](/ship-blog/official-prospectus) — voyage spine for guests.
 
 ---
 
 ## References
 
-1. `docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md` — OPS-EGS-BTC-2026-008  
-2. Mythos review · registry `rev-egs-hhf-mythos`  
-3. Resonance notice · registry `dp-resonance-notice`  
-4. `docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md`  
-5. `docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md`  
-6. `docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md`  
-7. `docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`  
-8. `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
+1. `docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md` — OPS-EGS-BTC-2026-008
+2. Mythos review · registry `rev-egs-hhf-mythos`
+3. Resonance notice · registry `dp-resonance-notice`
+4. `docs/SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md`
+5. `docs/SYNTHOBS_EDDY_CURRENT_MIRROR_EGS_2026-09.md`
+6. `docs/SYNTHOBS_GRAND_UNIFIED_METROLOGICAL_OVERLAP_EGS_2026-09.md`
+7. `docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`
+8. `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 9. `api/cron-coherence-rail.js` · `lib/coherence-autopilot.mjs`
 
 **NSPFRNP ⊃ plain speak ⊃ verify the pipes → ∞^∞**
@@ -173,10 +173,10 @@ Read the Mythos paper and engine companions for the full frame; read **this** do
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** HONESTY-COHERENCE-2026-009  
-**Registry ID:** `coherence-plain-speak`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** HONESTY-COHERENCE-2026-009
+**Registry ID:** `coherence-plain-speak`
 **Re-audit:** `npm run audit:paper -- --id=coherence-plain-speak`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

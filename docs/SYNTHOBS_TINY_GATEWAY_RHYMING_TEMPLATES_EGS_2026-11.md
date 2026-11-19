@@ -71,9 +71,9 @@ Conventional serving often reprints the same organizational pattern per session 
 
 Operator outcomes under test:
 
-1. Pack more concurrent work per box  
-2. Buy less memory per unit of AI service  
-3. Stretch limited accelerator supply further  
+1. Pack more concurrent work per box
+2. Buy less memory per unit of AI service
+3. Stretch limited accelerator supply further
 
 ---
 
@@ -111,10 +111,10 @@ Reproduce: `npm run research:synthobs-tiny-gateway-rhyming-templates` · GPU lab
 
 Live chat-serving proxy on **NVIDIA GeForce GTX 860M** (2 GiB GDDR; this laptop) via `nvcuda.dll` (`cuMemAlloc`, `cuMemcpyHtoD`, `cuCtxSynchronize`) and `nvidia-smi` peaks:
 
-- Weight stub retained in both modes  
-- Conventional: duplicate system-pattern buffer + KV-like buffer per session  
-- Tiny Footprint: one shared system-pattern buffer + compact per-session delta/state  
-- **Latency:** wall-clock materialization with vs without Tiny Footprint (HtoD of duplicated full pile vs shared pattern + deltas); **not** frontier LLM decode TTFT/TPS  
+- Weight stub retained in both modes
+- Conventional: duplicate system-pattern buffer + KV-like buffer per session
+- Tiny Footprint: one shared system-pattern buffer + compact per-session delta/state
+- **Latency:** wall-clock materialization with vs without Tiny Footprint (HtoD of duplicated full pile vs shared pattern + deltas); **not** frontier LLM decode TTFT/TPS
 
 Receipt: `data/gpu_live_chat_hbm_lab.json`.
 
@@ -128,8 +128,6 @@ Receipt: `data/gpu_live_chat_hbm_lab.json`.
 | HtoD bytes / turn | 128 MiB | ~13.6 MiB | ~89% less traffic |
 
 ---
-
-
 
 ## 4.2 Real local-GPU LLM lab (not the HtoD proxy)
 
@@ -158,8 +156,8 @@ Receipt wiring: suite `experimentT_rhymeKvShare` · workstation `measure_rhyme_s
 
 ## 6. Product offer
 
-**Name:** Tiny Footprint  
-**Brochure:** `/tiny-footprint`  
+**Name:** Tiny Footprint
+**Brochure:** `/tiny-footprint`
 **Positioning:** memory product for AI serving operators facing duplicated resident-state rent, memory cost, and accelerator scarcity — with measured materialization latency that improves when the duplicated pile shrinks.
 
 ---

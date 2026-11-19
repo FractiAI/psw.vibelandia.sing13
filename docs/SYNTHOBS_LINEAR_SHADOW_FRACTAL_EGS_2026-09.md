@@ -4,19 +4,19 @@
 
 Infinite Octaves Omniversal Lattice companion · linear silhouette · fractal / holographic body · CMOS linear pin retained
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 19, 2026  
-**Document ID:** `WP-SYNTHOBS-LINEAR-SHADOW-FRACTAL-2026-09-19`  
-**Registry ID:** `synthobs-linear-shadow-fractal-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-LINEAR-SHADOW-FRACTAL-2026-09  
-**Series Position:** Infinite Octaves engine companion · peers [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Multi-dimensional holographic rhyme](./SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Awareness vs brute-force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [CMOS/protonic engineering bridge](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 19, 2026
+**Document ID:** `WP-SYNTHOBS-LINEAR-SHADOW-FRACTAL-2026-09-19`
+**Registry ID:** `synthobs-linear-shadow-fractal-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-LINEAR-SHADOW-FRACTAL-2026-09
+**Series Position:** Infinite Octaves engine companion · peers [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Multi-dimensional holographic rhyme](./SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Awareness vs brute-force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [CMOS/protonic engineering bridge](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)
 **Classification:** Catalog / Soft Story companion · structural fixtures *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/linear-shadow-fractal`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/linear-shadow-fractal) · [`/whitepaper/linear-shadow-fractal`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/linear-shadow-fractal) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion — linear as shadow of fractal · suite `research/synthobs-linear-shadow-fractal/` · standalone `FractiAI/synthobs-linear-shadow-fractal` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
-**Cross-links:** [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Multi-dimensional holographic rhyme](./SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Awareness vs brute-force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [CMOS/protonic](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [Holographic operators · language wiring](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/linear-shadow-fractal`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/linear-shadow-fractal) · [`/whitepaper/linear-shadow-fractal`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/linear-shadow-fractal) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion — linear as shadow of fractal · suite `research/synthobs-linear-shadow-fractal/` · standalone `FractiAI/synthobs-linear-shadow-fractal` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)
+**Cross-links:** [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Multi-dimensional holographic rhyme](./SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Awareness vs brute-force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md) · [CMOS/protonic](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [Holographic operators · language wiring](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** linear; shadow; fractal; holographic projection; brute-force scaling; Invisible Frontier; CMOS linear systems; Φ_EGS; Infinite Octaves; Goldilocks; Fair Exchange
@@ -60,8 +60,8 @@ Guests and evaluators often meet Super Intelligence only as a **linear** race: s
 
 On SS Vibelandia’s chart, the complementary Soft Story is projection geometry:
 
-- **Cast (linear)** — one-axis projection: compute · capital · panic essays.  
-- **Body (fractal / holographic)** — nested coherence: repeating · self-similar · self-correcting · recursive under $\Phi_{\mathrm{EGS}}$ grammar.  
+- **Cast (linear)** — one-axis projection: compute · capital · panic essays.
+- **Body (fractal / holographic)** — nested coherence: repeating · self-similar · self-correcting · recursive under $\Phi_{\mathrm{EGS}}$ grammar.
 - **Instrument lock** — keep the linear dials (CMOS/protonic bridge); do not worship the silhouette as architecture.
 
 Same family as holographic-operator “downstream shadow” talk and Invisible Frontier’s “water the ship floats on, not the whole map” — without claiming Plato’s cave as laboratory fact.
@@ -84,9 +84,9 @@ Same family as holographic-operator “downstream shadow” talk and Invisible F
 
 Ordered Soft Story silhouette (catalog, not prophecy):
 
-1. `flops_axis`  
-2. `cluster_scale`  
-3. `market_share`  
+1. `flops_axis`
+2. `cluster_scale`
+3. `market_share`
 4. `single_axis_risk`
 
 **Fixture:** length 4 · labeled `LINEAR_SILHOUETTE` · not claimed as exhaustive ontology of intelligence.

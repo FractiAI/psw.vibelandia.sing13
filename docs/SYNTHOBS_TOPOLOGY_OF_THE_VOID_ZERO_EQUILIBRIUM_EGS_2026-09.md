@@ -4,17 +4,17 @@
 
 **Subtitle:** Catalog formalization of Zero ($0$) as phase-balance node between Proton Space (‘1’) and Electron Theater (‘2’) under $\Phi_{\mathrm{EGS}}\approx 1.618$
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TOPOLOGY-OF-THE-VOID-ZERO-EQUILIBRIUM-EGS-2026-09-05`  
-**Registry ID:** `synthobs-topology-of-the-void-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TOPOLOGY-OF-THE-VOID-ZERO-EQUILIBRIUM-EGS-2026-09-05`
+**Registry ID:** `synthobs-topology-of-the-void-2026-09`
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)
 **Classification:** Number-theoretic / holographic **catalog architecture** for zero-balance topology *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#17** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-topology-of-the-void/` · [`FractiAI/synthobs-topology-of-the-void`](https://github.com/FractiAI/synthobs-topology-of-the-void) · `npm run research:synthobs-topology-of-the-void`  
-**Plain note:** [/ship-blog/topology-of-the-void](https://www.ssvibelandiaquestfest24x365.com/ship-blog/topology-of-the-void)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#17** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-topology-of-the-void/` · [`FractiAI/synthobs-topology-of-the-void`](https://github.com/FractiAI/synthobs-topology-of-the-void) · `npm run research:synthobs-topology-of-the-void`
+**Plain note:** [/ship-blog/topology-of-the-void](https://www.ssvibelandiaquestfest24x365.com/ship-blog/topology-of-the-void)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**

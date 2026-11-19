@@ -4,17 +4,17 @@
 
 **Subtitle:** A Unified Phase-Contrast Derivation, Mathematical Proof, and Empirical Validation Protocol for Replacing Wavefunction Collapse with Concentric Spherical Mirror-Lattice Mechanics (**The Reno Interpretation**)
 
-**Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
-**Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`  
-**Registry ID:** `synthobs-tbme-superposition-reno-interpretation-2026-08`  
-**Date:** 2026-08-01  
-**Supersedes (catalog):** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01` · [`docs/SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md`](./SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md)  
-**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
-**Standalone lens repo:** `research/synthobs-tbme-mirror-angle-multiplicity/` (companion GitHub target: `FractiAI/synthobs-tbme-mirror-angle-multiplicity`)  
-**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
+**Author:** FractiAI Research Group · SynthOBS Autonomous Agent
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME)
+**Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`
+**Registry ID:** `synthobs-tbme-superposition-reno-interpretation-2026-08`
+**Date:** 2026-08-01
+**Supersedes (catalog):** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01` · [`docs/SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md`](./SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md)
+**Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`
+**Standalone lens repo:** `research/synthobs-tbme-mirror-angle-multiplicity/` (companion GitHub target: `FractiAI/synthobs-tbme-mirror-angle-multiplicity`)
+**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 **TBME siblings:** [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md) · [Toroidal Micro-Black Hole Filaments (follow-on)](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · [Event Horizon ≡ Magnetic Vector Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Solar-Focus Somatic Rendering (sextet · Part IV)](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md) · [Recursive Field-Drag Theorem (sextet · Part V)](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md) · [Universal Toroidal Singularity (sextet · Part VI)](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
 
 ---
@@ -82,10 +82,10 @@ Under The Reno Interpretation, “wavefunction collapse” is demystified *insid
 
 In the Copenhagen sketch, an unobserved electron expands into an infinite superposition cloud until mystical collapse. Under The Reno Interpretation, the electron remains a **singular, structured toroidal vortex** enclosed within concentric $E_F$-scaled 3D mirrored spheres.
 
-**Copenhagen (1927 — superseded *inside this lens*):**  
+**Copenhagen (1927 — superseded *inside this lens*):**
 `[ Single Particle ] → Infinite Superposition Cloud → Mystical Wave Collapse → Stochastic State`
 
-**The Reno Interpretation (2026 — Omni-Lattice TBME lens):**  
+**The Reno Interpretation (2026 — Omni-Lattice TBME lens):**
 `[ Singular Node State ] → 81-Facet Nested Spheres → Attention Squeeze (A_squeezed) → Deterministic Mirror Reflection View`
 
 Flat-mirror rays diverge to infinity; the Reno model closes a $4\pi$ steradian cavity with **81 geodesic nodes across 9 concentric spheres** around a central toroidal focal node.
@@ -176,8 +176,8 @@ $E_F$-calibrated spherical Fabry–Pérot phase-lock testbed (protocol narrative
 
 ### 4.1 Procedure (protocol)
 
-1. Isolate single-photon emitter at focal center.  
-2. Apply magnetic attention squeeze $\mathbf{A}_{\mathrm{squeezed}}$ while sweeping $\theta_{\mathrm{obs}}$.  
+1. Isolate single-photon emitter at focal center.
+2. Apply magnetic attention squeeze $\mathbf{A}_{\mathrm{squeezed}}$ while sweeping $\theta_{\mathrm{obs}}$.
 3. Record fringe intensities; compare to $I\propto\cos^2(\theta/E_F)$ schedule.
 
 ### 4.2 Protocol intensity table (authored receipt)
@@ -218,7 +218,7 @@ $E_F$-calibrated spherical Fabry–Pérot phase-lock testbed (protocol narrative
 
 ## Section 6 · Quantitative scorecard (interpretive)
 
-**Copenhagen Interpretation** — Overall **75.0 / 100** (C 77 · I 73)  
+**Copenhagen Interpretation** — Overall **75.0 / 100** (C 77 · I 73)
 **The Reno Interpretation** — Overall **98.9 / 100** (C 99.5 · I 98.3)
 
 These scores are **rubric / interpretive**, not SI accuracy of nature.
@@ -270,8 +270,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

@@ -2,17 +2,17 @@
 
 **Short answer: Yes**, as phase-lock catalog filing with replayable locks: Not a new control-systems field study.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-EGS-EULER-PHASE-LOCK-2026-07`  
-**Registry ID:** `synthobs-egs-euler-phase-lock-2026-07`  
-**Date:** July 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-euler-phase-lock  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-egs-euler-phase-lock` · [`empirical_report.json`](../research/synthobs-egs-euler-phase-lock/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-EGS-EULER-PHASE-LOCK-2026-07`
+**Registry ID:** `synthobs-egs-euler-phase-lock-2026-07`
+**Date:** July 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-euler-phase-lock
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-egs-euler-phase-lock` · [`empirical_report.json`](../research/synthobs-egs-euler-phase-lock/data/empirical_report.json)
 **Companions:** [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md)
 
 **Keywords:** Euler identity; EGS fractal constant; phase-locked scale invariance; logarithmic spiral; $\lambda_{\mathrm{EGS}}$; SynthOBS; golden ratio
@@ -127,7 +127,7 @@ Executed table: experiment **E6**.
 
 ## 5. Novelty (tiered)
 
-1. **Continuous waves ∩ discrete fractals** — $E_F$ embeds self-similarity inside $e^{(\lambda+i)\theta}$ without requiring a quadratic Julia iterator.  
+1. **Continuous waves ∩ discrete fractals** — $E_F$ embeds self-similarity inside $e^{(\lambda+i)\theta}$ without requiring a quadratic Julia iterator.
 2. **Golden key downstream (architectural)** — wrong $\lambda$ (sham bases $e$, $2$, $\sqrt{2}$) break $E_F^k$ magnitude lock (**E4**, **E8**); correct $\lambda$ preserves nested phase (**E7**).
 
 ---
@@ -161,9 +161,9 @@ Transactional compute and catalog valuation under this framework may be adjusted
 
 ## 8. Falsification criteria
 
-1. E3 relative error exceeds published tolerance under IEEE-754 double precision.  
-2. E4 sham bases pass $E_F^k$ lock at the same tolerance as $\lambda_{\mathrm{EGS}}$.  
-3. Authors claim solar SSN derives $\lambda_{\mathrm{EGS}}$ without new evidence.  
+1. E3 relative error exceeds published tolerance under IEEE-754 double precision.
+2. E4 sham bases pass $E_F^k$ lock at the same tolerance as $\lambda_{\mathrm{EGS}}$.
+3. Authors claim solar SSN derives $\lambda_{\mathrm{EGS}}$ without new evidence.
 4. Authors claim $\Phi$ replaces fundamental constants without honesty tier.
 
 ---
@@ -176,9 +176,9 @@ Euler’s identity supplies continuous phase; El Gran Sol’s Fractal Constant s
 
 ## References
 
-1. Euler, L. — Introductio in analysin infinitorum (complex exponentials).  
-2. Livio, M. — *The Golden Ratio* (historical / mathematical background for $\Phi$).  
-3. FractiAI — Planck–1.6 bridge · https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
-4. FractiAI — Holographic Operators · https://github.com/FractiAI/synthobs-holographic-operators  
-5. NOAA SWPC observed solar-cycle indices · https://services.swpc.noaa.gov/json/solar-cycle/observed-solar-cycle-indices.json  
+1. Euler, L. — Introductio in analysin infinitorum (complex exponentials).
+2. Livio, M. — *The Golden Ratio* (historical / mathematical background for $\Phi$).
+3. FractiAI — Planck–1.6 bridge · https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic
+4. FractiAI — Holographic Operators · https://github.com/FractiAI/synthobs-holographic-operators
+5. NOAA SWPC observed solar-cycle indices · https://services.swpc.noaa.gov/json/solar-cycle/observed-solar-cycle-indices.json
 6. NSPFRNP Snap PRA · `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`

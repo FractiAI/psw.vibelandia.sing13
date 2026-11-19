@@ -4,14 +4,14 @@
 
 **Testing Whether Tiny Footprint Multi-Agent Improves Speed, Accuracy, Convergence, Discovery, and Collective Problem-Solving**
 
-**Preliminary Experimental Abstract / Technical Paper · Version 1.0 · 5 November 2026**  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Document ID:** `WP-FRACTISI-EXPEDITION-002-BEYOND-MEMORY-EGS-2026-11-05`  
-**Registry ID:** `synthobs-fractisi-expedition-002-beyond-memory-2026-11`  
-**Expedition:** FractiSI Research Expedition 002 · Infinite Octave adjacency  
-**Product:** Tiny Footprint Multi-Agent · kit [`FractiAI/FractiSI-Multi-Agent`](https://github.com/FractiAI/FractiSI-Multi-Agent)  
-**Suite:** `research/synthobs-fractisi-expedition-002-beyond-memory/`  
-**Engine spine:** Tiny Gateway · Rhyming Templates · nested vectors · selective reconstruction  
+**Preliminary Experimental Abstract / Technical Paper · Version 1.0 · 5 November 2026**
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Document ID:** `WP-FRACTISI-EXPEDITION-002-BEYOND-MEMORY-EGS-2026-11-05`
+**Registry ID:** `synthobs-fractisi-expedition-002-beyond-memory-2026-11`
+**Expedition:** FractiSI Research Expedition 002 · Infinite Octave adjacency
+**Product:** Tiny Footprint Multi-Agent · kit [`FractiAI/FractiSI-Multi-Agent`](https://github.com/FractiAI/FractiSI-Multi-Agent)
+**Suite:** `research/synthobs-fractisi-expedition-002-beyond-memory/`
+**Engine spine:** Tiny Gateway · Rhyming Templates · nested vectors · selective reconstruction
 
 ---
 
@@ -65,7 +65,7 @@ A second controlled experiment tested discovery and collective problem-solving.
 
 Design: 100 operational scenarios, each containing a deliberately distributed six-hop relationship chain. Both architectures received the same underlying information and the same fixed retrieval/context budget (40 records for flat skim).
 
-- **Conventional baseline:** flat shared-world retrieval over a noise-first corpus.  
+- **Conventional baseline:** flat shared-world retrieval over a noise-first corpus.
 - **FractiSI-style:** relationship-guided reconstruction following explicit next-hop edges.
 
 **Suite receipt:**
@@ -116,8 +116,8 @@ node research/synthobs-fractisi-expedition-002-beyond-memory/scripts/run_empiric
 
 Receipts: `research/synthobs-fractisi-expedition-002-beyond-memory/data/empirical_report.{json,md}`
 
-Product kit: https://github.com/FractiAI/FractiSI-Multi-Agent  
-Live paper surface: `/library/papers/fractisi-expedition-002-beyond-memory/` on fractisi.vercel.app  
+Product kit: https://github.com/FractiAI/FractiSI-Multi-Agent
+Live paper surface: `/library/papers/fractisi-expedition-002-beyond-memory/` on fractisi.vercel.app
 
 ---
 

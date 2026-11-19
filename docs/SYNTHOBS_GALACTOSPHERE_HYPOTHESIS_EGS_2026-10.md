@@ -4,19 +4,19 @@
 
 ## A computational-laboratory test of a distributed galactic analogue to the heliosphere
 
-**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-GALACTOSPHERE-HYPOTHESIS-EGS-2026-10-07`  
-**Registry ID:** `synthobs-galactosphere-hypothesis-2026-10`  
-**Date:** 2026-10-07  
-**Published:** 2026-10-07T12:00:00Z  
-**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Goldilocks · Homeostasis Expedition  
-**Suite:** `research/synthobs-galactosphere-hypothesis/`  
-**Standalone:** [`FractiAI/synthobs-galactosphere-hypothesis`](https://github.com/FractiAI/synthobs-galactosphere-hypothesis)  
-**Ship blog:** `/ship-blog/galactosphere-hypothesis`  
-**Journey:** `/journey/homeostasis-expedition`  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-GALACTOSPHERE-HYPOTHESIS-EGS-2026-10-07`
+**Registry ID:** `synthobs-galactosphere-hypothesis-2026-10`
+**Date:** 2026-10-07
+**Published:** 2026-10-07T12:00:00Z
+**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Goldilocks · Homeostasis Expedition
+**Suite:** `research/synthobs-galactosphere-hypothesis/`
+**Standalone:** [`FractiAI/synthobs-galactosphere-hypothesis`](https://github.com/FractiAI/synthobs-galactosphere-hypothesis)
+**Ship blog:** `/ship-blog/galactosphere-hypothesis`
+**Journey:** `/journey/homeostasis-expedition`
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion #42 — **Galactosphere Hypothesis / distributed galactic boundary companion** (Homeostasis Expedition empirical lane · Soft Story / catalog / computational-lab PoC · not Milky Way proof)
 
 **Companions:**
@@ -157,8 +157,8 @@ We call the functional system:
 
 **Galactosphere**
 
-Not necessarily a sphere.  
-Not necessarily a sharp shell.  
+Not necessarily a sphere.
+Not necessarily a sharp shell.
 Not necessarily a single physical surface.
 
 Rather:
@@ -204,14 +204,14 @@ The test asks whether the same mathematical topology emerges despite enormous ch
 
 If a galactosphere exists as a functional distributed interface, several observables should exhibit **coordinated** radial transitions, rather than independent unrelated gradients:
 
-- outflow velocity  
-- gas density  
-- temperature  
-- ionization state  
-- metallicity  
-- magnetic-field structure  
-- cosmic-ray pressure/transport  
-- inflow/outflow balance  
+- outflow velocity
+- gas density
+- temperature
+- ionization state
+- metallicity
+- magnetic-field structure
+- cosmic-ray pressure/transport
+- inflow/outflow balance
 
 Transition radii need not coincide. The hypothesis predicts they probably should not:
 
@@ -231,9 +231,9 @@ Galactic-dynamo reviews increasingly argue for treating galaxy–CGM interaction
 
 If supported:
 
-stellar homeostasis → astrosphere  
-galactic homeostasis → galactosphere  
-group/cluster homeostasis → ???  
+stellar homeostasis → astrosphere
+galactic homeostasis → galactosphere
+group/cluster homeostasis → ???
 
 The final structure is **not named yet**. Digital experiment and observational literature should discover whether a corresponding higher-scale interface exists.
 
@@ -243,11 +243,11 @@ The final structure is **not named yet**. Digital experiment and observational l
 
 The galactosphere hypothesis would be weakened if:
 
-1. **F1** — no coherent multi-observable transition exists;  
-2. **F2** — the apparent transition is entirely explained by the virial radius with no additional structure;  
-3. **F3** — magnetic/nonthermal components do not materially participate;  
-4. **F4** — different galaxies show no common dimensionless topology;  
-5. **F5** — high-resolution simulations show the apparent boundary is merely an artifact of parameterization;  
+1. **F1** — no coherent multi-observable transition exists;
+2. **F2** — the apparent transition is entirely explained by the virial radius with no additional structure;
+3. **F3** — magnetic/nonthermal components do not materially participate;
+4. **F4** — different galaxies show no common dimensionless topology;
+5. **F5** — high-resolution simulations show the apparent boundary is merely an artifact of parameterization;
 6. **F6** — the heliosphere analogy adds no predictive power beyond existing CGM terminology.
 
 It becomes stronger if independent observations and simulations repeatedly reveal coherent, scale-dependent, multiphase transition zones coupled to galactic outflow and environmental interaction.
@@ -268,9 +268,9 @@ The first computational experiment does not establish a physical galactosphere. 
 
 This filing continues the Homeostasis Expedition trail:
 
-- Reflective Portal — observe and modify regulatory patterns  
-- Chart & Compass — expeditionary navigation of Goldilocks SI frontiers  
-- **Galactosphere** — boundary-function homeostasis at galactic exchange scales  
+- Reflective Portal — observe and modify regulatory patterns
+- Chart & Compass — expeditionary navigation of Goldilocks SI frontiers
+- **Galactosphere** — boundary-function homeostasis at galactic exchange scales
 
 Φ_EGS remains design grammar for nested catalog depth. Fair Exchange · Seed:Edge · lite edges remain in force.
 
@@ -280,9 +280,9 @@ This filing continues the Homeostasis Expedition trail:
 
 The heliosphere taught observers to look for a dynamically maintained interface, not a painted sphere. The galactosphere hypothesis asks whether galactic winds, CGM multiphase exchange, magnetic structure and cosmic-ray transport can be read as one distributed boundary function — then insists the answer be earned by digital structure tests, falsifiers, and eventually public simulation/observation pipelines.
 
-Computational lab: promising.  
-Astrophysical validation: open.  
+Computational lab: promising.
+Astrophysical validation: open.
 Cluster octave: unnamed.
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Fair Exchange** · Seed:Edge · NSPFRNP · → ∞^∞

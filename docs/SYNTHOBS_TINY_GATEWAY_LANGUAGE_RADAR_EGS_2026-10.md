@@ -80,9 +80,9 @@ Honesty: do not silently replace this stack with an unlabeled ordinary graph and
 
 ## 3. Data policy (Leo Computational Lab)
 
-1. Prefer live/historical public data already in the Hero Leo / Turner / TRGM estate.  
-2. Synthetic only when unavailable **and** env allows.  
-3. Report `sourceMode` on every experiment receipt.  
+1. Prefer live/historical public data already in the Hero Leo / Turner / TRGM estate.
+2. Synthetic only when unavailable **and** env allows.
+3. Report `sourceMode` on every experiment receipt.
 4. Withhold claims when real data are missing and synthetic is disallowed.
 
 Registered under `data/hero-leo/config.json` → `digitalLab.tinyGateway`.
@@ -153,10 +153,10 @@ Receipts: `research/synthobs-tiny-gateway-language-radar/data/empirical_report.{
 
 ## References (selected)
 
-- Wave–Node Mathematics ENGINE_SHELF #49  
-- Tiny Reality Generation Model #50 · Predictive Catalog #51  
-- TRGM Gateway Agent Performance (application companion)  
-- `research/geomagnetic-herbivore` Movebank + GFZ sources  
-- `lib/turner-data-policy.mjs` · open empirical science Tier A doctrine  
+- Wave–Node Mathematics ENGINE_SHELF #49
+- Tiny Reality Generation Model #50 · Predictive Catalog #51
+- TRGM Gateway Agent Performance (application companion)
+- `research/geomagnetic-herbivore` Movebank + GFZ sources
+- `lib/turner-data-policy.mjs` · open empirical science Tier A doctrine
 
 → ∞^∞

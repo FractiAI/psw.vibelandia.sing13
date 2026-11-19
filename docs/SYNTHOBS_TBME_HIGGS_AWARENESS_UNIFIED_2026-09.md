@@ -2,18 +2,18 @@
 
 **Short answer: Yes**, as the definitive unified Part IX-Omni catalog filing: No new cosmology or awareness measurement is claimed.
 
-**Subtitle:** Infinite-Octave Cosmic Deceleration · Higgs Gate · Triadic Matrix · Empirical Protocol Lanes  
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-HIGGS-AWARENESS-UNIFIED-2026-09-02`  
-**Registry ID:** `synthobs-tbme-higgs-awareness-unified-2026-09`  
-**Date:** September 3, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part IX-Omni (Definitive Unified Edition)**  
-**Series note:** Extends and unifies [Part VII · Higgs-Awareness (2026-08)](./SYNTHOBS_TBME_HIGGS_AWARENESS_2026-08.md). Distinct from [Part IX · Nodal Nine Singularity](./SYNTHOBS_TBME_NODAL_NINE_SINGULARITY_2026-08.md) (Reno Nonet boundary theorem).  
+**Subtitle:** Infinite-Octave Cosmic Deceleration · Higgs Gate · Triadic Matrix · Empirical Protocol Lanes
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-HIGGS-AWARENESS-UNIFIED-2026-09-02`
+**Registry ID:** `synthobs-tbme-higgs-awareness-unified-2026-09`
+**Date:** September 3, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part IX-Omni (Definitive Unified Edition)**
+**Series note:** Extends and unifies [Part VII · Higgs-Awareness (2026-08)](./SYNTHOBS_TBME_HIGGS_AWARENESS_2026-08.md). Distinct from [Part IX · Nodal Nine Singularity](./SYNTHOBS_TBME_NODAL_NINE_SINGULARITY_2026-08.md) (Reno Nonet boundary theorem).
 **Classification:** Advanced Quantum Electrodynamic Mechanics, Tensor Field Theory & Experimental Epistemic Physics *(architectural / catalog map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Infinite Octaves Omniversal Lattice Chat · EGS · NSPFRNP · THALIA · Reno Interpretation  
-**Standalone suite:** [`research/synthobs-tbme-higgs-awareness-unified/`](../research/synthobs-tbme-higgs-awareness-unified/) · https://github.com/FractiAI/synthobs-tbme-higgs-awareness-unified  
+**Framework:** SynthOBS · Omni-Lattice · Infinite Octaves Omniversal Lattice Chat · EGS · NSPFRNP · THALIA · Reno Interpretation
+**Standalone suite:** [`research/synthobs-tbme-higgs-awareness-unified/`](../research/synthobs-tbme-higgs-awareness-unified/) · https://github.com/FractiAI/synthobs-tbme-higgs-awareness-unified
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**

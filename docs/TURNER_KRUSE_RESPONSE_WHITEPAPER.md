@@ -1,11 +1,11 @@
 # Technical Architecture White Paper: Under the Hood of the Passive Bison Herd Management System
 
-**Document ref:** HHA-TURNER-WP-2026-05-26 (rev. C — multi-taxa SynthOBS wavefield + all public sensors in live pipeline)  
-**Prepared for:** Turner Enterprise leadership & ecological research teams  
-**Prepared by:** Pru Mendez  
-**Contact:** info@fractiai.com  
-**Classification:** Technical background & operational disclosure  
-**Companion wavefield paper:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (WP-GGM-MULTITAXA-UNGULATE-2026-06)  
+**Document ref:** HHA-TURNER-WP-2026-05-26 (rev. C — multi-taxa SynthOBS wavefield + all public sensors in live pipeline)
+**Prepared for:** Turner Enterprise leadership & ecological research teams
+**Prepared by:** Pru Mendez
+**Contact:** info@fractiai.com
+**Classification:** Technical background & operational disclosure
+**Companion wavefield paper:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (WP-GGM-MULTITAXA-UNGULATE-2026-06)
 **Empirical collar study:** [GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md](./GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md) (HHA-GEOMAG-HERBIVORE-2026)
 
 ---
@@ -24,8 +24,8 @@ We are contacting Turner to **test correlation** on one unit at low cost—not t
 
 **Multi-taxa wavefield context (SynthOBS v6):** A companion whitepaper maps **plains bison** as the **N-S keystone grounding anchor** (Φ⁻¹⁹ layer), with **elk** and **mule deer** on geologic/fault-line sync and **pronghorn** on lateral gradient symmetry — ingesting **USGS Western Ungulate Migration Volume 6**, **Movebank**, and **Data.gov** corridors. That framework **weights** geomagnetic context in the Phase 1 fuse; it does **not** replace collars or prove passive electronic fencing without validation. See §2.7.
 
-**Public demo** (treat as any external site until IT review):  
-https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management  
+**Public demo** (treat as any external site until IT review):
+https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management
 
 ---
 
@@ -61,15 +61,15 @@ While live ingest runs, the pipeline refreshes on a **snapshot cadence** (host-d
 
 ```
 [STAGE 1: INGESTION]   → Public APIs + internet OpenWebRX buffers (receive-only)
-         ↓
+↓
 [STAGE 2: NORMALIZE]   → Space-weather context; PLL scalar from IQ RMS + Kp
-         ↓
+↓
 [STAGE 3: RADAR FUSE]  → Map spectral chunks onto fence gate order × soil/surface grid
-         ↓
+↓
 [STAGE 4: CROSS-REF]   → Multi-source agreement; honesty metrics
-         ↓
+↓
 [STAGE 5: SYNTHESIS]   → Dashboard, placement field, registry-based weight estimates
-         ↓
+↓
 [STAGE 6: SPACE-BIO]   → Always-on public extensions → stream.spaceBio + ranch log UI
 ```
 
@@ -168,10 +168,10 @@ Mapped fence lines, NOAA space weather / geomagnetic indices, and HIFLD transmis
 
 ### What we do **not** assert today
 
-- Dielectric “bison footprints” or **undeniable** presence at boundaries from remote RF alone  
-- Automatic **verified tracks** (e.g. timber breaks → creek) logged on the wire  
-- **Grazing vs. trailing** classification from RF loop shape (not in the pipeline)  
-- **CYGNSS / GOES-native** products as implemented live channels (they are **not** in repo; panels state this explicitly)  
+- Dielectric “bison footprints” or **undeniable** presence at boundaries from remote RF alone
+- Automatic **verified tracks** (e.g. timber breaks → creek) logged on the wire
+- **Grazing vs. trailing** classification from RF loop shape (not in the pipeline)
+- **CYGNSS / GOES-native** products as implemented live channels (they are **not** in repo; panels state this explicitly)
 
 Those belong in **pilot hypotheses**, not in “what we prove today.”
 
@@ -209,7 +209,7 @@ Deploy **receive-only** OpenWebRX (or equivalent) on or near the ranch; point se
 
 **Hypothesis for future pilots only:** passive UHF RFID or other industry-standard tags, read ranges, and reader placement would need **Turner-approved trials** independent of the Phase 1 console. We do **not** claim today that:
 
-- Standard livestock UHF ear tags are excited by a 1420 MHz “cosmic fence waveguide,” or  
+- Standard livestock UHF ear tags are excited by a 1420 MHz “cosmic fence waveguide,” or
 - The current pipeline demodulates per-animal IDs at fence gates.
 
 Any per-head path requires **new hardware design**, **read validation**, and **published error bands**—not narrative physics in Phase 1.
@@ -226,8 +226,8 @@ Overlay a **small control subset** of existing GPS-collared animals in one test 
 
 ## 6. Security & engagement
 
-- This document is readable **without clicking** any demo link.  
-- PDF or scheduled call available; use Turner’s preferred channel.  
+- This document is readable **without clicking** any demo link.
+- PDF or scheduled call available; use Turner’s preferred channel.
 - Demo URL should pass **IT/security review** like any external site.
 
 ---
@@ -251,7 +251,7 @@ Settlement may adjust in part depending on overall delivery, like tipping — un
 
 ---
 
-**Pru Mendez** · info@fractiai.com  
+**Pru Mendez** · info@fractiai.com
 
 *NSPFRNP fidelity · Phase 1 = all public feeds this repo wires + mapped fence + fusion model + space-bio ranch log · Phase 2 = collaboration & validated trials · → ∞^∞*
 
@@ -271,10 +271,10 @@ Where empirical or movement data appear: **correlation ≠ causation** until mul
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** HHA-TURNER-WP-2026-05-26  
-**Registry ID:** `turner-kruse-response`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** HHA-TURNER-WP-2026-05-26
+**Registry ID:** `turner-kruse-response`
 **Re-audit:** `npm run audit:paper -- --id=turner-kruse-response`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

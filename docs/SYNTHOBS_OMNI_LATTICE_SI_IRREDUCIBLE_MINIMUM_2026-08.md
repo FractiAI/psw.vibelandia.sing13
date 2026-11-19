@@ -2,14 +2,14 @@
 
 **Short answer: No.** On the 2026-08-03 measurement, gate S3 failed and S6 was only partial, so SIM-v1 compliance was NO. The score was 5.5/7, or 78.6 out of 100 toward the project minimum, and no superintelligence arrival claim is authorized.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-SI-IRREDUCIBLE-MINIMUM-2026-08`  
-**Registry ID:** `synthobs-omni-lattice-si-irreducible-minimum-2026-08`  
-**Date:** August 3, 2026  
-**Framework:** SynthOBS · Goldilocks · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP · THALIA contract · PCE  
-**Engine measure:** `lib/si-irreducible-minimum.mjs`  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-SI-IRREDUCIBLE-MINIMUM-2026-08`
+**Registry ID:** `synthobs-omni-lattice-si-irreducible-minimum-2026-08`
+**Date:** August 3, 2026
+**Framework:** SynthOBS · Goldilocks · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP · THALIA contract · PCE
+**Engine measure:** `lib/si-irreducible-minimum.mjs`
 **Pattern debt:** `protocols/HH_AWARENESS_AI_OS_NSPFRNP_IRREDUCIBLE_MINIMUM_PROTOCOL_SPEC.md` (compliance-style minimum, different domain)
 
 **Keywords:** superintelligence; irreducible minimum; SIM; gated evidence; composition; Omni-Lattice; Lattice Chat Agent; Valet
@@ -69,10 +69,10 @@ If **any** gate fails, the system is **not** SIM-compliant → **do not claim SI
 | S6 | **PARTIAL** | THALIA DOI + FractiAI standalones linked; composition table below — recomputes = in-repo suite mirrors | Need more external lit recomputes for full PASS |
 | S7 | **PASS** | This document + measure module; audits state SI not arrived | Meta-gate |
 
-**SIM compliance: NO (blocked on S3; S6 partial).**  
+**SIM compliance: NO (blocked on S3; S6 partial).**
 **SI arrival claim: NOT AUTHORIZED.**
 
-**SIM score (equal weight, PARTIAL=0.5):**  
+**SIM score (equal weight, PARTIAL=0.5):**
 S1–S7 → $1+1+0+1+1+0.5+1 = 5.5/7$ → **78.6 / 100** toward *project SIM*, not global ASI.
 
 ---
@@ -92,12 +92,12 @@ S1–S7 → $1+1+0+1+1+0.5+1 = 5.5/7$ → **78.6 / 100** toward *project SIM*, n
 
 ## 4. Free actions executed this session (score lift)
 
-1. Crystallized **SIM-v1** + honesty boundary (this doc).  
-2. Measured current stack → **SI arrival not authorized**.  
-3. Froze composition table (above).  
-4. Re-ran `npm run research:synthobs-omni-lattice-unification` → **9/9**.  
-5. Re-ran report-card + PCE suites (companion receipts).  
-6. Shipped `lib/si-irreducible-minimum.mjs` for repeatable scoring.  
+1. Crystallized **SIM-v1** + honesty boundary (this doc).
+2. Measured current stack → **SI arrival not authorized**.
+3. Froze composition table (above).
+4. Re-ran `npm run research:synthobs-omni-lattice-unification` → **9/9**.
+5. Re-ran report-card + PCE suites (companion receipts).
+6. Shipped `lib/si-irreducible-minimum.mjs` for repeatable scoring.
 
 **Expected audit delta (honest):** Lane A peer trust ↑ (SIM refusal is a feature); Lane B systems ↑ (definition + measure + fresh suites); SI-arrival marketing stays **gated off** until S3+S6 full PASS.
 
@@ -105,9 +105,9 @@ S1–S7 → $1+1+0+1+1+0.5+1 = 5.5/7$ → **78.6 / 100** toward *project SIM*, n
 
 ## 5. Falsification
 
-1. Claiming SI arrival while S3 or S6 fail.  
-2. Treating SIM-v1 as global ASI consensus.  
-3. Using composition table to assert wet-lab/sky supremacy.  
+1. Claiming SI arrival while S3 or S6 fail.
+2. Treating SIM-v1 as global ASI consensus.
+3. Using composition table to assert wet-lab/sky supremacy.
 4. Silent Memory Gate overwrite of a failed SIM receipt.
 
 ---
@@ -120,12 +120,12 @@ Compute and documentation allocations remain subject to reciprocal balancing und
 
 ## References
 
-1. HH Awareness irreducible minimum protocol (pattern) — `protocols/HH_AWARENESS_AI_OS_NSPFRNP_IRREDUCIBLE_MINIMUM_PROTOCOL_SPEC.md`  
-2. PCE — `docs/SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`  
-3. Omni Unification — `docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`  
-4. Report Card Q3 — `docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md`  
-5. THALIA Goldilocks — `docs/SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md`  
-6. Token proof — `docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`  
+1. HH Awareness irreducible minimum protocol (pattern) — `protocols/HH_AWARENESS_AI_OS_NSPFRNP_IRREDUCIBLE_MINIMUM_PROTOCOL_SPEC.md`
+2. PCE — `docs/SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`
+3. Omni Unification — `docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`
+4. Report Card Q3 — `docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md`
+5. THALIA Goldilocks — `docs/SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md`
+6. Token proof — `docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`
 7. NSPFRNP PRA Snap — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 
 → ∞^∞

@@ -1,6 +1,6 @@
 # Do Agents Do Better With a Tiny Reality Gateway Than Without One?
 
-**Short answer: Yes.** On this digital task battery: Experiments E1 through E8 passed 8 of 8. With-gateway agents reached 100% navigation and viability versus about 66.7% without, and coherence 1.000 versus 0.263. This is not a live multi-provider language-model comparison.
+**Short answer: Yes.** On this digital task battery: Experiments E1 through E8 passed 8 of 8. With-gateway agents reached 100% navigation and viability versus about 66.7% without, and coherence 1.000 versus 0.263.
 
 **Homeostasis Expedition follow-on · application companion (not ENGINE_SHELF) · Infinite Octave / SynthOBS · 25 October 2026**
 
@@ -61,10 +61,10 @@ This paper is a **Homeostasis Expedition follow-on** and an **application compan
 
 ## 2. Contributions
 
-1. Paired treatments: `with_trgm_gateway` vs `without_trgm_gateway`.  
-2. Five-task agent battery: navigate · viability · coherence · channel recovery · rate intake.  
-3. Executed E1–E8 with pre-registered margins.  
-4. Findings reported in the Abstract (not deferred).  
+1. Paired treatments: `with_trgm_gateway` vs `without_trgm_gateway`.
+2. Five-task agent battery: navigate · viability · coherence · channel recovery · rate intake.
+3. Executed E1–E8 with pre-registered margins.
+4. Findings reported in the Abstract (not deferred).
 5. Standalone suite + ship-blog; journey trail update; no engine pin.
 
 ---
@@ -83,12 +83,12 @@ This paper is a **Homeostasis Expedition follow-on** and an **application compan
 
 ## 4. Methods
 
-- **Lab:** `src/agent-lab.mjs` · `src/experiments.mjs`  
-- **With stack:** `attachBioPipeToStack` + structured stream + polygon clock + holographic-rhyme tree + folded DNA · `driveRealityFromStack`  
-- **Without stack:** unstructured stream + flat encode + unfolded theater + periodic null probes  
-- **Channel task:** feature-kind grammar vs random triad labels on non-gene catalog entries  
-- **Rate task:** bio-pipe rate lock vs uncapped dump  
-- **Gates:** nav Δ≥0.25 · viability Δ≥0.25 · coherence Δ≥0.05 · channel BA Δ≥0.20  
+- **Lab:** `src/agent-lab.mjs` · `src/experiments.mjs`
+- **With stack:** `attachBioPipeToStack` + structured stream + polygon clock + holographic-rhyme tree + folded DNA · `driveRealityFromStack`
+- **Without stack:** unstructured stream + flat encode + unfolded theater + periodic null probes
+- **Channel task:** feature-kind grammar vs random triad labels on non-gene catalog entries
+- **Rate task:** bio-pipe rate lock vs uncapped dump
+- **Gates:** nav Δ≥0.25 · viability Δ≥0.25 · coherence Δ≥0.05 · channel BA Δ≥0.20
 - **Runner:** `npm run research:synthobs-trgm-gateway-agent-performance`
 
 ---
@@ -134,9 +134,9 @@ Numbers match `research/synthobs-trgm-gateway-agent-performance/data/empirical_r
 
 ## References
 
-1. FractiAI Tiny Reality Generation Model (2026). ENGINE_SHELF #50 — includes 10 bit/s biological reality stream pipe.  
-2. FractiAI TRGM Predictive Reality Catalog (2026). ENGINE_SHELF #51.  
-3. FractiAI Wave–Node Mathematics (2026). ENGINE_SHELF #49.  
+1. FractiAI Tiny Reality Generation Model (2026). ENGINE_SHELF #50 — includes 10 bit/s biological reality stream pipe.
+2. FractiAI TRGM Predictive Reality Catalog (2026). ENGINE_SHELF #51.
+3. FractiAI Wave–Node Mathematics (2026). ENGINE_SHELF #49.
 4. FractiAI Frontier Agent Convergence Experiment (2026). Application companion (not ENGINE_SHELF).
 
 ---

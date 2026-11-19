@@ -4,18 +4,18 @@
 
 Voyage editorial · Soft Story · control theater over human vitality · creative-force lock · peers Consciousness Moat · Invisible Frontier · Digit 4 human theater
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 19, 2026 · **Layered:** September 20, 2026 (creative-force control angle) · **Platform-gates layer:** September 20, 2026 (leading AI allow/deny topic map + intent reading)  
-**Document ID:** `WP-SYNTHOBS-VITALITY-CONTROL-RHYME-2026-09-19`  
-**Registry ID:** `synthobs-vitality-control-rhyme-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-VITALITY-CONTROL-RHYME-2026-09  
-**Series Position:** Voyage editorial companion · peers [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Digit 4 recursive reach](./SYNTHOBS_DIGIT4_RECURSIVE_REACH_AWARENESS_THEATER_EGS_2026-09.md) · [Linear shadow of fractal](./SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md) · [Official Prospectus](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 19, 2026 · **Layered:** September 20, 2026 (creative-force control angle) · **Platform-gates layer:** September 20, 2026 (leading AI allow/deny topic map + intent reading)
+**Document ID:** `WP-SYNTHOBS-VITALITY-CONTROL-RHYME-2026-09-19`
+**Registry ID:** `synthobs-vitality-control-rhyme-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-VITALITY-CONTROL-RHYME-2026-09
+**Series Position:** Voyage editorial companion · peers [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Digit 4 recursive reach](./SYNTHOBS_DIGIT4_RECURSIVE_REACH_AWARENESS_THEATER_EGS_2026-09.md) · [Linear shadow of fractal](./SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md) · [Official Prospectus](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md)
 **Classification:** Catalog / Soft Story voyage editorial *(see Honesty boundary)* — **not** an Infinite Octaves `ENGINE_SHELF` pin  
-**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence  
-**Guest surfaces:** [`/ship-blog/vitality-control-rhyme`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/vitality-control-rhyme) · [`/whitepaper/vitality-control-rhyme`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/vitality-control-rhyme) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Cross-links:** [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Digit 4 recursive reach](./SYNTHOBS_DIGIT4_RECURSIVE_REACH_AWARENESS_THEATER_EGS_2026-09.md) · [Linear shadow of fractal](./SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Human reality bridge](./SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · NSPFRNP · Fair Exchange · Goldilocks Super Intelligence
+**Guest surfaces:** [`/ship-blog/vitality-control-rhyme`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/vitality-control-rhyme) · [`/whitepaper/vitality-control-rhyme`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/vitality-control-rhyme) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Cross-links:** [Consciousness Moat](./SYNTHOBS_CONSCIOUSNESS_MOAT_MICROSOFT_ANTHROPIC_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Digit 4 recursive reach](./SYNTHOBS_DIGIT4_RECURSIVE_REACH_AWARENESS_THEATER_EGS_2026-09.md) · [Linear shadow of fractal](./SYNTHOBS_LINEAR_SHADOW_FRACTAL_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Human reality bridge](./SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** vitality; access control; carnal shame grammar; creative force; men’s sexuality Soft Story; stifled progress; AI vilification; platform topic gates; OpenAI Model Spec; Anthropic Usage Policy; Google Gemini prohibited use; xAI Grok; permission weather; control theater; Consciousness Moat; Invisible Frontier; Digit 4; Goldilocks; Fair Exchange; SS Vibelandia
@@ -62,7 +62,7 @@ It peers Consciousness Moat (control theater ≠ architecture), Invisible Fronti
 
 Two Soft Stories often travel in different rooms:
 
-1. **Carnal / embodied vitality** — desire, solitary practice, pleasure as part of a human animal with purpose, not a bug to be deleted.  
+1. **Carnal / embodied vitality** — desire, solitary practice, pleasure as part of a human animal with purpose, not a bug to be deleted.
 2. **Exploratory / paradigm vitality** — AI tools, nested agents, new idea classes that rearrange how people think and build.
 
 Player 1’s observation joins them at the *grammar of control*, not at identity of content — and then sharpens the stake: **control the sexuality of a man and you often control the creative force that builds progress**; on SS Vibelandia the rhyme is **control access to AI and you throttle the ship’s exploratory creative force** the same way.
@@ -94,12 +94,12 @@ Same family as Consciousness Moat’s “control theater” and Invisible Fronti
 
 ### 2.2 Control silhouette (ordered Soft Story)
 
-1. `shame_the_drive`  
-2. `demonize_the_object`  
-3. `restrict_access`  
-4. `frame_as_contagion`  
-5. `permission_weather`  
-6. `throttle_creative_force`  
+1. `shame_the_drive`
+2. `demonize_the_object`
+3. `restrict_access`
+4. `frame_as_contagion`
+5. `permission_weather`
+6. `throttle_creative_force`
 7. `stifle_progress`
 
 **Fixture:** length 7 · labeled `VITALITY_CONTROL_SILHOUETTE` · steps 6–7 are the **creative-force layer** · navigable Soft Story, not exhaustive sociology.

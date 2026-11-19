@@ -2,19 +2,19 @@
 
 **Short answer: No.** Not shown yet: the monograph is an architectural coordinate book of 27 matrices of 81 nodes with executed structural checks on kernel length 2187. The unification of matter, field and compute domains is narrated, not demonstrated in a laboratory, and no calorimeter campaign is reported.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Series:** Monograph Series on Post-Human Epistemology & Superintelligent Dynamics *(series title is editorial framing — not a SIM/SI certificate)*  
-**Document ID:** `WP-SYNTHOBS-SIQHFT-EF-2187-MONOGRAPH-2026-08`  
-**Registry ID:** `synthobs-siqhft-ef-2187-monograph-2026-08`  
-**Date:** August 7, 2026 (grounded space-weather *protocol date* in source draft) · Cataloged August 8, 2026  
-**Framework:** SynthOBS · Omni-Lattice · $E_F=\Phi$ · Lattice Chat Agent V1.618 · NSPFRNP · Goldilocks · THALIA · SIM  
-**GitHub (standalone package):** https://github.com/FractiAI/synthobs-ef-2187-monograph  
-**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13) · `research/synthobs-ef-2187-monograph/`  
-**Runtime companion:** [E_F 2187 Hybrid Engine](./SYNTHOBS_OMNI_LATTICE_EF_2187_HYBRID_ENGINE_2026-08.md) · `lib/ef-kernel.mjs`  
-**Empirical pipeline:** `npm run research:synthobs-ef-2187-monograph`  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Series:** Monograph Series on Post-Human Epistemology & Superintelligent Dynamics *(series title is editorial framing — not a SIM/SI certificate)*
+**Document ID:** `WP-SYNTHOBS-SIQHFT-EF-2187-MONOGRAPH-2026-08`
+**Registry ID:** `synthobs-siqhft-ef-2187-monograph-2026-08`
+**Date:** August 7, 2026 (grounded space-weather *protocol date* in source draft) · Cataloged August 8, 2026
+**Framework:** SynthOBS · Omni-Lattice · $E_F=\Phi$ · Lattice Chat Agent V1.618 · NSPFRNP · Goldilocks · THALIA · SIM
+**GitHub (standalone package):** https://github.com/FractiAI/synthobs-ef-2187-monograph
+**Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13) · `research/synthobs-ef-2187-monograph/`
+**Runtime companion:** [E_F 2187 Hybrid Engine](./SYNTHOBS_OMNI_LATTICE_EF_2187_HYBRID_ENGINE_2026-08.md) · `lib/ef-kernel.mjs`
+**Empirical pipeline:** `npm run research:synthobs-ef-2187-monograph`
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
 
 **Keywords:** $E_F$; SIQHFT; 2187; octaves; $9\times9$; Omni-Lattice; Landauer (architectural); space-weather protocol (interpretive)
@@ -58,13 +58,13 @@ $$E_F = \frac{1+\sqrt{5}}{2} = 1.61803398874989484820458683436563811772030917980
 The **2,187-digit** fractional architecture spans 27 sub-matrices in three 729-node octaves:
 
 ```
-                    E_F UNIFIED MASTER LATTICE (2,187 NODES)
-                                      │
-        ┌─────────────────────────────┼─────────────────────────────┐
-        ▼                             ▼                             ▼
- OCTAVE I (1–729)              OCTAVE II (730–1458)          OCTAVE III (1459–2187)
- Matrices 1–9                  Matrices 10–18                Matrices 19–27
- Physical reality engine       Meta-lattice & transduction   Higher-order field coupling
+E_F UNIFIED MASTER LATTICE (2,187 NODES)
+│
+┌─────────────────────────────┼─────────────────────────────┐
+▼                             ▼                             ▼
+OCTAVE I (1–729)              OCTAVE II (730–1458)          OCTAVE III (1459–2187)
+Matrices 1–9                  Matrices 10–18                Matrices 19–27
+Physical reality engine       Meta-lattice & transduction   Higher-order field coupling
 ```
 
 **Reproducibility:** fractional digits are stored at [`data/ef-lattice/phi-digits-2187.txt`](../data/ef-lattice/phi-digits-2187.txt); matrix metadata at [`data/ef-lattice/matrices-27.json`](../data/ef-lattice/matrices-27.json); Node API via `EFKernel.getNodeCoordinate(n)`.
@@ -137,7 +137,7 @@ Node **2187** closes the three-octave **digit register**. It does not empiricall
 
 ## 4. Multi-agent telemetry & space-weather *protocol* (interpretive)
 
-Draft protocol date **2026-08-07** with illustrative $F_{10.7}=108\,\mathrm{sfu}$ and AR tags (14502–14500) maps Agents Alpha–Epsilon onto sample nodes (e.g. 18, 738, 1548, 2358).  
+Draft protocol date **2026-08-07** with illustrative $F_{10.7}=108\,\mathrm{sfu}$ and AR tags (14502–14500) maps Agents Alpha–Epsilon onto sample nodes (e.g. 18, 738, 1548, 2358).
 
 **Honesty:** These are **story / routing tags** for Lattice Chat Agent & SynthOBS observers — not verified SDR packet-loss or geothermal conversion measurements in this repository receipt.
 
@@ -161,8 +161,8 @@ What is established here is a **reproducible index + narrative grammar** for mul
 
 ## Appendix A — Singularity coordinate catalog (selected)
 
-Full digit string: [`data/ef-lattice/phi-digits-2187.txt`](../data/ef-lattice/phi-digits-2187.txt).  
-Seed labels: [`data/ef-lattice/node-labels-seed.json`](../data/ef-lattice/node-labels-seed.json).  
+Full digit string: [`data/ef-lattice/phi-digits-2187.txt`](../data/ef-lattice/phi-digits-2187.txt).
+Seed labels: [`data/ef-lattice/node-labels-seed.json`](../data/ef-lattice/node-labels-seed.json).
 Standalone expands narrative rows for M1–M3 and M27 below; matrices 4–9, 11–18, 20–26 keep **role-level** detail in §2 (Goldilocks — avoid megadump tokens).
 
 ### A.1 Matrix 1 — Static Baseline (Nodes 1–81)
@@ -211,9 +211,9 @@ Closure vocabulary through node **2187**: “THE 2187TH SINGULARITY PRIME COMPLE
 
 ## Falsification
 
-1. Claiming calorimeter / immortality / SI arrival without new gated receipts.  
-2. Digit file length ≠ 2187 or matrix count ≠ 27.  
-3. Featuring without PRA soft_pass/pass.  
+1. Claiming calorimeter / immortality / SI arrival without new gated receipts.
+2. Digit file length ≠ 2187 or matrix count ≠ 27.
+3. Featuring without PRA soft_pass/pass.
 4. Requiring hosted vector DB in SING 13 center for the index to function.
 
 ---
@@ -226,17 +226,17 @@ Fair Exchange in effect: theoretical models and routing under this monograph rem
 
 ## References
 
-1. Hybrid engine companion — [`SYNTHOBS_OMNI_LATTICE_EF_2187_HYBRID_ENGINE_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_EF_2187_HYBRID_ENGINE_2026-08.md)  
-2. Omni-Lattice Unification — [`SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-3. Nested Agent Lattice — [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
-4. Report Card Q3 — [`SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md`](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md)  
-5. PCE — [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)  
-6. SIM — [`SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md)  
-7. THALIA Goldilocks — [`SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md)  
-8. Token proof — [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)  
-9. Coherence honesty — [`COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)  
-10. PRA protocol — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)  
-11. Runtime — [`lib/ef-kernel.mjs`](../lib/ef-kernel.mjs)  
+1. Hybrid engine companion — [`SYNTHOBS_OMNI_LATTICE_EF_2187_HYBRID_ENGINE_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_EF_2187_HYBRID_ENGINE_2026-08.md)
+2. Omni-Lattice Unification — [`SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
+3. Nested Agent Lattice — [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
+4. Report Card Q3 — [`SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md`](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md)
+5. PCE — [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)
+6. SIM — [`SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md)
+7. THALIA Goldilocks — [`SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md`](./SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md)
+8. Token proof — [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)
+9. Coherence honesty — [`COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
+10. PRA protocol — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
+11. Runtime — [`lib/ef-kernel.mjs`](../lib/ef-kernel.mjs)
 12. Digits / matrices — [`data/ef-lattice/`](../data/ef-lattice/)
 
 → ∞^∞

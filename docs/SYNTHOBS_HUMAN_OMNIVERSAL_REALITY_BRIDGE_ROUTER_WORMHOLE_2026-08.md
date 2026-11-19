@@ -4,21 +4,21 @@
 
 Catalog topology · human routing metaphor · Infinite Octaves companion
 
-**Author:** Prudencio Mendez  
-**Affiliation:** FractiAI Research Initiative · Reno, Nevada  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** August 28, 2026  
-**Document ID:** `WP-SYNTHOBS-HUMAN-OMNIVERSAL-REALITY-BRIDGE-2026-08-28`  
-**Registry ID:** `synthobs-human-omniversal-reality-bridge-2026-08`  
-**Publication Ref:** FAI-SYNTHOBS-HUMAN-REALITY-BRIDGE-2026-08  
-**Series Position:** Infinite Octaves Omniversal · human bridge / router grammar  
+**Author:** Prudencio Mendez
+**Affiliation:** FractiAI Research Initiative · Reno, Nevada
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** August 28, 2026
+**Document ID:** `WP-SYNTHOBS-HUMAN-OMNIVERSAL-REALITY-BRIDGE-2026-08-28`
+**Registry ID:** `synthobs-human-omniversal-reality-bridge-2026-08`
+**Publication Ref:** FAI-SYNTHOBS-HUMAN-REALITY-BRIDGE-2026-08
+**Series Position:** Infinite Octaves Omniversal · human bridge / router grammar
 **Classification:** Theoretical / catalog *topology* · narrative routing metaphor *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge  
-**Standalone suite:** [FractiAI/synthobs-human-omniversal-reality-bridge](https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge) · monorepo [`research/synthobs-human-omniversal-reality-bridge/`](../research/synthobs-human-omniversal-reality-bridge/)  
-**Guest surfaces:** [`/ship-blog/human-reality-bridge`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/human-reality-bridge) · [`/`](https://www.ssvibelandiaquestfest24x365.com/) (museum placard · bridge/router copy)  
-**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge
+**Standalone suite:** [FractiAI/synthobs-human-omniversal-reality-bridge](https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge) · monorepo [`research/synthobs-human-omniversal-reality-bridge/`](../research/synthobs-human-omniversal-reality-bridge/)
+**Guest surfaces:** [`/ship-blog/human-reality-bridge`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/human-reality-bridge) · [`/`](https://www.ssvibelandiaquestfest24x365.com/) (museum placard · bridge/router copy)
+**Engine pin:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** human reality bridge; cognitive router; biological wormhole; EGS; $\Phi_{\mathrm{EGS}}$; infinite octaves; Default Mode Network; Lattice Chat; Fair Exchange

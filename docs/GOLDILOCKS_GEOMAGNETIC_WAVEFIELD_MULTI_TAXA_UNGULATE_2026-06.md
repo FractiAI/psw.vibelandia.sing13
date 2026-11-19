@@ -2,11 +2,11 @@
 
 **Short answer: Yes**, as Goldilocks geomagnetic wavefield filing for multi-taxa corridors: Prefer public magnetometer and Movebank-style tracks when the receipt names them; otherwise treat as catalog.
 
-**Author:** Prudencio "Pru" Mendez, Lead Systems Architect  
-**Framework:** Goldilocks AIOS (v24.365) / SynthOBS Matrix Core  
-**Document ID:** WP-GGM-MULTITAXA-UNGULATE-2026-06  
-**Status:** Operational Run Lock [Until Further Notice]  
-**Companion:** [TURNER_KRUSE_RESPONSE_WHITEPAPER.md](./TURNER_KRUSE_RESPONSE_WHITEPAPER.md) · [GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md](./GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md)  
+**Author:** Prudencio "Pru" Mendez, Lead Systems Architect
+**Framework:** Goldilocks AIOS (v24.365) / SynthOBS Matrix Core
+**Document ID:** WP-GGM-MULTITAXA-UNGULATE-2026-06
+**Status:** Operational Run Lock [Until Further Notice]
+**Companion:** [TURNER_KRUSE_RESPONSE_WHITEPAPER.md](./TURNER_KRUSE_RESPONSE_WHITEPAPER.md) · [GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md](./GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md)
 **Live surfaces:** `/special-projects/geomagnetic-herbivore-study` · `/special-projects/turner-bison-herd-management` · `/api/turner-recent-anomaly-report`
 
 ---
@@ -77,21 +77,21 @@ The SynthOBS framework completely inverts this paradigm. Megafauna are not passi
 |               COSMIC HYDROGEN SOLAR CONDUIT                 |
 |             (146-147 sfu Elevated Radio Baseline)            |
 +-------------------------------------------------------------+
-                              │
-                              ▼
+│
+▼
 +-------------------------------------------------------------+
 |          EL GRAN SOL'S FRACTAL CONSTANT (EGS = 1.618)       |
 |            Master Downstepping Geometric Template           |
 +-------------------------------------------------------------+
-                              │
-                              ▼
+│
+▼
 +-------------------------------------------------------------+
 |             PLANETARY GEOMAGNETIC MATRIX CORE               |
 |            (Magnetopause Deflection / G3 Storm)             |
 +-------------------------------------------------------------+
-                              │
-          ┌───────────────────┼───────────────────┐
-          ▼                   ▼                   ▼
+│
+┌───────────────────┼───────────────────┐
+▼                   ▼                   ▼
 +-------------------+ +-------------------+ +-------------------+
 |   PLAINS BISON    | |  MULE DEER & ELK  | |PRONGHORN ANTELOPE |
 |  N-S Axis Anchor  | |Fault-Line Tracker | |  Lateral Vector   |
@@ -112,7 +112,7 @@ To maintain complete analytical independence, the SynthOBS Wavefield Reconstruct
 ### 1. Telemetry registries ingested
 
 - **Movebank Data Repository:** Active, open-access wildlife telemetry projects tracking long-term herd movements across the Great Plains and intermountain west.
-- **Data.gov / USGS Northern Prairie Wildlife Research Center:** Publicly accessible geospatial databases providing compiled .shapefile outputs, raster boundary bands, and raw GPS collar coordinates logged at 15-minute and 1-hour intervals.
+- **Data.gov / USGS Northern Prairie Wildlife Research Center:** Publicly accessible geospatial databases providing compiled.shapefile outputs, raster boundary bands, and raw GPS collar coordinates logged at 15-minute and 1-hour intervals.
 - **USGS Western Ungulate Migration Project (Volume 6):** Peer-reviewed migration corridor maps compiled by state, federal, and tribal agencies — definitive spatial tracks of western big game herds.
 
 ### 2. Processing pipeline
@@ -161,14 +161,14 @@ The multi-taxa re-execution of the migratory grid paper yields an absolute opera
 |         REAL-TIME DATA DISCOVERY NODE (IMG_2071.jpg)          |
 |      "A Historic Return: Bison as Ecosystem Engineers"        |
 +---------------------------------------------------------------+
-                                │
-                                ▼
+│
+▼
 +---------------------------------------------------------------+
 |             CARBON AWARENESS DEPLOYMENT (Φ^-81)               |
 |      Downsteps planetary grid data into physical execution    |
 +---------------------------------------------------------------+
-                                │
-                                ▼
+│
+▼
 +---------------------------------------------------------------+
 |             THE ZERO-ENTROPY PORTAL GATEWAY                   |
 |     Bypasses silicon infrastructure for absolute abundance    |
@@ -210,7 +210,7 @@ A fair exchange clause is permanently in effect for all sessions under this dire
 
 ---
 
-**Pru Mendez** · info@fractiai.com  
+**Pru Mendez** · info@fractiai.com
 
 *NSPFRNP fidelity · SynthOBS wavefield tier + empirical collar tier + Turner Phase 1 honesty · → ∞^∞*
 
@@ -218,10 +218,10 @@ A fair exchange clause is permanently in effect for all sessions under this dire
 
 ## SynthOBS operator & PRA Snap audit
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** WP-GGM-MULTITAXA-UNGULATE-2026-06  
-**Registry ID:** `goldilocks-geomagnetic-wavefield-multitaxa`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** WP-GGM-MULTITAXA-UNGULATE-2026-06
+**Registry ID:** `goldilocks-geomagnetic-wavefield-multitaxa`
 **Re-audit:** `npm run audit:paper -- --id=goldilocks-geomagnetic-wavefield-multitaxa`
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

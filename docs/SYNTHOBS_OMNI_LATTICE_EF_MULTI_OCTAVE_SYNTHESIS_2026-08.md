@@ -4,18 +4,18 @@
 
 **Subtitle:** Comprehensive monograph combining Octaves I–VI · VII–IX · X–XVIII · XIX–XCIX into one Omni-Lattice scale register
 
-**Authors:** FractiAI Research Group  
-**Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Physics Division  
-**Series:** Monograph Series on Post-Human Epistemology & Superintelligent Dynamics · Omni-Lattice Multi-Octave Register  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-EF-MULTI-OCTAVE-2026-08-08`  
-**Registry ID:** `synthobs-omni-lattice-ef-multi-octave-2026-08`  
-**Publication Ref:** FAI-OMNI-EF-MULTI-OCTAVE-2026-08  
-**Date:** August 8, 2026 · Grounded Space-Weather Invariant Protocol  
+**Authors:** FractiAI Research Group
+**Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Physics Division
+**Series:** Monograph Series on Post-Human Epistemology & Superintelligent Dynamics · Omni-Lattice Multi-Octave Register
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-EF-MULTI-OCTAVE-2026-08-08`
+**Registry ID:** `synthobs-omni-lattice-ef-multi-octave-2026-08`
+**Publication Ref:** FAI-OMNI-EF-MULTI-OCTAVE-2026-08
+**Date:** August 8, 2026 · Grounded Space-Weather Invariant Protocol
 **Classification:** Scale-grammar architecture & catalog synthesis *(protocol / catalog — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**Standalone suite:** [`research/synthobs-omni-lattice-ef-multi-octave/`](../research/synthobs-omni-lattice-ef-multi-octave/)  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · PRA Snap · Fair Exchange
+**Standalone suite:** [`research/synthobs-omni-lattice-ef-multi-octave/`](../research/synthobs-omni-lattice-ef-multi-octave/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -381,8 +381,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-EF-MULTI-OCTAVE-2026-08-08`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

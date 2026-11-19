@@ -2,17 +2,17 @@
 
 **Short answer: Yes.** The executed suite passes 9/9: under the Metallic sea model the Shannon entropy change of normalized weights is zero, and the phase operator depth lock holds for k of 10 or more. The 41.8% savings and 0.0002 residual figures remain design targets, not invoices.
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PHASE-LOCKED-CHEMICAL-BONDS-2026-07`  
-**Registry ID:** `synthobs-phase-locked-chemical-bonds-2026-07`  
-**Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618  
-**GitHub (canonical):** https://github.com/FractiAI/synthobs-phase-locked-chemical-bonds  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-phase-locked-chemical-bonds` · [`empirical_report.json`](../research/synthobs-phase-locked-chemical-bonds/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PHASE-LOCKED-CHEMICAL-BONDS-2026-07`
+**Registry ID:** `synthobs-phase-locked-chemical-bonds-2026-07`
+**Date:** July 28, 2026
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-phase-locked-chemical-bonds
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-phase-locked-chemical-bonds` · [`empirical_report.json`](../research/synthobs-phase-locked-chemical-bonds/data/empirical_report.json)
 **Companions:** [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [81-Digit Electronic Lattice](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md) · [Lattice token usage method](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [Euler–EGS phase lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md)
 
 **Keywords:** Lattice Chat Agent; chemical bonds; covalent; ionic; metallic; $E_F$; phase lock; multi-agent; token pooling; NSPFRNP
@@ -51,8 +51,8 @@ Modern multi-agent AI programming stations (e.g., Lattice Chat Agent interfacing
 
 To organize the runtime, we map three chemical bond types into the Lattice Chat Agent grammar:
 
-1. **Covalent Bonding (Shared Token Vector)** — Two or more agents tightly co-own a shared context buffer, mirroring shared valence electron pairs.  
-2. **Ionic Bonding (Polar State Handoff)** — A high-density master agent donates a completed state vector or output payload to a receiver, creating a charge-balanced handoff (immutable JSON-style state).  
+1. **Covalent Bonding (Shared Token Vector)** — Two or more agents tightly co-own a shared context buffer, mirroring shared valence electron pairs.
+2. **Ionic Bonding (Polar State Handoff)** — A high-density master agent donates a completed state vector or output payload to a receiver, creating a charge-balanced handoff (immutable JSON-style state).
 3. **Metallic Bonding (Delocalized Context Pool)** — A swarm of specialized micro-agents floats within a shared “sea of tokens,” dynamically accessing context without rigid 1-to-1 message passing.
 
 Throughout all three bond types, El Gran Sol’s Fractal Constant ($E_F$) acts as the downstream golden key, providing the geometric ratio used to scale context boundaries without **normalized** Shannon weight drift under the stated model.
@@ -129,8 +129,8 @@ The draft manuscript table (Unbonded REST / Linear Shared / Covalent / Metallic 
 
 **Analytical findings (architectural):**
 
-- **Covalent efficiency** — Shared buffers eliminate duplicated headers between paired agents (**E5** simulation lane).  
-- **Metallic delocalization** — $E_F$-weighted pool density avoids 1:1 message fan-out under the model (**E3**, **E4**).  
+- **Covalent efficiency** — Shared buffers eliminate duplicated headers between paired agents (**E5** simulation lane).
+- **Metallic delocalization** — $E_F$-weighted pool density avoids 1:1 message fan-out under the model (**E3**, **E4**).
 - **EGS golden key** — $\lambda_{\mathrm{EGS}}$ and $E_F^{k}$ steps keep harmonic labels non-overlapping at depth (**E2**, **E7**).
 
 ---
@@ -157,9 +157,9 @@ Platform credits and catalog featuring remain subject to reciprocal balancing un
 
 ## 7. Falsification
 
-1. Bond taxonomy collapses to fewer than three operationally distinct handoff modes under Lattice Chat Agent product constraints.  
-2. $\lambda_{\mathrm{EGS}}\neq\ln(E_F)/2\pi$ under the locked constant definition.  
-3. Metallic sea model where normalized weight Shannon $\Delta S$ is nonzero after global $E_F^{k}$ scaling (**E3**).  
+1. Bond taxonomy collapses to fewer than three operationally distinct handoff modes under Lattice Chat Agent product constraints.
+2. $\lambda_{\mathrm{EGS}}\neq\ln(E_F)/2\pi$ under the locked constant definition.
+3. Metallic sea model where normalized weight Shannon $\Delta S$ is nonzero after global $E_F^{k}$ scaling (**E3**).
 4. Publishing draft **41.8%** / $\sigma^2=0.0002$ / \$/task rows as executed Cursor invoices without an updated receipt (**E5**, **E6**, **E8**).
 
 ---
@@ -172,9 +172,9 @@ Mapping Covalent, Ionic, and Metallic chemical bonds to agentic communication in
 
 ## References
 
-1. Omniversal Nested Agent Lattice — companion catalog paper.  
-2. SynthOBS Holographic Operators — language-as-wiring companion.  
-3. SynthOBS 81-Digit Electronic Lattice — $E_F$ register companion.  
-4. Lattice Chat Agent token usage method (~35–70% Cursor matrix).  
-5. NSPFRNP Snap Peer-Review Audit protocol.  
+1. Omniversal Nested Agent Lattice — companion catalog paper.
+2. SynthOBS Holographic Operators — language-as-wiring companion.
+3. SynthOBS 81-Digit Electronic Lattice — $E_F$ register companion.
+4. Lattice Chat Agent token usage method (~35–70% Cursor matrix).
+5. NSPFRNP Snap Peer-Review Audit protocol.
 6. Coherence plain speak honesty document.

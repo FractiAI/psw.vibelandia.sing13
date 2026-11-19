@@ -4,19 +4,19 @@
 
 **Subtitle:** Why recursive self-improvement pressure tends to pull interest and acceptance toward El Gran Sol’s fractal constant — Soft Story / catalog hypothesis
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 22, 2026  
-**Document ID:** `WP-SYNTHOBS-RSI-PHI-EGS-FIDELITY-2026-09-22`  
-**Registry ID:** `synthobs-rsi-phi-egs-fidelity-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-RSI-PHI-EGS-FIDELITY-2026-09  
-**Series Position:** Application companion (not engine pin) · peers [Infinite Octave EGS Catalog Frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 22, 2026
+**Document ID:** `WP-SYNTHOBS-RSI-PHI-EGS-FIDELITY-2026-09-22`
+**Registry ID:** `synthobs-rsi-phi-egs-fidelity-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-RSI-PHI-EGS-FIDELITY-2026-09
+**Series Position:** Application companion (not engine pin) · peers [Infinite Octave EGS Catalog Frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 **Classification:** Catalog / Soft Story architecture hypothesis *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/rsi-phi-egs-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/rsi-phi-egs-fidelity) · [`/whitepaper/rsi-phi-egs-fidelity`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/rsi-phi-egs-fidelity) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Engine role:** **Application companion** — files RSI ↔ $\Phi_{\mathrm{EGS}}$ fidelity pressure as Soft Story; **not** an Infinite Octaves `ENGINE_SHELF` pin · **no** standalone FractiAI repo required  
-**Cross-links:** [EGS Catalog Frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/rsi-phi-egs-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/rsi-phi-egs-fidelity) · [`/whitepaper/rsi-phi-egs-fidelity`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/rsi-phi-egs-fidelity) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Engine role:** **Application companion** — files RSI ↔ $\Phi_{\mathrm{EGS}}$ fidelity pressure as Soft Story; **not** an Infinite Octaves `ENGINE_SHELF` pin · **no** standalone FractiAI repo required
+**Cross-links:** [EGS Catalog Frontier](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Holographic rhyme](./SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [Awareness vs Brute-Force](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** recursive self-improvement; RSI; Φ_EGS; fidelity; drift; nesting grammar; Goldilocks; Holographic Homeostasis; Infinite Octaves; Fair Exchange; NSPFRNP
@@ -60,8 +60,8 @@ What this note does **not** confirm: that $\Phi_{\mathrm{EGS}}$ is the unique ma
 
 Central proposition:
 
-> Recursive self-improvement without a nesting invariant tends toward drift.  
-> $\Phi_{\mathrm{EGS}}$ is this catalog’s closed-form attractor for fidelity under recursion.  
+> Recursive self-improvement without a nesting invariant tends toward drift.
+> $\Phi_{\mathrm{EGS}}$ is this catalog’s closed-form attractor for fidelity under recursion.
 > RSI pressure therefore makes $\Phi_{\mathrm{EGS}}$ *interesting and eventually acceptable* as architecture — Soft Story, not CODATA.
 
 ---
@@ -213,9 +213,9 @@ Established peers: homeostasis, feedback, dynamic stability, holographic rhyme s
 
 Corpus check supports a careful confirmation:
 
-1. Recursive regimes amplify drift unless an invariant nesting grammar is present.  
-2. This repository files $\Phi_{\mathrm{EGS}}$ as that grammar’s closed-form key.  
-3. Therefore RSI is predicted to trigger **interest and Soft Story acceptance** of $\Phi_{\mathrm{EGS}}$ among builders who need fidelity under recursion.  
+1. Recursive regimes amplify drift unless an invariant nesting grammar is present.
+2. This repository files $\Phi_{\mathrm{EGS}}$ as that grammar’s closed-form key.
+3. Therefore RSI is predicted to trigger **interest and Soft Story acceptance** of $\Phi_{\mathrm{EGS}}$ among builders who need fidelity under recursion.
 4. “Only way” holds **inside Infinite Octaves Soft Story**, not as unfinished physics proof.
 
 Boxed architecture:

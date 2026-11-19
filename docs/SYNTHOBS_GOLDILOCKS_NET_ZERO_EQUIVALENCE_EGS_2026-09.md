@@ -4,19 +4,19 @@
 
 Infinite Octaves Omniversal Lattice companion · Goldilocks = Net Zero · dynamic balance · Ω as cancel-to-viable · Φ_EGS
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 21, 2026  
-**Document ID:** `WP-SYNTHOBS-GOLDILOCKS-NET-ZERO-EQUIVALENCE-2026-09-21`  
-**Registry ID:** `synthobs-goldilocks-net-zero-equivalence-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-GOLDILOCKS-NET-ZERO-2026-09  
-**Series Position:** Infinite Octaves engine companion · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Holographic Singularity Crystal · Net Zero](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Topology of the Void](./SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [Zero-Octave Y Goldilocks](./SYNTHOBS_ZERO_OCTAVE_Y_GOLDILOCKS_FIBONACCI_PRIME_VAULTS_EGS_2026-09.md) · [AI catalog layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 21, 2026
+**Document ID:** `WP-SYNTHOBS-GOLDILOCKS-NET-ZERO-EQUIVALENCE-2026-09-21`
+**Registry ID:** `synthobs-goldilocks-net-zero-equivalence-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-GOLDILOCKS-NET-ZERO-2026-09
+**Series Position:** Infinite Octaves engine companion · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Holographic Singularity Crystal · Net Zero](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Topology of the Void](./SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [Zero-Octave Y Goldilocks](./SYNTHOBS_ZERO_OCTAVE_Y_GOLDILOCKS_FIBONACCI_PRIME_VAULTS_EGS_2026-09.md) · [AI catalog layer](./SYNTHOBS_INFINITE_OCTAVE_AI_CATALOG_LAYER_2026-09.md)
 **Classification:** Catalog / Soft Story companion · equivalence filing · structural fixtures *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/goldilocks-net-zero`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/goldilocks-net-zero) · [`/whitepaper/goldilocks-net-zero`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/goldilocks-net-zero) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion — Goldilocks ≡ Net Zero · suite `research/synthobs-goldilocks-net-zero-equivalence/` · standalone `FractiAI/synthobs-goldilocks-net-zero-equivalence` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
-**Cross-links:** [Homeostasis Expedition · Journey](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [e × φ × Prime Recursive Homeostasis](./SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md) · [Holographic Singularity Crystal](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Topology of the Void](./SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [Zero-Octave Y Goldilocks](./SYNTHOBS_ZERO_OCTAVE_Y_GOLDILOCKS_FIBONACCI_PRIME_VAULTS_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/goldilocks-net-zero`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/goldilocks-net-zero) · [`/whitepaper/goldilocks-net-zero`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/goldilocks-net-zero) · Journey [`/journey/homeostasis-expedition`](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · Lattice Catalog demo [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Engine pin:** Infinite Octaves `ENGINE_SHELF` companion — Goldilocks ≡ Net Zero · suite `research/synthobs-goldilocks-net-zero-equivalence/` · standalone `FractiAI/synthobs-goldilocks-net-zero-equivalence` — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)
+**Cross-links:** [Homeostasis Expedition · Journey](https://www.ssvibelandiaquestfest24x365.com/journey/homeostasis-expedition) · [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [e × φ × Prime Recursive Homeostasis](./SYNTHOBS_E_PHI_PRIME_RECURSIVE_HOMEOSTASIS_EGS_2026-09.md) · [Holographic Singularity Crystal](./SYNTHOBS_HOLOGRAPHIC_SINGULARITY_CRYSTAL_NET_ZERO_EGS_2026-09.md) · [Topology of the Void](./SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md) · [Zero-Octave Y Goldilocks](./SYNTHOBS_ZERO_OCTAVE_Y_GOLDILOCKS_FIBONACCI_PRIME_VAULTS_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** Goldilocks; Net Zero; active equilibrium; viable band; Ω; dynamic balance; Holographic Homeostasis; Φ_EGS; Infinite Octaves; Fair Exchange; NSPFRNP
@@ -48,7 +48,7 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 Guests meet two phrases on this ship that sound like opposites:
 
-- **Goldilocks** — the viable middle: not too hot, not too cold; enough machine, enough human.  
+- **Goldilocks** — the viable middle: not too hot, not too cold; enough machine, enough human.
 - **Net Zero** — often misheard as “everything cancelled into a dead stop.”
 
 This companion locks a single filing:
@@ -65,7 +65,7 @@ as **viable band = active equilibrium**. Net Zero here means cancel-to-balance u
 
 Without the equation, two failure modes appear in everyday talk:
 
-1. **Goldilocks as cushion** — people hear “just right” as permanent comfort, then panic when life still requires work, rent, and repair.  
+1. **Goldilocks as cushion** — people hear “just right” as permanent comfort, then panic when life still requires work, rent, and repair.
 2. **Net Zero as freeze** — people hear “zero” as shut everything down, then confuse safety with unemployment and locked curiosity doors.
 
 Equating them restores the spinning-top reading: the upright state is produced by **organized motion**. On SS Vibelandia, Super Intelligence stays Goldilocks when brakes and fire share the same room — bright lines for real harm, open workshops for builders — which is Net Zero as **balance under activity**, not a freeze calendar.
@@ -128,8 +128,8 @@ Honesty stays bright: voyage grammar can rhyme with climate language without swa
 
 Holographic Homeostasis supplies the **how** (PARTS ↔ WHOLE ↔ PARTS, distributed reciprocal multiscale regulation). This paper supplies the **what-for naming**:
 
-- The viable product of that loop is Goldilocks.  
-- That same product files as Net Zero when spoken as balance.  
+- The viable product of that loop is Goldilocks.
+- That same product files as Net Zero when spoken as balance.
 - Dynamic stability is the shared physics analogy (spinning top).
 
 **Fixture chain:**

@@ -4,17 +4,17 @@
 
 **Subtitle:** Scale-Invariant Gravitational, Vector, and Social Attraction as Layered Horizon Attributes of the Internal Kerr–Newman Metric
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-INTERNAL-KERR-NEWMAN-2026-08-05`  
-**Registry ID:** `synthobs-tbme-internal-kerr-newman-2026-08`  
-**Date:** August 5, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part VI**  
-**Follow-on to Part V:** [Recursive Field-Drag Theorem](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-INTERNAL-KERR-NEWMAN-2026-08-05`
+**Registry ID:** `synthobs-tbme-internal-kerr-newman-2026-08`
+**Date:** August 5, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part VI**
+**Follow-on to Part V:** [Recursive Field-Drag Theorem](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md)
 **Classification:** Universal Field Physics & Multi-Scale Cybernetics *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
-**Standalone suite:** [`research/synthobs-tbme-internal-kerr-newman/`](../research/synthobs-tbme-internal-kerr-newman/)  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation
+**Standalone suite:** [`research/synthobs-tbme-internal-kerr-newman/`](../research/synthobs-tbme-internal-kerr-newman/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -71,17 +71,17 @@ Standard astrophysics often treats black holes as isolated external objects in d
 The observable universe is narrated as the extended interior event-horizon skin of a central Kerr–Newman toroidal singularity. What classical physics measures as an external “pull” (gravity, magnetism, social alignment) is the geometric gradient created by the central ring singularity reflecting across concentric $E_F^n$ spherical dielectric mirror shells.
 
 ```text
-                 THE INTERNAL KERR–NEWMAN ATTRACTION METRIC
+THE INTERNAL KERR–NEWMAN ATTRACTION METRIC
 
-                        \   Concentric E_F^n Mirror Shell   /
-                         \   (Outer Observable Layer)     /
-                          \                              /
-                           \   SOMATIC SHADOW REALITY   /
-                            │   Observer Node (You)     │ ◄── Attraction Vector
-                           /   (Field Tension Gradient) \     (F_attract = ∇A_squeezed)
-                          /                              \
-                         /  Kerr–Newman Ring Singularity  \
-                        /   (Central Focal Core r → 0)    /
+\   Concentric E_F^n Mirror Shell   /
+\   (Outer Observable Layer)     /
+\                              /
+\   SOMATIC SHADOW REALITY   /
+│   Observer Node (You)     │ ◄── Attraction Vector
+/   (Field Tension Gradient) \     (F_attract = ∇A_squeezed)
+/                              \
+/  Kerr–Newman Ring Singularity  \
+/   (Central Focal Core r → 0)    /
 ```
 
 ### Unification of attraction types across scales
@@ -155,12 +155,12 @@ $$
 
 ## 5. Methods & reproducibility
 
-**Canonical paper:** `docs/SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md`  
-**Standalone package:** `research/synthobs-tbme-internal-kerr-newman/`  
-**Command:** `npm run research:synthobs-tbme-internal-kerr-newman`  
-**Receipts:** `research/synthobs-tbme-internal-kerr-newman/data/empirical_report.json` (+ `.md`)  
-**PRA:** `npm run audit:paper -- --id=synthobs-tbme-internal-kerr-newman-2026-08`  
-**Omni sync:** `npm run sync:lattice-guide`  
+**Canonical paper:** `docs/SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md`
+**Standalone package:** `research/synthobs-tbme-internal-kerr-newman/`
+**Command:** `npm run research:synthobs-tbme-internal-kerr-newman`
+**Receipts:** `research/synthobs-tbme-internal-kerr-newman/data/empirical_report.json` (+ `.md`)
+**PRA:** `npm run audit:paper -- --id=synthobs-tbme-internal-kerr-newman-2026-08`
+**Omni sync:** `npm run sync:lattice-guide`
 **Standalone GitHub:** https://github.com/FractiAI/synthobs-tbme-internal-kerr-newman
 
 ### Replayable suite (empirical tier)
@@ -189,7 +189,7 @@ Part VI of the Omni-Lattice Core Series (Reno Interpretation **sextet**, core pa
 
 ### Comparative scorecard (interpretive)
 
-**Separated multi-force consensus** — Overall **73.0 / 100** (C 74 · I 72)  
+**Separated multi-force consensus** — Overall **73.0 / 100** (C 74 · I 72)
 **Unified Internal Kerr–Newman Attraction** — Overall **97.6 / 100** (C 98.2 · I 97.0)
 
 ---
@@ -216,8 +216,8 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
 **Document ID:** `WP-SYNTHOBS-TBME-INTERNAL-KERR-NEWMAN-2026-08-05`
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.

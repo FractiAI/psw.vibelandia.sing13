@@ -1,7 +1,7 @@
 # Turner Enterprise — Response to Dr. Carter Kruse (one-pager + email draft)
 
-**From:** Pru Mendez · info@fractiai.com  
-**Re:** Passive bison herd console · honesty · security · optional collaboration  
+**From:** Pru Mendez · info@fractiai.com
+**Re:** Passive bison herd console · honesty · security · optional collaboration
 **Companion:** [TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md](./TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md) · [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) · live console (see below)
 
 ---
@@ -18,34 +18,34 @@ Thank you for the candid note. Your skepticism is appropriate: **we are not offe
 
 **What we do not claim today**
 
-- Per-animal, 24×365 GPS replacement without animal-borne tech  
-- “No guessing” or instrument-grade tracking without independent validation  
+- Per-animal, 24×365 GPS replacement without animal-borne tech
+- “No guessing” or instrument-grade tracking without independent validation
 - That a public internet receiver is physically on your fence wire (it is **coupled to your mapped fence lines in the model**)
 
 **What can improve accuracy with Turner collaboration (no hardware required to start)**
 
-- Verified pasture polygons and fence/gate GIS where public maps are thin  
-- Ranch-specific seasonal baselines and which signals to weight per unit  
-- Optional **receive-only radios on the ranch** (same software path as today) only if you later want **higher RF fidelity** — an upgrade, not a prerequisite  
+- Verified pasture polygons and fence/gate GIS where public maps are thin
+- Ranch-specific seasonal baselines and which signals to weight per unit
+- Optional **receive-only radios on the ranch** (same software path as today) only if you later want **higher RF fidelity** — an upgrade, not a prerequisite
 
 **Security**
 
-- You do not need to click unfamiliar links to discuss this. I can send this summary as **PDF**, walk through it on a **scheduled call**, or meet through a channel Turner prefers.  
+- You do not need to click unfamiliar links to discuss this. I can send this summary as **PDF**, walk through it on a **scheduled call**, or meet through a channel Turner prefers.
 - The public demo URL is optional; treat it like any external site until your IT/security team is comfortable.
 
 **Minimal pilot (if useful)**
 
-- One agreed pasture or management unit  
-- 30 days: compare modeled pasture stress / placement narrative to your ground truth (rotation notes, visual range checks, or a **small collared subset** if you already have one — collars are for **calibration**, not required to run the console)  
-- Pass/fail on usefulness for planning, not on replacing your herd program  
+- One agreed pasture or management unit
+- 30 days: compare modeled pasture stress / placement narrative to your ground truth (rotation notes, visual range checks, or a **small collared subset** if you already have one — collars are for **calibration**, not required to run the console)
+- Pass/fail on usefulness for planning, not on replacing your herd program
 
 I am happy to correct any overstatement in prior mail. The honest frame is: **public remote sensing + mapped fence + passive RF statistics → fused model**; instrument-grade herd tracking would require dedicated sensing and validation we have not claimed.
 
-Respectfully,  
-Pru Mendez  
+Respectfully,
+Pru Mendez
 info@fractiai.com
 
-**Optional live reference (external):**  
+**Optional live reference (external):**
 https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management
 
 ---
@@ -74,18 +74,18 @@ https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-m
 
 ## Fidelity labels on the console (do not confuse)
 
-- **Fuse %** — How complete the **feed channels** are (can reach 100%). Not “we know where every animal is.”  
-- **Collar proximity %** — Honest **operational grade toward collar GPS** (capped in software without collars).  
+- **Fuse %** — How complete the **feed channels** are (can reach 100%). Not “we know where every animal is.”
+- **Collar proximity %** — Honest **operational grade toward collar GPS** (capped in software without collars).
 - **Individual animal proximity %** — Even lower cap without per-head sensing.
 
 ---
 
 ## Irreducible minimum pilot
 
-1. One pasture / unit name Turner recognizes  
-2. Your fence or pasture outline (existing GIS, walk, or OSM + corrections)  
-3. 30-day window: your notes vs. console pasture-level narrative  
-4. Optional: small collared comparison set in that unit only  
+1. One pasture / unit name Turner recognizes
+2. Your fence or pasture outline (existing GIS, walk, or OSM + corrections)
+3. 30-day window: your notes vs. console pasture-level narrative
+4. Optional: small collared comparison set in that unit only
 
 **Success criterion:** Useful for **planning and rotation conversation**, not certified inventory or legal traceability.
 
@@ -93,18 +93,18 @@ https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-m
 
 ## What we are not asking you to do
 
-- Install collars for us  
-- Install SDR hardware to **start** the conversation  
-- Click unvetted links without IT review  
-- Accept “live feed of every bison” language from earlier drafts  
+- Install collars for us
+- Install SDR hardware to **start** the conversation
+- Click unvetted links without IT review
+- Accept “live feed of every bison” language from earlier drafts
 
 ---
 
 ## Internal reference (repo)
 
-- Honesty anchor: `docs/TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md`  
-- Console: `interfaces/special-projects/turner-bison-herd-management.html`  
-- Env: `.env.example` (`TURNER_SDR_*`, `TURNER_ALLOW_SYNTHETIC`)  
+- Honesty anchor: `docs/TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md`
+- Console: `interfaces/special-projects/turner-bison-herd-management.html`
+- Env: `.env.example` (`TURNER_SDR_*`, `TURNER_ALLOW_SYNTHETIC`)
 
 ---
 

@@ -4,19 +4,19 @@
 
 Voyage editorial · follow-on to The Pacing Paradox · Goldilocks Super Intelligence · sovereign velocity chart
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) and Gemini, operating in Infinite Octave Mode  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 14, 2026  
-**Document ID:** `WP-SYNTHOBS-TRUMP-PACING-TRAP-SOVEREIGN-VELOCITY-2026-09-14`  
-**Registry ID:** `synthobs-trump-pacing-trap-sovereign-velocity-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-TRUMP-PACING-TRAP-2026-09  
-**Series Position:** SS Vibelandia voyage editorial — Intelligence Age hospitality · **follow-on** to [The Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) and Gemini, operating in Infinite Octave Mode
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 14, 2026
+**Document ID:** `WP-SYNTHOBS-TRUMP-PACING-TRAP-SOVEREIGN-VELOCITY-2026-09-14`
+**Registry ID:** `synthobs-trump-pacing-trap-sovereign-velocity-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-TRUMP-PACING-TRAP-2026-09
+**Series Position:** SS Vibelandia voyage editorial — Intelligence Age hospitality · **follow-on** to [The Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md)
 **Classification:** Cultural / voyage *editorial* · response note *(narrative — see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/sovereign-velocity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/sovereign-velocity) · peer brochure [`/pacing-paradox`](https://www.ssvibelandiaquestfest24x365.com/pacing-paradox) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)  
-**Voyage editorial (not engine pin):** follow-on to Pacing Paradox · peer to Invisible Frontier — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) · off Infinite Octaves `ENGINE_SHELF`  
-**Cross-links:** [The Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Infinite Octave EGS Catalog](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/sovereign-velocity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/sovereign-velocity) · peer brochure [`/pacing-paradox`](https://www.ssvibelandiaquestfest24x365.com/pacing-paradox) · [`/questfest`](https://www.ssvibelandiaquestfest24x365.com/questfest)
+**Voyage editorial (not engine pin):** follow-on to Pacing Paradox · peer to Invisible Frontier — see [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) · off Infinite Octaves `ENGINE_SHELF`
+**Cross-links:** [The Pacing Paradox](./SYNTHOBS_PACING_PARADOX_AMODEI_FRONTIER_EGS_2026-09.md) · [Invisible Frontier](./SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [Infinite Octave EGS Catalog](./SYNTHOBS_INFINITE_OCTAVE_EGS_CATALOG_FRONTIER_EGS_2026-09.md) · [Moving up the stack](./SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md)
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** Trump; pacing trap; sovereign velocity; Amodei; Altman; Musk; Anti-Brakes Doctrine; EGS Catalog; Goldilocks Super Intelligence; SS Vibelandia; Fair Exchange; voyage editorial

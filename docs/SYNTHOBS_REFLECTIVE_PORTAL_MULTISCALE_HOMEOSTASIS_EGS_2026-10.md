@@ -2,19 +2,19 @@
 
 **Short answer: Yes.** In the sandbox, Agent RM recovered in about eleven steps while P and R stayed underwater, and returned to stable performance in thirteen steps versus forty-five after a phase flip. The best reflection rate was near ρ 0.2. These are not human trials.
 
-**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-REFLECTIVE-PORTAL-MULTISCALE-HOMEOSTASIS-2026-10-06`  
-**Registry ID:** `synthobs-reflective-portal-multiscale-homeostasis-2026-10`  
-**Date:** 2026-10-06  
-**Published:** 2026-10-06T20:00:00Z  
-**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Goldilocks · Homeostasis Expedition  
-**Suite:** `research/synthobs-reflective-portal-multiscale-homeostasis/`  
-**Standalone:** [`FractiAI/synthobs-reflective-portal-multiscale-homeostasis`](https://github.com/FractiAI/synthobs-reflective-portal-multiscale-homeostasis)  
-**Ship blog:** `/ship-blog/reflective-portal-homeostasis`  
-**Journey:** `/journey/homeostasis-expedition`  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Authors:** Pru “El Taíno” Méndez · FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-REFLECTIVE-PORTAL-MULTISCALE-HOMEOSTASIS-2026-10-06`
+**Registry ID:** `synthobs-reflective-portal-multiscale-homeostasis-2026-10`
+**Date:** 2026-10-06
+**Published:** 2026-10-06T20:00:00Z
+**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · Infinite Octaves · Holographic Goldilocks · Homeostasis Expedition
+**Suite:** `research/synthobs-reflective-portal-multiscale-homeostasis/`
+**Standalone:** [`FractiAI/synthobs-reflective-portal-multiscale-homeostasis`](https://github.com/FractiAI/synthobs-reflective-portal-multiscale-homeostasis)
+**Ship blog:** `/ship-blog/reflective-portal-homeostasis`
+**Journey:** `/journey/homeostasis-expedition`
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Engine role:** Infinite Octaves `ENGINE_SHELF` companion #40 — **Reflective Modification Portal companion** (Homeostasis Expedition empirical lane · multiscale octaves · Goldilocks ρ · not phenomenal consciousness proof)
 
 **Companions:**
@@ -120,11 +120,11 @@ This Homeostasis Expedition asks whether homeostasis can be understood more deep
 
 Inside a human being are molecules regulating molecular interactions, cells regulating internal states, organs regulating physiological variables, neural systems regulating behavior, and behavioral systems responding to environments. Above the individual are social and cultural systems. Within the individual, something additional can occur:
 
-> “When I experience X, I repeatedly respond with Y”  
-> can become  
+> “When I experience X, I repeatedly respond with Y”
+> can become
 > “I recognize that pattern, and I am going to respond differently next time.”
 
-This is not the disappearance of the original behavior. It is the emergence of another layer capable of participating in the regulation of that behavior. That is the central phenomenon investigated here.
+It is the emergence of another layer capable of participating in the regulation of that behavior. That is the central phenomenon investigated here.
 
 ---
 
@@ -293,13 +293,13 @@ Modification should be internally generated, causally connected to the diagnosis
 
 ## 24. What Would Falsify or Weaken the Model?
 
-1. **F1** Ordinary RL produces equivalent results under matched budgets.  
-2. **F2** Explicit self-models provide no measurable benefit.  
-3. **F3** Reflection without modification performs equally well.  
-4. **F4** Self-modification produces no targeted advantage.  
-5. **F5** Improvements disappear under computational-budget controls.  
-6. **F6** The supposed Goldilocks region cannot be reproduced.  
-7. **F7** Recursive modification provides no advantage.  
+1. **F1** Ordinary RL produces equivalent results under matched budgets.
+2. **F2** Explicit self-models provide no measurable benefit.
+3. **F3** Reflection without modification performs equally well.
+4. **F4** Self-modification produces no targeted advantage.
+5. **F5** Improvements disappear under computational-budget controls.
+6. **F6** The supposed Goldilocks region cannot be reproduced.
+7. **F7** Recursive modification provides no advantage.
 8. **F8** Multiscale coupling does not improve robustness or stability.
 
 A negative result would still be useful.
@@ -316,8 +316,8 @@ This expedition does not claim to discover homeostasis, metacognition, self-moni
 
 ## 26–28. Implications (bounded)
 
-**Biology:** Study intelligence across scales; ask when a regulatory system can represent and alter its own regulation.  
-**AI:** Size alone may miss observe → diagnose → modify → evaluate loops that preserve fast reactive layers.  
+**Biology:** Study intelligence across scales; ask when a regulatory system can represent and alter its own regulation.
+**AI:** Size alone may miss observe → diagnose → modify → evaluate loops that preserve fast reactive layers.
 **Human development:** Maturity as increasing capacity to regulate relationships among one’s own behavioral octaves — not as suppressing instinct.
 
 ---

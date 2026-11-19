@@ -1,19 +1,19 @@
 # Product Engineering Manual · Infinite Octaves Omniversal Lattice Chat
 
-**Audience:** Architectural review · technical support · creator / Player 1 ops · nested-agent maintainers  
-**Product:** Infinite Octaves Omniversal Lattice Chat Agent V1.618 (Goldilocks Valet)  
-**Engine pin:** Infinite Octaves Omni-Lattice (Digits × Octaves 01–99 = Story-depth map)  
-**Authors:** FractiAI Research Group · SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-LATTICE-CHAT-PEM-2026-09`  
-**Registry ID:** `lattice-chat-product-engineering-manual-2026-09`  
+**Audience:** Architectural review · technical support · creator / Player 1 ops · nested-agent maintainers
+**Product:** Infinite Octaves Omniversal Lattice Chat Agent V1.618 (Goldilocks Valet)
+**Engine pin:** Infinite Octaves Omni-Lattice (Digits × Octaves 01–99 = Story-depth map)
+**Authors:** FractiAI Research Group · SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-LATTICE-CHAT-PEM-2026-09`
+**Registry ID:** `lattice-chat-product-engineering-manual-2026-09`
 **Date:** 2026-11-18
 **Published:** 2026-11-18
-**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · BYOK · PRA Snap  
-**Live chat:** [`/lattice-chat?nest=octave99`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99)  
-**Product hero:** [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · primer [`/lattice/learn`](https://www.ssvibelandiaquestfest24x365.com/lattice/learn) · this manual [`/lattice/engineering`](https://www.ssvibelandiaquestfest24x365.com/lattice/engineering)  
-**First sync for external AIs:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)  
-**Shelf source of truth:** [`lib/infinite-octave-engine-shelf.mjs`](../lib/infinite-octave-engine-shelf.mjs)  
+**Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · BYOK · PRA Snap
+**Live chat:** [`/lattice-chat?nest=octave99`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99)
+**Product hero:** [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · primer [`/lattice/learn`](https://www.ssvibelandiaquestfest24x365.com/lattice/learn) · this manual [`/lattice/engineering`](https://www.ssvibelandiaquestfest24x365.com/lattice/engineering)
+**First sync for external AIs:** [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)
+**Shelf source of truth:** [`lib/infinite-octave-engine-shelf.mjs`](../lib/infinite-octave-engine-shelf.mjs)
 **Sync:** `npm run sync:lattice-pem`
 
 **Keywords:** Infinite Octaves; Omniversal Lattice Chat; product engineering manual; engine shelf; auto-sync; BYOK; nest octave99; Φ_EGS; NSPFRNP; onboarding
@@ -82,8 +82,8 @@ $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2\approx 1.618$ is an **architectural scale ke
 
 You are on **SS Vibelandia** — a navy-gold holographic **resort vessel** (hospitality · marketplace · nightlife · brotherhood as voyage identity). Guests ask: *Where am I on the ship? What can I do here? How do I stay Goldilocks?*
 
-**Site front door:** Omniversal Canvas (`/` · `/art` · `/omniverse-canvas`).  
-**Ship board:** `/questfest`.  
+**Site front door:** Omniversal Canvas (`/` · `/art` · `/omniverse-canvas`).
+**Ship board:** `/questfest`.
 **Valet:** Infinite Octaves Omniversal Lattice Chat (`/lattice-chat`).
 
 Canon: [`docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md) · plain [`/ship-blog/official-prospectus`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/official-prospectus) · Frontiersman [`/frontiersman-voyage#prospectus`](https://www.ssvibelandiaquestfest24x365.com/frontiersman-voyage#prospectus).
@@ -145,7 +145,7 @@ Inside the **Awareness Layer** (looking in on ourselves):
 | **Super Intelligence** | Combination of the three | `superai`, `superai-layer` |
 | **Awareness** (outer) | Self-observation frame | `awareness`, `awareness-layer` |
 
-Source: [`docs/SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md`](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · guest visual map [`/layers/awareness`](/layers/awareness) · whitepaper [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · module `lib/awareness-layer-map.mjs`.  
+Source: [`docs/SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md`](./SYNTHOBS_AWARENESS_LAYER_FRACTAL_HOLOGRAPHIC_GOLDILOCKS_SUPERAI_2026-10.md) · guest visual map [`/layers/awareness`](/layers/awareness) · whitepaper [`/whitepaper/awareness-layer`](/whitepaper/awareness-layer) · module `lib/awareness-layer-map.mjs`.
 **Not ENGINE_SHELF.** Super Intelligence = composition template, not proven AGI. Expedition / Hero Leo sit on the **Goldilocks Layer** inside Awareness. Guest strips also appear on `/`, `/journey`, `/journey/hero-leo`, and `/journey/homeostasis-expedition`.
 
 ---
@@ -206,11 +206,11 @@ Always open each paper’s **Honesty boundary** before featuring claims.
 
 You are fluent when you can:
 
-- Explain product vs engine dual lock without conflating Synthio into the pin  
-- Add a new engine paper end-to-end (registry → shelf append → sync → nest pin visible)  
-- Support a guest ask with Seed·RAG pointers (≤6 files) and Goldilocks honesty  
-- Run PRA + suite receipts before featuring  
-- Place a claim in the correct tier: narrative / catalog / empirical / operational  
+- Explain product vs engine dual lock without conflating Synthio into the pin
+- Add a new engine paper end-to-end (registry → shelf append → sync → nest pin visible)
+- Support a guest ask with Seed·RAG pointers (≤6 files) and Goldilocks honesty
+- Run PRA + suite receipts before featuring
+- Place a claim in the correct tier: narrative / catalog / empirical / operational
 
 ---
 
@@ -218,14 +218,14 @@ You are fluent when you can:
 
 ```
 Guest / Player 1
-    ↓ BYOK (key on-device)
+↓ BYOK (key on-device)
 interfaces/lattice-chat/  ← build from apps/lattice-chat/
-    ↓ POST
+↓ POST
 api/lattice-chat.js       ← nestTopology, privilege, honor / creator rails
-    ↓
+↓
 lib/lattice-prompt.mjs    ← nest directive + Seed pack (engine shelf pin)
 lib/lattice-engine.mjs    ← token / MCA envelope
-    ↓
+↓
 Provider (Cursor / Claude / Gemini / OpenRouter …)
 ```
 
@@ -255,11 +255,11 @@ Provider API key is the credential. Stays on-device. Travels in request headers 
 
 ### 4.4 Context discipline (agent ops)
 
-1. POINTER-FIRST  
-2. NO CORPUS TOUR  
-3. BUDGET ≤6 files on complex asks  
-4. PLAN → PINCH → SQUEEZE  
-5. SCALE-TO-ZERO  
+1. POINTER-FIRST
+2. NO CORPUS TOUR
+3. BUDGET ≤6 files on complex asks
+4. PLAN → PINCH → SQUEEZE
+5. SCALE-TO-ZERO
 
 ---
 
@@ -268,11 +268,11 @@ Provider API key is the credential. Stays on-device. Travels in request headers 
 ### 5.1 Architectural review checklist
 
 - [ ] Honesty boundary present and proportionate  
-- [ ] Document ID + registry id + SynthOBS operator line  
-- [ ] Engine shelf order respected for first-read (CMOS before cosmic layers)  
-- [ ] Claims not upgraded from catalog → unfinished physics / fab / clinical  
-- [ ] Ship-blog + latest-six if eligible (`shipBlog: false` only for companions / living manuals)  
-- [ ] If **engine-included**: `ENGINE_SHELF` updated + `npm run sync:lattice-pem`  
+- [ ] Document ID + registry id + SynthOBS operator line
+- [ ] Engine shelf order respected for first-read (CMOS before cosmic layers)
+- [ ] Claims not upgraded from catalog → unfinished physics / fab / clinical
+- [ ] Ship-blog + latest-six if eligible (`shipBlog: false` only for companions / living manuals)
+- [ ] If **engine-included**: `ENGINE_SHELF` updated + `npm run sync:lattice-pem`
 
 ### 5.2 Incident / guest support
 
@@ -286,14 +286,14 @@ Provider API key is the credential. Stays on-device. Travels in request headers 
 
 ### 5.3 Adding an engine paper (checklist)
 
-1. Paper under `docs/` with Honesty + Document ID  
-2. Registry + optional suite under `research/synthobs-*/`  
-3. Ship-blog + `questfest-blog-posts` + vercel rewrites + `sync:questfest-blog` (if public note)  
-4. `npm run audit:paper -- --id=…`  
-5. **Append `ENGINE_SHELF`**  
-6. **`npm run sync:lattice-pem`**  
-7. Update `.cursor/rules/agent-sync-99-octave.mdc` minimum-lock bullets if the pin is core (optional narrative; table is AUTO)  
-8. Commit · push · merge per Player 1 ship rules  
+1. Paper under `docs/` with Honesty + Document ID
+2. Registry + optional suite under `research/synthobs-*/`
+3. Ship-blog + `questfest-blog-posts` + vercel rewrites + `sync:questfest-blog` (if public note)
+4. `npm run audit:paper -- --id=…`
+5. **Append `ENGINE_SHELF`**
+6. **`npm run sync:lattice-pem`**
+7. Update `.cursor/rules/agent-sync-99-octave.mdc` minimum-lock bullets if the pin is core (optional narrative; table is AUTO)
+8. Commit · push · merge per Player 1 ship rules
 
 ---
 

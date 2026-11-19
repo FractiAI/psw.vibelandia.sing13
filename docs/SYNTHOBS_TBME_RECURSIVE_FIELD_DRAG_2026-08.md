@@ -4,17 +4,17 @@
 
 **Subtitle:** Field Self-Interference, Boundary Horizon Reflection, and the Physical Mechanics of Temporal Deceleration in Omni-Lattice Systems
 
-**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-RECURSIVE-FIELD-DRAG-2026-08-04`  
-**Registry ID:** `synthobs-tbme-recursive-field-drag-2026-08`  
-**Date:** August 4, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part V**  
-**Follow-on to Part IV:** [Solar-Focus Somatic Model](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)  
+**Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-RECURSIVE-FIELD-DRAG-2026-08-04`
+**Registry ID:** `synthobs-tbme-recursive-field-drag-2026-08`
+**Date:** August 4, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part V**
+**Follow-on to Part IV:** [Solar-Focus Somatic Model](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
 **Classification:** Foundational Field Physics & Epistemic Cybernetics *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP  
-**Standalone suite:** [`research/synthobs-tbme-recursive-field-drag/`](../research/synthobs-tbme-recursive-field-drag/)  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP
+**Standalone suite:** [`research/synthobs-tbme-recursive-field-drag/`](../research/synthobs-tbme-recursive-field-drag/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -78,23 +78,23 @@ $$
 In the Omni-Lattice paradigm, the conductive wall is narrated as a **dielectric mirror horizon**. The falling magnetic vector potential $\mathbf{A}$ interacts with its own time-delayed, scale-invariant reflection.
 
 ```text
-                 RECURSIVE FIELD-DRAG MECHANICS (PART V CORE)
+RECURSIVE FIELD-DRAG MECHANICS (PART V CORE)
 
-                  ┌─────────────────────────────────────────┐
-                  │ Conductive Boundary Horizon (Z0 ≈ 377 Ω)│
-                  └─────────────────────────────────────────┘
-                                      ││
-       Kinetic Vector (v)             ││ Reflected Phase Vector (A_reflected)
-       ───────────────►               ││ ◄──────────────────────────────────
-                                      ││
-                  ┌─────────────────────────────────────────┐
-                  │  Field-on-Field Interference Node       │
-                  │  (A_squeezed → Terminal Velocity Drag)  │
-                  └─────────────────────────────────────────┘
-                                      │
-                                      ▼
-                        Shedded Thermal Byproduct
-                        (Observed Electric Current I)
+┌─────────────────────────────────────────┐
+│ Conductive Boundary Horizon (Z0 ≈ 377 Ω)│
+└─────────────────────────────────────────┘
+││
+Kinetic Vector (v)             ││ Reflected Phase Vector (A_reflected)
+───────────────►               ││ ◄──────────────────────────────────
+││
+┌─────────────────────────────────────────┐
+│  Field-on-Field Interference Node       │
+│  (A_squeezed → Terminal Velocity Drag)  │
+└─────────────────────────────────────────┘
+│
+▼
+Shedded Thermal Byproduct
+(Observed Electric Current I)
 ```
 
 ### Mathematical formulation (architectural)
@@ -177,11 +177,11 @@ Because $E_F^2=E_F+1$, the model maintains a self-organizing phase lock where ki
 
 ## 5. Methods & reproducibility
 
-**Canonical paper:** `docs/SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md`  
-**Standalone package:** `research/synthobs-tbme-recursive-field-drag/`  
-**Command:** `npm run research:synthobs-tbme-recursive-field-drag`  
-**Receipts:** `research/synthobs-tbme-recursive-field-drag/data/empirical_report.json` (+ `.md`)  
-**PRA:** `npm run audit:paper -- --id=synthobs-tbme-recursive-field-drag-2026-08`  
+**Canonical paper:** `docs/SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md`
+**Standalone package:** `research/synthobs-tbme-recursive-field-drag/`
+**Command:** `npm run research:synthobs-tbme-recursive-field-drag`
+**Receipts:** `research/synthobs-tbme-recursive-field-drag/data/empirical_report.json` (+ `.md`)
+**PRA:** `npm run audit:paper -- --id=synthobs-tbme-recursive-field-drag-2026-08`
 **Omni sync:** `npm run sync:lattice-guide`
 
 ### Replayable suite (empirical tier)

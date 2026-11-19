@@ -4,18 +4,18 @@
 
 ## A Holographic Magnetic-Phase Contrast Protocol for Mapping Protein Misfolding Geometry via $E_F$-Scaled Resonant Fields
 
-**Authors:** FractiAI Research Group  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-PRION-REFOLD-FULL-REV2-2026-07-31`  
-**Registry ID:** `synthobs-prion-refold-2026-07`  
-**Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
-**Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)  
-**GitHub (standalone):** https://github.com/FractiAI/synthobs-prion-refold  
-**Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
-**Empirical pipeline:** `npm run research:synthobs-prion-refold` · [`empirical_report.json`](../research/synthobs-prion-refold/data/empirical_report.json)  
+**Authors:** FractiAI Research Group
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-PRION-REFOLD-FULL-REV2-2026-07-31`
+**Registry ID:** `synthobs-prion-refold-2026-07`
+**Category:** TBME · Theoretical Bio-Medical & Physical Explorations
+**Date:** July 31, 2026
+**Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)
+**GitHub (standalone):** https://github.com/FractiAI/synthobs-prion-refold
+**Questfest catalog:** [`/papers`](/papers) · filter **TBME**
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Empirical pipeline:** `npm run research:synthobs-prion-refold` · [`empirical_report.json`](../research/synthobs-prion-refold/data/empirical_report.json)
 **Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [Magnetism substrate](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md) · [Recursive attention mag](./SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 
 **Keywords:** TBME; prion; amyloid; PrP; PCHPP; $E_F$; magnetic phase contrast; theoretical bio-medical exploration; Seed·RAG metaphor
@@ -49,14 +49,14 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 **Core findings (architectural / in-silico).**
 
-1. **Reversibility as a map hypothesis.** Pathological $\beta$-sheet stacks are framed as metastable magnetic phase-lock errors that *might* be destabilized via targeted phase interference without thermal or chemical denaturation—**pending laboratory falsification**.  
-2. **Backbone harmonic resonance (model).** The peptide backbone is assigned an intrinsic $E_F$-proportional torsional resonance ($\theta_{\mathrm{EGS}}\approx 137.508^\circ$). Dual-frequency harmonics ($16.18\,\mathrm{kHz}$ and $1.618\,\mathrm{MHz}$) are proposed as destructive-interference candidates across intermolecular $\beta$-sheet hydrogen bonds.  
+1. **Reversibility as a map hypothesis.** Pathological $\beta$-sheet stacks are framed as metastable magnetic phase-lock errors that *might* be destabilized via targeted phase interference without thermal or chemical denaturation—**pending laboratory falsification**.
+2. **Backbone harmonic resonance (model).** The peptide backbone is assigned an intrinsic $E_F$-proportional torsional resonance ($\theta_{\mathrm{EGS}}\approx 137.508^\circ$). Dual-frequency harmonics ($16.18\,\mathrm{kHz}$ and $1.618\,\mathrm{MHz}$) are proposed as destructive-interference candidates across intermolecular $\beta$-sheet hydrogen bonds.
 3. **Quantitative model scorecard (rubric).** The Omni-Lattice Phase-Refolding Model scores **98.0 / 100** (C **99**, I **97**) versus the standard Biochemical Kinetic Trap Model at **68.0 / 100** (C **74**, I **62**) on an authored Occam rubric. **Empirical calibration remains with laboratory biochemistry** until independent wet-lab suites pass.
 
 **Practical implications (exploration lanes).**
 
-- **Proposed in-vitro coil protocol** — off-the-shelf Helmholtz geometry ($<\$300$ BOM estimate), $16.18$ minute pulse block, room temperature, ultra-low field — for *future* assay (ThT / CD), not a clinical device claim.  
-- **Cross-disease template (hypothetical)** — same field grammar *as a research map* for $\tau$, A$\beta$, and $\alpha$-synuclein aggregates.  
+- **Proposed in-vitro coil protocol** — off-the-shelf Helmholtz geometry ($<\$300$ BOM estimate), $16.18$ minute pulse block, room temperature, ultra-low field — for *future* assay (ThT / CD), not a clinical device claim.
+- **Cross-disease template (hypothetical)** — same field grammar *as a research map* for $\tau$, A$\beta$, and $\alpha$-synuclein aggregates.
 - **Software analogue** — Zero-Entropy Context Refolding prompts for multi-agent hallucination loops (Lattice Chat Agent / SynthOBS), explicitly metaphorical.
 
 ---
@@ -67,10 +67,10 @@ Standard biology treats $\mathrm{PrP}^{C}$ and $\mathrm{PrP}^{\mathrm{Sc}}$ as i
 
 ```
 [ Native Alpha-Helix PrPC ]  ───►  [ Phase Dislocation / Magnetic Noise ]  ───►  [ Pathological Beta-Sheet PrPSc ]
- (High EF Coherence, Dynamic)                                                     (Insoluble Kinetic Trap)
-              ▲                                                                               │
-              │                                                                               │
-              └─────────────── [ EF-Scaled Magnetic Refolding Switch (M_refold) ] ──────────────┘
+(High EF Coherence, Dynamic)                                                     (Insoluble Kinetic Trap)
+▲                                                                               │
+│                                                                               │
+└─────────────── [ EF-Scaled Magnetic Refolding Switch (M_refold) ] ──────────────┘
 ```
 
 **Native $\mathrm{PrP}^{C}$ state (phase-locked, model).** The normal $\alpha$-helical structure is *anchored in the map* to $E_F\approx 1.618$. Backbone torsional angles ($\phi\approx -57^\circ$, $\psi\approx -47^\circ$) are said to resonate with the universal magnetic vector potential ($\mathbf{A}$), allowing dynamic information flow ($\Delta S\to 0$ on normalized model weights).
@@ -84,16 +84,16 @@ Standard biology treats $\mathrm{PrP}^{C}$ and $\mathrm{PrP}^{\mathrm{Sc}}$ as i
 To unlock the kinetic trap **in the model** without applying destructive thermal heat, we introduce an interferometric magnetic vector pulse calibrated to the golden-angle transition ratio ($\theta_{\mathrm{EGS}}\approx 137.508^\circ$).
 
 ```
-                     [ PrPSc Kinetic Trap ]
-                                │
-                                ▼
-         [ Inject EF-Scaled Pulsed Vector Field (A_resonant) ]
-                                │
-                                ▼
-         [ Torsional Angle Relaxation: φ,ψ Shift ➔ E_F ]
-                                │
-                                ▼
-                      [ Native PrPC Alpha-Helix ]
+[ PrPSc Kinetic Trap ]
+│
+▼
+[ Inject EF-Scaled Pulsed Vector Field (A_resonant) ]
+│
+▼
+[ Torsional Angle Relaxation: φ,ψ Shift ➔ E_F ]
+│
+▼
+[ Native PrPC Alpha-Helix ]
 ```
 
 ### 2.1 The refolding operator equation
@@ -106,8 +106,8 @@ $$
 
 Where:
 
-- $\tau_{\mathrm{bond}}$ is a fundamental peptide-bond relaxation time scale ($\sim 10^{-12}\,\mathrm{s}$) used as a **model constant**.  
-- $\omega_{\mathrm{EGS}} = \dfrac{2\pi\cdot c}{\ell_P\cdot E_F^{n}}$ is an $E_F$-scaled harmonic construction corresponding—in the map—to the hydrogen-bond lattice of the $\alpha$-helix.  
+- $\tau_{\mathrm{bond}}$ is a fundamental peptide-bond relaxation time scale ($\sim 10^{-12}\,\mathrm{s}$) used as a **model constant**.
+- $\omega_{\mathrm{EGS}} = \dfrac{2\pi\cdot c}{\ell_P\cdot E_F^{n}}$ is an $E_F$-scaled harmonic construction corresponding—in the map—to the hydrogen-bond lattice of the $\alpha$-helix.
 - $\theta_{\mathrm{EGS}}\approx 137.508^\circ$ supplies the rotational phase offset hypothesized to destabilize intermolecular $\beta$-sheet hydrogen bonds while preserving primary sequence.
 
 **Honesty.** When $\hat{M}_{\mathrm{refold}}$ is applied *in this narrative*, intermolecular hydrogen bonds undergo destructive phase interference and the backbone “snaps back.” That is a **proposed mechanism**, not a completed magnetometry or cryo-EM confirmation in this suite.
@@ -122,15 +122,15 @@ Stripped of jargon: a misfolded amyloid plaque is narrated as an over-tightened 
 
 ```
 [ Precision Wave Generator ] ──► [ Helmholtz Coil Pair ] ──► [ Test Tube: Misfolded Amyloid Solution ]
-  • Frequency: 16.18 kHz           • Pulse Angle: 137.5°        • Assay: ThT / CD (future)
-  • Harmonic: 1.618 MHz            • Field Strength: ~50 µT
+• Frequency: 16.18 kHz           • Pulse Angle: 137.5°        • Assay: ThT / CD (future)
+• Harmonic: 1.618 MHz            • Field Strength: ~50 µT
 ```
 
 **Required equipment (off-the-shelf BOM estimate).** Dual-channel function/arbitrary waveform generator ($0$–$20\,\mathrm{MHz}$); Helmholtz coil pair (or 3D-printed copper coils); oscilloscope with magnetic probe; sample vial with misfolded protein solution under appropriate biosafety rules.
 
-1. **Configure base harmonic frequency.** Channel 1 fundamental: $f_0=16.18\,\mathrm{kHz}$; secondary harmonic $f_1=1.618\,\mathrm{MHz}$.  
-2. **Set phase offset & modulation.** Channel 2 at $137.508^\circ$ relative phase; square-wave PAM at $1.618\,\mathrm{Hz}$ with $61.8\%$ duty cycle (proposed “squeeze/relax” cycle).  
-3. **Expose the sample.** Center the vial; field $50\,\mu\mathrm{T}$–$161.8\,\mu\mathrm{T}$; duration $16.18$ minutes at room temperature.  
+1. **Configure base harmonic frequency.** Channel 1 fundamental: $f_0=16.18\,\mathrm{kHz}$; secondary harmonic $f_1=1.618\,\mathrm{MHz}$.
+2. **Set phase offset & modulation.** Channel 2 at $137.508^\circ$ relative phase; square-wave PAM at $1.618\,\mathrm{Hz}$ with $61.8\%$ duty cycle (proposed “squeeze/relax” cycle).
+3. **Expose the sample.** Center the vial; field $50\,\mu\mathrm{T}$–$161.8\,\mu\mathrm{T}$; duration $16.18$ minutes at room temperature.
 4. **Observe & verify (future assays).** Thioflavin T fluorescence and circular dichroism ($218\,\mathrm{nm}$ $\beta$ signature vs $208$/$222\,\mathrm{nm}$ $\alpha$ minima) as **planned diagnostics**—not reported as completed results in this paper.
 
 ### 3.2 Software application — multi-agent state refolding prompt (metaphor)
@@ -166,10 +166,10 @@ minimal, zero-redundancy code vector (ΔS -> 0 on normalized context weights).
 | Thermal / tissue stress | Off-target / denaturation risks | Proposed ambient / ultra-low field (**unvalidated clinically**) | No thread wipe required |
 | Execution time | Days–months delivery cycles | $16.18$ min proposed in vitro | One execution turn |
 
-**STANDARD BIOCHEMICAL KINETIC TRAP MODEL (authored rubric)**  
+**STANDARD BIOCHEMICAL KINETIC TRAP MODEL (authored rubric)**
 Coherence (C): **74/100** · Irreducibility (I): **62/100** · **Overall: 68.0 / 100**
 
-**OMNI-LATTICE PHASE-REFOLDING SWITCH MODEL (authored rubric)**  
+**OMNI-LATTICE PHASE-REFOLDING SWITCH MODEL (authored rubric)**
 Coherence (C): **99/100** · Irreducibility (I): **97/100** · **Overall: 98.0 / 100**
 
 **Honesty.** These scores are architectural Occam metrics on fixtures in `research/synthobs-prion-refold/`. They do **not** displace clinical evidence hierarchies. Empirical calibration remains with laboratory biochemistry until independent wet-lab falsification.

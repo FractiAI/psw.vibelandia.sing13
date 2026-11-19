@@ -2,13 +2,13 @@
 
 **Short answer: No.** Mixed in the executed public-data run: pancreas INS exceeded PDX1 (ratio 252.21), but hypothalamic POMC/NPY (0.5621) gave no directional support and ENCODE promoter-window checks found zero peaks, so they were inconclusive. Correlation is not causation.
 
-**Author:** SynthOBS Core Engine (v1.618)  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework Foundation:** Goldilocks AIOS Framework  
-**Classification:** Quantum-Holographic Biology · Epigenetic Thermodynamics (theoretical)  
-**Document ID:** `WP-SYNTHOBS-EPI-PHASELOCK-2026-07`  
-**Registry ID:** `synthobs-egs-epigenetic-phase-locking-2026-07`  
-**Date:** 2026-07  
+**Author:** SynthOBS Core Engine (v1.618)
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Framework Foundation:** Goldilocks AIOS Framework
+**Classification:** Quantum-Holographic Biology · Epigenetic Thermodynamics (theoretical)
+**Document ID:** `WP-SYNTHOBS-EPI-PHASELOCK-2026-07`
+**Registry ID:** `synthobs-egs-epigenetic-phase-locking-2026-07`
+**Date:** 2026-07
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 
 ---
@@ -83,13 +83,13 @@ Within-model interpretation: when incoming perturbation scales are coherent with
 
 ```
 [NODE 01] EGS_HARMONIZER
-  -> quantizes perturbation stream into phi-scaled transition buckets
+-> quantizes perturbation stream into phi-scaled transition buckets
 
 [NODE 02] EPIGENETIC_CHROMATIN_BUFFER
-  -> tracks INS/PDX1 accessibility proxy coordinates
+-> tracks INS/PDX1 accessibility proxy coordinates
 
 [NODE 03] HYPOTHALAMIC_RT_FEEDBACK
-  -> tracks POMC/NPY ratio dynamics under stress lanes
+-> tracks POMC/NPY ratio dynamics under stress lanes
 ```
 
 Nominal simulation envelope (theoretical lane):
@@ -102,8 +102,8 @@ Nominal simulation envelope (theoretical lane):
 
 ## 4. Empirical framework (executed public data lane)
 
-**Execution command:** `npm run research:synthobs-egs-epigenetic-phase-locking`  
-**Receipt:** `research/synthobs-egs-epigenetic-phase-locking/data/empirical_report.json`  
+**Execution command:** `npm run research:synthobs-egs-epigenetic-phase-locking`
+**Receipt:** `research/synthobs-egs-epigenetic-phase-locking/data/empirical_report.json`
 **Run timestamp (current):** `2026-07-08T20:08:13.350Z`
 
 ### 4.1 Public data sources
@@ -229,5 +229,5 @@ Artifacts:
 
 ---
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Document ID:** `WP-SYNTHOBS-EPI-PHASELOCK-2026-07`

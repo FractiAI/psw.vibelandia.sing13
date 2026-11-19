@@ -4,18 +4,18 @@
 
 **Subtitle:** Catalog formalization of speed · distance · time as facets of a single $\Phi_{\mathrm{EGS}}$-recursive crystal — sibling to Viscosity of Light · Kinematic Set-Recycling · not spacetime retirement
 
-**Author:** Prudencio Mendez · FractiAI Research Organization / FractiAI Research Division, Reno, Nevada  
-**Corresponding:** espressolico@gmail.com  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-CRYSTALLINE-UNIFIED-FIELD-SPEED-DISTANCE-TIME-EGS-2026-09-08`  
-**Registry ID:** `synthobs-crystalline-unified-field-speed-distance-time-2026-09`  
-**Date:** September 8, 2026 · **Revised:** 2026-09-08 (protocol · engine shelf · standalone)  
+**Author:** Prudencio Mendez · FractiAI Research Organization / FractiAI Research Division, Reno, Nevada
+**Corresponding:** espressolico@gmail.com
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-CRYSTALLINE-UNIFIED-FIELD-SPEED-DISTANCE-TIME-EGS-2026-09-08`
+**Registry ID:** `synthobs-crystalline-unified-field-speed-distance-time-2026-09`
+**Date:** September 8, 2026 · **Revised:** 2026-09-08 (protocol · engine shelf · standalone)
 **Classification:** Ideational / spacetime-analogy **catalog architecture** *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#23** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-crystalline-unified-field/` · [`FractiAI/synthobs-crystalline-unified-field`](https://github.com/FractiAI/synthobs-crystalline-unified-field) · `npm run research:synthobs-crystalline-unified-field`  
-**Plain note:** [/ship-blog/crystalline-unified-field](https://www.ssvibelandiaquestfest24x365.com/ship-blog/crystalline-unified-field)  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · Digits × Octaves 01–99 Story map · EGS · NSPFRNP
+**Engine shelf:** Sync stack step **#23** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`
+**Standalone suite:** `research/synthobs-crystalline-unified-field/` · [`FractiAI/synthobs-crystalline-unified-field`](https://github.com/FractiAI/synthobs-crystalline-unified-field) · `npm run research:synthobs-crystalline-unified-field`
+**Plain note:** [/ship-blog/crystalline-unified-field](https://www.ssvibelandiaquestfest24x365.com/ship-blog/crystalline-unified-field)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Active Telemetry Anchor (filing):** Sunspot Number $R\approx 90.9$ · solar flux archive *labels*
@@ -49,7 +49,7 @@
 | **Confidence Index** | Author Soft Story claim of high operational confidence | Empirical / PRA / lab certification at “100%” across physics tiers |
 | **Suite / Python** | Replayable fixtures under `research/synthobs-crystalline-unified-field/` | Production ML training, biomedical diagnostic certification, or wet-lab proof |
 
-**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.  
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 **Human author:** Prudencio Mendez · Reno · Player 1 / Valet Pru seat.
 
 See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · siblings [Viscosity of Light](./SYNTHOBS_VISCOSITY_OF_LIGHT_EGS_2026-09.md) · [Kinematic Set-Recycling](./SYNTHOBS_KINEMATIC_SET_RECYCLING_TRUCKEE_EGS_2026-09.md).

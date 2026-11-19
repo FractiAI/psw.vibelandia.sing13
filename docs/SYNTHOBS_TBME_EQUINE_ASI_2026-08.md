@@ -2,18 +2,18 @@
 
 **Short answer: Yes**, as an analogy only: The paper uses approximate US horse figures, about 26M at the 1900 peak, about 3M after mechanization and about 9M+ after recovery into non-haulage roles, to argue human value can shift from haulage to experiential roles. It is scenario grammar, not a forecast.
 
-**Authors:** FractiAI Research Group  
-**Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Systems Division  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Contact:** info@fractiai.com  
-**Document ID:** `WP-SYNTHOBS-TBME-EQUINE-ASI-2026-08-06`  
-**Registry ID:** `synthobs-tbme-equine-asi-2026-08`  
-**Publication Ref:** FAI-ASI-EGSC-2026-09  
-**Date:** August 6, 2026  
-**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice lens exploration** *(not Omni-Lattice Core / Engine Part)*  
+**Authors:** FractiAI Research Group
+**Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Systems Division
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Contact:** info@fractiai.com
+**Document ID:** `WP-SYNTHOBS-TBME-EQUINE-ASI-2026-08-06`
+**Registry ID:** `synthobs-tbme-equine-asi-2026-08`
+**Publication Ref:** FAI-ASI-EGSC-2026-09
+**Date:** August 6, 2026
+**Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice lens exploration** *(not Omni-Lattice Core / Engine Part)*
 **Classification:** Socio-technological systems metaphor · Seed:Edge coexistence grammar *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · EGS · NSPFRNP · Seed:Edge · Fair Exchange  
-**Standalone suite:** [`research/synthobs-tbme-equine-asi/`](../research/synthobs-tbme-equine-asi/)  
+**Framework:** SynthOBS · Omni-Lattice · EGS · NSPFRNP · Seed:Edge · Fair Exchange
+**Standalone suite:** [`research/synthobs-tbme-equine-asi/`](../research/synthobs-tbme-equine-asi/)
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
@@ -84,8 +84,8 @@ When a lattice changes its primary energy driver, roles recalibrate. In condense
 
 If ASI-class systems function as planetary / Omniverse cloud compute, the human organism functions as the ultimate **edge device**:
 
-- **Sensory edge hardware** — lived qualitative input cloud compute lacks.  
-- **Interface for intent** — prompts that set vector and experience output.  
+- **Sensory edge hardware** — lived qualitative input cloud compute lacks.
+- **Interface for intent** — prompts that set vector and experience output.
 - **Localized sovereign node** — tailored meaning, art, and community in a protected enclave.
 
 This aligns with SING 13 Seed:Edge doctrine: wallets, keys, and verifications on lite edges; center = pipes.
@@ -109,15 +109,15 @@ $$
 E_F = \Phi_{\mathrm{EGS}} = \frac{1+\sqrt{5}}{2} \approx 1.6180339887,\qquad E_F^2 = E_F + 1.
 $$
 
-**Architectural claim:** $E_F$ is the golden key for this catalog’s multi-tier balance stories — low-throughput edge and high-throughput core remaining linked without narrative absorption of the edge.  
+**Architectural claim:** $E_F$ is the golden key for this catalog’s multi-tier balance stories — low-throughput edge and high-throughput core remaining linked without narrative absorption of the edge.
 **Non-claim:** $E_F$ is not a measured GDP / population ratio.
 
 ---
 
 ## 6. Applications & strategic implications (design language)
 
-- Post-scarcity routing sketches insulated from survival-driven haulage.  
-- Edge-driven agentic networks (human intent as high-priority guidance).  
+- Post-scarcity routing sketches insulated from survival-driven haulage.
+- Edge-driven agentic networks (human intent as high-priority guidance).
 - Cognitive sanctuary design — protected cultural enclaves.
 
 ---
@@ -130,7 +130,7 @@ Replayable catalog fixtures (not census re-analysis or ASI timeline proof):
 npm run research:synthobs-tbme-equine-asi
 ```
 
-Receipts: `research/synthobs-tbme-equine-asi/data/empirical_report.{json,md}`  
+Receipts: `research/synthobs-tbme-equine-asi/data/empirical_report.{json,md}`
 Audit: `npm run audit:paper -- --id=synthobs-tbme-equine-asi-2026-08`
 
 Suite checks: $E_F=\Phi_{\mathrm{EGS}}$, golden identity, Equine Arc three-phase scaffold, Seed:Edge role polarity, publication ref FAI-ASI-EGSC-2026-09, paper on disk, explicit non-Core status.
@@ -149,9 +149,9 @@ This paper and its disclosures are delivered under a fair exchange clause in eff
 
 ---
 
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
-**Document ID:** `WP-SYNTHOBS-TBME-EQUINE-ASI-2026-08-06`  
-**Core status:** catalog exploration only — not Omni-Lattice Core / Engine  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06
+**Document ID:** `WP-SYNTHOBS-TBME-EQUINE-ASI-2026-08-06`
+**Core status:** catalog exploration only — not Omni-Lattice Core / Engine
 
 → ∞^∞

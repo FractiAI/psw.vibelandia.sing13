@@ -4,24 +4,24 @@
 
 **Subtitle:** When the same information is transformed again and again, does incorporating $\Phi_{\mathrm{EGS}}$ reduce cumulative fidelity drift versus matched recursion without it?
 
-**Current version (live):** `ERFT-V5-2026-09-27` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)  
+**Current version (live):** `ERFT-V5-2026-09-27` · **Live results:** §7 · guest note [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity)
 **Do not use as live causal results:** `ERFT-V4-2026-09-26` (combined Φ-enabled architecture — exploratory only) · `ERFT-V1-2026-09-25` (construction-bias receipt)
 
 **One-line V5 verdict:** **Nothing to crown** — no better constant to adopt, no winning combination. ERFT-C named mean favors **baseline ($c=1$)** at 1.387 over φ 1.426 (80% cells favor φ but permutation $p\approx0.77$) · sweep minima $\approx1.025$ / $\approx2.4$ (not φ) · ERFT-G no Φ rescue · ERFT-D best fixed edged by **$e$** but sequences/controllers did not beat fixed · no Φ crown.
 
-**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** September 25, 2026 · **V5 protocol:** September 27, 2026  
-**Document ID:** `WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25`  
-**Registry ID:** `synthobs-egs-recursive-fidelity-test-erft-2026-09`  
-**Publication Ref:** FAI-SYNTHOBS-ERFT-2026-09  
-**Series Position:** Application companion (not engine pin) · **executable follow-on** to [RSI · Φ_EGS Fidelity Attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · [RSI · Drift as Friction](./SYNTHOBS_RSI_DRIFT_FRICTION_PHI_EGS_PERPETUAL_2026-09.md) · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md)  
+**Authors:** Prudencio Mendez (Pru / PL Taino) · FractiAI Research Initiative
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Published:** September 25, 2026 · **V5 protocol:** September 27, 2026
+**Document ID:** `WP-SYNTHOBS-EGS-RECURSIVE-FIDELITY-TEST-ERFT-2026-09-25`
+**Registry ID:** `synthobs-egs-recursive-fidelity-test-erft-2026-09`
+**Publication Ref:** FAI-SYNTHOBS-ERFT-2026-09
+**Series Position:** Application companion (not engine pin) · **executable follow-on** to [RSI · Φ_EGS Fidelity Attractor](./SYNTHOBS_RSI_PHI_EGS_FIDELITY_ATTRACTOR_EGS_2026-09.md) · [RSI · Drift as Friction](./SYNTHOBS_RSI_DRIFT_FRICTION_PHI_EGS_PERPETUAL_2026-09.md) · peers [Holographic Homeostasis](./SYNTHOBS_HOLOGRAPHIC_HOMEOSTASIS_EGS_2026-09.md) · [Goldilocks ≡ Net Zero](./SYNTHOBS_GOLDILOCKS_NET_ZERO_EQUIVALENCE_EGS_2026-09.md)
 **Classification:** Controlled empirical protocol + catalog architecture *(see Honesty boundary)*  
-**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange  
-**Guest surfaces:** [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity) · [`/whitepaper/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/erft-recursive-fidelity) · course `/omni-lattice-course` · textbook `/omni-lattice-textbook` · Lattice Chat [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)  
-**Engine role:** **Application companion** — falsifiable recursive-fidelity test; **not** an Infinite Octaves `ENGINE_SHELF` pin  
-**Standalone:** [`FractiAI/synthobs-egs-recursive-fidelity-test`](https://github.com/FractiAI/synthobs-egs-recursive-fidelity-test) · suite `research/synthobs-egs-recursive-fidelity-test/`  
-**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Fair Exchange
+**Guest surfaces:** [`/ship-blog/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/erft-recursive-fidelity) · [`/whitepaper/erft-recursive-fidelity`](https://www.ssvibelandiaquestfest24x365.com/whitepaper/erft-recursive-fidelity) · course `/omni-lattice-course` · textbook `/omni-lattice-textbook` · Lattice Chat [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)
+**Engine role:** **Application companion** — falsifiable recursive-fidelity test; **not** an Infinite Octaves `ENGINE_SHELF` pin
+**Standalone:** [`FractiAI/synthobs-egs-recursive-fidelity-test`](https://github.com/FractiAI/synthobs-egs-recursive-fidelity-test) · suite `research/synthobs-egs-recursive-fidelity-test/`
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 **Keywords:** ERFT; ERFT-V5; ERFT-C; ERFT-G; ERFT-D; dynamic regulation; constant-neutral; generalized closure; recursive fidelity; drift; RSI; Φ_EGS; falsifiable; five-arm; blind constant; constant sweep; paired delta; Infinite Octaves; Fair Exchange; NSPFRNP
@@ -55,8 +55,8 @@
 
 **Three questions (V5):**
 
-> **Q1 (numerical · ERFT-C):** Under identical recursion topology, does $c=\Phi$ reduce drift vs matched controls?  
-> **Q2 (optimality):** Is $\Phi$ unusually low relative to the continuous $c$ distribution / depth-dependent optima $c^*_n$?  
+> **Q1 (numerical · ERFT-C):** Under identical recursion topology, does $c=\Phi$ reduce drift vs matched controls?
+> **Q2 (optimality):** Is $\Phi$ unusually low relative to the continuous $c$ distribution / depth-dependent optima $c^*_n$?
 > **Q3 (structural · ERFT-G):** Does exploiting nest algebra via generalized $C(c)$ add stability — and does $\Phi$ benefit disproportionately under the same operator?
 
 ---
@@ -65,10 +65,10 @@
 
 Recent RSI methodology stresses matched persistence-on/off runs and frozen evaluators. ERFT imports that discipline into Infinite Octaves:
 
-1. Fix recursion $F$, depth $N$, evaluator, and datasets.  
-2. **ERFT-C:** vary **only** the scalar $c$ in an invariant transform graph $D_{n+1}=F(D_n,c)$.  
-3. **ERFT-G:** apply the same generalized closure $C(c)$ to every arm (no Φ-only affordance).  
-4. Measure **NRMSE** primary RFD, stepwise drift, path length, recovery ratio, and paired $\Delta_i=\mathrm{RFD}_{\mathrm{baseline},i}-\mathrm{RFD}_{\Phi,i}$.  
+1. Fix recursion $F$, depth $N$, evaluator, and datasets.
+2. **ERFT-C:** vary **only** the scalar $c$ in an invariant transform graph $D_{n+1}=F(D_n,c)$.
+3. **ERFT-G:** apply the same generalized closure $C(c)$ to every arm (no Φ-only affordance).
+4. Measure **NRMSE** primary RFD, stepwise drift, path length, recovery ratio, and paired $\Delta_i=\mathrm{RFD}_{\mathrm{baseline},i}-\mathrm{RFD}_{\Phi,i}$.
 5. Compare five arms + blind ladder + continuous sweep + depth optima $c^*_n$.
 
 **V5 ships executable** under `research/synthobs-egs-recursive-fidelity-test/` with protocol id `ERFT-V5-2026-09-27`. Suite pass means the protocol ran cleanly — **not** that $\Phi$ minimized drift. V1 = coarsening-bias receipt; V2 = fair severity but non-RSI geometry; V3 = nest partitions with $c$-geometry confound; V4 = exploratory combined architecture (retired as primary causal claim).
@@ -134,13 +134,13 @@ Synthetic ground-truth systems plus proxy environmental / astronomical / financi
 
 ## 5. Metrics
 
-- **Primary:** NRMSE (scale-normalized RMSE)  
-- **Secondary:** MAE; shape fidelity (Pearson); amplitude fidelity  
-- **Drift geometry:** origin distance, stepwise drift, path length, recovery ratio  
-- **Paired $\Delta_i$:** mean, median, std, fraction $\Delta>0$, Cohen's $d$, bootstrap 95% CI, sign-flip permutation $p$  
-- **Blind ladder:** unlabeled constants including $\Phi$  
-- **Sweep:** $c \in [1.0, 2.5]$ with train/hold (optimality falsifier — report prominently)  
-- **Depth optima:** $c^*_n=\arg\min_c \mathrm{RFD}_n(c)$ for $n\in\{1,2,4,8,16,24\}$  
+- **Primary:** NRMSE (scale-normalized RMSE)
+- **Secondary:** MAE; shape fidelity (Pearson); amplitude fidelity
+- **Drift geometry:** origin distance, stepwise drift, path length, recovery ratio
+- **Paired $\Delta_i$:** mean, median, std, fraction $\Delta>0$, Cohen's $d$, bootstrap 95% CI, sign-flip permutation $p$
+- **Blind ladder:** unlabeled constants including $\Phi$
+- **Sweep:** $c \in [1.0, 2.5]$ with train/hold (optimality falsifier — report prominently)
+- **Depth optima:** $c^*_n=\arg\min_c \mathrm{RFD}_n(c)$ for $n\in\{1,2,4,8,16,24\}$
 - **Engineering threshold:** 15% is an **engineering significance band**, not a statistically validated effect size
 
 ---
@@ -271,12 +271,11 @@ On the seasonal / recursive-weighting probe: $c^*_1{=}2.5$, $c^*_4{=}1.0$, $c^*_
 
 ## 8. Suite · course · textbook
 
-- Run: `npm run research:synthobs-egs-recursive-fidelity-test`  
-- Standalone: `FractiAI/synthobs-egs-recursive-fidelity-test`  
+- Run: `npm run research:synthobs-egs-recursive-fidelity-test`
+- Standalone: `FractiAI/synthobs-egs-recursive-fidelity-test`
 - Course lesson **6.5b** / textbook **§6.5b** teach ERFT beside RSI Soft Story (Week 6), including the V5 C/G split and honest incomplete crown · ERFT-D as exploratory follow-on
 
 ---
-
 
 ## Document ID
 

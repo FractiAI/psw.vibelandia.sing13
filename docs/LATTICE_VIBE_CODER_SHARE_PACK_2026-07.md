@@ -1,7 +1,7 @@
 # Lattice Chat Agent V1.618 — Vibe Coder Share Pack
 
-**Document ID:** LATTICE-SHARE-PACK-2026-07  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Document ID:** LATTICE-SHARE-PACK-2026-07
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Status:** Factual copy (aligned to nested + pointer evidence boundary, 2026-07)
 
 **Honesty:** Public comparisons are **structural estimates** (chars÷4), not OpenAI/Anthropic/Cursor invoices. φ / SING φ is scale grammar and product naming — not a fractal compression algorithm.

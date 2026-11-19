@@ -2,19 +2,19 @@
 
 **Short answer: Yes.** On live Node wall-clock timings (process.hrtime.bigint) for a Bloch GRE kernel plus SHA-256 buffer work, the interference-phase path was faster than legacy full-mesh recompute. This is simulator CPU timing, not clinical MRI throughput.
 
-**Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)  
-**Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox  
-**Published:** August 13, 2026  
-**Document ID:** `WP-SYNTHIO-MRI-VS-LEGACY-PERF-LIVE-2026-08-13`  
-**Registry ID:** `synthio-mri-vs-legacy-perf-proxy-2026-08`  
-**Publication Ref:** FAI-SYNTHIO-MRI-VS-LEGACY-PERF-LIVE-2026-08  
+**Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)
+**Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox
+**Published:** August 13, 2026
+**Document ID:** `WP-SYNTHIO-MRI-VS-LEGACY-PERF-LIVE-2026-08-13`
+**Registry ID:** `synthio-mri-vs-legacy-perf-proxy-2026-08`
+**Publication Ref:** FAI-SYNTHIO-MRI-VS-LEGACY-PERF-LIVE-2026-08
 **Classification:** Empirical live wall-clock study · Synthio Cloud Services *(sandbox — see Honesty boundary)*  
-**Framework:** Synthio · Syntheverse Sandbox · Bloch CPU kernel · NSPFRNP · PRA Snap  
-**Parent papers:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md) · [`SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md`](./SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md)  
-**GitHub (standalone):** https://github.com/FractiAI/synthio-mri-vs-legacy-perf  
-**Standalone suite:** [FractiAI/synthio-mri-vs-legacy-perf](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) · monorepo [`research/synthio-mri-vs-legacy-perf/`](../research/synthio-mri-vs-legacy-perf/)  
-**Cloud home:** [`/synthio-cloud`](https://www.ssvibelandiaquestfest24x365.com/synthio-cloud)  
-**Ship URL:** https://www.ssvibelandiaquestfest24x365.com/synthio  
+**Framework:** Synthio · Syntheverse Sandbox · Bloch CPU kernel · NSPFRNP · PRA Snap
+**Parent papers:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md) · [`SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md`](./SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md)
+**GitHub (standalone):** https://github.com/FractiAI/synthio-mri-vs-legacy-perf
+**Standalone suite:** [FractiAI/synthio-mri-vs-legacy-perf](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) · monorepo [`research/synthio-mri-vs-legacy-perf/`](../research/synthio-mri-vs-legacy-perf/)
+**Cloud home:** [`/synthio-cloud`](https://www.ssvibelandiaquestfest24x365.com/synthio-cloud)
+**Ship URL:** https://www.ssvibelandiaquestfest24x365.com/synthio
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Keywords:** Synthio; MRI simulation; Bloch; interference-phase; live wall-clock; hrtime; legacy full-mesh; KomaMRI; Cloud Services; Syntheverse Sandbox; NSPFRNP

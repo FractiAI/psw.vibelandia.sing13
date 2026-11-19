@@ -4,12 +4,12 @@
 
 **Do rhyming world models outperform non-rhyming ones — after prior expeditions already showed that rhyming a shared world between agents produces observable, replicable, falsifiable, paradigm-shifting gains?**
 
-**Document ID:** `WP-RHYMING-VS-NON-RHYMING-WORLD-MODELS-EGS-2026-11-18`  
-**Registry ID:** `synthobs-shared-world-collective-intelligence-2026-11`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Classification:** Application companion Soft Story / computational expedition  
-**Date:** 18 November 2026  
-**Harness:** FractiSI Multi-Agent `experiments/world-model-expedition/`  
+**Document ID:** `WP-RHYMING-VS-NON-RHYMING-WORLD-MODELS-EGS-2026-11-18`
+**Registry ID:** `synthobs-shared-world-collective-intelligence-2026-11`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Classification:** Application companion Soft Story / computational expedition
+**Date:** 18 November 2026
+**Harness:** FractiSI Multi-Agent `experiments/world-model-expedition/`
 **Ship blog:** `/ship-blog/shared-world-collective-intelligence`
 
 ## Honesty boundary
@@ -33,7 +33,7 @@ Where do rhyming world models outperform non-rhyming ones — especially on high
 
 ## Method
 
-See `docs/world-model-expedition/experimental-design-v2.md`.  
+See `docs/world-model-expedition/experimental-design-v2.md`.
 Run: `npm run research:world-model-expedition` in FractiSI Multi-Agent.
 
 ## Computational Lab
@@ -83,7 +83,6 @@ Exp 002 · Tiny Gateway rhyme vs cache · Multi-Agent platform · this rhyming v
 - **Rhyme features of the FractiSI Multi-Agent World Model:** Rhyming Templates, Shared-World Rhyme, Protein Folding Rhyme (#53, new), LLM Rhyme (#54, new).
 
 → ∞^∞
-
 
 ## Addendum · 2026-11-18 · Pilot Rhyme (#55)
 

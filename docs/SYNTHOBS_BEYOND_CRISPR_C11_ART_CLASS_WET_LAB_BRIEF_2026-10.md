@@ -1,8 +1,8 @@
 # C11 · ART-Class Cassette — Minimum Wet-Lab Brief
 
-**Parent:** Beyond CRISPR Biological Discovery · gap lead **C11** (fixture triage — not confirmed mechanism)  
-**Document ID:** `WP-SYNTHOBS-BEYOND-CRISPR-C11-LAB-BRIEF-2026-10-02`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Parent:** Beyond CRISPR Biological Discovery · gap lead **C11** (fixture triage — not confirmed mechanism)
+**Document ID:** `WP-SYNTHOBS-BEYOND-CRISPR-C11-LAB-BRIEF-2026-10-02`
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 
 ---
 
@@ -54,11 +54,11 @@ Use matched genomic backbone; single locus edits; verify by sequencing.
 
 1. **Short-read + long-read** on locus after edits.
 2. **Nucleic acid profiling** under inducing vs non-inducing conditions:
-   - Total nucleic extracts; RNase / DNase discrimination as appropriate.
-   - **RT-dead vs WT** comparison under same induction.
+- Total nucleic extracts; RNase / DNase discrimination as appropriate.
+- **RT-dead vs WT** comparison under same induction.
 3. **Orthogonal exclusion panels** (as available):
-   - DGR-style VR deep-seq on nearby variable regions (expect flat if true C11).
-   - Retron/msDNA-specific assays if locus neighbors retron motifs.
+- DGR-style VR deep-seq on nearby variable regions (expect flat if true C11).
+- Retron/msDNA-specific assays if locus neighbors retron motifs.
 
 **Primary discriminant:** inducing conditions → product present in WT, absent in RT-dead, reduced/absent in partner-dead.
 

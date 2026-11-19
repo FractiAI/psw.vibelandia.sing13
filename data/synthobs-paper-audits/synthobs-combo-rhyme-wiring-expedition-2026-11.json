@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "dbff9f8e65e94670",
+  "auditId": "f3133e505f767f76",
   "paperId": "synthobs-combo-rhyme-wiring-expedition-2026-11",
   "sourcePath": "docs/SYNTHOBS_COMBO_RHYME_WIRING_EXPEDITION_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-19T16:34:56.293Z"
+          "invokedAt": "2026-11-19T17:26:31.481Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-19T16:34:56.292Z",
-  "completedAt": "2026-11-19T16:34:56.293Z",
+  "startedAt": "2026-11-19T17:26:31.480Z",
+  "completedAt": "2026-11-19T17:26:31.481Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1738,
+      "wordCount": 1932,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

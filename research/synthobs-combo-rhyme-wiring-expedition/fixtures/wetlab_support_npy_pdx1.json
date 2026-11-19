@@ -1,0 +1,122 @@
+{
+  "source": "Curated from web literature search and Europe PMC harvest (fixtures/europepmc_npy_pdx1_harvest.json)",
+  "curatedAt": "2026-11-19",
+  "pair": "NPY|PDX1",
+  "curationNote": "Matches are limited to what each abstract or page states. Items marked abstract-head were read only as far as the stored abstract head; none of these papers tested an NPY to PDX1 wire directly.",
+  "literature": [
+    {
+      "id": "JCI-INSIGHT-2017-NPY-BETA",
+      "citation": "JCI Insight 2017, doi 10.1172/jci.insight.94005",
+      "matchType": "supports",
+      "readDepth": "abstract and results summary",
+      "finding": "NPY marks partially differentiated beta cells. It is excluded from Pdx1-positive progenitors at E12.5, falls after birth (about 48% of islet cells at P0 to 3.5% at P30), and is re-expressed under high-fat diet (about 2% to 15%), in db/db and in NOD mice. NPY knockdown reduces replication and enhances glucose-stimulated insulin secretion.",
+      "bearsOn": "Direction of the wire: NPY is high where Pdx1 maturity is low and returns under stress."
+    },
+    {
+      "id": "DIABETES-2013-PDX1-DUCT",
+      "citation": "Diabetes 2013, doi 10.2337/db12-1833",
+      "matchType": "supports",
+      "readDepth": "abstract",
+      "finding": "Pdx1 deletion in ducts leaves postnatal beta-cell formation intact but impairs maturation. PDX1-low beta cells coexpress MAFB and NPY/PYY (the antibody cannot separate the two). PYY mRNA is elevated; NPY and PP mRNA are not.",
+      "bearsOn": "Same direction from the Pdx1 side, with a qualifier: the NPY signal in that study is not cleanly separated from PYY."
+    },
+    {
+      "id": "PMC4917419",
+      "citation": "PMC4917419",
+      "matchType": "context",
+      "readDepth": "search summary",
+      "finding": "Pdx1 and Oc1 cooperate in pancreatic gene regulation.",
+      "bearsOn": "Background on PDX1 as a regulator; no NPY result."
+    },
+    {
+      "id": "PMID-32646628",
+      "citation": "PMID 32646628, doi 10.1016/j.jdiacomp.2020.107669",
+      "matchType": "context",
+      "readDepth": "abstract-head",
+      "finding": "A Y1 receptor agonist was studied in islets of diet-induced obese mice.",
+      "bearsOn": "NPY signaling acts on islets under high-fat diet, matching the re-expression result."
+    },
+    {
+      "id": "PMID-22186407",
+      "citation": "PMID 22186407, doi 10.1210/en.2011-1635",
+      "matchType": "context",
+      "readDepth": "abstract-head",
+      "finding": "FoxO1 overexpression in hypothalamus and pancreas causes obesity and glucose intolerance.",
+      "bearsOn": "A shared upstream regulator that spans both the neuropeptide and the islet axis is a candidate mechanism."
+    },
+    {
+      "id": "PMID-29433879",
+      "citation": "PMID 29433879, doi 10.1016/j.jss.2017.11.010",
+      "matchType": "context",
+      "readDepth": "abstract-head",
+      "finding": "NPY and its Y1 and Y2 receptors are expressed in pancreatic intraepithelial neoplasia and invasive pancreatic cancer in a mouse model and human samples.",
+      "bearsOn": "Second tissue context in which NPY and pancreatic lineage genes co-occur."
+    },
+    {
+      "id": "PMC6026541",
+      "citation": "PMC6026541",
+      "matchType": "reagent",
+      "readDepth": "search summary",
+      "finding": "A high-content beta-cell replication platform that uses PDX1 as a beta-cell marker.",
+      "bearsOn": "A ready assay format for the replication readout."
+    },
+    {
+      "id": "PMID-17717131",
+      "citation": "PMID 17717131, doi 10.1373/clinchem.2007.087973",
+      "matchType": "reagent",
+      "readDepth": "abstract-head",
+      "finding": "Extracellular Pdx1 and Npy mRNA in medium conditioned by insulin-producing cells tracks cell number and function.",
+      "bearsOn": "Both genes are measurable in the same cultures with established RT-PCR."
+    },
+    {
+      "id": "PMID-21898210",
+      "citation": "PMID 21898210, doi 10.1007/978-1-61779-289-2_2",
+      "matchType": "reagent",
+      "readDepth": "abstract-head",
+      "finding": "Methods chapter for RT-PCR of extracellular mRNAs including Pdx1 and Npy from insulin-producing cells.",
+      "bearsOn": "Protocol for the readout above."
+    }
+  ],
+  "packages": {
+    "NPY|PDX1": {
+      "status": "recommended",
+      "hypothesis": "NPY expression in beta cells is inversely tied to PDX1 level: low PDX1 and immature beta cells express NPY, and mature PDX1-high cells do not.",
+      "assays": [
+        "Triple immunostain NPY, PDX1 and MAFB in mouse islets at P0, P30 and after high-fat diet, scoring the fraction of NPY-positive cells inside PDX1-low and PDX1-high bins.",
+        "Pdx1 knockdown in a beta-cell line, with NPY mRNA by qPCR; the reverse knockdown of NPY with PDX1 and insulin readouts.",
+        "PYY-versus-NPY separation with isoform-specific probes, because the 2013 antibody cannot tell them apart."
+      ],
+      "controls": [
+        "Non-rhyme beta-cell gene pair as a negative wire control",
+        "INS and POMC as the known positive wire",
+        "NPY on chr7 and PDX1 on chr13, so a locus effect is not expected"
+      ],
+      "falsifier": "No change in NPY after Pdx1 manipulation, or NPY-positive cells equally common in PDX1-high and PDX1-low bins."
+    },
+    "APP|TMPRSS2": {
+      "status": "not advised",
+      "reason": "No shared disease rail and both genes sit on chr21. A positive result would not separate wiring from locus.",
+      "ifRun": "Add a chr21 non-rhyme pair as a locus control before reading any signal."
+    }
+  },
+  "newRhymes": [
+    {
+      "label": "PDX1↔POMC",
+      "source": "LLM rhyme",
+      "role": "Endocrine neighbor of the thickened pair; POMC is the control gene in INS↔POMC.",
+      "stringStatus": "unqueried"
+    },
+    {
+      "label": "POMC↔NPY",
+      "source": "LLM rhyme",
+      "role": "Closes a triangle with NPY↔PDX1 and PDX1↔POMC. NPY and POMC neurons are a textbook antagonistic pair in appetite control, so this rhyme is expected to be known; STRING was not queried here.",
+      "stringStatus": "unqueried"
+    },
+    {
+      "label": "DNMT1↔PDX1",
+      "source": "Pilot rhyme",
+      "role": "Low-coupling Pilot neighbor of PDX1 (epigenetic regulator). A follow-up candidate, not a support.",
+      "stringStatus": "unqueried"
+    }
+  ]
+}

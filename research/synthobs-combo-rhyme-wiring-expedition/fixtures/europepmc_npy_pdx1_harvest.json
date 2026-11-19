@@ -1,0 +1,65 @@
+{
+  "source": "Europe PMC REST core search",
+  "fetchedAt": "2026-11-19",
+  "purpose": "bridge thickening wet-lab support harvest for NPY\u2194PDX1",
+  "queries": [
+    "TITLE_ABS:(\"NPY\" AND \"PDX1\")",
+    "TITLE_ABS:(\"neuropeptide Y\" AND \"PDX1\")",
+    "TITLE_ABS:(\"neuropeptide Y\" AND \"Pdx1\")",
+    "TITLE_ABS:(\"NPY\" AND \"Pdx1\" AND (islet OR beta OR \u03b2 OR pancreatic))",
+    "TITLE_ABS:(\"neuropeptide Y\" AND (islet OR \"beta cell\" OR \"\u03b2-cell\") AND (PDX1 OR Pdx1 OR \"pancreatic duodenum\"))"
+  ],
+  "nUnique": 5,
+  "papers": [
+    {
+      "title": "Effects of Y1 receptor agonist on the pancreatic islet of diet-induced obese and diabetic mice.",
+      "pmid": "32646628",
+      "doi": "10.1016/j.jdiacomp.2020.107669",
+      "year": "2020",
+      "journal": null,
+      "query": "TITLE_ABS:(\"NPY\" AND \"PDX1\")",
+      "abstractHead": "<h4>Aims</h4>Agonists of the NPY receptor might be potential in protecting pancreatic islets from injury. We aimed to characterize the role of [Leu31, Pro34]-PYY, an NPYR1 agonist, in pancreatic islets of a diet-induced obesity and insulin resistance model.<h4>Methods</h4>We studied long-term high-fat diet intake as a model and selective agonist of the Y1 receptor to explore the pancreatic islet a",
+      "isOpenAccess": "N"
+    },
+    {
+      "title": "Expression of neuropeptide Y and its receptors Y1 and Y2 in pancreatic intraepithelial neoplasia and invasive pancreatic cancer in a transgenic mouse model and human samples of pancreatic cancer.",
+      "pmid": "29433879",
+      "doi": "10.1016/j.jss.2017.11.010",
+      "year": "2018",
+      "journal": null,
+      "query": "TITLE_ABS:(\"NPY\" AND \"PDX1\")",
+      "abstractHead": "<h4>Background</h4>Pancreatic ductal adenocarcinoma (PDAC) is among the most dismal of human malignancies. Neuropeptides have shown to be implicated in angiogenesis, tumor growth, and formation of distant metastases in various solid tumors. In the present study, we used a genetically engineered mouse model of pancreatic cancer to evaluate the impact of neuropeptide Y (NPY) and its receptors 1 (Y1)",
+      "isOpenAccess": "N"
+    },
+    {
+      "title": "Reverse-transcriptase polymerase chain reaction to detect extracellular mRNAs.",
+      "pmid": "21898210",
+      "doi": "10.1007/978-1-61779-289-2_2",
+      "year": "2011",
+      "journal": null,
+      "query": "TITLE_ABS:(\"NPY\" AND \"PDX1\")",
+      "abstractHead": "The presence of extracellular nucleic acids has been reported in serum/plasma from cancer and diabetes patients that may help in disease diagnosis. Taking insulin-producing cells as examples here, RT-PCR was used to investigate a correlation between the presence and amounts of extracellular mRNA(s) and cell mass and/or function. RT-PCR was performed on a range of mRNAs, including Pdx1, Npy, Egr1, ",
+      "isOpenAccess": "N"
+    },
+    {
+      "title": "Detection of amplifiable mRNA extracellular to insulin-producing cells: potential for predicting beta cell mass and function.",
+      "pmid": "17717131",
+      "doi": "10.1373/clinchem.2007.087973",
+      "year": "2007",
+      "journal": null,
+      "query": "TITLE_ABS:(\"NPY\" AND \"PDX1\")",
+      "abstractHead": "<h4>Background</h4>Detecting extracellular nucleic acids in the serum/plasma of cancer patients may help in cancer diagnosis. We investigated whether extracellular mRNAs are reproducibly detectable in conditioned medium (CM) from insulin-producing cell cultures and if their presence and amounts are indicative of cell number and/or function.<h4>Methods</h4>We isolated mRNA from medium conditioned b",
+      "isOpenAccess": "N"
+    },
+    {
+      "title": "Overexpression of FoxO1 in the hypothalamus and pancreas causes obesity and glucose intolerance.",
+      "pmid": "22186407",
+      "doi": "10.1210/en.2011-1635",
+      "year": "2012",
+      "journal": null,
+      "query": "TITLE_ABS:(\"neuropeptide Y\" AND \"PDX1\")",
+      "abstractHead": "Recent studies have revealed that insulin signaling in pancreatic \u03b2-cells and the hypothalamus is critical for maintaining nutrient and energy homeostasis, the failure of which are hallmarks of metabolic syndrome. We previously reported that forkhead transcription factor forkhead box-containing protein of the O subfamily (FoxO)1, a downstream effector of insulin signaling, plays important roles in",
+      "isOpenAccess": "N"
+    }
+  ]
+}

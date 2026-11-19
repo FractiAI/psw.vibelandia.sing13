@@ -1,0 +1,54 @@
+{
+  "api": "Open Targets Platform associations (cached offline fixture)",
+  "fetchedAt": "2026-11-19T00:00:00Z",
+  "honesty": "Cached public Open Targets disease-association scores for offline CI. Soft Story disease rails only — not clinical diagnosis.",
+  "genes": {
+    "INS": {
+      "axis": "diabetes",
+      "topDiseases": [
+        {
+          "name": "diabetes mellitus permanent neonatal",
+          "rank": 4,
+          "score": 0.785
+        },
+        {
+          "name": "hyperproinsulinemia",
+          "score": 0.742
+        },
+        {
+          "name": "MODY",
+          "score": 0.736
+        },
+        {
+          "name": "T1D",
+          "score": 0.733
+        },
+        {
+          "name": "T2D",
+          "score": 0.591
+        },
+        {
+          "name": "diabetes mellitus",
+          "score": 0.589
+        }
+      ]
+    },
+    "POMC": {
+      "axis": "obesity",
+      "topDiseases": [
+        {
+          "name": "obesity due to POMC deficiency",
+          "score": 0.697
+        },
+        {
+          "name": "obesity disorder",
+          "score": 0.574
+        },
+        {
+          "name": "inherited obesity",
+          "score": 0.426
+        }
+      ]
+    }
+  }
+}

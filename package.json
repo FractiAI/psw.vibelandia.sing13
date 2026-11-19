@@ -355,7 +355,8 @@
     "publish:standalone:omniversal-time-crystal-engine:create": "node scripts/publish-standalone-suite.mjs synthobs-omniversal-time-crystal-engine --create-repo",
     "sync:lattice-skills": "node scripts/sync-lattice-skills-index.mjs",
     "generate:lattice-skills": "node scripts/generate-lattice-skills.mjs",
-    "research:synthobs-pilot-rhyme-expedition": "node research/synthobs-pilot-rhyme-expedition/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-pilot-rhyme-expedition": "node research/synthobs-pilot-rhyme-expedition/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-ins-pomc-endocrine-rhyme-validation": "node research/synthobs-ins-pomc-endocrine-rhyme-validation/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-19** · **412** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-19** · **413** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -374,6 +374,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-infinite-octave-egs-catalog-2026-09.html`](/interfaces/blog-infinite-octave-egs-catalog-2026-09.html) | What CEOs Need Between Bigger Racks and Total Freeze · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octave-prime-parity-2026-09.html`](/interfaces/blog-infinite-octave-prime-parity-2026-09.html) | Why Two Stands Alone on the Trail · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octaves-omniversal-2026-08.html`](/interfaces/blog-infinite-octaves-omniversal-2026-08.html) | Your Valet Just Got Infinite Octaves · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-ins-pomc-endocrine-rhyme-validation-2026-11.html`](/interfaces/blog-ins-pomc-endocrine-rhyme-validation-2026-11.html) | Insulin and Appetite: Can a Rhyme Pair Earn a Real-Data Check? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-invisible-frontier-gates-ai-2026-08.html`](/interfaces/blog-invisible-frontier-gates-ai-2026-08.html) | The Invisible Frontier — Warnings Answered · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-kinematic-set-recycling-2026-09-old.html`](/interfaces/blog-kinematic-set-recycling-2026-09-old.html) | Same River, New Speed, New Theater · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-kinematic-set-recycling-2026-09.html`](/interfaces/blog-kinematic-set-recycling-2026-09.html) | Same River, New Speed, New Theater · Ship blog · SS Vibelandia |

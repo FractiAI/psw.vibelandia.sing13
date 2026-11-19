@@ -70,6 +70,14 @@ h1 {
 }
 .dateline strong { color: var(--text); }
 p { margin-bottom: 1rem; color: var(--text); }
+p.answer {
+  border-left: 3px solid var(--gold);
+  padding: 0.55rem 0 0.55rem 0.95rem;
+  margin: 0.4rem 0 1.4rem;
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+p.answer strong { color: var(--gold); }
 p.lead {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.28rem;

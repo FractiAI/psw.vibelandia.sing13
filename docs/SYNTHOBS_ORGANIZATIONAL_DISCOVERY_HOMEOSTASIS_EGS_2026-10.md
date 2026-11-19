@@ -1,5 +1,7 @@
 # Homeostasis Expedition: Can Super Intelligence Discover the Organization That Makes Further Discovery—and Potentially System-Wide Homeostasis—Self-Sustaining?
 
+**Short answer: No.** Not shown: in a synthetic 12-node simulation, organizational discovery cut allocation RMSE by 7.33% versus local training, but became 6.83% worse after a structural shift until retrained. Super Intelligence and self-sustaining improvement were not tested directly.
+
 **Research program · Homeostasis Expedition · Infinite Octave / SynthOBS · 11 October 2026**
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

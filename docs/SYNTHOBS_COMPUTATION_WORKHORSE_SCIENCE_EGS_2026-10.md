@@ -1,5 +1,7 @@
 # Should Computation Become the Primary Workhorse of Science?
 
+**Short answer: Yes**, in the synthetic model only: Computation-first arms produced about 725 validated discoveries per researcher-year versus about 2, at roughly $237 versus $108,516 direct spend per validated discovery. Parameters are declared rather than calibrated, so real-world superiority is not established.
+
 **Homeostasis Expedition: Computational Discovery, Research Economics, Scientific Integrity, and the Discovery-to-Implementation Pipeline**
 
 **Research manuscript · 13 October 2026 · FractiAI / Infinite Octaves / SynthOBS**

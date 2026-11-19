@@ -1,5 +1,7 @@
 # Homeostasis Expedition: All Roads Lead to Fractal, Holographic, Goldilocks?
 
+**Short answer: Yes.** On deterministic fixtures, four of four experiments passed, with a mean post-hoc margin of about 0.118 against a gate of 0.10. The result is qualified convergence on synthetic landscapes, neither universal nor shown for external labs.
+
 **Independent Research Convergence in AI**
 
 **Literature synthesis + integrated FHG convergence test (Layer B executed in Hero Leo Computational Lab · fixtures)**

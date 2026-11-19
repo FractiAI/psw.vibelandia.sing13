@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "f36d034b1c8550c9",
+  "auditId": "99c05f7b34b36261",
   "paperId": "synthobs-npy-sod1-rhyme-validation-2026-11",
   "sourcePath": "docs/SYNTHOBS_NPY_SOD1_RHYME_VALIDATION_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-19T15:36:29.014Z"
+          "invokedAt": "2026-11-19T16:34:55.677Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-19T15:36:29.013Z",
-  "completedAt": "2026-11-19T15:36:29.014Z",
+  "startedAt": "2026-11-19T16:34:55.676Z",
+  "completedAt": "2026-11-19T16:34:55.678Z",
   "iterations": 1,
-  "overallScore": 0.876,
+  "overallScore": 0.971,
   "passThreshold": 0.85,
   "convergence": {
     "status": "pass",
@@ -95,15 +95,15 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.876,
+      "overallScore": 0.971,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
-        "methodsRepro": 0.6,
+        "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
         "references": 1,
-        "abstractTitle": 0.55,
+        "abstractTitle": 1,
         "synthobsAttribution": 1,
         "technicalPrecision": 0.85
       }
@@ -113,27 +113,25 @@
     "mode": "structural",
     "scores": {
       "honestyBoundary": 1,
-      "methodsRepro": 0.6,
+      "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
       "references": 1,
-      "abstractTitle": 0.55,
+      "abstractTitle": 1,
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.876,
+    "overallScore": 0.971,
     "criticalBlockers": [],
-    "suggestions": [
-      "Document methods, data sources, and reproducibility commands."
-    ],
+    "suggestions": [],
     "meta": {
-      "wordCount": 447,
+      "wordCount": 2080,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 0,
-        "numbered": 8,
-        "citeLines": 4
+        "numbered": 27,
+        "citeLines": 5
       }
     }
   },

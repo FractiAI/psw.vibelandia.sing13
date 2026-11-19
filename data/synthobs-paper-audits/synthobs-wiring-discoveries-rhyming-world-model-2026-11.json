@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "b68fead983a57d17",
+  "auditId": "1eb74cf64c854efc",
   "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
   "sourcePath": "docs/SYNTHOBS_WIRING_DISCOVERIES_RHYMING_WORLD_MODEL_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-19T15:59:05.360Z"
+          "invokedAt": "2026-11-19T16:34:56.056Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-19T15:59:05.359Z",
-  "completedAt": "2026-11-19T15:59:05.360Z",
+  "startedAt": "2026-11-19T16:34:56.055Z",
+  "completedAt": "2026-11-19T16:34:56.056Z",
   "iterations": 1,
-  "overallScore": 0.906,
+  "overallScore": 0.941,
   "passThreshold": 0.85,
   "convergence": {
     "status": "pass",
@@ -95,14 +95,14 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.906,
+      "overallScore": 0.941,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
         "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
-        "references": 0.35,
+        "references": 0.7,
         "abstractTitle": 1,
         "synthobsAttribution": 1,
         "technicalPrecision": 0.85
@@ -116,24 +116,22 @@
       "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
-      "references": 0.35,
+      "references": 0.7,
       "abstractTitle": 1,
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.906,
+    "overallScore": 0.941,
     "criticalBlockers": [],
-    "suggestions": [
-      "Expand References with ≥3 citable sources or repo cross-links."
-    ],
+    "suggestions": [],
     "meta": {
-      "wordCount": 1183,
+      "wordCount": 2025,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 0,
-        "numbered": 19,
-        "citeLines": 0
+        "numbered": 26,
+        "citeLines": 2
       }
     }
   },

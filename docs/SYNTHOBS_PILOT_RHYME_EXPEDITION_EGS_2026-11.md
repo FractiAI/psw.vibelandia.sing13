@@ -37,6 +37,8 @@ Five arms on 100 missions (seed `20261118`, six hops, three Pilots under one Dir
 
 Run: `npm run research:pilot-rhyme-expedition` (kit) or `npm run research:synthobs-pilot-rhyme-expedition` (SING 13).
 
+**Theater arm:** same public Cosmic/LLM fixtures; long-range held-out partner tasks; arms `flat_peers` vs `director_pilot_rhyme` (Director map + Pilot locals). Catalog rows where Pilot hits and flat misses.
+
 ## Results
 
 | Arm | Wins / 100 | Store |
@@ -52,6 +54,25 @@ Run: `npm run research:pilot-rhyme-expedition` (kit) or `npm run research:syntho
 ## World Model feature lock
 
 Pilot Rhyme = Director holds the map · Pilots run local steps · roles stored once · each mission as only what differs · one shared world.
+
+
+## Theater candidate recovery
+
+Director holds the coupling map; Pilots hold local ordered slices; flat peers only see local windows. Long-range held-out partners are the same fixture grammar used by Cosmic / LLM rhyme theaters.
+
+| Theater | Tasks | Flat peers | Pilot Rhyme | Named candidates (Pilot hit · flat miss) |
+|---|---:|---:|---:|---:|
+| cosmic · exoplanet | 169 | 0% | **100%** | **169** |
+| cosmic · neo | 96 | 0% | **100%** | **96** |
+| cosmic · ngc | 173 | 0% | **100%** | **173** |
+| cosmic · wmap_tt | 148 | 0% | **100%** | **148** |
+| genome · exon | 39 | 0% | **100%** | **39** |
+| genome · chrM | 67 | 0% | **100%** | **67** |
+| **Total** | **692** | **0%** | **100%** | **692** |
+
+Example named candidates: `Kepler-607 c ↔ TOI-1758 b`, `2022 AP1 ↔ 2025 WO`, `IC…` pairs, `ell-…` multipole pairs, `INS:ex2 ↔ POMC:ex2`. Full list: `research/synthobs-pilot-rhyme-expedition/data/DISCOVERY_CATALOG.md`.
+
+Private Director/Pilot copies also recover the board gold (roles+map); the **flat-miss catalog** is what Pilot seats surface as discovery candidates on these theaters. Genome rows remain public-panel demos, not clinical findings. Cosmic rows are fixture coupling partners, not finished astrophysical discoveries.
 
 ## Φ_EGS / catalog
 

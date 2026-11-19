@@ -35,6 +35,25 @@ function uniqueBy(arr, keyFn) {
   return out;
 }
 
+
+const pilotPath = join(
+  ROOT,
+  'research/synthobs-pilot-rhyme-expedition/data/DISCOVERY_CATALOG.json',
+);
+let pilotDiscoveries = [];
+if (existsSync(pilotPath)) {
+  const pilot = readJson(pilotPath);
+  pilotDiscoveries = (pilot.discoveries || []).map((d) => ({
+    rhyme: 'pilot-rhyme',
+    theater: d.theater,
+    discoveryId: d.discoveryId,
+    kind: d.kind,
+    coupling: d.coupling,
+    detail: d.detail,
+    source: 'synthobs-pilot-rhyme-expedition/data/DISCOVERY_CATALOG.json',
+  }));
+}
+
 const nvidia = join(ROOT, 'research/synthobs-nvidia-goldilocks-awareness-expedition/data');
 const cosmicPath = join(
   ROOT,
@@ -176,7 +195,7 @@ if (existsSync(llmPath)) {
 const catalog = {
   generatedAt: new Date().toISOString(),
   purpose:
-    'Named discoveries from protein-folding and LLM rhymes across theaters — not pass/fail alone.',
+    'Named discoveries from protein-folding, LLM, and Pilot rhymes across theaters — not pass/fail alone.',
   theaters: [
     'protein (E9)',
     'knowledge (E10)',
@@ -193,6 +212,10 @@ const catalog = {
     n: llmDiscoveries.length,
     discoveries: llmDiscoveries,
   },
+  pilotRhyme: {
+    n: pilotDiscoveries.length,
+    discoveries: pilotDiscoveries,
+  },
 };
 
 const outDirs = [
@@ -203,12 +226,12 @@ const outDirs = [
 
 function toMd(cat) {
   const lines = [];
-  lines.push('# Rhyme Discovery Catalog · Protein Folding + LLM');
+  lines.push('# Rhyme Discovery Catalog · Protein Folding + LLM + Pilot');
   lines.push('');
   lines.push(`Generated: ${cat.generatedAt}`);
   lines.push('');
   lines.push(
-    'Both rhymes must produce **named discoveries** with awareness — not merely pass H1/H2 tests. Catalogued by theater.',
+    'Rhymes must produce **named discoveries** with awareness — not merely pass H1/H2 tests. Catalogued by theater.',
   );
   lines.push('');
   lines.push('## Protein-folding rhyme discoveries');
@@ -237,10 +260,33 @@ function toMd(cat) {
     }
   }
   lines.push('');
+  lines.push('## Pilot rhyme discoveries');
+  lines.push('');
+  lines.push(`Count: **${cat.pilotRhyme?.n || 0}**`);
+  lines.push('');
+  if (!cat.pilotRhyme?.n) {
+    lines.push('_Run `npm run research:synthobs-pilot-rhyme-expedition` first._');
+  } else {
+    lines.push(
+      'Held-out partners recovered by Director map + Pilot local slices where flat peers (local windows only) missed.',
+    );
+    lines.push('');
+    lines.push('| Theater | Discovery | Kind | Coupling |');
+    lines.push('|---|---|---|---:|');
+    for (const d of cat.pilotRhyme.discoveries.slice(0, 120)) {
+      lines.push(
+        `| ${d.theater} | \`${d.discoveryId}\` | ${d.kind} | ${d.coupling ?? ''} |`,
+      );
+    }
+    if (cat.pilotRhyme.n > 120) {
+      lines.push(`| … | +${cat.pilotRhyme.n - 120} more in JSON | | |`);
+    }
+  }
+  lines.push('');
   lines.push('## Honesty');
   lines.push('');
   lines.push(
-    'Soft Story / computational expedition catalogs. Candidate novel physics rows are candidates under nulls, not finished laws. Genome rows are public-panel demonstrations, not clinical genetics. Φ_EGS is filing grammar only.',
+    'Soft Story / computational expedition catalogs. Candidate novel physics rows are candidates under nulls, not finished laws. Genome rows are public-panel demonstrations, not clinical genetics. Pilot rows are fixture coupling partners under Director/Pilot seats, not finished astrophysical or clinical discoveries. Φ_EGS is filing grammar only.',
   );
   lines.push('');
   lines.push('→ ∞^∞');
@@ -258,6 +304,7 @@ console.log(
     {
       proteinFold: catalog.proteinFoldingRhyme.n,
       llm: catalog.llmRhyme.n,
+      pilot: catalog.pilotRhyme.n,
       wrote: outDirs.map((d) => join(d, 'RHYME_DISCOVERY_CATALOG.md')),
     },
     null,

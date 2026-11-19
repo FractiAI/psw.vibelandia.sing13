@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-18T22:46:46.674Z",
+  "updatedAt": "2026-11-19T01:27:01.791Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-18T22:46:46.673Z",
+      "createdAt": "2026-11-19T01:27:01.790Z",
       "body": "Pilot Rhyme Expedition — Director and Pilot Seats that Share One World",
       "presenceHue": "gold",
       "paperId": "synthobs-pilot-rhyme-expedition-2026-11",

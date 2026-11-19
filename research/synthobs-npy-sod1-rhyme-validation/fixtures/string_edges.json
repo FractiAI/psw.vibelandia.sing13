@@ -1,0 +1,23 @@
+{
+  "source": "STRING API json/network species=9606",
+  "fetchedAt": "2026-11-19",
+  "focus": [],
+  "positiveControlInsPomc": [
+    {
+      "stringId_A": "9606.ENSP00000380432",
+      "stringId_B": "9606.ENSP00000384092",
+      "preferredName_A": "INS",
+      "preferredName_B": "POMC",
+      "ncbiTaxonId": "9606",
+      "score": 0.947,
+      "nscore": 0,
+      "fscore": 0,
+      "pscore": 0,
+      "ascore": 0.061,
+      "escore": 0,
+      "dscore": 0,
+      "tscore": 0.946
+    }
+  ],
+  "note": "Empty array = no STRING edge in live query. Positive control INS↔POMC confirms model recovers known edges."
+}

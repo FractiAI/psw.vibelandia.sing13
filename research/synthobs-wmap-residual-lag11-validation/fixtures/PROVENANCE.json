@@ -1,0 +1,7 @@
+{
+  "wmap_tt_spectrum_9yr_txt": {
+    "source": "NASA LAMBDA / WMAP 9-Year Combined Power Spectrum v5.0 (Dec 2012)",
+    "copiedFrom": "research/synthobs-cosmic-rhyme-expedition/fixtures/wmap_tt_spectrum_9yr.txt",
+    "realPublicData": true
+  }
+}

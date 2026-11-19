@@ -1,0 +1,93 @@
+{
+  "discoveryClass": "new_wiring",
+  "claim": "Assemble public CMB spectra + residual-lag graph into multipole wiring that is novel relative to acoustic-spacing rediscovery and falsifiable by beam/mask/cross-mission tests.",
+  "noveltyGate": "Lags 11 & 14 = candidate_novel_physics on real WMAP TT; lags 17\u201319 locked as rediscovery controls; pre-registered falsifiers X1\u2013X5 defined.",
+  "falsifiers": [
+    "X1 Planck silent on 11/14 under same residual gate \u2192 demote WMAP-specific",
+    "X3 only one continuum family sees 11/14 \u2192 fitting ghost",
+    "X4 beam-injected \u039bCDM sims recreate 11/14 \u2192 instrument wiring",
+    "X5 mask change moves/kills 11/14 while matching Galactic template lag \u2192 mask wiring"
+  ],
+  "doesNotClaim": [
+    "finished cosmological law",
+    "\u039bCDM replacement",
+    "instrument-systematics-free detection without X1\u2013X5"
+  ],
+  "pieces": [
+    {
+      "id": "W1",
+      "role": "real_wmap_tt",
+      "title": "NASA LAMBDA WMAP 9-year Combined TT Power Spectrum v5.0",
+      "cite": "Bennett et al. 2012 / LAMBDA DR5",
+      "url": "https://lambda.gsfc.nasa.gov/product/map/dr5/pow_tt_spec_get.html",
+      "wetLab": false,
+      "publicSpectrum": true,
+      "whatItShows": "Real published TT C\u2113 table (n\u2113=899 in fixture) \u2014 the wire substrate.",
+      "wires": [
+        "WMAP_TT",
+        "ell",
+        "Cl"
+      ]
+    },
+    {
+      "id": "W2",
+      "role": "residual_lag_novel",
+      "title": "C4b residual lag search (this suite)",
+      "cite": "runC4WmapResidualPhysics seed 20261119",
+      "url": "data/empirical_report.json",
+      "wetLab": false,
+      "publicSpectrum": true,
+      "whatItShows": "After log-quadratic continuum, lags 11 & 14 corr\u22480.499/0.466, p\u22480.0033, nearAcoustic=false \u2192 candidate_novel_physics.",
+      "wires": [
+        "lag_11",
+        "lag_14",
+        "residual_Cl"
+      ]
+    },
+    {
+      "id": "W3",
+      "role": "acoustic_rediscovery_control",
+      "title": "Same residual board labels lags 17\u201319 rediscovery",
+      "cite": "empirical_report wmapResidual.topLags",
+      "url": "data/empirical_report.json",
+      "wetLab": false,
+      "publicSpectrum": true,
+      "whatItShows": "Positive control that the wiring board can still say 'known' when near acoustic spacing.",
+      "wires": [
+        "lag_17",
+        "lag_18",
+        "lag_19",
+        "acoustic_spacing"
+      ]
+    },
+    {
+      "id": "W4",
+      "role": "falsification_board",
+      "title": "Pre-registered beam/mask/Planck falsifiers (X1\u2013X5)",
+      "cite": "Expedition design 2026-11-19",
+      "url": "PROTOCOL.md",
+      "wetLab": false,
+      "publicSpectrum": true,
+      "whatItShows": "Wiring stays provisional until cross-mission, continuum stress, and beam-injection nulls run \u2014 kill conditions explicit.",
+      "wires": [
+        "Planck_TT",
+        "beam_window",
+        "mask_KQ",
+        "continuum_family"
+      ]
+    }
+  ],
+  "assembledWiring": {
+    "edge": "residual_lag_11 \u2194 residual_lag_14 (WMAP TT residual graph)",
+    "edgeType": "multipole_residual_wiring",
+    "not": "finished_new_physics_law",
+    "path": [
+      "Real WMAP TT substrate (W1)",
+      "Residual lags 11 & 14 clear novel gate (W2)",
+      "Acoustic lags 17\u201319 locked rediscovery (W3)",
+      "Falsifiers X1\u2013X5 keep claim killable (W4)"
+    ],
+    "catalogStatus": "candidate_wiring_pending_cross_mission",
+    "discovery": "new_wiring_from_existing_public_spectra"
+  }
+}

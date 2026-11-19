@@ -1,0 +1,87 @@
+{
+  "discoveryClass": "new_wiring",
+  "claim": "Assemble existing wet-lab pieces into APP\u2194DNMT3A regulatory wiring that STRING does not list as a PPI edge.",
+  "noveltyGate": "STRING focus empty AND \u22653 wet-lab pieces spanning (A) DNMT3A tool acts on APP locus, (B) DNMT activity changes A\u03b2/APP in cells, (C) DNMT3A homeostasis in AD model cognition/amyloid.",
+  "falsifiers": [
+    "STRING gains APP\u2013DNMT3A PPI edge \u2192 demote to rediscovery",
+    "No direct DNMT3A\u2192APP locus experiment in set \u2192 fail assembly",
+    "Pieces only correlational methylation without DNMT3A identity \u2192 fail"
+  ],
+  "doesNotClaim": [
+    "new CRISPR run by us",
+    "PPI binding of APP to DNMT3A",
+    "approved AD therapy"
+  ],
+  "pieces": [
+    {
+      "id": "W1",
+      "role": "dnmt3a_targets_app_locus",
+      "title": "CRISPR/dCas9-Dnmt3a-mediated targeted DNA methylation of APP rescues brain pathology in a mouse model of Alzheimer\u2019s disease",
+      "cite": "Transl Neurodegener (2022)",
+      "url": "https://link.springer.com/article/10.1186/s40035-022-00314-0",
+      "wetLab": true,
+      "whatItShows": "dCas9-DNMT3A methylates APP promoter in vitro/in vivo; lowers APP/A\u03b2 and improves pathology/behavior in APP-KI mice.",
+      "wires": [
+        "DNMT3A",
+        "APP_promoter",
+        "Abeta",
+        "APP_KI"
+      ]
+    },
+    {
+      "id": "W2",
+      "role": "dnmt_activity_changes_abeta",
+      "title": "Folic Acid Inhibits Amyloid \u03b2-Peptide Production through Modulating DNA Methyltransferase Activity in N2a-APP Cells",
+      "cite": "Int J Mol Sci 16:25002 (2015)",
+      "url": "https://www.mdpi.com/1422-0067/16/10/25002",
+      "wetLab": true,
+      "whatItShows": "Raising DNMT activity lowers A\u03b2 in N2a-APP cells; DNMT inhibition raises A\u03b2 \u2014 DNMT board wires to APP product.",
+      "wires": [
+        "DNMT",
+        "APP695",
+        "Abeta"
+      ]
+    },
+    {
+      "id": "W3",
+      "role": "dnmt3a_ad_model_homeostasis",
+      "title": "Homeostatic DNMT3a Activity Is Required to Restore Cognition and Hippocampal DNA Methylation in the 5xFAD Model of Alzheimer\u2019s Disease",
+      "cite": "PMC13437123",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13437123/",
+      "wetLab": true,
+      "whatItShows": "DNMT3A knockdown/overexpression both harm cognition; methyl supplementation needs DNMT3A for pro-cognitive/amyloid effects in 5xFAD.",
+      "wires": [
+        "DNMT3A",
+        "5xFAD",
+        "hippocampal_methylation",
+        "cognition"
+      ]
+    },
+    {
+      "id": "W4",
+      "role": "app_ad_anchor",
+      "title": "OpenTargets APP Alzheimer rails (live-cached association board)",
+      "cite": "OpenTargets Platform GraphQL cache 2026-11-19",
+      "url": "fixtures/opentargets.json",
+      "wetLab": false,
+      "whatItShows": "APP tops Alzheimer disease association (~0.81) \u2014 disease rail the DNMT3A tools act on.",
+      "wires": [
+        "APP",
+        "Alzheimer"
+      ]
+    }
+  ],
+  "assembledWiring": {
+    "edge": "APP \u2194 DNMT3A",
+    "edgeType": "regulatory_epigenetic_wiring",
+    "not": "STRING_PPI",
+    "path": [
+      "dCas9-DNMT3A methylates APP and rescues APP-KI pathology (W1)",
+      "DNMT activity tunes A\u03b2 in APP-expressing cells (W2)",
+      "DNMT3A homeostasis required for AD-model cognitive/amyloid benefits (W3)",
+      "APP owns Alzheimer association rail (W4)"
+    ],
+    "catalogStatus": "STRING_empty_PPI",
+    "discovery": "new_wiring_from_existing_wet_labs"
+  }
+}

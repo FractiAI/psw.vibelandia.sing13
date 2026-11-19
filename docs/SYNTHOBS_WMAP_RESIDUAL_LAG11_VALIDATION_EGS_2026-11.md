@@ -6,6 +6,7 @@
 **Classification:** Application companion Soft Story · **new wiring discovery (provisional)** · **not** Infinite Octaves ENGINE_SHELF  
 **Date:** 19 November 2026  
 **Harness:** `research/synthobs-wmap-residual-lag11-validation/`  
+**FractiSI mirror:** https://fractisi.vercel.app/library/papers/wmap-residual-lag11-validation/  
 **Ship blog:** `/ship-blog/wmap-residual-lag11-validation`  
 **Data:** REAL NASA LAMBDA WMAP 9-year Combined TT Power Spectrum v5.0  
 

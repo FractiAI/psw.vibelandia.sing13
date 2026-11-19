@@ -29,3 +29,7 @@ export function loadEuropePmc() {
 export function loadChromosomeLoci() {
   return JSON.parse(readFileSync(join(FIX, 'chromosome_loci.json'), 'utf8'));
 }
+
+export function loadWetLabSupport() {
+  return JSON.parse(readFileSync(join(FIX, 'wetlab_support_npy_pdx1.json'), 'utf8'));
+}

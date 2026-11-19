@@ -34,4 +34,18 @@ describe('Combo rhyme wiring expedition', () => {
     expect(app.locus.same).toBe(true);
     expect(app.locus.chr).toBe('chr21');
   });
+
+  it('turns the thickened bridge into wet-lab support with literature matches and a falsifier', () => {
+    const report = runExpedition();
+    const e8 = report.experiments.e8;
+    expect(e8.passes).toBe(true);
+    expect(report.verdict.wetLabSupportPass).toBe(true);
+    expect(e8.literatureCounts.supports).toBeGreaterThanOrEqual(2);
+    expect(e8.literatureCounts.directTest).toBe(0);
+    expect(report.verdict.wetLabRecommended).toEqual(['NPY↔PDX1']);
+    expect(report.verdict.wetLabNotAdvised).toEqual(['APP↔TMPRSS2']);
+    const pkg = e8.packages.find((p) => p.key === 'NPY|PDX1');
+    expect(pkg.falsifier).toBeTruthy();
+    expect(e8.newRhymes.map((r) => r.label)).toEqual(['PDX1↔POMC', 'POMC↔NPY', 'DNMT1↔PDX1']);
+  });
 });

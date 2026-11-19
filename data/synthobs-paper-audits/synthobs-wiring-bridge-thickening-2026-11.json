@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "0adece147c005c66",
+  "auditId": "8ae963f34d5d957b",
   "paperId": "synthobs-wiring-bridge-thickening-2026-11",
   "sourcePath": "docs/SYNTHOBS_WIRING_BRIDGE_THICKENING_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-19T16:34:56.176Z"
+          "invokedAt": "2026-11-19T17:26:31.350Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-19T16:34:56.175Z",
-  "completedAt": "2026-11-19T16:34:56.176Z",
+  "startedAt": "2026-11-19T17:26:31.349Z",
+  "completedAt": "2026-11-19T17:26:31.351Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,
@@ -127,7 +127,7 @@
       "Expand References with ≥3 citable sources or repo cross-links."
     ],
     "meta": {
-      "wordCount": 1832,
+      "wordCount": 2756,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

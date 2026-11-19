@@ -8,6 +8,7 @@ import {
   loadOpenTargetsBridge,
   loadEuropePmc,
   loadChromosomeLoci,
+  loadWetLabSupport,
 } from './load.mjs';
 import { loadExonFeatureObjects } from '../../synthobs-npy-sod1-rhyme-validation/src/load.mjs';
 import {
@@ -330,6 +331,50 @@ export function runExpedition() {
     passes: bridgeProfiles.some((p) => p.role === 'new_empty' && p.bridgeVerdict.startsWith('THICKENED')),
   };
 
+  const wet = loadWetLabSupport();
+  const litBy = (t) => wet.literature.filter((l) => l.matchType === t);
+  const catalogLabels = new Set(classified.map((c) => c.label));
+  const newRhymes = wet.newRhymes.map((r) => ({
+    ...r,
+    inCatalog: catalogLabels.has(r.label) || catalogLabels.has(r.label.split('↔').reverse().join('↔')),
+    coupling: classified.find((c) => c.label === r.label || c.label === r.label.split('↔').reverse().join('↔'))?.maxCoupling ?? null,
+  }));
+  const wetPackages = Object.entries(wet.packages).map(([key, pkg]) => {
+    const prof = bridgeProfiles.find((p) => p.key === key);
+    return {
+      key,
+      label: prof?.label,
+      bridgeVerdict: prof?.bridgeVerdict,
+      thickened: !!prof && prof.bridgeVerdict.startsWith('THICKENED'),
+      ...pkg,
+    };
+  });
+  const recommended = wetPackages.filter((p) => p.status === 'recommended');
+  const e8 = {
+    id: 'E8',
+    name: 'wet_lab_support_from_thickened_bridge',
+    purpose:
+      'Turn a thickened bridge into wet-lab support: literature matches by type, new rhymes around the pair, and an assay package with a falsifier. Thin or confounded bridges are marked not advised.',
+    pair: wet.pair,
+    curationNote: wet.curationNote,
+    literature: wet.literature,
+    literatureCounts: {
+      supports: litBy('supports').length,
+      context: litBy('context').length,
+      reagent: litBy('reagent').length,
+      directTest: 0,
+    },
+    newRhymes,
+    packages: wetPackages,
+    passes:
+      litBy('supports').length >= 2 &&
+      litBy('reagent').length >= 1 &&
+      newRhymes.every((r) => r.inCatalog) &&
+      recommended.length >= 1 &&
+      recommended.every((p) => p.thickened) &&
+      wetPackages.filter((p) => p.status === 'not advised').every((p) => !p.thickened),
+  };
+
   const thickenedLabels = e7.thickened.filter((p) => p.role === 'new_empty').map((p) => p.label);
   const thinLabels = e7.thinOrConfounded.filter((p) => p.role === 'new_empty').map((p) => p.label);
 
@@ -348,10 +393,13 @@ export function runExpedition() {
       europepmc: epmc.source,
       chromosomes: chrom.source,
     },
-    experiments: { e1, e2, e3, e4, e5, e6, e7 },
+    experiments: { e1, e2, e3, e4, e5, e6, e7, e8 },
     verdict: {
       comboWiringExpeditionPass: e6.passes,
       bridgeThickeningPass: e7.passes,
+      wetLabSupportPass: e8.passes,
+      wetLabRecommended: recommended.map((p) => p.label),
+      wetLabNotAdvised: wetPackages.filter((p) => p.status === 'not advised').map((p) => p.label),
       newWiringCandidates: newEmpty.map((c) => ({
         label: c.label,
         maxCoupling: c.maxCoupling,

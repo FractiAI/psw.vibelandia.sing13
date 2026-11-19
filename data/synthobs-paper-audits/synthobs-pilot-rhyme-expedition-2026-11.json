@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "03de3d739bcea278",
+  "auditId": "2372ee8f4499f586",
   "paperId": "synthobs-pilot-rhyme-expedition-2026-11",
   "sourcePath": "docs/SYNTHOBS_PILOT_RHYME_EXPEDITION_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-18T22:46:46.671Z"
+          "invokedAt": "2026-11-19T01:27:01.788Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-18T22:46:46.670Z",
-  "completedAt": "2026-11-18T22:46:46.672Z",
+  "startedAt": "2026-11-19T01:27:01.787Z",
+  "completedAt": "2026-11-19T01:27:01.788Z",
   "iterations": 1,
   "overallScore": 0.871,
   "passThreshold": 0.85,
@@ -127,7 +127,7 @@
       "Expand References with ≥3 citable sources or repo cross-links."
     ],
     "meta": {
-      "wordCount": 582,
+      "wordCount": 818,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

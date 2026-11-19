@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "posts": [
+    {
+      "id": "daily-2026-11-19-synthobs-npy-sod1-rhyme-validation-2026-11",
+      "posted": "2026-11-19",
+      "featured": true,
+      "title": "When Existing ALS Wet Labs Wire NPY to SOD1, Is That a New Discovery?",
+      "subtitle": "News of the day · Thursday, November 19",
+      "summary": "New wiring discovery: STRING-empty PPI assembled from SOD1/ALS NPY wet labs; coupling ≈0.881; INS↔POMC control 0.947.",
+      "href": "/ship-blog/npy-sod1-rhyme-validation",
+      "pill": "TODAY",
+      "docRef": "synthobs-npy-sod1-rhyme-validation-2026-11",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-11-18-synthobs-cosmic-rhyme-expedition-2026-11",
       "posted": "2026-11-18",

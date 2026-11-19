@@ -1,0 +1,94 @@
+{
+  "source": "STRING API json/network species=9606",
+  "fetchedAt": "2026-11-19",
+  "pairs": {
+    "APP-DYRK1A": {
+      "a": "APP",
+      "b": "DYRK1A",
+      "nEdges": 1,
+      "empty": false,
+      "maxScore": 0.57,
+      "edges": [
+        {
+          "stringId_A": "9606.ENSP00000284981",
+          "stringId_B": "9606.ENSP00000340373",
+          "preferredName_A": "APP",
+          "preferredName_B": "DYRK1A",
+          "ncbiTaxonId": "9606",
+          "score": 0.57,
+          "nscore": 0,
+          "fscore": 0,
+          "pscore": 0,
+          "ascore": 0,
+          "escore": 0,
+          "dscore": 0,
+          "tscore": 0.57
+        }
+      ]
+    },
+    "DNMT1-DNMT3A": {
+      "a": "DNMT1",
+      "b": "DNMT3A",
+      "nEdges": 1,
+      "empty": false,
+      "maxScore": 0.999,
+      "edges": [
+        {
+          "stringId_A": "9606.ENSP00000264709",
+          "stringId_B": "9606.ENSP00000352516",
+          "preferredName_A": "DNMT3A",
+          "preferredName_B": "DNMT1",
+          "ncbiTaxonId": "9606",
+          "score": 0.999,
+          "nscore": 0,
+          "fscore": 0,
+          "pscore": 0,
+          "ascore": 0.084,
+          "escore": 0.922,
+          "dscore": 0.9,
+          "tscore": 0.973
+        }
+      ]
+    },
+    "NPY-PDX1": {
+      "a": "NPY",
+      "b": "PDX1",
+      "nEdges": 0,
+      "empty": true,
+      "maxScore": 0,
+      "edges": []
+    },
+    "APP-TMPRSS2": {
+      "a": "APP",
+      "b": "TMPRSS2",
+      "nEdges": 0,
+      "empty": true,
+      "maxScore": 0,
+      "edges": []
+    },
+    "INS-POMC": {
+      "a": "INS",
+      "b": "POMC",
+      "nEdges": 1,
+      "empty": false,
+      "maxScore": 0.947,
+      "edges": [
+        {
+          "stringId_A": "9606.ENSP00000380432",
+          "stringId_B": "9606.ENSP00000384092",
+          "preferredName_A": "INS",
+          "preferredName_B": "POMC",
+          "ncbiTaxonId": "9606",
+          "score": 0.947,
+          "nscore": 0,
+          "fscore": 0,
+          "pscore": 0,
+          "ascore": 0.061,
+          "escore": 0,
+          "dscore": 0,
+          "tscore": 0.946
+        }
+      ]
+    }
+  }
+}

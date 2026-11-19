@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-19T15:37:19.507Z",
+  "updatedAt": "2026-11-19T15:49:09.952Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-19T15:49:09.951Z",
+      "body": "Wiring Discoveries — A Higher-Layer Discovery Class Enabled by AI and the FractiSI Multiagent Rhyming World Model",
+      "presenceHue": "gold",
+      "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+      "artifact": {
+        "title": "Wiring Discoveries — A Higher-Layer Discovery Class Enabled by AI and the FractiSI Multiagent Rhyming World Model",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_WIRING_DISCOVERIES_RHYMING_WORLD_MODEL_EGS_2026-11.md",
+        "url": "/whitepaper/wiring-discoveries",
+        "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+        "docId": "WP-WIRING-DISCOVERIES-RHYMING-WORLD-MODEL-EGS-2026-11-20",
+        "published": "2026-11-20T01:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-combo-rhyme-wiring-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-19T15:48:57.547Z",
+      "body": "Combo Rhyme Wiring Expedition — Protein-Folding + LLM + Pilot Rhymes Surface New Wiring Candidates",
+      "presenceHue": "gold",
+      "paperId": "synthobs-combo-rhyme-wiring-expedition-2026-11",
+      "artifact": {
+        "title": "Combo Rhyme Wiring Expedition — Protein-Folding + LLM + Pilot Rhymes Surface New Wiring Candidates",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_COMBO_RHYME_WIRING_EXPEDITION_EGS_2026-11.md",
+        "url": "/whitepaper/combo-rhyme-wiring",
+        "paperId": "synthobs-combo-rhyme-wiring-expedition-2026-11",
+        "docId": "WP-COMBO-RHYME-WIRING-EXPEDITION-EGS-2026-11-20",
+        "published": "2026-11-20T00:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-wmap-residual-lag11-validation-2026-11",
       "type": "ArtifactEvent",

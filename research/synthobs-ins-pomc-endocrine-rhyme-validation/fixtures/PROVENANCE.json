@@ -1,0 +1,26 @@
+{
+  "fetchedAt": "2026-11-19T00:00:00Z",
+  "copiedFrom": "research/synthobs-llm-rhyme-cosmic-genome-expedition/fixtures",
+  "files": {
+    "genes.panel.json": {
+      "assembly": "GRCh38/hg38",
+      "n": 10,
+      "api": "GTEx v2 reference/gene",
+      "note": "Copied panel; focus genes INS + POMC present"
+    },
+    "exons.panel.json": {
+      "assembly": "GRCh38/hg38",
+      "n": 125,
+      "api": "MyGene.info v3"
+    },
+    "string_ins_pomc.json": {
+      "api": "STRING network API v11 (cached)",
+      "pairs": ["INS-POMC", "APP-DYRK1A", "NPY-SOD1"]
+    },
+    "opentargets_ins_pomc.json": {
+      "api": "Open Targets Platform associations (cached)",
+      "genes": ["INS", "POMC"]
+    }
+  },
+  "honesty": "Pinned public subsets for offline CI. Gene/exon = GRCh38 panel copy. STRING/OpenTargets = cached association scores. Not clinical genetics. Application companion Soft Story — not ENGINE_SHELF."
+}

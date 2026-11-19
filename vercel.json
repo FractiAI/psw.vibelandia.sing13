@@ -13,6 +13,22 @@
       "destination": "/api/whitepaper?id=synthobs-pilot-rhyme-expedition-2026-11"
     },
     {
+      "source": "/ship-blog/ins-pomc-endocrine-rhyme-validation/",
+      "destination": "/interfaces/blog-ins-pomc-endocrine-rhyme-validation-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/ins-pomc-endocrine-rhyme-validation",
+      "destination": "/interfaces/blog-ins-pomc-endocrine-rhyme-validation-2026-11.html"
+    },
+    {
+      "source": "/whitepaper/ins-pomc-endocrine-rhyme-validation/",
+      "destination": "/api/whitepaper?id=synthobs-ins-pomc-endocrine-rhyme-validation-2026-11"
+    },
+    {
+      "source": "/whitepaper/ins-pomc-endocrine-rhyme-validation",
+      "destination": "/api/whitepaper?id=synthobs-ins-pomc-endocrine-rhyme-validation-2026-11"
+    },
+    {
       "source": "/ship-blog/pilot-rhyme-expedition/",
       "destination": "/interfaces/blog-pilot-rhyme-expedition-2026-11.html"
     },

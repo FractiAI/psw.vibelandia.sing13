@@ -43,15 +43,15 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Shared World · LLM Rhyme · Cosmic Rhyme · NVIDIA Goldilocks · FractiSI Multi-Agent · Exp 002
-    expect(posts[0].id).toBe('synthobs-shared-world-collective-intelligence-2026-11');
+    // Newest: INS↔POMC validation · Pilot Rhyme · Shared World · LLM Rhyme · Cosmic Rhyme · NVIDIA Goldilocks
+    expect(posts[0].id).toBe('synthobs-ins-pomc-endocrine-rhyme-validation-2026-11');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-ins-pomc-endocrine-rhyme-validation-2026-11',
+      'synthobs-pilot-rhyme-expedition-2026-11',
       'synthobs-shared-world-collective-intelligence-2026-11',
       'synthobs-llm-rhyme-cosmic-genome-expedition-2026-11',
       'synthobs-cosmic-rhyme-expedition-2026-11',
       'synthobs-nvidia-goldilocks-awareness-expedition-2026-11',
-      'synthobs-fractisi-multi-agent-platform-2026-11',
-      'synthobs-fractisi-expedition-002-beyond-memory-2026-11',
     ]);
   });
 });

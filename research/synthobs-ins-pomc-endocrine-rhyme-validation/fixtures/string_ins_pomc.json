@@ -1,0 +1,52 @@
+{
+  "api": "STRING network API v11 (cached offline fixture)",
+  "fetchedAt": "2026-11-19T00:00:00Z",
+  "species": 9606,
+  "honesty": "Cached public STRING association scores for offline CI. Not a live API call. Not causal pathway proof.",
+  "pairs": [
+    {
+      "a": "INS",
+      "b": "POMC",
+      "empty": false,
+      "interactions": [
+        {
+          "preferredName_A": "INS",
+          "preferredName_B": "POMC",
+          "score": 0.947,
+          "nscore": 0,
+          "fscore": 0,
+          "pscore": 0,
+          "ascore": 0.061,
+          "escore": 0,
+          "dscore": 0,
+          "tscore": 0.946
+        }
+      ]
+    },
+    {
+      "a": "APP",
+      "b": "DYRK1A",
+      "empty": false,
+      "interactions": [
+        {
+          "preferredName_A": "APP",
+          "preferredName_B": "DYRK1A",
+          "score": 0.57,
+          "nscore": 0,
+          "fscore": 0,
+          "pscore": 0,
+          "ascore": 0,
+          "escore": 0,
+          "dscore": 0,
+          "tscore": 0.57
+        }
+      ]
+    },
+    {
+      "a": "NPY",
+      "b": "SOD1",
+      "empty": true,
+      "interactions": []
+    }
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "documentId": "WP-INS-POMC-ENDOCRINE-RHYME-VALIDATION-EGS-2026-11-19",
+  "registryId": "synthobs-ins-pomc-endocrine-rhyme-validation-2026-11",
+  "seed": 20261119,
+  "phiEgs": 1.618033988749895,
+  "engineShelfPinned": false,
+  "focusPair": {
+    "a": "INS",
+    "b": "POMC",
+    "label": "INS↔POMC"
+  },
+  "honesty": "Application companion Soft Story / endocrine rhyme validation. Not ENGINE_SHELF. Not causal pathway proof. Not clinical effect or medical advice. Not wet-lab genetics. STRING / OpenTargets rows are cached public API fixtures for offline CI. Φ_EGS is design grammar in honesty rails only. Mankind-benefit pick gate uses Soft Story population-burden scores × external STRING × rhyme recovery — triage, not prescription.",
+  "honestyTokens": [
+    "application companion",
+    "Soft Story",
+    "not ENGINE_SHELF",
+    "not causal pathway proof",
+    "not clinical effect",
+    "not wet-lab genetics",
+    "diabetes + obesity mankind-benefit Soft Story"
+  ],
+  "panel": {
+    "nGenes": 10,
+    "symbols": [
+      "APP",
+      "DNMT1",
+      "DNMT3A",
+      "DYRK1A",
+      "INS",
+      "NPY",
+      "PDX1",
+      "POMC",
+      "SOD1",
+      "TMPRSS2"
+    ],
+    "nExons": 125,
+    "featureKeys": [
+      "chrom_num",
+      "start",
+      "end",
+      "log_len",
+      "exon_index",
+      "strand",
+      "gene_span",
+      "tss_dist"
+    ]
+  },
+  "mathProofs": {
+    "ok": true,
+    "lemmas": [
+      {
+        "id": "cosine_symmetry",
+        "statement": "cos(a,b) === cos(b,a)",
+        "ab": 0.9943462972264046,
+        "ba": 0.9943462972264046,
+        "delta": 0,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:chrom_num",
+        "statement": "mean(z_chrom_num) ≈ 0",
+        "mean": 1.438849039914203e-16,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:start",
+        "statement": "mean(z_start) ≈ 0",
+        "mean": 3.552713678800501e-17,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:end",
+        "statement": "mean(z_end) ≈ 0",
+        "mean": -1.652011860642233e-16,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:log_len",
+        "statement": "mean(z_log_len) ≈ 0",
+        "mean": -7.7982065249671e-16,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:exon_index",
+        "statement": "mean(z_exon_index) ≈ 0",
+        "mean": 8.43769498715119e-18,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:strand",
+        "statement": "mean(z_strand) ≈ 0",
+        "mean": 0,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:gene_span",
+        "statement": "mean(z_gene_span) ≈ 0",
+        "mean": 1.2355894085658292e-14,
+        "eps": 1e-9,
+        "ok": true
+      },
+      {
+        "id": "zscore_mean_near_zero:tss_dist",
+        "statement": "mean(z_tss_dist) ≈ 0",
+        "mean": -9.450218385609333e-16,
+        "eps": 1e-9,
+        "ok": true
+      }
+    ]
+  },
+  "experiments": {
+    "e1": {
+      "id": "E1",
+      "name": "reproduce_ins_pomc_exon_coupling",
+      "focusPair": "INS↔POMC",
+      "nInsExons": 3,
+      "nPomcExons": 4,
+      "featureKeys": [
+        "chrom_num",
+        "start",
+        "end",
+        "log_len",
+        "exon_index",
+        "strand",
+        "gene_span",
+        "tss_dist"
+      ],
+      "maxCoupling": 0.737724,
+      "bestPair": {
+        "a": "INS:ex2@chr11:2161167",
+        "b": "POMC:ex2@chr2:25165635",
+        "coupling": 0.737724
+      },
+      "symmetryCheck": {
+        "cosAB": 0.7377238751007751,
+        "cosBA": 0.7377238751007751
+      }
+    },
+    "e2": {
+      "id": "E2",
+      "name": "null_rank_and_permutation",
+      "nGenes": 10,
+      "nCrossGenePairs": 45,
+      "focusRank": 13,
+      "focusMaxCoupling": 0.737724,
+      "permutation": {
+        "observed": 0.737724,
+        "nullMean": 0.651171,
+        "nullP95": 0.92168,
+        "p": 0.351621,
+        "nPerm": 400
+      },
+      "bootstrapPanelMeanCi": {
+        "mean": 0.53771,
+        "low": 0.456165,
+        "high": 0.622466,
+        "B": 400
+      },
+      "topPairs": [
+        {
+          "pair": "NPY↔POMC",
+          "maxCoupling": 0.972437
+        },
+        {
+          "pair": "DYRK1A↔TMPRSS2",
+          "maxCoupling": 0.936411
+        },
+        {
+          "pair": "PDX1↔SOD1",
+          "maxCoupling": 0.918241
+        },
+        {
+          "pair": "PDX1↔POMC",
+          "maxCoupling": 0.90439
+        },
+        {
+          "pair": "NPY↔PDX1",
+          "maxCoupling": 0.894138
+        },
+        {
+          "pair": "NPY↔SOD1",
+          "maxCoupling": 0.880843
+        },
+        {
+          "pair": "APP↔DYRK1A",
+          "maxCoupling": 0.850024
+        },
+        {
+          "pair": "DNMT3A↔DYRK1A",
+          "maxCoupling": 0.821996
+        },
+        {
+          "pair": "INS↔NPY",
+          "maxCoupling": 0.792953
+        },
+        {
+          "pair": "APP↔TMPRSS2",
+          "maxCoupling": 0.773828
+        },
+        {
+          "pair": "DYRK1A↔SOD1",
+          "maxCoupling": 0.77168
+        },
+        {
+          "pair": "APP↔DNMT3A",
+          "maxCoupling": 0.745451
+        }
+      ]
+    },
+    "e3": {
+      "id": "E3",
+      "name": "external_string_literature",
+      "comparisons": [
+        {
+          "pair": "INS↔POMC",
+          "role": "focus",
+          "empty": false,
+          "score": 0.947,
+          "tscore": 0.946,
+          "ascore": 0.061,
+          "supportsFloor": true
+        },
+        {
+          "pair": "APP↔DYRK1A",
+          "role": "runner_up",
+          "empty": false,
+          "score": 0.57,
+          "tscore": 0.57,
+          "ascore": 0,
+          "supportsFloor": false
+        },
+        {
+          "pair": "NPY↔SOD1",
+          "role": "negative_control",
+          "empty": true,
+          "score": 0,
+          "tscore": 0,
+          "ascore": 0,
+          "supportsFloor": false,
+          "note": "STRING returns empty [] — negative control fails literature association"
+        }
+      ],
+      "focusStringScore": 0.947,
+      "negativeControlEmpty": true
+    },
+    "e4": {
+      "id": "E4",
+      "name": "opentargets_disease_rails",
+      "INS": {
+        "axis": "diabetes",
+        "topDiseases": [
+          {
+            "name": "diabetes mellitus permanent neonatal",
+            "rank": 4,
+            "score": 0.785
+          },
+          {
+            "name": "hyperproinsulinemia",
+            "score": 0.742
+          },
+          {
+            "name": "MODY",
+            "score": 0.736
+          },
+          {
+            "name": "T1D",
+            "score": 0.733
+          },
+          {
+            "name": "T2D",
+            "score": 0.591
+          },
+          {
+            "name": "diabetes mellitus",
+            "score": 0.589
+          }
+        ],
+        "diabetesRail": {
+          "nHits": 6,
+          "topScore": 0.785,
+          "meanHitScore": 0.6960000000000001,
+          "hits": [
+            {
+              "name": "diabetes mellitus permanent neonatal",
+              "score": 0.785
+            },
+            {
+              "name": "hyperproinsulinemia",
+              "score": 0.742
+            },
+            {
+              "name": "MODY",
+              "score": 0.736
+            },
+            {
+              "name": "T1D",
+              "score": 0.733
+            },
+            {
+              "name": "T2D",
+              "score": 0.591
+            },
+            {
+              "name": "diabetes mellitus",
+              "score": 0.589
+            }
+          ]
+        }
+      },
+      "POMC": {
+        "axis": "obesity",
+        "topDiseases": [
+          {
+            "name": "obesity due to POMC deficiency",
+            "score": 0.697
+          },
+          {
+            "name": "obesity disorder",
+            "score": 0.574
+          },
+          {
+            "name": "inherited obesity",
+            "score": 0.426
+          }
+        ],
+        "obesityRail": {
+          "nHits": 3,
+          "topScore": 0.697,
+          "meanHitScore": 0.5656666666666667,
+          "hits": [
+            {
+              "name": "obesity due to POMC deficiency",
+              "score": 0.697
+            },
+            {
+              "name": "obesity disorder",
+              "score": 0.574
+            },
+            {
+              "name": "inherited obesity",
+              "score": 0.426
+            }
+          ]
+        }
+      },
+      "axesAligned": true
+    },
+    "e5": {
+      "id": "E5",
+      "name": "mankind_benefit_pick_gate",
+      "formula": "population_disease_burden_SoftStory × external_STRING × rhyme_recovery",
+      "mankindBenefit": {
+        "pair": "INS↔POMC",
+        "axes": [
+          "diabetes",
+          "obesity"
+        ],
+        "rationale": "INS (insulin / diabetes axis) and POMC (melanocortin / obesity axis) jointly address two of the largest metabolic disease burdens. Soft Story population-burden score for pick-gate triage only — not clinical effect size.",
+        "populationBurdenSoftStory": 1
+      },
+      "candidates": [
+        {
+          "pair": "INS↔POMC",
+          "burdenSoftStory": 1,
+          "string": 0.947,
+          "rhyme": 0.737724,
+          "gateScore": 0.698625
+        },
+        {
+          "pair": "APP↔DYRK1A",
+          "burdenSoftStory": 0.55,
+          "string": 0.57,
+          "rhyme": 0.850024,
+          "gateScore": 0.266482
+        },
+        {
+          "pair": "NPY↔SOD1",
+          "burdenSoftStory": 0.35,
+          "string": 0,
+          "rhyme": 0.880843,
+          "gateScore": 0
+        }
+      ],
+      "winner": "INS↔POMC",
+      "insPomcWins": true
+    }
+  },
+  "verdict": {
+    "supportsMetabolicFollowUp": true,
+    "summary": "Rhyme recovery + STRING literature association SUPPORTS following INS↔POMC for metabolic (diabetes+obesity) follow-up. Does NOT prove causal pathway or clinical effect. NPY↔SOD1 fails STRING (negative control).",
+    "claims": {
+      "rhymeRecovery": 0.737724,
+      "stringLiteratureAssociation": 0.947,
+      "stringFloorMet": true,
+      "mankindBenefitGateWinner": "INS↔POMC",
+      "negativeControlNpySod1Empty": true
+    },
+    "doesNotClaim": [
+      "causal endocrine pathway",
+      "clinical treatment effect",
+      "ENGINE_SHELF physics pin",
+      "wet-lab confirmation"
+    ]
+  },
+  "ms": 110,
+  "generatedAt": "2026-11-19T03:45:46.299Z"
+}

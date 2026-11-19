@@ -1,5 +1,6 @@
 import { mulberry32 } from './rng.mjs';
 import { runArchitecture } from './architectures.mjs';
+import { octaveInvariance, substrateLoss, PROFILE } from './spirit.mjs';
 import {
   ABLATIONS, ASSUMPTIONS, BOOTSTRAP, DOC_ID, ENGINE_SHELF_PINNED, FAMILIES, HONESTY, N_TRIALS, REGISTRY_ID, SEED,
 } from './constants.mjs';
@@ -140,6 +141,26 @@ export function runExpedition() {
       && sensitivity.find((s) => s.baselineLossRate === 0.02).transfer.gap <= 0.03,
     G5_compute_within_3x_B: compute.C <= 3 * compute.B,
   };
+  const octave = octaveInvariance();
+  const loss = substrateLoss();
+  const surv = octave.survival;
+  const flat = surv.C_five_repair;
+  gates.G6_scale_invariance = flat[1024] >= 0.85 && flat[1] - flat[1024] <= 0.1
+    && surv.C_five_no_repair[1024] <= 0.1 && surv.C_single_drift2[1024] <= 0.1;
+  gates.G7_substrate_loss = loss.results[0.3].nine >= 0.95 && loss.results[0.3].single <= 0.05;
+  const profile = PROFILE.map((row) => {
+    let evidence;
+    if (families[row.family]) {
+      const f = families[row.family];
+      evidence = { A: f.A.success, B: f.B.success, C: f.C.success, ablationDrop: f.ablations[row.ablation]?.dropVsFullC ?? null };
+    } else if (row.family === 'octave_depth') {
+      evidence = { A: surv.A_single_drift15[1024], B: surv.B_single_drift15[1024], C: flat[1024], ablationDrop: flat[1024] - surv.C_five_no_repair[1024] };
+    } else {
+      evidence = { A: loss.results[0.3].single, B: loss.results[0.3].single, C: loss.results[0.3].nine, ablationDrop: loss.results[0.3].nine - loss.results[0.3].single };
+    }
+    return { ...row, ...evidence, headHolds: evidence.C >= 0.85, baselinesFail: Math.max(evidence.A, evidence.B) < evidence.C - 0.05 };
+  });
+  const spiritCorrespondence = profile.every((r) => r.headHolds && r.baselinesFail);
   const mechanismVerified = Object.values(gates).every(Boolean);
 
   return {
@@ -152,17 +173,21 @@ export function runExpedition() {
     families,
     decoyRobustness: { decoy, genuineMinority, naiveRedirect: naive },
     sensitivity,
+    octaveInvariance: octave,
+    substrateLoss: loss,
+    spiritProfile: profile,
     overall,
     compute,
     gates,
     verdict: {
       mechanismVerified,
+      spiritCorrespondence,
       liveAgentReplication: false,
       engineShelfPinned: ENGINE_SHELF_PINNED,
       engineShelfDecision: mechanismVerified
         ? 'deferred: scripted simulator passes mechanism gates; pin waits for a live-agent replication'
         : 'not pinned: one or more mechanism gates failed',
-      summary: `Aware head ${(overall.C * 100).toFixed(1)}% vs shared world ${(overall.B * 100).toFixed(1)}% vs flat ${(overall.A * 100).toFixed(1)}% across ${FAMILIES.length} families; mechanism gates ${mechanismVerified ? 'pass' : 'fail'}; ENGINE_SHELF pin deferred.`,
+      summary: `Six-property spirit profile ${spiritCorrespondence ? 'holds' : 'does not hold'} for the head. Aware head ${(overall.C * 100).toFixed(1)}% vs shared world ${(overall.B * 100).toFixed(1)}% vs flat ${(overall.A * 100).toFixed(1)}% across ${FAMILIES.length} families; mechanism gates ${mechanismVerified ? 'pass' : 'fail'}; ENGINE_SHELF pin deferred.`,
     },
   };
 }

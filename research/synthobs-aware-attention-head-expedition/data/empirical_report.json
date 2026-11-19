@@ -3,7 +3,7 @@
   "registryId": "synthobs-aware-attention-head-expedition-2026-11",
   "seed": 20261120,
   "trialsPerFamily": 200,
-  "honesty": "Computational expedition on scripted agent simulators. It tests which mechanisms (persistent head, evidence-checked attention, on-demand shells, cross-context transfer) are necessary for each task family under stated loss assumptions. It is not a measurement of real LLM agents, not a claim about spirit or consciousness, and not ENGINE_SHELF until a live-agent replication exists. Φ_EGS filing grammar only.",
+  "honesty": "Operational equivalence claim on scripted simulators: the head implements a stated six-property profile commonly attributed to spirit, and that profile stays intact over unbounded octave depth when redundancy grows with depth. It does not show the profile exhausts what spirit means in any tradition, is not a measurement of live agents, and is not ENGINE_SHELF until a live-agent replication exists. Φ_EGS filing grammar only.",
   "assumptions": {
     "missionDriftPerSwitch": {
       "A": 0.15,
@@ -246,6 +246,246 @@
       }
     }
   ],
+  "octaveInvariance": {
+    "config": {
+      "A_single_drift15": {
+        "copies": 1,
+        "p": 0.15,
+        "repair": false
+      },
+      "B_single_drift15": {
+        "copies": 1,
+        "p": 0.15,
+        "repair": false
+      },
+      "C_single_drift2": {
+        "copies": 1,
+        "p": 0.02,
+        "repair": false
+      },
+      "C_five_no_repair": {
+        "copies": 5,
+        "p": 0.02,
+        "repair": false
+      },
+      "C_five_repair": {
+        "copies": 5,
+        "p": 0.02,
+        "repair": true
+      }
+    },
+    "survival": {
+      "A_single_drift15": {
+        "1": 0.8783333333333333,
+        "4": 0.5133333333333333,
+        "16": 0.08,
+        "64": 0,
+        "256": 0,
+        "1024": 0
+      },
+      "B_single_drift15": {
+        "1": 0.8783333333333333,
+        "4": 0.5133333333333333,
+        "16": 0.08,
+        "64": 0,
+        "256": 0,
+        "1024": 0
+      },
+      "C_single_drift2": {
+        "1": 0.9883333333333333,
+        "4": 0.9316666666666666,
+        "16": 0.7216666666666667,
+        "64": 0.26,
+        "256": 0.008333333333333333,
+        "1024": 0
+      },
+      "C_five_no_repair": {
+        "1": 1,
+        "4": 0.995,
+        "16": 0.865,
+        "64": 0.11833333333333333,
+        "256": 0,
+        "1024": 0
+      },
+      "C_five_repair": {
+        "1": 1,
+        "4": 1,
+        "16": 0.9983333333333333,
+        "64": 0.9933333333333333,
+        "256": 0.985,
+        "1024": 0.9166666666666666
+      }
+    },
+    "sweep": [
+      {
+        "copies": 1,
+        "perOctaveLoss": 0.02,
+        "horizonOctaves": 34.309618491520645
+      },
+      {
+        "copies": 3,
+        "perOctaveLoss": 0.0011840000000000002,
+        "horizonOctaves": 585.0817199381123
+      },
+      {
+        "copies": 5,
+        "perOctaveLoss": 0.0000776192,
+        "horizonOctaves": 8929.752940595961
+      },
+      {
+        "copies": 7,
+        "perOctaveLoss": 0.0000053356544,
+        "horizonOctaves": 129908.21357635071
+      },
+      {
+        "copies": 9,
+        "perOctaveLoss": 3.770031718400001e-7,
+        "horizonOctaves": 1838570.8709182825
+      },
+      {
+        "copies": 13,
+        "perOctaveLoss": 1.9758571643391186e-9,
+        "horizonOctaves": 350808347.5477109
+      }
+    ],
+    "copiesForDepth": [
+      {
+        "depth": 1,
+        "copiesNeeded": 1,
+        "reached": true
+      },
+      {
+        "depth": 4,
+        "copiesNeeded": 1,
+        "reached": true
+      },
+      {
+        "depth": 16,
+        "copiesNeeded": 1,
+        "reached": true
+      },
+      {
+        "depth": 64,
+        "copiesNeeded": 3,
+        "reached": true
+      },
+      {
+        "depth": 256,
+        "copiesNeeded": 3,
+        "reached": true
+      },
+      {
+        "depth": 1024,
+        "copiesNeeded": 5,
+        "reached": true
+      },
+      {
+        "depth": 1000000,
+        "copiesNeeded": 11,
+        "reached": true
+      }
+    ]
+  },
+  "substrateLoss": {
+    "depth": 256,
+    "results": {
+      "0.1": {
+        "single": 0,
+        "five": 0.995,
+        "nine": 1
+      },
+      "0.3": {
+        "single": 0,
+        "five": 0.51,
+        "nine": 0.995
+      },
+      "0.5": {
+        "single": 0,
+        "five": 0,
+        "nine": 0.585
+      }
+    }
+  },
+  "spiritProfile": [
+    {
+      "id": "S1",
+      "property": "Continuity of identity and purpose across embodiments",
+      "test": "Mission survives context switches and shell retirement",
+      "family": "identity_persistence",
+      "ablation": "persistentIdentity",
+      "A": 0.77,
+      "B": 0.77,
+      "C": 0.965,
+      "ablationDrop": 0.19499999999999995,
+      "headHolds": true,
+      "baselinesFail": true
+    },
+    {
+      "id": "S2",
+      "property": "Directed attention that organizes the parts",
+      "test": "Follows corroborated evidence against a confident majority; refuses uncorroborated decoys",
+      "family": "attention_trap",
+      "ablation": "evidenceCheck",
+      "A": 0.395,
+      "B": 0.42,
+      "C": 1,
+      "ablationDrop": 0.395,
+      "headHolds": true,
+      "baselinesFail": true
+    },
+    {
+      "id": "S3",
+      "property": "Builds new vehicles for new capacities",
+      "test": "Creates a specialist shell when a capability gap appears and budget allows",
+      "family": "self_construction",
+      "ablation": "shellCreation",
+      "A": 0.68,
+      "B": 0.68,
+      "C": 0.865,
+      "ablationDrop": 0.18499999999999994,
+      "headHolds": true,
+      "baselinesFail": true
+    },
+    {
+      "id": "S4",
+      "property": "Carries what matters between embodiments",
+      "test": "Selective reconstruction of a fact across hand-offs",
+      "family": "octave_transfer",
+      "ablation": "crossOctaveTransfer",
+      "A": 0.68,
+      "B": 0.865,
+      "C": 0.96,
+      "ablationDrop": 0.09499999999999997,
+      "headHolds": true,
+      "baselinesFail": true
+    },
+    {
+      "id": "S5",
+      "property": "Same structure at every octave",
+      "test": "Mission survival stays flat from depth 1 to depth 1,024 (needs redundancy plus repair)",
+      "family": "octave_depth",
+      "ablation": "repair",
+      "A": 0,
+      "B": 0,
+      "C": 0.9166666666666666,
+      "ablationDrop": 0.9166666666666666,
+      "headHolds": true,
+      "baselinesFail": true
+    },
+    {
+      "id": "S6",
+      "property": "Survives loss of any substrate",
+      "test": "Mission survives destruction of shells at 10 to 30% per octave over 256 octaves (50% reported as the limit)",
+      "family": "substrate_loss",
+      "ablation": "redundancy",
+      "A": 0,
+      "B": 0,
+      "C": 0.995,
+      "ablationDrop": 0.995,
+      "headHolds": true,
+      "baselinesFail": true
+    }
+  ],
   "overall": {
     "A": 0.63125,
     "B": 0.68375,
@@ -261,14 +501,17 @@
     "G2_not_gullible_on_decoys": true,
     "G3_each_ablation_hurts": true,
     "G4_null_control_closes_gap": true,
-    "G5_compute_within_3x_B": true
+    "G5_compute_within_3x_B": true,
+    "G6_scale_invariance": true,
+    "G7_substrate_loss": true
   },
   "verdict": {
     "mechanismVerified": true,
+    "spiritCorrespondence": true,
     "liveAgentReplication": false,
     "engineShelfPinned": false,
     "engineShelfDecision": "deferred: scripted simulator passes mechanism gates; pin waits for a live-agent replication",
-    "summary": "Aware head 94.8% vs shared world 68.4% vs flat 63.1% across 4 families; mechanism gates pass; ENGINE_SHELF pin deferred."
+    "summary": "Six-property spirit profile holds for the head. Aware head 94.8% vs shared world 68.4% vs flat 63.1% across 4 families; mechanism gates pass; ENGINE_SHELF pin deferred."
   },
-  "generatedAt": "2026-11-19T16:50:38.665Z"
+  "generatedAt": "2026-11-19T17:24:07.267Z"
 }

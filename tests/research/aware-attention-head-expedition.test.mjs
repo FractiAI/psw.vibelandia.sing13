@@ -17,6 +17,38 @@ describe('Aware attention head expedition', () => {
     expect(report.verdict.mechanismVerified).toBe(true);
   });
 
+  it('holds the six-property spirit profile with necessary mechanisms', () => {
+    expect(report.spiritProfile).toHaveLength(6);
+    for (const row of report.spiritProfile) {
+      expect(row.headHolds, row.id).toBe(true);
+      expect(row.baselinesFail, row.id).toBe(true);
+      expect(row.ablationDrop, row.id).toBeGreaterThanOrEqual(0.05);
+    }
+    expect(report.verdict.spiritCorrespondence).toBe(true);
+  });
+
+  it('needs redundancy plus repair across octave depth', () => {
+    const s = report.octaveInvariance.survival;
+    expect(s.C_five_repair[1024]).toBeGreaterThanOrEqual(0.85);
+    expect(s.C_five_no_repair[1024]).toBeLessThanOrEqual(0.1);
+    expect(s.C_single_drift2[1024]).toBeLessThanOrEqual(0.1);
+  });
+
+  it('has a finite horizon per copy count and needs copies that grow with depth', () => {
+    const sweep = report.octaveInvariance.sweep;
+    for (let i = 1; i < sweep.length; i += 1) {
+      expect(sweep[i].horizonOctaves).toBeGreaterThan(sweep[i - 1].horizonOctaves);
+      expect(Number.isFinite(sweep[i].horizonOctaves)).toBe(true);
+    }
+    const need = report.octaveInvariance.copiesForDepth;
+    expect(need.at(-1).copiesNeeded).toBeGreaterThan(need[0].copiesNeeded);
+  });
+
+  it('reports the 50% shell-loss limit instead of hiding it', () => {
+    expect(report.substrateLoss.results[0.5].nine).toBeLessThan(0.95);
+    expect(report.substrateLoss.results[0.3].nine).toBeGreaterThanOrEqual(0.95);
+  });
+
   it('shows the head beating both baselines overall', () => {
     expect(report.overall.C).toBeGreaterThan(report.overall.B + 0.1);
     expect(report.overall.B).toBeGreaterThan(report.overall.A);

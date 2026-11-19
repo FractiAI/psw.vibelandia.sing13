@@ -22,6 +22,10 @@ const lines = [
   ...Object.entries(report.families).map(([k, f]) =>
     `| ${k} | ${pct(f.A.success)} | ${pct(f.B.success)} | ${pct(f.C.success)} | ${pct(f.CminusB.mean)} [${pct(f.CminusB.lo)}, ${pct(f.CminusB.hi)}] |`),
   '',
+  '| Property | A | B | C | Mechanism removed |',
+  '|---|---|---|---|---|',
+  ...report.spiritProfile.map((r) => `| ${r.id} ${r.property} | ${pct(r.A)} | ${pct(r.B)} | ${pct(r.C)} | -${(r.ablationDrop * 100).toFixed(1)} |`),
+  '',
   '**Gates:** ' + Object.entries(report.gates).map(([k, v]) => `${k}=${v}`).join(' · '),
   '',
   '→ ∞^∞',

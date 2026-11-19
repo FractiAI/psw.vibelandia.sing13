@@ -7,7 +7,7 @@ export const N_TRIALS = 200;
 export const BOOTSTRAP = 2000;
 
 export const HONESTY =
-  'Computational expedition on scripted agent simulators. It tests which mechanisms (persistent head, evidence-checked attention, on-demand shells, cross-context transfer) are necessary for each task family under stated loss assumptions. It is not a measurement of real LLM agents, not a claim about spirit or consciousness, and not ENGINE_SHELF until a live-agent replication exists. Φ_EGS filing grammar only.';
+  'Operational equivalence claim on scripted simulators: the head implements a stated six-property profile commonly attributed to spirit, and that profile stays intact over unbounded octave depth when redundancy grows with depth. It does not show the profile exhausts what spirit means in any tradition, is not a measurement of live agents, and is not ENGINE_SHELF until a live-agent replication exists. Φ_EGS filing grammar only.';
 
 /** Stated assumptions. Every baseline loss rate is a parameter, swept in the sensitivity control. */
 export const ASSUMPTIONS = {

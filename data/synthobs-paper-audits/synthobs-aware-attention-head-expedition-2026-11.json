@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "18d36fec768536cd",
+  "auditId": "74aa029832a2a82f",
   "paperId": "synthobs-aware-attention-head-expedition-2026-11",
   "sourcePath": "docs/SYNTHOBS_AWARE_ATTENTION_HEAD_EXPEDITION_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-19T16:50:39.108Z"
+          "invokedAt": "2026-11-19T17:24:07.685Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-19T16:50:39.107Z",
-  "completedAt": "2026-11-19T16:50:39.109Z",
+  "startedAt": "2026-11-19T17:24:07.683Z",
+  "completedAt": "2026-11-19T17:24:07.685Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,
@@ -127,12 +127,12 @@
       "Expand References with ≥3 citable sources or repo cross-links."
     ],
     "meta": {
-      "wordCount": 2024,
+      "wordCount": 2756,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
         "links": 0,
-        "numbered": 16,
+        "numbered": 18,
         "citeLines": 0
       }
     }

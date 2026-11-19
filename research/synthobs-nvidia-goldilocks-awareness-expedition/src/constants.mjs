@@ -10,7 +10,7 @@ export const PAPER_NAME = 'SYNTHOBS_NVIDIA_GOLDILOCKS_AWARENESS_EXPEDITION_2026-
 export const SHIP_BLOG_SLUG = 'nvidia-goldilocks-moment';
 export const SHIP_BLOG_FILE = 'blog-nvidia-goldilocks-moment-2026-11.html';
 export const STUDY_TITLE =
-  'What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO — Computational Lab Receipts';
+  'What Both Jensen Huang and NVIDIA Need Is a New Rhyming World Model, Not a New CEO — Computational Lab Receipts';
 export const DIGITAL_SEED = 20261115;
 export const LEADERSHIP_CASE = 'Jensen Huang (observed leadership case)';
 export const ENGINE_SHELF_PINNED = false;

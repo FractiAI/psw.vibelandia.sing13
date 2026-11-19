@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "22a8d315fe2e25fa",
+  "auditId": "e202e9c485eaeb65",
   "paperId": "synthobs-wmap-residual-lag11-validation-2026-11",
   "sourcePath": "docs/SYNTHOBS_WMAP_RESIDUAL_LAG11_VALIDATION_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-19T15:37:19.503Z"
+          "invokedAt": "2026-11-19T16:34:55.933Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-19T15:37:19.502Z",
-  "completedAt": "2026-11-19T15:37:19.503Z",
+  "startedAt": "2026-11-19T16:34:55.932Z",
+  "completedAt": "2026-11-19T16:34:55.934Z",
   "iterations": 1,
-  "overallScore": 0.971,
+  "overallScore": 0.906,
   "passThreshold": 0.85,
   "convergence": {
     "status": "pass",
@@ -95,14 +95,14 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.971,
+      "overallScore": 0.906,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
         "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
-        "references": 1,
+        "references": 0.35,
         "abstractTitle": 1,
         "synthobsAttribution": 1,
         "technicalPrecision": 0.85
@@ -116,22 +116,24 @@
       "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
-      "references": 1,
+      "references": 0.35,
       "abstractTitle": 1,
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.971,
+    "overallScore": 0.906,
     "criticalBlockers": [],
-    "suggestions": [],
+    "suggestions": [
+      "Expand References with ≥3 citable sources or repo cross-links."
+    ],
     "meta": {
-      "wordCount": 772,
+      "wordCount": 1852,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 0,
-        "numbered": 8,
-        "citeLines": 4
+        "numbered": 22,
+        "citeLines": 1
       }
     }
   },

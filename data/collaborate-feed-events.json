@@ -1,29 +1,29 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-19T15:58:12.257Z",
+  "updatedAt": "2026-11-19T16:12:21.631Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
     {
-      "id": "wp_synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+      "id": "wp_synthobs-wiring-bridge-thickening-2026-11",
       "type": "ArtifactEvent",
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-19T15:58:12.256Z",
-      "body": "The Wiring Wet Lab — A New Form of Wet Lab That Repurposes Work Already Done",
+      "createdAt": "2026-11-19T16:12:21.630Z",
+      "body": "Wiring Bridge Thickening — Independent Rhymes That Land on the Same Pair",
       "presenceHue": "gold",
-      "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+      "paperId": "synthobs-wiring-bridge-thickening-2026-11",
       "artifact": {
-        "title": "The Wiring Wet Lab — A New Form of Wet Lab That Repurposes Work Already Done",
+        "title": "Wiring Bridge Thickening — Independent Rhymes That Land on the Same Pair",
         "kind": "whitepaper",
-        "path": "docs/SYNTHOBS_WIRING_DISCOVERIES_RHYMING_WORLD_MODEL_EGS_2026-11.md",
-        "url": "/whitepaper/wiring-discoveries",
-        "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
-        "docId": "WP-WIRING-DISCOVERIES-RHYMING-WORLD-MODEL-EGS-2026-11-20",
-        "published": "2026-11-20T01:00:00Z",
+        "path": "docs/SYNTHOBS_WIRING_BRIDGE_THICKENING_EGS_2026-11.md",
+        "url": "/whitepaper/wiring-bridge-thickening",
+        "paperId": "synthobs-wiring-bridge-thickening-2026-11",
+        "docId": "WP-WIRING-BRIDGE-THICKENING-EGS-2026-11-20",
+        "published": "2026-11-20T02:00:00Z",
         "featured": true,
         "auditStatus": "pass"
       }
@@ -34,7 +34,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-19T15:48:57.547Z",
+      "createdAt": "2026-11-19T16:10:26.279Z",
       "body": "Combo Rhyme Wiring Expedition — Protein-Folding + LLM + Pilot Rhymes Surface New Wiring Candidates",
       "presenceHue": "gold",
       "paperId": "synthobs-combo-rhyme-wiring-expedition-2026-11",
@@ -46,6 +46,28 @@
         "paperId": "synthobs-combo-rhyme-wiring-expedition-2026-11",
         "docId": "WP-COMBO-RHYME-WIRING-EXPEDITION-EGS-2026-11-20",
         "published": "2026-11-20T00:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-19T15:59:05.364Z",
+      "body": "The Wiring Wet Lab — A New Form of Wet Lab That Repurposes Work Already Done",
+      "presenceHue": "gold",
+      "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+      "artifact": {
+        "title": "The Wiring Wet Lab — A New Form of Wet Lab That Repurposes Work Already Done",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_WIRING_DISCOVERIES_RHYMING_WORLD_MODEL_EGS_2026-11.md",
+        "url": "/whitepaper/wiring-discoveries",
+        "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+        "docId": "WP-WIRING-DISCOVERIES-RHYMING-WORLD-MODEL-EGS-2026-11-20",
+        "published": "2026-11-20T01:00:00Z",
         "featured": true,
         "auditStatus": "pass"
       }

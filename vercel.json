@@ -5,6 +5,22 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/whitepaper/wiring-bridge-thickening/",
+      "destination": "/api/whitepaper?id=synthobs-wiring-bridge-thickening-2026-11"
+    },
+    {
+      "source": "/whitepaper/wiring-bridge-thickening",
+      "destination": "/api/whitepaper?id=synthobs-wiring-bridge-thickening-2026-11"
+    },
+    {
+      "source": "/ship-blog/wiring-bridge-thickening/",
+      "destination": "/interfaces/blog-wiring-bridge-thickening-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/wiring-bridge-thickening",
+      "destination": "/interfaces/blog-wiring-bridge-thickening-2026-11.html"
+    },
+    {
       "source": "/whitepaper/wiring-discoveries/",
       "destination": "/api/whitepaper?id=synthobs-wiring-discoveries-rhyming-world-model-2026-11"
     },

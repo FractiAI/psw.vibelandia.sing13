@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-19** · **417** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-19** · **418** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -513,6 +513,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-wave-node-mathematics-2026-10.html`](/interfaces/blog-wave-node-mathematics-2026-10.html) | When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What Frontier Means for Families · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the sun got loud — and what a household should do with weather talk · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-wiring-bridge-thickening-2026-11.html`](/interfaces/blog-wiring-bridge-thickening-2026-11.html) | Bridge Thickening — When Different Rhymes Keep Landing on the Same Pair · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-wiring-discoveries-2026-11.html`](/interfaces/blog-wiring-discoveries-2026-11.html) | The Wiring Wet Lab — Why Re-Spend Time and Money When the Work Is Already Done? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-wmap-residual-lag11-validation-2026-11.html`](/interfaces/blog-wmap-residual-lag11-validation-2026-11.html) | Is Residual Lag Wiring on the Real WMAP Spectrum a Discovery If Beam Stories Can Still Kill It? · Ship blog · SS Vibelan |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y as Story Geometry, Not Destiny · Ship blog · SS Vibelandia |

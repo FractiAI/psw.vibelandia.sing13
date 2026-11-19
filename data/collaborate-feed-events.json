@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-19T15:49:09.952Z",
+  "updatedAt": "2026-11-19T15:58:12.257Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,12 +12,12 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-11-19T15:49:09.951Z",
-      "body": "Wiring Discoveries — A Higher-Layer Discovery Class Enabled by AI and the FractiSI Multiagent Rhyming World Model",
+      "createdAt": "2026-11-19T15:58:12.256Z",
+      "body": "The Wiring Wet Lab — A New Form of Wet Lab That Repurposes Work Already Done",
       "presenceHue": "gold",
       "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
       "artifact": {
-        "title": "Wiring Discoveries — A Higher-Layer Discovery Class Enabled by AI and the FractiSI Multiagent Rhyming World Model",
+        "title": "The Wiring Wet Lab — A New Form of Wet Lab That Repurposes Work Already Done",
         "kind": "whitepaper",
         "path": "docs/SYNTHOBS_WIRING_DISCOVERIES_RHYMING_WORLD_MODEL_EGS_2026-11.md",
         "url": "/whitepaper/wiring-discoveries",

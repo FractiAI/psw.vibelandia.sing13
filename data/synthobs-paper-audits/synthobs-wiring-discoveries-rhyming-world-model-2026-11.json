@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "7287908d79b0cf5c",
+  "auditId": "0ea8a5ac90862eb4",
   "paperId": "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
   "sourcePath": "docs/SYNTHOBS_WIRING_DISCOVERIES_RHYMING_WORLD_MODEL_EGS_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-19T15:49:09.948Z"
+          "invokedAt": "2026-11-19T15:58:12.253Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-19T15:49:09.947Z",
-  "completedAt": "2026-11-19T15:49:09.949Z",
+  "startedAt": "2026-11-19T15:58:12.252Z",
+  "completedAt": "2026-11-19T15:58:12.253Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,
@@ -127,12 +127,12 @@
       "Expand References with ≥3 citable sources or repo cross-links."
     ],
     "meta": {
-      "wordCount": 796,
+      "wordCount": 1183,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 0,
-        "numbered": 16,
+        "numbered": 19,
         "citeLines": 0
       }
     }

@@ -513,7 +513,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-wave-node-mathematics-2026-10.html`](/interfaces/blog-wave-node-mathematics-2026-10.html) | When Nodes Carry Waves and Phases, What Actually Survives a Hard Math Check? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What Frontier Means for Families · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the sun got loud — and what a household should do with weather talk · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-wiring-discoveries-2026-11.html`](/interfaces/blog-wiring-discoveries-2026-11.html) | Is Wiring a New Kind of Discovery — Above Assays and Below Miracles? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-wiring-discoveries-2026-11.html`](/interfaces/blog-wiring-discoveries-2026-11.html) | The Wiring Wet Lab — Why Re-Spend Time and Money When the Work Is Already Done? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-wmap-residual-lag11-validation-2026-11.html`](/interfaces/blog-wmap-residual-lag11-validation-2026-11.html) | Is Residual Lag Wiring on the Real WMAP Spectrum a Discovery If Beam Stories Can Still Kill It? · Ship blog · SS Vibelan |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y as Story Geometry, Not Destiny · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-zero-octave-node-k0-2026-09.html`](/interfaces/blog-zero-octave-node-k0-2026-09.html) | Node Zero — Your Start Gate · Ship blog · SS Vibelandia |

@@ -75,7 +75,7 @@ Filing grammar only.
 
 1. `data/RHYME_DISCOVERY_CATALOG.json`  
 2. `research/synthobs-combo-rhyme-wiring-expedition/fixtures/string_panel.json`  
-3. Framework — `docs/SYNTHOBS_WIRING_DISCOVERIES_RHYMING_WORLD_MODEL_EGS_2026-11.md`  
+3. Wiring wet lab framework — `docs/SYNTHOBS_WIRING_DISCOVERIES_RHYMING_WORLD_MODEL_EGS_2026-11.md`  
 4. JCI Insight NPY β-cell — https://doi.org/10.1172/jci.insight.94005  
 5. NPY β-cell system — https://doi.org/10.1210/endocr/bqab070  
 6. TMPRSS2 in DS/AD — https://link.springer.com/article/10.1186/s40478-026-02289-9  

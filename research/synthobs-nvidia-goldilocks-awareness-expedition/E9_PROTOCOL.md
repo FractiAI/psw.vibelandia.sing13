@@ -15,7 +15,7 @@ Protein folding is used here as a **rhyme for intelligence in complex systems**,
 | Native fold | Coherent intelligent behavior under constraints |
 | Local fluency without contacts | Fluent agents that miss the global pattern |
 
-AlphaFold-class systems worked by exploiting **patterns across related sequences and constraints**, not by reading one chain more carefully. The rhyme: a World Model that holds **relationships** should see structure a linear pass systematically cannot.
+AlphaFold-class systems worked by exploiting **patterns across related sequences and constraints**, not by reading one chain more carefully. The rhyme: a Rhyming World Model that holds **relationships** should see structure a linear pass systematically cannot.
 
 Honesty: this is an architectural / computational rhyme. It does not claim AlphaFold is obsolete, that proteins are agents, or that NVIDIA inherits these numbers as KPIs.
 

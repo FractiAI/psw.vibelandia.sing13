@@ -38,7 +38,7 @@ Can public WMAP TT residuals at lags 11 and 14 be assembled into a **provisional
 
 Microwave background analysis already spent national instruments and careers. Re-deriving the spectrum is not the wiring experiment. The wiring experiment asks whether residual structure that survives standard acoustic expectations can be filed as a relationship edge between multipole lags — with honesty about systematics.
 
-Parents who pay taxes for science infrastructure deserve kill switches when residual plots look exciting after dinner. Kids’ curiosity doors stay open; overclaim doors stay closed.
+Public data and public funding both argue for kill switches before an exciting residual plot becomes a claim. Looking stays open; overclaiming stays closed.
 
 ## Thesis
 
@@ -100,7 +100,7 @@ Cosmic rhyme expeditions surface candidate residual structure and partner recove
 
 ### Why provisional matters for humanity
 
-Overclaimed CMB anomalies have burned careers and public trust. A provisional wire with a kill board is how FractiSI-style Soft Story stays useful without becoming astrology for multipoles. The human stake is institutional memory: keep looking without forcing a textbook rewrite tonight.
+Overclaimed CMB anomalies have burned careers and public trust. A provisional wire with a kill board is how FractiSI-style Soft Story stays useful without becoming astrology for multipoles. The human stake is institutional memory: keep looking without forcing a textbook rewrite.
 
 ### Limitations
 
@@ -138,13 +138,13 @@ Prior rhyme expeditions (protein-folding, LLM language-pack, Pilot shared-world)
 
 Compared with classical systematic review, a wiring wet lab is regenerable: fixtures, seeds, STRING caches, and gates are executable. Compared with knowledge-graph completion, the emphasis is **catalog emptiness + kill switches**, not maximizing edge count.
 
-## Worked example for a reader after dinner
+## Worked example: reproducing the receipt
 
 1. Open the empirical JSON.  
-2. Confirm focus STRING empty and INS↔POMC ≥ 0.9.  
-3. Read W1–W4 citations.  
-4. Ask whether any kill condition already fires in your head.  
-5. If not, file the wire as triage — then stop before clinic language.
+2. Confirm lags 11 and 14 are flagged on the locked real spectrum and the acoustic neighbors are labeled rediscovery.  
+3. Read the kill board X1–X5 and note which tests have not been run.  
+4. Check whether any kill condition already fires on public data.  
+5. If none does, file the wire as provisional triage and stop before claiming a new constant.
 
 ## Comparison table across wiring peers
 

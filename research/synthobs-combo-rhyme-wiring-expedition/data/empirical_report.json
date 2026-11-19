@@ -8,7 +8,10 @@
   "dataProvenance": {
     "catalogs": "data/RHYME_DISCOVERY_CATALOG.json (protein-folding + LLM + Pilot)",
     "string": "STRING API json/network species=9606",
-    "wiring": "fixtures/wiring_new_candidates.json"
+    "wiring": "fixtures/wiring_new_candidates.json",
+    "opentargets": "Open Targets Platform GraphQL API v4",
+    "europepmc": "Europe PMC REST search TITLE_ABS AND",
+    "chromosomes": "LLM exons.panel.json gene chromosomes"
   },
   "experiments": {
     "e1": {
@@ -679,10 +682,342 @@
         "NPY↔PDX1",
         "APP↔TMPRSS2"
       ]
+    },
+    "e7": {
+      "id": "E7",
+      "name": "multi_layer_bridge_thickening",
+      "purpose": "Ask whether independent rhymes (LLM, Pilot, OpenTargets disease, EuropePMC co-mention, exon cosine) arrive at the same pairs — and whether same-chromosome locus confounds the join.",
+      "sources": {
+        "opentargets": "Open Targets Platform GraphQL API v4",
+        "europepmc": "Europe PMC REST search TITLE_ABS AND",
+        "chromosomes": "LLM exons.panel.json gene chromosomes",
+        "exonPanel": "synthobs-npy-sod1-rhyme-validation exon features"
+      },
+      "profiles": [
+        {
+          "a": "NPY",
+          "b": "PDX1",
+          "key": "NPY|PDX1",
+          "label": "NPY↔PDX1",
+          "role": "new_empty",
+          "coupling": 0.7474,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": false,
+            "crossRhyme": false,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.13636363636363635,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "scoliosis",
+            "diabetes mellitus",
+            "neoplasm",
+            "frozen shoulder",
+            "duodenal ulcer"
+          ],
+          "literatureCount": 4,
+          "exon": {
+            "rank": 5,
+            "nPairs": 45,
+            "maxCoupling": 0.894137918565326
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 4,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        },
+        {
+          "a": "APP",
+          "b": "TMPRSS2",
+          "key": "APP|TMPRSS2",
+          "label": "APP↔TMPRSS2",
+          "role": "new_empty",
+          "coupling": 0.7065860995125953,
+          "layers": {
+            "llmRhyme": false,
+            "pilotRhyme": true,
+            "crossRhyme": false,
+            "diseaseRail": false,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": true
+          },
+          "diseaseJaccard": 0,
+          "diseaseShared": [],
+          "literatureCount": 2,
+          "exon": {
+            "rank": 10,
+            "nPairs": 45,
+            "maxCoupling": 0.7738281868063082
+          },
+          "locus": {
+            "same": true,
+            "chr": "chr21"
+          },
+          "thickeningLayerCount": 3,
+          "bridgeVerdict": "THIN / CHR-CONFOUND RISK — rhyme without disease rail; same chromosome"
+        },
+        {
+          "a": "NPY",
+          "b": "SOD1",
+          "key": "NPY|SOD1",
+          "label": "NPY↔SOD1",
+          "role": "prior_peer",
+          "coupling": 0.9139,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": true,
+            "crossRhyme": true,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.13636363636363635,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "diabetes mellitus",
+            "alcohol drinking",
+            "neurodegenerative disease",
+            "neoplasm",
+            "cancer"
+          ],
+          "literatureCount": 8,
+          "exon": {
+            "rank": 6,
+            "nPairs": 45,
+            "maxCoupling": 0.8808433120613464
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 5,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        },
+        {
+          "a": "APP",
+          "b": "DNMT3A",
+          "key": "APP|DNMT3A",
+          "label": "APP↔DNMT3A",
+          "role": "prior_peer",
+          "coupling": 0.7264644276451352,
+          "layers": {
+            "llmRhyme": false,
+            "pilotRhyme": true,
+            "crossRhyme": false,
+            "diseaseRail": false,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0,
+          "diseaseShared": [],
+          "literatureCount": 13,
+          "exon": {
+            "rank": 12,
+            "nPairs": 45,
+            "maxCoupling": 0.7454511874088052
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 3,
+          "bridgeVerdict": "PARTIAL — some layers, not full thicken gate"
+        },
+        {
+          "a": "INS",
+          "b": "POMC",
+          "key": "INS|POMC",
+          "label": "INS↔POMC",
+          "role": "control",
+          "coupling": 0.7384237154015189,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": true,
+            "crossRhyme": true,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.041666666666666664,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "autoimmune disease"
+          ],
+          "literatureCount": 17,
+          "exon": {
+            "rank": 13,
+            "nPairs": 45,
+            "maxCoupling": 0.7377238751007751
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 5,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        }
+      ],
+      "thickened": [
+        {
+          "a": "NPY",
+          "b": "PDX1",
+          "key": "NPY|PDX1",
+          "label": "NPY↔PDX1",
+          "role": "new_empty",
+          "coupling": 0.7474,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": false,
+            "crossRhyme": false,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.13636363636363635,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "scoliosis",
+            "diabetes mellitus",
+            "neoplasm",
+            "frozen shoulder",
+            "duodenal ulcer"
+          ],
+          "literatureCount": 4,
+          "exon": {
+            "rank": 5,
+            "nPairs": 45,
+            "maxCoupling": 0.894137918565326
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 4,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        },
+        {
+          "a": "NPY",
+          "b": "SOD1",
+          "key": "NPY|SOD1",
+          "label": "NPY↔SOD1",
+          "role": "prior_peer",
+          "coupling": 0.9139,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": true,
+            "crossRhyme": true,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.13636363636363635,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "diabetes mellitus",
+            "alcohol drinking",
+            "neurodegenerative disease",
+            "neoplasm",
+            "cancer"
+          ],
+          "literatureCount": 8,
+          "exon": {
+            "rank": 6,
+            "nPairs": 45,
+            "maxCoupling": 0.8808433120613464
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 5,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        },
+        {
+          "a": "INS",
+          "b": "POMC",
+          "key": "INS|POMC",
+          "label": "INS↔POMC",
+          "role": "control",
+          "coupling": 0.7384237154015189,
+          "layers": {
+            "llmRhyme": true,
+            "pilotRhyme": true,
+            "crossRhyme": true,
+            "diseaseRail": true,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": false
+          },
+          "diseaseJaccard": 0.041666666666666664,
+          "diseaseShared": [
+            "type 2 diabetes mellitus",
+            "autoimmune disease"
+          ],
+          "literatureCount": 17,
+          "exon": {
+            "rank": 13,
+            "nPairs": 45,
+            "maxCoupling": 0.7377238751007751
+          },
+          "locus": {
+            "same": false,
+            "chr": null
+          },
+          "thickeningLayerCount": 5,
+          "bridgeVerdict": "THICKENED — multi-layer disease-context wire (not locus-only)"
+        }
+      ],
+      "thinOrConfounded": [
+        {
+          "a": "APP",
+          "b": "TMPRSS2",
+          "key": "APP|TMPRSS2",
+          "label": "APP↔TMPRSS2",
+          "role": "new_empty",
+          "coupling": 0.7065860995125953,
+          "layers": {
+            "llmRhyme": false,
+            "pilotRhyme": true,
+            "crossRhyme": false,
+            "diseaseRail": false,
+            "literatureComention": true,
+            "exonCosineTopHalf": true,
+            "sameChromosome": true
+          },
+          "diseaseJaccard": 0,
+          "diseaseShared": [],
+          "literatureCount": 2,
+          "exon": {
+            "rank": 10,
+            "nPairs": 45,
+            "maxCoupling": 0.7738281868063082
+          },
+          "locus": {
+            "same": true,
+            "chr": "chr21"
+          },
+          "thickeningLayerCount": 3,
+          "bridgeVerdict": "THIN / CHR-CONFOUND RISK — rhyme without disease rail; same chromosome"
+        }
+      ],
+      "passes": true
     }
   },
   "verdict": {
     "comboWiringExpeditionPass": true,
+    "bridgeThickeningPass": true,
     "newWiringCandidates": [
       {
         "label": "NPY↔PDX1",
@@ -701,14 +1036,20 @@
         "stringEmpty": true
       }
     ],
+    "thickenedNewCandidates": [
+      "NPY↔PDX1"
+    ],
+    "thinOrConfoundedNewCandidates": [
+      "APP↔TMPRSS2"
+    ],
     "crossRhymeRecoveries": [
       "NPY↔SOD1",
       "INS↔POMC",
       "APP↔DYRK1A",
       "DNMT1↔DNMT3A"
     ],
-    "summary": "COMBO RHYME WIRING EXPEDITION PASS — protein-folding + LLM + Pilot catalogs surface 2 new STRING-empty wiring candidate(s): NPY↔PDX1, APP↔TMPRSS2. Cross-rhyme recoveries include NPY↔SOD1, INS↔POMC, APP↔DYRK1A, DNMT1↔DNMT3A. Not clinical; not ENGINE_SHELF."
+    "summary": "COMBO RHYME WIRING EXPEDITION PASS — new STRING-empty: NPY↔PDX1, APP↔TMPRSS2. Bridge thickening: thickened=NPY↔PDX1; thin/confounded=APP↔TMPRSS2. Not clinical; not ENGINE_SHELF."
   },
-  "ms": 4,
-  "generatedAt": "2026-11-19T15:45:48.599Z"
+  "ms": 28,
+  "generatedAt": "2026-11-19T16:10:26.365Z"
 }

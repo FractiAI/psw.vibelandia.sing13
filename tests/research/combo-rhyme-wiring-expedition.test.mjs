@@ -18,4 +18,20 @@ describe('Combo rhyme wiring expedition', () => {
     expect(labels).toContain('NPY↔PDX1');
     expect(labels).toContain('APP↔TMPRSS2');
   });
+
+  it('thickens NPY↔PDX1 across independent layers and flags APP↔TMPRSS2 chr21 confound', () => {
+    const report = runExpedition();
+    expect(report.experiments.e7.passes).toBe(true);
+    expect(report.verdict.bridgeThickeningPass).toBe(true);
+    expect(report.verdict.thickenedNewCandidates).toContain('NPY↔PDX1');
+    expect(report.verdict.thinOrConfoundedNewCandidates).toContain('APP↔TMPRSS2');
+    const npy = report.experiments.e7.profiles.find((p) => p.label === 'NPY↔PDX1');
+    const app = report.experiments.e7.profiles.find((p) => p.label === 'APP↔TMPRSS2');
+    expect(npy.layers.diseaseRail).toBe(true);
+    expect(npy.diseaseShared.join(' ')).toMatch(/diabetes/i);
+    expect(npy.locus.same).toBe(false);
+    expect(app.layers.diseaseRail).toBe(false);
+    expect(app.locus.same).toBe(true);
+    expect(app.locus.chr).toBe('chr21');
+  });
 });

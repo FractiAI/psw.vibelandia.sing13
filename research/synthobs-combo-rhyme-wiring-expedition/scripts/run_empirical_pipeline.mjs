@@ -14,8 +14,10 @@ report.generatedAt = new Date().toISOString();
 writeFileSync(join(dataDir, 'empirical_report.json'), JSON.stringify(report, null, 2));
 
 const v = report.verdict;
-const cand = (v.newWiringCandidates || []).map((c) => c.label).join(', ') || 'none';
 const nl = String.fromCharCode(10);
+const cand = (v.newWiringCandidates || []).map((c) => c.label).join(', ') || 'none';
+const thick = (v.thickenedNewCandidates || []).join(', ') || 'none';
+const thin = (v.thinOrConfoundedNewCandidates || []).join(', ') || 'none';
 writeFileSync(
   join(dataDir, 'empirical_report.md'),
   [
@@ -23,8 +25,9 @@ writeFileSync(
     '',
     '**Document ID:** `' + report.documentId + '`',
     '**New STRING-empty candidates:** ' + cand,
-    '**Cross-rhyme recoveries:** ' + (v.crossRhymeRecoveries || []).join(', '),
-    '**Gate:** **' + v.comboWiringExpeditionPass + '**',
+    '**Bridge thickened:** ' + thick,
+    '**Bridge thin/confounded:** ' + thin,
+    '**Gate:** **' + v.comboWiringExpeditionPass + '** · bridge thicken **' + v.bridgeThickeningPass + '**',
     '',
     v.summary || '',
     '',
@@ -32,4 +35,12 @@ writeFileSync(
     '',
   ].join(nl),
 );
-console.log(JSON.stringify({ ok: true, pass: v.comboWiringExpeditionPass, candidates: v.newWiringCandidates, ms: report.ms }, null, 2));
+console.log(JSON.stringify({
+  ok: true,
+  pass: v.comboWiringExpeditionPass,
+  bridgeThickeningPass: v.bridgeThickeningPass,
+  thickened: v.thickenedNewCandidates,
+  thinOrConfounded: v.thinOrConfoundedNewCandidates,
+  candidates: v.newWiringCandidates,
+  ms: report.ms,
+}, null, 2));

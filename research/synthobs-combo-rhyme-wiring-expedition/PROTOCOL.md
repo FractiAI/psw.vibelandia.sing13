@@ -16,8 +16,11 @@ Combine **protein-folding + LLM + Pilot** rhymes to surface **new STRING-empty w
 | E5 | Protein-folding grammar attestation (AWARE long-range contacts) |
 | E6 | Combo wiring discovery gate |
 
+| E7 | Multi-layer bridge thickening (LLM/Pilot/OpenTargets/EuropePMC/exon/chr) |
+
 ## Locked findings (seed run)
 - New empty: **NPY↔PDX1**, **APP↔TMPRSS2**
+- Bridge thickening: **NPY↔PDX1 THICKENED** (diabetes rails + lit + exon; not same chr); **APP↔TMPRSS2 THIN/chr21 confound**
 - Cross-rhyme: NPY↔SOD1, INS↔POMC, APP↔DYRK1A, DNMT1↔DNMT3A
 
 → ∞^∞

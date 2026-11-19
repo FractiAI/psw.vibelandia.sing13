@@ -38,6 +38,7 @@ Does a combo of protein-folding + LLM + Pilot rhymes surface **new STRING-empty 
 | E4 | New empty candidates (not prior companions; coupling ≥0.5) |
 | E5 | Protein-folding AWARE long-range contact attestation |
 | E6 | Combo wiring discovery gate |
+| E7 | Multi-layer bridge thickening (LLM · Pilot · OpenTargets · EuropePMC · exon cosine · chromosome locus) |
 
 ## Results
 
@@ -48,6 +49,15 @@ Does a combo of protein-folding + LLM + Pilot rhymes surface **new STRING-empty 
 | STRING control | INS↔POMC **0.947** |
 | Protein grammar | AWARE long-range contacts attested |
 | **Verdict** | **COMBO WIRING EXPEDITION PASS** |
+
+### E7 · Bridge thickening (new rhymes → same pairs)
+
+| Pair | Layers that agree | Verdict |
+|---|---|---|
+| **NPY↔PDX1** | LLM rhyme · OpenTargets diabetes rails (Jaccard≈0.14, shared T2D) · EuropePMC co-mentions (4) · exon cosine rank #5 · **not** same chromosome | **THICKENED** — promote toward full wiring wet lab |
+| **APP↔TMPRSS2** | Pilot rhyme · weak EuropePMC (2) · exon rank #10 · **same chr21** · **zero** OpenTargets top25 disease overlap | **THIN / chr21 confound risk** — do not promote yet |
+
+Independent layers that land on the **same** pair are how a wiring wet lab thickens without rebuying assays. Chromosome co-location is scored as a confounder, not as a disease-context bridge.
 
 ### Wet-lab neighborhood notes (assembly, not our assays)
 

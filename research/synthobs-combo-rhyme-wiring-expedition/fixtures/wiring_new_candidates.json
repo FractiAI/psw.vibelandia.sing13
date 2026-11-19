@@ -65,5 +65,32 @@
       "stringScore": 0.999,
       "note": "Cross-rhyme rediscovery control"
     }
-  ]
+  ],
+  "bridgeThickeningE7": {
+    "NPY\u2194PDX1": {
+      "verdict": "THICKENED",
+      "layers": [
+        "llm_rhyme",
+        "opentargets_diabetes_rail",
+        "europepmc_comention",
+        "exon_cosine_rank5"
+      ],
+      "notSameChromosome": true,
+      "sharedDiseases": [
+        "type 2 diabetes mellitus",
+        "diabetes mellitus"
+      ]
+    },
+    "APP\u2194TMPRSS2": {
+      "verdict": "THIN / CHR-CONFOUND RISK",
+      "layers": [
+        "pilot_rhyme",
+        "europepmc_comention_weak",
+        "exon_cosine_rank10"
+      ],
+      "sameChromosome": "chr21",
+      "diseaseRail": false,
+      "note": "Do not promote to full wiring wet lab until a non-locus disease/wet-lab layer appears."
+    }
+  }
 }

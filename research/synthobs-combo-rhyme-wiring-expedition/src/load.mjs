@@ -17,3 +17,15 @@ export function loadStringPanel() {
 export function loadNewCandidateWiring() {
   return JSON.parse(readFileSync(join(FIX, 'wiring_new_candidates.json'), 'utf8'));
 }
+
+export function loadOpenTargetsBridge() {
+  return JSON.parse(readFileSync(join(FIX, 'opentargets_bridge_panel.json'), 'utf8'));
+}
+
+export function loadEuropePmc() {
+  return JSON.parse(readFileSync(join(FIX, 'europepmc_comention.json'), 'utf8'));
+}
+
+export function loadChromosomeLoci() {
+  return JSON.parse(readFileSync(join(FIX, 'chromosome_loci.json'), 'utf8'));
+}

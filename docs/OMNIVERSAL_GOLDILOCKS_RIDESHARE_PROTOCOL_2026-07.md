@@ -1,4 +1,6 @@
-# The Omniversal Goldilocks Rideshare Protocol: A Multi-Dimensional Framework for Scaling Resource Routing, Thermodynamic Optimization, and Systemic Awareness
+# Does the Omniversal Goldilocks Rideshare Protocol Lower Routing Overhead Compared with Car-Based Delivery?
+
+**Short answer: Yes.** On published AAA tables, micro-mobility operating cost in the model is about $0.0050 per mile against $0.7718 for the composite vehicle average, and cited studies put parking cruising near 28% of trip time. These are arithmetic on published tables and a model, not a field trial.
 
 **Author:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

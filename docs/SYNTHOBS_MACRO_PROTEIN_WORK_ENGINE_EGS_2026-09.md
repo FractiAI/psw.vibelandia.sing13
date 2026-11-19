@@ -1,4 +1,6 @@
-# The Macro-Protein Work Engine: Validating Autonomous Living Organisms within the Infinite Octave Model
+# Can Living Organisms Be Filed as Macro-Protein Work Engines in Octave Band 13–17?
+
+**Short answer: Yes.** As a catalog design claim, yes: the replay suite passed 9 of 9 structural and algebraic locks, including band membership for fixture length ratios. Kleiber and WBE scaling are framed as compatible, not re-derived, and no metabolic measurements are reported.
 
 **Subtitle:** Mathematical proofs, published-scaling locks, and catalog architecture — Kleiber / WBE / Fibonacci developmental contrast
 

@@ -1,4 +1,6 @@
-# Prime-Vault Race Door · Guest Rollout Announcement
+# Is the Prime-Vault Race Door Now Open to Guests on the Existing Email Allowlist?
+
+**Short answer: Yes.** The announcement files a guest door at /prime-vault-race that reuses the Let's Chat and Lattice Chat allowlist. It reports measured host receipts, for example ubiquitin at about 0.051 ms for the vault lane against about 24.7 s for ColabFold, a latency comparison rather than a folding-accuracy result.
 
 **Document ID:** `WP-SYNTHOBS-PRIME-VAULT-RACE-DOOR-2026-09-06`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

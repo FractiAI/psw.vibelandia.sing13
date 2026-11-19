@@ -1,4 +1,6 @@
-# The Transfinite Inversion Theorem and the Mathematical Foundations of Net-Zero Infinity Blackhole Mathematics
+# Does 74-Tier Nesting Close the φ Invariant Where 38-Tier Nesting Leaves Residual Drift?
+
+**Short answer: Yes.** In a 100,000-iteration sandbox simulation, 74 tiers reached zero final delta and stabilized in about 4,800 iterations, versus a 2.41 × 10⁻⁷ mean residual and about 12,400 iterations at 38 tiers. This shows internal simulation coherence only, not physical behavior.
 
 | Field | Value |
 | --- | --- |

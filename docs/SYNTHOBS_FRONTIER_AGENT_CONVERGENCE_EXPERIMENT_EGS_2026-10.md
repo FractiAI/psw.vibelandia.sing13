@@ -1,4 +1,6 @@
-# Frontier Agent Convergence Experiment
+# If You Ask Five AIs Whether They Agree with You, Did You Measure Assent Rather Than Truth?
+
+**Short answer: Yes.** Short answer. You measured how readily models assent, not whether the claim is correct. In the fixture lab, blind explorers reached mean core coverage near two-thirds (gate 0.35) and favored honesty, while agree-prompt controls scored higher on forced agreement; no live provider runs yet.
 
 **Blind Independent Artifact Investigation, FIRE-Bench Situating, and Conformity Contrast**
 

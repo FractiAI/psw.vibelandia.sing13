@@ -1,4 +1,6 @@
-# The Reflective Portal: Multiscale Octaves, Self-Modification, and Goldilocks Homeostasis
+# When a Habit Stops Working, Can a System See Itself Clearly Enough to Change the Habit?
+
+**Short answer: Yes.** In the sandbox, Agent RM recovered in about eleven steps while P and R stayed underwater, and returned to stable performance in thirteen steps versus forty-five after a phase flip. The best reflection rate was near ρ 0.2. These are not human trials.
 
 **Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

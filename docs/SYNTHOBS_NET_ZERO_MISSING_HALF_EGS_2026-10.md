@@ -1,4 +1,6 @@
-# Net Zero Expedition 001 — The Missing Half: The Complementary Structure of Reality
+# When You See Only Half of a Structure, Does a Complementary Relationship Complete the Whole?
+
+**Short answer: Yes.** In the executed suite, experiments E1 through E8 passed 8 of 8, covering even–odd splits, balancing forces and accumulation terms. But a constraint alone admits many completions (five distinct pairs met the same sum-to-one constraint), so independent evidence is required.
 
 **The Net Zero Expedition Series · inaugural research paper · application companion (not ENGINE_SHELF) · Infinite Octave / SynthOBS · 31 October 2026**
 

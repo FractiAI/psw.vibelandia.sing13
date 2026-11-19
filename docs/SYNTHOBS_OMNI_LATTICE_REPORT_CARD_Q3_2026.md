@@ -1,4 +1,6 @@
-# Omni-Lattice Report Card Q3 2026
+# Can the Omni-Lattice Issue a Q3 Report Card Without Claiming the Sky?
+
+**Short answer: Yes**, as a status report card filing that keeps claims proportionate: Not a cosmology result.
 
 **Comparative Evaluation of Cosmological Frameworks — Internal Coherence and Parameter Irreducibility in $\Lambda$CDM/QFT versus the Omni-Lattice Holographic Model**
 

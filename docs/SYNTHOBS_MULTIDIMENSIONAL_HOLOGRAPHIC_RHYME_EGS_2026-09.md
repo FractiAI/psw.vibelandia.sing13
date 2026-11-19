@@ -1,4 +1,6 @@
-# The Multi-Dimensional Holographic Rhyme: Cross-Scale Summation Across Infinite Octaves and $xD \pm yD$ Dimensions
+# Can a Holographic Layer Be Encoded by Cross-Scale xD±yD Summation Rather Than a Static Boundary Screen?
+
+**Short answer: Yes.** As catalog architecture, the paper files each layer as a cross-scale summation over xD±yD octave offsets, and its suite passes 9/9 structural and algebraic locks. These are fixtures only, not a physics result, hardware, or a challenge to AdS/CFT.
 
 **Subtitle:** Catalog holography beyond static boundary screens — $\Phi$-recursive $xD\pm yD$ summation
 

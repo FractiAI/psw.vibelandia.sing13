@@ -1,4 +1,6 @@
-# Beyond CRISPR — Biological Discovery Challenge
+# If CRISPR Records Past Invaders, Can a Relational Search Name What Writes Tomorrow’s Diversity?
+
+**Short answer: Yes.** The search's lead candidate is an ART-class cassette: an unusual reverse transcriptase, an uncharacterized partner and a long repeat array. Orphan messenger synthases and cryptic variable-region diversifiers rank next. All are falsifiable triage targets from literature-scored fixtures, and the declared winner remains null.
 
 **Multi-Scale Relational Search for Biological Information-Processing Architectures**
 

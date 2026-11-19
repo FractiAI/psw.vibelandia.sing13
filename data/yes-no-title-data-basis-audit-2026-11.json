@@ -1,0 +1,346 @@
+{
+  "policy": "Scripted/synthetic simulation may be used only when real data is not available.",
+  "counts": {
+    "none": 138,
+    "scripted": 30,
+    "real": 9,
+    "mixed": 10
+  },
+  "scriptedOrMixedWithRealAvailable": [
+    {
+      "id": "synthobs-reflective-portal-multiscale-homeostasis-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-attention-awareness-downstream-activation-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-99-octave-digits-master-2026-08",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-omni-lattice-hiv-2026-07",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-cytographic-holographic-nucleus-2026-07",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-aware-attention-head-expedition-2026-11",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "goldilocks-transfinite-inversion-2026",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-omni-lattice-prompt-capture-2026-07",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-egs-planck-scale-harmonic-2026-07",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-hex-organ-engine-2026",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-agentic-convergence-experiment-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-omni-lattice-ef-multi-octave-2026-08",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-proof-by-continuous-execution-2026-07",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-phase-aware-consensus-calculus-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-humans-ai-infinite-octave-offset-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-independent-research-convergence-fhg-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-infinite-octave-prime-parity-2026-09",
+      "dataBasis": "mixed",
+      "available": "partial",
+      "suggestion": "Extended number-theory formalization in Lean/mathlib if desired.",
+      "note": "Replayable algebraic suite on standard prime facts; not a new theorem proof."
+    },
+    {
+      "id": "synthio-mri-cloud-antenna-99-octave-2026-08",
+      "dataBasis": "scripted",
+      "available": "yes",
+      "suggestion": "Public phantom datasets and open k-space challenges if a measured arm is added.",
+      "note": "Industry MRI Bloch/k-space simulators (KomaMRI and companions)."
+    },
+    {
+      "id": "fractiai-ac-hmm-satellites-2026",
+      "dataBasis": "mixed",
+      "available": "yes",
+      "suggestion": "Public centromeric HOR / alpha-satellite assemblies (e.g. T2T, CHM13).",
+      "note": "Genomic satellite modeling suite; confirm public HOR fixtures in receipt."
+    },
+    {
+      "id": "synthobs-computation-workhorse-science-2026-10",
+      "dataBasis": "mixed",
+      "available": "partial",
+      "suggestion": "See paper honesty rail for replaceable scripted arms.",
+      "note": "Mix of scripted/synthetic suite and named real arms."
+    },
+    {
+      "id": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+      "dataBasis": "scripted",
+      "available": "yes",
+      "suggestion": "Anonymized multi-domain ops traces from a partner environment if available.",
+      "note": "Executive UI mockup / demo simulator."
+    },
+    {
+      "id": "synthio-komamri-distributed-cloud-2026-08",
+      "dataBasis": "scripted",
+      "available": "yes",
+      "suggestion": "Public MRI phantom workloads and distributed Julia cluster timings.",
+      "note": "KomaMRI.jl integration plan and simulator reference."
+    },
+    {
+      "id": "fractiai-eesm-gpu-telemetry-2026",
+      "dataBasis": "mixed",
+      "available": "yes",
+      "suggestion": "Public GPU trace corpora (e.g. MLPerf power/telemetry dumps) if not already used.",
+      "note": "GPU telemetry modeling suite."
+    },
+    {
+      "id": "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
+      "dataBasis": "mixed",
+      "available": "partial",
+      "suggestion": "Live multi-agent coding traces on public repos for a stronger operational arm.",
+      "note": "Controlled chain tasks plus hosted open-weight arm; organizational framing."
+    },
+    {
+      "id": "synthobs-organizational-discovery-homeostasis-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "fractiai-egs-nlrf-2026",
+      "dataBasis": "mixed",
+      "available": "partial",
+      "suggestion": "Public NIST hydrogen line catalogs if a measured arm is added.",
+      "note": "Catalog plus suite fixtures; not new lab spectroscopy."
+    },
+    {
+      "id": "synthobs-fractisi-multi-agent-platform-2026-11",
+      "dataBasis": "mixed",
+      "available": "partial",
+      "suggestion": "See paper honesty rail for replaceable scripted arms.",
+      "note": "Mix of scripted/synthetic suite and named real arms."
+    },
+    {
+      "id": "synthobs-cmos-protonic-99-octave-omni-lattice-2026-08",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Public PDK timing/power reports if a measured PPA arm is added.",
+      "note": "Linear-systems / CMOS vocabulary fixtures."
+    },
+    {
+      "id": "fractiai-hgt-psd-covariance-2026",
+      "dataBasis": "mixed",
+      "available": "yes",
+      "suggestion": "Public microbial HGT datasets (e.g. NCBI genomes with known transfers).",
+      "note": "Genomic token / covariance suite."
+    },
+    {
+      "id": "synthobs-fractisi-expedition-002-beyond-memory-2026-11",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-lattice-vs-vibe-coding-2026-09",
+      "dataBasis": "scripted",
+      "available": "yes",
+      "suggestion": "Public SWE-bench or RepoBench tasks for a stronger real arm.",
+      "note": "In-process coding receipts / suite comparison."
+    },
+    {
+      "id": "synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Public ML compiler benchmarks if a measured arm is added.",
+      "note": "Deterministic tensor-decoupling fixtures."
+    },
+    {
+      "id": "synthobs-egs-euler-phase-lock-2026-07",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Public oscillator or PLL datasets if a measured arm is added.",
+      "note": "Replayable phase-lock fixtures."
+    },
+    {
+      "id": "synthobs-emergent-sync-multi-agent-2026",
+      "dataBasis": "scripted",
+      "available": "yes",
+      "suggestion": "Public multi-agent interaction logs or live IDE agent traces.",
+      "note": "Multi-agent sync suite (typically scripted)."
+    },
+    {
+      "id": "synthobs-tiny-gateway-rhyming-templates-2026-11",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-galactosphere-hypothesis-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    },
+    {
+      "id": "synthobs-pchpp-2026-07",
+      "dataBasis": "scripted",
+      "available": "yes",
+      "suggestion": "Public model weight files or activation dumps for a measured arm.",
+      "note": "Compression / packing suite."
+    },
+    {
+      "id": "synthobs-holographic-operators-2026-07",
+      "dataBasis": "mixed",
+      "available": "partial",
+      "suggestion": "Domain-specific public datasets per operator family if measured arms are added.",
+      "note": "Operator suite fixtures."
+    },
+    {
+      "id": "goldilocks-geomagnetic-wavefield-multitaxa",
+      "dataBasis": "mixed",
+      "available": "yes",
+      "suggestion": "NOAA/INTERMAGNET magnetometer series and Movebank tracks.",
+      "note": "Geomagnetic / multi-taxa corridor suite."
+    },
+    {
+      "id": "synthobs-chart-compass-holographic-goldilocks-si-2026-10",
+      "dataBasis": "scripted",
+      "available": "partial",
+      "suggestion": "Seek a public dataset or live agent log for the same question.",
+      "note": "Scripted simulator, synthetic landscape, or deterministic fixtures."
+    }
+  ],
+  "real": [
+    "synthobs-wiring-discoveries-rhyming-world-model-2026-11",
+    "synthobs-combo-rhyme-wiring-expedition-2026-11",
+    "synthobs-npy-sod1-rhyme-validation-2026-11",
+    "synthobs-tiny-reality-generation-model-2026-10",
+    "synthobs-app-dnmt3a-rhyme-validation-2026-11",
+    "synthobs-shared-world-collective-intelligence-2026-11",
+    "synthio-mri-vs-legacy-perf-proxy-2026-08",
+    "synthobs-llm-rhyme-cosmic-genome-expedition-2026-11",
+    "synthobs-cosmic-rhyme-expedition-2026-11"
+  ],
+  "scripted": [
+    "synthobs-reflective-portal-multiscale-homeostasis-2026-10",
+    "synthobs-attention-awareness-downstream-activation-2026-10",
+    "synthobs-99-octave-digits-master-2026-08",
+    "synthobs-omni-lattice-hiv-2026-07",
+    "synthobs-cytographic-holographic-nucleus-2026-07",
+    "synthobs-aware-attention-head-expedition-2026-11",
+    "goldilocks-transfinite-inversion-2026",
+    "synthobs-omni-lattice-prompt-capture-2026-07",
+    "synthobs-egs-planck-scale-harmonic-2026-07",
+    "synthobs-hex-organ-engine-2026",
+    "synthobs-agentic-convergence-experiment-2026-10",
+    "synthobs-omni-lattice-ef-multi-octave-2026-08",
+    "synthobs-proof-by-continuous-execution-2026-07",
+    "synthobs-phase-aware-consensus-calculus-2026-10",
+    "synthobs-humans-ai-infinite-octave-offset-2026-10",
+    "synthobs-independent-research-convergence-fhg-2026-10",
+    "synthio-mri-cloud-antenna-99-octave-2026-08",
+    "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+    "synthio-komamri-distributed-cloud-2026-08",
+    "synthobs-organizational-discovery-homeostasis-2026-10",
+    "synthobs-cmos-protonic-99-octave-omni-lattice-2026-08",
+    "synthobs-fractisi-expedition-002-beyond-memory-2026-11",
+    "synthobs-lattice-vs-vibe-coding-2026-09",
+    "synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",
+    "synthobs-egs-euler-phase-lock-2026-07",
+    "synthobs-emergent-sync-multi-agent-2026",
+    "synthobs-tiny-gateway-rhyming-templates-2026-11",
+    "synthobs-galactosphere-hypothesis-2026-10",
+    "synthobs-pchpp-2026-07",
+    "synthobs-chart-compass-holographic-goldilocks-si-2026-10"
+  ],
+  "mixed": [
+    "synthobs-infinite-octave-prime-parity-2026-09",
+    "fractiai-ac-hmm-satellites-2026",
+    "synthobs-computation-workhorse-science-2026-10",
+    "fractiai-eesm-gpu-telemetry-2026",
+    "synthobs-nvidia-goldilocks-awareness-expedition-2026-11",
+    "fractiai-egs-nlrf-2026",
+    "synthobs-fractisi-multi-agent-platform-2026-11",
+    "fractiai-hgt-psd-covariance-2026",
+    "synthobs-holographic-operators-2026-07",
+    "goldilocks-geomagnetic-wavefield-multitaxa"
+  ]
+}

@@ -1,4 +1,6 @@
-# Race Report: Infinite Octave Prime-Vault vs ColabFold (AlphaFold-class)
+# Does the Prime-Vault Closed Form Finish Faster Than ColabFold on Protein Fold Fixtures?
+
+**Short answer: Yes.** On a CPU-only host, prime-vault median latency stayed under a millisecond (0.014 to 0.051 ms) while ColabFold 1.6.2 took about 25 s, 154 s and 29 s on tiers 1 to 3, with mean pLDDT 48.4, 40.5 and 31.2. The lanes emit different outputs, so this is a latency result, not an accuracy comparison.
 
 **Subtitle:** Measured four-tier race — setup · run · results under $\Phi_{\mathrm{EGS}}$ (tiers 1–3 ColabFold live · tier 4 Unmodeled Nova vault-live decipher)
 

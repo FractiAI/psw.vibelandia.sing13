@@ -1,4 +1,6 @@
-# High-Density Data Storage and Memory Architecture via Prime-Indexed Volumetric Containers
+# Can Prime-Indexed Volumetric Containers Remove the Parity Overhead of Reed-Solomon and LDPC Storage?
+
+**Short answer: No.** Not shown yet: the paper's 0% parity overhead and 100% lookup-latency reduction are catalog framing, backed only by a 9/9 suite of structural and algebraic locks. No silicon or media bench measurement is reported.
 
 **Subtitle:** Mathematical proofs, catalog empirical locks, and quantified architectural framing — Reed-Solomon / LDPC / LBA contrast
 

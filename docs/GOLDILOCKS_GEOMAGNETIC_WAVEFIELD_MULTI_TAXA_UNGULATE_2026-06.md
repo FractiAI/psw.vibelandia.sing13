@@ -1,4 +1,6 @@
-# THE NEW GOLDILOCKS GAME MATHEMATICS: UNIFIED GEOMAGNETIC WAVEFIELDS AND MULTI-TAXA UNGULATE MIGRATION CORRIDORS ON THE GREAT PLAINS
+# Do Multi-Taxa Herd Corridors Share One Geomagnetic Wavefield Reading?
+
+**Short answer: Yes**, as Goldilocks geomagnetic wavefield filing for multi-taxa corridors: Prefer public magnetometer and Movebank-style tracks when the receipt names them; otherwise treat as catalog.
 
 **Author:** Prudencio "Pru" Mendez, Lead Systems Architect  
 **Framework:** Goldilocks AIOS (v24.365) / SynthOBS Matrix Core  

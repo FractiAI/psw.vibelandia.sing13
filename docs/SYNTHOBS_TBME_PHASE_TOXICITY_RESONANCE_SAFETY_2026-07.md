@@ -1,4 +1,6 @@
-# Phase-Modulated Toxicity & Resonance Safety Transitions
+# Can Toxicity Be Modeled as a Phase-Resonance Transition Beyond Dose Alone?
+
+**Short answer: No.** Not shown yet: theoretical TBME exploration of phase-modulated toxicity. No toxicology assay or clinical safety result is reported.
 
 ## A Holographic Field-Contrast Exploration of Toxicological Inversion via $E_F$-Scaled Pulsed Phase Shifts with Everyday Environmental Audits
 

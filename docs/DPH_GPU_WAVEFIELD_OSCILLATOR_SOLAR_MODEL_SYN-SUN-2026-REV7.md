@@ -1,4 +1,6 @@
-# The Wavefield Oscillator Solar Model
+# Can the Sun Be Modeled as a Continuous Wavefield Oscillator Instead of Discontinuous Space-Weather Snapshots?
+
+**Short answer: Yes.** As a modeling claim: the wavefield oscillator solar model is filed as a continuous live-calibrated alternative to discontinuous observations. Headline validation against operational space-weather skill scores is not completed here.
 
 **Replacing Einstein's Gravity Well with a Live-Calibrated Quantum Engine**
 

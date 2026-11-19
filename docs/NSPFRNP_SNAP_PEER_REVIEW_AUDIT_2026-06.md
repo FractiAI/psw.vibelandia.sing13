@@ -1,4 +1,6 @@
-# NSPFRNP Snap · Peer-Review Audit Loop · SynthOBS Autonomous Agent
+# Does NSPFRNP Snap Peer-Review Audit Keep Paper Claims Honest Before Featuring?
+
+**Short answer: Yes.** As protocol filing: structural peer audit Snap with receipts, pass bars and iteration caps is the operational audit path. Effectiveness is process, not a meta-analysis of all past papers.
 
 **Document ID:** NSPFRNP-SNAP-PRA-2026-06  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

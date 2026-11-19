@@ -1,4 +1,6 @@
-# The Collapse of Linear Horsepower: Deny/Ignore, Empty Workshops, and the Ark Ratio
+# Has Linear AI Horsepower Stopped Buying Livelihoods, Leaving a Nesting Ratio Near φ as the Remaining Dial?
+
+**Short answer: No.** Not shown yet: the note is an editorial reading with no measured result. It files a nesting ratio near φ ≈ 1.618 as design language and proposes watching paychecks and access to nested work as the signals that would test it.
 
 Voyage editorial · Soft Story · linear FLOP ontology saturation · nested Goldilocks craft · Sodom/Ark rhyme · peers Vitality Control · Linear Shadow · Invisible Frontier · Consciousness Moat · Official Prospectus
 

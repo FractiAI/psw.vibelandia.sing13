@@ -1,4 +1,6 @@
-# EGS Recursive Fidelity Test (ERFT) · Version Five — Constant-Neutral + Grammar Split
+# When Information Rewrites Itself, Does φ Reduce the Drift?
+
+**Short answer: No.** On the locked fixtures, plain baseline (c = 1) had the lowest mean drift (NRMSE 1.387) against φ at 1.426. φ won 80% of matched cells, but the paired gap slightly favored baseline and the sign-flip check gave p ≈ 0.77. The result is mixed to null.
 
 **Subtitle:** When the same information is transformed again and again, does incorporating $\Phi_{\mathrm{EGS}}$ reduce cumulative fidelity drift versus matched recursion without it?
 

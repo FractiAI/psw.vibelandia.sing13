@@ -1,4 +1,6 @@
-# What Both Jensen Huang and NVIDIA Need Is a New World Model, Not a New CEO
+# Do NVIDIA and Jensen Huang Need a New World Model More Than a New CEO?
+
+**Short answer: Yes.** As an organizational catalog note case: the expedition argues World Model migration (shared world vs private silos) and reports a controlled chain task of 0/100 vs 100/100 under matched budgets, plus a hosted-model arm. Leadership succession is not adjudicated.
 
 **A Fractal Holographic Goldilocks Superintelligence Awareness Expedition**
 

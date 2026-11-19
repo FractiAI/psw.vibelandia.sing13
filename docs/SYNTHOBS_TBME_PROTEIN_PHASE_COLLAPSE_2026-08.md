@@ -1,4 +1,6 @@
-# Biomedical Field Exploration: Universal Phase-Lock Collapse in Protein Misfolding Pathologies
+# Can Protein Phase Collapse Be Read as a Body-Field Event on the Trail?
+
+**Short answer: Yes**, as architectural TBME filing: Not a wet-lab folding experiment.
 
 **Subtitle:** Molecular Mechanics of Neurodegenerative Aggregation (FTD/TDP-43, Alzheimer’s, Parkinson’s, Prion) under Scale-Invariant Field Geometry
 

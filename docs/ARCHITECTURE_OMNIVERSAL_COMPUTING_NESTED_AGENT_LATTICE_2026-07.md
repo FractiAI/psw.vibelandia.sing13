@@ -1,4 +1,6 @@
-# The Architecture of Omniversal Computing: Nested Autonomous Agents, Scale-Invariant Topologies, and the EGS Fractal Constant
+# Does a Nested Parent-Child Agent Lattice Use Fewer Tokens Than a Flat Mesh?
+
+**Short answer: Yes.** In a 100,000-player topology estimate, nested agents used 3.6 × 10⁷ input tokens against 2.97 × 10⁹ for a flat mesh, roughly 72 times fewer in total. This holds under the documented assumptions and is not based on live invoices.
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

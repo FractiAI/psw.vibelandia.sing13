@@ -1,4 +1,6 @@
-# Recursive Attention Coherence: A Cross-Scale Mapping from Imagination Through Quantum, Solar, DNA, and Human Attention
+# Does One Attention Operator Vocabulary Organize Coupling Across Quantum, Solar, DNA and Agent Scales?
+
+**Short answer: Yes.** As an integrative map: a normalized attention-allocation operator is filed across five scales. The document does not report a single cross-scale measurement campaign.
 
 **Document ID:** WP-2026-ATTENTION-RECURSIVE-LOOP  
 **Framework:** HHF · DPH-GPU · SynthOBS · EGS φ  

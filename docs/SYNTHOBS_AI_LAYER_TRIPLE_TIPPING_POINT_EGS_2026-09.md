@@ -1,4 +1,6 @@
-# Are We at the Triple Tipping Point Yet? — Sodom / Noah Rhymes Over Today’s AI Layer
+# Are Rising AI Spend, Lagging Livelihoods and Tightening Access Arriving Together?
+
+**Short answer: Yes.** On the lived-signal read in this note, rising AI spend, lagging employment and tightening access look concurrent in current signals. This is a qualified observation, with no labor statistics offered as proof and no forecast date.
 
 Voyage editorial · Soft Story · AI arrival weather · triple tipping point · Sodom/Ark rhyme · supreme-intelligence naming · jobs & doors · peers Linear Horsepower Collapse · Vitality Control · Invisible Frontier · Consciousness Moat · Official Prospectus
 

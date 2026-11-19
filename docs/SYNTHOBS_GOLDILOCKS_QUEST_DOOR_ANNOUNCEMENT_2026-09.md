@@ -1,4 +1,6 @@
-# Goldilocks Quest · Full Gen v3 Protocol Door
+# Can Guests Enter Goldilocks Quest Full Gen Twin v3 Through the Email-Seated Door?
+
+**Short answer: Yes.** The announcement specifies a five-tier climb with live Twin relay, an email seat check shared with Lattice Chat, and curl commands to verify seat, Twin state and telemetry. It reports no playtest data or measured outcomes, so this is a design and access filing.
 
 **Document ID:** `WP-SYNTHOBS-GOLDILOCKS-QUEST-FULL-GEN-2026-09-06`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

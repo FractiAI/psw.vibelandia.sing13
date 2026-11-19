@@ -1,4 +1,6 @@
-# Triadic Nested Hemispheric Architectures: Harmonic Scaling, Node Topology, and Agent Containment via El Gran Sol’s Fractal Constant
+# Do Three Φ-Scaled Nested Hemispheres Satisfy an Additive Radial Lock?
+
+**Short answer: Yes.** The radial relation r3 = r2 + r1 follows algebraically from Φ² = Φ + 1, and the deterministic suite fixtures pass 9/9. This is catalog arithmetic only; no acoustic, impedance, or agent-compute measurement is reported.
 
 Architectural Scale Grammar for Concentric Hemispheres, Omniversal Theater Staging, and Sandbox Node Containment
 

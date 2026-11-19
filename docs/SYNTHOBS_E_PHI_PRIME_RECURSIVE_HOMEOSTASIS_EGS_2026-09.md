@@ -1,4 +1,6 @@
-# e × φ × Prime Recursive Homeostasis — Unified Exploratory Architecture
+# When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained?
+
+**Short answer: Yes.** On held-out fixtures, with e and ρ frozen, Δ-reconcile matched the three-axis gains (RCR ~0.875, E ~0.021, bleed ~0.294) with useful commit rate 0.50. This does not validate e×φ×prime as causal constants.
 
 **Subtitle:** Can $e$-driven transformation, $\varphi$-based recursive proportion, and prime-based containment collectively produce a Goldilocks regime of recursive evolution — nonzero change with bounded drift and minimal bleed?
 

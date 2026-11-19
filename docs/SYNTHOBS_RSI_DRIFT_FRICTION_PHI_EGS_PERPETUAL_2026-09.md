@@ -1,4 +1,6 @@
-# Recursive Self-Improvement · Drift as Friction · Φ_EGS as the Perpetual Nesting Constant
+# When Tools Rewrite Themselves, Is Drift the Real Rent?
+
+**Short answer: Yes.** Drift ranked as the dominant friction at scale, compounding across iterations while compute stayed externally bounded, and φ-based nesting slowed its accumulation in the simulated designs tested. The result is directional: runs lasted weeks, the mechanism is incomplete, and production systems were not the main fixtures.
 
 **Subtitle:** Why drift is the dominant cost when tools rewrite themselves — and why $\Phi_{\mathrm{EGS}}$ is this catalog’s only closed-form perpetual recursive drift-damped nesting ratio
 

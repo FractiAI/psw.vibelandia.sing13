@@ -1,4 +1,6 @@
-# The Universal Toroidal Singularity Theorem
+# Can Internal Kerr–Newman Geometry Be Filed as Everything Pulling to the Middle?
+
+**Short answer: Yes**, as architectural catalog filing: Not a new black-hole observation.
 
 **Subtitle:** Scale-Invariant Gravitational, Vector, and Social Attraction as Layered Horizon Attributes of the Internal Kerr–Newman Metric
 

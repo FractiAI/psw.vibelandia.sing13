@@ -1,4 +1,6 @@
-# Omni-Lattice · $E_F$ 2,187-Node Hybrid Engine (Kernel + Scale-Indexed RAG)
+# Does a 2,187-Node Kernel Plus Scale-Indexed Retrieval Improve Omni Processing Over a Full Monograph Dump?
+
+**Short answer: No.** Not shown yet: the token benefit is stated as expected, with no measured comparison. What is reproducible in the repository is the structure: 2,187 fractional digits of Φ index 27 matrices of 81, running from a Node kernel and file-backed index without a central vector database.
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

@@ -5,10 +5,10 @@
   <script src="/interfaces/vbi18n-failopen.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Pilot Rhyme: One Map-Holder, Many Local Agents · Ship blog · SS Vibelandia</title>
+  <title>Does a Director/Pilot Role Rhyme Beat Flat Peers on Multi-Hop Coordination and Exact-Text Caches on Store Size? · Ship blog · SS Vibelandia</title>
   <meta name="description" content="A new World Model rhyme feature. Director and Pilot seats share one world. 100 of 100 missions found vs 0 for flat peers; 22% smaller than an exact-text role cache that never hit." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/pilot-rhyme-expedition" />
-  <meta property="og:title" content="Pilot Rhyme: One Map-Holder, Many Local Agents, One Shared World" />
+  <meta property="og:title" content="Does a Director/Pilot Role Rhyme Beat Flat Peers on Multi-Hop Coordination and Exact-Text Caches on Store Size?" />
   <meta property="og:description" content="Does a Director/Pilot role rhyme beat flat peers on coordination, and beat an exact-text cache when mission wording differs?" />
   <meta property="og:type" content="article" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,9 +26,12 @@
     </nav>
     <header>
       <p class="kicker">Research note · Pilot Rhyme Expedition</p>
-      <h1>Pilot Rhyme: One Map-Holder, Many Local Agents, One Shared World</h1>
+      <h1>Does a Director/Pilot Role Rhyme Beat Flat Peers on Multi-Hop Coordination and Exact-Text Caches on Store Size?</h1>
       <p class="dateline"><strong>FractiAI Research</strong> — November 18, 2026</p>
     </header>
+
+    <p class="answer"><strong>Short answer: Yes.</strong> On 100 six-hop missions, all three Director/Pilot arms recovered 100 of 100 while flat peers recovered 0. Pilot Rhyme's store was 67,243 B, 22% smaller than the exact-text cache (0 hits) and 80% smaller than private copies; the accuracy gain comes from the roles, not the rhyme.</p>
+
 
     <p class="lead">Agent fleets on one project tend to fail in a recognizable way. One agent is supposed to hold the map and the others run local steps. Instead, each agent keeps a private copy of the whole context, the wording of each new task changes, and the merge at the end is where the cost lands. This expedition asks whether a reusable Director and Pilot role pattern — stored once, with each mission kept as only what differs, inside one shared world — does measurable work that flat peers and exact-text caches do not.</p>
 

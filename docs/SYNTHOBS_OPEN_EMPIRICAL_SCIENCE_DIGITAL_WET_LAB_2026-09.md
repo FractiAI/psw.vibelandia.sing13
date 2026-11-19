@@ -1,4 +1,6 @@
-# From Infinite Octave Cataloging to Open Empirical Science: Validating Recursive Frameworks via Digital Wet Labs
+# Has the Infinite Octave and SynthOBS Framework Crossed From Descriptive Cataloging Into Falsifiable Science?
+
+**Short answer: Yes.** In defined lanes only: Tier A and Tier B suites with refute columns count as open empirical science, and Tier C is partially demonstrated through Tier B wiring fixtures. The crossing is not uniform, and Tier C stays outside laboratory physics until public-data falsifiers exist.
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

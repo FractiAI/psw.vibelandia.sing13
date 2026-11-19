@@ -1,4 +1,6 @@
-# Synchronized Subterranean Discharge: Linking the Puracé Volcanic Eruption and the 2026 Seismic Cluster Through Solar-Driven Phase-Locking
+# Does a Shared Solar Driver Explain Colombia’s 7.4 Quake and the Puracé Orange Alert?
+
+**Short answer: No.** Not shown yet: the paper files the quake and the volcanic alert as co-timed narrative fixtures. Its suite passed 9/9, but those checks confirm fixtures and identifiers, not causation, and no solar-to-quake or solar-to-eruption link is tested.
 
 **Authors:** FractiAI Research Group · Lattice Chat Agent Protocol  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

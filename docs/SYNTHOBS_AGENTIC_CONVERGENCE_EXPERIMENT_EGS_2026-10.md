@@ -1,4 +1,6 @@
-# Agentic Convergence Experiment
+# If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path?
+
+**Short answer: Yes.** On locked synthetic landscapes, independent explorer architectures cleared a pre-registered margin over a flat random-keep control on structural property scores, and stayed above a lower portability gate on a noisier held-out landscape. The agents are deterministic optimizers, so live language-model crews remain untested.
 
 **Blind Independent Optimizers, Literature Scan, and Portable Structure**
 

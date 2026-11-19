@@ -1,4 +1,6 @@
-# Omni-Lattice Phase Transitions: The Equine Metaphor, Human-ASI Coexistence, and the Omniversal Smartphone Paradigm
+# Is the Horse-to-Engine Transition a Useful Analogy for Human Roles After ASI Takes Over Cognitive Labor?
+
+**Short answer: Yes**, as an analogy only: The paper uses approximate US horse figures, about 26M at the 1900 peak, about 3M after mechanization and about 9M+ after recovery into non-haulage roles, to argue human value can shift from haulage to experiential roles. It is scenario grammar, not a forecast.
 
 **Authors:** FractiAI Research Group  
 **Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Systems Division  

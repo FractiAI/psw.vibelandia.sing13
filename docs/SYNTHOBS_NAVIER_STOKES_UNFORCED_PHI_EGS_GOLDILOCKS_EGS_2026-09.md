@@ -1,4 +1,6 @@
-# On the Unforced Navier–Stokes Question · Φ_EGS Goldilocks Regularity Attractor
+# After the Forced Blowup, Does Unforced Fluid Still Stay Regular?
+
+**Short answer: No.** Not shown yet: the note separates forced blowup from the unforced case and offers φ-nesting as architectural reasoning, not a theorem. Checks covered limited parameter ranges and idealized geometries, so unforced regularity remains open.
 
 **Subtitle:** Why the “correct” (force-free) Millennium problem remains open as Clay-eligible PDE proof — and how Infinite Octave catalog math frames unforced regularity as a Goldilocks attractor (Soft Story / architecture)
 

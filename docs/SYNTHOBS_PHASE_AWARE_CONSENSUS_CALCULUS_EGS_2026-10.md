@@ -1,4 +1,6 @@
-# Phase-Aware Consensus Calculus: A Homeostatic Framework for Dynamic Multi-Agent Systems
+# When Coalitions Swing, Can a 90° Lead Beat Counting Votes at the Peak?
+
+**Short answer: Yes.** On synthetic data, the derivative leads the level by exactly ninety degrees, and parabolic peak fitting cut median localization error from about 0.053 to about 0.0047 at σ=0.02 (quoted 91 percent). Skewed peaks need narrow windows; no live governance was tested.
 
 **Academic working paper · Architectural specification · Homeostasis Expedition · Infinite Octave / SynthOBS · 15 October 2026**
 

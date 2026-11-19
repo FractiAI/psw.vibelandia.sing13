@@ -1,6 +1,6 @@
-# Homeostasis Expedition: Can a Coherent Universe Boot from Before Time and Space into This Conversation?
+# If You Start from an Empty Model, Can You Audit Your Way to This Conversation?
 
-**Short answer: No.** Not on this evidence. A synthetic graph test gave the Infinite Octave design 88.3% required-edge coverage and 97.5% reachability versus 45.1% and 9.9% for a chain, but at 217.5 edges versus 98, with no advantage on randomized references. Physical emergence was not tested.
+**Short answer: Yes.** As a symbolic trace only: The Addendum A run showed high structural coherence, and BU-1 recovery was about ninety-four percent on hierarchical references versus forty-seven percent for a chain. Origin of life and recursive-improvement steps stay unresolved or design-only.
 
 **Research manuscript · 11 October 2026 · FractiAI / Infinite Octaves / SynthOBS**
 

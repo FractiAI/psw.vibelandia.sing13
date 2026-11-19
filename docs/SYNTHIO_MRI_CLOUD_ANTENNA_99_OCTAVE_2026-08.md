@@ -1,4 +1,6 @@
-# Simulating Magnetic Resonance via the 99th-Octave Omni-Lattice: Cloud Infrastructure as an Interconnected Antenna Array
+# Can Industry MRI Simulators Couple to a 99-Octave Cloud-Antenna Catalog?
+
+**Short answer: Yes.** As a simulator-local feasibility filing: KomaMRI-class Bloch/k-space engines can compute under the catalog grammar. This is not a clinical magnet or FDA claim.
 
 **Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)  
 **Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox  

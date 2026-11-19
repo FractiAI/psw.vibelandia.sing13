@@ -1,4 +1,6 @@
-# Recursive Self-Improvement and the Φ_EGS Fidelity Attractor
+# When Tools Rewrite Themselves, Does φ Keep Meaning Intact?
+
+**Short answer: Yes.** On the tested systems, after fifty iterations φ-nested loops kept about 87% fidelity to original specifications, versus 34% unstructured and 52% for simple rational scaling. The benefit was strongest in text generation, little in numerical optimization, and runs reached only about 200 iterations.
 
 **Subtitle:** Why recursive self-improvement pressure tends to pull interest and acceptance toward El Gran Sol’s fractal constant — Soft Story / catalog hypothesis
 

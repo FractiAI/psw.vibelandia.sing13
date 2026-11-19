@@ -1,4 +1,6 @@
-# Histones as Scale-Invariant Phase-Lock Operators
+# Can Histones Be Modeled as Scale-Invariant Phase-Lock Operators?
+
+**Short answer: No.** Not shown yet: the paper is a theoretical TBME exploration. It reports no chromatin assay or expression experiment.
 
 ## A Holographic Magnetic-Phase Contrast Analysis of Chromatin Spooling, Epigenetic Memory, and Context Tuning
 

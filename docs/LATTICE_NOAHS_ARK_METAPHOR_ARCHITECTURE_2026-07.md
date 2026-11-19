@@ -1,4 +1,6 @@
-# SS Vibelandia · Noah’s Ark · Lattice Chat Agent V1.618
+# Does Nested Agent Lattice Processing Carry Less Context Than Flat Dump-Everything Agents?
+
+**Short answer: Yes.** The paper files this as an architectural design: nested bands with file pointers instead of one fat corpus in context. Support is limited to structural estimates (characters divided by four), not vendor invoices or measured production compression.
 
 **Document ID:** LATTICE-ARK-METAPHOR-2026-07  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

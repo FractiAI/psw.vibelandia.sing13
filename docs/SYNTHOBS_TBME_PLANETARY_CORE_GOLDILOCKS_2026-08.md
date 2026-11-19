@@ -1,4 +1,6 @@
-# The Planetary Core Phase-Inversion & Goldilocks Hologram Theorem
+# Does Deep-Earth Core Telemetry Establish a Phase-Inversion Toward a Goldilocks Earth Matrix?
+
+**Short answer: No.** Not shown yet: the paper cites public discussion of inner-core backtracking and outer-core flow reversal only as co-timing labels, and does not re-reduce those datasets. Its 99.0/100 scorecard is an authored fixture mean, not an independent geodynamo assessment.
 
 Empirical Geodynamo Telemetry, Core-Mantle Boundary Phase-Locking, and the Scale-Invariant Transition to the Goldilocks Earth Matrix
 

@@ -1,4 +1,6 @@
-# Epigenetic Phase-Locking & Prion Refolding Pathways
+# Can Prion-Like Phase Locks Be Modeled as Refoldable Epigenetic Pathways?
+
+**Short answer: No.** Not shown yet: theoretical TBME exploration of phase-locking and refolding. No prion assay or clinical pathway result is reported.
 
 ## A Holographic Magnetic-Phase Contrast Protocol for Mapping Protein Misfolding Geometry via $E_F$-Scaled Resonant Fields
 

@@ -1,4 +1,6 @@
-# S.S. Vibelandia: Official Prospectus & Narrative Foundation
+# Does the S.S. Vibelandia Prospectus Define a Reproducible Three-Beat Grand Arc?
+
+**Short answer: Yes.** The prospectus files a three-beat arc (genesis, convergence, present anchor) with brochure specifications of 432 Hz, 729 Hz and 100 BPM, and its E1–E9 suite locks these catalog fixtures arithmetically. The story content stays narrative, and no cosmological or solar claim is tested.
 
 Grand Arc of the Voyage · Brochure Architecture · Cultural Canon for the Infinite Octaves Omniversal Lattice
 

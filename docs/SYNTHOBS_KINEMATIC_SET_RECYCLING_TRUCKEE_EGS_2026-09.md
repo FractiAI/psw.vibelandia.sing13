@@ -1,4 +1,6 @@
-# Kinematic Set-Recycling: Velocity-Dependent Octave Modulation of the Terrestrial Theater along the Truckee River Corridor
+# Can Velocity Multiplex Recycling Be Filed on a Truckee Theater Under Φ_EGS?
+
+**Short answer: Yes**, as kinematic set-recycling catalog filing: Not a traffic or river hydrology field campaign.
 
 **Subtitle:** Catalog formalization of observer-velocity multiplex of a single physical set under $\Phi_{\mathrm{EGS}}\approx 1.618$ — Truckee River corridor field grammar
 

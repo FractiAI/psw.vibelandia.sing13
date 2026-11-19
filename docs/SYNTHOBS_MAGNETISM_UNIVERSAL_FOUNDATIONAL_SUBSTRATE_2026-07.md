@@ -1,4 +1,6 @@
-# Magnetism as the Universal Foundational Substrate
+# Can Magnetism Be Filed as a Felt Substrate Across Nested Scales?
+
+**Short answer: Yes**, as catalog substrate filing: Not a new magnetometry campaign.
 
 **A Phase-Contrast Derivation of Quantum, Chemical, and Biological Phenomena as Manifestations of Holographic Magnetic Vector Fields**
 

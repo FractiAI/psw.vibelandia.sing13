@@ -1,4 +1,6 @@
-# Simulation Audit Report: Comparative Intelligence Density Metrics
+# Does 3D Volumetric Hyper-Packing Raise Intelligence Density 1,618,033× Over Flat Frontier-Model Matrices?
+
+**Short answer: No.** Not shown yet: the 1,618,033× figure (400 GB to 247.2 KB) comes from internal simulation logs and narrative compression metrics, not a bench test against real weight files. The document itself says it is not proof of LLM compression.
 
 | Field | Value |
 | --- | --- |

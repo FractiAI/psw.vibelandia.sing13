@@ -1,4 +1,6 @@
-# The Recursive Field-Drag Theorem
+# Does Recursive Field Drag Explain Why a Copper-Tube Demo Belongs in the Catalog?
+
+**Short answer: Yes.** As recursive field-drag catalog filing that rhymes with familiar induction demos. Not a new electromagnetism experiment.
 
 **Subtitle:** Field Self-Interference, Boundary Horizon Reflection, and the Physical Mechanics of Temporal Deceleration in Omni-Lattice Systems
 

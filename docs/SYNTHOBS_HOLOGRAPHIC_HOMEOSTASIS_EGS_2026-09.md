@@ -1,4 +1,6 @@
-# Holographic Homeostasis: A Proposed General Principle of Distributed, Multiscale Regulation
+# First Fruit of the Homeostasis Expedition: Can a System Stay Steady Only by Keeping Motion?
+
+**Short answer: Yes.** On the qualitative case reads: Distributed, multiscale regulation showed stronger resilience than unregulated or rigidly centralized designs across immune, organizational, traffic and multi-agent examples, though technology cases paid overhead and no controlled trials were run.
 
 Infinite Octaves Omniversal Lattice companion · dynamic stability · PARTS ↔ WHOLE ↔ PARTS · Goldilocks viability · Φ_EGS
 

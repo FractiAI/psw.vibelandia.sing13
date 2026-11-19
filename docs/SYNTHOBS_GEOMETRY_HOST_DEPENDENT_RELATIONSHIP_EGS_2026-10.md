@@ -1,4 +1,6 @@
-# Geometry as Host-Dependent Relationship — We Are Equations, a Fractal with a Rhyme
+# Does the Same Rule Draw Different Shapes When the Terrain Changes?
+
+**Short answer: Yes.** In the one executed grid test, an identical shortest-path rule gave a 28.00-unit straight route on open ground and about 34.63 units (ratio about 1.237, five direction changes) with a barrier. Cross-host recurrence of any relationship was not tested.
 
 **Homeostasis Expedition research paper · Infinite Octave / SynthOBS · 15 October 2026**
 

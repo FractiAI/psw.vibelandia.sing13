@@ -1,4 +1,6 @@
-# The Apiary Metaphor: Sovereign Edge Ecology, Dimensional Convergence, and the Singularity Nexus in the Omni-Lattice Framework
+# Does the Apiary Metaphor Complement the Equine Arc as a Sovereign-Edge Steady State?
+
+**Short answer: Yes.** As a companion dialectic filing: Equine Arc (subtractive haulage) and Apiary (additive ecology) lock as paired catalog metaphors. No apiary productivity or edge-fleet metric is measured.
 
 **Authors:** FractiAI Research Group  
 **Affiliation:** Omni-Lattice Dynamics Laboratory & Syntheverse Systems Division  

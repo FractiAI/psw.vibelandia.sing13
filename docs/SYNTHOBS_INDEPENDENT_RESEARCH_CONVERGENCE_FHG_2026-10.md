@@ -1,6 +1,6 @@
-# Homeostasis Expedition: All Roads Lead to Fractal, Holographic, Goldilocks?
+# When Independent AI Research Takes Different Roads, Do They Still Meet at Fractal, Holographic, Goldilocks?
 
-**Short answer: Yes.** On deterministic fixtures, four of four experiments passed, with a mean post-hoc margin of about 0.118 against a gate of 0.10. The result is qualified convergence on synthetic landscapes, neither universal nor shown for external labs.
+**Short answer: Yes.** On deterministic fixtures, four of four experiments passed, with a mean IRC margin of about 0.118 against a pre-registered gate of 0.10. Margins come from synthetic landscapes and blind fixture agents, and the literature synthesis is not a systematic review, so convergence in deployed systems is unproven.
 
 **Independent Research Convergence in AI**
 

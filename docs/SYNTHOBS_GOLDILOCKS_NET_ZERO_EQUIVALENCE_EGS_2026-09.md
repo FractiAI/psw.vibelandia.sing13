@@ -1,4 +1,6 @@
-# Goldilocks ≡ Net Zero: Viable Band as Active Equilibrium
+# Is “Just Right” a Moving Band, Not a Still Point?
+
+**Short answer: Yes.** As a systems-level reading: Across biological, household and organizational cases, viable systems held balance through ongoing adjustment, and Goldilocks zones behaved as bands rather than points. Evidence is qualitative, with no numerical test, and active regulation costs more complexity than a fixed setpoint.
 
 Infinite Octaves Omniversal Lattice companion · Goldilocks = Net Zero · dynamic balance · Ω as cancel-to-viable · Φ_EGS
 

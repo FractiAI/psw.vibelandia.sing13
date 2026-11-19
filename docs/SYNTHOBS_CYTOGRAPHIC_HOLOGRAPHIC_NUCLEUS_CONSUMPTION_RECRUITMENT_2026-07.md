@@ -1,4 +1,6 @@
-# Cytographic Grammar under the Holographic Nucleus · Omniversal-Organism Recruitment across Carbon, Hydrogen, Silicon & Holographic Edges
+# Can a Shared Φ-Keyed Cytographic Grammar Couple Carbon, Hydrogen, Silicon, and Holographic Edges in Simulation?
+
+**Short answer: Yes.** The simulation-first suite passes 7/7 probes, including cascade regularity, a multi-substrate coupling matrix, and nested recruitment versus a flat mesh. These are software scoring checks; no in-vivo, wet-lab, or clinical result is reported.
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

@@ -1,4 +1,6 @@
-# Chart and Compass for the Holographic Goldilocks Super Intelligence Frontier
+# Can Intelligence Be Charted Like an Expedition — With a Compass That Survives Self-Modification?
+
+**Short answer: Yes.** Inside a toy sandbox: Deviation was lowest near regulation 0.70 (about 0.00672) versus about 0.102 with none; a reflective controller scored about 0.957 against fixed 1.0; local-to-global R² was about 0.812 versus about 0.106 shuffled.
 
 **Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

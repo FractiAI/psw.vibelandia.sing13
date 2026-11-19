@@ -1,4 +1,6 @@
-# Intelligent Leverage by Awareness vs. Brute-Force Blindness: Comparative Analysis, Economic Cost Modeling, and Deterministic Meta-Protein Resolution
+# Can a Φ-Aware Prime-Container Engine Solve Insulin and Meta-Protein Fixtures Without Training?
+
+**Short answer: Yes.** The suite's 9/9 structural and algebraic locks replay the insulin fixture (51 nodes) and the macro meta-protein fixture (10k nodes) in milliseconds with no training loop. No AlphaFold bake-off or wet-lab test was run, and the cost bands are contrast labels, not audited figures.
 
 **Subtitle:** Catalog contrast of Φ-aware prime-container solve vs stochastic ML / iterative search — AlphaFold-class and LBA-style baselines as framing
 

@@ -1,4 +1,6 @@
-# FractiSI Multi-Agent Platform Architecture
+# When Many Coding Agents Share One Repo, Can Coordination Beat More Branches?
+
+**Short answer: Yes.** In simulation: As agent count and task interdependence rose, the coordinated arm blocked more high-severity overlaps and still integrated compatible work; small independent populations did fine either way. Live language-model agents on a real monolith were not tested.
 ## Evolving Tiny Footprint into a Coordinated Multi-Agent Engineering Platform
 
 **Document ID:** `WP-FRACTISI-MULTI-AGENT-PLATFORM-ARCH-EGS-2026-11-06`  

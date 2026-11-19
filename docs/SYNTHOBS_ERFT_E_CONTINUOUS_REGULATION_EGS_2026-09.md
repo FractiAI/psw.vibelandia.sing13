@@ -1,4 +1,6 @@
-# ERFT-E · Continuous Constant Regulation + Confirmatory Held-Out Expedition
+# After Nothing to Crown, Does Continuous Regulation Clear the Bar?
+
+**Short answer: No.** On held-out fixtures, neither continuous nor discrete regulation beat the best fixed policy by the pre-registered fifteen-percent margin; improvement was about −0.8%. The inclusion gate failed, so the work ships as an application companion only.
 
 Infinite Octaves Omniversal Lattice · application companion · ERFT follow-on · Φ_EGS peer · ENGINE_SHELF gated
 

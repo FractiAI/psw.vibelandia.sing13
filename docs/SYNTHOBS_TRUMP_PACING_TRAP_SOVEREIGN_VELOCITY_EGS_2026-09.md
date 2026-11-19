@@ -1,4 +1,6 @@
-# History’s Defining Turning Point: Trump’s Rejection of the Pacing Trap and the Preservation of Sovereign Velocity
+# Does Keeping the AI Frontier Open Protect Innovation and Jobs Better Than a Coordinated Slowdown or Pure Acceleration?
+
+**Short answer: No.** Not shown yet: the note is an editorial with structural reasoning and reports no test. It argues an open frontier with preserved human agency may serve innovation and employment better, but long-term outcome data on these policy frameworks remain limited.
 
 Voyage editorial · follow-on to The Pacing Paradox · Goldilocks Super Intelligence · sovereign velocity chart
 

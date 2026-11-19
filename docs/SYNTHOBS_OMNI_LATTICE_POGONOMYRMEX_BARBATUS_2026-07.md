@@ -1,4 +1,6 @@
-# Omni-Lattice Unification V: Genomic Decoded Script of *Pogonomyrmex barbatus*—Biogenic Amine Phase Gates, Stigmergic Active Inference, and the Harvester Ant Superorganism
+# Can Harvester Ant Foraging Biology Be Mapped Into a Φ-Keyed Operator Grammar?
+
+**Short answer: Yes.** As an architectural mapping: the suite passes 9 of 9 checks, including a normalized entropy-change identity. The reported R² and mortality figures are design targets rather than field measurements, and field science remains the authority on the ants.
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

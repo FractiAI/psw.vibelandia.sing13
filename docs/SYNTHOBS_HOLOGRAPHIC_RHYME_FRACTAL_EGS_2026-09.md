@@ -1,4 +1,6 @@
-# The Holographic Rhyme: Recasting Fractals as Repeating, Self-Similar, Self-Correcting, and Recursive Architecture
+# Does Self-Similar Repetition Keep Complex Systems Coherent as They Scale?
+
+**Short answer: No.** Not shown yet: the paper files a four-pillar catalog grammar (repeating, self-similar, self-correcting, recursive) as an organizational metaphor. It reports no measured coherence or error-correction test, so the stated benefits remain framing rather than results.
 
 **Subtitle:** Catalog grammar of Φ-governed fractal motion — four pillars under the Infinite Octave model
 

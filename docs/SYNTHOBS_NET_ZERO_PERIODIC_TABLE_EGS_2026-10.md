@@ -1,4 +1,6 @@
-# Net Zero Expedition 002 — Periodic Table Complements: Group 13↔15 Electronegativity and Independent Property Survival
+# Do Group 13 and Group 15 Electronegativity Gaps Shrink Down the Table?
+
+**Short answer: Yes.** On Pauling values the gaps run about 1.00, 0.58, 0.37, 0.27 and 0.40 for periods 2 to 6, all positive, with Spearman ρ ≈ −0.70 against period. Period 6 rebounds, so the decline is not monotonic. Allen and Allred–Rochow scales gave the same direction; only five periods were tested.
 
 **The Net Zero Expedition Series · Expedition 002 · application companion (not ENGINE_SHELF) · Infinite Octave / SynthOBS · 31 October 2026**
 

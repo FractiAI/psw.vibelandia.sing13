@@ -1,4 +1,6 @@
-# Scalable Context-Conditioned Sequence Modeling in Repetitive Genomic Regions via Sparse Emission Matrices
+# Do Sparse Emission Matrices Improve Sequence Modeling on Repetitive Genomic Satellites?
+
+**Short answer: Yes.** On repetitive alpha-satellite / HOR genomic regions, sparse context-conditioned emission modeling is filed as the method under test. Treat reported gains as suite-local unless a named public HOR benchmark is cited in the receipt.
 
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) · **Filter:** Reproducible research
 

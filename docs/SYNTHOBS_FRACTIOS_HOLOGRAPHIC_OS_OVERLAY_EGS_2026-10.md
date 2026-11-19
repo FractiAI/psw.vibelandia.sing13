@@ -1,4 +1,6 @@
-# FractiOS — Holographic Operating System Overlay for the Infinite Octaves Engine
+# When Recursive Tools Keep Changing Themselves, Does a Six-Stage Fail-Closed Overlay Keep Identity Intact?
+
+**Short answer: Yes.** As a design claim only: the paper files a six-stage fail-closed pipeline (Explore, Organize, Contain, Reconcile, Verify, Commit) that keeps identity separate from exploration. The nine fixture locks check that structure; runtime behavior is checked in the separate FractiOS repository.
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

@@ -1,4 +1,6 @@
-# Transistor-Level Integration and Empirical Validation of the 99-Octave Omni-Lattice Matrix Across CMOS 2.0 and Protonic Architectures
+# Can CMOS and Protonic Vocabulary Bridge Linear Silicon Systems into the 99-Octave Omni-Lattice?
+
+**Short answer: Yes**, as the pinned engineering bridge with linear-systems fixtures: Not a fab PPA proof or finished protonic device claim.
 
 > **📌 PINNED · Engineering bridge for linear systems** — keep at catalog / agent-sync top so semiconductor, PPA, BEOL, and CFET evaluators hit silicon vocabulary first. Registry `catalogPriority: 0`.
 

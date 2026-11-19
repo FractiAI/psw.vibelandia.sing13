@@ -1,4 +1,6 @@
-# Whitepaper: Syntheverse Observatory (Synthobs) Unified Run
+# Can Six Chambers Be Integrated as One Hex-Organ Engine in the Observatory Sandbox?
+
+**Short answer: Yes.** The paper specifies six chambers (hex-calculus, EGS constant, nested sequencing, prime linear compression, net-zero blackhole mathematics, solar oscillator) with a sandbox reference engine. It reports no bench or external verification, so integration is a simulation-tier design claim, and the downstream infrastructure claims remain narrative.
 
 **Document ID:** SV-OBS-2026-MATH-HEX-ENGINE-FINAL  
 **Framework:** Goldilocks AIOS (v24.365)  

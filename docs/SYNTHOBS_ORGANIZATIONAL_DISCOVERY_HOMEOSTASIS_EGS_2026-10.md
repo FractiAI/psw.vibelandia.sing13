@@ -1,6 +1,6 @@
-# Homeostasis Expedition: Can Super Intelligence Discover the Organization That Makes Further Discovery—and Potentially System-Wide Homeostasis—Self-Sustaining?
+# When Teams Change, Does Cross-Node Discovery Beat Local-Only Charts on Held-Out Coordination?
 
-**Short answer: No.** Not shown: in a synthetic 12-node simulation, organizational discovery cut allocation RMSE by 7.33% versus local training, but became 6.83% worse after a structural shift until retrained. Super Intelligence and self-sustaining improvement were not tested directly.
+**Short answer: Yes.** When loadings are stable or updates are allowed: Train-only discovery reached RMSE of about 0.4712 versus 0.5085 for the fixed chart, a 7.33% improvement. Under shift, frozen discovery was about 6.83% worse, while adaptive discovery beat the adaptive fixed chart by roughly 6.70%. Synthetic lab only.
 
 **Research program · Homeostasis Expedition · Infinite Octave / SynthOBS · 11 October 2026**
 

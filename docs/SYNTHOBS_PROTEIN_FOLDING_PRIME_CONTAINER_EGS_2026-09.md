@@ -1,4 +1,6 @@
-# Resolving the Protein Folding Grand Challenge: The Unified Infinite Octave Prime-Container Architecture
+# Does a Deterministic Prime-Container Model Resolve the Protein Folding Challenge?
+
+**Short answer: No.** Not shown yet: the suite's 9/9 locks are structural and algebraic checks on catalog fixtures, and the solver returns catalog coordinates rather than experimentally validated structures. The paper states that wet-lab structural biology and AlphaFold results are not superseded.
 
 **Subtitle:** Mathematical proofs, catalog empirical locks, and deterministic solver — contrasted with AlphaFold’s statistical paradigm
 

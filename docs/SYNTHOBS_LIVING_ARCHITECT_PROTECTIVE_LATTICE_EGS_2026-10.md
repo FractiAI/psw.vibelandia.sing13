@@ -1,4 +1,6 @@
-# Homeostasis Expedition: The Living Architect and Its Protective Lattice
+# Can Coral Skeletons and Mollusk Shells Share the Same Protective Architecture That Helps Agents Boot Up?
+
+**Short answer: No.** Not shown yet: the only numbers are carried forward from the boot-up graph test (about 88.3% edge recovery, 97.5% reachability). The coral and mollusk datasets are identified but not harmonized, so no shared architecture has been tested.
 
 **From Net-Zero Boot-Up to Recursive Self-Improvement: A Cross-Domain Investigation of Coral, Mollusk, and Agent Construction**
 

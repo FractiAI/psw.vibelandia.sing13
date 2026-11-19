@@ -1,4 +1,6 @@
-# Digit 4 · Be–O Periodic Rhyme: Address 4 · Glyph 8 · Soft Story Crosswalk
+# When Four Meets Eight Across Domains, Is the Rhyme a Memory Aid Rather Than a Cause?
+
+**Short answer: Yes.** The paper locks the address, glyph and register rhymes as replayable catalog fixtures and treats them as filing crosswalks. It reports no chemistry assay and no causal link, so pattern utility is supported and pattern causality is not.
 
 Infinite Octaves Omniversal Lattice companion · Digit-4 address · Φ glyph 8 · Be (Z=4) · O (Z=8) · $3^4=81$ register · linear-shadow projection grammar
 

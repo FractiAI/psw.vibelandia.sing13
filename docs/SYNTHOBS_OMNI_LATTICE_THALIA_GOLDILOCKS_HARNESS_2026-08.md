@@ -1,4 +1,6 @@
-# Omni-Lattice · THALIA Goldilocks Harness Contract
+# Can THALIA’s Five-Stage Harness Be Mapped Onto the Omni-Lattice Engine as Named Processing Invariants?
+
+**Short answer: Yes.** The paper maps the five stages onto nested-agent invariants and wires a contract module into the Lattice execution envelope. This is a design and filing claim with stated falsifiers; no THALIA quality results are imported and it is not a full port.
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

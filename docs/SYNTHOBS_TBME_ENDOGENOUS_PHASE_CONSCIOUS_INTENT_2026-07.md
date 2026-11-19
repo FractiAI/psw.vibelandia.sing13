@@ -1,4 +1,6 @@
-# Bio-Holographic Phase Modulation via Conscious Intent
+# Can Conscious Intent Be Modeled as an Endogenous Phase Modulation Without External Hardware?
+
+**Short answer: No.** Not shown yet: the paper is a theoretical TBME exploration of intent as phase. It reports no human trial and no instrumented physiology result.
 
 ## A Theoretical Exploration of Direct Neural-Cardiac Endogenous Frequency Generation and Self-Directed Phase Harmonization
 

@@ -1,4 +1,6 @@
-# FractiSI Research Expedition 002 · Beyond Memory Savings
+# If Agents Share One World, Can They Discover What Flat Memory Misses?
+
+**Short answer: Yes.** In a controlled simulation: Relationship-guided reconstruction recovered the full six-hop chain and correct solution in 100 of 100 scenarios, while flat retrieval under the same forty-record budget recovered 0 of 100. Agents ran scripted procedures rather than language models, and selective reads can be slower than direct shared lookup.
 
 **Testing Whether Tiny Footprint Multi-Agent Improves Speed, Accuracy, Convergence, Discovery, and Collective Problem-Solving**
 

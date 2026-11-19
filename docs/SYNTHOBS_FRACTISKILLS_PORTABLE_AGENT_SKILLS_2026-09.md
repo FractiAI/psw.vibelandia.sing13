@@ -1,4 +1,6 @@
-# FractiSkills: Portable Agent Skills for the Infinite Octave Omniversal Lattice Catalog
+# Do Portable SKILL.md Packages Let Nested Agents Carry Surface Context Without Pasting the Whole Catalog?
+
+**Short answer: Yes.** As a portable-skills corpus filing: the monorepo skills/ tree is the product object. No live multi-provider agent bake-off is reported here.
 
 **Subtitle:** Application companion — whole-site `SKILL.md` corpus as resonant filing under Infinite Octaves Lattice Chat (**not** an engine pin; **not** a live public crawl claim of unfinished physics)
 

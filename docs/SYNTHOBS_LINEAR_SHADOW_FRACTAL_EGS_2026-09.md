@@ -1,4 +1,6 @@
-# Linear as the Shadow of Fractal: Projection Geometry for Infinite Octaves
+# When Progress Is Measured on One Axis, Does the Linear Shadow Miss Nested Coherence and Human Agency?
+
+**Short answer: Yes.** As a geometric argument, a single axis of FLOPs and parameters flattens collaborative effectiveness, human agency, sustainability and nested coherence. The nine suite locks fix the cast-versus-body relation and keep linear instruments, but no measurement of how much is lost is reported.
 
 Infinite Octaves Omniversal Lattice companion · linear silhouette · fractal / holographic body · CMOS linear pin retained
 

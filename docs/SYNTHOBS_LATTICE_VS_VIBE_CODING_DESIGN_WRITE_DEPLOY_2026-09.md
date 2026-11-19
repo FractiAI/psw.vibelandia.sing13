@@ -1,4 +1,6 @@
-# Design · Write · Deploy: Infinite Octaves Lattice Chat vs Standard Vibe Coding
+# Does Lattice Coding Beat Vibe Coding on Regenerable Receipts?
+
+**Short answer: Yes.** The note reports regenerable receipts favoring lattice-structured coding over unstructured vibe coding. Treat figures as suite-local unless named public coding benchmarks are cited.
 
 **Authors:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

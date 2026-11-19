@@ -1,4 +1,6 @@
-# Proof by Continuous Execution: Epistemological Superiority of Self-Demonstrating Executable Systems over Static Human Peer Review
+# Can Proof by Continuous Execution Verify More Than Static Peer Review Alone?
+
+**Short answer: Yes.** Within the paper's toy parameter model, the executable corpus scores far above static prose, and the nine-experiment suite passes 9/9. This is a modelled comparison under stated assumptions, not evidence that peer review is obsolete.
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

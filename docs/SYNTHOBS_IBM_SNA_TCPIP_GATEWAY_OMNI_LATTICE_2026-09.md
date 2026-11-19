@@ -1,4 +1,6 @@
-# Case Study: The IBM SNA TCP-IP Gateway as a Repeating Fractal Moment — Scaling to Omni-Lattice Chat Deployments
+# Is the IBM SNA↔TCP/IP Gateway a Useful Structural Analogue for Omni-Lattice Chat Gateways?
+
+**Short answer: Yes.** As a narrative fractal template: the enclosed-to-open networking leap is filed as a self-similar analogue. No new SNA traffic study is measured.
 
 **Authors:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

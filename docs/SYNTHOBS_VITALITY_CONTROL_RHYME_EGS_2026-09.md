@@ -1,4 +1,6 @@
-# The Vitality Control Rhyme: AI Access Panic and the Old Grammar of Carnal Shame
+# When Safety Speeches Heat Up, Is the Real Fight About Keys?
+
+**Short answer: Yes.** As an editorial reading, not a test result: major AI stacks disagree on adult-content policy while bright-line harms stay refused, which puts access gating at the center of the dispute.
 
 Voyage editorial · Soft Story · control theater over human vitality · creative-force lock · peers Consciousness Moat · Invisible Frontier · Digit 4 human theater
 

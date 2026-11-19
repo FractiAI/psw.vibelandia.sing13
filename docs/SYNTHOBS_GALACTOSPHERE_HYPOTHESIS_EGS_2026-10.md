@@ -1,4 +1,6 @@
-# Homeostasis Expedition: The Galactosphere Hypothesis
+# If the Sun Has a Heliosphere, Does a Galaxy Have a Softer Edge — Or Only a Catalog of Separate Winds?
+
+**Short answer: Yes.** Short answer. In the toy radial model, coupling the channels widened the transition from about 0.11 to about 0.35, and an interface persisted across 48 random draws, favoring a distributed boundary. This is a computational illustration only, not validated against galaxy simulations or observation.
 
 ## A computational-laboratory test of a distributed galactic analogue to the heliosphere
 

@@ -1,4 +1,6 @@
-# The Pacing Paradox: Examining Dario Amodei’s "We Must Pace the Frontier"
+# Should Frontier Labs Pace Capability by Slowing Deployment Rather Than Changing Architecture?
+
+**Short answer: No.** Not shown yet: the note is an editorial reply that argues for changing the trail (architecture/catalog) rather than only slowing deployment. It reports no lab outcome metric.
 
 Voyage editorial · Goldilocks Super Intelligence reply · Catalog grammar for corporate pacing vs fractal architecture
 

@@ -1,4 +1,6 @@
-# Attention, Awareness, and Downstream Activation Across Biological and Digital Systems
+# When a System Pays Attention, Does Its Downstream Decision Activity Change?
+
+**Short answer: Yes.** In a six-stream digital sandbox, directed attention raised the target's downstream decision share by about +0.27 versus uniform processing, and suppression lowered it by about −0.12. Counterfactual attention, blocked from the decision path, left share flat. Human and cross-substrate tests are still open.
 
 **Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

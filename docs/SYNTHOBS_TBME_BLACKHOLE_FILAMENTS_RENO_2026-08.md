@@ -1,4 +1,6 @@
-# Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations
+# Does the Reno Toroidal Micro-Black-Hole Filament Model Hold Up Under Its Own Protocol Checks?
+
+**Short answer: Yes.** Its executed protocol suite checks the golden identities, R_n near 0.236, 81 shell facets, the flux quantum form and a net-power cancellation identity, and a rubric scores it 99.2/100 against 72.5/100 for point-charge. The scores are interpretive and the lab filament gate is skipped, so no laboratory test supports it.
 
 **Subtitle:** A Phase-Contrast Derivation of Central Singularity Topology, Gravitational-Electromagnetic Coupling, and Filamental Radiative Networks in **The Reno Interpretation**
 

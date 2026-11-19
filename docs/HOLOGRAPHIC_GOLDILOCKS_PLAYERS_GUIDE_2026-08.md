@@ -1,4 +1,6 @@
-# Holographic Goldilocks Players Guide
+# Does the Goldilocks Players Guide Show That Brute-Force Control No Longer Pays Off?
+
+**Short answer: No.** Not shown yet: the guide is a marketing and orientation playbook with no empirical lane. The view that high-friction control stops paying off is an editorial position, not a tested result.
 
 Free Operational Orientation Companion for the Goldilocks Sandbox Matrix — Marketing Surface & Playbook (Not a Geodynamo Proof)
 

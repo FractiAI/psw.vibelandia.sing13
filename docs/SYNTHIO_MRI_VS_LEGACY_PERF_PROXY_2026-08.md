@@ -1,4 +1,6 @@
-# Live Wall-Clock Comparison: MRI Interference-Phase Bloch CPU vs Legacy Full-Mesh Recompute in Syntheverse Sandbox
+# Does Synthio’s MRI Interference-Phase Path Beat Legacy Full-Mesh Recompute on Live Wall-Clock Timings?
+
+**Short answer: Yes.** On live Node wall-clock timings (process.hrtime.bigint) for a Bloch GRE kernel plus SHA-256 buffer work, the interference-phase path was faster than legacy full-mesh recompute. This is simulator CPU timing, not clinical MRI throughput.
 
 **Authors:** FractiAI Research Group · Synthio (Syntheverse Sandbox)  
 **Operator:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox  

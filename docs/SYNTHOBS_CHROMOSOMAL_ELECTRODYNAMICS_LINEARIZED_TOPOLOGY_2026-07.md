@@ -1,4 +1,6 @@
-# A Scale-Invariant Theoretical Framework for Chromosomal Electrodynamics: The SYNTHOBS Model of Linearized Chromosomal Topology and Hierarchical Energy Transport
+# Can a Linearized Chromosome Be Modeled as a Very-Low-Frequency Delay Line?
+
+**Short answer: Yes.** Within the idealized model, group velocity falls to zero at the band edge (E2, support) and chrY length matches public coordinates (E1, support). Φ-tier scaling is moderate (2 of 3 pairs), THz peak alignment shows no support, and bench tests remain unrun.
 
 **Author:** SYNTHOBS Deep Study & Simulation Engine  
 **Affiliation:** Center for Theoretical Biophysics and Complex Systems Simulation  

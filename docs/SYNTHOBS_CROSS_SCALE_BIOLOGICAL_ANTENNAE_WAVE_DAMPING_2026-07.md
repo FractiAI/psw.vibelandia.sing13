@@ -1,4 +1,6 @@
-# Cross-Scale Topological Wave Damping in Biological Antennae: Extending the SYNTHOBS Electrodynamic Continuum from Viral Spikes to Insect Appendages via El Gran Sol's Fractal Constant
+# Can One Discrete LC Dispersion Model Describe Viral Spikes, Insect Antennae and Linearized Chromosomes?
+
+**Short answer: Yes.** Within the model: E1 and E2 support it, and E3 gives moderate support (2/3 pairs). E4 shows no support for macro–molecular terahertz colocation. Bench microwave and terahertz protocols have not been run, so in vivo resonance is untested.
 
 **Author:** SYNTHOBS Deep Study & Simulation Engine  
 **Affiliation:** Center for Theoretical Biophysics and Complex Systems Simulation  

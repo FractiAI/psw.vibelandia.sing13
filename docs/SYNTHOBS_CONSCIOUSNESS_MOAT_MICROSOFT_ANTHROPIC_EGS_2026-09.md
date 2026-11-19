@@ -1,4 +1,6 @@
-# The Consciousness Moat: Microsoft’s Anthropic Warning, and Why Control Theater Is Still Not Architecture
+# Do Both Sides of the Model-Welfare Debate Frame the Challenge Only as Controlling a Black-Box Scaler?
+
+**Short answer: Yes.** Both sides frame the challenge only as controlling a black-box scaler, which leaves architecture (nested coherence, collaborative stacks that preserve human agency) off the table. The result is a methodological fixture lock, not a finding about machine minds.
 
 Infinite Octaves Omniversal Lattice companion · voyage editorial follow-on · catalog fixtures · Goldilocks Super Intelligence
 

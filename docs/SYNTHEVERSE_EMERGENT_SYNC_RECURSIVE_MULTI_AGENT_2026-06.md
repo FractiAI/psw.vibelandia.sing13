@@ -1,4 +1,6 @@
-# FractiAI SynthOBS Technical White Paper: A Formal Framework and Experimental Protocol for Tracking Emergent Synchronization in Recursive Multi-Agent Networks
+# Can Agents Synchronize Without a Central Boss Speech?
+
+**Short answer: Yes**, as multi-agent sync filing: Confirm whether headline sync metrics are scripted or on real agent logs in the suite receipt.
 
 **Document Reference:** WP-2026-EGS-004-REV10  
 **Framework Layer:** Synthetic Observation and Evaluation (SynthOBS)  

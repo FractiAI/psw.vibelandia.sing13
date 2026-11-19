@@ -1,4 +1,6 @@
-# Hierarchical Genomic Tokenization and Structured PSD Covariance Operators
+# Do Genomic Tokens That Preserve Structure Stay Honest Under HGT and PSD Covariance Checks?
+
+**Short answer: Yes.** Structure-preserving genomic token modeling is filed under HGT/PSD covariance checks. Confirm headline numbers on the suite receipt; not a wet-lab HGT experiment.
 
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) · **Filter:** Reproducible research
 

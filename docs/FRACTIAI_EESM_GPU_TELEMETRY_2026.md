@@ -1,4 +1,6 @@
-# Epigenetic Execution-State Modeling for Causal Invariance in GPU Performance Telemetry
+# Does Epigenetic Execution-State Modeling Improve Causal Reading of GPU Performance Telemetry?
+
+**Short answer: Yes.** GPU performance traces are treated as expressed phenotypes of a latent execution genotype under the EESM filing. Confirm headline metrics against the suite receipt; this is telemetry modeling, not chip fab proof.
 
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) · **Filter:** Reproducible research
 

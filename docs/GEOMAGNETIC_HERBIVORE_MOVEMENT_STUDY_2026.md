@@ -1,4 +1,6 @@
-# Geomagnetic Influences on Bison and Large Herbivore Movement
+# Do Bison and Other Large Herbivores Show Movement Patterns Tied to Geomagnetic Activity?
+
+**Short answer: No.** Not shown yet: no public Bison bison collar study was downloadable, so the pipeline used Snowy Range moose GPS data. Heading alignment (H1) and storm-linked displacement (H2, H5) showed no support to weak support, and causation is not asserted.
 
 **Document ID:** HHA-GEOMAG-HERBIVORE-2026  
 **Principal investigator (edge):** FractiAI Research Team · PL Taino (systems architect)  

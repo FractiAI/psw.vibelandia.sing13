@@ -1,4 +1,6 @@
-# Moving Up the Stack — FractiAI & Lattice Chat as the Next AI Layer
+# Should Lattice Chat Be Valued as a New AI-Stack Layer Rather Than a Peer of Model Hubs and Agent IDEs?
+
+**Short answer: No.** Not shown yet: the paper is a valuation framing, not a test. It uses scenario anchors ($12.9B for Hugging Face, $60B for Cursor) to imply a $12B–$28B band against a $4.2B–$7.5B peer-shelf reading, with no audited appraisal.
 
 **Document ID:** `WP-SYNTHOBS-MOVING-UP-THE-STACK-VALUATION-2026-09-05`  
 **Registry ID:** `synthobs-moving-up-the-stack-valuation-2026-09`  

@@ -1,4 +1,6 @@
-# From Viral RNA to Artificial Superintelligence: Survival Computing, Host Reorganization, and the Hero’s Return to Source
+# If Viruses Recruit Hosts and AI Reorganizes Ours, Is Survival Itself a Kind of Computing?
+
+**Short answer: No.** Not shown yet. The paper offers a framework with host-reorganization variables and a proposed measurement program, but reports no completed empirical campaign. The ontological layer is labeled speculative, and prior-art novelty awaits a systematic literature review.
 
 **Authors:** Pru “El Taíno” Méndez · FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  

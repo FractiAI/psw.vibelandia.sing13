@@ -1,4 +1,6 @@
-# Prime Vault Chat — Edge Omni-Lattice Agent Replacing LLM Training with Φ-Recursive Prime-Vault Architecture
+# Can a Closed-Form Prime-Vault Engine Hold a Multi-Turn Chat Without Any Model Training?
+
+**Short answer: Yes.** The engine passes 14 of 14 suite checks, including multi-turn topic carry and refusal of out-of-domain asks, answering by closed-form vault ranking over a 111-cell corpus encoded from 16 documents at $0.00 training cost. It is a domain-bounded demo, not open-world question answering.
 
 **Subtitle:** Miracle 2 demonstration — ChatGPT-shaped guest UI powered by closed-form prime vaults under $\Phi_{\mathrm{EGS}}$
 

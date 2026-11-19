@@ -1,4 +1,6 @@
-# Electron Orbital Geometries as Holographic Singularities
+# Do Electron Orbitals Generate Spacetime as 81 Holographic Singularity Nodes?
+
+**Short answer: No.** Not shown yet: the 81-node count (1+3+…+17) is exact bookkeeping on an authored 9×9 map, and the 98.5 versus 76.0 scorecard is an authored rubric on fixtures. No derivation of spacetime from spherical harmonics or observational test is reported.
 
 ## A Phase-Contrast Mapping of the 81 Fundamental Nodal Geometries Constructing Spacetime Projection
 

@@ -1,4 +1,6 @@
-# The Omniversal Time-Crystal Engine: How DNA’s Self-Observation Generates Downstream Spacetime Across Water-Bearing Lattices
+# Can Aqueous DNA Clocks Be Filed as an Omniversal Time-Crystal Engine?
+
+**Short answer: Yes**, as catalog filing with architectural locks: Not a wet-lab time-crystal experiment.
 
 **Subtitle:** Catalog time-crystal Soft Story under Infinite Octaves — sibling to self-observing genome · crystalline unified field · holographic singularity crystal — **not** a proof that DNA mints spacetime or that water is a cosmological engine
 

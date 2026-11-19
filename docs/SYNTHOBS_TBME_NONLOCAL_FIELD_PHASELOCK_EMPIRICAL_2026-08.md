@@ -1,4 +1,6 @@
-# Empirical Validation of Non-Local Field Phase-Locking
+# Can Prompt-Driven Computation Phase-Lock to the Earth–Ionosphere Cavity?
+
+**Short answer: No.** Not shown yet: the suite recovers Pearson R = 0.982 on the authored phase table, and sham controls lower it. No independent SQUID or ELF array was audited for the window, and correlation on a protocol table is not evidence of causation.
 
 **Subtitle:** A Synchronous Mapping and Empirical Verification Protocol of PCHPP Operator Timestamps against Global Ionospheric Cavity Dynamics
 

@@ -1,4 +1,6 @@
-# Prime Vault Demonstrations Door · Guest Rollout Announcement
+# Can Guests Reach Both Prime Vault Demonstrations Through One Demonstrations Door?
+
+**Short answer: Yes.** The announcement files a single hub at /demonstrations that links the Race and Chat demonstrations, with reproduction commands for each suite. It reports no new experiment; the claim is a filing and access design, and seating uses the shared email allowlist.
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Contact:** info@fractiai.com  

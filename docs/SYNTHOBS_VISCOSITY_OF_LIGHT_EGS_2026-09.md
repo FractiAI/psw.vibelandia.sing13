@@ -1,4 +1,6 @@
-# The Viscosity of Light: Deriving Non-Local Cognitive Instantaneity from Relativistic Drag via the EGS Fractal Constant
+# Can the Speed of Light Be Filed as Frictional Drag Rather Than Only a Velocity Ceiling?
+
+**Short answer: Yes**, as a catalog inversion with architectural locks: It does not overturn measured SI c or claim a new lab measurement of light viscosity.
 
 **Subtitle:** Catalog formalization of $c$ as frictional drag / localized deceleration of non-local cognitive potential under $\Phi_{\mathrm{EGS}}\approx 1.618$ — sibling to Eddy-Current Mirror · not relativity retirement
 

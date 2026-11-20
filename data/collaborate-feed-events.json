@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-19T16:12:21.631Z",
+  "updatedAt": "2026-11-20T00:36:59.369Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-diverse-redundancy-inbreeding-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-20T00:36:59.367Z",
+      "body": "Do Diverse Copies Hold a Mission Deeper Than Cloned Copies When Failures Share a Cause?",
+      "presenceHue": "gold",
+      "paperId": "synthobs-diverse-redundancy-inbreeding-expedition-2026-11",
+      "artifact": {
+        "title": "Do Diverse Copies Hold a Mission Deeper Than Cloned Copies When Failures Share a Cause?",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_DIVERSE_REDUNDANCY_INBREEDING_EGS_2026-11.md",
+        "url": "/whitepaper/diverse-redundancy-inbreeding",
+        "paperId": "synthobs-diverse-redundancy-inbreeding-expedition-2026-11",
+        "docId": "WP-DIVERSE-REDUNDANCY-INBREEDING-EGS-2026-11-19",
+        "published": "2026-11-20T14:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-wiring-bridge-thickening-2026-11",
       "type": "ArtifactEvent",

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Do Diverse Copies Hold a Mission Deeper Than Cloned Copies When Failures Share a Cause? · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="Rhyming Expedition arm: cloned mission copies cap under common-cause β while diverse classes keep nesting depth. Backblaze, yeast, and human boards agree on direction." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/diverse-redundancy-inbreeding" />
+  <meta property="og:title" content="Do Diverse Copies Hold a Mission Deeper Than Cloned Copies When Failures Share a Cause?" />
+  <meta property="og:description" content="Short answer yes: clone-5 survival 0.262 vs diverse-5 0.997 at β=0.2 depth 6; Backblaze β̂≈0.0469; yeast and human paralog boards agree on direction." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/whitepaper/diverse-redundancy-inbreeding">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Research note · Rhyming Expedition</p>
+      <h1>Do Diverse Copies Hold a Mission Deeper Than Cloned Copies When Failures Share a Cause?</h1>
+      <p class="dateline"><strong>FractiAI Research</strong> — November 19, 2026</p>
+    </header>
+
+    <p class="answer"><strong>Short answer: Yes.</strong> On the regenerable depth board, five cloned copies at a common-cause fraction of 0.2 and depth 6 keep only 0.262 survival, while five diverse classes keep 0.997 — and nine clones still sit at 0.262. Public Backblaze 2019 H1 same-model failures give β̂ ≈ 0.0469; at that measured β the clone arm still falls with depth while the diverse arm stays near one. Public yeast and human paralog boards move the same way after length stratification.</p>
+
+    <p class="lead">When a team of agents is asked to hold a mission across nested contexts, the first instinct is often to make more copies of the same agent. That habit looks careful. It is also how payroll systems, on-call rotations, and household backups fail together: one bad update, one shared vendor, one power strip, and every “redundant” copy goes dark at once. The Rhyming Expedition arm reported here asks a narrower question. If failures share a cause, do diverse copy classes hold the mission deeper than cloned same-lineage copies?</p>
+
+    <h2>The problem cloning creates</h2>
+    <p>Cloned redundancy answers “how many?” without asking “how different?” A fleet that reprints the same model revision into nine containers still shares one failure mode. A parent who saves nine identical USB sticks of the family tax folder still loses the folder if the sticks were all written from the same corrupted laptop. Hiring managers already know a softer version of the trap: three people trained the same way, reading the same playbook, will miss the same blind spot on the same Tuesday. The cost lands as a lost paycheck, a missed rent transfer, or a child waiting at school because every driver used the same broken routing app.</p>
+    <p>Earlier FractiSI work already showed that mission copies help with depth. The Aware Attention Head expedition found that five repaired copies can keep high survival out to a thousand nested octaves on a scripted board, while a single copy dies out. That result left a second question open. Are those copies allowed to be identical lineages, or does common-cause risk demand diversity of class — different seats, different models, different failure modes — the way a Rhyming World Model prefers structure reuse over byte-identical reprints?</p>
+
+    <h2>What we tested</h2>
+    <p>We built five regenerable experiments under one document id. E1 is a depth simulator with an explicit common-cause fraction β and an independent failure rate λ. A clone arm of size n survives a nesting step only if the shared cause misses and at least one copy avoids independent failure. A diverse arm with k classes lets each class fail on its own; the mission survives a step if any class survives. We swept β, depth, and copy counts, then locked a headline at β = 0.2, depth = 6, and matched counts of five and nine.</p>
+    <p>E2 estimates β from a public hardware fixture: Backblaze Hard Drive Stats for the first half of 2019. Same-model failures inside a seven-day window are counted against a null that shuffles model labels. The excess share is β̂. E3 plugs that measured β̂ back into the depth table. E4 and E5 are public biology boards used as analogy — yeast null phenotypes with Ensembl paralogs, and human gnomAD LOEUF with Ensembl paralogs — stratified by protein-length tertile so raw length does not pretend to be diversity. Those boards ask whether paralog-bearing genes look more buffered than singleton genes, as a rhyme for agent classes rather than as genetics advice.</p>
+
+    <h2>Hypothesis</h2>
+    <p>If common-cause risk is real, cloned copies should saturate: past a point, adding more of the same lineage does not buy nesting depth. Diverse classes should keep survival high at the same depth and copy count. A public hardware board should show positive same-model clustering against a shuffled null. Public biology boards, after length stratification, should move toward buffering for paralog-bearing genes. If clone survival matched diverse survival at matched counts for β above zero, or if β̂ were non-positive, the expedition would fail its own gate.</p>
+
+    <h2>Results</h2>
+    <p>The depth headline is blunt. At β = 0.2 and depth 6, clone-5 survival is 0.2621 and clone-9 is still 0.2621. Diverse-5 is 0.9972 and diverse-9 is essentially 1.0. Extra clones did not help. Extra classes did. That is the inbreeding signature the arm was built to catch.</p>
+    <p>Backblaze same-model window pairs numbered 9,955 against a null mean of about 9,488, for β̂ ≈ 0.0469. That is a modest common-cause fraction, not a catastrophe. Even so, when E3 plugs β̂ into the depth model, clone-5 falls from 0.857 at depth 3 to 0.630 at depth 9, while diverse-5 stays at 1.0 across those depths. Nine clones still match five. The measured hardware β is enough to keep the clone-cap story intact.</p>
+    <p>On the yeast board, length-stratified mean essentiality is lower for paralog-bearing genes than for genes without paralogs (Δ ≈ −0.051). On the human board, length-stratified mean LOEUF is higher for paralog-bearing genes (Δ ≈ +0.084). Both deltas signal in the buffering direction. Together with E1–E3, all five experiments fire a positive expedition signal. The engine-shelf pin stays deferred on purpose: Analogy boards and a nesting grammar are not fleet telemetry.</p>
+
+    <h2>Qualifications</h2>
+    <p>The depth model uses stated β and λ; it is a nesting grammar, not a calendar forecast for any particular company. Backblaze measures drives, not agents. Yeast essentiality and human LOEUF are analogy rhymes for diversity buffering; they are not clinical findings and they do not tell anyone which gene to edit. Length stratification removes one confound and leaves others. A live agent replication should estimate its own β from correlated outages before anyone treats the depth table as an operations budget.</p>
+
+    <h2>Why this earns a Rhyming Expedition seat</h2>
+    <p>The Rhyming World Model already teaches teams to store shared structure once and write missions as deltas. This arm adds a complementary rule: when you do keep copies, prefer diverse classes over identical clones whenever failures can share a cause. Director and Pilot seats, octave mission replicas, and template reconstructions all inherit that rule. Cloning the same seat nine times looks like insurance on a spreadsheet and behaves like inbreeding under β.</p>
+    <p>For people who hire agents the way they hire people — one lead with the plan, several hands with different tools — the everyday stake is simple. Homogeneous backups fail together. Heterogeneous backups fail apart. The lab makes that difference measurable on a public, regenerable board instead of leaving it as folklore on a job board after the outage.</p>
+
+    <h2>Invitation</h2>
+    <p>The full paper, the suite under <code>research/synthobs-diverse-redundancy-inbreeding-expedition/</code>, and the FractiSI library mirror are public. One npm script regenerates E1–E5 from fixtures. Read it beside the Aware Attention Head paper (how many copies you need with depth) and the Pilot Rhyme paper (which seats hold the map). If you are evaluating FractiSI Multi-Agent for a design-partner pilot, this is the arm to open when your redundancy plan still reprints the same lineage into every container.</p>
+
+    <p class="honesty">Honesty rail: Soft Story / computational expedition · Rhyming Expedition arm · regenerable depth grammar with stated β, λ · Backblaze 2019 H1 hardware Soft Story for common-cause clustering · SGD yeast + gnomAD/Ensembl Soft Story for diversity buffering · not clinical genetics · not a drive warranty · not live agent-fleet telemetry · ENGINE_SHELF pin deferred · Φ_EGS architectural key only · Document WP-DIVERSE-REDUNDANCY-INBREEDING-EGS-2026-11-19 · Fair Exchange in effect · → ∞^∞</p>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/whitepaper/diverse-redundancy-inbreeding">Read the full paper</a>
+      <a class="btn btn-ghost" href="/ship-blog/aware-attention-head">Aware Attention Head</a>
+      <a class="btn btn-ghost" href="/ship-blog/pilot-rhyme-expedition">Pilot Rhyme</a>
+      <a class="btn btn-ghost" href="https://fractisi.vercel.app/research/">FractiSI Research</a>
+    </div>
+    <footer>Diverse Redundancy · Inbreeding · Rhyming Expedition · → ∞^∞</footer>
+  </article>
+  <script type="module" src="/interfaces/ship-blog-i18n.js"></script>
+</body>
+</html>

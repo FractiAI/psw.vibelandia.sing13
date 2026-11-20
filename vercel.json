@@ -37,6 +37,22 @@
       "destination": "/interfaces/blog-wiring-discoveries-2026-11.html"
     },
     {
+      "source": "/whitepaper/diverse-redundancy-inbreeding/",
+      "destination": "/api/whitepaper?id=synthobs-diverse-redundancy-inbreeding-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/diverse-redundancy-inbreeding",
+      "destination": "/api/whitepaper?id=synthobs-diverse-redundancy-inbreeding-expedition-2026-11"
+    },
+    {
+      "source": "/ship-blog/diverse-redundancy-inbreeding/",
+      "destination": "/interfaces/blog-diverse-redundancy-inbreeding-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/diverse-redundancy-inbreeding",
+      "destination": "/interfaces/blog-diverse-redundancy-inbreeding-2026-11.html"
+    },
+    {
       "source": "/whitepaper/aware-attention-head/",
       "destination": "/api/whitepaper?id=synthobs-aware-attention-head-expedition-2026-11"
     },

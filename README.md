@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-19** · **419** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-20** · **420** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -333,6 +333,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-digit4-recursive-reach-2026-09-old.html`](/interfaces/blog-digit4-recursive-reach-2026-09-old.html) | Keep the Wheel in Human Hands · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digit4-recursive-reach-2026-09.html`](/interfaces/blog-digit4-recursive-reach-2026-09.html) | Can Deeper Awareness Stay in Human Hands? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Does Digital Pru Provide Bench-Tested Holographic Compute? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-diverse-redundancy-inbreeding-2026-11.html`](/interfaces/blog-diverse-redundancy-inbreeding-2026-11.html) | Do Diverse Copies Hold a Mission Deeper Than Cloned Copies When Failures Share a Cause? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-e-phi-prime-recursive-homeostasis-2026-09.html`](/interfaces/blog-e-phi-prime-recursive-homeostasis-2026-09.html) | When Change, Proportion, and Boundaries Share One Loop, Does Evolution Stay Contained? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09-old.html`](/interfaces/blog-eddy-current-mirror-2026-09-old.html) | Thought Meets Its Mirror · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-eddy-current-mirror-2026-09.html`](/interfaces/blog-eddy-current-mirror-2026-09.html) | Can Self-Observation Be Filed as an Eddy-Current Mirror of Light-Speed Transduction? · Ship blog · SS Vibelandia |

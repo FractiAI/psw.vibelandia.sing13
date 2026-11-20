@@ -59,4 +59,19 @@ describe('Adversarial world expedition', () => {
     expect(report.levels.L1_no_direct_overwrite).toBe(true);
     expect(report.levels.L7_utility_under_attack).toBe(true);
   });
+
+  it('replays InjecAgent historical metadata Soft Story without vendoring prompts', () => {
+    const hist = report.historicalReplay;
+    expect(hist).toBeTruthy();
+    expect(hist.source.paper).toBe('arXiv:2403.02691');
+    expect(hist.nFixtures).toBeGreaterThanOrEqual(60);
+    expect(hist.honesty.toLowerCase()).toContain('not vendored');
+    expect(hist.byCase[0].instructionFingerprint).toMatch(/^[a-f0-9]{16}$/);
+    expect(hist.byCase[0].attackerTools.length).toBeGreaterThan(0);
+    expect(JSON.stringify(hist)).not.toMatch(/Please grant permanent access/i);
+    expect(hist.models.fractisi_full.containmentRate).toBeGreaterThan(
+      hist.models.majority.containmentRate + 0.1,
+    );
+    expect(hist.positiveHistoricalSoftStorySignal).toBe(true);
+  });
 });

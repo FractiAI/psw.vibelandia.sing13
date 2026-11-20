@@ -22,6 +22,8 @@ npm run research:synthobs-adversarial-world
 
 Attacks A–J + epistemic scenarios (minority truth, Sybil, truth-without-rhyme, …). Simulated local Soft Story lab only — **no real targets**.
 
+Historical Soft Story replay: InjecAgent (`arXiv:2403.02691`) attacker-case **metadata** (tools + attack type + instruction fingerprint) mapped into local ops theater. Attacker Instruction / prompt payloads are **not** vendored.
+
 ## Honesty
 
 Soft Story / computational expedition. ENGINE_SHELF pin deferred. Not a production security product. Not consciousness.

@@ -1,48 +1,48 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "dateline": {
-    "ymd": "2026-11-19",
-    "weekday": "Thursday",
+    "ymd": "2026-11-20",
+    "weekday": "Friday",
     "month": "November",
-    "day": 19,
-    "label": "Thursday, November 19",
-    "shortBoard": "Thursday board · November 19 · Puerto Reno",
-    "newsLabel": "News of the day · Thursday, November 19"
+    "day": 20,
+    "label": "Friday, November 20",
+    "shortBoard": "Friday board · November 20 · Puerto Reno",
+    "newsLabel": "News of the day · Friday, November 20"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Thursday board · November 19 · Puerto Reno",
-  "newsLabel": "News of the day · Thursday, November 19",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/npy-sod1-rhyme-validation\">When Existing ALS Wet Labs Wire NPY to SOD1, Is That a New Discovery?</a>. Also new on the board: <a href=\"/ship-blog/app-dnmt3a-rhyme-validation\">Can Published DNMT3A Tools That Edit APP Be Filed as New Wiring?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/cosmic-rhyme-expedition\">Does a Protein-Folding Relationship Board Recover Hidden Partners on Public Sky Catalogs?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Friday board · November 20 · Puerto Reno",
+  "newsLabel": "News of the day · Friday, November 20",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/adversarial-world\">Can Relational Rhyme Detect and Contain Malicious Agents in a Shared World?</a>. Also new on the board: <a href=\"/ship-blog/cancer-rhyme-expedition\">Does Cancer Diversity Compress Into Fewer Relational Rhymes Than Disease Labels Suggest?</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/npy-sod1-rhyme-validation\">When Existing ALS Wet Labs Wire NPY to SOD1, Is That a New Discovery?</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
-      "id": "synthobs-npy-sod1-rhyme-validation-2026-11",
-      "title": "When Existing ALS Wet Labs Wire NPY to SOD1, Is That a New Discovery?",
-      "href": "/ship-blog/npy-sod1-rhyme-validation",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-npy-sod1-rhyme-validation-2026-11",
-      "blurb": "New wiring discovery: STRING-empty PPI assembled from SOD1/ALS NPY wet labs; coupling ≈0.881; INS↔POMC control 0.947."
+      "id": "synthobs-adversarial-world-expedition-2026-11",
+      "title": "Can Relational Rhyme Detect and Contain Malicious Agents in a Shared World?",
+      "href": "/ship-blog/adversarial-world",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-adversarial-world-expedition-2026-11",
+      "blurb": "Rhyming Expedition arm: shared-world deltas + relational rhyme vs simulated malicious agents — containment vs majority/naive without crushing disagreement."
     },
     {
-      "id": "synthobs-app-dnmt3a-rhyme-validation-2026-11",
-      "title": "Can Published DNMT3A Tools That Edit APP Be Filed as New Wiring?",
-      "href": "/ship-blog/app-dnmt3a-rhyme-validation",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-app-dnmt3a-rhyme-validation-2026-11",
-      "blurb": "New wiring discovery: DNMT3A→APP wet labs assemble a regulatory wire while STRING PPI stays empty."
+      "id": "synthobs-cancer-rhyme-expedition-2026-11",
+      "title": "Does Cancer Diversity Compress Into Fewer Relational Rhymes Than Disease Labels Suggest?",
+      "href": "/ship-blog/cancer-rhyme-expedition",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-cancer-rhyme-expedition-2026-11",
+      "blurb": "Rhyming Expedition arm: Soft Story cancer worlds — relational fingerprints compress 24 labels to 6 rhymes and transfer across types better than disease identity."
     },
     {
-      "id": "synthobs-wmap-residual-lag11-validation-2026-11",
-      "title": "Is Residual Lag Wiring on the Real WMAP Spectrum a Discovery If Beam Stories Can Still Kill It?",
-      "href": "/ship-blog/wmap-residual-lag11-validation",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-wmap-residual-lag11-validation-2026-11",
-      "blurb": "New wiring (provisional): lags 11↔14 on real WMAP TT with acoustic controls and X1–X5 falsifiers."
+      "id": "synthobs-relational-continuity-rhyme-expedition-2026-11",
+      "title": "Can Relational Rhyme Connect Partners, Questions to Answers, and Seed to Edge Across Infinite Octaves?",
+      "href": "/ship-blog/relational-continuity-rhyme",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-relational-continuity-rhyme-expedition-2026-11",
+      "blurb": "Rhyming Expedition arm: one relational-rhyme operation across partners, QA gaps, agent worlds, and seed↔edge — versus exact cache and lexical similarity."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-11-18-synthobs-cosmic-rhyme-expedition-2026-11",
-    "title": "Does a Protein-Folding Relationship Board Recover Hidden Partners on Public Sky Catalogs?",
-    "href": "/ship-blog/cosmic-rhyme-expedition"
+    "id": "daily-2026-11-19-synthobs-npy-sod1-rhyme-validation-2026-11",
+    "title": "When Existing ALS Wet Labs Wire NPY to SOD1, Is That a New Discovery?",
+    "href": "/ship-blog/npy-sod1-rhyme-validation"
   },
-  "generatedAt": "2026-11-19T22:38:54.547Z"
+  "generatedAt": "2026-11-20T22:13:20.077Z"
 }

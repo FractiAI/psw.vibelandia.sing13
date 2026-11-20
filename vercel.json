@@ -37,6 +37,22 @@
       "destination": "/interfaces/blog-wiring-discoveries-2026-11.html"
     },
     {
+      "source": "/whitepaper/adversarial-world/",
+      "destination": "/api/whitepaper?id=synthobs-adversarial-world-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/adversarial-world",
+      "destination": "/api/whitepaper?id=synthobs-adversarial-world-expedition-2026-11"
+    },
+    {
+      "source": "/ship-blog/adversarial-world/",
+      "destination": "/interfaces/blog-adversarial-world-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/adversarial-world",
+      "destination": "/interfaces/blog-adversarial-world-2026-11.html"
+    },
+    {
       "source": "/whitepaper/cancer-rhyme-expedition/",
       "destination": "/api/whitepaper?id=synthobs-cancer-rhyme-expedition-2026-11"
     },

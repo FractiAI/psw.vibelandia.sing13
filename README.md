@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-20** · **422** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-20** · **423** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -307,6 +307,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/ai-transparency.html`](/interfaces/ai-transparency.html) | AI transparency · FractiAI · SS Vibelandia |
 | [`/interfaces/awareness-singularities-one-pager.html`](/interfaces/awareness-singularities-one-pager.html) | Awareness Singularities S0–S81 · SynthOBS · FractiAI |
 | [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Do Sparse Emission Matrices Improve Sequence Modeling on Repetitive Genomic Satellites? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-adversarial-world-2026-11.html`](/interfaces/blog-adversarial-world-2026-11.html) | Can Relational Rhyme Detect and Contain Malicious Agents in a Shared World? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-agentic-convergence-2026-10.html`](/interfaces/blog-agentic-convergence-2026-10.html) | If Nobody Mentions Fractals, Do Independent Agents Still Find the Cheap Path? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html`](/interfaces/blog-ai-layer-triple-tipping-point-2026-09.html) | Are Rising AI Spend, Lagging Livelihoods and Tightening Access Arriving Together? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-app-dnmt3a-rhyme-validation-2026-11.html`](/interfaces/blog-app-dnmt3a-rhyme-validation-2026-11.html) | Can Published DNMT3A Tools That Edit APP Be Filed as New Wiring? · Ship blog · SS Vibelandia |

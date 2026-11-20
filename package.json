@@ -363,7 +363,8 @@
     "research:synthobs-combo-rhyme-wiring-expedition": "node research/synthobs-combo-rhyme-wiring-expedition/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-diverse-redundancy-inbreeding": "node research/synthobs-diverse-redundancy-inbreeding-expedition/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-relational-continuity-rhyme": "node research/synthobs-relational-continuity-rhyme-expedition/scripts/run_empirical_pipeline.mjs",
-    "research:synthobs-cancer-rhyme": "node research/synthobs-cancer-rhyme-expedition/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-cancer-rhyme": "node research/synthobs-cancer-rhyme-expedition/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-adversarial-world": "node research/synthobs-adversarial-world-expedition/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

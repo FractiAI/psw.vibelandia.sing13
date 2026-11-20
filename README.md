@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-20** · **421** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-20** · **422** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -317,6 +317,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Do Awareness Gates File Cleanly from Zero Through Eighty-One? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-awareness-vs-brute-force-2026-09.html`](/interfaces/blog-awareness-vs-brute-force-2026-09.html) | Can a Φ-Aware Prime-Container Engine Solve Insulin and Meta-Protein Fixtures Without Training? · Ship blog · SS Vibeland |
 | [`/interfaces/blog-beyond-crispr-discovery-2026-10.html`](/interfaces/blog-beyond-crispr-discovery-2026-10.html) | If CRISPR Records Past Invaders, Can a Relational Search Name What Writes Tomorrow’s Diversity? · Ship blog · SS Vibelan |
+| [`/interfaces/blog-cancer-rhyme-expedition-2026-11.html`](/interfaces/blog-cancer-rhyme-expedition-2026-11.html) | Does Cancer Diversity Compress Into Fewer Relational Rhymes Than Disease Labels Suggest? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-chart-compass-goldilocks-si-2026-10.html`](/interfaces/blog-chart-compass-goldilocks-si-2026-10.html) | Can Intelligence Be Charted Like an Expedition — With a Compass That Survives Self-Modification? · Ship blog · SS Vibela |
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Can CMOS and Protonic Vocabulary Bridge Linear Silicon Systems into the 99-Octave Omni-Lattice? · Ship blog · SS Vibelan |
 | [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexist with AI — Which Post Are You? · Ship blog · SS Vibelandia |

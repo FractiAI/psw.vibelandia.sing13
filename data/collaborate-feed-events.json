@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-20T00:54:40.174Z",
+  "updatedAt": "2026-11-20T01:11:20.384Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-cancer-rhyme-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-20T01:11:20.383Z",
+      "body": "Does Cancer Diversity Compress Into Fewer Relational Rhymes Than Disease Labels Suggest?",
+      "presenceHue": "gold",
+      "paperId": "synthobs-cancer-rhyme-expedition-2026-11",
+      "artifact": {
+        "title": "Does Cancer Diversity Compress Into Fewer Relational Rhymes Than Disease Labels Suggest?",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_CANCER_RHYME_EGS_2026-11.md",
+        "url": "/whitepaper/cancer-rhyme-expedition",
+        "paperId": "synthobs-cancer-rhyme-expedition-2026-11",
+        "docId": "WP-CANCER-RHYME-EGS-2026-11-20",
+        "published": "2026-11-20T19:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-relational-continuity-rhyme-expedition-2026-11",
       "type": "ArtifactEvent",

@@ -37,6 +37,22 @@
       "destination": "/interfaces/blog-wiring-discoveries-2026-11.html"
     },
     {
+      "source": "/whitepaper/cancer-rhyme-expedition/",
+      "destination": "/api/whitepaper?id=synthobs-cancer-rhyme-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/cancer-rhyme-expedition",
+      "destination": "/api/whitepaper?id=synthobs-cancer-rhyme-expedition-2026-11"
+    },
+    {
+      "source": "/ship-blog/cancer-rhyme-expedition/",
+      "destination": "/interfaces/blog-cancer-rhyme-expedition-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/cancer-rhyme-expedition",
+      "destination": "/interfaces/blog-cancer-rhyme-expedition-2026-11.html"
+    },
+    {
       "source": "/whitepaper/relational-continuity-rhyme/",
       "destination": "/api/whitepaper?id=synthobs-relational-continuity-rhyme-expedition-2026-11"
     },

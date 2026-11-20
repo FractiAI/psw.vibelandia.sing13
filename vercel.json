@@ -5,6 +5,14 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/fractisi/rhyming-shield/",
+      "destination": "/interfaces/fractisi-rhyming-shield.html"
+    },
+    {
+      "source": "/fractisi/rhyming-shield",
+      "destination": "/interfaces/fractisi-rhyming-shield.html"
+    },
+    {
       "source": "/whitepaper/wiring-bridge-thickening/",
       "destination": "/api/whitepaper?id=synthobs-wiring-bridge-thickening-2026-11"
     },

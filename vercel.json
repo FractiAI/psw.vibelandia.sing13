@@ -37,6 +37,22 @@
       "destination": "/interfaces/blog-wiring-discoveries-2026-11.html"
     },
     {
+      "source": "/whitepaper/relational-continuity-rhyme/",
+      "destination": "/api/whitepaper?id=synthobs-relational-continuity-rhyme-expedition-2026-11"
+    },
+    {
+      "source": "/whitepaper/relational-continuity-rhyme",
+      "destination": "/api/whitepaper?id=synthobs-relational-continuity-rhyme-expedition-2026-11"
+    },
+    {
+      "source": "/ship-blog/relational-continuity-rhyme/",
+      "destination": "/interfaces/blog-relational-continuity-rhyme-2026-11.html"
+    },
+    {
+      "source": "/ship-blog/relational-continuity-rhyme",
+      "destination": "/interfaces/blog-relational-continuity-rhyme-2026-11.html"
+    },
+    {
       "source": "/whitepaper/diverse-redundancy-inbreeding/",
       "destination": "/api/whitepaper?id=synthobs-diverse-redundancy-inbreeding-expedition-2026-11"
     },

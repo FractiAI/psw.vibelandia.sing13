@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-20** · **420** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-20** · **421** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -432,6 +432,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Can Quakes and Solar Weather Be Filed on One Macro Seismic Phase-Lock Bulletin? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Does One Attention Operator Vocabulary Organize Coupling Across Quantum, Solar, DNA and Agent Scales? · Ship blog · SS V |
 | [`/interfaces/blog-reflective-portal-homeostasis-2026-10.html`](/interfaces/blog-reflective-portal-homeostasis-2026-10.html) | When a Habit Stops Working, Can a System See Itself Clearly Enough to Change the Habit? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-relational-continuity-rhyme-2026-11.html`](/interfaces/blog-relational-continuity-rhyme-2026-11.html) | Can Relational Rhyme Connect Partners, Questions to Answers, and Seed to Edge Across Infinite Octaves? · Ship blog · SS  |
 | [`/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html`](/interfaces/blog-rsi-drift-friction-phi-egs-2026-09.html) | When Tools Rewrite Themselves, Is Drift the Real Rent? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html`](/interfaces/blog-rsi-phi-egs-fidelity-2026-09.html) | When Tools Rewrite Themselves, Does φ Keep Meaning Intact? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-self-observing-genome-2026-09.html`](/interfaces/blog-self-observing-genome-2026-09.html) | Can DNA Be Filed as a Self-Observing Catalog Mirror Without Claiming a Hired Mind? · Ship blog · SS Vibelandia |

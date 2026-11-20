@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-11-20T00:36:59.369Z",
+  "updatedAt": "2026-11-20T00:54:40.174Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-relational-continuity-rhyme-expedition-2026-11",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-11-20T00:54:40.172Z",
+      "body": "Can Relational Rhyme Connect Partners, Questions to Answers, and Seed to Edge Across Infinite Octaves?",
+      "presenceHue": "gold",
+      "paperId": "synthobs-relational-continuity-rhyme-expedition-2026-11",
+      "artifact": {
+        "title": "Can Relational Rhyme Connect Partners, Questions to Answers, and Seed to Edge Across Infinite Octaves?",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_RELATIONAL_CONTINUITY_RHYME_EGS_2026-11.md",
+        "url": "/whitepaper/relational-continuity-rhyme",
+        "paperId": "synthobs-relational-continuity-rhyme-expedition-2026-11",
+        "docId": "WP-RELATIONAL-CONTINUITY-RHYME-EGS-2026-11-20",
+        "published": "2026-11-20T18:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-diverse-redundancy-inbreeding-expedition-2026-11",
       "type": "ArtifactEvent",

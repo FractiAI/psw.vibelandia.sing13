@@ -43,17 +43,17 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest: Diverse redundancy · Aware head · Bridge thickening · Wiring wet lab · Combo · NPY↔SOD1
+    // Newest: Relational continuity · Diverse redundancy · Aware head · Bridge · Wiring · Combo
     expect(posts[0].id).toBe(
-      'synthobs-diverse-redundancy-inbreeding-expedition-2026-11',
+      'synthobs-relational-continuity-rhyme-expedition-2026-11',
     );
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-relational-continuity-rhyme-expedition-2026-11',
       'synthobs-diverse-redundancy-inbreeding-expedition-2026-11',
       'synthobs-aware-attention-head-expedition-2026-11',
       'synthobs-wiring-bridge-thickening-2026-11',
       'synthobs-wiring-discoveries-rhyming-world-model-2026-11',
       'synthobs-combo-rhyme-wiring-expedition-2026-11',
-      'synthobs-npy-sod1-rhyme-validation-2026-11',
     ]);
   });
 });

@@ -3545,6 +3545,14 @@
       "destination": "/interfaces/fractisi-holographic-living.html"
     },
     {
+      "source": "/fractisi/holographic-skin-demonstration",
+      "destination": "/interfaces/fractisi-holographic-skin-demonstration.html"
+    },
+    {
+      "source": "/fractisi/holographic-skin-demonstration/",
+      "destination": "/interfaces/fractisi-holographic-skin-demonstration.html"
+    },
+    {
       "source": "/tiny-footprint/pricing",
       "destination": "/interfaces/tiny-footprint-local.html"
     },

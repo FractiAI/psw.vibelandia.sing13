@@ -51,11 +51,12 @@
   <div class="hl-stage" id="hl-stage" hidden>
     <img class="hl-stage__img" id="hl-stage-img" alt="" />
     <div class="hl-stage__veil" aria-hidden="true"></div>
-    <button type="button" class="hl-stage__close" id="hl-stage-close">Close</button>
+    <button type="button" class="hl-stage__close" id="hl-stage-close">← Menu</button>
     <div class="hl-stage__caption">
       <h2 id="hl-stage-title"></h2>
       <p id="hl-stage-blurb"></p>
     </div>
+    <button type="button" class="hl-stage__return" id="hl-stage-return">Return to menu</button>
   </div>
 
   <script>
@@ -76,13 +77,13 @@
       realPhoto: false,
     },
     vibelandia: {
-      label: 'Vibelandia',
-      blurb: 'SS Vibelandia — the festival and music world.',
+      label: 'SS Vibelandia',
+      blurb: 'SS Vibelandia — Holographic Goldilocks Cruiseship.',
       image: MEDIA + 'hl-vibelandia.jpg',
     },
     'bat-cave': {
       label: 'Bat cave',
-      blurb: 'The inventor cave — schematics, benches, and gold holography.',
+      blurb: 'His frontiersman work-cave — trapper timber and Batcave tech, schematics on the rock wall.',
       image: MEDIA + 'hl-bat-cave.jpg',
     },
     'duck-hunting': {
@@ -202,6 +203,7 @@
   const stageTitle = document.getElementById('hl-stage-title');
   const stageBlurb = document.getElementById('hl-stage-blurb');
   const stageClose = document.getElementById('hl-stage-close');
+  const stageReturn = document.getElementById('hl-stage-return');
 
   function openStage(scene) {
     if (!scene || !scene.image) return;
@@ -422,6 +424,7 @@
 
   panelClose.addEventListener('click', closePanel);
   stageClose.addEventListener('click', closeStage);
+  if (stageReturn) stageReturn.addEventListener('click', closeStage);
   panel.addEventListener('click', (e) => {
     if (e.target === panel) closePanel();
   });

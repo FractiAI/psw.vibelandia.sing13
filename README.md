@@ -296,7 +296,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-11-20** · **423** HTML pages under `interfaces/`.
+> Auto-generated **2026-11-21** · **426** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -548,6 +548,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
 | [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
 | [`/interfaces/fractios-start-here.html`](/interfaces/fractios-start-here.html) | START HERE — FractiOS · Holographic Homeostasis Firmware |
+| [`/interfaces/fractisi-holographic-living.html`](/interfaces/fractisi-holographic-living.html) | Enrichment Menu · Holographic Skin · FractiSI |
+| [`/interfaces/fractisi-holographic-skin-create.html`](/interfaces/fractisi-holographic-skin-create.html) | Create · Holographic Skin · FractiSI |
+| [`/interfaces/fractisi-holographic-skin-demonstration.html`](/interfaces/fractisi-holographic-skin-demonstration.html) | Holographic Skin · FractiSI |
 | [`/interfaces/fractisi-pricing.html`](/interfaces/fractisi-pricing.html) | FractiSI Multi-Agent · Freemium Pricing & Packaging |
 | [`/interfaces/fractisi-recruit.html`](/interfaces/fractisi-recruit.html) | Founding CEO / commercial builder · FractiSI recruit |
 | [`/interfaces/fractisi.html`](/interfaces/fractisi.html) | FractiSI · FractiSI Multi-Agent · Shared-world intelligence |

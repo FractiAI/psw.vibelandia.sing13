@@ -3561,6 +3561,14 @@
       "destination": "/interfaces/fractisi-holographic-skin-create.html"
     },
     {
+      "source": "/fractisi/holographic-auto-session",
+      "destination": "/interfaces/fractisi-holographic-auto-session.html"
+    },
+    {
+      "source": "/fractisi/holographic-auto-session/",
+      "destination": "/interfaces/fractisi-holographic-auto-session.html"
+    },
+    {
       "source": "/tiny-footprint/pricing",
       "destination": "/interfaces/tiny-footprint-local.html"
     },

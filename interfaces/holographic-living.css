@@ -9,6 +9,180 @@
   --hl-line: rgba(201, 162, 39, 0.38);
 }
 
+/* Status stack · slim bar + supporting flag */
+.hl-status-stack {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.hl-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 1.55rem;
+  padding: 0.28rem clamp(0.85rem, 3vw, 1.5rem);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+  background: rgba(7, 14, 24, 0.92);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: rgba(232, 238, 246, 0.55);
+}
+.hl-status-bar[data-track="linear"] {
+  border-bottom-color: rgba(200, 48, 48, 0.55);
+  background: rgba(18, 10, 12, 0.94);
+  color: rgba(255, 210, 210, 0.88);
+}
+.hl-status-bar__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #e02424;
+  box-shadow: 0 0 0 2px rgba(224, 36, 36, 0.35);
+  flex: 0 0 auto;
+}
+.hl-status-bar__spacer {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: 0 0 auto;
+  opacity: 0;
+}
+.hl-status-bar__label--quiet {
+  color: rgba(201, 162, 39, 0.55);
+  text-transform: uppercase;
+  font-weight: 650;
+}
+.hl-status-bar[data-track="linear"] .hl-status-bar__label {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.hl-status-bar__story {
+  margin-left: auto;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: rgba(201, 162, 39, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45vw;
+}
+.hl-status-bar[data-track="linear"] .hl-status-bar__story {
+  color: rgba(255, 180, 180, 0.45);
+}
+
+/* Small flag supporting the bar — inside vs drifting */
+.hl-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0.15rem clamp(0.85rem, 3vw, 1.5rem) 0.35rem;
+  cursor: pointer;
+  user-select: none;
+}
+.hl-flag__pole {
+  width: 2px;
+  height: 0.85rem;
+  background: rgba(201, 162, 39, 0.55);
+  border-radius: 1px;
+}
+.hl-flag[data-track="linear"] .hl-flag__pole {
+  background: rgba(224, 36, 36, 0.65);
+}
+.hl-flag__cloth {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.38rem 0.12rem 0.28rem;
+  border-radius: 0 0.2rem 0.2rem 0;
+  line-height: 1.2;
+}
+.hl-flag__cloth--in {
+  color: #0b1424;
+  background: linear-gradient(120deg, #f3e6c0, #c9a227);
+}
+.hl-flag__cloth--drift {
+  color: #fff5f5;
+  background: #c42828;
+}
+
+/* Skin result stack (Create page) reuses same chrome */
+.hl-skin-result .hl-status-stack {
+  position: relative;
+  top: auto;
+  margin: 0 0 0.85rem;
+  border-radius: 0.45rem;
+  overflow: hidden;
+  border: 1px solid rgba(201, 162, 39, 0.28);
+}
+
+/* Initiation navigator · frontier trailhead (no dual-track panels) */
+.hl-initiation {
+  margin: 0 0 1.5rem;
+  padding: 1.1rem 1.2rem 1.2rem;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  border-radius: 0.7rem;
+  background:
+    radial-gradient(640px 180px at 0% 0%, rgba(201, 162, 39, 0.16), transparent 55%),
+    linear-gradient(165deg, rgba(8, 18, 36, 0.92), rgba(12, 24, 40, 0.88));
+}
+.hl-initiation__kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hl-gold, #c9a227);
+}
+.hl-initiation__tale {
+  margin: 0;
+  max-width: 44rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.28rem);
+  line-height: 1.45;
+  color: rgba(232, 238, 246, 0.9);
+}
+.hl-initiation__trail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+}
+.hl-initiation__trail a {
+  color: #f3e6c0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.35);
+  padding-bottom: 0.05rem;
+}
+.hl-initiation__trail a[aria-current="page"] {
+  color: #c9a227;
+  border-bottom-color: #c9a227;
+  font-weight: 700;
+}
+.hl-initiation__trail a:hover {
+  color: #fff;
+}
+.hl-initiation__sep {
+  color: rgba(201, 162, 39, 0.55);
+  user-select: none;
+}
+.hl-initiation__next {
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.hl-initiation__next a {
+  color: #f3e6c0;
+  text-decoration: none;
+}
+.hl-initiation__next a:hover {
+  color: #fff;
+}
+
 .hl-hero-band {
   margin: 0 0 1.5rem;
   padding: 1.25rem 0 0.25rem;

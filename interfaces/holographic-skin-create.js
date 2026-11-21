@@ -125,9 +125,35 @@
     document.body.classList.remove('hl-lock');
   }
 
+  function mountSkinStatusChrome() {
+    const mount = document.getElementById('hl-skin-status-mount') || result;
+    if (!mount) return;
+    mount.querySelectorAll('.hl-status-stack').forEach((n) => n.remove());
+    const api = window.FractiSIHolographicStatus;
+    if (api && typeof api.mountBarAndFlag === 'function') {
+      api.mountBarAndFlag(mount);
+      return;
+    }
+    /* Fallback if initiation script is missing — same bar + flag markup */
+    const wrap = document.createElement('div');
+    wrap.className = 'hl-status-stack';
+    wrap.innerHTML = `
+      <div class="hl-status-bar" data-track="holographic" role="status">
+        <span class="hl-status-bar__spacer" aria-hidden="true"></span>
+        <span class="hl-status-bar__label hl-status-bar__label--quiet">Inside Soft Story</span>
+        <span class="hl-status-bar__story">Hero’s Return · FractiSI Multi-Agent</span>
+      </div>
+      <div class="hl-flag" data-track="holographic" role="img" aria-label="Flag: inside the chosen holographic space" title="Inside holographic space">
+        <span class="hl-flag__pole" aria-hidden="true"></span>
+        <span class="hl-flag__cloth hl-flag__cloth--in">In</span>
+      </div>`;
+    mount.insertBefore(wrap, mount.firstChild);
+  }
+
   function renderSkin(skin) {
     lastSkin = skin;
     result.hidden = false;
+    mountSkinStatusChrome();
     resultTitle.textContent = skin.title;
     resultVibe.textContent = skin.vibes;
     resultStyles.textContent =

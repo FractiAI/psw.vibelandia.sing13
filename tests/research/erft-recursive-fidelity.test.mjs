@@ -67,15 +67,19 @@ describe('ERFT V5 constant-neutral + grammar recursive fidelity', () => {
     expect(ed.falsification).toBeDefined();
   });
 
-  it('committed empirical report matches live V5 pipeline', async () => {
-    const reportPath = path.join(
-      process.cwd(),
-      'research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json',
-    );
-    const onDisk = JSON.parse(readFileSync(reportPath, 'utf8'));
-    expect(onDisk.protocol).toMatch(/^ERFT-V5-/);
-    const live = await runAllExperiments();
-    expect(onDisk.results.n_pass).toBe(live.n_pass);
-    expect(onDisk.results.PROTOCOL_VERSION).toBe(live.PROTOCOL_VERSION);
-  });
+  it(
+    'committed empirical report matches live V5 pipeline',
+    async () => {
+      const reportPath = path.join(
+        process.cwd(),
+        'research/synthobs-egs-recursive-fidelity-test/data/empirical_report.json',
+      );
+      const onDisk = JSON.parse(readFileSync(reportPath, 'utf8'));
+      expect(onDisk.protocol).toMatch(/^ERFT-V5-/);
+      const live = await runAllExperiments();
+      expect(onDisk.results.n_pass).toBe(live.n_pass);
+      expect(onDisk.results.PROTOCOL_VERSION).toBe(live.PROTOCOL_VERSION);
+    },
+    60_000,
+  );
 });

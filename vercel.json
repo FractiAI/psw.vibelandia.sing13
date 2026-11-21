@@ -3537,6 +3537,14 @@
       "destination": "/interfaces/fractisi-pricing.html"
     },
     {
+      "source": "/fractisi/holographic-living",
+      "destination": "/interfaces/fractisi-holographic-living.html"
+    },
+    {
+      "source": "/fractisi/holographic-living/",
+      "destination": "/interfaces/fractisi-holographic-living.html"
+    },
+    {
       "source": "/tiny-footprint/pricing",
       "destination": "/interfaces/tiny-footprint-local.html"
     },

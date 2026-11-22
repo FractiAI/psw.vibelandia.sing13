@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "posts": [
+    {
+      "id": "daily-2026-11-22-synthobs-adversarial-world-expedition-2026-11",
+      "posted": "2026-11-22",
+      "featured": true,
+      "title": "Can Relational Rhyme Detect and Contain Malicious Agents in a Shared World?",
+      "subtitle": "News of the day · Sunday, November 22",
+      "summary": "Rhyming Expedition arm: shared-world deltas + relational rhyme vs simulated malicious agents — containment vs majority/naive without crushing disagreement.",
+      "href": "/ship-blog/adversarial-world",
+      "pill": "TODAY",
+      "docRef": "synthobs-adversarial-world-expedition-2026-11",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-11-21-synthobs-adversarial-world-expedition-2026-11",
       "posted": "2026-11-21",

@@ -7,6 +7,7 @@
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { withLikelyFunction } from '../lib/rhyme-partner-likely-function.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -43,13 +44,34 @@ const pilotPath = join(
 let pilotDiscoveries = [];
 if (existsSync(pilotPath)) {
   const pilot = readJson(pilotPath);
-  pilotDiscoveries = (pilot.discoveries || []).map((d) => ({
+  const enrichedPilotDiscoveries = (pilot.discoveries || []).map((d) =>
+    withLikelyFunction({
+      ...d,
+      rhyme: d.rhyme || 'pilot-rhyme',
+    }),
+  );
+  // Keep source Pilot catalog annotated so theater exports carry likelyFunction.
+  writeFileSync(
+    pilotPath,
+    JSON.stringify(
+      {
+        ...pilot,
+        discoveries: enrichedPilotDiscoveries,
+      },
+      null,
+      2,
+    ),
+  );
+  pilotDiscoveries = enrichedPilotDiscoveries.map((d) => ({
     rhyme: 'pilot-rhyme',
     theater: d.theater,
     discoveryId: d.discoveryId,
     kind: d.kind,
     coupling: d.coupling,
     detail: d.detail,
+    likelyFunction: d.likelyFunction,
+    partnerAFunction: d.partnerAFunction,
+    partnerBFunction: d.partnerBFunction,
     source: 'synthobs-pilot-rhyme-expedition/data/DISCOVERY_CATALOG.json',
   }));
 }
@@ -206,15 +228,15 @@ const catalog = {
   ],
   proteinFoldingRhyme: {
     n: proteinFoldDiscoveries.length,
-    discoveries: proteinFoldDiscoveries,
+    discoveries: proteinFoldDiscoveries.map(withLikelyFunction),
   },
   llmRhyme: {
     n: llmDiscoveries.length,
-    discoveries: llmDiscoveries,
+    discoveries: llmDiscoveries.map(withLikelyFunction),
   },
   pilotRhyme: {
     n: pilotDiscoveries.length,
-    discoveries: pilotDiscoveries,
+    discoveries: pilotDiscoveries.map(withLikelyFunction),
   },
 };
 
@@ -238,10 +260,12 @@ function toMd(cat) {
   lines.push('');
   lines.push(`Count: **${cat.proteinFoldingRhyme.n}**`);
   lines.push('');
-  lines.push('| Theater | Discovery | Kind |');
-  lines.push('|---|---|---|');
+  lines.push('| Theater | Discovery | Kind | Likely function |');
+  lines.push('|---|---|---|---|');
   for (const d of cat.proteinFoldingRhyme.discoveries) {
-    lines.push(`| ${d.theater} | \`${d.discoveryId}\` | ${d.kind} |`);
+    lines.push(
+      `| ${d.theater} | \`${d.discoveryId}\` | ${d.kind} | ${d.likelyFunction || ''} |`,
+    );
   }
   lines.push('');
   lines.push('## LLM language-pack rhyme discoveries');
@@ -251,11 +275,11 @@ function toMd(cat) {
   if (!cat.llmRhyme.n) {
     lines.push('_Run `npm run research:synthobs-llm-rhyme-cosmic-genome-expedition` first._');
   } else {
-    lines.push('| Theater | Discovery | Kind | Coupling |');
-    lines.push('|---|---|---|---:|');
+    lines.push('| Theater | Discovery | Kind | Coupling | Likely function |');
+    lines.push('|---|---|---|---:|---|');
     for (const d of cat.llmRhyme.discoveries.slice(0, 100)) {
       lines.push(
-        `| ${d.theater} | \`${d.discoveryId}\` | ${d.kind} | ${d.coupling ?? ''} |`,
+        `| ${d.theater} | \`${d.discoveryId}\` | ${d.kind} | ${d.coupling ?? ''} | ${d.likelyFunction || ''} |`,
       );
     }
   }
@@ -271,11 +295,11 @@ function toMd(cat) {
       'Held-out partners recovered by Director map + Pilot local slices where flat peers (local windows only) missed.',
     );
     lines.push('');
-    lines.push('| Theater | Discovery | Kind | Coupling |');
-    lines.push('|---|---|---|---:|');
+    lines.push('| Theater | Discovery | Kind | Coupling | Likely function |');
+    lines.push('|---|---|---|---:|---|');
     for (const d of cat.pilotRhyme.discoveries.slice(0, 120)) {
       lines.push(
-        `| ${d.theater} | \`${d.discoveryId}\` | ${d.kind} | ${d.coupling ?? ''} |`,
+        `| ${d.theater} | \`${d.discoveryId}\` | ${d.kind} | ${d.coupling ?? ''} | ${d.likelyFunction || ''} |`,
       );
     }
     if (cat.pilotRhyme.n > 120) {

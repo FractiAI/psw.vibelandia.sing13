@@ -34,7 +34,7 @@ Operator line: **SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNA
 | **Holographic Now** | Music + awareness can change how a physical room is *experienced* | That sound physically reconstructs walls or relocates matter |
 | **Awareness** | Attention frames sensory observations (Valet Pru restroom tell rhyme) | Phenomenal consciousness for machines or finished AGI |
 | **Hit Factory** | Intended autonomous release workflow: creator WHAT+WHEN+APPROVAL; agents HOW | Live distributor submissions, engagement metrics, or CapEx proof unless separately evidenced |
-| **Fourteen Year Crossing** | Player 1 origin lock: July 4, 2012 waking tied to CERN Higgs announcement as Soft Story voyage start | That CERN’s result caused the waking as a measured causal physics claim |
+| **Fourteen Year Crossing** | Player 1 Soft Story origin lock: July 4, 2012 · age fifty · overnight shift from disbelief in God/the supernatural to knowing they are real · tied in story to CERN Higgs announcement | That CERN’s result caused the waking as measured causal physics; that readers must share the conviction |
 | **$\Phi_{\mathrm{EGS}}$ / Goldilocks** | Catalog / narrative filing grammar shared with SS Vibelandia prospectus | Replacement of CODATA constants or unfinished fab/physics proofs |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
@@ -74,7 +74,7 @@ npm run audit:paper -- --path=docs/HERO_JO_SONIC_SINGULARITY_GOLDEN_BACHDOOR_BRO
 
 ## Crossing origin (Player 1 lock · 2026-11-27)
 
-The **Fourteen Year Crossing** begins on the morning of **July 4, 2012** — the day CERN announced confirmation of the Higgs boson (the so-called God particle) — when Player One **miraculously woke up changed**. Valet Pru’s ordinary life opened into adventure from that Independence Day forward, walking toward Puerto Reno and Hero Jo’s Sonic Singularity aboard SS VIBELANDIA. Filed here as Soft Story voyage origin, not as a causal physics proof.
+The **Fourteen Year Crossing** begins on the morning of **July 4, 2012** — the day CERN announced confirmation of the Higgs boson (the so-called God particle) — when Player One, at **fifty years old**, **miraculously woke up changed**: overnight, from **not believing in God or the supernatural** to **knowing they are real**. Valet Pru’s ordinary life opened into adventure from that Independence Day forward, walking toward Puerto Reno and Hero Jo’s Sonic Singularity aboard SS VIBELANDIA. Filed here as Soft Story voyage origin and personal testimony lock — not as a causal physics proof, and not as a requirement that readers share the conviction.
 
 Canonical listening program chapter: FractiSI **Bach Cigar Lounge** track 1 · Suno https://suno.com/s/rFGcOvgPsDU2Dk5s.
 

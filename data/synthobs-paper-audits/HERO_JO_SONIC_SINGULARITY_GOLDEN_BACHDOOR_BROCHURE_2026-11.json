@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "11e1efae40d76185",
+  "auditId": "55e9796eb1d9da9e",
   "paperId": "HERO_JO_SONIC_SINGULARITY_GOLDEN_BACHDOOR_BROCHURE_2026-11",
   "sourcePath": "docs/HERO_JO_SONIC_SINGULARITY_GOLDEN_BACHDOOR_BROCHURE_2026-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-11-28T01:08:49.740Z"
+          "invokedAt": "2026-11-28T01:09:27.193Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-11-28T01:08:49.739Z",
-  "completedAt": "2026-11-28T01:08:49.740Z",
+  "startedAt": "2026-11-28T01:09:27.192Z",
+  "completedAt": "2026-11-28T01:09:27.194Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1872,
+      "wordCount": 1924,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

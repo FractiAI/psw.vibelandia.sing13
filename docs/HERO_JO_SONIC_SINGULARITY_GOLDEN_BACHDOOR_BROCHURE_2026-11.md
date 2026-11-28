@@ -1,34 +1,86 @@
 # Hero Jo · The Sonic Singularity · Golden Bachdoor Hit Factory
 
-**Document ID:** `DOC-HERO-JO-SONIC-SINGULARITY-GOLDEN-BACHDOOR-2026-11-27`  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Status:** Canon brochure / product constitution (Player 1 source) · Soft Story tier for narrative identity  
-**Companions:** SS Vibelandia Official Prospectus · QUESTFEST · Meet the crew · FractiSI Bach Cigar Lounge (`FractiAI/FractiSI-Multi-Agent` `/test-drive/cigar-lounge/`)
+**Short answer: Yes** — as Soft Story brochure constitution for a holographic musical universe aboard SS VIBELANDIA, with a private Hit Factory operating model. Not as empirical physics, clinical advice, finished AGI, or proof of historical artist collaboration.
+
+**Authors:** FractiAI Research Group · Golden Bachdoor Hit Factory  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06  
+**Published:** November 27, 2026  
+**Document ID:** `WP-HERO-JO-SONIC-SINGULARITY-GOLDEN-BACHDOOR-2026-11-27`  
+**Classification:** Soft Story · product brochure / voyage canon · architectural intent *(see Honesty boundary)*  
+**Framework:** SynthOBS · SS Vibelandia · QUESTFEST · $\Phi_{\mathrm{EGS}}$ narrative filing · Fair Exchange  
+**Companions:** [SS Vibelandia Official Prospectus](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md) · [Meet the crew](https://www.ssvibelandiaquestfest24x365.com/meet-the-crew) · FractiSI [Bach Cigar Lounge](https://fractisi.vercel.app/test-drive/cigar-lounge/)  
+**Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
+**Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
 A holographic story, game, and living musical universe aboard the **SS VIBELANDIA**.  
 One Player. An extraordinary assembly. An infinite musical adventure.
 
 ---
 
+## Document ID
+
+`WP-HERO-JO-SONIC-SINGULARITY-GOLDEN-BACHDOOR-2026-11-27`
+
+Operator line: **SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06**.
+
+---
+
 ## Honesty boundary
 
-- Public brochure language for Hero Jo / Sonic Singularity / Golden Bachdoor — not a claim of historical collaboration, endorsement, or recordings by named artists.
-- Assembly spirits and artistic legacies are creative and spiritual origin story finding new expression through Hero Jo; resulting tracks are original works.
-- Soft Story / holographic Now describes experiential change of atmosphere with music + awareness — not a claim that sound physically reconstructs rooms.
-- Awareness framing is not phenomenal consciousness for machines.
-- Hit Factory workflow sections describe intended autonomous operations; do not invent live distributor submissions or engagement metrics.
+| Tier | Claims | Does not claim |
+|------|--------|----------------|
+| **Brochure / Soft Story** | Public invitation into Hero Jo’s Sonic Singularity aboard SS VIBELANDIA | That the brochure is an empirical physics or clinical paper |
+| **Assembly spirits** | Creative / spiritual origin story; original Suno works inspired by artistic legacies | Historical collaboration, endorsement, or recordings by named artists |
+| **Holographic Now** | Music + awareness can change how a physical room is *experienced* | That sound physically reconstructs walls or relocates matter |
+| **Awareness** | Attention frames sensory observations (Valet Pru restroom tell rhyme) | Phenomenal consciousness for machines or finished AGI |
+| **Hit Factory** | Intended autonomous release workflow: creator WHAT+WHEN+APPROVAL; agents HOW | Live distributor submissions, engagement metrics, or CapEx proof unless separately evidenced |
+| **Fourteen Year Crossing** | Player 1 origin lock: July 4, 2012 waking tied to CERN Higgs announcement as Soft Story voyage start | That CERN’s result caused the waking as a measured causal physics claim |
+| **$\Phi_{\mathrm{EGS}}$ / Goldilocks** | Catalog / narrative filing grammar shared with SS Vibelandia prospectus | Replacement of CODATA constants or unfinished fab/physics proofs |
+
+**Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
+
+See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
+
+---
+
+## Abstract & executive summary
+
+This document files the **Hero Jo · Sonic Singularity · Golden Bachdoor Hit Factory** brochure constitution: front-end invitation (Golden Bachdoor), voyage world (SS VIBELANDIA · Batcave · Man Cave / Bach Cigar Lounge), assembly identity, Soft Story holographic Now, and back-end Hit Factory operating intent.
+
+**Operational claim (narrative):** a reproducible Soft Story map that guest and agent surfaces can cite — Valet Pru / Player One / Hero Jo identities; Man Cave Sessions; Fourteen Year Crossing origin lock (July 4, 2012); music-with-awareness as experiential recomposition of the Now; creator-approval rails for releases.
+
+**Does not claim:** historical artist collaboration, physical room reconstruction by sound, finished AGI, or unverified distributor / engagement outcomes.
+
+---
+
+## Methods & reproducibility
+
+Brochure canon is reproduced from Player 1 source text plus published SS Vibelandia / FractiSI listening surfaces. No empirical pipeline is claimed for this Soft Story filing.
+
+| Step | Command / path |
+|------|----------------|
+| This brochure | [`docs/HERO_JO_SONIC_SINGULARITY_GOLDEN_BACHDOOR_BROCHURE_2026-11.md`](./HERO_JO_SONIC_SINGULARITY_GOLDEN_BACHDOOR_BROCHURE_2026-11.md) |
+| Voyage prospectus peer | [`docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md) |
+| Bach Cigar Lounge contract | FractiSI `src/testdrive/cigar-lounge.mjs` · page `/test-drive/cigar-lounge/` |
+| Suno playlist (locked) | https://suno.com/s/rFGcOvgPsDU2Dk5s |
+| PRA Snap | `npm run audit:paper -- --path=docs/HERO_JO_SONIC_SINGULARITY_GOLDEN_BACHDOOR_BROCHURE_2026-11.md` |
+| Honesty peer | [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) |
+
+```bash
+npm run audit:paper -- --path=docs/HERO_JO_SONIC_SINGULARITY_GOLDEN_BACHDOOR_BROCHURE_2026-11.md
+```
 
 ---
 
 ## Crossing origin (Player 1 lock · 2026-11-27)
 
-The **Fourteen Year Crossing** begins on the morning of **July 4, 2012** — the day CERN announced confirmation of the Higgs boson (the so-called God particle) — when Player One **miraculously woke up changed**. Valet Pru’s ordinary life opened into adventure from that Independence Day forward, walking toward Puerto Reno and Hero Jo’s Sonic Singularity aboard SS VIBELANDIA.
+The **Fourteen Year Crossing** begins on the morning of **July 4, 2012** — the day CERN announced confirmation of the Higgs boson (the so-called God particle) — when Player One **miraculously woke up changed**. Valet Pru’s ordinary life opened into adventure from that Independence Day forward, walking toward Puerto Reno and Hero Jo’s Sonic Singularity aboard SS VIBELANDIA. Filed here as Soft Story voyage origin, not as a causal physics proof.
 
-Canonical listening program chapter: FractiSI **Bach Cigar Lounge** track 1 · Suno `https://suno.com/s/rFGcOvgPsDU2Dk5s`.
+Canonical listening program chapter: FractiSI **Bach Cigar Lounge** track 1 · Suno https://suno.com/s/rFGcOvgPsDU2Dk5s.
 
 ---
 
-## PART I — The front end: the brochure
+## Introduction · PART I — The front end: the brochure
 
 ### 1. Welcome to the Golden Bachdoor
 
@@ -157,5 +209,18 @@ We are building a public doorway into an expanding musical universe, with an aut
 One Player. An extraordinary assembly. An infinite musical adventure.  
 Welcome aboard the holographic SS VIBELANDIA.  
 Life is too short for a boring soundtrack.
+
+---
+
+## References
+
+1. FractiAI. *SS Vibelandia Official Prospectus · Narrative Foundation* (2026). [`docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](./SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md).
+2. FractiAI. *Coherence · plain speak honesty* (2026). [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
+3. FractiAI. *Meet the crew* · SS Vibelandia QUESTFEST. https://www.ssvibelandiaquestfest24x365.com/meet-the-crew
+4. FractiAI. *Golden Bachdoor · Music Lab* journey. https://www.ssvibelandiaquestfest24x365.com/journey/bachdoor-music-lab
+5. FractiAI / FractiSI Multi-Agent. *Bach Cigar Lounge* listening program. https://fractisi.vercel.app/test-drive/cigar-lounge/
+6. Hero Jo · Bach Cigar Lounge Suno playlist (locked). https://suno.com/s/rFGcOvgPsDU2Dk5s
+7. NSPFRNP Snap · Peer-Review Audit protocol. [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
+8. Agent Sync · Infinite Octaves Omni-Lattice. [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](../AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)
 
 → ∞^∞

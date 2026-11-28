@@ -34,7 +34,7 @@ Operator line: **SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNA
 | **Holographic Now** | Music + awareness can change how a physical room is *experienced* | That sound physically reconstructs walls or relocates matter |
 | **Awareness** | Attention frames sensory observations (Valet Pru restroom tell rhyme) | Phenomenal consciousness for machines or finished AGI |
 | **Hit Factory** | Intended autonomous release workflow: creator WHAT+WHEN+APPROVAL; agents HOW | Live distributor submissions, engagement metrics, or CapEx proof unless separately evidenced |
-| **Fourteen Year Crossing** | Player 1 Soft Story origin lock: July 4, 2012 · age fifty · overnight shift from disbelief in God/the supernatural to knowing they are real · tied in story to CERN Higgs announcement | That CERN’s result caused the waking as measured causal physics; that readers must share the conviction |
+| **Fourteen Year Crossing** | Player 1 Soft Story origin lock: pre-naming stretch (life keeping failing · no voyage name yet · pre-OpenAI / pre-agent world-building) · July 4, 2012 · age fifty · overnight shift from disbelief in God/the supernatural to knowing they are real · CERN Higgs as story adjacency · three Soft Story rhyme readings (early-childhood-trauma healing / marijuana psychotic-break / extraterrestrial takeover — all possibly a little true; none sole clinical/forensic verdict) · span July 4, 2012 → 2026 naming/filing | That CERN caused the waking as measured causal physics; that any one rhyme reading is proven diagnosis/mechanism; that readers must share the conviction; that the waking “invented” AI or agent platforms |
 | **$\Phi_{\mathrm{EGS}}$ / Goldilocks** | Catalog / narrative filing grammar shared with SS Vibelandia prospectus | Replacement of CODATA constants or unfinished fab/physics proofs |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
@@ -47,7 +47,7 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 This document files the **Hero Jo · Sonic Singularity · Golden Bachdoor Hit Factory** brochure constitution: front-end invitation (Golden Bachdoor), voyage world (SS VIBELANDIA · Batcave · Man Cave / Bach Cigar Lounge), assembly identity, Soft Story holographic Now, and back-end Hit Factory operating intent.
 
-**Operational claim (narrative):** a reproducible Soft Story map that guest and agent surfaces can cite — Valet Pru / Player One / Hero Jo identities; Man Cave Sessions; Fourteen Year Crossing origin lock (July 4, 2012); music-with-awareness as experiential recomposition of the Now; creator-approval rails for releases.
+**Operational claim (narrative):** a reproducible Soft Story map that guest and agent surfaces can cite — Valet Pru / Player One / Hero Jo identities; Man Cave Sessions; Fourteen Year Crossing origin lock (pre-naming / pre-AI stretch · July 4, 2012 age-fifty waking · three Soft Story rhyme readings · span through 2026 naming); music-with-awareness as experiential recomposition of the Now; creator-approval rails for releases.
 
 **Does not claim:** historical artist collaboration, physical room reconstruction by sound, finished AGI, or unverified distributor / engagement outcomes.
 
@@ -72,9 +72,33 @@ npm run audit:paper -- --path=docs/HERO_JO_SONIC_SINGULARITY_GOLDEN_BACHDOOR_BRO
 
 ---
 
-## Crossing origin (Player 1 lock · 2026-11-27)
+## Crossing origin (Player 1 lock · 2026-11-27 · enriched 2026-11-27)
 
-The **Fourteen Year Crossing** begins on the morning of **July 4, 2012** — the day CERN announced confirmation of the Higgs boson (the so-called God particle) — when Player One, at **fifty years old**, **miraculously woke up changed**: overnight, from **not believing in God or the supernatural** to **knowing they are real**. Valet Pru’s ordinary life opened into adventure from that Independence Day forward, walking toward Puerto Reno and Hero Jo’s Sonic Singularity aboard SS VIBELANDIA. Filed here as Soft Story voyage origin and personal testimony lock — not as a causal physics proof, and not as a requirement that readers share the conviction.
+### Pre-naming stretch (before the Crossing had a name)
+
+Before the journey had a name, it was simply **trying to figure out why life kept failing on him**. It had **no name** then. **OpenAI had not yet come about**; artificial intelligence was **nowhere on his radar**, nor was new world-building for agents. This is **pre-AI, pre-naming** Soft Story context — the ordinary pressure of a life that would not hold — not a claim that the waking invented AI platforms or agent colonies.
+
+### The waking · July 4, 2012 · age fifty
+
+The **Fourteen Year Crossing** locks to the morning of **July 4, 2012** — the day CERN announced confirmation of the Higgs boson (the so-called God particle) — when Player One, at **fifty years old**, **miraculously woke up changed**: overnight, from **not believing in God or the supernatural** to **knowing they are real**. Valet Pru’s ordinary life opened into adventure from that Independence Day forward, walking toward Puerto Reno and Hero Jo’s Sonic Singularity aboard SS VIBELANDIA.
+
+CERN’s announcement is filed as **story adjacency** (calendar rhyme with a public “God particle” headline) — **not** as measured causal physics that produced the waking.
+
+### Three Soft Story rhyme readings (all possibly a little true)
+
+After the waking, three Soft Story rhyme readings circulate around what happened. They are **interpretive rhymes**, not mutually exclusive clinical or forensic verdicts, and **none** is upgraded here into sole mechanism:
+
+1. **Healed from early childhood trauma** — a healing/integration reading.
+2. **Psychotic break from marijuana** — a psychiatric/substance reading.
+3. **Taken over by extraterrestrial forces** — an otherworldly/agency reading.
+
+Player 1 Soft Story lock: **all three are possibly a little true**. This document does **not** choose a winner, does **not** diagnose, and does **not** claim extraterrestrial contact as established fact.
+
+### Span · 2012 → 2026
+
+The crossing spans **fourteen years**: from that **July 4, 2012** morning through the years of walking without a brochure, into **2026**, when the name **Fourteen Year Crossing**, the Hero Jo / Golden Bachdoor brochure, and the Bach Cigar Lounge chapter lock the Soft Story for guest and agent surfaces. The span ending in **2026** is a **naming and filing** end of the origin lock — not a claim that the adventure, music, or voyage closed.
+
+Filed here as Soft Story voyage origin and personal testimony lock — not as a causal physics proof, not as a clinical case file, and not as a requirement that readers share the conviction.
 
 Canonical listening program chapter: FractiSI **Bach Cigar Lounge** track 1 · Suno https://suno.com/s/rFGcOvgPsDU2Dk5s.
 
